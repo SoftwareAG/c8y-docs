@@ -567,7 +567,7 @@ Sample result when the device type has been applied to node #1 but not node #2:
 ```
 ### Expiring operations
 
-In certain cases it is desirable that the OPC UA gateway only executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
+In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
 
 - Reading the value of a node/nodes 
 - Reading all attributes of a node 

@@ -565,3 +565,35 @@ Sample result when the device type has been applied to node #1 but not node #2:
     "{root node ID #2}": false
 }
 ```
+### Expiring operations
+
+In certain cases it is desirable that the OPC UA gateway only executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
+
+- Reading the value of a node/nodes 
+- Reading all attributes of a node 
+- Reading an attribute 
+- Read complex
+- Write value
+- Write attribute
+- Call method
+
+For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body. 
+
+The following example shows how to mark a read operation as expiring:
+
+```json
+{
+  "deviceId" : "<server-device-Id>",
+  "c8y_ua_command_ReadValue": {
+    "nodes": ["ns=3;s=FloatArray"],
+    "expirationTime": "2021-02-08T15:00:00.000Z"
+  },
+  "description":"Expiring read value"
+}
+```
+
+The operation above will only perform a read on the OPC UA server if processed by the gateway before the 8th of February, 2021 15:00. Otherwise, the operation will fail. In this case, `Operation expired` is returned as failure reason.
+
+
+
+

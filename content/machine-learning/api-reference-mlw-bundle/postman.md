@@ -9,7 +9,7 @@ aliases:
 
 Graphical REST clients such as Postman are a convenient way to explore REST interfaces and the Cumulocity IoT database content.
 
-If you are already using the Cumulocity IoT API collection in Postman and the environment to access the collection for your tenant is setup, then you can directly import the MLW microservice collection (see below).
+If you are already using the Cumulocity IoT API collection in Postman and the environment to access the collection for your tenant is set up, then you can directly import the MLW microservice collection (see below).
 
 If you are doing a fresh set up of Postman for using the Machine Learning Workbench (MLW) microservice collection, first follow the steps described in [Using the REST interface > Overview > Using Postman](/microservice-sdk/rest#using-postman) in the Microservice SDK guide. 
  

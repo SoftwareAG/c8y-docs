@@ -61,7 +61,7 @@ The following parameters are required only if you want to update the network par
 
 `gateway.ip` : Provide the gateway IP for your network. For example, 192.168.56.1
 
-`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1
+`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1. For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
 >**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
@@ -141,6 +141,8 @@ You have the choice to  enter the network parameters manually through the consol
 4. Provide the DNS Server IP for your network. For example, 192.168.66.1
 	
 	`* Enter DNS Server IP:`
+	
+	For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 

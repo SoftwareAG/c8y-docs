@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ebb9221f-dfaf-4739-817e-20c31b43491e",
-		"name": "C8Y Microservice MLW-api",
+		"_postman_id": "a1a4b020-ec8b-441b-97aa-2f4bdc3f1137",
+		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -18,14 +18,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -33,10 +38,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects",
@@ -59,14 +61,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -102,14 +109,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -146,14 +158,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -174,8 +191,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Resources",
@@ -187,14 +203,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -223,14 +244,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -265,14 +291,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -301,20 +332,25 @@
 					"response": []
 				},
 				{
-					"name": "Upload files into the Project",
+					"name": "Upload files into the project",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -369,10 +405,7 @@
 									"type": "file",
 									"src": "/C:/Users/themachine/Desktop/MLW_Postman/mlw-core/ResourceFIles/TestFiles/anomalySampleData.csv"
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources",
@@ -391,20 +424,25 @@
 					"response": []
 				},
 				{
-					"name": "Create new resource files into the Project (Python Script file)",
+					"name": "Create new resource files into the project (Python script file)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -437,20 +475,25 @@
 					"response": []
 				},
 				{
-					"name": "Create new resource files into the Project (Workflow file)",
+					"name": "Create new resource files into the project (Workflow file)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -483,20 +526,25 @@
 					"response": []
 				},
 				{
-					"name": "Create new resource files into the Project (Architecture file)",
+					"name": "Create new resource files into the project (Architecture file)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -529,20 +577,25 @@
 					"response": []
 				},
 				{
-					"name": "Create new resource files into the Project (Notebook file)",
+					"name": "Create new resource files into the project (Notebook file)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -575,20 +628,25 @@
 					"response": []
 				},
 				{
-					"name": "Create new resource files into the Project (Pipeline file)",
+					"name": "Create new resource files into the project (Pipeline file)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -627,14 +685,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -664,14 +727,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -715,14 +783,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -766,14 +839,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -817,14 +895,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -868,14 +951,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -928,14 +1016,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -949,10 +1042,7 @@
 									"type": "file",
 									"src": "/C:/Users/swsh/Desktop/ZMOD0203/MLW/ZMOD/Data/irisDataset.csv"
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/1603246088_0264_Resource",
@@ -989,6 +1079,11 @@
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1003,10 +1098,7 @@
 									"src": "/C:/Users/swsh/Desktop/ZMOD0203/MLW/ZMOD/Data/irisDataset.csv",
 									"disabled": true
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/1600766226_0198_Resource/download",
@@ -1033,14 +1125,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1078,14 +1175,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1116,8 +1218,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "AutoML",
@@ -1129,14 +1230,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1167,14 +1273,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1214,14 +1325,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1246,20 +1362,25 @@
 					"response": []
 				},
 				{
-					"name": "Start the training process of the Anomaly Detection Model",
+					"name": "Start the training process of the Anomaly detection model",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1292,8 +1413,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Cumulocity Data Pull",
@@ -1305,14 +1425,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1361,14 +1486,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1418,14 +1548,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1480,27 +1615,31 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "DataHub Data Pull",
 			"item": [
 				{
-					"name": "Pull Data from DataHub",
+					"name": "Pull data from DataHub",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1534,8 +1673,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Tasks",
@@ -1547,14 +1685,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1581,14 +1724,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1616,14 +1764,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1653,14 +1806,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1690,14 +1848,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1718,8 +1881,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "MLE integration",
@@ -1731,14 +1893,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1772,14 +1939,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1813,14 +1985,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1848,20 +2025,25 @@
 					"response": []
 				},
 				{
-					"name": "Deploy model to MLE (PMML)",
+					"name": "Deploy model to Zementis (PMML)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1886,20 +2068,25 @@
 					"response": []
 				},
 				{
-					"name": "Deploy model to MLE (ONNX)",
+					"name": "Deploy model to Zementis (ONNX)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1924,20 +2111,25 @@
 					"response": []
 				},
 				{
-					"name": "Deploy model to MLE (PIPELINE)",
+					"name": "Deploy model to Zementis (PIPELINE)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -1962,20 +2154,25 @@
 					"response": []
 				},
 				{
-					"name": "Remove model from MLE (PMML)",
+					"name": "Remove model from Zementis (PMML)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2000,20 +2197,25 @@
 					"response": []
 				},
 				{
-					"name": "Remove model from MLE (ONNX)",
+					"name": "Remove model from Zementis (ONNX)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2038,20 +2240,25 @@
 					"response": []
 				},
 				{
-					"name": "Remove model from MLE (PIPELINE)",
+					"name": "Remove model from Zementis (PIPELINE)",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2082,14 +2289,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2127,14 +2339,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2172,14 +2389,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2210,27 +2432,31 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Training WorkFLow",
 			"item": [
 				{
-					"name": "Retrain Machine Learning models using the Training WorkFlow",
+					"name": "Retrain Machine Learning models using the training WorkFlow",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2263,8 +2489,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Code Execution",
@@ -2276,14 +2501,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2316,8 +2546,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "NeuralNetwork",
@@ -2352,14 +2581,13 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Jupyter Notebook integration",
 			"item": [
 				{
-					"name": "Preview the Notebook Code along with the Session creation",
+					"name": "Preview the Jupyter Notebook code along with the session creation",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2368,14 +2596,19 @@
 							"type": "basic",
 							"basic": [
 								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2383,10 +2616,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600784593_Project/resources/1603183086_0914_Resource/jnb-content",
@@ -2413,10 +2643,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"content\": {\"cells\": [{\"cell_type\": \"code\", \"execution_count\": 1, \"metadata\": {}, \"outputs\": [], \"source\": [\"asdasfas\"]}], \"metadata\": {\"kernelspec\": {\"display_name\": \"Python 3\", \"language\": \"python\", \"name\": \"python3\"}, \"language_info\": {\"codemirror_mode\": {\"name\": \"ipython\", \"version\": 3}, \"file_extension\": \".py\", \"mimetype\": \"text/x-python\", \"name\": \"python\", \"nbconvert_exporter\": \"python\", \"pygments_lexer\": \"ipython3\", \"version\": \"3.6.9\"}}, \"nbformat\": 4, \"nbformat_minor\": 4},\r\n\"format\": \"json\",\r\n\"type\": \"notebook\"}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\"content\": {\"cells\": [{\"cell_type\": \"code\", \"execution_count\": 1, \"metadata\": {}, \"outputs\": [], \"source\": [\"asdasfas\"]}], \"metadata\": {\"kernelspec\": {\"display_name\": \"Python 3\", \"language\": \"python\", \"name\": \"python3\"}, \"language_info\": {\"codemirror_mode\": {\"name\": \"ipython\", \"version\": 3}, \"file_extension\": \".py\", \"mimetype\": \"text/x-python\", \"name\": \"python\", \"nbconvert_exporter\": \"python\", \"pygments_lexer\": \"ipython3\", \"version\": \"3.6.9\"}}, \"nbformat\": 4, \"nbformat_minor\": 4},\r\n\"format\": \"json\",\r\n\"type\": \"notebook\"}"
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600784593_Project/resources/1603183086_0914_Resource/jnb-content",
@@ -2437,20 +2664,25 @@
 					"response": []
 				},
 				{
-					"name": "Get the listt of running Jupyter Sessions",
+					"name": "Get the listt of running Jupyter sessions",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
 								{
 									"key": "password",
 									"value": "{{password}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "string"
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
 								}
 							]
 						},
@@ -2470,9 +2702,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

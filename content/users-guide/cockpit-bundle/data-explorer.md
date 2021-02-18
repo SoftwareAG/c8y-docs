@@ -206,7 +206,7 @@ To create a widget from the data explorer of in the navigator, click **More...**
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
-> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
+> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
 
 
 ### <a name="export-data"></a>Exporting measurement data

@@ -24,7 +24,7 @@ If the DDF files for the default mappings are uploaded in the management tenant,
 
 ![Upload DDF file](/images/device-protocols/lwm2m/lwm2m-uploadDDF.png)
 
-5. In the next dialog, you can see the name and description of the protocol. Click **Continue** to create the new device protocol. <br><br>
+5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. <br><br>
 
 ![Upload DDF file](/images/device-protocols/lwm2m/lwm2m-uploadprotocol.png)
 

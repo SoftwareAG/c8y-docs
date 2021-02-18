@@ -90,4 +90,6 @@ on all Alarm() as alarm {
 
 For events that have come from Cumulocity IoT, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
 
-See the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
+For more information, including examples for the different types of objects, see [Receiving update notifications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
+
+See also the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.

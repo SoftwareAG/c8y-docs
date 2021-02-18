@@ -121,8 +121,8 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Analytics Builder</a></td>
-<td style="text-align:left">Analytic Model-Manager und Editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Analytics Builder</a> (Teilbereich von Streaming Analytics)</td>
+<td style="text-align:left">Analytics Builder Modell-Manager und Editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
@@ -260,7 +260,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">EPL App</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">EPL App</a> (Teilbereich von Streaming Analytics)</td>
 <td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
 Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
 <td style="text-align:left">Apama EPL Apps</td>

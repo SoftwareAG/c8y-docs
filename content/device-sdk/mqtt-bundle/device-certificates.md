@@ -17,10 +17,10 @@ Devices connecting to the platform with certificates do not need to provide the 
 #### General requirements for connecting devices with certificates
 
 * The CA certificate may also be a self-signed certificate.
-* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
-* The device needs to trust the Cumulocity IoT server certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
+* Devices need to trust the Cumulocity IoT server certificate.
+* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
@@ -286,7 +286,7 @@ Go into your caCertificate directory.
       After completing all the steps except adding the certificate, the form should look like this:
 
       ![Trusted certificate addition](/images/mqtt/mqttTrustedCertificateAddition.png)
-   
+
       Then the added certificate should be visible:
 
       ![Trusted certificate added](/images/mqtt/mqttTrustedCertificateAdded.png)

@@ -1,6 +1,6 @@
 ---
-weight: 130
-title: Streaming Analytics
+weight: 90
+title: 10.7.0
 layout: redirect
 ---
 

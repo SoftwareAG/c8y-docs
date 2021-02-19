@@ -38,7 +38,7 @@ To edit the properties of a widget, click the cogwheel icon at the top right cor
 
 To remove a widget from a dashboard or report, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
-Widgets can only be modified, if the dashboard/report is unlocked. To lock/unlock it, use the toggle with the lock icon in the top menu bar.
+Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock it, use the toggle with the lock icon in the top menu bar.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 

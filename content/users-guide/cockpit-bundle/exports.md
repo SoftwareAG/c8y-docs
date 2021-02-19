@@ -10,7 +10,7 @@ The export functionality lets you export specific data to either CSV or Excel fi
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
->**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be taken.
+>**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be exported.
 
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
@@ -35,7 +35,7 @@ To filter for a particular object, enter a name or property value into the searc
 
 >**Info:** If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
 
-The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
+The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week", or you may select "Custom" and enter a custom from/to range in the additional fields.
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
@@ -125,11 +125,11 @@ On opening a report, all scheduled exports based on smart rules are automaticall
 
 To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.
 
-You will receive an e-mail containing links to each export file.
+You will receive an email containing links to each export file.
 
 Standard time properties of documents (like time or creationTime in alarms) are exported to
 
-* xlsx file in the format: 03/13/2016 00:00:24
+* XLSX file in the format: 03/13/2016 00:00:24
 * CSV file in the format: 2016-03-13T00:01:24.000Z
 
 Only CSV time contains milliseconds and timezone.

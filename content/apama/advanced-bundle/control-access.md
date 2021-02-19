@@ -8,9 +8,9 @@ By default, the Streaming Analytics application gives you access to the Analytic
 Administrators may wish to control which of these are shown on different tenants or for different users, 
 or modify the wording of the cards on the home screen.
 
-Which pages are available also depends on the type of Apama-ctrl microservice that is running. 
+Which pages are available also depends on the variant of the Apama-ctrl microservice that is running. 
 If the microservice is not running, an error message is shown indicating that the microservice cannot be accessed, 
-and only a card with information about Smart Rules is shown.
+and only a card with information about smart rules is shown.
 
 If the Apama Starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama Starter. For other variants of the Apama-ctrl microservice,

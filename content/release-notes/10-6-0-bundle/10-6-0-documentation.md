@@ -24,7 +24,7 @@ Note, that access to these documents on the Empower Portal requires credentials.
 
 ### Machine learning guide
 
-The former Predictive Analytics offering has been rebranded to **[Cumulocity IoT Machine Learning](https://cumulocity.com/guides/machine-learning/)**. Accordingly, the name of the respective guide has been changed.
+The former Predictive Analytics offering has been rebranded to *[Cumulocity IoT Machine Learning](https://cumulocity.com/guides/10.6.0/machine-learning/)*. Accordingly, the name of the respective guide has been changed.
 
 ### Microservice SDK guide
 

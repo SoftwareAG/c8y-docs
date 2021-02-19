@@ -15,7 +15,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 * The date specifying the time range can now be selected from a calendar and the theme can be selected through a toggle. [MTM-26441]
 * Moreover, an **Auto-refresh** button has been added. If enabled, the displayed logs automatically get updated every 10 seconds. [MTM-27531]
 
-![Microservice logging](/images/users-guide/Administration/admin-applications-logs.png)
+![Microservice logging](/images/release-notes/admin-applications-logs.png)
 
 For details, see *Administration > Managing applications* in the *User guide*.
 

@@ -50,7 +50,7 @@ With the 10.9 GA Release in April 2021, the calculation for the binary file size
 
 #### Underscore (_) not allowed in new tenant domains
 
-With the 10.9 GA Release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](/about-doc/contacting-support) in order to plan migration for those affected tenants.
+With the 10.9 GA Release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](https://cumulocity.com/guides/about-doc/contacting-support) in order to plan migration for those affected tenants.
 
 #### User and tenant creation will require a valid email address with impact to REST, MQTT and UI
 
@@ -79,7 +79,7 @@ This is a reminder (see also *Migration notes for release 10.5.0*), that Softwar
 
 Cumulocity IoT now uses Apama to provide streaming analytics. As a result, existing customers using CEL must migrate to Apama.
 
-For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
+For details on migration, refer to [Migrating from CEL (Esper) to Apama](https://cumulocity.com/guides/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
 
 Note that we offer an open-source Esper-to-Apama EPL translation tool which assists you in the migration of Esper CEL to Apama EPL. It generates EPL that is compatible with the Apama microservice version 10.6.6 and above. The translation tool is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). This tool focuses on reducing (though not eliminating) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs. See the README in GitHub for details. 
 
@@ -87,7 +87,7 @@ Note that we offer an open-source Esper-to-Apama EPL translation tool which assi
 
 As announced in the *Migration notes for release 10.5.0*, deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
 
-Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/reference/auditing/#audit-record-collection) in the *Reference guide*.
+Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](https://cumulocity.com/guides/reference/auditing/#audit-record-collection) in the *Reference guide*.
 
 #### Deprecation of breadcrumbs
 

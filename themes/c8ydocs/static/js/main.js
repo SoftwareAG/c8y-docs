@@ -53,7 +53,7 @@ var main = (function ($) {
       $('body').toggleClass('open');
     });
 
-    $('.cover').click(function(){
+    $('.cover, .list-group-item').click(function(){
       $('body').removeClass('open');
     });
 
@@ -121,6 +121,8 @@ var main = (function ($) {
       });
     }
 
+    // Fix for code highlight
+    $(".highlight pre code").addClass("hljs");
   }
   return {
     init: initializer

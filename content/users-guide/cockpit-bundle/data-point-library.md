@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 75
 title: Data Point Library
 layout: redirect
 ---

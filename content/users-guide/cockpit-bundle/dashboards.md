@@ -1,12 +1,12 @@
 ---
 weight: 40
-title: Dashboards
+title: Working with dashboards
 layout: redirect
 ---
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
 
-Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
+Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
 
 ### <a name="creating-dashboards"></a>To create a dashboard
 
@@ -36,47 +36,11 @@ In the **Preview** section at the right, a preview of the selected layout settin
 
 Click **Save** to create and open the dashboard.
 
-Since there will be no widgets on the dashboard yet, you will see an **Add Widget** button instead.
-
 <img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
+<br>Next, widgets can be added to the report.
 
-### <a name="adding-widgets"></a>To add a widget to a dashboard
-
-1. Click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
-
-2. In the **Add widget** dialog, select a widget type.
-
-	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
-
-3. Next, configure the widget. According to the widget type selected, various parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets).
-
-4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of the [dashboard](#creating-dashboards).
-
-	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
-
-5. Click **Save** to add the widget to the dashboard.
-
-### Modifying widgets on a dashboard
-
-Widgets may be rearranged on the dashboard. By dragging and dropping you can move the widget to another position.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
-
-By dragging the arrows on the bottom right corner of a widget, you can resize it.
-
-To edit the properties of a widget on a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
-
-To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
-
-Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the toggle with the lock icon in the top menu bar.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
-
->**Info:** On touch devices like smartphones or tablets some functions may not be supported.
-
+Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 
 ### <a name="sharing-dashboards"></a>Sharing dashboards
 

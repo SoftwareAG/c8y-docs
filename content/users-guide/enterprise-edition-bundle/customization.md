@@ -88,7 +88,7 @@ Under **Navigator logo** you can provide the navigator logo and set the navigato
 
 In the **Type** section you specify the font settings for your branded version.
 
-You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
+You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
 **Colors**
 
@@ -130,7 +130,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 **Misc**
 
-In the **Misc** section you may specify the “Button Border-Radius” by providing a value in pixel (px).
+In the **Misc** section you specify the “Button Border-Radius” by providing a value in pixel (px).
 
 **Cookie banner**
 
@@ -138,9 +138,9 @@ In the **Cookie banner** section you specify the settings for the banner with th
 
 The following parameters can be specified:
 
-* Title. Cookie banner title.
-* Text. Cookie banner text with a general statement on the cookie usage and the use cases for it.
-* Link to privacy policy. A link to the page with the privacy policy.
+* Title - Cookie banner title.
+* Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
+* Link to privacy policy - A link to the page with the privacy policy.
 
 ### <a name="domain-name"></a>Domain name
 

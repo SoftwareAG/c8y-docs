@@ -127,12 +127,7 @@ To export data to a CSV or XLSX file, select the checkbox in front of the respec
 
 You will receive an email containing links to each export file.
 
-Standard time properties of documents (like time or creationTime in alarms) are exported to
-
-* XLSX file in the format: 03/13/2016 00:00:24
-* CSV file in the format: 2016-03-13T00:01:24.000Z
-
-Only CSV time contains milliseconds and timezone.
+Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601]( https://www.w3.org/TR/NOTE-datetime).
 
 #### To edit an export
 

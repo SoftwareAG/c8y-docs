@@ -13,15 +13,16 @@ If the microservice is not running, an error message is shown indicating that th
 and only a card with information about smart rules is shown.
 
 If the Apama Starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
-as the EPL apps functionality is not available in Apama Starter. For other variants of the Apama-ctrl microservice,
-both the Analytics Builder and EPL Apps cards are shown by default.
+as the EPL apps functionality is not available in Apama Starter. 
+If the Apama Smart Rules-only microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled). In this case, only the card with information about the smart rules is shown.
+For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
 available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an enterprise or management tenant
 (see also [Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
 and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
-to restrict access to the functionality). To create a restriction within a tenant, send a POST request to `/application/applications`
-(as an administrator with the permission to create applications):
+to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
+(as an administrator with the permission to create applications). For example, to disable Analytics Builder:
 
 ```java
 {
@@ -33,6 +34,21 @@ to restrict access to the functionality). To create a restriction within a tenan
           "noAppSwitcher": true
    },
    "key":"feature-disable-analyticsbuilder-key"
+}
+```
+
+Or to disable EPL Apps:
+
+```java
+{
+   "name":"feature-disable-eplapps",
+   "contextPath": "feature-disable-eplapps",
+   "type":"HOSTED",
+   "resourcesUrl":"/",
+   "manifest": {
+          "noAppSwitcher": true
+   },
+   "key":"feature-disable-eplapps-key"
 }
 ```
 
@@ -54,7 +70,7 @@ To enable this, set the category of the tenant option to `streaminganalytics` an
 (see also the information on [tenant options](/reference/tenants/#option) in the *Reference guide*) or use a curl command as given in the example below:
 
 ```
-curl --user User123 -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options
+curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options
 ```
 
 where you have to replace the username with the name of a user who has ADMIN permission for "Option management".

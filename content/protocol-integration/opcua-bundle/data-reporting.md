@@ -6,9 +6,9 @@ layout: redirect
 
 There are three data reporting mechanisms which can be applied to read all mapped browse paths:
 
-- **None** - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
-- **Cyclic Read** - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
-- **Subscription** - The gateway retrieves values by using OPC UA's own subscription mechanism.
+- **None**: The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
+- **Cyclic Read**: The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
+- **Subscription**: The gateway retrieves values by using OPC UA's own subscription mechanism.
   
 ![OPC UA device protocol](/images/device-protocols/opcua/opcua-data-reporting-subscription.png)
 
@@ -34,9 +34,9 @@ Specifying auto-apply constraints allows you to limit the scope in which the dev
 
 The following constraints can be applied:
 
-- **Limit device protocol to a set of servers** - Limit the device protocols to a particular set of servers. This is useful if you want to have 1 device type for each OPC UA server. Simply click on the dropdown menu and select the desired servers.
-- **Limit device protocol scope in the address space** - Limit the scope to servers which have the entered path in their address space.
-- **Limit device protocol to servers with a certain fragment** - The device protocol will only be available to the servers which have the entered fragment.
-- **Limit device protocol to specific root nodes ID** - A list of “root” node IDs (from which your browsePath is defined) to which the device protocol should be applied. For example, if there is only one server and the device protocol is applied to two node IDs, two child devices of the server will be created. Note that if the device protocol variables do not exist in the root nodes, the device protocol will not be applied to the root node server.
+- **Limit device protocol to a set of servers**: Limit the device protocols to a particular set of servers. This is useful if you want to have 1 device type for each OPC UA server. Simply click on the dropdown menu and select the desired servers.
+- **Limit device protocol scope in the address space**: Limit the scope to servers which have the entered path in their address space.
+- **Limit device protocol to servers with a certain fragment**: The device protocol will only be available to the servers which have the entered fragment.
+- **Limit device protocol to specific root nodes ID**: A list of “root” node IDs (from which your browsePath is defined) to which the device protocol should be applied. For example, if there is only one server and the device protocol is applied to two node IDs, two child devices of the server will be created. Note that if the device protocol variables do not exist in the root nodes, the device protocol will not be applied to the root node server.
 
 ![OPC UA device protocol](/images/device-protocols/opcua/opcua-auto-constraints.png)

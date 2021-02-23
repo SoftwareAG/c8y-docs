@@ -51,9 +51,9 @@ Turn on **Create alarm** if you want to create an alarm out of the resource.
 
 Specify the following parameters (all mandatory):
 
-- Severity - one of CRITICAL, MAJOR, MINOR, WARNING
+- Severity: one of CRITICAL, MAJOR, MINOR, WARNING
 - Type
-- Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
+- Status: one of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
 **Send Event**
@@ -90,10 +90,10 @@ The value will also be populated as a fragment of the created event, under a sta
 
 Custom actions are HTTP POST requests which the gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
 
-- ${value} - value of specific node
-- ${serverId} - ID of OPC-UA server
-- ${nodeId} - ID of source node
-- ${deviceId} - ID of source device
+- ${value}: value of specific node
+- ${serverId}: ID of OPC-UA server
+- ${nodeId}: ID of source node
+- ${deviceId}: ID of source device
 
 Below there is an example of a full device protocol that configures a custom action:
 
@@ -163,16 +163,16 @@ The following parameters can be set:
 
 In the section _mappingExecution_ - _http_ - _failureHandling_  
 
-- _enabled_[boolean] - activate or deactivate the fail over for custom actions, default is true
+- _enabled_[boolean]: activate or deactivate the fail over for custom actions, default is true
 
-- _flushQueueDelay_[seconds] - time until a queue will be cleared automatically, default is 60
+- _flushQueueDelay_[seconds]: time until a queue will be cleared automatically, default is 60
 
-- _reScheduleDelay_[seconds] - time until the stored queues will be rescheduled, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default is 150
+- _reScheduleDelay_[seconds]: time until the stored queues will be rescheduled, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default is 150
 
-- _reScheduleElements_[number] - number of queues loaded for retry at the same time, default is 100
+- _reScheduleElements_[number]: number of queues loaded for retry at the same time, default is 100
 
-- _failedCustomActionQueueSize_[number] - size of maximum elements in one queue; if the limit is reached the queue will be saved, default is 100
+- _failedCustomActionQueueSize_[number]: size of maximum elements in one queue; if the limit is reached the queue will be saved, default is 100
 
-- _maxRetries_[number] - number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5
+- _maxRetries_[number]: number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5
 
-- _pendingMaxAge_[seconds] - queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 
+- _pendingMaxAge_[seconds]: queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 

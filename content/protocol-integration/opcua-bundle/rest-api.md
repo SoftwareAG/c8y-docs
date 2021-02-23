@@ -763,7 +763,7 @@ Full payload data structure explained:
 <td>Define the mappings from OPC UA alarms and events into Cumulocity alarms and events.</td>
 </tr>
 <tr>
-<td>referencedNam-espaceTable</td>
+<td>referencedNamespaceTable</td>
 <td>array<string></string></td>
 <td>no</td>
 <td>Reference namespace table if known. This is then used to convert the browse paths with namespace index into namespace URL. This is to make sure that the mappings are still the same even when the namespace index gets changed.</td>
@@ -781,8 +781,8 @@ Full payload data structure explained:
 <td>Define the Cumulocity processing mode for incoming data. Please refer to the&nbsp;<a href="../../reference/rest-implementation/#processing-mode">reference&nbsp;guide</a>&nbsp;for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
-<td>overiddenSub-scriptions</td>
-<td><em>Overridden-Subscription</em></td>
+<td>overiddenSubscriptions</td>
+<td><em>OverriddenSubscription</em></td>
 <td>no</td>
 <td>While the subscriptionType defines how data can be collected from the OPC UA server, this option allows you to override the mechanism for particular browse paths. For example you can have a subscription applied globally with a sampling rate of 1000ms but you can apply sampling rate of 500ms for particular browse paths.</td>
 </tr>
@@ -929,14 +929,14 @@ the OPC UA device gateway.</td>
 <td>Subscription type. Possible values: Subscription, CyclicRead, None.</td>
 </tr>
 <tr>
-<td>subscription-Parameters</td>
-<td><em>Subscription-Parameter</em></td>
+<td>subscriptionParameters</td>
+<td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
 <td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
 </tr>
 <tr>
-<td>cyclicReadP-arameters</td>
-<td><em>CyclicReadP-arameter</em></td>
+<td>cyclicReadParameters</td>
+<td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
 <td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
 </tr>
@@ -1001,7 +1001,7 @@ the OPC UA device gateway.</td>
 <td>Limit the servers by server managed object ID where the device type should be applied.</td>
 </tr>
 <tr>
-<td>serverObject-HasFragment</td>
+<td>serverObjectHasFragment</td>
 <td>string</td>
 <td>no</td>
 <td>Limit the servers by their custom fragment where the device type should be applied.</td>
@@ -1013,13 +1013,13 @@ the OPC UA device gateway.</td>
 <td>Limit the nodes in the server address space where the device type should be applied.</td>
 </tr>
 <tr>
-<td>browsePathM-atchesRegex</td>
+<td>browsePathMatchesRegex</td>
 <td>string</td>
 <td>no</td>
 <td>Regular expression of the browse paths where the device type should be applied.</td>
 </tr>
 <tr>
-<td>serverHasNod-eWithValues</td>
+<td>serverHasNodeWithValues</td>
 <td><em>ServerNodeValues</em></td>
 <td>no</td>
 <td>Limit the servers which have particular nodes with given values.</td>
@@ -1076,7 +1076,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the measurement.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the measurement to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT.</td>
@@ -1121,7 +1121,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the measurement.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the event to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT.</td>

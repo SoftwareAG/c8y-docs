@@ -6,9 +6,9 @@ layout: redirect
 
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection. The following authentication methods can be selected:
 
-- Anonymous - Anonymous connection will only work when the OPC UA server allows such connections.
-- Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
-- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
+- Anonymous: Anonymous connection will only work when the OPC UA server allows such connections.
+- Username/Password: With this setting the gateway will connect to the server as a specific user represented by a username and password.
+- Key-based authentication: The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
   - It has to be a Java keystore (JKS).
   - The keystore itself has to be password-protected.
   - The keystore has to contain user certificate with  “opcuauser” alias.
@@ -251,9 +251,9 @@ The following is the full list of monitoring measurements created by the gateway
 
 On the gateway device, the **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
 
-- Connection loss - If the gateway fails to connect to the OPC UA server a critical alarm is raised.
-- Gateway crash -  If the gateway crashes or is abruptly shut down a major alarm is raised.
-- No data arrived within interval - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
+- Connection loss: If the gateway fails to connect to the OPC UA server a critical alarm is raised.
+- Gateway crash: If the gateway crashes or is abruptly shut down a major alarm is raised.
+- No data arrived within interval: If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
 

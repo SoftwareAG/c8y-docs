@@ -6,7 +6,7 @@ layout: redirect
 
 By default, the Streaming Analytics application gives you access to the Analytics Builder and EPL Apps pages. 
 Administrators may wish to control which of these are shown on different tenants or for different users, 
-or modify the wording of the cards on the home screen.
+or modify the wording of the cards on the home screen (see also [Customizing the home screen of the Streaming Analytics application](/apama/advanced/#customize-home-screen)).
 
 Which pages are available also depends on the variant of the Apama-ctrl microservice that is running. 
 If the microservice is not running, an error message is shown indicating that the microservice cannot be accessed, 
@@ -14,7 +14,8 @@ and only a card with information about smart rules is shown.
 
 If the Apama Starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama Starter. 
-If the Apama Smart Rules-only microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled). In this case, only the card with information about the smart rules is shown.
+If the Apama Smart Rules-only microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled). 
+In this case, only the card with information about the smart rules is shown.
 For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
@@ -24,14 +25,14 @@ and then subscribing to subtenants (the subtenant administrators are then not ab
 to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
 (as an administrator with the permission to create applications). For example, to disable Analytics Builder:
 
-```java
+```
 {
    "name":"feature-disable-analyticsbuilder",
    "contextPath": "feature-disable-analyticsbuilder",
    "type":"HOSTED",
    "resourcesUrl":"/",
    "manifest": {
-          "noAppSwitcher": true
+       "noAppSwitcher": true
    },
    "key":"feature-disable-analyticsbuilder-key"
 }
@@ -39,14 +40,14 @@ to restrict access to the functionality). To create such a "feature application"
 
 Or to disable EPL Apps:
 
-```java
+```
 {
    "name":"feature-disable-eplapps",
    "contextPath": "feature-disable-eplapps",
    "type":"HOSTED",
    "resourcesUrl":"/",
    "manifest": {
-          "noAppSwitcher": true
+       "noAppSwitcher": true
    },
    "key":"feature-disable-eplapps-key"
 }

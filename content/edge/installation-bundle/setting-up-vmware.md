@@ -20,7 +20,7 @@ To set up a VM in VMware Workstation Player, follow the steps below.
 
 ### Configuring Cumulocity IoT Edge
 
-Once the VM starts up successfully, you have to configure the network so that it can be accessed from outside the VM.
+Once the VM starts up successfully, you must configure the network so that it can be accessed from outside the VM.
 
 To do so, the following information is required:
 

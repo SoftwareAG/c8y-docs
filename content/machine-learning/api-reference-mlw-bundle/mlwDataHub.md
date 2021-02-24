@@ -14,7 +14,7 @@ Operations on MLW data connectors - Data pull from Cumulocity IoT DataHub.
 ### POST - Pull data from Cumulocity IoT DataHub
 
 ```
-{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data
+{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data
 ```
 
 Pulls the data with the given query from Cumulocity IoT DataHub.
@@ -34,7 +34,7 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw-cdh/projects/1601355085_Project/resources/importFromDatahub/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/importFromDatahub/data' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
@@ -73,7 +73,7 @@ curl --location --request POST '{{url}}/service/mlw-cdh/projects/1601355085_Proj
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw-cdh/projects/1601355085_Project/resources/importFromDatahub/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/importFromDatahub/data' \
 --header 'Content-Type: application/json' \
 --data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
 ```
@@ -95,7 +95,7 @@ curl --location --request POST '{{url}}/service/mlw-cdh/projects/1601355085_Proj
 ```
 409 - Error
 
-curl --location --request POST '{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'

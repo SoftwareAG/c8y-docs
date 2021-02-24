@@ -14,6 +14,6 @@ These are some useful references to get started with the basic technologies unde
 - The client libraries use the Cumulocity IoT REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
 - All examples are open source and can be reviewed at the [Cumulocity IoT microservices examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository.
 
-> **Important:** You need to have at least version 8 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
+> **Important:** You need to have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 
 If you face any issue or need technical support, please use the [Cumulocity IoT community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.

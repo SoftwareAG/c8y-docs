@@ -32,11 +32,11 @@ where the *cumulocity.json* file contains the following:
 ```
 
 Then upload the ZIP file using the Administration application: go to **Own applications**, click **Add application**, and choose the method **Upload web application**. 
-See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
+See [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
 
 You may need to clear your browser cache for the changes to take effect. 
 
-You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an Enterprise Tenant.
+You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an Enterprise tenant.
 
 On new releases of the platform, it is recommended that you review the source *documentation.json* file for any changes. 
 New entries in this file will be picked up with their default values.

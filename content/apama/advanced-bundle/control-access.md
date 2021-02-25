@@ -9,18 +9,18 @@ Administrators may wish to control which of these are shown on different tenants
 or modify the wording of the cards on the home screen (see also [Customizing the home screen of the Streaming Analytics application](/apama/advanced/#customize-home-screen)).
 
 Which pages are available also depends on the variant of the Apama-ctrl microservice that is running. 
-If the microservice is not running, an error message is shown indicating that the microservice cannot be accessed, 
-and only a card with information about smart rules is shown.
 
-If the Apama Starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
+- If the microservice is not running, an error message is shown indicating that the microservice cannot be accessed, 
+and only a card with information about smart rules is shown.
+- If the Apama Starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama Starter. 
-If the Apama Smart Rules-only microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled). 
+- If the Apama Smart Rules-only microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled). 
 In this case, only the card with information about the smart rules is shown.
-For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
+- For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
-available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an enterprise or management tenant
-(see also [Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
+available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an Enterprise or Management tenant
+(see also [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
 and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
 to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
 (as an administrator with the permission to create applications). For example, to disable Analytics Builder:
@@ -66,7 +66,7 @@ curl --user username -X POST -H 'Content-Type: application/json' -d '{"name":"fe
 
 By default, all users can see the same set of pages (according to the limitations above). 
 You can also restrict the visibility of the pages to only users who have the permission ROLE_ANALYTICSBUILDER_READ or ROLE_EPLAPPS_READ,
-which can be assigned directly to users or via groups (see also [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
+which can be assigned directly to users or via groups (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role"
 (see also the information on [tenant options](/reference/tenants/#option) in the *Reference guide*) or use a curl command as given in the example below:
 

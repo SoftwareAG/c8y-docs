@@ -11,6 +11,8 @@ In the Cumulocity IoT platform we distinguish between two kinds of applications:
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
+Additionally, on enterprise tenants, it is possible to configure **Default subscriptions**, i.e. the lists of applications subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](#default-subscriptions) for more details.
+
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 ### <a name="application-properties"></a>Application properties
@@ -22,7 +24,7 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 20%
+<col width= 20%>
 <col width= 20%>
 <col width= 20%>
 <col width= 20%>
@@ -540,3 +542,33 @@ To define default applications for subtenants, a tenant policy with the followin
 * category: configuration
 * key: default.tenant.applications
 * value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+
+### <a name="default-subscriptions"></a>Default subscriptions
+
+This view allows to configure two separate lists of applications which will be subscribed by default:
+
+- to every new tenant on its creation,
+- to every existing tenant on platform upgrade.
+
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options for them, e.g. via tenant policy. To learn more about these tenant options, check [Reference guide](#TODO-ADD-REFERENCE).
+
+In the middle of the view, the list of subscribable applications (both web applications and microservices) is displayed, i.e.:
+
+- all own applications,
+- subscribed applications with names different than own applications.
+
+In order to help you distinguish which application is owned and which is subscribed, the owner tenant's id is displayed.
+
+Initially, the view shows default subscriptions inherited from tenant hierarchy, e.g.:
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
+
+You can override any of the two lists by clicking the corresponding toggle. Then you can either select applications which should be subscribed by default or you can leave the list empty (then no subscriptions will be executed on tenant creation and/or platform upgrade):
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
+
+Similarly, if you want to return to the settings inherited from tenant hierarchy, just click the corresponding toggle again.
+
+Finally, save the settings by clicking "Save" button at the bottom of the page.
+
+> **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in any of the lists is removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.

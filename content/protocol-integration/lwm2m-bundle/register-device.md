@@ -47,7 +47,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">c8y_GenericUi</td>
-<td style="text-align:left">In order to enable the "Objects" tab for LWM2M devices, the value of this field has to be set to "{}"</td>
+<td style="text-align:left">In order to enable the **Objects** tab for LWM2M devices, the value of this field has to be set to "{}".</td>
 </tr>
 <tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>

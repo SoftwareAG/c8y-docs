@@ -46,6 +46,10 @@ In the first CSV example you can see the following fields:
 <td style="text-align:left">To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see <a href="#shell-commands" class="no-ajaxy">Shell commands</a>.</td>
 </tr>
 <tr>
+<td style="text-align:left">c8y_GenericUi</td>
+<td style="text-align:left">In order to enable the **Objects** tab for LWM2M devices, the value of this field has to be set to "{}".</td>
+</tr>
+<tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>
 <td style="text-align:left">This field needs to have the value "1".</td>
 </tr>

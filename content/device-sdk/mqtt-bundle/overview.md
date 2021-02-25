@@ -27,7 +27,7 @@ The MQTT section is structured as follows:
 * [Device certificates](/device-sdk/mqtt#device-certificates) describes how devices can connect via MQTT with certificates.
 * [SmartREST 1.0](/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
 * [SmartREST 2.0](/device-sdk/mqtt#smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
-* [MQTT static templates](/device-sdk/mqtt#static-templates) provides a reference of pre-defined payload formats that you can use straight away.
+* [MQTT static templates](/device-sdk/mqtt/#mqtt-static-templates) provides a reference of pre-defined payload formats that you can use straight away.
 * [Handling IDs](/device-sdk/mqtt#handling-ids) describes how IDs are handled in the Cumulocity IoT MQTT protocol.
 * [JSON via MQTT](/device-sdk/mqtt/#json) describes the payload format that can be used with the Cumulocity IoT MQTT implementation.
 

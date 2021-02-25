@@ -29,7 +29,7 @@ Depending on the collection, you can use different time filters. All collections
 
 The below time filters are examples only; you can use much more complex or simpler combinations with a mixture of AND/OR-connected conditions.
 
-##### Alarms / Events
+##### Alarms/events
 To offload all alarms or events which have the application time set to between 2020-02-08 14:00:00.000 and 2020-02-08 15:00:00.000, use:
 
 ```

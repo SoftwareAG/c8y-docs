@@ -65,6 +65,8 @@ If you want to derive additional columns from nested content, you can specify th
 
 In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g., for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'`. Filtering on custom fields is also possible, e.g. `myCustomField2 >= 2020` for a numeric field.
 
+> Also check [Working with DataHub > DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for additional tips and example snippets for widely-used filter predicates.
+
 When working with additional result columns and filter predicates, you may want to inspect what the actual data that will be offloaded looks like. For that purpose, click the button **Check & preview**, which is at the bottom of the configuration form. First, the configuration is validated. If the validation fails, you will get an error description. For example, if you specify a non-existing *UnknownColumn* as an additional result column, you get an error message like *Column 'UnknownColumn' not found in any table*. If validation is successful, a sample of the resulting data is returned. The header row of the sample data incorporates the column name as well as the column type. Note that no data is permanently persisted to the data lake in this preview step. In addition to the query preview, you also get the schedule with which the offloading pipeline will be executed once it is started.
 
 Once you have defined all pipeline settings, click **Save** to save the pipeline. Otherwise click **Cancel** to cancel the pipeline creation.
@@ -183,6 +185,8 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | text | VARCHAR
 | type | VARCHAR
 
+> **Info:** The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, it must be added manually.
+
 The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the alarms collection encompasses additional steps. The first step is to offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. As a second step, two views over the target table are defined in the tenant's space in Dremio (with alarms used as the target table name in the following examples):
 
 * alarms_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
@@ -207,6 +211,12 @@ The events collection manages the events. During offloading, the data of the eve
 | text | VARCHAR
 | type | VARCHAR
 
+Events, just like alarms, are mutable, i.e. they can be changed after their creation. Thus, the same logic as for alarms applies. 
+
+The following two views exist:
+* events_all: Contains all states (that were captured by DataHub's period offloading) of all events 
+* events_latest: Contains only the latest state of all events without prior states
+  
 ### Offloading the inventory collection
 
 The inventory collection keeps track of managed objects. During offloading, the data of the inventory collection is flattened, with the resulting schema being defined as follows:

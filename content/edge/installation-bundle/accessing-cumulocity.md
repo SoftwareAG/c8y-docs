@@ -12,7 +12,7 @@ There are two ways to configure the accessibility with domain names:
 
 * Add an entry of domain name and IP mapping in DNS servers. <br>
 OR
-* [Add the alias](#add-alias) in order to reach the virtual machine through the domain name provided during configuration. This needs to done on each client host on which Cumulocity IoT Edge is accessed.
+* [Add the alias](#add-alias) in order to reach the virtual machine through the domain name provided during configuration. This needs to be performed on each client host on which Cumulocity IoT Edge is accessed.
 
 >**Info:** The first option is always preferable so that Cumulocity IoT Edge is reachable in LAN.
 

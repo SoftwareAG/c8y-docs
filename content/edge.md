@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT Edge (BETA)
+title: Cumulocity IoT Edge
 bundle: edge
 icon: "fa fa-book"
 type: root

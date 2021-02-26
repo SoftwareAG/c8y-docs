@@ -10,7 +10,7 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 * [Example setup for VMWare Workstation Player](/edge/installation#setting-up-vmware)
 * [Example setup for Hyper-V](/edge/installation#setting-up-hyper-v)
 
-For all hypervisors, the Edge VM is configured to use CET time zone. Software AG recommends you to use the same Internet Time Server on the host machine and the guest VM for better time sychronization.
+For all hypervisors, the Edge VM is configured to use CET time zone. Software AG recommends that you use the same Internet Time Server on the host machine and the guest VM for better time synchronization.
 
 ### VM login details
 

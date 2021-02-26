@@ -27,7 +27,7 @@ The twinned address space information is persisted in the Cumulocity IoT invento
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide “skipSync”: true.
 
-> **Info:** We do not recommend to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+> **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
 ### Reading the value of a node/nodes
 
@@ -216,7 +216,12 @@ This operation reads history values and applies the mappings except of alarm map
 ```
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
+<<<<<<< HEAD
 - processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
+=======
+- processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
+- batchSize (optional) - Batch size for each history read call to the OPC UA server. Default is 200.
+>>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 
 ### Historic data binary upload
 
@@ -447,3 +452,138 @@ Otherwise, the operation result provides an explanation why the device type coul
    "description":"Test Device Type"
 }
 ```
+<<<<<<< HEAD
+=======
+
+### Analyzing the set of nodes to which a device type can be applied (dry run)
+
+As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
+
+```json
+{
+   "deviceId":"<server-device-Id>",
+   "c8y_ua_command_DryRunDeviceTypeMatching":{
+      "deviceTypeId":"<device-type-id>"
+   },
+   "description":"Dry Run Device Type"
+}
+
+```
+
+The `deviceTypeId` is the ID of the managed object containing the device protocol.
+
+The result of the operation contains the set of nodes that match the device protocol. In addition to that, the fragment `matchednodes` is added to the operation. It contains a JSON representation of the matched nodes.
+
+```json
+{
+   "creationTime":"2020-08-20T12:22:07.947Z",
+   "deviceId":"12789",
+   "deviceName":"Test Server",
+   "id":"15187",
+   "status":"SUCCESSFUL",
+   "c8y_Command":{
+      "result":"Device protocol is currently disabled. Device protocol would be applied to the following nodes: [\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3\"\n      }\n    ],\n    \"attrs\": {}\n  }\n]",
+      "matchedNodes":[
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
+         },
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1"
+         },
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3"
+         }
+      ],
+      "syntax":null,
+      "text":null
+   },
+   "description":"Dry Run Device Type",
+   "c8y_ua_command_DryRunDeviceTypeMatching":{
+      "deviceTypeId":"14989"
+   }
+}
+```
+
+### Get the current application state of a device type
+
+In order to know what is the current state of a device type application, use the following operation:
+
+```json
+{
+	"description": "Query device type application state",
+	"deviceId": "{server ID}",
+	"c8y_ua_command_QueryDeviceTypeApplicationState": {
+		"deviceTypeId": "{device protocol ID}",
+		"matchingRootNodes": ["{root node ID #1}", "{root node ID #2}"]
+	}
+}
+```
+The result will be populated into the operation result as a map of nodes telling whether the device type has been applied to that node or not. Note that *matchingRootNodes* is optional. When *matchingRootNodes* is not provided, the application state of all matching nodes will be returned.
+
+Sample result when the device type has been applied to node #1 but not node #2:
+```json
+{
+    "{root node ID #1}": true,
+    "{root node ID #2}": false
+}
+```
+### Expiring operations
+
+In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
+
+- Reading the value of a node/nodes 
+- Reading all attributes of a node 
+- Reading an attribute 
+- Read complex
+- Write value
+- Write attribute
+- Call method
+
+For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body. 
+
+The following example shows how to mark a read operation as expiring:
+
+```json
+{
+  "deviceId" : "<server-device-Id>",
+  "c8y_ua_command_ReadValue": {
+    "nodes": ["ns=3;s=FloatArray"],
+    "expirationTime": "2021-02-08T15:00:00.000Z"
+  },
+  "description":"Expiring read value"
+}
+```
+
+The operation above will only perform a read on the OPC UA server if processed by the gateway before the 8th of February, 2021 15:00. Otherwise, the operation will fail. In this case, `Operation expired` is returned as failure reason.
+
+
+
+
+>>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop

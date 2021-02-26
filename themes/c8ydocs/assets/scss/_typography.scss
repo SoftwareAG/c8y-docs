@@ -8,7 +8,7 @@ html {
   }
 }
 
-// VISUAL TYPE: 
+// VISUAL TYPE:
 // base size: 16px
 // scale: Augmented fourth - 1.414
 
@@ -58,7 +58,7 @@ h3,
       font-size: 28px;
     }
   }
-  
+
 h4,
 .h4 {
   font-size: 16px;
@@ -112,8 +112,8 @@ blockquote {
 code{
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: #d8edf1;
-  color: #017de9;
+  background-color: #ddd;
+  color: #282c34;
   font-size: 90%;
 }
 
@@ -163,7 +163,7 @@ pre .hljs{
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;  
+  white-space: nowrap;
 }
 
 .text-nowrap{

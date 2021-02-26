@@ -11,7 +11,7 @@ Next, establish a connection between the gateway and the OPC UA server.
 2. Use the **Server connection** toggle, to enable or disable the server connection.
 3. Enter the **Server URL** which is used to establish a connection between the server and the gateway.
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful.
-5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway.
+5. Enter the **Status check interval** in seconds. The status check interval specifies how often the gateway actively checks if the server status has changed. These periodic checks are carried out by reading the *ServerStatus* variable on the OPC UA server.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see [Security modes](#security-modes).
 7. Select the desired authentication method. For more info, see [Authentication](/protocol-integration/opcua/#authentication).
 8. Click **Save**.

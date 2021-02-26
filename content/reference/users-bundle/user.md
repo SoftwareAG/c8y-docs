@@ -249,7 +249,7 @@ A "currentUser" resource type contains the following fields:
 
 Only objects which the user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case the "currentPage" field represents the offset instead of the actual page number.  
 
->**Important: ** If an object does not have any fragment in it, then to for example read that object, you have to put a wildcard to the fragment name part of device permission, i.e. "10200":["MEASUREMENT:*:READ"].
+>**Important:** If there is no fragment in an object, then for example to read the object, you have to use the wildcard "\*" for the "fragment_name" part of the device permission (see the structure above). For example: `"10200":["MEASUREMENT:*:READ"]`.
 
 ### Audit log
 

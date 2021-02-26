@@ -43,7 +43,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-> **Info:** We do not recommend to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+> **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
 ### Reading the value of a node/nodes
 
@@ -234,7 +234,7 @@ This operation reads history values and applies the mappings except of alarm map
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
 - processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
-- batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 200.
+- batchSize (optional) - Batch size for each history read call to the OPC UA server. Default is 200.
 
 ### Historic data binary upload
 
@@ -544,6 +544,7 @@ The result of the operation contains the set of nodes that match the device prot
 ```
 
 ### Get the current application state of a device type
+
 In order to know what is the current state of a device type application, use the following operation:
 
 ```json

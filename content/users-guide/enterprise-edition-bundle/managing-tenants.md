@@ -34,52 +34,55 @@ In the management tenant, you will also find information on the parent tenant, i
 ### <a name="creating-tenants"></a>To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
-<br>![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)<br>
+
+	![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)
+
 2. Provide the following properties:
 
 	<table>
-<col width = 150>
-<thead>
-<tr>
-<th style="text-align:left">Field</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Domain/ URL</td>
-<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.  </td>
-</tr>
-<tr>
-<td style="text-align:left">Name</td>
-<td style="text-align:left">The name of the tenant, e.g. the company's name.</td>
-</tr>
-<tr>
-<td style="text-align:left">Administrator's email</td>
-<td style="text-align:left">You must provide a valid email address to enable users to reset their password.</td>
-</tr>
-<tr>
-<td style="text-align:left">Administrator's username</td>
-<td style="text-align:left">Username for the administrator of this tenant.</td>
-</tr>
-<tr>
-<td style="text-align:left">Contact name</td>
-<td style="text-align:left">Optional name of the contact.</td>
-</tr>
-<tr>
-<td style="text-align:left">Contact phone</td>
-<td style="text-align:left">Optional phone number of the contact.</td>
-</tr>
-<tr>
-<td style="text-align:left">Send password reset link as email</td>
-<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity IoT platform</a> for more information on password strength).</td>
-</tr>
-<tr>
-<td style="text-align:left">Tenant policy</td>
-<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
-</tr>
-</tbody>
-</table>
+	<col style="width:20%">
+	<col style="width:80%">
+	<thead>
+	<tr>
+	<th style="text-align:left">Field</th>
+	<th style="text-align:left">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td style="text-align:left">Domain/ URL</td>
+	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.  </td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Name</td>
+	<td style="text-align:left">The name of the tenant, e.g. the company's name.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Administrator's email</td>
+	<td style="text-align:left">You must provide a valid email address to enable users to reset their password.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Administrator's username</td>
+	<td style="text-align:left">Username for the administrator of this tenant.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Contact name</td>
+	<td style="text-align:left">Optional name of the contact.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Contact phone</td>
+	<td style="text-align:left">Optional phone number of the contact.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Send password reset link as email</td>
+	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity IoT platform</a> for more information on password strength).</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Tenant policy</td>
+	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+	</tr>
+	</tbody>
+	</table>
 
 3. Click **Save** to apply your settings.
 

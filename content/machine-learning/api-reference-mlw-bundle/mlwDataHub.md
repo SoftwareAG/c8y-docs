@@ -14,7 +14,7 @@ Operations on MLW data connectors - Data pull from Cumulocity IoT DataHub.
 ### POST - Pull data from Cumulocity IoT DataHub
 
 ```
-{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data
+{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data
 ```
 
 Pulls the data with the given query from Cumulocity IoT DataHub.

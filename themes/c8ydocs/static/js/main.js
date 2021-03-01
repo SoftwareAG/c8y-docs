@@ -7,7 +7,6 @@ var main = (function ($) {
         //json = JSON.parse(json.responseText);
         var urls = json.releases;
         var first = urls[0];
-        console.log(first.label, first.url);
         var vmenu = $('.dropdown.version');
         var loc = window.location;
         var active = false;
@@ -19,14 +18,8 @@ var main = (function ($) {
           vs.push(urls[i].label);
         }
 
-        console.log(vs);
-
-        console.log(vs.indexOf("10.5.7"));
-
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
-          console.log("--------------------------------");
-          console.log(loc.href, el.label);
           if (loc.href.includes(el.label)) {
             active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
@@ -47,8 +40,6 @@ var main = (function ($) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);
         }
-
-        console.log(rest, v, vs.indexOf(v));
 
         if (!active) {
           var ind = 0;

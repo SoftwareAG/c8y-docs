@@ -36,6 +36,7 @@ var main = (function ($) {
           } else {
             rest = loc.href.split("guides/")[1];
             v = rest.split("/")[0];
+            console.log(rest, v, vs.indexOf(v));
             if (index == 0) {
               vmenu.find('.dropdown-menu').append(
                 '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'

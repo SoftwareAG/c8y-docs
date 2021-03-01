@@ -79,10 +79,12 @@ Registers the AWS S3 credentials information with Cumulocity.
 |:---|:---|
 |Authorization|{{auth}}
 
+
 |PARAMS||
 |:---|:---|
 |accessKey (string)|{{Access Key}}
 |secretKey (string)|{{Secret Key}}
+|type (string)| AWS
 
 
 **Example Request**
@@ -90,7 +92,7 @@ Registers the AWS S3 credentials information with Cumulocity.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/credentials' \
+curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 --header 'Authorization: {{auth}}' \
 --data-raw '{
     "accessKey": "AKIA4CCIEY3EHS3VHU5Q",
@@ -112,7 +114,7 @@ curl --location --request POST '{{url}}/service/mlw/credentials' \
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/credentials' \
+curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 --data-raw '{
     "accessKey": "AKIA4CCIEY3EHS3VHU5Q",
     "secretKey": "Ddsm****************"}'
@@ -135,7 +137,7 @@ curl --location --request POST '{{url}}/service/mlw/credentials' \
 ```
 409 - Conflict
 
-curl --location --request POST '{{url}}/service/mlw/credentials' \
+curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -164,12 +166,17 @@ Deletes the AWS S3 credentials information from Cumulocity.
 |Authorization|{{auth}}
 
 
+|PARAMS||
+|:---|:---|
+|type (string)| AWS
+
+
 **Example Request**
 
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/credentials' \
+curl --location --request DELETE '{{url}}/service/mlw/credentials?type=AWS' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -188,7 +195,7 @@ curl --location --request DELETE '{{url}}/service/mlw/credentials' \
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/credentials' 
+curl --location --request DELETE '{{url}}/service/mlw/credentials?type=AWS' 
 ```
 
 **Example Response**
@@ -200,5 +207,26 @@ curl --location --request DELETE '{{url}}/service/mlw/credentials'
     "error": "general/internalError",
     "message": "No auth information found",
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Missing query parameter
+
+curl --location --request DELETE '{{url}}/service/mlw/credentials' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+409 - Missing query parameter
+
+{
+    "message": "Missing query parameter ('type')",
+    "errorCode": 409,
+    "exception": "Missing query parameter"
 }
 ```

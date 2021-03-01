@@ -262,3 +262,47 @@ Click the menu icon in the tenant policy entry you want to duplicate and then cl
 #### To delete a tenant policy
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.
+
+#### <a name="default-applications"></a>Default applications
+
+To define default applications for subtenants, a tenant policy with the following options can be created and used when creating new tenants:
+
+* category: configuration
+* key: default.tenant.applications
+* value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+
+### <a name="default-subscriptions"></a>Default subscriptions
+
+In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
+
+- to every new tenant on its creation,
+- to every existing tenant on platform upgrade.
+
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) above or [Tenants](#reference/tenants) in the *Reference guide*.
+
+In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+
+- all own applications,
+- all subscribed applications which have different names than the related own applications.
+
+
+In order to help you to distinguish which application is owned and which is subscribed, the the tenant ID of the owner is displayed.
+
+On the left, you see the **Applications subscribed to a tenant on creation**, and on the right you see the **Applications subscribed to a tenant on platform upgrade**.
+
+Initially, the lists show the default subscriptions inherited from the tenant hierarchy.
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
+
+<br>
+You can override both lists by switching the corresponding toggle. This will clear the selected checkboxes. 
+
+Then either select the applications to be subscribed by default by selecting the corresponding checkboxes or leave the list empty (then no subscriptions will be executed on tenant creation and/or platform upgrade).
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
+<br>
+If you want to return to the settings inherited from the tenant hierarchy, just switch the corresponding toggle again.
+
+Save the settings by clicking **Save** at the bottom of the page.
+
+> **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.

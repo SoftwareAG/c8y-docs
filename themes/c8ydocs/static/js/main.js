@@ -29,30 +29,28 @@ var main = (function ($) {
           console.log(loc.href, el.label);
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text(el.label);
+            $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
-            rest = loc.href.split("guides/")[1];
-            v = rest.split("/")[0];
-            console.log(rest, v, vs.indexOf(v));
-            if (index == 0) {
-              vmenu.find('.dropdown-menu').append(
-                '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
-              );
-            } else {
-              if (vs.indexOf(v) >= 0) {
-                vmenu.find('.dropdown-menu').append(
-                  '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
-                );
-              } else {
-                active = true;
-                $('#current-dropdown-version-toggle').text('Release ' + v);
-              }
-            }
+            console.log(rest, v, vs.indexOf(v));{
+            vmenu.find('.dropdown-menu').append(
+              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+            );
           }
         }
+
+        rest = loc.href.split("guides/")[1];
+        v = rest.split("/")[0];
+
+        if (vs.indexOf(v) < 0) {
+          active = true;
+          $('#current-dropdown-version-toggle').text('Release ' + v);
+        }
+
+        console.log(rest, v, vs.indexOf(v));
+
         if (!active) {
           var ind = 0;
           for (var i = 0; i < urls.length; i++) {

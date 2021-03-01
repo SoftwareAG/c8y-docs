@@ -1,6 +1,6 @@
 var main = (function ($) {
   function initializer() {
-    
+
     //Load releases menu
     var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false }).done(function (json) {
 
@@ -44,6 +44,7 @@ var main = (function ($) {
               if (vs.indexOf(v) >= 0) {
                 vmenu.find('.dropdown-menu').append(
                   '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+                );
               } else {
                 active = true;
                 $('#current-dropdown-version-toggle').text('Release ' + v);

@@ -34,7 +34,7 @@ var main = (function ($) {
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
-            console.log(rest, v, vs.indexOf(v));{
+            console.log(rest, v, vs.indexOf(v));
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
             );

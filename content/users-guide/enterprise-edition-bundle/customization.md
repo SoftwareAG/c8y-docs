@@ -149,7 +149,7 @@ A key feature of the enterprise edition is the ability to operate the IoT platfo
 
 There are three prerequisites for using a custom domain:
 
-1. To activate your domain, a valid license is required. Please [contact us](/about-doc/contacting-support) to install a license for your domain.
+1. To activate your domain, a valid license that covers your wildcard domain is required. Please [contact us](/about-doc/contacting-support) to install a license for your domain.
 2. You've obtained a valid wildcard SSL certificate for the hostname you'll be using to serve the IoT platform, for example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are routed to the IoT platform (see below).
  

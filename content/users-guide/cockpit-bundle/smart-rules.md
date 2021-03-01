@@ -105,9 +105,9 @@ To explicitly activate or deactivate a rule, navigate to the **Info** tab of the
 
 An example use case for deactivating a smart rule for a single object could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects. 
 
-In case of a group, you activate/deactivate the smart rule with the toggle for the whole group. You can then separately select the children to which the rule should apply via the dropdown box below the toggle. 
+In case of a group, you activate/deactivate the smart rule with the toggle for the group alone. You can then separately activate/deactivate the rule for the group's children via the dropdown box below the toggle. 
 
-<img src="/images/users-guide/cockpit/cockpit-smartrule-children.png" name="Smart rule select children" /> 
+<img src="/images/users-guide/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" /> 
 
 >**Important:** A rule which is activated for a particular object only works if the rule is also globally enabled. 
 

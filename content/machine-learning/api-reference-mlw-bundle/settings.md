@@ -40,7 +40,7 @@ curl --location --request GET '{{url}}/service/mlw/credentials' \
 200 - OK
 
 {
-    "data": {
+    "AWS": {
         "accessKey": "AKIA4CCIEY3EHS3VHU5Q",
         "secretKey": "*******"
     }

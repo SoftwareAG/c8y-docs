@@ -46,5 +46,9 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <td style="text-align:left"><a href="../../protocol-integration/snmp">SNMP</a></td>
 <td style="text-align:left">Allows the communication with SNMP-enabled devices.</td>
 </tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
+<td style="text-align:left">Allows to interface with LoRa devices through LORIOT Network Server Provider.</td>
+</tr>
 </tbody>
 </table>

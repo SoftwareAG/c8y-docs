@@ -281,8 +281,7 @@ In the middle of the page, the list of subscribable applications (both web appli
 - all own applications,
 - all subscribed applications which have different names than the own applications.
 
-
-In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+> **Info:** In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
 
 On the left, you see the **Applications subscribed to a tenant on creation**, and on the right you see the **Applications subscribed to a tenant on platform upgrade**.
 

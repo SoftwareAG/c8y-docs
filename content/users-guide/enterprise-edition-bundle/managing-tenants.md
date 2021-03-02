@@ -263,22 +263,18 @@ Click the menu icon in the tenant policy entry you want to duplicate and then cl
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.
 
-#### <a name="default-applications"></a>Default applications
-
-To define default applications for subtenants, a tenant policy with the following options can be created and used when creating new tenants:
-
-* category: configuration
-* key: default.tenant.applications
-* value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
-
 ### <a name="default-subscriptions"></a>Default subscriptions
+
+In the Cumulocity IoT platform, you can configure to which applications and microservices a tenant gets subscribed on creation. When you create a new tenant, it automatically gets subscribed to the applications and microservices specified. 
+
+In addition, you can specify to which applications and microservices a  tenant gets subscribed when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, a tenant might have been unsubscribed from certain default applications after creation.
 
 In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
 
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) above or [Tenants](#reference/tenants) in the *Reference guide*.
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or [Tenants](#reference/tenants) in the *Reference guide*.
 
 In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
@@ -306,3 +302,32 @@ If you want to return to the settings inherited from the tenant hierarchy, just 
 Save the settings by clicking **Save** at the bottom of the page.
 
 > **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+
+#### <a name="default-applications"></a>Overriding default subscriptions
+
+The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
+
+* to define default web applications subscribed to new tenants on creation:
+  * category: configuration
+  * key: default.tenant.applications
+  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* to define default microservices subscribed to new tenants on creation:
+  * category: configuration
+  * key: default.tenant.microservices
+  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+* to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.applications.enabled
+  * value: true/false (when false or not set, the same list from default.tenant.applications will be used)
+* to define default web applications subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.applications
+  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.microservices.enabled
+  * value: true/false (when false or not set, the same list from default.tenant.microservices will be used)
+* to define default microservices subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.microservices
+  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway

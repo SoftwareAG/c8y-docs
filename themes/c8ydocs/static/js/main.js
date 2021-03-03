@@ -1,21 +1,28 @@
 var main = (function ($) {
   function initializer() {
-    
+
     //Load releases menu
-    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
-      .done(function (json) {
+    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false }).done(function (json) {
+
         //json = JSON.parse(json.responseText);
         var urls = json.releases;
+        var first = urls[0];
         var vmenu = $('.dropdown.version');
         var loc = window.location;
         var active = false;
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
+
+        vs = []
+        for (var i = 0; i < urls.length; i++) {
+          vs.push(urls[i].label);
+        }
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text('Release '+ el.label);
+            $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
@@ -25,16 +32,33 @@ var main = (function ($) {
             );
           }
         }
+
+        rest = loc.href.split("guides/")[1];
+        v = rest.split("/")[0];
+
+        if (vs.indexOf(v) < 0) {
+          active = true;
+          $('#current-dropdown-version-toggle').text('Release ' + v);
+        }
+
         if (!active) {
-          vmenu.find('a:first-child').addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:first-child').text());
+          var ind = 0;
+          for (var i = 0; i < urls.length; i++) {
+            var el = urls[i];
+            if (el.url == "https://cumulocity.com/guides/") {
+              ind = i;
+              break;
+            }
+          }
+          nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
+          nthChild.addClass('active');
+          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
       })
       .fail(function (resp) {
         console.error(resp.statusText);
         $('#dropdownVersionButton').hide();
       });
-
 
     // apply Highlight js
     hljs.initHighlightingOnLoad();
@@ -43,7 +67,7 @@ var main = (function ($) {
     $('.sidebar-toggle').click(function(){
       $('body').toggleClass('open');
     });
-    
+
     $('.cover').click(function(){
       $('body').removeClass('open');
     });
@@ -97,7 +121,7 @@ var main = (function ($) {
         $this.data('text', $this.text().toLowerCase());
         $this.data('$l', $this.parent());
       });
-      
+
       $('#filter-devices').on('keyup input', function(k){
         var $str = $(this).val().toLowerCase();
         //$str.length ? $titles.hide() : $titles.show();
@@ -111,7 +135,7 @@ var main = (function ($) {
         })
       });
     }
-      
+
   }
   return {
     init: initializer

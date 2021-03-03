@@ -32,7 +32,7 @@ Sie können Cumulocity IoT auch auf gängigen Smartphones und Tablets nutzen. Un
 >
 * Die Nutzung kann je nach Speicher und Rechenleistung des Geräts eingeschränkt sein. Das Laden von Graphen mit einer großen Anzahl an Datenpunkten etwa kann dazu führen, dass das Gerät nicht mehr reagiert.
 * Die Nutzung des private Modus eines Browsers funktioniert möglicherweise nicht.
-* [Apama EPL Apps](/apama/overview-analytics/#apama-epl-apps) und [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) unterstützen keine Mobil- bzw. Touch-Geräte.
+* Die [Streaming Analytics-Anwendung](/apama/overview-analytics/) unterstützt keine Mobil- bzw. Touch-Geräte.
 
 ### URL
 

@@ -32,7 +32,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 >
 * The usage may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* [Apama EPL Apps](/apama/overview-analytics/#apama-epl-apps) and [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) do not support mobile/ touch devices.
+* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile/touch devices.
 
 ### URL
 

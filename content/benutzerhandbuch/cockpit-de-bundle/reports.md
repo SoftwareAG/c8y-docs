@@ -146,7 +146,7 @@ Der Exportplan wird zu den Exportdetails hinzugefügt.
 
 ##### Migration geplanter Exports
 
-In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
+In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in der [Streaming Analytics-Anwendung](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
 
 Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
 

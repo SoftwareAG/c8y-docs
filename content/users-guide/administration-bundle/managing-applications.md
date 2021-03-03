@@ -115,15 +115,15 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Web app</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
-<td style="text-align:left">Runtime for Apama EPL Apps, smart rules and Analytics Builder.</td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules.</td>
 <td style="text-align:left">apama-ctrl-* (different strings for different size/capability options)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
-<td style="text-align:left">Analytics Builder model manager and editor – allows models to be built graphically to process and react to data from devices.</td>
-<td style="text-align:left">Apama Analytics Builder</td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled).</td>
+<td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web app</td>
 </tr>
 <tr>
@@ -228,13 +228,6 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
 <td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
-<td style="text-align:left"><b>This application is an optional service in Cumulocity IoT Core but standard in Cumulocity IoT Edge.</b><br>
-Manager and editor for Apama Event Processing Language (EPL) apps, for immediate processing of incoming data.</td>
-<td style="text-align:left">Apama EPL Apps</td>
-<td style="text-align:left">Web app</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>

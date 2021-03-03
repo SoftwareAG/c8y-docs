@@ -193,7 +193,8 @@ Data structure for ServerConnectionConfig:
 <td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
 </tr>
 </tbody>
-</table>                                                                                                                                         |
+</table>                                                                                                                                         
+
 
 #### Get all servers of a gateway device
 
@@ -270,12 +271,8 @@ Data structure for ServerConnectionConfig:
 
 **Description**
 
-<<<<<<< HEAD
-Description: Delete the OPC UA server managed object. Once the server deletion is detected by the gateway, the connection to the OPC UA server will be terminated. The gateway will also try to delete all address space nodes created in the Cumulocity platform that connected to the deleted server.
-=======
 Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the Cumulocity IoT platform will be deleted.
 The service will retain all the child devices of the server, and their corresponding data, which were created by the device protocols.
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 
 **Parameters**
 

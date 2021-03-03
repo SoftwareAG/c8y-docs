@@ -265,9 +265,9 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 
 ### <a name="default-subscriptions"></a>Default subscriptions
 
-In the Cumulocity IoT platform, you can configure to which applications and microservices a tenant gets subscribed on creation. When you create a new tenant, it automatically gets subscribed to the applications and microservices specified. 
+In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it. 
 
-In addition, you can specify to which applications and microservices a  tenant gets subscribed when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, a tenant might have been unsubscribed from certain default applications after creation and you may not want it to be subscribed to these applications again or you may want to subscribe it to different ones.
+In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
 In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
 

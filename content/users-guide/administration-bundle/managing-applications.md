@@ -11,7 +11,7 @@ In the Cumulocity IoT platform we distinguish between two kinds of applications:
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
-Additionally, in Enterprise tenants, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
+Additionally, in Enterprise tenants, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 

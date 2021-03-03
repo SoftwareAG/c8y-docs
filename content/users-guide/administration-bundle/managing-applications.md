@@ -11,6 +11,8 @@ In the Cumulocity IoT platform we distinguish between two kinds of applications:
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
+Additionally, in Enterprise tenants, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
+
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 ### <a name="application-properties"></a>Application properties
@@ -22,7 +24,7 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 20%
+<col width= 20%>
 <col width= 20%>
 <col width= 20%>
 <col width= 20%>
@@ -524,12 +526,3 @@ If no logs are available in the selected time range, a message is shown accordin
 > **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
-
-
-### <a name="default-applications"></a>Default applications
-
-To define default applications for subtenants, a tenant policy with the following options can be created and used when creating new tenants:
-
-* category: configuration
-* key: default.tenant.applications
-* value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules

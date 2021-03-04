@@ -131,7 +131,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 
 **New value window, Longitude**
 
-![Value creation: Longitude-nested](/images/device-protocol/lora-actility/lora-protocols-lng.png)
+![Value creation: Longitude-nested](/images/device-protocols/lora-actility/lora-protocols-lng.png)
 
 **New value window, Latitude**
 

@@ -14,3 +14,4 @@ These release notes document all relevant changes that have been implemented in 
 
 
 
+These release notes include all relevant changes (improvements, migration notes, documentation changes, fixes) that have been implemented since the previous GA release.

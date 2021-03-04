@@ -1,6 +1,6 @@
 ---
-weight: 60
-title: Devices
+weight: 50
+title: Device management & integration
 layout: bundle
 ---
 

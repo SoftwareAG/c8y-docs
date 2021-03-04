@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Platform services and devices
+title: Device management & integration
 layout: bundle
 ---
 

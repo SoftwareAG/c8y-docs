@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 20
 title: Migration notes
 layout: bundle
 ---

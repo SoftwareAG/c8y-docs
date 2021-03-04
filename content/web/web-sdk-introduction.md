@@ -10,6 +10,7 @@ aliases:
   - /web/reference
   - /10.5.7/teletubby
   - /10.4.6/teletubby
+  - /teletubby
 ---
 
 This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.

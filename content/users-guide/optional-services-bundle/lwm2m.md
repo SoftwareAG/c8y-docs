@@ -256,7 +256,7 @@ See example below for a device connection with a dynamic client awake time:
 java -jar <<device>>.jar -at <<value>> -u <<lwm2m server url>> -n <<endpoint id>> -b
 ```
 
-We connect a device with following options:
+We connect a device with the following options:
 
 <table>
 <col style="width:20%">

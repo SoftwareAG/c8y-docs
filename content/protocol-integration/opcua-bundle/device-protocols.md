@@ -85,6 +85,8 @@ The value will also be populated as a fragment of the created event, under a sta
  }
 }
 ```
+> **Info:** The measurements, events and alarms are added to a queue by the gateway, and they are flushed at once to create the respective elements. If the server is deleted, but there are still some items to be flushed, then the request is failed with a response code 403.
+Thereafter, the exception is handled by validating the existence of the source. If the source is missing then the elements will be removed from the queue.
 
 **Custom Actions**
 

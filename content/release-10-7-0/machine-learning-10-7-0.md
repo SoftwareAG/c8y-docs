@@ -1,5 +1,5 @@
 ---
-weight: 110
+weight: 80
 title: Machine Learning
 layout: bundle
 ---

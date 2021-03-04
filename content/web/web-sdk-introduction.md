@@ -8,9 +8,8 @@ aliases:
   - /developers-guide/developing-web-clients.html
   - /web/smart-toolkit
   - /web/reference
-  - /10.5.7/release-notes/overview
-  - /10.4.6/release-notes/overview
-  - /release-notes/overview
+  - /10.5.7/teletubby
+  - /10.4.6/teletubby
 ---
 
 This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.

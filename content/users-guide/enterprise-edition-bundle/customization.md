@@ -157,7 +157,7 @@ There are three prerequisites for using a custom domain:
 2. You've obtained a valid wildcard SSL certificate your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
-   routed to the IoT platform (see below).
+   routed to Cumulocity IoT. (see below).
 
 #### SSL certificate requirements
 
@@ -198,12 +198,11 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 The DNS entries for your custom domain have to be configured in a way that all requests are routed to the IoT platform.
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
-domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of the
-IoT platform. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
+domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of Cumulocity IoT. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
 is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Please also make sure to delete any
 conflicting A entries.
 
-> **Example** If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT platform at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
+> **Example** If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
 >```shell
 > NAME                  TYPE   VALUE
 > ----------------------------------------------------

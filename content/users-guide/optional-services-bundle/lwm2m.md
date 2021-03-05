@@ -23,6 +23,9 @@ For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumul
 
 ### <a name="register"></a>Registering LWM2M devices
 
+How long a device stays online is determined by its registration awake time attribute "at".
+If this attribute is missing during the device registration, the LWM2M agent will consider the default configured value
+to determine how long the device will stay online.
 To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
 
 ![CSV example 1](/images/users-guide/lwm2m/lwm2m-csv1.png)
@@ -243,55 +246,6 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 > **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
 
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
-
-#### <a name="device-connection-with-dynamic-client-awake-time"></a>Device connection with a dynamic client awake time
-
-How long a device stays online is determined by its registration awake time attribute "at".
-If this attribute is missing during the device registration, the LWM2M agent will consider the default configured value
-to determine how long the device will stay online.
-
-See example below for a device connection with a dynamic client awake time:
-
-```bash
-java -jar <<device>>.jar -at <<value>> -u <<lwm2m server url>> -n <<endpoint id>> -b
-```
-
-We connect a device with the following options:
-
-<table>
-<col style="width:20%">
-<col style="width:10%">
-<thead>
-<tr>
-<th style="text-align: left">Option</th>
-<th style="text-align: left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left">-u</td>
-<td style="text-align: left">The LWM2M or bootstrap server URL.</td>
-</tr>
-<tr>
-<td style="text-align: left">-n</td>
-<td style="text-align: left">The LWM2M client endpoint ID.</td>
-</tr>
-<tr>
-<td style="text-align: left">-b</td>
-<td style="text-align: left">Connect using bootstrapping.</td>
-</tr>
-<tr>
-<td style="text-align: left">-at</td>
-<td style="text-align: left">Client awake time in millisecond.</td>
-</tr>
-</tbody>
-</table>
-
-See all available options:
-
-```bash
-java -jar <<device>>.jar -h
-```
 
 #### <a name="duplicate-registeration-alarm"></a>Duplicate LWM2M devices
 

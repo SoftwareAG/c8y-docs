@@ -1,15 +1,16 @@
 ---
-weight: 40 title: Customizing your platform layout: redirect
+weight: 40
+title: Customizing your platform
+layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity IoT, you can customize your platform according to your wishes and
-requirements.
+Using the Enterprise Tenant of Cumulocity IoT, you can customize your platform according to your wishes and requirements.
 
 In the **Settings** menu, you may specify various customization settings.
 
 ### <a name="configuration"></a>Configuration
 
-> **Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
 
 #### Applications
 
@@ -19,8 +20,7 @@ In the **Applications** section, you can specify the default applications for ne
 
 #### Passwords
 
-In the **Passwords** section, you can specify password settings like default strength, length or validity for the users
-in your tenant.
+In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
 
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
@@ -28,59 +28,41 @@ in your tenant.
 
 In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
 
-With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access
-subtenant users in case of any issues. Refer
-to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
-In the field **Activate support user**, specify if support user access is enabled for subtenant users. Possible values
-you can enter here are:
+In the field **Activate support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
-* *true*: Support user access is activated. If support user access is activated, support users can log into any
-  subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves.
-* *false*: Support user access is deactivated. If support user access is deactivated, support users can log in only to
-  subtenants for which at least one user has explicitly enabled such access.
-* An explicit date in date-time format, until when support user activation should remain enabled. If no date is
-  specified the value is set to "No Limit".
+* *true*: Support user access is activated. If support user access is activated, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves.
+* *false*: Support user access is deactivated. If support user access is deactivated, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
+* An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
 
-In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user
-access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of
-hours. The default value is 24 hours.
+In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
 
-The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the
-current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will
-update the expiry date to 01/10/2018 15:00.
+The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of
-the tenant, see [Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
-In the **Branding** tab, you can configure various parameters like logos, colors and font types used throughout the
-platform.
+In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform.
 
-The [parameters](#configuration-parameters) are configured at the left side of the tab while at the right you can
-immediately see your selections applied to a preview extract.
+The [parameters](#configuration-parameters) are configured at the left side of the tab while at the right you can immediately see your selections applied to a preview extract.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
-For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of
-your branding settings in the overall platform. You may interact and even switch applications in the preview. Every
-change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
+For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
-When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save
-your branding settings to your tenant.
+When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
-Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply**
-in the top menu bar.
+Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default
-settings. The custom settings will still be saved but are no longer applied.
+Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 #### <a name="configuration-parameters"></a>Configuration parameters
 
@@ -94,23 +76,19 @@ Under **General**, you can edit the title which will be used in the browser tab.
 
 Under **Main logo**, specify the following items:
 
-* The favicon, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your
-  computer. The supported favicon format is “ico”.
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your
-  computer. The supported formats are “png” and “svg”.
+* The favicon, which will be displayed in the browser’s address bar. Click **Choose file** to select a file from your computer. The supported favicon format is “ico”.
+* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your computer. The supported formats are “png” and “svg”.
 * The brand logo height.
 
 **Navigator logo**
 
-Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the
-navigator panel.
+Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
 **Type**
 
 In the **Type** section you specify the font settings for your branded version.
 
-You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base
-or same as headings font). You may also add a link to existing remote fonts to be used.
+You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
 **Colors**
 
@@ -156,8 +134,7 @@ In the **Misc** section you specify the “Button Border-Radius” by providing 
 
 **Cookie banner**
 
-In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. The banner
-is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. The banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
 
 The following parameters can be specified:
 
@@ -168,9 +145,8 @@ The following parameters can be specified:
 ### <a name="domain-name"></a>Domain name
 
 A key feature of the enterprise tenant is the ability to operate the Cumulocity IoT platform using a custom domain name. This
-means that you can configure the platform to serve you and your customers using a host name of choice, for example *
-iot.mycompany.com* rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants
-using your domain. These will be using *\<subtenantName\>.iot.mycompany.com* as their host names.
+means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants
+using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
 > **Info:** The custom domain name functionality is only available for Cumulocity IoT cloud installations or On-Premise installations which don't use a custom load balancer.
 
@@ -195,7 +171,7 @@ The following criteria have to be met by any SSL certificate to be used with the
   certificate is mandatory, as it will also be used for subdomains created from your Enterprise tenant.
 * Every single certificate in the chain is provided using the X509 format.
 * The common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your
-  wildcard domain name, e.g. "CN=*.iot.mycompany.com*".
+  wildcard domain name, e.g. "CN=\*.iot.mycompany.com".
 
 Cumulocity IoT supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.
@@ -228,11 +204,11 @@ is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Pl
 conflicting A entries.
 
 > **Example** If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT platform at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
-> ```shell
+>```shell
 > NAME                  TYPE   VALUE
 > ----------------------------------------------------
->\*.iot.mycompany.com.   CNAME  cumulocity.com.
-> ```
+> *.iot.mycompany.com.   CNAME  cumulocity.com.
+>```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
 
@@ -250,6 +226,7 @@ uploaded to the platform.
 
 <img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
+
 Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
 to your enterprise tenant using the new domain name. You will also receive an email with information about the
 activation. Note that your management tenant domain name is static, for example, if your wildcard domain is "*
@@ -259,25 +236,24 @@ activation. Note that your management tenant domain name is static, for example,
 
 #### Updating your certificate
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When
-updating a certificate, you need to make sure that
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
 
 * the certificate is valid, like when being uploaded for the first time,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate.
 
-> **Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+>**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+
 
 #### Deactivating your certificate
 
 If you wish to return to your old domain at Cumulocity IoT, you can simply deactivate you certificate.
 
-> **Important:** Use with care. Your customers will not be able to access their subtenants anymore.
+>**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
-In case you cannot reach Cumulocity IoT using your custom domain, we recommend you to perform the following checks to
-verify your DNS setup.
+In case you cannot reach Cumulocity IoT using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
 
 **Check if the DNS entry is correct**
 
@@ -293,6 +269,7 @@ The following result should be returned:
 management.<your domain name> is an alias for <instance domain name>
 <instance domain name> has address <ip address>
 ```
+
 
 **Check if the API is responding**
 
@@ -310,5 +287,6 @@ HTTP/1.1 200 OK
 ...
 ```
 
-> **Info:** Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+
+>**Info:** Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
 >

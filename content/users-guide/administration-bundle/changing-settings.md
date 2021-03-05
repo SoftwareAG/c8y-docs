@@ -331,7 +331,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
-3. Depending on the selected provider, enter the relevant credentials. Different providers require different configuration and credentials. The form generated for the respective provider will display the required properties and available options.
+3. In the resulting dialog, enter the required credentials and properties or specify optional settings, which differ depending on the provider you selected.
 
 4. Click **Save** to save your settings.
 

@@ -26,7 +26,7 @@ Retrieves the list of PMML/ONNX/PIPELINE models deployed to MLE.
 
 |PARAMS||
 |:---|:---|
-|type (string)| PMML/ONNX/PIPELINE
+|type (string)| required query parameter to fetch a model type (ex: PMML/ONNX/PIPELINE)
 
 
 **Example Request**
@@ -174,8 +174,8 @@ Deploys the PMML/ONNX/PIPELINE model to MLE.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
 
 **Example Request**
 
@@ -437,8 +437,8 @@ Removes the PMML/ONNX/PIPELINE model from MLE.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
 
 **Example Request**
 
@@ -678,10 +678,10 @@ Predicts from the list of deployed PMML/ONNX/PIPELINE models in MLE.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
-|modelID (string)|{{model ID}}
-|type (string)| PMML/ONNX/PIPELINE
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
+|modelID (string)| required path variable of an existing model ID
+|type (string)| required query parameter to score against a model type (ex: PMML/ONNX/PIPELINE)
 
 **Example Request**
 

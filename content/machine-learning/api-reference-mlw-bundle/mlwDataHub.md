@@ -25,9 +25,9 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|sql (string)|required SQL query to pull the data
-|fileName (string)|required file name to store the pulled data
+|projectID (string)| required path variable of an existing project ID
+|sql (string)| required SQL query body parameter to pull the data
+|fileName (string)| required file name body parameter to store the pulled data
 
 **Example Request**
 

@@ -82,9 +82,9 @@ Registers the AWS S3 credentials information with Cumulocity.
 
 |PARAMS||
 |:---|:---|
-|accessKey (string)|{{Access Key}}
-|secretKey (string)|{{Secret Key}}
-|type (string)| AWS
+|accessKey (string)| required AWS Access Key body parameter  
+|secretKey (string)| required AWS Secret Key body parameter 
+|type (string)| required query parameter to store a particular credentials set (ex: AWS)
 
 
 **Example Request**
@@ -168,7 +168,7 @@ Deletes the AWS S3 credentials information from Cumulocity.
 
 |PARAMS||
 |:---|:---|
-|type (string)| AWS
+|type (string)| required query parameter to delete a particular credentials set (ex: AWS)
 
 
 **Example Request**

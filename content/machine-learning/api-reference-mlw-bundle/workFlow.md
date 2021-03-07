@@ -25,11 +25,11 @@ Trains the WorkFlow using the already created AutoML model, pre-processing scrip
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
-|taskName (string)|required task name to start the training
-|cronExpression (string)|required cron expression
-|recurrence (string)|required recurrence of ONE_TIME or REPEAT
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
+|taskName (string)| required body parameter of a task name to start the re-training
+|cronExpression (string)| required body parameter of a cron expression
+|recurrence (string)| required body parameter of a recurrence (ONE_TIME or REPEAT)
 
 **Example Request**
 

@@ -99,7 +99,7 @@ Lists the names of all the files within an AWS S3 buckets.
 
 |PARAMS||
 |:---|:---|
-|bucketName (string)|{{bucket Name}}
+|bucketName (string)| required path variable of an existing AWS S3 bucket Name
 
 **Example Request**
 
@@ -219,9 +219,9 @@ Downloads the file from AWS S3 bucket.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|bucketName (string)|{{bucket Name}}
-|name (string)|required file name to download the data
+|projectID (string)| required path variable of an existing project ID
+|bucketName (string)| required path variable of an existing AWS bucket Name
+|name (string)| required name body parameter to download an existing file from AWS S3
 
 **Example Request**
 

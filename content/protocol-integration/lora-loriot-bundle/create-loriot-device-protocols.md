@@ -19,7 +19,7 @@ In order to create a device protocol, navigate to the Device Management applicat
 ### <a name="import-device-type"></a>Importing a predefined device protocol
 
 1. In the **Device protocols** page, click **Import**.
-2. Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file. 
+2. Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file.
 3. Click **Import**.
 
 ![Import device protocol](/images/device-protocols/lora-actility/lora-protocols-import.png)
@@ -132,7 +132,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 
 **New value window, Longitude**
 
-![Value creation: Longitude-nested](/images/device-protocol/lora-actility/lora-protocols-lng.png)
+![Value creation: Longitude-nested](/images/device-protocols/lora-actility/lora-protocols-lng.png)
 
 **New value window, Latitude**
 

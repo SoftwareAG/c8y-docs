@@ -4,7 +4,9 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-
+How long a device stays online is determined by its registration awake time attribute "at".
+If this attribute is missing during the device registration, the LWM2M agent will consider the default configured value
+to determine how long the device will stay online.
 To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
 
 ![CSV example 1](/images/device-protocols/lwm2m/lwm2m-csv1.png)

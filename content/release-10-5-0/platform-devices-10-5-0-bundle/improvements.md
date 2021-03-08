@@ -12,7 +12,7 @@ Cumulocity now provides an **offline installation** process for the Cumulocity I
 
 #### Administration
 
-A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores authentication information in a cookie not reachable by JavaScript. For details, see <em>Administration > Changing settings</em> in the <em>User guide</em>. [26097]
+A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores authentication information in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](https://cumulocity.com/guides/10.5.0/users-guide/administration/#changing-settings) in the <em>User guide</em>. [26097]
 
 It is now possible to see the inbound API requests in the Home page. [MTM-25148]
 
@@ -40,7 +40,7 @@ You can now add context-based routes, for example an additional tab for a certai
 
 The Angular Web SDK now also allows for adding custom widgets developed in Angular to a Web SDK for Angular based application. With this addition, the Angular Web SDK supports all functionality of the deprecated Web SDK for AngularJS.[MTM-25425]
 
-For details, see the <em>How-to recipes</em> in the <em>Web SDK guide</em>.
+For details, see the [How-to recipes](https://cumulocity.com/guides/10.5.0/web/how-to/) in the <em>Web SDK guide</em>.
 
 #### Various
 
@@ -61,7 +61,7 @@ For details, see the <em>How-to recipes</em> in the <em>Web SDK guide</em>.
 
 The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
-The sample applications that were previously accessible from <em>Miscellaneous sample applications</em> in the <em>Streaming analytics guide</em> are now available directly from the Apama EPL Apps application. 
+The sample applications that were previously accessible from [Miscellaneous sample applications](https://cumulocity.com/guides/10.5.0/apama/examples/#misc-applications) in the *Streaming Analytics guide* are now available directly from the Apama EPL Apps application. 
 
 
 ### Apama Analytics Builder
@@ -91,5 +91,5 @@ Main features of the Cumulocity IoT DataHub application include:
 * Allows to use scalable and inexpensive storage via providing an easy-to-use data pipeline that extracts data from Cumulocity IoT’s Operational Store to a data lake for long-term archival and efficient analytical querying.
 * Offers a SQL-based Query Interface for querying the data lake and enabling customers to connect arbitrary applications that either support ODBC, JDBC, or REST protocols.
 
-See the <em>Datahub guide</em> for detailed information.
+See the [Datahub guide](https://cumulocity.com/guides/10.5.0/datahub/datahub-overview) for detailed information.
 

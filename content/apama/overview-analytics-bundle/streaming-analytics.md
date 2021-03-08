@@ -25,4 +25,4 @@ Typical real-time analytics use cases include:
 
 The following sections describe how you can create your own analytics or other server-side business logic and automation. You can do this using smart rules, analytic models and EPL apps.
 
->**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/) for further details.
+>**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/) for further details.

@@ -148,7 +148,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you have to fix this as a priority.
 
-See also the TECHniques blog post at [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot).
+See also [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in Software AG's Tech Community.
 
 #### <a name="apama_ctrl_fatalcritwarn"></a>Warning or higher level logging from an EPL file
 
@@ -319,5 +319,5 @@ The CEP queue size is based on the number of CEP events, not raw bytes.
 To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
-- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
+- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
 - Else, the cause may be some issue with connectivity or in Cumulocity IoT Core.

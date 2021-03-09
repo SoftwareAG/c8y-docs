@@ -52,7 +52,7 @@ A "User" resource type contains the following fields:
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
-<td align="left">POST: mandatory PUT: optional</td>
+<td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>

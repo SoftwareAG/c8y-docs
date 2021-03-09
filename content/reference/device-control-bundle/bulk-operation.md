@@ -74,9 +74,9 @@ colgroup>
 </tr>
 <tr>
 <td align="left">creationRamp</td>
-<td align="left">float</td>
+<td align="left">int or float</td>
 <td align="left">1</td>
-<td align="left">Delay between every operation creation in seconds.</td>
+<td align="left">Delay between every operation creation in seconds or subseconds.</td>
 <td>POST: Mandatory PUT: No</td>
 </tr>
 <tr>
@@ -127,7 +127,7 @@ Example Request:
     Authorization: Basic ...
     Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
     {
-      "creationRamp" : 15.0
+      "creationRamp" : 15
     }
 
 Example response:
@@ -145,7 +145,7 @@ Example response:
         "description": "Restart device",
         "c8y_Restart": {}
       },
-      "creationRamp":15.0,
+      "creationRamp":15,
       "progress":
         {
          "pending":0, "failed":0, "executing":0, "successful":0, "all":2
@@ -181,7 +181,7 @@ Example response:
         "description": "Restart device",
         "c8y_Restart": {}
       },
-      "creationRamp":15.0,
+      "creationRamp":15,
       "progress":
         {
          "pending":0, "failed":0, "executing":0, "successful":0, "all":2

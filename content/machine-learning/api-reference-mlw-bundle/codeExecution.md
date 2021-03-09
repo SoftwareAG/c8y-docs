@@ -26,15 +26,18 @@ Execute a python script.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| required path variable of an existing project ID
-|resourceID (string)| required path variable of an existing resource ID
+|projectID (string)| {{project ID}}
+|resourceID (string)| {{resource ID}}
+|recurrence (string)| ONE_TIME/REPEAT
+|cronExpression (string)| Cron expression
+|taskName (string)| Name of the task
 
 **Example Request**
 
 ```
 200 - OK
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
@@ -83,7 +86,7 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
 ```
 401 - Unauthorized
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
 ```
@@ -105,7 +108,7 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
 ```
 400 Bad Request
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":""}'

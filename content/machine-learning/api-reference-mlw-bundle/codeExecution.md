@@ -26,8 +26,8 @@ Execute a python script.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| {{project ID}}
-|resourceID (string)| {{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
 |recurrence (string)| ONE_TIME/REPEAT
 |cronExpression (string)| Cron expression
 |taskName (string)| Name of the task

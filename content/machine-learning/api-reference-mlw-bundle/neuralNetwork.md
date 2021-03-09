@@ -26,8 +26,8 @@ Train a neural network model using architecture file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| {{project ID}}
-|resourceID (string)| {{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
 |batchSize| integer
 |epoch| integer
 |stepPerEpoch| integer

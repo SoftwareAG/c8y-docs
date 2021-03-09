@@ -26,8 +26,22 @@ Train a neural network model using architecture file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| required path variable of an existing project ID
-|resourceID (string)| required path variable of an existing resource ID
+|projectID (string)| {{project ID}}
+|resourceID (string)| {{resource ID}}
+|batchSize| integer
+|epoch| integer
+|stepPerEpoch| integer
+|learningRate| float
+|loss (string)| loss function
+|metrics (list)| metrics to use when training neural network
+|optimizer (string)| required for compiling a model
+|testSize| float
+|recurrence (string)| ONE_TIME/REPEAT
+|cronExpression (string)| Cron expression
+|modelName (string)| name of the model
+|dataID (string)| resource ID of data
+|codeID (string)| resource ID of pre-processing script
+|problemType (string)| classification/regression
 
 **Example Request**
 

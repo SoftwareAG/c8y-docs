@@ -142,7 +142,7 @@ curl --request GET "{{url}}/service/mlw/resources/deploy?type=PMML"
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request POST '{{url}}/service/mlw/resources/deploy?type=H5' \
 --header 'Authorization: {{auth}}'
@@ -151,7 +151,7 @@ curl --location --request POST '{{url}}/service/mlw/resources/deploy?type=H5' \
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "Invalid Model Type",
@@ -365,7 +365,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
 --header 'Authorization: {{auth}}'
@@ -374,7 +374,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "A model with the name 'deployModel' already exists.",
@@ -405,7 +405,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
 --header 'Authorization: {{auth}}'
@@ -414,7 +414,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "'errors'",
@@ -627,7 +627,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
 --header 'Authorization: {{auth}}'
@@ -635,7 +635,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "Model 'deployModel' not found.",
@@ -646,7 +646,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
 --header 'Authorization: {{auth}}'
@@ -655,7 +655,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "'errors'",
@@ -1187,7 +1187,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX' \
 --header 'Authorization: {{auth}}'
@@ -1196,7 +1196,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "Onnx microservice is unsubscribed. Subscribe to Onnx microservice.",
@@ -1208,7 +1208,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/PPP?type=H5' \
 --header 'Authorization: {{auth}}'
@@ -1217,7 +1217,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "Invalid Model Type/File Type.",

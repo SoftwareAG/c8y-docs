@@ -129,7 +129,7 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
      --header "Authorization: {{auth}}" \
@@ -140,7 +140,7 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "Task name already exists. Please provide another name",

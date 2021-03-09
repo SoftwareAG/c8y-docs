@@ -158,7 +158,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request POST '{{url}}/service/mlw/projects' \
 --header 'Authorization: {{auth}}' \
@@ -168,7 +168,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "Project Name already exist",
@@ -286,14 +286,14 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --header "Authorization: {{auth}}" 
 ```
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {'message': 'Please select files',
  'errorCode': 409,
@@ -358,7 +358,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
 --header 'Authorization: {{auth}}' \
@@ -369,7 +369,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {'message': 'Project Name already exist for another project, Description also same',
  'errorCode': 409,

@@ -186,7 +186,7 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/file
 **Example Request**
 
 ```
-404 - Error
+404 - Not Found
 
 curl --location --request GET '{{url}}/service/mlw-cdh/downloadFromS3/nomlwbucket/files' \
 --header 'Authorization: {{auth}}' \
@@ -196,7 +196,7 @@ curl --location --request GET '{{url}}/service/mlw-cdh/downloadFromS3/nomlwbucke
 **Example Response**
 
 ```
-404 - Error
+404 - Not Found
 
 {
     "message": "The specified bucket does not exist",
@@ -298,7 +298,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request POST '{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
@@ -309,7 +309,7 @@ curl --location --request POST '{{url}}/service/mlw-cdh/projects/{{projectID}}/r
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "File already exists.",

@@ -93,7 +93,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data' \
 --header 'Authorization: {{auth}}' \
@@ -104,7 +104,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "File name already exists. Please provide another name",

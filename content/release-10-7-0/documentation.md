@@ -52,3 +52,69 @@ In addition to the Installation & Operations guides already provided for previou
 
 Note, that access to these documents on the Empower Portal requires credentials.
 
+### Improvements
+
+<div><table ><colgroup>
+<col style="width: 15%;"><col style="width: 70%;"><col style="width: 15%;"></colgroup>
+<thead><tr>
+<th>
+Component</th>
+<th>
+Description</th>
+<th>
+Issue</th>
+</tr>
+</thead><tbody>
+
+<tr>
+<td>
+Documentation</td>
+<td >  The documentation on tenant usage statistics has been improved.  </td>
+<td>
+MTM-32208</td>
+</tr>
+
+<tr>
+<td>
+Documentation</td>
+<td >  The Enterprise Tenant section has been updated to include the support of full chain certificates. For details, see <a href="https://cumulocity.com/guides/10.7.0/users-guide/enterprise-edition#customization" class="no-ajaxy">Enterprise Tenant > Customizing your platform</a> in the <em>User guide</em>. </td>
+<td>
+MTM-32145</td>
+</tr>
+
+<tr>
+<td>
+Documentation</td>
+<td > The documentation on metering and billing of microservices has been extended to improve transparency, see <a href="https://cumulocity.com/guides/10.7.0/users-guide/enterprise-edition/#usage-and-billing" class="no-ajaxy">Enterprise Tenant > Usage statistics and billing</a> in the <em>User guide</em>.</td>
+<td>
+MTM-33651</td>
+</tr>
+
+<tr>
+<td>
+Documentation</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed object collection</a> in the <em>Reference guide</em>. </td>
+<td>
+MTM-33763</td>
+</tr>
+
+<tr>
+<td>
+Documentation</td>
+<td > Details on the functionality of the smart rule “On measurement threshold create alarm” have been updated in <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit/#smart-rules-collection" class="no-ajaxy">Cockpit > Smart rules collection</a> in the <em>User guide</em>. </td>
+<td>
+MTM-34765</td>
+</tr>
+
+<tr>
+<td>
+Documentation</td>
+<td > Added a note on filtering to the export description, see also <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit#report" class="no-ajaxy">Cockpit > Managing reports and exports</a> in the <em>User guide</em>. If you select a group, the export will contain the data of direct child devices but the data of devices in subgroups (indirect children) will not be included.</td>
+<td>
+MTM-35116</td>
+</tr>
+
+
+
+</tbody></table></div>
+

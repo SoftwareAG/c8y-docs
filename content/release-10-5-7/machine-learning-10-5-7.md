@@ -1,5 +1,5 @@
 ---
-title: Machine Learning
+title: Predictive Analytics
 layout : bundle
 weight : 80
 

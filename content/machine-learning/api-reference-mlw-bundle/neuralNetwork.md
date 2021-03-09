@@ -28,20 +28,23 @@ Train a neural network model using architecture file.
 |:---|:---|
 |projectID (string)| required path variable of an existing project ID
 |resourceID (string)| required path variable of an existing resource ID
-|batchSize| integer
-|epoch| integer
-|stepPerEpoch| integer
-|learningRate| float
-|loss (string)| loss function
-|metrics (list)| metrics to use when training neural network
-|optimizer (string)| required for compiling a model
-|testSize| float
-|recurrence (string)| ONE_TIME/REPEAT
-|cronExpression (string)| Cron expression
-|modelName (string)| name of the model
-|dataID (string)| resource ID of data
-|codeID (string)| resource ID of pre-processing script
-|problemType (string)| classification/regression
+|batchSize (integer)| required batchSize body parameter to train model
+|epoch (integer)| required epoch body parameter to train model
+|stepPerEpoch (integer)| required stepPerEpoch body parameter to train model
+|learningRate (float)| required learningRate body parameter to train model
+|loss (string)| required loss function body parameter to train model
+|metrics (list)| required metrics body parameter to train model
+|optimizer (string)| required optimizer body parameter to train model
+|testSize (float)| required testSize body parameter to train model
+|recurrence (string)| required ONE_TIME/REPEAT
+|cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
+|modelName (string)| required modelName body parameter
+|dataID (string)| required resource ID of data (body parameter)
+|codeID (string)| optional resource ID of pre-processing script (body parameter)
+|problemType (string)| required classification/regression
+|startDate (string)| optional startDate body parameter to train model
+|startTimeH (integer)| optional startTimeH body parameter to train model
+|startTimeM (integer)| optional startTimeM body parameter to train model
 
 **Example Request**
 
@@ -51,7 +54,7 @@ Train a neural network model using architecture file.
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z","startTimeH": 4,"startTimeM": 4}'
 
 ```
 

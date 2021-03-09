@@ -28,9 +28,12 @@ Execute a python script.
 |:---|:---|
 |projectID (string)| required path variable of an existing project ID
 |resourceID (string)| required path variable of an existing resource ID
-|recurrence (string)| ONE_TIME/REPEAT
-|cronExpression (string)| Cron expression
-|taskName (string)| Name of the task
+|recurrence (string)| required ONE_TIME/REPEAT
+|cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
+|taskName (string)| required taskName body parameter
+|startDate (string)| optional startDate body parameter
+|startTimeH (integer)| optional startTimeH body parameter
+|startTimeM (integer)| optional startTimeM body parameter
 
 **Example Request**
 
@@ -40,7 +43,7 @@ Execute a python script.
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
---data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
+--data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1","startDate": "2020-03-08T18:30:00.000Z","startTimeH": 4,"startTimeM": 4}'
 
 ```
 

@@ -33,7 +33,7 @@ Example Request:
        "description": "Restart device",
        "c8y_Restart": {}
      },
-     "creationRamp":45,
+     "creationRamp":45.0,
      "groupId":"10205",
      "startDate":"2015-05-01T22:21:22"
     }
@@ -51,7 +51,7 @@ Example response:
        "description": "Restart device",
        "c8y_Restart": {}
      },
-     "creationRamp":45,
+     "creationRamp":45.0,
      "groupId":"10205",
      "startDate":"2015-05-01T22:21:22"
      "progress":
@@ -90,7 +90,7 @@ Example Response:
            "description": "Restart device",
            "c8y_Restart": {}
          },
-         "creationRamp":45,
+         "creationRamp":45.0,
          "groupId":"10205",
          "startDate":"2015-05-01T22:21:22"
          "progress":
@@ -109,7 +109,7 @@ Example Response:
              "text": "Do something"
            }
          },
-         "creationRamp":15,
+         "creationRamp":15.0,
          "groupId":"10201",
          "startDate":"2015-05-05T22:21:22"
          "progress":

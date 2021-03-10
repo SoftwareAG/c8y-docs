@@ -36,7 +36,7 @@ The available firmware objects will be displayed as a list.
 ![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Each entry shows the firmware name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular firmware.
-At the left in the top menu bar, you can filter the repository by name, description and device type.
+At the left in the top menu bar, you can filter the repository entries by name, description or device type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches.
 
@@ -114,7 +114,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a modal.
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
 
 
 ##### To install/replace firmware on a device
@@ -127,7 +127,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in a modal. The status of the last operation is also shown on the **Firmware** tab.
+The operation details are shown in a separate window when clicking on the operation. The status of the last operation is also shown on the **Firmware** tab.
 
 
 ##### To install/update firmware on multiple devices
@@ -157,7 +157,7 @@ The available software objects will be displayed as a list.
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
-At the left in the top menu bar, you can filter the repository by name, description, device type and configuration type.
+At the left in the top menu bar, you can filter the repository entries by name, description, device type or configuration type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
@@ -220,7 +220,7 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a modal.  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.  
 
 ##### To install software on a device
 
@@ -232,7 +232,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in a modal. The status of the last operation is also shown on the **Software** tab.
+The operation details are shown in a separate window when clicking on the operation. The status of the last operation is also shown on the **Software** tab.
 
 ![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 

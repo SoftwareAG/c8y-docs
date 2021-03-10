@@ -144,7 +144,7 @@ The following parameters can be specified:
 
 ### <a name="domain-name"></a>Domain name
 
-A key feature of the enterprise tenant is the ability to operate the Cumulocity IoT platform using a custom domain name. This
+A key feature of the Enterprise tenant is the ability to operate the Cumulocity IoT platform using a custom domain name. This
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
@@ -195,7 +195,7 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 #### DNS requirements for enterprise domains
 
-The DNS entries for your custom domain have to be configured in a way that all requests are routed to the IoT platform.
+The DNS entries for your custom domain have to be configured in a way that all requests are routed to the Cumulocity IoT platform.
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
 domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of Cumulocity IoT. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
@@ -203,11 +203,11 @@ is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Pl
 conflicting A entries.
 
 > **Example** If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
->```shell
-> NAME                  TYPE   VALUE
-> ----------------------------------------------------
-> *.iot.mycompany.com.   CNAME  cumulocity.com.
->```
+```shell
+NAME                  TYPE   VALUE
+----------------------------------------------------
+*.iot.mycompany.com.   CNAME  cumulocity.com.
+```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
 

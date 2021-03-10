@@ -57,7 +57,7 @@ Smart rules can be instantiated multiple times.
 
 A smart rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-Navigate to the **Info** tab of the group or device and enable/disable the respective rule using the toggle.
+Navigate to the **Info** tab of the group or device and activate/disactivate the respective rule using the toggle.
 
 <img src="/images/users-guide/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
 

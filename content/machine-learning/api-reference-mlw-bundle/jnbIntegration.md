@@ -120,7 +120,8 @@ Updates the contents of the Jupyter Notebook file.
 |resourceID (string)| required path variable of an existing resource ID
 |content (string)| required body parameter for updated contents of Jupyter Notebook
 |format (string)| required body parameter for format (ex. 'json')
-|type (string)| required required body parameter for type (ex. 'notebook')
+|type (string)| required body parameter for type (ex. 'notebook')
+|export (boolean)| required body parameter to export notebook to python file.
 
 
 **Example Request**

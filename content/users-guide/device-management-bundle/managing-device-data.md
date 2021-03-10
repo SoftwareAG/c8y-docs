@@ -36,6 +36,7 @@ The available firmware objects will be displayed as a list.
 ![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Each entry shows the firmware name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular firmware.
+At the left in the top menu bar, you can filter the repository by name, description and device type.
 
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches.
 
@@ -53,7 +54,7 @@ The list of versions and patches shows the version name and the name of the firm
 2. In the resulting dialog box,
 	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the upcoming window), add a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
-3. You can define the device type filter when adding a new firmware.
+3. Optionally, you can define the device type filter when adding a new firmware.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
@@ -113,7 +114,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a modal.
 
 
 ##### To install/replace firmware on a device
@@ -126,7 +127,8 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Firmware** tab.
+The operation details are shown in a modal. The status of the last operation is also shown on the **Firmware** tab.
+
 
 ##### To install/update firmware on multiple devices
 
@@ -155,6 +157,7 @@ The available software objects will be displayed as a list.
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
+At the left in the top menu bar, you can filter the repository by name, description, device type and configuration type.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
@@ -171,7 +174,7 @@ The versions are ordered by their creation time (descending).
 2. In the resulting dialog box,
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the upcoming window), a description and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
-3. You can define the device type filter when adding a new software.
+3. Optionally, you can define the device type filter when adding a new software.
 3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
 4. Click **Save**.
 
@@ -217,7 +220,7 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a modal.  
 
 ##### To install software on a device
 
@@ -229,7 +232,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Software** tab.
+The operation details are shown in a modal. The status of the last operation is also shown on the **Software** tab.
 
 ![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 

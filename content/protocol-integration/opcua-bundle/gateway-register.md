@@ -136,7 +136,7 @@ gateway:
       # Socket timeout (milliseconds)
       socketTimeout: 5000
       # Maximum number of connections via HTTP route
-      maxPerRoute: 50
+      maxPerRoute: 100
       # Maximum total size of the HTTP connection pool used for external, custom actions.
       maxTotal: 100
       # The inactivityLeaseTimeout setting defines a period, after which persistent connections to
@@ -147,20 +147,18 @@ gateway:
       # How often is the alarm aggregation for failed external calls invoked?
       failureAlarmFixedDelay: 15 # seconds
       failureHandling:
-        # activate custom action rescheduled
-        enabled: true
-        # Time in seconds queue will be flushed to event repository
-        flushQueueDelay: 60
-        # Time in seconds reschedule will start
-        reScheduleDelay: 150
-        # Count of elements per page within one retry
-        reScheduleElements: 100
-        # Maximum size of the queue before automatic be flushed to event repository
-        failedCustomActionQueueSize: 100
-        # Number of retries failed custom action will resend again
+        # Whether a failed http post should be retried later or not. This can be overridden by the configuration in device type. Default is false
+        enabled: false
+        # Number of retries a failed custom action will be resent
         maxRetries: 5
-        # oldest age of events to get from event repository
-        pendingMaxAge: 86400
+        # If retry is enabled, the exceptions of http status codes can be provided here. Http post which is failed with those codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled.
+        noRetryHttpCodes:
+        # Minimum delay in seconds between two retries
+        retryDelay: 120
+      # Max queue size of the http post actions queue. This counts all the elements that have been submitted to the thread pool queue and those have not.
+      maxQueueSize: 25000
+      # Worker thread (which performs the actual http request) pool size
+      threadPoolSize: 200
 
     # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
     # configures how often this happens.

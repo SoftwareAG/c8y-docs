@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: LightweightM2M
+title: LWM2M
 layout: bundle
 aliases:
   - /users-guide/optional-services/#lwm2m

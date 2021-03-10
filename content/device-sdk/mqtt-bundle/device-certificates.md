@@ -29,7 +29,7 @@ Cumulocity IoT supports two ways to register devices which will be able to conne
 
 **Auto registration**
 
-The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the Cumulocity IoT platform with a flag _autoRegistrationEnabled_ which has value true. For manage auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the Cumulocity IoT platform with a flag _autoRegistrationEnabled_ with a value of true. To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
 
 **Bulk registration**
 

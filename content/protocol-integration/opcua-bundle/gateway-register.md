@@ -147,17 +147,17 @@ gateway:
       # How often is the alarm aggregation for failed external calls invoked?
       failureAlarmFixedDelay: 15 # seconds
       failureHandling:
-        # Whether a failed http post should be retried later or not. This can be overridden by the configuration in device type. Default is false
+        # Whether a failed HTTP POST should be retried later or not. This can be overridden by the configuration in device type. Default is false
         enabled: false
-        # Number of retries a failed custom action will be resent
+        # Number of retries a failed HTTP POST will be resent
         maxRetries: 5
-        # If retry is enabled, the exceptions of http status codes can be provided here. Http post which is failed with those codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled.
+        # If retry is enabled, the exceptions of HTTP status codes can be provided here. A HTTP POST which failed with one of these codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled
         noRetryHttpCodes:
         # Minimum delay in seconds between two retries
         retryDelay: 120
-      # Max queue size of the http post actions queue. This counts all the elements that have been submitted to the thread pool queue and those have not.
+      # Max queue size of the HTTP POST actions queue
       maxQueueSize: 25000
-      # Worker thread (which performs the actual http request) pool size
+      # Worker thread (which performs the actual HTTP request) pool size
       threadPoolSize: 200
 
     # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval

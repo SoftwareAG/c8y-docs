@@ -127,7 +127,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in a separate window when clicking on the operation. The status of the last operation is also shown on the **Firmware** tab.
+Click on the operation to view its details. The status of the last operation is also shown on the **Firmware** tab.
 
 
 ##### To install/update firmware on multiple devices
@@ -234,7 +234,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in a separate window when clicking on the operation. The status of the last operation is also shown on the **Software** tab.
+Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
 
 ![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 

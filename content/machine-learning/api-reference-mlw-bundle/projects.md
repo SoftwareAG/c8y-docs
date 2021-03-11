@@ -92,8 +92,8 @@ Creates a new project with given project name and description.
 
 |PARAMS||
 |:---|:---|
-|name (string)|required name for the project
-|description (string)|required description of the project
+|name (string)|required name for the project as body parameters
+|description (string)|required description of the project as body parameters
 
 **Example Request**
 
@@ -192,7 +192,7 @@ Commit the resources of project for version control.
 |PARAMS||
 |:---|:---|
 |projectID (string)|{{project ID}}
-|listOfResources (list)|list of resource IDs
+|listOfResources (list)|list of resource IDs as body parameters
 
 
 **Example Request**
@@ -315,8 +315,8 @@ Updates the exiting project name and description with given new project name and
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project for which the name needs to be changed
-|name (string)|required name for the project
-|description (string)|required description of the project
+|name (string)|required name for the project as body parameters
+|description (string)|required description of the project as body parameters
 
 **Example Request**
 
@@ -767,11 +767,12 @@ Scans the project structure to list any un-reported file in the system, which wo
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|refresh|{{True/False}}
+
 
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project 
+|refresh|{{True/False}}
 
 **Example Request**
 
@@ -1256,11 +1257,12 @@ To upload the resource files to use in the project, files like csv, txt, json.
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|file|{{file Object}}
+
 
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project 
+|file|{{file Object}}
 
 **Example Request**
 
@@ -1412,7 +1414,7 @@ To create a new Workflow file.
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project 
-|type|{{type}}
+|type|wf
 |name|{{name of file}}
 |modelID|{{modelID}}
 |preProcessingID|{{preProcessingID}}
@@ -1424,7 +1426,7 @@ To create a new Notebook file.
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project 
-|type|{{type}}
+|type|ipynb
 |name|{{name of file}}
 
 To create a new Architecture file for NN Designer.
@@ -1434,7 +1436,7 @@ To create a new Architecture file for NN Designer.
 |:---|:---|
 |projectID (string)| project ID of the project 
 |template|{{template}}
-|type|{{type}}
+|type|arch
 |name|{{name of file}}
 
 
@@ -1444,7 +1446,7 @@ To create a new Pipeline file.
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project 
-|type|{{type}}
+|type|pipeline
 |name|{{name of file}}
 |modelID|{{modelID}}
 |preProcessingID|{{preProcessingID}}
@@ -1762,7 +1764,7 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 }
 ```
 
-### GET - Preview the Code file
+### GET - Preview the files (Code/Data/Architecture)
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
@@ -1818,217 +1820,6 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### GET - Preview the Data file
-
-```
-{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
-```
-
-Gets the content of the Data file.
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
-
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/preview' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-
-{
-    "columns": [
-        "col1",
-        "col2",
-        "col3",
-        "col4",
-        "target"
-    ],
-    "rows": [
-        {
-            "col1": "5.1",
-            "col2": "3.5",
-            "col3": "1.4",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.9",
-            "col2": "3.0",
-            "col3": "1.4",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.7",
-            "col2": "3.2",
-            "col3": "1.3",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.6",
-            "col2": "3.1",
-            "col3": "1.5",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "5.0",
-            "col2": "3.6",
-            "col3": "1.4",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "5.4",
-            "col2": "3.9",
-            "col3": "1.7",
-            "col4": "0.4",
-            "target": "0"
-        },
-        {
-            "col1": "4.6",
-            "col2": "3.4",
-            "col3": "1.4",
-            "col4": "0.3",
-            "target": "0"
-        },
-        {
-            "col1": "5.0",
-            "col2": "3.4",
-            "col3": "1.5",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.4",
-            "col2": "2.9",
-            "col3": "1.4",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.9",
-            "col2": "3.1",
-            "col3": "1.5",
-            "col4": "0.1",
-            "target": "0"
-        },
-        {
-            "col1": "5.4",
-            "col2": "3.7",
-            "col3": "1.5",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.8",
-            "col2": "3.4",
-            "col3": "1.6",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "4.8",
-            "col2": "3.0",
-            "col3": "1.4",
-            "col4": "0.1",
-            "target": "0"
-        },
-        {
-            "col1": "4.3",
-            "col2": "3.0",
-            "col3": "1.1",
-            "col4": "0.1",
-            "target": "0"
-        },
-        {
-            "col1": "5.8",
-            "col2": "4.0",
-            "col3": "1.2",
-            "col4": "0.2",
-            "target": "0"
-        },
-        {
-            "col1": "5.7",
-            "col2": "4.4",
-            "col3": "1.5",
-            "col4": "0.4",
-            "target": "0"
-        },
-        {
-            "col1": "5.4",
-            "col2": "3.9",
-            "col3": "1.3",
-            "col4": "0.4",
-            "target": "0"
-        },
-        {
-            "col1": "5.1",
-            "col2": "3.5",
-            "col3": "1.4",
-            "col4": "0.3",
-            "target": "0"
-        },
-        {
-            "col1": "5.7",
-            "col2": "3.8",
-            "col3": "1.7",
-            "col4": "0.3",
-            "target": "0"
-        },
-        {
-            "col1": "5.1",
-            "col2": "3.8",
-            "col3": "1.5",
-            "col4": "0.3",
-            "target": "0"
-        }
-    ],
-    "pagination": {
-        "totalRecords": 150,
-        "page": 1,
-        "size": 20,
-        "totalPages": 8
-    }
-}
-
-```
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/preview' \
-
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "No auth information found",
-    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
-}
-```
 ### GET - Preview the Notebook file
 
 ```
@@ -2119,283 +1910,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
-### GET - Preview the Architecture file
-```
-{{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview
-```
-Gets the content of the Architecture file.
 
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-
-{
-  "content": {
-    "class": "GraphLinksModel",
-    "linkKeyProperty": "key",
-    "linkFromPortIdProperty": "fromPort",
-    "linkToPortIdProperty": "toPort",
-    "modelData": {
-      "prop": "value"
-    },
-    "nodeDataArray": [
-      {
-        "color": "white",
-        "itemType": "LAYER",
-        "layerType": "Dense",
-        "trainable": true,
-        "name": "Dense",
-        "properties": [
-          {
-            "dataType": "string",
-            "hint": "Activation function for the dense layer",
-            "id": "activation",
-            "label": "Activation Function",
-            "options": [
-              "linear",
-              "tanh",
-              "relu",
-              "sigmoid",
-              "softmax"
-            ],
-            "value": "relu"
-          },
-          {
-            "dataType": "integer",
-            "hint": "Neurons for fully connected layer",
-            "id": "units",
-            "label": "Units",
-            "options": [],
-            "value": "10"
-          },
-          {
-            "dataType": "array",
-            "hint": "only required if dragged first",
-            "id": "inputDimension",
-            "label": "Input Dimension",
-            "options": [],
-            "value": "none,2"
-          }
-        ],
-        "text": "Dense",
-        "key": "Dense",
-        "loc": "600 90"
-      },
-      {
-        "color": "white",
-        "itemType": "LAYER",
-        "layerType": "Dense",
-        "trainable": true,
-        "name": "Dense",
-        "properties": [
-          {
-            "dataType": "string",
-            "hint": "Activation function for the dense layer",
-            "id": "activation",
-            "label": "Activation Function",
-            "options": [
-              "linear",
-              "tanh",
-              "relu",
-              "sigmoid",
-              "softmax"
-            ],
-            "value": "relu"
-          },
-          {
-            "dataType": "integer",
-            "hint": "Neurons for fully connected layer",
-            "id": "units",
-            "label": "Units",
-            "options": [],
-            "value": "1000"
-          },
-          {
-            "dataType": "array",
-            "hint": "only required if dragged first",
-            "id": "inputDimension",
-            "label": "Input Dimension",
-            "options": [],
-            "value": ""
-          }
-        ],
-        "text": "Dense",
-        "key": "Dense2",
-        "loc": "600 170"
-      },
-      {
-        "color": "white",
-        "itemType": "LAYER",
-        "layerType": "Dense",
-        "trainable": true,
-        "name": "Dense",
-        "properties": [
-          {
-            "dataType": "string",
-            "hint": "Activation function for the dense layer",
-            "id": "activation",
-            "label": "Activation Function",
-            "options": [
-              "linear",
-              "tanh",
-              "relu",
-              "sigmoid",
-              "softmax"
-            ],
-            "value": "relu"
-          },
-          {
-            "dataType": "integer",
-            "hint": "Neurons for fully connected layer",
-            "id": "units",
-            "label": "Units",
-            "options": [],
-            "value": "2000"
-          },
-          {
-            "dataType": "array",
-            "hint": "only required if dragged first",
-            "id": "inputDimension",
-            "label": "Input Dimension",
-            "options": [],
-            "value": ""
-          }
-        ],
-        "text": "Dense",
-        "key": "Dense3",
-        "loc": "600 250"
-      },
-      {
-        "color": "white",
-        "itemType": "LAYER",
-        "layerType": "Dense",
-        "trainable": true,
-        "name": "Dense",
-        "properties": [
-          {
-            "dataType": "string",
-            "hint": "Activation function for the dense layer",
-            "id": "activation",
-            "label": "Activation Function",
-            "options": [
-              "linear",
-              "tanh",
-              "relu",
-              "sigmoid",
-              "softmax"
-            ],
-            "value": "sigmoid"
-          },
-          {
-            "dataType": "integer",
-            "hint": "Neurons for fully connected layer",
-            "id": "units",
-            "label": "Units",
-            "options": [],
-            "value": "1"
-          },
-          {
-            "dataType": "array",
-            "hint": "only required if dragged first",
-            "id": "inputDimension",
-            "label": "Input Dimension",
-            "options": [],
-            "value": ""
-          }
-        ],
-        "text": "Dense",
-        "key": "Dense4",
-        "loc": "600 330"
-      }
-    ],
-    "linkDataArray": [
-      {
-        "from": "Dense",
-        "to": "Dense2",
-        "fromPort": "b",
-        "toPort": "t",
-        "key": -1,
-        "points": [
-          600,
-          109.69914805335318,
-          600,
-          119.69914805335318,
-          600,
-          130,
-          600,
-          130,
-          600,
-          140.30085194664682,
-          600,
-          150.30085194664682
-        ]
-      },
-      {
-        "from": "Dense2",
-        "to": "Dense3",
-        "fromPort": "b",
-        "toPort": "t",
-        "key": -2,
-        "points": [
-          600,
-          189.69914805335318,
-          600,
-          199.69914805335318,
-          600,
-          210,
-          600,
-          210,
-          600,
-          220.30085194664684,
-          600,
-          230.30085194664684
-        ]
-      },
-      {
-        "from": "Dense3",
-        "to": "Dense4",
-        "fromPort": "b",
-        "toPort": "t",
-        "key": -3,
-        "points": [
-          600,
-          269.6991480533532,
-          600,
-          279.6991480533532,
-          600,
-          290,
-          600,
-          290,
-          600,
-          300.3008519466468,
-          600,
-          310.3008519466468
-        ]
-      }
-    ]
-  }
-}
-
-```
 
 ### PUT - Add content to the file and save
 
@@ -2413,7 +1928,7 @@ Updates the contents of a file.
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|content|{{content}}
+|content|{{content}} as body parameter
 
 
 **Example Request**

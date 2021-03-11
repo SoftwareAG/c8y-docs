@@ -186,10 +186,10 @@ Train an AutoML model by using pre-processing options for variables and using th
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|data |filled form values
-|idforData |required description of the project
-|target_variable|column name which is target
-|problem_type|Classification/Regression
+|data |filled form values as body parameters
+|idforData |required description of the project as body parameters
+|target_variable|column name which is target as body parameters
+|problem_type|Classification/Regression as body parameters
 
 |HYPER- PARAMS||
 |:---|:---|
@@ -564,8 +564,8 @@ Train an Anomaly detection model by using pre-processing options for variables a
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|data |filled form values
-|idforData |required description of the project
+|data |filled form values as body parameters
+|idforData |required description of the project as a body paramerter
 
 
 |HYPER- PARAMS||

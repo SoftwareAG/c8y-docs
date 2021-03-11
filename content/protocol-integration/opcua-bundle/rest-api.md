@@ -220,6 +220,15 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
 </td>
 </tr>
+<tr>
+<td>enableModelChangeEvent</td>
+<td>boolean</td>
+<td>no</td>
+<td>Boolean. The subscription to model change event can be enabled/disabled using this property. Default value is 'false' (disabled), 
+which means any change in the address space nodes of the OPC UA server in runtime will not be automatically updated in the address space of Cumulocity. 
+This property has to be explicitly set as 'true' to trigger the partial address space scan by the gateway. </td>
+</tr>
+
 </tbody>
 </table>
 

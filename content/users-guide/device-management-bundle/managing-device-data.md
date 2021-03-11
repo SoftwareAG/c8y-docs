@@ -12,7 +12,7 @@ The Device Management application provides various features that support you in 
 |:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions and patches in the firmware repository and how to install or update them on devices. |
 | [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
-| [Managing configurations](#configuration-repository) | How to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot.                         |
+| [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
 | [Device credentials](#credentials)                   | How to manage all credentials generated for your connected devices.                                                                         |
 | [Device profiles](#device-profiles)                  | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
 | [Trusted certificates](#trusted-certificates)        | How to manage trusted certificates.                                                                                                         |
@@ -115,7 +115,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
-
+![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### To install/replace firmware on a device
 
@@ -220,7 +220,9 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
+
+![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
 
 ##### To install software on a device
 

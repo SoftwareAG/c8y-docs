@@ -116,8 +116,6 @@ Example request: Create a new user
 	  "sendPasswordResetEmail": true
     }
 
-When set to `true`, the field `sendPasswordResetEmail` will cause Cumulocity IoT to send a password reset email to the email address specified.
-
 Example response:
 
     HTTP/1.1 201 Created

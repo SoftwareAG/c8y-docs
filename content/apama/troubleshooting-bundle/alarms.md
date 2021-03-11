@@ -208,7 +208,7 @@ monitor Sample{
 
 Apama-ctrl generates the following alarm for the above example:
 
-- Alarm type: `APAMA_CTRL_ERROR_<HASHCODE>`mult
+- Alarm type: `APAMA_CTRL_ERROR_<HASHCODE>`
 - Alarm text: &lt;Monitor name&gt;-Error on line &lt;x&gt; of monitor : IndexOutOfBoundsException - Out of bounds index passed to sequence [] operator - Sample
 - Alarm severity: MAJOR
 

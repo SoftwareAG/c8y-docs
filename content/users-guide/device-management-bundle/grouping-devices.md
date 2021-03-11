@@ -150,7 +150,7 @@ The device details for the specific device stored under **All devices** in the D
 
 ### <a name="restructuring-groups"></a>Restructuring groups and devices
 
-You can easily restructure groups, sub-groups and devices by a drag and drop functionality.
+You can easily restructure groups, subgroups and devices by a drag and drop functionality.
 
 #### To move a group
 

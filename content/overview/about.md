@@ -5,9 +5,20 @@ layout: bundle
 aliases: -/release-notes
 ---
 
-These release notes document all relevant changes that have been implemented in a release since the previous release.
 
-><b>Important:</b> These release notes only cover changes implemented in the <b>Cumulocity IoT Core platform</b>. For release information on Cumulocity IoT Edge, Cumulocity IoT Streaming Analytics, Cumulocity IoT Machine Learning and Cumulocity IoT DataHub refer to the respective guides in our documentation. 
+These release notes document all relevant changes (improvements, migration notes, documentation changes, fixes) that have been implemented in a release since the previous release.
 
+The following components are included:
+
+* Cumulocity IoT Core consisting of
+	* Cumulocity IoT platform services
+	* Cumulocity IoT application enablement
+	* Cumulocity IoT device management & connectivity
+* Cumulocity IoT Edge 
+* Cumulocity IoT Streaming Analytics
+* Cumulocity IoT Machine Learning
+* Cumulocity IoT DataHub
+
+>**Info:** The release notes reach back to release 10.4.0. For release notes on older releases, [contact us](https://cumulocity.com/guides/about-doc/contacting-support/).
 
 

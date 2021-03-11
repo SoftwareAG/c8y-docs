@@ -66,7 +66,7 @@ For building management, it is most common that a group of sensors inside a buil
 
 In the asset hierarchy, Cumulocity IoT distinguishes between top-level groups and subgroups, so called subassets.
 
-In the navigator, top-level groups are shown in the **Group** menu at top-level. Subassets are shown under its top-level group. Moreover, subassets are shown  in the **Subasset** tab of the particular group.
+In the navigator, top-level groups are shown in the **Group** menu at top-level. Subassets are shown under its top-level group. Moreover, subassets are shown in the **Subassets** tab of the particular group.
 
 <img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Subassets"/>
 
@@ -76,7 +76,7 @@ When selecting an object in the asset hierarchy, details on the selected object 
 
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
-To navigate further in the asset hierarchy, use the navigator or select an object in the **Subasset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
+To navigate further in the asset hierarchy, use the navigator or select an object in the **Subassets** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
 ### Asset details
 
@@ -106,7 +106,7 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 >**Info:** A group can also be created with "0" devices in it.
 
-To add a new group as a child of an existing asset, navigate to its **Subasset** tab and click **Add Group** in the top menu bar.
+To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
 ### <a name="assigning-devices"></a>To assign devices to a group
 

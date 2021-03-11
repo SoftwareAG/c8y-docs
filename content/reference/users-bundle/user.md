@@ -58,7 +58,7 @@ A "User" resource type contains the following fields:
 <td align="left">sendPasswordResetEmail</td>
 <td align="left">boolean</td>
 <td align="left">1</td>
-<td align="left">When set to true, this field will cause Cumulocity IoT to send a password reset email to the email address specified. If there is no password specified, this must be specified and it must be set to true.</td>
+<td align="left">When set to true, this field will cause Cumulocity IoT to send a password reset email to the email address specified. If there is no password specified when creating a new user with a POST request, this must be specified and it must be set to true.</td>
 <td align="left">optional</td>
 </tr>
 <tr>

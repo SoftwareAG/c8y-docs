@@ -258,5 +258,3 @@ Acceptable query parameters are:
 * dateTo
 
 Since this operations can take a lot of time, request returns after maximum 0.5 sec of processing, and updating is continued as a background process in the platform.
-
-> Alarms can be updated even if they are in maintenance mode.

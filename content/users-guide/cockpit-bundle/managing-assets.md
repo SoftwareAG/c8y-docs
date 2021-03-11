@@ -64,11 +64,11 @@ For building management, it is most common that a group of sensors inside a buil
 
 ### Navigating assets
 
-In the asset hierarchy, Cumulocity IoT distinguishes between top-level groups and subgroups, so called sub-assets.
+In the asset hierarchy, Cumulocity IoT distinguishes between top-level groups and subgroups, so called subassets.
 
-In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown under its top-level group. Moreover, sub-assets are shown  in the **Sub-asset** tab of the particular group.
+In the navigator, top-level groups are shown in the **Group** menu at top-level. Subassets are shown under its top-level group. Moreover, subassets are shown  in the **Subasset** tab of the particular group.
 
-<img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
+<img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Subassets"/>
 
 When selecting an object in the asset hierarchy, details on the selected object are displayed at the right.
 
@@ -76,7 +76,7 @@ When selecting an object in the asset hierarchy, details on the selected object 
 
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
-To navigate further in the asset hierarchy, use the navigator or select an object in the **Sub-Asset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
+To navigate further in the asset hierarchy, use the navigator or select an object in the **Subasset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
 ### Asset details
 
@@ -86,7 +86,7 @@ Several tabs are available for each object, dependent of the object type:
 |:---|:---|:---
 |Info|Shows a list of [Smart Rules](#smart-rules) created for the object.|Group, Device
 |Alarms|Displays alarms for the device. For details on alarms, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring)|Device
-|Sub-assets|Shows the sub-assets of a group.|Group
+|Subassets|Shows the subassets of a group.|Group
 |Data explorer|Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).|Group, Device
 |Location|Shows the current location of a device.|Device
 
@@ -106,7 +106,7 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 >**Info:** A group can also be created with "0" devices in it.
 
-To add a new group as a child of an existing asset, navigate to its **Sub-asset** tab and click **Add Group** in the top menu bar.
+To add a new group as a child of an existing asset, navigate to its **Subasset** tab and click **Add Group** in the top menu bar.
 
 ### <a name="assigning-devices"></a>To assign devices to a group
 
@@ -114,7 +114,7 @@ Before adding a device to the asset hierarchy, it must be connected to Cumulocit
 
 To assign a device to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed.
+1. In the navigator, select a group from the **Group** menu and open its the **Subassets** tab. In the **Subassets** tab, all devices that are assigned to the respective group are displayed.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 3. Select the devices you want to add from the list.
@@ -122,7 +122,7 @@ To assign a device to a group, follow these steps:
 
 <img src="/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
-The devices will be shown as sub-assets in the **Sub-assets** tab.
+The devices will be shown as subassets in the **Subassets** tab.
 
 ### To edit a group
 
@@ -137,15 +137,15 @@ To delete a top-level group from the navigator, follow these steps:
 1. Click **Groups** in the navigator.
 2. In the **Groups** page, click the menu icon at the right of the group entry and then click **Delete**.
 
-To delete a group from the **Sub-assets** tab of another group, follow these steps:
+To delete a group from the **Subassets** tab of another group, follow these steps:
 
-1. Navigate to the **Sub-assets** tab.
+1. Navigate to the **Subassets** tab.
 2. Click the menu icon at the right of the group entry and then click **Delete**.
 
 
 ### To unassign a device from a group
 
-1. Navigate to the **Sub-assets** tab of the group.
+1. Navigate to the **Subassets** tab of the group.
 2. Click the menu icon at the right of the device you want to unassign and click **Unassign**.
 
-Unassigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.
+Unassigning a device does not remove the device, subdevices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.

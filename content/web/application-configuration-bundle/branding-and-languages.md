@@ -67,7 +67,7 @@ npm install @c8y/style
 
 1. Create a LESS file called for instance ```branding.less```.
 2. Save it inside a new folder, which can have any name you like.
-3. Inside this folder, create a sub folder for images.
+3. Inside this folder, create a subfolder for images.
 
 ```
 my-application

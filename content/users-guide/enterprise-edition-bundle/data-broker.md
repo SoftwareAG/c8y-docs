@@ -76,7 +76,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 <tbody>
 <tr>
 <td style="text-align:left">Group or device</td>
-<td style="text-align:left">The group or device that is forwarded. If you select a group here all sub-groups and sub-devices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
+<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
 </tr>
 <tr>
 <td style="text-align:left">API</td>
@@ -151,7 +151,7 @@ Click the menu icon at the right of a data connector entry and then click **Dele
 
 #### To view alarms for a data connector
 
-Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector. 
+Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
@@ -196,5 +196,5 @@ On the source tenant, data broker queues data that cannot be forwarded immediate
 ![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
 
 Similarly, an alarm is raised when the input queue is overflown.
- 
+
 To reduce the number of alarms, alarms are not triggered more often than once per minute.

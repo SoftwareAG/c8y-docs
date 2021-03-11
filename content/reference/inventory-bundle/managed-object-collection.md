@@ -170,7 +170,6 @@ The following sections explain how an application will handle a query in the par
 
 * Simple: `name`
 * Nested: `c8y_Availability.status`
-* Array: `c8y_Availability.statuses = [1, 2, 3]`
 
 ##### Grouping query operators:
 

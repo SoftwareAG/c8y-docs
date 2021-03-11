@@ -84,7 +84,7 @@ HTTP/1.1
 }
 ```
 
-In case of executing range queries on measurements API, like query by dateFrom and dateTo, the oldest measurements are returned first. It is possible to change the order by adding the query parameter "revert=true" to the request URL.
+In case of executing [range queries](https://en.wikipedia.org/wiki/Range_query_(database)) on measurements API, like query by dateFrom and dateTo, the oldest measurements are returned first. It is possible to change the order by adding the query parameter "revert=true" to the request URL.
 In many use cases it is required to get the latest measurement sent from the device. This can be accomplished by passing "revert" param together with "dateFrom" and "dateTo" params to sort the outcome by date, e.g. pass dateFrom from a year ago, and dateTo from the feature.
 
 Note that the `source` parameter is optional in the <kbd>/measurement/measurements</kbd> endpoint. If a user doesn't have access to certain devices, the results can be empty. However, in the <kbd>/measurement/measurements/series</kbd> endpoint (see below) the `source` parameter is required, so the access validation is done before any post filtering operation.

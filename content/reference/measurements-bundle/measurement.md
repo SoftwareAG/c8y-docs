@@ -20,7 +20,7 @@ layout: redirect
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">POST</th>
 </tr>
 </thead>
 
@@ -91,7 +91,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">POST</th>
 </tr>
 </thead>
 

@@ -17,20 +17,20 @@ Creating your own ID will only work on ManagedObjects.
 
 ### ManagedObjects
 
-|Available outputs|
-|:--|
-|CreateManagedObject|
-|UpdateManagedObject|
-|DeleteManagedObject|
+| Available outputs   |
+|:--------------------|
+| CreateManagedObject |
+| UpdateManagedObject |
+| DeleteManagedObject |
 
-|Parameter|Data type|Description|Mandatory|
-|:---|:----------|:-------------|:----------|
-|id|[ID](/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE and DELETE|
-|type|String|The type of the ManagedObject|No|
-|name|String|The name of the ManagedObject|No|
-|owner|String|The owner of the ManagedObject. If not set data created from event processing will have the owner "cep"|No|
-|childAssets|Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt;|A set of [IDs](/event-language/data-model#id) of all child assets|No|
-|childDevices|Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt;|A set of [IDs](/event-language/data-model#id) of all child devices|No|
+| Parameter    | Data type                                                           | Description                                                                                             | Mandatory         |
+|:-------------|:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|:------------------|
+| id           | [ID](/event-language/data-model#id) or String                       | ID of the ManagedObject                                                                                 | UPDATE and DELETE |
+| type         | String                                                              | The type of the ManagedObject                                                                           | No                |
+| name         | String                                                              | The name of the ManagedObject                                                                           | No                |
+| owner        | String                                                              | The owner of the ManagedObject. If not set data created from event processing will have the owner "cep" | No                |
+| childAssets  | Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt; | A set of [IDs](/event-language/data-model#id) of all child assets                                       | No                |
+| childDevices | Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt; | A set of [IDs](/event-language/data-model#id) of all child devices                                      | No                |
 
 Example:
 
@@ -54,19 +54,19 @@ Example:
 
 ### Events
 
-|Available outputs|
-|:----------------|
-|CreateEvent|
-|EventUpdated|
-|DeleteEvent|
+| Available outputs |
+|:------------------|
+| CreateEvent       |
+| UpdateEvent       |
+| DeleteEvent       |
 
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|id|[ID](/event-language/data-model#id) or String|The ID of the Event|DELETE|
-|type|String|The type of the Event|CREATE|
-|text|String|The text of the Event|CREATE|
-|time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Event|CREATE|
+| Parameter | Data type                                     | Description                                             | Mandatory |
+|:----------|:----------------------------------------------|:--------------------------------------------------------|:----------|
+| id        | [ID](/event-language/data-model#id) or String | The ID of the Event                                     | DELETE    |
+| type      | String                                        | The type of the Event                                   | CREATE    |
+| text      | String                                        | The text of the Event                                   | CREATE    |
+| time      | Date                                          | The time when the Event was created (as sent by device) | CREATE    |
+| source    | [ID](/event-language/data-model#id) or String | The ID of the device which created the Event            | CREATE    |
 
 Example:
 
@@ -85,17 +85,17 @@ Example:
 
 ### Measurements
 
-|Available outputs|
-|:----------------|
-|CreateMeasurement|
-|DeleteMeasurement|
+| Available outputs |
+|:------------------|
+| CreateMeasurement |
+| DeleteMeasurement |
 
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|id|[ID](/event-language/data-model#id) or String|The ID of the Measurement|DELETE|
-|type|String|The type of the Measurement|CREATE|
-|time|Date|The time when the Measurement was created (as sent by device)|CREATE|
-|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Measurement|CREATE|
+| Parameter | Data type                                     | Description                                                   | Mandatory |
+|:----------|:----------------------------------------------|:--------------------------------------------------------------|:----------|
+| id        | [ID](/event-language/data-model#id) or String | The ID of the Measurement                                     | DELETE    |
+| type      | String                                        | The type of the Measurement                                   | CREATE    |
+| time      | Date                                          | The time when the Measurement was created (as sent by device) | CREATE    |
+| source    | [ID](/event-language/data-model#id) or String | The ID of the device which created the Measurement            | CREATE    |
 
 Example:
 
@@ -116,16 +116,16 @@ Example:
 
 ### Operations
 
-|Available outputs|
-|:----------------|
-|CreateOperation|
-|UpdateOperation|
+| Available outputs |
+|:------------------|
+| CreateOperation   |
+| UpdateOperation   |
 
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|id|[ID](/event-language/data-model#id) or String|The ID of the Operation|UPDATE|
-|status|[OperationStatus](/event-language/data-model#operationstatus) or String|The current status of the Operation|CREATE|
-|deviceId|[ID](/event-language/data-model#id) or String|The ID of the device which should execute the Operation|CREATE|
+| Parameter | Data type                                                               | Description                                             | Mandatory |
+|:----------|:------------------------------------------------------------------------|:--------------------------------------------------------|:----------|
+| id        | [ID](/event-language/data-model#id) or String                           | The ID of the Operation                                 | UPDATE    |
+| status    | [OperationStatus](/event-language/data-model#operationstatus) or String | The current status of the Operation                     | CREATE    |
+| deviceId  | [ID](/event-language/data-model#id) or String                           | The ID of the device which should execute the Operation | CREATE    |
 
 Example:
 
@@ -146,20 +146,20 @@ Example:
 
 ### Alarms
 
-|Available outputs|
-|:----------------|
-|CreateAlarm|
-|UpdateAlarm|
+| Available outputs |
+|:------------------|
+| CreateAlarm       |
+| UpdateAlarm       |
 
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|id|[ID](/event-language/data-model#id) or String|The ID of the Alarm|UPDATE|
-|type|String|The type of the Alarm|CREATE|
-|severity|[Severity](/event-language/data-model#severity) or String|The severity of the Alarm|CREATE|
-|status|[AlarmStatus](/event-language/data-model#alarmstatus) or String|The status of the Alarm|CREATE|
-|text|String|The text of the Event|CREATE|
-|time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Alarm|CREATE|
+| Parameter | Data type                                                       | Description                                             | Mandatory |
+|:----------|:----------------------------------------------------------------|:--------------------------------------------------------|:----------|
+| id        | [ID](/event-language/data-model#id) or String                   | The ID of the Alarm                                     | UPDATE    |
+| type      | String                                                          | The type of the Alarm                                   | CREATE    |
+| severity  | [Severity](/event-language/data-model#severity) or String       | The severity of the Alarm                               | CREATE    |
+| status    | [AlarmStatus](/event-language/data-model#alarmstatus) or String | The status of the Alarm                                 | CREATE    |
+| text      | String                                                          | The text of the Event                                   | CREATE    |
+| time      | Date                                                            | The time when the Event was created (as sent by device) | CREATE    |
+| source    | [ID](/event-language/data-model#id) or String                   | The ID of the device which created the Alarm            | CREATE    |
 
 Example:
 

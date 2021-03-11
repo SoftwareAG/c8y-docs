@@ -8,14 +8,14 @@ layout: redirect
 
 The Device Management application provides various features that support you in efficiently managing your devices:
 
-|Feature|Description|
-|:---|:---|
-|[Managing device firmware](#firmware-repo)|How to retrieve and manage firmware, firmware versions and patches in the firmware repository and how to install or update them on devices.
-|[Managing device software](#software-repo)|How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.
-|[Managing configurations](#configuration-repository)|How to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot.
-|[Device credentials](#credentials)|How to manage all credentials generated for your connected devices.
-|[Device profiles](#device-profiles)|How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.
-|[Trusted certificates](#trusted-certificates)|How to manage trusted certificates.
+| Feature                                              | Description                                                                                                                                 |
+|:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions and patches in the firmware repository and how to install or update them on devices. |
+| [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
+| [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
+| [Device credentials](#credentials)                   | How to manage all credentials generated for your connected devices.                                                                         |
+| [Device profiles](#device-profiles)                  | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
+| [Trusted certificates](#trusted-certificates)        | How to manage trusted certificates.                                                                                                         |
 
 All features are accessible through the **Management** menu in the navigator:
 
@@ -36,6 +36,7 @@ The available firmware objects will be displayed as a list.
 ![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Each entry shows the firmware name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular firmware.
+At the left in the top menu bar, you can filter the repository entries by name, description or device type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches.
 
@@ -53,6 +54,7 @@ The list of versions and patches shows the version name and the name of the firm
 2. In the resulting dialog box,
 	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the upcoming window), add a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
+3. Optionally, you can define the device type filter when adding a new firmware.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
@@ -112,8 +114,8 @@ The **Firmware** tab shows the current firmware installed on the device.
 
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
-
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
+![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### To install/replace firmware on a device
 
@@ -125,7 +127,8 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Firmware** tab.
+Click on the operation to view its details. The status of the last operation is also shown on the **Firmware** tab.
+
 
 ##### To install/update firmware on multiple devices
 
@@ -154,6 +157,7 @@ The available software objects will be displayed as a list.
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
+At the left in the top menu bar, you can filter the repository entries by name, description, device type or configuration type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
@@ -170,6 +174,7 @@ The versions are ordered by their creation time (descending).
 2. In the resulting dialog box,
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the upcoming window), a description and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
+3. Optionally, you can define the device type filter when adding a new software.
 3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
 4. Click **Save**.
 
@@ -215,7 +220,9 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
+
+![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
 
 ##### To install software on a device
 
@@ -227,7 +234,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Software** tab.
+Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
 
 ![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 
@@ -531,12 +538,12 @@ To add a certificate perform these steps:
 
 2. In the resulting dialog box, provide the following information:
 
-|Field|Description|
-|:---|:---|
-|Certificate name|User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.|
-|Certificate|File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.|
-|Auto registration| If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered.|
-|Enabled/ Disabled| When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.|
+| Field             | Description                                                                                                                                |
+|:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| Certificate name  | User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.         |
+| Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.            |
+| Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
+| Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |
 
 3. Click **Add Certificate** to validate and save the certificate.
 

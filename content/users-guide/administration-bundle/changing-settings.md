@@ -387,7 +387,7 @@ In the following two fields provide an email template to be used on password cha
 
 In the **Support user** section, you can configure the parameters for the support user access for subtenant users.
 
-This feature, enables Software AG or Service Provider to support their Customers. Using support users (i.e. users with specific permissions in the *Management tenant*) can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature, enables Software AG or Service Provider to support their Customers using support user. Support users are users with specific permissions in the *Management tenant* who can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 

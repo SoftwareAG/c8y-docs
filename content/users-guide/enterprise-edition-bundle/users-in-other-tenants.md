@@ -4,55 +4,48 @@ title: Support user access
 layout: redirect
 ---
 
-With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant's users to provide help in case of any issues.
+This feature, enables Software AG or Service Provider to support their Customers using support user. Support users are users with specific permissions in the *Management tenant* who can access subtenant users in case of any issues.
 
-To do so, support user access must be enabled. This can globally be done on platform level or on user level as described below.
+To do so, support user access must be configured and required support users must be created on *Management tenant*
 
+> **Note:** For *Enterprise Tenant Customers* on cumulocity.com and other Public Cloud offering, **support user** is only used by *Software AG Global Support team* for providing customer support. It cannot be used by the Customer to support their customers/subtenants.
 
 ### <a name="configuring-support-access"></a>Configuring support user access
 
-Support user access may be enabled on different levels.
+Support user access can either be activated for all subtenants by default or deactivated for all subtenants, but can be explicitly enabled by a user for their tenant. This is configured in the system wide *Configuration* in *Management tenant* . see [Administration > Changing Settings > Configuration settings](/users-guide/administration/#config-platform).
 
-**Platform level**
+If it’s activated system wide, support user can login in as any user into all allowed subtenants freely without any restriction.
 
-The management tenant can enable support user access for all subtenants on platform level. This is done in the **Configuration** page, see [Customizing the platform](/users-guide/enterprise-edition#customization).
+> **Info:** If you don’t see either **Enable support** or **Disable support** button in the User menu, means it has been activated on System wide. Contact support for more details
 
-If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves. If support user access is disabled support users can log in only to subtenants for which at least one user has explicitly enabled such access, as described next.
-
-**Subtenant/user level**
-
-If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support** in the **User** menu, see [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
-
-The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
+If it’s deactivated system wide, it still can be enabled by a subtenant user when needed. This is done by clicking **Enable support** in the **User** menu, see [Getting started > User options and settings](/users-guide/getting-started/#user-settings). The support access is not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 
-The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/users-guide/enterprise-edition#customization).
+The duration of the active support request is configurable on System wide on *Management tenant* (default is 24 hours), see [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally).
 
 Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
-### Configuring support users
+### <a name="configuring-support-users"></a>Configuring support users
 
-There are two alternative setups for support users in Cumulocity IoT:
+A **support user** is a user with specific permissions on *Management tenant*. These users can login in to the target tenant and imporsonate target user.
 
-- A service provider configures specific permissions for management tenant users which enable them to provide support.
-- Tenant users request support and by this provide the permission to management tenant users to login.
+Below are the steps to create a **support user** in the *Management tenant*
+1. Software AG or Service providers creates a user in the *Management tenant*
+2. The user get assigned proper Roles as bescribed below
+    1. Using a global role. This can easily be done by
+        - Creating a Role called “Support” with “Support Read” and “Support Admin” permission
+        - Assign the Role “Support” and remove any other Roles for the user.
+    2. Using inventory role. Using this, you can selectively assign a **support user** for specific subtenants. This can be done in 3 steps
+        - Create a Inventory Role called “Support” for Type: * and Permission: All
+        - Create a group of the all the subtenants that you want the user to support.
+        - Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
-
-**Management tenant permission**
-
-To enable a management tenant user to support users in other tenants, you need to provide the user with either the "Support" global role or the "Support" inventory role (both READ and CHANGE).
-
-Using the "Support" inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
-
-**User-provided permission**
-
-Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support access**. For details, refer to [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
 
 
 ### To log in as support user

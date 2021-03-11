@@ -1252,7 +1252,7 @@ the OPC UA device gateway.</td>
 <td>noRetryHttpCodes</td>
 <td>array&lt;integer&gt;</td>
 <td>no</td>
-<td>Array of HTTP POST status exceptions by which the failed http post should not be retried if enabled. Example: [400, 500]. Note that, if this is null or missing, the exceptions will be taken from the gateway configuration. If this is provided, even with an empty array, the configuration in the gateway is disregarded.</td>
+<td>Array of HTTP POST status exceptions by which the failed HTTP POST should not be retried if enabled. Example: [400, 500]. Note that, if this is null or missing, the exceptions will be taken from the gateway configuration. If this is provided, even with an empty array, the configuration in the gateway is disregarded.</td>
 </tr>
 </tbody>
 </table>

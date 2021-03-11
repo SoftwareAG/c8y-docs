@@ -52,7 +52,7 @@ The list of versions and patches shows the version name and the name of the firm
 
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar.
 2. In the resulting dialog box,
-	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the upcoming window), add a description and its version (all required).
+	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the resulting window), add a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new firmware.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
@@ -114,7 +114,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 ![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### To install/replace firmware on a device
@@ -172,7 +172,7 @@ The versions are ordered by their creation time (descending).
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar.
 2. In the resulting dialog box,
-	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the upcoming window), a description and its version (all required).
+	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
 3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
@@ -220,7 +220,7 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details in a separate window.
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
 ![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
 

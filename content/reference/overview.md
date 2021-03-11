@@ -20,6 +20,14 @@ aliases:
   - /reference/real-time-notifications
   - /reference-guide/real-time-notifications.html
   - /reference/application-reference
+  - /reference/inventory
+  - /reference/events
+  - /reference/measurements
+  - /reference/alarms
+  - /reference/auditing
+  - /reference/tenants
+  - /reference/binaries
+  - /reference/retention-rules
 ---
 
 Our API reference has moved:

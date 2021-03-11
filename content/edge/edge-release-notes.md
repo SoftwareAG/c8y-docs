@@ -4,7 +4,7 @@ title: Release notes
 layout: bundle
 aliases:
   - /edge/edge-release-notes/
- ---
+---
 
 >**Info:** The release notes for Cumulocity IoT Edge have been moved to a new [release notes page](https://cumulocity.com/guides/release-notes). 
 >

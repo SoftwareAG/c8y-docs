@@ -10,7 +10,7 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Change the [application settings](#default-app).
 - Manage the [properties library](#properties).
 - Configure system-wide [configuration properties](#config-platform) in Cumulocity IoT.
-- Provide [SMS provider credentials](#openIT-credentials).
+- Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
 
 
@@ -317,7 +317,7 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
-### <a name="openIT-credentials"></a>Providing SMS provider credentials
+### <a name="sms-provider"></a>Providing SMS provider credentials
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
@@ -329,16 +329,13 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-2. In the **SMS provider** page, select either OpenIT or [sms77](https://www.sms77.io/en/) as SMS provider.
+2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
-3. Depending on the selected provider, enter the relevant credentials:
-
-	 * For OpenIT, your OpenIT username and password.
-	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
+3. In the resulting dialog, enter the required credentials and properties or specify optional settings, which differ depending on the provider you selected.
 
 4. Click **Save** to save your settings.
 
->**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select sms77 as SMS provider.
+>**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
 
 
 ### <a name="config-platform"></a>Configuration settings

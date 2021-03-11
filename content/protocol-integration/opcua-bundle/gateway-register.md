@@ -151,7 +151,7 @@ gateway:
         enabled: false
         # Number of retries a failed HTTP POST will be resent
         maxRetries: 5
-        # If retry is enabled, the exceptions of HTTP status codes can be provided here. A HTTP POST which failed with one of these codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled
+        # If retry is enabled, the exceptions of HTTP status codes can be provided here, comma separated. A HTTP POST which failed with one of these codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled. Example: 400,500
         noRetryHttpCodes:
         # Minimum delay in seconds between two retries
         retryDelay: 120

@@ -65,7 +65,7 @@ The "key" is an identifier of the public key, which will be referenced in the JW
 
 Now you can generate the JWT token and sign it with the matching private key. For example you can do it at [jwt.io](https://jwt.io/#debugger-io).
 Note however that this is a public website.
-jwt.io claim that validation and debugging is done on the client side, but in general we do not recommend you to paste your credentials to a public website.
+JWT.io claims that validation and debugging is done on the client side, but in general we do not recommend you to paste your credentials to a public website.
 If you want to generate a JWT token locally, you can install a command line tool such as [jwt-cli](https://github.com/mike-engel/jwt-cli).
 
 Token format:

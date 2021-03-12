@@ -249,7 +249,7 @@ For more details, you can also check the Apama logs if the tenant has the "micro
 #### <a name="eplapp_restore_timeout"></a>EPL app restore timeout on restart of Apama-ctrl
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
-specified by the `recovery.timeoutSecs` tenant option (in the `apama` category) or a default of 60 seconds, 
+specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds, 
 the Apama-ctrl microservice times out and raises an alarm, indicating that it will restart and reattempt to restore the EPL app.
 The alarm text includes the names of any EPL apps that are considered to be the reason for the timeout.
 

@@ -185,7 +185,7 @@ Every update request (PUT, POST, DELETE) executes with a so-called *processing m
 </tr>
 <tr>
 <td> Quiescent</td>
-<td> The QUIESCENT processing mode behave like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
+<td> The QUIESCENT processing mode behaves like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements, events and managed objects.</td>
 </tr>
 <tr>
 <td> CEP </td>

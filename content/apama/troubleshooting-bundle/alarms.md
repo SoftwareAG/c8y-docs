@@ -37,7 +37,7 @@ The following is a list of the alarms. The information further down below explai
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
-- [Recovery of EPL app timed out](#epl_recovery_timeout)
+- [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
@@ -63,23 +63,23 @@ Once you see this alarm, you can be sure that your change is effective.
 
 #### <a name="apama_safe_mode"></a>Safe mode on startup
 
-This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
+This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
 - Alarm type: `apama_safe_mode`
 - Alarm text: Apama has exited unexpectedly more than once. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, Safe mode is activated, resulting in all user-provided content being disabled.
+In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, safe mode is activated, resulting in all user-provided content being disabled.
 
-On every restart, the microservice checks the number of restarts that happened in the last 20 minutes. If the number is greater than 2, it enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by a user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts. The restart count is reset once Safe mode is enabled or if the restart happens after more than 20 minutes since the previous restart.
+On every restart, the microservice checks the number of restarts that happened in the last 20 minutes. If the number is greater than 2, it enables safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by a user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts. The restart count is reset once safe mode is enabled or if the restart happens after more than 20 minutes since the previous restart.
 
-You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
+You can check the mode of the microservice (either normal or safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
 To diagnose the cause of an unexpected restart, you can try the following:
 
 - Check the EPL apps memory profiler by making a REST request to */service/cep/diagnostics/eplMemoryProfiler* (available as of EPL Apps 10.5.7) for any memory leaks.
 
-    Note that you have to re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to Safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
+    Note that you have to re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
 
 - Check the microservice logs for any exceptions by downloading the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). In the downloaded ZIP file, you can find the logs under */diagnostics/*.
   
@@ -87,7 +87,7 @@ To diagnose the cause of an unexpected restart, you can try the following:
   
 - Check the audit logs.
 
-In Safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
+In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
 #### <a name="apama_ctrl_starter"></a>Deactivating models in Apama Starter
 
@@ -246,18 +246,23 @@ You can diagnose the issue by the monitor name and context name given in the ala
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
 
-#### <a name="epl_recovery_timeout"></a>Recovery of EPL app timed out
+#### <a name="eplapp_restore_timeout"></a>EPL app restore timeout on restart of Apama-ctrl
 
-If the recovery of an EPL app is taking a long time and exceeds the time limit specified by the `recovery.timeoutSecs` tenant option or a default of 60 seconds, 
-the Apama-ctrl microservice raises an alarm indicating that the recovery of the app timed out.
+If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
+specified by the `recovery.timeoutSecs` tenant option or a default of 60 seconds, 
+the Apama-ctrl microservice times out and raises an alarm, indicating that it will restart and reattempt to restore the EPL app.
+The alarm text includes the names of any EPL apps that are considered to be the reason for the timeout.
 
-The alarm text includes the names of any EPL apps that are considered to be the reason for the recovery timeout.
-
-- Alarm type: `epl_recovery_timeout`
-- Alarm text: EPL recovery timed out. This might be due to the following apps: &lt;comma-separated list of app names&gt;
+- Alarm type: `eplapp_restore_timeout`
+- Alarm text: Restoring EPL app after Apama-ctrl microservice restart has timed out. The EPL app &lt;app name&gt; could not be restored. 
+The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.
+The Apama-ctrl microservice will restart now, and restoring will be reattempted. 
+If this continues to fail, the Apama-ctrl microservice will enter safe mode, disabling all EPL apps.
 - Alarm severity: MAJOR
 
-If no apps are detected that are considered to be the reason for the recovery timeout, the alarm text only includes the message "EPL recovery timed out.", without the list of app names.
+The following is only included in the alarm text if the Apama-ctrl microservice detects that the timeout is due to some EPL apps:
+"The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.".
+
 
 #### <a name="extension_error"></a>Multiple extensions with the same name
 

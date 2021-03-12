@@ -51,8 +51,15 @@ A "User" resource type contains the following fields:
 <td align="left">password</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
-<td align="left">POST: mandatory PUT: optional</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed. If you do not specify a password when creating a new user with a POST request, it must contain the field sendPasswordResetEmail with a value of true.</td>
+<td align="left">optional</td>
+</tr>
+<tr>
+<td align="left">sendPasswordResetEmail</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">When set to true, this field will cause Cumulocity IoT to send a password reset email to the email address specified. If there is no password specified when creating a new user with a POST request, this must be specified and it must be set to true.</td>
+<td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>
@@ -170,7 +177,7 @@ A "currentUser" resource type contains the following fields:
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
-<td align="left">POST: mandatory PUT: optional</td>
+<td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>

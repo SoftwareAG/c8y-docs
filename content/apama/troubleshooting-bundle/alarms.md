@@ -37,7 +37,7 @@ The following is a list of the alarms. The information further down below explai
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
-- [Restore of EPL apps timed out](#epl_recovery_timeout)
+- [Recovery of EPL app timed out](#epl_recovery_timeout)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
@@ -246,7 +246,7 @@ You can diagnose the issue by the monitor name and context name given in the ala
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
 
-#### <a name="epl_recovery_timeout"></a>Restore of EPL apps timed out
+#### <a name="epl_recovery_timeout"></a>Recovery of EPL app timed out
 
 If the recovery of an EPL app is taking a long time and exceeds the time limit specified by the `recovery.timeoutSecs` tenant option or a default of 60 seconds, 
 the Apama-ctrl microservice raises an alarm indicating that the recovery of the app timed out.
@@ -257,7 +257,7 @@ The alarm text includes the names of any EPL apps that are considered to be the 
 - Alarm text: EPL recovery timed out. This might be due to the following apps: &lt;comma-separated list of app names&gt;
 - Alarm severity: MAJOR
 
-If no apps are detected that can be considered to be the reason for the failure, the alarm text only includes the message "EPL recovery timed out.", without the list of app names.
+If no apps are detected that are considered to be the reason for the recovery timeout, the alarm text only includes the message "EPL recovery timed out.", without the list of app names.
 
 #### <a name="extension_error"></a>Multiple extensions with the same name
 

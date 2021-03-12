@@ -249,19 +249,20 @@ For more details, you can also check the Apama logs if the tenant has the "micro
 #### <a name="eplapp_restore_timeout"></a>EPL app restore timeout on restart of Apama-ctrl
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
-specified by the `recovery.timeoutSecs` tenant option or a default of 60 seconds, 
+specified by the `recovery.timeoutSecs` tenant option (in the `apama` category) or a default of 60 seconds, 
 the Apama-ctrl microservice times out and raises an alarm, indicating that it will restart and reattempt to restore the EPL app.
 The alarm text includes the names of any EPL apps that are considered to be the reason for the timeout.
 
 - Alarm type: `eplapp_restore_timeout`
-- Alarm text: Restoring EPL app after Apama-ctrl microservice restart has timed out. The EPL app &lt;app name&gt; could not be restored. 
+- Alarm text: Restoring EPL apps after Apama-ctrl microservice restart has timed out. The EPL app &lt;app name&gt; could not be restored. 
 The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.
 The Apama-ctrl microservice will restart now, and restoring will be reattempted. 
 If this continues to fail, the Apama-ctrl microservice will enter safe mode, disabling all EPL apps.
 - Alarm severity: MAJOR
 
-The following is only included in the alarm text if the Apama-ctrl microservice detects that the timeout is due to some EPL apps:
+The following information is only included in the alarm text if the Apama-ctrl microservice detects that the timeout is due to some EPL apps:
 "The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.".
+If no such apps are detected, this information is omitted from the alarm text.
 
 
 #### <a name="extension_error"></a>Multiple extensions with the same name

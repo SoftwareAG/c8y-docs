@@ -383,17 +383,17 @@ In the **Email subject** field, provide a subject for all password reset related
 
 In the following two fields provide an email template to be used on password change confirmation and a template for the invitation email.
 
-#### Support user
+#### <a name="config-support-users"></a> Support user
 
 In the **Support user** section, you can configure the parameters for the support user access for subtenant users.
 
-This feature, enables Software AG or Service Provider to support their Customers using support user. Support users are users with specific permissions in the *Management tenant* who can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature enables Software AG or service providers to support their customers by accessing their users using a support user. A support user is a user in the *Management tenant* with specific permissions who can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 In the field **Activate support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
-* *true*: Support user access is activated for all subtenants by default. A support user can log into any subtenant as any user. </br> **Note:** Subtenant users cannot disable access themselves.
+* *true*: Support user access is activated for all subtenants by default. A support user can log into any subtenant as any user. </br> **Info:** Subtenant users cannot disable access themselves.
 * *false*: Support user access is deactivated for all subtenants, but can be explicitly enabled for a subtenant. A support user can log in only to subtenants for which at least one user has explicitly enabled such access.
 * An explicit date in date-time format, until when support user access should remain activated. If no date is specified the value is set to "No Limit".
 
@@ -402,6 +402,23 @@ In the **Validity limit** field, you can optionally specify the support duration
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
 Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+
+#### <a name="configuring-support-users"></a>Configuring support users
+
+A support user is a user in the *Management tenant* with specific permissions. This user can log in to the target tenant and impersonate the target user.
+
+Below are the steps to create a **support user** in the *Management tenant*
+1. Software AG or Service providers creates a user in the *Management tenant*
+2. The user get assigned proper Roles as bescribed below
+    1. Using a global role. This can easily be done by
+        - Creating a Role called “Support” with “Support Read” and “Support Admin” permission
+        - Assign the Role “Support” and remove any other Roles for the user.
+    2. Using inventory role. Using this, you can selectively assign a **support user** for specific subtenants. This can be done in 3 steps
+        - Create a Inventory Role called “Support” for Type: * and Permission: All
+        - Create a group of the all the subtenants that you want the user to support.
+        - Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+
+> **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
 
 #### Email server
 

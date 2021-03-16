@@ -9,46 +9,11 @@ The 10.7.0 documentation contains
 * all description enhancements and updates resulting from new features and improvements in the product,
 * a variety of documentation changes and fixes to permanently improve the documentation quality and make it clearer.
 
-Moreover, you can find the following major enhancements, improvements and fixes in the area of documentation.
-
-### Major enhancements
-
-#### Device SDK guide - NEW Linux agent documentation
-
-[MTM-34081] Documentation has been added to the *Device SDK guide* for the Cumulocity IoT Linux Agent.
-
-The [*Linux Agent User guide*](https://cumulocity.com/guides/device-sdk/linux-agent-user-guide) describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
-
-The [*Linux Agent Developer guide*](https://cumulocity.com/guides/device-sdk/linux-agent-developer-guide) contains various Lua plugin examples (Hello world, sending measurements, restart your machine, and more) for developers. 
-
-#### NEW Protocol integration guide
-
-[MTM-29779] The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called [*Protocol integration guide*](https://cumulocity.com/guides/protocol-integration/overview) to provide a clearer structure and easier navigation.
-
-![Protocol integration guide](/images/release-notes/new-protocol-integration-guide.png)
-
-#### Cloud Remote Access - NEW API documentation
-
-Information on the Cloud Remote Access API has been added to the Cloud Remote Access documentation. 
-
-As a result, the Cloud Remote Access documentation, which formerly could be found in the *Optional services* section of the *User guide*, has been moved into a separate [*Cloud Remote Access guide*](https://cumulocity.com/guides/cloud-remote-access/cra-general-aspects/), providing a clearer structure and easier navigation.
-
-![Cloud Remote Access guide](/images/release-notes/cloud-remote-access-guide.png)
-
-#### Installation and operations guides
-
-In addition to the Installation & Operations guides already provided for previous versions, the following new guides are now available through the [Software AG Empower Portal](https://documentation.softwareag.com/):
-
-* **Cloud Remote Access** - Installation & operations guide
-* **Connectivity** - Installation & operations guide
-* **Actility microservice** - Installation & operations guide
-* **SNMP microservice** - Installation & operations guide
-
-Note, that access to these documents on the Empower Portal requires credentials.
+Moreover, you can find the following improvements and major fixes in the area of documentation.
 
 ### Improvements
 
-<div><table ><colgroup>
+<table ><colgroup>
 <col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
 <thead><tr>
 <th>
@@ -61,6 +26,67 @@ Description</th>
 Issue</th>
 </tr>
 </thead><tbody>
+
+<tr>
+<td>
+Cloud Remote Access</td>
+<td>
+API</td>
+<td > Information on the Cloud Remote Access API has been added to the Cloud Remote Access documentation. 
+<br>As a result, the Cloud Remote Access documentation, which formerly could be found in the <i>Optional services</i> section of the <i>User guide</i>, has been moved into a separate <a href="https://cumulocity.com/guides/10.7.0/cloud-remote-access/cra-general-aspects/" class="no-ajaxy">Cloud Remote Access guide</a>, providing a clearer structure and easier navigation.
+<td>
+MTM-34081</td>
+</tr>
+
+<tr>
+<td>
+Device SDK guide</td>
+<td>
+Linux agent</td>
+<td > Documentation has been added for the Cumulocity IoT Linux Agent.
+
+<br>The <a href="https://cumulocity.com/guides/10.7.0/device-sdk/linux-agent-user-guide" class="no-ajaxy">Linux Agent user guide</a> describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
+
+<br>The <a href="https://cumulocity.com/guides/10.7.0/device-sdk/linux-agent-developer-guide" class="no-ajaxy">Linux Agent developer guide</a> contains various Lua plugin examples (Hello world, sending measurements, restart your machine, and more) for developers.
+<td>
+MTM-34081</td>
+</tr>
+
+<tr>
+<td>
+Installation & operations documentation</td>
+<td>
+NEW guides</td>
+<td > The following new Installation & operations guides are now available through the <a href="https://documentation.softwareag.com/" class="no-ajaxy">Software AG Empower Portal</a>:
+<br>- <i>Cloud Remote Access</i> 
+<br>- <i>Connectivity</i> 
+<br>- <i>Actility microservice</i>
+<br>- <i>SNMP microservice</i> 
+<br>Note, that access to these documents on the Empower Portal requires credentials.
+
+<td>
+</td>
+</tr>
+
+<tr>
+<td>
+Protocol integration guide</td>
+<td>
+NEW</td>
+<td > The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/overview" class="no-ajaxy">Protocol integration guide</a> to provide a clearer structure and easier navigation.
+<td>
+MTM-29779</td>
+</tr>
+
+<tr>
+<td>
+Reference guide</td>
+<td>
+Inventory API</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed object collection</a>. </td>
+<td>
+MTM-33763</td>
+</tr>
 
 <tr>
 <td>
@@ -111,20 +137,20 @@ MTM-33651</td>
 
 <tr>
 <td>
-Reference guide</td>
+Website</td>
 <td>
-Inventory API</td>
-<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed object collection</a>. </td>
+Hugo</td>
+<td > The Hugo version used for generating the documentation website at https://cumulocity.com/guides/about-doc/ has been updated from 0.55.0 to 0.80.0. </td>
 <td>
-MTM-33763</td>
+MTM-34547</td>
 </tr>
 
-</tbody></table></div>
+</tbody></table>
 
 
 ### Fixes
 
-<div><table ><colgroup>
+<table ><colgroup>
 <col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
 <thead><tr>
 <th>
@@ -148,4 +174,4 @@ OPCUA</td>
 MTM-31428</td>
 </tr>
 
-</tbody></table></div
+</tbody></table>

@@ -38,7 +38,7 @@ For each ad-hoc query, the following information is provided:
 
 In the navigator, select **Auditing** and then **System log** to view the system log. 
 
-The audit log shows the last 10 logs. In the action bar, you can change that number by setting a new limit and refreshing the audit log. Additionally you can filter the entries by text or status by using the filter controls in the action bar.
+In the action bar you can choose between log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
 
 For each log entry, the following information is provided:
 

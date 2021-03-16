@@ -97,6 +97,8 @@ Retrieve the results of the query job given the job ID and optional pagination s
 * Corresponding Dremio API:  GET /api/v3/job/{ID}/results?offset={offset}&limit={limit}
 * [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)
 
+>**Info:** As the result set of a query might be potentially very large, the corresponding endpoint for retrieving the results returns per default the first 100 entries. You can optionally define the offset and the limit (at maximum 500) to paginate through all results.
+
 #### Cancelling running jobs
 
 Cancel a query job given the job ID:

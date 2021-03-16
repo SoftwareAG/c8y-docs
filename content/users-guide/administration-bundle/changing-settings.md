@@ -344,6 +344,10 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
+After editing, click **Save configuration** to save your settings.
+
+Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/users-guide/enterprise-edition#customization).
+
 >**Info:** In some of the following properties you can configure email templates for various purposes. Note that the corresponding emails are send with "text/html" as content type.
 
 #### Placeholders
@@ -414,9 +418,14 @@ In the **Suspending tenants** section, you can provide settings for emails being
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
-Click **Save configuration** to save your settings.
+#### Product experience
 
-Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/users-guide/enterprise-edition#customization).
+Under **Product experience**, you can provide an API access key for [Gainsight PX](https://www.gainsight.com/product-experience/). The API access key is a unique access key used for authentication of Gainsight REST API requests. 
+
+![Product experience](/images/users-guide/Administration/admin-settings-gainsight.png)
+
+Parent tenants can enable/disable the Gainsight PX product experience tracking in the **Custom properties** tab of a subtenant, see [Enterprise tenant > Managing tenants > Custom properties](/enterprise-edition/managing-tenants/#tenants-custom-properties).
+
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 

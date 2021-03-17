@@ -156,7 +156,7 @@ gateway:
         # Minimum delay in seconds between two retries
         retryDelay: 120
       # Max queue size of the HTTP POST actions queue
-      maxQueueSize: 25000
+      maxQueueSize: 50000
       # Worker thread (which performs the actual HTTP request) pool size
       threadPoolSize: 200
 

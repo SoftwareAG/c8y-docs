@@ -379,18 +379,26 @@ TODO: adapt the document
 ````json
 {
     ...
-     "type": "temperature",
-     "unit": "C",
-     "value": "2.0791169082"
-     ...
+    "type": "Temperature",
+    ...
+     "c8y_Temperature": {
+         "T": {
+             "unit": "C",
+             "value": 2.0791169082
+
+     }
 }
 ...
 {
     ...
-     "type": "pressure",
-     "unit": "C",
-     "value": "2.0791169082"
-     ...
+    "type": "Pressure",
+    ...
+     "c8y_Pressure": {
+         "P": {
+             "unit": "kPa",
+             "value": 98.0665
+
+     }
 }
 ````
 
@@ -398,8 +406,10 @@ is represented as
 
 | | | |
 | ---- | ----- | ----- |
-| type | unit | value |
-| temperature | C | 2.0791169082 |
-| pressure | kPa | 98.0665 |
+| type | tagname | unit | value |
+| Temperature | c8y_TemperatureMeasurement.T | C | 2.0791169082 |
+| Pressure | c8y_PressureMeasurement.P | kPa | 98.0665 |
 
 For more details on the TrendMiner offloading see also Section TODO: XYZ.
+
+TODO: clarify if YEAR, MONTH, DAY are in the preview/final schema for all collections or not?

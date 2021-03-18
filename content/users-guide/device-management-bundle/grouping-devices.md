@@ -53,7 +53,7 @@ In the **Info** tab, the following information is provided:
 </tbody>
 </table>
 
-**Sub-assets**
+**Subassets**
 
 In the **Sub-assets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
 

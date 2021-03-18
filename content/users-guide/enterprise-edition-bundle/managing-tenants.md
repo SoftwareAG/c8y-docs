@@ -108,7 +108,7 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see [Administration > Changing Settings > Configuration settings](/users-guide/administration/#config-platform)),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings)),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally in the Management tenant. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 

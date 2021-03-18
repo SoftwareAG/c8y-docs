@@ -10,7 +10,7 @@ In the **Settings** menu, you may specify various customization settings.
 
 ### <a name="configuration"></a>Configuration
 
->**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#changing-settings) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
 
 #### Applications
 

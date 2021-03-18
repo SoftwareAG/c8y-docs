@@ -6,9 +6,42 @@ layout: redirect
 
 ### Announcements
 
-#### Support for Internet Explorer ending soon
+#### Removal of Basic Auth browser based authentication
 
-In response to the announcement by Microsoft of the end of life for Internet Explorer 11, Cumulocity IoT 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
+With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform. With the 10.10 GA release, scheduled for July 2021, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.11 GA release, scheduled for October 2021, the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+If not done already, we recommend you not to wait for the 10.11 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the *User guide*.
+In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5 or higher as well as the Microservice SDK 10.5 or higher.
+
+#### Deprecation of RxJS usage in the '@c8y/client' component of the Web SDK
+
+In favor of decoupling the '@c8y/client' library from RxJS library methods, using observables or other RxJS features will be removed with the 10.11 GA release. To continue using real-time data in your code use the new Observable(), defer() or from() to compose an observable on your own. 
+
+For example:
+
+	observable(channel: string) {
+	  return new Observable<any>(observer => {
+	    const subscription = this.realtime.subscribe(channel, msg => {
+	      const data = {
+	        channel: msg.channel,
+	        data: msg.data.data,
+	        id: msg.id,
+	        realtimeAction: msg.data.realtimeAction
+	      };
+	      return observer.next(data);
+	    });
+	    return () => this.realtime.unsubscribe(subscription);
+	  });
+	}
+
+
+
+
+### Implemented measures
+
+#### Internet Explorer 11 end of support
+
+As announced previously, with the 10.9 GA release Cumulocity IoT no longer supports Internet Explorer 11. Cumulocity IoT continues to support the latest version of the Chromium-based Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
+
 
 #### Smart REST response codes 
 

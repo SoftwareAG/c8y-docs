@@ -9,9 +9,9 @@ The 10.7.0 documentation contains
 * all description enhancements and updates resulting from new features and improvements in the product,
 * a variety of documentation changes and fixes to permanently improve the documentation quality and make it clearer.
 
-Moreover, you can find the following improvements and major fixes in the area of documentation.
+Moreover, you can find the following enhancements, improvements and major fixes in the area of documentation.
 
-### Improvements
+### New guides and sections
 
 <table ><colgroup>
 <col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
@@ -56,7 +56,7 @@ MTM-34081</td>
 <td>
 Installation & operations documentation</td>
 <td>
-NEW guides</td>
+Microservices & agents</td>
 <td > The following new Installation & operations guides are now available through the <a href="https://documentation.softwareag.com/" class="no-ajaxy">Software AG Empower Portal</a>:
 <br>- <i>Cloud Remote Access</i> 
 <br>- <i>Connectivity</i> 
@@ -72,21 +72,32 @@ NEW guides</td>
 <td>
 Protocol integration guide</td>
 <td>
-NEW</td>
+NEW guide</td>
 <td > The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/overview" class="no-ajaxy">Protocol integration guide</a> to provide a clearer structure and easier navigation.
 <td>
 MTM-29779</td>
 </tr>
 
-<tr>
-<td>
-Reference guide</td>
-<td>
-Inventory API</td>
-<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed object collection</a>. </td>
-<td>
-MTM-33763</td>
+</tbody></table>
+
+
+
+
+### Improvements
+
+<table ><colgroup>
+<col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
+<thead><tr>
+<th>
+Guide</th>
+<th>
+Component</th>
+<th>
+Description</th>
+<th>
+Issue</th>
 </tr>
+</thead><tbody>
 
 <tr>
 <td>
@@ -96,6 +107,16 @@ Cockpit</td>
 <td > Details on the functionality of the smart rule “On measurement threshold create alarm” have been updated in <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit/#smart-rules-collection" class="no-ajaxy">Cockpit > Smart rules collection</a>. </td>
 <td>
 MTM-34765</td>
+</tr>
+
+<tr>
+<td>
+User guide</td>
+<td>
+Cockpit</td>
+<td > The description of the smart rules behavior has been updated to achieve more clarity, see <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit/#smart-rules" class="no-ajaxy">Cockpit > Smart rules</a>.</td>
+<td>
+MTM-35582</td>
 </tr>
 
 <tr>
@@ -172,6 +193,26 @@ OPCUA</td>
 <td > The <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/opcua" class="no-ajaxy">OPC UA documentation</a> has been updated to state that the name of the user that runs the gateway is set as gateway identifier and as name by default if not provided.</td>
 <td>
 MTM-31428</td>
+</tr>
+
+<tr>
+<td>
+Reference guide</td>
+<td>
+Inventory API</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="//cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
+<td>
+MTM-33763</td>
+</tr>
+
+<tr>
+<td>
+User guide</td>
+<td>
+Enterprise tenant</td>
+<td > Updated the list of non-editable fields in the subtenants <b>Properties</b> tab in the documentation, see <a href="//cumulocity.com/guides/10.7.0/enterprise-edition/managing-tenants/" class="no-ajaxy">Enterprise Tenant > Managing tenants</a>.</td>
+<td>
+MTM-35001</td>
 </tr>
 
 </tbody></table>

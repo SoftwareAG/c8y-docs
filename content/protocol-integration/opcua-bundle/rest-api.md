@@ -1251,6 +1251,18 @@ the OPC UA device gateway.</td>
 <td>yes</td>
 <td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
 </tr>
+<tr>
+<td>retryEnabled</td>
+<td>boolean</td>
+<td>no</td>
+<td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
+</tr>
+<tr>
+<td>noRetryHttpCodes</td>
+<td>array&lt;integer&gt;</td>
+<td>no</td>
+<td>Array of HTTP POST status exceptions by which the failed HTTP POST should not be retried if enabled. Example: [400, 500]. Note that, if this is null or missing, the exceptions will be taken from the gateway configuration. If this is provided, even with an empty array, the configuration in the gateway is disregarded.</td>
+</tr>
 </tbody>
 </table>
 

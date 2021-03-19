@@ -98,7 +98,7 @@ In the **Description** field, you can add a description for this offloading pipe
 
 ##### Finish configuration
 
-The final step provides a summary of your settings as well as a result preview. The summary includes the settings from the previous steps as well as the internal UUID of this configuration. With the UUID you can distinguish configurations having the same task name, e.g., when browsing the audit log or the offloading status. In the summary, you also get the schedule with which the offloading pipeline will be executed once it is started, e.g., `every hour at minute 6`. The schedule cannot be modified. With the toggle at the end of the summary you choose whether the periodic offloading execution should be started upon save or not.  
+The final step provides a summary of your settings as well as a result preview. The summary includes the settings from the previous steps as well as the internal UUID of this configuration. With the UUID you can distinguish configurations having the same task name, e.g., when browsing the audit log or the offloading status. In the summary, you also get the schedule with which the offloading pipeline will be executed once it is started, e.g., `every hour at minute 6`. The schedule cannot be modified. With the **Inactive**/**Active** toggle at the end of the summary you choose whether the periodic offloading execution should be started upon save or not.  
 
 In the offloading preview you can inspect how the actual data that will be offloaded looks like. For that purpose, the offloading is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Note that no data is permanently persisted to the data lake when running the preview.
 
@@ -120,7 +120,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 ##### Starting periodic offloading
 
-Click **Active** in an offloading card to start the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of DataHub will then periodically trigger the pipeline.
+Click the **Active**/**Inactive** toggle in an offloading card to start the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of DataHub will then periodically trigger the pipeline.
 
 The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all data from the Operational Store of Cumulocity IoT to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For that reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
@@ -128,7 +128,7 @@ If the same pipeline has already been started and stopped in the past, a new sta
 
 Before restarting the periodic offloading, you may have changed the result schema by adding or removing columns (via adding or removing additional result columns). When you restart the pipeline, existing data in the data lake is not modified, but the new data being offloaded incorporates the new schema. When querying such a data set comprising different schemas, the system computes a "merged" schema and (virtually) fills it up with null values where fields have not yet been provided. This usually works without problems if additional attributes are included or removed from the offloading configuration. However, schema merging might fail or lead to unexpected behavior in certain cases. One example is if you change data types, e.g., if the old configuration contained `myCustomField1` as a string and you change it to a number via `CAST(myCustomField1 AS Integer) AS myCustomField1`. Therefore, you should take care that the data you offload is consistent.
 
-A previous offloading pipeline may have already written into the same target table, i.e., the data is stored in the same folder on the data lake. In that case, when starting the new offloading pipeline, you are asked whether you want to flush the existing data or append the data to the existing data. You should only append the data if old and new data share the same schema. Otherwise, you should use a new target table or flush the existing table if its old contents are not needed anymore. Again, you should be careful when flushing a table as the data might be not be recoverable.
+A previous offloading pipeline may have already written into the same target table, i.e., the data is stored in the same folder on the data lake. In that case, when starting the new offloading pipeline, you are asked whether you want to flush the existing data or append the data to the existing data. You should only append the data if old and new data share the same schema. Otherwise, you might end up with a table consisting of disparate data, which hinders meaningful analysis. If the new data differs from the old data, you should use a new target table. Alternatively, you can flush the existing table if its old contents are not needed anymore. Again, you should be careful when flushing a table as the data most likely cannot be recovered.
 
 ##### Scheduling settings
 
@@ -136,7 +136,7 @@ The scheduler is configured to run the offloading pipeline once an hour. The pre
 
 ##### Stopping periodic offloading
 
-Click **Active** in an offloading card to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
+Click the **Active**/**Inactive** toggle in an offloading card to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
 
 ##### Viewing the execution status
 
@@ -230,10 +230,12 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 
 > **Info:** The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, it must be added manually.
 
-The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the alarms collection encompasses additional steps. The first step is to offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. As a second step, two views over the target table are defined in the tenant's space in Dremio (with alarms used as the target table name in the following examples):
+The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the alarms collection encompasses additional steps:
 
-* alarms_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
-* alarms_latest: a view with the latest status of all alarms, with all previous transitions being discarded.
+1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
+2. Two views over the target table are defined in the tenant's space in Dremio (with alarms used as the target table name in the following examples):
+    * **alarms_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
+    * **alarms_latest**: a view with the latest status of all alarms, with all previous transitions being discarded.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
@@ -290,10 +292,12 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | childassets | OTHER |
 | childdevices | OTHER |
 
-The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps. The first step is to offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. As a second step, two views over the target table are defined in Dremio (with inventory used as the target table name in the following examples):
+The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps: 
 
-* inventory_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
-* inventory_latest: a view with the latest status of all managed objects, with all previous transitions being discarded.
+1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
+2. Two views over the target table are defined in Dremio (with inventory used as the target table name in the following examples):
+    * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
+    * **inventory_latest**: a view with the latest status of all managed objects, with all previous transitions being discarded.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
@@ -331,6 +335,9 @@ When using the default layout, you have to select a measurement type, which ensu
 The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment_` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment_attribute1_name_value` to `fragment_attributeN_name_value`.
 
 ###### Example mapping
+
+The following excerpt of a measurement document in the base collection
+
 ````json
 {
     ...
@@ -338,17 +345,18 @@ The entries in the measurements collection can have a different structure, depen
          "T": {
              "unit": "C",
              "value": 2.0791169082
+         }
 
      }
 }
 ````
 
-is represented as
+is represented in the target table in the data lake as
 
-| | |
-| ---- | ----- |
-| c8y_Temperature.T.unit | c8y_Temperature.T.value |
-| C | 2.0791169082 |
+| | | |
+| ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |
+| ---- | ---- | ----- |
+| ... | C | 2.0791169082 |
 
 ##### Offloading measurements with the TrendMiner target table layout
 
@@ -374,7 +382,7 @@ When using the TrendMiner layout, all measurements are offloaded with their corr
 
 ###### Example mapping
 
-TODO: adapt the document
+The following excerpt of a measurement document in the base collection
 
 ````json
 {
@@ -385,7 +393,7 @@ TODO: adapt the document
          "T": {
              "unit": "C",
              "value": 2.0791169082
-
+         }
      }
 }
 ...
@@ -397,19 +405,17 @@ TODO: adapt the document
          "P": {
              "unit": "kPa",
              "value": 98.0665
-
+         }
      }
 }
 ````
 
-is represented as
+is represented in the target table in the data lake as
 
-| | | |
-| ---- | ----- | ----- |
-| type | tagname | unit | value |
-| Temperature | c8y_TemperatureMeasurement.T | C | 2.0791169082 |
-| Pressure | c8y_PressureMeasurement.P | kPa | 98.0665 |
+| | | | | |
+| ... | type | tagname | unit | value |
+| ---- | ---- | ----- | ----- | ----- |
+| ... | Temperature | c8y_TemperatureMeasurement.T | C | 2.0791169082 |
+| ... | Pressure | c8y_PressureMeasurement.P | kPa | 98.0665 |
 
 For more details on the TrendMiner offloading see also Section TODO: XYZ.
-
-TODO: clarify if YEAR, MONTH, DAY are in the preview/final schema for all collections or not?

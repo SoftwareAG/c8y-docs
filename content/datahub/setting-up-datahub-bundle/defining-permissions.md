@@ -21,6 +21,8 @@ For those tasks the default role **DATAHUB_ADMINISTRATOR** is created. The permi
 |Datahub management|yes|yes|
 |Datahub query|yes|no|
 
+While **READ** refers to reading the specific data, **ADMIN** refers to creating, updating, or deleting the specified data.
+
 #### DataHub manager
 The configurator manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role **DATAHUB_MANAGER** is created. The permissions for this role are defined as follows:
 

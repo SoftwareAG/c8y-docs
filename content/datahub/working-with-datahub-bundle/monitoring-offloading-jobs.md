@@ -96,9 +96,9 @@ Select a job overview in the history per offloading job or in the status of all 
 | Dir0 | The name of the folder to which the pipeline has offloaded the data
 | Last watermark | The last watermark which indicates the data in the Cumulocity IoT collection that has already been processed
 
-**CTAS result**
+**CTAS results**
 
-During offloading the data is organized in newly created files within the data lake, following a temporal folder hierarchy. For each of those files the following information is provided:
+During offloading Dremio organizes the data in newly created files within the data lake, following a temporal folder hierarchy. For each of those files the following information is provided:
 
 | Component | Description |
 | ---         | --- |

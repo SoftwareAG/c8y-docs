@@ -8,7 +8,7 @@ The setup of DataHub requires you to choose a Dremio account name, and provide c
 
 >**Info:** You need administration permissions to define the settings. See the section on [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
-The settings whose meaning may not be obvious are equipped with a help icon. Click on the icon to get more information.
+Additional help icons provide more details on specific settings.
 
 ### Defining new settings
 

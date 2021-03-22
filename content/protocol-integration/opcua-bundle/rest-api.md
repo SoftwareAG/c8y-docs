@@ -849,6 +849,11 @@ There are some parameters in the configuration file to adjust the size of this m
   # The number of maxEntries multiple this factor gives the really max size of the database file. Resize only done if needed.
   maxBloatFactor: 5.0
   ```
+
+**Endpoint**
+
+`POST /devicecontrol/operations/`
+
 Example call to set an alarm to ACTIVE
 ```json
 {

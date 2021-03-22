@@ -33,7 +33,7 @@ Cloud Remote Access</td>
 <td>
 API</td>
 <td > Information on the Cloud Remote Access API has been added to the Cloud Remote Access documentation. 
-<br>As a result, the Cloud Remote Access documentation, which formerly could be found in the <i>Optional services</i> section of the <i>User guide</i>, has been moved into a separate <a href="https://cumulocity.com/guides/10.7.0/cloud-remote-access/cra-general-aspects/" class="no-ajaxy">Cloud Remote Access guide</a>, providing a clearer structure and easier navigation.
+<br>As a result, the Cloud Remote Access documentation, which formerly could be found in the <i>Optional services</i> section of the <i>User guide</i>, has been moved into a separate <a href="https://cumulocity.com/guides/10.7.0/cloud-remote-access/cra-general-aspects/" class="no-ajaxy"><i>Cloud Remote Access guide</i></a>, providing a clearer structure and easier navigation.
 <td>
 MTM-34081</td>
 </tr>
@@ -44,9 +44,7 @@ Device SDK guide</td>
 <td>
 Linux agent</td>
 <td > Documentation has been added for the Cumulocity IoT Linux Agent.
-
 <br>The <a href="https://cumulocity.com/guides/10.7.0/device-sdk/linux-agent-user-guide" class="no-ajaxy">Linux Agent user guide</a> describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
-
 <br>The <a href="https://cumulocity.com/guides/10.7.0/device-sdk/linux-agent-developer-guide" class="no-ajaxy">Linux Agent developer guide</a> contains various Lua plugin examples (Hello world, sending measurements, restart your machine, and more) for developers.
 <td>
 MTM-34081</td>
@@ -73,7 +71,7 @@ Microservices & agents</td>
 Protocol integration guide</td>
 <td>
 NEW guide</td>
-<td > The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/overview" class="no-ajaxy">Protocol integration guide</a> to provide a clearer structure and easier navigation.
+<td > The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/overview" class="no-ajaxy"><i>Protocol integration guide</i></a> to provide a clearer structure and easier navigation.
 <td>
 MTM-29779</td>
 </tr>
@@ -124,7 +122,7 @@ MTM-35582</td>
 User guide</td>
 <td>
 Cockpit</td>
-<td > Added a note on filtering to the export description, see also <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit#report" class="no-ajaxy">Cockpit > Managing reports and exports</a>. If you select a group, the export will contain the data of direct child devices but the data of devices in subgroups (indirect children) will not be included.</td>
+<td > Added a note on filtering to the export description, see also <a href="https://cumulocity.com/guides/10.7.0/users-guide/cockpit#reports" class="no-ajaxy">Cockpit > Managing reports and exports</a>. If you select a group, the export will contain the data of direct child devices but the data of devices in subgroups (indirect children) will not be included.</td>
 <td>
 MTM-35116</td>
 </tr>
@@ -200,7 +198,7 @@ MTM-31428</td>
 Reference guide</td>
 <td>
 Inventory API</td>
-<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="//cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/10.7.0/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
 <td>
 MTM-33763</td>
 </tr>
@@ -210,7 +208,7 @@ MTM-33763</td>
 User guide</td>
 <td>
 Enterprise tenant</td>
-<td > Updated the list of non-editable fields in the subtenants <b>Properties</b> tab in the documentation, see <a href="//cumulocity.com/guides/10.7.0/enterprise-edition/managing-tenants/" class="no-ajaxy">Enterprise Tenant > Managing tenants</a>.</td>
+<td > Updated the list of non-editable fields in the subtenants <b>Properties</b> tab in the documentation, see <a href="https://cumulocity.com/guides/10.7.0/users-guide/enterprise-edition/#managing-tenants/" class="no-ajaxy">Enterprise Tenant > Managing tenants</a>.</td>
 <td>
 MTM-35001</td>
 </tr>

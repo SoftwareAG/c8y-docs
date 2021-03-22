@@ -16,7 +16,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 
 ![Microservice logging](/images/release-notes/admin-applications-logs.png)
 
-For details, see [Administration > Managing applications](https://cumulocity.com/guides/10.5.7/users-guide/administration/managing-applications) in the *User guide*.
+For details, see [Administration > Managing applications](https://cumulocity.com/guides/10.5.7/users-guide/administration/#managing-applications) in the *User guide*.
 
 
 **Single sign-on**

@@ -21,8 +21,8 @@ A new chapter [SNMP](https://cumulocity.com/guides/10.5.7/users-guide/optional-s
 
 ### Device SDK guide: Device SDK for C++
 
-The *Device SDK for C++* documentation has been updated and improved, see [Device SDK for C++](https://cumulocity.com/guides/10.5.7/device-sdk/cpp/) in the Device SDK guide.
+The *Device SDK for C++* documentation has been updated and improved, see [Device SDK for C++](https://cumulocity.com/guides/10.5.7/device-sdk/cpp/) in the *Device SDK guide*.
 
 ### Cumulocity IoT Edge
 
-The [Cumulocity IoT Edge guide](https://cumulocity.com/guides/10.5.7/edge/overview) has been updated to include all new features and functionalities related to the Cumulocity IoT Edge 10.5 release from November 2019.
+The [*Cumulocity IoT Edge guide*](https://cumulocity.com/guides/10.5.7/edge/overview) has been updated to include all new features and functionalities related to the Cumulocity IoT Edge 10.5 release from November 2019.

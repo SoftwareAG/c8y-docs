@@ -13,7 +13,7 @@ The view of the dashboard and widgets editors has been improved:
 
 ![Welcome widget](/images/release-notes/widget-editor.png)
 
-The new look & feel offers a clearer overview and clarity of the functionality. See also [Cockpit > Dashboards](https://cumulocity.com/guides/10.6.6/users-guide/cockpit#dashboards) in the User guide. 
+The new look & feel offers a clearer overview and clarity of the functionality. See also [Cockpit > Dashboards](https://cumulocity.com/guides/10.6.6/users-guide/cockpit#dashboards) in the *User guide*. 
 
 This change is related to the dashboard migration, see below. 
 
@@ -23,7 +23,7 @@ This change is related to the dashboard migration, see below.
 
 ![Welcome widget](/images/release-notes/welcome-widget.png)
 
-See also [Cockpit > Overview](https://cumulocity.com/guides/10.6.6/users-guide/cockpit#overview) in the User guide.
+See also [Cockpit > Overview](https://cumulocity.com/guides/10.6.6/users-guide/cockpit#overview) in the *User guide*.
 
 #### New smartphone wizard
 
@@ -41,7 +41,7 @@ See also [Cockpit > Overview](https://cumulocity.com/guides/10.6.6/users-guide/c
 * Collecting metrics like system resources and cellular signal strength as measurements.
 * Updating and tracking GPS locations.
 
-For details, refer to the [Casa Systems (NetComm) router](https://cumulocity.com/guides/10.6.6/device-tutorials/netcomm-router/) in the Device integration tutorials. 
+For details, refer to the [Casa Systems (NetComm) router](https://cumulocity.com/guides/10.6.6/device-tutorials/netcomm-router/) in the *Device integration tutorials*. 
  
 ### Data broker
 
@@ -70,8 +70,8 @@ The following improvements have been implemented in the data broker since 10.6.0
 
 There is no further migration of AngularJS widgets required. Backward compatibility is maintained by still allowing to show AngularJS widgets and using the same data structure for storing.
 
-For details on creating new widgets based on Angular, see [How-to recipes > Add a custom widget to a dashboard](https://cumulocity.com/guides/10.6.6/web/how-to/#add-a-custom-widget) in the Web SDK guide.
+For details on creating new widgets based on Angular, see [How-to recipes > Add a custom widget to a dashboard](https://cumulocity.com/guides/10.6.6/web/how-to/#add-a-custom-widget) in the *Web SDK guide*.
 
-The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Angular > Overview](https://cumulocity.com/guides/10.6.6/web/angular/#overview) in the Web SDK guide for information on the tutorial application.  
+The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Angular > Overview](https://cumulocity.com/guides/10.6.6/web/angular/#overview) in the *Web SDK guide* for information on the tutorial application.  
 
 In this context, the view of the dashboard the widget editors has been updated to improve the user experience, see above. Moreover, a new preview is provided which can also be added to an AngularJS widget by using the `previewImage` property in the widget definition.

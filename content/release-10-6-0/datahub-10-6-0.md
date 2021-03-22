@@ -10,7 +10,7 @@ Cumulocity IoT DataHub Release 10.6, April 2020, includes the following improvem
 
 Cumulocity IoT DataHub is now also available as an add-on to Cumulocity IoT Edge, the local version of Cumulocity IoT. DataHub Edge offers the same capabilities as the cloud variant, namely data pipelines for moving data from Cumulocity's Operational Store to a local data lake and an SQL query interface for querying that data in an efficient manner.
 
-Learn more about DataHub Edge in section [Running DataHub on the Edge](https://cumulocity.com/guides/10-6-0/datahub/running-datahub-on-the-edge).
+Learn more about DataHub Edge in section [Running DataHub on the Edge](https://cumulocity.com/guides/10.6.0/datahub/running-datahub-on-the-edge).
 
 ### Limitations
 

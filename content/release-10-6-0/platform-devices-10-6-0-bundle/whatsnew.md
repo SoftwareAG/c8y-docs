@@ -37,7 +37,7 @@ For details, see [Cockpit > Data explorer](https://cumulocity.com/guides/10.6.0/
 
 The following improvements have been implemented in the OPC UA gateway since 10.5.7.
 
-For details, see [OPC UA](https://cumulocity.com/guides/10.6.0/protocol-integration/opcua) in the *Device integration guide*.  
+For details, see [Optional services > OPC UA](https://cumulocity.com/guides/10.6.0/users-guide/optional-services/#opc-ua) in the *User guide*.  
 
 #### Extended subscription parameters 
 

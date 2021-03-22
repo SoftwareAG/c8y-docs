@@ -4,7 +4,7 @@ title: Documentation
 layout: bundle
 ---
 
-The 10.7.0 documentation contains
+The 10.9.0 documentation contains
 
 * all description enhancements and updates resulting from new features and improvements in the product,
 * a variety of documentation changes and fixes to permanently improve the documentation quality and make it clearer.

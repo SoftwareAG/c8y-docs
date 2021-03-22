@@ -1,7 +1,7 @@
 ---
 weight: 10
 title: What´s new
-layout: redirect
+layout: bundle
 ---
 
 The following major feature enhancements are available with release 10.9.0.

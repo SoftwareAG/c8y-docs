@@ -56,27 +56,6 @@ Specify the following parameters (all mandatory):
 - Status - One of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
-**Alarms created by OPC UA server**
-
-If there are alarms, and the status changes from an event that is happened on the OPC UA server it is possible to reflect these changes to internal alarms.
-
-An alarm mapping device is needed to catch these events and convert them to an internal alarm. [See here](####-creating-a-new-device-type)
-
-For better performance an in memory map is used to store alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
-
-There are some parameters in the configuration file to adjust the size of this map. With maxEntries it's possible to specify the expected numbers of alarms at the same time and is hard connected with the maxBloatFactor. This factor gives you the chance to define a possible maximum of maxEntries to be extended. (e.g. default maxEntries is 100000 and maxBloatFactor is 5.0 results to a maximum of 500000 entries). The avarageKeySize is number to define the used key size coming from the length of the type and external id. It's used to calculate the local file size bound to the entry size. 
-```json
-
-# To avoid many REST calls to the inventory we included a in memory map with a crash backup functionality
-alarmStatusStore:
-# Expected number of maximum alarms at the same time
-maxEntries: 100000
-# The average size of the keys on the map. Needed for calculation of the size of the database file.
-averageKeySize: 30
-# The number of maxEntries multiple this factor gives the really max size of the database file. Resize only done if needed.
-maxBloatFactor: 5.0
-```
-
 **Send Event**
 
 Turn on **Send event** to send an event each time you receive a resource value.

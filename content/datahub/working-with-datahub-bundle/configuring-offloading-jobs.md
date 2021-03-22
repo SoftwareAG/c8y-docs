@@ -104,8 +104,6 @@ Finally, click **Save** to save the offloading pipeline. Otherwise click **Cance
 
 <img src="/images/datahub-guide/datahub-validate-an-offloading-configuration.png" alt="Validate an offloading configuration"  style="max-width: 100%">
 
-TODO: update pic
-
 #### Overview of offloading pipelines
 
 In the main panel of the **Offloading** page, you will find all defined pipelines as well as their current status.

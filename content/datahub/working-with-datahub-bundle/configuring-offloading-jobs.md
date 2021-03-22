@@ -18,7 +18,6 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 * Viewing the history of offloading executions
 
 <img src="/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
-TODO: update pic
 
 In the action bar you have a filter control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations. Below the action bar you will find the current set of configurations.
 
@@ -69,10 +68,9 @@ For the case of the **measurements** collection, additional settings are require
 
 The layout **One table for one measurement type (Default)** will create a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type**, to which the offloaded measurements are confined. DataHub automatically inspects a subset of the data and identifies measurement types. In the measurement type drop-down box, these auto-detected types are listed. In case a specific type you are looking for has not been detected, you can manually enter it in this box as well.     
 
-The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column listing for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use-cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its self-service analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see section TODO: XYZ.
+The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column listing for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use-cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its self-service analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
-<img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task"  style="max-width: 100%">
-TODO: update pic
+<img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task" style="max-width: 100%">
 
 ##### Set additional result columns
 
@@ -360,7 +358,9 @@ is represented in the target table in the data lake as
 
 ##### Offloading measurements with the TrendMiner target table layout
 
-When using the TrendMiner layout, all measurements are offloaded with their correspoding type being stored in  column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
+When using the TrendMiner layout, all measurements are offloaded into one table. Their correspoding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source , the *fragment*, and the series as stored in the measurements collection. 
+
+The resulting schema is defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
@@ -371,9 +371,9 @@ When using the TrendMiner layout, all measurements are offloaded with their corr
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
-| year | VARCHAR |
-| month | VARCHAR |
-| day | VARCHAR |
+| TODO: year | VARCHAR |
+| TODO: month | VARCHAR |
+| TODO: day | VARCHAR |
 | source | VARCHAR |
 | type | VARCHAR |
 | tagname | VARCHAR |
@@ -387,6 +387,7 @@ The following excerpt of a measurement document in the base collection
 ````json
 {
     ...
+    "source": "857",
     "type": "Temperature",
     ...
      "c8y_Temperature": {
@@ -399,6 +400,7 @@ The following excerpt of a measurement document in the base collection
 ...
 {
     ...
+    "source": "311",
     "type": "Pressure",
     ...
      "c8y_Pressure": {
@@ -415,7 +417,7 @@ is represented in the target table in the data lake as
 | | | | | |
 | ... | type | tagname | unit | value |
 | ---- | ---- | ----- | ----- | ----- |
-| ... | Temperature | c8y_TemperatureMeasurement.T | C | 2.0791169082 |
-| ... | Pressure | c8y_PressureMeasurement.P | kPa | 98.0665 |
+| ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |
+| ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |
 
-For more details on the TrendMiner offloading see also Section TODO: XYZ.
+For more details on the TrendMiner offloading see also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).

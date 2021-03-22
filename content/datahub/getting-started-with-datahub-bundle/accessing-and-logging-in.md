@@ -15,7 +15,8 @@ You access Cumulocity IoT DataHub via a web browser. It has been tested with the
 
 After the Cumulocity IoT DataHub services have been subscribed for your tenant, you have to log into your tenant. In the **application switcher** you will find the DataHub button. When you click this button, you will be taken to the home page of DataHub. DataHub provides the management and monitoring UI of Cumulocity IoT DataHub. Alternatively your tenant administrator can give you the URL directly navigating to DataHub, which requires a login as well.
 
-TODO: add screenie with the DataHub button in the app switcher
+<img src="/images/datahub-guide/datahub-app-switcher.png" alt="DataHub in application switcher"  style="max-width: 100%">
+
 
 As working with DataHub requires you to have corresponding [DataHub permissions](/datahub/setting-up-datahub/#defining-permissions), you will get a warning after login if you omit those permissions.
 

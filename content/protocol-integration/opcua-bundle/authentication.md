@@ -16,7 +16,7 @@ The following authentication methods can be selected:
   - The keystore has to contain a user certificate with the “opcuauser” alias.
   - The user certificate has to be password-protected.
 
-> **Info**: The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in the case a keystore file should contain more data.
+> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in case a keystore file should contain more data.
 
 The keystore can be created via the following Java keytool command:
 

@@ -1,15 +1,19 @@
 ---
 weight: 12
 title: Migration notes
-layout: redirect
+layout: bundle
 ---
 
 ### Announcements
 
-#### Removal of Basic Auth browser based authentication
+#### Removal of Basic Auth browser-based authentication
 
-With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform. With the 10.10 GA release, scheduled for July 2021, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.11 GA release, scheduled for October 2021, the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform. 
+
+With the 10.10 GA release, scheduled for July 2021, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.11 GA release, scheduled for October 2021, the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+
 If not done already, we recommend you not to wait for the 10.11 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the *User guide*.
+
 In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5 or higher as well as the Microservice SDK 10.5 or higher.
 
 #### Deprecation of RxJS usage in the '@c8y/client' component of the Web SDK
@@ -34,16 +38,30 @@ For example:
 	}
 
 
-
-
 ### Implemented measures
+
+#### Single Streaming Analytics application
+
+Where previously Apama Analytics Builder and Apama EPL apps were separate applications, these have now been combined into a single **Streaming Analytics** application available from the Cumulocity IoT application switcher.
+
+See the [Streaming Analytics release notes](/release-10-9-0/streaming-analytics-10-9-0/#10_9_0) for details on migrating if your tenant had configured access to the old applications.
 
 #### Internet Explorer 11 end of support
 
-As announced previously, with the 10.9 GA release Cumulocity IoT no longer supports Internet Explorer 11. Cumulocity IoT continues to support the latest version of the Chromium-based Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
+As announced previously, Cumulocity IoT no longer supports Internet Explorer 11. Cumulocity IoT continues to support the latest version of the Chromium-based Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
+
+#### Enforcing user passwords to meet password complexity
+
+As announced previously user passwords have been enforced to meet password complexity by default. The new password validation will not impact the existing users until they need to change or reset the password. The password complexity is enforced:
+
+* During user creations
+* During password change
+* During password reset
+
+For details on password validation refer to [Administration > Getting started > User settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings).
 
 
-#### Smart REST response codes 
+<!--#### Smart REST response codes 
 
 The error code "40" will be removed in Cumulocity IoT 1.8 January 2021 release.  
 
@@ -78,19 +96,4 @@ instead of
 For details, see the [ngx-bootstrap release notes](https://github.com/valor-software/ngx-bootstrap/releases). 
 
 
-### Implemented measures
-
-#### Removal of DELETE method for audit logs
-
-As announced in the [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration), deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
-
-Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/reference/auditing/#audit-record-collection) in the Reference guide. 
-
-#### Deprecation of breadcrumbs
-
-[MTM-29924] As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), the breadcrumbs for groups and devices are now turned off by default to improve performance. If required, they can still be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. 
-
-
-
-
-
+-->

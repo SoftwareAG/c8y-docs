@@ -26,7 +26,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-In the field **Preferred login modes*, you can select one of the following options:
+In the field *Preferred login modes*, you can select one of the following options:
 
 * OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
@@ -65,7 +65,7 @@ You may choose one of the following options:
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
-   
+
 	> **Info:** The TOTP method is only available with the login mode "OAuth Internal".
 
 Click **Save TFA settings** to apply your settings.

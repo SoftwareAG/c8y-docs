@@ -216,12 +216,9 @@ This operation reads history values and applies the mappings except of alarm map
 ```
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
-<<<<<<< HEAD
 - processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
-=======
 - processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
 - batchSize (optional) - Batch size for each history read call to the OPC UA server. Default is 200.
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 
 ### Historic data binary upload
 
@@ -452,8 +449,7 @@ Otherwise, the operation result provides an explanation why the device type coul
    "description":"Test Device Type"
 }
 ```
-<<<<<<< HEAD
-=======
+
 
 ### Analyzing the set of nodes to which a device type can be applied (dry run)
 
@@ -582,8 +578,3 @@ The following example shows how to mark a read operation as expiring:
 ```
 
 The operation above will only perform a read on the OPC UA server if processed by the gateway before the 8th of February, 2021 15:00. Otherwise, the operation will fail. In this case, `Operation expired` is returned as failure reason.
-
-
-
-
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop

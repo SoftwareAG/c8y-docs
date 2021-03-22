@@ -99,13 +99,10 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 
 ![Gateway measurements tab](/images/device-protocols/opcua/opcua-gateway-memory.png)
 
-<<<<<<< HEAD
-=======
+
 #### Monitoring measurement details
 
 The following is the full list of monitoring measurements created by the gateway:
-
-
 
 <table>
 <colgroup>
@@ -254,7 +251,7 @@ The following is the full list of monitoring measurements created by the gateway
 </tbody>
 </table>
 
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
+
 ### Monitoring alarms
 
 On the gateway device, the **Alarms** tab shows all alarms raised either on the gateway or on the servers. 
@@ -267,8 +264,7 @@ There are three alarm types which can be raised:
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
 
-<<<<<<< HEAD
-=======
+
 #### Monitoring alarm details
 
 The following is the full list of monitoring alarms created by the gateway:
@@ -329,14 +325,12 @@ The following is the full list of monitoring alarms created by the gateway:
 </tbody>
 </table>
 
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 ### Monitoring events
 
 On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-events.png)
-<<<<<<< HEAD
-=======
+
 
 #### Monitoring event details
 The following is the full list of monitoring events created by the gateway:
@@ -383,4 +377,3 @@ The following is the full list of monitoring events created by the gateway:
 </tr>
 </tbody>
 </table>
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop

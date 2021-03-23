@@ -832,21 +832,25 @@ Full payload data structure explained:
 
 **Alarms status changed by OPC UA server**
 
-If there are alarms, and the status changes from an event that is happened on the OPC UA server it is possible to reflect these changes to internal alarms.
+If the the status of an event which is operated on the OPC UA server changes, these changes can be reflected as internal alarms.
 
-A UA event mapping defintion is needed to catch these events and convert them to an internal alarm.
+To catch these events and convert them into internal alarms, a UA event mapping definition is required.
 
-For better performance an in memory map is used to store alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
+For better performance an in-memory map is used to store alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
 
-There are some parameters in the configuration file to adjust the size of this map. With maxEntries it's possible to specify the expected numbers of alarms at the same time and is hard connected with the maxBloatFactor. This factor gives you the chance to define a possible maximum of maxEntries to be extended. (e.g. default maxEntries is 100000 and maxBloatFactor is 5.0 results to a maximum of 500000 entries). The avarageKeySize is number to define the used key size coming from the length of the type and external id. It's used to calculate the local file size bound to the entry size.
+The size of the map can be adjusted by several parameters in the configuration file. 
+With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
+This factor let´s you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
+The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
+It's used to calculate the local file size bound to the entry size.
   ```yaml
-  # To avoid many REST calls to the inventory we included a in memory map with a crash backup functionality
+  # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
   alarmStatusStore:
   # Expected number of maximum alarms at the same time
   maxEntries: 100000
   # The average size of the keys on the map. Needed for calculation of the size of the database file.
   averageKeySize: 30
-  # The number of maxEntries multiple this factor gives the really max size of the database file. Resize only done if needed.
+  # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
   maxBloatFactor: 5.0
   ```
 

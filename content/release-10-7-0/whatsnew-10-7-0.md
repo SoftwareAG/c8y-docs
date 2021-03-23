@@ -4,7 +4,7 @@ title: What´s new
 layout: bundle
 ---
 
-The following major feature enhancements have been introduced in the Cumulocity IoT platform with the 10.7.0 release.
+Release 10.7.0 includes the following new features or major feature enhancements.
 
 ### Device management & connectivity
 

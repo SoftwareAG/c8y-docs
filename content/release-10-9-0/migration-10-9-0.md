@@ -38,6 +38,28 @@ For example:
 	}
 
 
+#### Change of supported SSL cipher suites
+
+In order to retain the SSL Labs A+ rating, Cumulocity IoT must make continual updates to the supported cyphers for the Cumulocity IoT platform. For the Cumulocity IoT Cloud instances the weaker ciphers will be removed, for customers running their own instances the defaults will be changed with the option to enable the weaker ciphers if they are required.  
+
+The following ciphers are the supported ciphers from release 10.10. 
+
+* rsa&#95;pkcs1&#95;sha256
+* dsa&#95;sha256
+* ecdsa_secp256r1&#95;sha256
+* rsa&#95;pkcs1&#95;sha384
+* ecdsa&#95;secp384r1&#95;sha384
+* rsa&#95;pkcs1&#95;sha512
+* ecdsa&#95;secp521r1&#95;sha512
+* rsa&#95;pss&#95;rsae&#95;sha256
+* rsa&#95;pss&#95;rsae&#95;sha384
+* rsa&#95;pss&#95;rsae&#95;sha512
+* ed25519 ed448
+* rsa&#95;pss&#95;pss&#95;sha256
+* rsa&#95;pss&#95;pss&#95;sha384
+* rsa&#95;pss&#95;pss&#95;sha512
+
+
 ### Implemented measures
 
 #### Single Streaming Analytics application

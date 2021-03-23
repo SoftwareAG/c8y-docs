@@ -118,8 +118,8 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 |Field|Description|
 |:---|:---|
-|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder
-|Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} place holder
+|Redirect URI|Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder
+|Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder
 |Button name|Name displayed on the button on the **Login** page
 |Issuer|OAuth token issuer
 |Provider name|Name of the provider
@@ -196,7 +196,17 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 
  >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+##### Placeholders
+Inside some fields you can use placeholders that are resolved by Cumulocity IoT at runtime. Available placeholders are:
 
+|Placeholder|Description|
+|:---|:---|
+|clientId|Value of the **Client ID** field
+|redirectUri| Value of the **Redirect URI** field
+|code|Code returned by the authorization server in response to authorization request
+|refreshToken| Refresh token returned by the authorization server after token request
+
+These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
 #### Integration with Azure AD
 

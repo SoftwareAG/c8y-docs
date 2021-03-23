@@ -4,9 +4,9 @@ title: Introduction
 layout: bundle
 ---
 
-This documentation describes the **10.7.0 release (January 2021)** of the Cumulocity IoT platform.
+This documentation describes the **10.9.0 release (April 2021)** of the Cumulocity IoT platform.
 
-This documentation includes all new features and functionality introduced with release 10.7.0 (see the [Release notes](/release-notes/overview/) for details).
+This documentation includes all new features and functionality introduced with release 10.9.0 (see the [Release notes](/release-notes/overview/) for details).
 
 >**Important:** Depending on the Cumulocity IoT plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you.
 >

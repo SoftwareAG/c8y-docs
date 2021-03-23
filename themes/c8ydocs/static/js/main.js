@@ -89,7 +89,7 @@ var main = (function ($) {
 
           backURL = prefix + suffix;
 
-          $('<p style="text-align: center; vertical-align: center;">You are looking at an outdated version of the documentation (version ' + v + '). It is no longer updated. Click <a href="' + backURL + '">here</a> to return to the latest version.</p>').appendTo('#deprecation-banner');
+          $('<p style="text-align: center; vertical-align: center;">You are looking at the documentation of a release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to return to the latest version.</p>').appendTo('#deprecation-banner');
 
           $('#deprecation-banner').css('vertical-align', 'middle');
           $('.main-top-bar').css('top', offset);

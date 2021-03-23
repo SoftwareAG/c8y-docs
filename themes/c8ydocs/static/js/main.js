@@ -1,7 +1,7 @@
 var main = (function ($) {
   function initializer() {
 
-    Load releases menu
+    //Load releases menu
     var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false }).done(function (json) {
 
         //json = JSON.parse(json.responseText);

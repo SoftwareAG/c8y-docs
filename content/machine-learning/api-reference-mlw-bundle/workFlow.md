@@ -30,6 +30,7 @@ Trains the WorkFlow using the already created AutoML model, pre-processing scrip
 |taskName (string)| required body parameter of a task name to start the re-training
 |cronExpression (string)| required body parameter of a cron expression
 |recurrence (string)| required body parameter of a recurrence (ONE_TIME or REPEAT)
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 
@@ -39,7 +40,7 @@ Trains the WorkFlow using the already created AutoML model, pre-processing scrip
 curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
-     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
+     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain","startDate": "2020-03-08T18:30:00.000Z"}'
 ```
 
 **Example Response**
@@ -72,9 +73,10 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
    "projectID":"1600784593_Project",
    "projectName":"Demo project",
    "recurrence":"ONE_TIME",
-   "startDate":"",
-   "startTimeH":"",
-   "startTimeM":"",
+   "startDate":"2020-03-08",
+   "startTimeH":"18",
+   "startTimeM":"30",
+   "timeZone":"UTC",
    "workflowName":"yyy",
    "properties":[
       {

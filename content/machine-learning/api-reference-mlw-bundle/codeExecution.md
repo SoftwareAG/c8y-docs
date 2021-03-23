@@ -31,9 +31,7 @@ Execute a python script.
 |recurrence (string)| required ONE_TIME/REPEAT
 |cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
 |taskName (string)| required taskName body parameter
-|startDate (string)| optional startDate body parameter
-|startTimeH (integer)| optional startTimeH body parameter
-|startTimeM (integer)| optional startTimeM body parameter
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 
@@ -43,7 +41,7 @@ Execute a python script.
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
---data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1","startDate": "2020-03-08T18:30:00.000Z","startTimeH": 4,"startTimeM": 4}'
+--data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
 
@@ -72,9 +70,10 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
    ],
    "projectID":"1600784593_Project",
    "projectName":"blah project",
-   "startDate":"2020-09-29",
-   "startTimeH":"06",
-   "startTimeM":"27",
+   "startDate":"2020-03-08",
+   "startTimeH":"18",
+   "startTimeM":"30",
+   "timeZone":"UTC",
    "properties":[
       
    ],

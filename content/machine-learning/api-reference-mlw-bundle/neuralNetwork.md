@@ -42,9 +42,7 @@ Train a neural network model using architecture file.
 |dataID (string)| required resource ID of data (body parameter)
 |codeID (string)| optional resource ID of pre-processing script (body parameter)
 |problemType (string)| required classification/regression
-|startDate (string)| optional startDate body parameter to train model
-|startTimeH (integer)| optional startTimeH body parameter to train model
-|startTimeM (integer)| optional startTimeM body parameter to train model
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 
@@ -54,7 +52,7 @@ Train a neural network model using architecture file.
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z","startTimeH": 4,"startTimeM": 4}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
 
@@ -93,9 +91,10 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
    ],
    "projectID":"1600784593_Project",
    "projectName":"blah project",
-   "startDate":"2020-09-29",
-   "startTimeH":"05",
-   "startTimeM":"45",
+   "startDate":"2020-03-08",
+   "startTimeH":"18",
+   "startTimeM":"30",
+   "timeZone":"UTC",
    "properties":[
       {
          "key":"problemType",

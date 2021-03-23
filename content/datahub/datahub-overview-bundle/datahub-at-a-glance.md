@@ -25,8 +25,6 @@ The following diagram illustrates the high-level concepts.
 
 <img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept"  style="max-width: 100%">
 
-TODO: update pic
-
 The central component of Cumulocity IoT DataHub is [Dremio](https://www.dremio.com), a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio is in charge of Extract-Transform-Load (ETL) pipelines that:
 
 * Periodically extract data from the Operational Store of Cumulocity IoT.

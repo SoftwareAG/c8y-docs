@@ -356,7 +356,7 @@ is represented in the target table in the data lake as
 
 ##### Offloading measurements with the TrendMiner target table layout
 
-When using the TrendMiner layout, all measurements are offloaded into one table. Their correspoding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source , the *fragment*, and the series as stored in the measurements collection. 
+When using the TrendMiner layout, all measurements are offloaded into one table. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection. 
 
 The resulting schema is defined as follows:
 
@@ -369,9 +369,6 @@ The resulting schema is defined as follows:
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
-| TODO: year | VARCHAR |
-| TODO: month | VARCHAR |
-| TODO: day | VARCHAR |
 | source | VARCHAR |
 | type | VARCHAR |
 | tagname | VARCHAR |

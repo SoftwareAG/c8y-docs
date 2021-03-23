@@ -12,41 +12,15 @@ Click **Configuration** in the **Settings** menu, to access the **Configuration*
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
->**Info:** In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
+Most of the settings you can configure here are also available in the Enterprise tenant. For details, refer to [Enterprise tenant > Customizing your platform](/users-guide/enterprise-edition/#customization).
 
-The following placeholders can be found in the **Configuration** page:
+In addition, the following settings can be configured in the Management tenant only. 
 
-|Placeholder|Description|
-|:---|:---|
-|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.cumulocity.com`.
-|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.cumulocity.com`.
-|{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
+### Passwords
 
->**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
+In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
 
-### Two-factor authentication
-
-In the **Two-factor authentication** section, you can change the SMS template which is sent to the users.
-
-### Support link
-
-In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
-
-Enter "false" to hide the link.
-
-### Password reset
-
-In the **Password reset** section you can change all settings related to password reset email templates.
-
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
-
-At the top you can select if you want to allow sending emails to unknown email addresses.
-
-In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
-
-In the **Email subject** field, provide a subject for all password reset related emails.
-
-In the following two fields provide an email template to be used on password change confirmation and a template for the invitation email.
+![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 ### <a name="config-support-users"></a> Support user
 
@@ -89,40 +63,3 @@ Using inventory roles, you can selectively assign a support user for specific su
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
 
-### Email server
-
-In the **Email server** section, you can configure custom email server settings.
-
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
-
-In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
-
-* SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
-* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
-* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
-
-Provide the host, port, username, password and sender address for the email server.
-
-### Data export
-
-In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
-
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
-
-### Storage limit
-
-In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
-
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
-
-### Suspending tenants
-
-In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
-
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
-
-At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
-
-Click **Save configuration** to save your settings.
-
-Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/users-guide/enterprise-edition#customization).

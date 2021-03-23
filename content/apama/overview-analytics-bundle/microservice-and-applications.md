@@ -18,7 +18,7 @@ See also the tables listing the available applications under [Managing applicati
 If your tenant is subscribed to the Apama Starter microservice (instead of other Apama-ctrl microservices), then the following applies for Apama:
 
 - Unlimited number of smart rules.
-- Limited number of at most 3 active models. Custom blocks written with the Apama Analytics Builder Block SDK cannot be used. 
+- Limited number of at most 3 active models. Custom blocks written with the Analytics Builder Block SDK cannot be used. 
 - The EPL Apps page is not available in the Streaming Analytics application.
 
 Contact [Software AG Support](/about-doc/contacting-support) to discuss adding more capabilities.

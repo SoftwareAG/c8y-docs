@@ -113,7 +113,7 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus des letzten Operationen an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
-
+![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
 
@@ -215,7 +215,9 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 ![Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-tab.png)
 
-Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
+Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).
+ 
+![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
 
 ##### So installieren Sie Software auf einem Gerät
 

@@ -249,7 +249,10 @@ domain from the certificate in the NAME field. The VALUE field of the CNAME entr
 is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Please also make sure to delete any
 conflicting A entries.
 
-> **Example** If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
+**Example:** 
+
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
+
 ```shell
 NAME                  TYPE   VALUE
 ----------------------------------------------------

@@ -94,7 +94,7 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
-In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#creating-tenants).
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 

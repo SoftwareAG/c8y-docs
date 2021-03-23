@@ -74,7 +74,7 @@ colgroup>
 </tr>
 <tr>
 <td align="left">creationRamp</td>
-<td align="left">int</td>
+<td align="left">float</td>
 <td align="left">1</td>
 <td align="left">Delay between every operation creation in seconds.</td>
 <td>POST: Mandatory PUT: No</td>

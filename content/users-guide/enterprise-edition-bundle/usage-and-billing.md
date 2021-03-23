@@ -529,7 +529,7 @@ The table below presents which values are used in each model for billing purpose
 </tr>
 <tr>
 <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Can create sub-tenants</td>
+<td style="text-align:left">Can create subtenants</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>
 </tr>

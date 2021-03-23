@@ -84,14 +84,13 @@ var main = (function ($) {
 
           $('<div/>', {
             id: 'deprecation-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: red; height: ' + offset + 'px; padding: 10px 5px 5px 5px;'
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: red; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
 
           backURL = prefix + suffix;
 
           $('<p style="text-align: center; vertical-align: center;">You are looking at the documentation of a release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to return to the latest version.</p>').appendTo('#deprecation-banner');
 
-          $('#deprecation-banner').css('vertical-align', 'middle');
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);
         }

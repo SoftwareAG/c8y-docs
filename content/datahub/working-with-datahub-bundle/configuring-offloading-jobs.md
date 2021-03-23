@@ -349,10 +349,9 @@ The following excerpt of a measurement document in the base collection
 
 is represented in the target table in the data lake as
 
-| | | |
-| ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |
-| ---- | ---- | ----- |
-| ... | C | 2.0791169082 |
+| ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
+| ---- | ---- | ---- | ---- |
+| ... | C | 2.0791169082 | ... |
 
 ##### Offloading measurements with the TrendMiner target table layout
 
@@ -409,10 +408,9 @@ The following excerpt of a measurement document in the base collection
 
 is represented in the target table in the data lake as
 
-| | | | | |
-| ... | type | tagname | unit | value |
-| ---- | ---- | ----- | ----- | ----- |
-| ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |
-| ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |
+| ... | type | tagname | unit | value | ... |
+| ---- | ---- | ----- | ----- | ----- | ----- |
+| ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
+| ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
 
 For more details on the TrendMiner offloading see also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).

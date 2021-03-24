@@ -26,7 +26,7 @@ All reports are now displayed under a separate <b>Reports</b> menu item in the n
 
 The <b>Exports</b> menu item has been moved under the <b>Configuration</b> menu.
 
-add screenshot
+![Report page](/images/release-notes/cockpit-reports-list.png)
 
 For details, see <a href="/cockpit/reports/" class="no-ajaxy">Cockpit > Reports</a> in the <em>User guide</em>.
 
@@ -38,7 +38,7 @@ The user experience for setting the default applications has been improved. The 
 
 A new <b>Default subscriptions</b> page is available in the <b>Applications</b> menu, where default applications for both new tenants and existing ones can be configured.
 
-add screenshot
+![Default subscriptions](/images/release-notes/admin-default-subscriptions-inherited.png)
 
 For details, see <a href="/users-guide/enterprise-edition/#Default subscriptions" class="no-ajaxy">Enterprise tenant > Managing tenants</a> in the <em>User guide</em>.
 
@@ -47,7 +47,7 @@ For details, see <a href="/users-guide/enterprise-edition/#Default subscriptions
 
 The <b>SMS provider</b> page has been updated. New providers have been added to be configured. 
 
-add screenshot
+![SMS providers](/images/release-notes/admin-settings-sms-provider.png)
 
 See also <a href="/users-guide/administration/#openIT-credentials" class="no-ajaxy">Administration > Changing settings > Providing SMS provider credentials</a> in the <em>User guide</em>.
 

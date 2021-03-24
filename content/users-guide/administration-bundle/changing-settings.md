@@ -26,7 +26,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-In the field **Preferred login modes*, you can select one of the following options:
+In the field *Preferred login modes*, you can select one of the following options:
 
 * OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
@@ -65,7 +65,7 @@ You may choose one of the following options:
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
-   
+
 	> **Info:** The TOTP method is only available with the login mode "OAuth Internal".
 
 Click **Save TFA settings** to apply your settings.
@@ -120,8 +120,8 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 |Field|Description|
 |:---|:---|
-|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder
-|Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} place holder
+|Redirect URI|Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder
+|Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder
 |Button name|Name displayed on the button on the **Login** page
 |Issuer|OAuth token issuer
 |Provider name|Name of the provider
@@ -198,7 +198,17 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 
  >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+##### Placeholders
+Inside some fields you can use placeholders that are resolved by Cumulocity IoT at runtime. Available placeholders are:
 
+|Placeholder|Description|
+|:---|:---|
+|clientId|Value of the **Client ID** field
+|redirectUri| Value of the **Redirect URI** field
+|code|Code returned by the authorization server in response to authorization request
+|refreshToken| Refresh token returned by the authorization server after token request
+
+These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
 #### Integration with Azure AD
 

@@ -832,11 +832,11 @@ Full payload data structure explained:
 
 **Alarms status changed by OPC UA server**
 
-If the the status of an event which is operated on the OPC UA server changes, these changes can be reflected as internal alarms.
+If the status of an event which is operated on the OPC UA server changes, these changes can be reflected as internal alarms.
 
 To catch these events and convert them into internal alarms, a UA event mapping definition is required.
 
-For better performance an in-memory map is used to store alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
+For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
 
 The size of the map can be adjusted by several parameters in the configuration file. 
 With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.

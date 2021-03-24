@@ -19,7 +19,7 @@ layout: redirect
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">Mandatory for PUT/POST</th>
 </tr>
 </thead>
 <tbody>
@@ -49,42 +49,42 @@ layout: redirect
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the type of this alarm, e.g., “com_cumulocity_events_TamperEvent”.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Yes<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">time</td>
 <td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time of the alarm.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Yes<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">text</td>
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Text description of the alarm.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Yes<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">source</td>
 <td align="left">ManagedObject</td>
 <td align="left">1</td>
 <td align="left">The ManagedObject that the alarm originated from, as object containing the “id” property.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Yes<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">status</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.</td>
-<td align="left">POST: Optional<br> PUT: Optional</td>
+<td align="left">No</td>
 </tr>
 <tr>
 <td align="left">severity</td>
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.</td>
-<td align="left">POST: Mandatory<br> PUT: Optional</td>
+<td align="left">POST: Yes<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">count</td>
@@ -112,7 +112,7 @@ layout: redirect
 <td align="left">Object</td>
 <td align="left">0..n</td>
 <td align="left">Additional properties of the event.</td>
-<td></td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>

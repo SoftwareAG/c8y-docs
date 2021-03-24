@@ -836,7 +836,7 @@ If events operated on the OPC UA server change their status, these changes can b
 
 To catch these events and convert them into internal alarms, a UA event mapping definition is required.
 
-For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. Cleared alarms will be deleted.
+For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
 
 The size of the map can be adjusted by several parameters in the configuration file. 
 With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.

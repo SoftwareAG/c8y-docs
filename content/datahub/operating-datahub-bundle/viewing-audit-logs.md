@@ -22,7 +22,7 @@ For each offloading query, the following information is provided:
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the offloading query has read from the Operational Store of Cumulocity IoT
 | Data billed (MB) | The amount of data being billed; amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
-| Details | The internal task ID in an expandable box
+| Details | The internal task UUID in an expandable box
 
 For each ad-hoc query, the following information is provided:
 

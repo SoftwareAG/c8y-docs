@@ -20,4 +20,4 @@ After the Cumulocity IoT DataHub services have been subscribed for your tenant, 
 
 As working with DataHub requires you to have corresponding [DataHub permissions](/datahub/setting-up-datahub/#defining-permissions), you will get a warning after login if you omit those permissions.
 
-When you want to log out, click the **User** button at the right of the top bar and from the context menu select **Logout**.
+When you want to log out, click the **User** button at the right of the top bar and select **Logout** from the context menu.

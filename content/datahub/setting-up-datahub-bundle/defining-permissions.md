@@ -6,12 +6,12 @@ layout: redirect
 
 Dedicated permissions define what a user is allowed to do in DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
-If you omit DataHub permissions, you will get a corresponding warning after login.  
+If you do not have corresponding DataHub permissions, you will get a warning after login.  
 
 ### DataHub roles and permissions
 
 #### DataHub administrator
-The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like viewing audit logs or monitoring the system status. The administrator can also manage offloading pipelines, e.g., defining and starting a pipeline. 
+The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like inspecting audit logs or monitoring the system status. The administrator can also manage offloading pipelines, e.g., defining and starting a pipeline. 
 
 For those tasks the default role **DATAHUB_ADMINISTRATOR** is created. The permissions for this role are defined as follows:
 
@@ -24,7 +24,7 @@ For those tasks the default role **DATAHUB_ADMINISTRATOR** is created. The permi
 While **READ** refers to reading the specific data, **ADMIN** refers to creating, updating, or deleting the specified data.
 
 #### DataHub manager
-The configurator manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role **DATAHUB_MANAGER** is created. The permissions for this role are defined as follows:
+The manager manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role **DATAHUB_MANAGER** is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
@@ -33,11 +33,11 @@ The configurator manages offloading pipelines, e.g., defining and starting a pip
 |Datahub query|yes|no|
 
 #### DataHub user
-The user runs queries against the data in the data lake. For details see section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub#querying-offloaded). To run queries the following approaches can be used:
+The user executes SQL queries against the data in the data lake. For details on querying the data lake see section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
 
-* Dremio UI: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for logging into the UI.
-* Dremio API: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against the Dremio REST API. Software AG does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
-* DataHub proxy API: The Cumulocity IoT user needs the role **DATAHUB_READER** in order to run queries using the proxy API.
+* Dremio UI: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for logging into the Dremio UI and executing queries within that UI.
+* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against that API. Software AG does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
+* DataHub proxy API: DataHub provides an API which proxies requests to the Dremio API. The Cumulocity IoT user needs the role **DATAHUB_READER** in order to execute queries using the proxy API.
 
 The permissions for the role **DATAHUB_READER** are defined as follows:
 

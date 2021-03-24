@@ -90,13 +90,12 @@ Select a job overview in the history per offloading job or in the status of all 
 | Job name | The name of the pipeline
 | Job id | The internal ID of the job
 | Job execution id | The Dremio ID of this execution
-| Source collection | The name of the Cumulocity IoT source collection
-| Target dataset | The folder name in the data lake
+| Source collection | The name of the Cumulocity IoT base collection
+| Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
-| Dir0 | The name of the folder to which the pipeline has offloaded the data
 | Last watermark | The last watermark which indicates the data in the Cumulocity IoT collection that has already been processed
 
-**CTAS results**
+**Offloading results**
 
 During offloading Dremio organizes the data in newly created files within the data lake, following a temporal folder hierarchy. For each of those files the following information is provided:
 

@@ -8,8 +8,6 @@ The setup of DataHub requires you to choose a Dremio account name, and provide c
 
 >**Info:** You need administration permissions to define the settings. See the section on [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
-Additional help icons provide more details on specific settings.
-
 ### Defining new settings
 
 #### Dremio Account
@@ -72,12 +70,12 @@ For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also defi
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
-* A data lake source in Dremio is created using the provided data lake settings.
+* A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data. 
 * A source in Dremio is created which connects to the Operational Store of Cumulocity IoT.
-* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
+* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant id concatenated with 'Space', e.g. t12345Space. 
 
 ### Editing settings
 Editing the settings is not supported. You have to delete the existing settings and define new settings.
 
 ### Deleting settings
-Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. The data lake and its contents are *not* deleted.
+Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. The data lake and its contents are *not* deleted. To delete the data lake and its contents you have to use the tooling of your data lake provider.

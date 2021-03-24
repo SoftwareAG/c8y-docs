@@ -832,7 +832,7 @@ Full payload data structure explained:
 
 **Alarms status changed by OPC UA server**
 
-If the status of an event which is operated on the OPC UA server changes, these changes can be reflected as internal alarms.
+If events operated on the OPC UA server change their status, these changes can be reflected as internal alarms.
 
 To catch these events and convert them into internal alarms, a UA event mapping definition is required.
 
@@ -840,7 +840,7 @@ For better performance an in-memory map is used to store the alarm type and the 
 
 The size of the map can be adjusted by several parameters in the configuration file. 
 With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
-This factor let´s you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
+This factor lets you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
 The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
 It's used to calculate the local file size bound to the entry size.
   ```yaml

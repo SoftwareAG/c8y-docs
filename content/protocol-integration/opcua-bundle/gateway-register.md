@@ -170,7 +170,16 @@ gateway:
     # received from the OPC UA server.
     threadpool:
       size: 200
-
+    
+    # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
+    alarmStatusStore:
+      # Expected number of maximum alarms at the same time
+      maxEntries: 100000
+      # The average size of the keys on the map. Needed for calculation of the size of the database file.
+      averageKeySize: 30
+      # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
+      maxBloatFactor: 5.0
+      
   # Mapping-specific settings
   mappings:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap

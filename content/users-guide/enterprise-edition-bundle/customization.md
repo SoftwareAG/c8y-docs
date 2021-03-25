@@ -4,45 +4,92 @@ title: Customizing your platform
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity IoT, you can customize your platform according to your wishes and requirements.
+With the Enterprise tenant of Cumulocity IoT, you can customize your platform in various aspects and according to your requirements.
 
-In the **Settings** menu, you may specify various customization settings.
+Apart from various [configuration](#configuration) settings, you can use your individual [branding](#branding) and your individual [domain name](#domain-name).
+
+Click **Enterprise tenant** in the **Settings** menu to access these settings.
+
+![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
 
 ### <a name="configuration"></a>Configuration
 
->**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info:** In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
 
-#### Applications
+The following placeholders can be found in the **Configuration** tab:
 
-In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list.
+|Placeholder|Description|
+|:---|:---|
+|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.cumulocity.com`.
+|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.cumulocity.com`. In case of an Enterprise tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
+|{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
-![Applications settings](/images/users-guide/enterprise-tenant/et-settings-configuration-applications.png)
+#### Two-factor authentication
 
-#### Passwords
+Under **Two-factor authentication**, you can change the SMS template which is sent to the users.
 
-In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
+![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
 
-![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
+#### Support link
 
-#### Support user
+In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
 
-In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
+![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
-With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+Enter "false" to hide the link.
 
-<img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+#### Password reset
 
-In the field **Activate support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
+In the **Password reset** section you can change all settings related to password reset email templates.
 
-* *true*: Support user access is activated. If support user access is activated, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves.
-* *false*: Support user access is deactivated. If support user access is deactivated, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
-* An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
+![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
-In the **Validity limit** field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
+At the top you can select if you want to allow sending emails to unknown email addresses.
 
-The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
+In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+In the **Email subject** field, provide a subject for all password reset related emails.
+
+In the following two fields provide an email template to be used on password change confirmation and a template for the invitation email.
+
+#### Email server
+
+In the **Email server** section, you can configure custom email server settings.
+
+<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+
+In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
+
+* SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
+* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
+* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
+
+Provide the host, port, username, password and sender address for the email server.
+
+### Data export
+
+In the**Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
+
+![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+
+### Storage limit
+
+In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
+
+![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+
+### Suspending tenants
+
+In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
+
+<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+
+At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
+
+Click **Save configuration** at the bottom to save your settings.
+
+**Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+
 
 ### <a name="branding"></a>Branding
 

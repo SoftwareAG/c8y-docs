@@ -104,6 +104,12 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
+<td style="text-align: left">awakeTimeRegistrationParameter</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to Cumulocity IoT. Defaults to the global setting of the LWM2M server.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
 <td style="text-align: left">serverPublicKey</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The public key of the server.</td>

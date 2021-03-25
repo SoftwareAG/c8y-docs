@@ -227,7 +227,7 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the alarms collection encompasses additional steps:
 
 1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
-2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target folder name plus *_all* and *_latest* respectively. The following examples use *alarms* as target table name:
+2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *alarms* as target table name:
     * **alarms_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
     * **alarms_latest**: a view with the latest status of all alarms, with all previous transitions being discarded.
 
@@ -258,7 +258,7 @@ The events collection manages the events. During offloading, the data of the eve
 
 Events, just like alarms, are mutable, i.e., they can be changed after their creation. Thus, the same logic as for alarms applies. 
 
-Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target folder name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
+Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
 
 * **events_all**: Contains all states (that were captured by DataHub's period offloading) of all events 
 * **events_latest**: Contains only the latest state of all events without prior states
@@ -290,7 +290,7 @@ The inventory collection keeps track of managed objects. During offloading, the 
 The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps: 
 
 1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
-2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target folder name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
+2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
     * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
     * **inventory_latest**: a view with the latest status of all managed objects, with all previous transitions being discarded.
 

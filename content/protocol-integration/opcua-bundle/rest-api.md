@@ -236,7 +236,7 @@ This property has to be explicitly set to "true" to detect and persist the addre
 
 If events operated on the OPC UA server change their status, these changes can be reflected as internal alarms.
 
-To catch these events and convert them into internal alarms, a UA event mapping with the alarmCreation definition is required and alarmStatusMappings in server configuration are required also.
+To catch these events and convert them into internal alarms, a UA event mapping with the alarmCreation definition in device protocol and alarmStatusMappings in server configuration are required.
 
 For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
 

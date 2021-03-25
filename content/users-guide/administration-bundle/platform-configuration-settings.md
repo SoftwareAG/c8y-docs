@@ -46,7 +46,7 @@ Details on the status of support requests and support user access for a tenant c
 
 A support user is a user in the Management tenant with specific permissions. This user can log in to the target tenant and impersonate the target user.
 
-To configure a user in the Management tenant as support user, you need to assign the relevant roles to the user. This can either be dine by using a global role or by inventory roles.  
+To configure a user in the Management tenant as support user, you need to assign the relevant roles to the user. This can either be done by using a global role or by inventory roles.  
 
 **Using a global role**
 

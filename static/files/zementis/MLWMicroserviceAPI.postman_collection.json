@@ -1195,7 +1195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"taskName\": \"Task1\", \"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0 15 0/1 1/1 * ? *\",\"startDate\":\"2020-07-18T18:30:00.000Z\",\"startTimeH\":10,\"startTimeM\":15}",
+							"raw": "{\"taskName\": \"Task1\", \"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0 15 0/1 1/1 * ? *\",\"startDate\":\"2020-07-18T18:30:00.000Z\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2464,7 +2464,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"sampleRunWF2\",\"startDate\":\"2020-10-20T18:30:00.000Z\",\"startTimeH\":8,\"startTimeM\":1}",
+							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"sampleRunWF2\",\"startDate\":\"2020-10-20T18:30:00.000Z\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2521,7 +2521,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"runFile2\",\"startDate\":\"2020-10-20T18:30:00.000Z\",\"startTimeH\":1,\"startTimeM\":1}",
+							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"runFile2\",\"startDate\":\"2020-10-20T18:30:00.000Z\"}",
 							"options": {
 								"raw": {
 									"language": "json"

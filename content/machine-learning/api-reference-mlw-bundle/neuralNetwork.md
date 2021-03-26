@@ -26,8 +26,23 @@ Train a neural network model using architecture file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
+|batchSize (integer)| required batchSize body parameter to train model
+|epoch (integer)| required epoch body parameter to train model
+|stepPerEpoch (integer)| required stepPerEpoch body parameter to train model
+|learningRate (float)| required learningRate body parameter to train model
+|loss (string)| required loss function body parameter to train model
+|metrics (list)| required metrics body parameter to train model
+|optimizer (string)| required optimizer body parameter to train model
+|testSize (float)| required testSize body parameter to train model
+|recurrence (string)| required ONE_TIME/REPEAT
+|cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
+|modelName (string)| required modelName body parameter
+|dataID (string)| required resource ID of data (body parameter)
+|codeID (string)| optional resource ID of pre-processing script (body parameter)
+|problemType (string)| required classification/regression
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 
@@ -37,7 +52,7 @@ Train a neural network model using architecture file.
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
 
@@ -76,9 +91,10 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
    ],
    "projectID":"1600784593_Project",
    "projectName":"blah project",
-   "startDate":"2020-09-29",
-   "startTimeH":"05",
-   "startTimeM":"45",
+   "startDate":"2020-03-08",
+   "startTimeH":"18",
+   "startTimeM":"30",
+   "timeZone":"UTC",
    "properties":[
       {
          "key":"problemType",

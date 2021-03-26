@@ -59,7 +59,7 @@ var main = (function ($) {
 
           backURL = prefix + suffix;
 
-          $('<p style="text-align: center; vertical-align: center;">You are looking at the documentation of a release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to return to the latest version.</p>').appendTo('#deprecation-banner');
+          $('<p style="text-align: center; vertical-align: center;">This documentation refers to a Cumulocity IoT release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to switch to the latest version.</p>').appendTo('#deprecation-banner');
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);

@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 layout: redirect
 title: Hello world tutorial
 ---

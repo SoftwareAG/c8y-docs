@@ -298,13 +298,9 @@ The service will retain all the child devices of the server, and their correspon
 </tbody>
 </table>
 
-<<<<<<< HEAD
-Response: `204 No content`
-=======
 **Response**
 
 `200 OK`
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 
 ### Address space resources
 

@@ -4,7 +4,7 @@ title: Authentication
 layout: redirect
 ---
 
-The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection. 
+The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection.
 
 The following authentication methods can be selected:
 
@@ -13,8 +13,10 @@ The following authentication methods can be selected:
 - Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
   - It has to be a Java keystore (JKS).
   - The keystore itself has to be password-protected.
-  - The keystore has to contain user certificate with  “opcuauser” alias.
+  - The keystore has to contain a user certificate with the “opcuauser” alias.
   - The user certificate has to be password-protected.
+
+> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in case a keystore file should contain more data.
 
 The keystore can be created via the following Java keytool command:
 
@@ -99,13 +101,10 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 
 ![Gateway measurements tab](/images/device-protocols/opcua/opcua-gateway-memory.png)
 
-<<<<<<< HEAD
-=======
+
 #### Monitoring measurement details
 
 The following is the full list of monitoring measurements created by the gateway:
-
-
 
 <table>
 <colgroup>
@@ -254,10 +253,10 @@ The following is the full list of monitoring measurements created by the gateway
 </tbody>
 </table>
 
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
+
 ### Monitoring alarms
 
-On the gateway device, the **Alarms** tab shows all alarms raised either on the gateway or on the servers. 
+On the gateway device, the **Alarms** tab shows all alarms raised either on the gateway or on the servers.
 
 There are three alarm types which can be raised:
 
@@ -267,8 +266,7 @@ There are three alarm types which can be raised:
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
 
-<<<<<<< HEAD
-=======
+
 #### Monitoring alarm details
 
 The following is the full list of monitoring alarms created by the gateway:
@@ -329,14 +327,12 @@ The following is the full list of monitoring alarms created by the gateway:
 </tbody>
 </table>
 
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
 ### Monitoring events
 
 On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-events.png)
-<<<<<<< HEAD
-=======
+
 
 #### Monitoring event details
 The following is the full list of monitoring events created by the gateway:
@@ -383,4 +379,3 @@ The following is the full list of monitoring events created by the gateway:
 </tr>
 </tbody>
 </table>
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop

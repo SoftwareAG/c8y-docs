@@ -134,8 +134,6 @@ Below there is an example of a full device protocol that configures a custom act
    ]
 }
 ```
-<<<<<<< HEAD
-=======
 
 ### Monitoring events for device protocol application
 
@@ -186,5 +184,4 @@ In the section _mappingExecution_ - _http_ - _failureHandling_
 
 - maxRetries[number] - Number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5.
 
-- pendingMaxAge[seconds] - Queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 .
->>>>>>> 76ee79595... Merged MTM-37324-Fix-dashes-in-OPC-UA-Doc into develop
+- pendingMaxAge[seconds] - Queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400.

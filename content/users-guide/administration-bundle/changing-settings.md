@@ -205,6 +205,14 @@ Inside some fields you can use placeholders that are resolved by Cumulocity IoT 
 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
+To use a placeholder in a field, put it inside two curly brackets preceded with a dollar sign:
+![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_standalone.png)
+
+Placeholders can also be used as a part of text:
+![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_text.png)
+
+Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
+
 #### Integration with Azure AD
 
 ##### Azure AD configuration

@@ -54,7 +54,7 @@ var main = (function ($) {
 
           $('<div/>', {
             id: 'deprecation-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: red; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff9301; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
 
           backURL = prefix + suffix;

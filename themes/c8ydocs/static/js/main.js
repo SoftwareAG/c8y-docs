@@ -18,27 +18,51 @@ var main = (function ($) {
           vs.push(urls[i].label);
         }
 
+        rest = loc.href.split("guides/")[1];
+        v = rest.split("/")[0];
+
+        prefix = loc.href.split("guides/")[0] + "guides/";
+        r = rest.split("/");
+        r.shift();
+        suffix = r.join("/");
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
+
+          console.log(el.url + "/" + suffix);
           if (loc.href.includes(el.label)) {
             active = true;
+
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
+              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }
 
-        rest = loc.href.split("guides/")[1];
-        v = rest.split("/")[0];
-
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);
+
+          $('.dropdown.version').hide();
+
+          offset = 45;
+
+          $('<div/>', {
+            id: 'deprecation-banner',
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff9301; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+          }).prependTo('body');
+
+          backURL = prefix + suffix;
+
+          $('<p style="text-align: center; vertical-align: center;">This documentation refers to a Cumulocity IoT release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to switch to the latest version.</p>').appendTo('#deprecation-banner');
+
+          $('.main-top-bar').css('top', offset);
+          $('.main-nav.navbar').css('top', offset);
         }
 
         if (!active) {

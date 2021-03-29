@@ -9,9 +9,28 @@ The 10.7.0 documentation contains
 * all description enhancements and updates resulting from new features and improvements in the product,
 * a variety of documentation changes and fixes to permanently improve the documentation quality and make it clearer.
 
-Moreover, you can find the following enhancements, improvements and major fixes in the area of documentation.
+Moreover, you can find the following major enhancements, improvements and fixes in the area of documentation.
 
 ### New guides and sections
+
+#### NEW Protocol integration guide
+
+[MTM-29779] The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called *[Protocol integration guide](/protocol-integration/overview)* to provide a clearer structure and easier navigation.
+
+![Protocol integration guide](/images/release-notes/new-protocol-integration-guide.png)
+
+#### Installation and operations guides
+
+In addition to the Installation & Operations guides already provided for previous versions, the following new guides are now available through the [Software AG Empower Portal](https://documentation.softwareag.com/):
+
+* **Cloud Remote Access** - Installation & operations guide
+* **Connectivity** - Installation & operations guide
+* **Actility microservice** - Installation & operations guide
+* **SNMP microservice** - Installation & operations guide
+
+Note, that access to these documents on the Empower Portal requires credentials.
+
+### Improvements
 
 <table ><colgroup>
 <col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
@@ -49,53 +68,6 @@ Linux agent</td>
 <td>
 MTM-34081</td>
 </tr>
-
-<tr>
-<td>
-Installation & operations documentation</td>
-<td>
-Microservices & agents</td>
-<td > The following new Installation & operations guides are now available through the <a href="https://documentation.softwareag.com/" class="no-ajaxy">Software AG Empower Portal</a>:
-<br>- <i>Cloud Remote Access</i> 
-<br>- <i>Connectivity</i> 
-<br>- <i>Actility microservice</i>
-<br>- <i>SNMP microservice</i> 
-<br>Note, that access to these documents on the Empower Portal requires credentials.
-
-<td>
-</td>
-</tr>
-
-<tr>
-<td>
-Protocol integration guide</td>
-<td>
-NEW guide</td>
-<td > The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called <a href="https://cumulocity.com/guides/10.7.0/protocol-integration/overview" class="no-ajaxy"><i>Protocol integration guide</i></a> to provide a clearer structure and easier navigation.
-<td>
-MTM-29779</td>
-</tr>
-
-</tbody></table>
-
-
-
-
-### Improvements
-
-<table ><colgroup>
-<col style="width: 15%;"><col style="width: 15%;"><col style="width: 55%;"><col style="width: 15%;"></colgroup>
-<thead><tr>
-<th>
-Guide</th>
-<th>
-Component</th>
-<th>
-Description</th>
-<th>
-Issue</th>
-</tr>
-</thead><tbody>
 
 <tr>
 <td>

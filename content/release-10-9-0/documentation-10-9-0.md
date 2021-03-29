@@ -17,7 +17,7 @@ Moreover, you can find the following major enhancements, improvements and fixes 
 
 A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard. 
 
-<!--add screenshot-->
+![Open API specification](/images/release-notes/open-api-new.png)
 
 The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0. 
 
@@ -86,7 +86,7 @@ MTM-35717</td>
 Protocol integration guide</td>
 <td>
 Loriot LoRa</td>
-<td > Documentation has been added to the Protocol integration guide for the new agent <a href="https://cumulocity.com/guides/protocol-integration/loriot-lora/" class="no-ajaxy">Loriot LoRa</a>. </td>
+<td > Documentation has been added to the Protocol integration guide for the new agent <a href="https://cumulocity.com/guides/protocol-integration/#loriot-lora/" class="no-ajaxy">Loriot LoRa</a>. </td>
 <td>
 MTM-36385</td>
 </tr>
@@ -96,7 +96,7 @@ MTM-36385</td>
 User guide</td>
 <td>
 Cockpit</td>
-<td > The description of the smart rules behavior has been updated to achieve more clarity, see <a href="https://cumulocity.com/guides//cockpit/smart-rules/" class="no-ajaxy">Cockpit > Smart rules</a>.</td>
+<td > The description of the smart rules behavior has been updated to achieve more clarity, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules" class="no-ajaxy">Cockpit > Smart rules</a>.</td>
 <td>
 MTM-35582</td>
 </tr>
@@ -105,7 +105,7 @@ MTM-35582</td>
 <td>
 User guide</td>
 <td>Cockpit</td>
-<td > The documentation on exports and reports has been enhanced to reflect the new UI behavior. You can now find two sections, Working with reports and Managing exports, instead of one, see <a href="https://cumulocity.com/guides/cockpit/overview/" class="no-ajaxy">Cockpit</a>. </td>
+<td > The documentation on exports and reports has been enhanced to reflect the new UI behavior. You can now find two sections, Working with reports and Managing exports, instead of one, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#overview/" class="no-ajaxy">Cockpit</a>. </td>
 <td>
 MTM-35165</td>
 </tr>
@@ -115,7 +115,7 @@ MTM-35165</td>
 User guide</td>
 <td>
 Cockpit</td>
-<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides//cockpit/smart-rules-collection/" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
+<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
 <td>
 MTM-35724</td>
 </tr>
@@ -125,7 +125,7 @@ MTM-35724</td>
 User guide</td>
 <td>
 Device Management</td>
-<td > The documentation on managing device data reflects various functional improvements in the software, firmware and configuration repositories, see <a href="https://cumulocity.com/guides/device-management/managing-device-data/" class="no-ajaxy">Managing device data</a>. </td>
+<td > The documentation on managing device data reflects various functional improvements in the software, firmware and configuration repositories, see <a href="https://cumulocity.com/guides/users-guide/device-management/#managing-device-data" class="no-ajaxy">Managing device data</a>. </td>
 <td>
 MTM-36884</td>
 </tr>
@@ -145,7 +145,7 @@ MTM-36884</td>
 Website</td>
 <td>
 Hugo</td>
-<td > The Hugo version used for generating the documentation website at https://cumulocity.com/guides/about-doc/ has been updated from 0.55.0 to 0.80.0. </td>
+<td > The Hugo version used for generating the documentation website at <a href="https://cumulocity.com/guides/about-doc/" class="no-ajaxy">https://cumulocity.com/guides</a> has been updated from 0.55.0 to 0.80.0. </td>
 <td>
 MTM-34547</td>
 </tr>
@@ -184,7 +184,7 @@ MTM-33763</td>
 User guide</td>
 <td>
 Enterprise tenant</td>
-<td > Updated the list of non-editable fields in the subtenants <b>Properties</b> tab in the documentation, see <a href="https://cumulocity.com/guides/enterprise-edition/managing-tenants/" class="no-ajaxy">Enterprise Tenant > Managing tenants</a>.</td>
+<td > Updated the list of non-editable fields in the subtenants <b>Properties</b> tab in the documentation, see <a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#managing-tenants" class="no-ajaxy">Enterprise Tenant > Managing tenants</a>.</td>
 <td>
 MTM-35001</td>
 </tr>

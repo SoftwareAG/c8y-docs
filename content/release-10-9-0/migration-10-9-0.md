@@ -59,6 +59,12 @@ The following ciphers are the supported ciphers from GA release 10.10.
 * rsa&#95;pss&#95;pss&#95;sha384
 * rsa&#95;pss&#95;pss&#95;sha512
 
+#### Removal of older documentation versions from the documentation website
+
+With the 10.10 GA release, scheduled for July 2021, product documentation for releases that are no longer in maintenance will be hidden from the version dropdown list at [https://cumulocity.com/guides/about-doc/intro-documentation/](https://cumulocity.com/guides/10.5.7/about-doc/intro-documentation/).  
+
+However, the documentation is still available and all links to it still work. To access it, use the full URL including the respective version number, for example [https://cumulocity.com/guides/**10.5.7**/about-doc/intro-documentation/](https://cumulocity.com/guides/10.5.7/about-doc/intro-documentation/).
+
 
 ### Implemented measures
 

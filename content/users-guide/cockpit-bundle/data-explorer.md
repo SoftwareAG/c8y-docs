@@ -12,7 +12,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 * Click **Data explorer** in the navigator to visualize all data points of all assets.
 
-* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its sub-assets.
+* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
 In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
@@ -206,7 +206,7 @@ To create a widget from the data explorer of in the navigator, click **More...**
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
-> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
+> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
 
 
 ### <a name="export-data"></a>Exporting measurement data

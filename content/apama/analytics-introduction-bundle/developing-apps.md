@@ -4,28 +4,28 @@ title: Developing apps
 layout: redirect
 ---
 
-An EPL app is a monitor (*.mon) file. You can develop EPL apps in two different ways:
+An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
-* You can use [Apama EPL Apps](#apama-epl-apps) which is available from Cumulocity IoT's application switcher and develop your EPL apps within Cumulocity IoT.
+* You can use the [Streaming Analytics application](#apama-epl-apps) which is available from Cumulocity IoT's application switcher and develop your EPL apps within Cumulocity IoT.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [Software AG Designer](#sag-designer), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
-### <a name="apama-epl-apps"></a>Developing apps with Apama EPL Apps
+### <a name="apama-epl-apps"></a>Developing apps with the Streaming Analytics application
 
-Apama EPL Apps provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps. 
+The EPL Apps page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps. 
 
-Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop apps with Apama EPL Apps and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support). 
+> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support). 
 
-**Step 1 - Invoke Apama EPL Apps**
+**Step 1 - Invoke the Streaming Analytics application**
 
-Open the application switcher and click the icon for the **Apama EPL Apps** application.
+Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the EPL Apps page.
 
-When you invoke Apama EPL Apps, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
+When you go to the  EPL Apps page, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
 
-![Apama EPL Apps](/images/apama/apama-epl-apps-cards.png)
+![EPL Apps](/images/apama/apama-epl-apps-cards.png)
 
 Each card that is shown for an app has an actions menu at the top which allows you to edit or remove the app.
 
@@ -35,7 +35,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of Cumulocity IoT (for example, using Software AG Designer), click **Import EPL** in the top menu bar to upload an Apama monitor (*.mon) file as an app into Apama EPL Apps.
+* Import EPL apps. If you prefer to develop your apps outside of Cumulocity IoT (for example, using Software AG Designer), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
 * Deploy existing EPL apps. On the card that is shown for an app, change the mode from **Inactive** to **Active**. For more information, see [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
@@ -57,7 +57,7 @@ Using the buttons in the top menu bar, you can undo/redo your last changes in th
 
 It is also possible to change the mode from **Inactive** to **Active** (or vice versa) in the EPL editor. Again, when there is an error in your EPL code, it is not possible to activate the app. The errors are highlighted within the code.
 
-Keep the following in mind while creating (or importing) an EPL app: When an EPL app is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the app. For example, you may only have ADMIN permission for "CEP management" for injecting EPL and creating Analytics Builder models. However, when the app is activated, it is also possible that the injected EPL can create or clear an alarm and that an Analytics Builder model can create an operation.
+Keep the following in mind while creating (or importing) an EPL app: When an EPL app is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the app. For example, you may only have ADMIN permission for "CEP management" for injecting EPL and creating analytic models. However, when the app is activated, it is also possible that the injected EPL can create or clear an alarm and that an analytic model can create an operation.
 
 > **Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
@@ -87,11 +87,11 @@ Both versions, the licensed version and the freemuim version, include Software A
 
 **Step 2 - Create a project**
 
-Once installed, create an Apama project in Software AG Designer and enable it for Cumulocity IoT connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
+Once installed, create an Apama project in Software AG Designer and enable it for Cumulocity IoT connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
 **Step 3 - Add Apama bundles to the project**
 
-Add the following Apama bundles to the newly created Apama project. These are required by Cumulocity IoT so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
+Add the following Apama bundles to the newly created Apama project. These are required by Cumulocity IoT so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
 * **Cumulocity IoT > Event Definitions for Cumulocity** <br>
 Provides event APIs required for sending and receiving data to/from Cumulocity IoT.
@@ -112,11 +112,11 @@ The bundles above are the only ones that are permissible in an EPL app, so be ca
 
 **Step 4 - Create a monitor file**
 
-To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
+To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
 
 Before you import the newly created monitor file as an EPL app into Cumulocity IoT and activate it there, you might want to test if the monitor file works as expected from within Software AG Designer.
 
-For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
+For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
 **Step 5 - Run and test the monitor file**
 

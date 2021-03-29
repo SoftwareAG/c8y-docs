@@ -575,19 +575,60 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into the yellow range, then an alarm of MINOR severity is created. If it moves out of the yellow range, the MINOR alarm is cleared.
 
-The rule uses the following parameter from the device object or Data Point Library:
+The rule uses the following parameters from the device object or Data Point Library:
 
 * Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
-* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point. Note that these are close intervals ([redMin : redMax]) that contain the lowest accepted value and the highest accepted value, see also example below.
+* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point. Note that these are close intervals ([red min: red max]) that contain the lowest accepted value and the highest accepted value, see also examples below.
 
-* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point. Note that these are half-open intervals ([yellowMin : yellowMax)) that contain the lowest accepted value but not the highest accepted value, see also example below.
+* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point. Note that these are half-open intervals ([yellow min : yellow max)) that contain the lowest accepted value but not the highest accepted value, see also examples below.
 
-**Example:**
+#### Examples
 
-When we set the yellow range to "[10;15)" and the red range to "[15;20]" and the measured value is "15", a CRITICAL alarm (red) will be created, because red includes the value "15".
+**Example 1 - Red range:**
 
-Using this mechanism, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
+When we set the red range to "[60;90]"
+
+* red min: 60
+* red max: 90 
+
+and the measured value is between 60 - 90 (including the values 60 and 90) as a result a CRITICAL alarm (red) will be created.
+
+**Example 2 - Yellow range:**
+
+When we set the yellow range to "[30;50)"
+
+* yellow min: 30
+* yellow max: 50 
+
+and the measured value is between 30 - 49 as a result a MINOR alarm (yellow) will be created. The value 50 is out of the yellow range.
+
+**Example 3 - Red and yellow range:**
+
+As a result of the above behavior, we can set configurations like the following:
+
+* red min: 60
+* red max: 90
+* yellow min: 30
+* yellow max: 60
+
+When the measured value is 60, then as a result a CRITICAL alarm (red) will be created because red includes the value 60.
+
+**Example 4 - Overlap:**
+
+The red range and the yellow range can overlap. A value in this overlap range is treated as being in the yellow range.
+
+When we set the yellow range to "[30;60)" and the red range to "[50;90]":
+
+* red min: 50
+* red max: 90
+* yellow min: 30
+* yellow max: 60
+
+and the measured value is 55, a MINOR alarm (yellow) will be created.
+
+Using these mechanisms, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
+
 
 **Parameters**
 

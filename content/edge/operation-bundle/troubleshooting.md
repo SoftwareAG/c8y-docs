@@ -12,7 +12,7 @@ We recommend you to follow these steps:
 * Monitor the system processes, see the [Monitoring](#monitoring) section.
 * Check the log files, see the [Log files](#log-files) section.
 
-If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it.
+If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagnostics](#diagnostics) section on details how to run it.
 
 ### <a name="health-check"></a>Health check
 
@@ -53,7 +53,7 @@ Example:
     inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 
-You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this examples 255.255.252.0).
+You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
 
 The following command lists the local routing information.
 
@@ -253,7 +253,7 @@ The solution stores log files at the following locations for the different nodes
 
 |Directory|Files|Usage|
 |:---|:---|:---
-|/var/log/cumulocity|access.log<br> error.log <br>karaf.log<br> mqtt.log|logfile for client access<br> logfile for errors and general informations<br> logfile for the Karaf Container<br> logfile for mqtt protocol communication
+|/var/log/cumulocity|access.log<br> error.log <br>karaf.log<br> mqtt.log|logfile for client access<br> logfile for errors and general information<br> logfile for the Karaf Container<br> logfile for mqtt protocol communication
 |/var/log/nginx|access.log<br> error.log|logfile for client access<br> logfile for nginx errors
 |/var/log|messages|general log file, contains also the messages from HAProxy
 

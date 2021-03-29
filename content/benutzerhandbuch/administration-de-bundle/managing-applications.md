@@ -115,15 +115,15 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
-<td style="text-align:left">Laufzeit für Apama EPL-Apps, Smart Rules und Analytics Builder.</td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left">Laufzeit für EPL Apps, Smart Rules und Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (verschiedene Zeichenketten für verschiedene Größen-/Kapazitätsoptionen)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
-<td style="text-align:left">Analytics Builder Modellmanager und -editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
-<td style="text-align:left">Apama Analytics Builder</td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left">Ermöglicht das Verwalten und Bearbeiten von Analytics Builder-Modellen und EPL Apps (falls aktiviert).</td>
+<td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
@@ -228,13 +228,6 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu LoRa-Geräten über Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
 <td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
-Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
-<td style="text-align:left">Apama EPL Apps</td>
-<td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>

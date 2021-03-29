@@ -8,7 +8,7 @@ aliases:
 
 ## Overview
 
-The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and sub-tenants.
+The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and subtenants.
 
 >**Info:** The Tenant SLA Monitoring service is only available to the main Management Tenant.
 
@@ -43,11 +43,11 @@ For details on application subscription, refer to [Enterprise Tenant > Managing 
 
 ### How the service works
 
-Every 5 minutes, the Tenant SLA Monitoring service probes for the response time of each tenant, and all its sub-tenants (if not disabled), and stores the results.
+Every 5 minutes, the Tenant SLA Monitoring service probes for the response time of each tenant, and all its subtenants (if not disabled), and stores the results.
 
-To be able to do so, the service automatically subscribes to all sub-tenants of a subscribed tenant, to get its credentials and gain access to its API.
+To be able to do so, the service automatically subscribes to all subtenants of a subscribed tenant, to get its credentials and gain access to its API.
 
-Moreover, for each subscribed tenant (i.e. management tenant), a source in the Device Management application is created in which the monitoring results, including those of the sub-tenants, are stored as measurements.
+Moreover, for each subscribed tenant (i.e. management tenant), a source in the Device Management application is created in which the monitoring results, including those of the subtenants, are stored as measurements.
 
 ### Viewing measurements
 

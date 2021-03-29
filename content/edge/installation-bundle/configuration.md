@@ -25,7 +25,7 @@ The post-installer configuration file is a key-value based configuration file wh
 A template of this configuration file is placed within the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
 
 >**Important:** This template file is overwritten if the post-installation script is invoked and inputs are entered manually through console.
-Therefore it is advisable to copy this template file to a different location and edit the same.
+Therefore, it is advisable to copy this template file to a different location and edit the same.
 
 The following keys are available in the configuration file:
 

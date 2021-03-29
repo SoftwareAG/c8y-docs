@@ -32,17 +32,26 @@ For your convenience find an overview on the content of this document below.
 <td align="left"><a href="#dashboards">Working with dashboards</a></td>
 <td align="left"><a href="#creating-dashboards">Create your own analytics and monitor pages</a> by adding and arranging <a href="#adding-widgets">widgets</a>. <a href="#sharing-dashboards">Share dashboards</a> among all devices of the same type.</td>
 </tr>
+</tr>
 <tr>
-<td align="left"><a href="#widgets">Widgets collection</a></td>
-<td align="left">Use various types of <a href="#widgets">widgets</a> from the Widgets collection that comes with Cumulocity IoT and configure them according your needs.</td>
+<td align="left"><a href="#reports">Working with reports</a></td>
+<td align="left">Handle <a href="#reports">reports</a> based on dashboard layouts.</td>
+</tr>
+</tr>
+<tr>
+<td align="left"><a href="#using-widgets">Using widgets in dashboards and reports</a></td>
+<td align="left">Create or arrange <a href="#using-widgets">widgets</a> to track and provide various information in dashboards and reports.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widgets-collection">Widgets collection</a></td>
+<td align="left">Use various types of <a href="#widgets-collection">widgets</a> from the Widgets collection that comes with Cumulocity IoT and configure them according your needs.</td>
 </tr>
 <tr>
 <td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a></td>
 <td align="left">Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to <a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a> in Device Management.</td>
-</tr>
 <tr>
-<td align="left"><a href="#reports">Managing reports</a></td>
-<td align="left">Handle <a href="#reports">reports</a> based on dashboard layouts, create <a href="#export">reports for exporting data</a> in CSV or excel format and <a href="#schedule-export">schedule the export</a>.</td>
+<td align="left"><a href="#exports">Managing exports</a></td>
+<td align="left">Configure <a href="#exports">exports for exporting data</a> in CSV or excel format and <a href="#schedule-export">schedule the export</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-point-library">Using the Data Point Library</a></td>

@@ -51,8 +51,15 @@ A "User" resource type contains the following fields:
 <td align="left">password</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
-<td align="left">POST: mandatory PUT: optional</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed. If you do not specify a password when creating a new user with a POST request, it must contain the field sendPasswordResetEmail with a value of true.</td>
+<td align="left">optional</td>
+</tr>
+<tr>
+<td align="left">sendPasswordResetEmail</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">When set to true, this field will cause Cumulocity IoT to send a password reset email to the email address specified. If there is no password specified when creating a new user with a POST request, this must be specified and it must be set to true.</td>
+<td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>
@@ -170,7 +177,7 @@ A "currentUser" resource type contains the following fields:
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
-<td align="left">POST: mandatory PUT: optional</td>
+<td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>
@@ -249,7 +256,7 @@ A "currentUser" resource type contains the following fields:
 
 Only objects which the user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case the "currentPage" field represents the offset instead of the actual page number.  
 
->**Important: ** If an object does not have any fragment in it, then to for example read that object, you have to put a wildcard to the fragment name part of device permission, i.e. "10200":["MEASUREMENT:*:READ"].
+>**Important:** If there is no fragment in an object, then for example to read the object, you have to use the wildcard "\*" for the "fragment_name" part of the device permission (see the structure above). For example: `"10200":["MEASUREMENT:*:READ"]`.
 
 ### Audit log
 

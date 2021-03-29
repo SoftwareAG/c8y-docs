@@ -14,17 +14,17 @@ There are three data reporting mechanisms which can be applied to read all mappe
 
 Possible parameters:
 
-* Sampling interval (required): The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
-* Queue size: The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you will also need to reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the yaml file.
-* Discard: Select whether to discard the oldest or newest item if the samples are exceeding the queue size.
-* Data change trigger:
-	* Status: Triggers notification if node's status has changed.
-	* Status/Value: Triggers notification if node's status or value has changed.
-	* Status/Value/Timestamp: Triggers notification if node's status, value or timestamp has changed.
-* Deadband filter: Deadband filter makes notified data values to be filtered.
-	* None: No filter will be applied. This option is selected by default.
-	* Absolute: Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
-	* Percent: The value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
+* **Sampling interval** (required) - Defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
+* **Queue size** - The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you will also need to reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the YAML file.
+* **Discard** - Select whether to discard the **oldest** or the **newest** item if the samples are exceeding the queue size.
+* **Data change trigger**:
+	* **Status** - Triggers notification if node's status has changed.
+	* **Status/Value** - Triggers notification if node's status or value has changed.
+	* **Status/Value/Timestamp** - Triggers notification if node's status, value or timestamp has changed.
+* **Deadband filter** - Deadband filter makes notified data values to be filtered.
+	* **None** - No filter will be applied. This option is selected by default.
+	* **Absolute** - Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
+	* **Percent** - The value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
 
 > **Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
 

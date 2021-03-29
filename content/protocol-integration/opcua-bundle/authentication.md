@@ -4,17 +4,21 @@ title: Authentication
 layout: redirect
 ---
 
-The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection. The following authentication methods can be selected:
+The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection.
 
-- Anonymous - Anonymous connection will only work when the OPC UA server allows such connections.
+The following authentication methods can be selected:
+
+- Anonymous - Will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
 - Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
   - It has to be a Java keystore (JKS).
   - The keystore itself has to be password-protected.
-  - The keystore has to contain user certificate with  “opcuauser” alias.
+  - The keystore has to contain a user certificate with the “opcuauser” alias.
   - The user certificate has to be password-protected.
 
-The keystore can be create via the following Java keytool command:
+> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in case a keystore file should contain more data.
+
+The keystore can be created via the following Java keytool command:
 
 ```shell
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
@@ -98,25 +102,28 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 ![Gateway measurements tab](/images/device-protocols/opcua/opcua-gateway-memory.png)
 
 #### Monitoring measurement details
+
 The following is the full list of monitoring measurements created by the gateway:
+
+
+
 <table>
 <colgroup>
-<col span="1" style="width: 10%;">
-<col span="1" style="width: 10%;">
-<col span="1" style="width: 10%;">
-<col span="1" style="width: 5%;">
-<col span="1" style="width: 65%;">
+<col span="1" style="width: 16%;">
+<col span="1" style="width: 25%;">
+<col span="1" style="width: 23%;">
+<col span="1" style="width: 14%;">
+<col span="1" style="width: 22%;">
 </colgroup>
 <thead>
 <tr>
-<th align="left">Charts</th>
+<th align="left">Chart</th>
 <th align="left">Measurement type</th>
 <th align="left">Measurement series</th>
-<th align="left">Measurement unit</th>
+<th align="left">Unit</th>
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Connected servers</td>
@@ -249,21 +256,25 @@ The following is the full list of monitoring measurements created by the gateway
 
 ### Monitoring alarms
 
-On the gateway device, the **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
+On the gateway device, the **Alarms** tab shows all alarms raised either on the gateway or on the servers.
+
+There are three alarm types which can be raised:
 
 - Connection loss - If the gateway fails to connect to the OPC UA server a critical alarm is raised.
-- Gateway crash -  If the gateway crashes or is abruptly shut down a major alarm is raised.
+- Gateway crash - If the gateway crashes or is abruptly shut down a major alarm is raised.
 - No data arrived within interval - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
 
 #### Monitoring alarm details
+
 The following is the full list of monitoring alarms created by the gateway:
+
 <table>
 <colgroup>
-<col span="1" style="width: 40%;">
-<col span="1" style="width: 25%;">
-<col span="1" style="width: 5%;">
+<col span="1" style="width: 30%;">
+<col span="1" style="width: 30%;">
+<col span="1" style="width: 10%;">
 <col span="1" style="width: 30%;">
 </colgroup>
 <thead>
@@ -325,10 +336,10 @@ On the gateway device, the **Events** tab shows all events related to the gatewa
 The following is the full list of monitoring events created by the gateway:
 <table>
 <colgroup>
-<col span="1" style="width: 40%;">
-<col span="1" style="width: 10%;">
-<col span="1" style="width: 10%;">
-<col span="1" style="width: 40%;">
+<col span="1" style="width: 25%;">
+<col span="1" style="width: 25%;">
+<col span="1" style="width: 15%;">
+<col span="1" style="width: 35%;">
 </colgroup>
 <thead>
 <tr>

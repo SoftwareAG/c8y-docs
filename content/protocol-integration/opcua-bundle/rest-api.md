@@ -4,19 +4,23 @@ title: REST APIs
 layout: redirect
 ---
 
-While Cumulocity IoT user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it via RESTful web service.
+While the Cumulocity IoT user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.
 
-The full API definitions can be found at: `/service/opcua-mgmt-service/swagger-ui.html`.
+The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
 
 ### OPC UA server resources
 
 #### Connect a new OPC UA server to the gateway
 
-Endpoint: `POST /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+**Endpoint**
 
-Description: Connect a new OPC UA server to the gateway or update the existing server with a new configuration.
+ `POST /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
 
-Payload:
+**Description**
+
+Connect a new OPC UA server to the gateway or update the existing server with a new configuration.
+
+**Payload**
 
 ```json
 {
@@ -48,25 +52,25 @@ Payload data structure explained:
 </thead>
 <tbody>
 <tr>
-<td><strong>id</strong></td>
+<td>id</td>
 <td>string</td>
 <td>yes/no</td>
 <td>String. Id of the OPC UA server in case of updating an existing server. When connecting a new server, this must not be provided.</td>
 </tr>
 <tr>
-<td><strong>name</strong></td>
+<td>name</td>
 <td>string</td>
 <td>yes</td>
 <td>Server managed object name.</td>
 </tr>
 <tr>
-<td><strong>requiredInterval</strong></td>
+<td>requiredInterval</td>
 <td>integer</td>
 <td>no</td>
 <td>How frequently the server is expected to send data to the Cumulocity IoT platform.</td>
 </tr>
 <tr>
-<td><strong>config</strong></td>
+<td>config</td>
 <td><em>ServerConnectionConfig</em></td>
 <td>yes</td>
 <td>Connection configuration to the OPC UA server.</td>
@@ -74,13 +78,13 @@ Payload data structure explained:
 </tbody>
 </table>
 
-Data structure for *ServerConnectionConfig*
+Data structure for ServerConnectionConfig:
 
 <table>
 <colgroup>
-<col style="width: 22%;">
+<col style="width: 25%;">
 <col style="width: 13%;">
-<col style="width: 10%;">
+<col style="width: 7%;">
 <col style="width: 55%;">
 </colgroup>
 <thead>
@@ -93,13 +97,13 @@ Data structure for *ServerConnectionConfig*
 </thead>
 <tbody>
 <tr>
-<td><strong>securityMode</strong></td>
+<td>securityMode</td>
 <td>string</td>
 <td>yes</td>
 <td>String enum, mandatory. Security mode for connection to OPC UA server. Possible values: <code>NONE,&nbsp;BASIC128RSA15_SIGN,&nbsp;BASIC128RSA15_SIGN_ENCRYPT,&nbsp;BASIC256_SIGN, BASIC256_SIGN, BASIC256_SIGN_ENCRYPT, BASIC256SHA256_SIGN, BASIC256SHA256_SIGN_ENCRYPT</code>.</td>
 </tr>
 <tr>
-<td><strong>serverUrl</strong></td>
+<td>serverUrl</td>
 <td>string</td>
 <td>yes</td>
 <td>String, mandatory. OPC UA server URL.</td>
@@ -216,15 +220,49 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
 </td>
 </tr>
+<tr>
+<td>subscribeModelChangeEvent</td>
+<td>boolean</td>
+<td>no</td>
+<td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled), 
+which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of Cumulocity IoT. 
+This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
+</tr>
+
 </tbody>
 </table>
 
+**Alarms status changed by OPC UA server**
+
+If events operated on the OPC UA server change their status, these changes can be reflected as internal alarms.
+
+To catch these events and convert them into internal alarms, a UA event mapping with the alarmCreation definition in device protocol and alarmStatusMappings in server configuration are required.
+
+For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
+
+The size of the map can be adjusted by several parameters in the configuration file.
+With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
+This factor lets you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
+The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
+It's used to calculate the local file size bound to the entry size.
+  ```yaml
+  # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
+  alarmStatusStore:
+    # Expected number of maximum alarms at the same time
+    maxEntries: 100000
+    # The average size of the keys on the map. Needed for calculation of the size of the database file.
+    averageKeySize: 30
+    # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
+    maxBloatFactor: 5.0
+  ```
 
 #### Get all servers of a gateway device
 
-Method: `GET /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+**Method**
 
-Parameters:
+`GET /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+
+**Parameters**
 
 <table>
 <colgroup>
@@ -248,7 +286,7 @@ Parameters:
 </tbody>
 </table>
 
-Sample response:
+**Example response**
 
 ```json
 [
@@ -287,12 +325,16 @@ Sample response:
 
 #### Delete and disconnect an OPC UA server
 
-Endpoint: `DELETE /service/opcua-mgmt-service/servers/{serverId}`
+**Endpoint**
 
-Description: Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the Cumulocity IoT platform will be deleted.
+`DELETE /service/opcua-mgmt-service/servers/{serverId}`
+
+**Description**
+
+Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the Cumulocity IoT platform will be deleted.
 The service will retain all the child devices of the server, and their corresponding data, which were created by the device protocols.
 
-Parameters:
+**Parameters**
 
 <table>
 <colgroup>
@@ -316,17 +358,23 @@ Parameters:
 </tbody>
 </table>
 
-Response: `200 OK`
+**Response**
+
+`200 OK`
 
 ### Address space resources
 
 #### Get an address space node by ID
 
-Endpoint: `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
+**Endpoint** 
 
-Description: Get a node in the server address space specified by the given node ID. The node ID must be URL encoded.
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
 
-Parameters:
+**Description** 
+
+Get a node in the server address space specified by the given node ID. The node ID must be URL encoded.
+
+**Parameters**
 
 <table>
 <colgroup>
@@ -360,7 +408,7 @@ Parameters:
 </tbody>
 </table>
 
-**Example:**
+**Example**
 
 Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=i%3D84`
 
@@ -409,11 +457,15 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 
 #### Get children of a given node
 
-Endpoint: `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
+**Endpoint**
 
-Description: Get all child nodes of the given node specified by the node ID in the server address space. The node ID must be properly URL encoded.
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
 
-Parameters:
+**Description**
+
+Get all child nodes of the given node specified by the node ID in the server address space. The node ID must be properly URL encoded.
+
+**Parameters**
 
 <table>
 <colgroup>
@@ -447,7 +499,7 @@ Parameters:
 </tbody>
 </table>
 
-**Example:**
+**Example**
 
 Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?nodeId=i%3D84`
 
@@ -501,11 +553,15 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 #### Browse a node
 
-Endpoint: `GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+**Endpoint**
 
-Description: Browse a node from a base node following the given browse path. This basically searches for a node with relative browse path to the other node.
+`GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
 
-Parameters:
+**Description**
+
+Browse a node from a base node following the given browse path. This basically searches for a node with relative browse path to the other node.
+
+**Parameters**
 
 <table>
 <colgroup>
@@ -544,7 +600,7 @@ Parameters:
 </tbody>
 </table>
 
-**Example:**
+**Example**
 
 Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/browse?nodeId=i%3D84&browsePath=Objects`
 
@@ -602,9 +658,11 @@ These resources provide the APIs for manipulating device types.
 
 #### Creating a new device type
 
-Endpoint: `POST /service/opcua-mgmt-service/device-types`
+**Endpoint**
 
-Sample payloads:
+`POST /service/opcua-mgmt-service/device-types`
+
+**Sample payloads**
 
 - Measurement mappings using subscription
 
@@ -727,7 +785,7 @@ Full payload data structure explained:
 <tr>
 <th>Field</th>
 <th>Type</th>
-<th>Madatory</th>
+<th>Mandatory</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -763,7 +821,7 @@ Full payload data structure explained:
 <td>Define the mappings from OPC UA alarms and events into Cumulocity alarms and events.</td>
 </tr>
 <tr>
-<td>referencedNam-espaceTable</td>
+<td>referencedNamespaceTable</td>
 <td>array<string></string></td>
 <td>no</td>
 <td>Reference namespace table if known. This is then used to convert the browse paths with namespace index into namespace URL. This is to make sure that the mappings are still the same even when the namespace index gets changed.</td>
@@ -778,11 +836,11 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the Cumulocity processing mode for incoming data. Please refer to the&nbsp;<a href="../../reference/rest-implementation/#processing-mode">reference&nbsp;guide</a>&nbsp;for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the Cumulocity processing mode for incoming data. Refer to the&nbsp;<a href="../../reference/rest-implementation/#processing-mode">Reference&nbsp;guide</a>&nbsp;for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
-<td>overiddenSub-scriptions</td>
-<td><em>Overridden-Subscription</em></td>
+<td>overiddenSubscriptions</td>
+<td><em>OverriddenSubscription</em></td>
 <td>no</td>
 <td>While the subscriptionType defines how data can be collected from the OPC UA server, this option allows you to override the mechanism for particular browse paths. For example you can have a subscription applied globally with a sampling rate of 1000ms but you can apply sampling rate of 500ms for particular browse paths.</td>
 </tr>
@@ -929,14 +987,14 @@ the OPC UA device gateway.</td>
 <td>Subscription type. Possible values: Subscription, CyclicRead, None.</td>
 </tr>
 <tr>
-<td>subscription-Parameters</td>
-<td><em>Subscription-Parameter</em></td>
+<td>subscriptionParameters</td>
+<td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
 <td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
 </tr>
 <tr>
-<td>cyclicReadP-arameters</td>
-<td><em>CyclicReadP-arameter</em></td>
+<td>cyclicReadParameters</td>
+<td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
 <td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
 </tr>
@@ -1001,7 +1059,7 @@ the OPC UA device gateway.</td>
 <td>Limit the servers by server managed object ID where the device type should be applied.</td>
 </tr>
 <tr>
-<td>serverObject-HasFragment</td>
+<td>serverObjectHasFragment</td>
 <td>string</td>
 <td>no</td>
 <td>Limit the servers by their custom fragment where the device type should be applied.</td>
@@ -1013,13 +1071,13 @@ the OPC UA device gateway.</td>
 <td>Limit the nodes in the server address space where the device type should be applied.</td>
 </tr>
 <tr>
-<td>browsePathM-atchesRegex</td>
+<td>browsePathMatchesRegex</td>
 <td>string</td>
 <td>no</td>
 <td>Regular expression of the browse paths where the device type should be applied.</td>
 </tr>
 <tr>
-<td>serverHasNod-eWithValues</td>
+<td>serverHasNodeWithValues</td>
 <td><em>ServerNodeValues</em></td>
 <td>no</td>
 <td>Limit the servers which have particular nodes with given values.</td>
@@ -1076,7 +1134,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the measurement.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the measurement to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT.</td>
@@ -1121,7 +1179,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the measurement.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the event to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT.</td>
@@ -1215,6 +1273,18 @@ the OPC UA device gateway.</td>
 <td>string</td>
 <td>yes</td>
 <td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
+</tr>
+<tr>
+<td>retryEnabled</td>
+<td>boolean</td>
+<td>no</td>
+<td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
+</tr>
+<tr>
+<td>noRetryHttpCodes</td>
+<td>array&lt;integer&gt;</td>
+<td>no</td>
+<td>Array of HTTP POST status exceptions by which the failed HTTP POST should not be retried if enabled. Example: [400, 500]. Note that, if this is null or missing, the exceptions will be taken from the gateway configuration. If this is provided, even with an empty array, the configuration in the gateway is disregarded.</td>
 </tr>
 </tbody>
 </table>
@@ -1456,12 +1526,20 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 
 #### Updating a device type
 
-Endpoint: `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+**Endpoint**
 
-Payload: The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
+`PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Payload**
+
+The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
 
 #### Deleting a device type
 
-Endpoint: `DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+**Endpoint**
 
-Success response: `204 No Content`
+`DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Success response**
+
+`204 No Content`

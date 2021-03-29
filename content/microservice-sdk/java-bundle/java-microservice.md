@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 layout: redirect
 title: Hello world tutorial
 ---
@@ -16,8 +16,8 @@ Verify that you have Java 8 installed together with Maven 3. It can be downloade
 $ mvn -v
 Apache Maven 3.6.0
 Maven home: /Library/Maven/apache-maven-3.6.0
-Java version: 1.8.0_201, vendor: Oracle Corporation
-Java home (runtime): /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
+Java version: 13.0.1, vendor: Oracle Corporation
+Java home (runtime): /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home
 OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 ```
 
@@ -43,7 +43,7 @@ Server: Docker Engine - Community
 
 You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
-> **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 8, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
+> **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
 #### Create a Maven project
 
@@ -61,8 +61,9 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 ```xml
 <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <java.version>13</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
     <spring-boot-dependencies.version>1.5.17.RELEASE</spring-boot-dependencies.version>
 </properties>
 ```
@@ -217,7 +218,7 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity IoT Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity IoT Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for Cumulocity IoT microservices including:
 

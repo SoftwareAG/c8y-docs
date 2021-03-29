@@ -15,7 +15,7 @@ layout: redirect
 4. Click **Create**.<br>
    ![Add new device protocol](/images/device-protocols/opcua/opcua-add-protocol.png)
 
-   > **Info:** Selecting a reference server will require you to select a reference node.
+> **Info:** Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
@@ -42,8 +42,8 @@ Turn on **Send measurement** to specify a measurement.
 Specify the following parameters:
 
 - Enter the type of the measurement, for example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, “c8y_AccelerationMeasurement.acceleration”.
-- The **Unit** field specifies the unit of the given measurement, for example, “m/s” for velocity.
+- Series are any fragments in measurements that contain a “value” property, for example, “c8y_AccelerationMeasurement.acceleration”.
+- Specify the unit of the given measurement, for example, “m/s” for velocity.
 
 **Create alarm**
 
@@ -51,21 +51,21 @@ Turn on **Create alarm** if you want to create an alarm out of the resource.
 
 Specify the following parameters (all mandatory):
 
-- Severity - one of CRITICAL, MAJOR, MINOR, WARNING
+- Severity - One of CRITICAL, MAJOR, MINOR, WARNING
 - Type
-- Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
+- Status - One of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
 **Send Event**
 
-Turn on Send event to send an event each time you receive a resource value.
+Turn on **Send event** to send an event each time you receive a resource value.
 
 Specify the following parameters:
 
-- Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
-- Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
+- Enter the type of the event, for example, “com_cumulocity_model_DoorSensorEvent”.
+- Enter the text which will be sent, for example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
 
-```plain
+	```plain
 Door sensor was triggered, event value: ${value}
 ```
 
@@ -85,15 +85,17 @@ The value will also be populated as a fragment of the created event, under a sta
  }
 }
 ```
+> **Info:** The measurements, events and alarms are added to a queue by the gateway, and they are flushed at once to create the respective elements. If the server is deleted, but there are still some items to be flushed, then the request is failed with a response code 403.
+Thereafter, the exception is handled by validating the existence of the source. If the source is missing then the elements will be removed from the queue.
 
 **Custom Actions**
 
 Custom actions are HTTP POST requests which the gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
 
-- ${value} - value of specific node
-- ${serverId} - ID of OPC-UA server
-- ${nodeId} - ID of source node
-- ${deviceId} - ID of source device
+- ${value}: value of specific node
+- ${serverId}: ID of OPC-UA server
+- ${nodeId}: ID of source node
+- ${deviceId}: ID of source device
 
 Below there is an example of a full device protocol that configures a custom action:
 
@@ -132,47 +134,54 @@ Below there is an example of a full device protocol that configures a custom act
    ]
 }
 ```
+
 ### Monitoring events for device protocol application
+
 When a device protocol has been applied to or un-applied from a node, a monitoring event is generated as the following:
 
 #### Device type has been applied
-- Event type: *c8y_ua_DeviceTypeApplied*
-- Event text: *Device type: {device type ID} is applied to root node: {root node ID} of server: {server ID}*
-- Event source: The server managed object
+
+- Event type - c8y_ua_DeviceTypeApplied
+- Event text - *Device type: {device type ID} is applied to root node: {root node ID} of server: {server ID}*
+- Event source - The server managed object
 
 ![OPC UA device protocol applied](/images/device-protocols/opcua/opcua-device-protocol-applied.png)
 
 #### Device type has been un-applied
-- Event type: *c8y_ua_DeviceTypeUnapplied*
-- Event text: 
+
+- Event type - c8y_ua_DeviceTypeUnapplied
+- Event text - 
     * If the device type has been un-applied from all nodes on the server: *Device type: {device type ID} is un-applied from all nodes of server: {server ID}*
     * If the device type has been un-applied from a specific node on the server: *Device type: {device type ID} is un-applied from root node: {root node ID} of server: {server ID}*
     * If all device types have been un-applied for the server: *All device types are un-applied for server: {server ID}* 
-- Event source: The server managed object
+- Event source - The server managed object
 
 ![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
 
 #### Custom action retry mechanism on external server failure
 
-If a custom action fails, a retry mechanism will be processed.  
-This is configured in the application YAML file, and the queues will be stored in the event repository.  
+If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository. 
+ 
 Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action. The collection has a defined size in _failedCustomActionQueueSize_ and a maximum number of retries in _maxRetries_.  
-A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out when the reach they _pendingMaxAge_ to reduce the load of the scheduler task.
+
+A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. 
+
+All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out when the reach they _pendingMaxAge_ to reduce the load of the scheduler task.
 
 The following parameters can be set:  
 
 In the section _mappingExecution_ - _http_ - _failureHandling_  
 
-- _enabled_[boolean] - activate or deactivate the fail over for custom actions, default is true
+- enabled[boolean] - Activate or deactivate the fail over for custom actions, default is true.
 
-- _flushQueueDelay_[seconds] - time until a queue will be cleared automatically, default is 60
+- flushQueueDelay[seconds] - Time until a queue will be cleared automatically, default is 60.
 
-- _reScheduleDelay_[seconds] - time until the stored queues will be rescheduled, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default is 150
+- reScheduleDelay[seconds] - Time until the stored queues will be rescheduled, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default is 150.
 
-- _reScheduleElements_[number] - number of queues loaded for retry at the same time, default is 100
+- reScheduleElements[number] - Number of queues loaded for retry at the same time, default is 100.
 
-- _failedCustomActionQueueSize_[number] - size of maximum elements in one queue; if the limit is reached the queue will be saved, default is 100
+- failedCustomActionQueueSize[number] - Size of maximum elements in one queue; if the limit is reached the queue will be saved, default is 100.
 
-- _maxRetries_[number] - number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5
+- maxRetries[number] - Number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5.
 
-- _pendingMaxAge_[seconds] - queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 
+- pendingMaxAge[seconds] - Queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 .

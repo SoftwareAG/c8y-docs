@@ -10,6 +10,10 @@ layout: redirect
 
 In response to the announcement by Microsoft of the end of life for Internet Explorer 11, Cumulocity IoT 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
 
+#### Removal of OPC UA legacy integration
+
+With the 10.9 GA release in April 2021, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*.
+
 #### Smart REST response codes
 
 With the 10.9 GA release in April 2021, the error code "40" will be removed.  

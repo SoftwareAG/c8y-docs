@@ -6,17 +6,17 @@ layout: redirect
 
 You can deploy the following to Cumulocity IoT:
 
-* EPL apps. You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
+* EPL apps. You can [develop or import a single \*.mon file with the Streaming Analytics application](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
 * Apama applications. You can upload complex Apama applications (that is, Apama projects developed with Software AG Designer) to Cumulocity IoT and [deploy them as custom microservices](#deploying-as-microservice) using the Cumulocity IoT Microservice SDK. 
 
-> **Info:** In Apama EPL Apps, the term "activate" is used for deploying an app.
+> **Info:** In the Streaming Analytics application, the term "activate" is used for deploying an app.
 
 
-### <a name="single-mon-file"></a>Deploying EPL apps as single \*.mon files with Apama EPL Apps
+### <a name="single-mon-file"></a>Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
->**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support).
+>**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support).
 
-When an Apama EPL app (that is, a \*.mon file) is activated in Cumulocity IoT, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
+When an EPL app (that is, a \*.mon file) is activated in Cumulocity IoT, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
 There is a restricted set of utilities and base events available for your EPL app. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles. 
 

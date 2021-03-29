@@ -4,7 +4,7 @@ title: Supported REST services
 layout: redirect
 ---
 
-Apama EPL Apps is designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
+EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
@@ -25,7 +25,7 @@ The following common error response codes can be expected for all requests:
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 401  | Unauthorized.                                                |
-| 403  | Forbidden. Apama EPL Apps is not available with Apama Starter. |
+| 403  | Forbidden. EPL apps are not available with Apama Starter. |
 
 Any other response codes that can be expected from a specific request are given below.
 

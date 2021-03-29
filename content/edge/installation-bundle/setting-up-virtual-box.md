@@ -85,7 +85,7 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 6. Click **Tools** > **Network** in the top left. Select VirtualBox Host-Only Ethernet Adapter.<br>
 <img src="/images/edge/edge-vb-06.png" name="NAT network details" style="width:75%;"/>
 
-7. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
+7. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Address = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
 <img src="/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/><br>
 If, in your VirtualBox, there already is a Host-Only Ethernet Adapter configured with the same IPv4 address, then update its properties as described in the next steps.
 

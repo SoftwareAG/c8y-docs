@@ -317,9 +317,9 @@ Permissions are grouped into the following categories:
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
-In the **Type** field, specify a type to further restrict the type of data that this permission applies to.
+In the **Type** field, specify a type to further restrict the type of data that this permission applies to. Access will be only granted to objects that contain the specified **Type**.
 
-For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength", and actual production measurements. You want a user to only see the device management measurements. In this case, enter "c8y&#95;SignalStrength" as type.
+For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength", and actual production measurements. You want a user to only see the device management measurements. In this case, enter "c8y&#95;SignalStrength" as type. This will allow the user to only see measurements that contain the type "c8y&#95;SignalStrength". Note that the user will be able to see the entire measurement object including other types that may be part of the same measurement object.
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 

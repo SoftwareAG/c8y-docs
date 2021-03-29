@@ -72,6 +72,14 @@ FROM myTable
 GROUP BY DATE_TRUNC('HOUR', "time")
 ```
 
+> **Info:** The creation (and update) of views can be done via the Dremio SQL API, too. This is especially useful to automate tasks. The above example can be created or updated as follows.
+```sql
+CREATE OR REPLACE VDS YourTenantIdSpace.YourDesiredViewName AS
+  SELECT DATE_TRUNC('HOUR', "time") as "time", avg(myValue) as hourlyAvg
+  FROM myTable
+  GROUP BY DATE_TRUNC('HOUR', "time")
+```
+
 ### Joining tables/views
 
 Views you have defined and target tables from your data lake can be joined as well. In Dremio you can either define joins using the SQL editor or use a graphical interface to define a join.

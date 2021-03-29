@@ -42,7 +42,7 @@ For example:
 
 In order to retain the SSL Labs A+ rating, Cumulocity IoT must make continual updates to the supported cyphers for the Cumulocity IoT platform. For the Cumulocity IoT Cloud instances the weaker ciphers will be removed, for customers running their own instances the defaults will be changed with the option to enable the weaker ciphers if they are required.  
 
-The following ciphers are the supported ciphers from release 10.10. 
+The following ciphers are the supported ciphers from GA release 10.10. 
 
 * rsa&#95;pkcs1&#95;sha256
 * dsa&#95;sha256

@@ -13,7 +13,7 @@ Model management functionality includes:
 
 * Uploading models
 * Downloading models
-* Activating or deactivating models (Only for PMML models)
+* Activating or deactivating models
 * Deleting models
 * Viewing model properties and KPIs
 
@@ -53,8 +53,6 @@ For a model listed under ONNX tab, the download icon in the model card can be us
 A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system.
 
 Click the **Active/Inactive** toggle in a model´s card to deactivate/activate the model.
-
->**Info:** This operation is only applicable for PMML models.
 
 ### Deleting models
 

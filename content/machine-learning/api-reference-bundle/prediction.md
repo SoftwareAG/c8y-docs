@@ -11,7 +11,7 @@ Operations on applying model, model group, pipeline to input data.
 
 ### GET - Apply PMML model to single record
 
-``` perl
+``` 
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
 ```
 
@@ -614,7 +614,7 @@ Apply a PMML model group to multiple records. Note that the size of the uploaded
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyToAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
+|applyAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
 
@@ -623,7 +623,7 @@ Apply a PMML model group to multiple records. Note that the size of the uploaded
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification?applyToAllModels=true" \
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification?applyAllModels=true" \
      --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
 ```
 
@@ -721,7 +721,7 @@ Note that the size of the uploaded file should not exceed 500 MB. If the operati
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyToAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
+|applyAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
 |matchScore (boolean)|optional parameter used to specify if score matching should be performed. If score matching is performed, the expected and actual outputs will be compared and a Match column will be added to the outputs (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
@@ -731,7 +731,7 @@ Note that the size of the uploaded file should not exceed 500 MB. If the operati
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail?applyToAllModels=true&matchScore=true" \
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail?applyAllModels=true&matchScore=true" \
      --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
 ```
 

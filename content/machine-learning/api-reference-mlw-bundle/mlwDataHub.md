@@ -25,9 +25,9 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|sql (string)|required SQL query to pull the data
-|fileName (string)|required file name to store the pulled data
+|projectID (string)| required path variable of an existing project ID
+|sql (string)| required SQL query body parameter to pull the data
+|fileName (string)| required file name body parameter to store the pulled data
 
 **Example Request**
 
@@ -93,7 +93,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 **Example Request**
 
 ```
-409 - Error
+409 - Conflict
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data' \
 --header 'Authorization: {{auth}}' \
@@ -104,7 +104,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
 **Example Response**
 
 ```
-409 - Error
+409 - Conflict
 
 {
     "message": "File name already exists. Please provide another name",

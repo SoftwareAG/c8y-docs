@@ -7,7 +7,7 @@ layout: redirect
 Cumulocity IoT can interface with LORIOT Network Server through the Loriot agent microservice. You can:
 
 * Configure the Loriot agent endpoint in LORIOT Network Server using Cumulocity data forwarder.
-* Assign a device protocol for the LoRa device for payload processing. 
+* Assign a device protocol for the LoRa device for payload processing.
 * Decode upstream payload packets using a web-based user interface.
 * Post-process raw device data through Cumulocity IoT events.
 * Make use of existing Cumulocity IoT features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
@@ -28,4 +28,4 @@ The following sections describe how to:
 * [Troubleshoot](#loriot-troubleshooting) for warning messages.
 
 
-> Note that your subscription needs to include this feature to be able to use it. If you do not see the functionality described in this document, please [contact support](/about-doc/contacting-support).
+> Note that your subscription needs to include this feature to be able to use it. If you do not see the functionality described in this document, please [contact product support](/about-doc/contacting-support).

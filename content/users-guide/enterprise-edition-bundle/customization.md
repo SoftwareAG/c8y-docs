@@ -200,7 +200,7 @@ using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** a
 There are three prerequisites for using a custom domain:
 
 1. To activate your domain, a valid license that covers your wildcard domain is required.
-   Please [contact us](/about-doc/contacting-support) to install a license for your domain.
+   Please [contact product support](/about-doc/contacting-support) to install a license for your domain.
 2. You've obtained a valid wildcard SSL certificate your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
@@ -249,7 +249,7 @@ domain from the certificate in the NAME field. The VALUE field of the CNAME entr
 is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Please also make sure to delete any
 conflicting A entries.
 
-**Example:** 
+**Example:**
 
 If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
 

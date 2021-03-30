@@ -49,14 +49,14 @@ Refer to [Device Management > Connectivity](/users-guide/device-management/#conn
 
 #### Provider configuration
 
-To configure SMS provider first is need get available providers schemas:
+To configure a SMS provider first is required to get available providers schemas:
 ```http
 GET /service/messaging/providers/definitions
 Host: ...
 Authorization: Basic ...
 ```
 
-The response contains provider properties. To save provider properties you need to call:
+The response contains the provider properties, and to save them you need to make a POST request as follows:
 ```http
 POST /service/messaging/providers/configuration
 Host: ...

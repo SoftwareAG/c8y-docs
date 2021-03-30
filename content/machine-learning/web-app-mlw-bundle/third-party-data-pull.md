@@ -56,6 +56,6 @@ The following steps illustrate how to ingest and transform data available in AWS
 
 3. Select the bucket from which you want to pull the data and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the AWS S3 data pull in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the AWS S3 data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data is stored in the **Data/Code** folder of the respective project in Machine Learning Workbench (MLW).

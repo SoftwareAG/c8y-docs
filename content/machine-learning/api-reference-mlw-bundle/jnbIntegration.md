@@ -121,7 +121,7 @@ Updates the contents of the Jupyter Notebook file.
 |content (string)| required body parameter for updated contents of Jupyter Notebook
 |format (string)| required body parameter for format (ex. 'json')
 |type (string)| required body parameter for type (ex. 'notebook')
-|export (boolean)| required body parameter to export notebook to python file.
+|export (boolean)| required body parameter to export notebook to Python file.
 
 
 **Example Request**

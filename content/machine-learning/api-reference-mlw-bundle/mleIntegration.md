@@ -681,7 +681,7 @@ Predicts from the list of deployed PMML/ONNX/PIPELINE models in MLE.
 |projectID (string)| required path variable of an existing project ID
 |resourceID (string)| required path variable of an existing resource ID
 |modelID (string)| required path variable of an existing model ID
-|type (string)| required query parameter to score against a model type (ex: PMML/ONNX/PIPELINE)
+|type (string)| required query parameter to score against a model type (for example: PMML/ONNX/PIPELINE)
 
 **Example Request**
 

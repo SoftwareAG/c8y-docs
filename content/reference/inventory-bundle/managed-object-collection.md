@@ -157,7 +157,8 @@ The following sections explain how an application will handle a query in the par
 
 	* 	Only supports custom fragments.   
 	*   Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
-* `bygroupid(12)` - match objects from group with ID `12`
+* `bygroupid(12)` - match objects from group with ID `12` (this function accepts one or multiple arguments e.g. `bygroupid(12,23)`)
+>**Important:** Although using multiple `bygroupid` functions joined with `or` operator is feasible (e.g. `bygroupid(12) or bygroupid(23)`), it's not recommended due to performance issue. You should use rather `bygroupid(12,23)`.
 
 ##### Supported query values:
 

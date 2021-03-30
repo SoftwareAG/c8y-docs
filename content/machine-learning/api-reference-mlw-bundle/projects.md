@@ -92,8 +92,8 @@ Creates a new project with given project name and description.
 
 |PARAMS||
 |:---|:---|
-|name (string)|required name for the project as body parameters
-|description (string)|required description of the project as body parameters
+|name (string)|required name for the project as body parameter
+|description (string)|required description of the project as body parameter
 
 **Example Request**
 
@@ -192,7 +192,7 @@ Commit the resources of project for version control.
 |PARAMS||
 |:---|:---|
 |projectID (string)|{{project ID}}
-|listOfResources (list)|list of resource IDs as body parameters
+|listOfResources (list)|list of resource IDs as body parameter
 
 
 **Example Request**
@@ -315,8 +315,8 @@ Updates the exiting project name and description with given new project name and
 |PARAMS||
 |:---|:---|
 |projectID (string)| project ID of the project for which the name needs to be changed
-|name (string)|required name for the project as body parameters
-|description (string)|required description of the project as body parameters
+|name (string)|required name for the project as body parameter
+|description (string)|required description of the project as body parameter
 
 **Example Request**
 
@@ -1408,7 +1408,7 @@ To create a new Python script.
 |projectID (string)| project ID of the project 
 
 
-To create a new Workflow file.
+To create a new workflow file.
 
 
 |PARAMS||
@@ -1420,7 +1420,7 @@ To create a new Workflow file.
 |preProcessingID|{{preProcessingID}}
 |dataID|{{dataID}}
 
-To create a new Notebook file.
+To create a new notebook file.
 
 
 |PARAMS||
@@ -1429,7 +1429,7 @@ To create a new Notebook file.
 |type|ipynb
 |name|{{name of file}}
 
-To create a new Architecture file for NN Designer.
+To create a new architecture file for NN Designer.
 
 
 |PARAMS||
@@ -1440,7 +1440,7 @@ To create a new Architecture file for NN Designer.
 |name|{{name of file}}
 
 
-To create a new Pipeline file.
+To create a new pipeline file.
 
 
 |PARAMS||
@@ -1764,12 +1764,12 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 }
 ```
 
-### GET - Preview the files (Code/Data/Architecture)
+### GET - Preview the files (code/data/architecture)
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
 ```
-Gets the content of the Code file.
+Gets the content of the code file.
 
 |HEADERS||
 |:---|:---|
@@ -1820,13 +1820,13 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### GET - Preview the Notebook file
+### GET - Preview the notebook file
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
 
-Gets the content of the Notebook file.
+Gets the content of the notebook file.
 
 |HEADERS||
 |:---|:---|

@@ -229,15 +229,15 @@ Downloads the data in the data section from Cumulocity IoT inventory wih given a
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|fileName |name of the file as body parameters
-|dateFrom |date from as body parameters
-|timeFromH|time from (hour) as body parameters
-|timeFromM|time from (minute) as body parameters
-|dateTo|date to  as body parameters
-|timeToH|time to (hour) as body parameters
-|timeToM|time to (minute) as body parameters
-|source| device ID as body parameters
-|series| list of measurement names as body parameters
+|fileName |name of the file as body parameter
+|dateFrom |date from as body parameter
+|timeFromH|time from (hour) as body parameter
+|timeFromM|time from (minute) as body parameter
+|dateTo|date to  as body parameter
+|timeToH|time to (hour) as body parameter
+|timeToM|time to (minute) as body parameter
+|source| device ID as body parameter
+|series| list of measurement names as body parameter
 
 **Example Request**
 

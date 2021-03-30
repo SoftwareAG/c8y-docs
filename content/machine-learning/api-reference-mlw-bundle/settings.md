@@ -12,7 +12,7 @@ Operations on MLW settings.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Get AWS S3 credentials from Cumulocity
+### GET - Get AWS S3 credentials from Cumulocity IoT
 
 ```
 {{url}}/service/mlw/credentials
@@ -67,13 +67,13 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 }
 ```
 
-### POST - Register AWS S3 Credentials with Cumulocity
+### POST - Register AWS S3 Credentials with Cumulocity IoT
 
 ```
 {{url}}/service/mlw/credentials
 ```
 
-Registers the AWS S3 credentials information with Cumulocity.
+Registers the AWS S3 credentials information with Cumulocity IoT.
 
 |HEADERS||
 |:---|:---|
@@ -82,9 +82,9 @@ Registers the AWS S3 credentials information with Cumulocity.
 
 |PARAMS||
 |:---|:---|
-|accessKey (string)| required AWS Access Key body parameter  
-|secretKey (string)| required AWS Secret Key body parameter 
-|type (string)| required query parameter to store a particular credentials set (ex: AWS)
+|accessKey (string)| required AWS access Key body parameter  
+|secretKey (string)| required AWS secret Key body parameter 
+|type (string)| required query parameter to store a particular credentials set (for example: AWS)
 
 
 **Example Request**
@@ -153,13 +153,13 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 }
 ```
 
-### DELETE - Delete AWS S3 credentials from Cumulocity
+### DELETE - Delete AWS S3 credentials from Cumulocity IoT
 
 ```
 {{url}}/service/mlw/credentials
 ```
 
-Deletes the AWS S3 credentials information from Cumulocity.
+Deletes the AWS S3 credentials information from Cumulocity IoT.
 
 |HEADERS||
 |:---|:---|
@@ -168,7 +168,7 @@ Deletes the AWS S3 credentials information from Cumulocity.
 
 |PARAMS||
 |:---|:---|
-|type (string)| required query parameter to delete a particular credentials set (ex: AWS)
+|type (string)| required query parameter to delete a particular credentials set (for example: AWS)
 
 
 **Example Request**

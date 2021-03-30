@@ -11,13 +11,13 @@ Operations on MLW data connectors - Download files from AWS S3.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Names of all the AWS S3 buckets
+### GET - Names of all AWS S3 buckets
 
 ```
 {{url}}/service/mlw/downloadFromS3/buckets
 ```
 
-List names of all the AWS S3 buckets.
+List names of all AWS S3 buckets.
 
 |HEADERS||
 |:---|:---|
@@ -85,13 +85,13 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
 }
 ```
 
-### GET - Names of all the files within an AWS S3 bucket
+### GET - Names of all files within an AWS S3 bucket
 
 ```
 {{url}}/service/mlw/downloadFromS3/{{bucketName}}/files
 ```
 
-Lists the names of all the files within an AWS S3 buckets.
+Lists the names of all files within an AWS S3 buckets.
 
 |HEADERS||
 |:---|:---|
@@ -99,7 +99,7 @@ Lists the names of all the files within an AWS S3 buckets.
 
 |PARAMS||
 |:---|:---|
-|bucketName (string)| required path variable of an existing AWS S3 bucket Name
+|bucketName (string)| required path variable of an existing AWS S3 bucket name
 
 **Example Request**
 
@@ -220,7 +220,7 @@ Downloads the file from AWS S3 bucket.
 |PARAMS||
 |:---|:---|
 |projectID (string)| required path variable of an existing project ID
-|bucketName (string)| required path variable of an existing AWS bucket Name
+|bucketName (string)| required path variable of an existing AWS bucket name
 |name (string)| required name body parameter to download an existing file from AWS S3
 
 **Example Request**

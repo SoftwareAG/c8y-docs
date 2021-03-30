@@ -1346,7 +1346,7 @@ curl --request GET "{{url}}/service/zementis/onnx/models"
 ```
 
 Get model name, model version, onnx version, producer name, producer version and information about inputs and outputs of the ONNX model.
-Here, onnx version property actually corresponds to the onnx format version (ir version) and not the release version.
+Here, the onnx version property actually corresponds to the onnx format version (ir version) and not the release version.
 
 |HEADERS||
 |:---|:---|
@@ -1624,7 +1624,7 @@ curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorizati
 {{url}}/service/zementis/onnx/models/{{model_name}}/activate
 ```
 
-Activates the ONNX model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
+Activates the ONNX model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially heap.
 
 |HEADERS||
 |:---|:---|
@@ -1715,7 +1715,7 @@ curl --request PUT "{{url}}/service/zementis/onnx/models/dummy/activate" --heade
 {{url}}/service/zementis/onnx/models/{{model_name}}/deactivate
 ```
 
-Deactivates the ONNX model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
+Deactivates the ONNX model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially heap. Deactivating an inactive model has no effect.
 
 |HEADERS||
 |:---|:---|

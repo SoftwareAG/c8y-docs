@@ -32,7 +32,7 @@ This warning message shows up when there are no credentials set up for the Sigfo
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
 
-To resolve this, refer to [Configure Sifox credentials](#connectivity-sigfox).
+To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
 
 #### No device protocols configured
 

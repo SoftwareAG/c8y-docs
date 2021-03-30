@@ -25,7 +25,7 @@ To verify whether your setup is correct, execute the following REST API request:
 
 > **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://www.cumulocity.com/reference/tenants) in the Reference guide.
 
-#### No LoRa provider settings found
+#### No Sigfox provider settings are found
 
 This warning message shows up when there are no credentials set up for the Sigfox account.
 

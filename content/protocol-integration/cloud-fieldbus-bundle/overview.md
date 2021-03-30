@@ -12,4 +12,4 @@ With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices an
 
 Cloud Fieldbus is supported out of the box by several devices. For information on supported devices, refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which allows to filter for [all devices which offer full functional support with Cloud Fieldbus](https://devicepartnerportal.softwareag.com/devices?additionalFeature=Cloud%20Fieldbus).
 
-> **Info:** To support Cloud Fieldbus with your terminal, please [contact product support](/about-doc/contacting-support).
+> **Info:** To support Cloud Fieldbus with your terminal, please contact [product support](/about-doc/contacting-support).

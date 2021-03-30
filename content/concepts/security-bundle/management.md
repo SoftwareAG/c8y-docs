@@ -10,4 +10,4 @@ To capture security-relevant events, Cumulocity IoT offers an [auditing interfac
 
 To receive security-related reports about the Cumulocity IoT platform, interested parties with a maintenance contract can subscribe to Early Warnings in the [Knowledge Center of Software AG Empower](https://empower.softwareag.com/KnowledgeCenter/EarlyWarningsCriticalAlerts/default.aspx).
 
-To report security incidents, please [contact product support](/about-doc/contacting-support).
+To report security incidents, please contact [product support](/about-doc/contacting-support).

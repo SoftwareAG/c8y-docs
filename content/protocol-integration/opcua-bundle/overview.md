@@ -15,7 +15,7 @@ The OPC UA device gateway is a stand-alone Java program that communicates with O
 
 The gateway has to be registered as Cumulocity IoT device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
 
-> **Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please [contact product support](/about-doc/contacting-support).
+> **Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please contact [product support](/about-doc/contacting-support).
 
 To download the gateway navigate to [Cumulocity resources](http://resources.cumulocity.com/examples/opc-ua/).
 

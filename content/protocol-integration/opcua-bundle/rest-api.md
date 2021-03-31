@@ -168,7 +168,6 @@ Data structure for ServerConnectionConfig:
 <td>no</td>
 <td>Authentication password when user identity mode is <code>UserName</code>. Set the value in order to change authentication password. If not given, the previously stored authentication password is preserved.</td>
 </tr>
-</tr>
 <tr>
 <td>keystoreBinaryId</td>
 <td>string</td>

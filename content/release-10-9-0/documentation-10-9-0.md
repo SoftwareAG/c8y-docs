@@ -15,11 +15,11 @@ Moreover, you can find the following major enhancements, improvements and fixes 
 
 #### Open API specification
 
-A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard. 
+A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 ![Open API specification](/images/release-notes/open-api-new.png)
 
-The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0. 
+The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0.
 
 
 #### Release notes
@@ -115,7 +115,7 @@ MTM-35165</td>
 User guide</td>
 <td>
 Cockpit</td>
-<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
+<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#on-measurement-threshold-create-alarm" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
 <td>
 MTM-35724</td>
 </tr>
@@ -190,4 +190,3 @@ MTM-35001</td>
 </tr>
 
 </tbody></table>
-

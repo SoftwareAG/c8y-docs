@@ -168,6 +168,13 @@ Data structure for ServerConnectionConfig:
 <td>yes/no</td>
 <td>Authentication password when user identity mode is <code>UserName</code>.</td>
 </tr>
+</tr>
+<tr>
+<td>passwordEncrypted</td>
+<td>boolean</td>
+<td>yes/no</td>
+<td>Indicates whether the authentication password is encrypted. When updating the server configuration with a new authentication password during user identity mode is <code>UserName</code>, this value should be set to <code>false</code> in order to store the new password. Afterwards, opcua-device-gateway asynchronously will replace the authentication password with the encrypted text and set this value to <code>true</code>.</td>
+</tr>
 <tr>
 <td>keystoreBinaryId</td>
 <td>string</td>

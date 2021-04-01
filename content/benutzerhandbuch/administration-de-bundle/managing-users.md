@@ -72,7 +72,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </tr>
 <tr>
 <td align="left">Login alias</td>
-<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.</td>
+<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Im Gegensatz zum Benutzernamen kann dieser Alias bei Bedarf geändert werden. Der Benutzeralias kann nicht mit MQTT-Konfigurations- oder REST-Vorlagen verwendet werden.</td>
 </tr>
 <tr>
 <td align="left">Aktiv</td>

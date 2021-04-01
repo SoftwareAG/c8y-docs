@@ -56,68 +56,14 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Built-in Options
 
-Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
+Refer to the [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options. These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
 
-```js
-export class ApplicationOptions {
-  name: string; // To be saved to the server
-  contextPath: string; // To be saved to the server
-  key: string; // To be saved to the server
-  upgrade?: boolean; // true if the application is hybrid using Angular and angularJS simultaneously
-  brandingEntry?: string; // the entry path to the branding
-  tsConfigPath?: string; // path to tsCconfig if typescript is used, defaults to ./tsconfig.json
-  entryModule?: string;
-  indexTemplate?: string; // path to the index.html to be used, otherwise the default will be used
-  dynamicOptionsUrl?: string; // URL to load the dynamic fetched options
-  faviconUrl?: string; // URL for the favicon
-  brandingUrl?: string; // URL for a CSS that will replace the default branding
-  brandingCssVars?: { // Object with properties that will be converted to CSS custom properties
-    [key: string]: string
-  };
-  languages?: { // Object with properties to add and change the languages available in the applications
-    [langCode: string]: {
-      name: string;
-      nativeName: string;
-      url: string;
-    }
-  };
-  localePath?: string; // The folder where the translations po files are loaded from
-  extraCssUrls?: string[]; // URLs for extra CSS files to be loaded at runtime
-  docs?: {
-    noDefault: boolean, // Hide default links to documentation
-    excludeDefault: string[], // The list of regex strings to be matched with the default docs url
-    links: Array<{ // Additional documentation links to be displayed
-        icon: string;
-        label: string;
-        url: string;
-    }>
-  };
-  icon?: { // Application icon to be displayed in app switcher and header bar
-    class?: string;
-    url?: string;
-  };
-  noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
-  globalTitle?: string; // HTML page title
-  hidePowered?: boolean; // Hide powered by at the bottom of the navigator
-  supportUrl?: boolean | string; // URL for support link
-  supportUserString?: string;
-  rightDrawer?: boolean; // Show or hide the right drawer
-  hideNavigator?: boolean; // Show or hide the navigator
-  tabsHorizontal?: boolean;  // Show tabs horizontally or vertically
-  loginExtraLink?: { // Extra link to add to login screen
-    url: string;
-    label: string;
-  };
-  storageLimitationFeatureEnabled?: boolean;
-  companyName?: string; // Company name used to prompt the user about support staff
-  guideHrefTemplate?: string; // The full URL for documentation, by default it's ${docsBaseUrl}${partialUrl}
-  docsBaseUrl?: string; // The base URL for documentation
-  contentSecurityPolicy?: string; // CSP string added to the index.html
-  imports?: string[]; // legacy plugin imports
-  cookieBanner?: { // Cookie Banner configuration
-    cookieBannerTitle?: string;
-    cookieBannerText?: string;
-    policyUrl?: string;
-  };
-}
-```
+> **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places:
+
+>
+
+> - When you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
+
+> - When you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute.
+
+> **Info:** If you build a custom application based on the standard application, make sure you append your CSP value to the default one.

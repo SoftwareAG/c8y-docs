@@ -23,7 +23,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-In the field **Preferred login modes*, you can select one of the following options:
+In the field **Preferred login modes**, you can select one of the following options:
 
 * OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.

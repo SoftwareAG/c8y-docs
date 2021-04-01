@@ -20,7 +20,6 @@ Notes about Operation Collections:
 -   The embedded operation object is filled with "deviceName", but only when requesting resource: Get a collection of operations.
 -   Operations are returned in the order of their ascending IDs.
 
-
 ### POST - Create an Operation
 
 Request body: Operation

@@ -11,6 +11,10 @@ To register a Sigfox device, navigate to the **Registration** page in the **Devi
 
 > **Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
 
+> **Info:** 
+> - Sigfox device type name is created with naming convention ```c8y_{tenantId}_{device-protocol-name}_{contractId}``` 
+> - if the constructed name is exceeding 100 characters it will be truncated until it is less than 100 characters.
+
 In the next window, fill in the required information:
 
 - **ID:** Unique device ID. The value must be a hexadecimal number.

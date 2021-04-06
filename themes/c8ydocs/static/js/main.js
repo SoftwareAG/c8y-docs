@@ -2,26 +2,66 @@ var main = (function ($) {
   function initializer() {
 
     //Load releases menu
-    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
-      .done(function (json) {
+//    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
+//      .done(function (json) {
         //json = JSON.parse(json.responseText);
+
+        json = {
+    "releases": [
+        {
+            "label": "10.7.0",
+            "url": "https://cumulocity.com/guides/"
+        },
+        {
+            "label": "10.6.6",
+            "url": "https://cumulocity.com/guides/10.6.6"
+        },
+        {
+            "label": "10.6.0",
+            "url": "https://cumulocity.com/guides/10.6.0"
+        },
+        {
+            "label": "10.5.7",
+            "url": "https://cumulocity.com/guides/10.5.7"
+        },
+        {
+            "label": "10.5.0",
+            "url": "https://cumulocity.com/guides/10.5.0"
+        }
+    ]
+};
+
         var urls = json.releases;
         var vmenu = $('.dropdown.version');
         var loc = window.location;
         var active = false;
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
+
+        vs = []
+        for (var i = 0; i < urls.length; i++) {
+          vs.push(urls[i].label);
+        }
+
+        rest = loc.href.split("guides/")[1];
+        v = rest.split("/")[0];
+
+        prefix = loc.href.split("guides/")[0] + "guides/";
+        r = rest.split("/");
+        r.shift();
+        suffix = r.join("/");
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text(el.label);
+            $('#current-dropdown-version-toggle').text('Release '+ el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
+              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }
@@ -38,11 +78,11 @@ var main = (function ($) {
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
-      })
-      .fail(function (resp) {
-        console.error(resp.statusText);
-        $('#dropdownVersionButton').hide();
-      });
+//      })
+//      .fail(function (resp) {
+//        console.error(resp.statusText);
+//        $('#dropdownVersionButton').hide();
+//      });
 
 
     // apply Highlight js

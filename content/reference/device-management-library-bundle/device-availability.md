@@ -33,6 +33,8 @@ The following messages update the last message timestamp of a device:
 -   Create an event, measurement or alarm (for given device as source)
 -   Update the device itself (with given id) sending empty PUT request or request with id only, ie. {} or {"id":...}
 
+> **Info:** Keep in mind that after updating the last message it may take some minutes until the new status has been saved in a database.
+
 A monitored device has one of the following statuses for c8y_Connection:
 
 |Name|Description|

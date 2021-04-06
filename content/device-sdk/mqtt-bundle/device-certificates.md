@@ -46,8 +46,7 @@ Single registration is not supported for devices which are going to use certific
 
 ### JWT Token retrieval
 
-A device which is authenticated by certificates and connected to the Cumulocity IoT platform can receive a token which can later be used to authenticate HTTP requests. Note that [JWT token authentication](/reference/rest-implementation/#http-usage) must be enabled to receive a token.
- This can be done e.g. by setting [preferred login modes](/users-guide/administration/#login-settings) on OAuth Internal.
+A device which is authenticated by certificates and connected to the Cumulocity IoT platform can receive a token which can later be used to authenticate HTTP requests.
 
 * First the device subscribes to the topic <kbd>s/dat</kbd>.
 * Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.

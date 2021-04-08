@@ -213,7 +213,7 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 ```
 
 
-### POST - Download the data from the inventory for the selected device ID 
+### POST - Download the data from the inventory for the selected device ID
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/importFromCumulocity/data

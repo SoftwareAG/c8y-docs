@@ -75,7 +75,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
    "startTimeM":"30",
    "timeZone":"UTC",
    "properties":[
-      
+
    ],
    "cronExpression":"",
    "status":"EXECUTED",

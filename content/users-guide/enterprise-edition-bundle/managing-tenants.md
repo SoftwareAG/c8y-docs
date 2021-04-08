@@ -267,7 +267,7 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 
 ### <a name="default-subscriptions"></a>Default subscriptions
 
-In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it. 
+In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
@@ -276,7 +276,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or [Tenants](#reference/tenants) in the *Reference guide*.
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the *Cumulocity IoT OpenAPI* Specification.
 
 In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
@@ -294,9 +294,9 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 <br>
 You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
 
-Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed. 
+Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
 
-You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade. 
+You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade.
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
 <br>

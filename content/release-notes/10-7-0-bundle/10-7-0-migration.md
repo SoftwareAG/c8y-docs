@@ -106,7 +106,7 @@ Note that we offer an open-source Esper-to-Apama EPL translation tool which assi
 
 As announced in the [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration), deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
 
-Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/reference/auditing/#audit-record-collection) in the Reference guide.
+Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Audits](https://cumulocity.com/api/#tag/Audits) in the Cumlocity IoT OpenAPI Specification.
 
 #### Deprecation of breadcrumbs
 

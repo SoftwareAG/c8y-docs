@@ -12,7 +12,7 @@ Examples:
 -   Device configuration: Setting up a charge table in a smart meter.
 -   Device maintenance: Requesting a gateway to download and install a new firmware.
 
-In Cumulocity IoT, these use cases are implemented by sending *operations* to a device. 
+In Cumulocity IoT, these use cases are implemented by sending *operations* to a device.
 
 The following snippet shows an operation for setting the state of the relay with the ID "42" to "OPEN":
 
@@ -37,9 +37,9 @@ Cumulocity IoT delivers operations to devices over any network using a reliable 
 
 -   It may not even be possible to reach a mobile device over the internet. Cumulocity IoT uses push technology to send operations to devices.
 
-To pass an operation from an application to a device, a process of several steps is required as illustrated in the image below. Assume that the user issues a remote control operation for a device (such as a device restart) from an application. The application creates the operation in Cumulocity IoT (Step "1"). Cumulocity IoT will queue the operation for execution and return control back to the application immediately. 
+To pass an operation from an application to a device, a process of several steps is required as illustrated in the image below. Assume that the user issues a remote control operation for a device (such as a device restart) from an application. The application creates the operation in Cumulocity IoT (Step "1"). Cumulocity IoT will queue the operation for execution and return control back to the application immediately.
 
-At some point in time, the agent responsible for the device will request operations that are queued for the devices that it manages ("Step 2"). This will happen immediately through Cumulocity IoT's push mechanism or at a regular or scheduled interval. 
+At some point in time, the agent responsible for the device will request operations that are queued for the devices that it manages ("Step 2"). This will happen immediately through Cumulocity IoT's push mechanism or at a regular or scheduled interval.
 
 The agent will execute the operations on the devices that it manages (Step "3"), and will update Cumulocity IoT with the results of the execution (Step "4"). The devices that the agent manages are direct or indirect children ("childDevices") of the agent.
 
@@ -57,5 +57,4 @@ Operations should always be idempotent. Idempotent means that no matter how ofte
 
 For example, an operation to set a switch to a certain state is idempotent. No matter how often the switch is set to "on", it will be "on" afterwards. An operation to toggle a switch is not idempotent - the result depends on whether the operation was run an odd or an even number of times.
 
-More details can be found in [Device control](/reference/device-control) in the Reference guide.
-
+More details can be found in [Device control](https://cumulocity.com/api/#tag/Device-control-API) in the Cumulocity IoT OpenAPI Specification.

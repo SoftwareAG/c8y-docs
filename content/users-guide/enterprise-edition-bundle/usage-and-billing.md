@@ -183,7 +183,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant usage statistics record](/reference/tenants/#tenant-usage-statistics) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://cumulocity.com/api/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -226,7 +226,7 @@ The information on the microservice usage is presented in the **Usage Statistics
 
 ![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-For more details, refer to [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 #### Scaling
 
@@ -241,7 +241,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](/reference/auditing/) in the Reference guide.
+For more information, refer to [Audits](https://cumulocity.com/api/#tag/Audits) in the Cumulocity IoT OpenAPI Specification.
 
 
 ### Timezone handling

@@ -4,8 +4,8 @@ title: Notifications
 layout: redirect
 ---
 
-The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in a separate [document](/reference/real-time-notifications).
-  
+The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in a separate [document](https://cumulocity.com/api/#tag/Real-time-notification-API).
+
 Required role: ROLE\_NOTIFICATION\_READ
 
 ### The subscription channel name format

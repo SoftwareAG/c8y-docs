@@ -288,7 +288,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --header "Authorization: {{auth}}" 
+curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --header "Authorization: {{auth}}"
 ```
 **Example Response**
 
@@ -397,7 +397,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 }
 ```
 
-### DELETE - Delete an existing project 
+### DELETE - Delete an existing project
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}
@@ -411,7 +411,7 @@ Delete the existing project.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 
 **Example Request**
 
@@ -459,7 +459,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
                 "v2"
             ]
         },
-        
+
     ]
 }
 ```
@@ -501,7 +501,7 @@ Retrieves the list of files available in the project. It contains info related t
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 
 **Example Request**
 
@@ -771,7 +771,7 @@ Scans the project structure to list any un-reported file in the system, which wo
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |refresh|{{True/False}}
 
 **Example Request**
@@ -780,7 +780,7 @@ Scans the project structure to list any un-reported file in the system, which wo
 200 - OK
 
 curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?refresh=true' \
---header 'Authorization: {{auth}}' 
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -1043,7 +1043,7 @@ Pulls all the resources from the C8Y inventory of the selected version of the pr
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |versionNumber|{{versionNumber}}
 
 
@@ -1053,7 +1053,7 @@ Pulls all the resources from the C8Y inventory of the selected version of the pr
 200 - OK
 
 curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0' \
---header 'Authorization: {{auth}}' 
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -1230,7 +1230,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0' 
+curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0'
 ```
 
 **Example Response**
@@ -1261,7 +1261,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |file|{{file Object}}
 
 **Example Request**
@@ -1388,7 +1388,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 
 
-### POST - Create new resource files into the Project 
+### POST - Create new resource files into the Project
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
@@ -1405,7 +1405,7 @@ To create a new Python script.
 |:---|:---|
 |name|{{name of the file}}
 |type|py
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 
 
 To create a new workflow file.
@@ -1413,7 +1413,7 @@ To create a new workflow file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |type|wf
 |name|{{name of file}}
 |modelID|{{modelID}}
@@ -1425,7 +1425,7 @@ To create a new notebook file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |type|ipynb
 |name|{{name of file}}
 
@@ -1434,7 +1434,7 @@ To create a new architecture file for NN Designer.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |template|{{template}}
 |type|arch
 |name|{{name of file}}
@@ -1445,7 +1445,7 @@ To create a new pipeline file.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project 
+|projectID (string)| project ID of the project
 |type|pipeline
 |name|{{name of file}}
 |modelID|{{modelID}}
@@ -1455,7 +1455,7 @@ To create a new pipeline file.
 **Example Request**
 
 ```
-200 - OK 
+200 - OK
 
 curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" \
 --header 'Authorization: {{auth}}' \
@@ -1674,7 +1674,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/
 ```
 
 
-### GET - Get the details of the resource file 
+### GET - Get the details of the resource file
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}
@@ -1698,7 +1698,7 @@ Gets the details of a resource file.
 200 - OK
 
 curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource' \
---header 'Authorization: {{auth}}' 
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -1895,7 +1895,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content' 
+curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content'
 
 ```
 

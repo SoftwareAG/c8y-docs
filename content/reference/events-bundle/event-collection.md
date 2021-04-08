@@ -203,9 +203,12 @@ The DELETE method allows for deletion of event collections. Applicable query par
 ```http
      DELETE: <<url>>/event/events....
 ```
+
 #### Example response
 
 ```http
 HTTP/1.1
 204 - NO CONTENT
 ```
+
+> **Info:** DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted event has a lot of associated data. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested event is deleted after all associated data has been deleted.

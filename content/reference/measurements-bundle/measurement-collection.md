@@ -332,7 +332,16 @@ HTTP/1.1
 ```
 ### DELETE - Delete a measurement collection
 
-The DELETE method allows for deletion of measurement collections. Applicable query parameters are equivalent to GET method.
+The DELETE method allows for deletion of measurement collections. Applicable query parameters are:
+
+Parameter | Type | Description | Example
+--|--|--|--
+dateFrom |  string &lt;date-time> | Start date or date and time of the measurement. | dateFrom=2020-03-01
+dateTo |  string &lt;date-time> | End date or date and time of the measurement. | dateFrom=2020-03-30
+fragmentType  | string  | A characteristic which identifies a managed object or event, e.g. geolocation, electricity sensor, relay state. | fragmentType=c8y_IsDevice
+source  | string  | The managed object ID to which the measurement is associated. |  source=251994
+type | string  | The type of measurement to search for. | type=c8y_Water
+
 
 **Request body:** N/A
 
@@ -350,9 +359,12 @@ The DELETE method allows for deletion of measurement collections. Applicable que
 ```http
  DELETE: <<url>>/measurement/measurements...
 ```
+
 #### Example response
 
 ```http
 HTTP/1.1  
 204 NO CONTENT
 ```
+
+> **Info:** DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted measurement has a lot of associated data. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested measurement is deleted after all associated data has been deleted.

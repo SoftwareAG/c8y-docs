@@ -15,4 +15,4 @@ On the `Request` object, you may set cookies, headers or query parameters as nee
 
 In the callback, the `Response` object is supplied with `statusCode` and `payload`. Fields on the payload are accessible via the `AnyExtractor` object it is supplied in - see the information on [access fragments](/apama/actions/#utility-functions) below.
 
-Refer to the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/index.html) for further details.
+Refer to the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/ApamaDoc/index.html) for further details.

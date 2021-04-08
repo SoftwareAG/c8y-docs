@@ -1346,6 +1346,7 @@ curl --request GET "{{url}}/service/zementis/onnx/models"
 ```
 
 Get model name, model version, onnx version, producer name, producer version and information about inputs and outputs of the ONNX model.
+Here, the onnx version property actually corresponds to the onnx format version (ir version) and not the release version.
 
 |HEADERS||
 |:---|:---|
@@ -1376,6 +1377,7 @@ curl --request GET "{{url}}/service/zementis/onnx/models/resnet50" --header "Aut
   "opsetVersions" : "ai.onnx v11",
   "producerName" : "keras2onnx",
   "producerVersion" : "1.6.0",
+  "isActive": false,
   "inputs" : [ {
     "name" : "input_3",
     "shape" : [ "N", 224, 224, 3 ],
@@ -1538,6 +1540,7 @@ curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorizati
   "opsetVersions" : "ai.onnx v9, ai.onnx.ml v1",
   "producerName" : "skl2onnx",
   "producerVersion" : "1.6.0",
+  "isActive": true,
   "inputs" : [ {
     "name" : "float_input",
     "shape" : [ null, 4 ],
@@ -1612,6 +1615,188 @@ curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorizati
     "errors": [
         "A model with the name 'resnet50' already exists."
     ]
+}
+```
+
+### PUT - Activate an existing ONNX model
+
+```
+{{url}}/service/zementis/onnx/models/{{model_name}}/activate
+```
+
+Activates the ONNX model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially heap.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for existing model name
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/resnet50/activate" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "modelName" : "resnet50",
+  "modelVersion" : 0,
+  "onnxVersion" : 6,
+  "opsetVersions" : "ai.onnx v11",
+  "producerName" : "keras2onnx",
+  "producerVersion" : "1.6.0",
+  "isActive": true,
+  "inputs" : [ {
+    "name" : "input_3",
+    "shape" : [ "N", 224, 224, 3 ],
+    "type" : "tensor(float)"
+  } ],
+  "outputs" : [ {
+    "name" : "fc1000",
+    "shape" : [ "N", 1000 ],
+    "type" : "tensor(float)"
+  } ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/resnet50/activate"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/dummy/activate" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+  "errors": [
+    "Model 'dummy' not found."
+  ]
+}
+```
+
+### PUT - Deactivate an existing ONNX model
+
+```
+{{url}}/service/zementis/onnx/models/{{model_name}}/deactivate
+```
+
+Deactivates the ONNX model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially heap. Deactivating an inactive model has no effect.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for existing model name
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/resnet50/deactivate" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "modelName" : "resnet50",
+  "modelVersion" : 0,
+  "onnxVersion" : 6,
+  "opsetVersions" : "ai.onnx v11",
+  "producerName" : "keras2onnx",
+  "producerVersion" : "1.6.0",
+  "isActive": false,
+  "inputs" : [ {
+    "name" : "input_3",
+    "shape" : [ "N", 224, 224, 3 ],
+    "type" : "tensor(float)"
+  } ],
+  "outputs" : [ {
+    "name" : "fc1000",
+    "shape" : [ "N", 1000 ],
+    "type" : "tensor(float)"
+  } ]
+}
+```
+
+**Example Request**
+
+```
+401 Unauthorized
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/resnet50/deactivate"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request PUT "{{url}}/service/zementis/onnx/models/dummy/deactivate" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+  "errors": [
+    "Model 'dummy' not found."
+  ]
 }
 ```
 

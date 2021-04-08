@@ -29,7 +29,7 @@ Cumulocity IoT supports two ways to register devices which will be able to conne
 
 **Auto registration**
 
-The user for the device will be created during the first MQTT call, if at least one uploaded certificate has _autoRegistrationEnabled_ set to true.
+The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the Cumulocity IoT platform with a flag _autoRegistrationEnabled_ with a value of true. To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
 
 **Bulk registration**
 
@@ -41,9 +41,12 @@ The CSV file used in bulk registration should meet the requirements described in
 
 Single registration is not supported for devices which are going to use certificates for authentication.
 
+>**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
+
+
 ### JWT Token retrieval
 
-A device which is connected by certificates can receive a token which can later be used to authenticate HTTP requests. Note that [JWT token authentication](/reference/rest-implementation/#http-usage) must be enabled to receive a token.
+A device which is authenticated by certificates and connected to the Cumulocity IoT platform can receive a token which can later be used to authenticate HTTP requests.
 
 * First the device subscribes to the topic <kbd>s/dat</kbd>.
 * Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.

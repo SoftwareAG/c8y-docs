@@ -94,13 +94,13 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
-In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#creating-tenants).
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
 #### Support user access
 
-In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.
+At the right of the **Properties** tab, you can find information on the support user requests/access for the subtenants.
 
 <img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
@@ -108,8 +108,8 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Configuration](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
-|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
+|Status|May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings)),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally in the Management tenant. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
@@ -119,7 +119,7 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
->**Important:** Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
+>**Important:** Suspended tenants for all Cumulocity IoT public cloud instances will be automatically deleted after 60 days.
 >
 > **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 
@@ -264,3 +264,73 @@ Click the menu icon in the tenant policy entry you want to duplicate and then cl
 #### To delete a tenant policy
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.
+
+### <a name="default-subscriptions"></a>Default subscriptions
+
+In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it. 
+
+In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
+
+In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
+
+- to every new tenant on its creation,
+- to every existing tenant on platform upgrade.
+
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or [Tenants](#reference/tenants) in the *Reference guide*.
+
+In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+
+- all own applications,
+- all subscribed applications which have different names than the own applications.
+
+> **Info:** In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+
+On the left, you see the **Applications subscribed to a tenant on creation**, and on the right you see the **Applications subscribed to a tenant on platform upgrade**.
+
+Initially, the lists show the default subscriptions inherited from the tenant hierarchy.
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
+
+<br>
+You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
+
+Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed. 
+
+You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade. 
+
+<img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
+<br>
+If you want to return to the settings inherited from the tenant hierarchy, just switch the corresponding toggle again.
+
+Save the settings by clicking **Save** at the bottom of the page.
+
+> **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+
+#### <a name="default-applications"></a>Overriding default subscriptions
+
+The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
+
+* to define default web applications subscribed to new tenants on creation:
+  * category: configuration
+  * key: default.tenant.applications
+  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* to define default microservices subscribed to new tenants on creation:
+  * category: configuration
+  * key: default.tenant.microservices
+  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+* to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.applications.enabled
+  * value: true/false (when false or not set, the same list from default.tenant.applications will be used)
+* to define default web applications subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.applications
+  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.microservices.enabled
+  * value: true/false (when false or not set, the same list from default.tenant.microservices will be used)
+* to define default microservices subscribed to existing tenants on platform upgrade:
+  * category: configuration
+  * key: on-update.tenant.microservices
+  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway

@@ -15,7 +15,7 @@ In the next window, fill in the required information:
 
 - **ID:** Unique device ID. The value must be a hexadecimal number.
 - **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
-- **Contract:** Choose your desired contract.
+- **Contract:** Choose your desired contract (contracts that are active and with free slots are listed).
 - **Device protocol:** Select your desired device protocol from the drop-down list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 

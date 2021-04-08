@@ -6,13 +6,13 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
 
-> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](/reference/events/) in the *Reference Guide*. 
+> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](/reference/events/) in the *Reference Guide*. 
 
 ### Predefined event types
 
 There are some predefined event types to interact with several Cumulocity IoT APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity IoT backend, you can create an event and send it to the relevant channel. Cumulocity IoT will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
-Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/com/apama/cumulocity/package-summary.html) in the API Reference for EPL (ApamaDoc) to see how the events for each stream are structured.
+Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/ApamaDoc/com/apama/cumulocity/package-summary.html) in the API Reference for EPL (ApamaDoc) to see how the events for each stream are structured.
 
 ### Sending events to a channel
 
@@ -92,4 +92,4 @@ For events that have come from Cumulocity IoT, one of `isUpdate()` or `isCreate(
 
 For more information, including examples for the different types of objects, see [Receiving update notifications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
 
-See also the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
+See also the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/ApamaDoc/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.

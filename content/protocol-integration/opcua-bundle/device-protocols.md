@@ -22,7 +22,8 @@ Once the device protocol is created, various configuration settings such as vari
 ### Adding a new variable
 
 1. Click **Add variable** under the **Variables** section.
-2. Enter the path and the name of the variable.
+2. Enter the path and the name of the variable. The path can be the exact browse path or a regular expression of the browse path. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings.
+When using a regular expression, keep in mind that it might be matching many nodes in the address space and resulting in unexpected incoming data. Our recommendation is to use it with great care and together with other exact browse paths in the same mapping if possible. For example, `&#91;"2:Objects", "regex(2:MyDevice\\d)", "..."&#93;`
 3. Choose either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable.
 4. Additionally, different functionalities such as sending measurements, creating alarms, sending events and custom actions for each variable can be selected.
 5. Click **Save** to save your settings.

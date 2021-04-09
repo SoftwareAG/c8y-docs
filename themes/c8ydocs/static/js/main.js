@@ -25,9 +25,12 @@ var main = (function ($) {
         r.shift();
         suffix = r.join("/");
 
+        console.log(rest, v, prefix, suffix);
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
           var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
+          console.log(href_url);
           if (loc.href.includes(el.label)) {
             active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);

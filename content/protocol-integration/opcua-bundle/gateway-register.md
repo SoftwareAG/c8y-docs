@@ -302,3 +302,20 @@ A sample logging config file may look like this:
        </root>
 </configuration>
 ```
+
+### Deletion of gateway
+
+An OPC UA gateway can be associated with multiple OPC UA servers, and the servers can also have multiple child devices
+connected to them. The cleanest approach to delete a gateway is to first delete the OPC UA server managed objects and all its child devices.
+The server can be either deleted from the "OPC UA server" tab of the gateway, or the device list itself. If the server is
+deleted from the "OPC UA server" tab, then the server managed object with its child devices and all the address space
+managed objects are deleted by the OPC UA management service. The server can also be deleted from the device list along with its child devices
+by selecting the checkbox "Also delete child devices of this device". The deletion is detected by the gateway,
+and the address space managed objects are deleted for the corresponding server.
+Thereafter, the gateway can be deleted from the list of devices along with the device user.
+
+Alternatively, the gateway and all its child devices can be deleted directly from the device list by selecting the checkbox
+"Also delete child devices of this device". The full hierarchy is deleted asynchronously. On selection of the checkbox
+"Also delete associated device owner 'device_<name>'", the platform will try to delete the device user at the same time.
+In this case, it is recommended to delete the device user from Management > Device credentials tab (in the Device management UI) afterward,
+because the device user might still be associated with a child device that is still in the process of deletion.

@@ -23,7 +23,12 @@ var main = (function ($) {
 
         prefix = loc.href.split("/guides/")[0] + "/guides/";
         r = rest.split("/");
-        r.shift();
+
+        if (r[0].split(".") > 1) {
+          r.shift();
+        } else {
+          v = urls[0].label;
+        }
         suffix = r.join("/");
 
         for (var index = 0; index < urls.length; index++) {

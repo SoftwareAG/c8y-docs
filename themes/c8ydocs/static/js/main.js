@@ -22,7 +22,8 @@ var main = (function ($) {
 
         prefix = loc.href.split("/guides/")[0] + "/guides/";
         r = rest.split("/");
-        if (!el.url.endsWith("/") && !el.url.endsWith("guides")) {
+
+        if (r[0].split(".") > 1) {
           r.shift();
         } else {
           v = "10.7.0";

@@ -22,7 +22,11 @@ var main = (function ($) {
 
         prefix = loc.href.split("/guides/")[0] + "/guides/";
         r = rest.split("/");
-        r.shift();
+        if (!el.url.endsWith("/") && !el.url.endsWith("guides")) {
+          r.shift();
+        } else {
+          v = "10.7.0";
+        }
         suffix = r.join("/");
 
         console.log(rest, v, prefix, suffix);

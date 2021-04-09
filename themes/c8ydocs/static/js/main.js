@@ -35,7 +35,6 @@ var main = (function ($) {
               '<a href="' + href_url + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
-            console.log(el.url, suffix, href_url);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + href_url + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
@@ -46,7 +45,7 @@ var main = (function ($) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);
         }
-        
+
         if (!active) {
           var ind = 0;
           for (var i = 0; i < urls.length; i++) {

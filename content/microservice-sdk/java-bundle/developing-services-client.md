@@ -49,7 +49,7 @@ Refer to [Device Management > Connectivity](/users-guide/device-management/#conn
 
 #### Provider configuration
 
-To configure a SMS provider first is required to get available providers schemas:
+To configure a SMS provider first it is required to get the available providers schemas:
 ```http
 GET /service/messaging/providers/definitions
 Host: ...

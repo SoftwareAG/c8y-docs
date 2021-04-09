@@ -189,4 +189,14 @@ Enterprise tenant</td>
 MTM-35001</td>
 </tr>
 
+<tr>
+<td>
+User guide</td>
+<td>
+Enterprise tenant</td>
+<td > The description of the handling of custom domain names has been improved for more clarity, see &lt;a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization" class="no-ajaxy"&gt;Enterprise Tenant &gt; Customizing your platform&lt;/a&gt;in the &lt;i&gt;User guide&lt;/i&gt;.</td>
+<td>
+MTM-33926</td>
+</tr>
+
 </tbody></table>

@@ -43,9 +43,6 @@ var main = (function ($) {
           }
         }
 
-        rest = loc.href.split("guides/")[1];
-        v = rest.split("/")[0];
-
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);

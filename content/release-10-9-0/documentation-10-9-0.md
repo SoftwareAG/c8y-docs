@@ -171,10 +171,10 @@ Issue</th>
 
 <tr>
 <td>
-Reference guide</td>
+Cumulocity IoT OpenAPI Specification</td>
 <td>
 Inventory API</td>
-<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/api/#tag/Managed-objects" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
 <td>
 MTM-33763</td>
 </tr>

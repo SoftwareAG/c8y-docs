@@ -24,7 +24,7 @@ var main = (function ($) {
         prefix = loc.href.split("/guides/")[0] + "/guides/";
         r = rest.split("/");
 
-        if (r[0].split(".") > 1) {
+        if (r[0].split(".").length > 1) {
           r.shift();
         } else {
           v = urls[0].label;

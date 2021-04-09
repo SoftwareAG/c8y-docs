@@ -57,9 +57,9 @@ A device which is authenticated by certificates and connected to the Cumulocity 
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using [tenant options](/reference/tenants/#option): `oauth.internal.device-token.lifespan.seconds`. Default value is 1 hour. Minimal possible value is 5 minutes.
+A device token lifetime can be configured using [tenant options](/reference/tenants/#option): `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes.
 
-A device can fetch new device token before old one expires, if it request JWT token after half of the token lifetime has passed.
+A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
 ### Introduction to X.509 certificates
 

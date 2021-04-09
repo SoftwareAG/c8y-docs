@@ -18,28 +18,27 @@ var main = (function ($) {
           vs.push(urls[i].label);
         }
 
-        rest = loc.href.split("guides/")[1];
+        rest = loc.href.split("/guides/")[1];
         v = rest.split("/")[0];
 
-        prefix = loc.href.split("guides/")[0] + "guides/";
+        prefix = loc.href.split("/guides/")[0] + "/guides/";
         r = rest.split("/");
         r.shift();
         suffix = r.join("/");
 
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
-
-          console.log(el.url + "/" + suffix);
+          var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
           if (loc.href.includes(el.label)) {
             active = true;
-
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item active">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
+            console.log(el.url, suffix, href_url);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/' + suffix + '" class="dropdown-menu-item">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }

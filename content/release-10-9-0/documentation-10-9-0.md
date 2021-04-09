@@ -15,11 +15,11 @@ Moreover, you can find the following major enhancements, improvements and fixes 
 
 #### Open API specification
 
-A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard. 
+A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 ![Open API specification](/images/release-notes/open-api-new.png)
 
-The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0. 
+The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0.
 
 
 #### Release notes
@@ -189,5 +189,14 @@ Enterprise tenant</td>
 MTM-35001</td>
 </tr>
 
-</tbody></table>
+<tr>
+<td>
+User guide</td>
+<td>
+Enterprise tenant</td>
+<td > The description of the handling of custom domain names has been improved for more clarity, see &lt;a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization" class="no-ajaxy"&gt;Enterprise Tenant &gt; Customizing your platform&lt;/a&gt;in the &lt;i&gt;User guide&lt;/i&gt;.</td>
+<td>
+MTM-33926</td>
+</tr>
 
+</tbody></table>

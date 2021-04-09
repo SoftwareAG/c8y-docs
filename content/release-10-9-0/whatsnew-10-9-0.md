@@ -4,6 +4,7 @@ title: What´s new
 layout: bundle
 ---
 
+
 Release 10.9.0 includes the following new features or major feature enhancements.
 
 ### NEW Loriot LoRa microservice
@@ -22,7 +23,7 @@ For details, refer to [Loriot LoRa](/protocol-integration/lora-loriot/#loriot-ov
 
 #### NEW reports page
 
-All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item.
+All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item. 
 
 The <b>Exports</b> menu item has been moved under the <b>Configuration</b> menu.
 
@@ -45,7 +46,7 @@ For details, see <a href="/users-guide/enterprise-edition/#Default subscriptions
 
 #### SMS provider configuration
 
-The <b>SMS provider</b> page has been updated. New providers have been added to be configured.
+The <b>SMS provider</b> page has been updated. New providers have been added to be configured. 
 
 ![SMS providers](/images/release-notes/admin-settings-sms-provider.png)
 
@@ -57,10 +58,11 @@ See also <a href="/users-guide/administration/#openIT-credentials" class="no-aja
 
 The bulk operations user experience has been enhanced. Among others, the following improvements have been implemented:
 
-* In the bulk operation creation dialog, a <b>Title</b> field has been implemented to change the name of the bulk operation. Moreover, a <b>Description</b> field has been added to provide additional information on the bulk operation.
+* In the bulk operation creation dialog, a <b>Title</b> field has been implemented to change the name of the bulk operation. Moreover, a <b>Description</b> field has been added to provide additional information on the bulk operation. 
 * In the <b>Bulk operations</b> tab, the details view of bulk operations now shows the audit log. Moreover, the <b>Audit logs</b> page in the Administration application has a filter type for bulk operations.
 * The <b>Bulk operations</b> tab is now updated in realtime. The <b>Refresh</b> button has been removed.
 * If a bulk operations fails, the user can now manually set the status to successful.
 * Devices for bulk operations can now be filtered by groups and subgroups via checkboxes.
 
 For details, see <a href="/users-guide/device-management/#working-with-operations" class="no-ajaxy">Device Management > Controlling and monitoring devices > Working with operations</a> in the <em>User guide</em>. </td>
+

@@ -38,7 +38,7 @@ Once the device retrieved the credentials, it needs to store them locally for fu
 To establish a connection you need to configure the following parameters:
 
 - Host: &lt;your&#95;cumulocity_url>
-- User: &lt;tenantID>/&lt;username>
+- User: &lt;tenantID>/&lt;username> (user alias is not supported)
 - Password: &lt;your&#95;cumulocity_password>
 
 For more information, refer to the [Hello MQTT](/device-sdk/mqtt-examples/#hello-mqtt) section.

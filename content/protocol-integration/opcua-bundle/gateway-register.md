@@ -334,15 +334,15 @@ A sample logging config file may look like this:
 
 An OPC UA gateway can be associated with multiple OPC UA servers, and the servers can also have multiple child devices
 connected to them. The cleanest approach to delete a gateway is to first delete the OPC UA server managed objects and all its child devices.
-The server can be either deleted from the "OPC UA server" tab of the gateway, or the device list itself. If the server is
-deleted from the "OPC UA server" tab, then the server managed object and all the address space managed objects are deleted by OPC UA management service.
-But the child devices associated with the server have to be deleted separately. On the other hand, if the server is deleted from the device list, then the
+The server can be either deleted from the **OPC UA server** tab of the gateway, or the device list itself. If the server is
+deleted from the **OPC UA server** tab, then the server managed object and all the address space managed objects are deleted by OPC UA management service,
+but the child devices associated with the server have to be deleted separately. On the other hand, if the server is deleted from the device list, then the
 child devices associated with the server can be deleted by selecting the checkbox "Also delete child devices of this device". The deletion is detected by the gateway,
 and the address space managed objects are deleted for the corresponding server.
 Thereafter, the gateway can be deleted from the list of devices along with the device user.
 
 Alternatively, the gateway and all its child devices can be deleted directly from the device list by selecting the checkbox
-"Also delete child devices of this device". The full hierarchy is deleted asynchronously. On selection of the checkbox
-"Also delete associated device owner 'device_<name>'", the platform will try to delete the device user at the same time.
-In this case, it is recommended to delete the device user from Management > Device credentials tab (in the Device management UI) afterwards,
+**Also delete child devices of this device**. The full hierarchy is deleted asynchronously. On selection of the checkbox
+**Also delete associated device owner 'device_name'**, the platform will try to delete the device user at the same time.
+In this case, we recommend you to delete the device user from Management > Device credentials (in the Device management UI) afterwards,
 because the device user might still be associated with a child device that is still in the process of deletion.

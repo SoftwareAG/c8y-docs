@@ -6,7 +6,7 @@ aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
-You access the Cumulocity IoT platform via a web browser.
+You access the {{< product-name >}} platform via a web browser.
 
 ### Supported browsers
 

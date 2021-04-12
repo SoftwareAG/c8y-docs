@@ -49,6 +49,9 @@ relativeURLs = true
   # Your favicon path, default is "/favicon.png"
   favicon = "https://cumulocity.com/favicon.ico"
 
+# Content variables for Frontmatter titles
+  productname = "Cumulocity IoT"
+
 # Customize
   [params.footer]
     copyright = "Cumulocity GmbH | All rights reserved"

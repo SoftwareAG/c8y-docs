@@ -89,7 +89,7 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 </tr>
 <tr>
 <td>Dremio UI</td>
-<td>On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under <em>http://datahub.edge_domain_name</em> or <em>https://datahub.edge_domain_name</em>, depending on whether TLS/SSL is used or not. You can log in as <em>admin</em> using password <em>datahub4edge@customer!</em>.</td>
+<td>On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under <em>http://datahub.edge_domain_name</em> or <em>https://datahub.edge_domain_name</em>, depending on whether TLS/SSL is used or not. You can log in as <em>admin</em> using the password defined in the installation procedure.</td>
 </tr>
 <tr>
 <td>DataHub JDBC/ODBC</td>

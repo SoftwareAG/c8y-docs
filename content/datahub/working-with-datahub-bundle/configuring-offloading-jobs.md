@@ -80,7 +80,7 @@ When defining additional columns, you can click the **Validate** button to valid
 
 ##### Set filter predicate
 
-Optionally you can define an additional filter predicate. Per default all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'` to filter out all active alarms with severity warning. 
+Optionally you can define an additional filter predicate. Per default all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'` to only persist active alarms with severity warning. The filter predicate functionality supports complex SQL statements, i.e., a combination of AND/OR, clauses like `IN(...)` / `NOT IN(...)`, and functions, e.g. `REGEXP_LIKE(text, 'MyText\S+')`.
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. For querying the attribute **id**, you have to use **_id**. For querying the time attributes, see also [Working with DataHub > DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets for widely-used temporal filter predicates.
 
@@ -282,10 +282,10 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | name | VARCHAR |
 | owner | VARCHAR |
 | type | VARCHAR |
-| c8y_isdevicegroup | BOOLEAN |
-| c8y_isdevice | BOOLEAN |
-| childassets | OTHER |
-| childdevices | OTHER |
+| c8y_IsDeviceGroup | BOOLEAN |
+| c8y_IsDevice | BOOLEAN |
+| childAssets | OTHER |
+| childDevices | OTHER |
 
 The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps: 
 

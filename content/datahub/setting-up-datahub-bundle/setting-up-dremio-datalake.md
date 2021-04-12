@@ -37,6 +37,9 @@ The following types of data lakes are currently supported:
 |Root path|The root path in the data lake under which the offloaded data will be stored; default root path is /; setting a subfolder allows you to hide other data in the container from DataHub|
 |Azure Storage shared access key|The access key used for authentication|
 
+
+>**Info:** Please note that the account type must be *StorageV2*, and the *Hierarchical namespace* feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the *Blob access tier* to *Hot*.
+
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
 
 |Settings|Description|
@@ -45,6 +48,8 @@ The following types of data lakes are currently supported:
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from DataHub|
+
+>**Info:** An S3 bucket with default settings works. If specific security policies are applied, please make sure that the minimum policy requirements listed [here](https://docs.dremio.com/data-sources/s3/) are satisfied.
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
 

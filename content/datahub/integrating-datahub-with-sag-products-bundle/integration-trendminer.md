@@ -23,7 +23,7 @@ The following diagram illustrates the high-level concepts of the integration bet
 
 Providing TrendMiner access to Cumulocity IoT data requires you solely to define an offloading pipeline using the TrendMiner data layout. When the offloading pipeline is in place, Cumulocity IoT data is regularly extracted from the Operational Store, flattened, and exported into a data lake. In addition, Dremio is configured to access recent data from the Operational Store, using the same schema as for the historical data.
 
-In Dremio a new view is provided, which combines the historical data in the data lake with recent data from the Operational Store. DataHub takes care that the combined data in that view is lossless and does not introduce duplicates. This view is the single connection point to provide TrendMiner access to historical and live data of the Cumulocity IoT platform.
+In Dremio a new view is provided, which combines the historical data in the data lake with recent data from the Operational Store, effectively providing a unified view over *hot* data in the Operational Store and *cold* data in the data lake. DataHub takes care that the combined data in that view is lossless and does not introduce duplicates. This view is the single connection point to provide TrendMiner access to historical and live data of the Cumulocity IoT platform.
 
 > **Info:** So far DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
 
@@ -33,7 +33,7 @@ You have to follow the instructions in Section [Configuring offloading jobs](/da
 
 Once you have defined and activated a TrendMiner offloading pipeline, the initial offload has to be completed before you can start querying the data in TrendMiner.
 
-> **Warning:** The offloading pipeline has to be activate. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
+> **Warning:** The offloading pipeline has to be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
 
 In TrendMiner you have to connect to the Dremio view **c8y_cdh_tm_measurements_live** using ODBC. For the ODBC connection settings, you have to navigate to the **Home** page in the DataHub UI and click the ODBC icon to open the ODBC connection settings.
 

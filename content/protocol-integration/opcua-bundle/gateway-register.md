@@ -337,7 +337,7 @@ connected to them. The cleanest approach to delete a gateway is to first delete 
 The server can be either deleted from the **OPC UA server** tab of the gateway, or the device list itself. If the server is
 deleted from the **OPC UA server** tab, then the server managed object and all the address space managed objects are deleted by OPC UA management service,
 but the child devices associated with the server have to be deleted separately. On the other hand, if the server is deleted from the device list, then the
-child devices associated with the server can be deleted by selecting the checkbox "Also delete child devices of this device". The deletion is detected by the gateway,
+child devices associated with the server can be deleted by selecting the checkbox **Also delete child devices of this device**. The deletion is detected by the gateway,
 and the address space managed objects are deleted for the corresponding server.
 Thereafter, the gateway can be deleted from the list of devices along with the device user.
 

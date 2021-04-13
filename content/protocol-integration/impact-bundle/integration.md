@@ -14,6 +14,6 @@ The following illustration provides an overview on the Cumulocity IoT IMPACT int
 
 <img src="/images/device-protocols/impact/impact-integration.png" alt="IMPACT integration" style="max-width: 100%">
 
->**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity IoT support.
+>**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact [product support](/about-doc/contacting-support).
 >
 >To be able to communicate with a device through IMPACT the device must be registered in IMPACT. How to register a device in IMPACT is not in the scope of this document.

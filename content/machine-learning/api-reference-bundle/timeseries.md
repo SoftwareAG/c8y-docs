@@ -41,6 +41,9 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 |Authorization|{{auth}}
 |Content-Type|required header parameter with value application/json
 
+|PARAMS||
+|:---|:---|
+|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 **BODY**
 ```
@@ -63,7 +66,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 ```
 200 - OK
 
-curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Authorization: {{auth}}” \
+curl --request POST “{{url}}/service/zementis/train/timeseries?autoDeploy=true --header “Authorization: {{auth}}” \
 	--header “Content-Type: application/json”
 
 {
@@ -147,7 +150,7 @@ curl --request POST “{{url}}/service/zementis/train/timeseries” --header “
 
 {
     "errors": [
-        "'startDate' should be specified in yyyy-MM-dd'T'HH:mm:ss.SSSXXX format."
+        "'startDate' must be specified in yyyy-MM-dd'T'HH:mm:ss.SSSXXX format."
     ]
 }
 ```

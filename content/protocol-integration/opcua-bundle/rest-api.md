@@ -82,9 +82,9 @@ Data structure for ServerConnectionConfig:
 
 <table>
 <colgroup>
-<col style="width: 22%;">
+<col style="width: 25%;">
 <col style="width: 13%;">
-<col style="width: 10%;">
+<col style="width: 7%;">
 <col style="width: 55%;">
 </colgroup>
 <thead>
@@ -165,8 +165,8 @@ Data structure for ServerConnectionConfig:
 <tr>
 <td>userPassword</td>
 <td>string</td>
-<td>yes/no</td>
-<td>Authentication password when user identity mode is <code>UserName</code>.</td>
+<td>no</td>
+<td>Authentication password when user identity mode is <code>UserName</code>. Set the value in order to change the authentication password. If it is not set, the previously stored authentication password is preserved.</td>
 </tr>
 <tr>
 <td>keystoreBinaryId</td>
@@ -220,9 +220,41 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
 </td>
 </tr>
+<tr>
+<td>subscribeModelChangeEvent</td>
+<td>boolean</td>
+<td>no</td>
+<td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled), 
+which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of Cumulocity IoT. 
+This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
+</tr>
+
 </tbody>
 </table>
 
+**Alarms status changed by OPC UA server**
+
+If events operated on the OPC UA server change their status, these changes can be reflected as internal alarms.
+
+To catch these events and convert them into internal alarms, a UA event mapping with the alarmCreation definition in device protocol and alarmStatusMappings in server configuration are required.
+
+For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
+
+The size of the map can be adjusted by several parameters in the configuration file.
+With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
+This factor lets you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
+The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
+It's used to calculate the local file size bound to the entry size.
+  ```yaml
+  # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
+  alarmStatusStore:
+    # Expected number of maximum alarms at the same time
+    maxEntries: 100000
+    # The average size of the keys on the map. Needed for calculation of the size of the database file.
+    averageKeySize: 30
+    # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
+    maxBloatFactor: 5.0
+  ```
 
 #### Get all servers of a gateway device
 
@@ -849,7 +881,7 @@ Full payload data structure explained:
 <td>browsePath</td>
 <td>array<string></string></td>
 <td>yes</td>
-<td>The browse path.</td>
+<td>The browse path. The path can be the exact browse path or a regular expression of the browse path. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings. When using a regular expression, keep in mind that it might be matching many nodes in the address space and resulting in unexpected incoming data. Our recommendation is to use it with great care and together with other exact browse paths in the same mapping if possible. For example, `&#91;"2:Objects", "regex(2:MyDevice\\d)", "..."&#93;`</td>
 </tr>
 <tr>
 <td>measurementCreation</td>
@@ -1241,6 +1273,18 @@ the OPC UA device gateway.</td>
 <td>string</td>
 <td>yes</td>
 <td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
+</tr>
+<tr>
+<td>retryEnabled</td>
+<td>boolean</td>
+<td>no</td>
+<td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
+</tr>
+<tr>
+<td>noRetryHttpCodes</td>
+<td>array&lt;integer&gt;</td>
+<td>no</td>
+<td>Array of HTTP POST status exceptions by which the failed HTTP POST should not be retried if enabled. Example: [400, 500]. Note that, if this is null or missing, the exceptions will be taken from the gateway configuration. If this is provided, even with an empty array, the configuration in the gateway is disregarded.</td>
 </tr>
 </tbody>
 </table>

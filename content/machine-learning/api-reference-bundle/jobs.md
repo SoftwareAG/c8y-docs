@@ -19,7 +19,7 @@ Operations on jobs scheduled for processing device data.
 |jobDescription|String|Description of the job.|
 |groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
 |modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
-|applyToAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
+|applyAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model’s inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 
@@ -62,7 +62,7 @@ On creation, a `jobId` is automatically assigned to the job and `jobCreationDate
    "jobDescription": "<jobDescription>",
    "groupOrDeviceId" : <groupOrDeviceId>,
    "modelOrGroup": "<modelOrGroup>",
-   "applyToAllModels": <true | false>,
+   "applyAllModels": <true | false>,
    "modelToDeviceMappings": {
       "<Model_Input1>": "<measurementType>.<seriesName1>.value",
       "<Model_Input2>": "<measurementType>.<seriesName2>.value",
@@ -92,7 +92,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
     "groupOrDeviceId": 15889549,
-    "applyToAllModels": false,
+    "applyAllModels": false,
     "modelToDeviceMappings": {
         "accelerationY": "c8y_Acceleration.accelerationY.value",
         "accelerationX": "c8y_Acceleration.accelerationX.value",
@@ -118,7 +118,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
     "jobDescription": "Detect activities",
     "jobCreationDate": "2020-03-18T17:41:25.901Z",
     "modelOrGroup": "DecisionTreeClassifier",
-    "applyToAllModels": false,
+    "applyAllModels": false,
     "groupOrDeviceId": 15889549,
     "modelToDeviceMappings": {
        "accelerationY": "c8y_Acceleration.accelerationY.value",
@@ -149,7 +149,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
     "groupOrDeviceId": 15889549,
-    "applyToAllModels":false,
+    "applyAllModels":false,
     "modelToDeviceMappings": {
         "accelerationY": "c8y_Acceleration.accelerationY.value",
         "accelerationX": "c8y_Acceleration.accelerationX.value",
@@ -208,7 +208,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
     "groupOrDeviceId": 123456,
-    "applyToAllModels":false,
+    "applyAllModels":false,
     "modelToDeviceMappings": {
         "accelerationY": "c8y_Acceleration.accelerationY.value",
         "accelerationX": "c8y_Acceleration.accelerationX.value",
@@ -282,7 +282,7 @@ curl --request GET "{{url}}/service/zementis/jobs" --header "Authorization: {{au
         "jobDescription": "Detect activities",
         "jobCreationDate": "2020-03-18T17:41:25.901Z",
         "modelOrGroup": "DecisionTreeClassifier",
-        "applyToAllModels": false,
+        "applyAllModels": false,
         "groupOrDeviceId": 15889549,
         "modelToDeviceMappings": {
             "accelerationY": "c8y_Acceleration.accelerationY.value",
@@ -305,7 +305,7 @@ curl --request GET "{{url}}/service/zementis/jobs" --header "Authorization: {{au
         "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
         "jobCreationDate": "2020-02-27T14:23:16.557Z",
         "modelOrGroup": "AnomalyDetectionModels",
-        "applyToAllModels": true,
+        "applyAllModels": true,
         "groupOrDeviceId": 15896385,
         "modelToDeviceMappings": {
             "rssi": "c8y_SignalStrengthWifi.rssi.value",
@@ -392,7 +392,7 @@ curl --request GET "{{url}}/service/zementis/job/15896925" --header "Authorizati
     "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
     "jobCreationDate": "2020-02-27T14:23:16.557Z",
     "modelOrGroup": "AnomalyDetectionModels",
-    "applyToAllModels": true,
+    "applyAllModels": true,
     "groupOrDeviceId": 15896385,
     "modelToDeviceMappings": {
         "rssi": "c8y_SignalStrengthWifi.rssi.value",
@@ -544,7 +544,7 @@ curl --request GET "{{url}}/service/zementis/job/000000/status" --header "Author
 {{url}}/service/zementis/job/{{jobId}}/history
 ```
 
-Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
+Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {{executionId}} path variable.
 
 |HEADERS||
 |:---|:---|
@@ -943,7 +943,7 @@ curl --request DELETE "{{url}}/service/zementis/job/15898918" --header "Authoriz
            "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
            "jobCreationDate": "2020-02-27T14:23:16.557Z",
            "modelOrGroup": "AnomalyDetectionModels",
-           "applyToAllModels": true,
+           "applyAllModels": true,
            "groupOrDeviceId": 15896385,
            "modelToDeviceMappings": {
            	  "rssi": "c8y_SignalStrengthWifi.rssi.value",

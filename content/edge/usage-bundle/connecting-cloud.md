@@ -35,6 +35,13 @@ Once the device is connected, the device status changes to **Pending acceptance*
 
 The Cumulocity IoT Cloud Remote Access microservice allows you to remotely access the Edge VM through a web browser. The remote Edge VM is represented as a device in the Device Management application of Cumulocity IoT.
 
+#### Prerequisites
+
+To use Cloud Remote Access, you need:
+
+* "Remote access" permission granted to the tenant user.
+* The Cloud Remote Access microservice included into your subscription plan.
+
 #### Supported protocols
 
 The following protocols are supported to connect to the Edge VM through remote access from the Cumulocity IoT tenant:
@@ -87,9 +94,9 @@ Record the allocated port number. This port number will be used to connect to th
 
 To access and connect to the Edge VM, you must create a remote access point.
 
-1. In the Cumulocity IoT tenant for your registered Edge VM, add a remote access endpoint. See [Adding remote access endpoints](/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
+1. In the Cumulocity IoT tenant for your registered Edge VM, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
 
-2. Connect to the endpoint. See [Connecting to endpoints](/users-guide/optional-services/#connecting-to-endpoints).
+2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
 
 The connection to the Edge VM is established and the GUI appears for the Edge VM. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 

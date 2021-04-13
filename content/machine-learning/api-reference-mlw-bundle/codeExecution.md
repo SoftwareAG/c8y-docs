@@ -26,18 +26,22 @@ Execute a python script.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)|{{project ID}}
-|resourceID (string)|{{resource ID}}
+|projectID (string)| required path variable of an existing project ID
+|resourceID (string)| required path variable of an existing resource ID
+|recurrence (string)| required ONE_TIME/REPEAT
+|cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
+|taskName (string)| required taskName body parameter
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 
 ```
 200 - OK
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
---data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
+--data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
 
@@ -66,9 +70,10 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
    ],
    "projectID":"1600784593_Project",
    "projectName":"blah project",
-   "startDate":"2020-09-29",
-   "startTimeH":"06",
-   "startTimeM":"27",
+   "startDate":"2020-03-08",
+   "startTimeH":"18",
+   "startTimeM":"30",
+   "timeZone":"UTC",
    "properties":[
       
    ],
@@ -83,7 +88,7 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
 ```
 401 - Unauthorized
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
 ```
@@ -105,7 +110,7 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
 ```
 400 Bad Request
 
-curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":""}'

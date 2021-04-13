@@ -72,7 +72,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </tr>
 <tr>
 <td align="left">Login alias</td>
-<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. Other then the username, this alias may be changed if required.</td>
+<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
 </tr>
 <tr>
 <td align="left">Active</td>

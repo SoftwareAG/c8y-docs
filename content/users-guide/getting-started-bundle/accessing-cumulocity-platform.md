@@ -42,7 +42,7 @@ To access the applications for your Cumulocity IoT tenant, use the following URL
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. See [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the *Reference* guide for further details on tenant ID and tenant domain.
 
 >**Info:** The above URL is only valid for Cumulocity IoT Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 
@@ -54,22 +54,21 @@ On the Login screen, enter your username (case-sensitive) and password.
 
 When you log into the Cumulocity IoT platform for the first time, you will see a cookie banner at the bottom:
 
-<img src="/images/users-guide/getting-started/getting-started-login-cookie.png" alt="Login prompt">
+<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<br>
 
 * Click **Agree and Proceed** to agree with the default cookie settings.
 * Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.
 * Click **Preferences** to select your individual cookie preferences:
-	* **Required** - Required cookies enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
-	* **Functional** - Functional cookies are used to analyze site usage so we can measure and improve onboarding experience, usability, performance. They are not used for targeting adverts.
-	* **Marketing** - Marketing cookies are used to target advertising to a user.
+	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
+	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance.
+<br>
+    <img src="/images/users-guide/getting-started/getting-started-cookie-selection.png" alt="Login prompt">
+<br>
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. 
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
->**Info:** This is also convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
-
-Click **Login** to enter the Cumulocity IoT platform. 
-
-Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
+Finally, click **Login** to enter the Cumulocity IoT platform. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 

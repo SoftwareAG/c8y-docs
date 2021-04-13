@@ -66,25 +66,34 @@ In the **Protocol and encryption** field, select a protocol/encryption type from
 
 Provide the host, port, username, password and sender address for the email server.
 
-### Data export
+#### Data export
 
 In the**Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
 ![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 
-### Storage limit
+#### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
 ![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
 
-### Suspending tenants
+#### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
 
 <img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
+
+#### Product experience
+
+In the **Product experience** section, you can provide an API access key, i.e. a unique access key used for authentication of REST API requests, for the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience tracking.
+
+<img src="/images/users-guide/Administration/admin-settings-gainsight.png" alt="Product experience">
+<br>
+
+If this key is provided, a parent tenant can enable the Gainsight product experience tracking for subtenants, see [Managing tenants](/users-guide/enterprise-edition-bundle/managing-tenants).
 
 Click **Save configuration** at the bottom to save your settings.
 
@@ -249,7 +258,7 @@ domain from the certificate in the NAME field. The VALUE field of the CNAME entr
 is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Please also make sure to delete any
 conflicting A entries.
 
-**Example:** 
+**Example:**
 
 If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
 

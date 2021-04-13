@@ -221,7 +221,7 @@ They can view the peak number of concurrently registered devices, root devices a
 
 Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 
-Even if tracking is enabled for a tenant, users needs to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
+Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -273,7 +273,7 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 
 ### <a name="default-subscriptions"></a>Default subscriptions
 
-In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it. 
+In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
@@ -300,9 +300,9 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 <br>
 You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
 
-Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed. 
+Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
 
-You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade. 
+You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade.
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
 <br>

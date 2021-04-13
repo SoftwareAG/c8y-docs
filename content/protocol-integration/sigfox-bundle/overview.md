@@ -26,4 +26,4 @@ The following sections describe how to:
 
 Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in case of any issues.
 
-> **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please [contact support](/about-doc/contacting-support).
+> **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/about-doc/contacting-support).

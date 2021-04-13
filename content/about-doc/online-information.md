@@ -24,9 +24,9 @@ On this community, you can:
 
 ### Software AG Empower product support website
 
-You can find product information on the [Software AG Empower Product Support](https://empower.softwareag.com) website.
+You can find product information on the [Software AG Empower product support](https://empower.softwareag.com) website.
 
->**Info**: If you do not have an account for Empower yet, send an email to <empower@softwareag.com> with your name, company, and company email address and request an account.
+>**Info:** If you do not have an account for Empower yet, send an email to <empower@softwareag.com> with your name, company, and company email address and request an account.
 
 Once you have an account, you can:
 

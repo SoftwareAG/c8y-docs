@@ -6,7 +6,7 @@ layout: bundle
 
 
 ### Overview
- 
+
 The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device comes with a cellular module as well as a GPS/GNSS receiver. These enable straightforward development of applications with location-aware communication capability.
 
 ![u-blox C027](/images/device-demos/ublox/ublox_c027.png)
@@ -33,7 +33,7 @@ To run the Cumulocity IoT mbed agent, the following items are required:
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free". 
+* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free".
 
 ### Setting up and registering the device
 
@@ -52,8 +52,8 @@ Further information is available on [https://os.mbed.com/users/ublox/notebook/u-
 
 #### To install the agent
 
-<!-- 
-Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket? 
+<!--
+Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket?
 -->
 
 1. Download the firmware to your computer, see table below.
@@ -72,8 +72,8 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 1. The C027 will now dial up to the internet. You will see the status "updated" in the LCD display. If the device cannot connect to the internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
 2. On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
-3. Log into the Cumulocity IoT platform. 
-4. Navigate to the Device Management application using the application switcher at the top right. 
+3. Log into the Cumulocity IoT platform.
+4. Navigate to the Device Management application using the application switcher at the top right.
 5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the User guide.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
 7. When the device is connected to Cumulocity IoT, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
@@ -93,7 +93,7 @@ The device sends new sensor data only when the sensor values are changing. If th
 
 #### To create a dashboard
 
-The representation of sensor data can be customized. 
+The representation of sensor data can be customized.
 
 1. Add the "Mbed Test Device" to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details.
 2. Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device".  
@@ -107,7 +107,7 @@ Try the following examples:
 
 ##### Relay
 
-In the "Relay control" widget, switch the toggle to turn the LED on or off. 
+In the "Relay control" widget, switch the toggle to turn the LED on or off.
 
 
 ##### Send Message
@@ -124,7 +124,7 @@ For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets
 #### To interact with control operations
 
 1. In the Device Management application, click **Devices > All Devices** in the navigator and select the "Mbed Test Device" from the device list.
-2. In the **Configuration** tab of the device, the supported configuration parameters are shown with their current values. Currently for the mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which Cumulocity IoT will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
+2. In the **Configuration** tab of the device, the supported configuration parameters are shown with their current values. Currently for the mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which Cumulocity IoT will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab.
 
 ![Interval Screenshot](/images/device-demos/ublox/ublox_interval.png)
 
@@ -208,7 +208,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
 
-* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or [contact support](/about-doc/contacting-support) if you are connecting directly to Cumulocity IoT.
+* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/about-doc/contacting-support) if you are connecting directly to Cumulocity IoT.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
@@ -221,4 +221,3 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 * **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 
 * **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity IoT and appear again.
-

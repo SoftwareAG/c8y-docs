@@ -12,7 +12,7 @@ To register a Sigfox device, navigate to the **Registration** page in the **Devi
 > **Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
 
 > **Info:** 
-> - The Sigfox device type name is created using the naming convention `c8y_{tenantId}_{device-protocol-name}_{contractId}` eg:`c8y_siqa16012021_TestSigfoxDeviceProtocol_5ccc4b54c563d64eecf4fa18` 
+> - The device type created in the Sigfox Cloud platform has the following naming convention `c8y_{tenantId}_{device-protocol-name}_{contractId}` e.g.: `c8y_myTenant_mySigfoxDeviceProtocol_aabbcc5b78c901d64eecf4faaa` 
 > - If the constructed name exceeds 100 characters it will be truncated until it is less than 100 characters.
 
 In the next window, fill in the required information:

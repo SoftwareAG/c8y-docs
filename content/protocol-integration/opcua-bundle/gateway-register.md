@@ -170,7 +170,7 @@ gateway:
     # received from the OPC UA server.
     threadpool:
       size: 200
-    
+
     # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
     alarmStatusStore:
       # Expected number of maximum alarms at the same time
@@ -179,7 +179,7 @@ gateway:
       averageKeySize: 30
       # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
       maxBloatFactor: 5.0
-      
+
   # Mapping-specific settings
   mappings:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
@@ -337,15 +337,15 @@ connected to them. The cleanest approach to delete a gateway is to first delete 
 
 The server can be either deleted from the **OPC UA server** tab of the gateway (recommended way of deletion), or from the device list itself. If the server is
 deleted from the **OPC UA server** tab, then the server managed object and all the address space managed objects are deleted by the OPC UA management service,
-but the child devices associated with the server have to be deleted separately. 
+but the child devices associated with the server have to be deleted separately.
 
 On the other hand, if the server is deleted from the device list, then the
 child devices associated with the server can be deleted by selecting the checkbox **Also delete child devices of this device**. The deletion is detected by the gateway,
-and the address space managed objects are deleted for the corresponding server. If the gateway is offline, then the address space managed objects will not be removed. 
+and the address space managed objects are deleted for the corresponding server. If the gateway is offline, then the address space managed objects will not be removed.
 
 The process of deletion is asynchronous for both cases, so it may take a while to
-completely remove all the associated managed objects. Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox 
-**Also delete associated device owner "device_{gateway_name}"**.
+completely remove all the associated managed objects. Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox
+**Also delete associated device owner "device&#95;&#60;gateway&#95;name&#62;"**.
 
 If the gateway is directly deleted from the list of devices before deleting gateway’s servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.

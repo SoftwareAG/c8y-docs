@@ -345,7 +345,7 @@ and the address space managed objects are deleted for the corresponding server. 
 
 The process of deletion is asynchronous for both cases, so it may take a while to
 completely remove all the associated managed objects. Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox 
-**Also delete associated device owner "device_<gateway_name>"**.
+**Also delete associated device owner "device_{gateway_name}"**.
 
-If the gateway is directly deleted from the list of devices, by selecting the checkbox **Also delete child devices of this device**,
+If the gateway is directly deleted from the list of devices before deleting gateway’s servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.

@@ -558,7 +558,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../reference/tenants/#device-statistics">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://cumulocity.com/api/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

@@ -13,7 +13,7 @@ Alarms are created by user applications in the Cumulocity IoT tenant (for exampl
 
 1. In the Cockpit application. See [Cockpit](/users-guide/cockpit/) in the *User guide* for detailed information.
 2. In the Administration application, in the **Applications** menu under **Subscribed applications** (or possibly under **Own applications**). Click the card for Apama-ctrl and then click **Status**. See [Managing applications](/users-guide/administration/#managing-applications) and especially its subsection *Monitoring microservices* in the *User guide* for detailed information.
-3. From the Streaming Analytics application. Click the **Diagnostics** (or **Enhanced**) link which is provided at the bottom of the home screen. A ZIP file is then downloaded that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information. 
+3. From the Streaming Analytics application. Click the **Diagnostics** (or **Enhanced**) link which is provided at the bottom of the home screen. A ZIP file is then downloaded that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
 
 ### Alarm severities
 
@@ -26,9 +26,9 @@ Alarms are created by user applications in the Cumulocity IoT tenant (for exampl
 
 ### Alarms created by the Apama-ctrl microservice
 
-Apama-ctrl can create alarms to notify users in scenarios such as the correlator running out of memory, uncaught exceptions in activated EPL files, and so on. Once you see an alarm in the Cumulocity IoT tenant, you should diagnose it and resolve it depending on the severity level of the raised alarm. Each alarm has details such as title, text, type, date, and count (represents the number of times the alarm has been raised). 
+Apama-ctrl can create alarms to notify users in scenarios such as the correlator running out of memory, uncaught exceptions in activated EPL files, and so on. Once you see an alarm in the Cumulocity IoT tenant, you should diagnose it and resolve it depending on the severity level of the raised alarm. Each alarm has details such as title, text, type, date, and count (represents the number of times the alarm has been raised).
 
-The following is a list of the alarms. The information further down below explains when these alarms will occur, their consequences, and how to resolve them. 
+The following is a list of the alarms. The information further down below explains when these alarms will occur, their consequences, and how to resolve them.
 
 - [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
 - [Safe mode on startup](#apama_safe_mode)
@@ -51,7 +51,7 @@ Once the cause of an alarm is resolved, you have to acknowledge and clear the al
 
 #### <a name="tenant_option_change"></a>Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to [Option](/reference/tenants/#option) in the *Reference guide*.
+This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
@@ -82,9 +82,9 @@ To diagnose the cause of an unexpected restart, you can try the following:
     Note that you have to re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
 
 - Check the microservice logs for any exceptions by downloading the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). In the downloaded ZIP file, you can find the logs under */diagnostics/*.
-  
+
     As mentioned in the above point, re-activate the EPL apps and analytic models that were active before and then check the logs.
-  
+
 - Check the audit logs.
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
@@ -103,7 +103,7 @@ In Apama Starter, a user can have a maximum of 3 active models. For example, a u
 
 This alarm is raised whenever the correlator consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
 
-There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview ZIP file. 
+There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview ZIP file.
 
 First variant:
 
@@ -123,7 +123,7 @@ Third variant:
 - Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
 - Alarm severity: WARNING
 
-Running EPL apps (and to a lesser extent, smart rules and analytic models) consumes memory, the amount will depend a lot on the nature of the app running. The memory usage should be approximately constant for a given set of apps, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text). 
+Running EPL apps (and to a lesser extent, smart rules and analytic models) consumes memory, the amount will depend a lot on the nature of the app running. The memory usage should be approximately constant for a given set of apps, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text).
 
 Apama-ctrl generates the diagnostics overview ZIP files with the following conditions:
 
@@ -157,7 +157,7 @@ This alarm is raised whenever messages are logged by Apama EPL files with specif
 
 The Streaming Analytics application allows you to deploy EPL files to the correlator. The Apama-ctrl microservice analyzes logged content in the EPL files and raises an alarm for specific log levels with details such as monitor name, log text and alarm type (either of WARNING or MAJOR), based on the log level.
 
-For example, the following is a simple monitor which prints a sequence and logs some texts at different EPL log levels. 
+For example, the following is a simple monitor which prints a sequence and logs some texts at different EPL log levels.
 
 ```java
 monitor Sample{
@@ -192,7 +192,7 @@ Third alarm:
 
 #### <a name="apama_ctrl_error"></a>An EPL file throws an uncaught exception
 
-You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem. 
+You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem.
 
 For example, the following monitor throws `IndexOutOfBoundsException` during runtime:
 
@@ -212,20 +212,20 @@ Apama-ctrl generates the following alarm for the above example:
 - Alarm text: &lt;Monitor name&gt;-Error on line &lt;x&gt; of monitor : IndexOutOfBoundsException - Out of bounds index passed to sequence [] operator - Sample
 - Alarm severity: MAJOR
 
-You can diagnose the issue by the monitor name and line number given in the alarm. 
+You can diagnose the issue by the monitor name and line number given in the alarm.
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
 #### <a name="apama_ctrl_warn"></a>An EPL file blocks the correlator context for too long
 
-If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
+If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
 For example, the following monitor blocks the correlator main context:
 
 ```java
 event MyEvent {
 }
- 
+
 monitor Sample{
     action onload() {
         while true {
@@ -242,21 +242,21 @@ Apama-ctrl generates the following alarm for the above example:
 - Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - context '&lt;contextName&gt;' has been processing a single event for a long time.
 - Alarm severity: WARNING
 
-You can diagnose the issue by the monitor name and context name given in the alarm. 
+You can diagnose the issue by the monitor name and context name given in the alarm.
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
 
 #### <a name="eplapp_restore_timeout"></a>EPL app restore timeout on restart of Apama-ctrl
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
-specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds, 
+specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds,
 the Apama-ctrl microservice times out and raises an alarm, indicating that it will restart and reattempt to restore the EPL app.
 The alarm text includes the names of any EPL apps that are considered to be the reason for the timeout.
 
 - Alarm type: `eplapp_restore_timeout`
-- Alarm text: Restoring EPL apps after Apama-ctrl microservice restart has timed out. The EPL app &lt;app name&gt; could not be restored. 
+- Alarm text: Restoring EPL apps after Apama-ctrl microservice restart has timed out. The EPL app &lt;app name&gt; could not be restored.
 The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.
-The Apama-ctrl microservice will restart now, and restoring will be reattempted. 
+The Apama-ctrl microservice will restart now, and restoring will be reattempted.
 If this continues to fail, the Apama-ctrl microservice will enter safe mode, disabling all EPL apps.
 - Alarm severity: MAJOR
 
@@ -336,8 +336,8 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
-- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
+- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in Cumulocity IoT Core.

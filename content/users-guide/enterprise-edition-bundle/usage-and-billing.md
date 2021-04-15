@@ -564,7 +564,7 @@ The table below presents which values are used in each model for billing purpose
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../reference/tenants/#device-statistics">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://cumulocity.com/api/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

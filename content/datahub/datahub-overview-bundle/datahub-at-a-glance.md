@@ -4,9 +4,9 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](/reference/rest-implementation/).
+The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](/https://www.cumulocity.com/api/#section/REST-implementation).
 
-In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose. 
+In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose.
 
 With Cumulocity IoT DataHub, you can connect existing tools and applications to Cumulocity, such as:
 
@@ -14,7 +14,7 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications)) 
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications))
 
 The main features of the Cumulocity IoT DataHub application are:
 
@@ -41,7 +41,7 @@ The table below summarizes the main terms used throughout this documentation.
 | DataHub | Scheduler component for triggering periodic offloading and UI component for defining, managing, and monitoring offloading pipelines
 | Cumulocity IoT Operational Store | Internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored
 | Dremio | Internal SQL engine for extracting data from the Cumulocity IoT Operational Store and writing to and reading from the data lake
-| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or HDFS. 
+| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or HDFS.
 > **Info:** Google Cloud Storage (GCS) is currently not supported.
 
 ### Design of offloading pipeline
@@ -67,4 +67,3 @@ As a result of these extraction and transformation steps, the flattened data is 
 DataHub's scheduler runs the offloading pipeline in a periodic manner. The UI displays the execution schedule next to each configuration. Within each of these executions, newly arrived data is extracted from the Cumulocity IoT collection and transformed and stored in the same way as described above. These incremental offloading tasks are designed to ensure a loss-free and duplicate-free offloading from the collection. For example, if one offloading execution fails, the next execution will automatically pick up the increments the failed one should have processed.
 
 For each of the offloading pipelines, target tables are created in Dremio that point to the corresponding data folders in the data lake. When you run queries against the offloaded data, Dremio uses these target tables.
-

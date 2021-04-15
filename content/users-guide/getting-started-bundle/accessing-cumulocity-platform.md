@@ -75,7 +75,7 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 >**Info:** The automated password reset will only work if your email address is stored with your Cumulocity IoT user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity IoT user, or your Cumulocity IoT user has no email address stored. In either case, contact a Cumulocity IoT administrator in your organization. Administrators can reset your password.
 >
-If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please [contact product support](/about-doc/contacting-support).
+If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/about-doc/contacting-support).
 
 ### <a name="URLs"></a>Accessing pages using URLs
 

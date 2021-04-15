@@ -288,23 +288,6 @@ All server connections are listed as child devices even if the servers are disco
 
 ![Gateway child devices](/images/users-guide/opcua/opcua-server-child-device.png)
 
-### Deletion of gateway
-
-An OPC UA gateway can be associated with multiple OPC UA servers, and the servers can also have multiple child devices
-connected to them. The cleanest approach to delete a gateway is to first delete the OPC UA server managed objects and all its child devices.
-The server can be either deleted from the "OPC UA server" tab of the gateway, or the device list itself. If the server is
-deleted from the "OPC UA server" tab, then the server managed object with its child devices and all the address space
-managed objects are deleted by the OPC UA management service. The server can also be deleted from the device list along with its child devices
-by selecting the checkbox "Also delete child devices of this device". The deletion is detected by the gateway,
-and the address space managed objects are deleted for the corresponding server.
-Thereafter, the gateway can be deleted from the list of devices along with the device user.
-
-Alternatively, the gateway and all its child devices can be deleted directly from the device list by selecting the checkbox
-"Also delete child devices of this device". The full hierarchy is deleted asynchronously. On selection of the checkbox
-"Also delete associated device owner 'device_<name>'", the platform will try to delete the device user at the same time.
-In this case, it is recommended to delete the device user from Management > Device credentials tab (in the Device management UI) afterward,
-because the device user might still be associated with a child device that is still in the process of deletion.
-
 #### Measurements
 
 The Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
@@ -379,6 +362,26 @@ The **Address space** tab shows the attributes and references of the address spa
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity IoT. Performing another address space operation will update the address space information.
 
 ![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
+
+### Deletion of gateway
+
+An OPC UA gateway can be associated with multiple OPC UA servers, and the servers can have multiple child devices
+connected to them. The cleanest approach to delete a gateway is to first delete the OPC UA server managed objects and all its child devices.
+
+The server can be either deleted from the **OPC UA server** tab of the gateway (recommended way of deletion), or from the device list itself. If the server is
+deleted from the **OPC UA server** tab, then the server managed object, its child devices and all the address space managed objects are deleted by the OPC UA management service.
+
+On the other hand, if the server is deleted from the device list, along with its child devices by selecting the checkbox **Also delete child devices of this device**,
+then the deletion is detected by the gateway, and the address space managed objects are removed for the corresponding server.
+If the gateway is offline, then the address space managed objects will not be removed.
+
+The process of deletion is asynchronous for both cases, so it may take a while to completely remove all the associated managed objects.
+Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox
+**Also delete associated device owner "device&#95;&#60;gateway&#95;name&#62;"**.
+
+If the gateway is directly deleted from the list of devices before deleting gateway’s servers and devices of those servers,
+by selecting the checkbox **Also delete child devices of this device**, then the server managed object will be deleted,
+but the corresponding address space objects will not be deleted as they are not children of the gateway.
 
 ### Device protocols
 

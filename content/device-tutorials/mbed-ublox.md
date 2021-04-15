@@ -48,7 +48,7 @@ To run the Cumulocity IoT mbed agent, the following items are required:
 
 > **Info**: The device cannot be flashed without the power supply connected.
 
-Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
+Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 
 #### To install the agent
 

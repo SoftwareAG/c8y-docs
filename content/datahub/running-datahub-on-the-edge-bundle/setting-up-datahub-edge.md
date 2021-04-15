@@ -18,7 +18,7 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 
 The hardware requirements for running a bare Cumulocity IoT Edge instance are described in section [Requirements](/edge/installation#prerequisites). When DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
 
-* 100 GB of free disk space plus sufficient free disk space for the data lake contents 
+* 100 GB of free disk space plus sufficient free disk space for the data lake contents
 * Intel x86 CPU
 * Recommended: 12 GB RAM, minimum: 8 GB RAM
 * Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
@@ -30,19 +30,19 @@ Hardware requirements for the host OS are excluded.
 
 Copy the DataHub Edge archive to the Cumulocity IoT Edge.
 
-```shell	
+```shell
 scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
 ```
 
 Log in as admin into Cumulocity IoT Edge.
 
-```shell	
+```shell
 ssh admin@<edge_ip_address>
 ```
 
 Run the install script.
 
-```shell	
+```shell
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 

@@ -45,7 +45,7 @@ Although it is technically not required by Cumulocity to have the country code w
 
 _Note:_
 
-This feature will only work if your tenant is linked to a sms provider. For more information please [contact product support](/about-doc/contacting-support).
+This feature will only work if your tenant is linked to a sms provider. For more information please contact [product support](/about-doc/contacting-support).
 
 Example:
 
@@ -68,7 +68,7 @@ This stream enables the possibility to send push notifications from Cumulocity v
 
 _Note:_
 
-This feature will only work if your tenant is linked to a push provider. For more information please [contact product support](/about-doc/contacting-support).
+This feature will only work if your tenant is linked to a push provider. For more information please contact [product support](/about-doc/contacting-support).
 
 Example:
 

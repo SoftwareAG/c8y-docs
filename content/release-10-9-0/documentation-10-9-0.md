@@ -115,7 +115,7 @@ MTM-35165</td>
 User guide</td>
 <td>
 Cockpit</td>
-<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
+<td > The description of the behavior of the red and yellow ranges in the smart rule "On measurement threshold create alarm" has been extended, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#on-measurement-threshold-create-alarm" class="no-ajaxy">Cockpit > Smart rules collection > On measurement threshold create alarm</a>. </td>
 <td>
 MTM-35724</td>
 </tr>
@@ -171,10 +171,10 @@ Issue</th>
 
 <tr>
 <td>
-Reference guide</td>
+Cumulocity IoT OpenAPI Specification</td>
 <td>
 Inventory API</td>
-<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection" class="no-ajaxy">Inventory > Managed objects collection</a>.</td>
+<td > Updated documentation for an edge case when loading managed objects without inventory role, see <a href="https://cumulocity.com/api/#tag/Managed-objects" class="no-ajaxy">Inventory > Managed objects</a>.</td>
 <td>
 MTM-33763</td>
 </tr>

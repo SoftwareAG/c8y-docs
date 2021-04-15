@@ -8,7 +8,7 @@ layout: bundle
 
 #### Removal of Basic Auth browser-based authentication
 
-With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform. 
+With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
 With the 10.10 GA release, scheduled for July 2021, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.11 GA release, scheduled for October 2021, the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
@@ -18,7 +18,7 @@ In case you have developed your own web applications or microservices, please ma
 
 #### Deprecation of RxJS usage in the '@c8y/client' component of the Web SDK
 
-In favor of decoupling the '@c8y/client' library from RxJS library methods, using observables or other RxJS features will be removed with the 10.11 GA release. To continue using real-time data in your code use the new Observable(), defer() or from() to compose an observable on your own. 
+In favor of decoupling the '@c8y/client' library from RxJS library methods, using observables or other RxJS features will be removed with the 10.11 GA release. To continue using real-time data in your code use the new Observable(), defer() or from() to compose an observable on your own.
 
 For example:
 
@@ -42,7 +42,7 @@ For example:
 
 In order to retain the SSL Labs A+ rating, Cumulocity IoT must make continual updates to the supported cyphers for the Cumulocity IoT platform. For the Cumulocity IoT Cloud instances the weaker ciphers will be removed, for customers running their own instances the defaults will be changed with the option to enable the weaker ciphers if they are required.  
 
-The following ciphers are the supported ciphers from GA release 10.10. 
+The following ciphers are the supported ciphers from GA release 10.10.
 
 * rsa&#95;pkcs1&#95;sha256
 * dsa&#95;sha256
@@ -86,10 +86,10 @@ As announced previously user passwords have been enforced to meet password compl
 * During password change
 * During password reset
 
-For details on password validation refer to [Administration > Getting started > User settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings).
+For details on password validation refer to [Administration > Getting started > User options and settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#login-settings).
 
 
-<!--#### Smart REST response codes 
+<!--#### Smart REST response codes
 
 The error code "40" will be removed in Cumulocity IoT 1.8 January 2021 release.  
 
@@ -109,19 +109,19 @@ No change is required for devices integrated via our Device SDK and agents. Howe
 
 #### ngx-boostrap upgrade to 5.6.1
 
-To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.8 GA Release in January 2021. 
+To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.8 GA Release in January 2021.
 
 This change may affect developers building Cumulocity IoT UI extensions or custom web applications. It may also affect existing extensions and web applications.
 
-An important change is the ngx-bootstrap module's import. Now, when importing a module, e.g. BsModalRef, you need to specify the exact directive to import from: 
+An important change is the ngx-bootstrap module's import. Now, when importing a module, e.g. BsModalRef, you need to specify the exact directive to import from:
 
-	import { BsModalRef } from 'ngx-bootstrap/modal'; 
+	import { BsModalRef } from 'ngx-bootstrap/modal';
 
-instead of 
+instead of
 
 	import { BsModalRef } from 'ngx-bootstrap’;
 
-For details, see the [ngx-bootstrap release notes](https://github.com/valor-software/ngx-bootstrap/releases). 
+For details, see the [ngx-bootstrap release notes](https://github.com/valor-software/ngx-bootstrap/releases).
 
 
 -->

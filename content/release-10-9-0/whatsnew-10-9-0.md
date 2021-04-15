@@ -17,19 +17,19 @@ Cumulocity IoT can now interface with LORIOT Network Server through the Loriot a
 * Post-process raw device data through Cumulocity IoT events.
 * Make use of existing Cumulocity IoT features with LoRa devices, like connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-For details, refer to [Loriot LoRa](/protocol-integration/lora-loriot/#loriot-overview) in the *Protocol integration guide*.
+For details, refer to [Loriot LoRa](https://cumulocity.com/guides/protocol-integration/#loriot-lora/) in the *Protocol integration guide*.
 
 ### Cockpit
 
 #### NEW reports page
 
-All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item. 
+All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item.
 
 The <b>Exports</b> menu item has been moved under the <b>Configuration</b> menu.
 
 ![Report page](/images/release-notes/cockpit-reports-list.png)
 
-For details, see <a href="/cockpit/reports/" class="no-ajaxy">Cockpit > Reports</a> in the <em>User guide</em>.
+For details, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#reports" class="no-ajaxy">Cockpit > Managing reports and exports</a> in the <em>User guide</em>.
 
 ### Administration
 
@@ -41,16 +41,16 @@ A new <b>Default subscriptions</b> page is available in the <b>Applications</b> 
 
 ![Default subscriptions](/images/release-notes/admin-default-subscriptions-inherited.png)
 
-For details, see <a href="/users-guide/enterprise-edition/#Default subscriptions" class="no-ajaxy">Enterprise tenant > Managing tenants</a> in the <em>User guide</em>.
+For details, see <a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#managing-tenants" class="no-ajaxy">Enterprise tenant > Managing tenants</a> in the <em>User guide</em>.
 
 
 #### SMS provider configuration
 
-The <b>SMS provider</b> page has been updated. New providers have been added to be configured. 
+The <b>SMS provider</b> page has been updated. New providers have been added to be configured.
 
 ![SMS providers](/images/release-notes/admin-settings-sms-provider.png)
 
-See also <a href="/users-guide/administration/#openIT-credentials" class="no-ajaxy">Administration > Changing settings > Providing SMS provider credentials</a> in the <em>User guide</em>.
+See also <a href="https://cumulocity.com/guides/users-guide/administration/#openIT-credentials" class="no-ajaxy">Administration > Changing settings > Providing SMS provider credentials</a> in the <em>User guide</em>.
 
 ### Device Management
 
@@ -58,11 +58,10 @@ See also <a href="/users-guide/administration/#openIT-credentials" class="no-aja
 
 The bulk operations user experience has been enhanced. Among others, the following improvements have been implemented:
 
-* In the bulk operation creation dialog, a <b>Title</b> field has been implemented to change the name of the bulk operation. Moreover, a <b>Description</b> field has been added to provide additional information on the bulk operation. 
+* In the bulk operation creation dialog, a <b>Title</b> field has been implemented to change the name of the bulk operation. Moreover, a <b>Description</b> field has been added to provide additional information on the bulk operation.
 * In the <b>Bulk operations</b> tab, the details view of bulk operations now shows the audit log. Moreover, the <b>Audit logs</b> page in the Administration application has a filter type for bulk operations.
 * The <b>Bulk operations</b> tab is now updated in realtime. The <b>Refresh</b> button has been removed.
 * If a bulk operations fails, the user can now manually set the status to successful.
 * Devices for bulk operations can now be filtered by groups and subgroups via checkboxes.
 
-For details, see <a href="/users-guide/device-management/#working-with-operations" class="no-ajaxy">Device Management > Controlling and monitoring devices > Working with operations</a> in the <em>User guide</em>. </td>
-
+For details, see <a href="https://cumulocity.com/guides/users-guide/device-management/#operation-monitoring" class="no-ajaxy">Device Management > Monitoring  and controlling devices > Working with operations</a> in the <em>User guide</em>. </td>

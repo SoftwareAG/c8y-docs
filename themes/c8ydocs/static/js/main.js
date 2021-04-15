@@ -11,20 +11,46 @@ var main = (function ($) {
         var active = false;
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
+
+        vs = []
+        for (var i = 0; i < urls.length; i++) {
+          vs.push(urls[i].label);
+        }
+
+        rest = loc.href.split("/guides/")[1];
+        v = rest.split("/")[0];
+
+        prefix = loc.href.split("/guides/")[0] + "/guides/";
+        r = rest.split("/");
+
+        if (r[0].split(".").length > 1) {
+          r.shift();
+        } else {
+          v = urls[0].label;
+        }
+        suffix = r.join("/");
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
+          var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text(el.label);
+            $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }
+
+        if (vs.indexOf(v) < 0) {
+          active = true;
+          $('#current-dropdown-version-toggle').text('Release ' + v);
+        }
+
         if (!active) {
           var ind = 0;
           for (var i = 0; i < urls.length; i++) {

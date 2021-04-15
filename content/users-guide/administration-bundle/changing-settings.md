@@ -70,6 +70,13 @@ Click **Save TFA settings** to apply your settings.
 
 >**Important:** Each time you change the TFA method you will be forced to log out. Users TFA settings are cleared and need to be configured again.
 
+### <a name="oauth-internal"></a>Oauth Internal
+
+Cumulocity IoT OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again.
+The default token validity time is two weeks and this can be changed with [tenant options](/reference/tenants/#option): `oauth.internal.basic-token.lifespan.seconds`. The minimum allowed value is 5 minutes.
+
+Cookies used to store a token in a browser have their own validity time that can be changed with [tenant options](/reference/tenants/#option): `oauth.internal.basic-user.cookie.lifespan.seconds`. The default value is two weeks. It can also be set to a negative value so that the cookie will be deleted when the user closes the browser.
+
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
 Cumulocity IoT provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.

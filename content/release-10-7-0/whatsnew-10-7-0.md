@@ -37,7 +37,7 @@ The firmware and software update functionality has been enhanced:
 
 	![Software management](/images/release-notes/devmgmt-software-tab.png)
 
-For details, see [Device Management > Managing device data > Managing device data](https://cumulocity.com/guides/10.7.0/users-guide/device-management#managing-device-data) in the *User guide*.
+For details, see [Device Management > Managing device data](https://cumulocity.com/guides/10.7.0/users-guide/device-management#managing-device-data) in the *User guide*.
 
 #### ENHANCED bulk operations functionality
 
@@ -84,5 +84,3 @@ The new Cumulocity IoT Sensor App works together with the new Smartphone wizard 
 ![Smartphone wizard](/images/release-notes/csa-connect-smartphone-wizard-step3.png)
 
 For details, see [Cumulocity IoT Sensor App](https://cumulocity.com/guides/10.7.0/users-guide/cumulocity-sensor-app/) in the *User guide*.
-
-

@@ -86,7 +86,7 @@ MTM-35717</td>
 Protocol integration guide</td>
 <td>
 Loriot LoRa</td>
-<td > Documentation has been added to the Protocol integration guide for the new agent <a href="https://cumulocity.com/guides/protocol-integration/#loriot-lora/" class="no-ajaxy">Loriot LoRa</a>. </td>
+<td > Documentation has been added to the Protocol integration guide for the new agent <a href="https://cumulocity.com/guides/protocol-integration/lora-loriot/" class="no-ajaxy">Loriot LoRa</a>. </td>
 <td>
 MTM-36385</td>
 </tr>
@@ -194,7 +194,7 @@ MTM-35001</td>
 User guide</td>
 <td>
 Enterprise tenant</td>
-<td > The description of the handling of custom domain names has been improved for more clarity, see &lt;a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization" class="no-ajaxy"&gt;Enterprise Tenant &gt; Customizing your platform&lt;/a&gt;in the &lt;i&gt;User guide&lt;/i&gt;.</td>
+<td > The description of the handling of custom domain names has been improved for more clarity, see <a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization" class="no-ajaxy">Enterprise Tenant > Customizing your platform</a> in the <i>User guide</i>.</td>
 <td>
 MTM-33926</td>
 </tr>

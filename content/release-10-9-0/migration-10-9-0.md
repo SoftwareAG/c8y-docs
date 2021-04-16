@@ -61,7 +61,7 @@ The following ciphers are the supported ciphers from GA release 10.10.
 
 #### Removal of older documentation versions from the documentation website
 
-With the 10.10 GA release, scheduled for July 2021, product documentation for releases that are no longer in maintenance will be hidden from the version dropdown list at [https://cumulocity.com/guides/about-doc/intro-documentation/](https://cumulocity.com/guides/10.5.7/about-doc/intro-documentation/).  
+With the 10.10 GA release, scheduled for July 2021, product documentation for releases that are no longer in maintenance will be hidden from the version dropdown list at [https://cumulocity.com/guides/about-doc/intro-documentation/](https://cumulocity.com/guides/about-doc/intro-documentation/).  
 
 However, the documentation is still available and all links to it still work. To access it, use the full URL including the respective version number, for example [https://cumulocity.com/guides/**10.5.7**/about-doc/intro-documentation/](https://cumulocity.com/guides/10.5.7/about-doc/intro-documentation/).
 
@@ -86,7 +86,7 @@ As announced previously user passwords have been enforced to meet password compl
 * During password change
 * During password reset
 
-For details on password validation refer to [Administration > Getting started > User options and settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#login-settings).
+For details on password validation refer to [Getting started > User options and settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#login-settings).
 
 
 <!--#### Smart REST response codes

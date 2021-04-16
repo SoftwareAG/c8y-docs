@@ -17,7 +17,7 @@ Cumulocity IoT can now interface with LORIOT Network Server through the Loriot a
 * Post-process raw device data through Cumulocity IoT events.
 * Make use of existing Cumulocity IoT features with LoRa devices, like connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-For details, refer to [Loriot LoRa](https://cumulocity.com/guides/protocol-integration/#loriot-lora/) in the *Protocol integration guide*.
+For details, refer to [Loriot LoRa](https://cumulocity.com/guides/protocol-integration/lora-loriot/) in the *Protocol integration guide*.
 
 ### Cockpit
 

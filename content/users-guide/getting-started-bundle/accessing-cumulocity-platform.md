@@ -52,12 +52,14 @@ This will direct you to the login page of your default application. See [Tenants
 
 On the Login screen, enter your username (case-sensitive) and password.
 
-When you log into the Cumulocity IoT platform for the first time, you will see a cookie banner at the bottom:
+If you use one of the public cloud instances of the Cumulocity IoT platform and log in for the first time, you will see a cookie banner at the bottom:
 
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-* Click **Agree and Proceed** to agree with the default cookie settings.
+> **Info:** The cookie banner is turned on by default only on the Cumulocity IoT public cloud instances. For on-premise instances this feature needs to be configured explicitly, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+
+* Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.

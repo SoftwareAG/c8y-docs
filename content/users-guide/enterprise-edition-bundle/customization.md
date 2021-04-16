@@ -86,19 +86,9 @@ In the **Suspending tenants** section, you can provide settings for emails being
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
-#### Product experience
-
-In the **Product experience** section, you can provide an API access key, i.e. a unique access key used for authentication of REST API requests, for the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience tracking.
-
-<img src="/images/users-guide/Administration/admin-settings-gainsight.png" alt="Product experience">
-<br>
-
-If this key is provided, a parent tenant can enable the Gainsight product experience tracking for subtenants, see [Managing tenants](/users-guide/enterprise-edition-bundle/managing-tenants).
-
 Click **Save configuration** at the bottom to save your settings.
 
-**Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
-
+> **Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 
 ### <a name="branding"></a>Branding
 

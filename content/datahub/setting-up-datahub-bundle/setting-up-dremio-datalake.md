@@ -38,7 +38,7 @@ The following types of data lakes are currently supported:
 |Azure Storage shared access key|The access key used for authentication|
 
 
->**Info:** Please note that the account type must be *StorageV2*, and the *Hierarchical namespace* feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the *Blob access tier* to *Hot*.
+>**Info:** Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
 
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
 
@@ -49,7 +49,7 @@ The following types of data lakes are currently supported:
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from DataHub|
 
->**Info:** An S3 bucket with default settings works. If specific security policies are applied, please make sure that the minimum policy requirements listed [here](https://docs.dremio.com/data-sources/s3/) are satisfied.
+>**Info:** An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
 
@@ -77,7 +77,7 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data. 
 * A source in Dremio is created which connects to the Operational Store of Cumulocity IoT.
-* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant id concatenated with 'Space', e.g. t12345Space. 
+* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant ID concatenated with 'Space', e.g. t12345Space. 
 
 ### Editing settings
 Editing the settings is not supported. You have to delete the existing settings and define new settings.

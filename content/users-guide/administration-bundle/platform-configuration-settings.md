@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment. 
+From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
@@ -14,13 +14,14 @@ Click **Configuration** in the **Settings** menu, to access the **Configuration*
 
 Most of the settings you can configure here are also available in the Enterprise tenant. For details, refer to [Enterprise tenant > Customizing your platform](/users-guide/enterprise-edition/#customization).
 
-In addition, the following settings can be configured in the Management tenant only. 
+In addition, the following settings can be configured in the Management tenant only.
 
 ### Passwords
 
 In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
 
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
+
 
 ### <a name="config-support-users"></a> Support user
 
@@ -55,7 +56,7 @@ To configure a user in the Management tenant as support user, you need to assign
 
 **Using inventory roles**
 
-Using inventory roles, you can selectively assign a support user for specific subtenants. 
+Using inventory roles, you can selectively assign a support user for specific subtenants.
 
 1. Create an inventory role called “Support” with type = "*" and permission = "All".
 2. Create a group of all subtenants which you want to be supported by the user.
@@ -63,3 +64,11 @@ Using inventory roles, you can selectively assign a support user for specific su
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
 
+#### Product experience
+
+In the **Product experience** section, you can provide an API access key, i.e. a unique access key used for authentication of REST API requests, for the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience tracking.
+
+<img src="/images/users-guide/Administration/admin-settings-gainsight.png" alt="Product experience">
+<br>
+
+If this key is provided, a parent tenant can enable the Gainsight product experience tracking for subtenants, see [Managing tenants](/users-guide/enterprise-edition-bundle/managing-tenants).

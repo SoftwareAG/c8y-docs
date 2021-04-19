@@ -93,6 +93,17 @@ MTM-36385</td>
 
 <tr>
 <td>
+Protocol integration guide</td>
+<td>
+LWM2M </td>
+<td > Explanation has been added to the documentation, why the Credentials field in the LWM2M bulk registration CSV is mandatory and why & how it has to be unique, see <a href="https://cumulocity.com/guides/protocol-integration/lwm2m/#register-device" class="no-ajaxy">LWM2M > Registering LWM2M devices</a>. </td>
+<td>
+MTM-35316</td>
+</tr>
+
+
+<tr>
+<td>
 User guide</td>
 <td>
 Cockpit</td>

@@ -65,3 +65,40 @@ The bulk operations user experience has been enhanced. Among others, the followi
 * Devices for bulk operations can now be filtered by groups and subgroups via checkboxes.
 
 For details, see <a href="https://cumulocity.com/guides/users-guide/device-management/#operation-monitoring" class="no-ajaxy">Device Management > Monitoring  and controlling devices > Working with operations</a> in the <em>User guide</em>. </td>
+
+#### OPC UA device gateway
+
+The functionality of the OPC UA device gateway has been enhanced including the following aspects:
+
+- Enhanced performance:
+  - Cyclic reads are performed in bulk whenever possible.
+  - Read batch sizes are now configurable per read operation.
+  - Performance tuning tips have been added.
+- Improved developer experience:
+  - Dry run of device protocols to find out set of matching nodes.
+  - Additional information for OPC UA gateway alarms.
+  - Better failure handling for custom actions.
+  - Added support for expiry of read-, write and method invocation operations.
+- Configurable OPC UA alarm mapping:
+  - Configurable mapping of alarm status using regular expressions.
+  - Configurable mapping of alarm severities.
+- Support for partial scanning of address space.
+- Support for boolean value node mapping to measurements.
+
+ For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/users-guide/protocl-integration/#opcua" class="no-ajaxy">OPC UA</a>in the *Protocol integration guide*.
+
+#### LWM2M
+
+The functionality of the LWM2M microservice has been enhanced including the following aspects:
+
+- More configuration options:
+  - Configurable request timeout.
+  - Client awake time can be defined on platform side per LWM2M device.
+  - Configurable content format for firmware objects.
+  - Operations that were not processed in a configurable timeframe can now be cancelled automatically.
+- Additional bootstrap events for enhanced device monitoring.
+- Added support for additional content formats (TLV, JSON).
+- Object ID is shown as part of the device type in the UI.
+- Improvements in device communication.
+
+For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/users-guide/protocl-integration/#lwm2m" class="no-ajaxy">LWM2M</a>in the *Protocol integration guide*.

@@ -85,7 +85,7 @@ The functionality of the OPC UA device gateway has been enhanced including the f
 - Support for partial scanning of address space.
 - Support for boolean value node mapping to measurements.
 
- For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/users-guide/protocl-integration/#opcua" class="no-ajaxy">OPC UA</a>in the *Protocol integration guide*.
+ For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/protocol-integration/#opcua" class="no-ajaxy">OPC UA</a> in the *Protocol integration guide*.
 
 #### LWM2M
 
@@ -101,4 +101,4 @@ The functionality of the LWM2M microservice has been enhanced including the foll
 - Object ID is shown as part of the device type in the UI.
 - Improvements in device communication.
 
-For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/users-guide/protocl-integration/#lwm2m" class="no-ajaxy">LWM2M</a>in the *Protocol integration guide*.
+For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/protocol-integration/#lwm2m" class="no-ajaxy">LWM2M</a> in the *Protocol integration guide*.

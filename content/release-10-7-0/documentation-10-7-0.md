@@ -15,7 +15,7 @@ Moreover, you can find the following major enhancements, improvements and fixes 
 
 #### NEW Protocol integration guide
 
-[MTM-29779] The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called *[Protocol integration guide](/protocol-integration/overview)* to provide a clearer structure and easier navigation.
+[MTM-29779] The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called *[Protocol integration guide](https://cumulocity.com/guides/10.7.0/protocol-integration/overview)* to provide a clearer structure and easier navigation.
 
 ![Protocol integration guide](/images/release-notes/new-protocol-integration-guide.png)
 

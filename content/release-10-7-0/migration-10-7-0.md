@@ -61,7 +61,7 @@ The password complexity is enforced:
 * During password change
 * During password reset
 
-Foe details on password validation refer to [Administration > Getting started > User options and settings](https://cumulocity.com/guides/10.7.0/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/10.7.0/users-guide/administration/#login-settings).
+Foe details on password validation refer to [Getting started > User options and settings](https://cumulocity.com/guides/10.7.0/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/10.7.0/users-guide/administration/#login-settings) in the *User guide*.
 
 
 #### User and tenant creation will require a valid email address with impact to REST, MQTT and UI

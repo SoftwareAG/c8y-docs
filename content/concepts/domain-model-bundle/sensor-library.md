@@ -10,7 +10,7 @@ Cumulocity IoT includes a [sensor library](/reference/sensor-library) to model s
 -   What are the energy readings?
 -   Does a particular energy meter also include a switch for the power supply that I can switch off?
 
-It covers basic sensors and controls, and is supported by the Cumulocity IoT client libraries. It also enables writing powerful generic IoT software plugins. 
+It covers basic sensors and controls, and is supported by the Cumulocity IoT client libraries. It also enables writing powerful generic IoT software plugins.
 
 Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention (see [Inventory](#inventory)). The example below shows two fragments used for an electricity meter:
 
@@ -33,5 +33,4 @@ To a JavaScript developer, the same check would look like this:
 
 More details can be found in [Sensor library](/reference/sensor-library) in the Reference guide.
 
-The Cumulocity team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into Cumulocity IoT by contacting our support. 
-
+The Cumulocity team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into Cumulocity IoT by contacting our [product support](/about-doc/contacting-support).

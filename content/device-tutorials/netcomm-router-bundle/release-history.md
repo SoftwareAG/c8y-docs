@@ -7,7 +7,7 @@ weight: 60
 
 This document describes the Cumulocity IoT NetComm Agent package for the [Casa System NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) router.
 
-> **Info:** If you are using either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), you must use our prior Netcomm Agent version 4.2.3 or older. [Contact support](/about-doc/contacting-support) or refer to the [NetComm](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) section in the Devices guide in the Cumulocity IoT 10.4.6 documentation 10.4.6 for information on how to get the packages.
+> **Info:** If you are using either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), you must use our prior Netcomm Agent version 4.2.3 or older. Contact [product support](/about-doc/contacting-support) or refer to the [NetComm](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) section in the Devices guide in the Cumulocity IoT 10.4.6 documentation 10.4.6 for information on how to get the packages.
 
 > **Important:** The Cumulocity IoT Netcomm Agent 1.0.0 is only supported on [Casa Systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) routers. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series) are only supported by another agent.
 

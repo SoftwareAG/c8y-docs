@@ -80,13 +80,17 @@ As announced previously, Cumulocity IoT no longer supports Internet Explorer 11.
 
 #### Enforcing user passwords to meet password complexity
 
-As announced previously user passwords have been enforced to meet password complexity by default. The new password validation will not impact the existing users until they need to change or reset the password. The password complexity is enforced:
+As announced previously, user passwords have been enforced to meet password complexity by default. The new password validation will not impact the existing users until they need to change or reset the password. The password complexity is enforced:
 
 * During user creations
 * During password change
 * During password reset
 
 For details on password validation refer to [Getting started > User options and settings](https://cumulocity.com/guides/users-guide/getting-started/#user-settings) and [Administration > Changing settings > Login settings](https://cumulocity.com/guides/users-guide/administration/#login-settings).
+
+#### Removal of OPC UA legacy integration
+
+As announced previously, the OPC UA legacy integration has been removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](https://cumulocity.com/guides/10.7.0/protocol-integration/opcua) in the *Protocol integration guide*.
 
 
 <!--#### Smart REST response codes

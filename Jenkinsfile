@@ -1,42 +1,51 @@
-HUGO_PARAMS = ""
 pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
     skipStagesAfterUnstable()
+    disableConcurrentBuilds()
   }
   agent {
-    docker {
-      image 'c8y-ubuntu-hugo-deploy:latest'
+    kubernetes {
+      inheritFrom 'c8y-hugo'
+      defaultContainer 'default'
     }
   }
-
   environment {
-
     YUM_SRV = 'yum.cumulocity.com'
     YUM_USR = 'hudson'
     YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
+    HUGO_PARAMS = ""
   }
-
   stages {
+    stage('Checkout') {
+      steps {
+      checkout([
+        $class: 'GitSCM', branches: [[name: 'carbon_migration']],
+        extensions: [[$class: 'CleanCheckout']],
+        userRemoteConfigs: [[url: 'git@bitbucket.org:m2m/c8y-docs.git',credentialsId:'jenkins-master']] ])
+      }
+    }
     stage('Build') {
       steps {
-        sh "hugo ${HUGO_PARAMS}"
+        sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
+          ls
+          hugo ${HUGO_PARAMS}'''
       }
     }
     stage('Deploy') {
       steps {
-        sshagent(['hudson-ssh-resources']) {
+        sshagent(['jenkins-master']) {
           sh '''bash --login
           python /docsRepoScanner.py ./
           pwd
           ls
           cp output.json ./public/releases.json
-          rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete
+          echo "rsync -e 'ssh -o StrictHostKeyChecking=no' -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete"
+          rsync -e 'ssh -o StrictHostKeyChecking=no' -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete
           '''
-          // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
+
         }
       }
     }
   }
 }
- 

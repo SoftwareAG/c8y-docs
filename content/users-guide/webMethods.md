@@ -2,6 +2,9 @@
 weight: 90
 layout: bundle
 title: webMethods.io Integration
+outputs:
+- html
+- json
 aliases:
   -/users-guide/optional-services/#webMethods
 ---

@@ -65,16 +65,17 @@
   z-index: 10;
   left: 0;
   transition: left 0.35s $ease;
-  @media (min-width: $grid-breakpoint) {
-    left: $main-nav-width;
-  }
   right: 0;
   top: 0;
   padding-top: 1rem;
-  padding-left: 10rem;
+  padding-left: 5.3rem;
+  @media (min-width: $grid-breakpoint) {
+    left: $main-nav-width;
+    padding-left: 10rem;
+  }
   > .d-flex {
     align-items: center;
-    max-width: 1168px;
+    max-width: 1078px;
   }
 
   .nav {
@@ -103,13 +104,17 @@
   }
 
   .nav-right {
-    width: 170px;
+    width: 100%;
+    margin-top: 2.5rem;
+    
     @media (min-width: $screen-sm-min) {
       width: 260px;
+      margin-top: 0;
       margin-left: auto !important;
+      margin-right: 0;
     }
-    @media (min-width: $grid-breakpoint) {
-      margin-right: 150px;
+    @media (min-width: $screen-lg-min) {
+      margin-right: 56px;
     }
   }
 }

@@ -2,6 +2,17 @@
 weight: 30
 title: Data explorer
 layout: redirect
+helpcontent: >-
+  In the data explorer, data points, i.e. measurements or sensor data, can be visualized. On the right, you see a list of available data points. On the left you see its visualization.
+
+
+  Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
+
+
+  You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see the data explorer documentation.
+
+
+  Moreover, the data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file.
 ---
 
 <a name="data explorer"></a>
@@ -26,9 +37,9 @@ The data points properties are pre-filled as follows:
 
 * If these properties have been customized previously, these values are used, see [*Customizing data point properties*](#customize-data-points).
 
-* If the data points have a matching definition in the Data Point Library, the values from the Data Point Library are used.
+* If the data points have a matching definition in the data point library, the values from the data point library are used.
 
-There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**.
+There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**.
 
 ![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
@@ -79,9 +90,9 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each datapoint, its visibility can be switched on or off by using the toggle left from the data point name.
 
-### <a name="add-data-points"></a>Adding data points
+### <a name="add-data-points"></a>To add a data point
 
-To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card.
+To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
@@ -89,11 +100,11 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**.
+To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
-For details on the Data Point Library refer to [Using the Datapoint Library](#data-point-library).
+For details on the data point library refer to [Using the Datapoint Library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
@@ -153,9 +164,9 @@ The following fields my be modified:
 </tbody>
 </table>
 
-After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
+After customizing the properties of a data point, you can save the modified settings to the data point library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 
-To return to the properties stored in the Data Point Library to a data point, select **Load [NAME] from library**.
+To return to the properties stored in the data point library to a data point, select **Load [NAME] from library**.
 
 ### Y-axis behaviour
 

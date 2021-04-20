@@ -20,7 +20,7 @@ layout: redirect
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">POST</th>
 </tr>
 </thead>
 
@@ -91,7 +91,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">POST</th>
 </tr>
 </thead>
 
@@ -175,9 +175,12 @@ HTTP/1.1
 ```http
 DELETE <<url>>/measurement/measurements/<<measurementID>>
 ```
+
 #### Example Response
 
 ```http
 HTTP/1.1
 204 NO CONTENT
 ```
+
+> **Info:** DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted measurement has a lot of associated data. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested measurement is deleted after all associated data has been deleted.

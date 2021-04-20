@@ -77,7 +77,7 @@ You can also choose to work with Software AG Professional Services to help ensur
 
 ### Handling scheduled exports
 
-Scheduled exports must be migrated to the report-agent microservice. This can be performed by opening a report in the Cockpit application. See also [Exporting data](/users-guide/cockpit/#export) in the *User guide*.
+Scheduled exports must be migrated to the report-agent microservice. This can be performed by opening a report in the Cockpit application. See also [Managing exports](/users-guide/cockpit/#exports) in the *User guide*.
 
 
 >**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.

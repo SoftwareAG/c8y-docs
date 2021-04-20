@@ -63,7 +63,10 @@ Example:
 
 The "key" is an identifier of the public key, which will be referenced in the JWT token header, and the "value" is the public key in PEM format.
 
-Now you can generate the JWT token and sign it with the matching private key. For example you can do it [here](https://jwt.io/#debugger-io).
+Now you can generate the JWT token and sign it with the matching private key. For example you can do it at [jwt.io](https://jwt.io/#debugger-io).
+Note however that this is a public website.
+JWT.io claims that validation and debugging is done on the client side, but in general we do not recommend you to paste your credentials to a public website.
+If you want to generate a JWT token locally, you can install a command line tool such as [jwt-cli](https://github.com/mike-engel/jwt-cli).
 
 Token format:
 
@@ -185,7 +188,7 @@ Every update request (PUT, POST, DELETE) executes with a so-called *processing m
 </tr>
 <tr>
 <td> Quiescent</td>
-<td> The QUIESCENT processing mode behave like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
+<td> The QUIESCENT processing mode behaves like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements, events and managed objects.</td>
 </tr>
 <tr>
 <td> CEP </td>

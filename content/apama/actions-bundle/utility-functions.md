@@ -56,7 +56,7 @@ monitor Example {
 }
 ```
 
-For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
+For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
 ### inMaintenanceMode
 

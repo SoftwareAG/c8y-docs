@@ -10,9 +10,9 @@ Apama’s Event Processing Language covers statements, which are organized into 
 
 For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/concepts/realtime#using-epl) below and to the [Streaming Analytics guide](/apama/overview-analytics/).
 
->**Important:** Support for streaming analytics using CEL (Esper) is deprecated. All new Cumulocity IoT subscriptions use the Apama CEP engine. Software AG will terminate support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018.
+>**Important:** Support for streaming analytics using CEL (Esper) has ended. All new Cumulocity IoT subscriptions use the Apama CEP engine. Software AG terminated support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018.
 >
->For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/event-language/introduction).
+>For documentation on using the unsupported CEL functionality based on Esper, refer to the [CEL analytics guide](/event-language/introduction).
 >
 >For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the Streaming Analytics guide.
 

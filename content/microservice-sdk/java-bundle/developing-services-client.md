@@ -47,201 +47,21 @@ Note that receiving messages and receiving specific messages are not supported f
 
 Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for information about how to set these credentials.
 
-#### Ericsson
+#### Provider configuration
 
-Use our Rest API to store tenant options separately for each key:
-
+To configure a SMS provider first it is required to get the available providers schemas:
 ```http
-POST /tenant/options
+GET /service/messaging/providers/definitions
 Host: ...
 Authorization: Basic ...
 ```
 
-Provider:
-
-```json
-{
-    "category": "messaging",
-    "key": "provider",
-    "value": "ericsson-dcp"
-}
-```
-
-Base URL:
-
-```json
-{
-    "category": "messaging",
-    "key": "ericsson-dcp.baseUrl",
-    "value": "<URL>"
-}
-```
-
-Username:
-
-```json
-{
-    "category": "messaging",
-    "key": "ericsson-dcp.username",
-    "value": "<username>"
-}
-```
-
-Password:
-
-```json
-{
-    "category": "messaging",
-    "key": "ericsson-dcp.password",
-    "value": "<password>"
-}
-```
-
-Sender address:
-
-```json
-{
-    "category": "messaging",
-    "key": "sms.senderAddress",
-    "value": "<The phone number all SMS will be sent from (provided by Ericsson DCP)>"
-}
-```
-
-Sender name:
-
-```json
-{
-    "category": "messaging",
-    "key": "sms.senderName",
-    "value": "<The name associated with the phone number>"
-}
-```
-
-Note that receiving specific messages is not supported for this provider.
-
-#### Telia Sonera
-
-Use our Rest API to store tenant options separately for each key:
-
+The response contains the provider properties, and to save them you need to make a POST request as follows:
 ```http
-POST /tenant/options
+POST /service/messaging/providers/configuration
 Host: ...
 Authorization: Basic ...
 ```
-
-Provider:
-
-```json
-{
-    "category": "messaging",
-    "key": "provider",
-    "value": "soneraoma"
-}
-```
-
-Username of Telia Sonera Client Application:
-
-```json
-{
-    "category": "messaging",
-    "key": "soneraoma.username",
-    "value": "<username>"
-}
-```
-
-Password assigned for Telia Sonera Client Application:
-
-```json
-{
-    "category": "messaging",
-    "key": "soneraoma.password",
-    "value": "<password>"
-}
-```
-
-Telia Sonera OAuth Service Endpoint:
-
-```json
-{
-    "category": "messaging",
-    "key": "soneraoma.authUrl",
-    "value": "<OAuth Service endpoint URL as appears in TS Application Profile, e.g., https://api.sonera.fi/autho4api/v1>"
-}
-```
-
-Telia Sonera Messaging OMA v1 Endpoint:
-
-```json
-{
-  "category": "messaging",
-  "key": "soneraoma.messagingUrl",
-  "value": "<Messaging endpoint URL as appears in TS Application Profile, e. g., https://api.sonera.fi/sandbox/messaging/v1>"
-}
-```
-
-Note that receiving messages and receiving specific messages is not supported for this provider.
-
-#### Tropo
-
-Use our Rest API to store tenant options separately for each key:
-
-```http
-POST /tenant/options
-Host: ...
-Authorization: Basic ...
-```
-
-Provider:
-
-```json
-{
-    "category": "messaging",
-    "key": "provider",
-    "value": "tropo"
-}
-```
-
-Base URL:
-
-```json
-{
-    "category": "messaging",
-    "key": "tropo.baseUrl",
-    "value": "<URL>"
-}
-```
-
-Credentials:
-
-```json
-{
-    "category": "messaging",
-    "key": "tropo.credentials",
-    "value": "<credentials>"
-}
-```
-
-Sender address:
-
-```json
-{
-    "category": "messaging",
-    "key": "sms.senderAddress",
-    "value": "cumulocity"
-}
-```
-
-Sender name:
-
-```json
-{
-    "category": "messaging",
-    "key": "sms.senderName",
-    "value": "cumulocity"
-}
-```
-
-Note that receiving messages and receiving specific message is not supported for this provider.
 
 ### Sending a message
 

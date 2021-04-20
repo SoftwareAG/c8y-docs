@@ -8,7 +8,7 @@ Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants f
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info:** If you would like to use this feature, please [contact us](/about-doc/contacting-support).
+>**Info:** If you would like to use this feature, please contact [product support](/about-doc/contacting-support).
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -94,13 +94,13 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
-In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#creating-tenants).
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
 #### Support user access
 
-In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.
+At the right of the **Properties** tab, you can find information on the support user requests/access for the subtenants.
 
 <img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
@@ -108,8 +108,8 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Configuration](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
-|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
+|Status|May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings)),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally in the Management tenant. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
@@ -119,7 +119,7 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
->**Important:** Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
+>**Important:** Suspended tenants for all Cumulocity IoT public cloud instances will be automatically deleted after 60 days.
 >
 > **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 
@@ -195,12 +195,6 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 ![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
-#### Limiting subtenant device number
-
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
-
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
-
 #### Limiting subtenant request rate
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
@@ -216,6 +210,18 @@ It is also possible to customize the buffer size for the CEP queue and the data 
  - data-broker.queue.limit
 
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
+
+#### Limiting subtenant device number
+
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
+
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
+
+#### Product experience tracking
+
+Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
+
+Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -267,7 +273,7 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 
 ### <a name="default-subscriptions"></a>Default subscriptions
 
-In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it. 
+In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
@@ -294,9 +300,9 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 <br>
 You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
 
-Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed. 
+Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
 
-You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade. 
+You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade.
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
 <br>

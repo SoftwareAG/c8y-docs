@@ -74,6 +74,8 @@ The UI is available in the following languages:
 |English (default)|en|
 |Brazilian Portuguese|pt_BR|
 |Chinese|zh_CN|
+|Chinese, traditional|zh_TW|
+|Dutch|nl|
 |French|fr|
 |German|de|
 |Japanese|ja_JP|

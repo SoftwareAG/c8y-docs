@@ -9,4 +9,4 @@ The measurements interface consists of three parts:
 -   The *measurement collection* resource retrieves measurements and enables creating new measurements.
 -   The *measurement* resource represents individual measurements that can be queried and deleted.
 
-> For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.
+> For all POST requests an accept header should be provided, otherwise an empty response body will be returned.

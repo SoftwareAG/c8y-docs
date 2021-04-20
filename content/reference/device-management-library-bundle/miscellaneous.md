@@ -38,7 +38,7 @@ To communicate the results of a particular command, the device adds a property "
 		"result": "165711141901401"
 	}
 
-Please [contact product support](/about-doc/contacting-support) if you would like to publish sample commands for your device type.
+Please contact [product support](/about-doc/contacting-support) if you would like to publish sample commands for your device type.
 
 #### c8y\_DeviceTypes
 

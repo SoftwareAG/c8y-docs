@@ -5,6 +5,9 @@ layout: redirect
 ---
 
 
+How long a device stays online is determined by its registration awake time attribute "at".
+If this attribute is missing during the device registration, the LWM2M agent will consider the default configured value
+to determine how long the device will stay online.
 To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
 
 ![CSV example 1](/images/device-protocols/lwm2m/lwm2m-csv1.png)
@@ -99,6 +102,12 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">String, &ldquo;NO_SEC&rdquo; or &ldquo;PSK</td>
 <td style="text-align: left; height: 40px;">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
 <td style="text-align: left">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left">awakeTimeRegistrationParameter</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to Cumulocity IoT. Defaults to the global setting of the LWM2M server.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">serverPublicKey</td>

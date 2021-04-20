@@ -42,7 +42,7 @@ To access the applications for your Cumulocity IoT tenant, use the following URL
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. See [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the *Reference* guide for further details on tenant ID and tenant domain.
 
 >**Info:** The above URL is only valid for Cumulocity IoT Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 
@@ -50,13 +50,27 @@ This will direct you to the login page of your default application. See [Tenants
 
 ### <a name="login"></a>To log into the Cumulocity IoT platform
 
-On the Login screen, enter your username (case-sensitive) and password and click **Login** to enter the application.
+On the Login screen, enter your username (case-sensitive) and password.
 
-<img src="/images/users-guide/getting-started/getting-started-login.png" alt="Login prompt">
+If you use one of the public cloud instances of the Cumulocity IoT platform and log in for the first time, you will see a cookie banner at the bottom:
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
+<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<br>
 
-When you log into the Cumulocity IoT platform for the first time, you will be taken to the default application (usually the [Cockpit](/users-guide/cockpit) application if not configured differently).
+> **Info:** The cookie banner is turned on by default only on the Cumulocity IoT public cloud instances. For on-premise instances this feature needs to be configured explicitly, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+
+* Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
+* Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.
+* Click **Preferences** to select your individual cookie preferences:
+	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
+	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.
+<br>
+    <img src="/images/users-guide/getting-started/getting-started-cookie-selection.png" alt="Login prompt">
+<br>
+
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
+
+Finally, click **Login** to enter the Cumulocity IoT platform. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -75,7 +89,7 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 >**Info:** The automated password reset will only work if your email address is stored with your Cumulocity IoT user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity IoT user, or your Cumulocity IoT user has no email address stored. In either case, contact a Cumulocity IoT administrator in your organization. Administrators can reset your password.
 >
-If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please [contact product support](/about-doc/contacting-support).
+If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/about-doc/contacting-support).
 
 ### <a name="URLs"></a>Accessing pages using URLs
 

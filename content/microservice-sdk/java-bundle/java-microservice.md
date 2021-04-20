@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 layout: redirect
 title: Hello world tutorial
 ---
@@ -276,7 +276,7 @@ To deploy your microservice on the Cumulocity IoT platform you need:
 * A valid tenant, a user and a password in order to access Cumulocity IoT.
 * The ZIP file built with Maven on the previous steps.
 
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. [Contact product support](/about-doc/contacting-support) so that we can assist you with the activation. Note that this is a paid feature.
+> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/about-doc/contacting-support) so that we can assist you with the activation. Note that this is a paid feature.
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 

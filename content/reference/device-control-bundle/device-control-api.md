@@ -7,7 +7,7 @@ layout: redirect
 ### DeviceControlAPI [application/vnd.com.nsn.cumulocity.devicecontrolApi+json]
 
 <table>
-colgroup>
+<colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
 <col style="width: 10%;">
@@ -66,6 +66,7 @@ colgroup>
 </tr>
 </tbody>
 </table>
+
 ### GET the Device Control API resource
 
 Response body: devicecontrolApi

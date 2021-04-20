@@ -13,7 +13,7 @@ The semantics described in the [HTTP specification](http://www.w3.org/Protocols/
 -   PUT updates an existing resource with the contents of the request.
 -   DELETE removes a resource. The response will be "204 No Content".
 
-If a PUT request only contains parts of a resource, so called "fragments", only those parts are updated. To remove a fragment, use a PUT request with a null value for the fragment. PUT cannot update sub-resources that are identified by a separate URI.
+If a PUT request only contains parts of a resource, so called "fragments", only those parts are updated. To remove a fragment, use a PUT request with a null value for the fragment. PUT cannot update subresources that are identified by a separate URI.
 
 ### URI space and URI templates
 

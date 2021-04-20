@@ -11,11 +11,15 @@ To register a Sigfox device, navigate to the **Registration** page in the **Devi
 
 > **Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
 
+> **Info:** 
+> - The device type created in the Sigfox Cloud platform has the following naming convention `c8y_{tenantId}_{device-protocol-name}_{contractId}` e.g.: `c8y_myTenant_mySigfoxDeviceProtocol_aabbcc5b78c901d64eecf4faaa` 
+> - If the constructed name exceeds 100 characters it will be truncated until it is less than 100 characters.
+
 In the next window, fill in the required information:
 
 - **ID:** Unique device ID. The value must be a hexadecimal number.
 - **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
-- **Contract:** Choose your desired contract.
+- **Contract:** Choose your desired contract (contracts that are active and with free slots are listed).
 - **Device protocol:** Select your desired device protocol from the drop-down list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 

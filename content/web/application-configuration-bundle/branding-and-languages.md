@@ -67,7 +67,7 @@ npm install @c8y/style
 
 1. Create a LESS file called for instance ```branding.less```.
 2. Save it inside a new folder, which can have any name you like.
-3. Inside this folder, create a sub folder for images.
+3. Inside this folder, create a subfolder for images.
 
 ```
 my-application
@@ -354,7 +354,7 @@ ui-assets
 
 #### Branding options
 
-Edit the file *public-options/options.json* and change the sub-properties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
+Edit the file *public-options/options.json* and change the subproperties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
 Note that the properties `brand-logo-img` and `navigator-platform-logo` are both URLs. Therefore the corresponding files must be placed inside the folder *ui-assets*.
 

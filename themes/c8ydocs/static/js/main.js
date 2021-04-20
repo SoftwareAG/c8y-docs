@@ -57,7 +57,7 @@ var main = (function ($) {
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);
-          $('.dropdown version').css('top', offset);
+          $('.dropdown.version').css('top', offset);
         }
 
 

@@ -2,6 +2,9 @@
 weight: 50
 title: Enterprise Tenant
 layout: bundle
+outputs:
+- html
+- json
 ---
 
 

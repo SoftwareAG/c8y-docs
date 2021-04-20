@@ -268,7 +268,6 @@ Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 </tr>
-
 </tbody>
 </table>
 

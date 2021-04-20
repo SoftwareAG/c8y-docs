@@ -77,6 +77,38 @@ export class WidgetConfigDemo {
 
 Here again, you just need to add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
 
+To enable the widget config validation, the following option should be added to the '@Component' decorator.
+
+```js
+import { ControlContainer, NgForm } from "@angular/forms";
+
+@Component({
+    ...
+    viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
+})
+```
+
+Combined with the example above, the `demo-widget-config.component.ts` component with enabled config validation will be:
+
+```js
+import { Component, Input } from '@angular/core';
+import { ControlContainer, NgForm } from "@angular/forms";
+
+@Component({
+  selector: 'c8y-widget-config-demo',
+  template: `<div class="form-group">
+    <c8y-form-group>
+      <label translate>Text</label>
+      <textarea style="width:100%" [(ngModel)]="config.text"></textarea>
+    </c8y-form-group>
+  </div>`,
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
+})
+export class WidgetConfigDemo {
+  @Input() config: any = {};
+}
+```
+
 ### 3. Add the widget to your application
 
 To add the widget you have to use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.

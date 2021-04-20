@@ -6,6 +6,6 @@ aliases:
   - /datahub/datahub-release-notes/
 ---
 
->**Info:** The release notes for Cumulocity IoT Datahub have been moved to a new [release notes page](https://cumulocity.com/guides/release-notes). 
+>**Info:** The release notes for Cumulocity IoT Datahub have been moved to a new [release notes page](https://cumulocity.com/guides/releasenotes).
 >
->On this page, select a release version from the dropdown at the top left and navigate to the DataHub entry.
+>On this new page, select a release version from the dropdown at the top left and navigate to the DataHub entry.

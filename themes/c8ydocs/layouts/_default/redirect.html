@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{.Permalink}}</title>
+    <link rel="canonical" href="{{.Permalink}}"/>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    
+    {{$current := . }}
+    {{ $currentBundle := newScratch}}
+    {{ range where .Site.RegularPages "Type" "root" }}
+    {{ $subs := where .Site.Pages "Section" .Params.bundle }}
+    {{$scratch := newScratch}}
+    {{/* grab the link from the first child page  */}}
+    {{ range $sub := first 1 $subs}}
+    {{ $scratch.Set "url" $sub.Permalink}}
+    {{end}}
+    
+    {{/* Check the current page to highlight the right root section  */}}
+    {{ if eq .Params.bundle $current.Section }}
+      <meta http-equiv="refresh" content='0; url={{ $scratch.Get "url"}}'/>
+      {{ end }}
+      
+      {{ end }}
+    </head>
+    <body>
+      {{/*  If there's no bundle, read the "target" value from the front matter  */}}
+      {{ if ne (substr .Params.target 0 1) "" }}
+        <meta http-equiv="refresh" content='0; url={{ printf "%s%s" .Site.BaseURL .Params.target }}'/>
+      {{ end }}
+    
+    Redirecting…
+  </body>
+</html>

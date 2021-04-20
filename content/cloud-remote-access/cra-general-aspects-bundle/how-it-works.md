@@ -1,0 +1,34 @@
+---
+title: How Cloud Remote Access works
+weight: 20
+layout: bundle
+---
+
+Cloud Remote Access is a technique to tunnel protocol traffic (e.g. VNC, Telnet, SSH) to the cloud without opening any ports at the gateway. Thus Cloud Remote Access is a secure way to directly access low level protocols on devices through the Cumulocity IoT platform UI in a web browser.
+
+
+![VNC](/images/cra/cra-VNC1a.png)
+
+The following protocols are supported:
+
+* Remote Desktop (VNC)
+* Secure Shell (SSH)
+* Terminal (Telnet)
+
+See [Supported protocols and gateways](/cloud-remote-access/supported-protocols/#supported-protocols) for details.
+
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity IoT. More information about registering devices and instructions can be found in [Device Management > Connecting devices > Device registration](/users-guide/device-management/#connecting-devices) in the User guide.
+
+![VNC2](/images/cra/cra-VNC2.png)
+
+With Cloud Remote Access users can
+
+* view status visualizations and track updates of remote devices directly in the same way as if you were at the device location.
+* connect to remote devices easily as complex VPN setups are not required.
+* establish a connection via Telnet or SSH to the gateway itself or to any device in the local area network.
+
+![VNC1b](/images/cra/cra-VNC1b.png)
+
+The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity IoT account, so that you do not need to manage them elsewhere.
+
+

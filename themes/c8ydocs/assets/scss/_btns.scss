@@ -1,0 +1,133 @@
+.btn-link {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: 0;
+  color: $blue-primary;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.sidebar-toggle {
+  position: fixed !important;
+  top: 10px;
+  left: 24px;
+  z-index: 2002;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 2px;
+  background-color: $blue-primary;
+  background-image: none;
+  color: white;
+  font-size: 10px;
+  transition: left 0.3s $ease;
+  .icon-bar {
+    display: block;
+    margin: 4px auto;
+    width: 26px;
+    height: 3px;
+    background-color: white;
+  }
+
+  @media (min-width: $grid-breakpoint) {
+    display: none;
+  }
+  @media print {
+    display: none;
+  }
+
+  .open & {
+    left: $main-nav-width + 1.5;
+  }
+}
+
+.to-the-top {
+  position: fixed;
+  right: 3rem;
+  bottom: 4rem;
+  z-index: 38;
+  font-size: 1rem;
+  display: block;
+  margin: 0;
+  padding: 9px 16px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $gray-60;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $gray-60;
+  text-align: center;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    background-color: $blue-primary;
+    color: white;
+    opacity: 1;
+    outline: none;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+// copy link
+.bookmark {
+  &:focus {
+    outline: none;
+  }
+  h2 &,
+  h3 &,
+  h4 &,
+  h1 & {
+    order: 5;
+    padding: 0 16px;
+    vertical-align: middle;
+    font-size: 14px;
+    opacity: 0;
+  }
+  h2:hover &,
+  h3:hover &,
+  h4:hover &,
+  h1:hover & {
+    opacity: 1;
+  }
+  &.copied {
+    position: relative;
+    opacity: 1 !important;
+    &:before {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-left: 0;
+      padding: 5px 3px 3px;
+      border-radius: 3px;
+      background: rgba($blue-primary, 0.8);
+      color: white;
+      content: "Copied!";
+      font-size: 12px;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 18px;
+      margin-left: 0;
+      width: 0;
+      height: 0;
+      border-width: 5px 5px 5px 5px;
+      border-style: solid;
+      border-color: rgba($blue-primary, 0.8) transparent transparent;
+      content: "";
+    }
+  }
+}

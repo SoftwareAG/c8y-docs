@@ -29,7 +29,7 @@ DataHub Edge consists of the following building blocks:
 
 * The DataHub UI is deployed as a web application in the Cumulocity IoT core. It provides the frontend for defining and managing offloading pipelines.
 * The DataHub backend manages offloading pipelines and their scheduled execution. The backend and its associated database run within one Docker container in the Docker daemon. Its internal state, e.g. the defined offloading configurations, is persisted on the central data disk.
-* The query processing is based on a Dremio master and a Dremio executor as well as on a Zookeeper instance. Dremio master and Zookeeper run in one Docker container and the Dremio executor runs in another one. Both containers are run by the Docker daemon. The internal state of the containers, e.g. the query job history, is persisted on the central data disk.
+* The query processing is based on a Dremio master and a Dremio executor as well as on a ZooKeeper instance. Dremio master and ZooKeeper run in one Docker container and the Dremio executor runs in another one. Both containers are run by the Docker daemon. The internal state of the containers, e.g. the query job history, is persisted on the central data disk. In the above figure just Dremio is shown for reasons of simplicity.
 * The data lake is located on the central data disk.
 
 #### DataHub Edge versus DataHub cloud deployments

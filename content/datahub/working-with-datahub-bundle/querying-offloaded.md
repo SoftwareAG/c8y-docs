@@ -8,7 +8,7 @@ Cumulocity IoT DataHub offers an SQL interface so that you can efficiently query
 
 ### Overview
 
-As described in section [Cumulocity IoT DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), Cumulocity IoT DataHub manages offloading pipelines which periodically extract data from the Operational Store of Cumulocity IoT, transform the data into a relational format and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
+As described in section [Cumulocity IoT DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), Cumulocity IoT DataHub manages offloading pipelines which periodically extract data from the Operational Store of Cumulocity IoT, transform the data into a relational format, and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
 
 Different standard interfaces exist for that purpose, namely JDBC, ODBC, and REST. In order to work with one of those interfaces, select **Home** in the navigation bar. Under **Quick links** you will find starting points for the different interfaces.
 
@@ -33,13 +33,13 @@ You can easily look up the paths to the tables in Dremio's UI. Click on your dat
 
 ### Connecting via JDBC
 
-If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You have to download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string from DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. As username and password use the credentials from your Dremio account when setting up your JDBC client.
+If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You have to download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client use as username and password the credentials from your Dremio account.
 
 For additional JDBC settings of Dremio see also the associated [Dremio documentation](https://docs.dremio.com/drivers/dremio-jdbc-driver.html).
 
 ### Connecting via ODBC
 
-If you want to use an ODBC client to run SQL queries against the data lake, you have to configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. As username and password use the credentials from your Dremio account when setting up your ODBC client.
+If you want to use an ODBC client to run SQL queries against the data lake, you have to configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
 
 ### Connecting via Dremio REST API
 
@@ -62,7 +62,7 @@ The URL paths of proxied requests consist of:
 * the path of the microservice, which you will find in its application properties (see also section [Managing applications](/users-guide/administration#managing-applications))
 * the corresponding Dremio REST API path, prefixed by "/dremio".
 
->**Info:** For the system eu-latest.cumulocity.com and tenant domain name `datahub-demo`, the base URL would be
+>**Example:** For the system eu-latest.cumulocity.com and tenant domain name `datahub-demo`, the base URL would be
 https://datahub-demo.eu-latest.cumulocity.com/service/datahub/.
 
 Dremio's SQL and JOB APIs are supported. Note that you must not provide the authorization header for Dremio when using DataHub REST API. Instead you have to provide the authorization header for DataHub. 
@@ -96,6 +96,8 @@ Retrieve the results of the query job given the job ID and optional pagination s
 * DataHub request: GET /dremio/api/v3/job/{ID}/results?offset={offset}&limit={limit}
 * Corresponding Dremio API:  GET /api/v3/job/{ID}/results?offset={offset}&limit={limit}
 * [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)
+
+>**Info:** As the result set of a query might be potentially very large, the corresponding endpoint for retrieving the results returns per default the first 100 entries. You can optionally define the offset and the limit (at maximum 500) to paginate through all results.
 
 #### Cancelling running jobs
 
@@ -162,7 +164,7 @@ The response shows the job status:
 }
 ```
 
-A job state of RUNNING is returned while the query is still being executed, and eventually it changes to COMPLETED or FAILED. Once the job has been completed, its results are returned by the following request:
+A job state of RUNNING is returned while the query is still being executed, and eventually it changes to COMPLETED or FAILED. Once the job has been completed, its results can be consumed with the following request:
 
 ```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000/results HTTP/1.1
@@ -209,3 +211,5 @@ The response might look as follows:
 ### Connecting other clients
 
 Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/client-applications/clients.html) discusses how to connect these clients to Dremio and leverage its query capabilities.
+
+See also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer) to learn how other Software AG products can connect to DataHub and leverage its query capabilities.

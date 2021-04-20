@@ -80,6 +80,8 @@ Here again, you just need to add a `config` object which you can fill with any s
 To enable the widget config validation, the following option should be added to the '@Component' decorator.
 
 ```js
+import { ControlContainer, NgForm } from "@angular/forms";
+
 @Component({
     ...
     viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
@@ -90,6 +92,7 @@ Combined with the example above, the `demo-widget-config.component.ts` component
 
 ```js
 import { Component, Input } from '@angular/core';
+import { ControlContainer, NgForm } from "@angular/forms";
 
 @Component({
   selector: 'c8y-widget-config-demo',

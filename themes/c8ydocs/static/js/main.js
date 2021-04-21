@@ -34,7 +34,7 @@ var main = (function ($) {
           var el = urls[index];
           var href_url = el.url;
           if (el.url.endsWith('releasenotes')) {
-            href_url = el.url;
+            href_url = el.url + '/overview/about/';
           } else if (el.url.endsWith('/')) {
             href_url = el.url + suffix;
           } else {

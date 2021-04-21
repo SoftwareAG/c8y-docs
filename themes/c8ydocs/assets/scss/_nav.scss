@@ -180,4 +180,24 @@
     background-color: rgba(black, .8);
     pointer-events: all;
   }
+<<<<<<< HEAD
+=======
+}
+.navsections-dropdown-menu{
+  max-height: calc(100vh - 230px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 4px;
+    /* for vertical scrollbars */
+    height: 4px;
+    /* for horizontal scrollbars */
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .2);
+  }
+>>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
 }

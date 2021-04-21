@@ -17,28 +17,30 @@
       </button>
       <div class="dropdown-menu"
         aria-labelledby="dropdownMenuButton">
-        {{$current := . }}
-        {{ $currentBundle := newScratch}}
-        {{ range where .Site.RegularPages "Type" "root" }}
-        {{ $subs := where .Site.Pages "Section" .Params.bundle }}
-        {{$scratch := newScratch}}
-        {{$rootclass := newScratch}}
-        {{/* grab the link from the first child page  */}}
-        {{ range $sub := first 1 $subs}}
-        {{ $scratch.Set "url" $sub.Permalink}}
-        {{end}}
+        <div class="navsections-dropdown-menu">
+          {{$current := . }}
+          {{ $currentBundle := newScratch}}
+          {{ range where .Site.RegularPages "Type" "root" }}
+          {{ $subs := where .Site.Pages "Section" .Params.bundle }}
+          {{$scratch := newScratch}}
+          {{$rootclass := newScratch}}
+          {{/* grab the link from the first child page  */}}
+          {{ range $sub := first 1 $subs}}
+          {{ $scratch.Set "url" $sub.Permalink}}
+          {{end}}
 
-        {{/* Check the current page to highlight the right root section  */}}
-        {{$rootclass.Set "active" "" }}
-        {{ if eq .Params.bundle $current.Section }}
-        {{$rootclass.Set "active" "active" }}
-        <span class="current-app">{{.Title}}</span>
-        {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundle "bundle") }}
-        {{ end }}
+          {{/* Check the current page to highlight the right root section  */}}
+          {{$rootclass.Set "active" "" }}
+          {{ if eq .Params.bundle $current.Section }}
+          {{$rootclass.Set "active" "active" }}
+          <span class="current-app">{{.Title}}</span>
+          {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundle "bundle") }}
+          {{ end }}
 
-        <a class='dropdown-menu-item {{ $rootclass.Get "active"}}'
-          href='{{ $scratch.Get "url"}}'><i class="{{.Params.icon}}"></i> {{.Title}}</a>
-        {{ end }}
+          <a class='dropdown-menu-item {{ $rootclass.Get "active"}}'
+            href='{{ $scratch.Get "url"}}'><i class="{{.Params.icon}}"></i> {{.Title}}</a>
+          {{ end }}
+        </div>
       </div>
     </div>
   </header>

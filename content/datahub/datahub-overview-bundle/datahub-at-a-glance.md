@@ -14,7 +14,9 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications)) 
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications))
+
+* Other Software AG products like TrendMiner or Cumulocity IoT Machine Learning Workbench
 
 The main features of the Cumulocity IoT DataHub application are:
 
@@ -25,26 +27,26 @@ The following diagram illustrates the high-level concepts.
 
 <img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept"  style="max-width: 100%">
 
-The central component of Cumulocity IoT DataHub is [Dremio](https://www.dremio.com), a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio enables the creation of Extract-Transform-Load (ETL) pipelines that:
+The central component of Cumulocity IoT DataHub is [Dremio](https://www.dremio.com), a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio is in charge of Extract-Transform-Load (ETL) pipelines that:
 
 * Periodically extract data from the Operational Store of Cumulocity IoT.
 * Transform the data into a relational format.
 * Persist the data as [Apache Parquet](https://parquet.apache.org/) files in the configured data lake.
 
-When a user submits an SQL query, the query runs against data in the data lake. Thus, the Operational Store of Cumulocity IoT is not accessed during query processing; the Operational Store is only accessed by the regular ETL process to extract data.
+When a user submits an SQL query, the query runs against data in the data lake. Thus, the Operational Store of Cumulocity IoT is not accessed during query processing; the Operational Store is only accessed by the regular ETL process which extracts the data. DataHub manages those ETL processes and ensures their execution in a periodic manner.
 
 The table below summarizes the main terms used throughout this documentation.
 
 | Component | Explanation |
 | ---  | ---         |
 | Cumulocity IoT DataHub | Cumulocity IoT application for offloading data from the Operational Store of Cumulocity IoT to a data lake and querying the data lake contents
-| DataHub | Scheduler component for triggering periodic offloading and UI component for defining, managing, and monitoring offloading pipelines
-| Cumulocity IoT Operational Store | Internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored
+| DataHub | Scheduler component (deployed as microservice) for triggering periodic offloading and UI component (deployed as web application) for defining, managing, and monitoring offloading pipelines
+| Cumulocity IoT Operational Store | Internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored in so-called base collections
 | Dremio | Internal SQL engine for extracting data from the Cumulocity IoT Operational Store and writing to and reading from the data lake
-| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or HDFS. 
+| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS
 > **Info:** Google Cloud Storage (GCS) is currently not supported.
 
-### Design of offloading pipeline
+### Design of offloading pipelines
 
 Offloading refers to moving data from the Operational Store of Cumulocity IoT to a data lake in order to:
 
@@ -54,17 +56,16 @@ Offloading refers to moving data from the Operational Store of Cumulocity IoT to
 
 The starting point is one of the base Cumulocity IoT collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
 
-> **Info:** DataHub only supports offloading for the base Cumulocity IoT collections, which are **alarms**, **events**, **inventory**, **measurements**. Offloading other collections is currently not supported.
+> **Info:** DataHub only supports offloading for the following base Cumulocity IoT collections: **alarms**, **events**, **inventory**, **measurements**. Offloading of other collections is currently not supported.
 
 When an offloading job runs, the contents of the collection are offloaded. The document-based entities of the Operational Store of Cumulocity IoT are transformed into a relational format by flattening the entries and mapping them to relational rows.
 
-> **Info:** The mapping automatically extracts a "standard" set of attributes from each entity, such as "time", "source", "id", and "type". It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Here, the fragment name becomes part of the column name; the fragment's value is stored in a column suffixed with ".value" (resulting in `<fragment name>.value` as the column name); the unit is stored in a column suffixed ".unit". Non-standard fields can also be processed to a limited extent as described in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs).
+> **Info:** The mapping automatically extracts a standard set of attributes from each entity, such as *time*, *source*, *id*, and *type*. It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Non-standard fields can also be offloaded to a limited extent. Section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) provides more details and examples for this transformation.
 
-As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which enables compression and efficient data fetching. These Parquet files are managed in a folder structure based on a temporal hierarchy, because analytical queries commonly have a temporal background, e.g. compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, DataHub also regularly runs a compaction algorithm over these files in the background. When data is stored in a time-based hierarchical manner in the data lake, DataHub can efficiently prune partitions. In addition, queries can explicitly leverage the structure to increase query performance.
+As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which enables compression and efficient data fetching. These Parquet files are managed in a folder structure based on a temporal hierarchy, because analytical queries commonly have a temporal background, e.g. compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, DataHub also regularly runs a compaction algorithm over these files in the background. As the data is stored in a time-based hierarchical manner in the data lake, DataHub can efficiently prune partitions. In addition, queries can explicitly leverage this temporal structure to increase query performance.
 
 > **Important:** You must not modify the data lake contents as this will corrupt your offloading pipelines and neither data consistency nor completeness can be guaranteed any more.
 
-DataHub's scheduler runs the offloading pipeline in a periodic manner. The UI displays the execution schedule next to each configuration. Within each of these executions, newly arrived data is extracted from the Cumulocity IoT collection and transformed and stored in the same way as described above. These incremental offloading tasks are designed to ensure a loss-free and duplicate-free offloading from the collection. For example, if one offloading execution fails, the next execution will automatically pick up the increments the failed one should have processed.
+The scheduler of DataHub runs the offloading pipelines in a periodic manner. The UI shows for each pipeline the corresponding schedule. Within each of these pipeline executions, newly arrived data is extracted from the Cumulocity IoT collection and transformed and stored in the same way as described above. These incremental offloading tasks are designed to ensure a loss-free and duplicate-free offloading from the collection. For example, if one offloading execution fails, the next execution will automatically pick up the increments the failed one should have processed.
 
-For each of the offloading pipelines, target tables are created in Dremio that point to the corresponding data folders in the data lake. When you run queries against the offloaded data, Dremio uses these target tables.
-
+For each offloading pipeline, a so-called **target table** is created in Dremio that points to the corresponding data folders in the data lake. When you run queries against the offloaded data, Dremio uses these target tables.

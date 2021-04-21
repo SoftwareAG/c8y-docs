@@ -45,11 +45,11 @@ When you click on your data source it will be shown in the main panel. Clicking 
 
 #### Spaces
 
-A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdSpace`, e.g. `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), the inventory and alarms collections already ship two views `inventory_all` and `inventory_latest` which are made available in your space.
+A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdSpace`, e.g. `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), for the inventory, events, and alarms collections there is a pair of preconfigured views providing either all or latest data.
 
 #### Job history
 
-The **Job History** tab at the top of the screen displays jobs/queries you have executed. It allows you to view details of a job by clicking on the particular job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
+The **Job History** tab at the top of the screen displays jobs/queries you have executed. It allows you to view details of a job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
 
 > **Info:** The job history only contains queries that you actively run; the jobs related to the data extraction are hidden.
 
@@ -64,7 +64,7 @@ In Dremio, you can create such a view by defining a corresponding query and savi
 > **Info:** Such a view is per default not materialized, i.e., it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data.
 
 #### Example
-Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column 'myValue'. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:
+Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column *myValue*. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:
 
 ```sql
 SELECT DATE_TRUNC('HOUR', "time") as "time", avg(myValue) as hourlyAvg
@@ -72,7 +72,8 @@ FROM myTable
 GROUP BY DATE_TRUNC('HOUR', "time")
 ```
 
-> **Info:** The creation (and update) of views can be done via the Dremio SQL API, too. This is especially useful to automate tasks. The above example can be created or updated as follows.
+The creation (and update) of views can be done via the Dremio SQL API, too. This is especially useful to automate tasks. The above example can be created or updated as follows.
+
 ```sql
 CREATE OR REPLACE VDS YourTenantIdSpace.YourDesiredViewName AS
   SELECT DATE_TRUNC('HOUR', "time") as "time", avg(myValue) as hourlyAvg
@@ -82,7 +83,7 @@ CREATE OR REPLACE VDS YourTenantIdSpace.YourDesiredViewName AS
 
 ### Joining tables/views
 
-Views you have defined and target tables from your data lake can be joined as well. In Dremio you can either define joins using the SQL editor or use a graphical interface to define a join.
+Views you have defined and target tables from your data lake can be joined as well. In Dremio you can either define joins using the SQL editor or a graphical interface.
 
 A general use case for joining is to enrich your alarms, events, or measurement values with metadata from the inventory collection, e.g.
 

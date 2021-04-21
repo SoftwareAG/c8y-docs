@@ -1,0 +1,17 @@
+{
+{{ $url := .Permalink}}
+{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+{{ $headless := .Site.GetPage $bundle }}
+{{if $headless}}
+{{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
+{{ $max := len $reusablePages }}
+{{ range $index, $el:= $reusablePages}}
+{{ $cont := $el.Params.helpcontent | markdownify}}
+{{ $name := substr $el.Name 0 -3 }}
+{{ $anchor := printf "%s#%s" $url $name}}
+  "{{$name}}": 
+    {{ dict "helpcontent" $cont "url" $anchor "title" $el.Title  | jsonify }}
+  {{if lt $index (sub $max 1) }},{{end}}
+{{ end }}
+{{ end }}
+}

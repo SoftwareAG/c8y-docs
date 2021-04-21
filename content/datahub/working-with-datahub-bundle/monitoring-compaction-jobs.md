@@ -78,10 +78,10 @@ Select a compaction job overview in the compaction history per offloading job or
 | Job execution ID | The Dremio ID of this execution
 | Target table name | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
-| Daily run | Indicates whether the job is executed daily
-| Monthly run | Indicates whether the job is executed monthly
+| Daily run | Indicates whether the job is a daily execution job
+| Monthly run | Indicates whether the job is is a monthly execution job
 
-**Daily CTAS results**
+**Daily compaction results**
 
 During daily compaction the files are merged, following a temporal hierarchy. As a result, a folder for each day of the month is built with one or more file(s) combining all values measured for this day. For each of those files the following information is provided:
 
@@ -93,7 +93,7 @@ During daily compaction the files are merged, following a temporal hierarchy. As
 | Path | The path to the file in the data lake
 | Records | The number of records stored in the file
 
-**Monthly CTAS results**
+**Monthly compaction results**
 
 During monthly compaction the files are merged, following a temporal hierarchy. As a result, a folder for each month is built with one or more file(s) combining all values measured for this month. For each of those files the following information is provided:
 

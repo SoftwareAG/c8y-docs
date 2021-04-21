@@ -1,6 +1,6 @@
 ---
 title: Release notes
-weight: 70
+weight: 80
 layout: bundle
 aliases:
   - /datahub/datahub-release-notes/

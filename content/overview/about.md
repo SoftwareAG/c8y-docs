@@ -2,7 +2,9 @@
 weight: 10
 title: About the release notes
 layout: bundle
-aliases: -/release-notes
+aliases:
+  - /release-notes
+  - /releasenotes
 ---
 
 

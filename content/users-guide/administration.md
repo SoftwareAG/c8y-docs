@@ -2,9 +2,6 @@
 title: Administration
 layout: bundle
 weight: 40
-outputs:
-- html
-- json
 aliases:
   - /users-guide/user-and-permissions-management/
 ---

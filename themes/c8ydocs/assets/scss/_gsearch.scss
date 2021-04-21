@@ -1,7 +1,7 @@
 body {
  
   .gsc-search-box.gsc-search-box-tools {
-    max-width: 300px;
+    // max-width: 300px;
   }
   .gsc-search-box-tools .gsc-search-box .gsc-input {
     background-color: transparent!important; //border: 2px solid @input-border;
@@ -57,6 +57,7 @@ body {
   }
   .gsc-input-box {
     border: 0;
+    padding: 0;
     background-color: transparent;
     height: 34px;
   }

@@ -16,7 +16,7 @@ The tutorial describes how to install a Cumulocity IoT agent with all relevant d
 * Use basic device management functionality.
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
-* Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
+* Use the [PiFace Digital 2](http://www.element14.com/community/docs/DOC-69001) adapter board from the cloud.
 * Use [TinkerForge](/guides/devices/tinkerforge) sensors and controls from the cloud.
 
 > **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the Cumulocity IoT C++ SDK.
@@ -56,7 +56,7 @@ The output of this command contains the serial number in a line like:
 Serial		: 1000000017b769d5
 ```
 
-Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the Cumulocity IoT platform. 
+Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the Cumulocity IoT platform.
 
 #### Internet
 
@@ -76,7 +76,7 @@ $ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 
 #### To set up the tenant URL in the cumulocity.properties file
 
-When the Cumulocity IoT agent on the Raspberry Pi connects to Cumulocity IoT, it uses the host URL that is defined in the file 
+When the Cumulocity IoT agent on the Raspberry Pi connects to Cumulocity IoT, it uses the host URL that is defined in the file
 */usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties* on the Raspberry Pi. The URL is defined in a line like:
 
 ````shell
@@ -85,7 +85,7 @@ host = https://<YourTenantName>.cumulocity.com
 
 Ensure that you have set up the correct host URL here before proceeding. Here, `<YourTenantName>` is the name of your Cumulocity IoT tenant on the Cumulocity IoT platform.
 
-The file is by default read-only, so you need superuser privileges to edit it. 
+The file is by default read-only, so you need superuser privileges to edit it.
 To go into "su" mode, use the following command on a command line console on the Raspberry Pi:
 
 ````console
@@ -128,9 +128,9 @@ Alternatively, you can use the desktop method:
 
 1. Open the Cumulocity IoT platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
-2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID. 
- 
-To view the device in your Cumulocity IoT account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>". 
+2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID.
+
+To view the device in your Cumulocity IoT account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
 ### Interacting with Cumulocity IoT
 
@@ -138,7 +138,7 @@ After the Raspberry Pi has been successfully registered, you can view the device
 
 If you have reached this part of the tutorial successfully, you have the proof-of-concept that you can attach a device such as a Raspberry Pi to a Cumulocity IoT server and view its status information. Congratulations!
 
-The Raspberry Pi by itself delivers only static information, so if you want to view real-time measurements coming from the device, you generally need to attach hardware components that deliver this data, such as components provided by the third-party suppliers Tinkerforge and PiFace Digital. See the following sections for details. 
+The Raspberry Pi by itself delivers only static information, so if you want to view real-time measurements coming from the device, you generally need to attach hardware components that deliver this data, such as components provided by the third-party suppliers Tinkerforge and PiFace Digital. See the following sections for details.
 
 #### Tinkerforge bricks and bricklets
 

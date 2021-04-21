@@ -21,6 +21,6 @@ If your tenant is subscribed to the Apama Starter microservice (instead of other
 - Apama Analytics Builder is limited to at most 3 active models. Custom blocks written with the Apama Analytics Builder Block SDK cannot be used. 
 - Apama EPL Apps is not available in the application switcher.
 
-Contact [Software AG Support](/about-doc/contacting-support) to discuss adding more capabilities.
+Contact [product support](/about-doc/contacting-support) to discuss adding more capabilities.
 
 > **Info:** If your tenant is subscribed to the Apama Smart Rules-only microservice (also called Apama-ctrl-smartrules), Apama EPL Apps and Apama Analytics Builder are not available. 

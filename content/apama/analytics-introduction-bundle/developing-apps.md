@@ -13,11 +13,11 @@ See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#u
 
 ### <a name="apama-epl-apps"></a>Developing apps with Apama EPL Apps
 
-Apama EPL Apps provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps. 
+Apama EPL Apps provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
 Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop apps with Apama EPL Apps and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support). 
+> **Info**: To be able to develop apps with Apama EPL Apps and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact [product support](/about-doc/contacting-support).
 
 **Step 1 - Invoke Apama EPL Apps**
 
@@ -31,7 +31,7 @@ Each card that is shown for an app has an actions menu at the top which allows y
 
 From this page, you can:
 
-* Edit existing EPL apps. Either use the **Edit** command from the actions menu or simply click on the card that is shown for the app. 
+* Edit existing EPL apps. Either use the **Edit** command from the actions menu or simply click on the card that is shown for the app.
 
 * Create new EPL apps. See below.
 
@@ -45,13 +45,13 @@ From this page, you can:
 
 **Step 2 - Create an EPL app**
 
-Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app. 
+Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app.
 
 The EPL editor is shown next. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with Cumulocity IoT. You can adapt them as required for your app. Consult the documentation and samples for more details.
 
 ![EPL editor](/images/apama/apama-epl-apps-editor.png)
 
-To help you get started, several samples are available. To see them, click **Samples** which is shown to the right of the editor. Click on a sample to see a preview of its contents. You can select part of the sample code and copy it over into your own code using the standard key combinations Ctrl+C and Ctrl+V. You can also use the command buttons to copy the entire code to the clipboard and insert it at an appropriate position in your own code, or to replace all of your existing code with the sample code. 
+To help you get started, several samples are available. To see them, click **Samples** which is shown to the right of the editor. Click on a sample to see a preview of its contents. You can select part of the sample code and copy it over into your own code using the standard key combinations Ctrl+C and Ctrl+V. You can also use the command buttons to copy the entire code to the clipboard and insert it at an appropriate position in your own code, or to replace all of your existing code with the sample code.
 
 Using the buttons in the top menu bar, you can undo/redo your last changes in the current session and you can save your changes.
 
@@ -81,7 +81,7 @@ Software AG Designer provides a full development environment and is the tool of 
 
 If you have licensed Apama, install it using Software AG Installer.
 
-You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from http://www.apamacommunity.com/downloads/ and install it. 
+You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from http://www.apamacommunity.com/downloads/ and install it.
 
 Both versions, the licensed version and the freemuim version, include Software AG Designer.
 
@@ -112,7 +112,7 @@ The bundles above are the only ones that are permissible in an EPL app, so be ca
 
 **Step 4 - Create a monitor file**
 
-To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
+To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
 
 Before you import the newly created monitor file as an EPL app into Cumulocity IoT and activate it there, you might want to test if the monitor file works as expected from within Software AG Designer.
 
@@ -123,15 +123,15 @@ For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]
 When running the project locally, you will need to provide your Cumulocity IoT credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
 
 ```
-CUMULOCITY_USERNAME=user@example.com 
-CUMULOCITY_SERVER_URL=http://exampleTenant.cumulocity.com 
-CUMULOCITY_PASSWORD=examplePassword 
+CUMULOCITY_USERNAME=user@example.com
+CUMULOCITY_SERVER_URL=http://exampleTenant.cumulocity.com
+CUMULOCITY_PASSWORD=examplePassword
 CUMULOCITY_APPKEY=apamaAppKey
 ```
 
 >**Info:** You need to [create an application](/users-guide/administration#managing-applications) in Cumulocity IoT to get a value for `CUMULOCITY_APPKEY`.
 
-Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file: 
+Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
 
 ```
 CUMULOCITY_TENANT=my_custom_tenant

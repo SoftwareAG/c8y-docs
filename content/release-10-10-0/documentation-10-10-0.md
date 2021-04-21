@@ -67,7 +67,7 @@ Issue</th>
 Protocol integration guide</td>
 <td>
 OPC UA</td>
-<td > The status check interval is now described correctly, see <a href="https://cumulocity.com/guides//protocol-integration/opcua/#connecting-gateway" class="no-ajaxy">OPC UA > Connecting the gateway to the server</a>.</td>
+<td > The OPC UA status check interval defines how frequently the OPC UA gateway checks for the OPC UA server status. The documentation now describes this status check interval correctly, see <a href="https://cumulocity.com/guides//protocol-integration/opcua/#connecting-gateway" class="no-ajaxy">OPC UA > Connecting the gateway to the server</a>.</td>
 <td>
 MTM-37323</td>
 </tr>

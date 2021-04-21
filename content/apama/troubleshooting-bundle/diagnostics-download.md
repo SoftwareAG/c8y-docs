@@ -4,9 +4,9 @@ title: Downloading diagnostics and logs
 layout: redirect
 ---
 
-If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available from the bottom of the Streaming Analytics application: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the home screen and also on the pages that appear when you go to the Analytics Builder and EPL Apps pages (that is, in the EPL app manager and in the model manager). 
+If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available from the bottom of the Streaming Analytics application: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the home screen and also on the pages that appear when you go to the Analytics Builder and EPL Apps pages (that is, in the EPL app manager and in the model manager).
 
-It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [Software AG Support](/about-doc/contacting-support) if you are filing a support ticket. 
+It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/about-doc/contacting-support) if you are filing a support ticket.
 You can see a version number next to the links.
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
@@ -29,12 +29,12 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
 
-- Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file. 
-- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues. 
+- Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file.
+- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues.
 
 What a user can see or do depends on the permissions:
 
-- A user with only READ permission for "CEP management" has read-only access to EPL apps and analytic models. 
+- A user with only READ permission for "CEP management" has read-only access to EPL apps and analytic models.
 - Without ADMIN permission for "CEP management", the user is not able to activate or edit EPL apps or analytic models.
 - If a user has both READ and ADMIN permissions for "CEP management", the user has read-write access and can access the diagnostics information.
 - If a user has only the ADMIN permission for "CEP management" and no READ permission, the user is able to load, edit and deploy EPL apps and analytic models, but is not able to see or access the diagnostics information.

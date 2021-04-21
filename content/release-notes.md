@@ -1,8 +1,8 @@
 ---
+weight: 10
 title: Release notes
 bundle: release-notes
-icon: "c8y-icon c8y-icon-notification"
+icon: "fa fa-book"
 type: root
 layout: root
-weight: 10
 ---

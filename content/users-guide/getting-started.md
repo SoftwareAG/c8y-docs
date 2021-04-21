@@ -2,9 +2,6 @@
 title: Getting Started
 weight: 10
 layout: bundle
-outputs:
-- html
-- json
 aliases:
   - /users-guide/overview
 ---

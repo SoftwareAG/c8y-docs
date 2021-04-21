@@ -1,10 +1,10 @@
 ---
 weight: 55
 title: Widgets collection
+layout: redirect
 aliases:
   - /users-guide/cockpit/#widgets
   - /users-guide/cockpit/#widget
-layout: redirect
 ---
 
 The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.

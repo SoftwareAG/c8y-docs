@@ -36,7 +36,7 @@
     &.show{
       z-index: 1010;
     }
-    
+
   }
   .dropdown-toggle{
     border: 2px solid $blue-primary;
@@ -117,7 +117,7 @@
   a.collapse-btn{
     position: absolute;
     right: 0;
-    padding: 12px; 
+    padding: 12px;
     font-size: 6px;
     box-shadow: none;
     display: block;
@@ -138,15 +138,15 @@
       padding: 6px 40px 6px 20px;
       font-size: 14px;
       display: block;
-    } 
-  } 
-  
+    }
+  }
+
   .list-group-item{
     display: block;
     padding: 6px 20px 6px 28px;
     box-shadow: none;
     font-size: 12px;
-    
+
   }
 
   .list-group.nav{
@@ -163,7 +163,7 @@
     color: $blue-primary;
     font-weight: bold;
   }
- 
+
 }
 
 .cover{
@@ -175,13 +175,11 @@
   z-index: 39;
   pointer-events: none;
   transition: background .30s $ease;
-  
+
   .open &{
     background-color: rgba(black, .8);
     pointer-events: all;
   }
-<<<<<<< HEAD
-=======
 }
 .navsections-dropdown-menu{
   max-height: calc(100vh - 230px);
@@ -199,5 +197,4 @@
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, .2);
   }
->>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
 }

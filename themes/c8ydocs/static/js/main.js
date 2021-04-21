@@ -2,41 +2,9 @@ var main = (function ($) {
   function initializer() {
 
     //Load releases menu
-//    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
-//      .done(function (json) {
+    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
+      .done(function (json) {
         //json = JSON.parse(json.responseText);
-        json = {
-    "releases": [
-        {
-            "label": "10.9.0",
-            "url": "https://cumulocity.com/guides/"
-        },
-        {
-            "label": "10.7.0",
-            "url": "https://cumulocity.com/guides/10.7.0"
-        },
-        {
-            "label": "10.6.6",
-            "url": "https://cumulocity.com/guides/10.6.6"
-        },
-        {
-            "label": "10.6.0",
-            "url": "https://cumulocity.com/guides/10.6.0"
-        },
-        {
-            "label": "10.5.7",
-            "url": "https://cumulocity.com/guides/10.5.7"
-        },
-        {
-            "label": "10.5.0",
-            "url": "https://cumulocity.com/guides/10.5.0"
-        },
-        {
-            "label": "Release notes",
-            "url": "https://cumulocity.com/guides/releasenotes"
-        }
-    ]
-};
         var urls = json.releases;
         var vmenu = $('.dropdown.version');
         var loc = window.location;
@@ -64,7 +32,14 @@ var main = (function ($) {
 
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
-          var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
+          var href_url = el.url;
+          if (el.url.endsWith('releasenotes')) {
+            href_url = el.url;
+          } else if (el.url.endsWith('/')) {
+            href_url = el.url + suffix;
+          } else {
+            href_url = el.url + '/' + suffix;
+          }
           if (loc.href.includes(el.label)) {
             active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
@@ -111,11 +86,11 @@ var main = (function ($) {
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
-//      })
-//      .fail(function (resp) {
-//        console.error(resp.statusText);
-//        $('#dropdownVersionButton').hide();
-//      });
+      })
+      .fail(function (resp) {
+        console.error(resp.statusText);
+        $('#dropdownVersionButton').hide();
+      });
 
 
     // apply Highlight js

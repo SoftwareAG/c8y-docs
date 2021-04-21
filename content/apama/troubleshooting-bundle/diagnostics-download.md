@@ -7,7 +7,8 @@ layout: redirect
 If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available in both the Apama EPL Apps and Apama Analytics Builder web applications: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the web application's starting page (that is, in the EPL app manager and in the model manager).
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/about-doc/contacting-support) if you are filing a support ticket.
-You can see a version number next to the links.
+
+You can see a version number in the EPL app manager and in the model manager. It is shown next to the above links.
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 

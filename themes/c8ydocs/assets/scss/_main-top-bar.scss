@@ -14,7 +14,7 @@
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.6rem 0 0 6rem;
- 
+
   &.show{
     z-index: 2000;
     .dropdown-toggle.version{
@@ -28,7 +28,7 @@
     margin-left: 4px;
     padding: 0.9rem 0 0 2.5rem;
   }
-  
+
   .dropdown-toggle.version{
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@
     z-index: 1010;
     font-weight: bold;
     opacity: .5;
-    
+
   }
 }
 
@@ -64,18 +64,6 @@
 .main-top-bar{
   position: fixed;
   z-index: 10;
-<<<<<<< HEAD
-  left:0;
-  transition: left .35s $ease;
-  @media(min-width: $grid-breakpoint){
-    left: $main-nav-width;
-  }
-  right:0;
-  top:0;
-  padding-top: 1rem;
-  padding-left: 10rem;
-  >.d-flex{
-=======
   left: 0;
   transition: left 0.35s $ease;
   right: 0;
@@ -87,7 +75,6 @@
     padding-left: 10rem;
   }
   > .d-flex {
->>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
     align-items: center;
     max-width: 1078px;
   }
@@ -117,20 +104,10 @@
     }
   }
 
-<<<<<<< HEAD
-  .nav-right{
-    width: 170px;
-    @media(min-width: $screen-sm-min){
-      width: 260px;
-      margin-left: auto!important;
-    }
-    @media(min-width: $grid-breakpoint){
-      margin-right: 150px;
-=======
   .nav-right {
     width: 100%;
     margin-top: 2.5rem;
-    
+
     @media (min-width: $screen-sm-min) {
       width: 260px;
       margin-top: 0;
@@ -139,7 +116,6 @@
     }
     @media (min-width: $screen-lg-min) {
       margin-right: 56px;
->>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
     }
   }
 

@@ -64,6 +64,7 @@
 .main-top-bar{
   position: fixed;
   z-index: 10;
+<<<<<<< HEAD
   left:0;
   transition: left .35s $ease;
   @media(min-width: $grid-breakpoint){
@@ -74,8 +75,21 @@
   padding-top: 1rem;
   padding-left: 10rem;
   >.d-flex{
+=======
+  left: 0;
+  transition: left 0.35s $ease;
+  right: 0;
+  top: 0;
+  padding-top: 1rem;
+  padding-left: 5.3rem;
+  @media (min-width: $grid-breakpoint) {
+    left: $main-nav-width;
+    padding-left: 10rem;
+  }
+  > .d-flex {
+>>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
     align-items: center;
-    max-width: 1168px;
+    max-width: 1078px;
   }
 
   .nav{
@@ -103,6 +117,7 @@
     }
   }
 
+<<<<<<< HEAD
   .nav-right{
     width: 170px;
     @media(min-width: $screen-sm-min){
@@ -111,6 +126,20 @@
     }
     @media(min-width: $grid-breakpoint){
       margin-right: 150px;
+=======
+  .nav-right {
+    width: 100%;
+    margin-top: 2.5rem;
+    
+    @media (min-width: $screen-sm-min) {
+      width: 260px;
+      margin-top: 0;
+      margin-left: auto !important;
+      margin-right: 0;
+    }
+    @media (min-width: $screen-lg-min) {
+      margin-right: 56px;
+>>>>>>> ffcaa5ff4... Merged in combining-style-changes (pull request #705)
     }
   }
 

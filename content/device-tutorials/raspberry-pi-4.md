@@ -16,7 +16,7 @@ The tutorial describes how to install a Cumulocity IoT agent with all relevant d
 * Use basic device management functionality.
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
-* Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
+* Use the [PiFace Digital 2](https://www.element14.com/community/docs/DOC-69001) adapter board from the cloud.
 * Use [TinkerForge](/device-tutorials/tinkerforge) sensors and controls from the cloud.
 
 > **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the Cumulocity IoT C++ SDK.

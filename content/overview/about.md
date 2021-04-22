@@ -21,4 +21,8 @@ The following components are included (if relevant for the particular release):
 * Cumulocity IoT Machine Learning
 * Cumulocity IoT DataHub
 
+To switch versions, use the dropdown on the top left:
+
+![Versions](/images/release-notes/releasenotes-version-dropdown.png)
+
 >**Info:** The release notes reach back to release 10.4.0. For release notes on older releases, please [contact support](https://cumulocity.com/guides/about-doc/contacting-support/).

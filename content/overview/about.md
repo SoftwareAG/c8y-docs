@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: About the release notes
+title: Introduction
 layout: bundle
 aliases:
   - /release-notes

@@ -22,6 +22,7 @@ DataHub introduces a new wizard for creating offloading configurations. Offloadi
 |If the collection to be offloaded has more than 800 JSON attributes, its data cannot be offloaded.|
 |If an attribute of a collection has varying types associated, the result table will contain a mixed type which may render query writing difficult or lead to problems with subsequent consumer applications.|
 |DataHub does not work with Kubernetes version prior to 1.9.|
+|Dremio has announced in its [Dremio 4.0 release notes](https://docs.dremio.com/release-notes/40-release-notes.html#deprecations) to deprecate some functionality on mixed types. In Dremio 13.2, GROUP BY or DISTINCT over mixed type expressions are no longer supported. It is necessary to cast these expressions to a simple type before using them in a GROUP BY or DISTINCT clause. Also mixed type expressions cannot be used in the SELECT clause, when retrieving data over ODBC or JDBC.|
 
 ### Known issues
 

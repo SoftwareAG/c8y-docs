@@ -37,7 +37,7 @@ var main = (function ($) {
 
           var href_url = el.url;
           if (el.url.endsWith('releasenotes')) {
-            href_url = el.url + '/overview/about/';
+            href_url = el.url + '/about/';
           } else if (el.url.endsWith('/')) {
             href_url = el.url + suffix;
           } else {
@@ -46,7 +46,7 @@ var main = (function ($) {
 
           if (v == "Release notes") {
             if (el.url.endsWith("releasenotes")) {
-              href = el.url + '/overview/about/';
+              href = el.url + '/about/';
             } else {
               href_url = el.url.endsWith('/') ? el.url + 'about-doc/intro-documentation' : el.url + "/about-doc/intro-documentation/";
             }

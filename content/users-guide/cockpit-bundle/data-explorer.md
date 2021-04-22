@@ -100,6 +100,10 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
+JsonPath expression added from data point will be stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces will be supported):
+
+![Measurement added form data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
+
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)

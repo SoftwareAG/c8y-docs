@@ -45,7 +45,7 @@ relativeURLs = true
   guidesRedirect = "https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html"
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "/favicon.ico"
+  favicon = "https://cumulocity.com/favicon.ico"
 
 # Customize
   [params.footer]

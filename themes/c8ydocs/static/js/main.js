@@ -33,7 +33,14 @@ var main = (function ($) {
 
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
-          var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
+          var href_url = el.url;
+          if (el.url.endsWith('releasenotes')) {
+            href_url = el.url + '/about/';
+          } else if (el.url.endsWith('/')) {
+            href_url = el.url + suffix;
+          } else {
+            href_url = el.url + '/' + suffix;
+          }
           if (loc.href.includes(el.label)) {
             active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);

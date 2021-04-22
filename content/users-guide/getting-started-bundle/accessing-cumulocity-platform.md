@@ -1,12 +1,12 @@
 ---
 weight: 20
-title: Accessing and logging into the var-product-name platform
+title: Accessing and logging into the Cumulocity IoT platform
 layout: redirect
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
-You access the {{< product-name >}} platform via a web browser.
+You access the Cumulocity IoT platform via a web browser.
 
 ### Supported browsers
 

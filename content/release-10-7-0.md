@@ -6,5 +6,3 @@ type: root
 layout: root
 weight: 110
 ---
-
-These release notes include all relevant changes (improvements, migration notes, documentation changes, fixes) that have been implemented in Cumulocity IoT since the previous GA release 10.6.6.

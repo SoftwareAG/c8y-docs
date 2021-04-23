@@ -18,13 +18,13 @@ Select a GA release version from the dropdown on the top left:
 
 >**Info:** The release notes reach back to GA release 10.4.0. For release notes on older GA releases, please [contact support](https://cumulocity.com/guides/about-doc/contacting-support/).
 
-### Product components
+### <a name="component"></a> Product components
 
-Then select the product component you are interested in from the index.
+Select the product component you are interested in from the index.
 
 ![Component](/images/release-notes/releasenotes-index.png)
 
-The following components are included (if relevant for the particular release):
+The following product components are generally included (if relevant for this particular release):
 
 * Cumulocity IoT Core consisting of
 	* Cumulocity IoT platform services
@@ -36,4 +36,4 @@ The following components are included (if relevant for the particular release):
 * Cumulocity IoT DataHub
 * Documentation
 
->**Info:** In most components, you will find separate entries for each published release. As you can see in the image above, for the Device Management component in 10.7.0, you will find release notes for 10.7.0.24 (the initially published 10.7.0 release), and for the maintenance releases 10.7.0.31, 10.7.0.32, 10.7.0.36. 
+>**Info:** In most components, you will find separate entries for each published release. As you can see in the image above, for the Device Management component in 10.7.0 for example, you will find release notes for 10.7.0.24 (the initially published 10.7.0 release), and for the maintenance releases 10.7.0.31, 10.7.0.32, 10.7.0.36.

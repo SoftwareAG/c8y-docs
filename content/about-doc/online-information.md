@@ -11,9 +11,9 @@ The **Installation and Operations guides** for the Cumulocity IoT platform are n
 ![Documentation on Empower](/images/about/about-empower.png)
 
 
-### Software AG TECHcommunity
+### Software AG TECHCommunity
 
-You can find documentation and other technical information on the [Software AG TECHcommunity](http://techcommunity.softwareag.com/home/-/product/name/cumulocity) website.
+You can find documentation and other technical information on the [Software AG TECHCommunity](https://techcommunity.softwareag.com/en_en/cumulocity-iot.html) website.
 
 On this community, you can:
 

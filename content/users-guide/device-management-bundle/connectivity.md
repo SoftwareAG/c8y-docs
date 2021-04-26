@@ -71,7 +71,7 @@ Process the following step to configure the connectivity in Cumulocity IoT:
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Click **Save** to save your settings.
 
-The Kite provided configuration differs from other providers as it requires to upload valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kitBaseUrl.
+Configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
 

@@ -899,7 +899,9 @@ Full payload data structure explained:
 <td>alarmCreation</td>
 <td><em>AlarmCreation</em></td>
 <td>no</td>
-<td>Mappings for alarm.</td>
+<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+The alarm de-duplication prevents the creation of multiple alarms with same source and type, thereby only incrementing the count of existing alarm. The alarms will be cleared as soon as the value 
+is changed to "false", or a negative number.</td>
 </tr>
 <tr>
 <td>customAction</td>

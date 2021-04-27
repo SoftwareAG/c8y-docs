@@ -25,7 +25,7 @@
       <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
         <span class="fa fa-link"></span>
       </button>
-      {{replace .Title "var-product-name" .Site.Params.productname}} </h2>
+      {{.Title}}</h2>
     {{ partial "headline-hash.html" .Content }}
   </article>
   {{ end }}

@@ -116,6 +116,8 @@ After the data is imported, you will get feedback on the number of devices that 
 
 For your convenience we provide CSV template files for both bulk registration types (simple/full) which you can download to view or copy the structure.
 
+>**Info:** If the device with the given identifier already exists, it will be updated with the data from the CSV file.
+
 ##### To import CSV data in Microsoft Excel
 
 1. In Microsoft Excel, switch to the **Data** tab.

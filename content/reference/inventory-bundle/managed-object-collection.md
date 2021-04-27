@@ -153,12 +153,17 @@ The following sections explain how an application will handle a query in the par
 
 ##### Supported query functions:
 
-* `has`: `has(c8y_IsDevice)` - match objects with custom property `c8y_IsDevice`
-
-	* 	Only supports custom fragments.   
-	*   Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
-* `bygroupid(12)` - match objects from group with ID `12` (this function accepts one or multiple arguments e.g. `bygroupid(12,23)`)
->**Important:** Although using multiple `bygroupid` functions joined with `or` operator is feasible (e.g. `bygroupid(12) or bygroupid(23)`), it's not recommended due to performance issue. You should use rather `bygroupid(12,23)`.
+* `has()`
+  * Matches objects with the property that is passed as an argument
+  * Accepts one or multiple arguments
+  * Only supports custom fragments   
+  * Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
+  * `has(field1,field2)` - matches objects with property `field1` or `field2`
+* `bygroupid()`
+  * Matches objects from the group with the ID that is passed as an argument
+  * Accepts one or multiple arguments
+  * `bygroupid(12,23)` matches objects from groups with ID = `12` or ID = `23`
+>**Important:** Although using multiple `bygroupid()`/`has()` functions joined with `or` operator is feasible (e.g. `bygroupid(12) or bygroupid(23)`/`has(field1) or has(field2)`), it's not recommended due to performance issue. You should rather use `bygroupid(12,23)`/`has(field1,field2)`.
 
 ##### Supported query values:
 

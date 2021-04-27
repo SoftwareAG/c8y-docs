@@ -71,7 +71,7 @@ Process the following step to configure the connectivity in Cumulocity IoT:
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Click **Save** to save your settings.
 
-Configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
+The configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
 
@@ -99,7 +99,7 @@ If the ICCID is not shown automatically check the following:
 
 > Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity IoT checks if the particular SIM card is managed by the SIM provider.
 
-The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and  MSISDN (Mobile Station International Subscriber Directory Number).
+The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
 
 ### <a name="jasperinfo"></a>Connectivity tab

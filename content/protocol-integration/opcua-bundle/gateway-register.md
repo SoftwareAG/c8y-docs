@@ -238,6 +238,19 @@ gateway:
 
   # The settings below describe platform-specific connection parameters.
   platform:
+    inventory:
+      update:
+        # Default processing mode for inventory managed objects update to the Cumulocity IoT platform.
+        defaultProcessingMode: QUIESCENT
+        # Processing mode for inventory update of the gateway device managed objects to the Cumulocity IoT platform.
+        gateway:
+          processingMode: QUIESCENT
+        # Processing mode for inventory update of the OPC UA server device managed objects to the Cumulocity IoT platform.
+        server:
+          processingMode: QUIESCENT
+        # Processing mode for inventory update of value-map managed objects to the Cumulocity IoT platform.
+        valuemap:
+          processingMode: QUIESCENT
     # Connection pool configuration
     connectionPool:
       # Overall maximum size of the connection pool

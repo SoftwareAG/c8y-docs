@@ -66,19 +66,19 @@ In the **Protocol and encryption** field, select a protocol/encryption type from
 
 Provide the host, port, username, password and sender address for the email server.
 
-### Data export
+#### Data export
 
 In the**Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
 ![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 
-### Storage limit
+#### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
 ![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
 
-### Suspending tenants
+#### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
 
@@ -88,8 +88,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** at the bottom to save your settings.
 
-**Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
-
+> **Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 
 ### <a name="branding"></a>Branding
 

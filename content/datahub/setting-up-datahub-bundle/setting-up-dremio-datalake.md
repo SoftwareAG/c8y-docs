@@ -8,8 +8,6 @@ The setup of DataHub requires you to choose a Dremio account name, and provide c
 
 >**Info:** You need administration permissions to define the settings. See the section on [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
-The settings whose meaning may not be obvious are equipped with a help icon. Click on the icon to get more information.
-
 ### Defining new settings
 
 #### Dremio Account
@@ -39,6 +37,9 @@ The following types of data lakes are currently supported:
 |Root path|The root path in the data lake under which the offloaded data will be stored; default root path is /; setting a subfolder allows you to hide other data in the container from DataHub|
 |Azure Storage shared access key|The access key used for authentication|
 
+
+>**Info:** Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
+
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
 
 |Settings|Description|
@@ -47,6 +48,8 @@ The following types of data lakes are currently supported:
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from DataHub|
+
+>**Info:** An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
 
@@ -72,12 +75,12 @@ For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also defi
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
-* A data lake source in Dremio is created using the provided data lake settings.
+* A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data. 
 * A source in Dremio is created which connects to the Operational Store of Cumulocity IoT.
-* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
+* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant ID concatenated with 'Space', e.g. t12345Space. 
 
 ### Editing settings
 Editing the settings is not supported. You have to delete the existing settings and define new settings.
 
 ### Deleting settings
-Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. The data lake and its contents are *not* deleted.
+Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. The data lake and its contents are *not* deleted. To delete the data lake and its contents you have to use the tooling of your data lake provider.

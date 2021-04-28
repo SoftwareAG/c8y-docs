@@ -127,7 +127,7 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
-<tr">
+<tr>
 <td style="text-align: left">bootstrapShortServerId</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">The short server ID to be used for the bootstrap server. Default is "0".</td>
@@ -174,6 +174,13 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
 <td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
+</tr>
+<tr>
+<td style="text-align: left">binaryDeliveryEncoding</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be either "OPAQUE" or "TLV" or "JSON" or "TEXT". In case of empty or invalid entries,
+the default format is considered as "OPAQUE".
+<td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>
@@ -266,10 +273,6 @@ Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 </tr>
-<tr>
-<td style="text-align: left">firmwareDeliveryEncoding</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the encoding format used while pushing the firmware binary during the LWM2M firmware update. The encoding format can be either "OPAQUE" or "TLV" or "JSON" or "TEXT". The default value is "OPAQUE".</tr>
 </tbody>
 </table>
 

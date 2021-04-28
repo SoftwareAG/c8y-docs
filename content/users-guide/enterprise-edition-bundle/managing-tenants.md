@@ -195,12 +195,6 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 ![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
-#### Limiting subtenant device number
-
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
-
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
-
 #### Limiting subtenant request rate
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
@@ -216,6 +210,18 @@ It is also possible to customize the buffer size for the CEP queue and the data 
  - data-broker.queue.limit
 
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
+
+#### Limiting subtenant device number
+
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
+
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
+
+#### Product experience tracking
+
+Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
+
+Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
 
 
 ### <a name="tenant-policies"></a> Tenant policies

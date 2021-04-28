@@ -56,6 +56,10 @@ Specify the following parameters (all mandatory):
 - Status - One of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
+>**Info:** If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value 
+is changed to "false", or a number that is less than or equals to 0.
+
 **Send Event**
 
 Turn on **Send event** to send an event each time you receive a resource value.

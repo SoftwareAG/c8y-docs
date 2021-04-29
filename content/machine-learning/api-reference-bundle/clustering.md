@@ -31,9 +31,9 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 ```
 {
     "data": [
-        <series1>:[<value1>, <value2>, ...., <valueN>], 
-        <series2>:[<value1>, <value2>, ...., <valueN>], 
-        <series3>:[<value1>, <value2>, ...., <valueN>], 
+        <series1>:[<value1>, <value2>, ...., <valueN>],
+        <series2>:[<value1>, <value2>, ...., <valueN>],
+        <series3>:[<value1>, <value2>, ...., <valueN>],
         <series4>:[<value1>, <value2>, ...., <valueN>]
     ]
 }
@@ -50,8 +50,8 @@ curl --request POST “{{url}}/service/zementis/train/clustering?autoDeploy=fals
 {
      "data": [
         "MAC000002": [ 1.945, 1.112, 0.6609999999999999, 0.23600000000000002, 0.20800000000000002, ... ],
-        "MAC000003": [ 6.760999900000001, 6.884000099999999, 7.241000200000001, 6.3209999, 5.157000099999999, ... ], 
-        "MAC000004": [ 0.0, 0.175, 0.0, 0.0, 0.191, ... ], 
+        "MAC000003": [ 6.760999900000001, 6.884000099999999, 7.241000200000001, 6.3209999, 5.157000099999999, ... ],
+        "MAC000004": [ 0.0, 0.175, 0.0, 0.0, 0.191, ... ],
         ...
     ]
 }
@@ -60,7 +60,7 @@ curl --request POST “{{url}}/service/zementis/train/clustering?autoDeploy=fals
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 {
     "modelName": "Clustering_19-10-2020_11-06-01_umGoj",
@@ -80,12 +80,12 @@ curl --request POST “{{url}}/service/zementis/train/clustering” --header “
 {
     "data": [
         "MAC000002": [ 1.945, 1.112, 0.6609999999999999, 0.23600000000000002, 0.20800000000000002, ... ],
-        "MAC000003": [ 6.760999900000001, 6.884000099999999, 7.241000200000001, 6.3209999, 5.157000099999999, ... ], 
-        "MAC000004":   0.0, 0.175, 0.0, 0.0, 0.191, ... ], 
+        "MAC000003": [ 6.760999900000001, 6.884000099999999, 7.241000200000001, 6.3209999, 5.157000099999999, ... ],
+        "MAC000004":   0.0, 0.175, 0.0, 0.0, 0.191, ... ],
         ...
 }
 ```
-  
+
 **Example Response**
 
 ```
@@ -105,7 +105,7 @@ curl --request POST “{{url}}/service/zementis/train/clustering” --header “
 
 curl --request POST “{{url}}/service/zementis/train/clustering” --header “Content-Type: application/json”
 ```
-     
+
 **Example Response**
 
 ```
@@ -140,7 +140,7 @@ If the status is FAILURE, the `errorMessage` attribute in the response holds the
 **Example Request**
 
 ```
-200 - OK 
+200 - OK
 
 curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status” --header “Authorization: {{auth}}”
 ```
@@ -160,7 +160,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status” 
+curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status”
 ```
 
 **Example Response**
@@ -216,7 +216,7 @@ Get the PMML file of the generated clustering model.
 **Example Request**
 
 ```
-200 - OK 
+200 - OK
 
 curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml” --header “Authorization: {{auth}}”
 ```
@@ -251,7 +251,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml” 
+curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml”
 ```
 
 **Example Response**
@@ -307,7 +307,7 @@ Get the information of clusters identified by the clustering model.
 **Example Request**
 
 ```
-200 - OK 
+200 - OK
 
 curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj” --header “Authorization: {{auth}}”
 ```
@@ -345,7 +345,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj” 
+curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj”
 ```
 
 **Example Response**

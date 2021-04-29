@@ -125,6 +125,6 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
-[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide.
+[Bulk device credentials](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity OpenAPI Specification.
 
 >**Info:** Wenn Sie mit dem Enterprise Tenant arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

@@ -35,7 +35,7 @@ The user for the device will be created during the first MQTT call, if a device 
 
 The user for the device can also be created via the standard bulk registration in Device Management.
 
-The CSV file used in bulk registration should meet the requirements described in [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the *Reference guide*. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
+The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the *Cumulocity IoT OpenAPI Specificaion*. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
 
 **Single registration**
 
@@ -56,7 +56,7 @@ A device which is authenticated by certificates and connected to the Cumulocity 
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using [tenant options](/reference/tenants/#option): `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes.
+A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 

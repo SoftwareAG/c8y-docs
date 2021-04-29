@@ -15,7 +15,7 @@ Operations on MLW Automated ML.
 ### GET - Start the AutoML process
 
 ```
-{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl 
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
 ```
 
 Start the AutoML process by passing the data to the engine and get the initial information to start the AutoML process.
@@ -170,7 +170,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### POST - Start the training process of the AutoML 
+### POST - Start the training process of the AutoML
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
@@ -227,7 +227,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
    "data_transformation_steps": ["None","One Hot Encoding",    "Label Encoding",
     "Normalize",    "Scaling Standard","Scaling Min Max",    "Scaling Max Absolute"],
    "algorithmTypes": {"Regression": ["ExtraTreeRegressor","GradientBoostingRegressor","DecisionTreeRegressor",
-                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor", 
+                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor",
                                      "LinearRegression","LGBMRegressor"],
     "Classification": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
     "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"],
@@ -360,7 +360,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
    "data_transformation_steps": ["None","One Hot Encoding",    "Label Encoding",
     "Normalize",    "Scaling Standard","Scaling Min Max",    "Scaling Max Absolute"],
    "algorithmTypes": {"Regression": ["ExtraTreeRegressor","GradientBoostingRegressor","DecisionTreeRegressor",
-                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor", 
+                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor",
                                      "LinearRegression","LGBMRegressor"],
     "Classification": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
     "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"],

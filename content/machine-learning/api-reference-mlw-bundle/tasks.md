@@ -88,7 +88,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks' \
             "startTimeM": "",
             "sortTime": 1601287609
         },
-        
+
     ]
 }
 ```
@@ -98,7 +98,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks' \
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/tasks' 
+curl --location --request GET '{{url}}/service/mlw/tasks'
 ```
 
 **Example Response**
@@ -233,7 +233,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 }
 ```
 
-### GET - Get the details of the individual task within a parent task 
+### GET - Get the details of the individual task within a parent task
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
@@ -302,7 +302,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 }
 ```
 
-### DELETE - Delete an individual task within the parent task 
+### DELETE - Delete an individual task within the parent task
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
@@ -405,7 +405,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
-### DELETE - Delete a parent task 
+### DELETE - Delete a parent task
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}
@@ -598,7 +598,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
             "status": "NOT SCHEDULED",
             "recurrence": "ONE_TIME"
         },
-        
+
     }
 }
 ```
@@ -608,7 +608,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' 
+curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks'
 ```
 
 **Example Response**

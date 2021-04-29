@@ -42,3 +42,9 @@ If you have any questions, you can find a local or toll-free number for your cou
 ### Cumulocity IoT status page
 
 For Cumulocity IoT Cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
+
+### Cumulocity IoT product training
+
+To learn what´s new in Cumulocity IoT or a particular area we offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which cover the new and enhanced functionality available in a specific release:
+
+![Product training](/images/about/about-product-training.png)

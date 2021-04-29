@@ -14,7 +14,7 @@ Each global smart rule type provides different parameters to configure.
 
 The following section describes each available type and its configuration properties.
 
-### Overview
+### Overview smart rules
 
 <table>
 <thead>
@@ -38,7 +38,7 @@ The following section describes each available type and its configuration proper
 </tr>
 <tr>
 <td align="left"><a href="#alarm-escalate">On alarm escalate it</a></td>
-<td align="left">When an alarm is created, sends e-mail or SMS.</td>
+<td align="left">When an alarm is created, sends email or SMS.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarm-severity">On alarm duration increase severity</a></td>
@@ -141,7 +141,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
-### <a name="alarm-email"></a> On alarm send e-mail
+### <a name="alarm-email"></a> On alarm send email
 
 **Functionality**
 
@@ -181,8 +181,8 @@ The rule uses the following parameters:
 </tr>
 <tr>
 <td align="left">3</td>
-<td align="left">Send e-mail</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+<td align="left">Send email</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -207,7 +207,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-When an alarm is created, sends e-mail or SMS.
+When an alarm is created, sends email or SMS.
 
 **Parameters**
 
@@ -242,7 +242,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Escalate as follows</td>
-<td align="left">Escalation steps processed in a chain. <br> Click <strong>Add step</strong> to define at least one step: <br> <strong>Type</strong>: Type of action executed in the step. Possible values are: <br> - Email (see “On alarm send e-mail” rule for parameter descriptions). <br> - SMS (see “On alarm send SMS” rule for parameter descriptions). <br> <strong>Condition</strong>: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.</td>
+<td align="left">Escalation steps processed in a chain. <br> Click <strong>Add step</strong> to define at least one step: <br> <strong>Type</strong>: Type of action executed in the step. Possible values are: <br> - Email (see “On alarm send email” rule for parameter descriptions). <br> - SMS (see “On alarm send SMS” rule for parameter descriptions). <br> <strong>Condition</strong>: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -391,7 +391,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-### <a name="geofence-email"></a> On geofence send e-mail
+### <a name="geofence-email"></a> On geofence send email
 
 **Functionality**
 
@@ -403,7 +403,7 @@ If a geofence border is crossed, an email is sent.
 
 The rule uses the following parameters:
 
-![On geofence send e-mail](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send email](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -431,8 +431,8 @@ The rule uses the following parameters:
 </tr>
 <tr>
 <td align="left">3</td>
-<td align="left">Send e-mail</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+<td align="left">Send email</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
 </tr>
 <tr>
 <td align="left">4</td>

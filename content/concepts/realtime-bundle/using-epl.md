@@ -26,7 +26,7 @@ As an example, the following statement listens for new temperature sensor readin
 		}
 	}
 
-Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Sensor library](/reference/sensor-library)).
+Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Sensor library](https://cumulocity.com/api/#section/Sensor-library)).
 
 Listeners such as the above should be placed in a monitor in the `onload` statement, and the file must contain `using` statements for the types used by the listener - for most of the Cumulocity IoT events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
 
@@ -94,7 +94,7 @@ Remote control with EPL is done by sending an operation event. Remote operations
 		}
 	}
 
-		
+
 * `m.source` is a placeholder for the ID of the heating that should be triggered.
 
 * The *params* field (the last field) defines the nested content of the operation. In this example we create a `c8y_Relay` operation and set the `relayState` to CLOSED. Note that the top-level fields must be `dictionary<string, any>`, thus the use of the `<any>` cast operation.

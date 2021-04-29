@@ -6,7 +6,7 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
 
-> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](/reference/events/) in the *Reference Guide*. 
+> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](https://www.cumulocity.com/api/#tag/Events) in the *Reference Guide*. 
 
 ### Predefined event types
 
@@ -20,9 +20,9 @@ Sending an event is done by constructing the event, either with `new <type>` fol
 
 ### Listening to events
 
-You can trigger your EPL by listening to events on channels. You can subscribe to channels with the `monitor.subscribe("string name")` method. This can be done in the startup of your monitor, or if you only need to receive events some of the time, called as needed, followed by `monitor.unsubscribe("string name")`. 
+You can trigger your EPL by listening to events on channels. You can subscribe to channels with the `monitor.subscribe("string name")` method. This can be done in the startup of your monitor, or if you only need to receive events some of the time, called as needed, followed by `monitor.unsubscribe("string name")`.
 
-Listen for events using the `on` statement, followed by the event type that you are listening to, open and close parentheses, and `as <identifier>` to name a variable that will hold the event. 
+Listen for events using the `on` statement, followed by the event type that you are listening to, open and close parentheses, and `as <identifier>` to name a variable that will hold the event.
 
 By default, a listener will fire once; to make it repeat for all events, use the `all` keyword before the event type.
 
@@ -51,7 +51,7 @@ send msmnt to Measurement.SEND_CHANNEL;
 
 ### Measurement fragments
 
-`Measurement` and `MeasurementFragment` events are always published. 
+`Measurement` and `MeasurementFragment` events are always published.
 
 You can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
 
@@ -62,7 +62,7 @@ on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_spe
 
 See also [Measurement fragments](/apama/advanced/#measurement-fragments).
 
-### <a name="notifications"></a>Distinguishing between create and update notifications 
+### <a name="notifications"></a>Distinguishing between create and update notifications
 
 When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from Cumulocity IoT, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
 

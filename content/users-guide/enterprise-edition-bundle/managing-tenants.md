@@ -282,7 +282,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or [Tenants](#reference/tenants) in the *Reference guide*.
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the *Cumulocity IoT OpenAPI* Specification.
 
 In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 

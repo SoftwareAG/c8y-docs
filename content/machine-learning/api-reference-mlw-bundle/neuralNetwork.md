@@ -12,7 +12,7 @@ Neural network training.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### POST - Start the training process of the neural network 
+### POST - Start the training process of the neural network
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/trainNN
@@ -58,14 +58,14 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
          "type":"NN",
          "projectID":"1600784593_Project",
          "log":{
-            
+
          },
          "properties":[
-            
+
          ],
          "message":"Initialising",
          "history":[
-            
+
          ],
          "tasksID":"1601358322415",
          "taskName":"modelName",

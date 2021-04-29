@@ -32,7 +32,6 @@ Measurements consist of a time when the measurement was taken, the unique identi
 
 Similar to the inventory model, fragments are used to identify characteristics of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. Each such fragment maps the names of the individual readings ("A+", "A-", ... in this example) to the actual numeric value and the unit of measurement.
 
-Readings can hold various additional information that applications may require. 
+Readings can hold various additional information that applications may require.
 
-More detailed information can be found in [Measurements](/reference/measurements) in the Reference guide.
-
+More detailed information can be found in [Measurements](https://cumulocity.com/api/#tag/Measurements) in the Cumulocity IoT OpenAPI Specification.

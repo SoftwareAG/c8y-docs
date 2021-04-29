@@ -112,7 +112,3 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
     "exception": "Duplicate name"
 }
 ```
-
-
-
-

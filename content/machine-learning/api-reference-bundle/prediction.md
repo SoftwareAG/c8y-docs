@@ -34,7 +34,7 @@ Apply a PMML model to a single JSON input record.
 curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
   --header "Authorization: {{auth}}"
   ```
-  
+
 **Example Response**
 
 ```perl
@@ -81,7 +81,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B%22petal_le
 curl --request GET "{{url}}/service/zementis/apply/dummy?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
   --header "Authorization: {{auth}}"
 ```
-  
+
 **Example Response**
 
 ```perl
@@ -154,52 +154,52 @@ curl --request GET \
 [petal_width] := 0.2 (DOUBLE)
 [sepal_length] := 5.1 (DOUBLE)
 [sepal_width] := 3.5 (DOUBLE)
- 
+
 [MiningSchema]
 [petal_length] := 1.4 (DOUBLE)
 [petal_width] := 0.2 (DOUBLE)
 [sepal_length] := 5.1 (DOUBLE)
 [sepal_width] := 3.5 (DOUBLE)
- 
- 
+
+
 [ModelEnsemble]
- 
+
 Process segment model [1]:
 The predicate of segment model [1] evaluates [True]
- 
+
 [MiningSchema]
 [petal_length] := 1.4 (DOUBLE)
 [petal_width] := 0.2 (DOUBLE)
 [sepal_length] := 5.1 (DOUBLE)
 [sepal_width] := 3.5 (DOUBLE)
- 
- 
+
+
 [DecisionTree]
 Evaluation of node [0] is [True].
 Evaluation of node [1] is [True].
 The confidence of the category [Iris-versicolor (STRING)] is [0].
 The confidence of the category [Iris-setosa (STRING)] is [1].
 The confidence of the category [Iris-virginica (STRING)] is [0].
- 
+
 [Output]
 The predicted value of segment model [1] is [Iris-setosa (STRING)]
- 
- 
+
+
 Process segment model [2]:
 The predicate of segment model [2] evaluates [True]
- 
+
 [MiningSchema]
 [sepal_length] := 5.1 (DOUBLE)
 [sepal_width] := 3.5 (DOUBLE)
 [petal_length] := 1.4 (DOUBLE)
 [petal_width] := 0.2 (DOUBLE)
- 
+
 [LocalTransformations]
 [derived_sepal_length] := 0.22222222222222213 (DOUBLE)
 [derived_sepal_width] := 0.6818181818181818 (DOUBLE)
 [derived_petal_length] := 0.07017543859649121 (DOUBLE)
 [derived_petal_width] := 0.04166666666666667 (DOUBLE)
- 
+
 [BackPropagationNetwork]
 Value of neural input [0] is [0.222].
 Value of neural input [1] is [0.682].
@@ -215,26 +215,26 @@ Value of hidden layer neuron [10] is [-0.345].
 Value of output neuron [11] in the last neural layer is [1].
 Value of output neuron [12] in the last neural layer is [0].
 Value of output neuron [13] in the last neural layer is [0].
- 
+
 [Output]
 The predicted value of segment model [2] is [Iris-setosa (STRING)]
- 
- 
+
+
 Process segment model [3]:
 The predicate of segment model [3] evaluates [True]
- 
+
 [MiningSchema]
 [sepal_length] := 5.1 (DOUBLE)
 [sepal_width] := 3.5 (DOUBLE)
 [petal_length] := 1.4 (DOUBLE)
 [petal_width] := 0.2 (DOUBLE)
- 
+
 [LocalTransformations]
 [derived_sepal_length] := 0.22222222222222213 (DOUBLE)
 [derived_sepal_width] := 0.6818181818181818 (DOUBLE)
 [derived_petal_length] := 0.07017543859649121 (DOUBLE)
 [derived_petal_width] := 0.04166666666666667 (DOUBLE)
- 
+
 [Regression]
 Processing [RegressionTable] [targetCategory: Iris-versicolor (STRING)]:
 Applied [Intercept], the value is [-14.897].
@@ -242,25 +242,25 @@ Applied [NumericPredictor] [coefficient: 61.867, exponent: 1] on field(s) [deriv
 Applied [NumericPredictor] [coefficient: -137.017, exponent: 1] on field(s) [derived_sepal_width], the value is [-93.421].
 Applied [NumericPredictor] [coefficient: 90.432, exponent: 1] on field(s) [derived_petal_length], the value is [6.346].
 Applied [NumericPredictor] [coefficient: 11.529, exponent: 1] on field(s) [derived_petal_width], the value is [0.48].
- 
+
 Processing [RegressionTable] [targetCategory: Iris-virginica (STRING)]:
 Applied [Intercept], the value is [-202.201].
 Applied [NumericPredictor] [coefficient: -120.94, exponent: 1] on field(s) [derived_sepal_length], the value is [-26.875].
 Applied [NumericPredictor] [coefficient: -129.401, exponent: 1] on field(s) [derived_sepal_width], the value is [-88.228].
 Applied [NumericPredictor] [coefficient: 284.914, exponent: 1] on field(s) [derived_petal_length], the value is [19.994].
 Applied [NumericPredictor] [coefficient: 251.754, exponent: 1] on field(s) [derived_petal_width], the value is [10.49].
- 
+
 Processing [RegressionTable] [targetCategory: Iris-setosa (STRING)]:
 Applied [Intercept], the value is [0].
- 
+
 The predicted value of the regression table with category [Iris-versicolor (STRING)] is [-87.743]. Value after normalization is [0].
 The predicted value of the regression table with category [Iris-virginica (STRING)] is [-286.82]. Value after normalization is [0].
 The predicted value of the regression table with category [Iris-setosa (STRING)] is [0]. Value after normalization is [1].
- 
+
 [Output]
 The predicted value of segment model [3] is [Iris-setosa (STRING)]
- 
- 
+
+
 [Output]
 The [predictedValue] is [Iris-setosa (STRING)]
 [class] := Iris-setosa (STRING)
@@ -342,7 +342,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter. 
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter.
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
@@ -374,7 +374,7 @@ curl --request POST "{{url}}/service/zementis/apply/Iris_ME_Classification " \
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 class,Probability_setosa,Probability_versicolor,Probability_virginica
 Iris-setosa,1.0,0.0,0.0
@@ -538,7 +538,7 @@ Iris-virginica,0.0,0.0,1.0
 curl --request POST "{{url}}/service/zementis/apply/Iris_ME_Classification " \
   --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.csv"
   ```
-  
+
 **Example Response**
 
 ```
@@ -560,7 +560,7 @@ curl --request POST "{{url}}/service/zementis/apply/Iris_ME_Classification " \
      --header "Content-Type: multipart/form-data" --header "Accept: text/csv" \
      --form "file=@Iris_ME_Classification.csv"
 ```
-     
+
 **Example Response**
 
 ```
@@ -630,7 +630,7 @@ curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassificatio
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 Zip file
 ```
@@ -644,7 +644,7 @@ Zip file
 curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification" \
   --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.csv"
   ```
-  
+
 **Example Response**
 
 ```
@@ -665,7 +665,7 @@ curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassificatio
 curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification" \
      --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
 ```
-     
+
 **Example Response**
 
 ```
@@ -707,7 +707,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}/detail
 ```
 
-Apply a PMML model group to multiple records and show the details. Details include the computed outputs alongside the expected outputs if the expected outputs are part of the input data. 
+Apply a PMML model group to multiple records and show the details. Details include the computed outputs alongside the expected outputs if the expected outputs are part of the input data.
 It also includes the information of the input record corresponding to the computed output.
 
 Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'. Compressing input data with ZIP will result in the same compression method for the returned output stream.
@@ -738,7 +738,7 @@ curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassificatio
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 Zip file
 ```
@@ -752,7 +752,7 @@ Zip file
 curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail" \
   --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.csv"
   ```
-  
+
 **Example Response**
 
 ```
@@ -773,7 +773,7 @@ curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassificatio
 curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail" \
      --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
 ```
-     
+
 **Example Response**
 
 ```
@@ -846,7 +846,7 @@ data.json
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 {
   "fc1000": [
@@ -884,7 +884,7 @@ data.json
 curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
   --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.json"
   ```
-  
+
 **Example Response**
 
 ```
@@ -905,7 +905,7 @@ curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
 curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
      --header "Content-Type: multipart/form-data" --form "file=@data.json"
 ```
-     
+
 **Example Response**
 
 ```
@@ -976,7 +976,7 @@ curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOr
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 {
     "fabricFace": "front",
@@ -993,7 +993,7 @@ curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOr
 curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
   --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@"
   ```
-  
+
 **Example Response**
 
 ```
@@ -1014,7 +1014,7 @@ curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOr
 curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
      --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
 ```
-     
+
 **Example Response**
 
 ```

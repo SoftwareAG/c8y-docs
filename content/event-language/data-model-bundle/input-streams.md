@@ -11,7 +11,7 @@ All input streams share the same base structure.
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
 |_type|String|The type of the event. See the table below which value types can be used for different streams.|
-|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/reference/rest-implementation#processing-mode).|
+|_mode|String|The processing mode in which the data was sent to Cumulocity. See <b>Processing mode</b> in the [Cumulocity IoT OpenAPI Specification](https://cumulocity.com/api/#section/REST-implementation/HTTP-usage).|
 |_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 

@@ -86,7 +86,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' 
+curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content'
 
 ```
 
@@ -284,7 +284,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/jnb-sessions' 
+curl --location --request GET '{{url}}/service/mlw/jnb-sessions'
 
 ```
 

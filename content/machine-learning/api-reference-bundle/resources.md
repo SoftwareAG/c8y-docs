@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/api-reference/#resources
 ---
 
-Operation on resources. 
+Operation on resources.
 
 >**Info:**
 <br>1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
@@ -334,8 +334,8 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 }
 ```
 
-### DEL - Remove PMML resource file 
- 
+### DEL - Remove PMML resource file
+
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
@@ -710,8 +710,8 @@ curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authoriz
 }
 ```
 
-### DEL - Remove ONNX resource file 
- 
+### DEL - Remove ONNX resource file
+
 ```
 {{url}}/service/zementis/onnx/resources/{{file_name}}
 ```

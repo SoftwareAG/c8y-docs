@@ -11,6 +11,135 @@ The Cockpit application includes preset widget types. Each widget type provides 
 
 The following section describes, in alphabetical order, each available widget type and its configuration properties.
 
+### Widget overview
+
+<table>
+<thead>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Widget</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#alarm-list">Alarm-list</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#all-alarms">All critical alarms</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#application">Application</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#asset-notes">Asset notes</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#asset-properties">Asset properties</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#asset-table">Asset table</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#data-graph">Data point graph</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#data-list">Data point list</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#data-table">Data point table</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#event-list">Event list</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#fieldbus-device">Fieldbus device</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#help-service">Help and service</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-image">Image</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#info-gauge">Info Gauge</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-html">HTML</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#linear-gauge">Linear Gauge</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-map">Map</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-message-sending">Message sending</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#pie-chart">Pie chart</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#quick-links">Quick links</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#recent-alarms">Recent alarms</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#relay-array-control">Relay array control</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#relay-control">Relay control</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-rotation">Rotation</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-scada">SCADA</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-silo">Fieldbus device</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#traffic-light">Traffic light</a></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
 ### Alarm list
 
 The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
@@ -123,7 +252,7 @@ The "Data point graph" widget shows a data point (measurement) in a graph. The v
 
 ![Data Point Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>. 
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>.
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 

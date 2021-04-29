@@ -14,7 +14,68 @@ Each global smart rule type provides different parameters to configure.
 
 The following section describes each available type and its configuration properties.
 
-### On alarm send SMS
+### Overview
+
+<table>
+<thead>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Smart rule</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#alarm-sms">On alarm send SMS</a></td>
+<td align="left">When an alarm is created, a SMS is sent.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-email">One alarm send email</a></td>
+<td align="left">When an alarm is created, an email is sent.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-escalate">On alarm escalate it</a></td>
+<td align="left">When an alarm is created, sends e-mail or SMS.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-severity">On alarm duration increase severity</a></td>
+<td align="left">If an alarm is active for a certain time, the severity is increased.</td>
+</tr>
+<tr>
+<td align="left"><a href="#geofence-alarm">On geofence create alarm</a></td>
+<td align="left">If a geofence border is crossed, an alarm is created.</td>
+</tr>
+<tr>
+<td align="left"><a href="#geofence-email">On geofence send email</a></td>
+<td align="left">If a geofence border is crossed, an email is sent.</td>
+</tr>
+<tr>
+<td align="left"><a href="#calculate-energy">Calculate energy consumption</a></td>
+<td align="left">Creates consumption data point based on data from an electric-, gas-, water- meter.</td>
+</tr>
+<tr>
+<td align="left"><a href="#missing-measurements">On missing measurements create alarm</a></td>
+<td align="left">If no new measurement data has been received for a specified time, an alarm is created.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-operation">On alarm execute operation</a></td>
+<td align="left">If a certain alarm occurs, the specified operation will be send to the device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
+<td align="left">When the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared.</td>
+</tr>
+<tr>
+<td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
+<td align="left">When the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared.</td>
+</tr>
+</tbody>
+</table>
+
+### <a name="alarm-sms"></a>On alarm send SMS
 
 **Functionality**
 
@@ -80,7 +141,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
-### On alarm send e-mail
+### <a name="alarm-email"></a> On alarm send e-mail
 
 **Functionality**
 
@@ -142,7 +203,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check your spam folder.
 
-### On alarm escalate it
+### <a name="alarm-escalate"></a> On alarm escalate it
 
 **Functionality**
 
@@ -204,7 +265,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
-### On alarm duration increase severity
+### <a name="alarm-severity"></a> On alarm duration increase severity
 
 **Functionality**
 
@@ -266,7 +327,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 > **Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
 
-### On geofence create alarm
+### <a name="geofence-alarm"></a> On geofence create alarm
 
 **Functionality**
 
@@ -330,7 +391,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-### On geofence send e-mail
+### <a name="geofence-email"></a> On geofence send e-mail
 
 **Functionality**
 
@@ -393,7 +454,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 * Check your spam folder.
 
 
-### Calculate energy consumption
+### <a name="calculate-energy"></a> Calculate energy consumption
 
 **Functionality**
 
@@ -456,7 +517,7 @@ The rule is configured to calculate every 20 minutes. The following measurements
 At 12:20 the rule is triggered, taking the last two measurements. It calculates value and time difference. The consumption measurement created at 12:20 will therefore be 400 kg/h.
 If no new measurement was created in the last period a measurement with consumption 0 will be created.
 
-### On missing measurements create alarm
+### <a name="missing-measurements"></a> On missing measurements create alarm
 
 **Functionality**
 
@@ -510,7 +571,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 > **Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 
-### On alarm execute operation
+### <a name="alarm-operation"></a>On alarm execute operation
 
 **Functionality**
 
@@ -563,7 +624,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-### On measurement threshold create alarm
+### <a name="threshold-alarm"></a>On measurement threshold create alarm
 
 **Functionality**
 
@@ -590,7 +651,7 @@ The rule uses the following parameters from the device object or Data Point Libr
 When we set the red range to "[60;90]"
 
 * red min: 60
-* red max: 90 
+* red max: 90
 
 and the measured value is between 60 - 90 (including the values 60 and 90) as a result a CRITICAL alarm (red) will be created.
 
@@ -599,7 +660,7 @@ and the measured value is between 60 - 90 (including the values 60 and 90) as a 
 When we set the yellow range to "[30;50)"
 
 * yellow min: 30
-* yellow max: 50 
+* yellow max: 50
 
 and the measured value is between 30 - 49 as a result a MINOR alarm (yellow) will be created. The value 50 is out of the yellow range.
 
@@ -713,7 +774,7 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-### On measurement explicit threshold create alarm
+### <a name="threshold-explicit"></a> On measurement explicit threshold create alarm
 
 **Functionality**
 

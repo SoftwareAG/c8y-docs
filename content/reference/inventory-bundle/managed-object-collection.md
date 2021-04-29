@@ -153,11 +153,17 @@ The following sections explain how an application will handle a query in the par
 
 ##### Supported query functions:
 
-* `has`: `has(c8y_IsDevice)` - match objects with custom property `c8y_IsDevice`
-
-	* 	Only supports custom fragments.   
-	*   Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
-* `bygroupid(12)` - match objects from group with ID `12`
+* `has()`
+  * Matches objects with the property that is passed as an argument
+  * Accepts one or multiple arguments
+  * Only supports custom fragments   
+  * Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
+  * `has(field1,field2)` - matches objects with property `field1` or `field2`
+* `bygroupid()`
+  * Matches objects from the group with the ID that is passed as an argument
+  * Accepts one argument
+  * `bygroupid(12)` matches objects from groups with ID = `12`
+>**Important:** Although using multiple `has()` functions joined with `or` operator is feasible (e.g. `has(field1) or has(field2)`), it's not recommended due to performance issue. You should rather use `has(field1,field2)`.
 
 ##### Supported query values:
 

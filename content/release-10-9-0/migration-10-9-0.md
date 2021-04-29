@@ -68,34 +68,6 @@ However, the documentation is still available and all links to it still work. To
 
 ### Implemented measures
 
-#### Single Streaming Analytics application
-
-Where previously Apama Analytics Builder and Apama EPL Apps were separate applications, these have now been combined into a single Streaming Analytics application available from the Cumulocity IoT application switcher.
-
-The Streaming Analytics application provides mechanisms to control visibility of the Analytics Builder and EPL Apps pages.
-If the old Apama Analytics Builder or Apama EPL Apps applications had been assigned to specific groups or users, a tenant will need to
-configure role-based access and assign roles to control the visibility of the corresponding pages within the Streaming Analytics application.
-See [Controlling access to the Streaming Analytics application](https://cumulocity.com/guides/apama/advanced/#control-access) for more information.
-This migration is a one-time step that needs to be performed manually.
-
-#### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
-
-As of Apama 10.7.0, the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
-These are the following bundles:
-- Cumulocity Client
-- Event Definitions for Cumulocity
-- Utilities for Cumulocity
-
-This has the advantage that with future versions, you can seamlessly upgrade to the latest Cumulocity IoT bundles.
-
-If you are using the old, versioned Cumulocity IoT bundles in Apama, you have to replace them. Proceed as follows:
-1. Go to Software AG Designer.
-2. Add the new Cumulocity IoT bundles to your Apama projects.
-3. Copy any changes you applied to the *CumulocityIoT.yaml* and *CumulocityIoT.properties* files over from the old, versioned bundles into the new bundles.
-4. Remove the old, versioned bundles from your Apama projects.
-
-See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/) for more information on the Cumulocity IoT transport connectivity plug-in.
-
 #### Internet Explorer 11 end of support
 
 As announced previously, Cumulocity IoT no longer supports Internet Explorer 11. Cumulocity IoT continues to support the latest version of the Chromium-based Microsoft Edge browser as the successor to the Internet Explorer. This will allow us to continue to provide you with a state-of-the-art user experience.
@@ -151,3 +123,69 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 
 -->
+
+### Streaming analytics
+
+#### Single Streaming Analytics application
+
+Where previously Apama Analytics Builder and Apama EPL Apps were separate applications, these have now been combined into a single Streaming Analytics application available from the Cumulocity IoT application switcher.
+
+The Streaming Analytics application provides mechanisms to control visibility of the Analytics Builder and EPL Apps pages.
+If the old Apama Analytics Builder or Apama EPL Apps applications had been assigned to specific groups or users, a tenant will need to
+configure role-based access and assign roles to control the visibility of the corresponding pages within the Streaming Analytics application.
+See [Controlling access to the Streaming Analytics application](https://cumulocity.com/guides/apama/advanced/#control-access) for more information.
+This migration is a one-time step that needs to be performed manually.
+
+#### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
+
+As of Apama 10.7.0, the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
+These are the following bundles:
+- Cumulocity Client
+- Event Definitions for Cumulocity
+- Utilities for Cumulocity
+
+This has the advantage that with future versions, you can seamlessly upgrade to the latest Cumulocity IoT bundles.
+
+If you are using the old, versioned Cumulocity IoT bundles in Apama, you have to replace them. Proceed as follows:
+1. Go to Software AG Designer.
+2. Add the new Cumulocity IoT bundles to your Apama projects.
+3. Copy any changes you applied to the *CumulocityIoT.yaml* and *CumulocityIoT.properties* files over from the old, versioned bundles into the new bundles.
+4. Remove the old, versioned bundles from your Apama projects.
+
+See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/) for more information on the Cumulocity IoT transport connectivity plug-in.
+
+#### Cumulocity IoT transport in Apama
+
+Generic requests that are sent using the Cumulocity IoT transport now return the response body with exactly what is returned from Cumulocity IoT. 
+In previous versions, this was put into a dictionary with an empty key. So if you have existing code such as the following
+
+```
+AnyExtractor dict := 
+AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
+```
+
+You have to replace this with:
+```
+AnyExtractor dict := AnyExtractor(response.body);
+```
+
+See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+
+#### Cumulocity API in Apama
+
+The `withResponse` action, which was added to the Cumulocity API in Apama 10.5.2, is now deprecated for all of the predefined types 
+(`ManagedObject`, `Alarm`, `Event`, `Measurement`, `MeasurementFragment` and `Operation`) and will be removed in a future release. 
+It is recommended that you now use the new `withChannelResponse` action.
+This allows your application to receive a response on the `<type>.SUBSCRIBE_CHANNEL` channel when one of these object types is created or updated.
+
+#### Removed items in Apama
+
+Several minor features which have been deprecated over the past few years have been removed from Apama. 
+The following table lists the removed items that are relevant for Cumulocity IoT and their recommended replacements.
+
+| Removed item          | Replacement       |
+| --------------------- | ----------------- |
+| aggregate prior       | aggregate nth     |
+| decimal.nextafter     | decimal.nextAfter |
+| dictionary.getDefault | dictionary.getOr  |
+| float.nextafter       | float.nextAfter   |

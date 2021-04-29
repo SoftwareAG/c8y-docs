@@ -178,9 +178,9 @@ The `withResponse` action, which was added to the Cumulocity API in Apama 10.5.2
 It is recommended that you now use the new `withChannelResponse` action.
 This allows your application to receive a response on the `<type>.SUBSCRIBE_CHANNEL` channel when one of these object types is created or updated.
 
-#### Removed items in Apama
+#### Removed items in Apama EPL
 
-Several minor features which have been deprecated over the past few years have been removed from Apama. 
+Several minor features which have been deprecated over the past few years have been removed from Apama EPL. 
 The following table lists the removed items that are relevant for Cumulocity IoT and their recommended replacements.
 
 | Removed item          | Replacement       |

@@ -8,4 +8,4 @@ This section will show security concepts and aspects of Cumulocity IoT, structur
 
 This section is especially intended for IT security staff and management staff. IT security expertise is required when running Cumulocity IoT.
 
-More information can be found in the security-related sections of the remaining documentation, like the [REST implementation](/reference/rest-implementation) and [User API](/reference/users/#user-api) description in the Reference guide. Permissions required for individual API calls are documented in the respective Reference guide sections for the APIs.
+More information can be found in the security-related sections of the remaining documentation, like the [REST implementation](https://cumulocity.com/api/#section/REST-implementation) and [User API](https://cumulocity.com/api/#tag/User-API) description in the Cumulocity IoT OpenAPI Specification. Permissions required for individual API calls are documented in the respective Reference guide sections for the APIs.

@@ -83,9 +83,8 @@ This is an example of an alarm that has been cleared:
 			...
 		} ]
 		...
-	} 
+	}
 	...
 }</code></pre>
 
-More detailed information can be found in [Events](/reference/events), [Alarms](/reference/alarms) and [Auditing](/reference/auditing) in the Reference guide.
-
+More detailed information can be found in [Events](https://cumulocity.com/api/#tag/Events), [Alarms](https://cumulocity.com/api/#tag/Alarms) and [Audits](https://cumulocity.com/api/#tag/Audits) in the Cumulocity IoT OpenAPI Specification.

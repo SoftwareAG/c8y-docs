@@ -353,7 +353,7 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 {
     "groupName": "IrisClassification",

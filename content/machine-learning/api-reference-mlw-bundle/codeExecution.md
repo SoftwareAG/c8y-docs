@@ -70,7 +70,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
    "startTimeH":"06",
    "startTimeM":"27",
    "properties":[
-      
+
    ],
    "cronExpression":"",
    "status":"EXECUTED",

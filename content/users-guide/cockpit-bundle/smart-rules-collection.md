@@ -6,15 +6,10 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity IoT includes preset global smart rule types.
+Cumulocity IoT includes preset global smart rule types. Each global smart rule type provides different parameters to configure.
 
-![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
+The following types are available:
 
-Each global smart rule type provides different parameters to configure.
-
-The following section describes each available type and its configuration properties.
-
-### Overview smart rules
 
 <table>
 <thead>
@@ -30,15 +25,15 @@ The following section describes each available type and its configuration proper
 <tbody>
 <tr>
 <td align="left"><a href="#alarm-sms">On alarm send SMS</a></td>
-<td align="left">When an alarm is created, a SMS is sent.</td>
+<td align="left">If an alarm is created, a SMS is sent.</td>
 </tr>
 <tr>
-<td align="left"><a href="#alarm-email">One alarm send email</a></td>
-<td align="left">When an alarm is created, an email is sent.</td>
+<td align="left"><a href="#alarm-email">On alarm send email</a></td>
+<td align="left">If an alarm is created, an email is sent.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarm-escalate">On alarm escalate it</a></td>
-<td align="left">When an alarm is created, sends email or SMS.</td>
+<td align="left">If an alarm is created, sends email or SMS.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarm-severity">On alarm duration increase severity</a></td>
@@ -54,7 +49,7 @@ The following section describes each available type and its configuration proper
 </tr>
 <tr>
 <td align="left"><a href="#calculate-energy">Calculate energy consumption</a></td>
-<td align="left">Creates consumption data point based on data from an electric-, gas-, water- meter.</td>
+<td align="left">Creates consumption data points based on data from an electric, gas, or water meter.</td>
 </tr>
 <tr>
 <td align="left"><a href="#missing-measurements">On missing measurements create alarm</a></td>
@@ -62,15 +57,15 @@ The following section describes each available type and its configuration proper
 </tr>
 <tr>
 <td align="left"><a href="#alarm-operation">On alarm execute operation</a></td>
-<td align="left">If a certain alarm occurs, the specified operation will be send to the device.</td>
+<td align="left">If a certain alarm occurs, the specified operation will be sent to the device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
-<td align="left">When the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared.</td>
+<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule “On measurement threshold create alarm”. However, in this rule the red threshold value is provided explicitly.</td>
 </tr>
 <tr>
 <td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
-<td align="left">When the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared.</td>
+<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or Data Point Library.</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +74,7 @@ The following section describes each available type and its configuration proper
 
 **Functionality**
 
-When an alarm is created, a SMS is sent.
+If an alarm is created, a SMS is sent.
 
 > **Info:** This rule is only available if your tenant has a configured SMS provider.
 
@@ -145,7 +140,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 **Functionality**
 
-When an alarm is created, an email is sent.
+If an alarm is created, an email is sent.
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
@@ -207,7 +202,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-When an alarm is created, sends email or SMS.
+If an alarm is created, sends email or SMS.
 
 **Parameters**
 
@@ -458,7 +453,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-Creates consumption data point based on data from an electric-, gas-, water- meter.
+Creates consumption data point based on data from an electric, gas, or water meter.
 
 **Parameters**
 
@@ -628,7 +623,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-When the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared.
+If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared.
 
 The severity of alarm is determined as follows:
 
@@ -648,7 +643,7 @@ The rule uses the following parameters from the device object or Data Point Libr
 
 **Example 1 - Red range:**
 
-When we set the red range to "[60;90]"
+If we set the red range to "[60;90]"
 
 * red min: 60
 * red max: 90
@@ -657,7 +652,7 @@ and the measured value is between 60 - 90 (including the values 60 and 90) as a 
 
 **Example 2 - Yellow range:**
 
-When we set the yellow range to "[30;50)"
+If we set the yellow range to "[30;50)"
 
 * yellow min: 30
 * yellow max: 50
@@ -673,13 +668,13 @@ As a result of the above behavior, we can set configurations like the following:
 * yellow min: 30
 * yellow max: 60
 
-When the measured value is 60, then as a result a CRITICAL alarm (red) will be created because red includes the value 60.
+If the measured value is 60, then as a result a CRITICAL alarm (red) will be created because red includes the value 60.
 
 **Example 4 - Overlap:**
 
 The red range and the yellow range can overlap. A value in this overlap range is treated as being in the yellow range.
 
-When we set the yellow range to "[30;60)" and the red range to "[50;90]":
+If we set the yellow range to "[30;60)" and the red range to "[50;90]":
 
 * red min: 50
 * red max: 90
@@ -778,7 +773,7 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 **Functionality**
 
-When the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared.
+If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared.
 
 The severity of alarm is determined as follows:
 

@@ -138,7 +138,7 @@ This migration is a one-time step that needs to be performed manually.
 
 #### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
 
-As of Apama 10.7.0 (that is, the standalone version, not the Apama-ctrl microservice that is included in Cumulocity IoT), 
+As of Apama 10.7.0 (that is, the standalone product, not the Apama-ctrl microservice that is included in Cumulocity IoT), 
 the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
 These are the following bundles:
 - Cumulocity Client

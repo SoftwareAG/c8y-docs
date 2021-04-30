@@ -94,7 +94,7 @@ In the example provided in the repository to be downloaded you can find an examp
 }
 ```
 
-The imported language can be changed in the UI after login. To do so, click the User icon at the top left, select User settings from the menu and in the upcoming window select the language of your choice.
+The imported language can be changed in the UI after login. To do so, click the User icon at the top right, select User settings from the menu and in the upcoming window select the language of your choice.
 
 ### Deploying
 
@@ -104,6 +104,6 @@ Inside the folder `ui-customization` that contains both `public-options`and `ui-
 c8ycli deploy public-options ui-assets
 ```
 
-Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants. 
+Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
 >**Info**: For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.

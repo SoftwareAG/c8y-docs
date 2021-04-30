@@ -148,7 +148,3 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
     "exception": "Duplicate name"
 }
 ```
-
-
-
-

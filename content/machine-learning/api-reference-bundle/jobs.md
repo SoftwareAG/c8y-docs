@@ -37,7 +37,7 @@ Operations on jobs scheduled for processing device data.
 >**Info:**
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
 <br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
-<br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30". 
+<br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".
 <br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
 
 ### POST - Create new job
@@ -87,7 +87,7 @@ On creation, a `jobId` is automatically assigned to the job and `jobCreationDate
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{ 
+{
     "jobName": "ActivityDetectionJob",
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
@@ -144,7 +144,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{ 
+{
     "jobName": "ActivityDetectionJob",
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
@@ -203,7 +203,7 @@ curl --request POST "{{url}}/service/zementis/job"
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{ 
+{
     "jobName": "ActivityDetectionJob",
     "jobDescription": "Detect activities",
     "modelOrGroup": "DecisionTreeClassifier",
@@ -569,7 +569,7 @@ curl --request GET "{{url}}/service/zementis/job/15896925/history?withTotalPages
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
 {
     "next": "/service/zementis/job/15896925/history?pageSize=5&currentPage=2",

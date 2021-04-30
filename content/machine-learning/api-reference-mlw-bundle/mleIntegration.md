@@ -1225,4 +1225,3 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
     "exception": "invalid model"
 }
 ```
-

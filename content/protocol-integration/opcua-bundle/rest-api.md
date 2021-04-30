@@ -224,8 +224,8 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 <td>subscribeModelChangeEvent</td>
 <td>boolean</td>
 <td>no</td>
-<td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled), 
-which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of Cumulocity IoT. 
+<td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
+which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of Cumulocity IoT.
 This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
 
@@ -343,11 +343,11 @@ The service will retain all the child devices of the server, and their correspon
 
 #### Get an address space node by ID
 
-**Endpoint** 
+**Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
 
-**Description** 
+**Description**
 
 Get a node in the server address space specified by the given node ID. The node ID must be URL encoded.
 
@@ -813,7 +813,7 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the Cumulocity processing mode for incoming data. Refer to the&nbsp;<a href="../../reference/rest-implementation/#processing-mode">Reference&nbsp;guide</a>&nbsp;for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the Cumulocity processing mode for incoming data. Refer to <a href="https://cumulocity.com/api/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the Cumulocity IoT OpenAPI Specification for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
 <td>overiddenSubscriptions</td>
@@ -876,7 +876,9 @@ Full payload data structure explained:
 <td>alarmCreation</td>
 <td><em>AlarmCreation</em></td>
 <td>no</td>
-<td>Mappings for alarm.</td>
+<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value 
+is changed to "false", or a number that is less than or equals to 0.</td>
 </tr>
 <tr>
 <td>customAction</td>

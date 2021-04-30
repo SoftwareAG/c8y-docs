@@ -14,9 +14,9 @@ With this API description you will learn how to use Cumulocity IoT's REST interf
 
 The description is closely linked to the Reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular:
 
-- [REST implementation](/reference/rest-implementation) is the reference for all general concepts.
-- [Device management library](/reference/device-management) specifies the data model for device management.
-- [Sensor library](/reference/sensor-library) specifies the data model for sensors and controls.
+- [REST implementation](https://cumulocity.com/api/#section/REST-implementation) is the reference for all general concepts.
+- [Device management library](https://cumulocity.com/api/#section/Device-management-library) specifies the data model for device management.
+- [Sensor library](https://cumulocity.com/api/#section/Sensor-library) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to Cumulocity IoT's functionality.
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the Device SDK guide.
@@ -63,7 +63,7 @@ From this point, you can navigate further to the different returned objects. For
 $ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/reference/rest-implementation#paging).
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://cumulocity.com/api/#section/REST-implementation/REST-usage) in the Cumulocity IoT OpenAPI Specification.
 
 ### Using Postman
 

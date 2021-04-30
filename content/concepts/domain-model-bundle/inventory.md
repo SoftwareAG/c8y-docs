@@ -78,7 +78,7 @@ The approach also enables developing generic application components. For example
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library) and in the [Device management library](/reference/device-management) in the Reference guide.
+In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](https://cumulocity.com/api/#section/Sensor-library) and in the [Device management library](https://cumulocity.com/api/#section/Device-management-library) in the Cumulocity IoT OpenAPI Specification.
 
 > **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`.
 
@@ -98,7 +98,7 @@ This service is used by agents (to register external identifiers) and is used by
 
 As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag needs to be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards both previously collected and new meter readings are related to the correct customer.
 
-More information can be found in [Identity](/reference/identity) in the Reference guide.
+More information can be found in [Identity](https://cumulocity.com/api/#tag/Identity-API) in the Cumulocity IoT OpenAPI Specification.
 
 ### Object hierarchies
 
@@ -116,7 +116,7 @@ An example asset hierarchy for building management could be buildings containing
 
 #### Child objects in hierarchies
 
-The two hierarchies above are explicitly supported by the [inventory interface](/reference/inventory) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
+The two hierarchies above are explicitly supported by the [inventory interface](https://cumulocity.com/api/#tag/Inventory-API) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
 Note that the object hierarchies do not necessarily need to form a tree, the same asset can be a child of multiple parent assets. This enables applications to create additional, user-defined groups of objects such as working sets or virtual networks. Applications can, in addition, use fragments to define arbitrary alternative hierarchies.
 
@@ -130,4 +130,4 @@ Addressing the device lifecycle properly is important when designing agents. An 
 
 ### Further information
 
-More detailed information for working with the inventory can be found in [Inventory](/reference/inventory) in the Reference guide.
+More detailed information for working with the inventory can be found in [Inventory](https://cumulocity.com/api/#tag/Inventory-API) in the Cumulocity IoT OpenAPI Specification.

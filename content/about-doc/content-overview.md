@@ -56,7 +56,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">Developer documentation</td>
-<td align="left"><a href="/reference/rest-implementation/">Reference guide</a></td>
+<td align="left"><a href="/reference">Reference guide</a></td>
 <td align="left">Detailed technical specifications of the programming interfaces of Cumulocity IoT as a reference for software developers.</td>
 </tr>
 

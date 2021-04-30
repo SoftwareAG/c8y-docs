@@ -124,7 +124,7 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 -->
 
-### Streaming analytics
+### Streaming Analytics
 
 #### Single Streaming Analytics application
 

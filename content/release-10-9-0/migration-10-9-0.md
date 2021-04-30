@@ -138,7 +138,8 @@ This migration is a one-time step that needs to be performed manually.
 
 #### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
 
-As of Apama 10.7.0, the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
+As of Apama 10.7.0 (that is, the standalone version, not the Apama-ctrl microservice that is included in Cumulocity IoT), 
+the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
 These are the following bundles:
 - Cumulocity Client
 - Event Definitions for Cumulocity
@@ -173,10 +174,20 @@ See also [Invoking other parts of the Cumulocity IoT REST API](https://documenta
 
 #### Cumulocity API in Apama
 
-The `withResponse` action, which was added to the Cumulocity API in Apama 10.5.2, is now deprecated for all of the predefined types 
+The `withResponse` action is now deprecated for all of the predefined types 
 (`ManagedObject`, `Alarm`, `Event`, `Measurement`, `MeasurementFragment` and `Operation`) and will be removed in a future release. 
-It is recommended that you now use the new `withChannelResponse` action.
+
+It is recommended that you now use the new `withChannelResponse` action for the predefined types.
 This allows your application to receive a response on the `<type>.SUBSCRIBE_CHANNEL` channel when one of these object types is created or updated.
+
+See the following topics in the Apama documentation for more information:
+
+* [Updating a managed object](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_updating_a_managed_object.html)
+* [Creating a new alarm](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_creating_a_new_alarm.html)
+* [Creating a new event](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_creating_an_event.html)
+* [Creating a new measurement](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_creating_a_new_measurement.html)
+* [Creating measurement fragments](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_creating_measurement_fragments.html)
+* [Creating a new operation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_creating_a_new_operation.html)
 
 #### Removed items in Apama EPL
 

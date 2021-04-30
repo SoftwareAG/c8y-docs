@@ -4,6 +4,7 @@ title: REST implementation
 layout: bundle
 aliases:
   - /reference-guide/rest-implementation
+  - /reference/overview
   - /reference-guide
 ---
 

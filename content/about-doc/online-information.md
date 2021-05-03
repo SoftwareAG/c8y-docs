@@ -45,6 +45,6 @@ For Cumulocity IoT Cloud shared environments, information on known issues and th
 
 ### Cumulocity IoT product training
 
-To learn what´s new in Cumulocity IoT or a particular area we offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which cover the new and enhanced functionality available in a specific release:
+To learn what´s new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which cover the new and enhanced functionality available in a specific product release:
 
 ![Product training](/images/about/about-product-training.png)

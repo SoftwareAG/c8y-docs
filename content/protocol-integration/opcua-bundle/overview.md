@@ -19,4 +19,4 @@ The gateway has to be registered as Cumulocity IoT device in a specific tenant a
 
 To download the gateway navigate to [Cumulocity resources](http://resources.cumulocity.com/examples/opc-ua/).
 
-The gateway requires Java 8 in order to run.
+The gateway requires Java 11 in order to run.

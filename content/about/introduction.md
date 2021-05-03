@@ -27,9 +27,9 @@ Select the product component you are interested in from the index.
 The following product components are generally included (if relevant for this particular release):
 
 * Cumulocity IoT Core consisting of
-	* Cumulocity IoT platform services
-	* Cumulocity IoT application enablement
-	* Cumulocity IoT device management & connectivity
+	* Core platform services
+	* Application enablement
+	* Device management & connectivity
 * Cumulocity IoT Edge
 * Cumulocity IoT Streaming Analytics
 * Cumulocity IoT Machine Learning

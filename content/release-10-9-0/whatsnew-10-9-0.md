@@ -8,6 +8,15 @@ Release 10.9.0 includes the following new features or major feature enhancements
 
 >**Info:** To learn what´s new in Cumulocity IoT or in a particular area of the platform we also offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which present the new and enhanced functionality available in a specific product release.
 
+### Open API specification
+
+A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+
+![Open API specification](/images/release-notes/open-api-new.png)
+
+The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0.
+
+
 ### NEW Loriot LoRa microservice
 
 Cumulocity IoT can now interface with LORIOT Network Server through the Loriot agent microservice. You can:

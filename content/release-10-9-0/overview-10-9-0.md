@@ -11,6 +11,6 @@ These release notes for **Cumulocity IoT release 10.9.0, April 2021**, include a
 
 ### Product components
 
-Select the [product component](/about/introduction/#component) you are interested in from the index at the left.
+Select the [product component](/about/introduction/#component) you are interested in from the index at the left. In most components, you will find separate entries for each published release (initial release and maintenance releases).
 
->**Info:** In most components, you will find separate entries for each published release (initial release and maintenance releases). 
+> **Important:** To provide a clearer structure, the Cumulocity IoT Core release notes have been split into three main areas of interest: Core platform services, Application enablement, Device management & connectivity. 

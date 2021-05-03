@@ -46,6 +46,8 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a “value” property, for example, “c8y_AccelerationMeasurement.acceleration”.
 - Specify the unit of the given measurement, for example, “m/s” for velocity.
 
+All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (e.g. 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
+
 **Create alarm**
 
 Turn on **Create alarm** if you want to create an alarm out of the resource.

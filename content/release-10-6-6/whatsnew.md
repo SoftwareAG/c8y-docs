@@ -1,11 +1,14 @@
 ---
-weight: 5
+weight: 11
 title: What´s new
 layout: bundle
 ---
 
-### Cockpit
+Release 10.6.6 includes the following new features or major feature enhancements.
 
+>**Info:** To learn what´s new in Cumulocity IoT or in a particular area of the platform we also offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which present the new and enhanced functionality available in a specific product release.
+
+### Cockpit
 
 #### New dashboard and widget editors
 

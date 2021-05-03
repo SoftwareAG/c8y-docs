@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 100
 title: Documentation
 layout: bundle
 ---
@@ -27,4 +27,3 @@ In addition to the Installation & Operations guides already provided for previou
 Moreover, a new document **Operations release notes** is provided which lists all improvement or fixes related to the installation or operation of the Cumulocity IoT platform.
 
 Note, that access to these documents on the Empower Portal requires credentials.
-

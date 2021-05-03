@@ -7,7 +7,10 @@ layout: redirect
 
 ### No contracts available
 
-![No contracts available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
+![No active contracts with free slots available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
+
+Active contracts are filtered based on each contracts activationEndTime and maxTokens. Contracts which have activationEndTime greater than current time or activationEndTime is equal to 0 AND Contract's maxTokens is greated than tokensInUse or maxTokens is 0. According to the Sigfox documentation, 0 should be considered as unlimited.
+
 
 In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
 

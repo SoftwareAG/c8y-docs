@@ -25,7 +25,7 @@ The following types are available:
 <tbody>
 <tr>
 <td align="left"><a href="#alarm-sms">On alarm send SMS</a></td>
-<td align="left">If an alarm is created, a SMS is sent.</td>
+<td align="left">If an alarm is created, an SMS is sent.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarm-email">On alarm send email</a></td>
@@ -33,7 +33,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#alarm-escalate">On alarm escalate it</a></td>
-<td align="left">If an alarm is created, sends email or SMS.</td>
+<td align="left">If an alarm is created, an email or SMS is sent.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarm-severity">On alarm duration increase severity</a></td>
@@ -74,7 +74,7 @@ The following types are available:
 
 **Functionality**
 
-If an alarm is created, a SMS is sent.
+If an alarm is created, an SMS is sent.
 
 > **Info:** This rule is only available if your tenant has a configured SMS provider.
 
@@ -124,7 +124,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-you can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
+You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 

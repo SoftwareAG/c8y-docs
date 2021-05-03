@@ -15,19 +15,19 @@ The gateway can run with either default or custom settings. To run the gateway r
 * Custom settings and default logging configuration:
 
   ```shell
-    java --spring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+    java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,PROFILE_NAME
   ```
 
 * Custom settings and custom logging configuration:
 
   ```shell
-    java --logging.config=file:PATH_TO_LOGBACK_XML --spring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+    java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,PROFILE_NAME --logging.config=file:PATH_TO_LOGBACK_XML
   ```
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
 ```shell
-java --spring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
+java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
 ### Adjusting gateway memory settings

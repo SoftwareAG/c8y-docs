@@ -13,4 +13,4 @@ These release notes for **Cumulocity IoT release 10.6.0, April 2020**, include a
 
 Select the [product component](/about/introduction/#component) you are interested in from the index at the left.
 
->**Info:** In most components, you will find separate entries for each published release (initial release and maintenance releases). 
+>**Info:** In most components, you will find separate entries for each published release (initial release and Maintenance releases). 

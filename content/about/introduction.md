@@ -36,4 +36,4 @@ The following product components are generally included (if relevant for this pa
 * Cumulocity IoT DataHub
 * Documentation
 
->**Info:** In most components, you will find separate entries for each published release. As you can see in the image above, for the Device Management component in 10.7.0 for example, you will find release notes for 10.7.0.24 (the initially published 10.7.0 release), and for the maintenance releases 10.7.0.31, 10.7.0.32, 10.7.0.36.
+>**Info:** In most components, you will find separate entries for each published release. As you can see in the image above, for the Device Management component in 10.7.0 for example, you will find release notes for 10.7.0.24 (the initially published 10.7.0 release), and for the Maintenance releases 10.7.0.31, 10.7.0.32, 10.7.0.36.

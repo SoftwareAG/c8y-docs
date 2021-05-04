@@ -135,7 +135,7 @@ No change is required for devices integrated via our Device SDK and agents. Howe
 
 #### ngx-boostrap upgrade to 5.6.1
 
-To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.8 GA Release in January 2021.
+To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental release and to the 10.8 GA release in January 2021.
 
 This change may affect developers building Cumulocity IoT UI extensions or custom web applications. It may also affect existing extensions and web applications.
 

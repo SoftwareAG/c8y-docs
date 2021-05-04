@@ -61,7 +61,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule “On measurement threshold create alarm”. However, in this rule the red threshold value is provided explicitly.</td>
+<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule “On measurement threshold create alarm”. However, it provides the red threshold value explicitly.</td>
 </tr>
 <tr>
 <td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>

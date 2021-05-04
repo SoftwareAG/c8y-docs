@@ -9,7 +9,7 @@ layout: redirect
 
 ![No active contracts with free slots available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
 
-Contracts in which the activation end time is higher than the current time or the activation end time is unlimited, and contracts in which the max tokens are higher than the tokens in use or the max tokens are unlimited will be considered.
+Active contracts with free slots are filtered based on the activation end time and tokens in use. Contracts in which the activation end time is higher than the current time or the activation end time is unlimited, and contracts in which the max tokens are higher than the tokens in use or the max tokens are unlimited will be considered.
 
 In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
 

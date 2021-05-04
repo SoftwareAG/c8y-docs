@@ -180,9 +180,9 @@ the default format is considered as "OPAQUE".
 <tr>
 <td style="text-align: left">lwm2mRequestTimeout</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The timeout used for the shell operation requests such as read, write, execute, etc. done by the LWM2M microservice to the LWM2M device.
-The value is in miliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with &ldquo;C8Y.lwm2mRequestTimeout&rdquo; property.
-The value should not exceed the maximum request timeout limit given with the LWM2M microservice property file with &ldquo;C8Y.lwm2mMaxRequestTimeout&rdquo; property.
+<td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
+The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with &ldquo;C8Y.lwm2mRequestTimeout&rdquo; property.
+The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with &ldquo;C8Y.lwm2mMaxRequestTimeout&rdquo; property.
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>

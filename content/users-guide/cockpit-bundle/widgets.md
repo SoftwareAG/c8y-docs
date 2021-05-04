@@ -8,9 +8,136 @@ layout: redirect
 
 The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
-The following section describes, in alphabetical order, each available widget type and its configuration properties.
+The following types are available:
 
-### Alarm list
+<table>
+<thead>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Widget</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#alarm-list">Alarm list</a></td>
+<td align="left">Shows a list of alarms, filtered by objects, alarm severity and alarm status.</td>
+</tr>
+<tr>
+<td align="left"><a href="#all-alarms">All critical alarms</a></td>
+<td align="left">Displays all objects with a critical alarm.</td>
+</tr>
+<tr>
+<td align="left"><a href="#applications">Applications</a></td>
+<td align="left">Provides a list of links to all available applications.</td>
+</tr>
+<tr>
+<td align="left"><a href="#asset-notes">Asset notes</a></td>
+<td align="left">Displays messages provided by the administrative user to all owners of the current widget.</td>
+</tr>
+<tr>
+<td align="left"><a href="#asset-properties">Asset properties</a></td>
+<td align="left">Provides a user-defined list of attributes of the current object.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-asset-table">Asset table</a></td>
+<td align="left">Shows details of all child devices in a table.</td>
+</tr>
+<tr>
+<td align="left"><a href="#data-graph">Data point graph</a></td>
+<td align="left">Displays data points (measurements) in a graph.</td>
+</tr>
+<tr>
+<td align="left"><a href="#data-list">Data point list</a></td>
+<td align="left">Displays data points (measurements), one in each row, with current values and data point properties.</td>
+</tr>
+<tr>
+<td align="left"><a href="#data-table">Data point table</a></td>
+<td align="left">Lists data points (measurements) as a table.</td>
+</tr>
+<tr>
+<td align="left"><a href="#event-list">Event list</a></td>
+<td align="left">Allows to monitor events for a selected device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#fieldbus-device">Fieldbus device</a></td>
+<td align="left">Lets you see the status of a modbus device and operate it.</td>
+</tr>
+<tr>
+<td align="left"><a href="#help-service">Help and service</a></td>
+<td align="left">Displays links to help and service resources.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-image">Image</a></td>
+<td align="left">Shows a single image to be selected from your file system by browsing.</td>
+</tr>
+<tr>
+<td align="left"><a href="#info-gauge">Info Gauge</a></td>
+<td align="left">Visualizes one data point in form of a radial gauge and multiple data points as labels.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-html">HTML</a></td>
+<td align="left">Shows user-defined content formatted in HTML.</td>
+</tr>
+<tr>
+<td align="left"><a href="#linear-gauge">Linear Gauge</a></td>
+<td align="left">Displays data points in form of a linear gauge.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-map">Map</a></td>
+<td align="left">Shows the location of a device or all devices of a group.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-message-sending">Message sending</a></td>
+<td align="left">Sends a message to a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#pie-chart">Pie chart</a></td>
+<td align="left">Displays data points (measurements) with current values in a pie chart presentation.</td>
+</tr>
+<tr>
+<td align="left"><a href="#quick-links">Quick links</a></td>
+<td align="left">Provides several quick links to relevant operations.</td>
+</tr>
+<tr>
+<td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
+<td align="left">Displays data points in form of a radial gauge.</td>
+</tr>
+<tr>
+<td align="left"><a href="#recent-alarms">Recent alarms</a></td>
+<td align="left">Shows all alarms of all severities sorted by time.</td>
+</tr>
+<tr>
+<td align="left"><a href="#relay-array-control">Relay array control</a></td>
+<td align="left">Allows to switch relays on or off independently in an array of relays.</td>
+</tr>
+<tr>
+<td align="left"><a href="#relay-control">Relay control</a></td>
+<td align="left">Allows to switch a device relay on or off.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-rotation">Rotation</a></td>
+<td align="left">Allows to render an object model of a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-scada">SCADA</a></td>
+<td align="left">Provides a graphic representation of the status of a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-silo">Silo</a></td>
+<td align="left">Displays data points (measurements) with current values in a silo presentation.</td>
+</tr>
+<tr>
+<td align="left"><a href="#traffic-light">Traffic light</a></td>
+<td align="left">Shows the states of a device as traffic light.</td>
+</tr>
+</tbody>
+</table>
+
+### <a name="alarm-list"></a> Alarm list
 
 The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
@@ -27,7 +154,7 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 |Severities|Only show alarms of the selected alarm severity.
 |Order|Alarms may be ordered by the active status (followed by severity and time, the default) or the severity (followed by time).
 
-### All critical alarms
+### <a name="all-alarms"></a> All critical alarms
 
 The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
 
@@ -35,7 +162,7 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 
 For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
-### Applications
+### <a name="applications"></a> Applications
 
 The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
 
@@ -44,7 +171,7 @@ The "Applications" widget shows a list of links to all available applications. A
 For details on applications, refer to [Administration > Managing Applications](/users-guide/administration#managing-applications).
 
 
-### Asset notes
+### <a name="asset-notes"></a> Asset notes
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget.
 
@@ -53,7 +180,7 @@ The "Asset notes" widget displays messages provided by the administrative user t
 Only users with the permission to edit the home dashboard will be able to provide this message.
 
 
-### Asset properties
+### <a name="asset-properties"></a> Asset properties
 
 The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
 
@@ -116,13 +243,13 @@ You can rearrange the columns by clicking the icon at the very left of a row and
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
 
-### Data point graph
+### <a name="data-graph"></a> Data point graph
 
 The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/users-guide/cockpit/#data-explorer).
 
 ![Data Point Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>. 
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>.
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 
@@ -133,7 +260,7 @@ At the top right of the data point graph, an **Auto scroll** toggle determines t
 
 ![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
 
-### Data point list
+### <a name="data-list"></a> Data point list
 
 The "Data point list" widget shows data points (measurements), one in each row, with current values and data point properties.
 
@@ -166,7 +293,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 </tbody>
 </table>
 
-### Data point table
+### <a name="data-table"></a> Data point table
 
 The "Data point table" widget configuration is similar to the "Data point graph" widget, but instead of visualizing the data as a line-chart, data is visualized as a table.
 
@@ -176,7 +303,7 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
 
-### Event list
+### <a name="event-list"></a> Event list
 
 The "Event list" widget lets you monitor events for a selected device.
 
@@ -184,23 +311,23 @@ The "Event list" widget lets you monitor events for a selected device.
 
 Additionally, a specific date range can be set and the events can be monitored in realtime.
 
-### Fieldbus device
+### <a name="fieldbus-device"></a> Fieldbus device
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
 For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
 
-### Help and service
+### <a name="help-service"></a> Help and service
 
 The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
 
 ![Help and service widget](/images/users-guide/cockpit/cockpit-widget-help-service.png)
 
-### Image
+### <a name="widget-image"></a> Image
 
 The "Image" widget lets you display a single image to be selected from your file system by browsing. There are no additional parameters to be configured.
 
-### Info Gauge
+### <a name="info-gauge"></a> Info Gauge
 
 The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels.
 
@@ -215,7 +342,7 @@ You can select one data point for the gauge, and multiple data points shown with
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
 
-### HTML
+### <a name="widget-html"></a> HTML
 
 The "HTML" widget shows user-defined content. The content can be formatted using HTML.
 
@@ -246,7 +373,7 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
-### Linear Gauge
+### <a name="linear-gauge"></a> Linear Gauge
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
@@ -256,7 +383,7 @@ The "Linear gauge" widget visualizes data points in form of a linear gauge. Min 
 
 You must enable at least one data point to create the "Linear gauge" widget.
 
-### Map
+### <a name="widget-map"></a> Map
 
 The "Map" widget shows the location of a device or all devices of a group.
 
@@ -284,7 +411,7 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 
 >**Info:** If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
-### Message sending
+### <a name="widget-message-sending"></a> Message sending
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support this type of operation.
 
@@ -321,13 +448,13 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tbody>
 </table>
 
-### Quick links
+### <a name="quick-links"></a> Quick links
 
 The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
 
 ![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
-### Radial Gauge
+### <a name="radial-gauge"></a> Radial Gauge
 
 The "Radial gauge" widget visualizes data points in form of a radial gauge.
 
@@ -336,7 +463,7 @@ The "Radial gauge" widget visualizes data points in form of a radial gauge.
 You must enable at least one data point to create the "Radial gauge" widget.
 
 
-### Recent alarms
+### <a name="recent-alarms"></a> Recent alarms
 
 The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
 
@@ -344,15 +471,15 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
-### Relay array control
+### <a name="relay-array-control"></a> Relay array control
 
 The "Relay array control" widget lets you switch relays on or off independently in an array of relays. Only available for devices that support this type of operation.
 
-### Relay control
+### <a name="relay-control"></a> Relay control
 
 The "Relay control" widget allows you to switch a device relay on or off. Only available for devices that support this type of operation.
 
-### Rotation
+### <a name="widget-rotation"></a> Rotation
 
 The "Rotation" widget lets you render an object model of a device.
 
@@ -368,7 +495,7 @@ The "Rotation" widget lets you render an object model of a device.
 
 In the "Rotation" widget you can rotate the object by dragging and moving it around. Zoom in and out by using the mouse.
 
-### SCADA
+### <a name="widget-scada"></a> SCADA
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
@@ -378,7 +505,7 @@ For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status 
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
-### Silo
+### <a name="widget-silo"></a> Silo
 
 The "Silo" widget displays data points (measurements) with current values in a silo presentation.
 
@@ -407,7 +534,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 </tbody>
 </table>
 
-### Traffic light
+### <a name="traffic-light"></a> Traffic light
 
 The "Traffic light" widget visualizes the states of a device as traffic light.
 

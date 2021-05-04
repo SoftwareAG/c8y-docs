@@ -86,7 +86,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">Analytics documentation</td>
-<td align="left"><a href="/predictive-analytics/introduction/">Machine learning guide</a></td>
+<td align="left"><a href="/predictive-analytics/introduction/">Machine Learning guide</a></td>
 <td align="left">Detailed information on the machine learning capabilities in the Cumulocity IoT platform.</td>
 </tr>
 
@@ -98,7 +98,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 <tr>
 <td align="left"><a href="/release-notes/overview/">Release Notes</a></td>
 <td align="left"></td>
-<td align="left">Find detailed information on new features, improvements and fixes implemented in each single Cumulocity IoT release, including maintenance releases.</td>
+<td align="left">Find detailed information on new features, improvements and fixes implemented in each single Cumulocity IoT release, including Maintenance releases.</td>
 </tr>
 </tbody>
 </table>

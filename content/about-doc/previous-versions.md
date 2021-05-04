@@ -12,7 +12,7 @@ You can switch between the versions by using the dropdown list at the top right.
 
 The Cumulocity IoT documentation sources are located in a Git repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it.
 
-You find the documentation sources for the maintenance release versions in the following branches:
+You find the documentation sources for the GA release versions in the following branches:
 
 Release 10.6.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0)
 

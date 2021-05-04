@@ -65,11 +65,11 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#fieldbus-device">Fieldbus device</a></td>
-<td align="left">The “Fieldbus device” widget lets you see the status of a modbus device and operate it.</td>
+<td align="left">Lets you see the status of a modbus device and operate it.</td>
 </tr>
 <tr>
 <td align="left"><a href="#help-service">Help and service</a></td>
-<td align="left">The “Help and service” widget displays links to help and service resources.</td>
+<td align="left">Displays links to help and service resources.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widget-image">Image</a></td>
@@ -77,7 +77,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#info-gauge">Info Gauge</a></td>
-<td align="left">The “Info gauge” widget visualizes one data point in form of a radial gauge and multiple data points as labels.</td>
+<td align="left">Visualizes one data point in form of a radial gauge and multiple data points as labels.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widget-html">HTML</a></td>

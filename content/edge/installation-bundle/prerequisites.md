@@ -64,7 +64,6 @@ The following ports need to be enabled by default in order to accept traffic fro
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
-|any|any|Edge VM IP|TCP/80|HTTP
 |any|any|Edge VM IP|TTCP/443|HTTPS
 |any|any|Edge VM IP|TCP/1883|MQTT
 |any|any|Edge VM IP|TCP/8883|MQTT/TLS
@@ -77,7 +76,6 @@ The core node must be able to connect to the internet. Ports required to outside
 
 |Service|Port|
 |:---|:---|
-|HTTP|80|
 |HTTPS|443|
 
 Depending on the installed integrations (email, SMS, etc.) different ports might have to be opened in order to make these services available to the Cumulocity IoT platform. The descriptions of these ports are delivered with the corresponding integrations.

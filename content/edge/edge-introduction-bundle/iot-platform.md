@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 40
 title: IoT platform
 layout: redirect
 ---

@@ -161,13 +161,19 @@ Generic requests that are sent using the Cumulocity IoT transport now return the
 In previous versions, this was put into a dictionary with an empty key. So if you have existing code such as the following
 
 ```
-AnyExtractor dict := 
-AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
+AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
 
 You have to replace this with:
+
 ```
 AnyExtractor dict := AnyExtractor(response.body);
+```
+
+Alternatively, you can change your code to the following form in advance of the upgrade, since it works with both versions:
+
+```
+AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
 ```
 
 See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.

@@ -180,7 +180,7 @@ In the **Misc** section you specify the “Button Border-Radius” by providing 
 
 **Cookie banner**
 
-In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. The banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
 
 The following parameters can be specified:
 

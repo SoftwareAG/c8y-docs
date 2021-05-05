@@ -63,12 +63,3 @@ Using inventory roles, you can selectively assign a support user for specific su
 3. Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
-
-#### Product experience
-
-In the **Product experience** section, you can provide an API access key, i.e. a unique access key used for authentication of REST API requests, for the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience tracking.
-
-<img src="/images/users-guide/Administration/admin-settings-gainsight.png" alt="Product experience">
-<br>
-
-If this key is provided, a parent tenant can enable the Gainsight product experience tracking for subtenants, see [Managing tenants](/users-guide/enterprise-edition-bundle/managing-tenants).

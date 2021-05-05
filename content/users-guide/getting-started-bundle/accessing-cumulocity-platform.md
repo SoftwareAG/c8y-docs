@@ -57,7 +57,7 @@ If you use one of the public cloud instances of the Cumulocity IoT platform and 
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default only on the Cumulocity IoT public cloud instances. For on-premise instances this feature needs to be configured explicitly, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+> **Info:** The cookie banner is turned on by default on the Cumulocity IoT public cloud instances. For on-premise instances, this feature can be configured, see [Enterprise Tenant > Customizing your platform > Branding](/users-guide/administration/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.

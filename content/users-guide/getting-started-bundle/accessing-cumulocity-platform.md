@@ -42,7 +42,7 @@ To access the applications for your Cumulocity IoT tenant, use the following URL
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. See [Tenants](https://cumulocity.com/api/#tag/Tenants) in the **Cumulocity IoT OpenAPI** Specification for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification for further details on tenant ID and tenant domain.
 
 >**Info:** The above URL is only valid for Cumulocity IoT Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 

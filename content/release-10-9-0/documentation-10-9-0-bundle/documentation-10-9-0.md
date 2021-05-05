@@ -13,11 +13,11 @@ Moreover, you can find the following major enhancements, improvements and fixes 
 
 ### New guides
 
-#### Open API specification
+#### OpenAPI specification
 
-A new Open API Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A new OpenAPI Specification for the Cumulocity IoT REST API is available at [https://cumulocity.com/api](https://cumulocity.com/api). The new specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
-![Open API specification](/images/release-notes/open-api-new.png)
+![OpenAPI specification](/images/release-notes/open-api-new.png)
 
 The new specification is an enhancement of the former *Reference guide* and replaces it, starting with release 10.9.0.
 
@@ -27,7 +27,7 @@ A new release notes presentation is available which combines the release notes f
 
 ![Release notes](/images/release-notes/release-notes-new-page.png)
 
-The new release notes page is accessible through the dropdown list on the documentation website.  
+The new release notes page is accessible through a link in the top navigation on the documentation website.  
 
 #### Installation and operations guides
 

@@ -16,6 +16,6 @@ aliases:
 
 <p style="font-size:16px">On this new page, select a release version from the dropdown on the left and navigate to the component you are interested in.</p>
 
-You can access the release notes page from the link in the top navigation on the documentation website or using the URL <a href="https://cumulocity.com/guides/releasenotes/about">https://cumulocity.com/guides/releasenotes/about</a>.
+You can access the release notes page from the release version dropdown list on the documentation website or using the URL <a href="https://cumulocity.com/guides/releasenotes/about">https://cumulocity.com/guides/releasenotes/about</a>.
 
 </div>

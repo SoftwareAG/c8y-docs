@@ -2,7 +2,24 @@
 weight: 80
 title: SmartREST templates
 layout: redirect
+helpcontent: >-
+	SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+
+
+	To add a new template, you may either import an existing template or create a new one.
+
+
+	To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.
+
+
+	To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *Device Management > SmartREST templates* section in the *User guide*.
 ---
+
+SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+
+To add a new template, either import an existing template or create a new one.
+To import a template, click **Import template** at the right of the top menu bar, select a file to be uploaded and provide a name and unique ID.
+To create a new template, click **Create template** at the right of the top menu bar, provide a name and unique ID and add the required messages or responses as described in the *Device Management > SmartREST templates* section in the *User guide*.
 
 ### Introduction
 
@@ -28,14 +45,14 @@ There are two ways to add a SmartRest template:
 
 ### To import an existing SmartREST template
 
-1. Click **Import** at the right of the top menu bar.
+1. Click **Import template** at the right of the top menu bar.
 2. In the resulting dialog box, choose a file to upload by browsing for it.
 3. Enter a template name and a unique template ID (both mandatory fields).
 4. Click **Import** to import the template.
 
 ### To create a new SmartREST template
 
-1. Click **New** at the right of the top menu bar.
+1. Click **Create template** at the right of the top menu bar.
 2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields).
 3. Click **Continue** to proceed adding messages or responses.
 

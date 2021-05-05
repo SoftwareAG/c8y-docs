@@ -2,6 +2,16 @@
 weight: 90
 title: Working with simulators
 layout: redirect
+helpcontent: >--
+  With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.
+
+
+  A simulator uses a playlist to simulate messages that the device sends to the Cumulocity IoT platform. A playlist is a series of instructions that the simulator executes one after the other. An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).
+
+  For each simulator, you can create instructions specifying what the simulator is supposed to do.
+
+
+  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *Device Management > Simulator* section in the *User guide*.
 ---
 
 With the Cumulocity IoT simulator all aspects of IoT devices can be simulated, as
@@ -33,7 +43,7 @@ All simulators which you can access will be listed here.
 
 ### To create a simulator
 
-1. Click **New Simulator** at the right of the top menu bar.
+1. Click **Add simulator** at the right of the top menu bar.
 2. In the resulting dialog box, select a simulator type from the dropdown list in the **Presets** field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
 3. Enter a name for the simulator.
 4. Select the number of instances for this simulator (up to ten).

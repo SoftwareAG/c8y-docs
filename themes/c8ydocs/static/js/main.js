@@ -74,6 +74,8 @@ var main = (function ($) {
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);
+
+          $('.dropdown.version').hide();
         }
 
         if (!active) {

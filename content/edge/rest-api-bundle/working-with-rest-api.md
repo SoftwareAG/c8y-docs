@@ -386,7 +386,7 @@ Use this endpoint to get the time synchronization configuration.
 
 ### GET /edge/configuration/microservices
 
-Use this endpoint to get the status of the microservices.
+Use this endpoint to get the status of the microservices hosting feature.
 
 **Response**
 
@@ -400,7 +400,7 @@ The endpoint returns HTTP status 200.
 }
 ```
 
-The endpoint returns `"enabled": true` if the microservices feature is enabled. 
+The endpoint returns `"enabled": true` if the microservices hosting feature is enabled. 
 
 ### POST /edge/configuration/microservices
 
@@ -423,7 +423,7 @@ Content-Type: application/json
 }
 ```
 
-If the value of `enabled` is set to `true`, the installation service enables the microservices feature.
+If the value of `enabled` is set to `true`, the installation service enables the microservices hosting feature.
 
 **Response**
 

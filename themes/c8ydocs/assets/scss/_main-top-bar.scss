@@ -83,7 +83,7 @@
     margin: 0;
     list-style: none;
     a {
-      color: #ccd2d6;
+      color: #333;
       letter-spacing: 0.05em;
       font-size: 11px;
       text-decoration: none;
@@ -106,7 +106,7 @@
   .nav-right {
     width: 100%;
     margin-top: 2.5rem;
-    
+
     @media (min-width: $screen-sm-min) {
       width: 260px;
       margin-top: 0;

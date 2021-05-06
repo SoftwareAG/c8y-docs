@@ -12,35 +12,7 @@ layout: redirect
 
 ### Configuring the network using the REST APIs
 
-### POST /edge/configuration/network
+To configure the network for the Edge appliance, use the following endpoints:
 
-Use this endpoint to configure the Cumulocity IoT Edge network.
-
-|HEADERS||
-|:---|:---|
-|Content-Type|application/json
-
-**Request**
-
-```http
-POST https://192.168.66.10/edge/configuration/network
-Content-Type: application/json
-
-{
-	"address": "192.168.66.10",
-	"netmask": "255.255.255.0",
-	"gateway": "192.168.66.1",
-	"dns": "8.8.8.8"
-}
-```
-Use the above JSON format before the installation. After the installation, you can configure the Docker bridge network CIDR.
-
-**Response**
-
-The endpoint returns HTTP status 201, if the request is successful.
-
-```json
-{
-	"id": "2"
-}
-```
+- [POST /edge/configuration/network](/edge/configuration/#post-edgeconfigurationnetwork)
+- [GET /edge/configuration/network](/edge/configuration/#get-edgeconfigurationnetwork)

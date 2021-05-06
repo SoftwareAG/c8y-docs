@@ -26,56 +26,10 @@ Next steps: Note down the Edge device ID and register your Edge appliance in the
 
 ### Configuring remote-connectivity using the REST APIs
 
-### POST /edge/configuration/remote-connectivity
+To configure remote-connectivity, use the following endpoints:
 
-Use this endpoint to configure remote device management.
-
-|HEADERS||
-|:---|:---|
-|Content-Type|application/json
-
-**Request**
-
-```http
-POST https://192.168.66.10/edge/configuration/remote-connectivity
-Content-Type: application/json
-
-{
-
-    "enabled": true,
-
-    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io/apps/cockpit/index.html"
-
-}
-```
-
-**Response**
-
-The endpoint returns HTTP status 201, if the request is successful.
-
-```json
-{
-	"id": "6"
-}
-```
-
-### GET /edge/configuration/remote-connectivity
-
-Use this endpoint to get the remote device management configuration.
-
-**Response**
-
-```json
-{
-
-    "enabled": true,
-
-    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io/apps/cockpit/index.html"
-
-    "device_id": "a-device_id"
-
-}
-```
+- [POST /edge/configuration/remote-connectivity](/edge/rest-api/#post-edgeconfigurationremote-connectivity)
+- [GET /edge/configuration/remote-connectivity](/edge/rest-api/#get-edgeconfigurationremote-connectivity)
 
 ### Registering the Edge appliance in the remote tenant
 
@@ -96,9 +50,9 @@ Turn on the Edge VM and wait for the connection to be established.
 Once the device is connected, the device status changes to **Pending acceptance**.
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.
 
-### Accessing the Edge device from the Cumulocity IoT tenant
+### Accessing the Edge appliance from the Cumulocity IoT tenant
 
-The Cumulocity IoT Cloud Remote Access microservice allows you to remotely access the Edge VM through a web browser. The remote Edge VM is represented as a device in the Device Management application of Cumulocity IoT.
+The Cumulocity IoT Cloud Remote Access microservice allows you to remotely access the Edge VM through a web browser. The remote Edge appliance is represented as a device in the Device Management application of Cumulocity IoT.
 
 #### Prerequisites
 
@@ -127,7 +81,7 @@ For more information about remote access, see [Cloud Remote Access](/cloud-remot
 
 You can access the Edge VM from the Cumulocity IoT tenant by installing the VNC components on your Edge VM. 
 
-**Info:** Ensure that you have registered your Edge VM with the Cumulocity IoT tenant. See [Registering the Edge device with the Cumulocity IoT tenant](/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
+**Info:** Ensure that you have registered your Edge VM with the Cumulocity IoT tenant. See [Registering the Edge appliance in the remote tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
 
 #### Step 1: Installing the VNC components
 

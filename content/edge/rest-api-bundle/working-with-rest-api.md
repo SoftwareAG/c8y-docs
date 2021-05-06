@@ -8,7 +8,7 @@ Cumulocity IoT Edge supports REST APIs to perform the tasks like installation, c
 
 During the installation, the host of the URL changes from the IP address to the domain name that you have configured. For example, https://myown.iot.com/edge/configuration/domain. 
 
-Cumulocity IoT Edge creates a new self-signed certificate for the domain name if you want Cumulocity IoT edge to generate a self-signed certificate. Otherwise, you must upload the self-signed certificate. Also, some of the endpoints could be temporarily unavailable during the installation. For example, the endpoint `/edge/tasks/latest-installation` can be used for polling to see the status (executing, succeeded, failed) of the installation process.
+Cumulocity IoT Edge creates a new self-signed certificate for the domain name if you want Cumulocity IoT Edge to generate a self-signed certificate. Otherwise, you must upload the self-signed certificate. Also, some of the endpoints could be temporarily unavailable during the installation. For example, the endpoint `/edge/tasks/latest-installation` can be used for polling to see the status (executing, succeeded, failed) of the installation process.
 
 When you send an HTTPS request with the POST operation, some of the tasks return the response immediately with the task still running in the background. Here, the tasks refer to installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
@@ -141,13 +141,13 @@ The endpoint returns:
 
 - HTTP status 400, if:
 
-	- The file has been already uploaded for the specified task
-	- The `Content-Disposition` header is set incorrectly
+	- the file has been already uploaded for the specified task
+	- the `Content-Disposition` header is set incorrectly
 	
 - HTTP status 404, if:
-	- The upload timeout has expired
-	- The task doesn't exist
-	- The upload key is not recognized
+	- the upload timeout has expired
+	- the task doesn't exist
+	- the upload key is not recognized
 
 ### POST /edge/update
 

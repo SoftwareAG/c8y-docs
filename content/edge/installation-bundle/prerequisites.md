@@ -26,11 +26,11 @@ For example, to access the Edge platform with the domain name **myown.iot.com**,
 
 	>**Important:** When you are running the Edge post installation process, you must use the FQDN. For example, **myown.iot.com**.
 
-* If you exclude the subdomain from the domain name in the Edge license, you should possess a wildcard SSL certificate which can be used with multiple subdomains (**myown** or others) of the domain (**iot.com**).<br>
-For example, if you provide **iot.com** as the domain name, you should possess an SSL certificate for ***.iot.com**.
+* If you exclude the subdomain from the domain name in the Edge license, you must possess a wildcard SSL certificate which can be used with multiple subdomains (**myown** or others) of the domain (**iot.com**).<br>
+For example, if you provide **iot.com** as the domain name, you must possess an SSL certificate for ***.iot.com**.
 
-* If you have an Internationalized Domain Name (IDN), then you should provide the translated ASCII equivalent domain name.<br>
-For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you should use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge post installation process.<br>
+* If you have an Internationalized Domain Name (IDN), then you must provide the translated ASCII equivalent domain name.<br>
+For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge post installation process.<br>
 
 	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
 
@@ -97,5 +97,5 @@ The virtual machine has the following minimum hardware requirements:
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
 
->**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements should be sized independently and should be over and above the resource allocated to the virtual machines.
+>**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
 

@@ -9,7 +9,7 @@ To install Cumulocity IoT Edge using the GUI:
 1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
 <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
 
-2. Configure the network for your Edge appliance. For example, see the sample screenshot.
+2. Configure the network for your Edge appliance, see the sample screenshot.
 <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
 
 3. Press **Enter** to save the network configuration. 
@@ -25,7 +25,7 @@ To install Cumulocity IoT Edge using the GUI:
 
 6. Create an administrator account for the guest operating system below **Guest OS admin**.
 
-7. Provide a password for the **root** user of the guest operating system below **Guest OS root**, and click **Next**.
+7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
 8. Create an administrator account to access the Cumulocity IoT Edge tenant and the Cumulocity IoT Edge management tenant,and click **Next**.
 
@@ -47,4 +47,4 @@ To install Cumulocity IoT Edge using the GUI:
 
 The installation takes some time to complete. After the installation is complete, the "Cumulocity IoT Edge installation is now complete" message appears. If you still see the installation in progress, refresh the browser. 
 
-Next steps, click **Open Cumulocity IoT Edge**.
+Next, click **Open Cumulocity IoT Edge**.

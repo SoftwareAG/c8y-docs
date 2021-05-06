@@ -10,7 +10,7 @@ During the installation, the host of the URL changes from the IP address to the 
 
 Cumulocity IoT Edge creates a new self-signed certificate for the domain name if you want Cumulocity IoT edge to generate a self-signed certificate. Otherwise, you must upload the self-signed certificate. Also, some of the endpoints could be temporarily unavailable during the installation. For example, the endpoint `/edge/tasks/latest-installation` can be used for polling to see the status (executing, succeeded, failed) of the installation process.
 
-When you send a HTTPS request with the POST operation, some of the tasks return the response immediately with the task still running in the background. Here, the tasks refer to installation process, uploading license and certificate files, configuring a network and so on. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
+When you send an HTTPS request with the POST operation, some of the tasks return the response immediately with the task still running in the background. Here, the tasks refer to installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
 >**Important:** Running two tasks concurrently results in conflicts between the tasks and might return HTTP status 409.
 

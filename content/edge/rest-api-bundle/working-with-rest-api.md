@@ -149,39 +149,6 @@ The endpoint returns:
 	- The task doesn't exist
 	- The upload key is not recognized
 
-### POST /edge/configuration/network
-
-Use this endpoint to configure the Cumulocity IoT Edge network.
-
-|HEADERS||
-|:---|:---|
-|Content-Type|application/json
-
-**Request**
-
-```http
-POST https://192.168.66.10/edge/configuration/network
-Content-Type: application/json
-
-{
-	"address": "192.168.66.10",
-	"netmask": "255.255.255.0",
-	"gateway": "192.168.66.1",
-	"dns": "8.8.8.8"
-}
-```
-Use the above JSON format before the installation. After the installation, you can configure the Docker bridge network CIDR.
-
-**Response**
-
-The endpoint returns HTTP status 201, if the request is successful.
-
-```json
-{
-	"id": "2"
-}
-```
-
 ### POST /edge/update
 
 Use this endpoint to update Cumulocity IoT Edge to a newer version.
@@ -250,6 +217,39 @@ The endpoint returns HTTP status 200.
 ```json
 {
     "hostname": "iot-edge-server"
+}
+```
+
+### POST /edge/configuration/network
+
+Use this endpoint to configure the Cumulocity IoT Edge network.
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/json
+
+**Request**
+
+```http
+POST https://192.168.66.10/edge/configuration/network
+Content-Type: application/json
+
+{
+	"address": "192.168.66.10",
+	"netmask": "255.255.255.0",
+	"gateway": "192.168.66.1",
+	"dns": "8.8.8.8"
+}
+```
+Use the above JSON format before the installation. After the installation, you can configure the Docker bridge network CIDR.
+
+**Response**
+
+The endpoint returns HTTP status 201, if the request is successful.
+
+```json
+{
+	"id": "2"
 }
 ```
 

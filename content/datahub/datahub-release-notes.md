@@ -14,6 +14,6 @@ aliases:
 
 <p style="font-size:16px">On this new page, select a release version from the dropdown on the left and navigate to the DataHub entry in the index.</p>
 
-You can access the release notes page from the release version dropdown list on the documentation website or using the URL <a href="https://cumulocity.com/guides/releasenotes/about">https://cumulocity.com/guides/releasenotes/about</a>.
+You can access the release notes page from a link in the top navigation on the documentation website or using the URL <a href="https://cumulocity.com/guides/releasenotes/about">https://cumulocity.com/guides/releasenotes/about</a>.
 
 </div>

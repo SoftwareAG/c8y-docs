@@ -2,6 +2,17 @@
 weight: 30
 title: Data explorer
 layout: redirect
+helpcontent: >-
+  In the data explorer, data points, i.e. measurements or sensor data, can be visualized. On the right, you see a list of available data points. On the left you see its visualization.
+
+
+  Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
+
+
+  You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see *Cockpit > Data explorer* in the *User guide*.
+
+
+  Moreover, the data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file.
 ---
 
 <a name="data explorer"></a>

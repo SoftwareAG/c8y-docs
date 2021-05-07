@@ -299,7 +299,7 @@ Content-Type: application/json
 
     "enabled": true,
 
-    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io/apps/cockpit/index.html"
+    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io"
 
 }
 ```
@@ -324,7 +324,7 @@ The endpoint returns HTTP status 200.
 
 ```json
 {
-    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io/apps/cockpit/index.html",
+    "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io",
 
     "enabled": true,
 

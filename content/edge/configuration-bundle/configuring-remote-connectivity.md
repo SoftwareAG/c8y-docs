@@ -4,7 +4,7 @@ title: Configuring remote-connectivity
 layout: redirect
 ---
 
-The Cumulocity IoT tenant (remote tenant) allows you to remotely manage your Edge appliance by registering the Edge appliance in the Cumulocity IoT tenant account. To do so, you must first configure the Cumulocity IoT tenant account in the Edge agent and then register your Edge appliance in the remote tenant account. The Cumulocity IoT tenant uses the SSH protocol to access the remote Edge appliance through a web browser.
+The Cumulocity IoT tenant (remote tenant) allows you to remotely manage your Edge appliance by registering the Edge appliance in the Cumulocity IoT tenant account. To do so, you must first enable remote-connectivity in the Edge appliance and then register your Edge appliance in the remote tenant account. The Cumulocity IoT tenant uses the SSH protocol to access the remote Edge appliance through a web browser.
 
 >**Important:** Ensure that the DNS entry is configured while configuring the network for your Edge appliance.
 
@@ -52,7 +52,7 @@ Before performing these steps, ensure that you have configured the URL for the r
 
 ### Accessing the Edge appliance from the Cumulocity IoT tenant
 
-The Cumulocity IoT Cloud Remote Access microservice allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of Cumulocity IoT.
+The Cumulocity IoT Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of Cumulocity IoT.
 
 #### Prerequisites
 

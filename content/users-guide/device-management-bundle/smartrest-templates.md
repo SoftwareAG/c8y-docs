@@ -84,15 +84,17 @@ A response template contains the necessary information to extract data values fr
 |:---|:---|
 |Response ID|Unique integer that will be used as a response identifier.
 |Name|Name for the response. Mandatory.
-|Base Pattern|Base pattern for the response.
+|Base Pattern|Base pattern of JSON paths referencing objects and object lists to extract data and values in order to execute the response.
 |Condition|Condition value of the response.
 |Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
 
-	![Add template response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+	![Add template response filled out](/images/users-guide/DeviceManagement/defmgmt-devicetypes-smartrest-addresponse-test.png)
 
 3. Click **Save**.
 
 The response will be added to the SmartREST template.
+
+For further information see [Templates > SmartREST](https://cumulocity.com/guides/reference/smartrest/#response-templates) in the *Reference guide*.
 
 #### To remove a response
 

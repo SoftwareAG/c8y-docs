@@ -50,7 +50,7 @@ Use this endpoint to get the domain name configured in Cumulocity IoT Edge. This
 
 **Response**:
 
-This endpoint returns:
+The endpoint returns:
 
 - HTTP status 200, after the installation.
 
@@ -81,11 +81,11 @@ Content-Type: application/json
 	}
 ```
 	
-In the JSON syntax above, the value `certificate` can be `generate` or `upload`:
+In the JSON syntax above, the value of `certificate` can be `generate` or `upload`:
 
-- If you have `"certificate": "generate"`, Cumulocity IoT Edge generates the certificate for you.
+- If you have set `"certificate": "generate"`, Cumulocity IoT Edge generates the certificate for you.
 
-- If you have `"certificate": "upload"`, you must upload the certificate, before the installation starts.
+- If you have set `"certificate": "upload"`, you must upload the certificate, before the installation starts.
 
 **Response**
 
@@ -374,6 +374,8 @@ Use this endpoint to get the time synchronization configuration.
 
 **Response**
 
+The endpoint returns HTTP status 200.
+
 ```json
 {
     "enabled": true,
@@ -434,6 +436,73 @@ The endpoint returns HTTP status 201, if the request is successful.
 	"id": "9"
 }
 ```
+
+### GET /edge/configuration/certificate
+
+Use this endpoint to review the validity of the current SSL certificate.
+
+**Response**
+
+The endpoint returns HTTP status 200.
+
+```json
+{
+
+	"signing_type": "self-signed",
+	"expiry": "31/12/2099"
+
+}
+```
+
+### POST /edge/configuration/certificate
+
+Use this endpoint to upload the new SSL certificate and the key file.
+
+**Request**
+
+```http
+POST https://myown.iot.com/edge/configuration/certificate
+Content-Type: application/json
+
+{
+
+    "renewal_type": "upload"
+
+}
+```
+In the JSON syntax above, the value of `renewal_type` can be `generate` or `upload`:
+
+- If you have set `"renewal_type": "generate"`, Cumulocity IoT Edge generates the certificate for you.
+
+- If you have set `"renewal_type": "upload"`, you must upload the certificate.
+
+**Response**
+
+- If you have set `"renewal_type": "upload"`, the endpoint returns HTTP status 201.
+
+		{
+		    "id": "14",
+		    "uploads": [
+		        {
+		            "name": "certificate",
+		            "url": "https://myown.iot.com/edge/upload/14/certificate"
+		        },
+		        {
+		            "name": "certificate_key",
+		            "url": "https://myown.iot.com/edge/upload/14/certificate_key"
+		        }
+		    ]
+		}
+
+- If you have set `"renewal_type": "generate"`, the endpoint returns HTTP status 201.
+
+		{
+    		"id": "15"
+		}
+	
+Use the `/edge/upload/` endpoint with the combination of `task_id` and `upload_key`values to upload the SSL certificate and the key file. The `upload_key` represents the values of the keys: `certificate` and `certificate_key`.
+
+The syntax for this endpoint is not static and can be changed anytime.
 
 ### GET /edge/tasks/{id}
 

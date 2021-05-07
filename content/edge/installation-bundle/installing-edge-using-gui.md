@@ -19,7 +19,7 @@ To install Cumulocity IoT Edge using the GUI:
 
 4. Open the URL in a browser to start the installation process.
 
-   Read the prerequisistes and ensure that you have the domain name, SSL certificate and key associated with your domain name, and the license file.
+   Read the prerequisites and ensure that you have the domain name, SSL certificate and key associated with your domain name, and the license file.
 
 5. Click **Start Installation**.
 
@@ -39,7 +39,7 @@ To install Cumulocity IoT Edge using the GUI:
 
 10. Provide the Cumulocity IoT Edge license file associated with your domain name below **Product licence**.
 
-11. Proide the SSL certificate file and the SSL certificate key file.
+11. Provide the SSL certificate file and the SSL certificate key file.
 
     If you do not have an SSL certificate, select **Generate self-signed certificate** to generate one.
 

@@ -20,6 +20,7 @@ aliases:
   - /reference/real-time-notifications
   - /reference-guide/real-time-notifications.html
   - /reference/application-reference
+  - /reference/applications
   - /reference/inventory
   - /reference/events
   - /reference/measurements

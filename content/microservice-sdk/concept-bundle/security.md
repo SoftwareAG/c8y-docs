@@ -73,7 +73,7 @@ You can add them to the [application manifest](#manifest) in the `roles` propert
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review the [User API](https://cumulocity.com/api/#tag/User-API) in the **Cumulocity IoT OpenAPI** Specification.
+The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review the [User API](https://cumulocity.com/api/#tag/User-API) in the Cumulocity IoT OpenAPI Specification.
 
 ### Microservice bootstrap
 

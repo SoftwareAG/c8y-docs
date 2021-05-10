@@ -49,7 +49,7 @@ layout: redirect
 <td align="left">key</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Shared secret of application.</td>
+<td align="left">Applications regardless of their form are identified by a so-called application key. The application key enables Cumulocity to associate a REST request from an application with the particular application.</td>
 <td align="left">POST: Mandatory, PUT: Optional</td>
 </tr>
 <tr>

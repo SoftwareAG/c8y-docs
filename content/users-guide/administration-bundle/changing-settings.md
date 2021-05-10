@@ -23,7 +23,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-In the field **Preferred login modes**, you can select one of the following options:
+In the **Preferred login mode** field, you can select one of the following options:
 
 * OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
@@ -37,7 +37,7 @@ This login mode will be used by the platform's applications as the default metho
 In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 >**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
-> 
+>
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents devices passwords from expiring.
 
 By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#login).

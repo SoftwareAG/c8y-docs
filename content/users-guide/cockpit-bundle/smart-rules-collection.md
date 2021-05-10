@@ -843,68 +843,171 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 ### Smart rule variables
 
-In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS). You can include any information of the triggering event (like the alarm) and its source device.
+In certain rule parameters, various fields of triggering events can be used as variables. When a rule is triggered, the variables are replaced by the actual values of these event fields.
 
-The following table lists example variables:
+You can use this mechanism for example to insert device names or alarm text into various outputs (email, SMS).
+
+**Common fields to be used from all triggering events (alarms, measurements, operations, events)**
 
 <table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>Variable</td>
-    <td>Content</td>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
   </tr>
   <tr>
-    <td>#{creationTime}</td>
-    <td>Time when the alarm was created in the database.</td>
+    <td>#{id}</td>
+    <td>Identifier of the event.</td>
   </tr>
   <tr>
     <td>#{type}</td>
-    <td>Type of the alarm.</td>
+    <td>Type of the event.</td>
+  </tr>
+  <tr>
+    <td>#{source}</td>
+    <td>Identifier of the source of the event.</td>
   </tr>
   <tr>
     <td>#{time}</td>
-    <td>Time of alarm, as provided by the alarm.  </td>
+    <td>Timestamp of the event.  </td>
   </tr>
   <tr>
     <td>#{text}</td>
-    <td>Textual description of the alarm.</td>
-  </tr>
-  <tr>
-    <td>#{source.name}</td>
-    <td>Name of the device.</td>
-  </tr>
-  <tr>
-    <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
-    <td>Serial number of the device.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Notes}</td>
-    <td>Note field of the device.</td>
-  </tr>
-  <tr>
-    <td>#{status}</td>
-    <td>Status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED.</td>
-  </tr>
-  <tr>
-    <td>#{severity}</td>
-    <td>Severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. </td>
-  </tr>
-  <tr>
-    <td>#{count}</td>
-    <td>Number of alarm messages for this device: Repeating messages for the same device and same alarm type are de-duplicated into one alarm.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Address.street}</td>
-    <td>Street of the device.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Address.cityCode}</td>
-    <td>ZIP code of the device.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Address.city}</td>
-    <td>City of the device.</td>
+    <td>Text or message of the event.</td>
   </tr>
 </table>
 
+**Fields specific for alarms and operations**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{status}</td>
+    <td>Status of the operation/alarm: ACTIVE, ACKNOWLEDGED or CLEARED.</td>
+  </tr>
+  <tr>
+    <td>#{severity}</td>
+    <td>Severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING.</td>
+  </tr>
+  <tr>
+    <td>#{count}</td>
+    <td>Number of times the alarm has been sent. Repeating alarms for the same device and same alarm type are de-duplicated into one alarm.</td>
+  </tr>
+</table>
+
+**Fields specific for measurements**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{valueFragment}</td>
+    <td>Measurement value fragment name.</td>
+  </tr>  
+  <tr>
+    <td>#{valueSeries}</td>
+    <td>Measurement series fragment name.</td>
+  </tr>
+  <tr>
+    <td>#{value}</td>
+    <td>Value from the sensor.</td>
+  </tr>
+  <tr>
+    <td>#{unit}</td>
+    <td>Unit being used, for example "mm", "lux".</td>
+  </tr>
+</table>
+
+
+Moreover, the following pattern is supported:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{X.Y} or #{X.Y.Z} </td>
+    <td>The property field information available in extra params or nested structure params of the triggering event.</td>
+  </tr>  
+</table>
+
+#### Example
+
+**Cumulocity IoT event**
+
+```json
+{
+"source":{
+  "id":"10200"
+},
+"type":"TestEvent",
+"text":"sensor was triggered",
+"time":"2014-03-03T12:03:27.845Z",
+"c8y_Position":{
+  "lat":2,
+  "lng":2
+},
+"c8y_evtdata":{
+  "data1":111,
+  "date2":222,
+  "evtInnerData":{
+    "indate1":333,
+    "indate2":444
+  }
+}
+}
+```
+
+Here we can for example define the following variables:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_Position.lat} </td>
+    <td>Gets latitude value.</td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_evtdata.data1} </td>
+    <td>Gets data1 value.</td>
+  </tr>  
+  <tr>
+    <td>{ c8y_evtdata. evtInnerData . indate1} </td>
+    <td>Gets nested structure value.</td>
+  </tr>  
+  <tr>
+    <td>#{source.X.Y} </td>
+    <td>The property field information from the source device (ManagedObject) of the triggering event. For example:
+    <br> #{source.c8y_Hardware.serialNumber} > Serial number of the device.
+    <br> #{source.c8y_Notes} > Note field of the device.
+  </tr>  
+</table>
 
 > **Info:** In case the variable does not exist or is misspelled, the generated content is displayed.

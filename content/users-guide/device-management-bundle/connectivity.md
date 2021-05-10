@@ -95,7 +95,7 @@ If the ICCID is not shown automatically check the following:
 
 * Determine the ICCID of the SIM card. It is printed on the SIM card and is visible in Control Center.
 * Enter the ICCID in the **Info** tab, then click **Save**.
-* Click **Reload** in the tab menu bar to make the **Connectivity** tab appear.
+* Click **Reload** in the top menu bar to make the **Connectivity** tab appear.
 
 > Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity IoT checks if the particular SIM card is managed by the SIM provider.
 

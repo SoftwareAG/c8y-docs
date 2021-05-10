@@ -33,7 +33,7 @@ Below is an example code with the `c8y_Network` fragment:
   	  "domainName":"null",
   	  "addressRange":{
   	    "start":"192.168.128.100",
-        "end":"192.168.128.199"
+  	    "end":"192.168.128.199"
       },
       "enabled":1
   	}

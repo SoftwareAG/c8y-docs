@@ -55,9 +55,9 @@ In the **Info** tab, the following information is provided:
 
 **Sub-assets**
 
-In the **Sub-assets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
+In the **Subassets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
 
-![Sub-assets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
+![Subassets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
 See also [To add a group](#add-group) and [To assign a device to a group](#assigning-devices).
 
@@ -106,7 +106,7 @@ You can quickly assign devices to groups by using the drag and drop functionalit
 
 Moreover, you can assign devices performing the following steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Sub-assets** tab.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
 2. Click **Assign devices** at the right of the top menu bar. In the resulting dialog box search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 3. Checkmark the devices you want to add from the list.
 4. Click **Assign # device(s)** to assign the selected devices.
@@ -189,7 +189,7 @@ The new group will appear as a top-level group in the **Groups** menu of the nav
 
 ![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
-In the **Sub-asset** tab you can adjust your selection and modify the filter settings.
+In the **Subasset** tab you can adjust your selection and modify the filter settings.
 
 #### To delete a smart group
 

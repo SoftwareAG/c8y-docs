@@ -3,6 +3,7 @@ weight: 100
 title: Documentation
 layout: bundle
 ---
+<!--10.9.1.0 - 10.9.8.0-->
 
 The 10.10.0 documentation contains
 
@@ -36,12 +37,30 @@ Issue</th>
 Protocol integration guide</td>
 <td>
 LWM2M</td>
-<td > The description of the dynamic client awake time has been added, see &lt;a href="/protocol-integration/lwm2m/#register-device" class="no-ajaxy"&gt;LWM2M &gt; Registering LWM2M devices. </td>
+<td > A description has been added on how to configure the client awake time on a device-level basis, see &lt;a href="/protocol-integration/lwm2m/#register-device" class="no-ajaxy"&gt;LWM2M &gt; Registering LWM2M devices</a>. </td>
+<td>
+MTM-35340</td>
+</tr>
+
+<tr>
+<td>
+Protocol integration guide</td>
+<td>
+LWM2M</td>
+<td > The description of the dynamic client awake time has been added, see &lt;a href="/protocol-integration/lwm2m/#register-device" class="no-ajaxy"&gt;LWM2M &gt; Registering LWM2M devices</a>. </td>
 <td>
 MTM-34195</td>
 </tr>
 
-
+<tr>
+<td>
+Protocol integration guide</td>
+<td>
+Sigfox</td>
+<td > Two more error messages have been added to the troubleshooting section, see <a href="/protocol-integration/sigfox/#troubleshooting" class="no-ajaxy"<Sigfox > Troubleshooting</a>. </td>
+<td>
+MTM-37912</td>
+</tr>
 
 </tbody></table>
 

@@ -4,15 +4,15 @@ title: Working with REST APIs
 layout: redirect
 ---
 
-Cumulocity IoT Edge supports REST APIs to perform the tasks like installation, configuring the network for the Edge appliance, updating the Edge appliance, changing the hostname, and so on. The REST APIs in Cumulocity IoT Edge use the HTTPS protocol for all the endpoints. Before the installation, Cumulocity IoT Edge generates a self-signed certificate for the IP address of the Edge appliance when you configure the network. You must use the IP address of the Edge appliance in the URL. For example, https://192.168.66.10/edge/tasks/latest-installation.
+Cumulocity IoT Edge supports REST APIs to perform the tasks like installation, configuring the network for the Edge appliance, updating the Edge appliance, changing the hostname, and so on. The REST APIs in Cumulocity IoT Edge use the HTTPS protocol for all the endpoints. Before the installation, the self-signed certificate uses the currently configured IP address of the Edge appliance. You must use the IP address of the Edge appliance in the URL. For example, https://192.168.66.10/edge/tasks/latest-installation.
 
-During the installation, the host of the URL changes from the IP address to the domain name that you have configured. For example, https://myown.iot.com/edge/configuration/domain. 
+During the installation, the certificate changes from using the IP address to the domain name that you have configured. You must use the domain name in your browser to match the certificate. For example, https://myown.iot.com/edge/configuration/domain. 
 
-Cumulocity IoT Edge creates a new self-signed certificate for the domain name if you want Cumulocity IoT Edge to generate a self-signed certificate. Otherwise, you must upload the self-signed certificate. Also, some of the endpoints could be temporarily unavailable during the installation. For example, the `/edge/tasks/latest-installation` endpoint can be used for polling to see the status (executing, succeeded, failed) of the installation process.
+You can either upload a certificate (self-signed) issued by a certificate authority or have Cumulocity IoT Edge generate a self-signed certificate for the domain name. Some of the endpoints could be temporarily unavailable during the installation. For example, the `edge/configuration/network` endpoint can be used only after the installation.
 
-When you send an HTTPS request with the POST operation, some of the tasks return the response immediately with the task still running in the background. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
+When you use a POST endpoint, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
->**Important:** Running two tasks concurrently results in conflicts between the tasks and might return HTTP status 409.
+>**Important:** You cannot run two tasks at the same time. If you attempt to run a task when another task is in progress, then you will get a HTTP status 409.
 
 ### Authentication
 
@@ -23,6 +23,22 @@ If you are using the REST APIs for configuring the Edge appliance, most endpoint
 Your authorization header would look like:
 
 	Authorization: Basic bWFuYWdlbWVudC9hZG1pbjpwYXNzd29yZA==
+
+The following table lists the endpoints that need authentication and the endpoints that does not need authentication:
+
+|Endpoints need authentication|Endpoints does not need authentication
+|:---|:---
+|/edge/tasks/latest-installation|/edge/configuration/network
+|/edge/configuration/domain|/edge/tasks/{id}
+|/edge/install|/edge/tasks/{id}/log
+||/edge/version
+||/edge/configuration/hostname
+||/edge/update
+||/edge/configuration/time-sync
+||/edge/configuration/microservices
+||/edge/configuration/remote-connectivity
+||/edge/reboot
+||/edge/configuration/certificate
 
 ### GET /edge/tasks/latest-installation
 
@@ -42,7 +58,7 @@ The endpoint returns:
 
 	The `status` represents the current status of the installation: `executing`, `succeeded`, or `failed`.
 	
-- HTTP status 404, before attempting the installation.
+- HTTP status 404, before an installation has been attempted.
 
 ### GET /edge/configuration/domain
 
@@ -60,7 +76,11 @@ The endpoint returns:
 		
 ### POST /edge/install
 
-Use this endpoint to perform the initial installation.
+Use this endpoint to perform the initial installation. 
+
+If the installation is successful, this endpoint will not be available.
+
+If the installation fails, this endpoint will be available. You can use the endpoint to attempt the installation again. 
 
 |HEADERS||
 |:---|:---|
@@ -107,47 +127,7 @@ The endpoint returns:
 	
 Note that this task does not start the installation. You must run the subsequent calls to upload the license and the certificate files to start the installation.
 
-To upload the license and the certificate files, use the `/edge/upload/` endpoint with the combination of `task_id` and `upload_key`values. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`.
-
-The syntax for this endpoint is not static and can be changed anytime.
-
-|HEADERS||
-|:---|:---|
-|Content-Type|application/octet-stream
-|Content-Disposition|attachment; filename="\<filename\>"
-
-**Request**
-
-In the following JSON syntax, the `Content-Type` is set to `application/octet-stream` for the binary files. The `Content-Disposition` header must contain only the filename with the file extension and not the path to the file. The URL for this endpoint `/edge/upload/` must be read from the `uploads` JSON response from the `/edge/install` endpoint. You must not construct the URL.
-
-```http
-POST https://192.168.66.10/edge/upload/1/certificate_key
-
-Content-Type: application/octet-stream
-Content-Disposition: attachment; filename="myown-selfsigned.key"
-```
-
-**Timeout period**
-
-For each task that requires uploading the files, a 10 second timeout is applied from when the bytes were last received for any upload that is part of this task, or from when the task was created. If this timeout is reached, the endpoint returns HTTP status 404.
-
->**Important:** If you have a large file to upload (such as an archive for the `/edge/update` endpoint), check whether your HTTP client loads the full file into the memory before sending the file. It can take more than 10 seconds to load a large file (in gigabytes) into the memory, so the timeout could expire before the HTTP client can send the first byte. Software AG recommends you to stream the bytes directly from the file to the upload endpoint. If you fail to stream the bytes directly from the file and read the file into the memory before calling the endpoint that starts the task, then the client is ready to stream the upload immediately.
-
-**Response**
-
-The endpoint returns:
-
-- HTTP status 201, if the request is successful.
-
-- HTTP status 400, if:
-
-	- the file has been already uploaded for the specified task
-	- the `Content-Disposition` header is set incorrectly
-	
-- HTTP status 404, if:
-	- the upload timeout has expired
-	- the task doesn't exist
-	- the upload key is not recognized
+To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 ### POST /edge/update
 
@@ -155,16 +135,13 @@ Use this endpoint to update Cumulocity IoT Edge to a newer version.
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/octet-stream
-|Content-Disposition|attachment; filename="\<filename\>"
+|Content-Type|application/json
 
 **Request**
 
 ```http
 POST https://myown.iot.com/edge/update
-
-Content-Type: application/octet-stream
-Content-Disposition: attachment; filename="CumulocityIoTEdge.tar.gz"
+Content-Type: application/json
 
 {
     "type": "upload"
@@ -186,7 +163,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-Upload the archive of the new Cumulocity IoT Edge version at the URL returned in the JSON using the `/edge/upload/` endpoint.
+Upload the archive of the new Cumulocity IoT Edge version using the URL returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 ### POST /edge/configuration/network
 
@@ -209,7 +186,26 @@ Content-Type: application/json
 	"dns": "8.8.8.8"
 }
 ```
-Use the above JSON format before the installation. After the installation, you can configure the Docker bridge network CIDR.
+Use the above JSON format before the installation to configure the network. Before the installation, the `dns` key and the network CIDR key are optional. After the installation, you can configure the Docker bridge network CIDR.
+
+To configure the Docker bridge network CIDR, use the same JSON syntax:
+
+**Request**
+
+```http
+POST https://192.168.66.10/edge/configuration/network
+Content-Type: application/json
+
+{
+	"address": "192.168.66.10",
+	"netmask": "255.255.255.0",
+	"gateway": "192.168.66.1",
+	"dns": "8.8.8.8",
+    "ip_range": "172.18.0.1/16"
+}
+```
+
+Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. 
 
 **Response**
 
@@ -218,6 +214,24 @@ The endpoint returns HTTP status 201, if the request is successful.
 ```json
 {
 	"id": "2"
+}
+```
+
+### GET /edge/configuration/network
+
+Use this endpoint to get the network configuration of the Edge appliance.
+
+**Response**
+
+The endpoint returns HTTP status 200.
+
+```json
+{
+    "address": "192.168.66.10",
+	"netmask": "255.255.255.0",
+	"gateway": "192.168.66.1",
+	"dns": "8.8.8.8",
+    "ip_range": "172.18.0.1/16"
 }
 ```
 
@@ -500,9 +514,7 @@ In the JSON syntax above, the value of `renewal_type` can be `generate` or `uplo
     		"id": "15"
 		}
 	
-Use the `/edge/upload/` endpoint with the combination of `task_id` and `upload_key`values to upload the SSL certificate and the key file. The `upload_key` represents the values of the keys: `certificate` and `certificate_key`.
-
-The syntax for this endpoint is not static and can be changed anytime.
+To upload the certificate, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 ### GET /edge/tasks/{id}
 

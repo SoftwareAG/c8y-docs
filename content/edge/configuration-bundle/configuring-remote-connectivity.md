@@ -4,9 +4,9 @@ title: Configuring remote-connectivity
 layout: redirect
 ---
 
-The Cumulocity IoT tenant (remote tenant) allows you to remotely manage your Edge appliance by registering the Edge appliance in the Cumulocity IoT tenant account. To do so, you must first enable remote-connectivity in the Edge appliance and then register your Edge appliance in the remote tenant account. The Cumulocity IoT tenant uses the SSH protocol to access the remote Edge appliance through a web browser.
+The Cumulocity IoT tenant allows you to remotely manage your Edge appliance by registering the Edge appliance in the Cumulocity IoT tenant account. To do so, you must first enable remote-connectivity in the Edge appliance and then register your Edge appliance in the Cumulocity IoT tenant account. The Cumulocity IoT tenant uses the SSH protocol to access the remote Edge appliance through a web browser.
 
->**Important:** Ensure that the DNS entry is configured while configuring the network for your Edge appliance.
+>**Important:** If you want to configure remote-connectivity, you must configure the DNS when configuring the network, for example, using the `/edge/configuration/network` endpoint.
 
 ### Configuring remote-connectivity using the GUI
 
@@ -18,11 +18,11 @@ The Cumulocity IoT tenant (remote tenant) allows you to remotely manage your Edg
 
 4. Click **Enable remote connectivity** toggle to enable remote-connectivity.
 
-5. Provide the URL of the remote tenant in the **Remote tenant URL** field.
+5. Provide the URL of the Cumulocity IoT tenant in the **Remote tenant URL** field.
 
 6. Click **Save**.
 
-Next steps: Note down the Edge device ID and register your Edge appliance in the remote tenant.
+Next steps: Note down the Edge device ID and register your Edge appliance in the Cumulocity IoT tenant.
 
 ### Configuring remote-connectivity using the REST APIs
 
@@ -31,11 +31,11 @@ To configure remote-connectivity, use the following endpoints:
 - [POST /edge/configuration/remote-connectivity](/edge/rest-api/#post-edgeconfigurationremote-connectivity)
 - [GET /edge/configuration/remote-connectivity](/edge/rest-api/#get-edgeconfigurationremote-connectivity)
 
-### Registering the Edge appliance in the remote tenant
+### Registering the Edge appliance in the Cumulocity IoT tenant
 
-Before performing these steps, ensure that you have configured the URL for the remote tenant in the Edge appliance.   
+Before performing these steps, ensure that you have configured the URL for the Cumulocity IoT tenant in the Edge appliance.   
 
-1. Log in to your remote tenant. 
+1. Log in to your Cumulocity IoT tenant. 
 2. Go to **Device Management**.
 3. Click **Registration** in the **Devices** menu and then click **Register device**.
 4. Select **General device registration**.
@@ -77,11 +77,11 @@ The following protocols are supported to connect to the Edge appliance through r
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).
 
-### Accessing the Edge device remotely through VNC
+### Accessing the Edge appliance remotely through VNC
 
 You can access the Edge appliance from the Cumulocity IoT tenant by installing the VNC components on your Edge appliance. 
 
-**Info:** Ensure that you have registered your Edge appliance with the Cumulocity IoT tenant. See [Registering the Edge appliance in the remote tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the Cumulocity IoT tenant. See [Registering the Edge appliance in the Cumulocity IoT tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
 
 #### Step 1: Installing the VNC components
 
@@ -111,7 +111,7 @@ Record the allocated port number. This port number will be used to connect to th
 
 #### Step 3: Connecting to the Edge appliance using VNC
 
-To access and connect to the Edge appliance, you must create a remote access point.
+To access and connect to the Edge appliance:
 
 1. In the Cumulocity IoT tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
 
@@ -126,3 +126,16 @@ The connection to the Edge appliance is established and the GUI appears for the 
 #### Changing the VNC password
 
 You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
+
+### Accessing the Edge appliance remotely through SSH
+
+You can access the Edge appliance from the Cumulocity IoT tenant through SSH. 
+
+**Info:** Ensure that you have registered your Edge appliance with the Cumulocity IoT tenant. See [Registering the Edge appliance in the Cumulocity IoT tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+
+To access and connect to the Edge appliance:
+
+1. In the Cumulocity IoT tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#to-add-a-remote-access-endpoint-via-ssh). You must use the same port number that is allocated for you.
+
+2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
+

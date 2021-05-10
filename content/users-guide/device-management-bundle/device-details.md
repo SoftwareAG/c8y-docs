@@ -367,8 +367,6 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Depending on the type of device and the integration into Cumulocity IoT, you can configure device-side geo-fencing and motion detection.
 
->**Info:** When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID-based data.
-
 ### <a name="identity"></a>Identity
 
 Cumulocity IoT can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.

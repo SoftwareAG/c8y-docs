@@ -2,7 +2,7 @@
 weight: 90
 title: Working with simulators
 layout: redirect
-helpcontent: >--
+helpcontent: >-
   With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.
 
 

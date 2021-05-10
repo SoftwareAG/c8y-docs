@@ -2,7 +2,7 @@
 weight: 50
 title: Managing device types
 layout: redirect
-helpcontent: >--
+helpcontent: >-
   To process data from various device types, Cumulocity IoT uses so-called device protocols. Each device protocol is configured for a particular device protocol type (for example Modbus, LoRa, LWM2M).
 
 

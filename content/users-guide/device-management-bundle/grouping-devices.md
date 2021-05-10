@@ -2,6 +2,14 @@
 weight: 30
 title: Grouping devices
 layout: redirect
+helpcontent: >-
+  Devices can be arbitrarily grouped according to your requirements. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+
+
+  To create a new group, click Click **Add group** at the top right.
+
+
+  You can easily restructure groups or assign devices to groups, by dragging and dropping groups or devices in the navigator, see also *Device Management > Grouping devices* in the *User guide*.
 ---
 
 Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.

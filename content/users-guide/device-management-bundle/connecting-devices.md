@@ -2,6 +2,11 @@
 weight: 11
 title: Connecting Devices
 layout: redirect
+helpcontent: >-
+	To connect devices to Cumulocity IoT they need to be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in *Device Management > Connecting devices* in the *User guide*.
+
+
+	All devices which are currently in the registration process are displayed with one of the following status: **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect, **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device, or **Accepted** - the user has allowed the credentials to be send to the device.
 ---
 
 ### <a name="dev-registration">

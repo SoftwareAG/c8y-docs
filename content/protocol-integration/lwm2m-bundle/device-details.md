@@ -72,10 +72,10 @@ For further information on the fields in the **LWM2M bootstrap parameters** tab,
 
 ### <a name="lwm2m-client-awake-time"></a> LWM2M client awake time
 
-LWM2M client awake time is used for sending the operations to the device during the awake time after the registration or registration update request received by the LWM2M Server.
+LWM2M client awake time is used for sending the operations to the device during the awake time after the registration or after the registration update request is received by the LWM2M server.
 After the awake time has passed, the operations are being queued and will be sent to the device on the next registration or registration update.
-This applies to all the operations that can be done to the device.
+This applies to all the operations that can be applied to the device.
 
-LWM2M client awake time can be given by the LWM2M client with registration awake time attribute &ldquo;at&rdquo;.
-If LWM2M client does not provide this information then LWM2M server will use the global setting of the LWM2M server, which is defined with &ldquo;C8Y.lwm2m.client_awake_time&rdquo; property in the property file.
+LWM2M client awake time can be given by the LWM2M client with the registration awake time attribute &ldquo;at&rdquo;.
+If the LWM2M client does not provide this information then the LWM2M server will use its global setting, which is defined with the &ldquo;C8Y.lwm2m.client_awake_time&rdquo; property in the LWM2M microservice property file.
 It is also possible to override this client awake time value for the device by setting &ldquo;awakeTimeRegistrationParameter&rdquo; during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m#register-device).

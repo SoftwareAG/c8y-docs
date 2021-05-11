@@ -157,8 +157,8 @@ See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Ro
 
 #### Cumulocity IoT transport in Apama
 
-Generic requests that are sent using the Cumulocity IoT transport will be changing how they return the response body in future releases.
-In previous versions, the response body was put into a dictionary with an empty key. In a future release, this will be corrected to return the unadorned response in the body field. So if you have existing code such as the following
+Generic requests that are sent using the Cumulocity IoT transport will be changing how they return the response body in future versions.
+In previous versions, the response body was put into a dictionary with an empty key. In a future version, this will be corrected to return the unadorned response in the body field. So if you have existing code such as the following
 
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);

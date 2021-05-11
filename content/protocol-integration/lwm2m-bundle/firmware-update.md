@@ -35,7 +35,7 @@ If the device goes offline or considered offline by the LwM2M agent, the firmwar
 When the firmware operation is being executed, the LwM2M agent first of all tries to reset the firmware state machine to the original state to avoid any leftover downloaded firmware that has not been installed or failures of the previous firmware update attempts on the device.
 Cumulocity IoT LwM2M agent supports the following mechanisms of resetting firmware update state machine:
 * If only PUSH delivery method is supported by the device, the state machine is reset by writing a byte array of single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
-* If both PUSH and PULL or only PULL deliver method is supported, the state machine is reset by writing a NULL string to the package URI resource: **write &#47;5&#47;0&#47;1 \0**
+* If both PUSH and PULL or only PULL delivery method is supported, the state machine is reset by writing a NULL string to the package URI resource: **write &#47;5&#47;0&#47;1 \0**
 * This mechanism can also be specified in the device managed object by using fragment: **fwUpdateResetMechanism**. When this is set, the delivery method is disregarded. Possible values:
     ** **PACKAGE**: This works the same as when only PUSH delivery method is supported, writing a byte array of single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
     ** **PACKAGE_URI**: The state machine is reset by writing an empty string ("") to the package URI resource: **write &#47;5&#47;0&#47;1 &lt;empty string&gt;**
@@ -72,4 +72,6 @@ When the delivery is completed on the device (no matter if it's successful or fa
 When the firmware delivery is completed successfully and the agent is informed, it will trigger the firmware update on the device by sending an execute request to the update resource: execute */5/0/2*. Note that the observations on the update state and update result are still being maintained. When the update process is completed on the device, it must communicate to the agent by updating the value of firmware update result (and firmware update state).
 
 ### Complete firmware update process
-When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process by setting the firmware information to the device managed object and mark the firmware update operation as completed successfully.
+When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process.
+* If the firmware update is successful on the device: The agent sets the firmware information to the device managed object and marks the firmware update operation as completed successfully.
+* If the firmware update is failed on the device: The agent marks the firmware update operation as failed.

@@ -80,6 +80,37 @@ Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom da
 
 Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
+##### Predefined Custom Actions
+
+There are several predefined custom actions which can be selected to apply predefined actions for the relevant resources.
+![Predefined custom actions](/images/device-protocols/lwm2m/lwm2m-predefined-custom-actions.png)
+
+Actions that are relevant for Device (/3):
+- device:updateManufacturer
+  - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
+- device:updateModelNumber
+  - Stores to the device managed object with &ldquo;c8y_Hardware&rdquo; fragment &ldquo;model&rdquo; property.
+- device:updateSerialNumber
+  - Stores to the device managed object with &ldquo;c8y_Hardware&rdquo; fragment &ldquo;serialNumber&rdquo; property.
+- device:updateFirmwareVersion
+  - Stores to the ddevice managed object with &ldquo;c8y_Hardware&rdquo; fragment &ldquo;revision&rdquo; property.
+
+Actions that are relevant for Connectivity monitoring (/4):
+- connectivity:updateCellId
+  - Stores to the device managed object with &ldquo;c8y_Mobile&rdquo; fragment &ldquo;cellId&rdquo; property.
+- connectiviy:updateSmnc
+  - Stores to the device managed object with &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mnc&rdquo; property.
+- connectivity:updateSmcc
+  - Stores to the device managed object with &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
+- connectivity:updateRssi
+  - Stores the value as device measurement with &ldquo;c8y_SignalStrength&rdquo; type and fragment and &ldquo;rssi&rdquo; property.
+  - In the same measurement, stores resource path information in &ldquo;resourcePath&rdquo; fragment and also in &ldquo;objectResourcePath_&lt;resource path&gt;&rdquo; fragment name.
+  - In the same measurement, stores device name information in &ldquo;device!Name&rdquo; fragment.
+  - In the same measurement, stores device mobile information in &ldquo;device!c8y_Mobile&rdquo; fragment.
+
+Below is an example where &ldquo;connectivity:updateRssi&rdquo; custom action is selected for the Connectivity monitoring (/4) radio signal strength in order to create the signal measurement for the device.
+![Custom actions for connectivity signal strength](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
+
 #### Auto observe
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.

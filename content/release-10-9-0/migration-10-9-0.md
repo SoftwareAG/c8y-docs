@@ -164,7 +164,7 @@ In previous versions, the response body was put into a dictionary with an empty 
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
 
-you should change your code to the following form that works with the current version, as well as the future API change.
+you are recommended to change your code to the following form that works with the current version, as well as the future API change.
 
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));

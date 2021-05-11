@@ -77,7 +77,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
 
 
 ### <a name="subscribed-applications"></a>Subscribed applications
@@ -93,9 +93,9 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### Standard Tenant default applications
+### Standard tenant default applications
 
-In the Standard Tenant you will find the following default applications:
+In the Standard tenant you will find the following default applications:
 
 <table>
 <col width="200">
@@ -130,7 +130,7 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard Tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -168,7 +168,7 @@ In the Standard Tenant you will find the following default applications:
 </table>
 
 
-### Enterprise Tenant applications
+### Enterprise tenant applications
 
 <table>
 <col width="200">

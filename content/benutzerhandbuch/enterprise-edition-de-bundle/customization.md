@@ -4,13 +4,13 @@ title: Anpassen der Plattform
 layout: redirect
 ---
 
-Mit dem Enterprise Tenant von Cumulocity IoT können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen.
+Mit dem Enterprise tenant von Cumulocity IoT können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen.
 
 Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vornehmen.
 
 ### <a name="configuration"></a>Konfiguration
 
->**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise tenants verfügbar sind.
 
 #### Anwendungen
 
@@ -180,7 +180,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
  Ziel = Domain der Plattform, auf die Sie verweisen wollen, d.h. die aktuelle URL, die Sie verwenden, um auf Ihren Mandanten zuzugreifen. Wenn Sie beispielsweise aktuell *https&#58;//demo.cumulocity.com* verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demo.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
-Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" lautet, so lautet die Domain Ihres Management-Mandanten "management.iot.mycompany.com".
+Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" lautet, so lautet die Domain Ihres Management-Mandanten "management.iot.mycompany.com".
 
 >**Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 

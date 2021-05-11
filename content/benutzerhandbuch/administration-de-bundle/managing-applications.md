@@ -75,7 +75,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tbody>
 </table>
 
-Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
+Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
 
 
 ### <a name="subscribed-applications"></a>Abonnierte Anwendungen
@@ -91,9 +91,9 @@ Die Spalten enthalten folgende Informationen:
 * **Name**: Identifikation der Anwendung in der API. Wenn Sie die Anwendung über eine API für einen Mandanten abonnieren möchten, verwenden Sie diese Zeichenkette im Argument (als Name).
 * **Typ**: Technischer Typ der Anwendung. "Funktion" bezieht sich auf integrierte Anwendungsabonnements, d. h., diese Anwendungen werden nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt.
 
-### Standardanwendungen des Standard Tenant
+### Standardanwendungen des Standard tenant
 
-Im Standard Tenant finden Sie die folgenden Standardanwendungen:
+Im Standard tenant finden Sie die folgenden Standardanwendungen:
 
 <table>
 <col width="200">
@@ -128,7 +128,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im Standard Tenant mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Aktivitäten anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
+<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im Standard tenant mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Aktivitäten anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -166,7 +166,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### Enterprise Tenant-Anwendungen
+### Enterprise tenant-Anwendungen
 
 <table>
 <col width="200">

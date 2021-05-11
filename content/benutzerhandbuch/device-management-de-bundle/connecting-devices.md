@@ -52,7 +52,7 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
-> **Info:** In einem Enterprise Tenant kann der Management-Mandant auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der Management-Mandant keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
+> **Info:** In einem Enterprise tenant kann der Management-Mandant auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der Management-Mandant keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
@@ -127,4 +127,4 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
 [Bulk device credentials](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity OpenAPI Specification.
 
->**Info:** Wenn Sie mit dem Enterprise Tenant arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.
+>**Info:** Wenn Sie mit dem Enterprise tenant arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

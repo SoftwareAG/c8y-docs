@@ -104,7 +104,7 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to Cumulocity IoT.
 If set to 0, the device will be considered as always online.
-If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute &ldquo;at&rdquo; or, if this attribute is also not found, then by the global setting that is defined with the &ldquo;C8Y.lwm2m.client_awake_time&rdquo; property in the LWM2M microservice property file.
+If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute &ldquo;at&rdquo; or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
 </td>
 <td style="text-align: left">Optional</td>
 </tr>

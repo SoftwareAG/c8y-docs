@@ -68,7 +68,7 @@ In the asset hierarchy, Cumulocity IoT distinguishes between top-level groups an
 
 In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown under its top-level group. Moreover, sub-assets are shown  in the **Sub-asset** tab of the particular group.
 
-<img src="/images/users-guide/cockpit/cockpit-subassets.png" name="Subassets"/>
+<img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
 
 When selecting an object in the asset hierarchy, details on the selected object are displayed at the right.
 

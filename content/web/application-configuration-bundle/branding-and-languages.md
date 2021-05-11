@@ -354,7 +354,7 @@ ui-assets
 
 #### Branding options
 
-Edit the file *public-options/options.json* and change the subproperties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
+Edit the file *public-options/options.json* and change the sub-properties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
 Note that the properties `brand-logo-img` and `navigator-platform-logo` are both URLs. Therefore the corresponding files must be placed inside the folder *ui-assets*.
 

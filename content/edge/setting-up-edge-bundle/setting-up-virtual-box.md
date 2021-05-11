@@ -38,7 +38,7 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 	<img src="/images/edge/edge-host-only-adapter.png" name="OVF tool command" style="width:75%;"/>
 
-10. Start the Edge VM and log in as **root** user. See [Starting the virtual machine](/edge/installation/#starting-the-virtual-machine).
+10. Start the Edge appliance and log in as **root** user. See [Starting the virtual machine](/edge/installation/#starting-the-virtual-machine).
 
 11. Configure and activate the network adapter.
     
@@ -56,11 +56,11 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 		This command provides an error **Error: Connection activation failed: IP configuration could not be reserved (no available address, timeout, etc.)**. Ignore this error.
 
-12. Restart the Edge VM.
+12. Restart the Edge appliance.
 
 13. Log in as **admin** user.
 
-14. Configure the Edge VM network using the post-installer. See [Configuring the Edge network](/edge/installation/#configuring-the-edge-network).
+14. Configure the Edge appliance network using the post-installer. See [Configuring the Edge network](/edge/installation/#configuring-the-edge-network).
 
 15. Run the post installation process. See [Running the post installation process](/edge/installation/#running-the-post-installation-process).
 
@@ -115,9 +115,9 @@ To setup port forwarding, follow the steps below:
 3. In the **Port Forwarding Rules** window, click the plus icon. Add the following details for HTTP:<br>
 **Name**: HTTP <br>
 **Protocol**: TCP<br>
-**Host IP**: The operating system IP address on which the Edge VM is running. <br>
+**Host IP**: The operating system IP address on which the Edge appliance is running. <br>
 **Host port**: 80 <br>
-**Guest IP**: The Edge VM IP address is always 192.168.56.120.<br>
+**Guest IP**: The Edge appliance IP address is always 192.168.56.120.<br>
 **Guest port**: 80<br><br>
 <img src="/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/>
 
@@ -127,7 +127,7 @@ Once all port details have been added, it should look similar to the following s
  
 5. Click **OK** in the **Port Forwarding Rules** window.
 
-6. Click **OK** in the **Settings** window to complete port forwarding on Edge VM.
+6. Click **OK** in the **Settings** window to complete port forwarding on the Edge appliance.
 
 ### Upgrading on VirtualBox
 
@@ -151,7 +151,7 @@ Once all port details have been added, it should look similar to the following s
 
 8. Navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, that is *disk002.vmdk*, and click **OK**.
 
-9. Click **Start** to start the Edge VM. 
+9. Click **Start** to start the Edge appliance. 
 
 10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).
 

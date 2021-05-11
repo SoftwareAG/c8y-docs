@@ -13,7 +13,7 @@ To configure the hostname of your Edge appliance, run the command:
 ```shell
 [admin@server ~]$ sudo hostnamectl set-hostname <hostname>
 ```
-The default hostname of the Edge VM is **iot-edge-server**.
+The default hostname of the Edge appliance is **iot-edge-server**.
 
 ### Configuring the hostname using the REST APIs
 

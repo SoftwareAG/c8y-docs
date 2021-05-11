@@ -10,13 +10,13 @@ To set up a VM in VMware Workstation Player, follow the steps below.
 
 >**Info:** The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
 
-1. In VMware, navigate to **Player** > **File** > **Open** to import the Edge VM.
+1. In VMware, navigate to **Player** > **File** > **Open** to import the Edge appliance.
 
-2.	Navigate to the folder where the Edge VM files are located, select the OVF file and click **Open**.
+2.	Navigate to the folder where the Edge appliance files are located, select the OVF file and click **Open**.
 
 3.	Change the VM name if required and click **Import**. You can also change the VM storage path here.
 
-4.	Start the Edge VM by clicking **Play virtual machine**.
+4.	Start the Edge appliance by clicking **Play virtual machine**.
 
 ### Configuring Cumulocity IoT Edge
 
@@ -24,7 +24,7 @@ Once the VM starts up successfully, you must configure the network so that it ca
 
 To do so, the following information is required:
 
-* Edge VM IP - Will be used to access the VM from outside
+* Edge appliance IP - Will be used to access the VM from outside
 * Netmask
 * Gateway IP
 * DNS server IP (if unknown, you can use the gateway IP here as well)

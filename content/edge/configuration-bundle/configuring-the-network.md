@@ -4,11 +4,35 @@ title: Configuring the network
 layout: redirect
 ---
 
-
+After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
 ### Configuring the network using the GUI
 
-[Placeholder - instructions for configuring the network using GUI]\
+1. Log in to the **management** tenant.
+
+2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+
+3. Click **Edge Configuration** > **Network** in the left navigation pane.
+
+   The current network configuration for the Edge appliance appears.
+
+4. Click **Edit** to reconfigure the network.
+
+5. Provide the new **IP address** for the ethernet interface. For example, 192.168.66.10
+
+6. Provide the **Netmask IP** for your network. For example, 255.255.255.0
+
+7. Provide the **Gateway IP** for your network. For example, 192.168.66.1
+
+8. Provide the **DNS** for your network. For example, 8.8.8.8
+
+   For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
+
+9. Provide the **Address range CIDR**. For example, 172.18.0.0/16
+
+   The CIDR suffix must be between 0 and 27 inclusive.
+
+   >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 
 ### Configuring the network using the REST APIs
 

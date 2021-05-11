@@ -42,7 +42,7 @@ PS C:\WINDOWS\system32> New-NetNat -Name NATSwitchForEDGE -InternalIPInterfaceAd
 
 #### Creating a NAT adapter using user-defined settings
 
-You can define the adapter name and configure the IP address for your Edge VM. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
+You can define the adapter name and configure the IP address for your Edge appliance. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
 
 >**Info:** The following steps show a reference example. The final configuration also depends on the end user setup.
 
@@ -67,16 +67,16 @@ PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddres
 
 ### Setting up Hyper-V
 
-After creating a NAT adapter, you must import the Edge VM image into Hyper-V.
+After creating a NAT adapter, you must import the Edge appliance image into Hyper-V.
 
 1. In Hyper-V Manager, go to **Action** > **Import Virtual Machine**. <br>
 <img src="/images/edge/edge-hyper-v-001.png" name="Import Virtual Machine" style="width:75%;"/>
 
 2. In the **Before You Begin** wizard, click **Next**. <br>
 
-3. Provide the location of the Edge VM image and click **Next**. <br>
+3. Provide the location of the Edge appliance image and click **Next**. <br>
 
-4. Select the Edge VM and click **Next**. <br>
+4. Select the Edge appliance and click **Next**. <br>
 
 5. In the **Choose Import Type** wizard, select **Register the virtual machine in-place (use the existing unique ID)** and click **Next**. <br>
 
@@ -86,10 +86,10 @@ If you have used a different NAT adapter name, you will see the following screen
 <img src="/images/edge/edge-hyper-v-008.png" name="Select-NetAdapter" style="width:75%;"/>
 Select the adapter from the **Connection** drop down list and click **Next**.
 
-7. Click **Finish**. The Edge VM image appears in the Hyper-V Manager. <br> 
+7. Click **Finish**. The Edge appliance image appears in the Hyper-V Manager. <br> 
 
-8. Right-click the Edge VM image and click **Connect**. <br>
-<img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge VM" style="width:75%;"/>
+8. Right-click the Edge appliance image and click **Connect**. <br>
+<img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge appliance" style="width:75%;"/>
 
 9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge Server](/edge/installation/#configuring-the-edge-server).
 

@@ -190,9 +190,9 @@ Content-Type: application/json
 	"dns": "8.8.8.8"
 }
 ```
-Use the above JSON format before the installation to configure the network. Before the installation, the `dns` key and the network CIDR key are optional. After the installation, you can configure the Docker bridge network CIDR.
+Use the above JSON format before the installation to configure the network. Before the installation, the `dns` key and the network CIDR key are optional. After the installation, you can configure the network CIDR.
 
-To configure the Docker bridge network CIDR, use the same JSON syntax:
+To configure the network CIDR, use the same JSON syntax:
 
 **Request**
 
@@ -209,7 +209,9 @@ Content-Type: application/json
 }
 ```
 
-Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. 
+Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive.
+
+>**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
 
 **Response**
 
@@ -320,11 +322,8 @@ POST https://myown.iot.com/edge/configuration/remote-connectivity
 Content-Type: application/json
 
 {
-
     "enabled": true,
-
     "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io"
-
 }
 ```
 
@@ -351,9 +350,7 @@ The endpoint returns HTTP status 200.
 ```json
 {
     "remote_tenant_url": "https://edge-testing.latest.stage.c8y.io",
-
     "enabled": true,
-
     "device_id": "edge-agent-038e59f8-5efa-45f9-bd25-ca5f88191691"
 }
 ```
@@ -375,13 +372,9 @@ POST https://myown.iot.com/edge/configuration/time-sync
 Content-Type: application/json
 
 {
-
     "enabled": true,
-
     "interval": 10,
-
     "servers": ["pool.ntp.org"]
-
 }
 ```
 >**Important:** If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
@@ -411,9 +404,7 @@ The endpoint returns HTTP status 200.
 ```json
 {
     "enabled": true,
-
     "interval": 10,
-
     "servers": ["timenet.eur.ad.sag"]
 }
 ```
@@ -428,9 +419,7 @@ The endpoint returns HTTP status 200.
 
 ```json
 {
-
     "enabled": false,
-
 }
 ```
 
@@ -451,9 +440,7 @@ POST https://myown.iot.com/edge/configuration/microservices
 Content-Type: application/json
 
 {
-
     "enabled": true
-
 }
 ```
 
@@ -483,11 +470,8 @@ If the certificate is self-signed:
 
 ```json
 {
-
     "signing_type": "self-signed",
-
     "expiry": "2019-04-26T05:28:52Z"
-
 }
 ```
 
@@ -498,9 +482,7 @@ If the certificate is not self-signed:
 ```json
 {
     "signing_type": "not-self-signed",
-	
     "signed_by": "A-Certificate-Authority",
-
     "expiry": "2019-04-26T05:28:52Z"
 }
 ``` 
@@ -522,9 +504,7 @@ POST https://myown.iot.com/edge/configuration/certificate
 Content-Type: application/json
 
 {
-
     "renewal_type": "upload"
-
 }
 ```
 In the JSON syntax above, the value of `renewal_type` can be `generate` or `upload`:
@@ -581,8 +561,6 @@ The endpoint returns:
 	
 	The `status` refers to the status of the task: `executing`, `succeeded`, `failed`.
 
-- HTTP status 404, if the task does not exist.
-
 ### GET /edge/tasks/{id}/log
 
 Use this endpoint to get the log for the task with the given ID.
@@ -597,5 +575,4 @@ The endpoint returns:
 		  {"text":"This is a log line"},
 		  {"text":"This is another log line"}
 		]
-- HTTP status 404, if the task does not exist.
 - HTTP status 410, if the log has been deleted to save disk space.

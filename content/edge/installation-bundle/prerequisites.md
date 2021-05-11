@@ -9,11 +9,11 @@ layout: redirect
 |Item|Details|
 |:---|:---|
 |**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 16.x <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.
-|**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf, mf and two disks vmdk files). <br> For Hyper-V, download the ZIP file.|
+|**Edge appliance image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf, mf and two disks vmdk files). <br> For Hyper-V, download the ZIP file.|
 |**Cumulocity IoT Edge license file**|To request the license file for Cumulocity IoT Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (for example, myedge.domain.com), where Cumulocity IoT Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](#domain-name-validation-for-edge-license-key-generation).|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to generate these files. These files must not be password-protected. <br>**Info:** Ensure that the .crt and .key files are in PEM format and the .key file is not encrypted.|
-|**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
-|**Edge cloud remote access**|To connect and manage one (or multiple) Edge devices to your Cumulocity IoT cloud tenant, you need an active Cumulocity IoT standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in Cumulocity IoT Edge.|
+|**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge appliance within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
+|**Edge cloud remote access**|To connect and manage one (or multiple) Edge appliances to your Cumulocity IoT cloud tenant, you need an active Cumulocity IoT standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in Cumulocity IoT Edge.|
 
 ### Domain name validation for Edge license key generation
 
@@ -64,9 +64,9 @@ The following ports need to be enabled by default in order to accept traffic fro
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
-|any|any|Edge VM IP|TTCP/443|HTTPS
-|any|any|Edge VM IP|TCP/1883|MQTT
-|any|any|Edge VM IP|TCP/8883|MQTT/TLS
+|any|any|Edge appliance IP|TTCP/443|HTTPS
+|any|any|Edge appliance IP|TCP/1883|MQTT
+|any|any|Edge appliance IP|TCP/8883|MQTT/TLS
 
 Depending on additional integrations more ports must be opened. 
 

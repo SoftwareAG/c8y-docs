@@ -105,7 +105,7 @@ In the JSON syntax above, the value of `certificate` can be `generate` or `uploa
 
 - If you have set `"certificate": "generate"`, Cumulocity IoT Edge generates the certificate for you.
 
-- If you have set `"certificate": "upload"`, you must upload the certificate, before the installation starts.
+- If you have set `"certificate": "upload"`, you must upload the certificate, before the installation will start.
 
 **Response**
 
@@ -128,6 +128,8 @@ The endpoint returns:
 Note that this task does not start the installation. You must run the subsequent calls to upload the license and the certificate files to start the installation.
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/update
 
@@ -164,6 +166,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 ```
 
 Upload the archive of the new Cumulocity IoT Edge version using the URL returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/configuration/network
 
@@ -217,6 +221,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
 ### GET /edge/configuration/network
 
 Use this endpoint to get the network configuration of the Edge appliance.
@@ -251,7 +257,9 @@ The endpoint returns HTTP status 200.
 
 ### POST /edge/reboot
 
-Use this endpoint to reboot the Edge appliance. This endpoint returns an error as the connection is lost with the Edge appliance before the response is returned.
+Use this endpoint to reboot the Edge appliance. 
+
+This endpoint returns HTTP status 202. There is no guarantee that the reboot will not start before the response is returned. There could be errors or dropped connections as the connection is lost with the Edge appliance before the response is returned.
 
 ### GET /edge/configuration/hostname
 
@@ -295,6 +303,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
 ### POST /edge/configuration/remote-connectivity
 
 Use this endpoint to configure remote device management.
@@ -328,6 +338,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
 ### GET /edge/configuration/remote-connectivity
 
 Use this endpoint to get the remote-connectivity configuration.
@@ -345,6 +357,8 @@ The endpoint returns HTTP status 200.
     "device_id": "edge-agent-038e59f8-5efa-45f9-bd25-ca5f88191691"
 }
 ```
+
+You must use this `device_id` to register the Edge appliance with the Cumulocity IoT tenant.
 
 ### POST /edge/configuration/time-sync
 
@@ -366,11 +380,13 @@ Content-Type: application/json
 
     "interval": 10,
 
-    "servers": ["timenet.eur.ad.sag"]
+    "servers": ["pool.ntp.org"]
 
 }
 ```
-If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
+>**Important:** If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
+
+The servers must be NTP servers. If you specify multiple servers, any server specified in the configuration can be used for time synchronization.
 
 **Response**
 
@@ -381,6 +397,8 @@ The endpoint returns HTTP status 200.
 	"id": "7"
 }
 ```
+
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### GET /edge/configuration/time-sync
 
@@ -451,6 +469,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid). 
+
 ### GET /edge/configuration/certificate
 
 Use this endpoint to review the validity of the current SSL certificate.
@@ -459,18 +479,41 @@ Use this endpoint to review the validity of the current SSL certificate.
 
 The endpoint returns HTTP status 200.
 
+If the certificate is self-signed:
+
 ```json
 {
 
-	"signing_type": "self-signed",
-	"expiry": "31/12/2099"
+    "signing_type": "self-signed",
+
+    "expiry": "2019-04-26T05:28:52Z"
 
 }
 ```
 
+The value of `signing_type` can be `self-signed` or `not-self-signed`.
+
+If the certificate is not self-signed:
+
+```json
+{
+    "signing_type": "not-self-signed",
+	
+    "signed_by": "A-Certificate-Authority",
+
+    "expiry": "2019-04-26T05:28:52Z"
+}
+``` 
+
+The format of the `expiry` field is in the ISO format and is always in the UTC timezone. 
+
 ### POST /edge/configuration/certificate
 
 Use this endpoint to upload the new SSL certificate and the key file.
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/json
 
 **Request**
 
@@ -516,6 +559,8 @@ In the JSON syntax above, the value of `renewal_type` can be `generate` or `uplo
 	
 To upload the certificate, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
 ### GET /edge/tasks/{id}
 
 Use this endpoint to get the details of the task with the given ID.
@@ -528,14 +573,15 @@ The endpoint returns:
 
 	    {
 			"id":"1",
-			"type":"configure-network",
+			"type":"network",
 			"status":"executing"
 		}
 		
-	The `type` refers to the type of task: `configure-network`, `installation`, `configure-hostname`.
+	The `type` refers to the type of task: `network`, `installation`, `hostname`, `remote-connectivity`, `certificate-renewal`, `microservices-state`, `update`, `time-sync`, `reboot`.
 	
 	The `status` refers to the status of the task: `executing`, `succeeded`, `failed`.
-- HTTP status 404, if a task is not found with the given ID.
+
+- HTTP status 404, if the task does not exist.
 
 ### GET /edge/tasks/{id}/log
 
@@ -551,5 +597,5 @@ The endpoint returns:
 		  {"text":"This is a log line"},
 		  {"text":"This is another log line"}
 		]
-- HTTP status 404, if a task is not found with the given ID.
+- HTTP status 404, if the task does not exist.
 - HTTP status 410, if the log has been deleted to save disk space.

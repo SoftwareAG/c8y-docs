@@ -20,7 +20,7 @@ In this case, only the card with information about the smart rules is shown.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
 available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an Enterprise or Management tenant
-(see also [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
+(see also [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
 and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
 to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
 (as an administrator with the permission to create applications). For example, to disable Analytics Builder:

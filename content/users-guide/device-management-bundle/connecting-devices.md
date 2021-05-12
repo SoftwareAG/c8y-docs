@@ -52,7 +52,7 @@ If you are subscribed to the required applications you will see a third option
 5. Click **Add another device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
-> **Info:** In an Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
+> **Info:** In an Enterprise tenant, the Management tenant may also directly select a tenant to which the device will be added from here. Note that since the Management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
@@ -129,4 +129,4 @@ For your convenience we provide CSV template files for both bulk registration ty
 For further information on the file format and accepted CSV variants, also refer to
 [Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity IoT OpenAPI Specification.
 
->**Info:** In an Enterprise Tenant you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the management tenant.
+>**Info:** In an Enterprise tenant you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the Management tenant.

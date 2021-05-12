@@ -6,7 +6,7 @@ layout: redirect
 
 The application concept of Cumulocity IoT includes a basic application marketplace.
 
-Tenants can be subscribed to applications which have been deployed by their super tenant (Management Tenant or Enterprise Tenant).
+Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
 
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 

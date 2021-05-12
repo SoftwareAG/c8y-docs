@@ -6,7 +6,7 @@ layout: redirect
 
 Physical security of IT systems prevents unauthorized physical access to servers, storage, and network devices.
 
-Cumulocity IoT Standard Tenant accounts are hosted at Amazon Web Services (AWS). AWS has been certified according to [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). It features extensive physical security measures and is independently audited. Not all details are published for actual security reasons. Audit reports can be obtained directly at [AWS Compliance](http://aws.amazon.com/compliance/contact/).
+Cumulocity IoT Standard tenant accounts are hosted at Amazon Web Services (AWS). AWS has been certified according to [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). It features extensive physical security measures and is independently audited. Not all details are published for actual security reasons. Audit reports can be obtained directly at [AWS Compliance](http://aws.amazon.com/compliance/contact/).
 
 Our strategic hosting partners follow up to date concepts and concepts of data security.
 

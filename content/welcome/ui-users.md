@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 30
 title: Get started using the UI
 layout: bundle
 ---

@@ -14,11 +14,11 @@ The Cumulocity IoT documentation sources are located in a Git repository called 
 
 You find the documentation sources for the GA release versions in the following branches:
 
-Release 10.6.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0)
-
 Release 10.6.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6)
 
 Release 10.7.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0)
+
+Release 10.9.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.9.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.9.0)
 
 You may also find the sources of older versions here in corresponding branches.
 
@@ -52,6 +52,6 @@ The Markdown files are converted to HTML files by an application called "Hugo".
 
 5. Open a browser and enter the following URL:
 
-		http://localhost:1313/guides/about-doc
+		http://localhost:1313/guides/welcome
 
 The documentation will show up.

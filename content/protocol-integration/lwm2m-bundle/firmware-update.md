@@ -17,7 +17,7 @@ Assuming that you have already registered and connected your device, go to the d
 
 Once the firmware update has been triggered, the LwM2M agent creates and queues up a PENDING firmware update operation for execution.
 
-> **Info:** This document is not supposed to cover every details of firmware update process because they are already specified in the LwM2M specification. This instead summaries the process; highlights the key points and possible customizations of firmware update process in Cumulocity IoT LwM2M.
+> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LwM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in Cumulocity IoT LwM2M.
 
 ### Firmware update state machine
 

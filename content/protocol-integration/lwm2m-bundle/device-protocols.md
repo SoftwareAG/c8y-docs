@@ -82,7 +82,7 @@ Cumulocity IoT LWM2M allows the set of custom actions to be extended using decod
 
 ##### Predefined custom actions
 
-There are several predefined custom actions which can be selected to apply predefined actions to the relevant resources.
+There are several predefined custom actions which can be selected to apply actions to the relevant resources.
 ![Predefined custom actions](/images/device-protocols/lwm2m/lwm2m-predefined-custom-actions.png)
 
 Actions that are relevant for Device (/3):

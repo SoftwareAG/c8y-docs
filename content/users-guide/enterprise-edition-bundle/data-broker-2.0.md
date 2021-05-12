@@ -23,6 +23,8 @@ See [Data subscriptions](#data-broker-subscriptions) for details on how to manag
 
 ### <a name="migrating-data-broker-connectors-to-2.0"></a> Migrating existing data connectors to Data Broker 2.0
 
+After enabling Data Broker 2.0, your existing data connectors should continue to work without any additional configuration.
+
 ### <a name="troubleshooting-data-broker--2.0"></a> Troubleshooting
 
 

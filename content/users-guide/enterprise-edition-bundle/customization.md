@@ -276,9 +276,9 @@ uploaded to the platform.
 
 
 Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
-to your enterprise tenant using the new domain name. You will also receive an email with information about the
-activation. Note that your management tenant domain name is static, for example, if your wildcard domain is "*
-.iot.mycompany.com" then your management tenant domain will be "management.iot.mycompany.com".
+to your Enterprise tenant using the new domain name. You will also receive an email with information about the
+activation. Note that your Management tenant domain name is static, for example, if your wildcard domain is "*
+.iot.mycompany.com" then your Management tenant domain will be "management.iot.mycompany.com".
 
 > **Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 

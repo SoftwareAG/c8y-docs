@@ -257,6 +257,25 @@ This operation reads historic values and only saves those values to a file which
 The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
 - batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 100000.
 
+### Read file
+
+With this operation a file could be downloaded from the OPC UA server at the given fileNodeId.  
+
+The parameter bufferSize is optional and adjustable up to 10Mb. The default size, if not set up in the request, will be 1Mb. This will not limit the size of the file to read. If the size is bigger, multiple read operation are triggered.
+
+After successfully read (see Control section of the device) the downloaded file is available in Administration pane, submenu Management/Files repository for download to local file system.
+
+```json
+{
+"deviceId" : "DEVICE_ID",
+"c8y_ua_command_ReadFileOperation": {
+"fileNodeId": "ns=2;s=sampleFile",
+"bufferSize": <bufferSize>
+},
+"description":"Read sample file"
+}
+```
+
 ### Write value
 
 This operation writes values to the node/nodes.

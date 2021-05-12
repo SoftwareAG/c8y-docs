@@ -172,8 +172,6 @@ AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").
 ```
 which is compatible with both current and previous versions of the GenericResponse API.
 
-See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
-
 #### Cumulocity API in Apama
 
 The `withResponse` action is now deprecated for all of the predefined types 

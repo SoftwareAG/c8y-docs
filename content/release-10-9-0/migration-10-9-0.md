@@ -157,7 +157,7 @@ See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Ro
 
 #### Cumulocity IoT transport in Apama
 
-The contents of the com.apama.cumulocity.GenericResponse event have changed. You are recommended to change EPL apps which use the body field in the following ways
+The contents of the `com.apama.cumulocity.GenericResponse` event have changed. You are recommended to change EPL apps which use the `body` field in the following ways
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
@@ -170,7 +170,7 @@ to:
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
 ```
-which is compatible with both current and previous versions of the GenericResponse API.
+which is compatible with both current and previous versions of the `GenericResponse` API.
 
 #### Cumulocity API in Apama
 

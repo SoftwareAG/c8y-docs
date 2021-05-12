@@ -69,7 +69,7 @@ The device issues this request repeatedly. While the user has not yet registered
 
 The device can now connect to Cumulocity IoT using the tenant ID, username and password. User alias is not supported for devices.
 
-With the introduction of the concept of Enterprise Tenants, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant. 
+With the introduction of the concept of Enterprise tenants, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant. 
 
 Request header should be:
 

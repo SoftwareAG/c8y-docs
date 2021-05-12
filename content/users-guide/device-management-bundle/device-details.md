@@ -215,19 +215,10 @@ The **Configuration** tab allows you to configure the parameters and initial set
 
 For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](#configuration-repository).
 
-#### To request the current text-based configuration snapshot
-
-1. Navigate to the **Configuration** tab.
-2. Click **Get snapshot from device**.
-
 #### To add or edit a text-based configuration snapshot
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
-2. Click **Send configuration to device** to save your edits.
-
-![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
-
-> **Info:** If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+2. Click **Save** to save your edits.
 
 ### <a name="control"></a>Control
 
@@ -366,8 +357,6 @@ In the dropdown list at the top right you can select a time period (or specify o
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 
 Depending on the type of device and the integration into Cumulocity IoT, you can configure device-side geo-fencing and motion detection.
-
->**Info:** When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID-based data.
 
 ### <a name="identity"></a>Identity
 

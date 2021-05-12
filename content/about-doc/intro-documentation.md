@@ -16,6 +16,4 @@ To access the documentation index, click the arrow icon in the selection field b
 
 ![Select guide](/images/about/about-docs-selection.png)
 
-See [Content overview](/about-doc/content-overview/) for a quick overview on the content of each guide.
-
->**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/), see [Additional resources](/about-doc/online-information/).
+>**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/), see [Additional resources](/about-doc/additional-resources/).

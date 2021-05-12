@@ -8,7 +8,7 @@ After a successful installation, you can reconfigure the network and also config
 
 ### Configuring the network using the GUI
 
-1. Log in to the **management** tenant.
+1. Log in to the Management tenant.
 
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 

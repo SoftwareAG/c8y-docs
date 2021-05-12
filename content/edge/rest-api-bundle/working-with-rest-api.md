@@ -16,7 +16,7 @@ When you use a POST endpoint, the server starts a task running in the background
 
 ### Authentication
 
-If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. Cumulocity IoT Edge supports basic authentication and the authentication is performed by the management tenant. For a successful authentication, you must prefix **management** to the user name. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
+If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. Cumulocity IoT Edge supports basic authentication and the authentication is performed by the Management tenant. For a successful authentication, you must prefix **management** to the user name. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
 
 	$ echo -n management/admin:password | base64
 
@@ -538,6 +538,28 @@ In the JSON syntax above, the value of `renewal_type` can be `generate` or `uplo
 		}
 	
 To upload the certificate, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+
+The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
+### POST /edge/expand-disk
+
+Use this endpoint to expand the disk size of the installation disk and the data disk.
+
+Before using this endpoint, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
+
+**Request**
+
+An empty POST request triggers a new disk expansion task.
+
+**Response**
+
+The endpoint returns HTTP status 201, if the request is successful.
+
+```json
+{
+	"id": "20"
+}
+```
 
 The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 

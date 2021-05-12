@@ -25,6 +25,7 @@ The firmware update procedure is well standardized within the LwM2M Specificatio
 Let’s have a quick glance at the Firmware Update State Machine as defined by the LwM2M Specification:
 
  ![Firmware update state machine](/images/device-protocols/lwm2m/lwm2m-fota-state-machine.png)
+ (Source: openmobilealliance.org)
 
 Basically the whole update process contains different phases of interactions between the LwM2M server and the device. The above diagram consists of the possible states and transitions that could be introduced during firmware update process.
 

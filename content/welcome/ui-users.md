@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Welcome to the UI
+title: Get started using the UI
 layout: bundle
 ---
 
@@ -8,7 +8,7 @@ Welcome to the Cumulocity IoT user documentation!
 
 Read about the concepts behind Cumulocity IoT and get detailed advice on using our standard applications (Cockpit, Device Management and Administration) as well as various optional services.
 
-If you are new to Cumulocity IoT, you might want to learn about the architecture, technical concepts and domain models behind Cumulocity IoT. The <a href="/concepts/introduction/">*Concepts guide*</a> is intended as a starting point for anyone technically interested in our  IoT platform.
+If you are new to Cumulocity IoT, you might want to learn about the architecture, technical concepts and domain models behind Cumulocity IoT. The <a href="/concepts/introduction/">*Concepts guide*</a> serves as a starting point for anyone technically interested in our  IoT platform.
 
 
 ### User guides

@@ -8,9 +8,9 @@ Welcome to the Cumulocity IoT developer documentation!
 
 Learn how to develop and deploy applications on top of our IoT platform and integrate IoT data sources.
 
-For our developer community, we offer of variety of sources to quickly get started or to dig deeper into the matter.
+For our developer community, we offer a variety of sources to quickly get started or to dig deeper into the matter.
 
-If you are new to Cumulocity IoT, you might want to learn about the architecture, technical concepts and domain models behind Cumulocity IoT. The <a href="/concepts/introduction/">*Concepts guide*</a> is intended as a starting point for anyone technically interested in our  IoT platform.
+If you are new to Cumulocity IoT, you might want to learn about the architecture, technical concepts and domain models behind Cumulocity IoT. The <a href="/concepts/introduction/">*Concepts guide*</a> serves as a starting point for anyone technically interested in our  IoT platform.
 
 
 ### Developer guides

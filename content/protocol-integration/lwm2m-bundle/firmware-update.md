@@ -47,29 +47,29 @@ Cumulocity IoT LwM2M agent supports the following mechanisms of resetting firmwa
 
 In order to determine what is the best way to deliver the firmware to the device, the LwM2M agent tries to read the device configuration by executing a read request on the firmware update object on the device: read &#47;5&#47;0.
 In this step, the agent will learn:
-* What are the supported delivery methods on the devices specified by the value on resource **/5/0/9**, for example: 0 (PUSH), 1 (PULL) or 2 (both). If both delivery methods are supported, PULL will be taken.
-* What are the supported delivery protocols on the device, specified by the value on resource **/5/0/8**, for example: 0 (CoAP), 1 (CoAPs), etc. If this value is not specified by the device, 0 (CoAP) will be taken.
+* What are the supported delivery methods on the device specified by the value on resource **&#47;5&#47;0&#47;9**, for example: 0 (PUSH), 1 (PULL) or 2 (both). If both delivery methods are supported, PULL will be taken.
+* What are the supported delivery protocols on the device, specified by the value on resource **&#47;5&#47;0&#47;8**, for example: 0 (CoAP), 1 (CoAPs), etc. If this value is not specified by the device, 0 (CoAP) will be taken.
 * What is the current state of the firmware update on the device. This value must be 0 (IDLE), otherwise the firmware update process is aborted immediately.
 
 ### Firmware delivery
 
 As the first step of the delivery, the agent tries to establish the observations on two resources to monitor the firmware delivery transitions on the device:
-* **observe /5/0/3**: Observe the firmware update state
-* **observe /5/0/5**: Observe the firmware update result.
+* **observe &#47;5&#47;0&#47;3**: Observe the firmware update state
+* **observe &#47;5&#47;0&#47;5**: Observe the firmware update result.
 
 Depending on the supported delivery protocols and methods by the device, the agent now delivers the firmware to the device.
 
-When PULL is chosen as the delivery method, the agent will try to write the firmware URI to the device firmware package URI: write **/5/0/1 <firmware uri>**. The agent constructs the firmware URI according to the chosen delivery protocol.
+When PULL is chosen as the delivery method, the agent will try to write the firmware URI to the device firmware package URI: write **&#47;5&#47;0&#47;1 <firmware uri>**. The agent constructs the firmware URI according to the chosen delivery protocol.
 
-When PUSH is chosen as the deliver method, the agent will try to write the firmware binary to the device firmware package: write **/5/0/0 <firmware binary>**.
+When PUSH is chosen as the deliver method, the agent will try to write the firmware binary to the device firmware package: write **&#47;5&#47;0&#47;0 <firmware binary>**.
 
-In both case, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LwM2M agent. If the device does not specified it, the agent uses its default block size of 512 bytes.
+In both case, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LwM2M agent. If the device does not specify it, the agent uses its default block size of 512 bytes.
 
-When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (/5/0/3) and/or firmware update result (/5/0/5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading). 
+When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading). 
 
 ### Trigger firmware update on the device
 
-When the firmware delivery is completed successfully and the agent is informed, it will trigger the firmware update on the device by sending an execute request to the update resource: execute */5/0/2*. Note that the observations on the update state and update result are still being maintained. When the update process is completed on the device, it must communicate to the agent by updating the value of firmware update result (and firmware update state).
+When the firmware delivery is completed successfully and the agent is informed, it will trigger the firmware update on the device by sending an execute request to the update resource: execute *&#47;5&#47;0&#47;2*. Note that the observations on the update state and update result are still being maintained. When the update process is completed on the device, it must communicate to the agent by updating the value of firmware update result (and firmware update state).
 
 ### Complete firmware update process
 When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process.

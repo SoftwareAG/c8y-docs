@@ -40,3 +40,21 @@ To configure the network for the Edge appliance, use the following endpoints:
 
 - [POST /edge/configuration/network](/edge/configuration/#post-edgeconfigurationnetwork)
 - [GET /edge/configuration/network](/edge/configuration/#get-edgeconfigurationnetwork)
+
+### Troubleshooting the network CIDR
+
+The network CIDR fails in the following scenarios:
+
+1. The network CIDR unavailable on boot time.
+	
+	Description: The default network CIDR range is not available in the network. If the network range is already utilized, the network CIDR does not start properly and the Kubernetes cluster startup fails.
+
+2. Invalid network CIDR provided during IP change.
+
+	Description: You tried to change the network CIDR of the properly running Edge appliance, but the range is not available in the network.
+
+To troubleshoot these scenarios:
+
+1. Configure the Edge appliance's network and gateway to a different network range. Configuring the Edge appliance to a different network disconnects the Edge appliance from the existing network.
+2. Configure the network CIDR to a new non-conflicting value.
+3. Configure the Edge appliance's network and gateway back to the network range.

@@ -91,6 +91,6 @@ Select the adapter from the **Connection** drop down list and click **Next**.
 8. Right-click the Edge appliance image and click **Connect**. <br>
 <img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge appliance" style="width:75%;"/>
 
-9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge Server](/edge/installation/#configuring-the-edge-server).
+9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge appliance](/edge/installation/#configuring-the-edge-server).
 
 >**Info:** By default, the NTP servers are configured to Europe NTP servers. You can configure the NTP server as per your requirements.

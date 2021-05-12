@@ -140,7 +140,7 @@ Once all port details have been added, it should look similar to the following s
 3. Right-click the VM and click **Remove**. Select **Remove Only**, so that the VM will not be deleted. 
 <img src="/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/> 
 
-4. Import the new version of EDGE server. Click **File** > **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
+4. Import the new version of Edge appliance. Click **File** > **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
 
 5. Right-click the VM and select **Settings**> **Storage**. Two disks should be visible called *disk001.vmdk* and *disk002.vmdk*. 
 

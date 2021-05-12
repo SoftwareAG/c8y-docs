@@ -265,7 +265,7 @@ This endpoint returns HTTP status 202. There is no guarantee that the reboot wil
 
 ### GET /edge/configuration/hostname
 
-Use this endpoint to get the current hostname of the Cumulocity IoT Edge server.
+Use this endpoint to get the current hostname of the Cumulocity IoT Edge appliance.
 
 **Response**
 
@@ -279,7 +279,7 @@ The endpoint returns HTTP status 200.
 
 ### POST /edge/configuration/hostname
 
-Use this endpoint to change the hostname of the Cumulocity IoT Edge server.
+Use this endpoint to change the hostname of the Cumulocity IoT Edge appliance.
 
 |HEADERS||
 |:---|:---|

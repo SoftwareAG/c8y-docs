@@ -139,3 +139,25 @@ To access and connect to the Edge appliance:
 
 2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
 
+### Data exchange using Data Broker
+
+Cumulocity IoT Edge provides the option to upload the data to a Cumulocity IoT tenant account selectively. Note that you must first create a Cumulocity IoT tenant account.
+
+You can share the following data:
+
+* devices (and more generically, managed objects)
+* events
+* alarms
+* measurements
+
+>**Important:** Data Broker in Cumulocity IoT Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
+
+Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account. 
+
+Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
+
+<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
+
+For more information about sending and receiving data in Cumulocity IoT, see [Enterprise tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker).
+
+

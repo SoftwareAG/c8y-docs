@@ -55,6 +55,7 @@ In this step, the agent will learn:
 Supported firmware delivery methods and delivery protocols can also be specified in the device managed object by setting these fragments:
 * **fwUpdateDeliveryMethod**. Possible values: PUSH, PULL, BOTH
 * **fwUpdateSupportedDeviceProtocol**. Possible values: COAP, COAPS, HTTP, HTTPS
+
 If they are specified in the device managed object, the values sent by the device are ignored. 
 
 

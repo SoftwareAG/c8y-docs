@@ -39,7 +39,7 @@ Der Management-Mandant muss die Anwendung “Tenant-sla-monitoring” abonnieren
 
 ![Sla-monitoring subscribe](/images/benutzerhandbuch/sla-monitoring/sla-subscribe.png)
 
-Weitere Informationen zum Abonnieren von Anwendungen finden Sie unter [Enterprise tenant > Verwalten von Mandanten > Anwendungen](/benutzerhandbuch/enterprise-edition-de#subscribe) im Benutzerhandbuch.
+Weitere Informationen zum Abonnieren von Anwendungen finden Sie unter [Enterprise Tenant > Verwalten von Mandanten > Anwendungen](/benutzerhandbuch/enterprise-edition-de#subscribe) im Benutzerhandbuch.
 
 ### Funktionsweise des Service
 

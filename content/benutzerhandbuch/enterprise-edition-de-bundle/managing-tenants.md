@@ -4,7 +4,7 @@ title: Verwalten von Mandanten
 layout: redirect
 ---
 
-Über den Enterprise tenant von Cumulocity IoT können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
+Über den Enterprise Tenant von Cumulocity IoT können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
 > **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten.
 
@@ -139,7 +139,7 @@ Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten g
 
 >**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im Management-Mandanten verfügbar. Mandanten können ausschließlich vom Management-Mandanten aus gelöscht werden.
 >
->Administratoren in Enterprise tenants dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+>Administratoren in Enterprise Tenants dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 
 #### So löschen Sie einen Untermandanten
 

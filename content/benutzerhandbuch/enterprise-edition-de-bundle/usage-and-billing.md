@@ -151,7 +151,7 @@ Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 
 ### <a name="microservice-usage"></a>Microservice-Nutzung
 
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können Enterprise tenants und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
+Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können Enterprise Tenants und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 
 
 #### Abrechnungsmodi
@@ -179,7 +179,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://cumulocity.com/api/#tag/Tenant-applications) verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://cumulocity.com/api/#tag/Tenant-applications) verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 

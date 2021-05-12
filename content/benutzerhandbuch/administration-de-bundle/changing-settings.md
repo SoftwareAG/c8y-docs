@@ -86,7 +86,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * alle Microservices mit dem Microservice Java SDK 10.4.6 oder vorzugsweise höher erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
->**Info:** Um die Single-Sign-On-Funktion für Enterprise tenants nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+>**Info:** Um die Single-Sign-On-Funktion für Enterprise Tenants nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 
 
 #### Konfigurationseinstellungen
@@ -352,7 +352,7 @@ Die folgenden Platzhalter sind auf der Seite **Konfiguration** zu finden:
 - {tenant-domain} - Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.cumulocity.com` sein.
 - {token} - Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 
->**Info:** Beim Enterprise tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
+>**Info:** Beim Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 
 #### Zwei-Faktor-Authentifizierung
 
@@ -414,7 +414,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-Für Enterprise tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
+Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
 ### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 

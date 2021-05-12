@@ -18,7 +18,7 @@ If you are new to Cumulocity IoT, you might want to learn about the architecture
 Check out the following developer guides if you are looking for step-by-step instructions to specific topics:
 
 <table>
-colgroup>
+<colgroup>
    <col style="width: 20%;">
    <col style="width: 80%;">
 </colgroup>

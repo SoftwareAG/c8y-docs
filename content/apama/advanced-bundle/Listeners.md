@@ -63,6 +63,22 @@ on Event() -> wait(600.0) and not Alarm() { ... }
 ```
 This will trigger if there is an event and within 10 minutes (600 seconds) there is no alarm. Note the use of `not` which terminates the listener if the event occurs.
 
+You can use a tenant option to set the timezone used for `on at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
+For example: 
+
+```
+{
+    "category" : "microservice.runtime",
+    "key" : "timezone",
+    "value" : "Europe/Warsaw"
+}
+```
+
+See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in the *Microservice SDK guide*.
+
+> **Info:** This tenant option is only read when the microservice starts. 
+If the tenant option is changed, the microservice only picks this up on the next microservice subscription.
+
 ### Streams - windows
 
 Streams give you the possibility to operate on windows of events. Streams use the `from` keyword instead of `on ` and define a window to operate over, and select what output they want from that window using aggregates. Windows can be restricted by two means:

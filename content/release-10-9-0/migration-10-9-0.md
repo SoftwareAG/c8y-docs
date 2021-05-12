@@ -157,26 +157,20 @@ See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Ro
 
 #### Cumulocity IoT transport in Apama
 
-Generic requests that are sent using the Cumulocity IoT transport now return the response body with exactly what is returned from Cumulocity IoT. 
-In previous versions, this was put into a dictionary with an empty key. So if you have existing code such as the following
-
+The contents of the `com.apama.cumulocity.GenericResponse` event have changed. You are recommended to change EPL apps which use the `body` field in the following ways
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
-
-You have to replace this with:
-
+or:
 ```
 AnyExtractor dict := AnyExtractor(response.body);
 ```
-
-Alternatively, you can change your code to the following form in advance of the upgrade, since it works with both versions:
+to: 
 
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
 ```
-
-See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+which is compatible with both current and previous versions of the `GenericResponse` API.
 
 #### Cumulocity API in Apama
 

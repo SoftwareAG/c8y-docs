@@ -4,14 +4,14 @@ title: LWM2M device firmware update (FOTA)
 layout: redirect
 ---
 
-Cumulocity IoT LwM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that uploaded to the Cumulocity IoT platform.
-To upload a firmware, go to **Device Management** &gt;&gt; **Management** &gt;&gt; **Firmware repository** &gt;&gt; **Add firmware**
+Cumulocity IoT LwM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the Cumulocity IoT platform.
+To upload a firmware, go to **Device Management** &gt; **Management** &gt; **Firmware repository** &gt; **Add firmware**
 
 ![Add new firmware](/images/device-protocols/lwm2m/lwm2m-add-new-firmware.png)
 
-Select the firmware binary to upload, either from your local computer or from an URL. The device type filter must be left empty or filled with value "c8y_lwm2m".
+Select the firmware binary to upload, either from your local computer or from a URL. The device type filter must be left empty or filled with a value of "c8y_lwm2m".
 
-Assuming that you have already registered and connected your device, go to the device page to trigger a firmware update as the following:
+Assuming that you have already registered and connected your device, go to the device page to trigger a firmware update like this:
 
 ![Trigger firmware update](/images/device-protocols/lwm2m/lwm2m-trigger-fota.png)
 
@@ -21,15 +21,15 @@ Once the firmware update has been triggered, the LwM2M agent creates and queues 
 
 ### Firmware update state machine
 
-The firmware update procedure is well standardized within the LwM2M Specification, and a standard Firmware Update Object (&#47;5) is used to perform the process.
-Let’s have a quick glance at the Firmware Update State Machine as defined by the LwM2M Specification:
+The firmware update procedure is well standardized within the LwM2M specification, and a standard Firmware Update Object (&#47;5) is used to perform the process.
+Let’s have a quick glance at the firmware update state machine as defined by the LwM2M specification:
 
  ![Firmware update state machine](/images/device-protocols/lwm2m/lwm2m-fota-state-machine.png)
  (Source: openmobilealliance.org)
 
-Basically the whole update process contains different phases of interactions between the LwM2M server and the device. The above diagram consists of the possible states and transitions that could be introduced during firmware update process.
+Basically the whole update process contains different phases of interactions between the LwM2M server and the device. The above diagram consists of the possible states and transitions that could be introduced during the firmware update process.
 
-If the device goes offline or considered offline by the LwM2M agent, the firmware update operation is left IN_PROGRESS and the agent will try to resume the firmware update process if possible when the device connects again via a registration or registration update. 
+If the device goes offline or is considered offline by the LwM2M agent, the firmware update operation is left IN_PROGRESS and the agent will try to resume the firmware update process if possible when the device connects again via a registration or registration update. 
 
 ### Resetting state machine
 
@@ -51,6 +51,12 @@ In this step, the agent will learn:
 * What are the supported delivery methods on the device specified by the value on resource **&#47;5&#47;0&#47;9**, for example: 0 (PUSH), 1 (PULL) or 2 (both). If both delivery methods are supported, PULL will be taken.
 * What are the supported delivery protocols on the device, specified by the value on resource **&#47;5&#47;0&#47;8**, for example: 0 (CoAP), 1 (CoAPs), etc. If this value is not specified by the device, 0 (CoAP) will be taken.
 * What is the current state of the firmware update on the device. This value must be 0 (IDLE), otherwise the firmware update process is aborted immediately.
+
+Supported firmware delivery methods and delivery protocols can also be specified in the device managed object by setting these fragments:
+* **fwUpdateDeliveryMethod**. Possible values: PUSH, PULL, BOTH
+* **fwUpdateSupportedDeviceProtocol**. Possible values: COAP, COAPS, HTTP, HTTPS
+If they are specified in the device managed object, the values sent by the device are ignored. 
+
 
 ### Firmware delivery
 
@@ -76,3 +82,9 @@ When the firmware delivery is completed successfully and the agent is informed, 
 When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process.
 * If the firmware update is successful on the device: The agent sets the firmware information to the device managed object and marks the firmware update operation as completed successfully.
 * If the firmware update is failed on the device: The agent marks the firmware update operation as failed.
+
+### Cancel firmware update process
+In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, etc. you might want to cancel the firmware update process entirely and start a new one. To do that, send a HTTP request as the following:
+```PUT .../service/lwm2m-agent/shell/{tenantId}/{deviceId}/cancelFirmwareUpdate```
+in which **tenantId** is ID of your tenant, **deviceId** is your device managed object ID. The ongoing firmware update process will be canceled by the agent.
+Alternatively, the firmware update process is also canceled if you delete the firmware update operation.

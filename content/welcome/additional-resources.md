@@ -1,7 +1,9 @@
 ---
-weight: 30
+weight: 50
 title: Additional resources
 layout: bundle
+aliases:
+  - /about-doc/online-information
 ---
 
 ### Installation and operations documentation on Empower
@@ -43,7 +45,7 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 For Cumulocity IoT Cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
 
-### Cumulocity IoT product training
+### Cumulocity IoT delta training
 
 To learn what´s new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [Software AG learning portal](https://knowledge.softwareag.com/iot_delta) which cover the new and enhanced functionality available in a specific product release:
 

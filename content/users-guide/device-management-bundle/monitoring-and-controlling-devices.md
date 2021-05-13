@@ -2,10 +2,17 @@
 weight: 40
 title: Monitoring and controlling devices
 layout: redirect
+helpcontent:
+  - label: locating-devices
+    title: Locating devices
+    content: "Dummy text, missing real content"
+  - label: service-monitoring
+    title: Monitoring devices
+    content: "Dummy text , missing real content"
+
 ---
 
-
-### <a name="map"></a>Locating devices
+### Locating devices
 
 Cumulocity IoT provides the option to view all devices in your account on a map.
 

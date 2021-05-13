@@ -1,20 +1,22 @@
 ---
 
 title: Working with dashboards
-helpcontent: >-
-  Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
+helpcontent:
+  - label: dashboards
+    title: Working with Dashboards
+    content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
 
 
-  Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type, see the documentation for details.
+    Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type, see the documentation for details.
 
 
-  On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon.
+    On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon.
 
 
-  Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
+    Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration.
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration."
 weight: 40
 ---
 

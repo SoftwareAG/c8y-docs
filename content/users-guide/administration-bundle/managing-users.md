@@ -1,11 +1,13 @@
 ---
 weight: 12
 title: Managing users
-helpcontent: >-
-	The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign user names and passwords, store user details, or configure the login and security options.  
+helpcontent:
+  - label: managing-users
+    title: Managing users
+    content: "The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign user names and passwords, store user details, or configure the login and security options.  
 
 
-	Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*.
+    Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
 ---
 
 The user management feature allows you to manage the users within your tenant. With this functionality you may:
@@ -54,11 +56,11 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 1. Click **Add user** at the right of the top menu bar.  
 
-	>**Info:** If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+  >**Info:** If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
 
 2. At the left of the **New user** window, provide the following information to identify the user:
 
-	<table>
+  <table>
 <thead>
 <colgroup>
 <col style="width: 20%;">
@@ -110,9 +112,9 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </table>
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To log into the Cumulocity IoT platform](/users-guide/getting-started/#login) for further information on password strength.  
-	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+  * 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
+  * **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To log into the Cumulocity IoT platform](/users-guide/getting-started/#login) for further information on password strength.  
+  * **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.

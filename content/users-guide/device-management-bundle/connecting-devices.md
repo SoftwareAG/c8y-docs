@@ -2,11 +2,13 @@
 weight: 11
 title: Connecting Devices
 layout: redirect
-helpcontent: >-
-	To connect devices to Cumulocity IoT they need to be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in *Device Management > Connecting devices* in the *User guide*.
+helpcontent:
+  - label: connecting-devices
+    title: Connecting devices
+    content: "To connect devices to Cumulocity IoT they need to be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in *Device Management > Connecting devices* in the *User guide*.
 
 
-	All devices which are currently in the registration process are displayed with one of the following status: **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect, **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device, or **Accepted** - the user has allowed the credentials to be send to the device.
+    All devices which are currently in the registration process are displayed with one of the following status: **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect, **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device, or **Accepted** - the user has allowed the credentials to be send to the device."
 ---
 
 ### <a name="dev-registration">
@@ -50,7 +52,7 @@ If you are subscribed to the required applications you will see a third option
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box, select **General device registration**.
 
-	<img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+  <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
@@ -77,7 +79,7 @@ To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-r
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box select **Bulk device registration**.
 
-	<img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+  <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
 3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
 
@@ -91,9 +93,9 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 The CSV file contains two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
 ```asciidoc
-		ID;PATH
-		Device1;Group A
-		Device2;Group A/Group B			
+    ID;PATH
+    Device1;Group A
+    Device2;Group A/Group B			
 ```
 
 
@@ -106,9 +108,9 @@ The CSV files must contain at least the IDs as device identifier and the credent
 In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in this example.
 
 ```asciidoc
-		ID;Credentials;PATH;ICCID;NAME;TYPE
-		006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
-		006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+    ID;Credentials;PATH;ICCID;NAME;TYPE
+    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
 ```
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:

@@ -2,14 +2,16 @@
 weight: 80
 title: Smart rules
 layout: redirect
-helpcontent: >-
-  Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
+helpcontent:
+  - label: smart-rules
+    title: Smart rules
+    content: 'Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
 
 
-  Click **Add smart rule** in the top menu bar to add a new global smart rule. Use the menu icon to edit, duplicate or delete global smart rules.
+    Click **Add smart rule** in the top menu bar to add a new global smart rule. Use the menu icon to edit, duplicate or delete global smart rules.
 
 
-  Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration. 
+    Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration.' 
 ---
 
 

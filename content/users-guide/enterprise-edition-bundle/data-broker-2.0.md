@@ -27,4 +27,28 @@ After enabling Data Broker 2.0, your existing data connectors should continue to
 
 ### <a name="troubleshooting-data-broker--2.0"></a> Troubleshooting
 
+#### Management tenant subscription alert
+
+TODO description + screenshot
+
+#### Data Broker connection error
+
+Its REST request failure alert
+TODO description + screenshot
+Maps to DATA_BROKER_ALARM_REST_REQUEST_FAILURE
+
+#### Data Broker slow processing alert
+
+TODO what are slow processing alerts? 
+
+* Queue Backlog
+
+TODO description + screenshot
+Maps to DATA_BROKER_ALARM_PULSAR_BACKLOG
+
+* Average request bytes sent per second
+
+TODO description + screenshot
+Maps to DATA_BROKER_ALARM_BYTES_SEND_PER_SECOND
+
 

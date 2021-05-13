@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 40
 title: Troubleshooting the system
 layout: redirect
 ---

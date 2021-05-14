@@ -80,15 +80,36 @@ A response template contains the necessary information to extract data values fr
 
 2. Complete the following fields:
 
-	|Field|Description|
-|:---|:---|
-|Response ID|Unique integer that will be used as a response identifier.
-|Name|Name for the response. Mandatory.
-|Base Pattern|Base pattern of JSON paths referencing objects and object lists to extract data and values in order to execute the response.
-|Condition|Condition value of the response.
-|Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
+<table>
+<col style="width: 10%;">
+<col style="width: 90%;">
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Response ID</td>
+<td align="left">Unique integer that will be used as a response identifier.</td>
+</tr>
+<tr>
+<td align="left">Base Pattern</td>
+<td align="left">Path in a JSON document. The base pattern acts like a prefix to all patterns. You can enter either a base pattern and add patterns with only the subpath below the base pattern, or enter no base pattern but multiple patterns with the full path.</td>
+</tr>
+<tr>
+<td align="left">Condition</td>
+<td align="left">Condition value of the response.</td>
+</tr>
+<tr>
+<td align="left">Pattern</td>
+<td align="left">At least one pattern is required. Click <b>Add pattern</b> and enter a pattern value.</td>
+</tr>
+</tbody>
+</table>
 
-	![Add template response filled out](/images/users-guide/DeviceManagement/defmgmt-devicetypes-smartrest-addresponse-test.png)
+![Add template with filled out response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Click **Save**.
 

@@ -41,7 +41,7 @@ Cumulocity IoT LWM2M agent supports the following mechanisms of resetting the fi
     ** **PACKAGE**: This works the same as when only PUSH delivery method is supported, writing a byte array of a single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
     ** **PACKAGE_URI**: The state machine is reset by writing an empty string ("") to the package URI resource: **write &#47;5&#47;0&#47;1 &lt;empty string&gt;**
  
- If resetting the state machine is failed because the device is not reachable, the firmware update operation stays in PENDING status and will be executed when the device connects. If it's failed by any other reason, the firmware update operation set to FAILED.
+ If resetting the state machine has failed because the device is not reachable, the firmware update operation stays in PENDING status and will be executed when the device connects. If it's failed by any other reason, the firmware update operation set to FAILED.
  If the state machine is reset successfully, the firmware update operation is marked as IN_PROGRESS and the process continues to the next steps.
 
 ### Querying the device configuration
@@ -82,9 +82,9 @@ When the firmware delivery is completed successfully and the agent is informed, 
 ### Completing of the firmware update process
 When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process.
 * If the firmware update is successful on the device, the agent sets the firmware information to the device managed object and marks the firmware update operation as completed successfully.
-* If the firmware update is failed on the device, the agent marks the firmware update operation as failed.
+* If the firmware update has failed on the device, the agent marks the firmware update operation as failed.
 
-### Canceling firmware update process
+### Canceling the firmware update process
 In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, etc. you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
 ```PUT .../service/lwm2m-agent/shell/{tenantId}/{deviceId}/cancelFirmwareUpdate```
 in which **tenantId** is the ID of your tenant, **deviceId** is your device managed object ID. The ongoing firmware update process will be canceled by the agent.

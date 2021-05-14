@@ -261,18 +261,18 @@ The binary file representations, which can be queried using binary API, are crea
 
 With this operation a file could be downloaded from the OPC UA server at the given fileNodeId.  
 
-The parameter bufferSize is optional and adjustable up to 10Mb. The default size, if not set up in the request, will be 1Mb. This will not limit the size of the file to read. If the size is bigger, multiple read operation are triggered.
+The parameter bufferSize is optional and adjustable up to 10MB. The default size, if not set up in the request, will be 1Mb. This will not limit the size of the file to read. If the size is bigger, multiple read operation are triggered.
 
-After successfully read (see Control section of the device) the downloaded file is available in Administration pane, submenu Management/Files repository for download to local file system.
+After the downloaded file has been read successfully (see Control section of the device) it is available for download to the local file system in the Administration pane, submenu Management/Files repository for download to local file system.
 
 ```json
 {
-"deviceId" : "DEVICE_ID",
-"c8y_ua_command_ReadFileOperation": {
-"fileNodeId": "ns=2;s=sampleFile",
-"bufferSize": <bufferSize>
-},
-"description":"Read sample file"
+  "deviceId" : "DEVICE_ID",
+  "c8y_ua_command_ReadFileOperation": {
+    "fileNodeId": "ns=2;s=sampleFile",
+    "bufferSize": <bufferSize>
+  },
+  "description":"Read sample file"
 }
 ```
 

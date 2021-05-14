@@ -345,6 +345,35 @@ Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom da
 
 Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
+**Predefined custom actions**
+
+There are several predefined custom actions which can be selected to apply actions to the relevant resources.
+
+![Predefined custom actions](/images/users-guide/lwm2m/lwm2m-predefined-custom-actions.png)
+
+> **Info**: fwupdate action is deprecated and will be removed in the future releases.
+
+Actions that are relevant for Device (/3):
+- device:updateManufacturer
+  - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
+- device:updateModelNumber
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;model&rdquo; property.
+- device:updateSerialNumber
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;serialNumber&rdquo; property.
+- device:updateFirmwareVersion
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;revision&rdquo; property.
+
+Actions that are relevant for connectivity monitoring (/4):
+- connectivity:updateCellId
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;cellId&rdquo; property.
+- connectiviy:updateSmnc
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mnc&rdquo; property.
+- connectivity:updateSmcc
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
+
+Below is an example where the &ldquo;connectivity:updateCellId&rdquo; custom action is selected for the Connectivity monitoring (/4) cell id in order to store cell id information for the device.
+![Custom actions for connectivity signal strength](/images/users-guide/lwm2m/lwm2m-custom-action-connectivity-cellId.png)
+
 **Auto observe**
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.

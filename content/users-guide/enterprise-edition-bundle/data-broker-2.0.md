@@ -29,25 +29,33 @@ After enabling Data Broker 2.0, your existing data connectors should continue to
 
 #### Management tenant subscription alert
 
-TODO description + screenshot
+This alarm is raised when trying to subscribe a management tenant to data connector. 
 
 #### Data Broker connection error
 
-Its REST request failure alert
-TODO description + screenshot
+The databroker is configured to monitor each connector for the number of bad forwarding requests sent. If this number reaches a configured threshold a CRITICAL alarm is raised in the tenant. 
+If this happens the data will be stored until the connection is restored and it can be forwarded again.
+Bad requests can happen in the event the databroker subscriber tenant becomes unreachable.
+TODO screenshot
 Maps to DATA_BROKER_ALARM_REST_REQUEST_FAILURE
 
 #### Data Broker slow processing alert
 
-TODO what are slow processing alerts? 
+The databroker agent is configured to monitor the rate at which events are being delivered to their destination. All forwarding events are stored by the databroker to ensure a reliable delivery. 
+If data cannot be delivered fast enough, slow processing alarms will be raised. A slow processing alarm includes connector id to help identify which tenants are affected. 
 
 * Queue Backlog
 
-TODO description + screenshot
+This alarm is raised if there is a backlog of undelivered events. When events cannot be delivered immediately they will get stored to disk, this increases delivery latency.
+If the latency for message delivery crosses a specified threshold the databroker agent will log this and raise a CRITICAL alarm. 
+This can happen when the rate at which events are being sent to the connector is higher than the rate they can be delivered to their destination tenant. This can lead to running out of disk space.
+TODO what happens in the event of bookies running out of space?
+TODO screenshot
 Maps to DATA_BROKER_ALARM_PULSAR_BACKLOG
 
 * Average request bytes sent per second
 
+The databroker monitors the data rate at which events are being forwarded, if this rate is lower than a critical threshold a slow processing alert will be raised. This can occur due to slow network.
 TODO description + screenshot
 Maps to DATA_BROKER_ALARM_BYTES_SEND_PER_SECOND
 

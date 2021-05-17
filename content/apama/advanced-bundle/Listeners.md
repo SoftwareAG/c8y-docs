@@ -63,7 +63,7 @@ on Event() -> wait(600.0) and not Alarm() { ... }
 ```
 This will trigger if there is an event and within 10 minutes (600 seconds) there is no alarm. Note the use of `not` which terminates the listener if the event occurs.
 
-You can use a tenant option to set the timezone used for `on at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
+You can use a tenant option to set the timezone used for `on all at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
 For example: 
 
 ```

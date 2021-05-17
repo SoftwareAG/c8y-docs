@@ -75,7 +75,7 @@ The CSV must at least contain the following fields to be able to establish a con
 
 > **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
-Upon upload of the CSV in Cumulocity we should see that our "nosec_device" device has been created.
+Upon upload of the CSV in Cumulocity IoT we should see that our "nosec_device" device has been created.
 
 ![PSK device created](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
 

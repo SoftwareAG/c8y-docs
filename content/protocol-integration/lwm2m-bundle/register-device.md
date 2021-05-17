@@ -77,7 +77,7 @@ The CSV must at least contain the following fields to be able to establish a con
 
 Upon upload of the CSV in Cumulocity we should see that our "nosec_device" device has been created.
 
-![PSK device csv](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
+![PSK device created](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
 
 The table below reflects the full set of possible fields that can be added:
 
@@ -257,17 +257,25 @@ The table below lists the information of the additional fields:
 <td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
+<td style="text-align: left">external-c8y_Lwm2mPskId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">This field has the same value as the lwm2m psk_id field. The ID is used to create an additional external ID of type "c8y_Lwm2mPskId" in the registered device. </td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
 <td style="text-align: left">external-c8y_BootstrapPskId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">This field has the same value as the bootstrap psk_id field. The ID is used to create additional external ID for the device. </td>
+<td style="text-align: left">This field has the same value as the bootstrap psk_id field. The ID is used to create an additional external ID of type "c8y_BootstrapPskId" in the registered device which will be used to find the device during bootstrap. </td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>
 
-Upon upload of the CSV in Cumulocity we should see that our "psk_device" device has been created.
+Upon upload of the CSV in Cumulocity we should see that our "psk_device" device has been created with the appropriate external IDs.
 
-![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-device-created.png)
+![PSK device created](/images/device-protocols/lwm2m/lwm2m-psk-device-created.png)
+![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
+
 
 > **Info**: Firmware updates are also supported for registration of unsecured device as well as psk-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
 

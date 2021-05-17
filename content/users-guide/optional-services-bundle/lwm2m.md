@@ -372,7 +372,7 @@ Actions that are relevant for connectivity monitoring (/4):
   - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
 
 Below is an example where the &ldquo;connectivity:updateCellId&rdquo; custom action is selected for the Connectivity monitoring (/4) cell id in order to store cell id information for the device.
-![Custom actions for connectivity signal strength](/images/users-guide/lwm2m/lwm2m-custom-action-connectivity-cellId.png)
+![Custom actions for connectivity cell id](/images/users-guide/lwm2m/lwm2m-custom-action-connectivity-cellId.png)
 
 **Auto observe**
 

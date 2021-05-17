@@ -907,6 +907,8 @@ You can use this mechanism for example to insert device names or alarm text into
 
 **Fields specific for measurements**
 
+> **Info:** This section only applies to tenants that are using Apama (not Esper/CEP).
+
 <table>
 <colgroup>
        <col style="width: 30%;">
@@ -958,24 +960,24 @@ Moreover, the following pattern is supported:
 
 ```json
 {
-"source":{
-  "id":"10200"
-},
-"type":"TestEvent",
-"text":"sensor was triggered",
-"time":"2014-03-03T12:03:27.845Z",
-"c8y_Position":{
-  "lat":2,
-  "lng":2
-},
-"c8y_evtdata":{
-  "data1":111,
-  "date2":222,
-  "evtInnerData":{
-    "indate1":333,
-    "indate2":444
+  "source":{
+    "id":"10200"
+  },
+  "type":"TestEvent",
+  "text":"sensor was triggered",
+  "time":"2014-03-03T12:03:27.845Z",
+  "c8y_Position":{
+    "lat":2,
+    "lng":2
+  },
+  "c8y_evtdata":{
+    "data1":111,
+    "date2":222,
+    "evtInnerData":{
+      "indate1":333,
+      "indate2":444
+    }
   }
-}
 }
 ```
 
@@ -1010,4 +1012,4 @@ Here we can for example define the following variables:
   </tr>  
 </table>
 
-> **Info:** In case the variable does not exist or is misspelled, the generated content is displayed.
+> **Info:** In case the variable does not exist or is misspelled, no substitution will occur.

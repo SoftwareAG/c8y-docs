@@ -4,12 +4,22 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
+A LWM2M device is registered in the Cumulocity Platform by uploading a CSV file with registration data in the Bulk Registration option
+in Device Management, see [Device Management > Bulk device registration](/users-guide/device-management/#creds-upload).
+This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
+Cumulocity supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing respectively connection with **NO_SEC** and **PSK** mode.
 
-![CSV example 1](/images/device-protocols/lwm2m/lwm2m-csv1.png)
+### <a name="registeration-of-unsecured-device"></a>Registration of unsecured device
 
-In the first CSV example you can see the following fields:
+Unsecured devices connect during bootstrap session and server connection through unsecured ports: 
+* **5683**: unsecured bootstrap connection.
+* **5783**: unsecured direct server connection.
+ 
+Below you can see an example CSV file for a unsecured device:
 
+![NO_SEC device csv](/images/device-protocols/lwm2m/lwm2m-nosec-csv-example.png)
+
+The CSV must at least contain the following fields to be able to establish a connection:
 <table>
 <col style="width:20%">
 <col style="width:80%">
@@ -22,15 +32,15 @@ In the first CSV example you can see the following fields:
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be unique as it uniquely identifies a LWM2M device.</td>
+<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
-<td style="text-align:left">The type of the device.</td>
+<td style="text-align:left">The type of the External ID. This type must be "c8y_Id" to allow Cumulocity to create an external ID for the LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here because bulk registration is a generalized feature in the Cumulocity IoT platform. Accessing Cumulocity IoT devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter.</td>
+<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing Cumulocity IoT devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -38,7 +48,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">TYPE</td>
-<td style="text-align:left">This field needs to have the value "c8y_lwm2m”.</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to signify that the device is a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">SHELL</td>
@@ -46,24 +56,28 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>
-<td style="text-align:left">This field needs to have the value "1".</td>
+<td style="text-align:left">This field needs to have the value "1" to forward all commands to the LWM2M agent.</td>
 </tr>
 <tr>
 <td style="text-align:left">endpoint id</td>
-<td style="text-align:left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.</td>
+<td style="text-align:left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint id has be to be <b>unique</b> across all tenants and have the same value as the ID.</td>
 </tr>
 <tr>
-<td style="text-align:left">lwm2m server url</td>
-<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align:left">lwm2m server uri</td>
+<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The ports bootstrap server port is "5683" for unsecured bootstrap connection, "5684" for secured bootstrap connection and the LWM2M port is "5783" for unsecured server connection, "5784" for secured server connection. Note, that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
+<td style="text-align:left">This field determines the type of connection used by the LWM2M device. <b>“NO_SEC”</b> is used for unsecure connection which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. <b>"PSK"</b> is used for secure connection. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
 </tr>
 </tbody>
 </table>
 
 > **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+
+Upon upload of the CSV in Cumulocity we should see that our "nosec_device" device has been created.
+
+![PSK device csv](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
 
 The table below reflects the full set of possible fields that can be added:
 
@@ -84,19 +98,19 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The name of the LWM2M client endpoint.</td>
+<td style="text-align: left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint id has be to be <b>unique</b> across all tenants and have the same value as the ID.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
-<td style="text-align: left">lwm2m server url</td>
+<td style="text-align: left">lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align: left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The ports bootstrap server port is "5683" for unsecured bootstrap connection, "5684" for secured bootstrap connection and the LWM2M port is "5783" for unsecured server connection, "5784" for secured server connection. Note, that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
 <td style="text-align: left">securityMode</td>
-<td style="text-align: left">String, &ldquo;NO_SEC&rdquo; or &ldquo;PSK</td>
-<td style="text-align: left; height: 40px;">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left; height: 40px;">This field determines the type of connection used by the LWM2M device. <b>“NO_SEC”</b> is used for unsecure connection which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. <b>"PSK"</b> is used for secure connection. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
@@ -192,9 +206,17 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 </tbody>
 </table>
 
-![CSV example 2.1](/images/device-protocols/lwm2m/lwm2m-psk-example.png)
+### <a name="registeration-of-psk-secured-device"></a>Registration of PSK-secured device
 
-In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
+PSK-secured devices connect during bootstrap session and server connection using a pre-shared key through secured ports:
+* **5684**: PSK bootstrap connection.
+* **5784**: PSK direct server connection.
+
+PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registeration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK secured device below).  
+
+![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-csv-example.png)
+
+The table below lists the information of the additional fields:
 
 <table>
 <col style="width:25%">
@@ -213,37 +235,41 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 <tr>
 <td style="text-align: left">lwm2m psk_key</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
+<td style="text-align: left">The hex-encoded pre-shared key used by the device for server connection in PSK mode.</td>
 <td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">lwm2m psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
+<td style="text-align: left">The PSK ID used by the device for server connection in PSK mode.</td>
 <td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">bootstrap psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">The ID used by the device for bootstrap connection in PSK mode.</td>
 <td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
 <td style="text-align: left">bootstrap psk_key</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">The hex-encoded key used by the device for bootstrap connection in PSK mode.</td>
 <td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
 <td style="text-align: left">external-c8y_BootstrapPskId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The ID being used to find a device during bootstrap.</td>
+<td style="text-align: left">This field has the same value as the bootstrap psk_id field. The ID is used to create additional external ID for the device. </td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>
 
-> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
+Upon upload of the CSV in Cumulocity we should see that our "psk_device" device has been created.
+
+![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-device-created.png)
+
+> **Info**: Firmware updates are also supported for registration of unsecured device as well as psk-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

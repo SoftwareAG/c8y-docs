@@ -373,7 +373,7 @@ Content-Type: application/json
 
 {
     "enabled": true,
-    "interval": 10,
+    "interval_power_of_two": 10,
     "servers": ["pool.ntp.org"]
 }
 ```

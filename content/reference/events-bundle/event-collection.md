@@ -91,15 +91,15 @@ HTTP/1.1
 |Accept|application/vnd.com.nsn.cumulocity.event+json
 
 ```http
-POST <<url>>/event/events
+POST /event/events
+Host: <URL>
 
 {
   "time" : "2011-09-06T12:03:27.845+02:00",
   "type" : "com_cumulocity_model_DoorSensorEvent",
   "text" : "Door sensor was triggered.",
   "source": {
-	"id" : "12345",
-	 ...
+	"id" : "12345"
   }
 }
 ```

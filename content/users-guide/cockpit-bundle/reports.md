@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: reports
     title: Working with reports
-    content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy. 
+    content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 
     Click **Add report** in the top menu bar to configure a new report, or use the menu icon to editor delete exports.
 
@@ -34,8 +34,9 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 
 See [To create a report](#create-report) below for details on how to configure the position in the navigator.
 
+<a name="create-report"></a>
 
-### <a name="create-report"></a>To create a report
+### To create a report
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>

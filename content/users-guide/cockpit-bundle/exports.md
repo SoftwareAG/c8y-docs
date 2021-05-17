@@ -12,7 +12,7 @@ helpcontent:
 aliases:
   - /users-guide/cockpit/#export
 ---
-                                    
+
 
 
 The export functionality lets you export specific data to either CSV or Excel files.
@@ -27,8 +27,9 @@ In the **Export** page you will find a list displaying all exports with their na
 
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
+<a name="add-export"></a>
 
-#### <a name="add-export"></a>To add an export
+#### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
 	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
@@ -82,7 +83,9 @@ If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.do
 
 In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 
-#### <a name="schedule-export"></a>To schedule an export
+<a name="schedule-export"></a>
+
+#### To schedule an export
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
 

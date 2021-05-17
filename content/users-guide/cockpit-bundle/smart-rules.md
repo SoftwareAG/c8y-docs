@@ -11,7 +11,7 @@ helpcontent:
     Click **Add smart rule** in the top menu bar to add a new global smart rule. Use the menu icon to edit, duplicate or delete global smart rules.
 
 
-    Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration.' 
+    Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration.'
 ---
 
 
@@ -59,8 +59,9 @@ Smart rules can be seen in two places:
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
 
 
+<a name="create-rules"></a>
 
-### <a name="create-rules"></a>To create a smart rule
+### To create a smart rule
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
@@ -98,7 +99,9 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
-### <a name="toggle-rules"></a> To enable/disable a smart rule
+<a name="toggle-rules"></a>
+
+### To enable/disable a smart rule
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (i.e. its underlying module gets deployed) so that the rule is available for devices and groups.
 

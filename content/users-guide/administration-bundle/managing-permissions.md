@@ -6,11 +6,11 @@ helpcontent:
   - label: managing-permissions
     title: Managing permissions
     content: 'Permissions define what a user is allowed to do in Cumulocity IoT applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
-    
+
     In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined (which may serve as a template), but you can define your own according to your needs.
-    
+
     In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device.
-  
+
     For details on working with global roles and inventory roles, see *Administration > Managing permissions* in the *User guide*.'
 ---
 
@@ -23,8 +23,9 @@ The following types of roles can be associated with users:
 
 Moreover, application access can be granted to enable a user to use an application.
 
+<a name="global"></a>
 
-### <a name="global"></a>Global roles
+### Global roles
 
 Click **Roles** in the **Account** menu to display a list of configured roles.
 
@@ -113,8 +114,9 @@ You may also see the following legacy roles:
 |business|Can access all devices and their data but has no management permission in the tenant.
 |readers|Can read all data (including users, in contrast to "Global Readers").
 
+<a name="create-edit-roles"></a>
 
-#### <a name="create-edit-roles"></a>To add a global role
+#### To add a global role
 
 Click **Add Role** in the **Global roles** tab.
 
@@ -263,7 +265,9 @@ There may be additional permissions visible depending on the features in your su
 
 > **Important:** When new features with new permissions are added to Cumulocity IoT, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 
-#### <a name="attach-global"></a>Assigning global roles
+<a name="attach-global"></a>
+
+#### Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
@@ -283,7 +287,9 @@ Click **Save** to save your settings.
 
 ![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
-### <a name="inventory"></a>Inventory roles
+<a name="inventory"></a>
+
+### Inventory roles
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
@@ -372,7 +378,9 @@ If you try to perform actions without sufficient permissions, an error message w
 
 To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/about-doc/contacting-support) can help in fixing the permissions.
 
-### <a name="app-access"></a>Granting application access
+<a name="app-access"></a>
+
+### Granting application access
 
 The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order.
 

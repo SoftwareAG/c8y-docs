@@ -2,7 +2,7 @@
 weight: 30
 title: Data explorer
 layout: redirect
-helpcontent: 
+helpcontent:
   - label: data-explorer
     title: Data explorer
     content: "In the data explorer, data points, i.e. measurements or sensor data, can be visualized. On the right, you see a list of available data points. On the left you see its visualization.
@@ -48,8 +48,9 @@ For details on modifying the visualization in general, see [Changing data explor
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
+<a name="change-visualization"></a>
 
-### <a name="change-visualization"></a>Changing data explorer visualization
+### Changing data explorer visualization
 
 To change the visualization in the data explorer, you can modify several properties.
 
@@ -91,7 +92,9 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each datapoint, its visibility can be switched on or off by using the toggle left from the data point name.
 
-### <a name="add-data-points"></a>To add a data point
+<a name="add-data-points"></a>
+
+### To add a data point
 
 To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
 
@@ -109,8 +112,9 @@ For details on the data point library refer to [Using the Datapoint Library](#da
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
+<a name="customize-data-points"></a>
 
-### <a name="customize-data-points"></a>Customizing data point properties
+### Customizing data point properties
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
@@ -195,8 +199,9 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
+<a name="create-widget"></a>
 
-### <a name="create-widget"></a>Creating widgets from the data explorer
+### Creating widgets from the data explorer
 
 If you want to keep your current configuration in the data explorer for later usage, save it as a widget.
 
@@ -220,8 +225,9 @@ In the upcoming dialog, select one of the reports available and click **Select**
 
 > **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
 
+<a name="export-data"></a>
 
-### <a name="export-data"></a>Exporting measurement data
+### Exporting measurement data
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
 

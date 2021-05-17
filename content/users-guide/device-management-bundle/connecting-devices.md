@@ -11,7 +11,9 @@ helpcontent:
     All devices which are currently in the registration process are displayed with one of the following status: **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect, **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device, or **Accepted** - the user has allowed the credentials to be send to the device."
 ---
 
-### <a name="dev-registration">
+<a name="dev-registration"></a>
+
+### Device registration
 
 In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
 
@@ -44,8 +46,9 @@ If you are subscribed to the required applications you will see a third option
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
+<a name="device-registration-manually"></a>
 
-#### <a name="device-registration-manually"></a>To connect a  device manually
+#### To connect a  device manually
 
 >**Info:** Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 
@@ -71,8 +74,9 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 > **Info:** In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) or look up the manual of your device.
 
+<a name="creds-upload"></a>
 
-#### <a name="creds-upload"></a>To bulk-register devices
+#### To bulk-register devices
 
 To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 

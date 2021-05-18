@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-### No contracts available
+### No active contracts with free slots available
 
 ![No active contracts with free slots available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
 

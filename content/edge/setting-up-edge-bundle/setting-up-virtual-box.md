@@ -44,15 +44,15 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
     
     - Start the *NetworkManager* service.
 	 
-		`[root@server ~]# systemctl start NetworkManager`
+		`[root@iot-edge-server ~]# systemctl start NetworkManager`
 
 	- Update the name of the newly added connection.
 		 
-		`[root@server ~]# nmcli connection modify “Wired connection 2” connection.id “enp0s8"`
+		`[root@iot-edge-server ~]# nmcli connection modify “Wired connection 2” connection.id “enp0s8"`
 
 	- Activate the connection.
 
-		`[root@server ~]# nmcli connection up enp0s8`
+		`[root@iot-edge-server ~]# nmcli connection up enp0s8`
 
 		This command provides an error **Error: Connection activation failed: IP configuration could not be reserved (no available address, timeout, etc.)**. Ignore this error.
 

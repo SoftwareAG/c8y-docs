@@ -12,7 +12,7 @@ In Cumulocity IoT Edge, Monit is used to monitor the processes and perform a res
 
 Monit can provide a quick status report of all the configured services and processes by running the following command:
 
-	[admin@server ~]$ sudo monit summary
+	[admin@iot-edge-server ~]$ sudo monit summary
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues.
 
@@ -20,14 +20,14 @@ There might be cases where Monit has stopped monitoring some resources because o
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command:
 
-	[admin@server ~]$ sudo monit restart apama-ctrl_proc
+	[admin@iot-edge-server ~]$ sudo monit restart apama-ctrl_proc
 
 The Monit status can be checked by running:
 
-	[admin@server ~]$ sudo systemctl status monit
+	[admin@iot-edge-server ~]$ sudo systemctl status monit
 
 Monit can be restarted by running:
 
-	[admin@server ~]$ sudo systemctl restart monit
+	[admin@iot-edge-server ~]$ sudo systemctl restart monit
 
 The log file for monit is located in /var/log/monit.log.

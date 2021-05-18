@@ -89,7 +89,7 @@ You can access the Edge appliance from the Cumulocity IoT tenant by installing t
 
 1. Run the script *vnc-setup.sh*.
 
-	` [admin@server ~]$ sudo /opt/c8y/utilities/vnc-setup.sh`
+	` [admin@iot-edge-server ~]$ sudo /opt/c8y/utilities/vnc-setup.sh`
 
 The *vnc-setup.sh* script installs the VNC components. After installing the VNC components, you should configure the VNC server for each user.
 
@@ -99,7 +99,7 @@ To configure the VNC server, run the *vnc-user-setup.sh* script. Each user shoul
  
 1. Run the script *vnc-user-setup.sh*.
 
-	` [admin@server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
+	` [admin@iot-edge-server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
 
 2. Provide and verify the password.
 

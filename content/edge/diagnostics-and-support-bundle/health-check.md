@@ -12,13 +12,13 @@ The following instructions show how to check the network connectivity of the pla
 
 The following commands will show the interface and network settings of the machine:
 
-	[admin@server ~]$ ip a
+	[admin@iot-edge-server ~]$ ip a
 
 This will list all interfaces and its current configuration.
 
 Example:
 
-	[admin@server ~]$ ip a
+	[admin@iot-edge-server ~]$ ip a
 
 	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -45,11 +45,11 @@ You need to make sure that the node has an external interface (ethX) and the loo
 
 The following command lists the local routing information.
 
-	[admin@server ~]$ netstat -rn
+	[admin@iot-edge-server ~]$ netstat -rn
 
 Example:
 
-	[admin@server ~]$ netstat -rn
+	[admin@iot-edge-server ~]$ netstat -rn
 	Kernel IP routing table
 	Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 	0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
@@ -62,7 +62,7 @@ Make sure you have the destination 0.0.0.0 in the list which then also has the g
 
 Try to reach a well-known address in the internet with the following command:
 
-	[admin@server ~]$ ping -s 1500 8.8.8.8
+	[admin@iot-edge-server ~]$ ping -s 1500 8.8.8.8
 	PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
 	64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
 	64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
@@ -178,7 +178,7 @@ The list describes the tenants which on the core node have not been fully initia
 
 Run the following command to check the REST API availability:
 
-	[admin@server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
+	[admin@iot-edge-server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
 
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected

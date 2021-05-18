@@ -6,6 +6,8 @@ layout: redirect
 
 After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
+>**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for Cumulocity IoT Edge internal purpose.
+
 ### Configuring the network using the GUI
 
 1. Log in to the Management tenant.
@@ -18,7 +20,7 @@ After a successful installation, you can reconfigure the network and also config
 
 4. Click **Edit** to reconfigure the network.
 
-5. Provide the new **IP address** for the ethernet interface. For example, 192.168.66.10
+5. Provide the new **IP address** for you network. For example, 192.168.66.10
 
 6. Provide the **Netmask IP** for your network. For example, 255.255.255.0
 
@@ -30,7 +32,7 @@ After a successful installation, you can reconfigure the network and also config
 
 9. Provide the **Address range CIDR**. For example, 172.18.0.0/16
 
-   The CIDR suffix must be between 0 and 27 inclusive.
+   The CIDR suffix must be between 0 and 27 inclusive. The default value is 172.16.0.0/15.
 
    >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 
@@ -38,8 +40,8 @@ After a successful installation, you can reconfigure the network and also config
 
 To configure the network for the Edge appliance, use the following endpoints:
 
-- [POST /edge/configuration/network](/edge/configuration/#post-edgeconfigurationnetwork)
-- [GET /edge/configuration/network](/edge/configuration/#get-edgeconfigurationnetwork)
+- [POST /edge/configuration/network](/edge/rest-api/#post-edgeconfigurationnetwork)
+- [GET /edge/configuration/network](/edge/rest-api/#get-edgeconfigurationnetwork)
 
 ### Troubleshooting the network CIDR
 

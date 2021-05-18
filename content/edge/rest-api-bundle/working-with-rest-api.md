@@ -177,6 +177,8 @@ Use this endpoint to configure the Cumulocity IoT Edge network.
 |:---|:---|
 |Content-Type|application/json
 
+>**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for Cumulocity IoT Edge internal purpose.
+
 **Request**
 
 ```http
@@ -190,7 +192,9 @@ Content-Type: application/json
 	"dns": "8.8.8.8"
 }
 ```
-Use the above JSON format before the installation to configure the network. Before the installation, the `dns` key and the network CIDR key are optional. After the installation, you can configure the network CIDR.
+Use the above JSON format before the installation to configure the network. Before the installation, the `dns` and the network CIDR keys are optional. After the installation, you can configure the network CIDR.
+
+>**Important:** For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
 To configure the network CIDR, use the same JSON syntax:
 
@@ -208,8 +212,7 @@ Content-Type: application/json
     "ip_range": "172.18.0.1/16"
 }
 ```
-
-Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive.
+Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
 
 >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
 

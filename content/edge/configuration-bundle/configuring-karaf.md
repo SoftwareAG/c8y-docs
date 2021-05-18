@@ -24,13 +24,13 @@ To increase the memory of the JVM:
 After increasing the size, restart Karaf:
 
 ```shell
-[admin@server ~]$  sudo service cumulocity-core-karaf stop
+[admin@iot-edge-server ~]$  sudo service cumulocity-core-karaf stop
 ```
 
 and
 
 ```shell
-[admin@server ~]$  service cumulocity-core-karaf start
+[admin@iot-edge-server ~]$  service cumulocity-core-karaf start
 ```
 
 ### Changing log level for Karaf

@@ -21,7 +21,7 @@ To enable or disable the microservice hosting feature, use the following endpoin
 After you enable the microservices, before using the microservices ensure that the microservices are active and healthy.
 For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
 
-On some hardware configurations, enabling or disbaling the microservice hosting feature takes more then 15 minutes.
+On some hardware configurations, enabling or disabling the microservice hosting feature may take more than 15 minutes.
 
 Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.

@@ -13,13 +13,13 @@ Before you connect a Modbus device, ensure that the agent is running.
 Use the following command to check if the agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
-[admin@server ~]$ systemctl status cumulocity-agent
+[admin@iot-edge-server ~]$ systemctl status cumulocity-agent
 ```
 
 If the agent is not running, start it with the following command:
 
 ```shell
-[admin@server ~]$ systemctl start cumulocity-agent
+[admin@iot-edge-server ~]$ systemctl start cumulocity-agent
 ```
 
 The Modbus agent is pre-registered.
@@ -44,13 +44,13 @@ To connect an OPC UA device in Edge, follow the steps below.
 Check if the OPC UA management service is running in Cumulocity IoT Edge (running on port 8083):  
 
 ```shell
-[admin@server ~]$ sudo service opcua-mgmt-service status
+[admin@iot-edge-server ~]$ sudo service opcua-mgmt-service status
 ```
 
 If the agent is not running, start it with the following command:
 
 ```shell
-[admin@server ~]$ sudo service opcua-mgmt-service start
+[admin@iot-edge-server ~]$ sudo service opcua-mgmt-service start
 ```
 
 **OPC UA Device Gateway**
@@ -58,13 +58,13 @@ If the agent is not running, start it with the following command:
 Check if the OPC UA device gateway is running in Cumulocity IoT Edge (running on port 1099):  
 
 ```shell
-[admin@server ~]$ sudo service opcua-device-gateway status
+[admin@iot-edge-server ~]$ sudo service opcua-device-gateway status
 ```
 
 If the agent is not running, start it with the following command:
 
 ```shell
-[admin@server ~]$ sudo service opcua-device-gateway start
+[admin@iot-edge-server ~]$ sudo service opcua-device-gateway start
 ```
 
 #### Registering the device

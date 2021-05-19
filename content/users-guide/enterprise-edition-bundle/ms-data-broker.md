@@ -1,33 +1,35 @@
 ---
-weight: 65
-title: Data Broker 2.0
+weight: 70
+title: Microservice-based Data Broker
 layout: redirect
 ---
 
-The Data Broker 2.0 is powered by the all-new Cumulocity Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The Data Broker 2.0 is similar to the existing Data Broker in its functionality except that it needs a special microservice, known as Data-Broker microservice, to be enabled to make use of it.
+The microservice-based Data Broker is powered by the Cumulocity Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based Data Broker is similar to the existing Data Broker in its functionality except that it needs a special microservice, known as Data-Broker microservice, to be enabled to make use of it.
 
-### <a name="enabling-data-broker-2.0"></a> To Enable Data Broker 2.0
+> **Important:** Please note that in this release the Cumulocity Messaging Service and the microservice-based Data Broker are available on a limited trial basis, and not yet enabled in all Cumulocity public cloud environments. Please contact Cumulocity customer support or your Software AG sales representative to inquire about using these capabilities in your Cumulocity environment. The original Data Broker will continue to operate alongside the microservice-based Data Broker for the time being. Users can choose which Data Broker to use on a per-tenant basis.
 
-1. As a management tenant, navigate to Administration > Tenants > Subtenants & select the tenant that will serve as the Data connector.
+### <a name="enabling-ms-data-broker"></a> To Enable the microservice-based Data Broker
+
+1. As a management tenant, navigate to Administration > Tenants > Subtenants & select the tenant that will serve as the source of the data connector.
 2. Click on the Applications tab and subscribe the tenant to `databroker-agent-server`.
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
 
-> **Info:** Tenants subscribing to data connector don't need `databroker-agent-server` application subscription.
+> **Info:** Tenants subscribing to a data connector don’t need the `databroker-agent-server` application subscription.
 
-### <a name="data-broker-connectors-2.0"></a> Data connectors
+### <a name="ms-data-broker-connectors"></a> Data connectors
 
 See [Data connectors](#data-broker-connectors) for details on how to manage data connectors.
 
-### <a name="data-broker-subscriptions-2.0"></a> Data subscriptions
+### <a name="ms-data-broker-subscriptions"></a> Data subscriptions
  
 See [Data subscriptions](#data-broker-subscriptions) for details on how to managed data subscriptions.
 
-### <a name="migrating-data-broker-connectors-to-2.0"></a> Migrating existing data connectors to Data Broker 2.0
+### <a name="migrating-data-broker-connectors-to-ms-data-broker"></a> Migrating existing data connectors to the microservice-based Data Broker
 
-After enabling Data Broker 2.0, your existing data connectors should continue to work without any additional configuration.
+After enabling the microservice-based Data Broker, your existing data connectors should continue to work without any additional configuration.
 
-### <a name="troubleshooting-data-broker--2.0"></a> Troubleshooting
+### <a name="troubleshooting-ms-data-broker"></a> Troubleshooting
 
 #### Management tenant subscription alert
 
@@ -43,11 +45,11 @@ Bad requests can happen in the event the data broker subscriber tenant becomes u
 
 The data broker agent is configured to monitor the rate at which events are being delivered to their destination. If events cannot be delivered fast enough, slow processing alarms will be raised. A slow processing alarm includes a connector id to help identify which destination tenant is affected.
 
-* Queue Backlog
+##### Queue Backlog 
 
 This alarm is raised when latency for message delivery crosses a specified threshold. This usually happens if there is a backlog of undelivered events to the destination tenant due to various factors.
-
-* Average request bytes sent per second
+ 
+##### Average request bytes sent per second 
 
 The data broker monitors the data rate at which events are being forwarded. If this rate is lower than a configured threshold, a slow processing alert will be raised. This can occur due to a slow network.
 

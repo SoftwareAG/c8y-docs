@@ -4,7 +4,9 @@ title: Configuring the microservice hosting feature
 layout: redirect
 ---
 
-Microservices are server-side applications which may be used to extend the Cumulocity IoT Edge platform with customer-specific functionality. For more information, see [Microservices SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device Simulator microservice also gets enabled or disabled. To use the Device Simulator microservice, you must set the user role permission to `ROLE_INVENTORY_ADMIN`. For more information, see [Microservice development](/microservice-sdk/rest/#microservice-development). 
+Microservices are server-side applications which may be used to extend the Cumulocity IoT Edge platform with customer-specific functionality. For more information, see [Microservices SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device simulator microservice also gets enabled or disabled. To use the Device simulator, add the **Simulator** permission. For more information, see [Global roles](/users-guide/administration/#a-nameglobalaglobal-roles).
+
+For more information about Device simulator, see [Working with simulators](/users-guide/device-management/#simulator).
 
 >**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
 

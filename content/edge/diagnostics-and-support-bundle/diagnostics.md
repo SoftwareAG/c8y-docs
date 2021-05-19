@@ -125,7 +125,7 @@ Following are the available keys used in the configuration file:
 |<div style="width:300px">Information</div>|Description|
 |:----------------|:---|
 |email.notification|Allows users to select whether they want to receive the diagnostic report via email
-|recipient.email|Email ID to be used by the utility while sending support email
+|recipient.email|Recipient email ID that receives the support email
 |smtp.server.host|SMTP host for sending support email
 |smtp.server.port|SMTP port to be used by the utility while sending support email
 |smtp.username|SMTP username to be used by the utility while sending support email

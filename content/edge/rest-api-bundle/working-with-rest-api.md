@@ -26,7 +26,7 @@ Your authorization header would look like:
 
 The following table lists the endpoints that need authentication and the endpoints that does not need authentication:
 
-|Endpoints need authentication|Endpoints does not need authentication
+|Endpoints does not need authentication|Endpoints need authentication
 |:---|:---
 |/edge/tasks/latest-installation|/edge/configuration/network
 |/edge/configuration/domain|/edge/tasks/{id}
@@ -39,6 +39,7 @@ The following table lists the endpoints that need authentication and the endpoin
 ||/edge/configuration/remote-connectivity
 ||/edge/reboot
 ||/edge/configuration/certificate
+||/edge/expand-disk
 
 ### GET /edge/tasks/latest-installation
 
@@ -101,7 +102,7 @@ Content-Type: application/json
 	}
 ```
 	
-In the JSON syntax above, the value of `certificate` can be `generate` or `upload`:
+In the JSON format above, the value of `certificate` can be `generate` or `upload`:
 
 - If you have set `"certificate": "generate"`, Cumulocity IoT Edge generates the certificate for you.
 
@@ -129,7 +130,7 @@ Note that this task does not start the installation. You must run the subsequent
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/update
 
@@ -167,7 +168,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 
 Upload the archive of the new Cumulocity IoT Edge version using the URL returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/configuration/network
 
@@ -192,11 +193,11 @@ Content-Type: application/json
 	"dns": "8.8.8.8"
 }
 ```
-Use the above JSON format before the installation to configure the network. Before the installation, the `dns` and the network CIDR keys are optional. After the installation, you can configure the network CIDR.
+Use the above JSON format before the installation to configure the network. 
 
 >**Important:** For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
-To configure the network CIDR, use the same JSON syntax:
+After the installation, you can configure the IP range for network CIDR using the same JSON format with an additional key `ip_range`:
 
 **Request**
 
@@ -212,7 +213,9 @@ Content-Type: application/json
     "ip_range": "172.18.0.1/16"
 }
 ```
-Here, the `ip_range` is the IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
+Here, the `ip_range` is an IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
+
+Before the installation, the `dns` and the network CIDR keys are optional.
 
 >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
 
@@ -226,7 +229,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### GET /edge/configuration/network
 
@@ -308,7 +311,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/configuration/remote-connectivity
 
@@ -340,7 +343,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### GET /edge/configuration/remote-connectivity
 
@@ -394,7 +397,7 @@ The endpoint returns HTTP status 200.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### GET /edge/configuration/time-sync
 
@@ -459,7 +462,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid). 
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid). 
 
 ### GET /edge/configuration/certificate
 
@@ -510,7 +513,7 @@ Content-Type: application/json
     "renewal_type": "upload"
 }
 ```
-In the JSON syntax above, the value of `renewal_type` can be `generate` or `upload`:
+In the JSON format above, the value of `renewal_type` can be `generate` or `upload`:
 
 - If you have set `"renewal_type": "generate"`, Cumulocity IoT Edge generates the certificate for you.
 
@@ -542,7 +545,7 @@ In the JSON syntax above, the value of `renewal_type` can be `generate` or `uplo
 	
 To upload the certificate, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/expand-disk
 
@@ -564,7 +567,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task Id. Use the task Id for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### GET /edge/tasks/{id}
 

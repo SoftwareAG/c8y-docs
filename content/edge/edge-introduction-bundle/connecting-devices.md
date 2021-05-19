@@ -4,7 +4,7 @@ title: Connecting devices
 layout: redirect
 ---
 
-Cumulocity IoT uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity IoT . For more information, see [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.
+Cumulocity IoT Edge uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity IoT Edge. For more information, see [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.
 
 Additionally, Cumulocity IoT Edge offers:
 

@@ -10,5 +10,5 @@ In case of any issues, we recommend you to follow these steps:
 * Monitor the system processes, see the [Monitoring](/edge/diagnostics-and-support/#monitoring) section.
 * Check the log files, see the [Log files](/edge/diagnostics-and-support/#logs-files) section.
 
-These steps help you analyze the issue and provide a fix. If you still need to contact Software AG support, include the output of the diagnostics script. For more information about using the diagnostics, see [Diagnostics](#diagnostics).
+These steps help you analyze the issue and provide a fix. If you still need to contact Software AG support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostics](#diagnostics).
 

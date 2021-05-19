@@ -210,7 +210,7 @@ Content-Type: application/json
 	"netmask": "255.255.255.0",
 	"gateway": "192.168.66.1",
 	"dns": "8.8.8.8",
-    "ip_range": "172.18.0.1/16"
+	"ip_range": "172.18.0.1/16"
 }
 ```
 Here, the `ip_range` is an IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
@@ -245,7 +245,7 @@ The endpoint returns HTTP status 200.
 	"netmask": "255.255.255.0",
 	"gateway": "192.168.66.1",
 	"dns": "8.8.8.8",
-    "ip_range": "172.18.0.1/16"
+	"ip_range": "172.18.0.1/16"
 }
 ```
 
@@ -549,7 +549,7 @@ The `id` returned in the JSON response is the task ID. Use the task ID for polli
 
 ### POST /edge/expand-disk
 
-Use this endpoint to expand the disk size of the installation disk and the data disk.
+Use this endpoint to expand the disk size of the installation disk and the data disk. You can either expand the disk size for both the disks or any one of the disk at a time. There is no limit on the number of the disk expansion process.
 
 Before using this endpoint, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
 

@@ -241,7 +241,7 @@ The endpoint returns HTTP status 200.
 
 ```json
 {
-    "address": "192.168.66.10",
+	"address": "192.168.66.10",
 	"netmask": "255.255.255.0",
 	"gateway": "192.168.66.1",
 	"dns": "8.8.8.8",

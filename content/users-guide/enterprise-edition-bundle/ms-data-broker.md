@@ -37,9 +37,9 @@ The management tenant cannot be used as a data broker source tenant & this alarm
 
 #### Data Broker connection error
 
-The data broker agent is configured to monitor each connector for the number of bad forwarding requests sent. If this number reaches a configured threshold a CRITICAL alarm is raised in the tenant. 
+The data broker agent is configured to monitor each connector for the number of failed forwarding requests sent. If this number reaches a configured threshold a CRITICAL alarm is raised in the tenant. 
 If this happens the data will be stored until the connection is restored and it can be forwarded again.
-Bad requests can happen in the event the data broker subscriber tenant becomes unreachable.
+Failed requests can happen in the event the data broker subscriber tenant becomes unreachable.
 
 #### Data Broker slow processing alert
 

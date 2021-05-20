@@ -6,7 +6,7 @@ layout: redirect
 
 ### Setting up for VMware
 
-To set up a VM in VMware Workstation Player, follow the steps below.
+To set up the Edge appliance in VMware Workstation Player, follow the steps below.
 
 >**Info:** The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
 
@@ -14,32 +14,15 @@ To set up a VM in VMware Workstation Player, follow the steps below.
 
 2.	Navigate to the folder where the Edge appliance files are located, select the OVF file and click **Open**.
 
-3.	Change the VM name if required and click **Import**. You can also change the VM storage path here.
+3.	Change the Edge appliance name if required and click **Import**. You can also change the storage path of the Edge appliance here.
 
 4.	Start the Edge appliance by clicking **Play virtual machine**.
 
-### Configuring Cumulocity IoT Edge
-
-Once the VM starts up successfully, you must configure the network so that it can be accessed from outside the VM.
-
-To do so, the following information is required:
-
-* Edge appliance IP - Will be used to access the VM from outside
-* Netmask
-* Gateway IP
-* DNS server IP (if unknown, you can use the gateway IP here as well)
-
-If this information is not available to you, contact your network administrator.  
-
-You may also use the `vmnetcfg` utility provided by VMware (see below) to obtain the netmask and gateway IP.
-
-Configure the network by completing the "Configure network" task using the post-installer utility, see [Configuration](/edge/installation/#configuration).
-
-Finish the Cumulocity IoT Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/edge/installation/#configuration).
+Next, perform the Edge appliance installation. See, [Installing Cumulocity IoT Edge](/edge/installation/).
 
 ### Setting up for vmnetcfg utility
 
-You can use the VMware `vmnetcfg` utility to get the necessary details like subnet mask and gateway IP required for completing the "Configure network" task using the post-installer.
+You can use the VMware `vmnetcfg` utility to get the necessary details like the subnet mask and gateway IP required to configure the network.
 
 The following example illustrates the network configuration on a Windows platform. For instructions on Linux platform, see VMware Knowledge Base.  
 

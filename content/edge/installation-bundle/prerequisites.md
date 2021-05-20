@@ -21,16 +21,13 @@ To procure the Cumulocity IoT Edge license file, you must provide the right doma
 
 When you provide the domain name, consider the following points:
 
-* The domain name does not need to be a Fully Qualified Domain Name (FQDN).<br>
-For example, to access the Edge platform with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the subdomain **myown**).
-
-	>**Important:** When you are running the Edge post installation process, you must use the FQDN. For example, **myown.iot.com**.
+* The domain name does not need to be a Fully Qualified Domain Name (FQDN). For example, to access the Edge appliance with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the subdomain **myown**).
 
 * If you exclude the subdomain from the domain name in the Edge license, you must possess a wildcard SSL certificate which can be used with multiple subdomains (**myown** or others) of the domain (**iot.com**).<br>
 For example, if you provide **iot.com** as the domain name, you must possess an SSL certificate for ***.iot.com**.
 
 * If you have an Internationalized Domain Name (IDN), then you must provide the translated ASCII equivalent domain name.<br>
-For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge post installation process.<br>
+For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge installation process.<br>
 
 	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
 

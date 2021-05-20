@@ -34,10 +34,4 @@ A VM with the provided name, e.g. "EDGE-server", should now show up in the **Vir
 * Edit VM Settings -> VMware Tools: Check time synchronization
 * Edit VM Settings -> General Options: Set guest OS to CentOs 7 (64bit)
 
-### Cumulocity IoT Edge configuration
-
-Perform the following steps to configure the network once the image is imported into ESXi.
-
-1. Run /opt/c8y/utilities/post_installation.sh -> Option 1 ->  “Configure network”.
-
-2. Run /opt/c8y/utilities/post_installation.sh -> Option 2 -> “Run post-installation”.
+Next, perform the Edge appliance installation. See, [Installing Cumulocity IoT Edge](/edge/installation/).

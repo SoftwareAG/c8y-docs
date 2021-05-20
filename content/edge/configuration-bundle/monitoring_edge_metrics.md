@@ -1,5 +1,5 @@
 ---
-weight: 65
+weight: 70
 title: Monitoring the Edge metrics
 layout: redirect
 ---

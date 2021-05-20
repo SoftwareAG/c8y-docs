@@ -23,6 +23,7 @@ The following differences apply:
 |Cloud Field Bus|Included|Optional
 |Apama real-time analytics|Included|Optional
 |Data Broker|Included|Optional
+|OPC UA|Included|Optional
 
 **Footnote**: * The underlying infrastructure including the virtualization is not part of the product. For further details on high availability or fault tolerance options, refer to the relevant information provided by third parties (e.g.[vSphere Availability](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-63F459B7-8884-4818-8872-C9753B2E0215.html)).
 

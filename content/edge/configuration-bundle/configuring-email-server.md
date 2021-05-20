@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 75
 title: Configuring the email server
 layout: redirect
 ---
@@ -7,4 +7,4 @@ layout: redirect
 To configure the "reset password" template and email server settings, perform the following steps:
 
 1. Log into the management tenant using *https://&#60;tenant-domain>/apps/administration/index.html#/configuration*.
-2. Update the email server details and templates as mentioned in [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
+2. Update the email server details and templates as mentioned in [Configuring password reset](/users-guide/enterprise-edition/#password-reset) and [Configuring email server](/users-guide/enterprise-edition/#email-server) in the User guide.

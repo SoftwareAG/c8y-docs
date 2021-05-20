@@ -4,16 +4,7 @@ title: Configuring the hostname
 layout: redirect
 ---
 
-You can change the hostname of your Edge appliance using the terminal and REST APIs.
-
-### Configuring the hostname using the terminal
-
-To configure the hostname of your Edge appliance, run the command:
-
-```shell
-[admin@iot-edge-server ~]$ sudo hostnamectl set-hostname <hostname>
-```
-The default hostname of the Edge appliance is **iot-edge-server**.
+You can change the hostname of your Edge appliance using the REST APIs. The default hostname of the Edge appliance is **iot-edge-server**.
 
 ### Configuring the hostname using the REST APIs
 

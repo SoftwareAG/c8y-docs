@@ -57,7 +57,7 @@ There is no internet connection required during installation. Internet connectio
 
 #### Incoming traffic
 
-The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to "Setting up port forwarding" in [Setting up the environment](/edge/installation#setting-up-the-environment)):
+The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also see [Setting up port forwarding](/edge/setting-up-edge/#vmware-port-forwarding):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---

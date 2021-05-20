@@ -10,8 +10,8 @@ To set up Hyper-V, you must first enable Hyper-V on your system, and  create Net
 
 You can create a NAT adapter using two ways:
 
-* [Using default settings](/edge/installation/#creating-a-nat-adapter-using-default-settings)  
-* [Using user-defined settings](/edge/installation/#creating-a-nat-adapter-using-user-defined-settings) 
+* [Using default settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-default-settings)  
+* [Using user-defined settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-user-defined-settings) 
 
 Run all the commands in Windows PowerShell as an administrator.
 
@@ -23,13 +23,16 @@ Run all the commands in Windows PowerShell as an administrator.
 ```
 PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEDGE" -SwitchType Internal
 ```
+
 2. Verify that the new NAT adapter is created.
-```
-PS C:\WINDOWS\system32> Get-NetAdapter
-```
-<br>
-<img src="/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
-Note down the `ifIndex` of the adapter. The `ifIndex` in the above screenshot is 31. The `ifIndex` may vary in your system and the same `ifIndex` should be used in the next step. 
+
+   ```
+   PS C:\WINDOWS\system32> Get-NetAdapter
+   ```
+
+   <img src="/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
+
+   Note down the `ifIndex` of the adapter. The `ifIndex` in the above screenshot is 31. The `ifIndex` may vary in your system and the same `ifIndex` should be used in the next step. 
 
 3. Assign an IP address for the adapter.
 ```

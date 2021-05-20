@@ -16,7 +16,6 @@ To perform port forwarding on a VMware platform, follow the steps below.
 	
 3. Click **Add** to add the port forwarding rules. Enter the port forwarding rules for HTTPS, MQTT and MQTT over SSL protocols as described in the table below:
 
-
 	>**Info:** Ensure that the **Virtual machine IP address** is the same as the IP address that you have configured for the Edge appliance.
 
 	|Host Port|Type|VM IP Address|VM Port|Description

@@ -77,7 +77,7 @@ The CSV must at least contain the following fields to be able to establish a con
 
 Upon upload of the CSV in Cumulocity IoT we should see that our "nosec_device" device has been created.
 
-![PSK device created](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
+![Unsecure device created](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
 
 The table below reflects the full set of possible fields that can be added:
 

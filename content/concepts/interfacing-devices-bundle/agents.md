@@ -4,7 +4,7 @@ title: What is an agent?
 layout: redirect
 ---
 
-Machine-to-machine (M2M) devices come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
+Devices for the Internet of Things (IoT) come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
 
 To shield machine-to-machine applications from this numbers of access options, Cumulocity IoT uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
 
@@ -14,7 +14,7 @@ To shield machine-to-machine applications from this numbers of access options, C
 
 ![Agent architecture](/images/concepts-guide/agents.png)
 
-#### Protocol translation 
+#### Protocol translation
 
 The configuration of parameters, readings, events and other information is either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity IoT requires. It will also receive device control commands from Cumulocity IoT ("switch off that relay") and translate these into a kind of protocol the device requires.
 
@@ -42,4 +42,3 @@ Agents can be deployed in various ways, as illustrated in the picture below. We 
 * The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.
 
 **Device-side agents** run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents.
-

@@ -48,7 +48,7 @@ The CSV must at least contain the following fields to be able to establish a con
 </tr>
 <tr>
 <td style="text-align:left">TYPE</td>
-<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to signify that the device is a LWM2M device.</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to mark the device as a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">SHELL</td>

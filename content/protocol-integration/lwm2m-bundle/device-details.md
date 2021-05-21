@@ -73,3 +73,25 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 > **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
 
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register-device).
+
+### <a name="lwm2m-client-awake-time"></a> LWM2M client awake time
+
+LWM2M client awake time specifies how long a device can be expected to be listening for incoming traffic before it goes back to sleep. The LWM2M server uses the client awake time to determine if the operations are passed down to a device.
+The operations are sent during the awake time after the registration or after the registration update request is received by the LWM2M server.
+After the awake time has passed, the operations are being queued and will be sent to the device on the next registration or registration update.
+This applies to all operations that can be applied to the device.
+
+LWM2M client awake time is determined based on the following priority:
+1. (If provided) Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment.
+2. (If provided) Registration awake time attribute &ldquo;at&rdquo; in the registration request by the LWM2M client.
+3. Global setting of the LWM2M microservice.
+
+Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m#register-device) or set with the managed object update request as in the example:
+```
+PUT /inventory/managedObjects/<device-managed-object-id>
+
+{
+    "awakeTimeRegistrationParameter": 180000
+}
+```
+The value is in milliseconds. If set to 0, the device will be considered as always online.

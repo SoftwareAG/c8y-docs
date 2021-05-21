@@ -35,11 +35,11 @@ Use the the Device Management application to visualize Tenant SLA Monitoring dat
 
 ### Prerequisites  
 
-The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results.
+The Management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results.
 
 ![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
-For details on application subscription, refer to [Enterprise Tenant > Managing tenants > Applications](/users-guide/enterprise-edition#subscribe) in the User guide.
+For details on application subscription, refer to [Enterprise tenant > Managing tenants > Applications](/users-guide/enterprise-edition#subscribe) in the User guide.
 
 ### How the service works
 
@@ -47,11 +47,11 @@ Every 5 minutes, the Tenant SLA Monitoring service probes for the response time 
 
 To be able to do so, the service automatically subscribes to all subtenants of a subscribed tenant, to get its credentials and gain access to its API.
 
-Moreover, for each subscribed tenant (i.e. management tenant), a source in the Device Management application is created in which the monitoring results, including those of the subtenants, are stored as measurements.
+Moreover, for each subscribed tenant (i.e. Management tenant), a source in the Device Management application is created in which the monitoring results, including those of the subtenants, are stored as measurements.
 
 ### Viewing measurements
 
-To view the measurements showing the monitoring results, open the management tenant´s source (device) in **All devices** in the Device Management application and switch to the **Measurements** tab.
+To view the measurements showing the monitoring results, open the Management tenant´s source (device) in **All devices** in the Device Management application and switch to the **Measurements** tab.
 
 <img src="/images/users-guide/sla-monitoring/sla-Tenant-Monitoring-Measurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
 
@@ -79,4 +79,4 @@ The Tenant SLA Monitoring service will create alarms in case of the following sc
 
 These alarms are used to calculate the availability of the system in percentage, shown as measurements (see above).
 
-To view recent alarms, switch to the **Alarms** tabs of the management tenant´s source.
+To view recent alarms, switch to the **Alarms** tabs of the Management tenant´s source.

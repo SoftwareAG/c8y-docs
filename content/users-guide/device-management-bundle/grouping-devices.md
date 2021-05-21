@@ -59,6 +59,9 @@ In the **Subassets** tab you see a list of all devices assigned to the group. Fo
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
+
+(/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
+
 See also [To add a group](#add-group) and [To assign a device to a group](#assigning-devices).
 
 **Bulk operations**

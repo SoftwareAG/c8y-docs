@@ -4,7 +4,7 @@ title: What is an agent?
 layout: redirect
 ---
 
-Devices for the Internet of Things (IoT) come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
+Internet of Things (IoT) devices come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
 
 To shield machine-to-machine applications from this numbers of access options, Cumulocity IoT uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
 

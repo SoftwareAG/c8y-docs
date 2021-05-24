@@ -12,7 +12,7 @@ You must always have an SSL certificate for your domain name that is configured.
 
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge Configuration** > **Domain/Certificate** in the left navigation pane.
+3. Click **Edge Configuration** > **Domain/Certificate** in the navigator.
 
    Review the domain name and the SSL certificate.
 

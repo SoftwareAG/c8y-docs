@@ -14,7 +14,7 @@ To update Cumulocity IoT Edge:
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge Configuration** > **Update** in the left navigation pane.
+3. Click **Edge Configuration** > **Update** in the navigator.
 
 4. Click **Update** > **Next**.
 

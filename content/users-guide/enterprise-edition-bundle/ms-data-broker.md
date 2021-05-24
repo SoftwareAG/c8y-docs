@@ -4,7 +4,7 @@ title: Microservice-based Data Broker
 layout: redirect
 ---
 
-The microservice-based Data Broker is powered by the Cumulocity Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based Data Broker is similar to the existing Data Broker in its functionality except that it needs a special microservice, known as Data-Broker microservice, to be enabled to make use of it.
+The microservice-based Data Broker is powered by the Cumulocity Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based Data Broker is similar to the existing Data Broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
 > **Important:** Please note that at this time the Cumulocity Messaging Service and the microservice-based Data Broker are available on a limited trial basis, and not yet enabled in all Cumulocity public cloud environments. Please contact Cumulocity customer support or your Software AG sales representative to inquire about using these capabilities in your Cumulocity environment. The original Data Broker will continue to operate alongside the microservice-based Data Broker for the time being. Users can choose which Data Broker to use on a per-tenant basis.
 

@@ -259,6 +259,9 @@ The binary file representations, which can be queried using binary API, are crea
 
 ### Read file
 
+Prerequisites: 
+- Open and Read files methods must be implemented on server side, either as the children of the file node itself or as the children of the data type node
+
 With this operation a file could be downloaded from the OPC UA server at the given fileNodeId.  
 
 The parameter bufferSize is optional and adjustable up to 10MB. The default size, if not set up in the request, will be 1Mb. This will not limit the size of the file to read. If the size is bigger, multiple read operation are triggered.

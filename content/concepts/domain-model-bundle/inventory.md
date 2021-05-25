@@ -104,11 +104,11 @@ More information can be found in [Identity](https://cumulocity.com/api/#tag/Iden
 
 The inventory model supports two default hierarchies of objects: A communication hierarchy ("childDevices") and an asset hierarchy ("childAssets").
 
-The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls.
+The communication hierarchy tracks how devices are linked to the IoT platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls.
 
 ![Example communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
-The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices.
+The asset hierarchy structures the assets that are remotely supervised and controlled through the IoT devices.
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity IoT, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 

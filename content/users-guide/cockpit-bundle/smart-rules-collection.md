@@ -847,6 +847,7 @@ In certain rule parameters, various fields of triggering events can be used as v
 
 You can use this mechanism for example to insert device names or alarm text into various outputs (email, SMS).
 
+
 **Common fields to be used from all triggering events (alarms, measurements, operations, events)**
 
 <table>
@@ -879,6 +880,11 @@ You can use this mechanism for example to insert device names or alarm text into
     <td>Text or message of the event.</td>
   </tr>
 </table>
+
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
+The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York.
+
+
 
 **Fields specific for alarms**
 
@@ -1030,4 +1036,4 @@ Here we can for example define the following variables:
   </tr>  
 </table>
 
-> **Info:** In case the variable does not exist or is misspelled, no substitution will occur.
+> **Important:** In case the variable does not exist or is misspelled, no substitution will occur.

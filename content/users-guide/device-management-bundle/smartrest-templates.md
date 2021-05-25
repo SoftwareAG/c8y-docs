@@ -96,7 +96,7 @@ A response template contains the necessary information to extract data values fr
 </tr>
 <tr>
 <td align="left">Base Pattern</td>
-<td align="left">Path in a JSON document. The base pattern acts as a prefix to all patterns. You can enter either a base pattern and add patterns with only the subpath below the base pattern, or enter no base pattern but multiple patterns with the full path.</td>
+<td align="left">Path in a JSON document. The base pattern acts as a prefix to all patterns. You can enter either a base pattern here and add patterns with only the subpath below the base pattern, or leave this field empty and provide patterns with the full path.</td>
 </tr>
 <tr>
 <td align="left">Condition</td>

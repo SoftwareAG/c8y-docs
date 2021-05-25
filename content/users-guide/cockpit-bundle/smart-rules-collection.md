@@ -880,7 +880,7 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-**Fields specific for alarms and operations**
+**Fields specific for alarms**
 
 <table>
 <colgroup>
@@ -893,7 +893,7 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>  
   <tr>
     <td>#{status}</td>
-    <td>Status of the operation/alarm: ACTIVE, ACKNOWLEDGED or CLEARED.</td>
+    <td>Status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED.</td>
   </tr>
   <tr>
     <td>#{severity}</td>
@@ -904,6 +904,24 @@ You can use this mechanism for example to insert device names or alarm text into
     <td>Number of times the alarm has been sent. Repeating alarms for the same device and same alarm type are de-duplicated into one alarm.</td>
   </tr>
 </table>
+
+**Fields specific for operations**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{status}</td>
+    <td>Status of the operation: SUCCESSFUL, FAILED, EXECUTING or PENDING.</td>
+  </tr>
+</table>
+
 
 **Fields specific for measurements**
 

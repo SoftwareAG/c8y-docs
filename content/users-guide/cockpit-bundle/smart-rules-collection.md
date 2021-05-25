@@ -884,8 +884,6 @@ You can use this mechanism for example to insert device names or alarm text into
 > **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
 The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York.
 
-
-
 **Fields specific for alarms**
 
 <table>

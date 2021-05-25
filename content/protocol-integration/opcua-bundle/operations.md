@@ -262,9 +262,9 @@ The binary file representations, which can be queried using binary API, are crea
 Prerequisites: 
 - Open and Read files methods must be implemented on server side, either as the children of the file node itself or as the children of the data type node
 
-With this operation a file could be downloaded from the OPC UA server at the given fileNodeId.  
+With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId.  
 
-The parameter bufferSize is optional and adjustable up to 10MB. The default size, if not set up in the request, will be 1Mb. This will not limit the size of the file to read. If the size is bigger, multiple read operation are triggered.
+The parameter `bufferSize` is optional and adjustable up to 10MB. The default size, if not set in the request, it is 1Mb. This will not limit the size of the file to be read. If the size is bigger, multiple read operations are triggered.
 
 ```json
 {
@@ -277,15 +277,15 @@ The parameter bufferSize is optional and adjustable up to 10MB. The default size
 }
 ```
 
-After the downloaded file has been read successfully (see Control section of the device) it is available for download to the local file system in the Administration pane, submenu Management/Files repository for download to local file system.
+After the downloaded file has been read successfully (see **Control** tab of the device) it is available in Management > Files repository in the Administration application for download to local file system.
 
-An other way to get the file is to check the binary folder on the backend using
+Alternatively, you can check the binary folder on the backend using
 
 ```shell
 {{url}}/inventory/binaries
 ```
 
-This will return a JSON response like this
+This returns a JSON response like this
 
 ```json
 {

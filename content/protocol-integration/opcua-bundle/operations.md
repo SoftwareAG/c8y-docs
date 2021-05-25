@@ -289,14 +289,14 @@ This returns a JSON response like this:
 
 ```json
 {
-  "self": "http://localhost/inventory/binaries?pageSize=5&currentPage=1",
+  "self": "http://<tenant-domain>/inventory/binaries?pageSize=5&currentPage=1",
   "managedObjects": [
     {
-      "owner": "device_TORS",
+      "owner": <device-owner>,
       "type": "ua-file-type",
       "lastUpdated": "2021-05-17T14:33:21.074Z",
       "name": "ns=2;s=sampleFile",
-      "self": "http://localhost/inventory/binaries/2351",
+      "self": "http://<tenant-domain>/inventory/binaries/2351",
       "id": "2351",
       "c8y_IsBinary": "",
       "length": 13268,

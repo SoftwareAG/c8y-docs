@@ -10,7 +10,8 @@ To use this feature, support user access must be configured and the required sup
 
 > **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [Software AG Global Support](/about-doc/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
 
-### <a name="configuring-support-access"></a>Configuring support user access
+<a name="configuring-support-access"></a>
+### Configuring support user access
 
 Support user access can either be
 

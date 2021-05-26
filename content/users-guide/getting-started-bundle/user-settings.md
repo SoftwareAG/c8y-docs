@@ -47,7 +47,8 @@ The **User** menu contains the following items:
 </tbody>
 </table>
 
-### <a name="user-settings"></a>To change user settings
+<a name="user-settings"></a>
+### To change user settings
 
 Several account settings can be changed by the user.
 
@@ -65,7 +66,8 @@ The user interface language will be selected along the following criteria, in th
 *  The language selected in the browser preferences.
 * 	The operating system language.
 
-#### <a name="languages"></a>Available languages
+<a name="languages"></a>
+#### Available languages
 
 The UI is available in the following languages:
 
@@ -85,7 +87,8 @@ The UI is available in the following languages:
 |Spanish|es|
 
 
-#### <a name="change-password"></a>To change your password
+<a name="change-password"></a>
+#### To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.

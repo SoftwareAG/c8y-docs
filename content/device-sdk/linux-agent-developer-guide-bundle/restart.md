@@ -8,7 +8,8 @@ Besides sending requests, e.g., measurements to the Cumulocity IoT platform, ano
 Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
-### <a name="restart"></a>Restart device example - simple
+<a name="restart"></a>
+### Restart device example - simple
 
 First, this example sends the operation status EXECUTING when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends SUCCESSFUL as the operation status update to the server.
 

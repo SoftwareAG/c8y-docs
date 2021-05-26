@@ -62,7 +62,8 @@ on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_spe
 
 See also [Measurement fragments](/apama/advanced/#measurement-fragments).
 
-### <a name="notifications"></a>Distinguishing between create and update notifications
+<a name="notifications"></a>
+### Distinguishing between create and update notifications
 
 When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from Cumulocity IoT, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
 

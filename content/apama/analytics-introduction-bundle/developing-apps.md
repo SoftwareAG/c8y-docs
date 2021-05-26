@@ -11,7 +11,8 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
-### <a name="apama-epl-apps"></a>Developing apps with the Streaming Analytics application
+<a name="apama-epl-apps"></a>
+### Developing apps with the Streaming Analytics application
 
 The EPL Apps page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps. 
 
@@ -73,7 +74,8 @@ Once your app is activated, you should be able to see the results of it running.
 
 See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
-### <a name="sag-designer"></a>Developing apps with Software AG Designer
+<a name="sag-designer"></a>
+### Developing apps with Software AG Designer
 
 Software AG Designer provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into Cumulocity IoT.
 

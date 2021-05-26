@@ -332,8 +332,8 @@ Endpoint: `/service/cep/eplfiles/{id}`
 | 200  | Successfully deleted.                                        |
 | 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
-### Example value for response code 404<a name="example-404"></a>
-
+<a name="example-404"></a>
+### Example value for response code 404
 The response code 404 indicates that a file with a specific identifier was not found. 
 
 ```

@@ -31,7 +31,8 @@ The **Tenants** page provides the following information on each subtenant:
 
 In the Management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
 
-### <a name="creating-tenants"></a>To create a subtenant
+<a name="creating-tenants"></a>
+### To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
 
@@ -148,7 +149,8 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
 
 
-### <a name="subscribe"></a>Applications
+<a name="subscribe"></a>
+### Applications
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity IoT applications.
 
@@ -189,7 +191,8 @@ The following information is provided:
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
 
-### <a name="tenants-custom-properties"></a>Custom properties
+<a name="tenants-custom-properties"></a>
+### Custom properties
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition/#usage-and-billing) page.
 
@@ -224,7 +227,8 @@ Using the checkbox **Enable Gainsight product experience tracking** a parent ten
 Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
 
 
-### <a name="tenant-policies"></a> Tenant policies
+<a name="tenant-policies"></a>
+### Tenant policies
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
@@ -271,7 +275,8 @@ Click the menu icon in the tenant policy entry you want to duplicate and then cl
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.
 
-### <a name="default-subscriptions"></a>Default subscriptions
+<a name="default-subscriptions"></a>
+### Default subscriptions
 
 In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
@@ -312,7 +317,8 @@ Save the settings by clicking **Save** at the bottom of the page.
 
 > **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
 
-#### <a name="default-applications"></a>Overriding default subscriptions
+<a name="default-applications"></a>
+#### Overriding default subscriptions
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
 

@@ -4,7 +4,8 @@ title: Usage statistics and billing
 layout: redirect
 ---
 
-### <a name="usage-stats"></a> Viewing usage statistics
+<a name="usage-stats"></a>
+### Viewing usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
@@ -153,7 +154,8 @@ You can also filter and sort the list on any column by clicking the filter icon 
 The CSV file will be downloaded to your file system.
 
 
-### <a name="microservice-usage"></a>Microservice usage
+<a name="microservice-usage"></a>
+### Microservice usage
 
 The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables Enterprise tenants and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 

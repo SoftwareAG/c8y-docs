@@ -3,7 +3,8 @@ title: Managing devices
 weight: 45
 ---
 
-### <a name="network"></a> Configuring network parameters
+<a name="network"></a>
+### Configuring network parameters
 
 You can view and configure the essential mobile network (**WAN**) and local area network (**LAN**) parameters in the **Network** tab as shown in the screenshot below.
 
@@ -19,7 +20,8 @@ For more information on the **Network** tab, see [Device Management > Device det
 
 LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
 
-### <a name="software-and-firmware"></a> Managing software and firmware
+<a name="software-and-firmware"></a>
+### Managing software and firmware
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
 
@@ -33,7 +35,8 @@ Firmware can be uploaded and installed on the router as well. To successfully up
 
 ![Software and Firmware info](/images/device-demos/casa-system-router/router-software-menu.png)
 
-### <a name="system-resources"></a> Monitoring system resources
+<a name="system-resources"></a>
+### Monitoring system resources
 
 You can record statistics of the router’s system resources usage for troubleshooting purposes. The following statistics are available:
 
@@ -49,7 +52,8 @@ set service.cumulocity.system_resources.interval=<seconds>
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
 
-### <a name="cellular"></a> Monitoring cellular signal strength
+<a name="cellular"></a>
+### Monitoring cellular signal strength
 
 You can also record statistics of the router’s cellular signal strength.
 
@@ -61,7 +65,8 @@ set service.cumulocity.signal.interval=<seconds>
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
 
-### <a name="gps"></a> Using GPS
+<a name="gps"></a>
+### Using GPS
 
 To locate or trace the router, connect a GPS antenna to the router and enable its GPS functionality. Then [configure](#configure) the frequency of data collection by setting the **GPS position update interval** and/or the **GPS position event** to a non-zero value. **GPS position update interval** defines how often the current location of the router is updated. **GPS position event** defines how often the current location is stored as location update event for tracing.
 
@@ -74,7 +79,8 @@ set service.cumulocity.gps.interval=<seconds>
 
 After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
 
-### <a name="snapshots"></a> Managing configuration snapshots
+<a name="snapshots"></a>
+### Managing configuration snapshots
 
 You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [**Configuration**](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
@@ -84,7 +90,8 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 
 ![Configuration](/images/device-demos/casa-system-router/router-relay-configuration-widget.png)
 
-### <a name="device-shell"></a> Using the device shell
+<a name="device-shell"></a>
+### Using the device shell
 
 With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details > Device shell](/users-guide/device-management/#shell) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
 
@@ -97,7 +104,8 @@ Click the **Get Predefined** link to access frequently used parameters and comma
 
 ![Device Shell](/images/device-demos/casa-system-router/router-device-shell.png)
 
-### <a name="logs"></a> Viewing log files
+<a name="logs"></a>
+### Viewing log files
 
 You can download and view the logs from the device. Log files can be quite big, but you can set filtering criteria to get only what is interesting for you.
 
@@ -105,13 +113,15 @@ For more information about logs, see [Device Management > Device details > Logs]
 
 ![Logs](/images/device-demos/casa-system-router/router-log.png)
 
-### <a name="notification"></a> Event notifications
+<a name="notification"></a>
+### Event notifications
 
 The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT platform as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
 
 ![Notification](/images/device-demos/casa-system-router/router-alarms.png)
 
-### <a name="mqtt"></a> MQTT protocol support
+<a name="mqtt"></a>
+### MQTT protocol support
 
 The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run the following command via the [device shell](#device-shell) to either disable or enable MQTT communication.
 

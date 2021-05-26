@@ -46,7 +46,8 @@ Moreover you can filter by global roles. Select the desired roles from the dropd
 
 Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition/#user-hierarchies).
 
-### <a name="creating-users"></a>To add a user
+<a name="creating-users"></a>
+### To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
 

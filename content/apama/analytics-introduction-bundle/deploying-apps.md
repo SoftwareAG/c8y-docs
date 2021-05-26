@@ -12,7 +12,8 @@ You can deploy the following to Cumulocity IoT:
 > **Info:** In the Streaming Analytics application, the term "activate" is used for deploying an app.
 
 
-### <a name="single-mon-file"></a>Deploying EPL apps as single \*.mon files with the Streaming Analytics application
+<a name="single-mon-file"></a>
+### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
 >**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/about-doc/contacting-support).
 
@@ -24,7 +25,8 @@ When any EPL app signals a runtime error, this will be raised as an alarm. Runti
 
 For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
-### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
+<a name="deploying-as-microservice"></a>
+### Deploying Apama applications as microservices
 
 Using Software AG Designer, you can also develop more complex projects which:
 

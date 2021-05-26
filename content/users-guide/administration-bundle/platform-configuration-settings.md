@@ -41,7 +41,7 @@ In the **Validity limit** field, you can optionally specify the support duration
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
 #### <a name="configuring-support-users"></a>Configuring a support user
 

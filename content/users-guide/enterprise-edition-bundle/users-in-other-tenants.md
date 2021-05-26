@@ -41,7 +41,7 @@ Details on the status of support requests and support user access for a tenant c
 To log in as support user from the Management tenant, you must provide the following information in the Login screen:
 
 * Tenant ID:  The ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI. In some environments, especially in test environments, you can open the destination tenant´s URL (e.g. *testtenant.cumulocity.com*) and log into the tenant without the tenant ID.
-* Support user: The username of the management tenant user that executes the support.
+* Support user: The username of the Management tenant user that executes the support.
 * User: The username of the user to be supported.
 
 "Support user" and "user" are entered into the **Username** field in the following notation:
@@ -50,7 +50,7 @@ To log in as support user from the Management tenant, you must provide the follo
 
 **Example**
 
-Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the tenant ID *t07007007*). Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following credentials to reproduce what John is seeing:
+Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the tenant ID *t07007007*). Your username in the Management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following credentials to reproduce what John is seeing:
 
 ![Support user access login](/images/users-guide/enterprise-tenant/et-support-user-access.png)
 

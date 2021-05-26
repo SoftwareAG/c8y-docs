@@ -16,4 +16,4 @@ Microservices are Docker containers, hosted by Cumulocity IoT and exposing a RES
 
 Applications regardless of their form are identified by a so-called *application key*. The application key enables Cumulocity IoT to associate a REST request from an application with the particular application. See the section on [Application management](https://cumulocity.com/api/#tag/Application-API) in the Cumulocity IoT OpenAPI Specification.
 
-Super tenants (Management Tenants or Enterprise Tenants) can subscribe subtenants to Cumulocity IoT applications deployed by them. This provides a basic application marketplace.
+Super tenants (Management tenants or Enterprise tenants) can subscribe subtenants to Cumulocity IoT applications deployed by them. This provides a basic application marketplace.

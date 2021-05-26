@@ -4,7 +4,7 @@ title: Managing tenants
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
+Using the Enterprise tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
@@ -29,7 +29,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
+In the Management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
 
 ### <a name="creating-tenants"></a>To create a subtenant
 
@@ -51,7 +51,7 @@ In the management tenant, you will also find information on the parent tenant, i
 	<tbody>
 	<tr>
 	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.  </td>
+	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
@@ -88,7 +88,7 @@ In the management tenant, you will also find information on the parent tenant, i
 
 When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
-From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
+From the Management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
 ### To view or edit subtenant properties
 
@@ -139,9 +139,9 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 ### Deleting subtenants
 
->**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
+>**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the Management tenant. You cannot delete tenants from any tenant but the Management tenant.
 >
->Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
+>Administrators in Enterprise tenants are only allowed to suspend active subtenants, but not to delete them.
 
 #### To delete a subtenant
 
@@ -204,7 +204,7 @@ Platform administrators can limit the request rate of each subtenant via the fol
 * Limit stream queue - Limit of MQTT request queue for tenant
 * Limit stream requests - Limit of MQTT requests for tenant per second
 
-It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the management tenant by using the following subtenant custom fragments:
+It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the Management tenant by using the following subtenant custom fragments:
 
  - cep.queue.limit
  - data-broker.queue.limit
@@ -253,7 +253,7 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
->**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the management tenant in order to edit those rules and options.
+>**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the Management tenant in order to edit those rules and options.
 
 #### To edit a tenant policy
 

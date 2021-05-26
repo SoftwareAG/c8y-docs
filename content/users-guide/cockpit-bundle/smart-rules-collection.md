@@ -70,6 +70,9 @@ The following types are available:
 </tbody>
 </table>
 
+>**Info:** In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  
+
+
 ### <a name="alarm-sms"></a>On alarm send SMS
 
 **Functionality**
@@ -111,7 +114,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -177,7 +180,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -427,7 +430,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -841,70 +844,198 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
+<a name="smart-rules-variables"></a>
 ### Smart rule variables
 
-In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS). You can include any information of the triggering event (like the alarm) and its source device.
+In certain rule parameters, various trigger fields can be used as variables. When a rule is triggered, the variables are replaced by the actual values of these trigger fields.
 
-The following table lists example variables:
+You can use this mechanism for example to insert device names or alarm text into various outputs (email, SMS).
+
+
+**Common fields to be used from all triggers (alarms, measurements, operations, events)**
 
 <table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>Variable</td>
-    <td>Content</td>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
   </tr>
   <tr>
-    <td>#{creationTime}</td>
-    <td>Time when the alarm was created in the database.</td>
+    <td>#{id}</td>
+    <td>Identifier of the trigger.</td>
   </tr>
   <tr>
     <td>#{type}</td>
-    <td>Type of the alarm.</td>
+    <td>Type of the trigger.</td>
+  </tr>
+  <tr>
+    <td>#{source}</td>
+    <td>Identifier of the source of the trigger.</td>
   </tr>
   <tr>
     <td>#{time}</td>
-    <td>Time of alarm, as provided by the alarm.  </td>
+    <td>Timestamp of the trigger.  </td>
   </tr>
   <tr>
     <td>#{text}</td>
-    <td>Textual description of the alarm.</td>
+    <td>Text or message of the trigger.</td>
   </tr>
+</table>
+
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
+The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York.
+
+**Fields specific for alarms**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>#{source.name}</td>
-    <td>Name of the device.</td>
-  </tr>
-  <tr>
-    <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
-    <td>Serial number of the device.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Notes}</td>
-    <td>Note field of the device.</td>
-  </tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
   <tr>
     <td>#{status}</td>
     <td>Status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED.</td>
   </tr>
   <tr>
     <td>#{severity}</td>
-    <td>Severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. </td>
+    <td>Severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING.</td>
   </tr>
   <tr>
     <td>#{count}</td>
-    <td>Number of alarm messages for this device: Repeating messages for the same device and same alarm type are de-duplicated into one alarm.</td>
+    <td>Number of times the alarm has been sent. Repeating alarms for the same device and same alarm type are de-duplicated into one alarm.</td>
   </tr>
+</table>
+
+**Fields specific for operations**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>#{source.c8y_Address.street}</td>
-    <td>Street of the device.</td>
-  </tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
   <tr>
-    <td>#{source.c8y_Address.cityCode}</td>
-    <td>ZIP code of the device.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Address.city}</td>
-    <td>City of the device.</td>
+    <td>#{status}</td>
+    <td>Status of the operation: SUCCESSFUL, FAILED, EXECUTING or PENDING.</td>
   </tr>
 </table>
 
 
-> **Info:** In case the variable does not exist or is misspelled, the generated content is displayed.
+**Fields specific for measurements**
+
+> **Info:** This section only applies to tenants that are using Apama (not Esper/CEP).
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{valueFragment}</td>
+    <td>Measurement value fragment name.</td>
+  </tr>  
+  <tr>
+    <td>#{valueSeries}</td>
+    <td>Measurement series fragment name.</td>
+  </tr>
+  <tr>
+    <td>#{value}</td>
+    <td>Value from the sensor.</td>
+  </tr>
+  <tr>
+    <td>#{unit}</td>
+    <td>Unit being used, for example "mm", "lux".</td>
+  </tr>
+</table>
+
+
+Moreover, the following pattern is supported:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{X.Y} or #{X.Y.Z} </td>
+    <td>The property field information available in extra params or nested structure params of the trigger.</td>
+  </tr>  
+</table>
+
+#### Example
+
+**Cumulocity IoT trigger**
+
+```json
+{
+  "source":{
+    "id":"10200"
+  },
+  "type":"TestEvent",
+  "text":"sensor was triggered",
+  "time":"2014-03-03T12:03:27.845Z",
+  "c8y_Position":{
+    "lat":2,
+    "lng":2
+  },
+  "c8y_evtdata":{
+    "data1":111,
+    "date2":222,
+    "evtInnerData":{
+      "indate1":333,
+      "indate2":444
+    }
+  }
+}
+```
+
+Here we can for example define the following variables:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Content</b></td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_Position.lat} </td>
+    <td>Gets latitude value.</td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_evtdata.data1} </td>
+    <td>Gets data1 value.</td>
+  </tr>  
+  <tr>
+    <td>{ c8y_evtdata. evtInnerData . indate1} </td>
+    <td>Gets nested structure value.</td>
+  </tr>  
+  <tr>
+    <td>#{source.X.Y} </td>
+    <td>The property field information from the source device (ManagedObject) of the trigger. For example:
+    <br> #{source.c8y_Hardware.serialNumber} > Serial number of the device.
+    <br> #{source.c8y_Notes} > Note field of the device.
+  </tr>  
+</table>
+
+> **Important:** In case the variable does not exist or is misspelled, no substitution will occur.

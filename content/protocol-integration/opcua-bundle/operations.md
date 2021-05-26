@@ -126,8 +126,8 @@ This operation supports to read one or more attributes of one or more nodes. Thi
     "c8y_ua_command_ReadAttribute": {
          "nodes": ["ns=3;s=FloatArray"],
          "attribute":"13"
-    }
-    "description": "Read attribute from ns=3;s=FloatArray",
+    },
+    "description": "Read attribute from ns=3;s=FloatArray"
 }
 ```
 
@@ -277,7 +277,8 @@ The parameter `bufferSize` is optional and adjustable up to 10MB. The default si
 }
 ```
 
-After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system.
+After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system. 
+For further information goto section [binaries collection](/reference/binaries/#binaries-collection).
 
 Alternatively, you can check the binary folder on the backend using
 

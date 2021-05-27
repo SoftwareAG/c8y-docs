@@ -4,7 +4,7 @@ title: Migrating Cumulocity IoT Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from Cumulocity IoT Edge version 10.7 to Cumulocity IoT Edge version 10.9. If you are using a version earlier than Cumulocity IoT Edge 10.7 and planning to upgrade to Cumulocity IoT Edge 10.9, you must first upgrade to Cumulocity IoT Edge 10.7 and then migrate from Cumulocity IoT Edge 10.7 to version 10.9.
+This section describes the steps to migrate from Cumulocity IoT Edge version 10.7 to Cumulocity IoT Edge version 10.9. If you are using a version earlier than Cumulocity IoT Edge 10.7 and plan to upgrade to Cumulocity IoT Edge 10.9, you must first upgrade to Cumulocity IoT Edge 10.7 and then migrate from Cumulocity IoT Edge 10.7 to version 10.9.
 
 For information about upgrading from an earlier version to Cumulocity IoT Edge 10.7, see:
 
@@ -25,7 +25,7 @@ To migrate from Cumulocity IoT Edge version 10.7 to version 10.9, you must:
 
 ### Creating a backup on Cumulocity IoT Edge 10.7
 
-In your Cumulocity IoT Edge 10.7 setup, you must back up the data for each tenant and docker collection, and note down the device-ID.
+In your Cumulocity IoT Edge 10.7 setup, you must back up the data for each tenant and docker collection, and note down the device ID.
 
 To back up the data:
 
@@ -36,7 +36,7 @@ mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies th
 mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
-2. Note down the device-ID of your Cumulocity IoT Edge 10.7 appliance available at: /usr/edge/properties/edge-agent/device-id
+2. Note down the device ID of your Cumulocity IoT Edge 10.7 appliance available at: /usr/edge/properties/edge-agent/device-id
 
 3. Move the backup folders to Cumulocity IoT Edge 10.9 appliance.
 
@@ -104,7 +104,7 @@ chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
 ```
-5. Restore the device-ID of the Cumulocity IoT Edge 10.7 appliance using the commands:
+5. Restore the device ID of the Cumulocity IoT Edge 10.7 appliance using the commands:
 ```shell
 DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
 curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
@@ -134,14 +134,14 @@ chown -R karaf:karaf /webapps/
 chown nginx:karaf /webapps
 cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
-Wait for karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
+Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
-10. Restart karaf and edge-agent using the commands:
+10. Restart Karaf and edge-agent using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
 ```
-Restarting the karaf and edge-agent completes the migration procedure. Note that the tenants from 10.9 installation are removed after the migration is successful. You will now be able to log in using the 10.7 user credentials.
+Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from 10.9 installation are removed after the migration is successful. You will now be able to log in using the 10.7 user credentials.
 
 ### Sample scripts to automate the migration
 

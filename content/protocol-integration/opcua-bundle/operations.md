@@ -277,10 +277,9 @@ The parameter `bufferSize` is optional and adjustable up to 10MB. The default si
 }
 ```
 
-After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system. 
-For further information goto section [binaries collection](/reference/binaries/#binaries-collection).
+After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system.
 
-Alternatively, you can check the binary folder on the backend using
+Alternatively, you can check the binary folder by using the binary API like this:
 
 ```shell
 {{url}}/inventory/binaries
@@ -313,6 +312,10 @@ This returns a JSON response like this:
 ```
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
+
+For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
+
+For 10.9 and later, refer to the [binaries API](https://www.cumulocity.com/api/#tag/Binaries) in the Cumulocity IoT OpenAPI Specification
 
 
 ### Write value

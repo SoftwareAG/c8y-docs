@@ -6,19 +6,39 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity IoT without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
+> **Info:** You can connect any device supporting LWM2M 1.0 to Cumulocity IoT without programming. We expect the device and its capabilities (e.g. firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard.
+
+Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:
+
+- Device (/3)
+- Connectivity monitoring (/4)
+- Firmware update (/5)
+- Location (/6)
+
+To make use of these integrations, upload the corresponding DDF XML to your tenant.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumulocity IoT using [device protocols](#configure).
 
 ![Device protocols](/images/users-guide/lwm2m/lwm2m-deviceprotocol.png)
 
 
 ### <a name="register"></a>Registering LWM2M devices
 
-To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
+To register a LWM2M device in Cumulocity IoT, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application
+see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
+This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
+Cumulocity IoT supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
-![CSV example 1](/images/users-guide/lwm2m/lwm2m-csv1.png)
+#### <a name="registration-of-unsecured-device"></a>Registration of unsecured devices
 
-In the first CSV example you can see the following fields:
+Unsecured devices connect during bootstrap connection and server connection through unsecured ports:
+* **5683**: unsecure bootstrap connection
+* **5783**: unsecure direct server connection
 
+Below you can see an example CSV file for an unsecured device:
+
+![NO_SEC device csv](/images/users-guide/lwm2m/lwm2m-nosec-csv-example.png)
+
+The CSV file must at least contain the following fields to be able to establish a connection:
 <table>
 <col style="width:19%">
 <col style="width:81%">
@@ -31,15 +51,15 @@ In the first CSV example you can see the following fields:
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.</td>
+<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
-<td style="text-align:left">The type of the device.</td>
+<td style="text-align:left">The type of the external ID. This type must be "c8y_Id" to allow Cumulocity IoT to create an external ID for the LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by LWM2M.</td>
+<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing Cumulocity IoT devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -47,7 +67,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">TYPE</td>
-<td style="text-align:left">This field needs to have the value "c8y_lwm2m”.</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to mark the device as a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">SHELL</td>
@@ -59,22 +79,29 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>
-<td style="text-align:left">This field needs to have the value "1".</td>
+<td style="text-align:left">This field needs to have the value "1" to forward all commands to the LWM2M agent.</td>
 </tr>
 <tr>
 <td style="text-align:left">endpoint id</td>
-<td style="text-align:left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.</td>
+<td style="text-align:left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 </tr>
 <tr>
-<td style="text-align:left">lwm2m server url</td>
-<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align:left">lwm2m server uri</td>
+<td style="text-align:left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
 </tr>
 </tbody>
 </table>
+
+> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+
+Upon upload of the CSV file in Cumulocity IoT we should see that our "nosec_device" device has been created.
+
+![Unsecure device created](/images/users-guide/lwm2m/lwm2m-nosec_device-created.png)
+
 
 The table below reflects the full set of possible fields that can be added:
 
@@ -95,20 +122,29 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The name of the LWM2M endpoint.</td>
+<td style="text-align: left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
-<td style="text-align: left">lwm2m server url</td>
+<td style="text-align: left">lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
 <td style="text-align: left">securityMode</td>
-<td style="text-align: left">String, &ldquo;NO_SEC&rdquo; or &ldquo;PSK</td>
-<td style="text-align: left; height: 40px;">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
 <td style="text-align: left">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left">awakeTimeRegistrationParameter</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to Cumulocity IoT.
+If set to 0, the device will be considered as always online.
+If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute &ldquo;at&rdquo; or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
+</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">serverPublicKey</td>
@@ -176,12 +212,28 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
 <td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
 </tr>
+<tr>
+<td style="text-align: left">lwm2mRequestTimeout</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
+The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with &ldquo;C8Y.lwm2mRequestTimeout&rdquo; property.
+The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with &ldquo;C8Y.lwm2mMaxRequestTimeout&rdquo; property.
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
 
-![CSV example 2.1](/images/users-guide/lwm2m/lwm2m-psk-example.png)
+#### <a name="registration-of-psk-secured-device"></a>Registration of PSK-secured devices
 
-In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
+PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
+* **5684**: PSK bootstrap connection
+* **5784**: PSK direct server connection
+
+PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).
+
+![PSK device csv](/images/users-guide/lwm2m/lwm2m-psk-device-csv-example.png)
+
+The table below lists the information of the additional fields:
 
 <table>
 <col style="width:20%">
@@ -200,39 +252,56 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 <tr>
 <td style="text-align: left">lwm2m psk_key</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
+<td style="text-align: left">The hex-encoded pre-shared key used by the device for server connections in PSK mode.</td>
 <td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">lwm2m psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
+<td style="text-align: left">The ID used by the device for server connections in PSK mode.</td>
 <td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">bootstrap psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode.</td>
 <td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
 <td style="text-align: left">bootstrap psk_key</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">The hex-encoded key used by the device for bootstrap connections in PSK mode.</td>
 <td style="text-align: left">Yes for PSK</td>
+</tr>
+<tr>
+<td style="text-align: left">external-c8y_Lwm2mPskId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">This field has the same value as the "lwm2m psk_id" field. The ID is used to create an additional external ID of type "c8y_Lwm2mPskId" in the registered device. </td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">external-c8y_BootstrapPskId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The ID being used to find a device during bootstrap.</td>
+<td style="text-align: left">This field has the same value as the "bootstrap psk_id" field. The ID is used to create an additional external ID of type "c8y_BootstrapPskId" in the registered device which will be used to find the device during bootstrap.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>
 
-> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
+Upon upload of the CSV file in Cumulocity IoT we should see that our "psk_device" device has been created with the appropriate external IDs.
+
+![PSK device created](/images/users-guide/lwm2m/lwm2m-psk-device-created.png)
+![PSK device external ids](/images/users-guide/lwm2m/lwm2m-psk-device-created-external-ids.png)
+
+> **Info**: Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the *User guide*.
 
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+
+#### <a name="duplicate-registeration-alarm"></a>Duplicate LWM2M devices
+
+If a LWM2M device is registered with the same endpoint ID in multiple tenants, the device will be binded only to the tenant in which the device was first registered and the devices in the other tenants will be considered as duplicates. As notification, a MAJOR alarm is created stating that the device with this endpoint already exists.
+
+![Alarm for duplicated device with endpoint](/images/users-guide/lwm2m/lwm2m-alarm-for-duplicated-device-with-endpoint.png)
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
@@ -312,6 +381,35 @@ Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom da
 
 Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
+**Predefined custom actions**
+
+There are several predefined custom actions which can be selected to apply actions to the relevant resources.
+
+![Predefined custom actions](/images/users-guide/lwm2m/lwm2m-predefined-custom-actions.png)
+
+> **Info**: fwupdate action is deprecated and will be removed in the future releases.
+
+Actions that are relevant for Device (/3):
+- device:updateManufacturer
+  - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
+- device:updateModelNumber
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;model&rdquo; property.
+- device:updateSerialNumber
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;serialNumber&rdquo; property.
+- device:updateFirmwareVersion
+  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;revision&rdquo; property.
+
+Actions that are relevant for connectivity monitoring (/4):
+- connectivity:updateCellId
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;cellId&rdquo; property.
+- connectiviy:updateSmnc
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mnc&rdquo; property.
+- connectivity:updateSmcc
+  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
+
+Below is an example where the &ldquo;connectivity:updateCellId&rdquo; custom action is selected for the Connectivity monitoring (/4) cell id in order to store cell id information for the device.
+![Custom actions for connectivity cell id](/images/users-guide/lwm2m/lwm2m-custom-action-connectivity-cellId.png)
+
 **Auto observe**
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
@@ -388,6 +486,27 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register).
 
+### <a name="lwm2m-client-awake-time"></a> LWM2M client awake time
+
+LWM2M client awake time specifies how long a device can be expected to be listening for incoming traffic before it goes back to sleep. The LWM2M server uses the client awake time to determine if the operations are passed down to a device.
+The operations are sent during the awake time after the registration or after the registration update request is received by the LWM2M server.
+After the awake time has passed, the operations are being queued and will be sent to the device on the next registration or registration update.
+This applies to all operations that can be applied to the device.
+
+LWM2M client awake time is determined based on the following priority:
+1. (If provided) Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment.
+2. (If provided) Registration awake time attribute &ldquo;at&rdquo; in the registration request by the LWM2M client.
+3. Global setting of the LWM2M microservice.
+
+Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m#register-device) or set with the managed object update request as in the example:
+```
+PUT /inventory/managedObjects/<device-managed-object-id>
+
+{
+    "awakeTimeRegistrationParameter": 180000
+}
+```
+The value is in milliseconds. If set to 0, the device will be considered as always online.
 
 ### <a name="shell_commands"></a> Handling LWM2M shell commands
 
@@ -406,16 +525,16 @@ In the next table you will see all available commands and a brief description of
 
 |Command|Description|
 |:------|:----------|
-|read /<objectID>/<instanceID>/<resourceID>|Reads a resource path|
-|observe /<objectID>/<instanceID>/<resourceID>|Enables the observe functionality|
-|execute /<objectID>/<instanceID>/<resourceID>|Executes a resource on the device|
+|read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Reads a resource path|
+|observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Enables the observe functionality|
+|execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Executes a resource on the device|
 |write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;|Writes value to a resource on the device|
-|cancelobservation /<objectID>/<instanceID>/<resourceID>|Cancels the observation functionality from the desired resource|
-|delete /<objectID>/<instanceID>[/<resourceID>]|Deletes a given object/instance/resource|
-|discover /<objectID>/<instanceID>/<resourceID>|Shows all resources of the given object|
-|create /<objectID> [JSON]|Creates a new object. The JSON argument is optional|
-|writeattr /<objectID>/<instanceID>/<resourceID> {pmin=<sec>}{&pmax=<sec>}{&greater=<num>}{&less=<num>}{&step=<num>}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
-|fwupdate /<Firmware name>/<firmware version>/<firmware_ur>/l|Updates the firmware of the agent|
+|cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Cancels the observation functionality from the desired resource|
+|delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]|Deletes a given object/instance/resource|
+|discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Shows all resources of the given object|
+|create /&lt;objectID&gt; [JSON]|Creates a new object. The JSON argument is optional|
+|writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; {pmin=&lt;sec&gt;}{&pmax=&lt;sec&gt;}{&greater=&lt;num&gt;}{&less=&lt;num&gt;}{&step=&lt;num&gt;}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
+|fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_ur&gt;/l|Updates the firmware of the agent|
 
 ### <a name="validation_rules"></a> Adding validation rules to resources
 
@@ -466,3 +585,21 @@ In order to enable more complex conditions,  multiple validation rules can be de
 The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
+
+### <a name="post-registration-actions"></a> Handling LWM2M post registration actions
+
+The LWM2M shell commands can be performed in the **Shell** tab of each device. It is also possible to execute some common operations when a device sends a full registration request.
+This can be done in the **LWM2M post-operations** page accessible from the **Device types** menu in the navigator. A set of shell commands can be saved in the Commands section, which will be performed on each device on registration.
+
+![Post operations example](/images/users-guide/lwm2m/lwm2m-post-operations.png)
+
+The above image shows the **LWM2M post-operations** page with a set of sample shell commands.
+More information on shell commands can be found in [LightweightM2M > Handling LWM2M shell commands](#shell_commands).
+
+#### Device operations handling
+
+If the operations are created while the device is offline, they will be all executed when the device comes online as those operations will be delivered through the real-time channel.
+A configurable property can limit the number of operations to be executed as part of the post-registration process, for example, the operations which were already delivered to the device once 
+via the real-time channel, but they are still in a pending state.
+
+>**Info:** The default maximum limit of the pending operations is 10, which is a configurable value for the agent. In case this limit is not sufficient for your use case please contact our [support](/about-doc/contacting-support).

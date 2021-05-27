@@ -63,7 +63,7 @@ on Event() -> wait(600.0) and not Alarm() { ... }
 ```
 This will trigger if there is an event and within 10 minutes (600 seconds) there is no alarm. Note the use of `not` which terminates the listener if the event occurs.
 
-You can use a tenant option to set the timezone used for `on all at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
+You can use a tenant option to set the time zone used for `on all at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
 For example: 
 
 ```
@@ -74,7 +74,9 @@ For example:
 }
 ```
 
-See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in the *Microservice SDK guide*.
+See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in the *Microservice SDK guide* 
+and [Supported time zones](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+
 
 > **Info:** This tenant option is only read when the microservice starts. 
 If the tenant option is changed, the microservice only picks this up on the next microservice subscription.

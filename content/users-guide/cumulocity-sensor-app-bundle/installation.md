@@ -20,4 +20,4 @@ If you don't have one yet, you can create a free trial account at [https://softw
 Click the **Login** button at the top right of the page and follow the instructions to create a new account.
 There are no limitations within a Cumulocity IoT free trial. 
 
-> **Info:** This mobile app does not collect any personal data. The app collects only mobile phone sensor data and anonymous app usage data. If you do not agree with Software AG collecting this data, do not connect the app with Cumulocity IoT and delete it from your device.
+> **Info:** This mobile app does not collect any personal data. The app collects only mobile phone sensor data and anonymous app usage data. If you do not agree with {{< company-name-2 >}} collecting this data, do not connect the app with Cumulocity IoT and delete it from your device.

@@ -61,8 +61,8 @@ The Management tenant builds the highest level of the Cumulocity IoT tenant hier
 
 Every Cumulocity IoT deployment is delivered with a Management tenant. The Management tenant is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
-On the Cumulocity IoT cloud instances, The Management tenant of the Cumulocity IoT cloud instances can only be accessed by the Software AG Cloud operations team.
+On the Cumulocity IoT cloud instances, The Management tenant of the Cumulocity IoT cloud instances can only be accessed by the {{< company-cloud >}} operations team.
 
 You will only have access to the Management tenant, when you setup your own Cumulocity IoT instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the Cumulocity IoT Edge offering.
 
-For detailed information on the configuration options of a Cumulocity IoT deployment on platform level, refer to the *Cumulocity IoT Core - Operations guide* available on the [Software AG Empower Portal](https://documentation.softwareag.com/).
+For detailed information on the configuration options of a Cumulocity IoT deployment on platform level, refer to the *Cumulocity IoT Core - Operations guide* available on the [{{< company-portal >}}]({{< documentation-link >}}).

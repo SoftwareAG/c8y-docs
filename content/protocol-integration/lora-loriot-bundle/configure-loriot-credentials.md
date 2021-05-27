@@ -4,7 +4,7 @@ title: Configuring the Loriot agent endpoint credentials
 layout: redirect
 ---
 
-Before using LoRa devices with Cumulocity IoT, you need to configure the Cumulocity IoT Loriot agent endpoint details in LORIOT Network Server. 
+Before using LoRa devices with Cumulocity IoT, you need to configure the Cumulocity IoT Loriot agent endpoint details in LORIOT Network Server.
 
 ### <a name="map-loriot-endpoint-with-credentials">Configuring the Loriot endpoint using Basic authentication</a>
 
@@ -16,7 +16,7 @@ LORIOT Network Server forwards the LoRa device messages to the external applicat
 
 ![Output page with https forwarder](/images/device-protocols/lora-loriot/loriot-output-https-page.png)
 
-Use Cumulocity data forwarder for configuring the Loriot endpoint using Basic authentication.
+Use Cumulocity IoT data forwarder for configuring the Loriot endpoint using Basic authentication.
 
 ![Setting endpoint credentials](/images/device-protocols/lora-loriot/loriot-endpoint-assignment.png)
 

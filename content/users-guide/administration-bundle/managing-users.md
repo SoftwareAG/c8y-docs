@@ -14,7 +14,7 @@ The user management feature allows you to manage the users within your tenant. W
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
-If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
+If your tenant is configured for using single sign-on (SSO) in {{< company-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
 For users created via an external authorization server, updating the following settings in Cumulocity IoT will have no effect (will be reset on the next user re-login):
 
@@ -106,7 +106,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </table>
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa). 
+	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
 	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To log into the Cumulocity IoT platform](/users-guide/getting-started/#login) for further information on password strength.  
 	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 

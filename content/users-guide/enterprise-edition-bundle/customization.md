@@ -32,7 +32,7 @@ Under **Two-factor authentication**, you can change the SMS template which is se
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
+In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< company-help >}} page will be used.
 
 ![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 

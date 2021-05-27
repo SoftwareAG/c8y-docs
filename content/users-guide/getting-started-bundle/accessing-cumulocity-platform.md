@@ -60,7 +60,7 @@ If you use one of the public cloud instances of the Cumulocity IoT platform and 
 > **Info:** The cookie banner is turned on by default on the Cumulocity IoT public cloud instances. For on-premise instances, this feature can be configured, see [Enterprise tenant > Customizing your platform > Branding](/users-guide/administration/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
-* Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.
+* Click **Privacy policy** to open the [[{{< company-name-2 >}} privacy statement]({{< privacy-statement-link >}}) with details on the [{{< company-name-2 >}} privacy policy.
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
 	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.

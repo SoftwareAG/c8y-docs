@@ -125,7 +125,7 @@ Example console output:
 
 ```console
 $ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
-Cumulocity UI development server running in port 9000.
+{{< company-name-1>}} UI development server running in port 9000.
 Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.
@@ -296,7 +296,7 @@ To test your application, use the command ```c8y server``` with the complete URL
 ### Build and deploy your application and plugins
 
 If you run ```c8y --help``` you will list all available commands.
-You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity "Administration" application or you can deploy the app directly to your tenant.
+You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity IoT "Administration" application or you can deploy the app directly to your tenant.
 
 #### build:app
 Builds the application to the specified folder (./build by default).

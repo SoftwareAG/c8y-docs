@@ -33,7 +33,7 @@ To run the Cumulocity IoT mbed agent, the following items are required:
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free".
+* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to {{< company-cloud >}} > [Cumulocity IoT] ({{< cloud-link >}}) and select "Try for free".
 
 ### Setting up and registering the device
 

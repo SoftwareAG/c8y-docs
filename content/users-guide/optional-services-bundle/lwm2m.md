@@ -134,7 +134,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left; height: 40px;">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>

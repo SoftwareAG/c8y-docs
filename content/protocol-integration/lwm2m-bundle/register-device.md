@@ -212,7 +212,7 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5684**: PSK bootstrap connection
 * **5784**: PSK direct server connection
 
-PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registeration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
+PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
 
 ![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-device-csv-example.png)
 

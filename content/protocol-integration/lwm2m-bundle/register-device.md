@@ -6,10 +6,10 @@ layout: redirect
 
 To register a LWM2M device in Cumulocity IoT, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application 
 see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
-This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
+This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
 Cumulocity IoT supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
-### <a name="registeration-of-unsecured-device"></a>Registration of unsecured devices
+### <a name="registration-of-unsecured-device"></a>Registration of unsecured devices
 
 Unsecured devices connect during bootstrap connection and server connection through unsecured ports: 
 * **5683**: unsecure bootstrap connection
@@ -19,7 +19,7 @@ Below you can see an example CSV file for an unsecured device:
 
 ![NO_SEC device csv](/images/device-protocols/lwm2m/lwm2m-nosec-csv-example.png)
 
-The CSV must at least contain the following fields to be able to establish a connection:
+The CSV file must at least contain the following fields to be able to establish a connection:
 <table>
 <col style="width:20%">
 <col style="width:80%">
@@ -73,7 +73,7 @@ The CSV must at least contain the following fields to be able to establish a con
 </tbody>
 </table>
 
-> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
 Upon upload of the CSV file in Cumulocity IoT we should see that our "nosec_device" device has been created.
 

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Measurements from your smartphone and connected Bluetooth sensors are sent to Cumulocity IoT automatically as soon as the device is connected or started and as long as the app is in foreground. All measurements of the smartphone sensors are displayed automatically in the device dashboard in Cumulocity IoT.
+Measurements from your smartphone, OBD devices and connected Bluetooth sensors are sent to Cumulocity IoT automatically as soon as the device is connected or started and as long as the app is in foreground. All measurements of the smartphone sensors are displayed automatically in the device dashboard in Cumulocity IoT.
 
 ![Device dashboard](/images/users-guide/csa/csa-device-dashboard.jpg)
 

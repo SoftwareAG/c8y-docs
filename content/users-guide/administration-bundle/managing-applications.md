@@ -2,6 +2,30 @@
 weight: 30
 title: Managing applications
 layout: redirect
+helpcontent:
+  - label: own-applications
+    title: Own applications
+    content: "Owned applications are custom applications owned by your tenant. You can add custom applications in various ways. They can be  
+    
+
+    * duplicates of subscribed applications (in order to be able to customize them)
+    * web-based applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+    * server-side business logic deployed through microservices
+
+
+    To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Own applications* in the *User guide*.
+
+
+    Click on an application card to view the application properties."
+  - label: subscribed-applications
+    title: Subscribed applications
+    content: "Subscribed applications refer to the applications which are subscribed to your tenant, as opposed to owned applications.
+
+
+    Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in *Administration > Managing applications* in the *User guide*.
+
+
+    Click on an application card to view the application properties."
 ---
 
 In the Cumulocity IoT platform we distinguish between two kinds of applications:

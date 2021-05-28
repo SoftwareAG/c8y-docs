@@ -11,7 +11,7 @@ helpcontent:
     Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
 
 
-    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see the data explorer documentation.
+    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see *Cockpit > Data explorer* in the *User guide*.
 
 
     Moreover, the data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."

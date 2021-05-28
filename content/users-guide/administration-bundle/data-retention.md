@@ -1,10 +1,20 @@
 ---
 weight: 60
 title: Managing data
+helpcontent:
+- label: retention-rules
+  title: Retention rules
+  content: "Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings). You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
+
+  See also *Administration > Managing data* in the *User guide*."
+- label: files
+  title: Files repository
+  content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
 ---
 
-### <a name="retention-rules"></a>Retention rules
+<a name="retention-rules"></a>
+### Retention rules
 
 Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
@@ -65,7 +75,8 @@ Hover over the rule you want to delete and click the delete icon at the right.
 
 >**Info:** The source parameter is the ID of the device. When it is defined, the retention process only removes the documents directly related to the device represented by the source, not its children or groups it belongs to.
 
-### <a name="files"></a>Managing files in the file repository
+<a name="files"></a>
+### Managing files in the file repository
 
 The file repository provides an overview of the files stored in your account.
 

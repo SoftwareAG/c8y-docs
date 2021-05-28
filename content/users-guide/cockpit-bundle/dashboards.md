@@ -16,7 +16,7 @@ helpcontent:
     Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration."
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 weight: 40
 ---
 

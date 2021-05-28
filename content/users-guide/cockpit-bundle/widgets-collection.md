@@ -123,7 +123,7 @@ The "Data point graph" widget shows a data point (measurement) in a graph. The v
 
 ![Data Point Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>. 
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>.
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 

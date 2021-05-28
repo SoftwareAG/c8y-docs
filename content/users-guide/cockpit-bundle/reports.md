@@ -7,13 +7,14 @@ helpcontent:
     title: Working with reports
     content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 
-    Click **Add report** in the top menu bar to configure a new report, or use the menu icon to editor delete exports.
 
     On a report dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon.
 
+
     Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration."
+
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 ---
 
 <!-- -->

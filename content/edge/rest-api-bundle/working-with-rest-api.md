@@ -231,6 +231,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
+>**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
+
 ### GET /edge/configuration/network
 
 Use this endpoint to get the network configuration of the Edge appliance.
@@ -248,7 +250,6 @@ The endpoint returns HTTP status 200.
 	"ip_range": "172.18.0.1/16"
 }
 ```
-
 ### GET /edge/version
 
 Use this endpoint to get the current version of the Cumulocity IoT Edge installation. This endpoint is available only after a successful installation.
@@ -463,6 +464,8 @@ The endpoint returns HTTP status 201, if the request is successful.
 ```
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid). 
+
+>**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
 
 ### GET /edge/configuration/certificate
 

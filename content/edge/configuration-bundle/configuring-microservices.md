@@ -29,4 +29,6 @@ Before disabling the microservice feature, you should unsubscribe from all the m
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
 For more information about developing and hosting a microservice, see [Microservices SDK](/microservice-sdk/introduction/).
 
+>**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
+
 

@@ -118,11 +118,7 @@ DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
 curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
 systemctl restart edge-agent
 ```
-6. Get the Management tenant domain from Edge 10.9 appliance using the command:
-```shell
-mongo management --quiet --eval 'db.tenants.find({"_id":"management"}, {"_id":0, "domainName":1})' | jq '.domainName'
-```
-7. Restore the MongoDB collections from Edge 10.7 using the command:
+6. Restore the MongoDB collections from Edge 10.7 using the command:
 ```shell
 mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
@@ -132,11 +128,7 @@ For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
 mongorestore --drop --db management /home/admin/migration_data/management/
 ```
-8. Restore the Management tenant domain using the command:
-```shell
-mongo management --eval 'db.tenants.update({"_id":"management"}, {$set: {"domainName":"MANAGEMENT_DOMAIN_NAME"}})'
-```
-9. Restore the web applications of the Edge 10.9 appliance using the command:
+7. Restore the web applications of the Edge 10.9 appliance using the command:
 ```shell
 chown -R karaf:karaf /webapps/
 chown nginx:karaf /webapps
@@ -144,7 +136,7 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
-10. Restart Karaf and edge-agent using the commands:
+8. Restart Karaf and edge-agent using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
@@ -155,7 +147,10 @@ Next, you must configure Edge 10.9 appliance. For example, if you had enabled mi
 
 ### Sample scripts to automate the migration
 
-Software AG provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available at: [PLACE_HOLDER]
+Software AG provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
+
+- [backup.sh](/files/edge/backup.sh)
+- [restore.sh](/files/edge/restore.sh)
 
 >**IMPORTANT:** Software AG does not officially support these scripts. These scripts are only for your reference.
 

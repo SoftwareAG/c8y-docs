@@ -6,8 +6,8 @@ layout: redirect
 
 When editing sensor properties, it is possible to change the following settings:
 
-* The interval in seconds between measurements sent to Cumulocity IoT
-* The minimum and maximum thresholds for data values to be sent
+* The interval in seconds between measurements sent to Cumulocity IoT.
+* The minimum and maximum thresholds for data values to be sent.
 * The size and number of simulated peak values to be sent.
 
 The update interval determines how often the sensor is queried by the phone, as well as how often data is sent to Cumulocity IoT. Altering the value here will also affect the speed at which charts are redrawn in the application. The minimum value for the update interval is 0.1 seconds. Note that at shorter update intervals, both the sensor device and the phone itself will consume more power.

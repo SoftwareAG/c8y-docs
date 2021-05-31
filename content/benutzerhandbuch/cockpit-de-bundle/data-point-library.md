@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 75
 title: Datenpunktbibliothek
 layout: redirect
 ---
@@ -14,9 +14,9 @@ Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standardvis
 
 Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von Schwellwertregeln verwendet, um Alarme auszulösen.
 
-Klicken Sie **Datenpunktbibliothek** im Menü **Konfiguration** im Navigator, um die Datenpunktbibliothek zu öffnen.
+Klicken Sie auf **Datenpunktbibliothek** im Menü **Konfiguration** im Navigator, um die Datenpunktbibliothek zu öffnen.
 
-![Data point library](/images/benutzerhandbuch/cockpit/cockpit-data-point-library.png)
+![Data point library](/images/users-guide/cockpit/cockpit-data-point-library.png)
 
 Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
 
@@ -27,7 +27,7 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 
 ### So fügen Sie der Bibliothek einen Datenpunkt hinzu
 
-1. Klicken Sie **Datenpunkt hinzufügen** in der oberen Menüleiste.
+1. Klicken Sie auf **Datenpunkt hinzufügen** in der oberen Menüleiste.
 2. Geben Sie die folgenden Informationen ein:
 
 	|Feld|Beschreibung|
@@ -43,7 +43,7 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 |Gelber Bereich|Min./Max.-Werte für den gelben Bereich (WENIGER WICHTIGE Alarme)
 |Roter Bereich|Min./Max.-Werte für den roten Bereich (KRITISCHE Alarme)
 
-3. Klicken Sie **Speichern**, um den Datenpunkt zur Bibliothek hinzuzufügen.
+3. Klicken Sie auf **Speichern**, um den Datenpunkt zur Bibliothek hinzuzufügen.
 
 ### So bearbeiten Sie einen Datenpunkt
 

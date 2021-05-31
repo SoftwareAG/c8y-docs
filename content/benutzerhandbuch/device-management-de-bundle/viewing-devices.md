@@ -4,11 +4,11 @@ title: Anzeigen von Geräten
 layout: redirect
 ---
 
-Klicken Sie **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
+Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
+![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 ### <a name="device-list"></a>Geräteinformationen
 
@@ -64,7 +64,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 </tr>
 </tbody>
 </table>
-Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
+Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie auf **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
 
 ### Konfigurieren von Spalten
 
@@ -72,10 +72,10 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 
 #### So blenden Sie Spalten ein/aus
 
-1. Klicken Sie **Spalten konfigurieren** in der oberen Menüleiste.
-2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
+1. Klicken Sie auf **Spalten konfigurieren** in der oberen Menüleiste.
+2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
 <br>
-3. Klicken Sie **Speichern**.
+3. Klicken Sie auf **Speichern**.
 
 Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalten.
 
@@ -84,14 +84,14 @@ Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalte
 Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zusätzliche Geräteattribute angezeigt werden.
 
 1. Klicken Sie im Dialog **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
-![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.  
 3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur Cumulocity IoT-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, erfolgt die Filterung durch Anwenden der Kriterien, die ein Benutzer in dem Dialogfeld festlegen kann, das beim Klicken auf das Spaltenfilter-Symbol angezeigt wird.<br>
-![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
-5. Klicken Sie **Hinzufügen**.
+![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
+<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.   
+5. Klicken Sie auf **Hinzufügen**.
 
 Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 
@@ -113,11 +113,11 @@ Cumulocity IoT umfasst eine Volltextsuche nach Geräten.
 
 Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein. 
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/getting-started#gui-features).
 
 Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
-![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
+![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 
 ### <a name="filtering-devices"></a>So filtern Sie Geräte
 
@@ -125,11 +125,11 @@ Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestim
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
 
-![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
+![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie im Dialog **Filteroptionen** Ihre Filteroptionen fest.
 
-Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie wie im Suchfeld einen beliebigen Text in das Textfeld eingeben. Klicken Sie **+ Oder**, um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten.
+Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie wie im Suchfeld einen beliebigen Text in das Textfeld eingeben. Klicken Sie auf **+ Oder**, um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten.
 
 Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 
@@ -139,10 +139,10 @@ Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 * Wenn für benutzerdefinierte Spalten bei der Konfiguration das Kriterium **Fragment entspricht Wert** festgelegt wurde, muss ein Wert bereitgestellt werden.
 * Wenn bei der Konfiguration das Kriterium **Fragment existiert** festgelegt wurde, hängt die Filterung davon ab, ob das Fragment existiert oder nicht.
 
-Klicken Sie im Dialog **Filteroptionen** die Option **Aufsteigend** oder **Absteigend**, wenn Sie die Geräte in einer bestimmten Reihenfolge sortieren möchten. Klicken Sie **Anwenden**, um die Filterbedingungen anzuwenden.
+Klicken Sie im Dialog **Filteroptionen** auf die Option **Aufsteigend** oder **Absteigend**, wenn Sie die Geräte in einer bestimmten Reihenfolge sortieren möchten. Klicken Sie auf **Anwenden**, um die Filterbedingungen anzuwenden.
 
 Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingungen zutreffen.
 
 Klicken Sie **Filter zurücksetzen** links in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
 
->**Info:** Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
+>**Info:** Wenn Sie die Liste anhand eines Textfelds, z. B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.

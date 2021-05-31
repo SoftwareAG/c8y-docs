@@ -4,45 +4,92 @@ title: Anpassen der Plattform
 layout: redirect
 ---
 
-Mit dem Enterprise Tenant von Cumulocity IoT können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen.
+Mit dem Enterprise Tenant von Cumulocity IoT können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
 
-Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vornehmen.
+Neben verschiedenen [Konfigurationseinstellungen](#configuration) können Sie auch Ihr eigenes [Branding](#branding) und Ihren eigenen [Domain-Namen](#domain-name) verwenden.
+
+Klicken Sie auf **Enterprise Tenant** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
+
+![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
 
 ### <a name="configuration"></a>Konfiguration
 
->**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info:** Bei einigen Attributen können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
-#### Anwendungen
+Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 
-Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen.
+|Platzhalter|Beschreibung|
+|:---|:---|
+|{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.cumulocity.com`.
+|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.cumulocity.com` sein. Bei einem Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
+|{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 
-![Applications settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-applications.png)
+#### Zwei-Faktor-Authentifizierung
 
-#### Passwörter
+Unter **Zwei-Faktor-Authentifizierung** können Sie das SMS-Template, das an die Benutzer geschickt wird, ändern.
 
-Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
+![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
 
-![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
+#### Support-Link
 
-#### Supportbenutzer
+Im Bereich **Support-Link** können Sie eine URL eingeben, die als Link zu einer Support-Seite verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Seite der Software AG TechCommunity verwendet.
 
-Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivierung eines Supportbenutzers für Untermandanten-Benutzer.
+![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
-Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+Geben Sie "false" ein, um den Link zu verbergen.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+#### Zurücksetzen des Passworts
 
-Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
+Im Bereich **Passwort zurücksetzen** können Sie alle Einstellungen im Zusammenhang mit E-Mail-Templates zum Zurücksetzen des Passworts ändern.
 
-* *true*: Supportbenutzerzugriff ist aktiviert. Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst deaktivieren.
-* *false*: Supportbenutzerzugriff ist deaktiviert. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
-* Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem die Supportbenutzer-Aktivierung aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
+![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
-Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
+Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
-Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
+Stellen Sie im Feld **E-Mail-Template für das Zurücksetzen von Passwörtern** ein Template bereit, das verwendet werden soll, wenn die Adresse bekannt ist, und eine für unbekannte Adressen. Der Link zum Zurücksetzen des Passworts kann beispielsweise lauten: {host}/apps/devicemanagement/index.html?token={token}.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
+Geben Sie im Feld **E-Mail-Betreff** ein Betreff für alle E-Mails im Zusammenhang mit dem Zurücksetzen des Passworts ein.
+
+Geben Sie in den folgenden beiden Feldern jeweils ein Template für die E-Mails zur Bestätigung der Passwortänderung und für die Einladung zur Aktivierung ein.
+
+#### E-Mail-Server
+
+Im Bereich **E-Mail-Server** können Sie benutzerdefinierte E-Mail-Server-Einstellungen konfigurieren.
+
+<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+
+Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschlüsselungstyp aus der Auswahlliste. Hierbei kann es sich um einen der folgenden Typen handeln:
+
+* SMTP (keine Verschlüsselung): email.protocol=smtp and email.connection.encrypted=false
+* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
+* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
+
+Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an.
+
+### Datenexport
+
+Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
+
+![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+
+### Speicherbegrenzung
+
+Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden (Warnung) und *nachdem* Daten gelöscht wurden (Begrenzung überschritten).
+
+![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+
+### Mandanten werden gesperrt
+
+Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
+
+<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+
+Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
+
+Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
+
+**Info:** Einige zusätzliche Konfigurationseinstellungen können global im Management-Mandanten festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).
+
 
 ### <a name="branding"></a>Branding
 
@@ -52,11 +99,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 
@@ -76,8 +123,8 @@ Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab ve
 
 Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
-* Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
-* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.
+* Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
+* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.
 * Die Höhe des Markenlogos.
 
 **Navigatorlogo**
@@ -88,7 +135,7 @@ Unter **Navigatorlogo** können Sie das Logo, das oben im Navigator angezeigt wi
 
 Im Bereich **Typ** definieren Sie die Schriftarten für Ihre Branding-Version.
 
-Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
+Sie können den Basis-Schriftartenstapel und den Überschriften-Schriftartenstapel wählen sowie eine Option für den Navigator-Schriftartenstapel (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
 **Farben**
 
@@ -130,7 +177,7 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 **Sonstiges**
 
-Im Bereich **Sonstiges** können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.
+Im Bereich **Sonstiges** legen Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) fest.
 
 **Cookie-Banner**
 
@@ -138,52 +185,102 @@ Im Abschnitt **Cookie-Banner** legen Sie die Einstellungen für das Banner mit d
 
 Folgende Parameter können festgelegt werden:
 
-* Titel. Cookie-Banner-Titel.
-* Text. Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen.
-* Link zur Datenschutzerklärung. Ein Link zu der Seite mit der Datenschutzerklärung.
+* Titel - Cookie-Banner-Titel.
+* Text - Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen.
+* Link zur Datenschutzerklärung - Ein Link zu der Seite mit der Datenschutzerklärung.
 
 ### <a name="domain-name"></a>Domain-Name
 
-In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
+Ein entscheidendes Merkmal des Enterprise Tenant ist die Fähigkeit, die Cumulocity IoT-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
+bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von Cumulocity IoT. Zudem haben Sie die Möglichkeit, Untermandanten
+mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
->**Wichtig:** Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
+> **Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für Cumulocity IoT-Cloud- oder lokale Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
+Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen:
 
->**Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
+1. Zum Aktivieren Ihrer Domain ist eine gültige Lizenz erforderlich, die Ihre Wildcard-Domain abdeckt.
+   Bitte kontaktieren Sie den [Produkt-Support](/about-doc/contacting-support), um eine Lizenz für Ihre Domain zu installieren.
+2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
+   ein Zertifikat für *\*.iot.mycompany.com*.
+3. Es gibt eine gültige DNS-Konfiguration für Ihre Domain, die dafür sorgt, dass alle Anfragen an *\*.iot.mycompany.com* an
+   Cumulocity IoT geleitet werden. (siehe unten).
 
-Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
+#### Anforderungen an das SSL-Zertifikat
 
-* das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
-* das Zertifikat in einem gültigen PKCS#12-Format vorliegt und die vollständige Autorisierungskette enthält,
-* jedes einzelne Zertifikat in der Kette im X509-Format vorliegt,
-* der private Schlüssel nicht passwortgeschützt ist,
-* Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen,
-* der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) den Wert Ihres Wildcard-Domain-Namens enthält, z. B. "CN=*.iot.mycompany.com".
+Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der Enterprise Tenant-Funktion verwendet werden zu können:
 
-Cumulocity IoT unterstützt ein Einzelkettenzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das ein oder mehrere Zwischenzertifikate enthält.
+* Das Zertifikat ist aktuell gültig und ist nicht abgelaufen. Konkret muss "validFrom" auf einen Zeitpunkt in der
+  Vergangenheit und "validTo" auf einen Zeitpunkt in der Zukunft verweisen.
+* Das Zertifikat wurde von einer anerkannten Zertifizierungsstelle (CA) herausgegeben. Selbstsignierte Zertifikate werden
+  ausdrücklich nicht unterstützt.
+* Das Zertifikat ist ein für Ihre Domain *\*.iot.mycompany.com* herausgegebenes Wildcard-Zertifikat. Die Verwendung eines Wildcard-Zertifikats
+  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren Enterprise Tenant erstellt werden.
+* Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
+* Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
+  Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
 
-> **Info:** Wenn Ihr Zertifikat nicht in einem gültigen PKCS#12-Format vorliegt aber Sie PEM-Dateien für Zertifikat, privaten Schlüssel und Autorisierungskette haben, können Sie mit dem folgenden Kommando eine gültige PKCS#12-Datei generieren:
+Cumulocity IoT unterstützt ein Einzelzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das
+ein oder mehrere Zwischenzertifikate enthält.
+
+#### Verpacken des SSL-Zertifikats in PKCS #12
+
+Um ein SSL-Zertifikat mit Cumulocity IoT verwenden zu können, muss das Zertifikat zusammen mit seinem privaten Schlüssel
+in einer einzelnen Datei im Dateiformat PKCS #12 an die Plattform hochgeladen werden.
+
+Die meisten Zertifizierungsstellen liefern ihre Zertifikate und zugehörigen privaten Schlüssel im Dateiformat PEM, wobei zwei
+separate Textdateien verwendet werden: eine für die Zertifikatkette und eine für den privaten Schlüssel. Vergewissern Sie sich, dass der private Schlüssel nicht
+durch ein Passwort oder eine Passphrase geschützt ist.
+
+Solche PEM-Dateien lassen sich mittels [OpenSSL](https://www.openssl.org/) leicht in das Format #PKCS #12 umverpacken. Im folgenden
+Beispiel dient OpenSSL zum Zusammenführen einer Zertifikatkette  (*chain.cert*) und des entsprechenden Schlüssels (*privkey.pem*) zu einer
+PKCS #12-Keystore-Datei (*out_keystore.p12*), die mit Cumulocity IoT verwendet werden kann.
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
 ```
 
-Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
+#### DNS-Anforderungen an Enterprise-Domains
 
-* Sie ein gültiges SSL-Zertifikat für die eigene Domain hochgeladen haben,
-* der Domain-Name nicht von einem anderen Mandanten verwendet wird,
-* das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
-* Sie einen Wildcard-CNAME-Eintrag (beginnend mit `*.`) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
- Domain-Name = "&ast;.&lt;ihr domain name>", z.B. "*.iot.mycompany.com" <br>
- Typ = CNAME <br>
- Ziel = Domain der Plattform, auf die Sie verweisen wollen, d.h. die aktuelle URL, die Sie verwenden, um auf Ihren Mandanten zuzugreifen. Wenn Sie beispielsweise aktuell *https&#58;//demo.cumulocity.com* verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demo.cumulocity.com" als Ziel.<br>
-Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
+Die DNS-Einträge für Ihre benutzerdefinierte Domain müssen so konfiguriert werden, dass alle Anfragen an die Cumulocity IoT-Plattform geleitet werden.
 
-Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" lautet, so lautet die Domain Ihres Management-Mandanten "management.iot.mycompany.com".
+Wir **empfehlen dringend**, zu diesem Zweck den Wildcard-Eintrag CNAME zu verwenden. Der CNAME muss Ihre Wildcard-Domain
+aus dem Zertifikat im Feld NAME enthalten. Das Feld VALUE des CNAME-Eintrags muss auf den Hostnamen von Cumulocity IoT verweisen. Dieser Ziel-Hostname lässt sich leicht anhand Ihrer aktuellen Mandanten-URL ermitteln. Wenn Ihre Mandanten-URL
+*http://mytenant.cumulocity.com* lautet, ist der Ziel-Hostname *cumulocity.com*. Achten Sie außerdem darauf, eventuell miteinander
+in Konflikt stehende A-Einträge zu löschen.
 
->**Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
+**Beispiel:**
 
+Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und Cumululocity IoT unter *cumulocity.com* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
+
+```shell
+NAME                  TYPE   VALUE
+----------------------------------------------------
+*.iot.mycompany.com.   CNAME  cumulocity.com.
+```
+
+Aus folgenden Gründen raten wir dringend von der Verwendung alternativer DNS-Konfigurationen ab:
+
+- *Wildcard-A-Einträge* verwenden die IP-Adresse der Plattform im Wert-Feld und leiten somit alle Anfragen anhand
+  der jeweiligen IP statt anhand eines Hostnamens um. Dies führt zu erheblichen Problemen, wenn die IP-Adresse der IoT-Plattform
+  später geändert wird.
+- *Singuläre A-Einträge oder singuläre CNAME-Einträge* anstelle von DNS-Wildcards erfordern einen einzelnen DNS-Eintrag für jede
+  zu erstellende Enterprise-Domain. Dies ist sehr fehleranfällig und verhindert die Erstellung von Untermandanten, ohne jedes Mal
+  die DNS-Einstellungen bearbeiten zu müssen.
+
+#### Hochladen des Zertifikats und Aktivieren Ihrer Domain
+
+Sobald die DNS-Konfiguration vorliegt und ein Zertifikat gemäß den entsprechenden Anforderungen verfügbar ist, kann dieses problemlos
+an die Plattform hochgeladen werden.
+
+<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+
+
+Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
+über den neuen Domain-Namen zu Ihrem Enterprise Tenant umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "** .iot.mycompany.com" ist, lautet die Domain des Management-Mandanten "management.iot.mycompany.com".
+
+> **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 #### Aktualisieren des Zertifikats
 

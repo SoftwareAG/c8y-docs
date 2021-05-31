@@ -8,7 +8,7 @@ layout: redirect
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 Die folgenden Informationen werden für jedes Gerät angezeigt:
 
@@ -33,34 +33,34 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
 #### <a name="device-registration-manually"></a>So verbinden Sie ein Gerät manuell
 
 >**Info:** Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
 
-1. Klicken Sie **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann **Gerät registrieren**.
+1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
 
-	<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
-5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
-6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
+5. Klicken Sie auf **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
+6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
 > **Info:** In einem Enterprise Tenant kann der Management-Mandant auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der Management-Mandant keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
 Nach erfolgreicher Registrierung werden die Geräte auf der [Seite **Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
 
 Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
-Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
+Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
 > **Info:** Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 
@@ -69,12 +69,12 @@ Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Ge
 
 Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity IoT die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
 
-1. Klicken Sie **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann **Gerät registrieren**.
+1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
 
-	<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
-3. Klicken Sie **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie auf Ihrem Computer zu der Datei navigieren.
+3. Klicken Sie auf **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie auf Ihrem Computer zu der Datei navigieren.
 
 <br>
 Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet.
@@ -121,10 +121,10 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 1. Wechseln Sie in Microsoft Excel zur Registerkarte **Daten**.
 2. Wählen Sie in der Registerkarte **Daten** in der oberen Menüleiste die Option **Aus Text**.
 3. Wählen Sie die zu importierende CSV-Datei aus, indem Sie zu ihr navigieren (in diesem Fall zu der Vorlagendatei, die Sie von der Cumulocity IoT-Plattform heruntergeladen haben).
-4. Behalten Sie in Schritt 1 des **Textimport-Assistenten** die Standardeinstellungen bei und klicken Sie **Weiter**.
-5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
+4. Behalten Sie in Schritt 1 des **Textimport-Assistenten** die Standardeinstellungen bei und klicken Sie auf **Weiter**.
+5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie auf **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
-[Bulk device credentials](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity OpenAPI Specification.
+[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) im Reference guide.
 
 >**Info:** Wenn Sie mit dem Enterprise Tenant arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

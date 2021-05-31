@@ -8,7 +8,7 @@ layout: redirect
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
-![Subtenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
 
@@ -27,6 +27,10 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 <tr>
 <td align="left">ID</td>
 <td align="left">ID des Untermandanten</td>
+</tr>
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Untermandanten</td>
 </tr>
 <tr>
 <td align="left">API-Anfragen</td>
@@ -129,22 +133,22 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/users-guide/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Die Seite **Nutzungsstatistiken** zeigt die Zahlen für alle Untermandanten in diesem Zeitraum an.
 
 >**Info:** Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
 
-Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
+Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
 
 > **Wichtig:** Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 
-1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
+1. Klicken Sie auf CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
-<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
-3. Klicken Sie **Herunterladen**, um den Export zu starten.
+<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
+3. Klicken Sie auf **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 
@@ -179,7 +183,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://cumulocity.com/api/#tag/Tenant-applications) verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](/reference/tenants/#tenant-usage-statistics) verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -220,9 +224,9 @@ Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache
 
 Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungsstatistiken** aufgeführt.
 
-![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Weitere Informationen finden Sie unter [Tenants](https://cumulocity.com/api/#tag/Tenant-applications) im Cumulocity IoT OpenAPI Specification. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -235,9 +239,9 @@ Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AU
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
+![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) im Cumulocity IoT OpenAPI Specification.
+Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Reference Guide.
 
 
 ### Handhabung von Zeitzonen
@@ -313,7 +317,7 @@ In diesem Fall haben wir einen großen Zeitunterschied zwischen der Zeit des Ser
 
 ### Tägliche Routine
 
-Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen und Werte, die Snapshots eines Status in einem bestimmten Zeitraum darstellen. Im Falle des zweiten Datentyps werden die Werte mehrmals täglich neu geladen, aber der Wert vom Ende des Tages (EOD) ist der Wert, der für den bestimmten Tag zugewiesen wird.
+Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen und aus Werten, die Snapshots eines Status in einem bestimmten Zeitraum darstellen. Im Falle des zweiten Datentyps werden die Werte mehrmals täglich neu geladen, aber der Wert vom Ende des Tages (EOD) ist der Wert, der für den bestimmten Tag zugewiesen wird.
 
 |Werttyp|Neu geladen|
 |:--------|:--------|
@@ -338,23 +342,25 @@ Ein Mandant der Cumulocity IoT-Platform kann mehrere Status besitzen:
 
 Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt werden, werden "wie verbraucht" in Rechnung gestellt; dabei entspricht der Rechnungsbeginn dem Verbrauchsbeginn. Nachdem die Anwendung für den Mandanten abonniert wurde, wird ein Anwendungsstart-Prozess ausgelöst, der verschiedene Phasen auf oberster Ebene durchläuft:
 
-  * Geplant - Der Start des Microservice wurde geplant, aber der Docker-Container läuft noch nicht. In diesem Status wird der Microservice noch nicht in Rechnung gestellt.
-  * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits, weshalb auch die Abrechnung gestartet wurde.
+  * Ausstehend - Der Start des Microservice wurde geplant, aber der Docker-Container läuft noch nicht. In diesem Status wird der Microservice noch nicht in Rechnung gestellt.
+  * Geplant - Der Microservice wurde einem Knoten zugewiesen, die Initialisierung des Docker-Containers wurde gestartet. Die Ressourcen für den Microservice wurden bereits zugewiesen, die Abrechnung wird somit gestartet.
+  * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits.
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
-Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z.B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/users-guide/administration/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
-  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 
-  * `Pod "apama-ctrl-starter-scope-..." erstellt.` - Der Start einer Microservice-Instanz wurde für den Mandanten geplant (wird dem Status "Geplant" zugeordnet).
-  * `Container erstellt.` - Der Microservice-Container wurde erstellt, aber noch nicht gestartet. Dies bedeutet, dass die Ressourcenzuweisung erfolgreich war, die Anwendung jedoch noch nicht ausgeführt wird.
-  * `Container gestartet.` - Der Microservice-Container wurde gestartet, ist jedoch noch nicht bereit, eingehenden Datenverkehr zu verarbeiten. Ab diesem Zeitpunkt startet die Abrechnung, da die Anwendung ausgeführt wird und die Ressourcen verbraucht werden (Status "Nicht bereit").
+  * `Pod "apama-ctrl-starter-scope-..." erstellt.` - Der Start einer Microservice-Instanz wurde für den Mandanten geplant. Dies bedeutet, dass die Ressourcenzuweisung erfolgreich war, die Anwendung jedoch noch nicht ausgeführt wird (verweist auf den Zustand "Geplant").
+  * `Image "apama-ctrl-starter-scope-..." wird gelesen` - Der Microservice-Initialisierungsprozess wurde gestartet und das Docker-Image wird bereits heruntergeladen (Zustand "Geplant").
+  * `Container erstellt.` - Der Microservice-Container wurde erstellt, aber noch nicht gestartet (Zustand "Geplant").
+  * `Container gestartet.` - Der Microservice-Container wurde gestartet, ist jedoch noch nicht bereit, eingehenden Datenverkehr zu verarbeiten (Zustand "Nicht bereit").
 
 >**Info:** Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
 
-  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit-Logs und Ereignisse werden entsprechend der Isolationsstufe im Mandantenbereich gespeichert. Bei Microservices mit Isolation mehrerer Mandanten handelt es sich dabei um den Mandanten, der der Eigentümer des Microservice ist, und bei Isolation nach Mandant um den abonnierten Mandanten.
 
@@ -558,7 +564,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://cumulocity.com/api/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="../../reference/tenants/#device-statistics">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

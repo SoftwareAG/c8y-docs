@@ -9,11 +9,11 @@ layout: redirect
 
 Cumulocity IoT bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf einer Karte anzuzeigen.
 
-Klicken Sie **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt.
+Klicken Sie auf **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt.
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.
 
-![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
 
 ### <a name="connection-monitoring"></a>Verbindungsüberwachung
 
@@ -27,7 +27,7 @@ Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehre
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Sendeverbindungen**
 
@@ -49,7 +49,7 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity IoT zum Ger�
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /device/control/notifications API, **nicht** zu /device/control/realtime API.
+Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /notification/operations API, **nicht** zu Echtzeit-API.
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
@@ -64,7 +64,7 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Verbindungen zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
@@ -76,7 +76,7 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartun
 
 Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 ### <a name="monitoring-services"></a>Serviceüberwachung
 
@@ -91,7 +91,7 @@ Ist ein Gerät offline, nimmt Cumulocity IoT standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/users-guide/administration#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 Cumulocity IoT zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
@@ -101,9 +101,9 @@ Klicken Sie auf die Registerkarte **Serviceüberwachung** in den Details eines b
 
 #### So zeigen Sie die Serviceüberwachung für alle Geräte an
 
-Klicken Sie **Serviceüberwachung** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
+Klicken Sie auf **Serviceüberwachung** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
 
-![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
 Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an.
 
@@ -116,15 +116,15 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 Cumulocity IoT zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
 
-* Um die Alarme für alle Geräte zu überprüfen, klicken Sie **Alarme** im Menü **Übersichten** des Navigators.
+* Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
 
-![Alarms page](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
 
 Standardmäßig
 
 * werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
-* werden Alarme in Echtzeit angezeigt, sobald sie vom Gerät gemeldet werden. Klicken Sie **Echtzeit** in der oberen Menüleiste, um Echtzeitaktualisierungen zu deaktivieren.
+* werden Alarme in Echtzeit angezeigt, sobald sie vom Gerät gemeldet werden. Klicken Sie auf **Echtzeit** in der oberen Menüleiste, um Echtzeitaktualisierungen zu deaktivieren.
 
 Alarme werden nach Schweregraden klassifiziert. Cumulocity IoT enthält vier verschiedene Alarmtypen:
 
@@ -184,28 +184,28 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration“ > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration“ > Priorisieren von Alarmen](/users-guide/administration#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger über die Zeile und klicken Sie auf die entsprechende Schaltfläche oder klicken Sie auf das Menüsymbol und wählen Sie den gewünschten Status.
 
-![Alarm change status](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
+![Alarm change status](/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
 
-Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade zu löschen.
+Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie auf **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade zu löschen.
 
 <!-- Seems to be no longer relevant
 * **Additional information**: Ein Alarm kann beliebige vom Gerät bereitgestellte zusätzliche Informationen enthalten.
 * **Audit-Log**: Zusammen mit dem Alarm wird eine Logdatei mit am Alarm vorgenommenen Änderungen gespeichert. So entsteht eine Alarmhistorie mit verschiedenen Daten. -->
 
-### <a name="operation-monitoring"></a>Verwenden von Operationen (enthält Beta-Änderungen)
+### <a name="operation-monitoring"></a>Verwenden von Operationen
 
 Operationen werden verwendet, um Geräte aus der Ferne zu steuern.
 
 Sie können Operationen für einzelne Geräte oder für alle Geräte anzeigen:
 
-* Um die Operationen für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.
+* Um die Operationen für alle Geräte anzuzeigen, klicken Sie auf **Gerätesteuerung** im Menü **Übersichten** im Navigator.
 * Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
 
 In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf einer eigenen Registerkarte angezeigt werden:
@@ -213,15 +213,15 @@ In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf 
 * **Einzel-Operationen** werden auf einzelnen Geräten ausgeführt, siehe [So zeigen Sie Einzel-Operationen an](#to-view-single-operations).
 * **Bulk-Operationen** bestehen aus einer Einzel-Operation, die auf einer Reihe von Geräten ausgeführt wird, siehe [So zeigen Sie Bulk-Operationen an](#to-view-bulk-operations).
 
-#### <a name="to-view-single-operations">So zeigen Sie Einzel-Operationen an
+#### <a name="to-view-single-operations"></a>So zeigen Sie Einzel-Operationen an
 
 Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
-![Single operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
+![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
 Einzel-Operationen können sich in einem der folgenden vier Status befinden:
 
-| Zustand      | Beschreibung |
+| Status      | Beschreibung |
 | :-----     | :---------- |
 | AUSSTEHEND    | Die Operation wurde gerade erstellt und wartet darauf, vom Gerät empfangen zu werden. |
 | WIRD AUSGEFÜHRT  | Die Operation wurde vom Gerät empfangen und wird ausgeführt. |
@@ -232,60 +232,60 @@ In jeder Zeile werden die folgenden Informationen für eine Operation angezeigt:
 
 | Info   | Beschreibung |
 | :----- | :---------- |
-| Zustand  | AUSSTEHEND, WIRD AUSGEFÜHRT, ERFOLGREICH oder FEHLGESCHLAGEN (siehe oben). |
+| Status  | AUSSTEHEND, WIRD AUSGEFÜHRT, ERFOLGREICH oder FEHLGESCHLAGEN (siehe oben). |
 | Name   | Name der Operation. |
 | Gerät | Name des Geräts. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts. |
 
-Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zur Operation angezeigt.
+Durch Klicken auf eine Zeile wird diese aufgeklappt und es werden weitere Details zur Operation angezeigt.
 
-* **Details**: Informationen zu Namen und Status der Operation. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
+* **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
 * **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
 
-![Details zur Einzel-Operation](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
+![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
-Um die Liste der einzelnen Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
-Klicken Sie **Alle**, um den Filter wieder zurückzusetzen.
+Um die Liste der Einzel-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
+Klicken Sie auf **Alle**, um den Filter wieder zurückzusetzen.
 
-Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Operationen in Echtzeit anzuzeigen.
-Klicken Sie **Neu laden**, um die Liste einmal manuell zu aktualisieren.
+Klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Operationen in Echtzeit anzuzeigen.
+Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 >**Info:** Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/users-guide/device-management/#managing-firmware-on-a-device), [Software](/users-guide/device-management/#managing-software-on-a-device), [Konfigurationen](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
 
-Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die einzelnen Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
+Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/users-guide/device-management#shell).
 
 >**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remotevorgänge den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
-#### So brechen Sie ausstehende Operationen ab
+#### So brechen Sie ausstehende Einzel-Operationen ab
 
-Sie können bestimmte ausstehende Operationen oder alle ausstehenden Einzel-Operationen gleichzeitig abbrechen.
+Sie können bestimmte ausstehende Einzel-Operationen oder alle ausstehenden Einzel-Operationen gleichzeitig abbrechen.
 
-Um eine bestimmte ausstehende Operation abzubrechen, klicken Sie auf das Menüsymbol rechts neben dem Eintrag der betreffenden einzelnen Operation und wählen Sie **Operation abbrechen**.
+Um eine bestimmte ausstehende Einzel-Operation abzubrechen, klicken Sie auf das Menüsymbol rechts neben dem Eintrag der betreffenden Einzel-Operation und wählen Sie **Operation abbrechen**.
 
 Um alle ausstehenden Operationen gleichzeitig abzubrechen, klicken Sie auf **Mehr...** rechts in der oberen Menüleiste und wählen Sie **Alle ausstehenden Operationen abbrechen**.
-Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHEND filtern, und anschließend auf **Alle abbrechen** klicken.
+Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHEND filtern und anschließend auf **Alle abbrechen** klicken.
 
 #### So erstellen Sie eine Regel für eine Einzel-Operation
 
 Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
-Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
+Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/users-guide/cockpit/#create-rules) beschrieben.
 
-#### <a name="to-view-bulk-operations">So zeigen Sie Bulk-Operationen an
+#### <a name="to-view-bulk-operations"></a>So zeigen Sie Bulk-Operationen an
 
 Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
-![Bulk operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
 Bulk-Operationen besitzen einen Operationstyp und einen Status.
 
-Mit Hilfe des [Bulk-Operations-Assistenten](#to-add-a-bulk-operation-using-the-wizard) können Sie Bulk-Operationen der folgenden Operationstypen hinzufügen:
+Mit Hilfe des [Bulk-Operations-Assistenten](#bulk-operation-wizard) können Sie Bulk-Operationen der folgenden Operationstypen hinzufügen:
 
 | Operationstyp          | Beschreibung |
 | :---------------------- | :---------- |
@@ -294,23 +294,23 @@ Mit Hilfe des [Bulk-Operations-Assistenten](#to-add-a-bulk-operation-using-the-w
 | Software Update         | Die Bulk-Operation aktualisiert die Software der ausgewählten Geräte. |
 | Geräteprofil anwenden    | Die Bulk-Operation wendet auf den ausgewählten Geräten ein Geräteprofil an. |
 
-Bulk-Operationen können auch andere Operationstypen besitzen, beispielsweise wenn Sie [eine Einzel-Operation als Bulk-Operation planen](#to-schedule-a-single-operation-as-bulk-operation) und der Typ der einzelnen Operation sich von dem der Bulk-Operation unterscheidet.
+Bulk-Operationen können auch andere Operationstypen besitzen, beispielsweise wenn Sie [eine Einzel-Operation als Bulk-Operation planen](#to-schedule-a-single-operation-as-bulk-operation) und der Typ der Einzel-Operation sich von dem der Bulk-Operation unterscheidet.
 
 Bulk-Operationen können sich in einem der folgenden Status befinden:
 
-| Zustand                   | Beschreibung |
+| Status                   | Beschreibung |
 | :---------------------- | :---------- |
 | GEPLANT               | Die Bulk-Operation wurde angelegt und wird bis zum geplanten Zeitpunkt zurückgestellt. |
 | WIRD AUSGEFÜHRT               | Die Bulk-Operation wird ausgeführt. |
 | ABGEBROCHEN               | Die Bulk-Operation wurde angelegt, aber vor dem geplanten Zeitpunkt abgebrochen. |
 | MIT FEHLERN ABGESCHLOSSEN | Die Bulk-Operation wurde bei einigen Geräten mit Fehlern abgeschlossen. |
-| ERFOLGREICH ABGESCHLOSSEN  | Die Operation wurde auf allen Geräten erfolgreich ausgeführt. |
+| ERFOLGREICH ABGESCHLOSSEN  | Die Bulk-Operation wurde auf allen Geräten erfolgreich ausgeführt. |
 
 In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angezeigt:
 
 | Info   | Beschreibung |
 | :----- | :---------- |
-| Zustand  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
+| Status  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
 | Name   | Name der Operation. |
 | Fortschrittsanzeige | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an. |
 | Start- und Enddatum | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen. |
@@ -318,39 +318,45 @@ In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angez
 
 Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zur Bulk-Operation anzeigen.
 
-* **Details**: Informationen zu Startdatum, Verzögerung, Status und Ergebnis der Bulk-Operation. Das Ergebnis listet die Anzahl der erfolgreich abgeschlossenen, fehlgeschlagenen und ausstehenden Operationen auf.
+* **Details**: Informationen zu Startdatum, Verzögerung, Status und Ergebnis der Bulk-Operation. Das Ergebnis listet die Anzahl der erfolgreich abgeschlossenen, fehlgeschlagenen und ausstehenden Operationen auf. Handelt es sich bei der Bulk-Operation um einen [Wiederholungsversuch für fehlgeschlagene Operationen](#to-retry-failed-operations), wird eine zusätzliche Zeile mit dem Index der Bulk-Operation angezeigt, die erneut ausgeführt werden soll. Klicken Sie auf den Index, um zu dieser Bulk-Operation zu scrollen. Wenn beim [Erstellen der Bulk-Operation](#to-add-a-bulk-operation) eine Beschreibung hinzugefügt wurde, wird eine zusätzliche Zeile mit dieser Beschreibung angezeigt.
 * **Operation**: Informationen zur Operation in Form eines JSON-Objekts.
-* **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von einzelnen Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden.
+* **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen**  klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
+* **Änderungshistorie**: In einer zweiten Registerkarte werden Informationen zu den letzten Änderungen der Operation angezeigt.
 
-![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+
+![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
 
 Um die Liste der Bulk-Operationen nach Operationstyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Operationstypen und klicken Sie auf **Anwenden**.
 Um den Filter wieder zurückzusetzen, wählen Sie **Alle** in der Auswahlliste und klicken Sie erneut auf **Anwenden**.
 
 Um die Liste der Bulk-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
-Klicken Sie **Alle**, um den Filter wieder zurückzusetzen.
+Klicken Sie auf **Alle**, um den Filter wieder zurückzusetzen.
 
-Um beide Filter zurücksetzen, klicken Sie **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
+Um die Liste der Bulk-Operationen nach Datum zu filtern, wählen Sie ein Datum in den beiden Datumsauswahlfeldern **Von Datum** und **Bis Datum** aus und klicken Sie direkt daneben auf **Anwenden**.
+Um den Filter zurückzusetzen, klicken Sie direkt daneben auf **Löschen**.
+
+Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
 
 >**Info:** Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
 
->![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
+>![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### <a name="bulk-operations"></a>So fügen Sie eine Bulk-Operation hinzu
+#### <a name="bulk-operations"></a><a name="to-add-a-bulk-operation"></a>So fügen Sie eine Bulk-Operation hinzu
 
 Es gibt zwei Möglichkeiten, eine Bulk-Operation anzulegen:
 
-* Verwenden Sie den [Bulk-Operations-Assistenten](#to-add-a-bulk-operation-using-the-wizard)
+* Verwenden Sie den [Bulk-Operations-Assistenten](#bulk-operation-wizard)
 * [Planen Sie eine Einzel-Operation als Bulk-Operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="to-add-a-bulk-operation-using-the-wizard">So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu
+##### <a name="bulk-operation-wizard"></a>So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu
 
 Führen Sie folgende Schritte aus:
 
 1. Klicken Sie in der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation**.
 2. Wählen Sie im nächsten Dialog einen Operationstyp.
-    ![Select a bulk operation type](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
-3. Im darauf folgenden Assistenten gibt es vier Schritte. Ja nach Gerätetyp unterscheiden sich die ersten beiden Schritte:
+    ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
+3. Im darauf folgenden Assistenten gibt es vier Schritte. Je nach Operationstyp unterscheiden sich die ersten beiden Schritte:
   * **Konfigurationsaktualisierung**
       * Wählen Sie eine Konfiguration aus der Liste aus. Die Liste kann nach Konfigurationstyp oder Konfigurationsnamen gefiltert werden. Klicken Sie auf **Weiter**.
       * Überprüfen Sie die Vorschau der gewählten Konfiguration. Klicken Sie auf **Weiter**.
@@ -358,23 +364,23 @@ Führen Sie folgende Schritte aus:
       * Wählen Sie eine Firmware aus der Liste aus. Die Liste kann nach Firmware-Namen gefiltert werden. Klicken Sie auf **Weiter**.
       * Erweitern Sie einen Versionseintrag und wählen Sie einen Patch. Klicken Sie auf **Weiter**.
   * **Software Update**
-      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp oder Softwarenamen gefiltert werden. Klicken Sie auf **Weiter**.
+      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp oder Softwarenamen gefiltert werden. Klicken Sie auf **Weiter**. Wenn Sie Software für mehrere Gerätetypen gewählt haben, informiert Sie ein Warndialog darüber, dass einige Operationen wegen nicht unterstützter Software fehlschlagen könnten, und fordert Sie zur Bestätigung auf.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
   * **Geräteprofil anwenden**
       * Wählen Sie ein Geräteprofil aus der Liste aus. Die Liste kann nach Gerätetyp oder Profilnamen gefiltert werden. Klicken Sie auf **Weiter**.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
-4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Namen, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
-    ![Bulk operation wizard, step 3](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
-5. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den einzelnen Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
-    ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
+4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Name, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Der Gruppenfilter ermöglicht auch das Filtern nach Untergruppen. Zum Auswählen einer ggf. vorhandenen Untergruppe klicken Sie auf die Pfeilschaltfläche rechts neben einer Gruppe und wählen Sie die gewünschten Untergruppen aus der Auswahlliste. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
+    ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
+5. Geben Sie einen neuen Titel ein oder verwenden Sie den vorgegebenen Titel. Geben Sie bei Bedarf eine Beschreibung ein. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den Einzel-Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
+    ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="to-schedule-a-single-operation-as-bulk-operation"> So planen Sie eine Einzel-Operation als Bulk-Operation
+##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>So planen Sie eine Einzel-Operation als Bulk-Operation
 
-Es gibt zwei Möglichkeiten, eine Einzel-Operation als Bulk-Operation zu planen: entweder auf der Registerkarte **Einzel-Operation** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
+Es gibt zwei Möglichkeiten, eine Einzel-Operation als Bulk-Operation zu planen: entweder auf der Registerkarte **Einzel-Operationen** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
 Führen Sie folgende Schritte aus:
 
-1. Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, die sie als Bulk-Operation planen möchten, und klicken Sie anschließend auf **Als Bulk-Operation planen**.
-2. Der darauf folgende Assistent ähnelt dem neuen Bulk-Operations-Assistenten, der unter [So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu](#to-add-a-bulk-operation-using-the-wizard) beschrieben wird. Allerdings gibt es nur zwei Schritte, da der Operationstyp von der als Bulk-Operation geplanten Operation abgeleitet wird. Lesen Sie die Beschreibung des [vollständigen Assistenten](#to-add-a-bulk-operation-using-the-wizard) und folgen Sie den Anweisungen.
+1. Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, die Sie als Bulk-Operation planen möchten, und klicken Sie anschließend auf **Als Bulk-Operation planen**.
+2. Der darauf folgende Assistent ähnelt dem neuen Bulk-Operations-Assistenten, der unter [So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu](#bulk-operation-wizard) beschrieben wird. Allerdings gibt es nur zwei Schritte, da der Operationstyp von der als Bulk-Operation geplanten Operation abgeleitet wird. Lesen Sie die Beschreibung des [vollständigen Assistenten](#bulk-operation-wizard) und folgen Sie den Anweisungen.
 
 #### <a name="bulk-operations"></a>So bearbeiten Sie den Zeitplan von Bulk-Operationen
 
@@ -382,11 +388,11 @@ Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbei
 
 1. Klicken Sie auf das Menüsymbol rechts neben der Bulk-Operation, die Sie bearbeiten möchten, und anschließend auf **Zeitplan bearbeiten**.
 3. Im darauf folgenden Dialog können Sie die Werte für **Startzeit** und **Verzögerung** ändern.
-5. Klicken Sie **Neu planen**, um Ihre Einstellungen zu speichern.
+5. Klicken Sie auf **Neu planen**, um Ihre Einstellungen zu speichern.
 
 Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
 
-![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
+![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
 #### <a name="bulk-operations"></a>So brechen Sie Bulk-Operationen ab
 
@@ -396,15 +402,23 @@ Auf diese Weise können Sie die Erstellung der verbleibenden Einzel-Operationen 
 
 Klicken Sie auf das Menüsymbol rechts neben der Bulk-Operation, die Sie abbrechen möchten, und anschließend auf **Bulk-Operation abbrechen**.
 
-#### So führen Sie fehlgeschlagene Operationen erneut aus
+#### <a name="to-retry-failed-operations"></a>So führen Sie fehlgeschlagene Operationen erneut aus
 
 Sie können die fehlgeschlagenen Operationen einer Bulk-Operation, die ausgeführt wird oder mit Fehlern abgeschlossen wurde, erneut ausführen.
 
 Erweitern Sie dazu die gewünschte Bulk-Operation und klicken Sie unter **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen**, um mit allen fehlgeschlagenen Operationen eine neue Bulk-Operation zu erstellen.
-Um eine Einzel-Operation erneut auszuführen, bewegen sie den Mauszeiger über die Operation und klicken Sie auf **Operation erneut ausführen**.
+Um eine Einzel-Operation erneut auszuführen, bewegen Sie den Mauszeiger über die Operation und klicken Sie auf **Operation erneut ausführen**.
 Dadurch wird eine neue Einzel-Operation angelegt.
 
 Bei einer Bulk-Operation, die mit Fehlern abgeschlossen wurde, können Sie auch auf das Menüsymbol rechts neben der Operation und anschließend auf **Fehlgeschlagene Operationen erneut ausführen** klicken.
+
+#### So setzen Sie fehlgeschlagene Bulk-Operation manuell auf "erfolgreich"
+
+Sie können fehlgeschlagene Bulk-Operation manuell auf "erfolgreich" setzen.
+
+Klicken Sie dazu auf das Menüsymbol rechts neben der Bulk-Operation und anschließend auf **Operation auf ERFOLGREICH setzen**.
+
+Dies kann hilfreich sein, wenn die Operation allgemein erfolgreich war, aber Operationsfehler bei Geräten aufweist, die nicht allzu wichtig sind. Diese Fehler würden andernfalls dazu führen, dass die Bulk-Operation im Status FEHLGESCHLAGEN verbleibt.
 
 ### <a name="events-all"></a>Fehlerbehebung von Geräten
 
@@ -414,12 +428,12 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 
 Cumulocity IoT zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
 
-* Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie **Ereignisse** im Menü **Übersichten** des Navigators.
+* Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
 
-![Events](/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
+![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
 
-Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie **Echtzeit** rechts in der oberen Menüleiste.
+Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste.
 
 Für jedes Ereignis werden die folgenden Informationen bereitgestellt:
 
@@ -435,4 +449,4 @@ Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Ereigni
 
 Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten nach Datum filtern.
 
-Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie **Anwenden**, um den Filter anzuwenden. Klicken Sie **Aufheben**, um den Filter wieder zurückzusetzen.
+Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie auf **Anwenden**, um den Filter anzuwenden. Klicken Sie auf **Aufheben**, um den Filter wieder zurückzusetzen.

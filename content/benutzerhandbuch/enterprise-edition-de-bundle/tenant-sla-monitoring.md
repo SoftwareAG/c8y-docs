@@ -37,9 +37,9 @@ Verwenden Sie die Device Management-Anwendung, um die Daten des Tenant SLA Monit
 
 Der Management-Mandant muss die Anwendung “Tenant-sla-monitoring” abonnieren, um die Ergebnisse der Überwachung anzeigen zu können.
 
-![Sla-monitoring subscribe](/images/benutzerhandbuch/sla-monitoring/sla-subscribe.png)
+![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
-Weitere Informationen zum Abonnieren von Anwendungen finden Sie unter [Enterprise Tenant > Verwalten von Mandanten > Anwendungen](/benutzerhandbuch/enterprise-edition-de#subscribe) im Benutzerhandbuch.
+Weitere Informationen zum Abonnieren von Anwendungen finden Sie unter [Enterprise Tenant > Verwalten von Mandanten > Anwendungen](/users-guide/enterprise-edition#subscribe) im Benutzerhandbuch.
 
 ### Funktionsweise des Service
 
@@ -53,7 +53,7 @@ Darüber hinaus wird für jeden abonnierten Mandanten (d.h. Management-Mandanten
 
 Um die Messwerte mit den Überwachungsergebnissen anzuzeigen, öffnen Sie die Quelle (das Gerät) des Management-Mandanten unter **Alle Geräte** in der Device Management-Anwendung und wechseln Sie zur Registerkarte **Messwerte**.
 
-<img src="/images/benutzerhandbuch/sla-monitoring/sla-Tenant-Monitoring-Measurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
+<img src="/images/users-guide/sla-monitoring/sla-Tenant-Monitoring-Measurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
 
 Im API-Reaktionszeit-Diagramm wird die Reaktionszeit der Mandanten in Millisekunden angezeigt.
 
@@ -65,13 +65,13 @@ Zusätzlich gibt es Diagramme, die die durchschnittlichen Verfügbarkeitswerte d
 
 Diese Mittelwerte werden errechnet, indem die Zeitspannen aller Timeout- und Reaktionszeit-Alarme (die z. B. erstellt werden, wenn Daten fehlen, siehe unten) eines bestimmten Zeitraums addiert und anschließend durch die gesamte Zeitspanne dividiert werden.
 
-<img src="/images/benutzerhandbuch/sla-monitoring/sla-Tenant-Monitoring-Day-Average.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
+<img src="/images/users-guide/sla-monitoring/sla-Tenant-Monitoring-Day-Average.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
 
-Weitere Informationen zu Messwerten finden Sie unter [Device Management > Gerätedetails > Messwerte](/benutzerhandbuch/device-management-de#measurements) im Benutzerhandbuch.
+Weitere Informationen zu Messwerten finden Sie unter [Device Management > Gerätedetails > Messwerte](/users-guide/device-management#measurements) im Benutzerhandbuch.
 
 ### Erzeugen von Alarmen
 
-Der Service 'Tenant SLA Monitoring' erzeugt in folgenden Fällen Alarme:
+Der Service "Tenant SLA Monitoring" erzeugt in folgenden Fällen Alarme:
 
 * Nichtverfügbarkeit eines Mandanten - Immer wenn ein Mandant nicht erreichbar ist, speichert der Service keine Messwerte, sondern lässt Lücken in der Messwertreihe. Wenn der Mandant wieder verfügbar ist, sucht der Service nach dem letzten Messwert, der für den Mandanten gespeichert wurde, und erzeugt einen Alarm für die berechnete Zeit der Nichtverfügbarkeit.
 * Lange Reaktionszeit - Wenn die erforderliche Reaktionszeit überschritten wird (standardmäßig 300 ms). Dieser Alarm ist solange aktiv, bis die Reaktionszeit wieder unter die festgelegte Grenze fällt.

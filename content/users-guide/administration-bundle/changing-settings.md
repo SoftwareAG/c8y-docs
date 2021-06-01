@@ -18,14 +18,14 @@ helpcontent:
 
 	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Changing settings > Configuring single-sign on* in the *User guide*."
 - label: application
-	title: Application
-	content: Under **Default application** you can select an application which will show up as default application on login for all users within the tenant.
+  title: Application
+  content: "Under **Default application** you can select an application which will show up as default application on login for all users within the tenant.
 
 
-	Under **Access control**, the **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
+  Under **Access control**, the **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
 
-	See also *Administration > Changing settings* in the *User guide*."	
+  See also *Administration > Changing settings* in the *User guide*."
 ---
 
 

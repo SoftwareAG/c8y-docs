@@ -43,7 +43,7 @@ Failed requests can happen in the event the data broker subscriber tenant become
 
 #### Data broker slow processing alert
 
-The data broker agent is pre-configured to monitor the rate at which events are being delivered to their destination. If events cannot be delivered fast enough, slow processing alarms will be raised. A slow processing alarm includes a connector id to help identify which destination tenant is affected.
+The data broker agent is pre-configured to monitor the rate at which events are being delivered to their destination. If events cannot be delivered fast enough, slow processing alarms will be raised. A slow processing alarm includes a connector ID to help identify which destination tenant is affected.
 
 ##### Queue backlog 
 

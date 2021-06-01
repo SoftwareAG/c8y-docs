@@ -53,11 +53,11 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 2. In the **Settings** tab, provide the following information to create a new data connector:
 
 	|Field|Description|
-|:---|:---|
-|Title|The name of the data connector.
-|Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
-|Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
-|Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
+	|:---|:---|
+	|Title|The name of the data connector.
+	|Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
+	|Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
+	|Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
 
 3. Click **Add filter** to configure a new filter.
 
@@ -66,49 +66,48 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 4. Each data filter contains the following information:
 
 	<table>
-<col width = 150>
-<thead>
-<tr>
-<th style="text-align:left">Field</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Group or device</td>
-<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
-</tr>
-<tr>
-<td style="text-align:left">API</td>
-<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
-</tr>
-<tr>
-<td style="text-align:left">Fragments to filter</td>
-<td style="text-align:left">The fragments that need to be present in a device to be forwarded.</td>
-</tr>
-<tr>
-<td style="text-align:left">Fragments to copy</td>
-<td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
-</tr>
-<tr>
-<td style="text-align:left">Type filter</td>
-<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
-</tr>
-</tbody>
-</table>
+	<col width = 150>
+	<thead>
+	<tr>
+	<th style="text-align:left">Field</th>
+	<th style="text-align:left">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td style="text-align:left">Group or device</td>
+	<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
+	</tr>
+	<tr>
+	<td style="text-align:left">API</td>
+	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Fragments to filter</td>
+	<td style="text-align:left">The fragments that need to be present in a device to be forwarded.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Fragments to copy</td>
+	<td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Type filter</td>
+	<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
+	</tr>
+	</tbody>
+	</table>
 
 5. Click **Save** to save the configuration.
 
 >**Warning on the usage of All objects**
-
->The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
-
->When selected, Cumulocity IoT will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
-
->This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
-
->For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
-
+<br><br>
+The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
+<br><br>
+When selected, Cumulocity IoT will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
+<br><br>
+This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
+<br><br>
+For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
 
 If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
 

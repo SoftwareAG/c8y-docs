@@ -319,7 +319,8 @@ Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M
 
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
-### <a name="duplicate-registeration-alarm"></a>Duplicate LWM2M devices
+<a name="duplicate-registeration-alarm"></a>
+### Duplicate LWM2M devices
 
 If a LWM2M device is registered with the same endpoint ID in multiple tenants, the device will be binded only to the tenant in which the device was first registered and the devices in the other tenants will be considered as duplicates. As notification, a MAJOR alarm is created stating that the device with this endpoint already exists.
 

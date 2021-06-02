@@ -4,7 +4,8 @@ title: Managing data
 
 ---
 
-### <a name="retention-rules"></a>Retention rules
+<a name="retention-rules"></a>
+### Retention rules
 
 Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
@@ -21,7 +22,8 @@ For each rule, the rule name, details on the data to be deleted (fragment type, 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
 
-#### <a name="add-retention-rule"></a>To add a retention rule
+<a name="add-retention-rule"></a>
+#### To add a retention rule
 
 1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
@@ -65,7 +67,8 @@ Hover over the rule you want to delete and click the delete icon at the right.
 
 >**Info:** The source parameter is the ID of the device. When it is defined, the retention process only removes the documents directly related to the device represented by the source, not its children or groups it belongs to.
 
-### <a name="files"></a>Managing files in the file repository
+<a name="files"></a>
+### Managing files in the file repository
 
 The file repository provides an overview of the files stored in your account.
 

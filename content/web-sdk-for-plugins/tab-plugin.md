@@ -28,7 +28,8 @@ In order to achieve this goal you need to do the following steps:
 
 We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/deviceContact".
 
-#### <a name="dependencies"></a>Adding dependencies
+<a name="dependencies"></a>
+#### Adding dependencies
 
 For this exercise, let us consider you want to extend the application "Device Management". In practice, this means adding the set of plugins used in Device Management and adding your own to the list of imports in your application manifest. You can print the list of used plugins by any available application in your development environment by executing the command ```c8y util:showimports <appContextPath>```.
 

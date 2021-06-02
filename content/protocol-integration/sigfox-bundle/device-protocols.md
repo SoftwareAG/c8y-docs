@@ -16,13 +16,15 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 
-### <a name="import-device-type"></a>Importing a device protocol
+<a name="import-device-type"></a>
+### Importing a device protocol
 
 In the **Device protocols** page, click **Import**.
 
 Select the desired predefined device type or upload it from a file. When ready, click **Import** again.
 
-### <a name="create-new-device-type"></a>Creating a new device protocol
+<a name="create-new-device-type"></a>
+### Creating a new device protocol
 
 In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list.
 

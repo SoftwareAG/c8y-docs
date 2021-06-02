@@ -4,7 +4,8 @@ title: Setup
 layout: bundle
 ---
 
-### <a name="prerequisites"></a>Prerequisites
+<a name="prerequisites"></a>
+### Prerequisites
 
 Plugins are based on HTML5. You should be familiar with the following technologies:
 
@@ -19,7 +20,8 @@ The following prerequisites are required to develop plugins and to execute the e
 * [npm](https://www.npmjs.com/) (installed with Node.js)
 * Access to your Cumulocity IoT account, i.e. you need your tenant ID, username and password.
 
-### <a name="cli-tool"></a>Cumulocity IoT CLI tool
+<a name="cli-tool"></a>
+### Cumulocity IoT CLI tool
 
 Once all prerequisites are met, you are almost ready to build your own application and plugin.
 
@@ -37,7 +39,8 @@ $ c8y --help
 
 The "--help" option displays all available commands for the CLI tool.
 
-### <a name="ui-package"></a>Cumulocity IoT UI package
+<a name="ui-package"></a>
+### Cumulocity IoT UI package
 
 As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. Prior to this, you must add a *package.json* file to the folder you will use for your application. To generate the *package.json* file automatically, simply run:
 

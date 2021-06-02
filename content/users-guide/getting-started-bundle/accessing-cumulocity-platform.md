@@ -48,7 +48,8 @@ This will direct you to the login page of your default application. See [Tenants
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Cumulocity IoT platform.
 
-### <a name="login"></a>To log into the Cumulocity IoT platform
+<a name="login"></a>
+### To log into the Cumulocity IoT platform
 
 On the Login screen, enter your username (case-sensitive) and password.
 
@@ -78,7 +79,8 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 <img src="/images/users-guide/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
-### <a name="reset-password"></a>To reset your password
+<a name="reset-password"></a>
+### To reset your password
 
 1. Click the **Forgot password?** link on the Login screen.
 2. In the resulting dialog box, enter your email address and click **Reset password**.
@@ -91,7 +93,8 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 >
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/about-doc/contacting-support).
 
-### <a name="URLs"></a>Accessing pages using URLs
+<a name="URLs"></a>
+### Accessing pages using URLs
 
 You can navigate straight to any place inside a Cumulocity IoT application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 

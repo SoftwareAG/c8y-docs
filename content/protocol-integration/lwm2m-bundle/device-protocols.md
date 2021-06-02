@@ -7,7 +7,8 @@ layout: redirect
 To process data from LWM2M devices, Cumulocity IoT uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
-### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
+<a name="creating_device_protocols"></a>
+### Creating LWM2M device protocols
 
 Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
@@ -42,7 +43,8 @@ Example: In the following screenshot you can see an example device protocol. Thi
 
 ![Example protocol2](/images/device-protocols/lwm2m/lwm2m-temperature-example.png)
 
-### <a name="resources"></a>Adding additional functionalities to a resource
+<a name="resources"></a>
+### Adding additional functionalities to a resource
 
 The functionalities that you may enable are the following:
 

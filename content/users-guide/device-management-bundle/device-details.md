@@ -102,7 +102,8 @@ Depending of the type and usage of a device, further actions are provided in an 
 
 Details on these additional menu items are provided where required.
 
-### <a name="info"></a>Info
+<a name="info"></a>
+### Info
 
 The **Info** tab summarizes management-relevant device information in a dashboard.
 
@@ -154,13 +155,15 @@ The information is provided on the following cards:
 </tbody>
 </table>
 
-### <a name="child-devices"></a>Child devices
+<a name="child-devices"></a>
+### Child devices
 
 The **Child devices** tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
 For details provided in the child device list, see [Viewing devices](#viewing-devices).
 
-### <a name="measurements"></a>Measurements
+<a name="measurements"></a>
+### Measurements
 
 The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series".
 
@@ -203,11 +206,13 @@ Example:
 
 `"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
 
-### <a name="alarms"></a>Alarms
+<a name="alarms"></a>
+### Alarms
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
 
-### <a name="config"></a> Configuration
+<a name="config"></a>
+### Configuration
 
 The **Configuration** tab allows you to configure the parameters and initial settings of your device. Depending on the device, possible configurations are:
  - Text-based configurations
@@ -220,13 +225,15 @@ For more details on managing binary-based configuration snapshots, see [Managing
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 2. Click **Save** to save your edits.
 
-### <a name="control"></a>Control
+<a name="control"></a>
+### Control
 
 The **Control** tab lists the operations being sent to a device. See [Working with operations](#operation-monitoring) for detailed information on operations.
 
 ![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
-### <a name="network"></a>Network
+<a name="network"></a>
+### Network
 
 In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
 
@@ -259,7 +266,8 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
 
-### <a name="software"></a>Software
+<a name="software"></a>
+### Software
 
 The **Software** tab allows you to manage and update the firmware of a device and the software installed on a device.
 
@@ -277,11 +285,13 @@ Installing software and firmware usually includes a restart of the device. To mo
 
 To remove a firmware/software object from a device, hover over a particular firmware/software entry and click the delete icon.
 
-### <a name="events"></a>Events
+<a name="events"></a>
+### Events
 
 The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Troubleshooting devices](#events-all) for detailed information.
 
-### <a name="location"></a>Location
+<a name="location"></a>
+### Location
 
 The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
 
@@ -290,7 +300,8 @@ The **Location** tab by default shows the location of a device on a map and as c
 The **Location** tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
 
 
-### <a name="logs"></a>Logs
+<a name="logs"></a>
+### Logs
 
 In the **Logs** tab you can manage log information from devices.
 
@@ -321,11 +332,13 @@ Hover over a row and click the download icon, to download the log excerpt to you
 
 Hover over a row and click the delete icon, to delete the log information.
 
-### <a name="service-monitoring"></a>Service monitoring
+<a name="service-monitoring"></a>
+### Service monitoring
 
 In addition to connection monitoring, Cumulocity IoT offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
 
-### <a name="shell"></a>Shell
+<a name="shell"></a>
+### Shell
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
@@ -344,7 +357,8 @@ For your convenience, Cumulocity IoT provides several frequently used commands f
 ![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
-### <a name="tracking"></a>Tracking
+<a name="tracking"></a>
+### Tracking
 
 Devices can record the history of their movements in Cumulocity IoT. This movements may be viewed in the **Tracking** tab.
 
@@ -358,7 +372,9 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Depending on the type of device and the integration into Cumulocity IoT, you can configure device-side geo-fencing and motion detection.
 
-### <a name="identity"></a>Identity
+
+<a name="identity"></a>
+### Identity
 
 Cumulocity IoT can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 

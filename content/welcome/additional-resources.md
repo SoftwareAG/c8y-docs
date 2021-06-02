@@ -24,15 +24,15 @@ On this community, you can:
 * Link to external websites that discuss open standards and web technology.
 
 
-### {{< company-portal >}} product support website
+### Product support website in the {{< company-portal >}}
 
-You can find product information on the [{{< company-portal >}} product support]({{< portal-link >}}) website.
+You can find product information on the product support website in the [{{< company-portal >}} ]({{< portal-link >}}) website.
 
 >**Info:** If you do not have an account for the {{< company-portal >}} yet, send an email to [{{< company-email >}}]({{< company-email >}}) with your name, company, and company email address and request an account.
 
 Once you have an account, you can:
 
-* Open Support Incidents online via the eService section of {< company-portal >}}.
+* Open Support Incidents online via the eService section of Empower.
 * Find further product information and product downloads.
 
 To submit feature/enhancement requests, get information about product availability, and download products, go to [Products](https://empower.softwareag.com/Products/default.aspx?).
@@ -47,6 +47,6 @@ For Cumulocity IoT Cloud shared environments, information on known issues and th
 
 ### Cumulocity IoT delta training
 
-To learn what´s new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}](https://knowledge.softwareag.com/iot_delta) which cover the new and enhanced functionality available in a specific product release:
+To learn what´s new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
 
 ![Product training](/images/about/about-product-training.png)

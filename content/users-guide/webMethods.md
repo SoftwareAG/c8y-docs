@@ -40,4 +40,4 @@ WebMethods.io also provides pre-configured workflows which are called "recipes".
 
 ![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
-More examples and technical guides can be found on the [{{< company-help >}}](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).
+More examples and technical guides can be found on the [{{< company-help >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).

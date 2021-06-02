@@ -4,9 +4,9 @@ layout: bundle
 weight: 40
 ---
 
-Product support for Cumulocity IoT is provided to licensed customers by the {{< company-support >}} team, who you can access on the {{< company-portal >}} at {{< portal-link >}}. There you will find information about how to contact us via email or phone. Some services on this site may require your {{< company-portal >}} login ID and password.
+Product support for Cumulocity IoT is provided to licensed customers by the {{< company-support >}} team, who you can access on the {{< company-portal >}} at {{< portal-link >}}. There you will find information about how to contact us via email or phone. Some services on this site may require your login ID and password.
 
-For further information on the {{< company-portal >}} product support website, see also [Additional resources](/welcome/additional-resources).
+For further information on the product support website in the {{< company-portal >}}, see also [Additional resources](/welcome/additional-resources).
 
 If you are using Cumulocity IoT on a trial basis, you can refer to our free {{< company-help >}} pages at {{< help-link >}} for information sources such as user forums and FAQs.
 

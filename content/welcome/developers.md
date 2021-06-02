@@ -56,14 +56,14 @@ Moreover, the <a href="/apama/overview-analytics/"><i>Streaming Analytics guide<
 A complete Open API Specification for the Cumulocity IoT REST API is available at https://cumulocity.com/api. The Open API Specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
-### Software AG TECHCommunity
+### {{< company-name-2 >}} {{< company-help >}}
 
-Collaborate with Cumulocity IoT community experts on our [Software AG Tech Community](https://techcommunity.softwareag.com/en_en/cumulocity-iot.html) website.
+Collaborate with Cumulocity IoT community experts on our [{{< company-name-2 >}} {{< company-help >}}]({{< help-link >}}) website.
 
 Here you can:
 
 * Browse through our vast knowledge base of tutorials, articles, code samples, tips and tricks.
 * As questions, brainstorm solutions or discuss best practices in our discussion forum
-* Get the latest Software AG news and announcements
+* Get the latest {{< company-name-2 >}} news and announcements
 
 Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).

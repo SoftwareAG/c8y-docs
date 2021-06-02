@@ -7,9 +7,9 @@ layout: redirect
 
 ### General structure
 
-Output streams contain the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
+Output streams contain the possibility to CREATE, UPDATE and DELETE data in Cumulocity IoT.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
-When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
+When creating data, Cumulocity IoT will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
 In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at the [custom fragments](/event-language/advanced-cel/#custom-fragments) section for adding custom fragments.
 
 Note:

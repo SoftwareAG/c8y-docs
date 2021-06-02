@@ -4,11 +4,11 @@ title: Support user access
 layout: redirect
 ---
 
-The support user access feature enables Cumulocity IoT platform providers (Software AG in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues.
+The support user access feature enables Cumulocity IoT platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues.
 
 To use this feature, support user access must be configured and the required support users must be created in the Management tenant, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
-> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [Software AG Global Support](/about-doc/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
+> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/about-doc/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
 
 <a name="configuring-support-access"></a>
 ### Configuring support user access

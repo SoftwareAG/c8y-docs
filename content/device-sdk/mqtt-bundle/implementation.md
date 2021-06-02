@@ -160,10 +160,7 @@ To support developers during development, it is possible to subscribe to the top
 
 >**Info:** This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
 
-### Reloading the server certificate
+### MQTT broker certificates
 
-You can change the server certificate, which is sent to the devices. To do so, please contact [product support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
-
-Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
-
->**Info:** This functionality is designed to renew or change the server certificate, when it is going to expire.
+MQTT broker uses the certificates which are assigned to the main environment domain. MQTT broker always sends these certificates during TLS handshake to devices.
+Moreover, Enterprise tenants are not able to customize MQTT broker certificates via the SSL Management feature.

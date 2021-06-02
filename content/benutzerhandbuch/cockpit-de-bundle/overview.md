@@ -47,8 +47,8 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 <td align="left">Verwenden Sie verschiedene <a href="#widgets-collection">Widget-Typen</a> aus der in Cumulocity IoT enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
 </tr>
 <tr>
-<td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Verwenden von Alarmen</a></td>
-<td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../users-guide/device-management/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
+<td align="left"><a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a></td>
+<td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
 <tr>
 <td align="left"><a href="#exports">Verwalten von Exporten</a></td>
 <td align="left">Konfigurieren Sie <a href="#exports">Exporte zum Exportieren von Daten</a> im CSV- oder Excel-Format und <a href="#schedule-export">planen Sie den Export</a>.</td>
@@ -74,7 +74,7 @@ Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
-![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Home dashboard](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 

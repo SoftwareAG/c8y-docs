@@ -8,7 +8,7 @@ layout: redirect
 
 Cumulocity IoT enthält eine Reihe von vordefinierten Smart Rules.
 
-![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
+![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules.png)
 
 Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
@@ -26,7 +26,7 @@ Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
+![On alarm send SMS](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 <table>
 <thead>
@@ -74,9 +74,9 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 >**Wichtig:** Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 
@@ -92,7 +92,7 @@ Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
+![On alarm send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 <table>
 <thead>
@@ -136,9 +136,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
@@ -152,7 +152,7 @@ Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
+![On alarm escalate](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-escalate.png)
 
 <table>
 <thead>
@@ -199,9 +199,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 ### Bei Alarmdauer Schweregrad erhöhen
@@ -214,7 +214,7 @@ Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
+![On alarm increase severity](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-severity.png)
 
 <table>
 <thead>
@@ -278,7 +278,7 @@ Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder f
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
+![On geofence create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |<table>
 <thead>
@@ -326,9 +326,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 ### Bei Geofence E-Mail senden
 
@@ -342,7 +342,7 @@ Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence send e-mail](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send e-mail](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -403,7 +403,7 @@ Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas o
 
 Die Regel verwendet die folgenden Parameter:
 
-![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
+![Calculate energy consumption](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-energy.png)
 
 <table>
 <thead>
@@ -466,7 +466,7 @@ Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein A
 
 Die Regel verwendet die folgenden Parameter:
 
-![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
+![On missing measurements create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 <table>
 <thead>
@@ -521,7 +521,7 @@ Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gese
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
+![On alarm execute operation](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <colgroup>
@@ -634,7 +634,7 @@ Durch diese Mechanismen können globale Schwellwertbereiche in der Datenpunktbib
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
+![On measurement threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 <table>
 <thead>
@@ -705,9 +705,9 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
@@ -731,7 +731,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
+![On measurement explicit threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 <table>
 <thead>
@@ -777,9 +777,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 

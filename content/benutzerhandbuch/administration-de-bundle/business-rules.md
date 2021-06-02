@@ -8,11 +8,11 @@ title: Anwenden von Geschäftsregeln
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von Cumulocity IoT automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 
->**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/users-guide/cockpit#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
+>**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
 
 Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Regeln anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
+<img src="/images/benutzerhandbuch/Administration/admin-event-processing.png" alt="Event processing">
 
 <br>Für jede Regel in der Liste wird der Status  (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
@@ -28,7 +28,7 @@ Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die An
 
 Die folgende Beispielregel erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.
 
-<img src="/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example rule" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-event-processing-sample-module.png" alt="Example rule" style="max-width: 100%">
 
 #### So bearbeiten Sie eine Regel
 
@@ -50,7 +50,7 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
 Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Beschreibung (optional) angezeigt.
 
@@ -66,7 +66,7 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Besc
 
 Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht bearbeitbar.
 
-<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### So löschen Sie eine Alarmregel
 

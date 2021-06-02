@@ -16,7 +16,8 @@ OR
 
 >**Info:** The first option is always preferable so that Cumulocity IoT Edge is reachable in LAN.
 
-#### <a name="add-alias"></a>Adding the alias
+<a name="add-alias"></a>
+#### Adding the alias
 
 On Linux machines, add the following entry to */etc/hosts*:
 

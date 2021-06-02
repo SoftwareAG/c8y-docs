@@ -20,7 +20,8 @@ These three levels differ in their scope, particularly with regards to administr
 >Refer to your contract for details on your individual subscriptions.
 >
 
-### <a name="standard-tenant"></a> Standard tenant
+<a name="standard-tenant"></a>
+### Standard tenant
 
 At the bottom of the hierarchy you can find single tenants which are represented by the concept of Standard tenants in Cumulocity IoT.
 
@@ -32,7 +33,8 @@ Standard tenants, as direct subtenants of the Management tenant, provide fully s
 
 Details on the administration of Standard tenants are described in the [Administration](/users-guide/administration/) section in the *User guide*.
 
-### <a name="enterprise-tenant"></a> Enterprise tenant
+<a name="enterprise-tenant"></a>
+### Enterprise tenant
 
 An Enterprise tenant offers additional administrative functionality compared to a Standard tenant, the major difference being **multi-tenancy**.
 
@@ -55,7 +57,8 @@ Enterprise tenants offer standardized functionality combined with some individua
 
 Details on the usage of this additional features and on the additional administration options of the Enterprise tenant can be found in the [Enterprise tenant](/users-guide/enterprise-edition/) section in the *User guide*.
 
-### <a name="management-tenant"></a> Management tenant
+<a name="management-tenant"></a>
+### Management tenant
 
 The Management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
 

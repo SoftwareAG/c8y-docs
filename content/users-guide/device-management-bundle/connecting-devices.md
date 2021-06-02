@@ -38,7 +38,8 @@ If you are subscribed to the required applications you will see a third option
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
-#### <a name="device-registration-manually"></a>To connect a  device manually
+<a name="device-registration-manually"></a>
+#### To connect a  device manually
 
 >**Info:** Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 
@@ -65,7 +66,8 @@ Click **Accept** to confirm the connection. The status of the device will change
 > **Info:** In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) or look up the manual of your device.
 
 
-#### <a name="creds-upload"></a>To bulk-register devices
+<a name="creds-upload"></a>
+#### To bulk-register devices
 
 To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 

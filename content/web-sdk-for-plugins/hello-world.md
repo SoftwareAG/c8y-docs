@@ -60,7 +60,8 @@ With the project structure so far, we can already test our application. By addin
 
 For more details on other properties of the manifest, see [Concepts > Manifests](/web-sdk-for-plugins/concepts/#manifests).
 
-### <a name="create-application"></a>Create the application in your tenant
+<a name="create-application"></a>
+### Create the application in your tenant
 
 After successfully logging in into a Cumulocity IoT UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
@@ -341,7 +342,8 @@ The build process for an app includes the following steps:
 5. Copy the application manifest.
 6. Create a zip file with the above contents.
 
-### <a name="target"></a>Deploy your plugin to the core applications
+<a name="target"></a>
+### Deploy your plugin to the core applications
 
 You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
 

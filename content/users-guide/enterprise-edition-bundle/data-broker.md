@@ -26,7 +26,8 @@ Be aware of the following limitations of the data broker:
 * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant.
 * While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity IoT tenants which run on earlier Cumulocity IoT versions than the source.
 
-### <a name="data-broker-connectors"></a> Data connectors
+<a name="data-broker-connectors"></a>
+### Data connectors
 
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
@@ -47,7 +48,8 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 
 > **Info:** If the source tenant has been suspended all its data broker connectors will be suspended as well.
 
-#### <a name="data-broker-connector-edit"></a>To add a data connector
+<a name="data-broker-connector-edit"></a>
+#### To add a data connector
 
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
@@ -157,7 +159,8 @@ For details on data broker alarms, see [Troubleshooting](#data-broker-troublesho
 For details on alarms in general, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 
-### <a name="data-broker-subscriptions"></a> Data subscriptions
+<a name="data-broker-subscriptions"></a>
+### Data subscriptions
 
 In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones.
 
@@ -184,7 +187,8 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 Click the menu icon and then click **Delete** to stop data forwarding and delete the data connector.
 
-### <a name="data-broker-troubleshooting"></a> Troubleshooting
+<a name="data-broker-troubleshooting"></a>
+### Troubleshooting
 
 If the data broker is not able to connect to a destination tenant, a CRITICAL alarm is raised, showing the connector which is affected.
 

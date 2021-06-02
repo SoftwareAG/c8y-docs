@@ -37,7 +37,8 @@ The following sections describe:
 * Which information is shown in the [Connectivity tab](#jasperinfo)
 * How to [manage connectivity](#managing) from Device Management
 
-### <a name="link-account"></a>Setting up your Jasper Control Center account
+<a name="link-account"></a>
+### Setting up your Jasper Control Center account
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from Cumulocity IoT to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity IoT.
 
@@ -59,7 +60,8 @@ To create a user in Jasper Control Center perform the following steps:
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
 
-### <a name="connectivity"></a>Configuring the connectivity for the SIM provider in Cumulocity IoT
+<a name="connectivity"></a>
+### Configuring the connectivity for the SIM provider in Cumulocity IoT
 
 Process the following step to configure the connectivity in Cumulocity IoT:
 
@@ -77,7 +79,8 @@ The configuration of the Kite provider differs from other providers as it requir
 
 The Connectivity agent is now set up.
 
-### <a name="link-sims"></a>Linking SIMs and mobile devices
+<a name="link-sims"></a>
+### Linking SIMs and mobile devices
 
 Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown,
 
@@ -102,7 +105,8 @@ If the ICCID is not shown automatically check the following:
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
 
-### <a name="jasperinfo"></a>Connectivity tab
+<a name="jasperinfo"></a>
+### Connectivity tab
 
 In the **Connectivity** tab you will find the following sections:
 
@@ -149,7 +153,8 @@ The **Audit logs** section lists all changes to the SIM card and its tariff. It 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
 
-### <a name="managing"></a>Checking connectivity
+<a name="managing"></a>
+### Checking connectivity
 
 If you suspect that a device is not correctly reporting to Cumulocity IoT, or it is not receiving commands, you can verify the connectivity status of the device.
 

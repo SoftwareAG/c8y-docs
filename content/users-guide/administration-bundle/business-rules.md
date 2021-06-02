@@ -18,7 +18,8 @@ Click **Event processing** in the **Business rules** menu to view all rules.
 
 If the status of a rule is set to **Deployed**, you will see the output produced by the statement below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 
-#### <a name="add-rule"></a>To add a rule
+<a name="add-rule"></a>
+#### To add a rule
 
 1. Click **New rule** in the top menu bar.
 2. Enter a name for the rule at the very top. You may only use alphanumeric characters without blanks.
@@ -44,7 +45,8 @@ Click the menu icon at the right of the respective row and then click **Delete**
 Instead of deleting the rule you can also disable it temporarily by setting its status to "Not deployed".
 
 
-### <a name="reprio-alarms"></a>Alarm mapping
+<a name="reprio-alarms"></a>
+### Alarm mapping
 
 Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL.
 
@@ -54,7 +56,8 @@ Click **Alarm mapping** in the **Business Rules** menu to see a list of all alar
 
 For each alarm mapping, the alarm severity, the alarm type and a new description (optional) is shown.
 
-#### <a name="add-alarm-mapping"></a> To add alarm mapping
+<a name="add-alarm-mapping"></a>
+#### To add alarm mapping
 
 1. Click **Add alarm mapping** in the top menu bar.
 2. Enter the alarm type to be modified.

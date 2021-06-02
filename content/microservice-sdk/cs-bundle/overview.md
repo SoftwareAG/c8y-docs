@@ -27,7 +27,8 @@ To migrate your current version (e.g. 9.20.0 or 1004.12.0) to a new one of the S
 
 For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v3.1/), and it is recommended to use [Cumulocity.SDK.Microservices v1006.6.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1006.6.0) based on .Net Core 3.1.
 
-### <a name="general-prerequisites"></a> Development prerequisites
+<a name="general-prerequisites"></a>
+### Development prerequisites
 
 To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 

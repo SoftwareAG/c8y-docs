@@ -36,7 +36,8 @@ To define an offloading configuration, click **Offload collection** to start a w
 
 The wizard prepopulates settings for the different steps to ease the configuration process. You can modify those settings according to your needs.
 
-##### <a name="select-collection"></a>Select collection
+<a name="select-collection"></a>
+##### Select collection
 
 In the dropdown box select one of the Cumulocity IoT base collections, which are:
 
@@ -51,7 +52,8 @@ Later in this section you will find a summary of the default attributes being of
 
 <img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task" style="max-width: 100%">
 
-##### <a name="configure-target-table"></a>Configure target table
+<a name="configure-target-table"></a>
+##### Configure target table
 
 Once you have selected a collection for offloading, you have to specify the target table in the data lake. The **Target table name** denotes the folder name in the data lake. In this folder the offloaded data is stored. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder and thus the offloaded data. The target table name must follow these syntax rules:
 
@@ -70,7 +72,8 @@ The layout **One table for one measurement type (Default)** will create a table 
 
 The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
-##### <a name="set-addtl-cols"></a>Set additional result columns
+<a name="set-addtl-cols"></a>
+##### Set additional result columns
 
 Optionally you can define additional result columns, except for the TrendMiner case, which does not support this option. For each base collection, the associated default set of data fields is extracted. If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your DataHub queries, then you can include them as additional result columns. In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For example, if you feed in measurements with the additional fields "myCustomField1" and "myCustomField2", you just need to enter "myCustomField1, myCustomField2" into the input field to add both fields to the offloading configuration. If you only want to offload "myCustomField2", just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. "BTRIM(myCustomField1, '~')" to trim leading and trailing '~' from the text in field "myCustomField1".
 
@@ -78,7 +81,8 @@ If you want to derive additional columns from nested content, you can specify th
 
 When defining additional columns, you can click **Validate** to validate them. If the validation fails, you will get an error description. For example, if you specify a non-existing "UnknownColumn" as an additional result column, you get an error message like *Column "UnknownColumn" not found in any table*. You should fix these errors as otherwise the offloading execution will fail. If the underlying collection is empty and no schema information is available, the validation step cannot be executed due to lack of data.
 
-##### <a name="set-filter-predicate"></a>Set filter predicate
+<a name="set-filter-predicate"></a>
+##### Set filter predicate
 
 Optionally you can define an additional filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be "status='ACTIVE' AND severity='WARNING'" to only persist active alarms with severity warning. The filter predicate functionality supports complex SQL statements, i.e., a combination of AND/OR, clauses like "IN(...)" / "NOT IN(...)", and functions, e.g. "REGEXP_LIKE(text, 'MyText\S+')".
 
@@ -86,13 +90,15 @@ In the filter predicate you can query all standard attributes of the base collec
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You should fix these errors as otherwise the offloading execution will fail. If the underlying collection is empty and no schema information is available, the validation step cannot be executed.
 
-##### <a name="configure-task"></a>Configure task
+<a name="configure-task"></a>
+##### Configure task
 
 The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It has to have at minimum one non-whitespace character. Even though the task name does not have to be unique, it is advisable to use a unique name.
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but we recommend you to use it, as it provides additional information about the pipeline and its purpose.
 
-##### <a name="finish"></a>Finish configuration
+<a name="finish"></a>
+##### Finish configuration
 
 The final step provides a summary of your settings as well as a result preview. The summary includes the settings from the previous steps as well as the internal UUID of this configuration. The UUID is generated by the system and cannot be modified. With the UUID you can distinguish configurations having the same task name, e.g., when browsing the audit log or the offloading status. In the summary, you also get the schedule with which the offloading pipeline will be executed once it is started, e.g., "every hour at minute 6". The schedule cannot be modified. With the **Inactive**/**Active** toggle at the end of the summary you choose whether the periodic offloading execution should be activated upon save or not.  
 

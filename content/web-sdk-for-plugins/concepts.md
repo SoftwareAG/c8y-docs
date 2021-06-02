@@ -64,9 +64,11 @@ If you only want to create a plugin and [add it to an already existing applicati
 
 Create an explicit root folder for your project. The Web SDK assumes that the parent folder of the root folder is readable by your operating system user.
 
-### <a name="manifests"></a>Manifests
+<a name="manifests"></a>
+### Manifests
 
-#### <a name="application-manifest"></a>Application manifest
+<a name="application-manifest"></a>
+#### Application manifest
 
 The application manifest describes where your application is stored and how it is exposed to Cumulocity IoT.
 
@@ -86,7 +88,8 @@ The following properties are available:
 
 > **Info**: The properties "contextPath" and "key" need to be unique. For "PRIVATE" applications, the properties "name" and "contextPath" need to be unique within your tenant only.
 
-#### <a name="plugin-manifest"></a>Plugin manifest
+<a name="plugin-manifest"></a>
+#### Plugin manifest
 
 The plugin manifest describes how your plugin is shown in the Cumulocity IoT Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 

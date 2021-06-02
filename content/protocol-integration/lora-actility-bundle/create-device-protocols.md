@@ -15,7 +15,8 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
-### <a name="import-device-type"></a>Importing a predefined device protocol
+<a name="import-device-type"></a>
+### Importing a predefined device protocol
 
 In the **Device protocols** page, click **Import**.
 
@@ -25,7 +26,8 @@ Select the predefined device type, for example "LoRaWAN Demonstrator" or upload 
 
 Alternatively, you may also load the device protocol from a file and import it.
 
-### <a name="create-new-device-type"></a>Creating a new device protocol
+<a name="create-new-device-type"></a>
+### Creating a new device protocol
 
 In the **Device protocols** page, click **New device protocol** in the top menu bar. The following window will open:
 
@@ -123,7 +125,8 @@ The following image shows an example for a message which sends a measurement whe
 <br><br>
 ![Battery level changes example](/images/device-protocols/lora-actility/lora-protocols-battery2.png)
 
-#### <a name="nested-structure-example"></a>Example with nested structure
+<a name="nested-structure-example"></a>
+#### Example with nested structure
 
 The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude.
 

@@ -18,4 +18,4 @@ To access the documentation index, click the arrow icon in the selection field b
 
 ![Select guide](/images/about/about-docs-selection.png)
 
->**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-portal >}}]({{< documentation-link >}}), see [Additional resources](/welcome/additional-resources/).
+>**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}), see [Additional resources](/welcome/additional-resources/).

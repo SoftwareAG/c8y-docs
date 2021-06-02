@@ -6,11 +6,11 @@ aliases:
   - /about-doc/online-information
 ---
 
-### Installation and operations documentation on {{< company-portal >}}
+### Installation and operations documentation on the {{< company-name-2 >}} {{< company-portal >}}
 
-The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
+The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
-![Documentation on Empower](/images/about/about-empower.png)
+![Documentation on {{< company-portal >}}](/images/about/about-empower.png)
 
 
 ### {{< company-name-2 >}} {{< company-help >}}
@@ -24,15 +24,15 @@ On this community, you can:
 * Link to external websites that discuss open standards and web technology.
 
 
-### Product support website in the {{< company-portal >}}
+### Product support website in the {{< company-name-2 >}} {{< company-portal >}}
 
-You can find product information on the product support website in the [{{< company-portal >}} ]({{< portal-link >}}) website.
+You can find product information on the product support website in the [{{< company-name-2 >}} {{< company-portal >}} ]({{< portal-link >}}) website.
 
 >**Info:** If you do not have an account for the {{< company-portal >}} yet, send an email to [{{< company-email >}}]({{< company-email >}}) with your name, company, and company email address and request an account.
 
 Once you have an account, you can:
 
-* Open Support Incidents online via the eService section of Empower.
+* Open Support Incidents online via the eService section in the {{< company-portal >}}.
 * Find further product information and product downloads.
 
 To submit feature/enhancement requests, get information about product availability, and download products, go to [Products](https://empower.softwareag.com/Products/default.aspx?).
@@ -43,7 +43,7 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 ### Cumulocity IoT status page
 
-For Cumulocity IoT Cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
+For {{< company-cloud-1>}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
 
 ### Cumulocity IoT delta training
 

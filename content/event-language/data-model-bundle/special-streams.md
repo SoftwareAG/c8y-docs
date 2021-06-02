@@ -4,7 +4,7 @@ title: Special streams
 layout: redirect
 ---
 
-The streams mentioned in this section do not interact with the Cumulocity database but will create calls to external services.
+The streams mentioned in this section do not interact with the Cumulocity IoT database but will create calls to external services.
 
 ### SendMail
 
@@ -41,7 +41,7 @@ Example:
 |deviceId|String|The ID of the device generating the sms. A log event will be created for the device|no|
 
 It is possible to have more than one phone number in the parameter receiver. Therefore create a string that contains all phone numbers separated by commas e.g. "+49123456789,+49987654321".
-Although it is technically not required by Cumulocity to have the country code we recommend you to use it because the sms gateway might require it. You can use the notation like e.g. "0049" or "+49" (for Germany).
+Although it is technically not required by Cumulocity IoT to have the country code we recommend you to use it because the sms gateway might require it. You can use the notation like e.g. "0049" or "+49" (for Germany).
 
 _Note:_
 
@@ -58,7 +58,7 @@ Example:
 
 ### SendPush
 
-This stream enables the possibility to send push notifications from Cumulocity via the Telekom push service to mobile applications.
+This stream enables the possibility to send push notifications from Cumulocity IoT via the Telekom push service to mobile applications.
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
@@ -81,7 +81,7 @@ Example:
 
 ### SendRequest
 
-This stream enables the possibility to send HTTP requests from Cumulocity to external systems.
+This stream enables the possibility to send HTTP requests from Cumulocity IoT to external systems.
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|

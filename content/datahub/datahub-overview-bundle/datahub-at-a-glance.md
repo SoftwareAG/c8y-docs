@@ -16,7 +16,7 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications))
 
-* Other Software AG products like TrendMiner or Cumulocity IoT Machine Learning Workbench
+* Other {{< company-name-2 >}} products like TrendMiner or Cumulocity IoT Machine Learning Workbench
 
 The main features of the Cumulocity IoT DataHub application are:
 

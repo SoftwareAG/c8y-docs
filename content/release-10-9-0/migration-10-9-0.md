@@ -6,6 +6,14 @@ layout: bundle
 
 ### Announcements
 
+#### Link in schedule export email
+
+The template for emails, which are sent out when exporting reports, contains a placeholder for {tenant-domain}. In emails, the fully qualified domain name, for example "demo.cumulocity.com", was used without specification of the protocol. Since the prefix "https://" was missing in the email users couldn’t just klick on a link to open the report.
+
+In 10.9 GA release, the prefix has been added, i.e. the email now contains the proper link starting with "https", for example "https://demo.cumulocity.com".
+
+In case users added the prefix as a workaround manually in the template, they now need to revert this workaround.
+
 #### Removal of Basic Auth browser-based authentication
 
 With the 10.5 GA release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
@@ -138,7 +146,7 @@ This migration is a one-time step that needs to be performed manually.
 
 #### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
 
-As of Apama 10.7.0 (that is, the standalone product, not the Apama-ctrl microservice that is included in Cumulocity IoT), 
+As of Apama 10.7.0 (that is, the standalone product, not the Apama-ctrl microservice that is included in Cumulocity IoT),
 the names of the Cumulocity IoT bundles that you can add using Software AG Designer no longer include a version number.
 These are the following bundles:
 - Cumulocity Client
@@ -157,31 +165,25 @@ See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Ro
 
 #### Cumulocity IoT transport in Apama
 
-Generic requests that are sent using the Cumulocity IoT transport now return the response body with exactly what is returned from Cumulocity IoT. 
-In previous versions, this was put into a dictionary with an empty key. So if you have existing code such as the following
-
+The contents of the `com.apama.cumulocity.GenericResponse` event have changed. You are recommended to change EPL apps which use the `body` field in the following ways
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
-
-You have to replace this with:
-
+or:
 ```
 AnyExtractor dict := AnyExtractor(response.body);
 ```
-
-Alternatively, you can change your code to the following form in advance of the upgrade, since it works with both versions:
+to:
 
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
 ```
-
-See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+which is compatible with both current and previous versions of the `GenericResponse` API.
 
 #### Cumulocity API in Apama
 
-The `withResponse` action is now deprecated for all of the predefined types 
-(`ManagedObject`, `Alarm`, `Event`, `Measurement`, `MeasurementFragment` and `Operation`) and will be removed in a future release. 
+The `withResponse` action is now deprecated for all of the predefined types
+(`ManagedObject`, `Alarm`, `Event`, `Measurement`, `MeasurementFragment` and `Operation`) and will be removed in a future release.
 
 It is recommended that you now use the new `withChannelResponse` action for the predefined types.
 This allows your application to receive a response on the `<type>.SUBSCRIBE_CHANNEL` channel when one of these object types is created or updated.
@@ -197,7 +199,7 @@ See the following topics in the Apama documentation for more information:
 
 #### Removed items in Apama EPL
 
-Several minor features which have been deprecated over the past few years have been removed from Apama EPL. 
+Several minor features which have been deprecated over the past few years have been removed from Apama EPL.
 The following table lists the removed items that are relevant for Cumulocity IoT and their recommended replacements.
 
 | Removed item          | Replacement       |

@@ -23,7 +23,8 @@ In the **Passwords** section, you can specify password settings like default str
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 
-### <a name="config-support-users"></a> Support user
+<a name="config-support-users"></a>
+### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
@@ -43,7 +44,8 @@ The expiry date-time will be updated based on the duration specified in the **Va
 
 Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
-#### <a name="configuring-support-users"></a>Configuring a support user
+<a name="configuring-support-users"></a>
+#### Configuring a support user
 
 A support user is a user in the Management tenant with specific permissions. This user can log in to the target tenant and impersonate the target user.
 

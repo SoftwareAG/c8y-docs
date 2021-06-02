@@ -14,7 +14,8 @@ We recommend you to follow these steps:
 
 If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagnostics](#diagnostics) section on details how to run it.
 
-### <a name="health-check"></a>Health check
+<a name="health-check"></a>
+### Health check
 
 #### Network
 
@@ -213,7 +214,8 @@ Run the following command to check the REST API availability:
 
 This example shows the correct response of the platform. The username and password need to have full read access to the management tenant. The &#60;base_url> needs to be given to connect to the correct platform and the management tenant must not be blocked from outside.  
 
-### <a name="monitoring"></a>Monitoring
+<a name="monitoring"></a>
+### Monitoring
 
 Monit is a small open-source utility for managing and monitoring Unix systems. It conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.
 
@@ -243,7 +245,8 @@ Monit can be restarted by running:
 
 The log file for monit is located in /var/log/monit.log.
 
-### <a name="log-files"></a>Log files
+<a name="log-files"></a>
+### Log files
 
 #### Log level locations
 
@@ -355,7 +358,8 @@ Adjust the log levels by changing the level attribute according to the following
 
 Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.
 
-### <a name="diagnostics"></a>Diagnostics
+<a name="diagnostics"></a>
+### Diagnostics
 
 The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.
 

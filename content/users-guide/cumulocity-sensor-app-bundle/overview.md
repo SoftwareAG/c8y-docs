@@ -9,7 +9,7 @@ aliases:
 
 The Cumulocity IoT Sensor App is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.
 
-The app is designed to collect measurements from your smartphone and nearby Bluetooth device sensors and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
 
 If you are using the Cumulocity IoT free trial available via Software AG Cloud, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
 
@@ -23,6 +23,7 @@ Supported smartphone sensors include:
 *   Magnetometer and compass
 *   GPS location 
 *   Microphone and voice
+*   WiFi strength (selected Android devices only)
 
 > **Info:** The app only works with sensors supported by your smartphone's hardware which provide official APIs. Depending on platform support, additional sensors may be added in future releases.
 
@@ -33,6 +34,11 @@ The latest list of supported Bluetooth devices is provided in the app. A button 
 *   Cinco Scale
 *   CirrusSense Pressure Sensor
 
-Additional devices will be supported in the future and made available in the app.
+More devices will be supported in the future and made available in the app.
 
 > **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to Cumulocity IoT in real time.
+
+Reading vehicle sensors comes with the use of an additional OBD dongle, which exposes the vehicles sensors to the phone via WiFi or Bluetooth (Note: iOS is WiFi only). There are two supported diagnostic connectors, both based on the ELM327 microcontroller:
+
+*	Kungfuren OBD2 Diagnostic Device Bluetooth 4.0 Adapter
+*	Kungfuren OBD2 Reader WiFi Adapter

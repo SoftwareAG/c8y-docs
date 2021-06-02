@@ -12,7 +12,8 @@ Click **Enterprise tenant** in the **Settings** menu to access these settings.
 
 ![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
 
-### <a name="configuration"></a>Configuration
+<a name="configuration"></a>
+### Configuration
 
 >**Info:** In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
 
@@ -90,7 +91,8 @@ Click **Save configuration** at the bottom to save your settings.
 
 > **Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 
-### <a name="branding"></a>Branding
+<a name="branding"></a>
+### Branding
 
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
@@ -110,7 +112,8 @@ Saving the settings will not yet apply them to the current tenant and respective
 
 Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
-#### <a name="configuration-parameters"></a>Configuration parameters
+<a name="configuration-parameters"></a>
+#### Configuration parameters
 
 In the Configuration section, the following branding parameters can be configured.
 
@@ -188,7 +191,8 @@ The following parameters can be specified:
 * Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
 * Link to privacy policy - A link to the page with the privacy policy.
 
-### <a name="domain-name"></a>Domain name
+<a name="domain-name"></a>
+### Domain name
 
 A key feature of the Enterprise tenant is the ability to operate the Cumulocity IoT platform using a custom domain name. This
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants

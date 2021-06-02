@@ -191,7 +191,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
-#### <a name="java-example"></a>Create a Java application
+<a name="java-example"></a>
+#### Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -282,7 +283,7 @@ In the Administration application, navigate to **Applications** > **Own applicat
 
 ![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
 
-Upload the ZIP file of your microservice application and click **Subscribe** for your tenant to be to subscribed to the microservice afterwards.
+Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
 ![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
@@ -316,7 +317,8 @@ and your authorization header would look like `"Authorization": "Basic dDAwNzEyM
 $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-### <a name="run-locally"></a> Running the microservice locally
+<a name="run-locally"></a>
+### Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity IoT.
 

@@ -70,7 +70,8 @@ For your convenience find an overview on the content of this document below.
 
 If you want to learn more about general aspects of the Cumulocity IoT platform and its applications, refer to [Getting Started](/users-guide/overview).
 
-### <a name="home"></a>Home dashboard
+<a name="home"></a>
+### Home dashboard
 
 The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 

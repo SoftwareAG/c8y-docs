@@ -102,7 +102,8 @@ The machine will automatically be added to the VirtualBox Manager. The machine h
 
 Click **Start** to start the virtual machine.
 
-### <a name="port-forwarding"></a>Setting up port forwarding
+<a name="port-forwarding"></a>
+### Setting up port forwarding
 
 To setup port forwarding, follow the steps below:
 

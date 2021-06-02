@@ -4,7 +4,8 @@ title: Troubleshooting
 layout: redirect
 ---
 
-### <a name="lora-connectivity-troubleshooting"></a> Connectivity
+<a name="lora-connectivity-troubleshooting"></a>
+### Connectivity
 
 #### Authorization to the provider´s platform failed
 
@@ -14,7 +15,8 @@ This warning message shows up if a provided profile ID, username or password is 
 <br>
 To resolve this, provide correct credentials and try again.
 
-### <a name="lora-device-registration-troubleshooting"></a> Device registration
+<a name="lora-device-registration-troubleshooting"></a>
+### Device registration
 
 #### Access to device denied
 

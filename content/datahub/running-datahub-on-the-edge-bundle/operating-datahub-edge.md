@@ -18,7 +18,8 @@ If problems occur, you should follow these steps:
 
 If you still need to contact [product support](/about-doc/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/operation/#diagnostics) for details of how to run it.
 
-#### <a name="health-check"></a>Health check
+<a name="health-check"></a>
+#### Health check
 
 ##### Check DataHub Edge backend status
 
@@ -49,7 +50,8 @@ curl http://datahub.edge_domain_name/apiv2/server_status
 ```
 Dremio is running if *OK* is returned. No response will be returned if it is not running or inaccessible.
 
-#### <a name="log-files"></a>Log files
+<a name="log-files"></a>
+#### Log files
 
 The installation log file is stored at */var/log/cdh*.
 
@@ -67,7 +69,8 @@ docker logs -f cdh-executor
 
 The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB.
 
-#### <a name="monitoring"></a>Monitoring
+<a name="monitoring"></a>
+#### Monitoring
 Cumulocity IoT Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring

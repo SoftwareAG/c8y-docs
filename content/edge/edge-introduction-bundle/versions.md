@@ -4,7 +4,7 @@ title: Versions
 layout: redirect
 ---
 
-Cumulocity IoT Edge “April 2020 release” uses the following versions:
+Cumulocity IoT Edge “April 2021 release” uses the following versions:
 
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|

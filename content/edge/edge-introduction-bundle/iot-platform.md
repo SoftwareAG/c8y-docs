@@ -1,20 +1,14 @@
 ---
 weight: 40
-title: IoT platform
+title: Cumulocity IoT Edge funtionalities
 layout: redirect
 ---
 
-Cumulocity IoT Edge comes with three built-in applications - Device Management, Cockpit and Application. 
+Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumulocity IoT platform version, the included applications are the same in both versions, with minor restrictions. 
 
-Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumulocity IoT Core version, the above applications are the same in both versions, with minor restrictions. 
+For general information about functionalities and features of Cumulocity IoT platform, see [Cumulocity IoT platform](/welcome/intro-documentation/).
 
-Below find an overview on the functionalities of these applications in Cumulocity IoT Edge. 
-
-[DataHub Edge](/datahub/running-datahub-on-the-edge/) is an optional component of Cumulocity IoT Edge, which can be used for storage and analytics over historical data.
-
-For general information on functionalities and features of the GUI refer to [GUI functionalities and features](/users-guide/getting-started/#gui-features).
-
-For information on how to change the user settings of your account refer to [User settings](/users-guide/getting-started/#user-settings).
+Below you can find the links to the most common functionalities of Cumulocity IoT.
 
 ### Device Management
 
@@ -59,6 +53,7 @@ The following functionalities are available in Cumulocity IoT Edge and described
 
 |SECTION|CONTENT|
 |:---|:---|
+|[Configuring Cumulocity IoT Edge](/edge/configuration/)|Providing information on Edge specific configuration options
 |[Home Screen](/users-guide/administration#home-screen)|Providing information on your [capacity usage and subscribed applications](/users-guide/administration#home-screen).
 |[Managing Users](/users-guide/administration#managing-users)|How to [create users](/users-guide/administration#creating-users), edit, disable or delete them.
 |[Managing Permissions](/users-guide/administration#managing-permissions)|How to create and edit [global roles](/users-guide/administration#global) and [inventory roles](/users-guide/administration#inventory), how to assign them to users, and how to [grant application access](/users-guide/administration#app-access).

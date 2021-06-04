@@ -5,4 +5,4 @@ layout: bundle
 slug: introduction
 ---
 
-This document describes conceptual aspects of Cumulocity IoT Edge, the local version of Cumulocity IoT Core.
+This document describes conceptual aspects of Cumulocity IoT Edge, the single-server variant of the Cumulocity IoT platform.

@@ -27,6 +27,8 @@ To install Cumulocity IoT Edge using the GUI:
 
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
+	>**Important:** Do not use the root credentials to perform any task except during the migration.
+
 8. Create an administrator account to access the Cumulocity IoT Edge tenant and the Cumulocity IoT Edge Management tenant,and click **Next**.
 
 9. Provide a fully qualified domain name below **Register domain**.

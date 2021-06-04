@@ -2,6 +2,8 @@
 title: Contacting product support
 layout: bundle
 weight: 40
+aliases:
+  - /about-doc/contacting-support
 ---
 
 Product support for Cumulocity IoT is provided to licensed customers by the {{< company-support >}} team, who you can access on the {{< company-name-2 >}} {{< company-portal >}} at {{< portal-link >}}. There you will find information about how to contact us via email or phone. Some services on this site may require credentials.

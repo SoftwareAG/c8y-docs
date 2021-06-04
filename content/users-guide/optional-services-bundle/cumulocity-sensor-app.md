@@ -7,11 +7,10 @@ layout: redirect
 ### Overview
 
 The Cumulocity IoT Sensor App is a free smartphone application available for iOS and Android smartphones and the successor of the Cloud Sensor App.
-It is designed to collect measurements from your smartphone and nearby Bluetooth device sensors and send them to the Cumulocity IoT Platform.
-It is the easiest way to get data into Cumulocity IoT, and it has a straightforward registration workflow to get you up and running quickly.
-It is ideal to use the app during the Cumulocity IoT free trial available via Software AG Cloud, and therefore an aid for learning the platform.
-The Cumulocity IoT Sensor App provides an easy way to connect devices and sensors.
-Capturing data from Bluetooth devices with Cumulocity IoT may save a lot of implementation effort.
+
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
+
+If you are using the Cumulocity IoT free trial available via Software AG Cloud, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
 
 Besides sending data to the platform, the Cumulocity IoT Sensor App can also send commands to the smartphone directly from the phone dashboard.
 Commands currently available in the dashboard include alert messages and vibration.
@@ -24,6 +23,7 @@ Supported smartphone sensors include:
 *   Magnetometer and compass
 *   GPS location 
 *   Microphone and voice
+*   WiFi strength (selected Android devices only)
 
 > **Info:** The application only works with sensors supported by your smartphone's hardware which provides official APIs. Depending on platform support, additional sensors may be added in future releases.
 
@@ -36,7 +36,7 @@ At the time of writing, the application supports the following devices:
 *   Cinco Scale
 *   CirrusSense Pressure Sensor
 
-Additional devices will be supported and made available within the application.
+More devices will be supported in the future and made available within the application.
 
 > **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to Cumulocity IoT in real time.
 
@@ -107,7 +107,7 @@ After that you can connect to the same or any other Cumulocity IoT instance or t
 
 ### Sending sensor data to Cumulocity IoT
 
-Measurements from your smartphone and connected Bluetooth sensors will be sent to Cumulocity IoT automatically when you're connected.
+Measurements from your smartphone, OBD devices and connected Bluetooth sensors will be sent to Cumulocity IoT automatically when you're connected.
 This happens automatically as soon the device is connected or started and as long as the app is in foreground.
 All measurements of the smartphone sensors will be displayed automatically in the device dashboard in Cumulocity IoT.
 
@@ -119,13 +119,14 @@ If your smartphone has a gyroscope sensor, a 3D rotation widget will depict the 
 The application will send sensor data to Cumulocity IoT at regular intervals.
 By default, this will be every 2 seconds.
 This interval can be configured from the application itself for the accelerometer, location, and other sensors.
+
 Tap the 3 vertical dots on a sensor's card, then **Edit** or drag the page up from the bottom to reveal additional settings.
 
 Every time a measurement is sent to Cumulocity IoT the Pulse indicator in front of the device name will animate.
 
 Using device details, it is also possible to disable sending measurements for the device.
 The sensor measurements will still be displayed, but not sent to Cumulocity IoT.
-When disabled, the Pulse indicator will be shown with a line drawn through it.
+When disabled, the Pulse indicator is shown as "striked through".
 
 ### Viewing sensor data
 
@@ -169,6 +170,30 @@ Bring the device close to your smartphone, 30cm or less is ideal.
 When the Bluetooth device appears in the list, tap **Pair Device** to start pairing.
 The Bluetooth device will then be connected to your smartphone and start sending data to Cumulocity IoT if you are currently connected.
 
+### Connecting new OBD devices to the Sensor App
+
+Connections to OBD devices work in a slightly different way then normal Bluetooth sensors. They must be connected to the phone directly before the device can be added to the Sensor App.
+
+
+In case of WiFi based OBD devices, the procedure is as follows:
+
+
+* Plug the OBD dongle into the vehicle's diagnostic port. Ensure that the power LED is illuminated.
+* On the phone, navigate to the WiFi settings in the Settings application.
+* Search for new networks, and join the "WiFi_OBDII" network (or other name as specified in the device's documentation), to pair directly with the dongle.
+* If a password is required to do this, refer to your device's documentation.
+* Once the device is connected, return to the Sensor App, and click the plus ("+") button in the bottom right of the screen.
+* The OBD device should then become available in the list of available devices and can be added as any other Bluetooth sensor.
+
+For Bluetooth-based OBD devices, the device must be paired to the phone before the Sensor App will recognize it:
+
+* Plug the OBD dongle into the vehicle's diagnostic port. Ensure that the power LED is illuminated.
+* On the phone, navigate to the WiFi settings in the Settings application.
+* Scan for new Bluetooth devices and connect to the device named "ODBII" (or other name as specified in the device's documentation).
+* The pairing process will ask for a PIN, consult your device's documentation to find this value.
+* Once the device is connected, return to the Sensor App, and click the plus ("+") button in the bottom right of the screen.
+* The OBD device should then become available in the list of available devices and can be added as any other Bluetooth sensor.
+
 ### Configuring, disabling or removing devices
 
 If you wish to make changes to the smartphone's or a connected Bluetooth device's settings, simply tap the 3 dots at the top right of the card for that device.
@@ -185,6 +210,45 @@ Tapping **Disable** will still allow the smartphone to monitor measurements from
 Tapping **Edit**, or swiping upwards, will reveal further settings that allow you to adjust various properties about this sensor, such as its name and update intervals.
 
 > **Info:** Smaller update intervals will give better response times and more complete measurement data, but will also lead to higher power usage.
+
+### Adjusting sensor properties
+
+When editing sensor properties, it is possible to change the following settings:
+
+
+* The interval in seconds between measurements sent to Cumulocity IoT.
+* The minimum and maximum thresholds for data values to be sent.
+* The size and number of simulated peak values to be sent.
+
+The update interval determines how often the sensor is queried by the phone, as well as how often data is sent to Cumulocity IoT. Altering the value here will also affect the speed at which charts are redrawn in the application. The minimum value for the update interval is 0.1 seconds. Note that at shorter update intervals, both the sensor device and the phone itself will consume more power.
+
+Minimum and maximum thresholds affect the handling of the incoming data. By default, both the minimum and maximum values are infinite - that is, any recorded value from the sensor will be sent directly to Cumulocity IoT. You can drag the slider to adjust these values, or type new values directly into the text boxes at each end of the slider. To change the slider between adjusting minimum and maximum values on iOS, tap in the text box on the respective side. Although there is a recommended range for sensor measurements, it is possible to type values outside of this range if desired.
+
+To return to unlimited values, simply drag the slider all the way to the end of the range again.
+
+With non-infinite minimum or maximum threshold values configured, measurements sent to Cumulocity IoT will be capped to the minimum and maximum threshold values. No measurement values outside the threshold will be sent to Cumulocity IoT.
+
+Simulated peaks can be useful for sending data values outside of the expected range on demand. These can be used for testing rules, alarms and other such functionality in a controlled and repeatable manner. The application allows you to specify the peak value to be used, as well as the number of times the sensor will be simulated at that value.
+
+![Sensor properties](/images/users-guide/csa/csa-sensor-properties.png)
+
+### Simulating peaks and sending alarms and events
+
+![Sensor buttons](/images/users-guide/csa/csa-sensor-buttons.png)
+
+In order to simulate peak values, tap the 3rd button on the card for that sensor. The application will ask if you wish to start simulating peak values. Select **Simulate** to begin. If the phone is connected to Cumulocity IoT, then it will send these values to the platform instead of the measurements coming from the selected sensor.
+
+Sending alarms and events requires the phone to be connected to Cumulocity IoT. If the device is not connected, the icons are greyed out. Tap the bell icon to send an alarm.
+
+![Alarm dialog](/images/users-guide/csa/csa-alarm-dialog.png)
+
+This will open a dialog in which you can select the alarm text, its type, and its severity. Tap **Create** to generate the alarm and send it to the Cumulocity IoT platform.
+
+To generate an event, tap the 2nd button on the card for that sensor.
+
+![Event dialog](/images/users-guide/csa/csa-event-dialog.png)
+
+This will open a dialog where the user can set the event text and type. Tap **Create** to generate the event and send it to Cumulocity IoT platform.
 
 ### Device control
 

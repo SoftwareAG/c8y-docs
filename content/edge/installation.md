@@ -1,7 +1,7 @@
 ---
-weight: 30
-title: Setting up Cumulocity IoT Edge
+weight: 25
+title: Installing Cumulocity IoT Edge
 layout: bundle
 ---
 
-This document describes how to set up Cumulocity IoT Edge, the local version of Cumulocity IoT Core, in a Virtual Machine (VM).
+This section describes how to install Cumulocity IoT Edge.

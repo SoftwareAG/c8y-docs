@@ -57,4 +57,4 @@ Visit the {{< documentation-link >}} where you can find helpful eLearning materi
 
 ### Additional resources
 
-For more information and resources, see also [Additional resources](/about-doc/additional-resources).
+For more information and resources, see also [Additional resources](/welcome/additional-resources/).

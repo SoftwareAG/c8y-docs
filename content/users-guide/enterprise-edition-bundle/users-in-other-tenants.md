@@ -8,7 +8,7 @@ The support user access feature enables Cumulocity IoT platform providers ({{< c
 
 To use this feature, support user access must be configured and the required support users must be created in the Management tenant, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
-> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/about-doc/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
+> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/welcome/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
 
 <a name="configuring-support-access"></a>
 ### Configuring support user access
@@ -27,7 +27,7 @@ If deactivated globally, support user access can still be enabled by a subtenant
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
-> **Info:** If you don’t see either the **Enable support** or **Disable support** button in the **User** menu, support user access has been activated globally. Contact [product support](/about-doc/contacting-support/) for more details.
+> **Info:** If you don’t see either the **Enable support** or **Disable support** button in the **User** menu, support user access has been activated globally. Contact [product support](/welcome/contacting-support/) for more details.
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 

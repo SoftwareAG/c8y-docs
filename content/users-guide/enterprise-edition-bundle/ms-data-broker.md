@@ -6,7 +6,7 @@ layout: redirect
 
 The microservice-based data broker is powered by the Cumulocity IoT Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
-> **Important:** At this time the Cumulocity IoT Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all Cumulocity IoT public cloud environments. Please contact [product support](/about-doc/contacting-support/) to inquire about using these capabilities in your Cumulocity IoT environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
+> **Important:** At this time the Cumulocity IoT Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all Cumulocity IoT public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your Cumulocity IoT environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
 
 ### <a name="enabling-ms-data-broker"></a> To enable the microservice-based data broker
 

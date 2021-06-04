@@ -53,7 +53,7 @@ If you are looking for more detailed information on device integration using sup
 
 Visit the [{{< learning-portal >}}]({{< learning-portal-link >}}) where you can find helpful eLearning material to get started:
 
-[*Cumulocity IoT Basic*](https://knowledge.softwareag.com/enrol/index.php?id=1480) is a self-paced training which provides a jump-start into the Cumulocity IoT platform offering in the {{< company-cloud >}}. Short videos followed by hands-on labs on your free trial Cumulocity IoT tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the Cumulocity IoT platform.
+[*Cumulocity IoT Basic*](https://knowledge.softwareag.com/enrol/index.php?id=1480) is a self-paced training which provides a jump-start into the Cumulocity IoT platform offering in the {{< company-cloud >}}s. Short videos followed by hands-on labs on your free trial Cumulocity IoT tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the Cumulocity IoT platform.
 
 ### Additional resources
 

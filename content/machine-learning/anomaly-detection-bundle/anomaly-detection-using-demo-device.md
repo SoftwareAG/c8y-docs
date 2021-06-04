@@ -41,7 +41,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 1. Upload the attached model *iforest_demo.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
-3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
+3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
 
 #### Trigger an Anomaly Alert

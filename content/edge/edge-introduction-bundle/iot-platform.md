@@ -53,7 +53,7 @@ The following functionalities are available in Cumulocity IoT Edge and described
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Configuring Cumulocity IoT Edge](/edge/configuration/)|Providing information on Edge specific configuration options
+|[Configuring Cumulocity IoT Edge](/edge/configuration/)|Providing information on Edge specific configuration options.
 |[Home Screen](/users-guide/administration#home-screen)|Providing information on your [capacity usage and subscribed applications](/users-guide/administration#home-screen).
 |[Managing Users](/users-guide/administration#managing-users)|How to [create users](/users-guide/administration#creating-users), edit, disable or delete them.
 |[Managing Permissions](/users-guide/administration#managing-permissions)|How to create and edit [global roles](/users-guide/administration#global) and [inventory roles](/users-guide/administration#inventory), how to assign them to users, and how to [grant application access](/users-guide/administration#app-access).

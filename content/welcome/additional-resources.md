@@ -43,10 +43,10 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 ### Cumulocity IoT status page
 
-For {{< company-cloud-1>}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
+For {{< company-cloud-1 >}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
 
 ### Cumulocity IoT delta training
 
-To learn what´s new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
+To learn what's new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
 
 ![Product training](/images/about/about-product-training.png)

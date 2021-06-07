@@ -4,13 +4,13 @@ title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
 layout: redirect
 ---
 
-Cumulocity IoT Edge uses the same software as Cumulocity IoT Core. 
+Cumulocity IoT Edge uses the same software as Cumulocity IoT platform. 
 
 However, while the base software is the same, there are differences regarding the activated optional features and pre-installed agents.
  
 The following differences apply:
 
-|<div style="width:250px">AREA</div>|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
+|<div style="width:250px">AREA</div>|CUMULOCITY IOT EDGE|CUMULOCITY IOT PLATFORM
 |:---|:---|:--
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes
@@ -21,9 +21,13 @@ The following differences apply:
 |Root access|No|Yes, if customer is hosting
 |Installation|Offline, with VM image|Online, with chef & RPM
 |Cloud Field Bus|Included|Optional
-|Apama real-time analytics|Included|Optional
+|Streaming Analytics|Included|Optional
 |Data Broker|Included|Optional
+|OPC UA|Included|Optional
+|Microservice Hosting|Optional|Optional
+|Machine Learning|Optional|Optional
+|Data Hub|Optional|Optional
 
 **Footnote**: * The underlying infrastructure including the virtualization is not part of the product. For further details on high availability or fault tolerance options, refer to the relevant information provided by third parties (e.g.[vSphere Availability](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-63F459B7-8884-4818-8872-C9753B2E0215.html)).
 
-In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity IoT agent and Device SDK. These can be installed on less powerful devices like embedded devices. 
+In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the open-source Cumulocity IoT Device SDKs. These can be utilized to build agents on less powerful devices like embedded devices. 

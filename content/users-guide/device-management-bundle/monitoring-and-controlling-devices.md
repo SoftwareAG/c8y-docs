@@ -428,7 +428,7 @@ For a bulk operation that completed with failures, you may also click the menu i
 
 #### To manually set failed bulk operations to successful
 
-You may manually set a failed bulk operation to successful.
+You may manually set a failed bulk operation to the status SUCCESSFUL.
 
 To do so, click the menu icon to the right of the bulk operation, then click **Set operation to successful**.
 

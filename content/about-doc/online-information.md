@@ -2,6 +2,8 @@
 weight: 30
 title: Additional resources
 layout: bundle
+aliases:
+  - /welcome/online-information/
 ---
 
 ### Installation and operations documentation on Empower

@@ -37,7 +37,8 @@ mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies th
 mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
-2. Note down the device ID of your Edge 10.7 appliance available at: /usr/edge/properties/edge-agent/device-id
+2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
+3. Create a backup of the `/etc/opcua` directory. 
 
 ### Restoring the data on Cumulocity IoT Edge 10.9
 
@@ -136,7 +137,9 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
-8. Restart Karaf and edge-agent using the commands:
+8. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+  
+9. Restart Karaf and edge-agent using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf

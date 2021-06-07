@@ -319,7 +319,7 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 - Alarm text: Unable to ping correlator: &lt;message&gt;, Apama-ctrl will restart.
 - Alarm severity: MAJOR
 
-Apama-ctrl will automatically restart. Report this to [product support](/about-doc/contacting-support) if this is happening frequently.
+Apama-ctrl will automatically restart. Report this to [product support](/welcome/contacting-support) if this is happening frequently.
 
 <a name="application_queue_full"></a>
 #### The correlator queue is full

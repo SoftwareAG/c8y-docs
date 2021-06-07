@@ -1,20 +1,20 @@
 ---
-weight: 50
-title: Accessing the Cumulocity IoT platform
+weight: 25
+title: Accessing the Cumulocity IoT Edge appliance
 layout: redirect
 ---
 
-### Configuring the access via domain name
+### Configuring the access through domain name
 
-The Cumulocity IoT platform is accessible with the domain name provided as part of the post installation script.
+The Cumulocity IoT Edge appliance is accessible using the domain name configured as part of the installation.
 
-There are two ways to configure the accessibility with domain names:
+There are two ways to configure the accessibility with the domain names:
 
-* Add an entry of domain name and IP mapping in DNS servers. <br>
+* Add an entry of the domain name and IP mapping in the DNS servers. <br>
 OR
-* [Add the alias](#add-alias) in order to reach the virtual machine through the domain name provided during configuration. This needs to be performed on each client host on which Cumulocity IoT Edge is accessed.
+* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
 
->**Info:** The first option is always preferable so that Cumulocity IoT Edge is reachable in LAN.
+>**Info:** The first option is always preferable so that the Edge appliance is accessible over LAN.
 
 <a name="add-alias"></a>
 #### Adding the alias
@@ -25,44 +25,31 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 ```
 
-Use the IP address provided during [network configuration](/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
+Use the IP address provided during the network configuration. For example, the default value for Hyper-V is 192.168.66.10.
 
-On Windows machines,  add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
+On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
 Ping the &#60;domain_name> to verify it.
 
 ```shell
-[admin@server ~]$ ping <domain_name>
+[admin@iot-edge-server ~]$ ping <domain_name>
 ```
 
-If the ping is successful the DNS resolution is working properly.
+If the ping is successful, the DNS resolution is working properly.
 
-Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host operating system (operating system which is hosting the Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
+Using &#60;domain_name>, the Edge appliance can be connected from the host operating system (operating system which is hosting the Edge appliance). If you want to connect the Edge appliance within your LAN, which is outside of the host operating system, you need to do following:
 
-* Port forwarding must be enabled as mentioned in [Setting up the environment](/edge/installation#setting-up-the-environment).
-* The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
+* On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
+* The DNS entry must be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
 
-### Entering Cumulocity IoT
+### Accessing the Edge appliance through domain name
 
-#### Entering Cumulocity IoT via domain name
-
-Enter the following:
+Enter the URL in the browser:
 
 ```http
 https://<domain_name>
 ```
 
-The Cumulocity IoT Login screen appears.
+The Edge appliance login screen appears. Log in with your credentials created during the installation.
 
 <img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>
-
-Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. See [Changing the sysadmin password](/edge/installation/#changing_the_sysadmin_password).
-
-#### Entering Cumulocity IoT via IP
-
-Enter the following:
-
-```http
-https://<IP_Address_Of_Edge>;
-```
-Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. The **sysadmin** user account is used for unlocking the tenant admin user. See [Changing the sysadmin password](/edge/installation/#changing_the_sysadmin_password).

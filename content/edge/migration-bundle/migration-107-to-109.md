@@ -143,6 +143,8 @@ Wait for Karaf to install the applications. After the installation is complete, 
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
+monit restart opcua_device_gateway_proc
+monit restart opcua_mgmt_service_proc
 ```
 Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 

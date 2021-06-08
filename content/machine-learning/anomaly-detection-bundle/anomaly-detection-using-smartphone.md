@@ -15,7 +15,7 @@ Registering a smartphone in Cumulocity IoT involves installing the Cloud Sensor 
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, note down the device ID of your registered phone.
 
-In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format.
+In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format. For this demo, use the data provided within the zip file.
 
 #### Upload Training Data with Cumulocity IoT Machine Learning Workbench (MLW)
 
@@ -29,6 +29,7 @@ The data recorded on your smartphone can be downloaded using MLW. To download th
 
 4. To upload the provided *dataset_training.csv* file, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
 
+![Upload training dataset](/images/zementis/AnomalyDetection/anomaly-training-dataset.png)
 
 #### Train the PMML model
 
@@ -45,6 +46,8 @@ The following steps illustrate how to train an Isolation Forests machine learnin
 2. To edit a notebook, select the *createModel.ipynb* notebook file in the **Code** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> at the top right.
 
 3. This will open the notebook in an editor. Run each cell of the notebook to train an Isolation Forests PMML model.
+
+![Train Model usng Jupyter Notebook](/images/zementis/AnomalyDetection/anomaly-jnb.png)
 
 4. The PMML model named *isolationForests.pmml* will show up in the **Model** folder of the MLW when one clicks on the refresh button <img src="/images/zementis/mlw-refresh-icon.png" alt="Edit" style="display:inline-block; margin:0">
 

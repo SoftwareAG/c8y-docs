@@ -11,8 +11,8 @@ Anomaly detection (also outlier detection) is the identification of items, event
 
 Capturing anomalous events through the sensor data of a mobile device on an IoT platform can for instance serve the purpose of detecting accidents of elderly people living without a caretaker. Regular behavior sensor data of a person can be collected over a period of time. This data can then be used to train an anomaly detection model. As soon as an irregularity in behavior data is observed, e.g. the person falls down, an anomaly can be detected. For the purpose of showcasing this use case, we followed these steps:
 
-* Collect sensor data from a user performing regular everyday tasks.
-* With the collected data, Train an anomaly detection model using AutoML that transforms the model to PMML.
+* Upload the provided sensor data from a user performing regular everyday tasks.
+* With the provided data, train an anomaly detection model using the Jupyter Notebook and convert the model to PMML.
 * Deploy the model to Cumulocity IoT using the Machine Learning Workbench application.
 * Create and upload an EPL rule to Cumulocity (C8Y) IoT which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.

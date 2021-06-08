@@ -8,6 +8,14 @@ aliases:
   - /developers-guide/developing-web-clients.html
   - /web/smart-toolkit
   - /web/reference
+  - /web/application-configuration
+  - /web/development-tools
+  - /web/overview
+  - /web/libraries
+  - /web/tutorials
+  - /web/upgrade
+  - /web-sdk-for-plugins/overview
+  - /web-sdk-for-plugins
 ---
 
 This Web SDK guide provides information on the Web SDK which enables you to develop web applications on top of our platform, communicate through our API and apply UI components to your custom application.

@@ -38,6 +38,8 @@ aliases:
   - /device-sdk/device-sdk-cs/#prerequisites-mqtt
   - /device-sdk/device-sdk-cs/#developing-the-client-mqtt
   - /device-sdk/device-sdk-cs/#cs-static-templates-mqtt
+  - /device-sdk/linux-agent-developer-guide
+  - /device-sdk/linux-agent-user-guide
   - /cs
   - /cs/introduction
   - /cs/hello-world-basic

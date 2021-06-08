@@ -238,7 +238,7 @@ In jeder Zeile werden die folgenden Informationen für eine Operation angezeigt:
 
 Durch Klicken auf eine Zeile wird diese aufgeklappt und es werden weitere Details zur Operation angezeigt.
 
-* **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
+* **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
 * **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
 
 ![Single operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)

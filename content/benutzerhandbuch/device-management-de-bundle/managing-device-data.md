@@ -125,7 +125,7 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 
 ![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät das Kommando ausgeführt hat.
+Das von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
 
@@ -134,13 +134,13 @@ Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzte
 
 Cumulocity IoT bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
-1. Führen Sie das Firmware-Kommando (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dem Kommando und wählen Sie im Kontextmenü **Als Bulk-Kommando planen**.
+1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
+2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
 3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
-Außerdem werden die Kommandodetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
+Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
@@ -229,10 +229,10 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
 2. Wählen Sie einen oder mehrere Software-Einträge, indem Sie die entsprechende Version in der Liste auswählen. Diese enthält die gesamte Software, die für diesen Gerätetyp im Software-Repository bereitsteht.
 4. Klicken Sie auf **Installieren**.
-5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie das Software-Update-Kommando durch Klicken auf **Änderungen übernehmen**.<br><br>
+5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.<br><br>
 	![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät das Kommando ausgeführt hat.
+Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
 
@@ -256,13 +256,13 @@ Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möc
 
 Cumulocity IoT bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
-1. Führen Sie das Software-Kommando (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dem Kommando und wählen Sie im Kontextmenü **Als Bulk-Kommando planen**.
+1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
+2. Navigieren Sie in der Registerkarte **Steuerung** zu dieser Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
 3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
-Außerdem werden die Kommandodetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
+Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
@@ -333,7 +333,7 @@ Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau**
 
 ![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird ein neues Kommando erstellt. Wenn sich das Kommando im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um das Kommando abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
+> **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
 
 So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
 
@@ -415,7 +415,7 @@ Geben Sie im Fenster **Geräteprofil hinzufügen** einen Namen für das Profil a
 
 #### <a name="to-add-items"></a>So fügen Sie Elemente zu einem Geräteprofil hinzu
 
-In den Details eines Geräteprofils können sie Firmware-Versionen, Softwarepakets und Konfigurationsdateien hinzufügen.
+In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakets und Konfigurationsdateien hinzufügen.
 
 Klicken Sie auf **Firmware hinzufügen**, um dem Profil eine Firmware-Version hinzuzufügen. Wählen Sie eine Firmware und eine Version aus der Liste und klicken Sie auf **Speichern**, um die Auswahl zu dem Profil hinzuzufügen. Wenn ein Gerätetyp für das Profil definiert wurde, können nur Firmware-Versionen mit dem entsprechenden Gerätetyp gewählt werden. Sie können nur eine Firmware-Version zu einem Profil hinzufügen.
 
@@ -467,7 +467,7 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 
 ![Currently installed profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Kommandos vom Typ c8y_DeviceProfile unterstützen.
+>**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ c8y_DeviceProfile unterstützen.
 
 Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
 
@@ -482,17 +482,17 @@ Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile
 
 	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
 
-2. Klicken Sie auf **Geräteprofil zuweisen**, um das Aktualisierungskommando zu starten.
+2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
 #### <a name="to-apply-profiles-to-multiple-devices"></a>So wenden Sie Geräteprofile auf mehrere Geräte an
 
 Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet werden.
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
-2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neues Bulk-Kommando** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos > So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
+2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen > So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
-Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status des Kommandos. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
+Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
 >**Info:** Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
 

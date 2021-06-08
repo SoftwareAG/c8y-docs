@@ -549,8 +549,8 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td style="text-align:left">3</td>
-<td style="text-align:left">Kommando ausführen</td>
-<td style="text-align:left">Die Operation, das gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
+<td style="text-align:left">Operation ausführen</td>
+<td style="text-align:left">Die Operation, die gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -590,7 +590,7 @@ Diese Regel verwendet die folgenden Parameter vom Gerät oder aus der Datenpunkt
 Wenn wir den roten Bereich auf "[60;90]" einstellen
 
 * rot min: 60
-* rot max: 90 
+* rot max: 90
 
 und der Messwert zwischen 60 und 90 liegt (einschließlich der Werte 60 und 90), führt dies zur Erzeugung eines KRITISCHEN Alarms (rot).
 
@@ -599,7 +599,7 @@ und der Messwert zwischen 60 und 90 liegt (einschließlich der Werte 60 und 90),
 Wenn wir den gelben Bereich auf "[30;50)" einstellen
 
 * gelb min: 30
-* gelb max: 50 
+* gelb max: 50
 
 und der Messwert zwischen 30 und 49 liegt, führt dies zur Erzeugung eines WENIGER WICHTIGEN Alarms (gelb). Der Wert 50 liegt außerhalb des gelben Bereichs.
 

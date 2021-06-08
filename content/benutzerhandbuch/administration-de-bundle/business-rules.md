@@ -14,7 +14,7 @@ Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle 
 
 <img src="/images/benutzerhandbuch/Administration/admin-event-processing.png" alt="Event processing">
 
-<br>Für jede Regel in der Liste wird der Status  (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
+<br>Für jede Regel in der Liste wird der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
 Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die Anweisung erzeugte Ausgabe unterhalb des Häkchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie auf **Alle löschen**, um die Ausgabe zu entfernen.
 

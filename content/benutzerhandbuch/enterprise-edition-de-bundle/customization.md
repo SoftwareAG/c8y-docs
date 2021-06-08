@@ -233,7 +233,7 @@ separate Textdateien verwendet werden: eine f체r die Zertifikatkette und eine f�
 durch ein Passwort oder eine Passphrase gesch체tzt ist.
 
 Solche PEM-Dateien lassen sich mittels [OpenSSL](https://www.openssl.org/) leicht in das Format #PKCS #12 umverpacken. Im folgenden
-Beispiel dient OpenSSL zum Zusammenf체hren einer Zertifikatkette  (*chain.cert*) und des entsprechenden Schl체ssels (*privkey.pem*) zu einer
+Beispiel dient OpenSSL zum Zusammenf체hren einer Zertifikatkette (*chain.cert*) und des entsprechenden Schl체ssels (*privkey.pem*) zu einer
 PKCS #12-Keystore-Datei (*out_keystore.p12*), die mit Cumulocity IoT verwendet werden kann.
 
 ```shell

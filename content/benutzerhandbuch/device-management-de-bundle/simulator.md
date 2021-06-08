@@ -116,15 +116,15 @@ In der Registerkarte **Unterstützte Operationen** eines Simulators finden Sie s
 
 ![Supported operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-supported-operations.png)
 
-Klicken Sie auf den Umschalter, um das jeweilige Kommando ein- oder auszuschalten.
+Klicken Sie auf den Umschalter, um die jeweilige Operation ein- oder auszuschalten.
 
-#### So fügen Sie ein benutzerdefiniertes Kommando hinzu
+#### So fügen Sie eine benutzerdefinierte Operation hinzu
 
-1. Klicken Sie auf **Eigenes Kommando hinzufügen**, um ein eigenes Kommando festzulegen.
+1. Klicken Sie auf **Eigene Operation hinzufügen**, um eine eigene Operation festzulegen.
 2. Geben Sie im darauf folgenden Dialog den Typ des benutzerdefinierten Operationen an, der vom Simulator unterstützt werden soll.
 3. Klicken Sie auf **Hinzufügen**.
 
-Das benutzerdefinierte Kommando wird der Kommandoliste hinzugefügt.
+Die benutzerdefinierte Operation wird der Operationsliste hinzugefügt.
 
 ### Alarme für den Simulator
 

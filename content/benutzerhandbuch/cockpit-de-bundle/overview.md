@@ -40,7 +40,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tr>
 <tr>
 <td align="left"><a href="#using-widgets">Verwenden von Widgets in Dashboards und Berichten</a></td>
-<td align="left">Erstellen oder Arrangieren Sie <a href="#using-widgets">Widgets</a>, um verschiedene Informationen zu verfolgen und in Dashboards und Berichten bereitzustellen.</td>
+<td align="left">Erstellen oder arrangieren Sie <a href="#using-widgets">Widgets</a>, um verschiedene Informationen zu verfolgen und in Dashboards und Berichten bereitzustellen.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widgets-collection">Widgets-Sammlung</a></td>

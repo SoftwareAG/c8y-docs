@@ -46,14 +46,14 @@ The following steps illustrate how to train an Isolation Forests machine learnin
 
 3. This will open the notebook in an editor. Run each cell of the notebook to train an Isolation Forests PMML model.
 
-4. The PMML model named *isolationForest.pmml* will show up in the **Model** folder of the MLW when one clicks on the refresh button <img src="/images/zementis/mlw-refresh-icon.png" alt="Edit" style="display:inline-block; margin:0">
+4. The PMML model named *isolationForests.pmml* will show up in the **Model** folder of the MLW when one clicks on the refresh button <img src="/images/zementis/mlw-refresh-icon.png" alt="Edit" style="display:inline-block; margin:0">
 
 
 #### Model deployment and predictions using Cumulocity IoT
 
 Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
 
-Select the *isolationForest.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model on Machine Learning Engine (MLE).
+Select the *isolationForests.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model on Machine Learning Engine (MLE).
 
 Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
 

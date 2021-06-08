@@ -4,6 +4,7 @@ title: Introduction
 layout: bundle
 aliases:
   - /about-doc/intro-documentation
+  - /about-doc/content-overview
 ---
 
 This documentation describes the **10.9.0 release (April 2021)** of the Cumulocity IoT platform.

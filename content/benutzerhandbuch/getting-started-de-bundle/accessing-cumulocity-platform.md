@@ -52,17 +52,17 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein und klicken Sie auf **Anmelden**, um die Anwendung zu öffnen.
 
-<img src="/images/users-guide/getting-started/getting-started-login.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-login.png" alt="Login prompt">
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da die Cumulocity IoT-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Wenn Sie sich das erste Mal an der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/users-guide/cockpit)-Anwendung) weitergeleitet.
+Wenn Sie sich das erste Mal an der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-<img src="/images/users-guide/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
 ### <a name="reset-password"></a>So setzen Sie Ihr Passwort zurück
 

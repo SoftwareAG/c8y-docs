@@ -14,13 +14,13 @@ Cumulocity IoT stellt vordefinierte Widget-Typen zur Verfügung, Näheres siehe 
 
 2. Wählen Sie im Dialog **Widget hinzufügen** einen Widget-Typ.
 
-	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
+	<img src="/images/benutzerhandbuch/cockpit/cockpit-widget-add.png" name="Add widget">
 
 3. Konfigurieren Sie als Nächstes das Widget. Je nach gewähltem Widget-Typ können unter **Konfiguration** verschiedene Parameter festgelegt werden. Nähere Informationen zu den einzelnen Widget-Typen finden Sie unter [Widgets-Sammlung](#widgets-collection).
 
 4. Auf der Registerkarte **Design** können Sie den Stil für den Inhalt und die Kopfzeile des Widgets individuell anpassen. Dies erfolgt in gleicher Weise wie das Festlegen eines [Dashboard](#creating-dashboards)-Layouts.
 
-	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
+	<img src="/images/benutzerhandbuch/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
 5. Klicken Sie auf **Speichern**, um das Widget zum Dashboard oder Bericht hinzuzufügen.
 
@@ -28,18 +28,18 @@ Cumulocity IoT stellt vordefinierte Widget-Typen zur Verfügung, Näheres siehe 
 
 Sie können die Anordnung von Widgets in einem Dashboard oder Bericht ändern. Durch Ziehen mit dem Mauszeiger können Sie ein Widget im Dashboard bewegen und an einer anderen Position ablegen.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
 
 Durch Ziehen der Pfeile in der unteren rechten Ecke des Widgets können Sie seine Größe verändern.
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Bearbeiten**, um die Eigenschaften eines Widgets zu bearbeiten.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Löschen**, um ein Widget aus einem Dashboard oder Bericht zu entfernen.
 
 Sie können Widgets nur bearbeiten, wenn das Dashboard bzw. der Bericht entsperrt ist. Verwenden Sie zum Sperren bzw. Entsperren den Umschalter mit dem Schloss-Symbol in der oberen Menüleiste.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
 >**Info:** Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.

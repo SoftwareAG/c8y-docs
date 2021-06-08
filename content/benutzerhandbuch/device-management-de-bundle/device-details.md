@@ -7,7 +7,7 @@ Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt
 
 Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.
 
-![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
+![Device info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-info.png)
 
 Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d.h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind.
 
@@ -98,7 +98,7 @@ Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil e
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Aktionsmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken.
 
-![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
+![More menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-more.png)
 
 Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.
 
@@ -106,7 +106,7 @@ Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant s
 
 Die Registerkarte **Info** fasst die Geräteinformationen, die aus Managementsicht relevant sind, in einem Dashboard zusammen.
 
-![Device Info](/images/users-guide/DeviceManagement/devmgmt-devices-infotab.png)
+![Device Info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-infotab.png)
 
 Die Information wird auf den folgenden Karten bereitgestellt:
 
@@ -130,7 +130,7 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tr>
 <tr>
 <td style="text-align:left">Gerät und Kommunikation</td>
-<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation. <br>Folgende Messwerte können hier angezeigt werden: <br>
+<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/benutzerhandbuch/cockpit-de#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation. <br>Folgende Messwerte können hier angezeigt werden: <br>
 <strong>Datenpunkte</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarme</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Ereignisse</strong>: c8y_LocationUpdate</td>
@@ -166,7 +166,7 @@ Die Registerkarte **Messwerte** zeigt eine Standardvisualisierung der vom Gerät
 
 Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, einschließlich Graphen für Beschleunigung in drei Dimensionen sowie ein Diagramm mit Modemstatistiken im Form von Signalstärken und Bit-Fehlerraten.
 
-![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
+![Measurements](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-measurements.png)
 
 Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit "Meter je Sekundequadrat", daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.
 
@@ -182,7 +182,7 @@ Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es
 
 Klicken Sie auf **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden.
 
-Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/users-guide/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/benutzerhandbuch/administration-de).
 
 **Messwerteformate**
 
@@ -225,7 +225,7 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 1. In der Registerkarte **Konfiguration** können Sie manuell die Gerätekonfiguration im Textfeld hinzufügen oder bearbeiten.
 2. Klicken Sie auf **Konfiguration an Gerät senden**, um Ihre Eingaben zu speichern.
 
-![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
+![Text-based configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-textconfig.png)
 
 > **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
 
@@ -233,13 +233,13 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 
 Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
 
-![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
+![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 ### <a name="network"></a>Netzwerk
 
 In der Registerkarte **Netzwerk** können Parameter für das mobile Netzwerk (WAN) und das lokale Netzwerk (LAN) angezeigt und konfiguriert werden.
 
-![Network tab](/images/users-guide/DeviceManagement/devmgmt-devices-network.png)
+![Network tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-network.png)
 
 Die WAN-Parameter auf der Benutzeroberfläche entsprechen dem ersten im Router gespeicherten Profil. Diese Parameter können remote oder per SMS konfiguriert werden.
 
@@ -278,7 +278,7 @@ Wählen Sie eine Firmware aus der Auswahlliste, die sämtliche im [Firmware Repo
 
 Ähnliches gilt für das Installieren einer Software auf dem Gerät: Wählen Sie ein Software-Paket aus der Auswahlliste, die sämtliche im [Software Repository](#software-repo) verfügbare Software enthält, und klicken Sie auf **Installieren**.
 
-![Device Software tab](/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
+![Device Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software.png)
 
 Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte **Steuerung**.
 
@@ -294,7 +294,7 @@ Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse
 
 Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
 
-![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
+![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
 
 Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y-Position-Ereignis senden, können Sie das gleiche c8y-Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
 
@@ -314,7 +314,7 @@ Die Registerkarte **Logdateien** ermöglicht es, Loginformationen von Geräten z
 
 Die Loginformationen des Geräts werden abgefragt.
 
-![Logs tab](/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
+![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
 >Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
 
@@ -342,7 +342,7 @@ Die Registerkarte **Shell** enthält eine Kommandozeile zur Eingabe der Kommando
 
 In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie auf **Ausführen**, um das Kommando an das Gerät zu senden. Diese Schaltfläche ist nur aktiviert, wenn das Gerät online ist.
 
-![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
+![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
 >**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remotevorgänge den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
@@ -350,7 +350,7 @@ Klicken Sie auf **Historie ansehen** rechts in der oberen Menüleiste, um zur Re
 
 Cumulocity IoT stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie auf **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie auf **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie auf **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
 
-![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
+![Device shell predefined](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
 ### <a name="tracking"></a>Tracking
@@ -361,7 +361,7 @@ In Cumulocity IoT können Geräte die Historie ihrer Bewegungen festhalten. Dies
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 
-![Tracking tab](/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
+![Tracking tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-tracking.png)
 
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an.
 

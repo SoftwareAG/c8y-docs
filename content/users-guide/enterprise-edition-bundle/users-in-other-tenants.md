@@ -8,7 +8,7 @@ The support user access feature enables Cumulocity IoT platform providers ({{< c
 
 To use this feature, support user access must be configured and the required support users must be created in the Management tenant, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
-> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/about-doc/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
+> **Info:** On the Cumulocity IoT public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/welcome/contacting-support/) team for providing customer support. It is not available for Enterprise tenant customers to support their customers/subtenants.
 
 <a name="configuring-support-access"></a>
 ### Configuring support user access

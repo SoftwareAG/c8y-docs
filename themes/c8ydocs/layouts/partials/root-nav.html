@@ -5,7 +5,7 @@
         class="img-responsive no-zoom"
         alt="Cumulocity IoT">
     </a>
-    
+
     <div class="dropdown">
       <button class="dropdown-toggle"
         type="button"
@@ -64,8 +64,8 @@
       </a>
       {{ end }}
       <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
-        href="{{.Permalink}}">{{.Title}}</a>
-     
+        href="{{.Permalink}}">{{replace .Title "var-company-name-2" .Site.Params.companyname2}}</a>
+
       {{ if $headless }}
       {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
       <div id="page-nav{{$i}}"

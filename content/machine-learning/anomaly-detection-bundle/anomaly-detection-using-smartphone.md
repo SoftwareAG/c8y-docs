@@ -17,7 +17,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format.
 
-#### Data collection with Cumulocity IoT Machine Learning Workbench (MLW)
+#### Upload Training Data with Cumulocity IoT Machine Learning Workbench (MLW)
 
 The data recorded on your smartphone can be downloaded using MLW. To download the data, follow the below steps:
 
@@ -27,17 +27,7 @@ The data recorded on your smartphone can be downloaded using MLW. To download th
 
 3. Click **+Add Project** at the right of the top menu bar, enter a project named *Anomaly Detection* and description as *Anomaly detection using smartphone*, and click **Add Project**. This will create a new project with the given name. Click on the project name to navigate inside the project.
 
-4. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from Cumulocity**.
-
-5. Select your phone's device ID (the one created above) from which the data needs to be pulled and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
-
-6. As part of data pull, provide the parameters such as data file name as *anomalyTrainingData*, data interval (i.e. interval during which the data was created), data aggregation as *None*, and choose **c8y_Acceleration** and **c8y_Gyroscope** Data points for data extraction. Once these parameters are provided, click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
-
-    ![Cumulocity parameters](/images/zementis/anomaly-app-c8y-datapull-param.png)
-
-Click **Tasks** in the navigator and click the *anomalyTrainingData* task name, to display the status of the Cumulocity IoT data pull in the **Task History** section at the center.
-
-Once the task has reached the status COMPLETED, the data with the name *anomalyTrainingData.csv* is stored in the **Data** folder of the *Anomaly Detection* project in MLW.
+4. To upload the provided *dataset_training.csv* file, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
 
 
 #### Train the PMML model
@@ -46,34 +36,24 @@ For this demo, the anomaly detection machine learning algorithm "Isolation Fores
 
 The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. - [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The AutoML feature within the Cumulocity IoT Machine Learning Workbench creates an Isolation Forest Model in PMML format using the previously extracted training data. The AutoML uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created, MLW underneath converts the scikit-learn object into PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
+The integrated Jupyter Notebook feature within the Cumulocity IoT Machine Learning Workbench helps in writing the code that creates an Isolation Forest Model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created, one could convert the scikit-learn object into PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-The following steps illustrate how to train an Isolation Forests machine learning model using AutoML.
+The following steps illustrate how to train an Isolation Forests machine learning model using the Jupyter Notebook.
 
-1. Select the data resource named *anomalyTrainingData.csv* in the **Data** folder, and click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> at the right of the top menu bar to proceed with training the AutoML model on that data.
+1. To upload the provided *createModel.ipynb* file, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
 
-2. Toggle the **Supervised** button and unselect the *time* checkbox (i.e. *time* feature is not considered for model building) at the right. Next, select the imputation methods and data transformation steps for the respective column and click **Build** to proceed.
+2. To edit a notebook, select the *createModel.ipynb* notebook file in the **Code** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> at the top right.
 
-    ![Pre-processing steps](/images/zementis/anomaly-app-automl-pre.png)
+3. This will open the notebook in an editor. Run each cell of the notebook to train an Isolation Forests PMML model.
 
-3. In the **Training Parameter** section at the right, select the training parameters which include Model Name (*anomalyModel*) and choose *IsolationForest* from the Algorithm drop-down. Click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0"> to initiate the model training process.
-
-    ![Pre-processing steps](/images/zementis/anomaly-app-automl-trainparam.png)
-
-This will create a new task with the name *anomalyModel* in the **Tasks** section.
-
-Click **Tasks** in the navigator and click the *anomalyModel* task name, to display the status of the model training in the **Task History** section at the center.
-
-![Pre-processing steps](/images/zementis/anomaly-app-automl-hyper.png)
-
-After the training is complete and the task reaches COMPLETED status, the *anomalyModel.pmml* will be saved in the **Model** folder of the *Anomaly Detection* Project.
+4. The PMML model named *isolationForest.pmml* will show up in the **Model** folder of the MLW when one clicks on the refresh button <img src="/images/zementis/mlw-refresh-icon.png" alt="Edit" style="display:inline-block; margin:0">
 
 
 #### Model deployment and predictions using Cumulocity IoT
 
 Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
 
-Select the *anomalyModel.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model on Machine Learning Engine (MLE).
+Select the *isolationForest.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model on Machine Learning Engine (MLE).
 
 Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
 
@@ -83,11 +63,11 @@ To predict data using a deployed model, select *test_data.csv* from the **Data**
 
 Select the **PMML** option under the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
 
-![Select Format MLE](/images/zementis/anomaly-app-automl-predict.png)
+![Select Format MLE](/images/zementis/AnomalyDetection/anomaly-app-automl-predict.png)
 
-This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select *anomalyModel* PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select *isolationForest* PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
-![Select Model for Prediction](/images/zementis/anomaly-app-automl-predict-model-select.png)
+![Select Model for Prediction](/images/zementis/AnomalyDetection/anomaly-app-automl-predict-model-select.png)
 
 The prediction results will be stored in the **Data** folder. The predicted output data is stored in the CSV format with the file name suffixed with *predicted*. 
 
@@ -124,7 +104,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file 
         action onload() {
             cumulocity := CumulocityRequestInterface.connectToCumulocity();
             // Replace yourDeviceId with the value of your device id
-            listenAndActOnMeasurements("yourDeviceId", "anomalyModel");
+            listenAndActOnMeasurements("yourDeviceId", "isolationForest");
         }
 
         action listenAndActOnMeasurements(string deviceId, string modelName) {

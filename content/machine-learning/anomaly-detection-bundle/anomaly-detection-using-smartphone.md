@@ -16,16 +16,16 @@ Registering a smartphone in Cumulocity IoT involves installing the Cloud Sensor 
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, note down the device ID of your registered phone.
 
-In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format. For this demo, use the data provided within the zip file.
+In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format.
 
 
 #### Data collection with Cumulocity IoT Machine Learning Workbench (MLW)
 
-You could either user the data provided within the zip folder or download the recorded data on your smart phone for model building purposes.
+You could either user the data provided within the zip folder or download the recorded data from your smart phone for model building purposes.
 
-The data recorded on your smartphone can be downloaded using MLW. To download the data, follow the below steps:
+The data from your your smartphone can be downloaded using MLW. To download the data, follow the below steps:
 
-1. log in to MLW using the username and password
+1. Log in to MLW using your tenant username and password
 
 2. Click **Projects** in the navigator. This will list all the available projects. 
 
@@ -42,6 +42,8 @@ The data recorded on your smartphone can be downloaded using MLW. To download th
 Click **Tasks** in the navigator and click the *anomalyTrainingData* task name, to display the status of the Cumulocity IoT data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data with the name *anomalyTrainingData.csv* is stored in the **Data** folder of the *Anomaly Detection* project in MLW.
+
+Alternatively, to upload the provided training dataset, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the *anomalyTrainingData.csv *file for uploading or use the drag and drop files capability.
 
 
 #### Train the PMML model
@@ -67,9 +69,9 @@ The following steps illustrate how to train an Isolation Forests machine learnin
 
 #### Model deployment and predictions using Cumulocity IoT
 
-Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
+Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions. 
 
-Select the *isolationForests.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model on Machine Learning Engine (MLE).
+Select the *isolationForests.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model to Machine Learning Engine (MLE).
 
 Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
 
@@ -81,7 +83,7 @@ Select the **PMML** option under the predict icon <img src="/images/zementis/mlw
 
 ![Select Format MLE](/images/zementis/AnomalyDetection/anomaly-app-automl-predict.png)
 
-This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select *isolationForest* PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+This will list all the available PMML models deployed on the Machine Learning Engine (MLE). Select *isolationForest* PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Select Model for Prediction](/images/zementis/AnomalyDetection/anomaly-app-automl-predict-model-select.png)
 
@@ -98,7 +100,7 @@ For this anomaly detection scenario, we need to use Apama streaming analytics. W
 
 We create an EPL-based monitor file and upload it to Cumulocity IoT. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies_iPhone.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
     using com.apama.correlator.Component;
     using com.apama.cumulocity.Alarm;
@@ -113,7 +115,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file 
     using com.softwareag.connectivity.httpclient.Response;
     using com.apama.json.JSONPlugin;
 
-    monitor DetectAnomalies_iPhone {
+    monitor DetectAnomalies {
 
         CumulocityRequestInterface cumulocity;
 

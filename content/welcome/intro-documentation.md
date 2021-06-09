@@ -4,6 +4,8 @@ title: Introduction
 layout: bundle
 aliases:
   - /about-doc/intro-documentation
+  - /users-guide/enterprise-edition/#tenant-sla-monitoring
+  - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
 ---
 
 This documentation describes the **10.9.0 release (April 2021)** of the Cumulocity IoT platform.

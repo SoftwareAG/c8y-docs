@@ -83,6 +83,11 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 echo "Waiting for webapps to install. If this takes too long please look at /webapps/2Install"
 while [ ! -f /webapps/2Install/$UI_VERSION.zip.installed ]; do sleep 1; done
 
+echo "Restoring opcua"
+rm -rf /etc/opcua
+cp -rp $EXTRACTED_PATH/opcua_data/opcua /etc/
+
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
-
+monit restart opcua_device_gateway_proc
+monit restart opcua_mgmt_service_proc

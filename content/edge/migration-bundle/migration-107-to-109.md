@@ -119,11 +119,7 @@ DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
 curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
 systemctl restart edge-agent
 ```
-7. Get the Management tenant domain from the Edge 10.9 appliance using the command:
-```shell
-mongo management --quiet --eval 'db.tenants.find({"_id":"management"}, {"_id":0, "domainName":1})' | jq '.domainName'
-```
-8. Restore the MongoDB collections from the Edge 10.7 appliance using the command:
+7. Restore the MongoDB collections from the Edge 10.7 appliance using the command:
 ```shell
 mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
@@ -133,12 +129,7 @@ For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
 mongorestore --drop --db management /home/admin/migration_data/management/
 ```
-9. Restore the Management tenant domain using the command:
-```shell
-mongo management --eval 'db.tenants.update({"_id":"management"}, {$set: {"domainName":"MANAGEMENT_DOMAIN_NAME"}})'
-```
-
-10. Restore the web applications of the Edge 10.9 appliance using the command:
+8. Restore the web applications of the Edge 10.9 appliance using the command:
 ```shell
 chown -R karaf:karaf /webapps/
 chown nginx:karaf /webapps
@@ -146,9 +137,9 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
-11. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
-12. Restart Karaf and edge-agent using the commands:
+10. Restart Karaf and edge-agent using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf

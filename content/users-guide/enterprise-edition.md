@@ -8,4 +8,4 @@ outputs:
 ---
 
 
-The Enterprise tenant of the Cumulocity IoT platform provides several enhancements to the features for the Standard tenant. The following sections describe additional functionalities available in the Enterprise tenant.
+The {{< tenant-type-2 >}} of the Cumulocity IoT platform provides several enhancements to the features for the {{< tenant-type-1 >}}. The following sections describe additional functionalities available in the {{< tenant-type-2 >}}.

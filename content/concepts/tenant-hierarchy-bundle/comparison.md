@@ -171,7 +171,7 @@ Having a separate tenant for each customer they will not be limited with respect
 <tbody>
 <tr>
 <td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the Management tenant. This does not apply for UI applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< tenant-type-3 >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>

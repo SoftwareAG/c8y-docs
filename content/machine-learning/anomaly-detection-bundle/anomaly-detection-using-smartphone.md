@@ -120,7 +120,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file 
         action onload() {
             cumulocity := CumulocityRequestInterface.connectToCumulocity();
             // Replace yourDeviceId with the value of your device id
-            listenAndActOnMeasurements("yourDeviceId", "isolationForest");
+            listenAndActOnMeasurements("yourDeviceId", "IsolationForest");
         }
 
         action listenAndActOnMeasurements(string deviceId, string modelName) {

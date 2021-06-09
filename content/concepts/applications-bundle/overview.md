@@ -5,7 +5,7 @@ title: Overview
 layout: redirect
 ---
 
- Cumulocity applications can have two forms:
+ Cumulocity IoT applications can have two forms:
 
 * web-based user interface applications ("[web applications](#web-applications)")
 * server-side business logic through microservices (“[microservices](#microservices)”)

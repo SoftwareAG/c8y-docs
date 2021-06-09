@@ -1,5 +1,5 @@
 ---
-title: Integrating DataHub with other Software AG products
+title: Integrating DataHub with other var-company-name-2 products
 weight: 70
 layout: bundle
 ---

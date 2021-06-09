@@ -6,7 +6,7 @@
 <div class="main-content">
   <article class="page-section">
     <header class="section-header">
-      <h1 class="text-light">{{.Title}}</h1>
+      <h1 class="text-light">{{replace .Title "var-company-name-2" .Site.Params.companyname2}}</h1>
     </header>
     {{if $headless }}
       <div class="lead">

@@ -24,7 +24,7 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 #### <a name="add-retention-rule"></a>So fügen Sie eine Datenhaltungsregel hinzu
 
 1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
-2. Wählen Sie im darauf folgenden Dialog den Datentyp aus, den Sie löschen möchten (Alarm, Messung, Ereignis, Kommando, Audit oder Alle).
+2. Wählen Sie im darauf folgenden Dialog den Datentyp aus, den Sie löschen möchten (Alarm, Messung, Ereignis, Operation, Audit oder Alle).
 3. Geben Sie einen Fragmenttypen ein, wenn Sie die zu löschenden Daten genauer spezifizieren möchten. Geben Sie im Feld **Typ** ein "type"-Attribut als Filter ein. Um beispielsweise alle Alarme im Zusammenhang mit Verbindungsabbrüchen zu löschen, wählen Sie als Datentyp "Alarm" und geben Sie "c8y_UnavailabilityAlarm" als Attribut ein.
 4. Wenn Sie nur die Daten für ein bestimmtes Gerät löschen möchten, geben Sie die entsprechende Geräte-ID in das Feld **Quelle** ein.
 5. Geben Sie das maximale Alter in Tagen an (maximal zulässiger Wert ist 10 Jahre in Tagen).
@@ -34,7 +34,7 @@ Die Datenhaltungsregel wird zu den Berichtsdetails hinzugefügt.
 
 >**Info:** Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
 
->**Info:** Alarme werden nur entfernt, wenn sie den Status ENTFERNT aufweisen.
+>**Info:** Alarme werden nur entfernt, wenn sie den Status AUFGEHOBEN aufweisen.
 
 #### So bearbeiten Sie eine Datenhaltungsregel
 

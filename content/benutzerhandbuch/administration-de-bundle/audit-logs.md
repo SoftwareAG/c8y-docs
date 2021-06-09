@@ -33,7 +33,7 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Ko
 
 <tr>
 <td align="left">Beschreibung</td>
-<td align="left">Liefert je nach Kommando weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
+<td align="left">Liefert je nach Operation weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
 </tr>
 
 <tr>

@@ -4,20 +4,6 @@ title: Introduction
 layout: bundle
 aliases:
   - /welcome/intro-documentation/
-  - /cloud-remote-access
-  - /cloud-remote-access/cra-general-aspects
-  - /cloud-remote-access/supported-protocols
-  - /cloud-remote-access/using-cloud-remote-access
-  - /cloud-remote-access/cra-api
-  - /protocol-integration
-  - /protocol-integration/overview
-  - /protocol-integration/cloud-fieldbus
-  - /protocol-integration/impact
-  - /protocol-integration/lora-actility
-  - /protocol-integration/lwm2m
-  - /protocol-integration/opcua
-  - /protocol-integration/sigfox
-  - /protocol-integration/snmp
 ---
 
 This documentation describes the **10.6.6 release (July 2020)** of the Cumulocity IoT platform.

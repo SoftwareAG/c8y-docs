@@ -20,5 +20,19 @@ aliases:
   - /benutzerhandbuch/jasper-deutsch
   - /benutzerhandbuch/saas-integration-deutsch
   - /benutzerhandbuch/android-cloud-remote-access-deutsch
+  - /cloud-remote-access
+  - /cloud-remote-access/cra-general-aspects
+  - /cloud-remote-access/supported-protocols
+  - /cloud-remote-access/using-cloud-remote-access
+  - /cloud-remote-access/cra-api
+  - /protocol-integration
+  - /protocol-integration/overview
+  - /protocol-integration/cloud-fieldbus
+  - /protocol-integration/impact
+  - /protocol-integration/lora-actility
+  - /protocol-integration/lwm2m
+  - /protocol-integration/opcua
+  - /protocol-integration/sigfox
+  - /protocol-integration/snmp
 ---
 In addition to the standard and built-in applications that come with Cumulocity IoT, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.

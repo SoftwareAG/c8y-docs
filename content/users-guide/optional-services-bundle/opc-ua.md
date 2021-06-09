@@ -1,4 +1,4 @@
-  ---
+---
 weight: 70
 title: OPC UA
 layout: redirect

@@ -8,9 +8,11 @@ layout: redirect
 
 The Cumulocity IoT Sensor App is a free smartphone application available for iOS and Android smartphones and the successor of the Cloud Sensor App.
 
-The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform.
+It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
 
-If you are using the Cumulocity IoT free trial available via Software AG Cloud, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
+If you are using the Cumulocity IoT free trial available via Software AG Cloud, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors.
+Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
 
 Besides sending data to the platform, the Cumulocity IoT Sensor App can also send commands to the smartphone directly from the phone dashboard.
 Commands currently available in the dashboard include alert messages and vibration.
@@ -39,6 +41,11 @@ At the time of writing, the application supports the following devices:
 More devices will be supported in the future and made available within the application.
 
 > **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to Cumulocity IoT in real time.
+
+Reading vehicle sensors comes with the use of an additional OBD dongle, which exposes the vehicles sensors to the phone via WiFi or Bluetooth (Note: iOS is WiFi only). There are two supported diagnostic connectors, both based on the ELM327 microcontroller:
+
+* Kungfuren OBD2 Diagnostic Device Bluetooth 4.0 Adapter
+* Kungfuren OBD2 Reader WiFi Adapter
 
 ### Installing the Sensor App
 
@@ -172,7 +179,7 @@ The Bluetooth device will then be connected to your smartphone and start sending
 
 ### Connecting new OBD devices to the Sensor App
 
-Connections to OBD devices work in a slightly different way then normal Bluetooth sensors. They must be connected to the phone directly before the device can be added to the Sensor App.
+Connections to OBD devices work in a slightly different way than normal Bluetooth sensors. They must be connected to the phone directly before the device can be added to the Sensor App.
 
 
 In case of WiFi based OBD devices, the procedure is as follows:
@@ -182,10 +189,10 @@ In case of WiFi based OBD devices, the procedure is as follows:
 * On the phone, navigate to the WiFi settings in the Settings application.
 * Search for new networks, and join the "WiFi_OBDII" network (or other name as specified in the device's documentation), to pair directly with the dongle.
 * If a password is required to do this, refer to your device's documentation.
-* Once the device is connected, return to the Sensor App, and click the plus ("+") button in the bottom right of the screen.
+* Once the device is connected, return to the Sensor App, and click the plus ("+") button at the bottom right of the screen.
 * The OBD device should then become available in the list of available devices and can be added as any other Bluetooth sensor.
 
-For Bluetooth-based OBD devices, the device must be paired to the phone before the Sensor App will recognize it:
+For Bluetooth-based OBD devices, the device must be paired with the phone before the Sensor App will recognize it:
 
 * Plug the OBD dongle into the vehicle's diagnostic port. Ensure that the power LED is illuminated.
 * On the phone, navigate to the WiFi settings in the Settings application.

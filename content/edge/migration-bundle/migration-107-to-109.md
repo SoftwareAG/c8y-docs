@@ -52,7 +52,7 @@ Perform these steps as **root** user in your Edge 10.9 appliance.
 
    You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance. 
 
-2. Backup the web applications in Edge 10.9 appliance. To do this, you must first detect the IDs of the applications using the command:
+2. Backup the web applications in the Edge 10.9 appliance. To do this, you must first detect the IDs of the applications using the command:
 
 ```shell
 mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
@@ -84,7 +84,7 @@ The command returns the name and ID of the application. For example:
   }
 }
 ```
-2. Download the web applications using the ID of the application using the command:
+3. Download the web applications using the ID of the application using the command:
 
 ```shell
 mkdir -p /tmp/apps/
@@ -99,11 +99,11 @@ mongofiles -d management --prefix cmdata get  111 -l /tmp/apps/cockpit.zip
 mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/devicemanagement.zip
 mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/streaming-analytics.app.zip
 ```
-3. Install the ZIP package using the command:
+4. Install the ZIP package using the command:
 ```shell
 rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 ```
-4. Prepare the applications for deployment using the commands:
+5. Prepare the applications for deployment using the commands:
 
 ```shell
 UI_VERSION=1009.6.0
@@ -113,13 +113,17 @@ chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
 ```
-5. Restore the device ID of the Edge 10.7 appliance using the commands:
+6. Restore the device ID of the Edge 10.7 appliance using the commands:
 ```shell
 DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
 curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
 systemctl restart edge-agent
 ```
-6. Restore the MongoDB collections from Edge 10.7 using the command:
+7. Get the Management tenant domain from the Edge 10.9 appliance using the command:
+```shell
+mongo management --quiet --eval 'db.tenants.find({"_id":"management"}, {"_id":0, "domainName":1})' | jq '.domainName'
+```
+8. Restore the MongoDB collections from the Edge 10.7 appliance using the command:
 ```shell
 mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
@@ -129,7 +133,12 @@ For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
 mongorestore --drop --db management /home/admin/migration_data/management/
 ```
-7. Restore the web applications of the Edge 10.9 appliance using the command:
+9. Restore the Management tenant domain using the command:
+```shell
+mongo management --eval 'db.tenants.update({"_id":"management"}, {$set: {"domainName":"MANAGEMENT_DOMAIN_NAME"}})'
+```
+
+10. Restore the web applications of the Edge 10.9 appliance using the command:
 ```shell
 chown -R karaf:karaf /webapps/
 chown nginx:karaf /webapps
@@ -137,9 +146,9 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
-8. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+11. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
-9. Restart Karaf and edge-agent using the commands:
+12. Restart Karaf and edge-agent using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
@@ -148,7 +157,7 @@ monit restart opcua_mgmt_service_proc
 ```
 Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
-Next, you must configure Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in Edge 10.7 appliance, you must enable microsrevices and configure NTP in Edge 10.9 appliance. For more information about configuring Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/)
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/)
 
 ### Sample scripts to automate the migration
 

@@ -4,6 +4,7 @@ title: Introduction
 layout: bundle
 aliases:
   - /about-doc/intro-documentation
+  - /about-doc/content-overview
   - /users-guide/enterprise-edition/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
 ---

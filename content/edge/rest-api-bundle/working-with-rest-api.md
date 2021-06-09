@@ -556,6 +556,8 @@ Use this endpoint to expand the disk size of the installation disk and the data 
 
 Before using this endpoint, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
 
+>**Info:** If there is no disk space to expand, the task will be marked as success.
+
 **Request**
 
 An empty POST request triggers a new disk expansion task.

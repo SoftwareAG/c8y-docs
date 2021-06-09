@@ -9,15 +9,19 @@ aliases:
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone. Note that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
 
+
 #### Register your smartphone in Cumulocity IoT
 
-Registering a smartphone in Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration. Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide.
+Registering a smartphone in Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration. Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide. Make sure you set the *INTERVAL (secs)* of *Acceleration* and *Gyroscope* sensors in the Cloud Sensor App to 1 sec.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, note down the device ID of your registered phone.
 
 In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format. For this demo, use the data provided within the zip file.
 
-#### Upload Training Data with Cumulocity IoT Machine Learning Workbench (MLW)
+
+#### Data collection with Cumulocity IoT Machine Learning Workbench (MLW)
+
+You could either user the data provided within the zip folder or download the recorded data on your smart phone for model building purposes.
 
 The data recorded on your smartphone can be downloaded using MLW. To download the data, follow the below steps:
 
@@ -27,9 +31,18 @@ The data recorded on your smartphone can be downloaded using MLW. To download th
 
 3. Click **+Add Project** at the right of the top menu bar, enter a project named *Anomaly Detection* and description as *Anomaly detection using smartphone*, and click **Add Project**. This will create a new project with the given name. Click on the project name to navigate inside the project.
 
-4. To upload the provided *dataset_training.csv* file, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
+4. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from Cumulocity**.
 
-![Upload training dataset](/images/zementis/AnomalyDetection/anomaly-training-dataset.png)
+5. Select your phone's device ID (the one created above) from which the data needs to be pulled and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
+
+6. As part of data pull, provide the parameters such as data file name as *anomalyTrainingData*, data interval (i.e. interval during which the data was created), data aggregation as *None*, and choose **c8y_Acceleration** and **c8y_Gyroscope** Data points for data extraction. Once these parameters are provided, click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+
+    ![Cumulocity parameters](/images/zementis/AnomalyDetection/anomaly-app-c8y-datapull-param.png)
+
+Click **Tasks** in the navigator and click the *anomalyTrainingData* task name, to display the status of the Cumulocity IoT data pull in the **Task History** section at the center.
+
+Once the task has reached the status COMPLETED, the data with the name *anomalyTrainingData.csv* is stored in the **Data** folder of the *Anomaly Detection* project in MLW.
+
 
 #### Train the PMML model
 

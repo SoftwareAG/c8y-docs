@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/anomaly-detection/#prerequisites
 ---
 
-[Download the AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains training data set, jupyter notebook, test data set, PMML model and the EPL rule.
+Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains training data set, demo scripts, test data set, PMML model and the EPL rule.
 
 Running the demo requires 
 

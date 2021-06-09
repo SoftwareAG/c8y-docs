@@ -57,4 +57,4 @@ Visit the [{{< learning-portal >}}]({{< learning-portal-link >}}) where you can 
 
 ### Additional resources
 
-For more information and resources, see also [Additional resources](/about-doc/additional-resources).
+For more information and resources, see also [Additional resources](/welcome/additional-resources/).

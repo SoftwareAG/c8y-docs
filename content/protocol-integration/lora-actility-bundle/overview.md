@@ -26,4 +26,4 @@ The following sections describe how to:
 * [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity IoT.
 * [Troubleshooting](#troubleshooting) for warning messages.
 
-> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact [product support](/about-doc/contacting-support).
+> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).

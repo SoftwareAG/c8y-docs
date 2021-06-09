@@ -289,12 +289,6 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
-<tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
-<td style="text-align:left">Lets service providers monitor the availability and response time of tenants and sub-tenants.</td>
-<td style="text-align:left">tenant-sla-monitoring</td>
-<td style="text-align:left">Microservice</td>
-</tr>
 
 </tbody>
 </table>

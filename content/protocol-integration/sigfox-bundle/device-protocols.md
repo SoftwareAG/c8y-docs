@@ -9,7 +9,7 @@ To process data from Sigfox devices, Cumulocity IoT needs to understand the payl
 
 During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
-The assigned device protocol to the Sigfox device can be changed later using the **LPWAN** tab in the device details page.
+The device protocol assigned during Sigfox device registration can be changed from the **LPWAN** tab in the device details page.
 
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
 

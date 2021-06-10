@@ -81,7 +81,7 @@ Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten An
 
 ![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](/reference/sensor-library/) im Reference Guide.
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](/reference/sensor-library/) im Cumulocity IoT OpenAPI Specification.
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 

@@ -241,7 +241,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) im Reference Guide.
+Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) im Cumulocity IoT OpenAPI Specification.
 
 
 ### Handhabung von Zeitzonen

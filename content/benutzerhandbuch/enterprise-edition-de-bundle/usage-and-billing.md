@@ -226,7 +226,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) im Cumulocity IoT OpenAPI Specification. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 

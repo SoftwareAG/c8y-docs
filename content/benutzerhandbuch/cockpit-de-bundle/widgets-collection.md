@@ -102,7 +102,7 @@ Klicken Sie auf **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attri
 
 1. Klicken Sie auf **+Kommando hinzufügen**.
 1. Wählen Sie **Wartungsmodus umschalten** um die entsprechende vordefinierte Aktion hinzuzufügen.
-1. Wählen Sie **Kommando erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im darauf folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben.
+1. Wählen Sie **Operation erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im darauf folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben.
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
@@ -123,7 +123,7 @@ Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen.
 
 ![Data Point Graph widget](/images/benutzerhandbuch/cockpit/cockpit-datapointsgraph-widget.png)
 
-Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen. 
+Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen.
 
 Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 

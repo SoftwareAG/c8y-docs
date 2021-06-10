@@ -6,12 +6,12 @@ weight: 30
 aliases:
   - /predictive-analytics/activity-recognition/#getting-started
 ---
+Upload all the files from the zip file into Cumulocity IoT Machine Learning Workbench, you will have 1 json file, 1 notebook file and 1 EPL code file.
+We have added a *CONFIG.json* file to the zip. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
 
-We have added a *CONFIG.INI* file to the zip. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
+First of all, update the *CONFIG.json* with the appropriate values and save it. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. Leave the `c_device_source` as is for now.
 
-First of all, update the *CONFIG.INI* with the appropriate values and save it. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. Leave the `c_device_source` as is for now.
-
-	CONFIG.INI
+	CONFIG.JSON
 	[cumulocity]
 	c_url=https://yourtenant.cumulocity.com
 	c_user=user@company.com
@@ -23,5 +23,6 @@ For this particular demo, a phone or a phone-like device needs to be used, so th
 
 Therefore, the documentation has been split up into two parts:
 
+* [Activity recognition using an Android Smart-Phone](#activity-recognition-using-android)
 * [Activity recognition using an iPhone](#activity-recognition-using-iphone)
 * [Activity recognition using a simulated demo device](#activity-recognition-using-demo-device)

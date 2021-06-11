@@ -176,7 +176,7 @@ AnyExtractor dict := AnyExtractor(response.body);
 to:
 
 ```
-AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
+AnyExtractor dict := AnyExtractor(response.getBody());
 ```
 which is compatible with both current and previous versions of the `GenericResponse` API.
 

@@ -4,6 +4,9 @@ title: Introduction
 layout: bundle
 aliases:
   - /about-doc/intro-documentation
+  - /about-doc/content-overview
+  - /users-guide/enterprise-edition/#tenant-sla-monitoring
+  - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
 ---
 
 This documentation describes the **10.9.0 release (April 2021)** of the Cumulocity IoT platform.
@@ -18,4 +21,4 @@ To access the documentation index, click the arrow icon in the selection field b
 
 ![Select guide](/images/about/about-docs-selection.png)
 
->**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/), see [Additional resources](/welcome/additional-resources/).
+>**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}), see [Additional resources](/welcome/additional-resources/).

@@ -282,11 +282,6 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
-<tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
-<td style="text-align:left">Gibt Service Providern die Möglichkeit, die Verfügbarkeit und Reaktionszeit von Mandanten und Untermandanten zu überwachen.</td>
-<td style="text-align:left">tenant-sla-monitoring</td>
-<td style="text-align:left">Microservice</td>
 </tr>
 
 </tbody>

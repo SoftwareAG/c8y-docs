@@ -3,7 +3,7 @@ title: Visualization and remote control
 weight: 50
 ---
 
-Cumulocity visualizes your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.
+Cumulocity IoT visualizes your sensor data centrally and graphically through its modern web user interface. It also exposes common remote controls to users with the relevant permissions.
 
 The user interface automatically adapts itself to the devices you connect -- no configuration required. For example, if you connect a device that supports being restarted from remote, you will see a "Restart" button. If the device sends light sensor data, you will see a graph with the readings from the sensor.
 

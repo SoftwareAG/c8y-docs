@@ -5,6 +5,7 @@ layout: bundle
 aliases:
   - /concepts-guide/introduction-to-cumulocity
   - /concepts-guide/introduction-to-cumulocity.html
+  - /concepts/tenant-hierarchy
   - /concepts/acl
   - /konzepte/einfuehrung
   - /konzepte/introduction

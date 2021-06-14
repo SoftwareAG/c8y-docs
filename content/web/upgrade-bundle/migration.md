@@ -5,11 +5,11 @@ weight: 10
 ---
 
 
-This section targets to developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications.
+This section targets developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications.
 
-You should have read and understand the following concepts:
+You should have read and understood the following concepts:
 
-* [Overview](/web/overview/), explaining when to use which SDK.
+* [Appendix: Migration history](/web/background/), explaining when to use which SDK.
 * [Migration history](/web/background), explaining which versions you can use with the new SDK.
 * [c8y Command Line Tool (CLI)](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 

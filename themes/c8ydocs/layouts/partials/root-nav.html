@@ -64,7 +64,7 @@
       </a>
       {{ end }}
       <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
-        href="{{.Permalink}}">{{replace .Title "var-company-name-2" .Site.Params.companyname2}}</a>
+        href="{{.Permalink}}">{{replace (replace .Title "var-company-name-2" .Site.Params.companyname2) "var-tenant-type-2" .Site.Params.tenanttype2}}</a>
 
       {{ if $headless }}
       {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}

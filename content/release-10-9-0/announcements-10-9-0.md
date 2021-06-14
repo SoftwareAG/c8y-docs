@@ -6,7 +6,7 @@ aliases:
   - /release-10-9-0/migration-10-9-0
 ---
 
-### Cumulocity IoT Core platform
+### Core platform
 
 #### Deprecation of /devicecontrol/notifications endpoint
 

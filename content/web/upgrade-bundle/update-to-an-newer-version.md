@@ -1,7 +1,7 @@
 ---
-title: Update to a newer Web SDK version
+title: Updating the Web SDK version
 layout: redirect
-weight: 20
+weight: 5
 ---
 
  **Version:** 10.6.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components

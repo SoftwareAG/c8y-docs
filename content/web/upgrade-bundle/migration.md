@@ -1,5 +1,5 @@
 ---
-title: Migration
+title: Migrating applications
 layout: redirect
 weight: 10
 ---

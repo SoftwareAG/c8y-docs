@@ -31,6 +31,6 @@ The MQTT section is structured as follows:
 * [JSON via MQTT](/device-sdk/mqtt/#json) describes the payload format that can be used with the Cumulocity IoT MQTT implementation.
 
 
-This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions in the Internet. Some references can be found on the [MQTT web site](https://mqtt.org/mqtt-specification/).
+This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions in the Internet. Some references can be found on the [MQTT website](https://mqtt.org/mqtt-specification/).
 
 > **Info**: For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.

@@ -155,7 +155,7 @@ Next, you must configure the Edge 10.9 appliance. For example, if you had enable
 Software AG provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
 
 - [backup.sh](/files/edge/backup.sh)
-- [restore.sh](/files/edge/restore.sh)
+- [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 
 >**IMPORTANT:** Software AG does not officially support these scripts. These scripts are only for your reference.
 
@@ -178,9 +178,12 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 3. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
 ##### In 10.9 appliance
-1. Copy the `restore.sh` script to your Edge 10.9 appliance.
 
-2. Run the `restore.sh` script with the parameters:
+1. Log in as **root** user.
+
+2. Copy the `restore.sh` script to your Edge 10.9 appliance.
+
+3. Run the `restore.sh` script with the parameters:
 	- ARCHIVE_PATH: path to the ZIP with 10.7 migration data
 	- EXTRACTED_PATH: path to the folder with extracted migration data. It can also be an external drive.
 

@@ -215,6 +215,8 @@ Content-Type: application/json
 ```
 Here, the `ip_range` is an IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
 
+The **ip_range** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
+
 Before the installation, the `dns` and the network CIDR keys are optional.
 
 >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.

@@ -11,7 +11,8 @@
 
 function usage() {
     echo "Usage:"
-    echo "    backup_db.sh TENANT OUTPUT_DIRECTORY"
+    echo "    backup.sh TENANT [OUTPUT_DIRECTORY]"
+    echo "    OUTPUT_DIRECTORY by default is /tmp"
 }
 
 # ARGUMENTS

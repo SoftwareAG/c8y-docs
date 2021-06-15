@@ -37,6 +37,8 @@ After a successful installation, you can reconfigure the network and also config
 
    The CIDR suffix must be between 0 and 27 inclusive. The default value is 172.16.0.0/15.
 
+   The **Address range CIDR** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
+
    >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 
 ### Configuring the network using the REST APIs

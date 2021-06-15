@@ -163,4 +163,4 @@ To support developers during development, it is possible to subscribe to the top
 ### MQTT broker certificates
 
 MQTT broker uses the certificates which are assigned to the main environment domain. MQTT broker always sends these certificates during TLS handshake to devices.
-Moreover, Enterprise tenants are not able to customize MQTT broker certificates via the SSL Management feature.
+Moreover, {{< tenant-type-2 >}}s are not able to customize MQTT broker certificates via the SSL Management feature.

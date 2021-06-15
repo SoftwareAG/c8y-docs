@@ -44,7 +44,7 @@ https://<tenant-domain>.cumulocity.com/
 
 This will direct you to the login page of your default application. See [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification for further details on tenant ID and tenant domain.
 
->**Info:** The above URL is only valid for Cumulocity IoT Standard tenant subscribers. For Enterprise tenant deployments of Cumulocity IoT, the URL is specific to your organization.
+>**Info:** The above URL is only valid for Cumulocity IoT {{< tenant-type-1 >}} subscribers. For {{< tenant-type-2 >}} deployments of Cumulocity IoT, the URL is specific to your organization.
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Cumulocity IoT platform.
 
@@ -58,7 +58,7 @@ If you use one of the public cloud instances of the Cumulocity IoT platform and 
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default on the Cumulocity IoT public cloud instances. For on-premise instances, this feature can be configured, see [Enterprise tenant > Customizing your platform > Branding](/users-guide/administration/#branding).
+> **Info:** The cookie banner is turned on by default on the Cumulocity IoT public cloud instances. For on-premise instances, this feature can be configured, see [{{< tenant-type-2 >}} > Customizing your platform > Branding](/users-guide/administration/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [{{< company-name-2 >}} privacy statement]({{< privacy-statement-link >}}) with details on the {{< company-name-2 >}} privacy policy.

@@ -16,4 +16,4 @@ Microservices are Docker containers, hosted by {{< product-name-1 >}} and exposi
 
 Applications regardless of their form are identified by a so-called *application key*. The application key enables {{< product-name-1 >}} to associate a REST request from an application with the particular application. See the section on [Application management](https://{{< URL >}}/api/#tag/Application-API) in the {{< OpenAPI >}}.
 
-Super tenants (Management tenants or Enterprise tenants) can subscribe subtenants to {{< product-name-1 >}} applications deployed by them. This provides a basic application marketplace.
+Super tenants ({{< tenant-type-3 >}}s or {{< tenant-type-2 >}}s) can subscribe subtenants to {{< product-name-1 >}} applications deployed by them. This provides a basic application marketplace.

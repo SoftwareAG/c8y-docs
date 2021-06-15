@@ -10,7 +10,7 @@ The microservice-based data broker is powered by the Cumulocity IoT Messaging Se
 
 ### <a name="enabling-ms-data-broker"></a> To enable the microservice-based data broker
 
-1. In the Management tenant, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
+1. In the {{< tenant-type-3 >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
 2. In the **Applications** tab, subscribe the tenant to the data broker agent (databroker-agent-server).
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
@@ -31,9 +31,9 @@ After enabling the microservice-based data broker, your existing data connectors
 
 ### <a name="troubleshooting-ms-data-broker"></a> Troubleshooting
 
-#### Management tenant subscription alert
+#### {{< tenant-type-3 >}} subscription alert
 
-The Management tenant cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a Management tenant to the data broker agent.
+The {{< tenant-type-3 >}} cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a {{< tenant-type-3 >}} to the data broker agent.
 
 #### Data broker connection error
 

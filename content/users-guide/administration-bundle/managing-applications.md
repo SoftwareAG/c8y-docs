@@ -11,7 +11,7 @@ In the Cumulocity IoT platform we distinguish between two kinds of applications:
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
-Additionally, in Enterprise tenants, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
+Additionally, in {{< tenant-type-2 >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
@@ -78,7 +78,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< tenant-type-2 >}} > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
 
 
 <a name="subscribed-applications"></a>
@@ -95,9 +95,9 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### Standard tenant default applications
+### {{< tenant-type-1 >}} default applications
 
-In the Standard tenant you will find the following default applications:
+In the {{< tenant-type-1 >}} you will find the following default applications:
 
 <table>
 <col width="200">
@@ -132,7 +132,7 @@ In the Standard tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left"><b>This application is deprecated and no longer a default application in the {{< tenant-type-1 >}}. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -170,7 +170,7 @@ In the Standard tenant you will find the following default applications:
 </table>
 
 
-### Enterprise tenant applications
+### {{< tenant-type-2 >}} applications
 
 <table>
 <col width="200">

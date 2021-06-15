@@ -43,7 +43,7 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and Enterprise tenant customization.
+Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and {{< tenant-type-2 >}} customization.
 As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options

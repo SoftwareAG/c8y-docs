@@ -28,17 +28,17 @@ In general, microservices use the standard Cumulocity IoT authentication mechani
 1. The microservice can be created in any tenant that have **feature-microservice-hosting** enabled.
 2. The microservices access the Tenant API.
 
-At installation time of the microservice, an application is created in the Management tenant reflecting the new microservice. In addition, a service user is created in the Management tenant that allows the microservice to retrieve subscriptions.
+At installation time of the microservice, an application is created in the {{< tenant-type-3 >}} reflecting the new microservice. In addition, a service user is created in the {{< tenant-type-3 >}} that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.
 
 #### Microservice authorization
 
 Authorization is relevant on two levels:
 
-1. On the Management tenant level, the only authorization of a microservice is to access its own subscriptions.
+1. On the {{< tenant-type-3 >}} level, the only authorization of a microservice is to access its own subscriptions.
 2. For accessing customer tenants, the microservice installs a set of required permissions for being able to operate.
 
-A microservice is associated with a service user in the Management tenant, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.
+A microservice is associated with a service user in the {{< tenant-type-3 >}}, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.
 These permissions are visualized in the Administration application. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant.
 
 

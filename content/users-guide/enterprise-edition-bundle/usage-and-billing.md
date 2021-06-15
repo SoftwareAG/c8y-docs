@@ -123,7 +123,7 @@ The following information is provided for each subtenant (not completely visible
 </tr>
 <tr>
 <td align="left">Parent tenant</td>
-<td align="left">Name of the parent tenant (available only for Management tenant)</td>
+<td align="left">Name of the parent tenant (available only for {{< tenant-type-3 >}})</td>
 </tr>
 <tr>
 <td align="left">External reference</td>
@@ -157,7 +157,7 @@ The CSV file will be downloaded to your file system.
 <a name="microservice-usage"></a>
 ### Microservice usage
 
-The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables Enterprise tenants and service providers to charge tenants not only based on subscriptions but also based on resources usage.
+The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables {{< tenant-type-2 >}}s and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 
 
 #### Billing modes
@@ -185,7 +185,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the Management tenant of an Enterprise tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://cumulocity.com/api/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the {{< tenant-type-3 >}} of an {{< tenant-type-3 >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://cumulocity.com/api/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 

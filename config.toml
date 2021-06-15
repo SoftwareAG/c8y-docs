@@ -51,6 +51,7 @@ relativeURLs = true
 
   # Content variables for Frontmatter titles
   companyname2 = "Software AG"
+  tenanttype2 = "Enterprise tenant"
 
 # Customize
   [params.footer]

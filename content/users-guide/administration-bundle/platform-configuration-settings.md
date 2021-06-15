@@ -23,11 +23,12 @@ In the **Passwords** section, you can specify password settings like default str
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 
-### <a name="config-support-users"></a> Support user
+<a name="config-support-users"></a>
+### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables Cumulocity IoT platform providers (Software AG in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature enables Cumulocity IoT platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -41,9 +42,10 @@ In the **Validity limit** field, you can optionally specify the support duration
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
-#### <a name="configuring-support-users"></a>Configuring a support user
+<a name="configuring-support-users"></a>
+#### Configuring a support user
 
 A support user is a user in the Management tenant with specific permissions. This user can log in to the target tenant and impersonate the target user.
 
@@ -63,12 +65,3 @@ Using inventory roles, you can selectively assign a support user for specific su
 3. Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
-
-#### Product experience
-
-In the **Product experience** section, you can provide an API access key, i.e. a unique access key used for authentication of REST API requests, for the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience tracking.
-
-<img src="/images/users-guide/Administration/admin-settings-gainsight.png" alt="Product experience">
-<br>
-
-If this key is provided, a parent tenant can enable the Gainsight product experience tracking for subtenants, see [Managing tenants](/users-guide/enterprise-edition-bundle/managing-tenants).

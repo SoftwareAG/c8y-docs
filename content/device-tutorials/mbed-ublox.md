@@ -33,7 +33,7 @@ To run the Cumulocity IoT mbed agent, the following items are required:
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free".
+* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to [{{< company-cloud >}} > Cumulocity IoT]({{< cloud-link >}}) and select "Try for free".
 
 ### Setting up and registering the device
 
@@ -208,7 +208,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
 
-* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/about-doc/contacting-support) if you are connecting directly to Cumulocity IoT.
+* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/welcome/contacting-support/) if you are connecting directly to Cumulocity IoT.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 

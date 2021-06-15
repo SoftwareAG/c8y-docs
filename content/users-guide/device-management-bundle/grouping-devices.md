@@ -75,7 +75,6 @@ In the **Bulk operations** tab, bulk operations created for the group can be man
 > **Info:** Bulk operations are ordered by date, showing the latest operation at the top.
 
 <a name="add-group"></a>
-
 ### To create a new group
 
 1. Click the **Plus** button at the right of the top bar and then click **New group**.<br>
@@ -105,7 +104,6 @@ Click the menu icon in a device entry and then click **Delete**.
 ### Managing devices in groups
 
 <a name="assigning-devices"></a>
-
 #### To assign devices to a group
 
 You can assign devices to groups in several ways.
@@ -159,7 +157,6 @@ Click the menu icon in a device entry and then click **Device management**.
 The device details for the specific device stored under **All devices** in the Device Management application will open.
 
 <a name="restructuring-groups"></a>
-
 ### Restructuring groups and devices
 
 You can easily restructure groups, subgroups and devices by a drag and drop functionality.
@@ -178,7 +175,6 @@ You can easily restructure groups, subgroups and devices by a drag and drop func
 3. In the resulting dialog box, select if you want to move or add the device.
 
 <a name="smart-groups"></a>
-
 ### Using smart groups
 
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.

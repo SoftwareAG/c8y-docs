@@ -12,7 +12,8 @@ Click **Enterprise tenant** in the **Settings** menu to access these settings.
 
 ![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
 
-### <a name="configuration"></a>Configuration
+<a name="configuration"></a>
+### Configuration
 
 >**Info:** In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
 
@@ -32,7 +33,7 @@ Under **Two-factor authentication**, you can change the SMS template which is se
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
+In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< company-help >}} page will be used.
 
 ![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
@@ -90,7 +91,8 @@ Click **Save configuration** at the bottom to save your settings.
 
 > **Info:** Some additional configuration settings can be specified globally in the Management tenant, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 
-### <a name="branding"></a>Branding
+<a name="branding"></a>
+### Branding
 
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
@@ -110,7 +112,8 @@ Saving the settings will not yet apply them to the current tenant and respective
 
 Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
-#### <a name="configuration-parameters"></a>Configuration parameters
+<a name="configuration-parameters"></a>
+#### Configuration parameters
 
 In the Configuration section, the following branding parameters can be configured.
 
@@ -180,7 +183,7 @@ In the **Misc** section you specify the “Button Border-Radius” by providing 
 
 **Cookie banner**
 
-In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. The banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
 
 The following parameters can be specified:
 
@@ -188,7 +191,8 @@ The following parameters can be specified:
 * Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
 * Link to privacy policy - A link to the page with the privacy policy.
 
-### <a name="domain-name"></a>Domain name
+<a name="domain-name"></a>
+### Domain name
 
 A key feature of the Enterprise tenant is the ability to operate the Cumulocity IoT platform using a custom domain name. This
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants
@@ -199,8 +203,8 @@ using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** a
 There are three prerequisites for using a custom domain:
 
 1. To activate your domain, a valid license that covers your wildcard domain is required.
-   Please contact [product support](/about-doc/contacting-support) to install a license for your domain.
-2. You've obtained a valid wildcard SSL certificate your IoT domain, for
+   Please contact [product support](/welcome/contacting-support/) to install a license for your domain.
+2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
    routed to Cumulocity IoT. (see below).
@@ -276,9 +280,9 @@ uploaded to the platform.
 
 
 Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
-to your enterprise tenant using the new domain name. You will also receive an email with information about the
-activation. Note that your management tenant domain name is static, for example, if your wildcard domain is "*
-.iot.mycompany.com" then your management tenant domain will be "management.iot.mycompany.com".
+to your Enterprise tenant using the new domain name. You will also receive an email with information about the
+activation. Note that your Management tenant domain name is static, for example, if your wildcard domain is "*
+.iot.mycompany.com" then your Management tenant domain will be "management.iot.mycompany.com".
 
 > **Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 

@@ -80,7 +80,7 @@ Fragments use a naming convention to avoid conflicts between different parties s
 
 In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](https://cumulocity.com/api/#section/Sensor-library) and in the [Device management library](https://cumulocity.com/api/#section/Device-management-library) in the Cumulocity IoT OpenAPI Specification.
 
-> **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`.
+> **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
 
 Note that Cumulocity IoT follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
@@ -104,11 +104,11 @@ More information can be found in [Identity](https://cumulocity.com/api/#tag/Iden
 
 The inventory model supports two default hierarchies of objects: A communication hierarchy ("childDevices") and an asset hierarchy ("childAssets").
 
-The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls.
+The communication hierarchy tracks how devices are linked to the IoT platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls.
 
 ![Example communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
-The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices.
+The asset hierarchy structures the assets that are remotely supervised and controlled through the IoT devices.
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity IoT, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 

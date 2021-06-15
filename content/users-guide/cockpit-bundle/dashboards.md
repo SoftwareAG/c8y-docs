@@ -26,7 +26,6 @@ Dashboards provide you with a customized visualization of your data by using a s
 Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
 
 <a name="creating-dashboards"></a>
-
 ### To create a dashboard
 
 Select the group or the device in the navigator for which to create a dashboard.
@@ -62,7 +61,6 @@ Click **Save** to create and open the dashboard.
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 
 <a name="sharing-dashboards"></a>
-
 ### Sharing dashboards
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.

@@ -24,12 +24,13 @@ To position a device in the asset hierarchy, you have to "assign" the device to 
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
-### <a name="hierarchies"></a>Asset hierarchy versus device hierarchy
+<a name="hierarchies"></a>
+### Asset hierarchy versus device hierarchy
 
 Cumulocity IoT supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
 
-The device hierarchy tracks how devices are linked to Cumulocity IoT from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to [Cumulocity IoT's domain model](/concepts/domain-model) in the Concepts guide.
+The device hierarchy tracks how devices are linked to Cumulocity IoT from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [Cumulocity IoT's domain model](/concepts/domain-model) in the Concepts guide.
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
@@ -94,7 +95,8 @@ If dashboards have been created for an object, they will also be added as a tab.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/web-sdk-for-plugins/overview/) for details.
 
-### <a name="creating-groups"></a>To create a group
+<a name="creating-groups"></a>
+### To create a group
 
 1. Click the **Plus** button at the right of the top bar and then click **New group**.
 2. In the resulting dialog box, enter a unique group name to identify your group.
@@ -108,7 +110,8 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
-### <a name="assigning-devices"></a>To assign devices to a group
+<a name="assigning-devices"></a>
+### To assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to Cumulocity IoT. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
 

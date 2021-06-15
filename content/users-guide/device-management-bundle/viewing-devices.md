@@ -18,7 +18,6 @@ A detailed device list will be displayed.
 ![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
-
 ### Device information
 
 For each device, the device list shows the following information provided in columns:
@@ -116,7 +115,6 @@ The device will be permanently deleted from the platform.
 > **Important:** Deleting a device means to remove the device from the Cumulocity IoT database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 <a name="searching-devices"></a>
-
 ### To search for devices
 
 Cumulocity IoT includes a full-text search for devices.
@@ -130,7 +128,6 @@ Our example shows a search for "Ublox C027".
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 
 <a name="filtering-devices"></a>
-
 ### To filter devices
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.

@@ -37,4 +37,4 @@ Once you have defined and activated a TrendMiner offloading pipeline, the initia
 
 In TrendMiner you have to connect to the Dremio view **c8y_cdh_tm_measurements_live** using ODBC. For the ODBC connection settings, you have to navigate to the **Home** page in the DataHub UI and click the ODBC icon to open the ODBC connection settings.
 
-For more details on the steps required in TrendMiner, see also the corresponding TrendMiner documentation of the [Connector API](https://developer.trendminer.com/connector-api/). 
+For more details on the steps required in TrendMiner, see also the corresponding TrendMiner documentation of the [Generic ODBC Connector Configuration](https://support.trendminer.com/hc/en-us/articles/360039446851-Generic-Connector-Configuration).

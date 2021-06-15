@@ -42,13 +42,14 @@ To access the applications for your Cumulocity IoT tenant, use the following URL
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. See [Tenants](https://cumulocity.com/api/#tag/Tenants) in the **Cumulocity IoT OpenAPI** Specification for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification for further details on tenant ID and tenant domain.
 
->**Info:** The above URL is only valid for Cumulocity IoT Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
+>**Info:** The above URL is only valid for Cumulocity IoT Standard tenant subscribers. For Enterprise tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Cumulocity IoT platform.
 
-### <a name="login"></a>To log into the Cumulocity IoT platform
+<a name="login"></a>
+### To log into the Cumulocity IoT platform
 
 On the Login screen, enter your username (case-sensitive) and password.
 
@@ -57,10 +58,10 @@ If you use one of the public cloud instances of the Cumulocity IoT platform and 
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default only on the Cumulocity IoT public cloud instances. For on-premise instances this feature needs to be configured explicitly, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+> **Info:** The cookie banner is turned on by default on the Cumulocity IoT public cloud instances. For on-premise instances, this feature can be configured, see [Enterprise tenant > Customizing your platform > Branding](/users-guide/administration/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
-* Click **Privacy policy** to open the [Software AG privacy statement](https://www.softwareag.com/en_corporate/privacy.html) with details on the Software AG privacy policy.
+* Click **Privacy policy** to open the [{{< company-name-2 >}} privacy statement]({{< privacy-statement-link >}}) with details on the {{< company-name-2 >}} privacy policy.
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
 	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.
@@ -78,7 +79,8 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 <img src="/images/users-guide/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
-### <a name="reset-password"></a>To reset your password
+<a name="reset-password"></a>
+### To reset your password
 
 1. Click the **Forgot password?** link on the Login screen.
 2. In the resulting dialog box, enter your email address and click **Reset password**.
@@ -89,9 +91,10 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 >**Info:** The automated password reset will only work if your email address is stored with your Cumulocity IoT user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity IoT user, or your Cumulocity IoT user has no email address stored. In either case, contact a Cumulocity IoT administrator in your organization. Administrators can reset your password.
 >
-If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/about-doc/contacting-support).
+If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/welcome/contacting-support/).
 
-### <a name="URLs"></a>Accessing pages using URLs
+<a name="URLs"></a>
+### Accessing pages using URLs
 
 You can navigate straight to any place inside a Cumulocity IoT application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 

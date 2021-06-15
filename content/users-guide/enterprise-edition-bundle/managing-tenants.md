@@ -4,11 +4,11 @@ title: Managing tenants
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
+Using the Enterprise tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info:** If you would like to use this feature, please contact [product support](/about-doc/contacting-support).
+>**Info:** If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -29,9 +29,10 @@ The **Tenants** page provides the following information on each subtenant:
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
+In the Management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
 
-### <a name="creating-tenants"></a>To create a subtenant
+<a name="creating-tenants"></a>
+### To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
 
@@ -51,7 +52,7 @@ In the management tenant, you will also find information on the parent tenant, i
 	<tbody>
 	<tr>
 	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.  </td>
+	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
@@ -88,7 +89,7 @@ In the management tenant, you will also find information on the parent tenant, i
 
 When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
-From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
+From the Management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
 ### To view or edit subtenant properties
 
@@ -139,16 +140,17 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 ### Deleting subtenants
 
->**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
+>**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the Management tenant. You cannot delete tenants from any tenant but the Management tenant.
 >
->Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
+>Administrators in Enterprise tenants are only allowed to suspend active subtenants, but not to delete them.
 
 #### To delete a subtenant
 
 Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
 
 
-### <a name="subscribe"></a>Applications
+<a name="subscribe"></a>
+### Applications
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity IoT applications.
 
@@ -189,7 +191,8 @@ The following information is provided:
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
 
-### <a name="tenants-custom-properties"></a>Custom properties
+<a name="tenants-custom-properties"></a>
+### Custom properties
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition/#usage-and-billing) page.
 
@@ -204,7 +207,7 @@ Platform administrators can limit the request rate of each subtenant via the fol
 * Limit stream queue - Limit of MQTT request queue for tenant
 * Limit stream requests - Limit of MQTT requests for tenant per second
 
-It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the management tenant by using the following subtenant custom fragments:
+It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the Management tenant by using the following subtenant custom fragments:
 
  - cep.queue.limit
  - data-broker.queue.limit
@@ -224,7 +227,8 @@ Using the checkbox **Enable Gainsight product experience tracking** a parent ten
 Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
 
 
-### <a name="tenant-policies"></a> Tenant policies
+<a name="tenant-policies"></a>
+### Tenant policies
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
@@ -253,7 +257,7 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
->**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the management tenant in order to edit those rules and options.
+>**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the Management tenant in order to edit those rules and options.
 
 #### To edit a tenant policy
 
@@ -271,7 +275,8 @@ Click the menu icon in the tenant policy entry you want to duplicate and then cl
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.
 
-### <a name="default-subscriptions"></a>Default subscriptions
+<a name="default-subscriptions"></a>
+### Default subscriptions
 
 In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
@@ -282,7 +287,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the *Cumulocity IoT OpenAPI* Specification.
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification.
 
 In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
@@ -312,7 +317,8 @@ Save the settings by clicking **Save** at the bottom of the page.
 
 > **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
 
-#### <a name="default-applications"></a>Overriding default subscriptions
+<a name="default-applications"></a>
+#### Overriding default subscriptions
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
 

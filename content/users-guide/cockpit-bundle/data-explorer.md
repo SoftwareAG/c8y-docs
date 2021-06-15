@@ -49,7 +49,6 @@ For details on modifying the visualization in general, see [Changing data explor
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
 <a name="change-visualization"></a>
-
 ### Changing data explorer visualization
 
 To change the visualization in the data explorer, you can modify several properties.
@@ -93,7 +92,6 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 For each datapoint, its visibility can be switched on or off by using the toggle left from the data point name.
 
 <a name="add-data-points"></a>
-
 ### To add a data point
 
 To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
@@ -104,6 +102,10 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
+JsonPath expressions added from data points will be stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces will be supported):
+
+![Measurement added from data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
+
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
@@ -113,7 +115,6 @@ For details on the data point library refer to [Using the Datapoint Library](#da
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
 <a name="customize-data-points"></a>
-
 ### Customizing data point properties
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
@@ -200,7 +201,6 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
 <a name="create-widget"></a>
-
 ### Creating widgets from the data explorer
 
 If you want to keep your current configuration in the data explorer for later usage, save it as a widget.
@@ -226,7 +226,6 @@ In the upcoming dialog, select one of the reports available and click **Select**
 > **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
 
 <a name="export-data"></a>
-
 ### Exporting measurement data
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:

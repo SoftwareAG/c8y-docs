@@ -38,7 +38,7 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Activate support</td>
-<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the management tenant, see <a href="/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Supporting users in other tenants</a> for details. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the Management tenant, see <a href="/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Supporting users in other tenants</a> for details. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
@@ -47,7 +47,8 @@ The **User** menu contains the following items:
 </tbody>
 </table>
 
-### <a name="user-settings"></a>To change user settings
+<a name="user-settings"></a>
+### To change user settings
 
 Several account settings can be changed by the user.
 
@@ -65,7 +66,8 @@ The user interface language will be selected along the following criteria, in th
 *  The language selected in the browser preferences.
 * 	The operating system language.
 
-#### <a name="languages"></a>Available languages
+<a name="languages"></a>
+#### Available languages
 
 The UI is available in the following languages:
 
@@ -85,7 +87,8 @@ The UI is available in the following languages:
 |Spanish|es|
 
 
-#### <a name="change-password"></a>To change your password
+<a name="change-password"></a>
+#### To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.

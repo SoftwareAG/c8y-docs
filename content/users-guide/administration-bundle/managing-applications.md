@@ -39,7 +39,8 @@ Additionally, in Enterprise tenants, it is possible to configure **Default subsc
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
-### <a name="application-properties"></a>Application properties
+<a name="application-properties"></a>
+### Application properties
 
 Click on an application card to view the application properties.
 
@@ -101,10 +102,11 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
 
 
-### <a name="subscribed-applications"></a>Subscribed applications
+<a name="subscribed-applications"></a>
+### Subscribed applications
 
 Cumulocity IoT provides a variety of applications for different purposes.
 
@@ -117,9 +119,9 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### Standard Tenant default applications
+### Standard tenant default applications
 
-In the Standard Tenant you will find the following default applications:
+In the Standard tenant you will find the following default applications:
 
 <table>
 <col width="200">
@@ -154,7 +156,7 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard Tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -192,7 +194,7 @@ In the Standard Tenant you will find the following default applications:
 </table>
 
 
-### Enterprise Tenant applications
+### Enterprise tenant applications
 
 <table>
 <col width="200">
@@ -308,18 +310,14 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
-<tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
-<td style="text-align:left">Lets service providers monitor the availability and response time of tenants and subtenants.</td>
-<td style="text-align:left">tenant-sla-monitoring</td>
-<td style="text-align:left">Microservice</td>
 </tr>
 
 </tbody>
 </table>
 
 
-### <a name="own-applications"></a>Own applications
+<a name="own-applications"></a>
+### Own applications
 
 Own applications may be
 
@@ -342,7 +340,8 @@ To display further information on the application, simply click its card. For de
 To directly open an application from here, click **Open** on the respective application card.
 
 
-#### <a name="adding-applications"></a>To add an own application
+<a name="adding-applications"></a>
+#### To add an own application
 
 Click **Add application** in the **Own applications** page.
 
@@ -355,7 +354,8 @@ In the resulting dialog box, choose one of the following methods:
 * [External application](#external-application) - by linking to an application running elsewhere
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
-##### <a name="uploading-zip-files"></a>To upload a web application
+<a name="uploading-zip-files"></a>
+##### To upload a web application
 
 1. Click **Add application** in the **Own applications** page.
 2. Select **Upload web application**.
@@ -365,7 +365,8 @@ The application is created once the ZIP file has been successfully uploaded.
 
 <img src="/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
-##### <a name="uploading-microservices"></a>To upload a microservice
+<a name="uploading-microservices"></a>
+##### To upload a microservice
 
 1. Click **Add application** in the **Own applications** page.
 2. Select **Upload microservice**.
@@ -376,7 +377,8 @@ The microservice application is created once the ZIP file has been successfully 
 >**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
-##### <a name="external-application"></a>To link to an external application
+<a name="external-application"></a>
+##### To link to an external application
 
 1. Click **Add application** in the **Own applications** page.
 2. Select **External application**.
@@ -390,7 +392,8 @@ The microservice application is created once the ZIP file has been successfully 
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-##### <a name="clone-application"></a>To duplicate an application
+<a name="clone-application"></a>
+##### To duplicate an application
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
@@ -413,7 +416,8 @@ For details on the fields, see also [Application properties](#application-proper
 > **Info:** If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 
-#### <a name="editing-and-removing"></a>To edit an own application
+<a name="editing-and-removing"></a>
+#### To edit an own application
 
 Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
 

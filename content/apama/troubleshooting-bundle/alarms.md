@@ -49,7 +49,8 @@ Once the cause of an alarm is resolved, you have to acknowledge and clear the al
 
 > **Info:** The alarm texts for the alarms below may undergo minor changes in the future.
 
-#### <a name="tenant_option_change"></a>Change in tenant options and restart of Apama-ctrl
+<a name="tenant_option_change"></a>
+#### Change in tenant options and restart of Apama-ctrl
 
 This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
 
@@ -61,7 +62,8 @@ Analytics Builder allows you to configure its settings by changing the tenant op
 
 Once you see this alarm, you can be sure that your change is effective.
 
-#### <a name="apama_safe_mode"></a>Safe mode on startup
+<a name="apama_safe_mode"></a>
+#### Safe mode on startup
 
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
@@ -89,7 +91,8 @@ To diagnose the cause of an unexpected restart, you can try the following:
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
-#### <a name="apama_ctrl_starter"></a>Deactivating models in Apama Starter
+<a name="apama_ctrl_starter"></a>
+#### Deactivating models in Apama Starter
 
 This alarm is raised when Apama-ctrl switches from the fully capable microservice to Apama Starter with more than 3 active models.
 
@@ -99,7 +102,8 @@ This alarm is raised when Apama-ctrl switches from the fully capable microservic
 
 In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
-#### <a name="apama_highmemoryusage"></a>High memory usage
+<a name="apama_highmemoryusage"></a>
+#### High memory usage
 
 This alarm is raised whenever the correlator consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
 
@@ -151,7 +155,8 @@ If the memory continues to grow, then when it reaches the limit, the correlator 
 
 See also [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in Software AG's Tech Community.
 
-#### <a name="apama_ctrl_fatalcritwarn"></a>Warning or higher level logging from an EPL file
+<a name="apama_ctrl_fatalcritwarn"></a>
+#### Warning or higher level logging from an EPL file
 
 This alarm is raised whenever messages are logged by Apama EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
@@ -190,7 +195,8 @@ Third alarm:
 - Alarm text: &lt;Monitor name&gt;-Warning.
 - Alarm severity: WARNING
 
-#### <a name="apama_ctrl_error"></a>An EPL file throws an uncaught exception
+<a name="apama_ctrl_error"></a>
+#### An EPL file throws an uncaught exception
 
 You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem.
 
@@ -216,7 +222,8 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
-#### <a name="apama_ctrl_warn"></a>An EPL file blocks the correlator context for too long
+<a name="apama_ctrl_warn"></a>
+#### An EPL file blocks the correlator context for too long
 
 If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
@@ -246,7 +253,8 @@ You can diagnose the issue by the monitor name and context name given in the ala
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
 
-#### <a name="eplapp_restore_timeout"></a>EPL app restore timeout on restart of Apama-ctrl
+<a name="eplapp_restore_timeout"></a>
+#### EPL app restore timeout on restart of Apama-ctrl
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
 specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds,
@@ -265,7 +273,8 @@ The following information is only included in the alarm text if the Apama-ctrl m
 If no such apps are detected, this information is omitted from the alarm text.
 
 
-#### <a name="extension_error"></a>Multiple extensions with the same name
+<a name="extension_error"></a>
+#### Multiple extensions with the same name
 
 This alarm is raised when the Apama-ctrl microservice tries to activate the deployed extensions during its startup process and there are multiple extensions with the same name.
 
@@ -277,7 +286,8 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
 
-#### <a name="smartrule_configuration_error"></a>Smart rule configuration failed
+<a name="smartrule_configuration_error"></a>
+#### Smart rule configuration failed
 
 This alarm is raised if a smart rule contains an invalid configuration.
 
@@ -289,7 +299,8 @@ To diagnose the cause, download the diagnostics overview ZIP file as described i
 
 The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
 
-#### <a name="smartrule_restore_failed"></a>Smart rule restore failed
+<a name="smartrule_restore_failed"></a>
+#### Smart rule restore failed
 
 This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
 
@@ -299,7 +310,8 @@ This alarm is raised if a corrupt smart rule is present in the inventory and the
 
 To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
 
-#### <a name="lost_correlator_connection"></a>Connection to correlator lost
+<a name="lost_correlator_connection"></a>
+#### Connection to correlator lost
 
 This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
 
@@ -307,9 +319,10 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 - Alarm text: Unable to ping correlator: &lt;message&gt;, Apama-ctrl will restart.
 - Alarm severity: MAJOR
 
-Apama-ctrl will automatically restart. Report this to [product support](/about-doc/contacting-support) if this is happening frequently.
+Apama-ctrl will automatically restart. Report this to [product support](/welcome/contacting-support) if this is happening frequently.
 
-#### <a name="application_queue_full"></a>The correlator queue is full
+<a name="application_queue_full"></a>
+#### The correlator queue is full
 
 This alarm is raised whenever the correlator queue is full, including both input and output queues.
 
@@ -323,7 +336,8 @@ The correlator queue size is based on the number of events, not raw bytes.
 
 Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger the "correlator queue is full" alarm followed by the "CEP queue is full" alarm.
 
-#### <a name="cep_queue_full"></a>The CEP queue is full
+<a name="cep_queue_full"></a>
+#### The CEP queue is full
 
 This alarm is raised whenever the CEP queue for the respective tenant is full.
 

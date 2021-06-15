@@ -27,7 +27,6 @@ The following types of roles can be associated with users:
 Moreover, application access can be granted to enable a user to use an application.
 
 <a name="global"></a>
-
 ### Global roles
 
 Click **Roles** in the **Account** menu to display a list of configured roles.
@@ -118,7 +117,6 @@ You may also see the following legacy roles:
 |readers|Can read all data (including users, in contrast to "Global Readers").
 
 <a name="create-edit-roles"></a>
-
 #### To add a global role
 
 Click **Add Role** in the **Global roles** tab.
@@ -269,7 +267,6 @@ There may be additional permissions visible depending on the features in your su
 > **Important:** When new features with new permissions are added to Cumulocity IoT, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 
 <a name="attach-global"></a>
-
 #### Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
@@ -291,7 +288,6 @@ Click **Save** to save your settings.
 ![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
 <a name="inventory"></a>
-
 ### Inventory roles
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
@@ -332,7 +328,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/users-guide/enterprise-edition#users-in-other-tenants).
+> **Info:** Service providers will see an additional permission "Support" in their Management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/users-guide/enterprise-edition#users-in-other-tenants).
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -356,7 +352,8 @@ As another example, assume that you are using tracking devices. You want to allo
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-### <a name="attach-inventory"></a>Assigning inventory roles to users
+<a name="attach-inventory"></a>
+### Assigning inventory roles to users
 
 Inventory roles are assigned to a user and a group of devices.
 
@@ -379,10 +376,9 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/about-doc/contacting-support) can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
 <a name="app-access"></a>
-
 ### Granting application access
 
 The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order.

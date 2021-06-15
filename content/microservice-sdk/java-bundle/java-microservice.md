@@ -86,7 +86,7 @@ The response looks like this:
 }
 ```
 
-See also [Tenants](https://cumulocity.com/api/#tag/Tenants) in the cumulocity IoT OpenAPI guide.
+See also [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification.
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
@@ -191,7 +191,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
-#### <a name="java-example"></a>Create a Java application
+<a name="java-example"></a>
+#### Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -276,13 +277,13 @@ To deploy your microservice on the Cumulocity IoT platform you need:
 * A valid tenant, a user and a password in order to access Cumulocity IoT.
 * The ZIP file built with Maven on the previous steps.
 
-> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/about-doc/contacting-support) so that we can assist you with the activation. Note that this is a paid feature.
+> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
 ![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
 
-Upload the ZIP file of your microservice application and click **Subscribe** for your tenant to be to subscribed to the microservice afterwards.
+Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
 ![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
@@ -316,7 +317,8 @@ and your authorization header would look like `"Authorization": "Basic dDAwNzEyM
 $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-### <a name="run-locally"></a> Running the microservice locally
+<a name="run-locally"></a>
+### Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity IoT.
 

@@ -31,7 +31,8 @@ For each rule, the rule name, details on the data to be deleted (fragment type, 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
 
-#### <a name="add-retention-rule"></a>To add a retention rule
+<a name="add-retention-rule"></a>
+#### To add a retention rule
 
 1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).

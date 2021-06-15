@@ -17,7 +17,8 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 >**Info:** To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
-#### <a name="adding-remote-access-endpoints-via-vnc"></a>To add a remote access endpoint via VNC
+<a name="adding-remote-access-endpoints-via-vnc"></a>
+#### To add a remote access endpoint via VNC
 
 1. Enter the host (IP address or hostname) and the port of the server.
 2. Select a sign-in method. If you select "Password only", provide the password for the VNC server.
@@ -80,7 +81,8 @@ To delete an endpoint, click the menu icon at the right of the respective entry 
 
 >**Info:** An active connection will not be terminated automatically after the endpoint was deleted.
 
-#### <a name="connecting-to-endpoints"></a>To connect to an endpoint
+<a name="connecting-to-endpoints"></a>
+#### To connect to an endpoint
 
 To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**.
 

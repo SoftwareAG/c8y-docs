@@ -126,8 +126,8 @@ This operation supports to read one or more attributes of one or more nodes. Thi
     "c8y_ua_command_ReadAttribute": {
          "nodes": ["ns=3;s=FloatArray"],
          "attribute":"13"
-    }
-    "description": "Read attribute from ns=3;s=FloatArray",
+    },
+    "description": "Read attribute from ns=3;s=FloatArray"
 }
 ```
 
@@ -256,6 +256,67 @@ This operation reads historic values and only saves those values to a file which
 ```
 The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
 - batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 100000.
+
+### Read file
+
+Prerequisites: 
+- Open and Read methods for the file node must be implemented on server side, either as the children of the file node itself or as the children of the data type node
+
+With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId.  
+
+The parameter `bufferSize` is optional and adjustable up to 10MB. The default size, if not set in the request, is 1MB. This will not limit the size of the file to be read. If the size is bigger, multiple read operations are triggered.
+
+```json
+{
+  "deviceId" : "DEVICE_ID",
+  "c8y_ua_command_ReadFileOperation": {
+    "fileNodeId": "ns=2;s=sampleFile",
+    "bufferSize": <bufferSize>
+  },
+  "description":"Read sample file"
+}
+```
+
+After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system.
+
+Alternatively, you can check the binary folder by using the binary API like this:
+
+```shell
+{{url}}/inventory/binaries
+```
+
+This returns a JSON response like this:
+
+```json
+{
+  "self": "http://<tenant-domain>/inventory/binaries?pageSize=5&currentPage=1",
+  "managedObjects": [
+    {
+      "owner": <device-owner>,
+      "type": "ua-file-type",
+      "lastUpdated": "2021-05-17T14:33:21.074Z",
+      "name": "ns=2;s=sampleFile",
+      "self": "http://<tenant-domain>/inventory/binaries/2351",
+      "id": "2351",
+      "c8y_IsBinary": "",
+      "length": 13268,
+      "contentType": "application/octet-stream"
+    }
+  ],
+  "statistics": {
+    "totalPages": 1,
+    "currentPage": 1,
+    "pageSize": 5
+  }
+}
+```
+
+Now download is possible with the self link provided inside the managedObjects section of the JSON response.
+
+For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
+
+For 10.9 and later, refer to [binaries API](https://www.cumulocity.com/api/#tag/Binaries) in the Cumulocity IoT OpenAPI Specification
+
 
 ### Write value
 

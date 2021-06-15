@@ -3,7 +3,8 @@ title: Setting up and registering the device
 weight: 30
 ---
 
-### <a name="install-agent"></a> To install the agent
+<a name="install-agent"></a>
+### To install the agent
 
 1. Download the agent software, which includes the CA root certificate bundle, Cloud Remote Access software, and our package public key. For the link see the table below.
 2. Log in to the web user interface of the NTC-200 series.
@@ -31,9 +32,11 @@ The agent will automatically start and the router can then be [registered with C
 |1.1.1|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6 and higher|
 
 
-### <a name="register-device"></a> Registering the router as a device to Cumulocity IoT
+<a name="register-device"></a>
+### Registering the router as a device to Cumulocity IoT
 
-#### <a name="configure"></a> To configure the router
+<a name="configure"></a>
+#### To configure the router
 
 The support for Cumulocity IoT can be configured through the router’s web user interface. To do so, log in to the user interface as described in the router’s manual. Navigate to the **System** tab and click the **Internet of Things** menu item.
 
@@ -65,7 +68,8 @@ The web interface also shows the status of the connection to Cumulocity IoT:
 * Integration failed: Cannot connect to Cumulocity IoT.
 * Create threads failed: Not able to start reporter or device push.
 
-#### <a name="connect"></a> To connect the router
+<a name="connect"></a>
+#### To connect the router
 
 To register your NetComm router to Cumulocity IoT, you need the router’s serial number as device ID. The serial number is printed on the back side of the router as shown below. Alternatively, it is also available in the router’s web user interface. Navigate to **System** > **Internet of Things** and view the **Device ID** field.
 

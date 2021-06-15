@@ -15,5 +15,5 @@ For your convenience, here is an overview of the contents of this document:
 | [Working with DataHub](/datahub/working-with-datahub) | Manage offloading pipelines and query the offloaded results |
 | [Operating DataHub](/datahub/operating-datahub) | Run administrative tasks |
 | [Running DataHub on Cumulocity IoT Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of DataHub |
-| [Integrating DataHub with other Software AG products](/datahub/integrating-datahub-with-sag-products) | Learn how to integrate DataHub with other Software AG products |
+| [Integrating DataHub with other {{< company-name-2 >}} products](/datahub/integrating-datahub-with-sag-products) | Learn how to integrate DataHub with other {{< company-name-2 >}} products |
 | [Release notes](/datahub/datahub-release-notes) | Get news about the latest DataHub releases |

@@ -3,7 +3,8 @@ title: Remote monitoring and control of industrial assets
 weight: 40
 ---
 
-### <a name="gpio"></a> Using GPIO
+<a name="gpio"></a>
+### Using GPIO
 
 The following GPIO functionalities are supported:
 
@@ -64,7 +65,8 @@ Digital outputs can be controlled using the "Relay array control" widget, see th
 
 ![Relay Array Widget](/images/device-demos/casa-system-router/router-relay-array.png)
 
-### <a name="modbus"></a> Cloud Fieldbus
+<a name="modbus"></a>
+### Cloud Fieldbus
 
 You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and serial port, respectively, and manage them remotely in Cumulocity IoT. To do so, you need to follow these steps.
 
@@ -92,11 +94,12 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router a
 
 Then:
 
-* Subscribe your account to the Cloud Fieldbus feature by contacting [product support](/about-doc/contacting-support).
+* Subscribe your account to the Cloud Fieldbus feature by contacting [product support](/welcome/contacting-support/).
 * Configure the Modbus communication as described in [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) in the *Protocol integration guide*.
 * Enable or disable write permission by setting the “Modbus read only” property in the Cumulocity IoT menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
 
-### <a name="remote-access"></a> Cloud Remote Access
+<a name="remote-access"></a>
+### Cloud Remote Access
 
 If your device supports VNC, Telnet or SSH remote access, you can remotely manage it via Cumulocity IoT.
 

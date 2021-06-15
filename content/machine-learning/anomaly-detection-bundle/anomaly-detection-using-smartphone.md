@@ -7,92 +7,63 @@ aliases:
   - /predictive-analytics/anomaly-detection/#anomaly-detection-using-smartphone
 ---
 
-This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone. Note that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
+This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone. Note that 
 
+> **Note:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 #### Register your smartphone in Cumulocity IoT
 
-Registering a smartphone in Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration. Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide. Make sure you set the *INTERVAL (secs)* of *Acceleration* and *Gyroscope* sensors in the Cloud Sensor App to 1 sec.
+Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) and register a smartphone in Cumulocity IoT. 
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, note down the device ID of your registered phone.
+> **Note:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cloud Sensor App.
 
-In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench which automatically transforms the JSON data into the training data format.
+Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
+
+In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
 
 #### Data collection with Cumulocity IoT Machine Learning Workbench (MLW)
 
-You could either user the data provided within the zip folder or download the recorded data from your smart phone for model building purposes.
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using smartphone" as **Project description**.
 
-The data from your your smartphone can be downloaded using MLW. To download the data, follow the below steps:
+2. Either you can download the recorded measurements of your smartphone or use the data provided within the ZIP file for model-building purposes.
 
-1. Log in to MLW using your tenant username and password
+    * Follow the steps described in [ Machine Learning Workbench > Data pull > Cumulocity IoT](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
 
-2. Click **Projects** in the navigator. This will list all the available projects. 
-
-3. Click **+Add Project** at the right of the top menu bar, enter a project named *Anomaly Detection* and description as *Anomaly detection using smartphone*, and click **Add Project**. This will create a new project with the given name. Click on the project name to navigate inside the project.
-
-4. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from Cumulocity**.
-
-5. Select your phone's device ID (the one created above) from which the data needs to be pulled and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
-
-6. As part of data pull, provide the parameters such as data file name as *anomalyTrainingData*, data interval (i.e. interval during which the data was created), data aggregation as *None*, and choose **c8y_Acceleration** and **c8y_Gyroscope** Data points for data extraction. Once these parameters are provided, click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
-
-    ![Cumulocity parameters](/images/zementis/AnomalyDetection/anomaly-app-c8y-datapull-param.png)
-
-Click **Tasks** in the navigator and click the *anomalyTrainingData* task name, to display the status of the Cumulocity IoT data pull in the **Task History** section at the center.
-
-Once the task has reached the status COMPLETED, the data with the name *anomalyTrainingData.csv* is stored in the **Data** folder of the *Anomaly Detection* project in MLW.
-
-Alternatively, to upload the provided training dataset, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the *anomalyTrainingData.csv *file for uploading or use the drag and drop files capability.
+    * Alternatively, follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *anomalyTrainingData.csv* to Machine Learning Workbench (MLW).
 
 
 #### Train the PMML model
 
-For this demo, the anomaly detection machine learning algorithm "Isolation Forest" is applied. Isolation Forest is an approach that detects anomalies by isolating instances, without relying on any distance or density measure.
+For this use case, the "Isolation Forest" an anomaly detection machine learning algorithm is applied. Isolation Forest is an approach that detects anomalies by isolating instances, without relying on any distance or density measure.
 
 The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. - [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The integrated Jupyter Notebook feature within the Cumulocity IoT Machine Learning Workbench helps in writing the code that creates an Isolation Forest Model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created, one could convert the scikit-learn object into PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
+The integrated Jupyter Notebook feature within the Cumulocity IoT Machine Learning Workbench helps in writing the code that creates an Isolation Forest Model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. 
 
-The following steps illustrate how to train an Isolation Forests machine learning model using the Jupyter Notebook.
+> **Info:** To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. 
 
-1. To upload the provided *createModel.ipynb* file, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
+After the model is created, the scikit-learn object can be converted to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-2. To edit a notebook, select the *createModel.ipynb* notebook file in the **Code** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> at the top right.
+The following steps illustrate the training of an Isolation Forest machine learning model using the Jupyter Notebook.
 
-3. This will open the notebook in an editor. Run each cell of the notebook to train an Isolation Forests PMML model.
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *createModel.ipynb* to Machine Learning Workbench (MLW).
 
-![Train Model usng Jupyter Notebook](/images/zementis/AnomalyDetection/anomaly-jnb.png)
+2. Follow the steps described in [ Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *createModel.ipynb* to train an Isolation Forest PMML model.
 
-4. The PMML model named *isolationForests.pmml* will show up in the **Model** folder of the MLW when one clicks on the refresh button <img src="/images/zementis/mlw-refresh-icon.png" alt="Edit" style="display:inline-block; margin:0">
+
+![Train Model using Jupyter Notebook](/images/zementis/AnomalyDetection/anomaly-jnb.png)
+
+3. Click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of Tabs to list the newly created *isolationForests.pmml* in the **Model** folder.
 
 
 #### Model deployment and predictions using Cumulocity IoT
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions. 
 
-Select the *isolationForests.pmml* model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the model to Machine Learning Engine (MLE).
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
 
-Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
-
-For predictions, first upload the test dataset *test_data.csv* to MLW. To upload test dataset, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the file for uploading or use the drag and drop files capability.
-
-To predict data using a deployed model, select *test_data.csv* from the **Data** folder and click the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
-
-Select the **PMML** option under the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
-
-![Select Format MLE](/images/zementis/AnomalyDetection/anomaly-app-automl-predict.png)
-
-This will list all the available PMML models deployed on the Machine Learning Engine (MLE). Select *isolationForest* PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
-
-![Select Model for Prediction](/images/zementis/AnomalyDetection/anomaly-app-automl-predict-model-select.png)
-
-The prediction results will be stored in the **Data** folder. The predicted output data is stored in the CSV format with the file name suffixed with *predicted*. 
-
-Select the output data from the **Data** folder and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> at the right of the top menu bar to download the output data to the local machine. 
-
-Select the output data from the **Data** folder and click the preview icon <img src="/images/zementis/mlw-preview-icon.png" alt="Preview" style="display:inline-block; margin:0"> to preview the output data.
-
+2. Follow the steps described in [ Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using *isolationForest* PMML model.
 
 #### Create and upload Apama monitor to Cumulocity IoT
 

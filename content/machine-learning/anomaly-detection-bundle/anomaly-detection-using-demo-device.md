@@ -11,17 +11,22 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 #### Register a demo device in Cumulocity IoT
 
-Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
+A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.py* which registers a demo device in Cumulocity IoT. To upload the script and CONFIG.json to Cumulocity IoT, follow the steps described in [Machine Learning application > Projects](/machine-learning/web-app-mlw/#projects).
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
 
-Before running the script, navigate to the **Data** section, edit *CONFIG.json* file to update the values of c_url, c_user and c_pass with your tenant credentials.
+2. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py* (A script that registers a demo device in Cumulocity IoT) and *CONFIG.json* to Machine Learning Workbench (MLW).
 
-To run the script in MLW, navigate to the **Code** folder, choose the Python file named *DemoDeviceCreator.py* . Click **Execute** and select "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence**. click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">. 
+3. Select *CONFIG.json* in the **Data** folder and click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
-Click **Tasks** in the navigator and click the *DemoDeviceCreator* task name, to display the status of the Python Execution in the **Task History** section at the center.
+4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
-Use this script to add a device named "DemoDevice" to Cumulocity IoT.
+5. Select *DemoDeviceCreator.py* in the **Code** folder and click execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+
+
+Click **Tasks** in the navigator and click the *DemoDeviceCreator* task name, to display the status of the Python Execution in the **Task History** section at the centre.
+
+Script to add a device named "DemoDevice" to Cumulocity IoT.
 
 	DemoDeviceCreator.py
 	

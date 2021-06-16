@@ -148,7 +148,7 @@ monit restart opcua_mgmt_service_proc
 ```
 Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/)
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 

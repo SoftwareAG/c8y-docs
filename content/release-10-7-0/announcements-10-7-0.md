@@ -1,6 +1,6 @@
 ---
 weight: 12
-title: Migration notes
+title: Important announcements
 layout: bundle
 ---
 
@@ -73,13 +73,6 @@ With the 10.10 GA release in July 2021, there will be an enhancement to security
 
 With the 10.10 GA release in July 2021, all Cumulocity IoT UIs will be upgraded to Angular 11. This change will only affect you, if you or your development team use the Web SDK to extend default Cumulocity IoT UI applications (Cockpit, Administration, Device Management) or to build your own web applications.
 
-#### Security using OAuth to be made default
-
-With the 10.10 GA release in July 2021, the "OAuth internal" login mode (OAuth authentication) will be the default login mode. Currently, any tenant that is provisioned uses "Basic Auth" (basic authentication) for authenticating a user against a UI application. This mode is considered unsafe in the browser, as the user information and password can be read by JavaScript. With the OAuth internal mode, the credentials aren’t readable by JavaScript and thus more secure.  
-
-If required (for instance due to old extensions that do not support the OAuth authentication), basic authentication can be manually enabled in the Administration application.
-
-It is strongly recommended that all customers move to OAuth authentication to reduce the security exposure of using basic authentication.
 
 #### Underscore not allowed in new tenant domains
 

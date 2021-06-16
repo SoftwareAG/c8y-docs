@@ -200,7 +200,7 @@ mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.myco
 Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen:
 
 1. Zum Aktivieren Ihrer Domain ist eine gültige Lizenz erforderlich, die Ihre Wildcard-Domain abdeckt.
-   Bitte kontaktieren Sie den [Produkt-Support](/about-doc/contacting-support), um eine Lizenz für Ihre Domain zu installieren.
+   Bitte kontaktieren Sie den [Produkt-Support](/welcome/contacting-support), um eine Lizenz für Ihre Domain zu installieren.
 2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
    ein Zertifikat für *\*.iot.mycompany.com*.
 3. Es gibt eine gültige DNS-Konfiguration für Ihre Domain, die dafür sorgt, dass alle Anfragen an *\*.iot.mycompany.com* an

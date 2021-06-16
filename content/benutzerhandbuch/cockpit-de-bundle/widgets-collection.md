@@ -11,6 +11,14 @@ Die Cockpit-Anwendung enthält voreingestellte Widget-Typen. Jeder Widget-Typ er
 
 Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren Widget-Typen und ihre Konfigurationsparameter beschrieben.
 
+### Aktuelle Alarme
+
+Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
+
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+
 ### Alarmliste
 
 Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
@@ -35,6 +43,18 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
 Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+
+### Ampel
+
+Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
+|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
 
 ### Anwendungen
 
@@ -117,13 +137,17 @@ Sie können die Spalten umsortieren, in dem Sie auf das Symbol ganz links in ein
 
 Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger über die entsprechende Zeile und klicken Sie auf **Löschen** auf der rechten Seite.
 
+### Bild
+
+Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
 ### Datenpunktgraph
 
 Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
 ![Data Point Graph widget](/images/benutzerhandbuch/cockpit/cockpit-datapointsgraph-widget.png)
 
-Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen. 
+Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen.
 
 Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
@@ -191,30 +215,15 @@ Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anz
 
 Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
 
+### Gerätenachricht
+
+Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die diese Art von Operation unterstützen.
+
 ### Hilfe und Service
 
 Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
-
-### Bild
-
-Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-### Infoanzeige
-
-Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
-
-![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
-
-Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
-
-![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
-
-![Info gauge widget data point label](/images/benutzerhandbuch/cockpit/cockpit-widget-data-labels.png)
-
-Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
-
 
 ### HTML
 
@@ -247,15 +256,19 @@ Das Widget "HTML" zeigt benutzerdefinierten Inhalt. Die Inhalt kann mit HTML for
 
 ![HTML widget](/images/benutzerhandbuch/cockpit/cockpit-widget-html.png)
 
-### Linearer Zeiger
+### Infoanzeige
 
-Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und maximale Zielwerte werden ebenfalls angezeigt.
+Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
 
-![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-linear-gauge.png)
+![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
 
->**Info:** Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
+Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
 
-Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
+![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
+
+![Info gauge widget data point label](/images/benutzerhandbuch/cockpit/cockpit-widget-data-labels.png)
+
+Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
 
 ### Karte
 
@@ -284,10 +297,6 @@ Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Popup-Fenster an
 Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle einer Gruppe werden alle Geräte in dieser Gruppe (aber nicht in Untergruppen) angezeigt.
 
 >**Info:** Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
-
-### Gerätenachricht
-
-Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die diese Art von Operation unterstützen.
 
 ### Kuchendiagramm
 
@@ -322,28 +331,22 @@ Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten i
 </tbody>
 </table>
 
+### Linearer Zeiger
+
+Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und maximale Zielwerte werden ebenfalls angezeigt.
+
+![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-linear-gauge.png)
+
+>**Info:** Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
+
+Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
+
 ### Quick Links
 
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
 
-### Tacho
-
-Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
-
-![Radial gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-radial-gauge.png)
-
-Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.
-
-
-### Aktuelle Alarme
-
-Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
-
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Relaisfeldsteuerung
 
@@ -408,14 +411,10 @@ Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Si
 </tbody>
 </table>
 
-### Ampel
+### Tacho
 
-Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
+Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
 
-**Konfigurierbare Parameter**
+![Radial gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-radial-gauge.png)
 
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
-|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
+Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.

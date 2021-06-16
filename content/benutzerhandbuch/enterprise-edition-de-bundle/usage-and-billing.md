@@ -226,7 +226,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) im Cumulocity IoT OpenAPI. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -241,7 +241,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) im Reference Guide.
+Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) im Cumulocity IoT OpenAPI.
 
 
 ### Handhabung von Zeitzonen

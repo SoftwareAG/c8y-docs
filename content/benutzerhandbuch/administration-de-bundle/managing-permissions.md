@@ -360,7 +360,7 @@ Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie 
 
 Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
 
-Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Produkt-Support](/about-doc/contacting-support) können Ihnen helfen, die Berechtigungsprobleme zu beheben.
+Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Produkt-Support](/welcome/contacting-support) können Ihnen helfen, die Berechtigungsprobleme zu beheben.
 
 ### <a name="app-access"></a>Gewähren von Anwendungszugriff
 

@@ -8,7 +8,7 @@ Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der Cumulocity IoT-Plat
 
 Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und die erforderlichen Supportbenutzer müssen im Management-Mandanten erstellt sein, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/benutzerhandbuch/administration-de/#config-support-users).
 
-> **Info:** In den Public-Cloud-Instanzen von Cumulocity IoT kann die Supportbenutzer-Funktionalität nur vom [Software AG Global Support](/about-doc/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für Enterprise Tenant-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
+> **Info:** In den Public-Cloud-Instanzen von Cumulocity IoT kann die Supportbenutzer-Funktionalität nur vom [Software AG Global Support](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für Enterprise Tenant-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
 
 ### <a name="configuring-support-access"></a>Konfigurieren von Supportbenutzerzugriff
 
@@ -26,7 +26,7 @@ Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch
 
 Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
 
-> **Info:** Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details erfragen Sie bitte beim [Produkt-Support](/about-doc/contacting-support/).
+> **Info:** Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support/).
 
 > **Info:** Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 

@@ -184,7 +184,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration“ > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -254,7 +254,7 @@ Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#managing-firmware-on-a-device), [Software](/benutzerhandbuch/device-management-de/#managing-software-on-a-device), [Konfigurationen](/benutzerhandbuch/device-management-de/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 

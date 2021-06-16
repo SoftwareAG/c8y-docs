@@ -218,10 +218,10 @@ In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit 
 Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anfragen und Abmeldeanfragen in folgenden Feldern verwendet werden: URL, Text, Kopfzeilen und Anfrageparameter
 
 Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin_sso_placeholder_standalone.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
 
 Platzhalter können auch als Textteile verwendet werden:
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin_sso_placeholder_text.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
 
 Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
 
@@ -229,7 +229,7 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v2-oauth2-auth-code-flow](https://docs.microsoft.com/de-de/azure/active-directory/develop/v2-oauth2-auth-code-flow).
 
 Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weiteren Schritte erforderlich.
 
@@ -318,15 +318,48 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 1. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
 
-	|Checkbox|Beschreibung|
-|:---|:---|
-|Erforderlich|Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".
-|Standardwert|Stellen Sie einen Standardwert bereit, der automatisch in das benutzerdefinierte Attributfeld eingefügt wird. Nur verfügbar bei Attributen des Typs "Zeichenkette".
-|Minimum|Geben Sie einen minimalen Integer-Wert ein.
-|Maximum|Geben Sie einen maximalen Integer-Wert ein.
-|Minimale Länge|Geben Sie eine minimale Länge ein, die für die Zeichenkette erforderlich ist.
-|Maximale Länge|Geben Sie eine maximale Länge ein, die für die Zeichenkette erforderlich ist.
-|Regulärer Ausdruck|Fügen Sie einen regulären Ausdruck hinzu, der zum Ausfüllen des benutzerdefinierten Attributfelds erforderlich ist.
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Checkbox</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Erforderlich</td>
+<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp “Boolean”.</td>
+</tr>
+<tr>
+<td style="text-align:left">Standardwert</td>
+<td style="text-align:left">Stellen Sie einen Standardwert bereit, der automatisch in das benutzerdefinierte Attributfeld eingefügt wird. Nur verfügbar bei Attributen des Typs “Zeichenkette”.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum</td>
+<td style="text-align:left">Geben Sie einen minimalen Integer-Wert ein.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum</td>
+<td style="text-align:left">Geben Sie einen maximalen Integer-Wert ein.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimale Länge</td>
+<td style="text-align:left">Geben Sie eine minimale Länge ein, die für die Zeichenkette erforderlich ist.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximale Länge</td>
+<td style="text-align:left">Geben Sie eine maximale Länge ein, die für die Zeichenkette erforderlich ist.</td>
+</tr>
+<tr>
+<td style="text-align:left">Regulärer Ausdruck</td>
+<td style="text-align:left">Fügen Sie einen regulären Ausdruck hinzu, der zum Ausfüllen des benutzerdefinierten Attributfelds erforderlich ist.</td>
+</tr>
+</tbody>
+</table>
 
 4. Klicken Sie auf **Speichern**, um das neue Attribut zu erstellen.
 

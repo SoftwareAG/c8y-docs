@@ -64,6 +64,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 </tr>
 </tbody>
 </table>
+
 Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie auf **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
 
 ### Konfigurieren von Spalten
@@ -111,7 +112,7 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
 Cumulocity IoT umfasst eine Volltextsuche nach Geräten.
 
-Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein. 
+Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein.
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
 

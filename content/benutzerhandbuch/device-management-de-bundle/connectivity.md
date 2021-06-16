@@ -8,7 +8,7 @@ aliases:
 
 Der Connectivity-Agent, der von der Anwendung Cumulocity IoT Device Management aus arbeitet, liefert grundlegende Informationen zu Mobilgeräten sowie zusätzliche Details zur Konnektivität.
 
-Cumulocity IoT lässt sich mit der SIM-Connectivity-Management-Plattform Jasper integrieren. Für die SIM-Connectivity-Management-Plattformen Comarch und Ericsson bietet Cumulocity IoT eine experimentelle Implementierung. Weitere Details erfragen Sie bitte beim [Produkt-Support](/about-doc/contacting-support).
+Cumulocity IoT lässt sich mit der SIM-Connectivity-Management-Plattform Jasper integrieren. Für die SIM-Connectivity-Management-Plattformen Comarch und Ericsson bietet Cumulocity IoT eine experimentelle Implementierung. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support).
 
 Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 
@@ -32,7 +32,7 @@ Die folgende Beschreibung basiert vornehmlich auf Jasper, doch dieselbe Konfigur
 In den nachstehenden Abschnitten wird Folgendes beschrieben:
 
 * [Einrichten Ihres Jasper Control Center-Kontos](#link-account) (beispielhaft)
-* Konfigurieren der [Konnektivität](#connectivity) zum SIM-Anbieter in Ihrem Cumulocity IoT-Mandanten
+* Konfigurieren der [Konnektivität](#connectivity-configuration) zum SIM-Anbieter in Ihrem Cumulocity IoT-Mandanten
 * [Verknüpfen von SIMs](#link-sims) und Mobilgeräten
 * In der [Registerkarte "Connectivity"](#jasperinfo) angezeigte Informationen
 * [Verwalten der Konnektivität](#managing) über Device Management
@@ -59,13 +59,13 @@ Zum Erstellen eines Benutzers im Jasper Control Center führen Sie die folgenden
 Der Benutzer ist nun erstellt, aber hat noch kein Passwort. Folgen Sie den Anweisungen, die Ihnen das Control Center per E-Mail gesendet hat, um das Passwort festzulegen.
 
 
-### <a name="connectivity"></a>Konfigurieren der Konnektivität für den SIM-Anbieter in Cumulocity IoT
+### <a name="connectivity-configuration"></a>Konfigurieren der Konnektivität für den SIM-Anbieter in Cumulocity IoT
 
 Führen Sie den folgenden Schritt aus, um die Konnektivität in Cumulocity IoT zu konfigurieren:
 
 1. Melden Sie sich über einen Cumulocity IoT-Administratorbenutzer bei der Cumulocity IoT-Plattform an.
 1. Wechseln Sie zur Anwendung Administration.
-1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/about-doc/contacting-support), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
+1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
 2. Wechseln Sie zur Registerkarte **Mobilfunkanbieter-Einstellungen**.
 3. Wählen Sie einen Anbieter aus der Auswahlliste aus.
 1. Geben Sie die Zugangsdaten (URL, Schlüssel (im Falle von Jasper), Benutzername und Passwort) für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.

@@ -9,3 +9,5 @@ You can expand the disk size of the installation disk and the data disk using th
 To expand the disk size of the installation disk and the data disk, use the following endpoint:
 
 - [POST /edge/expand-disk](/edge/rest-api/#post-edgeexpand-disk)
+
+>**Info:** If there is no disk space to expand, the task will be marked as success.

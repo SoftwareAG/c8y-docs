@@ -43,9 +43,9 @@ In case users added the prefix as a workaround manually in the template, they no
 
 With the 10.5 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
-With the 10.10 release, scheduled for July 2021, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.11 release, scheduled for October 2021, the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.11 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.12, release the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
-If not done already, we recommend you not to wait for the 10.11 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the *User guide*.
+If not done already, we recommend you not to wait for the 10.12 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the *User guide*.
 
 In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5 or higher as well as the Microservice SDK 10.5 or higher.
 

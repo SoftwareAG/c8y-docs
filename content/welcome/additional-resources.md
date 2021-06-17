@@ -8,7 +8,7 @@ aliases:
 
 ### Installation and operations documentation on the {{< company-name-2 >}} {{< company-portal >}}
 
-The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
+The **Installation and Operations guides** for the {{< product-name-1 >}} platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
 ![Documentation on {{< company-portal >}}](/images/about/about-empower.png)
 
@@ -26,7 +26,7 @@ On this community, you can:
 
 ### Product support website in the {{< company-name-2 >}} {{< company-portal >}}
 
-You can find product information on the product support website in the [{{< company-name-2 >}} {{< company-portal >}} ]({{< portal-link >}}) website.
+You can find product information on the product support website in the [{{< company-name-2 >}} {{< company-portal >}} ]({{< portal-link >}}).
 
 >**Info:** If you do not have an account for the {{< company-portal >}} yet, send an email to [{{< company-email >}}]({{< company-email >}}) with your name, company, and company email address and request an account.
 

@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](/https://www.cumulocity.com/api/#section/REST-implementation).
+The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](https://www.cumulocity.com/api/#section/REST-implementation).
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose.
 

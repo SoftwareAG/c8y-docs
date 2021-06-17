@@ -63,7 +63,7 @@ Siehe auch [So fügen Sie eine Gruppe hinzu](#add-group) und [So weisen Sie eine
 
 **Bulk-Operationen**
 
-In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie ein Kommando in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
+In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie eine Operation in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
 > **Info:** Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
 

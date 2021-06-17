@@ -550,7 +550,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td style="text-align:left">3</td>
 <td style="text-align:left">Operation ausführen</td>
-<td style="text-align:left">Die Operation, die gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
+<td style="text-align:left">Die Operation, die gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Operation"-Feld können einige Standardoperationen ausgewählt werden. Um eine Standardoperation zu verwenden, wählen sie die entsprechende Operation und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
 </tr>
 <tr>
 <td align="left">4</td>

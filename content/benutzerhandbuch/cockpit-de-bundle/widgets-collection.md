@@ -122,7 +122,7 @@ Klicken Sie auf **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attri
 
 1. Klicken Sie auf **+Kommando hinzufügen**.
 1. Wählen Sie **Wartungsmodus umschalten** um die entsprechende vordefinierte Aktion hinzuzufügen.
-1. Wählen Sie **Kommando erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im darauf folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben.
+1. Wählen Sie **Operation erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im darauf folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben.
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 

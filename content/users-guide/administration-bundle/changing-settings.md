@@ -49,8 +49,6 @@ Strong (green) passwords must have "M" characters. By default, the system restri
 
 Click **Save** to apply the settings.
 
->**Important:** Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
-
 #### TFA settings
 
 Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).

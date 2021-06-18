@@ -23,6 +23,5 @@ For this particular demo, a phone or a phone-like device needs to be used, so th
 
 Therefore, the documentation has been split up into two parts:
 
-* [Activity recognition using an Android Smart-Phone](#activity-recognition-using-android)
-* [Activity recognition using an iPhone](#activity-recognition-using-iphone)
+* [Activity recognition using a Smart-Phone](#activity-recognition-using-android)
 * [Activity recognition using a simulated demo device](#activity-recognition-using-demo-device)

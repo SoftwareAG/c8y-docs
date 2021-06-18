@@ -1,5 +1,5 @@
 ---
-title: Activity recognition using an Android Smart-Phone
+title: Activity recognition using a Smart-Phone
 layout: redirect
 weight: 40
 
@@ -7,23 +7,33 @@ aliases:
   - /predictive-analytics/activity-recognition/#activity-recognition-using-android
 ---
 
-This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your Android Smart-Phone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. Note, that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
+This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your Smart-Phone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. 
 
-#### Register an Android Smart-Phone in Cumulocity IoT
+> **Note:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
-Registering an Android Smart-Phone in Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration.
 
-Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide.
+#### Register a Smart-Phone in Cumulocity IoT
 
-After the download, do the following on your Android Smart-Phone: Open Settings > Click General > Click Device Management or Profiles & Device Management > Select Software AG > Trust "Software AG“.
+Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) and register a smartphone in Cumulocity IoT. 
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of your registered Android Smart-Phone.
+> **Note:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cloud Sensor App.
 
+Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. 
 #### Data collection with Cumulocity IoT
 
-Collecting training data for activity recognition is done by starting the Cumulocity IoT Cloud Sensor App, performing each one of the activities over a few minutes, and noting the exact time. The important point to care is you need to set up the app to send data in seconds intervals.  As a next step, the instructions and scripts provided below can be used to collect training data per activity type. The resulting CSV files can be combined for the different activity classes so that the final training data includes instances for all activity types.
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with **Activity Recognition** as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
-Note that the code and data structure follows the current version of Cumulocity IoT it might get changed in the future and data might need more complex pre-processing might for an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
+2. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *01 merge Data.ipynb* and *CONFIG.json* to Machine Learning Workbench (MLW).
+
+3. Select *CONFIG.json* in the **Data** folder and click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
+
+4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
+
+
+Recording training data for activity recognition is done by starting the Cumulocity IoT Cloud Sensor App, performing each one of the activities over a few minutes, and noting the exact time.
+
+
+The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
 
 The following code block contains the data format of the JSON schema that was assumed for this demo.
 
@@ -55,40 +65,33 @@ The following code block contains the data format of the JSON schema that was as
 	    "activity" : "none"
 	}
 
-Data collection can be done by using the *Import from Cumulocity IoT* feature of Cumulocity IoT Machine Learning Workbench tool.
-
-<img src="/images/zementis/ActivityRecognition/dataimport.PNG" alt="Download" style="display:inline-block; margin:0">
-
-
 
 #### To collect the walking data:
 
-Click on “Import from Cumulocity IoT” >> Select Your Device >>> Give a name walkData >>> Select time period  From: 11:45 To: 11:50  Select sensor *c8y_Acceleration, c8y_Gyroscope*. >>> Aggregation None >>> Click submit>> This will create a task in Cumulocity Machine Learning Workbench >> Once task changes to Success >> We can confirm the data in our Data section the name of the file is *walkData.csv*.
-This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
-<img src="/images/zementis/ActivityRecognition/walk.PNG" alt="Download" style="display:inline-block; margin:0">
+* Follow the steps described in [ Machine Learning Workbench > Data pull > Cumulocity IoT](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with *walkData.csv* as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration"  as **Data points**.
 
+* This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the sitting data:
 
-Click on “Import from Cumulocity IoT” >> Select Your Device >>> Give a name sittingData >>> Select time period  From: 11:38 To: 11:44  Select sensor *c8y_Acceleration, c8y_Gyroscope*. >>> Aggregation None >>> Click submit>> This will create a task in Cumulocity Machine Learning Workbench >> Once task changes to Success >> We can confirm the data in our Data section the name of the file is *sittingData.csv*.
-This file can be previewed to verify the downloaded data and can be used for model building exercise.
+* Follow the steps described in [ Machine Learning Workbench > Data pull > Cumulocity IoT](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with *sittingData.csv* as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration"  as **Data points**.
 
-<img src="/images/zementis/ActivityRecognition/sitting.PNG" alt="Download" style="display:inline-block; margin:0">
-
+* This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the jumping data:
 
-Click on “Import from Cumulocity IoT” >> Select Your Device >>> Give a name jumpData >>> Select time period  From: 11:52 To: 11:58  Select sensor *c8y_Acceleration, c8y_Gyroscope*. >>> Aggregation None >>> Click submit>> This will create a task in Cumulocity Machine Learning Workbench >> Once task changes to Success >> We can confirm the data in our Data section the name of the file is *jumpData.csv*.
-This file can be previewed to verify the downloaded data and can be used for model building exercise.
+* Follow the steps described in [ Machine Learning Workbench > Data pull > Cumulocity IoT](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with *jumpData.csv* as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration"  as **Data points**.
 
-<img src="/images/zementis/ActivityRecognition/sitting.PNG" alt="Download" style="display:inline-block; margin:0"><br>
+* This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 Once data is downloaded.
 
-We need to merge all these file and create a concatenated data with labels which can be used for model building exercise. Run the attached *01 merge Data.ipynb* notebook which does the following:
+The following steps illustrate the next steps to merge all these file and create a concatenated data with labels which can be used for machine learning model building exercise using the Jupyter Notebook.
 
-*	Loads al the activity data, aggregate them in second wise, and add labels for each activity and save it in a single file.
+Follow the steps described in [ Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *01 merge Data.ipynb*. This will perform following actions.
+
+*	Loads al the activity data, aggregate them in second wise, and add labels for each activity and save it in a single file *activityData.csv*.
 
 <img src="/images/zementis/ActivityRecognition/notebook1.PNG" alt="Download" style="display:inline-block; margin:0">
 
@@ -96,25 +99,35 @@ We need to merge all these file and create a concatenated data with labels which
 #### Train the PMML model
 
 To train the model we will use the AutoML feature of Cumulocity IoT Machine Learning Workbench.
-Select the data file *activityData.csv* and click on train AutoML icon.
 
-<img src="/images/zementis/ActivityRecognition/autoML.PNG" alt="Download" style="display:inline-block; margin:0"> <br><br>
-This will open a Pre-processing form which needs to be filled as shown in the below image. The actions are:
-* Select *Classification* 
-* Select the "label" variable as target variable and uncheck the checkbox. 
-* Unselect the time variable
-* CLick on *Build*
- <br><br>
-<img src="/images/zementis/ActivityRecognition/automl1.PNG" alt="Download" style="display:inline-block; margin:0"><br><br>
-Fill the form to start the AutoML task. Give Name "activityrecognitionModel" >>> Select Scoring "accuracy" >>> Select Algorithm of your choice "RandomForestClassifier" >>> Generation *5* >>> Population Size *25*
+1. Follow the steps described in [ Machine Learning Workbench > Projects > Resources](/machine-learning/web-app-mlw/#automl).
 
+2. Select the data resource **activityData.csv** in the **Data** folder, and click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> at the right of the top menu bar to proceed with training the AutoML model on that data.
+
+3. Select the **Problem Type**  **Classification** and select the **Target Variable** **label** at the right, unselect **USE FOR MODEL** **time**, click on **BUILD**
+<img src="/images/zementis/ActivityRecognition/automl1.PNG" alt="Download" style="display:inline-block; margin:0">
+
+4. In the **Training Parameter** section at the right, select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**) and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 <img src="/images/zementis/ActivityRecognition/automl3.PNG" alt="Download" style="display:inline-block; margin:0">
 
-#### Upload the model to Cumulocity IoT
 
-In order to upload the model to Cumulocity IoT, Navigate to Models section of Cumulocity IoT Machine Learning Workbench and select the model *activityRecognitionModel.pmml* and click on Deploy icon.
+This will create a new task in the **Tasks** section.
 
-<img src="/images/zementis/ActivityRecognition/uplaodModel.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the model training in the **Task History** section at the centre.
+
+Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
+
+The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
+
+After the training is complete, the best model selected by the evaluation criteria will be saved in the **Model** folder of the respective **Project** in PMML format.
+
+#### Deploy the model to Cumulocity IoT
+
+Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
+
+Select the model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
+
+Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 

@@ -32,11 +32,13 @@ For example, if your domain name is **myown.iöt.com** (for example, containing 
 	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
 
 * Ensure that you adhere to the following domain name validation rules:
-	* The domain name may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. The domain name can be a combination of lowercase or alphanumeric characters separated by dot ( . ) or hyphen ( - ) Note that the usage of underscore characters is deprecated, but still possible for backward compatibility reasons.
+	* The domain name must be a combination of case-insensitive alphanumeric characters separated by dot ( . ) or hyphen ( - ).
 		* Cannot contain any letters of languages like Chinese, Latin or Arabic.
 		* Cannot contain any special characters like (+ , ! @ # $ % ^ & * ( ) ; \ \ / | < > \ " \ ' ) other than dot ( . ) or hyphen ( - ).
 	* The length of the domain name including the dot must not exceed 255 characters.
-	* Each segment of the domain name separated by a dot must be between 1 to 63 characters long.
+	* The domain name must contain at least one dot.
+	* Each segment of the domain name must be separated by a dot.
+		* The domain name must be between 1 to 63 characters long.
 		* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long.
 		* The domain name cannot begin or end with a hyphen.
 
@@ -53,7 +55,7 @@ If Cumulocity IoT Edge should communicate with the cloud, the following ports of
 * HTTPS
 * MQTT over TLS
 
-There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker. 
+There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker.
 
 #### Incoming traffic
 
@@ -65,7 +67,7 @@ The following ports need to be enabled by default in order to accept traffic fro
 |any|any|Edge appliance IP|TCP/1883|MQTT
 |any|any|Edge appliance IP|TCP/8883|MQTT/TLS
 
-Depending on additional integrations more ports must be opened. 
+Depending on additional integrations more ports must be opened.
 
 #### Outgoing Traffic
 
@@ -95,4 +97,3 @@ The virtual machine has the following minimum hardware requirements:
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
 
 >**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
-

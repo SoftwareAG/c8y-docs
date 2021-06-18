@@ -35,7 +35,7 @@ Use the the Device Management application to visualize Tenant SLA Monitoring dat
 
 ### Prerequisites  
 
-The Management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results.
+The Management tenant needs to be subscribed to the application "Tenant-sla-monitoring" to see any monitoring results.
 
 ![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 

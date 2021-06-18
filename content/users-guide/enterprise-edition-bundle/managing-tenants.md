@@ -120,7 +120,7 @@ The following information is displayed here:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">May be either “Enabled” or “Disabled”. <br>“Enabled” indicates that: <br>- support user access has been activated globally in the Management tenant (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>“Disabled” indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).</td>
+<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).</td>
 </tr>
 <tr>
 <td style="text-align:left">Active requests count</td>
@@ -128,7 +128,7 @@ The following information is displayed here:
 </tr>
 <tr>
 <td style="text-align:left">Expiry date</td>
-<td style="text-align:left">Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to “No limit”.</td>
+<td style="text-align:left">Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".</td>
 </tr>
 </tbody>
 </table>

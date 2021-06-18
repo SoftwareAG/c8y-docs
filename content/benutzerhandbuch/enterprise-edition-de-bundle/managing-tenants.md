@@ -120,7 +120,7 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder “Eingeschaltet” oder “Ausgeschaltet” sein. <br>“Eingeschaltet” bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>“Ausgeschaltet” bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
@@ -128,7 +128,7 @@ Hier werden die folgenden Informationen angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Ablaufdatum</td>
-<td style="text-align:left">Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf “Unbegrenzt” gesetzt.</td>
+<td style="text-align:left">Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.</td>
 </tr>
 </tbody>
 </table>

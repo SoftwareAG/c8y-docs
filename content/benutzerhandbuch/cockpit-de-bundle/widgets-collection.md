@@ -105,7 +105,7 @@ Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu den Kindgeräten an
 
 **Beispiel**
 
-Im folgenden Screenshot sind 5 Spalten konfiguriert. Die Spalten "Meter", “Vendor”, und “Owner” beziehen sich auf die Attribute “name”, type” und “owner”. Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
+Im folgenden Screenshot sind 5 Spalten konfiguriert. Die Spalten "Meter", "Vendor", und "Owner" beziehen sich auf die Attribute "name", "type" und "owner". Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
 
 ![Asset table widget](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table.png)
 
@@ -252,7 +252,7 @@ Das Widget "HTML" zeigt benutzerdefinierten Inhalt. Die Inhalt kann mit HTML for
 	* {{device.*fragment*.*property*}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut oder Fragment des Geräts ansprechen.
 
 "device" bezieht sich auf das im Widget-Konfigurationsparameter ausgewählte Zielgerät.<br>
-"fragment.property" bezieht sich auf die Attribute des betreffenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie in der Konfiguration des Widgets "Asset-Attribut" oder “Asset-Tabelle” auf **+Attribut hinzufügen** klicken. Daraufhin wird eine Tabelle der unterstützten Attribute angezeigt. Sie können die Werte aus der Spalte **Attribut** kopieren und einfügen. Generierte Attribute dieser Widgets sind nicht in den HTML-Widgets verfügbar.
+"fragment.property" bezieht sich auf die Attribute des betreffenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie in der Konfiguration des Widgets "Asset-Attribut" oder "Asset-Tabelle" auf **+Attribut hinzufügen** klicken. Daraufhin wird eine Tabelle der unterstützten Attribute angezeigt. Sie können die Werte aus der Spalte **Attribut** kopieren und einfügen. Generierte Attribute dieser Widgets sind nicht in den HTML-Widgets verfügbar.
 
 ![HTML widget](/images/benutzerhandbuch/cockpit/cockpit-widget-html.png)
 

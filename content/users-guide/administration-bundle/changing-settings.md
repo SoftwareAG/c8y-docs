@@ -159,9 +159,9 @@ The user will be granted access to the global role "business" and the default ap
 
 New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
-New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles “business" and "admin"."
+New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
 
-When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with “cur”. "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
+When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
 In case the asterisk character should be matched literally it has to be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
 
@@ -306,7 +306,7 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 With custom properties, you can extend the data model of Cumulocity IoT built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
@@ -336,11 +336,11 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 <tbody>
 <tr>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is “Boolean”.</td>
+<td style="text-align:left">If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".</td>
 </tr>
 <tr>
 <td style="text-align:left">Default Value</td>
-<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type “String”.</td>
+<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".</td>
 </tr>
 <tr>
 <td style="text-align:left">Minimum</td>

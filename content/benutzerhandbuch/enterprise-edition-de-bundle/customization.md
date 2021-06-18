@@ -123,8 +123,8 @@ Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab ve
 
 Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
-* Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
-* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.
+* Das "Favicon", das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist "ico".
+* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind "png" und "svg".
 * Die Höhe des Markenlogos.
 
 **Navigatorlogo**
@@ -144,12 +144,12 @@ Im Bereich **Farben** definieren Sie die Farben für Ihre Branding-Version.
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 * Haupt-Branding-Farbe.
-* Neben-Branding-Farbe. Der Standardwert ist “#07b91A”.
+* Neben-Branding-Farbe. Der Standardwert ist "#07b91A".
 * Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B".
 * Helle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
-* Textfarbe. Der Standardwert ist “#444”.
+* Textfarbe. Der Standardwert ist "#444".
 * Link-Farbe. Der Standardwert ist die Haupt-Branding-Farbe.
-* Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist “#FAFAFA”.
+* Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist "#FAFAFA".
 
 **Obere Leiste**
 
@@ -157,8 +157,8 @@ Unter **Obere Leiste** definieren Sie die Parameter für die obere Leiste.
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* Hintergrundfarbe. Der Standardwert ist “#FFFFF”.
-* Textfarbe. Der Standardwert ist “49595B”.
+* Hintergrundfarbe. Der Standardwert ist "#FFFFF".
+* Textfarbe. Der Standardwert ist "49595B".
 * Hover-Textfarbe für Schaltflächen. Der Standardwert ist die Haupt-Branding-Farbe.
 
 **Navigator**
@@ -167,12 +167,12 @@ Unter **Navigator** definieren Sie die Parameter für den Navigator.
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* Hintergrundfarbe. Der Standardwert ist “#2c3637”.
-* Hintergrundfarbe der Logoumrandung. Der Standardwert ist “Transparent”.
-* Titelfarbe. Der Standardwert ist “#FFFFF”.
-* Farbe für Texte und Schaltflächen. Der Standardwert ist “#FAFAFA”.
-* Farbe für Trennlinien. Der Standardwert ist “#FAFAFA”.
-* Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist “#FAFAFA”.
+* Hintergrundfarbe. Der Standardwert ist "#2c3637".
+* Hintergrundfarbe der Logoumrandung. Der Standardwert ist "Transparent".
+* Titelfarbe. Der Standardwert ist "#FFFFF".
+* Farbe für Texte und Schaltflächen. Der Standardwert ist "#FAFAFA".
+* Farbe für Trennlinien. Der Standardwert ist #FAFAFA".
+* Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist "#FAFAFA".
 * Hintergrundfarbe des aktuellen Elements im Navigator mit der Haupt-Branding-Farbe als Standard.
 
 **Sonstiges**

@@ -8,7 +8,7 @@ layout: redirect
 
 > **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten.
 
->**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/about-doc/contacting-support).
+>**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support).
 
 Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
 
@@ -40,8 +40,8 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 2. Geben Sie die folgenden Attribute an:
 
 	<table>
-	<col style="width:20%">
-	<col style="width:80%">
+	<col style="width:30%">
+	<col style="width:70%">
 	<thead>
 	<tr>
 	<th style="text-align:left">Feld</th>
@@ -106,11 +106,32 @@ Auf der rechten Seite der Registerkarte **Attribute** finden Sie Informationen z
 
 Hier werden die folgenden Informationen angezeigt:
 
-|Feld|Beschreibung
-|:--------|:-----
-|Status|Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global aktiviert (siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings)),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
-|Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im Management-Mandanten eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
-|Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Status</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+</tr>
+<tr>
+<td style="text-align:left">Anzahl aktiver Anfragen</td>
+<td style="text-align:left">Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im Management-Mandanten eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.</td>
+</tr>
+<tr>
+<td style="text-align:left">Ablaufdatum</td>
+<td style="text-align:left">Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.</td>
+</tr>
+</tbody>
+</table>
 
 
 ### Sperren von Untermandanten
@@ -276,7 +297,7 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden neuen Mandanten bei dessen Erstellung,
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
-> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](https://cumulocity.com/api/#operation/postTenantApplicationReferenceCollectionResource) unten oder [Mandanten](https://cumulocity.com/api/#tag/Tenants) im Cumulocity IoT OpenAPI Specification.
+> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](https://cumulocity.com/api/#operation/postTenantApplicationReferenceCollectionResource) unten oder [Mandanten](https://cumulocity.com/api/#tag/Tenants) in der Cumulocity IoT OpenAPI Specification.
 
 In der Mitte der Seite wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
 

@@ -61,7 +61,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule “On measurement threshold create alarm”. However, it provides the red threshold value explicitly.</td>
+<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule "On measurement threshold create alarm". However, it provides the red threshold value explicitly.</td>
 </tr>
 <tr>
 <td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
@@ -114,7 +114,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -180,7 +180,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -240,7 +240,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Escalate as follows</td>
-<td align="left">Escalation steps processed in a chain. <br> Click <strong>Add step</strong> to define at least one step: <br> <strong>Type</strong>: Type of action executed in the step. Possible values are: <br> - Email (see “On alarm send email” rule for parameter descriptions). <br> - SMS (see “On alarm send SMS” rule for parameter descriptions). <br> <strong>Condition</strong>: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.</td>
+<td align="left">Escalation steps processed in a chain. <br> Click <strong>Add step</strong> to define at least one step: <br> <strong>Type</strong>: Type of action executed in the step. Possible values are: <br> - Email (see "On alarm send email" rule for parameter descriptions). <br> - SMS (see "On alarm send SMS" rule for parameter descriptions). <br> <strong>Condition</strong>: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -366,7 +366,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left"><b>Trigger:</b> Reason for triggering the alarm: “On entering”, “On leaving” (the default), “On entering and leaving”.<br><b>Type:</b> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br> <b>Severity:</b> Severity of alarm being raised. <br><b>Text:</b> Alarm message.</td>
+<td align="left"><b>Trigger:</b> Reason for triggering the alarm: "On entering", "On leaving" (the default), "On entering and leaving".<br><b>Type:</b> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br> <b>Severity:</b> Severity of alarm being raised. <br><b>Text:</b> Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -430,7 +430,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>

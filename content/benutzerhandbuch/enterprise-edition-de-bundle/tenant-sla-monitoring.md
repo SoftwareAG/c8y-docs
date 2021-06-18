@@ -35,7 +35,7 @@ Verwenden Sie die Device Management-Anwendung, um die Daten des Tenant SLA Monit
 
 ### Voraussetzungen  
 
-Der Management-Mandant muss die Anwendung “Tenant-sla-monitoring” abonnieren, um die Ergebnisse der Überwachung anzeigen zu können.
+Der Management-Mandant muss die Anwendung "Tenant-sla-monitoring" abonnieren, um die Ergebnisse der Überwachung anzeigen zu können.
 
 ![Sla-monitoring subscribe](/images/benutzerhandbuch/sla-monitoring/sla-subscribe.png)
 

@@ -31,5 +31,3 @@ To perform port forwarding on a VMware platform, follow the steps below.
 4. Click **OK** in the **NAT Settings** window.
 
 5. Click **Apply** > **OK**.
-
-You can now access Cumulocity IoT Edge using the IP address of the host machine.

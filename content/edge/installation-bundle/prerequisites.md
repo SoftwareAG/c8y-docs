@@ -32,12 +32,14 @@ For example, if your domain name is **myown.iöt.com** (for example, containing 
 	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
 
 * Ensure that you adhere to the following domain name validation rules:
-	* The domain name may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. The domain name can be a combination of lowercase or alphanumeric characters separated by dot ( . ) or hyphen ( - )
+	* The domain name must be a combination of case-insensitive alphanumeric characters separated by dot ( . ) or hyphen ( - ).
 		* Cannot contain any letters of languages like Chinese, Latin or Arabic.
 		* Cannot contain any special characters like (+ , ! @ # $ % ^ & * ( ) ; \ \ / | < > \ " \ ' ) other than dot ( . ) or hyphen ( - ).
 	* The length of the domain name including the dot must not exceed 255 characters.
-	* Each segment of the domain name separated by a dot must be between 1 to 63 characters long.
-		* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long.
+	* The domain name must contain at least one dot.
+	* Each segment of the domain name must be separated by a dot.
+		* The domain name must be between 1 to 63 characters long.
+		* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long. 
 		* The domain name cannot begin or end with a hyphen.
 
 ### Network connectivity

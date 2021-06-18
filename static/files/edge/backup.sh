@@ -11,7 +11,8 @@
 
 function usage() {
     echo "Usage:"
-    echo "    backup_db.sh TENANT OUTPUT_DIRECTORY"
+    echo "    backup.sh TENANT [OUTPUT_DIRECTORY]"
+    echo "    OUTPUT_DIRECTORY by default is /tmp"
 }
 
 # ARGUMENTS
@@ -52,14 +53,18 @@ fi
 OUTPUT_DATA=$OUTPUT/data
 OUTPUT_COLLECTIONS=$OUTPUT_DATA/collections
 OUTPUT_CONFIGS=$OUTPUT_DATA/configs
+OUTPUT_OPCUA=$OUTPUT_DATA/opcua_data
 mkdir -p $OUTPUT_COLLECTIONS
 mkdir -p $OUTPUT_CONFIGS
+mkdir -p $OUTPUT_OPCUA
 
 mongodump --db=management --out "$OUTPUT_COLLECTIONS"
 mongodump --db=$TENANT --out "$OUTPUT_COLLECTIONS"
 mongodump --db=docker --out "$OUTPUT_COLLECTIONS"
 
 cp -rp /usr/edge/properties/edge-agent/device-id $OUTPUT_CONFIGS/edge-agent_device-id
+
+cp -rp /etc/opcua $OUTPUT_OPCUA
 
 tar -C $OUTPUT_DATA -cvzf $OUTPUT/migration_data.tgz ./
 rm -rf $OUTPUT_DATA

@@ -222,10 +222,10 @@ Inside some fields you can use placeholders that are resolved by Cumulocity IoT 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
 To use a placeholder in a field, put it inside two curly brackets preceded with a dollar sign:
-![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_standalone.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
 
 Placeholders can also be used as a part of text:
-![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_text.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 
@@ -322,15 +322,48 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 
 1. Additionally, select validation rules for the new property:
 
-	|Checkbox|Description|
-|:---|:---|
-|Required|If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".
-|Default Value|Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".
-|Minimum|Enter a minimum integer value.
-|Maximum|Enter a maximum integer value.
-|Minimum length|Enter the minimum length required for the string.
-|Maximum length|Enter the maximum length required for the string.
-|Regular expression|Add a regular expression which will be required in order to fill the custom property field.
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Checkbox</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Required</td>
+<td style="text-align:left">If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is “Boolean”.</td>
+</tr>
+<tr>
+<td style="text-align:left">Default Value</td>
+<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type “String”.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum</td>
+<td style="text-align:left">Enter a minimum integer value.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum</td>
+<td style="text-align:left">Enter a maximum integer value.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum length</td>
+<td style="text-align:left">Enter the minimum length required for the string.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum length</td>
+<td style="text-align:left">Enter the maximum length required for the string.</td>
+</tr>
+<tr>
+<td style="text-align:left">Regular expression</td>
+<td style="text-align:left">Add a regular expression which will be required in order to fill the custom property field.</td>
+</tr>
+</tbody>
+</table>
 
 4. Click **Save** to create the new property.
 

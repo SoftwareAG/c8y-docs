@@ -32,7 +32,7 @@ The following description is primarily based on Jasper, but the same configurati
 The following sections describe:
 
 * How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#connectivity) to the SIM provider in your Cumulocity IoT tenant
+* How to configure the [connectivity](#connectivity-configuration) to the SIM provider in your Cumulocity IoT tenant
 * How to [link SIMs](#link-sims) and mobile devices
 * Which information is shown in the [Connectivity tab](#jasperinfo)
 * How to [manage connectivity](#managing) from Device Management
@@ -59,7 +59,7 @@ To create a user in Jasper Control Center perform the following steps:
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
 
-### <a name="connectivity"></a>Configuring the connectivity for the SIM provider in Cumulocity IoT
+### <a name="connectivity-configuration"></a>Configuring the connectivity for the SIM provider in Cumulocity IoT
 
 Process the following step to configure the connectivity in Cumulocity IoT:
 

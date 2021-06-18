@@ -42,9 +42,9 @@ mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if mic
 
 ### Restoring the data on Cumulocity IoT Edge 10.9
 
-To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance. Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance.
+To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance.
 
-For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+>**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 
 Perform these steps as **root** user in your Edge 10.9 appliance.
 
@@ -163,21 +163,29 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 ##### In 10.7 appliance
 
+>**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+
 1. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-2. Run the `backup.sh` script with the parameters:
-	- TENANT: your tenant name (edge by default)
-	- OUTPUT_DIRECTORY: path to save the backup archive. It can also be an external drive.
-
+2. Run the `backup.sh`.
+  
+   You can also run the script with the parameters:
+	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
+	- ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
+    
+    >**Info:** If you do not specify any parameter, the backup archive is saved at `/tmp` directory. The `/tmp` directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
+   
 	For example:
 	```shell
-	./backup.sh edge /home/admin/
+	./backup.sh /home/admin/
 	```	
 	The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
 
 3. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
 ##### In 10.9 appliance
+
+>**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 
 1. Log in as **root** user.
 
@@ -189,6 +197,6 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 	For example:
 	```shell
-	./restore migration_data.tgz /home/admin/migration_data
+	./restore.sh migration_data.tgz /home/admin/migration_data
 	``` 
 Running the `restore.sh` script successfully completes the migration process.

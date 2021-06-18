@@ -21,7 +21,6 @@ Once registered, note down the device ID by looking up your device on the **All 
 
 In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
-
 #### Data collection with Cumulocity IoT Machine Learning Workbench (MLW)
 
 1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using smartphone" as **Project description**.

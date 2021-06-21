@@ -8,7 +8,8 @@ aliases:
 
 
 
-### <a name="screen"></a>Main screen elements
+<a name="screen"></a>
+### Main screen elements
 
 The general structure common to all Cumulocity IoT applications includes the following screen elements:
 
@@ -57,7 +58,8 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 > **Info:** Cumulocity IoT applications provide tooltips when you hover over a particular screen element. When you use Cumulocity IoT applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
-### <a name="app-switcher"></a>Application switcher
+<a name="app-switcher"></a>
+### Application switcher
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
 
@@ -65,14 +67,16 @@ The application switcher allows you to quickly switch between applications. Clic
 
 The application switcher shows all Cumulocity IoT applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
-If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity IoT applications:
+If you are using {{< company-cloud >}}, the application switcher also shows other {{< company-cloud >}} applications at the first level, followed by the Cumulocity IoT applications:
 
 <img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
-### <a name="searching-and-filtering"></a>Search and filter functionality
+<a name="searching-and-filtering"></a>
+### Search and filter functionality
 
-#### <a name="searching"></a>Full text search
+<a name="searching"></a>
+#### Full text search
 
 Cumulocity IoT provides a full text search, available through the search field at the right of the top bar in the UI.
 
@@ -113,7 +117,8 @@ my demo device
 
 For details on the MongoDB full text search, see [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
-#### <a name="filtering"></a>Filtering
+<a name="filtering"></a>
+#### Filtering
 
 Some pages offer a filtering functionality to filter objects in a list.
 

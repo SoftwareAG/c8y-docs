@@ -25,7 +25,8 @@ The profile ID, username and password are used to retrieve an access token to se
 
 Click **Save**. If everything is okay, there will be a message "Credentials successfully saved".
 
-### <a name="replace-credentials"></a>Replacing account credentials
+<a name="replace-credentials"></a>
+### Replacing account credentials
 
 In order to replace your credentials, click **Replace credentials**.
 

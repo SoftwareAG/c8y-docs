@@ -8,7 +8,8 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 
 Cumulocity IoT provides preset widget types, for details see the [Widgets collection](#widgets-collection).
 
-### <a name="adding-widgets"></a>To add a widget to a dashboard or a report
+<a name="adding-widgets"></a>
+### To add a widget to a dashboard or a report
 
 1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 
@@ -24,7 +25,8 @@ Cumulocity IoT provides preset widget types, for details see the [Widgets collec
 
 5. Click **Save** to add the widget to the dashboard or report.
 
-### <a name="modifying-widgets"></a>Modifying widgets
+<a name="modifying-widgets"></a>
+### Modifying widgets
 
 Widgets may be rearranged on the dashboard/report. By dragging and dropping you can move the widget to another position.
 

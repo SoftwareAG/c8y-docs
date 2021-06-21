@@ -191,7 +191,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
-#### <a name="java-example"></a>Create a Java application
+<a name="java-example"></a>
+#### Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -276,7 +277,7 @@ To deploy your microservice on the Cumulocity IoT platform you need:
 * A valid tenant, a user and a password in order to access Cumulocity IoT.
 * The ZIP file built with Maven on the previous steps.
 
-> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/about-doc/contacting-support) so that we can assist you with the activation. Note that this is a paid feature.
+> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
@@ -316,7 +317,8 @@ and your authorization header would look like `"Authorization": "Basic dDAwNzEyM
 $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-### <a name="run-locally"></a> Running the microservice locally
+<a name="run-locally"></a>
+### Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity IoT.
 

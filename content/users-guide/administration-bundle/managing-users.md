@@ -14,7 +14,7 @@ The user management feature allows you to manage the users within your tenant. W
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
-If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
+If your tenant is configured for using single sign-on (SSO) in {{< company-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
 For users created via an external authorization server, updating the following settings in Cumulocity IoT will have no effect (will be reset on the next user re-login):
 
@@ -46,7 +46,8 @@ Moreover you can filter by global roles. Select the desired roles from the dropd
 
 Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition/#user-hierarchies).
 
-### <a name="creating-users"></a>To add a user
+<a name="creating-users"></a>
+### To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
 

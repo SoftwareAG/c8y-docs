@@ -45,7 +45,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 Dremio offers a [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
 
-Note that the API might change any time and Software AG does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use DataHub's REST API, see below.
+Note that the API might change any time and {{< company-name-2 >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use DataHub's REST API, see below.
 
 ### Connecting via DataHub REST API
 
@@ -65,11 +65,11 @@ The URL paths of proxied requests consist of:
 >**Example:** For the system eu-latest.cumulocity.com and tenant domain name `datahub-demo`, the base URL would be
 https://datahub-demo.eu-latest.cumulocity.com/service/datahub/.
 
-Dremio's SQL and JOB APIs are supported. Note that you must not provide the authorization header for Dremio when using DataHub REST API. Instead you have to provide the authorization header for DataHub. 
+Dremio's SQL and JOB APIs are supported. Note that you must not provide the authorization header for Dremio when using DataHub REST API. Instead you have to provide the authorization header for DataHub.
 
 The following APIs are available, followed by an example showing their usage. Each enlisted query functionality comprises:
 
-* The request to send to the DataHub backend if you want to run the request using DataHub 
+* The request to send to the DataHub backend if you want to run the request using DataHub
 * The equivalent request to send to the Dremio backend if you want to run the request directly against Dremio
 * The associated Dremio documentation with details on the request
 
@@ -109,7 +109,7 @@ Cancel a query job given the job ID:
 
 #### Example
 
-This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
+This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result.
 
 Assuming tenantId `t47110815`, `Dremio` as name of your file system in Azure Storage, and the table name `JohnsAlarms`, the SQL query is:
 
@@ -176,7 +176,7 @@ The response might look as follows:
 ```json
 {
     "rowCount": 5,
-    "schema": 
+    "schema":
     [
         {
             "name": "creationTime",
@@ -197,7 +197,7 @@ The response might look as follows:
             }
         }
     ],
-    "rows": 
+    "rows":
     [
         {   
             "creationTime": "2019-06-07 13:58:38.197",
@@ -205,11 +205,11 @@ The response might look as follows:
             "text": "Something unfortunate went wrong (1)."
         }
     ]
-} 
+}
 ```
 
 ### Connecting other clients
 
 Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/client-applications/clients.html) discusses how to connect these clients to Dremio and leverage its query capabilities.
 
-See also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer) to learn how other Software AG products can connect to DataHub and leverage its query capabilities.
+See also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer) to learn how other {{< company-name-2 >}} products can connect to DataHub and leverage its query capabilities.

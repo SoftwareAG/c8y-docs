@@ -9,6 +9,10 @@ To process data from Sigfox devices, Cumulocity IoT needs to understand the payl
 
 During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
+The device protocol assigned during Sigfox device registration can be changed from the **LPWAN** tab in the device details page.
+
+![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
+
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
 
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
@@ -16,13 +20,15 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 
-### <a name="import-device-type"></a>Importing a device protocol
+<a name="import-device-type"></a>
+### Importing a device protocol
 
 In the **Device protocols** page, click **Import**.
 
 Select the desired predefined device type or upload it from a file. When ready, click **Import** again.
 
-### <a name="create-new-device-type"></a>Creating a new device protocol
+<a name="create-new-device-type"></a>
+### Creating a new device protocol
 
 In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list.
 

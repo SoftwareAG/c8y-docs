@@ -11,13 +11,14 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
-### <a name="apama-epl-apps"></a>Developing apps with the Streaming Analytics application
+<a name="apama-epl-apps"></a>
+### Developing apps with the Streaming Analytics application
 
 The EPL Apps page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps. 
 
 Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/about-doc/contacting-support). 
+> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support). 
 
 **Step 1 - Invoke the Streaming Analytics application**
 
@@ -73,7 +74,8 @@ Once your app is activated, you should be able to see the results of it running.
 
 See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
-### <a name="sag-designer"></a>Developing apps with Software AG Designer
+<a name="sag-designer"></a>
+### Developing apps with Software AG Designer
 
 Software AG Designer provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into Cumulocity IoT.
 

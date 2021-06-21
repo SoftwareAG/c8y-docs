@@ -22,7 +22,8 @@ Let us assume that a tenant has a storage quota of 10 GB. Retention rules are 80
 The total storage is now at 9.8 GB.
 
 
-### <a name="warningEmail"></a>Managing storage quota warning email
+<a name="warningEmail"></a>
+### Managing storage quota warning email
 
 This feature is only visible if a storage quota was set for the tenant.
 

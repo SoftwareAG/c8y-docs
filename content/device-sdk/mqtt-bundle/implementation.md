@@ -18,7 +18,7 @@ Available ports:
 | no SSL | 1883 | 80 |
 
 Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
-The two-way SSL support is enabled by default since version 10.7.0. To disable it please contact [product support](/about-doc/contacting-support).
+The two-way SSL support is enabled by default since version 10.7.0. To disable it please contact [product support](/welcome/contacting-support/).
 
 > **Info:** To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -89,7 +89,7 @@ If the platform is configured to support two-way SSL, your devices have a config
 
 * The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
 * The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the MQTT client and Java 11. However, it works with Java 8.
-* In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/about-doc/contacting-support).
+* In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/welcome/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
 #### <a name="MQTT-ClientId">MQTT ClientId</a>
@@ -160,10 +160,7 @@ To support developers during development, it is possible to subscribe to the top
 
 >**Info:** This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
 
-### Reloading the server certificate
+### MQTT broker certificates
 
-You can change the server certificate, which is sent to the devices. To do so, please contact [product support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
-
-Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
-
->**Info:** This functionality is designed to renew or change the server certificate, when it is going to expire.
+MQTT broker uses the certificates which are assigned to the main environment domain. MQTT broker always sends these certificates during TLS handshake to devices.
+Moreover, {{< tenant-type-2 >}}s are not able to customize MQTT broker certificates via the SSL Management feature.

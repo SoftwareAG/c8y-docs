@@ -6,15 +6,15 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
+From the {{< tenant-type-3 >}}, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
-Most of the settings you can configure here are also available in the Enterprise tenant. For details, refer to [Enterprise tenant > Customizing your platform](/users-guide/enterprise-edition/#customization).
+Most of the settings you can configure here are also available in the {{< tenant-type-2 >}}. For details, refer to [{{< tenant-type-2 >}} > Customizing your platform](/users-guide/enterprise-edition/#customization).
 
-In addition, the following settings can be configured in the Management tenant only.
+In addition, the following settings can be configured in the {{< tenant-type-3 >}} only.
 
 ### Passwords
 
@@ -23,11 +23,12 @@ In the **Passwords** section, you can specify password settings like default str
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 
-### <a name="config-support-users"></a> Support user
+<a name="config-support-users"></a>
+### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables Cumulocity IoT platform providers (Software AG in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature enables Cumulocity IoT platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< tenant-type-3 >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -41,13 +42,14 @@ In the **Validity limit** field, you can optionally specify the support duration
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [{{< tenant-type-2 >}} > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
-#### <a name="configuring-support-users"></a>Configuring a support user
+<a name="configuring-support-users"></a>
+#### Configuring a support user
 
-A support user is a user in the Management tenant with specific permissions. This user can log in to the target tenant and impersonate the target user.
+A support user is a user in the {{< tenant-type-3 >}} with specific permissions. This user can log in to the target tenant and impersonate the target user.
 
-To configure a user in the Management tenant as support user, you need to assign the relevant roles to the user. This can either be done by using a global role or by inventory roles.  
+To configure a user in the {{< tenant-type-3 >}} as support user, you need to assign the relevant roles to the user. This can either be done by using a global role or by inventory roles.  
 
 **Using a global role**
 

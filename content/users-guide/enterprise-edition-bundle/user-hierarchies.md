@@ -16,7 +16,8 @@ A small number next to the user name shows how many direct sub-users a user has.
 
 ![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
 
-### <a name="sub-users"></a> To create a sub-user
+<a name="sub-users"></a>
+### To create a sub-user
 
 User hierarchies are created by assigning an "owner" to a user. The owner can manage the user. The user can have at most the same permissions as the owner.
 
@@ -36,7 +37,8 @@ A user A has the role "business". User A becomes the owner of a new user B. User
 
 ![Owner Sample](/images/users-guide/enterprise-tenant/et-user-hierarchy-roles.png)
 
-### <a name="delegate"></a>Delegating user hierarchies to other users
+<a name="delegate"></a>
+### Delegating user hierarchies to other users
 
 In Cumulocity IoT, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation.
 

@@ -13,7 +13,8 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [connectivity settings](#connectivity).
 
 
-### <a name="authentication"></a>Changing authentication settings
+<a name="authentication"></a>
+### Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
@@ -74,7 +75,8 @@ Click **Save TFA settings** to apply your settings.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 
-### <a name="oauth-internal"></a>Oauth Internal
+<a name="oauth-internal"></a>
+### Oauth Internal
 
 Cumulocity IoT OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again.
 The default token validity time is two weeks and this can be changed with tenant options: `oauth.internal.basic-token.lifespan.seconds`. The minimum allowed value is 5 minutes.
@@ -83,7 +85,8 @@ Cookies used to store a token in a browser have their own validity time that can
 
 Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
 
-### <a name="single-sign-on"></a>Configuring single sign-on
+<a name="single-sign-on"></a>
+### Configuring single sign-on
 
 Cumulocity IoT provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
@@ -100,7 +103,7 @@ Before switching to the single sign-on option it is mandatory that:
 * All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
->**Info:** In order to use the single sign-on feature for Enterprise tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
+>**Info:** In order to use the single sign-on feature for {{< tenant-type-2 >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
 
 
 #### Configuration settings
@@ -279,7 +282,8 @@ The contexts of the token will be presented in JSON format.
 ![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
 
 
-### <a name="default-app"></a>Changing application settings
+<a name="default-app"></a>
+### Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.
 
@@ -298,7 +302,8 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
-### <a name="properties"></a>Managing the properties library
+<a name="properties"></a>
+### Managing the properties library
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
 
@@ -312,7 +317,8 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 
 >**Info:** Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
-#### <a name="add-property"></a>To add a custom property
+<a name="add-property"></a>
+#### To add a custom property
 
 1. Select the tab for the desired property and click **Add property**.
 
@@ -379,7 +385,8 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
-### <a name="sms-provider"></a>Providing SMS provider credentials
+<a name="sms-provider"></a>
+### Providing SMS provider credentials
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
@@ -400,7 +407,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 >**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
 
 
-### <a name="connectivity"></a>Managing the connectivity settings
+<a name="connectivity"></a>
+### Managing the connectivity settings
 
 In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
 

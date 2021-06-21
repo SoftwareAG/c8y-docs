@@ -47,7 +47,8 @@ The following tasks should be covered by a platform solution:
 
 The following sections discuss how these tasks are handled in both approaches.
 
-#### <a name="customer-onboarding"></a> Customer onboarding
+<a name="customer-onboarding"></a>
+#### Customer onboarding
 
 <table>
 <thead>
@@ -72,7 +73,8 @@ The following sections discuss how these tasks are handled in both approaches.
 
 The creation of a new customer is equally simple. However, you need to consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
 
-#### <a name="device-registration"></a>Device registration
+<a name="device-registration"></a>
+#### Device registration
 
 <table>
 <thead>
@@ -97,7 +99,8 @@ The creation of a new customer is equally simple. However, you need to consider 
 
 There is no technical limitation on who registers the device on the platform. However, care should be taken with the RBAC approach since customers can more easily make an incorrect configuration which registers the device without the customers being able to see it.
 
-#### <a name="access-rights"></a>Access Rights
+<a name="access-rights"></a>
+#### Access Rights
 
 <table>
 <thead>
@@ -125,7 +128,8 @@ In the RBAC approach, managing access is the most complicated part as a misconfi
 For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
 
 
-#### <a name="user-management"></a>User management
+<a name="user-management"></a>
+#### User management
 
 <table>
 <thead>
@@ -150,7 +154,8 @@ For security aspects on access control see [Security aspects > Access control](/
 
 Having a separate tenant for each customer they will not be limited with respect to user management and can fully utilize all management functionality. In the RBAC approach you can delegate certain management functionality and the platform will make sure that users can never overstep their boundaries. However, certain functionality like creating roles will only be available to full user management admins.
 
-#### <a name="application management"></a>Application management
+<a name="application management"></a>
+#### Application management
 
 <table>
 <thead>
@@ -166,7 +171,7 @@ Having a separate tenant for each customer they will not be limited with respect
 <tbody>
 <tr>
 <td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the Management tenant. This does not apply for UI applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< tenant-type-3 >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>
@@ -175,7 +180,8 @@ Having a separate tenant for each customer they will not be limited with respect
 
 Application management is only available on tenant level. If you want to give customers the ability to extend the platform on their own you will need to go for a separate customer tenant. In the RBAC approach you need to take care of the application management but it is still possible to have different applications for different customers. This is easily doable for UI applications however if you add microservices you need to manage it via access rights as the microservice is generally available for the whole tenant.
 
-#### <a name="usage-data"></a>Invoicing and usage data
+<a name="usage-data"></a>
+#### Invoicing and usage data
 
 <table>
 <thead>
@@ -201,7 +207,8 @@ Application management is only available on tenant level. If you want to give cu
 
 Choosing the RBAC approach limits you in the options for your business model as it will be impossible to get accurate usage data for the customers. A license based business model (e.g. per device) is far more feasible in the RBAC setup. Dealing with a multi-tenant setup gives you the option to choose typical Cloud-based business models where you charge per API call and storage.
 
-#### <a name="analytics"></a>Analytics
+<a name="analytics"></a>
+#### Analytics
 
 <table>
 <thead>

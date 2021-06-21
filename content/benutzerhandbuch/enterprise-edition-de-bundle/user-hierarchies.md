@@ -16,7 +16,8 @@ Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkt untergeordnet
 
 ![User hierarchies](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy.png)
 
-### <a name="sub-users"></a> So erstellen Sie einen untergeordneten Benutzer
+<a name="sub-users"></a>
+###  So erstellen Sie einen untergeordneten Benutzer
 
 Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewiesen wird. Dieser Besitzer kann den Benutzer verwalten. Der Benutzer kann maximal die Berechtigungen des Besitzers haben.
 
@@ -36,7 +37,8 @@ Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neue
 
 ![Owner Sample](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-roles.png)
 
-### <a name="delegate"></a>Delegieren von Benutzerhierarchien
+<a name="delegate"></a>
+### Delegieren von Benutzerhierarchien
 
 In Cumulocity IoT können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.
 

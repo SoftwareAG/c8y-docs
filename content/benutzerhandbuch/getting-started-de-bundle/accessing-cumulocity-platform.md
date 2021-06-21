@@ -32,7 +32,7 @@ Sie können Cumulocity IoT auch auf gängigen Smartphones und Tablets nutzen. Un
 >
 * Die Nutzung kann je nach Speicher und Rechenleistung des Geräts eingeschränkt sein. Das Laden von Graphen mit einer großen Anzahl an Datenpunkten etwa kann dazu führen, dass das Gerät nicht mehr reagiert.
 * Die Nutzung des private Modus eines Browsers funktioniert möglicherweise nicht.
-* Die [Streaming Analytics-Anwendung](/apama/overview-analytics/) unterstützt keine Mobil- bzw. Touch-Geräte.
+* Die [Anwendung Streaming Analytics](/apama/overview-analytics/) unterstützt keine Mobil- oder Touch-Geräte.
 
 ### URL
 
@@ -48,9 +48,10 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der Cumulocity IoT-Plattform verbunden sind.
 
-### <a name="login"></a>So melden Sie sich an der Cumulocity IoT-Plattform an
+<a name="login"></a>
+### So melden Sie sich an der Cumulocity IoT-Plattform an
 
-Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein und klicken Sie **Anmelden**, um die Anwendung zu öffnen.
+Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein und klicken Sie auf **Anmelden**, um die Anwendung zu öffnen.
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-login.png" alt="Login prompt">
 
@@ -58,13 +59,14 @@ Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zug
 
 Wenn Sie sich das erste Mal an der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
-![image alt text](/images/benutzerhandbuch/getting-started/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
-### <a name="reset-password"></a>So setzen Sie Ihr Passwort zurück
+<a name="reset-password"></a>
+### So setzen Sie Ihr Passwort zurück
 
 1. Klicken Sie auf den Link **Passwort vergessen?** auf der Anmeldeseite.
 2. Geben Sie im darauffolgenden Dialog Ihre E-Mail-Adresse ein und klicken Sie auf **Passwort zurücksetzen**.
@@ -75,9 +77,10 @@ Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rech
 
 >**Info:** Das automatisierte Zurücksetzen des Passworts funktioniert nur, wenn Ihre E-Mail-Adresse in Ihrem Benutzerkonto hinterlegt ist. Wenn Sie eine Warnung erhalten, dass Ihr Passwort nicht zurückgesetzt werden konnte, verwenden Sie entweder eine andere E-Mail-Adresse als in Ihrem Benutzerkonto hinterlegt, oder es ist keine E-Mail-Adresse hinterlegt. Kontaktieren Sie in beiden Fällen den Cumulocity IoT-Administrator in Ihrem Unternehmen. Ein Administrator kann Ihr Passwort zurücksetzen.
 >
-Wenn Sie selbst der Hauptadministrator sind, wird die E-Mail-Adresse, die Sie bei der ersten Registrierung angegeben haben, automatisch gespeichert. Wenn Sie weitere Fragen haben, [kontaktieren Sie unseren Support](/about-doc/contacting-support).
+Wenn Sie selbst der Hauptadministrator sind, wird die E-Mail-Adresse, die Sie bei der ersten Registrierung angegeben haben, automatisch gespeichert. Wenn Sie weitere Fragen haben, kontaktieren Sie den [Produkt-Support](/welcome/contacting-support).
 
-### <a name="URLs"></a>Zugreifen auf Seiten mittels URL
+<a name="URLs"></a>
+### Zugreifen auf Seiten mittels URL
 
 Sie können unmittelbar an jede Stelle in einer Cumulocity IoT-Anwendung navigieren, indem Sie die entsprechende URL verwenden. So können Sie etwa, um allgemeine Information zu einem Gerät anzuzeigen, die folgende URL eingeben:
 

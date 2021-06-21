@@ -29,7 +29,7 @@ Außerdem ist das Zurücksetzen des Passworts in Cumulocity IoT für Benutzer de
 
 ### Anzeigen von Benutzern
 
-Klicken Sie **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
+Klicken Sie auf **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
 ![Expanded view](/images/benutzerhandbuch/Administration/admin-users-list.png)
 
@@ -42,13 +42,14 @@ Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Info
 
 Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de/#searching) im Abschnitt *Erste Schritte*.
 
-Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
+Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie auf **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de/#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de/#user-hierarchies).
 
-### <a name="creating-users"></a>So fügen Sie einen Benutzer hinzu
+<a name="creating-users"></a>
+### So fügen Sie einen Benutzer hinzu
 
-1. Klicken Sie **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
+1. Klicken Sie auf **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
 
 	>**Info:** Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
 
@@ -72,7 +73,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </tr>
 <tr>
 <td align="left">Login alias</td>
-<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.</td>
+<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden. Für Geräte wird kein Benutzeralias unterstützt.</td>
 </tr>
 <tr>
 <td align="left">Aktiv</td>
@@ -96,7 +97,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </tr>
 <tr>
 <td align="left">Eigentümer</td>
-<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 </tr>
 <tr>
 <td align="left">Delegiert von</td>
@@ -111,7 +112,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
-5. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.
 
@@ -120,8 +121,8 @@ Der neue Benutzer wird der Benutzerliste hinzugefügt.
 ### So bearbeiten Sie einen Benutzer
 
 1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**. Alle Felder mit Ausnahme von **Benutzername** und **Link zum Zurücksetzen des Passworts per E-Mail senden** können bearbeitet werden. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Benutzer hinzu](#creating-users).
-2. Klicken Sie **Passwort ändern**, um das Passwort zu ändern.
-3. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+2. Klicken Sie auf **Passwort ändern**, um das Passwort zu ändern.
+3. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
 > **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 
@@ -130,7 +131,7 @@ Der neue Benutzer wird der Benutzerliste hinzugefügt.
 1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Stammdatenrollen eines anderen Benutzers kopieren**.
 2. Im darauf folgenden Dialog können Sie auswählen, ob Sie die zu kopierenden Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung) oder ob Sie die vorhandenen Rollen ersetzen möchten.
 3. Wählen Sie den Benutzer, von dem Sie Rollen kopieren möchten, aus der Auswahlliste.
-4. Klicken Sie **Kopieren**.
+4. Klicken Sie auf **Kopieren**.
 
 Die Stammdatenrollen werden vom ausgewählten Benutzer kopiert.
 
@@ -140,7 +141,7 @@ Die Stammdatenrollen werden vom ausgewählten Benutzer kopiert.
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Delegieren**, um Ihre Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren.
 
-Klicken Sie **Delegierung aufheben**, um eine Delegierung zu entfernen.
+Klicken Sie auf **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
 Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de#user-hierarchies).
 

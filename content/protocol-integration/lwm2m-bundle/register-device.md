@@ -9,7 +9,8 @@ see [Device Management > Connecting devices > To bulk-register devices](/users-g
 This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
 Cumulocity IoT supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
-### <a name="registration-of-unsecured-device"></a>Registration of unsecured devices
+<a name="registration-of-unsecured-device"></a>
+### Registration of unsecured devices
 
 Unsecured devices connect during bootstrap connection and server connection through unsecured ports: 
 * **5683**: unsecure bootstrap connection
@@ -206,7 +207,8 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 </tbody>
 </table>
 
-### <a name="registration-of-psk-secured-device"></a>Registration of PSK-secured devices
+<a name="registration-of-psk-secured-device"></a>
+### Registration of PSK-secured devices
 
 PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
 * **5684**: PSK bootstrap connection

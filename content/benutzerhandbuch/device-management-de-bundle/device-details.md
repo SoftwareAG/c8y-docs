@@ -102,7 +102,8 @@ Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, di
 
 Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.
 
-### <a name="info"></a>Info
+<a name="info"></a>
+### Info
 
 Die Registerkarte **Info** fasst die Geräteinformationen, die aus Managementsicht relevant sind, in einem Dashboard zusammen.
 
@@ -154,13 +155,15 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tbody>
 </table>
 
-### <a name="child-devices"></a>Kindgeräte
+<a name="child-devices"></a>
+### Kindgeräte
 
 Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.
 
 Weitere Informationen zur Kindgeräte-Liste finden Sie unter [Anzeigen von Geräten](#viewing-devices).
 
-### <a name="measurements"></a>Messwerte
+<a name="measurements"></a>
+### Messwerte
 
 Die Registerkarte **Messwerte** zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen. Die Diagramme sind in Messwert-Typen aufgeteilt, die jeweils mehrere Graphen und "Series" enthalten können.
 
@@ -203,11 +206,13 @@ Beispiel:
 
 `"Fragment_name"` und `"serie_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
 
-### <a name="alarms"></a>Alarme
+<a name="alarms"></a>
+### Alarme
 
 Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
-### <a name="config"></a> Konfiguration
+<a name="config"></a>
+###  Konfiguration
 
 Die Registerkarte **Konfiguration** ermöglicht das Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts. Abhängig vom Gerät sind folgende Konfigurationen möglich:
  - Textbasierte Konfigurationen
@@ -229,13 +234,15 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 
 > **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
 
-### <a name="control"></a>Steuerung
+<a name="control"></a>
+### Steuerung
 
 Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
 
 ![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
-### <a name="network"></a>Netzwerk
+<a name="network"></a>
+### Netzwerk
 
 In der Registerkarte **Netzwerk** können Parameter für das mobile Netzwerk (WAN) und das lokale Netzwerk (LAN) angezeigt und konfiguriert werden.
 
@@ -268,7 +275,8 @@ Zum Konfigurieren von LAN-Parametern geben Sie einfach **IP-Adresse** und **Subn
 
 > **Info:** Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
 
-### <a name="software"></a>Software
+<a name="software"></a>
+### Software
 
 Die Registerkarte **Software** ermöglicht es, die Firmware eines Geräts sowie die auf dem Gerät installierte Software zu verwalten und zu aktualisieren.
 
@@ -286,11 +294,13 @@ Das Installieren von Software oder Firmware beinhaltet normalerweise einen Gerä
 
 Um ein Firmware-/Software-Objekt von einem Gerät zu löschen, fahren Sie mit dem Mauszeiger über den entsprechenden Eintrag und klicken Sie auf das Löschen-Symbol.
 
-### <a name="events"></a>Ereignisse
+<a name="events"></a>
+### Ereignisse
 
 Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse an. Dies ermöglicht unter anderem eine Fehlersuche. Weitere Informationen finden Sie unter [Fehlerbehebung von Geräten](#events-all).
 
-### <a name="location"></a>Standort
+<a name="location"></a>
+### Standort
 
 Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
 
@@ -299,7 +309,8 @@ Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts 
 Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y-Position-Ereignis senden, können Sie das gleiche c8y-Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
 
 
-### <a name="logs"></a>Logdateien
+<a name="logs"></a>
+### Logdateien
 
 Die Registerkarte **Logdateien** ermöglicht es, Loginformationen von Geräten zu verwalten.
 
@@ -330,11 +341,13 @@ Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Herunterlade
 
 Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Löschen-Symbol, um die Loginformationen zu löschen.
 
-### <a name="service-monitoring"></a>Serviceüberwachung
+<a name="service-monitoring"></a>
+### Serviceüberwachung
 
 Zusätzlich zur Verbindungsüberwachung bietet Cumulocity IoT eine Serviceüberwachung von Maschinen, siehe [Serviceüberwachung](#monitoring-services).
 
-### <a name="shell"></a>Shell
+<a name="shell"></a>
+### Shell
 
 Die Registerkarte Shell ermöglicht es, interaktiv mit entfernten Geräten zu arbeiten. Viele industrielle Geräte unterstützen Kommandosprachen wie etwa AT-Kommandos für Modems, CSV-artige Kommandos für viele Tracking-Systeme oder aufwendigere Scripting-Mechanismen wie Tixi TiXML. In der Shell können Kommandos in der entsprechenden Sprache an das Gerät gesendet und die Ergebnisse angezeigt werden.
 
@@ -353,7 +366,8 @@ Cumulocity IoT stellt für manche Gerätetypen einige häufig verwendete Kommand
 ![Device shell predefined](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
-### <a name="tracking"></a>Tracking
+<a name="tracking"></a>
+### Tracking
 
 In Cumulocity IoT können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
@@ -369,7 +383,8 @@ Abhängig vom Gerätetypen und der Integration in Cumulocity IoT können Sie ger
 
 >**Info:** Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierten Daten filtern.
 
-### <a name="identity"></a>Identifikator
+<a name="identity"></a>
+### Identifikator
 
 Cumulocity IoT kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte **Identifikator** listet alle gespeicherten Identifikatoren für ein Gerät auf.
 

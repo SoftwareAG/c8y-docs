@@ -68,7 +68,8 @@ In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die
 > **Info:** Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
 
 
-### <a name="add-group"></a>So erstellen Sie eine neue Gruppe
+<a name="add-group"></a>
+### So erstellen Sie eine neue Gruppe
 
 1. Klicken Sie auf die Schaltfläche **Plus** rechts in der oberen Leiste und anschließend auf **Gruppe hinzufügen**.<br>
 2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen für die Gruppe an.
@@ -96,7 +97,8 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 ### Verwalten von Geräten in Gruppen
 
-#### <a name="assigning-devices"></a>So weisen Sie einer Gruppe Geräte zu
+<a name="assigning-devices"></a>
+#### So weisen Sie einer Gruppe Geräte zu
 
 Geräte können Gruppen auf mehrere Arten zugewiesen werden.
 
@@ -148,7 +150,8 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 Die Gerätedetails für das jeweilige Gerät, die unter **Alle Geräte** in der Anwendung Device Management gespeichert sind, werden geöffnet.
 
-### <a name="restructuring-groups"></a>Umsortieren von Gruppen und Geräten
+<a name="restructuring-groups"></a>
+### Umsortieren von Gruppen und Geräten
 
 Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfache Weise neu strukturieren.
 
@@ -166,7 +169,8 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 3. Wählen Sie im darauf folgenden Dialog, ob das Gerät verschoben oder hinzugefügt werden soll.
 
 
-### <a name="smart-groups"></a>Verwenden von dynamischen Gruppen
+<a name="smart-groups"></a>
+### Verwenden von dynamischen Gruppen
 
 Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.
 

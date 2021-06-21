@@ -14,7 +14,8 @@ Die folgenden Rollen können zugewiesen werden:
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
 
-### <a name="global"></a>Globale Rollen
+<a name="global"></a>
+### Globale Rollen
 
 Klicken Sie auf **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
@@ -104,7 +105,8 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 |readers|Kann alle Daten lesen (einschl. Benutzer, im Unterschied zu "Globaler Leser").
 
 
-#### <a name="create-edit-roles"></a>So fügen Sie eine globale Rolle hinzu
+<a name="create-edit-roles"></a>
+#### So fügen Sie eine globale Rolle hinzu
 
 Klicken Sie auf **Rolle hinzufügen** in der Registerkarte **Globale Rollen**.
 
@@ -253,7 +255,8 @@ Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funkt
 
 > **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
-#### <a name="attach-global"></a>Zuweisen von globalen Rollen
+<a name="attach-global"></a>
+#### Zuweisen von globalen Rollen
 
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
@@ -273,7 +276,8 @@ Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 ![Attach global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-2.png)
 
-### <a name="inventory"></a>Stammdatenrollen
+<a name="inventory"></a>
+### Stammdatenrollen
 
 Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
@@ -337,7 +341,8 @@ Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie m�
 
 <img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen zu Benutzern
+<a name="attach-inventory"></a>
+### Zuweisen von Stammdatenrollen zu Benutzern
 
 Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
 
@@ -362,7 +367,8 @@ Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechti
 
 Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Produkt-Support](/welcome/contacting-support) können Ihnen helfen, die Berechtigungsprobleme zu beheben.
 
-### <a name="app-access"></a>Gewähren von Anwendungszugriff
+<a name="app-access"></a>
+### Gewähren von Anwendungszugriff
 
 Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge.
 

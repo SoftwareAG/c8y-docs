@@ -46,7 +46,8 @@ Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewün
 
 Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de/#user-hierarchies).
 
-### <a name="creating-users"></a>So fügen Sie einen Benutzer hinzu
+<a name="creating-users"></a>
+### So fügen Sie einen Benutzer hinzu
 
 1. Klicken Sie auf **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
 

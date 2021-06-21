@@ -31,7 +31,8 @@ Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandan
 
 Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
 
-### <a name="creating-tenants"></a>So erstellen Sie einen Untermandanten
+<a name="creating-tenants"></a>
+### So erstellen Sie einen Untermandanten
 
 1. Klicken Sie auf **Mandanten anlegen** rechts in der oberen Menüleiste.
 
@@ -169,7 +170,8 @@ Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten g
 Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und anschließend auf **Löschen**, um einen Mandanten dauerhaft zu löschen und alle zugehörigen Daten zu entfernen.
 
 
-### <a name="subscribe"></a>Anwendungen
+<a name="subscribe"></a>
+### Anwendungen
 
 In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity IoT abonniert.
 
@@ -210,7 +212,8 @@ Folgende Informationen werden angezeigt:
 Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
-### <a name="tenants-custom-properties"></a>Benutzerdefinierte Attribute
+<a name="tenants-custom-properties"></a>
+### Benutzerdefinierte Attribute
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing) angezeigt.
 
@@ -239,7 +242,8 @@ Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffe
 Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzungsfunktion als deaktiviert betrachtet und der Mandant erhält unbegrenzten Zugriff. Um die Begrenzung der Anfragerate wieder abzuschalten, setzen Sie den Wert auf "-1".
 
 
-### <a name="tenant-policies"></a> Mandantenregeln
+<a name="tenant-policies"></a>
+###  Mandantenregeln
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
 
@@ -286,7 +290,8 @@ Klicken Sie auf das Menüsymbol in dem Mandantenregel-Eintrag, den Sie duplizier
 
 Klicken Sie auf das Menüsymbol in dem Mandantenregel-Eintrag, den Sie löschen wollen, und klicken Sie dann auf **Löschen**.
 
-### <a name="default-subscriptions"></a>Standardabonnements
+<a name="default-subscriptions"></a>
+### Standardabonnements
 
 In der Cumulocity IoT-Plattform können Sie konfigurieren, welche Anwendungen und Microservices bei der Erstellung eines Mandanten für diesen abonniert sind. Wenn Sie einen neuen Mandanten erstellen, werden die angegebenen Anwendungen und Microservices automatisch für ihn abonniert.
 
@@ -327,7 +332,8 @@ Speichern Sie die Einstellungen, indem Sie unten auf der Seite auf **Speichern**
 
 > **Info:** Veraltete Einträge, die keinen bestehenden Anwendungen entsprechen, werden beim Speichern entfernt. Wenn eine Anwendung, die in einer der Listen ausgewählt war, entfernt wurde, wird sie während der Mandantenerstellung bzw. dem Plattform-Upgrade stillschweigend ignoriert. Wird danach (aber noch bevor die Einstellungen auf dieser Seite erneut gespeichert werden, wodurch der veraltete Eintrag gelöscht wird) eine andere Anwendung mit demselben Namen erstellt, so wird anstelle der früheren Anwendung die neue Anwendung abonniert.
 
-#### <a name="default-applications"></a>Außerkraftsetzen von Standardabonnements
+<a name="default-applications"></a>
+#### Außerkraftsetzen von Standardabonnements
 
 Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, indem Sie eine Mandantenregel mit den folgenden Optionen einrichten:
 

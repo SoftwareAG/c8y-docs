@@ -8,7 +8,8 @@ aliases:
 
 
 
-### <a name="screen"></a>Hauptbildschirmelemente
+<a name="screen"></a>
+### Hauptbildschirmelemente
 
 Die grundsätzliche Struktur, die in allen Cumulocity IoT-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
@@ -57,7 +58,8 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 > **Info:** Die Cumulocity IoT-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
-### <a name="app-switcher"></a>Application Switcher
+<a name="app-switcher"></a>
+### Application Switcher
 
 Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen.
 
@@ -70,9 +72,11 @@ Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle w
 <img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
-### <a name="searching-and-filtering"></a>Such- und Filterfunktionalität
+<a name="searching-and-filtering"></a>
+### Such- und Filterfunktionalität
 
-#### <a name="searching"></a>Volltextsuche
+<a name="searching"></a>
+#### Volltextsuche
 
 Cumulocity IoT bietet eine Volltextsuche, die über das Suchfeld rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
 
@@ -113,7 +117,8 @@ mein demo gerät
 
 Weitere Informationen zur MongoDB-Volltextsuche finden Sie unter [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
-#### <a name="filtering"></a>Filtern
+<a name="filtering"></a>
+#### Filtern
 
 Einige Seiten bieten eine Filterfunktionalität, um Objekte auf einer Seite zu filtern.
 

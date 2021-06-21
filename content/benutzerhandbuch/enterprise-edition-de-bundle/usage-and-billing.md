@@ -4,7 +4,8 @@ title: Nutzungsstatistiken und Abrechnung
 layout: redirect
 ---
 
-### <a name="usage-stats"></a> Anzeigen von Nutzungsstatistiken
+<a name="usage-stats"></a>
+###  Anzeigen von Nutzungsstatistiken
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
@@ -153,7 +154,8 @@ Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem S
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 
 
-### <a name="microservice-usage"></a>Microservice-Nutzung
+<a name="microservice-usage"></a>
+### Microservice-Nutzung
 
 Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können Enterprise Tenants und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 

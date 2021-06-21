@@ -24,7 +24,8 @@ Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gru
 
 > **Info:** Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Die Verwaltung erfolgt in der Device Management-Anwendung.
 
-### <a name="hierarchies"></a>Asset-Hierarchie versus Gerätehierarchie
+<a name="hierarchies"></a>
+### Asset-Hierarchie versus Gerätehierarchie
 
 Cumulocity IoT unterstützt zwei Hierarchietypen: die Gerätehierarchie und die
 Asset-Hierarchie.
@@ -94,7 +95,8 @@ Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Regi
 
 Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web-sdk-for-plugins/overview/).
 
-### <a name="creating-groups"></a>So erstellen Sie eine Gruppe
+<a name="creating-groups"></a>
+### So erstellen Sie eine Gruppe
 
 1. Klicken Sie auf die Schaltfläche **Plus** rechts in der oberen Leiste und anschließend auf **Gruppe hinzufügen**.
 2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen für die Gruppe an.
@@ -108,7 +110,8 @@ Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit
 
 Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
-### <a name="assigning-devices"></a>So weisen Sie einer Gruppe Geräte zu
+<a name="assigning-devices"></a>
+### So weisen Sie einer Gruppe Geräte zu
 
 Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity IoT verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/benutzerhandbuch/device-management-de).
 

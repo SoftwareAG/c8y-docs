@@ -4,7 +4,8 @@ title: Verwalten von Daten
 
 ---
 
-### <a name="retention-rules"></a>Datenhaltungsregeln
+<a name="retention-rules"></a>
+### Datenhaltungsregeln
 
 Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Standardmäßig werden alle historischen Daten nach 60 Tagen gelöscht (konfigurierbar in den Systemeinstellungen).
 
@@ -21,7 +22,8 @@ Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen
 Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert, entfernt werden.
 
 
-#### <a name="add-retention-rule"></a>So fügen Sie eine Datenhaltungsregel hinzu
+<a name="add-retention-rule"></a>
+#### So fügen Sie eine Datenhaltungsregel hinzu
 
 1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
 2. Wählen Sie im darauf folgenden Dialog den Datentyp aus, den Sie löschen möchten (Alarm, Messung, Ereignis, Operation, Audit oder Alle).
@@ -65,7 +67,8 @@ Bewegen Sie die Maus über die Regel, die Sie löschen möchten, und klicken Sie
 
 >**Info:** Der Quellparameter ist die ID des Geräts. Wenn dieser definiert ist, entfernt der Datenhaltungsprozess nur die Dokumente, die direkt mit dem durch die Quelle dargestellten Gerät verbunden sind, nicht jedoch die der Kinder oder zugehörigen Gruppen.
 
-### <a name="files"></a>Verwalten von Daten in der Dateiablage
+<a name="files"></a>
+### Verwalten von Daten in der Dateiablage
 
 Die Dateiablage bietet einen Überblick über die Dateien, die in Ihrem Konto gespeichert sind.
 

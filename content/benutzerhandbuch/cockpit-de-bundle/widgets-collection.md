@@ -91,7 +91,8 @@ Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen 
 
 >**Info:** Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.
 
-### <a name="widget-asset-table"></a> Asset-Tabelle
+<a name="widget-asset-table"></a>
+###  Asset-Tabelle
 
 Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu den Kindgeräten an. Dies ist ein sehr mächtiges Widget, dass es ermöglicht, ausgewählte Attribute von Objekten in einer Tabelle zu arrangieren.
 

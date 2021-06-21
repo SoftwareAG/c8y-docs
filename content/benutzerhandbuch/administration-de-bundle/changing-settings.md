@@ -276,8 +276,8 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
 ![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
 
-
-### <a name="default-app"></a>Ändern von Anwendungseinstellungen
+<a name="default-app"></a>
+### Ändern von Anwendungseinstellungen
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
@@ -296,7 +296,8 @@ Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendu
 
 Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-cors.org).
 
-### <a name="properties"></a>Verwalten der Attributsbibliothek
+<a name="properties"></a>
+### Verwalten der Attributsbibliothek
 
 Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
@@ -310,7 +311,8 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 >**Info:** Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
-#### <a name="add-property"></a>So fügen Sie ein benutzerdefiniertes Attribut hinzu
+<a name="add-property"></a>
+#### So fügen Sie ein benutzerdefiniertes Attribut hinzu
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
@@ -377,7 +379,8 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 1. Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen.
 2. Klicken Sie auf **Entfernen**, um das Attribut zu löschen.
 
-### <a name="sms-provider"></a>Bereitstellen von Zugangsdaten für den SMS-Anbieter
+<a name="sms-provider"></a>
+### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
 SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
@@ -397,8 +400,8 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 >**Info:** OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, einen der anderen SMS-Anbieter zu wählen.
 
-
-### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
+<a name="connectivity"></a>
+### Verwalten der Konnektivitätseinstellungen
 
 Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbieter verwalten. Zum Hinzufügen oder Ersetzen von Zugangsdaten sind ADMIN-Berechtigungen erforderlich.
 

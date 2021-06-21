@@ -10,7 +10,8 @@ Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und di
 
 > **Info:** In den Public-Cloud-Instanzen von Cumulocity IoT kann die Supportbenutzer-Funktionalität nur vom [Software AG Global Support](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für Enterprise Tenant-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
 
-### <a name="configuring-support-access"></a>Konfigurieren von Supportbenutzerzugriff
+<a name="configuring-support-access"></a>
+### Konfigurieren von Supportbenutzerzugriff
 
 Supportbenutzerzugriff kann entweder
 

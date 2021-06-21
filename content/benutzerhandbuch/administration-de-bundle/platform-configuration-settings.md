@@ -22,7 +22,8 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 ![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
-### <a name="config-support-users"></a> Supportbenutzer
+<a name="config-support-users"></a>
+###  Supportbenutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
@@ -42,7 +43,8 @@ Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegeb
 
 Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Enterprise Tenant > Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
-#### <a name="configuring-support-users"></a>Konfigurieren eines Supportbenutzers
+<a name="configuring-support-users"></a>
+#### Konfigurieren eines Supportbenutzers
 
 Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen. Dieser Benutzer kann sich beim Zielmandanten anmelden und sich als Zielbenutzer ausgeben.
 

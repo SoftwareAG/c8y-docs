@@ -10,7 +10,8 @@ Eine detaillierte Geräteliste wird angezeigt.
 
 ![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
-### <a name="device-list"></a>Geräteinformationen
+<a name="device-list"></a>
+### Geräteinformationen
 
 Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:
 
@@ -108,7 +109,8 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 > **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity IoT-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
 
-### <a name="searching-devices"></a>So suchen Sie nach Geräten
+<a name="searching-devices"></a>
+### So suchen Sie nach Geräten
 
 Cumulocity IoT umfasst eine Volltextsuche nach Geräten.
 
@@ -120,7 +122,8 @@ Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
 ![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 
-### <a name="filtering-devices"></a>So filtern Sie Geräte
+<a name="filtering-devices"></a>
+### So filtern Sie Geräte
 
 Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 

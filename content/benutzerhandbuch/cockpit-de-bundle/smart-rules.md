@@ -49,7 +49,8 @@ Smart Rules sind an zwei Orten zu sehen:
 
 
 
-### <a name="create-rules"></a>So erstellen Sie eine Smart Rule
+<a name="create-rules"></a>
+### So erstellen Sie eine Smart Rule
 
 Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Konfiguration** des Navigators (globale Smart Rules) oder in der Registerkarte **Info** einer Gruppe oder eines Geräts (lokale Smart Rules) erstellt werden.
 
@@ -87,7 +88,8 @@ Um die Fehlersuche zu vereinfachen, gibt es einen direkten Link von einer Smart 
 
 Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Quelltext ansehen**, um diesen Link zu verwenden.
 
-### <a name="toggle-rules"></a> So schalten Sie eine Smart Rule ein/aus
+<a name="toggle-rules"></a>
+###  So schalten Sie eine Smart Rule ein/aus
 
 Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 

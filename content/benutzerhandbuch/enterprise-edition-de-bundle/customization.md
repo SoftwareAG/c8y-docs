@@ -12,7 +12,8 @@ Klicken Sie auf **Enterprise Tenant** im Menü **Einstellungen**, um zu diesen E
 
 ![Custom settings](/images/benutzerhandbuch/enterprise-tenant/et-custom-settings.png)
 
-### <a name="configuration"></a>Konfiguration
+<a name="configuration"></a>
+### Konfiguration
 
 >**Info:** Bei einigen Attributen können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
@@ -91,7 +92,8 @@ Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern
 **Info:** Einige zusätzliche Konfigurationseinstellungen können global im Management-Mandanten festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 
 
-### <a name="branding"></a>Branding
+<a name="branding"></a>
+### Branding
 
 Mit der Branding-Funktion können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
 
@@ -111,7 +113,8 @@ Durch Speichern werden die Einstellungen noch nicht auf den aktuellen Mandanten 
 
 Klicken Sie in der oberen Menüleiste auf **Zurücksetzen**, um das Branding des aktuellen Mandanten und seiner Untermandanten auf die Standardeinstellungen zurückzusetzen. Die benutzerdefinierten Einstellungen werden weiterhin gespeichert, aber nicht mehr angewendet.
 
-#### <a name="configuration-parameters"></a>Konfigurationsparameter
+<a name="configuration-parameters"></a>
+#### Konfigurationsparameter
 
 Unter "Konfiguration" können die folgenden Branding-Parameter konfiguriert werden.
 
@@ -189,7 +192,8 @@ Folgende Parameter können festgelegt werden:
 * Text - Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen.
 * Link zur Datenschutzerklärung - Ein Link zu der Seite mit der Datenschutzerklärung.
 
-### <a name="domain-name"></a>Domain-Name
+<a name="domain-name"></a>
+### Domain-Name
 
 Ein entscheidendes Merkmal des Enterprise Tenant ist die Fähigkeit, die Cumulocity IoT-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
 bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von Cumulocity IoT. Zudem haben Sie die Möglichkeit, Untermandanten

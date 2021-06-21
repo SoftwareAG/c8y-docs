@@ -37,7 +37,8 @@ In den nachstehenden Abschnitten wird Folgendes beschrieben:
 * In der [Registerkarte "Connectivity"](#jasperinfo) angezeigte Informationen
 * [Verwalten der Konnektivität](#managing) über Device Management
 
-### <a name="link-account"></a>Einrichten Ihres Jasper Control Center-Kontos
+<a name="link-account"></a>
+### Einrichten Ihres Jasper Control Center-Kontos
 
 In den folgenden Schritten wird beschrieben, wie Sie im Jasper Control Center einen dedizierten Benutzer einrichten können. Dieser Benutzer wird für jeglichen Zugriff von Cumulocity IoT auf das Jasper Control Center verwendet. Die Berechtigungen des Benutzers haben also Einfluss auf die in Cumulocity IoT verfügbaren Funktionalitäten.
 
@@ -59,7 +60,8 @@ Zum Erstellen eines Benutzers im Jasper Control Center führen Sie die folgenden
 Der Benutzer ist nun erstellt, aber hat noch kein Passwort. Folgen Sie den Anweisungen, die Ihnen das Control Center per E-Mail gesendet hat, um das Passwort festzulegen.
 
 
-### <a name="connectivity-configuration"></a>Konfigurieren der Konnektivität für den SIM-Anbieter in Cumulocity IoT
+<a name="connectivity-configuration"></a>
+### Konfigurieren der Konnektivität für den SIM-Anbieter in Cumulocity IoT
 
 Führen Sie den folgenden Schritt aus, um die Konnektivität in Cumulocity IoT zu konfigurieren:
 
@@ -75,7 +77,8 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in Cumulocity IoT z
 
 Der Connectivity-Agent ist nun eingerichtet.
 
-### <a name="link-sims"></a>Verknüpfen von SIMs und Mobilgeräten
+<a name="link-sims"></a>
+### Verknüpfen von SIMs und Mobilgeräten
 
 Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das über eine SIM-Karte verbunden ist, die vom SIM-Anbieter Ihrer Wahl verwaltet wird. Das Gerät sollte eine Registerkarte namens **Connectivity** aufweisen. Wird diese Registerkarte nicht angezeigt, hat dies einen der folgende Gründe:
 
@@ -97,7 +100,8 @@ Falls die ICCID nicht automatisch angezeigt wird, überprüfen Sie Folgendes:
 
 > Beachten Sie, dass es einige Sekunden dauern kann, bis die Registerkarte bei einem Gerät zum ersten Mal erscheint, da Cumulocity IoT überprüft, ob die jeweilige SIM-Karte durch den SIM-Anbieter verwaltet wird.
 
-### <a name="jasperinfo"></a>Registerkarte "Connectivity"
+<a name="jasperinfo"></a>
+### Registerkarte "Connectivity"
 
 In der Registerkarte **Connectivity** finden Sie folgende Abschnitte:
 
@@ -144,7 +148,8 @@ Im Abschnitt **Audit-Logs** werden alle Änderungen an der SIM-Karte und ihrem T
 Die Registerkarte **Connectivity** wird nicht in Echtzeit aktualisiert. Um aktuelle Daten anzuzeigen, klicken Sie in der oberen Menüleiste auf **Neu laden**.
 
 
-### <a name="managing"></a>Überprüfen der Konnektivität
+<a name="managing"></a>
+### Überprüfen der Konnektivität
 
 Wenn Sie den Verdacht haben, dass ein Gerät nicht die korrekten Daten an Cumulocity IoT meldet oder keine Kommandos empfängt, können Sie den Konnektivitätsstatus des Geräts überprüfen.
 

@@ -15,7 +15,8 @@ Zudem gibt es in Enterprise Tenants die Möglichkeit, **Standardabonnements** zu
 
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
-### <a name="application-properties"></a>Anwendungsattribute
+<a name="application-properties"></a>
+### Anwendungsattribute
 
 Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
@@ -80,7 +81,8 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
 
 
-### <a name="subscribed-applications"></a>Abonnierte Anwendungen
+<a name="subscribed-applications"></a>
+### Abonnierte Anwendungen
 
 Cumulocity IoT stellt vielerlei Anwendungen für verschiedene Zwecke bereit.
 
@@ -290,7 +292,8 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### <a name="own-applications"></a>Eigene Anwendungen
+<a name="own-applications"></a>
+### Eigene Anwendungen
 
 Eigene Anwendungen können sein:
 
@@ -313,7 +316,8 @@ Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf de
 Klicken Sie auf **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten.
 
 
-#### <a name="adding-applications"></a>So fügen Sie eine eigene Anwendung hinzu
+<a name="adding-applications"></a>
+#### So fügen Sie eine eigene Anwendung hinzu
 
 Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 
@@ -326,7 +330,8 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
 * [Existierende Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
-##### <a name="uploading-zip-files"></a>So laden Sie eine Web-Anwendung hoch
+<a name="uploading-zip-files"></a>
+##### So laden Sie eine Web-Anwendung hoch
 
 1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Web-Anwendung hochladen**.
@@ -336,7 +341,8 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
-##### <a name="uploading-microservices"></a>So laden Sie einen Microservice hoch
+<a name="uploading-microservices"></a>
+##### So laden Sie einen Microservice hoch
 
 1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Microservice hochladen**.
@@ -347,7 +353,8 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 >**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
 
 
-##### <a name="external-application"></a>So verweisen Sie auf eine externe Anwendung
+<a name="external-application"></a>
+##### So verweisen Sie auf eine externe Anwendung
 
 1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Externe Anwendung**.
@@ -361,7 +368,8 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-##### <a name="clone-application"></a>So duplizieren Sie eine Anwendung
+<a name="clone-application"></a>
+##### So duplizieren Sie eine Anwendung
 
 Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
 
@@ -384,7 +392,8 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 > **Info:** Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
 
 
-#### <a name="editing-and-removing"></a>So bearbeiten Sie eine eigene Anwendung
+<a name="editing-and-removing"></a>
+#### So bearbeiten Sie eine eigene Anwendung
 
 Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**.
 

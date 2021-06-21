@@ -70,7 +70,8 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 
 Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/overview).
 
-### <a name="home"></a>Startseite
+<a name="home"></a>
+### Startseite
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 

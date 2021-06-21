@@ -38,7 +38,8 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
-#### <a name="device-registration-manually"></a>So verbinden Sie ein Gerät manuell
+<a name="device-registration-manually"></a>
+#### So verbinden Sie ein Gerät manuell
 
 >**Info:** Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
 
@@ -65,7 +66,8 @@ Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status de
 > **Info:** Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 
 
-#### <a name="creds-upload"></a>So führen Sie eine Bulk-Registrierung von Geräten durch
+<a name="creds-upload"></a>
+#### So führen Sie eine Bulk-Registrierung von Geräten durch
 
 Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity IoT die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
 

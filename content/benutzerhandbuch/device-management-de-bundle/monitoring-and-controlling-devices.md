@@ -5,7 +5,8 @@ layout: redirect
 ---
 
 
-### <a name="map"></a>Lokalisieren von Geräten
+<a name="map"></a>
+### Lokalisieren von Geräten
 
 Cumulocity IoT bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf einer Karte anzuzeigen.
 
@@ -15,7 +16,8 @@ Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen
 
 ![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
 
-### <a name="connection-monitoring"></a>Verbindungsüberwachung
+<a name="connection-monitoring"></a>
+### Verbindungsüberwachung
 
 Im Device Management können Sie die Verbindungen zu Ihren Geräten überwachen.
 
@@ -78,7 +80,8 @@ Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
-### <a name="monitoring-services"></a>Serviceüberwachung
+<a name="monitoring-services"></a>
+### Serviceüberwachung
 
 Cumulocity IoT unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit Cumulocity IoT kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
 
@@ -108,7 +111,8 @@ Klicken Sie auf **Serviceüberwachung** im Menü **Geräte** des Navigators, um 
 Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an.
 
 
-### <a name="alarm-monitoring"></a>Verwenden von Alarmen
+<a name="alarm-monitoring"></a>
+### Verwenden von Alarmen
 
 Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das einer Handlung bedarf.
 
@@ -199,7 +203,8 @@ Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" z
 * **Additional information**: Ein Alarm kann beliebige vom Gerät bereitgestellte zusätzliche Informationen enthalten.
 * **Audit-Log**: Zusammen mit dem Alarm wird eine Logdatei mit am Alarm vorgenommenen Änderungen gespeichert. So entsteht eine Alarmhistorie mit verschiedenen Daten. -->
 
-### <a name="operation-monitoring"></a>Verwenden von Operationen
+<a name="operation-monitoring"></a>
+### Verwenden von Operationen
 
 Operationen werden verwendet, um Geräte aus der Ferne zu steuern.
 
@@ -213,7 +218,8 @@ In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf 
 * **Einzel-Operationen** werden auf einzelnen Geräten ausgeführt, siehe [So zeigen Sie Einzel-Operationen an](#to-view-single-operations).
 * **Bulk-Operationen** bestehen aus einer Einzel-Operation, die auf einer Reihe von Geräten ausgeführt wird, siehe [So zeigen Sie Bulk-Operationen an](#to-view-bulk-operations).
 
-#### <a name="to-view-single-operations"></a>So zeigen Sie Einzel-Operationen an
+<a name="to-view-single-operations"></a>
+#### So zeigen Sie Einzel-Operationen an
 
 Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
@@ -277,7 +283,8 @@ Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie 
 
 Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
 
-#### <a name="to-view-bulk-operations"></a>So zeigen Sie Bulk-Operationen an
+<a name="to-view-bulk-operations"></a>
+#### So zeigen Sie Bulk-Operationen an
 
 Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
@@ -342,14 +349,17 @@ Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende 
 
 >![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### <a name="bulk-operations"></a><a name="to-add-a-bulk-operation"></a>So fügen Sie eine Bulk-Operation hinzu
+<a name="bulk-operations"></a>
+<a name="to-add-a-bulk-operation"></a>
+#### So fügen Sie eine Bulk-Operation hinzu
 
 Es gibt zwei Möglichkeiten, eine Bulk-Operation anzulegen:
 
 * Verwenden Sie den [Bulk-Operations-Assistenten](#bulk-operation-wizard)
 * [Planen Sie eine Einzel-Operation als Bulk-Operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="bulk-operation-wizard"></a>So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu
+<a name="bulk-operation-wizard"></a>
+##### So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu
 
 Führen Sie folgende Schritte aus:
 
@@ -374,7 +384,8 @@ Führen Sie folgende Schritte aus:
 5. Geben Sie einen neuen Titel ein oder verwenden Sie den vorgegebenen Titel. Geben Sie bei Bedarf eine Beschreibung ein. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den Einzel-Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
     ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>So planen Sie eine Einzel-Operation als Bulk-Operation
+<a name="to-schedule-a-single-operation-as-bulk-operation"></a>
+##### So planen Sie eine Einzel-Operation als Bulk-Operation
 
 Es gibt zwei Möglichkeiten, eine Einzel-Operation als Bulk-Operation zu planen: entweder auf der Registerkarte **Einzel-Operationen** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
 Führen Sie folgende Schritte aus:
@@ -382,7 +393,8 @@ Führen Sie folgende Schritte aus:
 1. Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, die Sie als Bulk-Operation planen möchten, und klicken Sie anschließend auf **Als Bulk-Operation planen**.
 2. Der darauf folgende Assistent ähnelt dem neuen Bulk-Operations-Assistenten, der unter [So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu](#bulk-operation-wizard) beschrieben wird. Allerdings gibt es nur zwei Schritte, da der Operationstyp von der als Bulk-Operation geplanten Operation abgeleitet wird. Lesen Sie die Beschreibung des [vollständigen Assistenten](#bulk-operation-wizard) und folgen Sie den Anweisungen.
 
-#### <a name="bulk-operations"></a>So bearbeiten Sie den Zeitplan von Bulk-Operationen
+<a name="bulk-operations"></a>
+#### So bearbeiten Sie den Zeitplan von Bulk-Operationen
 
 Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbeiten.
 
@@ -394,7 +406,8 @@ Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
 
 ![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
-#### <a name="bulk-operations"></a>So brechen Sie Bulk-Operationen ab
+<a name="bulk-operations"></a>
+#### So brechen Sie Bulk-Operationen ab
 
 Sie können nur Bulk-Operationen mit dem Status GEPLANT oder WIRD AUSGEFÜHRT abbrechen.
 Wenn eine Bulk-Operation gerade ausgeführt wird, können Sie sie nur solange abbrechen, bis alle Einzel-Operationen angelegt wurden.
@@ -402,7 +415,8 @@ Auf diese Weise können Sie die Erstellung der verbleibenden Einzel-Operationen 
 
 Klicken Sie auf das Menüsymbol rechts neben der Bulk-Operation, die Sie abbrechen möchten, und anschließend auf **Bulk-Operation abbrechen**.
 
-#### <a name="to-retry-failed-operations"></a>So führen Sie fehlgeschlagene Operationen erneut aus
+<a name="to-retry-failed-operations"></a>
+#### So führen Sie fehlgeschlagene Operationen erneut aus
 
 Sie können die fehlgeschlagenen Operationen einer Bulk-Operation, die ausgeführt wird oder mit Fehlern abgeschlossen wurde, erneut ausführen.
 
@@ -420,7 +434,8 @@ Klicken Sie dazu auf das Menüsymbol rechts neben der Bulk-Operation und anschli
 
 Dies kann hilfreich sein, wenn die Operation allgemein erfolgreich war, aber Operationsfehler bei Geräten aufweist, die nicht allzu wichtig sind. Diese Fehler würden andernfalls dazu führen, dass die Bulk-Operation im Status FEHLGESCHLAGEN verbleibt.
 
-### <a name="events-all"></a>Fehlerbehebung von Geräten
+<a name="events-all"></a>
+### Fehlerbehebung von Geräten
 
 Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Ereignissen durchgeführt werden. Ereignisse sind von Geräten gesendete Low-Level-Nachrichten, die üblicherweise für die anwendungsspezifische Verarbeitung verwendet werden. So sendet zum Beispiel ein Verkaufsautomat seine Echtzeitverkäufe in Form von Ereignissen.
 

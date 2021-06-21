@@ -8,7 +8,8 @@ Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand vers
 
 Cumulocity IoT bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets-collection)). Sie können auch eigene Widgets entwickeln und Ihrem Cumulocity IoT-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK guide](/web/).
 
-### <a name="creating-dashboards"></a>So erstellen Sie ein Dashboard
+<a name="creating-dashboards"></a>
+### So erstellen Sie ein Dashboard
 
 Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie ein Dashboard erstellen möchten.
 
@@ -42,7 +43,8 @@ Klicken Sie auf **Speichern** um das Dashboard zu erstellen und zu öffnen.
 
 Nähere Informationen zum Hinzufügen, Ändern oder Entfernen von Widgets finden Sie unter [Verwenden von Widgets in Dashboards und Berichten](#using-widgets).
 
-### <a name="sharing-dashboards"></a>Teilen von Dashboards
+<a name="sharing-dashboards"></a>
+### Teilen von Dashboards
 
 Sie können ein Dashboard für ein bestimmtes Gerät erstellen und auf alle Geräte des gleichen Typs anwenden. Dies ist jedoch nur möglich, wenn das Typ-Attribut für das Gerät gesetzt ist.
 

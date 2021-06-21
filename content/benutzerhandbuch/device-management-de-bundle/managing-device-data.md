@@ -21,7 +21,8 @@ Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufger
 
 ![Management menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-menu.png)
 
-### <a name="firmware-repo"></a> Verwalten von Geräte-Firmware
+<a name="firmware-repo"></a>
+###  Verwalten von Geräte-Firmware
 
 Mit dem Firmware-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Firmware für Geräte zu verwalten.
 
@@ -144,7 +145,8 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
-### <a name="software-repo"></a> Verwalten von Geräte-Software
+<a name="software-repo"></a>
+###  Verwalten von Geräte-Software
 
 Mit dem Software-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden.
 
@@ -266,7 +268,8 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
-### <a name="configuration-repository"></a>Verwalten von Konfigurationen
+<a name="configuration-repository"></a>
+### Verwalten von Konfigurationen
 
 In Cumulocity IoT können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
 
@@ -276,7 +279,8 @@ Klicken Sie auf **Konfigurations-Repository** im Menü **Verwaltung** des Naviga
 
 ![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### <a name="add-snapshot"></a> So fügen Sie einen Konfigurationssnapshot hinzu
+<a name="add-snapshot"></a>
+####  So fügen Sie einen Konfigurationssnapshot hinzu
 
 1. Klicken Sie auf **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste.
 2. Geben Sie im darauffolgenden Dialog einen eindeutigen Namen ein.
@@ -346,7 +350,8 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfig
 
 > **Info:** Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
 
-### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
+<a name="credentials"></a>
+### Verwalten von Gerätezugangsdaten
 
 Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#dev-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
@@ -387,7 +392,8 @@ Die Gerätezugangsdaten werden dauerhaft gelöscht.
 
 Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#dev-registration) fort, um das Gerät erneut zu registrieren.
 
-### <a name="device-profiles"></a>Verwalten von Geräteprofilen
+<a name="device-profiles"></a>
+### Verwalten von Geräteprofilen
 
 Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Benutzer mit Hilfe von Bulk-Operationen eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
 
@@ -413,7 +419,8 @@ Um ein neues Geräteprofil hinzuzufügen, klicken Sie rechts in der oberen Menü
 
 Geben Sie im Fenster **Geräteprofil hinzufügen** einen Namen für das Profil an und tragen Sie optional einen oder mehrere Gerätetypen ein. Wenn ein Gerätetyp angegeben wird, kann das Geräteprofil nur Geräten dieses bestimmten Typs zugewiesen werden. Wird kein Gerätetyp angegeben, ist das Profil für alle Gerätetypen verfügbar.
 
-#### <a name="to-add-items"></a>So fügen Sie Elemente zu einem Geräteprofil hinzu
+<a name="to-add-items"></a>
+#### So fügen Sie Elemente zu einem Geräteprofil hinzu
 
 In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakets und Konfigurationsdateien hinzufügen.
 
@@ -474,7 +481,8 @@ Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils 
 ![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
 
 
-#### <a name="to-apply-profiles-to-single-devices"></a>So wenden Sie Geräteprofile auf ein einzelnes Gerät an
+<a name="to-apply-profiles-to-single-devices"></a>
+#### So wenden Sie Geräteprofile auf ein einzelnes Gerät an
 
 Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
@@ -484,7 +492,8 @@ Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile
 
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
-#### <a name="to-apply-profiles-to-multiple-devices"></a>So wenden Sie Geräteprofile auf mehrere Geräte an
+<a name="to-apply-profiles-to-multiple-devices"></a>
+#### So wenden Sie Geräteprofile auf mehrere Geräte an
 
 Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet werden.
 
@@ -497,7 +506,8 @@ Die Geräte installieren die Firmware, Software und Konfigurationselemente des P
 >**Info:** Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
 
 
-### <a name="trusted-certificates"></a> Verwalten von vertrauenswürdigen Zertifikaten
+<a name="trusted-certificates"></a>
+###  Verwalten von vertrauenswürdigen Zertifikaten
 
 In Cumulocity IoT können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von Cumulocity IoT als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
 

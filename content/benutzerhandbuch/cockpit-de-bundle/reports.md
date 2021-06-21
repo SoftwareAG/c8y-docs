@@ -21,7 +21,8 @@ Verwenden Sie den Umschalter in der Spalte **Im Navigator anzeigen**, wenn Sie d
 Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden Sie unter [So erstellen Sie einen Bericht](#create-report).
 
 
-### <a name="create-report"></a>So erstellen Sie einen Bericht
+<a name="create-report"></a>
+### So erstellen Sie einen Bericht
 
 1. Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um den Dialog **Bericht hinzufügen** zu öffnen.
 	<br>![Add report](/images/benutzerhandbuch/cockpit/cockpit-report-add.png)<br>

@@ -26,7 +26,8 @@ Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 * Data Broker garantiert nicht, dass die Zielmandanten dieselbe Nachrichtenreihenfolge aufweisen wie der Ursprungsmandant.
 * Wenngleich wir für Rückwärtskompatibilität sorgen, können wir nicht sicherstellen, dass Data Broker Daten an Cumulocity IoT-Mandanten senden kann, die in älteren Cumulocity IoT-Versionen als der Ursprungsmandant ausgeführt werden.
 
-### <a name="data-broker-connectors"></a> Datenkonnektoren
+<a name="data-broker-connectors"></a>
+###  Datenkonnektoren
 
 Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
 
@@ -47,7 +48,8 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 > **Info:** Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
 
-#### <a name="data-broker-connector-edit"></a>So fügen Sie einen Datenkonnektor hinzu
+<a name="data-broker-connector-edit"></a>
+#### So fügen Sie einen Datenkonnektor hinzu
 
 1. Klicken Sie auf **Datenkonnektor hinzufügen** in der oberen Menüleiste.
 2. Geben Sie in der Registerkarte **Einstellungen** die folgenden Informationen ein, um einen neuen Datenkonnektor zu erstellen:
@@ -158,7 +160,8 @@ Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](
 Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 
-### <a name="data-broker-subscriptions"></a> Datenabonnements
+<a name="data-broker-subscriptions"></a>
+###  Datenabonnements
 
 Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwalten und neue anlegen.
 
@@ -185,7 +188,8 @@ Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Si
 
 Klicken Sie auf das Menüsymbol und anschließend auf **Löschen**, um die Datenweiterleitung zu stoppen und den Datenkonnektor zu löschen.
 
-### <a name="data-broker-troubleshooting"></a> Troubleshooting
+<a name="data-broker-troubleshooting"></a>
+###  Troubleshooting
 
 Wenn der Data Broker die Verbindung zu einem Zielmandanten nicht herstellen kann, wird ein KRITISCHER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
 

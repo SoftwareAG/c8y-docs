@@ -19,7 +19,8 @@ Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 ![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
 
 
-#### <a name="add-export"></a>So fügen Sie einen Export hinzu
+<a name="add-export"></a>
+#### So fügen Sie einen Export hinzu
 
 1. Klicken Sie auf **Export hinzufügen** in der oberen Menüleiste.<br>
 	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
@@ -73,7 +74,8 @@ Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darau
 
 Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
 
-#### <a name="schedule-export"></a>So planen Sie einen Export
+<a name="schedule-export"></a>
+#### So planen Sie einen Export
 
 Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
 

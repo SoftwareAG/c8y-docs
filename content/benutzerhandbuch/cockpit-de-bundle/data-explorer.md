@@ -37,7 +37,8 @@ Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Änder
 >**Info:** Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
 
-### <a name="change-visualization"></a>Ändern der Daten-Explorer-Visualisierung
+<a name="change-visualization"></a>
+### Ändern der Daten-Explorer-Visualisierung
 
 Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parameter bearbeiten:
 
@@ -79,7 +80,8 @@ Klicken Sie auf **Echtzeit** in der oberen Menüleiste, um die Aktualisierung in
 
 Die Sichtbarkeit eines Datenpunkts kann mit dem Umschalter links neben dem Datenpunktnamen aktiviert bzw. deaktiviert werden.
 
-### <a name="add-data-points"></a>Hinzufügen von Datenpunkten
+<a name="add-data-points"></a>
+### Hinzufügen von Datenpunkten
 
 Klicken Sie auf **Datenpunkt hinzufügen** am Ende der Karte **Datenpunkte**, um einen Datenpunkt zum Daten-Explorer hinzuzufügen.
 
@@ -98,7 +100,8 @@ Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibli
 Klicken Sie im Kontextmenü auf **Von der Liste löschen**, um einen Datenpunkt aus der Datenpunktliste zu löschen.
 
 
-### <a name="customize-data-points"></a>Anpassen von Datenpunktattributen
+<a name="customize-data-points"></a>
+### Anpassen von Datenpunktattributen
 
 Sie können die Visualisierung eines einzelnen Datenpunkts nach Ihren Wünschen anpassen. Erweitern Sie dazu den Datenpunkteintrag in der Datenpunktliste durch Klicken auf das Pfeilsymbol.
 
@@ -184,7 +187,8 @@ Klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü die Option **Lö
 Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Explorer durch einen Umschalter ein- oder abgeschaltet werden.
 
 
-### <a name="create-widget"></a>Erstellen von Widgets im Daten-Explorer
+<a name="create-widget"></a>
+### Erstellen von Widgets im Daten-Explorer
 
 Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, können Sie diese als Widget speichern.
 
@@ -209,7 +213,8 @@ Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie 
 > **Info:** Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
 
 
-### <a name="export-data"></a>Exportieren von Messwerten
+<a name="export-data"></a>
+### Exportieren von Messwerten
 
 Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten Daten enthalten die folgenden Informationen, repräsentiert in Spalten:
 

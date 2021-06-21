@@ -20,7 +20,7 @@ For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* 
 #### Register a demo device in Cumulocity IoT
 
 Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank. Follow the below steps
-We have added a script **01 Register Device.ipynb** which registers a demo device in Cumulocity IoT. 
+We have added a script **RegisterDevice.ipynb** which registers a demo device in Cumulocity IoT. 
 
 1. Open it, click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in Cumulocity, upon successful execution, a device named *DemandForecastDemoDevice* is registered in Cumulocity IoT. 
@@ -34,7 +34,7 @@ This device is capable of simulating readings of water flow to Cumulocity IoT in
 
 #### Simulate measurements for the demo device
 
-Use **02 Simulate Data.ipynb** for simulating the measurements for the demo device.
+Use **SimulateData.ipynb** for simulating the measurements for the demo device.
 
 1. Open it, click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in Cumulocity, upon successful **c8y_Flow** measurements are sent to Cumulocity IoT on behalf of the demo device. The measurements are simulated dynamically for the last  days period and for every two hours (i.e. 12 observations per day). 
@@ -53,7 +53,7 @@ We use this data to generate a time series model and forecast the next day’s c
 
 #### Generate forecasts based on the simulated data
 
-Run the attached **03 Train Model and Predict.ipynb** notebook which does the following:
+Run the attached **TrainModelandPredict.ipynb** notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
 2. Forecast the next day’s (i.e. Today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.

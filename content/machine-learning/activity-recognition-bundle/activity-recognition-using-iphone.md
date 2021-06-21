@@ -89,7 +89,7 @@ Once data is downloaded.
 
 The following steps illustrate the next steps to merge all these file and create a concatenated data with labels which can be used for machine learning model building exercise using the Jupyter Notebook.
 
-Follow the steps described in [ Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *01 merge Data.ipynb*. This will perform following actions.
+Follow the steps described in [ Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the **MergeData.ipynb**. This will perform following actions.
 
 *	Loads al the activity data, aggregate them in second wise, and add labels for each activity and save it in a single file *activityData.csv*.
 

@@ -3,8 +3,8 @@ weight: 50
 title: Anwenden von Geschäftsregeln
 
 ---
-
-### <a name="event-processing">Echtzeitverarbeitung
+<a name="event-processing">
+### Echtzeitverarbeitung
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von Cumulocity IoT automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 
@@ -18,7 +18,8 @@ Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle 
 
 Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die Anweisung erzeugte Ausgabe unterhalb des Häkchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie auf **Alle löschen**, um die Ausgabe zu entfernen.
 
-#### <a name="add-rule"></a>So fügen Sie eine Regel hinzu
+<a name="add-rule"></a>
+#### So fügen Sie eine Regel hinzu
 
 1. Klicken Sie auf **Neue Regel** in der oberen Menüleiste.
 2. Geben Sie oben einen Namen für die neue Regel ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.
@@ -43,8 +44,8 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Anstatt eine Regel zu löschen, können Sie sie auch zeitweise deaktivieren, indem Sie den Status auf "Nicht gestartet" setzen.
 
-
-### <a name="reprio-alarms"></a>Alarmregeln
+<a name="reprio-alarms"></a>
+### Alarmregeln
 
 Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um diese den Prioritäten Ihres Unternehmens anzupassen. Der Abbruch einer Verbindung wird beispielsweise standardmäßig als WICHTIG eingestuft, kann aber in Ihrem Fall KRITISCH sein. Daher können Sie eine Alarmregel definieren, die Alarme im Zusammenhang mit Verbindungsabbrüchen als KRITISCH einstuft.
 
@@ -54,7 +55,8 @@ Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste all
 
 Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Beschreibung (optional) angezeigt.
 
-#### <a name="add-alarm-mapping"></a> So fügen Sie eine Alarmregel hinzu
+<a name="add-alarm-mapping"></a>
+####  So fügen Sie eine Alarmregel hinzu
 
 1. Klicken Sie auf **Alarmregel hinzufügen** in der oberen Menüleiste.
 2. Geben Sie den Alarmtypen ein, den Sie ändern möchten.
@@ -64,7 +66,7 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Besc
 
 #### So bearbeiten Sie eine Alarmregel
 
-Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht bearbeitbar.
+Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht editierbar.
 
 <img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

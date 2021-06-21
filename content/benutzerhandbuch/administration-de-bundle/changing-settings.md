@@ -12,8 +12,8 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Zugangsdaten für den SMS-Anbieter](#sms-provider) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
-
-### <a name="authentication"></a>Ändern von Authentifizierungseinstellungen
+<a name="authentication"></a>
+### Ändern von Authentifizierungseinstellungen
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
@@ -70,7 +70,8 @@ Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speich
 
 >**Wichtig:** Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. TFA-Einstellungen der Benutzer werden gelöscht und müssen erneut konfiguriert werden.
 
-### <a name="oauth-internal"></a>OAuth Internal
+<a name="oauth-internal"></a>
+### OAuth Internal
 
 Cumulocity IoT OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden.
 Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit Mandantenoptionen geändert werden: `oauth.internal.basic-token.lifespan.seconds`. Der minimal zulässige Wert ist 5 Minuten.
@@ -79,7 +80,8 @@ Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkei
 
 Weitere Informationen finden Sie unter [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in der Cumulocity IoT OpenAPI Specification.
 
-### <a name="single-sign-on"></a>Konfigurieren von Single Sign-On
+<a name="single-sign-on"></a>
+### Konfigurieren von Single Sign-On
 
 Cumulocity IoT bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 

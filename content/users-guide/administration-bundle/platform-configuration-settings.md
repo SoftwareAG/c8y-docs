@@ -53,15 +53,15 @@ To configure a user in the Management tenant as support user, you need to assign
 
 **Using a global role**
 
-1. Create a role “Support” with “Support READ” and “Support ADMIN” permission.
-2. Assign the role “Support” to the respective user and remove all other roles for the user.
+1. Create a role "Support" with "Support READ" and "Support ADMIN" permission.
+2. Assign the role "Support" to the respective user and remove all other roles for the user.
 
 **Using inventory roles**
 
 Using inventory roles, you can selectively assign a support user for specific subtenants.
 
-1. Create an inventory role called “Support” with type = "*" and permission = "All".
+1. Create an inventory role called "Support" with type = "*" and permission = "All".
 2. Create a group of all subtenants which you want to be supported by the user.
-3. Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+3. Assign the "Support" inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.

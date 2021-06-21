@@ -218,7 +218,7 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 
 **Example**
 
-In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner” respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+In the following screenshot, five columns are configured. Three property columns "Meter", "Vendor", and "Owner", which refer to the properties "name", "type" and "owner" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
 ![Asset table widget](/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 
@@ -385,7 +385,7 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
-"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
+"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 

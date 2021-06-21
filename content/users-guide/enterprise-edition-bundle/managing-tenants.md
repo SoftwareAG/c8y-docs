@@ -107,12 +107,32 @@ At the right of the **Properties** tab, you can find information on the support 
 
 The following information is displayed here:
 
-|Field|Description
-|:--------|:-----
-|Status|May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings)),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
-|Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally in the Management tenant. Shown as a number in a small red dot.
-|Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
-
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Status</td>
+<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the Management tenant (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the Management tenant, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).</td>
+</tr>
+<tr>
+<td style="text-align:left">Active requests count</td>
+<td style="text-align:left">The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally in the Management tenant. Shown as a number in a small red dot.</td>
+</tr>
+<tr>
+<td style="text-align:left">Expiry date</td>
+<td style="text-align:left">Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".</td>
+</tr>
+</tbody>
+</table>
 
 ### Suspending subtenants
 

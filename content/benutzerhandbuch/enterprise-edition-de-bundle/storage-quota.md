@@ -22,7 +22,8 @@ Nehmen wir an, ein Mandant hat ein Speicherkontingent von 10 GB. Datenhaltungsre
 Die Gesamtspeichernutzung beträgt nun 9,8 GB.
 
 
-### <a name="warningEmail"></a>Verwalten der Warn-E-Mail bei Überschreiten des Speicherkontingents
+<a name="warningEmail"></a>
+### Verwalten der Warn-E-Mail bei Überschreiten des Speicherkontingents
 
 Die Funktion ist nur sichtbar, wenn ein Speicherkontingent für den Mandanten gesetzt wurde.
 

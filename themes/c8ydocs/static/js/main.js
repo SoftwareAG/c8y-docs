@@ -53,7 +53,7 @@ var main = (function ($) {
           }
         }
 
-        if (true) {
+        if (false) {
           offset = 45;
           $('<div/>', {
             id: 'preview-banner',

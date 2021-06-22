@@ -495,7 +495,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 **Endpoint**
 
-`GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
 
 **Description**
 

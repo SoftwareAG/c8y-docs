@@ -11,9 +11,12 @@ In der Cumulocity IoT-Plattform gibt es zwei Arten von Anwendungen:
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
+Zudem gibt es in Enterprise Tenants die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-edition-de/#default-subscriptions).
+
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
-### <a name="application-properties"></a>Anwendungsattribute
+<a name="application-properties"></a>
+### Anwendungsattribute
 
 Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
@@ -22,7 +25,7 @@ Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
 <table>
-<col width= 20%
+<col width= 20%>
 <col width= 20%>
 <col width= 20%>
 <col width= 20%>
@@ -78,7 +81,8 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
 
 
-### <a name="subscribed-applications"></a>Abonnierte Anwendungen
+<a name="subscribed-applications"></a>
+### Abonnierte Anwendungen
 
 Cumulocity IoT stellt vielerlei Anwendungen für verschiedene Zwecke bereit.
 
@@ -116,13 +120,13 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
-<td style="text-align:left">Laufzeit für EPL Apps, Smart Rules und Analytics Builder.</td>
+<td style="text-align:left">Laufzeit für Analytics Builder, EPL Apps und Smart Rules.</td>
 <td style="text-align:left">apama-ctrl-* (verschiedene Zeichenketten für verschiedene Größen-/Kapazitätsoptionen)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
-<td style="text-align:left">Ermöglicht das Verwalten und Bearbeiten von Analytics Builder-Modellen und EPL Apps (falls aktiviert).</td>
+<td style="text-align:left">Analytics Builder-Modelle und EPL-Apps (sofern aktiviert) verwalten und bearbeiten.</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
@@ -158,7 +162,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
-<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
+<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama"</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -185,7 +189,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
 <td style="text-align:left">branding</td>
-<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Funktion</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
@@ -254,7 +258,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
@@ -288,7 +292,8 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### <a name="own-applications"></a>Eigene Anwendungen
+<a name="own-applications"></a>
+### Eigene Anwendungen
 
 Eigene Anwendungen können sein:
 
@@ -308,12 +313,13 @@ Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen i
 
 Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf deren Karte. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties).
 
-Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten.
+Klicken Sie auf **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten.
 
 
-#### <a name="adding-applications"></a>So fügen Sie eine eigene Anwendung hinzu
+<a name="adding-applications"></a>
+#### So fügen Sie eine eigene Anwendung hinzu
 
-Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
 
@@ -324,9 +330,10 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
 * [Existierende Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
-##### <a name="uploading-zip-files"></a>So laden Sie eine Web-Anwendung hoch
+<a name="uploading-zip-files"></a>
+##### So laden Sie eine Web-Anwendung hoch
 
-1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Web-Anwendung hochladen**.
 3. Legen Sie im darauf folgenden Dialog eine entsprechende ZIP-Datei ab oder navigieren Sie in Ihrem Dateisystem zu der Datei.
 
@@ -334,9 +341,10 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
-##### <a name="uploading-microservices"></a>So laden Sie einen Microservice hoch
+<a name="uploading-microservices"></a>
+##### So laden Sie einen Microservice hoch
 
-1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Microservice hochladen**.
 3. Legen Sie im darauf folgenden Dialog eine entsprechende ZIP-Datei ab oder navigieren Sie in Ihrem Dateisystem zu der Datei. Beachten Sie, dass die hochzuladende Datei nicht größer als 500 MB sein darf.
 
@@ -345,9 +353,10 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 >**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
 
 
-##### <a name="external-application"></a>So verweisen Sie auf eine externe Anwendung
+<a name="external-application"></a>
+##### So verweisen Sie auf eine externe Anwendung
 
-1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Externe Anwendung**.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
@@ -355,15 +364,16 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
 6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann.
-7. Klicken Sie **Speichern**, um die Anwendung zu erstellen.
+7. Klicken Sie auf **Speichern**, um die Anwendung zu erstellen.
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-##### <a name="clone-application"></a>So duplizieren Sie eine Anwendung
+<a name="clone-application"></a>
+##### So duplizieren Sie eine Anwendung
 
 Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
 
-1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
+1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
 <br><br>
@@ -382,7 +392,8 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 > **Info:** Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
 
 
-#### <a name="editing-and-removing"></a>So bearbeiten Sie eine eigene Anwendung
+<a name="editing-and-removing"></a>
+#### So bearbeiten Sie eine eigene Anwendung
 
 Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**.
 
@@ -409,8 +420,8 @@ Es können mehrere Anwendungsversionen in Cumulocity IoT gespeichert werden, ind
 
 1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
 2. Wechseln Sie zur Registerkarte **Archiv**.
-3. Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
-4. Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity IoT-Konto hochzuladen.
+3. Klicken Sie auf **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
+4. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr Cumulocity IoT-Konto hochzuladen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
@@ -424,8 +435,8 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 
 1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
 2. Wechseln Sie zur Registerkarte **Archiv**.
-3. Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie **Aktivieren**, um diese Version zur aktiven Version zu machen.
-4. Klicken Sie **Entfernen** um eine Version aus dem Archiv zu löschen.
+3. Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie auf **Aktivieren**, um diese Version zur aktiven Version zu machen.
+4. Klicken Sie auf **Entfernen** um eine Version aus dem Archiv zu löschen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
@@ -435,7 +446,7 @@ Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie er
 
 1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
 2. Wechseln Sie zur Registerkarte **Archiv**.
-3. Klicken Sie **Erneut aktivieren** in der oberen rechten Ecke der Registerkarte **Archivdateien**.
+3. Klicken Sie auf **Erneut aktivieren** in der oberen rechten Ecke der Registerkarte **Archivdateien**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-reactivate.png" alt="Refresh application">  
 
@@ -519,12 +530,3 @@ Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine en
 > **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 
 >Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
-
-
-### <a name="default-applications"></a>Standardanwendungen
-
-Um Standardanwendungen für Untermandanten zu definieren, kann beim Anlegen neuer Mandanten eine Mandantenregel mit den folgenden Optionen erstellt und verwendet werden:
-
-* category: configuration
-* key: default.tenant.applications
-* value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules

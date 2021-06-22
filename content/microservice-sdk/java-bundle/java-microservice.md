@@ -147,7 +147,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achive that, include in your _pom.xml_ file build plugins as follows:
+Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>

@@ -78,13 +78,18 @@ If you are using {{< company-cloud >}}, the application switcher also shows othe
 <a name="searching"></a>
 #### Full text search
 
-Cumulocity IoT provides a full text search, available through the search field at the right of the top bar in the UI.
-
-![Search field](/images/users-guide/getting-started/getting-started-search-button.png)
+Cumulocity IoT provides a full text search, available through the **Search** button at the right of the top bar in the UI.
 
 The search result includes groups, devices and child devices. On entering a search term into the textbox, Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment).
 
 The search functionality is based on the [MongoDB full text search](https://docs.mongodb.com/manual/text-search/).
+
+For convenience, you can select one of the following search options:
+
+* exact match
+* starts with
+* contains
+* ends with
 
 Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
@@ -124,7 +129,7 @@ Some pages offer a filtering functionality to filter objects in a list.
 
 ![Filter field](/images/users-guide/getting-started/getting-started-filtering.png)
 
-As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words.
+As opposed to the search functionality, on entering filter criteria you must not necessarily enter complete words.
 
 In many cases you can just enter any arbitrary text into the text field, even just 2-3 characters. Entering
 

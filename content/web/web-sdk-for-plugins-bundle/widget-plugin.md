@@ -66,7 +66,7 @@ Update the application manifest to add this new plugin to the import list.
 
 #### Add an item to the widget menu list
 
-Next, we have to create a config file which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we have to create a configuration file which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -311,7 +311,7 @@ Update the application manifest to add this new plugin to the import list.
 
 #### Add an item to the navigator menu
 
-Next, we have to create a config file, which adds an item to the navigator menu. For that purpose, we can use the service "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we have to create a configuration file, which adds an item to the navigator menu. For that purpose, we can use the service "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -482,7 +482,7 @@ Secondly, we need to allow our application to send requests to Dark Sky API. In 
 
 #### Add an item to the widget menu list
 
-Next, we have to create a config file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we have to create a configuration file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {

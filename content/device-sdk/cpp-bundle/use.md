@@ -4,7 +4,7 @@ title: C++ Device integration
 layout: redirect
 ---
 
-Before we really get started, we need a Cumulocity IoT account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity IoT using the library.
+Before we really get started, we need a Cumulocity IoT account. Go to <https://{{< URL >}}> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity IoT using the library.
 
 ![Cumulocity IoT Registration Page](/images/cpp/img/registerd.png)
 

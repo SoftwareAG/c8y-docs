@@ -15,11 +15,11 @@ The complete webMethods.io Integration documentation is available at [https://do
 
 ### Getting started
 
->**Info:** If your tenant has been created outside of {{< company-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity IoT with other applications, but you cannot use the app switcher and single sign-on login.
+>**Info:** If your tenant has been created outside of {{< company-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-name-1 >}} with other applications, but you cannot use the app switcher and single sign-on login.
 
 To subscribe to webMethods.io Integration, perform the following steps:
 
-1. Log into the Cumulocity IoT platform as part of **{{< company-cloud >}}**.
+1. Log into the {{< product-name-1 >}} platform as part of **{{< company-cloud >}}**.
 
 2. In the application switcher, select **webMethods.io Integration**.
 
@@ -32,7 +32,7 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 Integrations in webmethods.io are called "workflows". A workflow is a connection between two or more web apps or services. It’s like a set of steps required to perform a task.
 
-The example workflow below is triggered by an alarm in Cumulocity IoT and creates a ticket in Zendesk and sends an SMS message.
+The example workflow below is triggered by an alarm in {{< product-name-1 >}} and creates a ticket in Zendesk and sends an SMS message.
 
 ![webMethods.io Example Workflow](/images/users-guide/webMethods.io/wmio-example1.png)
 

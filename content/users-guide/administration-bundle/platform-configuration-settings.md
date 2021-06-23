@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-From the {{< tenant-type-3 >}}, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
+From the {{< tenant-type-3 >}}, you can configure properties which apply globally to the whole {{< product-name-1 >}} deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
@@ -28,7 +28,7 @@ In the **Passwords** section, you can specify password settings like default str
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables Cumulocity IoT platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< tenant-type-3 >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature enables {{< product-name-1 >}} platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< tenant-type-3 >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 

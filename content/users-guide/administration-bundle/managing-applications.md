@@ -4,7 +4,7 @@ title: Managing applications
 layout: redirect
 ---
 
-In the Cumulocity IoT platform we distinguish between two kinds of applications:
+In the {{< product-name-1 >}} platform we distinguish between two kinds of applications:
 
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
 * [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#adding-applications) in various ways as own applications.
@@ -84,7 +84,7 @@ In case of applications of the type "microservice", you will additionally find i
 <a name="subscribed-applications"></a>
 ### Subscribed applications
 
-Cumulocity IoT provides a variety of applications for different purposes.
+{{< product-name-1 >}} provides a variety of applications for different purposes.
 
 Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications listed below.
 
@@ -205,7 +205,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
-<td style="text-align:left">Reflect independent organizational entities in Cumulocity IoT that share the same database.</td>
+<td style="text-align:left">Reflect independent organizational entities in {{< product-name-1 >}} that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -247,7 +247,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/protocol-integration/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
-<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in Cumulocity IoT.</td>
+<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in {{< product-name-1 >}}.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -264,7 +264,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Host your own microservices on top of Cumulocity IoT.</td>
+<td style="text-align:left">Host your own microservices on top of {{< product-name-1 >}}.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -414,14 +414,14 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 #### Uploading archives
 
-Multiple archive file versions can be stored in Cumulocity IoT when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
+Multiple archive file versions can be stored in {{< product-name-1 >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
 ##### To upload an archive
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
 3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
-4. Click **Upload** to upload the archive to your Cumulocity IoT account.
+4. Click **Upload** to upload the archive to your {{< product-name-1 >}} account.
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
@@ -454,7 +454,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Monitoring microservices
 
-You can monitor microservices hosted by Cumulocity IoT in two ways.
+You can monitor microservices hosted by {{< product-name-1 >}} in two ways.
 
 #### Status information
 
@@ -492,7 +492,7 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 #### Log files
 
-Cumulocity IoT offers viewing logs which provide more details on the status of microservices.
+{{< product-name-1 >}} offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
 

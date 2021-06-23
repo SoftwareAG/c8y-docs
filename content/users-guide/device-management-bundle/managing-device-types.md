@@ -4,7 +4,7 @@ title: Managing device types
 layout: redirect
 ---
 
-To process data from various device types, Cumulocity IoT uses so-called "device protocols" which are stored in a database.
+To process data from various device types, {{< product-name-1 >}} uses so-called "device protocols" which are stored in a database.
 
 Click **Device protocols** in the **Device types** menu in the navigator.
 

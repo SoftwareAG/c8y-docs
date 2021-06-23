@@ -7,13 +7,13 @@ aliases:
   - /users-guide/optional-services/#cumulocity-sensor-app
 ---
 
-The Cumulocity IoT Sensor App is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.
+The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.
 
-The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-name-1 >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-name-1 >}}.
 
-If you are using the Cumulocity IoT free trial available via {{< company-cloud >}}, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
+If you are using the {{< product-name-1 >}} free trial available via {{< company-cloud >}}, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with {{< product-name-1 >}} moreover saves a lot of implementation effort.
 
-Besides sending data to the platform, the Cumulocity IoT Sensor App can also send commands to the smartphone directly from the phone dashboard. Commands currently available in the dashboard include alert messages and vibration.
+Besides sending data to the platform, the {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard. Commands currently available in the dashboard include alert messages and vibration.
 
 Supported smartphone sensors include:
 
@@ -36,7 +36,7 @@ The latest list of supported Bluetooth devices is provided in the app. A button 
 
 More devices will be supported in the future and made available in the app.
 
-> **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to Cumulocity IoT in real time.
+> **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to {{< product-name-1 >}} in real time.
 
 Reading vehicle sensors comes with the use of an additional OBD dongle, which exposes the vehicles sensors to the phone via WiFi or Bluetooth (Note: iOS is WiFi only). There are two supported diagnostic connectors, both based on the ELM327 microcontroller:
 

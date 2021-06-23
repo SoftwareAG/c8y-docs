@@ -4,7 +4,7 @@ title: Customizing your platform
 layout: redirect
 ---
 
-With the {{< tenant-type-2 >}} of Cumulocity IoT, you can customize your platform in various aspects and according to your requirements.
+With the {{< tenant-type-2 >}} of {{< product-name-1 >}}, you can customize your platform in various aspects and according to your requirements.
 
 Apart from various [configuration](#configuration) settings, you can use your individual [branding](#branding) and your individual [domain name](#domain-name).
 
@@ -21,8 +21,8 @@ The following placeholders can be found in the **Configuration** tab:
 
 |Placeholder|Description|
 |:---|:---|
-|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.cumulocity.com`.
-|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.cumulocity.com`. In case of an {{< tenant-type-2 >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
+|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< URL >}}`.
+|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< URL >}}`. In case of an {{< tenant-type-2 >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
 #### Two-factor authentication
@@ -194,11 +194,11 @@ The following parameters can be specified:
 <a name="domain-name"></a>
 ### Domain name
 
-A key feature of the {{< tenant-type-2 >}} is the ability to operate the Cumulocity IoT platform using a custom domain name. This
-means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of Cumulocity IoT. In addition you'll be able to create subtenants
+A key feature of the {{< tenant-type-2 >}} is the ability to operate the {{< product-name-1 >}} platform using a custom domain name. This
+means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-name-1 >}}. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
-> **Info:** The custom domain name functionality is only available for Cumulocity IoT cloud installations or On-Premise installations which don't use a custom load balancer.
+> **Info:** The custom domain name functionality is only available for {{< product-name-1 >}} cloud installations or On-Premise installations which don't use a custom load balancer.
 
 There are three prerequisites for using a custom domain:
 
@@ -207,7 +207,7 @@ There are three prerequisites for using a custom domain:
 2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
-   routed to Cumulocity IoT. (see below).
+   routed to {{< product-name-1 >}}. (see below).
 
 #### SSL certificate requirements
 
@@ -223,12 +223,12 @@ The following criteria have to be met by any SSL certificate to be used with the
 * The common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your
   wildcard domain name, e.g. "CN=\*.iot.mycompany.com".
 
-Cumulocity IoT supports a single certificate that is signed by the root CA, as well as a full chain certificate which
+{{< product-name-1 >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.
 
 #### Packaging the SSL certificate in PKCS #12
 
-In order to use a SSL certificate with Cumulocity IoT, the certificate together with its private key have to be uploaded to
+In order to use a SSL certificate with {{< product-name-1 >}}, the certificate together with its private key have to be uploaded to
 the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two
@@ -237,7 +237,7 @@ protected with a password/passphrase.
 
 Such PEM files can easily be repackaged into #PKCS #12 using [OpenSSL](https://www.openssl.org/). In the following
 example, OpenSSL is used to combine a certificate chain (*chain.cert*) and the corresponding key (*privkey.pem*) into a
-PKCS #12 keystore file (*out_keystore.p12*) that can be used with Cumulocity IoT.
+PKCS #12 keystore file (*out_keystore.p12*) that can be used with {{< product-name-1 >}}.
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
@@ -245,21 +245,21 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 #### DNS requirements for enterprise domains
 
-The DNS entries for your custom domain have to be configured in a way that all requests are routed to the Cumulocity IoT platform.
+The DNS entries for your custom domain have to be configured in a way that all requests are routed to the {{< product-name-1 >}} platform.
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
-domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of Cumulocity IoT. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
-is *http://mytenant.cumulocity.com*, the target hostname is *cumulocity.com*. Please also make sure to delete any
+domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of {{< product-name-1 >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
+is *http://mytenant.{{< URL >}}*, the target hostname is *{{< URL >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the Cumululocity IoT at *cumulocity.com*, the following CNAME entry has to be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-name-1 >}} at *{{< URL >}}*, the following CNAME entry has to be added to your DNS zone:
 
 ```shell
 NAME                  TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  cumulocity.com.
+*.iot.mycompany.com.   CNAME  {{< URL >}}.
 ```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
@@ -284,7 +284,7 @@ to your {{< tenant-type-2 >}} using the new domain name. You will also receive a
 activation. Note that your {{< tenant-type-3 >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< tenant-type-3 >}} domain will be "management.iot.mycompany.com".
 
-> **Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
+> **Info:** After the activation is completed you will no longer be able to access your tenant with the {{< product-name-1 >}} domain name. Instead, use your custom domain name.
 
 #### Updating your certificate
 
@@ -299,13 +299,13 @@ When your certificate expires, you must update your certificate with a new one w
 
 #### Deactivating your certificate
 
-If you wish to return to your old domain at Cumulocity IoT, you can simply deactivate you certificate.
+If you wish to return to your old domain at {{< product-name-1 >}}, you can simply deactivate you certificate.
 
 >**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
-In case you cannot reach Cumulocity IoT using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
+In case you cannot reach {{< product-name-1 >}} using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
 
 **Check if the DNS entry is correct**
 

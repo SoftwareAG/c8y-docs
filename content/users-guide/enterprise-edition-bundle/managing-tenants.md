@@ -4,7 +4,7 @@ title: Managing tenants
 layout: redirect
 ---
 
-Using the {{< tenant-type-2 >}} of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
+Using the {{< tenant-type-2 >}} of {{< product-name-1 >}}, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
@@ -52,7 +52,7 @@ In the {{< tenant-type-3 >}}, you will also find information on the parent tenan
 	<tbody>
 	<tr>
 	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
+	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< URL >}}" on {{< URL >}}. You can only use one subdomain level. For example, you can only use "acme.{{< URL >}}" on {{< URL >}}. You cannot use "mycustomer.acme.{{< URL >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
@@ -76,7 +76,7 @@ In the {{< tenant-type-3 >}}, you will also find information on the parent tenan
 	</tr>
 	<tr>
 	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity IoT platform</a> for more information on password strength).</td>
+	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-name-1 >}} platform</a> for more information on password strength).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Tenant policy</td>
@@ -120,7 +120,7 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
->**Important:** Suspended tenants for all Cumulocity IoT public cloud instances will be automatically deleted after 60 days.
+>**Important:** Suspended tenants for all {{< product-name-1 >}} public cloud instances will be automatically deleted after 60 days.
 >
 > **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 
@@ -152,7 +152,7 @@ Click the menu icon at the right of the respective subtenant entry and then clic
 <a name="subscribe"></a>
 ### Applications
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity IoT applications.
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-name-1 >}} applications.
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -166,7 +166,7 @@ Hover over the applications under **Subscribed applications** at the left and cl
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by Cumulocity IoT the status of the microservice is indicated next to its name by symbols:
+For all applications hosted as microservices by {{< product-name-1 >}} the status of the microservice is indicated next to its name by symbols:
 
 <img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
 
@@ -224,7 +224,7 @@ They can view the peak number of concurrently registered devices, root devices a
 
 Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 
-Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#accessing-cumulocity-platform).
+Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the platform](/users-guide/getting-started/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -278,7 +278,7 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 <a name="default-subscriptions"></a>
 ### Default subscriptions
 
-In the Cumulocity IoT platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
+In the {{< product-name-1 >}} platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
@@ -287,7 +287,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification.
+> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< URL >}}/api/#tag/Tenant-API) in the {{< OpenAPI >}}.
 
 In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 

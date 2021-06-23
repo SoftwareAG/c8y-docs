@@ -168,7 +168,7 @@ If you want to change the behaviour of the agent, go to mbed.org and adopt the s
 
 1. Sign up for an account in [mbed](https://mbed.org) for free.
 2. Log into the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
-3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity MbedSmartRESTMain application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
+3. Visit <a href="http://mbed.org/users/{{< company-name-1 >}}/code/MbedSmartRestMain/">{{< company-name-1 >}} MbedSmartRESTMain application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
 4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
 5. Copy the downloaded file to the "MBED" drive.
 6. Press the reset button on the C027 to start the agent.

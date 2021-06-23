@@ -27,7 +27,7 @@ The installed software and firmware on the router can be remotely managed using 
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, make sure to install these first.
 
-> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-name-1 >}}.
+> **Info:** The package *{{< company-name-lowercase-1 >}}-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-name-1 >}}.
 
 Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm’s naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
 
@@ -47,7 +47,7 @@ You can record statistics of the router’s system resources usage for troublesh
 By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.system_resources.interval=<seconds>
+set service.{{< company-name-lowercase-1 >}}.system_resources.interval=<seconds>
 ```
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
@@ -60,7 +60,7 @@ You can also record statistics of the router’s cellular signal strength.
 By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.signal.interval=<seconds>
+set service.{{< company-name-lowercase-1 >}}.signal.interval=<seconds>
 ```
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
@@ -73,8 +73,8 @@ To locate or trace the router, connect a GPS antenna to the router and enable it
 Similarly, you can set these parameters from the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.gps.update_interval=<seconds>
-set service.cumulocity.gps.interval=<seconds>
+set service.{{< company-name-lowercase-1 >}}.gps.update_interval=<seconds>
+set service.{{< company-name-lowercase-1 >}}.gps.interval=<seconds>
 ```
 
 After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
@@ -126,15 +126,15 @@ The router reports certain system events as notifications, which can be forwarde
 The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run the following command via the [device shell](#device-shell) to either disable or enable MQTT communication.
 
 ```shell
-set service.cumulocity.mqtt.enable = <0|1>
+set service.{{< company-name-lowercase-1 >}}.mqtt.enable = <0|1>
 ```
 
-The configured server URL remains the same. For example, `http://mqtt.cumulocity.com` if you want to use plain MQTT, or `https://mqtt.cumulocity.com` if you want secure MQTT + TLS.
+The configured server URL remains the same. For example, `http://mqtt.{{< URL >}}` if you want to use plain MQTT, or `https://mqtt.{{< URL >}}` if you want secure MQTT + TLS.
 
 To configure the MQTT keepalive interval (default is 240 seconds), run the following command via the [device shell](#device-shell) to change the keepalive interval.
 
 ```shell
-set service.cumulocity.mqtt.keepalive = <seconds>
+set service.{{< company-name-lowercase-1 >}}.mqtt.keepalive = <seconds>
 ```
 
 > **Info:** Changing the keepalive interval only has effect after the next reboot.

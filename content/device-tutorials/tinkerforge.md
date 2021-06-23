@@ -131,7 +131,7 @@ To operate the display from {{< product-name-1 >}}, proceed as follows:
 3. Click **Add widget**.
 4. In the list of available widgets, select **Message sending**.
 5. Click the **Display** asset of the RaspPi. This adds the "Message sending" widget to the dashboard.
-6. In the message field of the widget, type a text such as "Hello from Cumulocity", then click **Send**.
+6. In the message field of the widget, type a text such as "Hello from {{< product-name-1 >}}", then click **Send**.
 7. The text should now appear on the LCD Bricklet of the Weather Station.
 
 Similarly, if you want to toggle the LCD display's backlight on and off, create a **Relay control** widget, set it up to use the **Display** asset of the RaspPi, and use the on/off setting.
@@ -140,7 +140,7 @@ Similarly, if you want to toggle the LCD display's backlight on and off, create 
 
 ![Display usage](/images/device-demos/tinkerforge/tinkerforgedisplay.png)
 
-The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
+The display has four buttons at the bottom. Operating these buttons will send an event to {{< product-name-1 >}} which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
 
 ![Events](/images/device-demos/tinkerforge/tinkerforgeevents.png)
 
@@ -334,4 +334,4 @@ The GPS bricklet will report its current location and send location updates as t
 
 ### Extending the TinkerForge driver
 
-The source code for the TinkerForge driver is publicly available at https://bitbucket.org/m2m/cumulocity-examples in the folder _java-agent/tinkerforge-driver_.
+The source code for the TinkerForge driver is publicly available at https://bitbucket.org/m2m/{{< company-name-lowercase-1 >}}-examples in the folder _java-agent/tinkerforge-driver_.

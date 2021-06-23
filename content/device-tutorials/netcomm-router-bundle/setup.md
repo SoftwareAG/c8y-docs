@@ -25,11 +25,11 @@ The agent will automatically start and the router can then be [registered with {
 
 |Version|Download|GA release version|
 |:---|:---|:---|
-|1.0.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk)|10.6.0|
-|1.0.2|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.2_arm-signed.ipk)|10.6.0|
-|1.0.3|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.3_arm-signed.ipk)|10.6.0|
-|1.1.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.0_arm-signed.ipk)|10.6.6 and higher|
-|1.1.1|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6 and higher|
+|1.0.0|[download](http://resources.{{< URL >}}/ntc/{{< company-name-lowercase-1 >}}-ntc-agent_1.0.0_arm-signed.ipk)|10.6.0|
+|1.0.2|[download](http://resources.{{< URL >}}/ntc/{{< company-name-lowercase-1 >}}-ntc-agent_1.0.2_arm-signed.ipk)|10.6.0|
+|1.0.3|[download](http://resources.{{< URL >}}/ntc/{{< company-name-lowercase-1 >}}-ntc-agent_1.0.3_arm-signed.ipk)|10.6.0|
+|1.1.0|[download](http://resources.{{< URL >}}/ntc/{{< company-name-lowercase-1 >}}-ntc-agent_1.1.0_arm-signed.ipk)|10.6.6 and higher|
+|1.1.1|[download](http://resources.{{< URL >}}/ntc/{{< company-name-lowercase-1 >}}-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6 and higher|
 
 
 <a name="register-device"></a>
@@ -44,7 +44,7 @@ The support for {{< product-name-1 >}} can be configured through the router’s 
 
 Verify that the **Agent** toggle is set to **ON**.
 
-The URL in the **Server** field must point to the {{< product-name-1 >}} instance that you want to connect to. The URL has to be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-name-1 >}} instance, for example `https://mqtt.cumulocity.com/`.
+The URL in the **Server** field must point to the {{< product-name-1 >}} instance that you want to connect to. The URL has to be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-name-1 >}} instance, for example `https://mqtt.{{< url >}}/`.
 
 Optionally, you can activate data collecting for the following functionalities:
 

@@ -5,9 +5,9 @@ weight: 10
 
 This tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series) series using the {{< product-name-1 >}} NetComm Agent package.
 
->**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the {{< product-name-1 >}} 10.4.6 documentation.
+>**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://{{< URL >}}/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the {{< product-name-1 >}} 10.4.6 documentation.
 
->**Info:** The developer documentation is available at [https://bitbucket.org/m2m/cumulocity-agents-netcomm/src/master/doc/devguide.md](https://bitbucket.org/m2m/cumulocity-agents-netcomm/src/master/doc/devguide.md).
+>**Info:** The developer documentation is available at [https://bitbucket.org/m2m/{{< company-name-lowercase-1 >}}-agents-netcomm/src/master/doc/devguide.md](https://bitbucket.org/m2m/{{< company-name-lowercase-1 >}}-agents-netcomm/src/master/doc/devguide.md).
 
 ### Overview
 

@@ -23,7 +23,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 
 ![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
->**Info:** This process can only be executed in the administration UI and is not available under **User settings**.
+>**Info:** This process can only be executed in the Administration application and is not available under **User settings**.
 
 
 ### TOTP (Google Authenticator)
@@ -43,11 +43,11 @@ Alternatively, the secret can also be inserted manually in case scanning the QR 
 
 After this process the mobile application will generate a new code every 30 seconds that can be used to complete the authentication process.
 
-#### Revoking
+#### Revoking the secret
 
-Although the setup must be done by each individual user, revoking the secret is only possible as a tenant administrator in the Administration application. As so, if the user loses the phone or uninstalls the application they must contact the tenant administrator.
+><b>Info:</b> Although the setup must be done by each individual user, revoking the secret can only be done by a user with "user management ADMIN" permission via the Administration application. As so, if the user loses the phone or uninstalls the application they must contact a user with this particular permission.
 
-From the tenant administrator perspective the process to revoke the key is:
+To revoke the key follow these steps:
 
 1. Navigate to the Administration application.
 2. Click on the desired user in the **Users** page.

@@ -55,7 +55,7 @@ For your convenience find an overview on the content of this document below.
 </tr>
 <tr>
 <td align="left"><a href="#data-point-library">Using the Data Point Library</a></td>
-<td align="left">Manage default settings (“profiles”) of your devices and apply them automatically using the <a href="#data-point-library">Data Point Library</a>.</td>
+<td align="left">Manage default settings ("profiles") of your devices and apply them automatically using the <a href="#data-point-library">Data Point Library</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules">Working with smart rules</a></td>

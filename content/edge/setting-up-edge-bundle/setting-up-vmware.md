@@ -12,11 +12,13 @@ To set up the Edge appliance in VMware Workstation Player, follow the steps belo
 
 1. In VMware, navigate to **Player** > **File** > **Open** to import the Edge appliance.
 
-2.	Navigate to the folder where the Edge appliance files are located, select the OVF file and click **Open**.
+2. Navigate to the folder where the Edge appliance files are located, select the OVF file and click **Open**.
 
-3.	Change the Edge appliance name if required and click **Import**. You can also change the storage path of the Edge appliance here.
+3. Change the Edge appliance name if required and click **Import**. You can also change the storage path of the Edge appliance here.
 
-4.	Start the Edge appliance by clicking **Play virtual machine**.
+   >**Important:** On VMware Workstation, you must use UTC on your host machine. If you choose not to use UTC, you may have time sync issues. Set `rtc.diffFromUTC=0` in the .vmx file to avoid the time sync issues.
+
+4. Start the Edge appliance by clicking **Play virtual machine**.
 
 Next, perform the Edge appliance installation. See, [Installing Cumulocity IoT Edge](/edge/installation/).
 

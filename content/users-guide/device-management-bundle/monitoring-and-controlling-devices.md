@@ -173,7 +173,7 @@ In each row, the following information for an alarm is provided:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to “Acknowledged” to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to “clear” or when the device detected by itself that the problem has gone.</td>
+<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to "Acknowledged" to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to "clear" or when the device detected by itself that the problem has gone.</td>
 </tr>
 <tr>
 <td align="left">Last occurrence</td>

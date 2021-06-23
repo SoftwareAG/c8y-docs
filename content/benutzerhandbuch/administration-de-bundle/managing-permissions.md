@@ -14,9 +14,10 @@ Die folgenden Rollen können zugewiesen werden:
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
 
-### <a name="global"></a>Globale Rollen
+<a name="global"></a>
+### Globale Rollen
 
-Klicken Sie **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
+Klicken Sie auf **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
 
@@ -24,7 +25,7 @@ In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Be
 
 > **Info:** Die vordefinierten Rollen sind nicht vollständig konfiguriert. Sie können als Muster betrachtet werden, die für einen bestimmten Zweck vorkonfiguriert sind. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
 
-> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für diesen Benutzer relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
+> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für diesen Benutzer relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
@@ -104,9 +105,10 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 |readers|Kann alle Daten lesen (einschl. Benutzer, im Unterschied zu "Globaler Leser").
 
 
-#### <a name="create-edit-roles"></a>So fügen Sie eine globale Rolle hinzu
+<a name="create-edit-roles"></a>
+#### So fügen Sie eine globale Rolle hinzu
 
-Klicken Sie **Rolle hinzufügen** in der Registerkarte **Globale Rollen**.
+Klicken Sie auf **Rolle hinzufügen** in der Registerkarte **Globale Rollen**.
 
 Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann.
 
@@ -253,7 +255,8 @@ Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funkt
 
 > **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
-#### <a name="attach-global"></a>Zuweisen von globalen Rollen
+<a name="attach-global"></a>
+#### Zuweisen von globalen Rollen
 
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
@@ -261,7 +264,7 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 
 1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen.
 1. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
-1. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
+1. Klicken Sie auf **Anwenden**, um Ihre Einstellungen zu speichern.
 
 ![Apply global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-1.png)
 
@@ -269,11 +272,12 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 
 Klicken Sie auf die Zeile des jeweiligen Benutzers in der Benutzerliste.
 Aktivieren oder deaktivieren Sie auf der Benutzerseite rechts die Checkboxen für die entsprechenden globalen Rollen.
-Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 ![Attach global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-2.png)
 
-### <a name="inventory"></a>Stammdatenrollen
+<a name="inventory"></a>
+### Stammdatenrollen
 
 Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
@@ -295,7 +299,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
 #### So fügen Sie eine Stammdatenrolle hinzu
 
-Klicken Sie **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
+Klicken Sie auf **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
 
 Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie auf das grüne Häkchen zum Speichern Ihrer Eingabe.
 
@@ -317,9 +321,9 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 
-Geben Sie im Feld **Typ** einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll.
+Geben Sie im Feld **Typ** einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll. Zugriff wird nur auf Objekte gewährt, die den angegebenen **Typ** enthalten.
 
-Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&#95;SignalStrength", sowie aktuelle Produktionsmesswerte. Sie möchten aber, dass der Benutzer nur die Device Management-Messwerte sieht. In diesem Fall geben Sie "c8ySignalStrength" als Typ ein.
+Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&#95;SignalStrength", sowie aktuelle Produktionsmesswerte. Sie möchten aber, dass der Benutzer nur die Device Management-Messwerte sieht. In diesem Fall geben Sie "c8ySignalStrength" als Typ ein. So kann der Benutzer nur Messwerte sehen, die den Typ "c8y&#95;SignalStrength" enthalten. Beachten Sie, dass der Benutzer dann das gesamte Messwertobjekt, einschließlich anderer Typen, die Teil desselben Messwertobjekts sind, sehen kann.
 
 Standardmäßig enthält das Feld **Typ** ein Sternsymbol *, so dass alle Typen eingeschlossen sind.
 
@@ -337,13 +341,14 @@ Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie m�
 
 <img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen zu Benutzern
+<a name="attach-inventory"></a>
+### Zuweisen von Stammdatenrollen zu Benutzern
 
 Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
 
-Klicken Sie **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
+Klicken Sie auf **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
-In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
+In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 
 > **Wichtig:** Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 
@@ -351,7 +356,7 @@ Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergr
 
 Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zugriff auf alle Dashboards für diese Gruppe in der Cockpit-Anwendung.
 
-Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
+Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie auf **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie auf **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
 
 <img src="/images/benutzerhandbuch/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
@@ -360,9 +365,10 @@ Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie 
 
 Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
 
-Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Support](/about-doc/contacting-support) kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
+Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Produkt-Support](/welcome/contacting-support) können Ihnen helfen, die Berechtigungsprobleme zu beheben.
 
-### <a name="app-access"></a>Gewähren von Anwendungszugriff
+<a name="app-access"></a>
+### Gewähren von Anwendungszugriff
 
 Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge.
 

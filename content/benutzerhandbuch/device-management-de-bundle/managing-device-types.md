@@ -6,7 +6,7 @@ layout: redirect
 
 Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity IoT sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
 
-Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
+Klicken Sie auf **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
 
 Die Seite **Geräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
@@ -20,13 +20,13 @@ Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 
 ### So fügen Sie ein Geräteprotokoll hinzu
 
-1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste.
+1. Klicken Sie auf **Geräteprotokoll hinzufügen** in der oberen Menüleiste.
  <br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
 2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste.
-3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**.
+3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie auf **Erstellen**.
 4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
 Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Dokumentation des jeweiligen Gerätetyps, den Sie anlegen möchten, siehe [Protocol Integration Guide](/protocol-integration/overview).
-5. Klicken Sie **Speichern**.
+5. Klicken Sie auf **Speichern**.
 
 Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
@@ -34,10 +34,10 @@ Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
 Um ein Geräteprotokoll aus einem bestehenden Protokoll hinzuzufügen, gehen Sie folgendermaßen vor:
 
-1. Klicken Sie **Importieren** in der oberen Menüleiste.
+1. Klicken Sie auf **Importieren** in der oberen Menüleiste.
  <br>![Import device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-import.png)
 2. Wählen Sie das zu importierende Geräteprotokoll entweder aus einer Liste der vordefinierten Protokolle aus oder laden Sie es aus einer Datei, indem Sie zu dieser navigieren.
-3. Geben Sie einen Namen für das neue Protokoll ein und klicken Sie **Speichern**.
+3. Geben Sie einen Namen für das neue Protokoll ein und klicken Sie auf **Speichern**.
 
 Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 

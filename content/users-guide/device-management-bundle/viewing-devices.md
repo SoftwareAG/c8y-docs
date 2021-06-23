@@ -65,6 +65,7 @@ For each device, the device list shows the following information provided in col
 </tr>
 </tbody>
 </table>
+
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
 ### Configuring columns

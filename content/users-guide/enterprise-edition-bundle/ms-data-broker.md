@@ -8,7 +8,8 @@ The microservice-based data broker is powered by the {{< product-name-1 >}} Mess
 
 > **Important:** At this time the {{< product-name-1 >}} Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all {{< product-name-1 >}} public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your {{< product-name-1 >}} environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
 
-### <a name="enabling-ms-data-broker"></a> To enable the microservice-based data broker
+<a name="enabling-ms-data-broker"></a>
+###  To enable the microservice-based data broker
 
 1. In the {{< tenant-type-3 >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
 2. In the **Applications** tab, subscribe the tenant to the data broker agent (databroker-agent-server).
@@ -17,19 +18,23 @@ The microservice-based data broker is powered by the {{< product-name-1 >}} Mess
 
 > **Info:** Tenants subscribing to a data connector don’t need the data broker agent subscription.
 
-### <a name="ms-data-broker-connectors"></a> Data connectors
+<a name="ms-data-broker-connectors"></a>
+###  Data connectors
 
 See [Data connectors](#data-broker-connectors) for details on how to manage data connectors.
 
-### <a name="ms-data-broker-subscriptions"></a> Data subscriptions
+<a name="ms-data-broker-subscriptions"></a>
+###  Data subscriptions
 
 See [Data subscriptions](#data-broker-subscriptions) for details on how to manage data subscriptions.
 
-### <a name="migrating-data-broker-connectors-to-ms-data-broker"></a> Migrating existing data connectors to the microservice-based data broker
+<a name="migrating-data-broker-connectors-to-ms-data-broker"></a>
+###  Migrating existing data connectors to the microservice-based data broker
 
 After enabling the microservice-based data broker, your existing data connectors should continue to work without any additional configuration.
 
-### <a name="troubleshooting-ms-data-broker"></a> Troubleshooting
+<a name="troubleshooting-ms-data-broker"></a>
+###  Troubleshooting
 
 #### {{< tenant-type-3 >}} subscription alert
 

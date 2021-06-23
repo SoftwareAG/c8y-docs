@@ -97,7 +97,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </tr>
 <tr>
 <td align="left">Owner</td>
-<td align="left">Another user that manages (“owns”) the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+<td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
 </tr>
 <tr>
 <td align="left">Delegated by</td>

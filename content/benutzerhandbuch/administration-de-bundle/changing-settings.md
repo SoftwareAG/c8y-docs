@@ -9,15 +9,13 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
 - Die [Attributsbibliothek](#properties) verwalten.
-- Systemweite [Einstellungen](#config-platform) in Cumulocity IoT konfigurieren.
-- [Zugangsdaten für den SMS-Anbieter](#openIT-credentials) bereitstellen.
+- [Zugangsdaten für den SMS-Anbieter](#sms-provider) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
+<a name="authentication"></a>
+### Ändern von Authentifizierungseinstellungen
 
-
-### <a name="authentication"></a>Ändern von Authentifizierungseinstellungen
-
-Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
+Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
 ![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
@@ -26,11 +24,12 @@ Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmel
 
 #### Anmeldeeinstellungen
 
-Unter **Bevorzugter Login-Modus** sind drei Modi verfügbar:
+Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wählen:
 
-* "OAuth Internal" - Dies ist die empfohlene Option, da sie mehr Sicherheit bietet.
-* "Basic Auth" - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden.
-* "Single-Sign-On-Weiterleitung" - Diese Option steht nur zur Verfügung, wenn Single-Sign-On (SSO) konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAuth Internal" entfernt.
+* OAuth Internal - Empfohlene Option, da sie durch Autorisierungs-Tokens als Nachweis Ihrer Identität (gegenüber dem Server) ein hohes Maß an Sicherheit bietet.
+* Basic Auth - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da sie nur minimale Sicherheit bietet.
+* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAuth Internal" entfernt.
+
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
@@ -46,7 +45,9 @@ Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits fr
 
 >**Info:** "M" und "N" können vom Plattform-Administrator konfiguriert werden.
 
-Klicken Sie **Speichern**, um Ihre Einstellungen anzuwenden.
+Klicken Sie auf **Speichern**, um Ihre Einstellungen anzuwenden.
+
+>**Wichtig:** Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden. Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
 
 #### TFA-Einstellungen
 
@@ -60,16 +61,27 @@ Sie können eine der folgenden Optionen wählen:
 
 	> **Info:** Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
 
-* **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellungen:
+* **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellung:
 	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
-   - **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten.  Nach Ablauf der Sitzung muss sich der Benutzer erneut authentifizieren.
 
-	> **Info:** Diese Strategie ist nur zusammen mit "OAuth Internal" verfügbar.
+	> **Info:** Die TOTP-Methode ist nur im Anmeldemodus "OAuth Internal" verfügbar.
 
-Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
+Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
+>**Wichtig:** Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. TFA-Einstellungen der Benutzer werden gelöscht und müssen erneut konfiguriert werden.
 
-### <a name="single-sign-on"></a>Konfigurieren von Single Sign-On
+<a name="oauth-internal"></a>
+### OAuth Internal
+
+Cumulocity IoT OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden.
+Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit Mandantenoptionen geändert werden: `oauth.internal.basic-token.lifespan.seconds`. Der minimal zulässige Wert ist 5 Minuten.
+
+Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann: `oauth.internal.basic-user.cookie.lifespan.seconds`. Der Standardwert ist zwei Wochen. Es kann auch ein negativer Wert eingestellt werden, so dass das Cookie gelöscht wird, wenn der Benutzer den Browser schließt.
+
+Weitere Informationen finden Sie unter [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in der Cumulocity IoT OpenAPI Specification.
+
+<a name="single-sign-on"></a>
+### Konfigurieren von Single Sign-On
 
 Cumulocity IoT bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
@@ -93,7 +105,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 
 Um die Single-Sign-On-Funktionalität zu aktivieren, muss der Administrator eine Verbindung zum Autorisierungsserver konfigurieren. Diese erfolgt in der "Administration"-Anwendung.
 
-Klicken Sie **Single-Sign-On** im Menü **Einstellungen** im Navigator.
+Klicken Sie auf **Single-Sign-On** im Menü **Einstellungen** im Navigator.
 
 Links oben können Sie eine Vorlage auswählen. Diese wirkt sich auf das Layout der Seite aus. Die Standardvorlage "Benutzerdefiniert" ermöglicht eine sehr detaillierte Konfiguration mit nahezu jedem Autorisierungsserver, der die Vergabe von OAuth2-Autorisierungscodes unterstützt. Andere Vorlagen bieten vereinfachte Ansichten bekannter und unterstützter Autorisierungsserver. Im Folgenden wird erklärt, wie Sie die benutzerdefinierte Vorlage verwenden, sowie eine Vorlage für das Azure Active Directory vorgestellt.
 
@@ -105,6 +117,8 @@ Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basi
 
 Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird von POST-Anfragen als GET-, Token- und Refresh-Anfrage ausgeführt.
 
+>**Info:** Beachten Sie, dass das Text-Feld jeder Anfrage nach dem Ausfüllen der Platzhalter mit Werten in unveränderter Form in der Anfrage versendet wird. Es wird also nicht von Cumulocity IoT kodiert. Viele Autorisierungsserver verlangen, dass Werte im Text URL-kodiert (x-form-urlencoded) sind. Dies kann dadurch erreicht werden, dass bereits kodierte Werte in ein Text-Feld eingegeben werden.
+
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity IoT zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
@@ -115,7 +129,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 |Feld|Beschreibung|
 |:---|:---|
-|Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
+|Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${redirectUri}-Platzhalter verwendet werden.
 |Client-ID|Client-ID der OAuth-Verbindung. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
 |Name der Schaltfläche|Name auf der Schaltfläche auf der Anmeldeseite
 |Issuer|OAuth-Token-Issuer
@@ -141,11 +155,11 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 
 Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cockpit" zugewiesen.
 
-Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen.
+Klicken Sie auf **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie auf **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie auf das Minus-Symbol, um eine Regel zu entfernen.
 
-Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen “business" und "admin".
+Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen "business" und "admin".
 
-Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit “cur” beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
+Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit "cur" beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
 
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
 
@@ -193,13 +207,31 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 
  >**Info:** Cumulocity IoT unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (zum Beispiel Elliptic-Curves) werden nicht unterstützt.
+##### Platzhalter
+In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit von Cumulocity IoT aufgelöst werden. Folgende Platzhalter sind verfügbar:
 
+|Platzhalter|Beschreibung|
+|:---|:---|
+|clientId|Wert des Felds **Client-ID**
+|redirectUri| Wert des Felds **Redirect-URI**
+|code|Wert, der vom Autorisierungsserver als Antwort auf die Autorisierungsanfrage zurückgegeben wird
+|refreshToken| Refresh-Token, das vom Autorisierungsserver nach einer Token-Anfrage zurückgegeben wird
+
+Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anfragen und Abmeldeanfragen in folgenden Feldern verwendet werden: URL, Text, Kopfzeilen und Anfrageparameter
+
+Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
+
+Platzhalter können auch als Textteile verwendet werden:
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
+
+Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
 
 #### Integration mit Azure AD
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v2-oauth2-auth-code-flow](https://docs.microsoft.com/de-de/azure/active-directory/develop/v2-oauth2-auth-code-flow).
 
 Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weiteren Schritte erforderlich.
 
@@ -244,10 +276,10 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
 ![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
 
+<a name="default-app"></a>
+### Ändern von Anwendungseinstellungen
 
-### <a name="default-app"></a>Ändern von Anwendungseinstellungen
-
-Klicken Sie **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
+Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
 ![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
@@ -264,23 +296,25 @@ Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendu
 
 Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-cors.org).
 
-### <a name="properties"></a>Verwalten der Attributsbibliothek
+<a name="properties"></a>
+### Verwalten der Attributsbibliothek
 
-Klicken Sie **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
+Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
 ![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity IoT integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
-- Eigene Stammdatenattribute werden verwendet, um das Stammdatenmodell zu erweitern. Sie können in den Widgets “Asset-Tabelle” und “Asset-Attribute” genutzt werden.
+- Eigene Stammdatenattribute werden verwendet, um das Stammdatenmodell zu erweitern. Sie können in den Widgets "Asset-Tabelle" und "Asset-Attribute" genutzt werden.
 - Eigene Mandantenattribute sind bei der Erstellung von Mandanten verfügbar. Die eigenen Attribute können unter Untermandanten in der Registerkarte Benutzerdefinierte Attribute bearbeitet werden. Außerdem können diese Attribute in den Nutzungsstatistiken eingesehen und exportiert werden.
 - Benutzerdefinierte Alarm- und Ereignisattribute können Ihren Berichten als eigene Felder hinzugefügt werden und sind in der Seite **Exporte** in der Cockpit-Anwendung verfügbar.
 
 >**Info:** Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
-#### <a name="add-property"></a>So fügen Sie ein benutzerdefiniertes Attribut hinzu
+<a name="add-property"></a>
+#### So fügen Sie ein benutzerdefiniertes Attribut hinzu
 
-1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie **Attribut hinzufügen**.
+1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
 	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
@@ -288,31 +322,65 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 1. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
 
-	|Checkbox|Beschreibung|
-|:---|:---|
-|Erforderlich|Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".
-|Standardwert|Stellen Sie einen Standardwert bereit, der automatisch in das benutzerdefinierte Attributfeld eingefügt wird. Nur verfügbar bei Attributen des Typs "Zeichenkette".
-|Minimum|Geben Sie einen minimalen Integer-Wert ein.
-|Maximum|Geben Sie einen maximalen Integer-Wert ein.
-|Minimale Länge|Geben Sie eine minimale Länge ein, die für die Zeichenkette erforderlich ist.
-|Maximale Länge|Geben Sie eine maximale Länge ein, die für die Zeichenkette erforderlich ist.
-|Regulärer Ausdruck|Fügen Sie einen regulären Ausdruck hinzu, der zum Ausfüllen des benutzerdefinierten Attributfelds erforderlich ist.
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Checkbox</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Erforderlich</td>
+<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".</td>
+</tr>
+<tr>
+<td style="text-align:left">Standardwert</td>
+<td style="text-align:left">Stellen Sie einen Standardwert bereit, der automatisch in das benutzerdefinierte Attributfeld eingefügt wird. Nur verfügbar bei Attributen des Typs "Zeichenkette".</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum</td>
+<td style="text-align:left">Geben Sie einen minimalen Integer-Wert ein.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum</td>
+<td style="text-align:left">Geben Sie einen maximalen Integer-Wert ein.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimale Länge</td>
+<td style="text-align:left">Geben Sie eine minimale Länge ein, die für die Zeichenkette erforderlich ist.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximale Länge</td>
+<td style="text-align:left">Geben Sie eine maximale Länge ein, die für die Zeichenkette erforderlich ist.</td>
+</tr>
+<tr>
+<td style="text-align:left">Regulärer Ausdruck</td>
+<td style="text-align:left">Fügen Sie einen regulären Ausdruck hinzu, der zum Ausfüllen des benutzerdefinierten Attributfelds erforderlich ist.</td>
+</tr>
+</tbody>
+</table>
 
-4. Klicken Sie **Speichern**, um das neue Attribut zu erstellen.
+4. Klicken Sie auf **Speichern**, um das neue Attribut zu erstellen.
 
 #### So bearbeiten Sie ein benutzerdefiniertes Attribut
 
 1. Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen.
 2. Nehmen Sie die gewünschten Bearbeitungen vor. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie ein benutzerdefiniertes Attribut hinzu](#add-property).
-3. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+3. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 
 #### So entfernen Sie ein benutzerdefiniertes Attribut
 
 1. Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen.
-2. Klicken Sie **Entfernen**, um das Attribut zu löschen.
+2. Klicken Sie auf **Entfernen**, um das Attribut zu löschen.
 
-### <a name="openIT-credentials"></a>Bereitstellen von Zugangsdaten für den SMS-Anbieter
+<a name="sms-provider"></a>
+### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
 SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
@@ -320,112 +388,29 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 #### So geben Sie die Zugangsdaten für den SMS-Anbieter ein
 
-1. Klicken Sie **SMS-Anbieter** im Menü **Einstellungen**.
+1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
 	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
 
-2. Wählen Sie auf der Seite **SMS-Anbieter** entweder OpenIT oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter.
+2. Wählen Sie auf der Seite **SMS-Anbieter** einen der verfügbaren SMS-Anbieter aus der Auswahlliste **SMS-Anbieter**. Sie können mit der Eingabe beginnen, um Elemente zu filtern und Ihren bevorzugten Anbieter leichter zu finden.
 
-3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
+3. Geben Sie im daraufhin angezeigten Dialog die erforderlichen Zugangsdaten und Attribute ein oder legen Sie optionale Einstellungen fest, die sich je nach gewähltem Anbieter unterscheiden.
 
-	 * Für OpenIT: Ihren OpenIT-Benutzernamen und Ihr Passwort.
-	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter "Einstellungen" > "HTTP API").
+4. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-4. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+>**Info:** OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, einen der anderen SMS-Anbieter zu wählen.
 
->**Info:** OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, sms77 als SMS-Anbieter zu wählen.
-
-
-### <a name="config-platform"></a>Konfigurationseinstellungen
-
-Unter **Konfiguration** im Menü **Einstellungen** können Sie in Cumulocity IoT systemweite Attribute konfigurieren.
-
-![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
-
->**Info:** Bei einigen der folgenden Attribute können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-
-#### Platzhalter
-
-Die folgenden Platzhalter sind auf der Seite **Konfiguration** zu finden:
-
-- {host} - Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.cumulocity.com`.
-- {tenant-domain} - Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.cumulocity.com` sein.
-- {token} - Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
-
->**Info:** Beim Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
-
-#### Zwei-Faktor-Authentifizierung
-
-Im Bereich **Zwei-Faktor-Authentifizierung** können Sie das SMS-Template, das an die Benutzer geschickt wird, ändern.
-
-#### Support-Link
-
-Im Bereich **Support-Link** können Sie eine URL eingeben, die als Support-Link verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Seite der Software AG TechCommunity verwendet.
-
-Geben Sie "false" ein, um den Link zu verbergen.
-
-#### Zurücksetzen des Passworts
-
-Im Bereich **Passwort zurücksetzen** können Sie alle Einstellungen im Zusammenhang mit E-Mail-Templates zum Zurücksetzen des Passworts ändern.
-
-![Configuration menu1](/images/benutzerhandbuch/Administration/admin-settings-configuration-password-reset.png)
-
-Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
-
-Stellen Sie im Feld **E-Mail-Template für das Zurücksetzen von Passwörtern** ein Template bereit, das verwendet werden soll, wenn die Adresse bekannt ist, und eine für unbekannte Adressen. Der Link zum Zurücksetzen des Passworts kann beispielsweise lauten: {host}/apps/devicemanagement/index.html?token={token}.
-
-Geben Sie im Feld **E-Mail-Betreff** ein Betreff für alle E-Mails im Zusammenhang mit dem Zurücksetzen des Passworts ein.
-
-Geben Sie in den folgenden beiden Feldern jeweils ein Template für die E-Mails zur Bestätigung der Passwortänderung und für die Einladung zur Aktivierung ein.
-
-#### E-Mail-Server
-
-Im Bereich **E-Mail-Server** können Sie benutzerdefinierte E-Mail-Server-Einstellungen konfigurieren.
-
-<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
-
-Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschlüsselungstyp aus der Auswahlliste. Hierbei kann es sich um einen der folgenden Typen handeln:
-
-* SMTP (keine Verschlüsselung): email.protocol=smtp and email.connection.encrypted=false
-* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
-* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
-
-Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an.
-
-#### Datenexport
-
-Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
-
-![Data export settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-data-export.png)
-
-#### Speicherbegrenzung
-
-Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und *nachdem* Daten gelöscht wurden.
-
-![Storage limit settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-storage-limit.png)
-
-#### Mandanten werden gesperrt
-
-Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
-
-<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
-
-Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
-
-Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
-
-Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
-
-### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
+<a name="connectivity"></a>
+### Verwalten der Konnektivitätseinstellungen
 
 Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbieter verwalten. Zum Hinzufügen oder Ersetzen von Zugangsdaten sind ADMIN-Berechtigungen erforderlich.
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Impact](/protocol-integration/impact)
-- [LoRa](/protocol-integration/lora-actility)
+- [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/users-guide/device-management/#connectivity)
+- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 

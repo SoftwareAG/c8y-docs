@@ -5,17 +5,13 @@
 # Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.
 #
 
-# This will install zip package which is needed to install ui
-rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
-
-# This script is to backup c8y data. Outpus are inside /tmp directory: /tmp/migration_data_TENANT.tgz
-
 # FUNCTIONS
 
 function usage() {
     echo "Usage:"
-    echo "    restore_db.sh ARCHIVE_PATH EXTRACT_PATH"
-    echo " EXTRACT_PATH is /tmp/migration_data by default"
+    echo "    restore.sh ARCHIVE_PATH EXTRACT_PATH"
+    echo "    ARCHIVE_PATH is the path to archive created by backup.sh script"
+    echo "    EXTRACT_PATH is the path to where archive will be extracted before applying"
 }
 # ARGUMENTS
 
@@ -34,6 +30,10 @@ if [ -z "$EXTRACTED_PATH" ]; then
    usage
    exit 1;
 fi
+
+echo "Installing zip package needed for restore procedure"
+# This will install zip package which is needed to install ui
+rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 
 echo "Getting application zips from 10.9"
 # Create temp dir to get 10.9 apps from mongo
@@ -59,7 +59,6 @@ zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
 cd $CPWD
 
-
 echo "Started archive restore procedure"
 echo "Restoring device-id from 10.7"
 DEVICE_ID=$(cat $EXTRACTED_PATH/configs/edge-agent_device-id)
@@ -83,6 +82,11 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 echo "Waiting for webapps to install. If this takes too long please look at /webapps/2Install"
 while [ ! -f /webapps/2Install/$UI_VERSION.zip.installed ]; do sleep 1; done
 
+echo "Restoring opcua"
+rm -rf /etc/opcua
+cp -rp $EXTRACTED_PATH/opcua_data/opcua /etc/
+
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
-
+monit restart opcua_device_gateway_proc
+monit restart opcua_mgmt_service_proc

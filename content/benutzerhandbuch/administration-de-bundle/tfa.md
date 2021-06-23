@@ -19,7 +19,7 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefo
 
 1. Klicken Sie auf den gewünschten Benutzer in der Seite **Benutzer**.
 2. Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung aktivieren**.
-3. Klicken Sie **Speichern**.
+3. Klicken Sie auf **Speichern**.
 
 ![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
 
@@ -52,7 +52,7 @@ Zum Zurücksetzen des Schlüssels muss der Mandantenadministrator folgende Schri
 1. Navigieren Sie zur "Administration"-Anwendung.
 2. Klicken Sie auf den gewünschten Benutzer in der Seite **Benutzer**.
 3. Scrollen Sie herunter zu **Anmeldeoptionen**.
-4. Klicken Sie **TOTP-Secret zurücksetzen**.
+4. Klicken Sie auf **TOTP-Secret zurücksetzen**.
 5. Bestätigen Sie dies durch Klicken auf **Zurücksetzen**.
 
 ![TOTP secret revoke](/images/benutzerhandbuch/Administration/admin-user-totp-revoke.png)

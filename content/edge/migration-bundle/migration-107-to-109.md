@@ -94,10 +94,10 @@ APP_ID refers to the ID of the application. For example, 112
 APP_NAME refers to the name of the application. For example, devicemanagement.zip
 
 For example:
-mongofiles -d management --prefix cmdata get  110 -l /tmp/apps/administration.zip
 mongofiles -d management --prefix cmdata get  111 -l /tmp/apps/cockpit.zip
 mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/devicemanagement.zip
-mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/streaming-analytics.app.zip
+mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/administration.zip
+mongofiles -d management --prefix cmdata get  119 -l /tmp/apps/streaming-analytics.app.zip
 ```
 4. Install the ZIP package using the command:
 ```shell
@@ -106,9 +106,10 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 5. Prepare the applications for deployment using the commands:
 
 ```shell
-UI_VERSION=1009.6.0
+UI_VERSION=1009.0.0 #The Edge appliance UI version number. Must be in the format xxxx.x.x
+zip_names="cockpit.zip devicemanagement.zip administration.zip streaming-analytics-app.zip"
 cd /tmp/apps
-zip package-cumulocity-$UI_VERSION.zip $zip_names #zip_names refers to the application ZIP filenames
+zip package-cumulocity-$UI_VERSION.zip $zip_names #zip_names
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
@@ -139,14 +140,14 @@ Wait for Karaf to install the applications. After the installation is complete, 
 ```
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
-10. Restart Karaf and edge-agent using the commands:
+10. Restart Karaf using the commands:
 ```shell
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
 monit restart opcua_device_gateway_proc
 monit restart opcua_mgmt_service_proc
 ```
-Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+Restarting Karaf completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 

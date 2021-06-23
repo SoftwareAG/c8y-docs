@@ -432,7 +432,7 @@ For example, the following will translate a custom cookie banner:
 ```json
    "i18nExtra": {
       "de": {
-        "About cookies on Cumulocity IoT": "Informationen zu Cookies in Cumulocity IoT",
+        "About cookies on {{< product-name-1 >}}": "Informationen zu Cookies in {{< product-name-1 >}}",
         "Click Agree and Proceed to accept cookies and go directly to the platform or click on Privacy Policy to see detailed descriptions of the used cookies.": "Klicken Sie auf Zustimmen und fortfahren, um Cookies zu akzeptieren und direkt zur Plattform zu gelangen, oder klicken Sie auf Datenschutzrichtlinie, um detaillierte Beschreibungen der verwendeten Cookies anzuzeigen."
       }
    }

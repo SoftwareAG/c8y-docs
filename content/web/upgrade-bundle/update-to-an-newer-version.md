@@ -41,7 +41,7 @@ To update the Web SDK you can simply use the `new` command that is used for scaf
 c8ycli new <<app-name>> <<cockpit|devicemanagement|administration>> -a @c8y/apps@<<version>>
 ```
 
-So for example if your current working directory is an application called "my-cockpit" based on Cumulocity's Cockpit application and you want to update to version 10.6.2.0, you need to run the following command:
+So for example if your current working directory is an application called "my-cockpit" based on {{< product-name-1 >}}'s Cockpit application and you want to update to version 10.6.2.0, you need to run the following command:
 
 ```shell
 cd ..

@@ -97,7 +97,7 @@ For example:
 mongofiles -d management --prefix cmdata get  111 -l /tmp/apps/cockpit.zip
 mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/devicemanagement.zip
 mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/administration.zip
-mongofiles -d management --prefix cmdata get  119 -l /tmp/apps/streaming-analytics.app.zip
+mongofiles -d management --prefix cmdata get  119 -l /tmp/apps/streaming-analytics-app.zip
 ```
 4. Install the ZIP package using the command:
 ```shell
@@ -106,10 +106,9 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 5. Prepare the applications for deployment using the commands:
 
 ```shell
-UI_VERSION=1009.0.0 #The Edge appliance UI version number. Must be in the format xxxx.x.x
-zip_names="cockpit.zip devicemanagement.zip administration.zip streaming-analytics-app.zip"
+UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
 cd /tmp/apps
-zip package-cumulocity-$UI_VERSION.zip $zip_names #zip_names
+zip package-cumulocity-$UI_VERSION.zip cockpit.zip devicemanagement.zip administration.zip streaming-analytics-app.zip
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
@@ -129,6 +128,7 @@ PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders i
 For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
 mongorestore --drop --db management /home/admin/migration_data/management/
+mongorestore --drop --db docker /home/admin/migration_data/docker/
 ```
 8. Restore the web applications of the Edge 10.9 appliance using the command:
 ```shell

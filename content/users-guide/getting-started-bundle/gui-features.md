@@ -78,18 +78,25 @@ If you are using {{< company-cloud >}}, the application switcher also shows othe
 <a name="searching"></a>
 #### Full text search
 
-Cumulocity IoT provides a full text search, available through the **Search** button at the right of the top bar in the UI.
+Cumulocity IoT provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
 
-The search result includes groups, devices and child devices. On entering a search term into the textbox, Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment).
+On entering a search term into the textbox at the top of the **Search** window, Cumulocity IoT returns all assets (groups, devices, child devices) matching the search criteria.
 
-The search functionality is based on the [MongoDB full text search](https://docs.mongodb.com/manual/text-search/).
+<img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-For convenience, you can select one of the following search options:
+<br>
 
-* exact match
-* starts with
-* contains
-* ends with
+Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets tab](/users-guide/device-management#subassets-tab).
+
+The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
+
+>**Important:** The search results include all assets containing the search term in any property (name, model, any fragment), i.e. the search results do not only include assets matching the search criteria with their names.
+
+##### Exact match
+
+By default, the search option **Exact match** is applied.
+
+The underlying search functionality is based on the MongoDB full text search. For details, see [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
 Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
@@ -118,9 +125,13 @@ My Demo Device
 my demo device
 ```
 
-**Info:** Other than with filtering, using wildcards in a search is not supported.
+##### Alternative search options
 
-For details on the MongoDB full text search, see [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
+Other than with filtering, using wildcards in a search is not supported.
+
+Instead, you can switch the search option by clicking one of the following buttons: **Starts with**, **Contains**, **Ends with**. This will search for assets starting with, containing or ending with the search term, respectively.
+
+
 
 <a name="filtering"></a>
 #### Filtering

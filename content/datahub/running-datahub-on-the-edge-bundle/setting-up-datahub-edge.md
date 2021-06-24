@@ -46,7 +46,7 @@ Run the install script.
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 
-During script execution, you are prompted for the username and password of the administration user of tenant <em>edge<em>. During installation, you are also prompted to set the new password of the Dremio <em>admin<em> account. It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
+During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge<em>. During installation, you are also prompted to set the new password of the Dremio <em>admin<em> account. It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
 
@@ -69,7 +69,7 @@ The containers are configured to store their application state on the data disk 
 
 ### Adapting to network changes of Cumulocity IoT Edge
 
-There might be cases where you have to change the network setup of your edge installation, e.g. by setting the IP range used by the edge internally. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
+There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
 
 ### Accessing DataHub Edge
 

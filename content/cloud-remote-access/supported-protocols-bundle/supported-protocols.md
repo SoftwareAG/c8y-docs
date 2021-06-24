@@ -37,4 +37,4 @@ Cloud Remote Access supports the following gateways:
 	* Can be used on any linux-based gateway device
 	* Version 4.0.0 or later
 * Third-party devices
-	* Many third-party devices are supported, for details see [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices).
+	* Many third-party devices are supported, for details see [{{< product-name-1 >}} Device Partner Portal](https://devicepartnerportal.softwareag.com/devices).

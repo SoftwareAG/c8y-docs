@@ -4,19 +4,19 @@ title: Events and channels
 layout: redirect
 ---
 
-In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
+In Apama EPL, interactions with the rest of the {{< product-name-1 >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-name-1 >}} data.
 
-> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](https://www.cumulocity.com/api/#tag/Events) in the Cumulocity IoT OpenAPI Specification. 
+> **Info:** Apama and {{< product-name-1 >}} use different "event" concepts. Apama events are used for all interactions with {{< product-name-1 >}}, such as listening for and creating device measurements, alarms and ({{< product-name-1 >}}) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-name-1 >}} events, see [Events](https://www.cumulocity.com/api/#tag/Events) in the {{< OpenAPI >}}. 
 
 ### Predefined event types
 
-There are some predefined event types to interact with several Cumulocity IoT APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity IoT backend, you can create an event and send it to the relevant channel. Cumulocity IoT will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
+There are some predefined event types to interact with several {{< product-name-1 >}} APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the {{< product-name-1 >}} backend, you can create an event and send it to the relevant channel. {{< product-name-1 >}} will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
 Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/ApamaDoc/com/apama/cumulocity/package-summary.html) in the API Reference for EPL (ApamaDoc) to see how the events for each stream are structured.
 
 ### Sending events to a channel
 
-Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to Cumulocity IoT. The `send` statement requires a channel - this is the `SEND_CHANNEL` constant on the event type.
+Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to {{< product-name-1 >}}. The `send` statement requires a channel - this is the `SEND_CHANNEL` constant on the event type.
 
 ### Listening to events
 
@@ -32,7 +32,7 @@ Adding filters can be done by specifying one or more fields between the parenthe
 
 ### Standard event types and channels
 
-For the standard Cumulocity IoT events, there are constants that contain the channels for sending and receiving events, for example:
+For the standard {{< product-name-1 >}} events, there are constants that contain the channels for sending and receiving events, for example:
 
 ```java
 monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
@@ -65,7 +65,7 @@ See also [Measurement fragments](/apama/advanced/#measurement-fragments).
 <a name="notifications"></a>
 ### Distinguishing between create and update notifications
 
-When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from Cumulocity IoT, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
+When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from {{< product-name-1 >}}, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
 
 Example for listening for new alarms:
 
@@ -89,7 +89,7 @@ on all Alarm() as alarm {
 }
 ```
 
-For events that have come from Cumulocity IoT, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
+For events that have come from {{< product-name-1 >}}, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
 
 For more information, including examples for the different types of objects, see [Receiving update notifications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
 

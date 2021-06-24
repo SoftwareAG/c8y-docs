@@ -68,7 +68,7 @@ By default, all users can see the same set of pages (according to the limitation
 You can also restrict the visibility of the pages to only users who have the permission ROLE_ANALYTICSBUILDER_READ or ROLE_EPLAPPS_READ,
 which can be assigned directly to users or via groups (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role"
-(also see the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification) or use a curl command as given in the example below:
+(also see the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the {{< OpenAPI >}}) or use a curl command as given in the example below:
 
 ```
 curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options

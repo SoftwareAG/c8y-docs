@@ -7,7 +7,7 @@ layout: redirect
 The cards that are shown on the home screen of the Streaming Analytics application contain text and links 
 which you can customize on a per-tenant and per-language basis. To do this, download the *documentation.json* file 
 for the language you wish to customize from the URL */service/cep/apamacorrelator/EN/documentation.json* 
-(that will need to be authenticated for a user in the Cumulocity IoT tenant). Replace the "EN" within the URL with the 
+(that will need to be authenticated for a user in the {{< product-name-1 >}} tenant). Replace the "EN" within the URL with the 
 language code for the file you want to download. 
 
 The *documentation.json* file includes the URLs for the documentation links across the Streaming Analytics application 

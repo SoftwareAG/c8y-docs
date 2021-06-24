@@ -72,10 +72,31 @@ The layout **One table for one measurement type (Default)** will create a table 
 
 The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
+For each base collection, a corresponding offloading pipeline extracts a default set of data fields. This set defines the default schema of the target table with columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to examine the default schema, with name and type listed per column.
+
 <a name="set-addtl-cols"></a>
 ##### Set additional result columns
 
-Optionally you can define additional result columns, except for the TrendMiner case, which does not support this option. For each base collection, the associated default set of data fields is extracted. If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your DataHub queries, then you can include them as additional result columns. In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For example, if you feed in measurements with the additional fields "myCustomField1" and "myCustomField2", you just need to enter "myCustomField1, myCustomField2" into the input field to add both fields to the offloading configuration. If you only want to offload "myCustomField2", just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. "BTRIM(myCustomField1, '~')" to trim leading and trailing '~' from the text in field "myCustomField1".
+If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your DataHub queries, then you can include them as additional result columns. You can also use additional result columns to offload data fields in the base collection not being part of the default schema. Additional result columns are optional, except for the TrendMiner case, which does not support this option.
+
+###### Auto-detected columns
+
+###### Structure of an additional result column
+TODO: screenshot
+- hide auto colummns
+
+###### Add an additional result column
+
+###### Edit an additional result column
+
+###### Duplicate an additional result column
+
+###### Delete an additional result column
+
+###### Migration of additional result columns
+- import/export
+
+In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For example, if you feed in measurements with the additional fields "myCustomField1" and "myCustomField2", you just need to enter "myCustomField1, myCustomField2" into the input field to add both fields to the offloading configuration. If you only want to offload "myCustomField2", just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. "BTRIM(myCustomField1, '~')" to trim leading and trailing '~' from the text in field "myCustomField1".
 
 If you want to derive additional columns from nested content, you can specify the nested fields in the input field as well using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional column to access the first array entry.
 

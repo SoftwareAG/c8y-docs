@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Apama limitations in Cumulocity IoT
+title: Apama limitations in var-product-name-1
 layout: redirect
 ---
 
@@ -68,6 +68,6 @@ When designing an Apama solution to be deployed within any form of {{< product-n
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Developing apps with {{< development-environment >}}](/apama/analytics-introduction/#sag-designer). 
+	* You can only use the bundles listed in [Developing apps with {{< development-environment >}}](/apama/analytics-introduction/#sag-designer).
 
 All of these restrictions are implemented to ensure the smooth and secure operation of EPL apps within {{< product-name-1 >}}.

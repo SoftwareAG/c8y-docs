@@ -19,10 +19,10 @@ To migrate from Edge 10.7 to 10.9, you must:
 
 ### Before you begin
 
-- Import the Edge 10.9 appliance. See, [Setting up Cumulocity IoT Edge](Setting up Cumulocity IoT Edge).
+- Import the Edge 10.9 appliance. See, [Configuring the Edge infrastructure](/edge/setting-up-edge/).
 - Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing Cumulocity IoT Edge](/edge/installation/)
 
->**Important:** Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
+>**Important:** You can have both the Edge 10.7 and 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
 
 ### Creating a backup on Cumulocity IoT Edge 10.7
 
@@ -39,6 +39,7 @@ mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if mic
 ```
 2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
 3. Create a backup of the `/etc/opcua` directory. 
+4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
 ### Restoring the data on Cumulocity IoT Edge 10.9
 
@@ -139,15 +140,18 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+
+10. Copy the `/var/lib/cumulocity-agent/credentials` file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
-10. Restart Karaf using the commands:
+11. Restart the services using the commands:
 ```shell
+systemctl restart cumulocity-agent
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
 monit restart opcua_device_gateway_proc
 monit restart opcua_mgmt_service_proc
 ```
-Restarting Karaf completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+Restarting the services completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 

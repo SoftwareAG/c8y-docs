@@ -52,7 +52,7 @@ Once the cause of an alarm is resolved, you have to acknowledge and clear the al
 <a name="tenant_option_change"></a>
 #### Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
+This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to the [Tenant API](https://{{< URL >}}/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
@@ -153,7 +153,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you have to fix this as a priority.
 
-See also [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in Software AG's Tech Community.
+See also [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-name-2 >}}'s {{< company-help >}}.
 
 <a name="apama_ctrl_fatalcritwarn"></a>
 #### Warning or higher level logging from an EPL file

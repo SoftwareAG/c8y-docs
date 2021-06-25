@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Connecting to the Cumulocity IoT platform
+title: Connecting to the var-product-name-1 platform
 layout: redirect
 ---
 

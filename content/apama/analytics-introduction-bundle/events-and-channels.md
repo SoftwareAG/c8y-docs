@@ -6,7 +6,7 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the {{< product-name-1 >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-name-1 >}} data.
 
-> **Info:** Apama and {{< product-name-1 >}} use different "event" concepts. Apama events are used for all interactions with {{< product-name-1 >}}, such as listening for and creating device measurements, alarms and ({{< product-name-1 >}}) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-name-1 >}} events, see [Events](https://www.cumulocity.com/api/#tag/Events) in the {{< OpenAPI >}}. 
+> **Info:** Apama and {{< product-name-1 >}} use different "event" concepts. Apama events are used for all interactions with {{< product-name-1 >}}, such as listening for and creating device measurements, alarms and ({{< product-name-1 >}}) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-name-1 >}} events, see [Events](https://{{< URL >}}/api/#tag/Events) in the {{< OpenAPI >}}. 
 
 ### Predefined event types
 

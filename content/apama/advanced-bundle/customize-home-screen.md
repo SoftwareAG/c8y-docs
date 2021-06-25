@@ -36,7 +36,7 @@ See [Administration > Managing applications](/users-guide/administration/#managi
 
 You may need to clear your browser cache for the changes to take effect. 
 
-You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an Enterprise tenant.
+You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an {{< tenant-type-2 >}}.
 
 On new releases of the platform, it is recommended that you review the source *documentation.json* file for any changes. 
 New entries in this file will be picked up with their default values.

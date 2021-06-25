@@ -129,7 +129,7 @@ When running the project locally, you will need to provide your {{< product-name
 
 ```
 CUMULOCITY_USERNAME=user@example.com 
-CUMULOCITY_SERVER_URL=http://exampleTenant.cumulocity.com 
+CUMULOCITY_SERVER_URL=http://exampleTenant.{{< URL >}} 
 CUMULOCITY_PASSWORD=examplePassword 
 CUMULOCITY_APPKEY=apamaAppKey
 ```

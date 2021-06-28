@@ -70,7 +70,7 @@ The tutorial assumes that the Raspberry Pi has an active connection to the inter
 Log into the Raspberry Pi and install the agent with the following command:
 
 ```shell
-$ wget http://resources.{{< URL >}}/examples/cumulocity-rpi-agent-latest.deb
+$ wget http://resources.cumulocity.com/examples/cumulocity-rpi-agent-latest.deb
 $ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 ```
 

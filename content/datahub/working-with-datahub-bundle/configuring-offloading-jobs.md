@@ -85,7 +85,7 @@ If you have added additional top-level fields while feeding data into Cumulocity
 
 ###### Auto-detected columns
 
-To ease the configuration process, DataHub auto-detects additional result columns. Using a sample of the base collection, DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a top-level field you miss.
+To ease the configuration process, DataHub auto-detects additional result columns. Using a sample of the base collection, DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
  
 ###### Structure of additional result columns
 
@@ -97,7 +97,7 @@ Each additional result column, whether it is a manually configured or an auto-de
 - **Source definition**: The source definition is the actual SQL expression, which defines how the data in this column looks like. 
 - **Column type**: The column type defines which kind of data the column contains, e.g. DOUBLE for double values or VARCHAR for strings.
 
-When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. In the top right corner the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, a collapse button and a context menu is available. With the collapse button you can expand/collapse more details of the column. In the details section you can explore lengthy source definitions and sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field. 
+When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. In the top right corner the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, a collapse button and a context menu is available. With the collapse button you can expand/collapse more details of the column. In the details section you can explore the source definition as well as sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field. 
 
 In the top-right corner of the table you find a button for manually adding an additional result column.
 
@@ -138,14 +138,15 @@ Auto-detected columns cannot be deleted.
 When deleting an additional result column, in the next offloading run the data will no more be included. Data already being offloaded to the data lake is not affected by the deletion of the column.  
 
 ###### Migration of additional result columns
-DataHub versions prior to version 10.10 offer a single input field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes in its version upgrade process an auto-migration procedure to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified. 
 
-To migrate to the new format, proceed as follows:
+DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes in its version upgrade process an auto-migration procedure to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified. 
+
+To migrate to the new format manually, proceed as follows:
 
 - In the context menu of the column click **Show** and navigate through the configuration.
 - Copy the task name, the additional result columns definition, and the target table name to a text editor.
 - Create a new configuration with an arbitrary target table name and an arbitrary task name. 
-- Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "expr$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
+- Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "EXPR$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
 - Delete the old configuration.
 - Edit the new configuration and set the task name and the target table name of the old configuration.
 - When activating the new configuration, you are prompted for either flushing or appending to the existing data. Use the latter option to base the new configuration on the data the old configuration has offloaded so far.

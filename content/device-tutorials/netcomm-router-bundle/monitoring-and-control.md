@@ -19,13 +19,13 @@ Consult the documentation of your router for more information about its specific
 To regularly poll the input voltage of a GPIO pin and send it to the {{< product-name-1 >}} platform, set [**GPIO analog measurements**](#configure) to a non-zero value. Alternatively, use the [device shell](#device-shell).
 
 ```shell
-set service.{{< company-name-lowercase-1 >}}.gpio.interval=<seconds>
+set service.cumulocity.gpio.interval=<seconds>
 ```
 
 Then, you need to specify the port and turn on the notification by using the [device shell](#device-shell).
 
 ```shell
-set service.{{< company-name-lowercase-1 >}}.gpio.<port>.notify=measurement
+set service.cumulocity.gpio.<port>.notify=measurement
 ```
 
 &#60;port&#62; is the numbering of the GPIO pin. For NTC-220, <port> can be 1, 2 or 3. The visualized result is then visible in the **Measurements** tab.
@@ -34,10 +34,10 @@ set service.{{< company-name-lowercase-1 >}}.gpio.<port>.notify=measurement
 You can raise alarms from digital inputs. These can be configured using the router user interface or through the [device shell](#device-shell).
 
 ```shell
-set service.{{< company-name-lowercase-1 >}}.gpio.<port>.notify=alarm
-set service.{{< company-name-lowercase-1 >}}.gpio.<port>.debounce.interval=<seconds>
-set service.{{< company-name-lowercase-1 >}}.gpio.<port>.alarm.text=<ALARM_TEXT>
-set service.{{< company-name-lowercase-1 >}}.gpio.<port>.alarm.severity=<severity>
+set service.cumulocity.gpio.<port>.notify=alarm
+set service.cumulocity.gpio.<port>.debounce.interval=<seconds>
+set service.cumulocity.gpio.<port>.alarm.text=<ALARM_TEXT>
+set service.cumulocity.gpio.<port>.alarm.severity=<severity>
 ```
 
 Possible values for the notify parameter are:

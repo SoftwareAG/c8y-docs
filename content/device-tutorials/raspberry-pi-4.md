@@ -70,14 +70,14 @@ The tutorial assumes that the Raspberry Pi has an active connection to the inter
 Log into the Raspberry Pi and install the agent with the following command:
 
 ```shell
-$ wget http://resources.{{< URL >}}/examples/{{< company-name-lowercase-1 >}}-rpi-agent-latest.deb
-$ sudo dpkg -i {{< company-name-lowercase-1 >}}-rpi-agent-latest.deb
+$ wget http://resources.{{< URL >}}/examples/cumulocity-rpi-agent-latest.deb
+$ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 ```
 
-#### To set up the tenant URL in the {{< company-name-lowercase-1 >}}.properties file
+#### To set up the tenant URL in the cumulocity.properties file
 
 When the {{< product-name-1 >}} agent on the Raspberry Pi connects to {{< product-name-1 >}}, it uses the host URL that is defined in the file
-*/usr/share/{{< company-name-lowercase-1 >}}-rpi-agent/cfg/{{< company-name-lowercase-1 >}}.properties* on the Raspberry Pi. The URL is defined in a line like:
+*/usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties* on the Raspberry Pi. The URL is defined in a line like:
 
 ````shell
 host = https://<YourTenantName>.{{< URL >}}
@@ -96,10 +96,10 @@ To do the edit, you can start the "vi" editor in the superuser console and make 
 
 If you prefer to use another editor, you may have to install it first. After the editor is installed, ensure that you start it from a console with superuser privileges.
 
-When you have updated *{{< company-name-lowercase-1 >}}.properties*, restart the agent using:
+When you have updated *cumulocity.properties*, restart the agent using:
 
 ````shell
-$ sudo service {{< company-name-lowercase-1 >}}-agent restart
+$ sudo service cumulocity-agent restart
 ````
 
 
@@ -126,7 +126,7 @@ Alternatively, you can use the desktop method:
 
 #### To register the device to {{< product-name-1 >}}
 
-1. Open the {{< product-name-1 >}} platform in a web browser. The URL must match the host URL that you defined in the *{{< company-name-lowercase-1 >}}.properties* file on the Raspberry Pi, as described above.
+1. Open the {{< product-name-1 >}} platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
 2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID.
 

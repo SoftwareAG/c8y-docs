@@ -78,7 +78,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // client, user and device details
-        final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.cumulocity.com:8883 for a secure connection */
+        final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.{{< URL >}}:8883 for a secure connection */
         final String clientId    = "my_mqtt_java_client";
         final String device_name = "My Java MQTT device";
         final String tenant      = "<<tenant_ID>>";
@@ -153,7 +153,7 @@ public class App {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
+{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< URL >}}:1883` or `ssl://mqtt.{{< URL >}}:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code in `main` do?
 

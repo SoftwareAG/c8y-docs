@@ -134,7 +134,7 @@ except (KeyboardInterrupt, SystemExit):
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
+{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.{{< URL >}}`).
 
 The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
 

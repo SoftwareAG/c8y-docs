@@ -75,11 +75,11 @@ Request header should be:
 
 	Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
 
-For example, a credentials request for a device added to *xyz.cumulocity.com* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.cumulocity.com*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.cumulocity.com* or *management.cumulocity.com* or even *anything.cumulocity.com* can be used.
+For example, a credentials request for a device added to *xyz.{{< URL >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.{{< URL >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< URL >}}* or *management.{{< URL >}}* or even *anything.{{< URL >}}* can be used.
 
 {{< product-name-1 >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
+If the valid tenant URL is known (e.g. *xyz.{{< URL >}}* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -116,7 +116,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
     ...
     {
         "error": "identity/Not Found",
-        "info": "https://www.cumulocity.com/guides/reference/#error_reporting",
+        "info": "https://www.{{< URL >}}/guides/reference/#error_reporting",
         "message": "External id not found; external id = ID [type=c8y_Serial, value=raspi-0000000017b769d6]"
     }
 

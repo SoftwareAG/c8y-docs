@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The {{<
 
 ### Connecting via MQTT
 
-{{< product-name-1 >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_) or your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_).
+{{< product-name-1 >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< URL >}}_) or your tenant domain (e.g. _mytenant.{{< URL >}}/mqtt_).
 
 Available ports:
 

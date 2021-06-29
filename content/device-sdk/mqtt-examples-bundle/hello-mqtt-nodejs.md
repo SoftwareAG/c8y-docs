@@ -99,7 +99,7 @@ client.on("message", function (topic, message) {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The {{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
+The {{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.{{< URL >}}`).
 
 What does the code do?
 

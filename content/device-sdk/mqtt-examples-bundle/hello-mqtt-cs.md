@@ -194,7 +194,7 @@ var cDetails = new ConnectionDetailsBuilder()
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-name-1 >}} MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
+{{< product-name-1 >}} MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< URL >}}:1883` or `ssl://mqtt.{{< URL >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
 
 What does the code in `Main` do?
 

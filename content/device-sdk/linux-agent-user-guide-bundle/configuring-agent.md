@@ -23,12 +23,12 @@ A unique device ID is required to register your device. You can specify it using
 
 ### Server URL
 
-The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.
+The agent by default connects to the {{< URL >}} instance. In case you’re using a different instance, you can change the server URL.
 The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https&#58;//example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
 |Parameter|Example value|
 |---|---|
-|server|server=https://mqtt.cumulocity.com<br>or<br>server=mqtts://mqtt.cumulocity.com|
+|server|server=https://mqtt.{{< URL >}}<br>or<br>server=mqtts://mqtt.{{< URL >}}|
 
 ### Log settings
 

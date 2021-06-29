@@ -7,7 +7,7 @@ layout: redirect
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
 * You can use the [Streaming Analytics application](#apama-epl-apps) which is available from {{< product-name-1 >}}'s application switcher and develop your EPL apps within {{< product-name-1 >}}.
-* Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< development-environment >}}](#sag-designer), that is, in a separate environment.
+* Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
@@ -18,7 +18,7 @@ The EPL Apps page of the Streaming Analytics application provides an interface f
 
 Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< development-environment >}} into {{< product-name-1 >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-name-1 >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support). 
+> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-name-1 >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-name-1 >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support). 
 
 **Step 1 - Invoke the Streaming Analytics application**
 
@@ -36,7 +36,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-name-1 >}} (for example, using {{< development-environment >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-name-1 >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
 * Deploy existing EPL apps. On the card that is shown for an app, change the mode from **Inactive** to **Active**. For more information, see [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
@@ -75,9 +75,9 @@ Once your app is activated, you should be able to see the results of it running.
 See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
 <a name="sag-designer"></a>
-### Developing apps with {{< development-environment >}}
+### Developing apps with {{< sag-designer >}}
 
-{{< development-environment >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into {{< product-name-1 >}}.
+{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into {{< product-name-1 >}}.
 
 **Step 1 - Install Apama**
 
@@ -85,11 +85,11 @@ If you have licensed Apama, install it using Software AG Installer.
 
 You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from http://www.apamacommunity.com/downloads/ and install it. 
 
-Both versions, the licensed version and the freemuim version, include {{< development-environment >}}.
+Both versions, the licensed version and the freemuim version, include {{< sag-designer >}}.
 
 **Step 2 - Create a project**
 
-Once installed, create an Apama project in {{< development-environment >}} and enable it for {{< product-name-1 >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
+Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-name-1 >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
 **Step 3 - Add Apama bundles to the project**
 
@@ -119,7 +119,7 @@ The bundles above are the only ones that are permissible in an EPL app, so be ca
 
 To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
 
-Before you import the newly created monitor file as an EPL app into {{< product-name-1 >}} and activate it there, you might want to test if the monitor file works as expected from within {{< development-environment >}}.
+Before you import the newly created monitor file as an EPL app into {{< product-name-1 >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
@@ -142,6 +142,6 @@ Note that the above description assumes that you are connecting to a tenant wher
 CUMULOCITY_TENANT=my_custom_tenant
 ```
 
-You can now proceed with testing your EPL in {{< development-environment >}}.
+You can now proceed with testing your EPL in {{< sag-designer >}}.
 
 Once the EPL app is ready, refer to [Deploying apps](/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to {{< product-name-1 >}}.

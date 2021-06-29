@@ -40,7 +40,7 @@ When designing an Apama solution to be deployed within any form of {{< product-n
 	* Engine Management API, Event Service API, Scenario Service API.
 	* Connecting to adapters running out-of-process in an IAF.
 	* Dashboards (provided in-the-box with Apama).
-	* Debugging from {{< development-environment >}}. Instead, debug your app running in a local correlator.
+	* Debugging from {{< sag-designer >}}. Instead, debug your app running in a local correlator.
 	* Correlator REST interface.
 
 ### Specific Apama limitations when using EPL apps
@@ -68,6 +68,6 @@ When designing an Apama solution to be deployed within any form of {{< product-n
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Developing apps with {{< development-environment >}}](/apama/analytics-introduction/#sag-designer).
+	* You can only use the bundles listed in [Developing apps with {{< sag-designer >}}](/apama/analytics-introduction/#sag-designer).
 
 All of these restrictions are implemented to ensure the smooth and secure operation of EPL apps within {{< product-name-1 >}}.

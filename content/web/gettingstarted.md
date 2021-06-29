@@ -43,7 +43,7 @@ After logging in you should see a barely empty starter application. If you want 
 
 > **Info**: If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
 
-> **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://cumulocity.com/api/#operation/getCurrentTenantResource).
+> **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< URL >}}/api/#operation/getCurrentTenantResource).
 
 ### First route & component
 

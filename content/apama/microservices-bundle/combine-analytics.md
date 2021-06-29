@@ -28,7 +28,7 @@ The response will be a JSON document with the results of executing the model.
 }
 ```
 
-We will start with EPL which connects to Cumulocity IoT and starts listening for measurements from a specific device.
+We will start with EPL which connects to {{< product-name-1 >}} and starts listening for measurements from a specific device.
 
 ```java
 using com.apama.json.JSONPlugin;
@@ -72,7 +72,7 @@ action listenForSignalStrength(string deviceId, string modelName)
 
 ### Converting measurements to Zementis records
 
-In order to execute the Machine Learning model, we need to convert the Cumulocity IoT request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
+In order to execute the Machine Learning model, we need to convert the {{< product-name-1 >}} request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
 
 ```java
 action convertMeasurementToRecord(Measurement m) returns string
@@ -87,7 +87,7 @@ action convertMeasurementToRecord(Measurement m) returns string
 
 ### Receiving the response from the Zementis microservice
 
-The response from the Zementis microservice will be passed to the request handler once the model has finished executing. It will contain a payload which has been parsed from JSON and will tell us if this is an outlier. We want to raise alarms in Cumulocity IoT for any outliers, which we will do by sending an `Alarm` event. We are using an event with an action on it so that we can create a closure around the device identifier.
+The response from the Zementis microservice will be passed to the request handler once the model has finished executing. It will contain a payload which has been parsed from JSON and will tell us if this is an outlier. We want to raise alarms in {{< product-name-1 >}} for any outliers, which we will do by sending an `Alarm` event. We are using an event with an action on it so that we can create a closure around the device identifier.
 
 ```java
 event ZementisHandler

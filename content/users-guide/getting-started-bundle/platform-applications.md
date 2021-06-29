@@ -1,12 +1,13 @@
 ---
 weight: 30
-title: Cumulocity IoT applications
+title: var-product-name-1 applications
 layout: redirect
 aliases:
   - /users-guide/overview/#cumulocity-applications
+  - /users-guide/getting-started/#cumulocity-applications
 ---
 
-Per default, Cumulocity IoT comes with the following three standard applications:
+Per default, {{< product-name-1 >}} comes with the following three standard applications:
 
 <table>
 <col width = 100>
@@ -38,15 +39,15 @@ Per default, Cumulocity IoT comes with the following three standard applications
 </tbody>
 </table>
 
-Apart from these standard applications that initially come with Cumulocity IoT, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Tenant you are using and the applications your organization is subscribed to.
+Apart from these standard applications that initially come with {{< product-name-1 >}}, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Tenant you are using and the applications your organization is subscribed to.
 
-Find a detailed list of all applications available with Cumulocity IoT in  [Administration > Managing applications](/users-guide/administration/#managing-applications).
+Find a detailed list of all applications available with {{< product-name-1 >}} in  [Administration > Managing applications](/users-guide/administration/#managing-applications).
 
-On top of this, the Cumulocity IoT platform provides broad functionality to add your own applications to be used in your Cumulocity IOT account, see [Administration > Managing applications](/users-guide/administration#managing-applications) for details.
+On top of this, the {{< product-name-1 >}} platform provides broad functionality to add your own applications to be used in your {{< product-name-1 >}} account, see [Administration > Managing applications](/users-guide/administration#managing-applications) for details.
 
-The content of the Cumulocity IoT platform therefore is entirely dynamic and is generated based on various criteria:
+The content of the {{< product-name-1 >}} platform therefore is entirely dynamic and is generated based on various criteria:
 
 * The applications that your organization has subscribed to.
-* The applications that your organization has configured or developed itself for Cumulocity IoT.
+* The applications that your organization has configured or developed itself for {{< product-name-1 >}}.
 * The functionality that your user is permitted to see.
 * The configuration of the user interface, such as groups and reports.

@@ -50,6 +50,7 @@ relativeURLs = true
   favicon = "https://cumulocity.com/favicon.ico"
 
   # Content variables for Frontmatter titles
+  productname1 = "Cumulocity IoT"
   companyname2 = "Software AG"
   tenanttype2 = "Enterprise tenant"
 

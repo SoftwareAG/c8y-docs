@@ -5,13 +5,13 @@ layout: redirect
 ---
 
 
-There are two ways of connecting your smartphone to Cumulocity IoT, depending on the platform's version.
-For Cumulocity IoT versions starting with release 10.6.6, you can connect your smartphone via [QR code](#registration-using-qr-code).
-For earlier versions of Cumulocity IoT, follow the steps in [Manual registration](#manual-registration).
+There are two ways of connecting your smartphone to {{< product-name-1 >}}, depending on the platform's version.
+For {{< product-name-1 >}} versions starting with release 10.6.6, you can connect your smartphone via [QR code](#registration-using-qr-code).
+For earlier versions of {{< product-name-1 >}}, follow the steps in [Manual registration](#manual-registration).
 
 ### Registration using QR code
 
-1.  On a desktop or laptop computer, open a web browser and log in to your Cumulocity IoT tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-name-1 >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
 
     ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.jpg)
 
@@ -24,13 +24,13 @@ For earlier versions of Cumulocity IoT, follow the steps in [Manual registration
 5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your smartphone and fill in the details at the right side of the wizard screen.
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
-When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by Cumulocity IoT and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.
+When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by {{< product-name-1 >}} and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.
 
-> **Info:** QR codes not supported by the Cumulocity IoT Sensor App are highlighted using a red region of interest in the Camera view. QR codes from older versions of Cumulocity IoT will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual Registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
+> **Info:** QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-name-1 >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual Registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
 
 ### Manual registration
 
-1.  On a desktop or laptop computer, open a web browser and log in to your Cumulocity IoT tenant. In the Device Management application, choose **Devices > Registration** from the navigator.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-name-1 >}} tenant. In the Device Management application, choose **Devices > Registration** from the navigator.
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.jpg)
 
@@ -38,7 +38,7 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 3. Back in your web browser, click **Register device** and then **General device registration**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 
-4. On your smartphone, fill in your tenant (e.g. "companytenant01"), select your instance (e.g. "cumulocity.com"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
+4. On your smartphone, fill in your tenant (e.g. "companytenant01"), select your instance (e.g. "{{< URL >}}"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
     ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 
@@ -50,4 +50,4 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 For further information about registering a device on the platform manually, refer to [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices).
 
-If you want to disconnect from Cumulocity IoT, tap **Disconnect** in the top right corner of the screen and approve the confirmation dialog. After that you can connect to the same or any other Cumulocity IoT instance or tenant.
+If you want to disconnect from {{< product-name-1 >}}, tap **Disconnect** in the top right corner of the screen and approve the confirmation dialog. After that you can connect to the same or any other {{< product-name-1 >}} instance or tenant.

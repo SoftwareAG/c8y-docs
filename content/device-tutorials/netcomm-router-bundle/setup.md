@@ -44,7 +44,7 @@ The support for {{< product-name-1 >}} can be configured through the router’s 
 
 Verify that the **Agent** toggle is set to **ON**.
 
-The URL in the **Server** field must point to the {{< product-name-1 >}} instance that you want to connect to. The URL has to be of the format `https://<my-tenant>.<instance-url>`, where `<instance-url>` refers to the URL of the {{< product-name-1 >}} instance, for example `https://mqtt.{{< URL >}}/`.
+The URL in the **Server** field must point to the {{< product-name-1 >}} instance that you want to connect to. The URL has to be of the format *https://\<my-tenant\>.\<instance-url\>*, where *\<instance-url\>* refers to the URL of the {{< product-name-1 >}} instance, for example *https://mqtt.{{< URL >}}/*.
 
 Optionally, you can activate data collecting for the following functionalities:
 

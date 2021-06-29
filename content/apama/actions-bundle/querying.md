@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Querying Cumulocity IoT data
+title: Querying var-product-name-1 data
 layout: redirect
 ---
 

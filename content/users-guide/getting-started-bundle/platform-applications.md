@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: {{< product-name-1 >}} applications
+title: var-product-name-1 applications
 layout: redirect
 aliases:
   - /users-guide/overview/#cumulocity-applications

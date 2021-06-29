@@ -4,7 +4,7 @@ title: Connecting new Bluetooth devices to the Sensor App
 layout: redirect
 ---
 
-The {{< sensor-app >} connects to a range of Bluetooth sensor devices.
+The {{< sensor-app >}} connects to a range of Bluetooth sensor devices.
 Additional devices will be added in the future.
 
 To connect a device, click the plus button at the bottom right of the screen.

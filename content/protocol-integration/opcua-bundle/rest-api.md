@@ -532,7 +532,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 **Endpoint**
 
-`GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
 
 **Description**
 
@@ -1209,7 +1209,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the alarm.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the alarm to be created. Possible values: PERSISTENT.</td>

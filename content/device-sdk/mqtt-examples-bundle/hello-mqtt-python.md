@@ -4,13 +4,13 @@ title: Hello MQTT Python
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Python MQTT client with Cumulocity IoT using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Python MQTT client with {{< product-name-1 >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user, and a password in order to access Cumulocity IoT.
+* You have a valid tenant, a user, and a password in order to access {{< product-name-1 >}}.
 * Verify that you have Python 3 installed:
 
 ```shell
@@ -30,7 +30,7 @@ $ pip install paho-mqtt
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for Cumulocity IoT, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-name-1 >}}, you need to
 
 * create a Python script,
 * run the script.
@@ -102,7 +102,7 @@ def device_loop():
         task_queue.put(send_measurement)
         time.sleep(7)
 
-# connect the client to Cumulocity IoT and register a device
+# connect the client to {{< product-name-1 >}} and register a device
 client = mqtt.Client(clientId)
 client.username_pw_set(tenant + "/" + username, password)
 client.on_message = on_message
@@ -134,7 +134,7 @@ except (KeyboardInterrupt, SystemExit):
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-Cumulocity IoT MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
+{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
 
 The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
 
@@ -143,7 +143,7 @@ What does the script do?
 -   Configure a MQTT connection.
 -   Register an ``on_message`` callback function which will print incoming messages. In case of a c8y_Restart operation, it will simulate a device restart.
 -   Register an ``on_publish`` callback function which will be called after a publish message has been delivered.
--   Connect with Cumulocity IoT via the MQTT protocol.
+-   Connect with {{< product-name-1 >}} via the MQTT protocol.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device – this will result in an ``on_message`` method call every time a new operation is created.
@@ -172,4 +172,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity IoT MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.

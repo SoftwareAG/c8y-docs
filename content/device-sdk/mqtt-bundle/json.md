@@ -4,7 +4,7 @@ title: JSON via MQTT
 layout: redirect
 ---
 
-This section describes the JSON payload format that can be used with the Cumulocity IoT MQTT implementation.
+This section describes the JSON payload format that can be used with the {{< product-name-1 >}} MQTT implementation.
 
 Compared to SmartREST 2.0 – which only works with fixed templates – JSON's support for MQTT was designed to combine the payload flexibility of our REST API with the low protocol overhead of MQTT.
 

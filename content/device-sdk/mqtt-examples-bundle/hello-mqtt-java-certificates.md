@@ -4,7 +4,7 @@ title: Hello MQTT Java with certificates
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Java MQTT client with Cumulocity IoT using X.509 certificates for authentication.
+In this tutorial, you will learn how to use the Java MQTT client with {{< product-name-1 >}} using X.509 certificates for authentication.
 
 In the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
@@ -13,7 +13,7 @@ In the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumu
 In order to follow this tutorial, check the following prerequisites:
 
 *   You have correctly configured the Java client based on the [Hello MQTT Java](#hello-mqtt-java) tutorial.
-*   You have a valid tenant, a user and a password in order to access Cumulocity IoT.
+*   You have a valid tenant, a user and a password in order to access {{< product-name-1 >}}.
 *   You have a valid certificate. If you don't have it, follow the instructions in the next section to generate one.
 
 #### To generate a valid certificate
@@ -32,7 +32,7 @@ $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key
 
 ### Developing the "Hello, MQTT world!" client with certificates  
 
-To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, you need to
+To develop a "Hello, world!" MQTT client for {{< product-name-1 >}} with certificates, you need to
 
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
@@ -98,4 +98,4 @@ private MqttClient connect() throws MqttException {
 
 The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, e.g. creating a user. The user is created during the [auto registration](/device-sdk/mqtt/#device-certificates) process.
 
-> **Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize the tenant and the user by the provided certificate.
+> **Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-name-1 >}} will recognize the tenant and the user by the provided certificate.

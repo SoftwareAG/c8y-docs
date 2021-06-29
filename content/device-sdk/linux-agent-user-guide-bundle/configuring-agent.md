@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
+The {{< product-name-1 >}} Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
 
 ### Device ID
 
@@ -86,15 +86,15 @@ Each feature is implemented as a Lua plugin.
 </tr>
 <tr>
 <td>logview</td>
-<td>Allows you to remotely view the device and the agent logs from Cumulocity IoT</td>
+<td>Allows you to remotely view the device and the agent logs from {{< product-name-1 >}}</td>
 </tr>
 <tr>
 <td>shell</td>
-<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from Cumulocity IoT</td>
+<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from {{< product-name-1 >}}</td>
 </tr>
 <tr>
 <td>version</td>
-<td>Reports the agent version to Cumulocity IoT</td>
+<td>Reports the agent version to {{< product-name-1 >}}</td>
 </tr>
 <tr>
 <td>modbus</td>
@@ -129,7 +129,7 @@ You can change various Modbus parameters in the configuration file. The **modbus
 
 |Parameter|Description|Example value|  
 |---|---|---|
-|modbus.transmitrate|The transmit rate for reporting measurements to Cumulocity IoT [in seconds]||
+|modbus.transmitrate|The transmit rate for reporting measurements to {{< product-name-1 >}} [in seconds]||
 |modbus.pollingrate|The polling rate for querying the Modbus slave for data [in seconds]|modbus.pollingrate=30|
 |modbus.readonly|Controls the ability to write data to slaves. 1 is read-only, 0 is writable|modbus.readonly=0|
 |modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus slave [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|

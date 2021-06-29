@@ -4,13 +4,13 @@ title: Hello MQTT C
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use MQTT client in C with Cumulocity IoT using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use MQTT client in C with {{< product-name-1 >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user, and a password in order to access Cumulocity IoT.
+* You have a valid tenant, a user, and a password in order to access {{< product-name-1 >}}.
 * Verify that you have a gcc compiler installed:
 
 
@@ -27,7 +27,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for Cumulocity IoT, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-name-1 >}}, you need to
 
 * create the application,
 * build and run the application.
@@ -99,14 +99,14 @@ int main(int argc, char* argv[]) {
 
 Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant_ID>>`, `<<username>>` and `<<password>>` with your data.
 
-The Cumulocity IoT MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
+The {{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
 
 What does the code in `main` do?
 
 -   Configure an MQTT connection.
 -   Register a ``on_message`` callback function which will print incoming messages.
--   Connect with Cumulocity IoT via MQTT protocol.
+-   Connect with {{< product-name-1 >}} via MQTT protocol.
 -   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type.
 -   Update the device hardware information by putting a ``"S123456789"`` serial, a ``"MQTT test model"`` model and a ``"Rev0.1"`` revision.
 -   Subscribe to the static operation templates for the device - this will result in an ``on_message`` method call every time a new operation is created.
@@ -142,4 +142,4 @@ Additionally, if there will be a new operation created for this device (for exam
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity IoT MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.

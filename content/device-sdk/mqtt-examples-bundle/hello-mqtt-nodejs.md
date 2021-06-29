@@ -4,18 +4,18 @@ title: Hello MQTT Node.js
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Node.js MQTT client with Cumulocity IoT using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Node.js MQTT client with {{< product-name-1 >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have Node.js and the package manager (npm) installed.
-* You have a valid tenant, a user, and a password in order to access Cumulocity IoT.
+* You have a valid tenant, a user, and a password in order to access {{< product-name-1 >}}.
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for Cumulocity IoT, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-name-1 >}}, you need to
 
 * create a Node.js application,
 * install the MQTT middleware (in this example we will use the library [MQTT.js](https://github.com/mqttjs/MQTT.js)),
@@ -52,7 +52,7 @@ const password    = "<<password>>";
 
 var temperature   = 25;
 
-// connect the client to Cumulocity IoT
+// connect the client to {{< product-name-1 >}}
 const client = mqtt.connect(serverUrl, {
     username: tenant + "/" + username,
     password: password,
@@ -99,7 +99,7 @@ client.on("message", function (topic, message) {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The Cumulocity IoT MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
+The {{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
 
 What does the code do?
 
@@ -133,4 +133,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity IoT MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.

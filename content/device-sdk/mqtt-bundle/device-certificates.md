@@ -6,9 +6,9 @@ layout: redirect
 
 ### Overview
 
-Devices can authenticate against the Cumulocity IoT platform using X.509 client certificates.  
+Devices can authenticate against the {{< product-name-1 >}} platform using X.509 client certificates.  
 
-Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The Cumulocity IoT platform expects devices to connect using SSL on port 8883.
+Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The {{< product-name-1 >}} platform expects devices to connect using SSL on port 8883.
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
@@ -19,23 +19,23 @@ Devices connecting to the platform with certificates do not need to provide the 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
-* Devices need to trust the Cumulocity IoT server certificate.
+* Devices need to trust the {{< product-name-1 >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
 
-Cumulocity IoT supports two ways to register devices which will be able to connect using certificates:
+{{< product-name-1 >}} supports two ways to register devices which will be able to connect using certificates:
 
 **Auto registration**
 
-The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the Cumulocity IoT platform with a flag _autoRegistrationEnabled_ with a value of true. To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-name-1 >}} platform with a flag _autoRegistrationEnabled_ with a value of true. To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
 
 **Bulk registration**
 
 The user for the device can also be created via the standard bulk registration in Device Management.
 
-The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity IoT OpenAPI Specification. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
+The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< OpenAPI >}}. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
 
 **Single registration**
 
@@ -46,7 +46,7 @@ Single registration is not supported for devices which are going to use certific
 
 ### JWT Token retrieval
 
-A device which is authenticated by certificates and connected to the Cumulocity IoT platform can receive a token which can later be used to authenticate HTTP requests.
+A device which is authenticated by certificates and connected to the {{< product-name-1 >}} platform can receive a token which can later be used to authenticate HTTP requests.
 
 * First the device subscribes to the topic <kbd>s/dat</kbd>.
 * Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.
@@ -56,7 +56,7 @@ A device which is authenticated by certificates and connected to the Cumulocity 
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
+A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
@@ -86,7 +86,7 @@ If these devices certificates are signed by the customer certificate, then the p
 In this case, every device should send not only its own certificate, but the whole chain of certificates (so-called chain of trust) during the SSL handshake.
 The chain of certificates starts with the one belonging to the device, through all used intermediate certificates until it reaches the CA certificate trusted by the platform.
 Usually the chain of certificates does not have to contain the trusted CA certificate, so it can end with the certificate signed directly by the CA.
-However, in the Cumulocity IoT platform it is also required to provide the trusted CA certificate in the chain of certificates.
+However, in the {{< product-name-1 >}} platform it is also required to provide the trusted CA certificate in the chain of certificates.
 Providing the chain of certificates lets the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
 The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted.
 However, there are a few things to keep in mind:
@@ -231,7 +231,7 @@ The intermediate certificate is signed by the CA certificate, but will also be u
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
 However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
-Keep in mind that in the Cumulocity IoT cloud the maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and the device certificate there:
+Keep in mind that in the {{< product-name-1 >}} cloud the maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and the device certificate there:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
 2. Go to this directory and create a configuration file for your intermediate certificate: `touch intermediateConfig.cnf`
@@ -300,7 +300,7 @@ Go into your caCertificate directory.
 
     * Via REST:
 
-        1. Display your CA (or intermediate) certificate, which you want to upload to the Cumulocity IoT platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
+        1. Display your CA (or intermediate) certificate, which you want to upload to the {{< product-name-1 >}} platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
         2. Send it to the platform via POST request:
 
         ```text    
@@ -362,7 +362,7 @@ Then the instance of the MQTT client can be created with a single line:
 
 The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
 The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
-The "d:" prefix is used in Cumulocity IoT for device connections and it should not be removed or changed.
+The "d:" prefix is used in {{< product-name-1 >}} for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
 
     sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());

@@ -14,9 +14,9 @@ In this tutorial, you will learn how to create and run a microservice written in
 
 ### Prerequisites
 
-Create an account on [cumulocity.com](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
+Create an account on [{{< URL >}}](https://{{< URL >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Cumulocity IoT hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be >= 1.12.6. Verify your Docker installation with the following command:
+{{< product-name-1 >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be >= 1.12.6. Verify your Docker installation with the following command:
 
 ```shell
 $ docker version
@@ -111,7 +111,7 @@ The microservice manifest file _cumulocity.json_ is required for the application
     "apiVersion": "1",
     "version": "1.0.0",
     "provider": {
-        "name": "Cumulocity GmbH"
+        "name": "{{< company-name-1 >}} GmbH"
     },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [
@@ -136,7 +136,7 @@ Then pack _image.tar_ together with the manifest _cumulocity.json_ into a ZIP fi
 $ zip hello-microservice cumulocity.json image.tar
 ```
 
-The resulting _hello-microservice.zip_ file contains your microservice and it is ready to be uploaded to the Cumulocity IoT platform.
+The resulting _hello-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-name-1 >}} platform.
 
 #### Run the example
 
@@ -193,4 +193,4 @@ and your authorization header would look like `"Authorization": "Basic dDAwNzEyM
 
 ### Source code
 
-The source code of this Hello world microservice can be found in our [GitHub repository](https://github.com/SoftwareAG/c8y_microservice-python). Moreover, in our Bitbucket repository you can find a more comprehensive [Python microservice application](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/sample-python-microservice/) which uses the Cumulocity IoT REST API and exposes endpoints to verify if the microservice is up and running, create a device and random measurements for it, and to get the current application subscriptions for a particular tenant.
+The source code of this Hello world microservice can be found in our [GitHub repository](https://github.com/SoftwareAG/c8y_microservice-python). Moreover, in our Bitbucket repository you can find a more comprehensive [Python microservice application](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/sample-python-microservice/) which uses the {{< product-name-1 >}} REST API and exposes endpoints to verify if the microservice is up and running, create a device and random measurements for it, and to get the current application subscriptions for a particular tenant.

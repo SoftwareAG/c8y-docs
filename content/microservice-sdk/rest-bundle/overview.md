@@ -6,35 +6,35 @@ layout: redirect
 
 This section describes specific aspects of developing microservices using the REST interface.
 
-Cumulocity IoT employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
+{{< product-name-1 >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
 
 REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
-With this API description you will learn how to use Cumulocity IoT's REST interfaces to develop microservice applications on top of the Cumulocity IoT platform.
+With this API description you will learn how to use {{< product-name-1 >}}'s REST interfaces to develop microservice applications on top of the {{< product-name-1 >}} platform.
 
 The description is closely linked to the Reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular:
 
-- [REST implementation](https://cumulocity.com/api/#section/REST-implementation) is the reference for all general concepts.
-- [Device management library](https://cumulocity.com/api/#section/Device-management-library) specifies the data model for device management.
-- [Sensor library](https://cumulocity.com/api/#section/Sensor-library) specifies the data model for sensors and controls.
+- [REST implementation](https://{{< URL >}}/api/#section/REST-implementation) is the reference for all general concepts.
+- [Device management library](https://{{< URL >}}/api/#section/Device-management-library) specifies the data model for device management.
+- [Sensor library](https://{{< URL >}}/api/#section/Sensor-library) specifies the data model for sensors and controls.
 
-If you develop applications using Java or C#, check these relevant sections for even more convenient access to Cumulocity IoT's functionality.
+If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-name-1 >}}'s functionality.
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the Device SDK guide.
 
 
 ### Using the REST interfaces
 
-Nowadays, most programming environments have particular support for REST-based communication. For experimentation and for understanding Cumulocity IoT's REST interfaces, it is helpful to use one of the numerous available command line tools or browser extensions.
+Nowadays, most programming environments have particular support for REST-based communication. For experimentation and for understanding {{< product-name-1 >}}'s REST interfaces, it is helpful to use one of the numerous available command line tools or browser extensions.
 
-For example, many operating systems come with pre-installed tools such as the cURL command. If you want to start browsing the Cumulocity IoT APIs, enter on a command line:
+For example, many operating systems come with pre-installed tools such as the cURL command. If you want to start browsing the {{< product-name-1 >}} APIs, enter on a command line:
 
 ```shell
-$ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/platform
+$ curl -u <username>:<password> https://<yourTenant>.{{< URL >}}/platform
 ```
 
-Replace `<username>` and `<password>` with the username and password that you used to register to Cumulocity IoT. Similarly, replace `<yourTenant>` with your tenant URL.
+Replace `<username>` and `<password>` with the username and password that you used to register to {{< product-name-1 >}}. Similarly, replace `<yourTenant>` with your tenant URL.
 
-The command will return links to all basic interfaces of Cumulocity IoT:
+The command will return links to all basic interfaces of {{< product-name-1 >}}:
 
 ```json
 ...
@@ -54,34 +54,34 @@ The command will return links to all basic interfaces of Cumulocity IoT:
 To format the output to a more readable way, pass it to the `python -mjson.tool` command:
 
 ```shell
-$ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/platform | python -mjson.tool
+$ curl -u <username>:<password> https://<yourTenant>.{{< URL >}}/platform | python -mjson.tool
 ```
 
 From this point, you can navigate further to the different returned objects. For instance, retrieve the items in the inventory by following the <kbd>managedObjects</kbd> endpoint:
 
 ```shell
-$ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/inventory/managedObjects
+$ curl -u <username>:<password> https://<yourTenant>.{{< URL >}}/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://cumulocity.com/api/#section/REST-implementation/REST-usage) in the Cumulocity IoT OpenAPI Specification.
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< URL >}}/api/#section/REST-implementation/REST-usage) in the {{< OpenAPI >}}.
 
 ### Using Postman
 
-Graphical REST clients such as [Postman](https://www.getpostman.com/) are a convenient way to explore REST interfaces and the Cumulocity IoT database content.
+Graphical REST clients such as [Postman](https://www.getpostman.com/) are a convenient way to explore REST interfaces and the {{< product-name-1 >}} database content.
 
 ![Example REST client](/images/rest/postman.png)
 
-Cumulocity IoT provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
+{{< product-name-1 >}} provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
 
 Import the APIs as a [JSON file](/files/rest/Cumulocity_API.postman_collection.json).
 
-Now, click the **Collections** tab on the top left of Postman. You should see a folder _Cumulocity API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from Cumulocity IoT.
+Now, click the **Collections** tab on the top left of Postman. You should see a folder _{{< product-name-1 >}} API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from {{< product-name-1 >}}.
 
-Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your Cumulocity IoT account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
+Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your {{< product-name-1 >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
 * Click on the cogwheel on the top right and choose **Manage Environments**, then click **Add**.
 * Enter a name for the environment (e.g., your tenant ID), then add values for the placeholders.
-* Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.cumulocity.com_. Click **Submit**.
+* Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.{{< URL >}}_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 

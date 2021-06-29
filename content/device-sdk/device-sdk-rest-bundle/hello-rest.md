@@ -108,7 +108,7 @@ Replace the id value with the appropriate value you received in the first step.
 
 Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on {{< product-name-1 >}} UI later.
 
-Note the data format for timestamp values which is explained in the [Reference guide](https://cumulocity.com/api/#section/REST-implementation).
+Note the data format for timestamp values which is explained in the [Reference guide](https://{{< URL >}}/api/#section/REST-implementation).
 
     curl -v -u <username>:<password> \
        -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \

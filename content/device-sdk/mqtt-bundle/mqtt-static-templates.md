@@ -293,7 +293,7 @@ Set the list of software installed on the device.
 ##### Set required availability (117)
 
 Set the required interval for availability monitoring as an integer value representing minutes.
-For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.cumulocity.com/api/#section/Device-management-library/Device-availability) in the {{< OpenAPI >}}.
+For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.{{< URL >}}/api/#section/Device-management-library/Device-availability) in the {{< OpenAPI >}}.
 This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|

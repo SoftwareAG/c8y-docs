@@ -10,8 +10,8 @@ This section explains how to use {{< product-name-1 >}}'s REST interfaces to int
 
 The description is closely linked to the {{< OpenAPI >}}, which describes each interface in detail. Relevant chapters in the {{< OpenAPI >}} are in particular
 
--   [REST implementation](https://cumulocity.com/api/#section/REST-implementation) is the reference for all general concepts.
--   [Device management library](https://cumulocity.com/api/#section/Device-management-library) specifies the data model for device management.
--   [Sensor library](https://cumulocity.com/api/#section/Sensor-library) specifies the data model for sensors and controls.
+-   [REST implementation](https://{{< URL >}}/api/#section/REST-implementation) is the reference for all general concepts.
+-   [Device management library](https://{{< URL >}}/api/#section/Device-management-library) specifies the data model for device management.
+-   [Sensor library](https://{{< URL >}}/api/#section/Sensor-library) specifies the data model for sensors and controls.
 
 If you develop using Java ME/SE, JavaScript or C/C++, check the relevant chapters in this guide for even more convenient access to {{< product-name-1 >}}'s functionality. Also, if you use any of the supported development boards, see the corresponding description in the Devices guide for more information.

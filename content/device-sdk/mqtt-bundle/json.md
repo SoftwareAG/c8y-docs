@@ -41,7 +41,7 @@ To publish messages in CEP mode:
 c/<api>/<resource>/<action>/<id>
 ```
 
-Refer to [Processing mode](https://cumulocity.com/api/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
+Refer to [Processing mode](https://{{< URL >}}/api/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 
 #### Topic actions
 
@@ -63,11 +63,11 @@ The following endpoints and actions are supported:
 
 |Endpoint|create|createBulk|update|delete|
 |:-------|:-----|:---------|:-----|:-----|
-|[event/events](https://cumulocity.com/api/#tag/Events)|x|x|x|x|
-|[alarm/alarms](https://cumulocity.com/api/#tag/Alarms)|x|x|x|&nbsp;|
-|[measurement/measurements](https://cumulocity.com/api/#tag/Measurements)|x|x|&nbsp;|x|
-|[inventory/managedObjects](https://cumulocity.com/api/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
-|[inventory/child operations](https://cumulocity.com/api/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
+|[event/events](https://{{< URL >}}/api/#tag/Events)|x|x|x|x|
+|[alarm/alarms](https://{{< URL >}}/api/#tag/Alarms)|x|x|x|&nbsp;|
+|[measurement/measurements](https://{{< URL >}}/api/#tag/Measurements)|x|x|&nbsp;|x|
+|[inventory/managedObjects](https://{{< URL >}}/api/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
+|[inventory/child operations](https://{{< URL >}}/api/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 
@@ -142,7 +142,7 @@ Example payload:
 
 A notification client can subscribe to the <kbd>notification/operations</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 
-Additionally, it contains an [External ID](https://cumulocity.com/api/#tag/External-IDs), so the client can identify for which child the operation is executed.
+Additionally, it contains an [External ID](https://{{< URL >}}/api/#tag/External-IDs), so the client can identify for which child the operation is executed.
 
 Example notification:
 

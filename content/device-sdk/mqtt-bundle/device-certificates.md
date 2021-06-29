@@ -35,7 +35,7 @@ The user for the device will be created during the first MQTT call, if a device 
 
 The user for the device can also be created via the standard bulk registration in Device Management.
 
-The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< OpenAPI >}}. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
+The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< URL >}}/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< OpenAPI >}}. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
 
 **Single registration**
 
@@ -56,7 +56,7 @@ A device which is authenticated by certificates and connected to the {{< product
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
+A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://{{< URL >}}/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
@@ -342,7 +342,7 @@ The connection settings should look like this:
 
 ![MQTT.fx configuration](/images/mqtt/mqttFxConfig.png)
 
-### Cumulocity MQTT Example Client
+### {{< product-name-1 >}} MQTT Example Client
 
 The code of our example MQTT client implemented in Java, which connects to the platform using x.509 certficiates, is available here: https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.

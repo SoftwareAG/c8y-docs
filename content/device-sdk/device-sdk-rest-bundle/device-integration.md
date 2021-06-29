@@ -116,7 +116,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
     ...
     {
         "error": "identity/Not Found",
-        "info": "https://www.{{< URL >}}/guides/reference/#error_reporting",
+        "info": "https://www.cumulocity.com/guides/reference/#error_reporting",
         "message": "External id not found; external id = ID [type=c8y_Serial, value=raspi-0000000017b769d6]"
     }
 

@@ -11,7 +11,7 @@ If you want to make changes to the settings of the smartphone or a connected Blu
 
 Tapping **Disconnect** removes a Bluetooth device from your smartphone entirely.
 
-Tapping **Disable** still allows the smartphone to monitor measurements from this device, but stops sending sensor measurements to Cumulocity IoT.
+Tapping **Disable** still allows the smartphone to monitor measurements from this device, but stops sending sensor measurements to {{< product-name-1 >}}.
 
 Tapping **Edit**, or swiping upwards, reveals further settings that allow you to adjust various properties about this sensor, such as its name and update intervals.
 

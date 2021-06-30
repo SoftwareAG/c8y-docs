@@ -38,7 +38,7 @@ The following information is provided for each subtenant (not completely visible
 </tr>
 <tr>
 <td align="left">Device API requests</td>
-<td align="left">ID of the subtenant</td>
+<td align="left">Number of API requests from devices</td>
 </tr>
 <tr>
 <td align="left">Storage (MB)</td>
@@ -66,10 +66,6 @@ The following information is provided for each subtenant (not completely visible
 </tr>
 <tr>
 <td align="left">Endpoint devices</td>
-<td align="left">ID of the subtenant</td>
-</tr>
-<tr>
-<td align="left">ID</td>
 <td align="left">Leaf machines, without gateways and edges</td>
 </tr>
 <tr>

@@ -25,6 +25,13 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](https://{{< URL >}}/api/#section/Device-management-library/Device-information) fragment of the managed object. This is used to properly map the managed object in Cumulocity IoT to the associated SIM on the respective provider's platform.
+
+|Requires|Jasper|Ericsson|Comarch|Kite|
+|:------|:-----|:-------|:------|:------|
+|ICCID|x| |x|x|
+|MSISDN| |x| | |
+
 The following description is primarily based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.
 
 <img src="/images/users-guide/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">

@@ -14,7 +14,7 @@ For information about upgrading from an earlier version to Cumulocity IoT Edge 1
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7
-- move the backup to Edge 10.9 appliance
+- move the backup to Edge 10.9
 - restore the data on Edge 10.9
 
 ### Before you begin
@@ -62,25 +62,25 @@ The command returns the name and ID of the application. For example:
 
 {
   "metadata": {
-    "id": "111",
+    "id": "112",
     "name": "cockpit.zip"
   }
 }
 {
   "metadata": {
-    "id": "112",
+    "id": "113",
     "name": "devicemanagement.zip"
   }
 }
 {
   "metadata": {
-    "id": "113",
+    "id": "114",
     "name": "administration.zip"
   }
 }
 {
   "metadata": {
-    "id": "119",
+    "id": "122",
     "name": "streaming-analytics-app.zip"
   }
 }
@@ -91,14 +91,17 @@ The command returns the name and ID of the application. For example:
 mkdir -p /tmp/apps/
 mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip 
 
-APP_ID refers to the ID of the application. For example, 112
-APP_NAME refers to the name of the application. For example, devicemanagement.zip
+Here:
+ - APP_ID refers to the ID of the application. For example, 112
+ - APP_NAME refers to the name of the application. For example, devicemanagement.zip
 
 For example:
-mongofiles -d management --prefix cmdata get  111 -l /tmp/apps/cockpit.zip
-mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/devicemanagement.zip
-mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/administration.zip
-mongofiles -d management --prefix cmdata get  119 -l /tmp/apps/streaming-analytics-app.zip
+mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
+mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/devicemanagement.zip
+mongofiles -d management --prefix cmdata get  114 -l /tmp/apps/administration.zip
+mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
+
+Important: Create a backup of the streaming-analytics-app.zip file separately.
 ```
 4. Install the ZIP package using the command:
 ```shell
@@ -106,10 +109,12 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 ```
 5. Prepare the applications for deployment using the commands:
 
+   >**Important:** Do not include the `streaming-analytics-app.zip` file in the ZIP package.
+
 ```shell
 UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
 cd /tmp/apps
-zip package-cumulocity-$UI_VERSION.zip cockpit.zip devicemanagement.zip administration.zip streaming-analytics-app.zip
+zip package-cumulocity-$UI_VERSION.zip cockpit.zip devicemanagement.zip administration.zip #Do not include the streaming-analytics-app.zip file.
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
@@ -124,7 +129,8 @@ systemctl restart edge-agent
 ```shell
 mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
-PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your 10.9 appliance.
+Here:
+ - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your 10.9 appliance.
 
 For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
@@ -151,9 +157,27 @@ systemctl restart cumulocity-core-karaf
 monit restart opcua_device_gateway_proc
 monit restart opcua_mgmt_service_proc
 ```
-Restarting the services completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+12. Restore the Streaming Analytics application.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+	- Log in to the Management tenant.
+
+	- Upload the `streaming-analytics-app.zip` file as a web application.
+
+	- Subscribe the Streaming Analytics app to the edge tenant.
+
+		>**Important:** To subscribe the application, the user must have "Tenant Manager" role.
+
+	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
+
+	- Log in to the edge tenant and verify the Streaming Analytics application.
+
+Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
+
+>**Important:** To enable the microservice hosting feature, the user must have "Tenant Manager" role.
+
+For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 

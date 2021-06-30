@@ -83,7 +83,7 @@ See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
 If you have licensed Apama, install it using Software AG Installer.
 
-You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from http://www.apamacommunity.com/downloads/ and install it. 
+You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it. 
 
 Both versions, the licensed version and the freemuim version, include {{< sag-designer >}}.
 

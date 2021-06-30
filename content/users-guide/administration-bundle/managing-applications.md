@@ -188,7 +188,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
-<td style="text-align:left">branding</td>
+<td style="text-align:left">feature-branding</td>
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>

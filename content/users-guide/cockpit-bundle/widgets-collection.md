@@ -432,7 +432,7 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 <a name="widget-message-sending"></a>
 ### Message sending
 
-The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support this type of operation.
+The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
 ### Pie chart
 

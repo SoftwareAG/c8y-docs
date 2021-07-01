@@ -17,8 +17,8 @@ The following image shows the relevant aspects of devices and assets in the Inte
 
 * **Operations** relate to data that is sent to devices for execution or processing, such as switching a relay in a power meter or sending a credit to a vending machine.
 
-One of the great innovations in Cumulocity IoT is its standardized representation of common devices and sensors as well as concepts for flexibly extending and modifying this representation. By default, Cumulocity IoT comes with detailed visualizations of sensors, smart meters, trackers and other devices. It has many options to fit in local customizations.
+One of the great innovations in {{< product-name-1 >}} is its standardized representation of common devices and sensors as well as concepts for flexibly extending and modifying this representation. By default, {{< product-name-1 >}} comes with detailed visualizations of sensors, smart meters, trackers and other devices. It has many options to fit in local customizations.
 
 As a result, Internet of Things applications can be written independently from connected devices and underlying sensor networks, customized for specific cases in different web configurations or different devices from manufacturers.
 
-The following sections are a walk-through of these concepts and will describe the ideas behind it and give you examples. The examples use Cumulocity IoT's REST APIs as format. For usability with other programming languages, refer to the specified sections in the [Reference guide](/reference).
+The following sections are a walk-through of these concepts and will describe the ideas behind it and give you examples. The examples use {{< product-name-1 >}}'s REST APIs as format. For usability with other programming languages, refer to the specified sections in the [Reference guide](/reference).

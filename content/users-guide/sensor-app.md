@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Cumulocity IoT Sensor App
+title: var-product-name-1 Sensor App
 layout: bundle
 outputs:
 - html
@@ -8,4 +8,5 @@ outputs:
 aliases:
   - /users-guide/android-cloud-sensor-app
   - /users-guide/optional-services/#cumulocity-sensor-app
+  - /users-guide/cumulocity-sensor-app
 ---

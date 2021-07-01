@@ -6,7 +6,7 @@ layout: redirect
 
 Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
 
-Cumulocity IoT distinguishes between top-level groups and subgroups:
+{{< product-name-1 >}} distinguishes between top-level groups and subgroups:
 
 * **Top-level groups** are shown in the **Group** menu in the navigator at top-level.
 * **Subgroups** can be used to further subdivide top-level groups.

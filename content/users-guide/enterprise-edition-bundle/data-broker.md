@@ -24,7 +24,7 @@ Be aware of the following limitations of the data broker:
 * The {{< tenant-type-3 >}} cannot be used as data broker source tenant.
 * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
 * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant.
-* While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity IoT tenants which run on earlier Cumulocity IoT versions than the source.
+* While we provide backwards compatibility, we cannot ensure that data broker can send data to {{< product-name-1 >}} tenants which run on earlier {{< product-name-1 >}} versions than the source.
 
 <a name="data-broker-connectors"></a>
 ### Data connectors
@@ -105,7 +105,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 <br><br>
 The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
 <br><br>
-When selected, Cumulocity IoT will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
+When selected, {{< product-name-1 >}} will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
 <br><br>
 This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
 <br><br>
@@ -194,7 +194,7 @@ If the data broker is not able to connect to a destination tenant, a CRITICAL al
 
 #### Queue overflow
 
-On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity IoT cannot queue any further data, the oldest queued data is dropped. In this case, a MAJOR alarm is raised in the tenant, showing the connector which is affected.
+On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If {{< product-name-1 >}} cannot queue any further data, the oldest queued data is dropped. In this case, a MAJOR alarm is raised in the tenant, showing the connector which is affected.
 
 ![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
 

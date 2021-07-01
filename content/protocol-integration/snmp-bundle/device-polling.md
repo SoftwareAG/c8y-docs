@@ -114,7 +114,7 @@ The agent makes use of c8y core APIs (most notably inventory, identity, device c
 #### What are the ports used by the agent?
 
 Exposed Network Interfaces  (listening ports)
-The table below lists the default values for all inbound listening ports. All ports are configurable in the agent settings config file.
+The table below lists the default values for all inbound listening ports. All ports are configurable in the agent settings configuration file.
 
 | Default Port  | Protocol     | Remarks                 | Note         |
 | ------------- |:-------------| ----------------------- |:-------------|

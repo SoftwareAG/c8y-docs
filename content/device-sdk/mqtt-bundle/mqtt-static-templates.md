@@ -70,7 +70,7 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#operation-templates">Operation templates</a></strong>
 + <a href="#500">500 (get pending)</a>
 + <a href="#501">501,typeToSetToExecuting</a>
-+ <a href="#502">502,typeToSetToFailed,fialureReason</a>
++ <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 

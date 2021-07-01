@@ -6,7 +6,7 @@
 <div class="main-content">
   <article class="page-section">
     <header class="section-header">
-      <h1 class="text-light">{{replace (replace .Title "var-company-name-2" .Site.Params.companyname2) "var-tenant-type-2" .Site.Params.tenanttype2}}</h1>
+      <h1 class="text-light">{{replace (replace (replace .Title "var-company-name-2" .Site.Params.companyname2) "var-tenant-type-2" .Site.Params.tenanttype2)  "var-product-name-1" .Site.Params.productname1}}</h1>
     </header>
     {{if $headless }}
       <div class="lead">
@@ -25,7 +25,7 @@
       <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
         <span class="fa fa-link"></span>
       </button>
-      {{.Title}}</h2>
+      {{replace .Title "var-product-name-1" .Site.Params.productname1}}</h2>
     {{ partial "headline-hash.html" .Content }}
   </article>
   {{ end }}

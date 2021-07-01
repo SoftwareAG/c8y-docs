@@ -29,7 +29,7 @@ Annotation | Description
 
 ### Context support
 
-It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/concept) of microservices in Cumulocity IoT.
+It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/concept) of microservices in {{< product-name-1 >}}.
 
 `@UserScope` and `@TenantScope` at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
@@ -437,7 +437,7 @@ $ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://dem
 
 #### Hosted deployment
 
-> **Info**: For your convenience, Cumulocity IoT provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
+> **Info**: For your convenience, {{< product-name-1 >}} provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
 
 To deploy an application on an environment you need the following:
 

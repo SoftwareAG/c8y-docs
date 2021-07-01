@@ -247,7 +247,7 @@ Create the directory _src/main/configuration_ to contain a _cumulocity.json_ fil
   "apiVersion": "1",
   "version": "@project.version@",
   "provider": {
-    "name": "{{< company-name-1 >}} GmbH"
+    "name": "{{< company-name-1 >}}"
   },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [

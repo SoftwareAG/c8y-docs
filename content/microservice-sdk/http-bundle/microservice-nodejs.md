@@ -255,7 +255,7 @@ Create a microservice manifest *cumulocity.json* with the following content:
     "apiVersion": "1",
     "version": "1.0.0-SNAPSHOT",
     "provider": {
-        "name": "{{< company-name-1 >}} GmbH"
+        "name": "{{< company-name-1 >}}"
     },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [

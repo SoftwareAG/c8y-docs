@@ -111,7 +111,7 @@ The microservice manifest file _cumulocity.json_ is required for the application
     "apiVersion": "1",
     "version": "1.0.0",
     "provider": {
-        "name": "{{< company-name-1 >}} GmbH"
+        "name": "{{< company-name-1 >}}"
     },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [

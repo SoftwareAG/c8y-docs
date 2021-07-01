@@ -67,7 +67,7 @@ Your manifest file should look similar to this:
     "apiVersion": "1",
     "version": "@project.version@",
     "provider": {
-        "name": "{{< company-name-1 >}} GmbH"
+        "name": "{{< company-name-1 >}}"
     },
     "isolation": "PER_TENANT",
     "settings": [

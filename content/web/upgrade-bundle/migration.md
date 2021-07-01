@@ -26,7 +26,7 @@ c8ycli new cockpit cockpit
 
 When you run this command it provides you with a very simple file structure that contains the following files:
 
- - `app.module.ts`: An Angular entry module in which you can hook Angular routes. Note that for a Cumulocity IoT application you don't get access to the root element and therefore there is no root template (index.html) which you can modify.
+ - `app.module.ts`: An Angular entry module in which you can hook Angular routes. Note that for a {{< product-name-1 >}} application you don't get access to the root element and therefore there is no root template (index.html) which you can modify.
  - `package.json`: The package.json describes the dependencies and the application itself. The `c8y.upgrade: true` flag tells our webpack plugins to allow AngularJS plugins.
  - `ng1.ts`: Our default AngularJS plugins for the Cockpit application.
  - `index.ts`: The bootstrapping which is setup to bootstrap a hybrid application.

@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-The @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) platform API.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-name-1 >}}](http://www.{{< URL >}}) platform API.
 
 ### Installation
 
@@ -15,7 +15,7 @@ npm install @c8y/client
 
 ### Usage
 
-Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT REST API and
+Use `client.<endpoint>.list()` to request listed data from the {{< product-name-1 >}} REST API and
 `client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`.
 
 > In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/)).
@@ -46,7 +46,7 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT RE
 <tr>
 <td><code>list(filter)</code></td>
 <td>Request a list of data with an optional filter.</td>
-<td><code>filter:object</code>: (optional) A filter for query result paging, see<a href="https://cumulocity.com/api/#section/REST-implementation/REST-usage"> Inventory > Query language</a></td>
+<td><code>filter:object</code>: (optional) A filter for query result paging, see<a href="https://{{< URL >}}/api/#section/REST-implementation/REST-usage"> Inventory > Query language</a></td>
 <td><code>Promise&lt;IResultList&lt;TData&gt;&gt;</code>: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.</td>
 </tr>
 </tbody>
@@ -96,7 +96,7 @@ All fetch responses can be parsed to JSON if the content type is set correctly. 
 
 ### Authentication strategy
 
-In the Cumulocity IoT platform we currently allow two ways to authenticate:
+In the {{< product-name-1 >}} platform we currently allow two ways to authenticate:
 
  * Basic Auth: The authentication header is injected into each request.
  * Oauth: The client doesn't know about the authentication header. The header is set in a cookie.
@@ -110,7 +110,7 @@ await Client.authenticate({ tenant, user, password }), url);
 It internally creates a client instance and tries to contact the API to verify if the given credentials are correct. In some cases you need to use a more fine-grained authentication, e.g. when you don't know which authentication strategy the user is going to use. In this case you need to construct an own instance of the client and pass the authentication strategy to it:
 
 ```js
- const baseUrl = 'https://acme.cumulocity.com';
+ const baseUrl = 'https://acme.{{< URL >}}';
  const client = new Client(new CookieAuth(), baseUrl); // use here `new BasicAuth()` to switch to Basic Auth
  try {
   const { data, paging, res } = await client.user.currentUser();
@@ -148,7 +148,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 <tr>
 <td><code>list$(filter, options)</code></td>
 <td>Returns an observable for a list of entities.</td>
-<td><code>filter: object</code>: (optional) A filter for query result paging, see<a href="https://cumulocity.com/api/#section/REST-implementation/REST-usage"> Inventory > Query language</a> <br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
+<td><code>filter: object</code>: (optional) A filter for query result paging, see<a href="https://{{< URL >}}/api/#section/REST-implementation/REST-usage"> Inventory > Query language</a> <br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
 <td><code>ObservableList&lt;TData&gt;&gt;</code>: The list as subscribable observable.</td>
 </tr>
 </tbody>
@@ -191,6 +191,7 @@ Below some examples are provided which may help you to get started. To see a com
 
 
 #### Requesting list data from the inventory:
+
 ```js
 import { Client } from '@c8y/client';
 
@@ -213,6 +214,7 @@ const password = 'pw';
 ```
 
 #### Getting an observable of the inventory endpoint:
+
 ```js
 import { Client } from '@c8y/client';
 
@@ -235,6 +237,7 @@ const password = 'pw';
 ```
 
 #### Using realtime:
+
 ```js
 // realtime event
 const subscription = client.realtime.subscribe('/alarms/*', (data) => {
@@ -251,6 +254,7 @@ observableSubscription.unsubscribe();
 ```
 
 #### Authenticate in node.js
+
 The constructor `new Client([...])` initializes a new client which allows to request data from the API. Unlike to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
 
 ```js

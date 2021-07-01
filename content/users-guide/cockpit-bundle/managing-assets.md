@@ -74,7 +74,7 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 
 >**Info:** If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
-To navigate down in the asset hierarchy, use the navigator or the **Subassets** tab. To navigate up in the asset hierarchy, breadcrumbs may be configured in a custom application, see [Application configuration](/web/application-configuration/) in the *Web SDK guide*.
+Use the navigator, to navigate through the asset hierarchy.
 
 ### Asset details
 
@@ -130,12 +130,14 @@ The devices will be assigned to the selected group and shown as subassets in the
 ### To edit a group
 
 1. In the navigator, click a group to open it.
-2. In the **Subassets** tab, you can edit the name and description of the group. Switch to the **Info** tab, if you want to edit the notes.
+2. In the **Subassets** tab, you can edit the name and description of the group.
 
 
 ### To delete a group
 
 To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
+
+In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
 
 ### To unassign a device from a group

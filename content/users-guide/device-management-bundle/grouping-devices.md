@@ -26,6 +26,8 @@ To filter the groups for certain criteria, hover over the column headers and cli
 
 See also [Viewing devices > Filtering devices](/users-guide/device-management/#filtering-devices).
 
+Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#smart-groups) function.  
+
 Click a group to view its details. Per default, the **Subassets** tab is displayed.
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)

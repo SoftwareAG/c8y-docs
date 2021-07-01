@@ -1,4 +1,4 @@
-{{< company-name-1 >}}---
+---
 weight: 60
 layout: redirect
 title: Troubleshooting

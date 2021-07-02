@@ -13,18 +13,18 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
-1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
+1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
 
-2. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py* (A script that registers a demo device in Cumulocity IoT) and *CONFIG.json* to Machine Learning Workbench (MLW).
+2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py* (A script that registers a demo device in Cumulocity IoT) and *CONFIG.json* to Machine Learning Workbench (MLW).
 
-3. Select *CONFIG.json* in the **Data** folder and click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
+3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
 4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
-5. Select *DemoDeviceCreator.py* in the **Code** folder and click execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+5. Select *DemoDeviceCreator.py* in the **Code** folder and click the execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 
-Click **Tasks** in the navigator and click the *DemoDeviceCreator* task name, to display the status of the Python Execution in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the centre.
 
 Script to add a device named "DemoDevice" to Cumulocity IoT.
 
@@ -64,7 +64,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 #### Upload the model and Apama monitor to Cumulocity IoT
 
 1. Upload the attached model *iforest_demo.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
-2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of c_device_source with the ID of your registered device.
+2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of `c_device_source` with the ID of your registered device.
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
 

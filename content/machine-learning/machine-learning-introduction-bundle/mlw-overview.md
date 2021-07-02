@@ -14,4 +14,4 @@ Machine Learning Workbench is composed of the following components:
 | [mlw](/machine-learning/api-reference-mlw/) | Microservice | Microservice backend for Machine Learning Workbench |
 | [mlw-cdh](/machine-learning/api-reference-mlw/) | Microservice | Microservice backend with DataHub role for Machine Learning Workbench |
 
->**Info:** Subscription of exactly one microservice (mlw or mlw-cdh) is required to work with Machine Learning Workbench. To fetch data from [Cumulocity IoT DataHub](/datahub/datahub-overview/), subscription of mlw-cdh and DataHub is required..
+>**Info:** Subscription of exactly one microservice (mlw or mlw-cdh) is required to work with Machine Learning Workbench. To fetch data from [{{ < product-name-1 > }} DataHub](/datahub/datahub-overview/), subscription of mlw-cdh and DataHub is required.

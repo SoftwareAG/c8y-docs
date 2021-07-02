@@ -7,9 +7,9 @@ aliases:
   - /predictive-analytics/anomaly-detection/#prerequisites
 ---
 
-Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains training data set, demo scripts, test data set, PMML model and the EPL rule.
+Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains the training data set, demo scripts, the test data set, the PMML model and the EPL rule.
 
-Running the demo requires 
+Running the demo requires: 
 
 * Prior experience and understanding of data science processes.
 * Familiarity with Cumulocity IoT and its in-built apps.

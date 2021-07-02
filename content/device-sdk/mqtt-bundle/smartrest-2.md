@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-This section describes the SmartREST 2.0 payload format that can be used with the Cumulocity IoT MQTT implementation.
+This section describes the SmartREST 2.0 payload format that can be used with the {{< product-name-1 >}} MQTT implementation.
 
 SmartREST 2.0 was designed to make use of the MQTT protocol, so it may reduce the payload even more than the SmartREST 1.0 via HTTP.
 
@@ -153,7 +153,7 @@ A request template contains the following basic fields:
 <td style="text-align:left">String</td>
 <td style="text-align:left">INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION</td>
 <td style="text-align:left">Y</td>
-<td style="text-align:left">Cumulocity IoT API to be used</td>
+<td style="text-align:left">{{< product-name-1 >}} API to be used</td>
 </tr>
 <tr>
 <td style="text-align:left">response</td>
@@ -232,7 +232,7 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
 <td style="text-align:left">Boolean</td>
 <td style="text-align:left">true<br>false</td>
 <td style="text-align:left">Y</td>
-<td style="text-align:left">Whether the GET should be executed by Cumulocity IoT ID (=true) or externalId (=false)</td>
+<td style="text-align:left">Whether the GET should be executed by {{< product-name-1 >}} ID (=true) or externalId (=false)</td>
 </tr>
 <tr>
 <td style="text-align:left">externalIdType</td>
@@ -246,7 +246,7 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
 
 This enables you to query inventory in three different ways:
 
-**By Cumulocity IoT ID**
+**By {{< product-name-1 >}} ID**
 
 ```bash
 # Creation:

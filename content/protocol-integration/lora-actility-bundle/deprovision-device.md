@@ -4,7 +4,7 @@ title: Deprovisioning LoRa devices
 layout: redirect
 ---
 
-You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity IoT, but the device will be deleted in ThingPark.
+You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in {{< product-name-1 >}}, but the device will be deleted in ThingPark.
 
 To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**.
 

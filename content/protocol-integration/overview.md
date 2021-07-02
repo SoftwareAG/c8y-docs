@@ -4,7 +4,7 @@ title: Overview
 layout: bundle
 ---
 
-IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols.
+IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, {{< product-name-1 >}} supports various standard device protocols.
 
 <table>
 <colgroup>
@@ -36,7 +36,7 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
-<td style="text-align:left">Enables the communication between the Cumulocity IoT platform and an OPC UA server via a OPC UA gateway.</td>
+<td style="text-align:left">Enables the communication between the {{< product-name-1 >}} platform and an OPC UA server via a OPC UA gateway.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/sigfox">Sigfox</a></td>

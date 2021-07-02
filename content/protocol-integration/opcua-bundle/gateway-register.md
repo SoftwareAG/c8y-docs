@@ -72,12 +72,12 @@ The following properties can be manually configured in the YAML file:
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-  # This is the base URL pointing to the Cumulocity IoT platform. This must always be customized in an application profile.
+  # This is the base URL pointing to the {{< product-name-1 >}} platform. This must always be customized in an application profile.
   baseUrl: http://localhost
-  # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
-  # want to configure the Cumulocity IoT SDK to always use the baseURL provided during initialization.
+  # This is an internal setting of the {{< product-name-1 >}} SDK. It is set to true, because we typically
+  # want to configure the {{< product-name-1 >}} SDK to always use the baseURL provided during initialization.
   # Otherwise, the gateway would use the links in the `self` fragment of the core API responses as the host name.
-  # This is helpful in deployment scenarios where the Cumulocity IoT instance is
+  # This is helpful in deployment scenarios where the {{< product-name-1 >}} instance is
   # reachable only with an IP address.
   forceInitialHost: true
 
@@ -183,7 +183,7 @@ gateway:
   # Mapping-specific settings
   mappings:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-    # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels.
+    # allows to configure how OPC UA severity is mapped into {{< product-name-1 >}} severity levels.
     alarmSeverityMap:
       1001: CRITICAL
       801: CRITICAL
@@ -240,15 +240,15 @@ gateway:
   platform:
     inventory:
       update:
-        # Default processing mode for inventory managed objects update to the Cumulocity IoT platform.
+        # Default processing mode for inventory managed objects update to the {{< product-name-1 >}} platform.
         defaultProcessingMode: QUIESCENT
-        # Processing mode for inventory update of the gateway device managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of the gateway device managed objects to the {{< product-name-1 >}} platform.
         gateway:
           processingMode: QUIESCENT
-        # Processing mode for inventory update of the OPC UA server device managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of the OPC UA server device managed objects to the {{< product-name-1 >}} platform.
         server:
           processingMode: QUIESCENT
-        # Processing mode for inventory update of value-map managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of value-map managed objects to the {{< product-name-1 >}} platform.
         valuemap:
           processingMode: QUIESCENT
     # Connection pool configuration

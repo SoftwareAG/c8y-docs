@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To process data from LoRa devices, Cumulocity IoT needs to understand the payload format of the devices. Mapping a payload data to Cumulocity IoT data can be done by creating a LoRa device protocol.
+To process data from LoRa devices, {{< product-name-1 >}} needs to understand the payload format of the devices. Mapping a payload data to {{< product-name-1 >}} data can be done by creating a LoRa device protocol.
 
 During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
@@ -62,9 +62,9 @@ In the upcoming window, configure the relevant values as shown in this example.
 **New value window part 2**
 ![LoRa protocol add new value](/images/device-protocols/lora-actility/lora-protocols-newvalue2.png)
 
-The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
+The value configuration maps the value in the payload of a message type to the {{< product-name-1 >}} data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification and map it to the Cumulocity IoT data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification and map it to the {{< product-name-1 >}} data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 

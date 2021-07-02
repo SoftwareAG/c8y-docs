@@ -65,7 +65,7 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">lwm2m server uri</td>
-<td style="text-align:left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-name-1 >}} service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align:left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-name-1 >}} service the hostname of the LWM2M server is "lwm2m.{{< URL >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
@@ -105,7 +105,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-name-1 >}} service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-name-1 >}} service the hostname of the LWM2M server is "lwm2m.{{< URL >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>

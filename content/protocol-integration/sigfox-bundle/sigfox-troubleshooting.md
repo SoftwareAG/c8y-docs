@@ -25,7 +25,7 @@ To verify whether your setup is correct, execute the following REST API request:
 	GET {{url}}/tenant/currentTenant
 	```
 
-> **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://cumulocity.com/api/#tag/Tenants) in the {{< OpenAPI >}}.
+> **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< URL >}}/api/#tag/Tenants) in the {{< OpenAPI >}}.
 
 #### No Sigfox provider settings are found
 

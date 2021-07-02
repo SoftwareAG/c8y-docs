@@ -16,7 +16,7 @@ For example, to connect to a tenant, first a profile named *application-myTenant
 
 ```yaml
 C8Y:
-    baseUrl: https://<<yourTenant>>.cumulocity.com
+    baseUrl: https://<<yourTenant>>.{{< URL >}}
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
@@ -97,7 +97,7 @@ gateway:
 
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
-  # Contact product support (https://cumulocity.com/guides/<latest-release>/welcome/contacting-support/)
+  # Contact product support (https://{{< URL >}}/guides/<latest-release>/welcome/contacting-support/)
   # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap

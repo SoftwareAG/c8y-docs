@@ -315,7 +315,7 @@ Now download is possible with the self link provided inside the managedObjects s
 
 For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
 
-For 10.9 and later, refer to [binaries API](https://www.cumulocity.com/api/#tag/Binaries) in the {{< OpenAPI >}}.
+For 10.9 and later, refer to [binaries API](https://www.{{< URL >}}/api/#tag/Binaries) in the {{< OpenAPI >}}.
 
 
 ### Write value

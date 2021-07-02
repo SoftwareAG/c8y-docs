@@ -81,7 +81,7 @@ See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
 **Step 1 - Install Apama**
 
-If you have licensed Apama, install it using Software AG Installer.
+If you have licensed Apama, install it using {{< sag-installer >}}.
 
 You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it. 
 

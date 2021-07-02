@@ -165,7 +165,7 @@ monit restart opcua_mgmt_service_proc
 
 	- Subscribe the Streaming Analytics app to the edge tenant.
 
-		>**Important:** To subscribe the application, the user must have "Tenant Manager" role.
+		>**Important:** To subscribe the application, you must have the *Tenant Manager** role.
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
@@ -175,7 +175,7 @@ Restoring the Streaming Analytics application completes the migration procedure.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
 
->**Important:** To enable the microservice hosting feature, the user must have "Tenant Manager" role.
+>**Important:** To enable the microservice hosting feature, you must have the **Tenant Manager** role.
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 

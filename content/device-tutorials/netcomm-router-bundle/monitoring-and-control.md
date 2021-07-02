@@ -3,19 +3,20 @@ title: Remote monitoring and control of industrial assets
 weight: 40
 ---
 
-### <a name="gpio"></a> Using GPIO
+<a name="gpio"></a>
+### Using GPIO
 
 The following GPIO functionalities are supported:
 
-* Send the voltage of an analog input as measurements to the Cumulocity IoT platform.
+* Send the voltage of an analog input as measurements to the {{< product-name-1 >}} platform.
 * Raise or clear alarms when a digital input turns 1 or 0, respectively.
-* Write to a digital output remotely from the Cumulocity IoT platform.
+* Write to a digital output remotely from the {{< product-name-1 >}} platform.
 
 Consult the documentation of your router for more information about its specific IO settings. The available functionalities may vary between different router models. For example, the NTC-220 supports GPIO pins 1-3.
 
 #### Analog input
 
-To regularly poll the input voltage of a GPIO pin and send it to the Cumulocity IoT platform, set [**GPIO analog measurements**](#configure) to a non-zero value. Alternatively, use the [device shell](#device-shell).
+To regularly poll the input voltage of a GPIO pin and send it to the {{< product-name-1 >}} platform, set [**GPIO analog measurements**](#configure) to a non-zero value. Alternatively, use the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.gpio.interval=<seconds>
@@ -64,14 +65,15 @@ Digital outputs can be controlled using the "Relay array control" widget, see th
 
 ![Relay Array Widget](/images/device-demos/casa-system-router/router-relay-array.png)
 
-### <a name="modbus"></a> Cloud Fieldbus
+<a name="modbus"></a>
+### Cloud Fieldbus
 
-You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and serial port, respectively, and manage them remotely in Cumulocity IoT. To do so, you need to follow these steps.
+You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and serial port, respectively, and manage them remotely in {{< product-name-1 >}}. To do so, you need to follow these steps.
 
 For Modbus-TCP setup:
 
 * Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP slaves.
-* Configure the Modbus-TCP port in the Cumulocity IoT menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
+* Configure the Modbus-TCP port in the {{< product-name-1 >}} menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
 
 For Modbus-RTU setup:
 
@@ -86,19 +88,20 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router a
 
 * Make sure to turn off all serial port related functionalities on the router, e.g. PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
-> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it’s empty or you need to configure a different port, it can be configured in the Cumulocity IoT menu in the web UI of the router, see [Configuring the router](#configure).
+> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it’s empty or you need to configure a different port, it can be configured in the {{< product-name-1 >}} menu in the web UI of the router, see [Configuring the router](#configure).
 >
 >Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter’s manufacturer about how to disable it.
 
 Then:
 
-* Subscribe your account to the Cloud Fieldbus feature by contacting [product support](/about-doc/contacting-support).
+* Subscribe your account to the Cloud Fieldbus feature by contacting [product support](/welcome/contacting-support/).
 * Configure the Modbus communication as described in [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) in the *Protocol integration guide*.
-* Enable or disable write permission by setting the “Modbus read only” property in the Cumulocity IoT menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
+* Enable or disable write permission by setting the “Modbus read only” property in the {{< product-name-1 >}} menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
 
-### <a name="remote-access"></a> Cloud Remote Access
+<a name="remote-access"></a>
+### Cloud Remote Access
 
-If your device supports VNC, Telnet or SSH remote access, you can remotely manage it via Cumulocity IoT.
+If your device supports VNC, Telnet or SSH remote access, you can remotely manage it via {{< product-name-1 >}}.
 
 As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an endpoint with appropriate IP and port in the **Remote Access** tab of a particular device in the Device Management application. If you click **Connect**, the display content of your remote server will be shown in a new browser window.
 

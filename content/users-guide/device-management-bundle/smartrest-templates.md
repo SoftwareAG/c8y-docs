@@ -6,9 +6,9 @@ layout: redirect
 
 ### Introduction
 
-SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-name-1 >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-To ease the device integration, Cumulocity IoT supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Device SDK guide](/device-sdk/mqtt#static-templates).
+To ease the device integration, {{< product-name-1 >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Device SDK guide](/device-sdk/mqtt#static-templates).
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator.
 
@@ -80,19 +80,42 @@ A response template contains the necessary information to extract data values fr
 
 2. Complete the following fields:
 
-	|Field|Description|
-|:---|:---|
-|Response ID|Unique integer that will be used as a response identifier.
-|Name|Name for the response. Mandatory.
-|Base Pattern|Base pattern for the response.
-|Condition|Condition value of the response.
-|Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
+<table>
+<col style="width: 10%;">
+<col style="width: 90%;">
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Response ID</td>
+<td align="left">Unique integer that will be used as a response identifier.</td>
+</tr>
+<tr>
+<td align="left">Base Pattern</td>
+<td align="left">Path in a JSON document. The base pattern acts as a prefix to all patterns. You can enter either a base pattern here and add patterns with only the subpath below the base pattern, or leave this field empty and provide patterns with the full path.</td>
+</tr>
+<tr>
+<td align="left">Condition</td>
+<td align="left">Condition value of the response.</td>
+</tr>
+<tr>
+<td align="left">Pattern</td>
+<td align="left">At least one pattern is required. Click <b>Add pattern</b> and enter a pattern value.</td>
+</tr>
+</tbody>
+</table>
 
-	![Add template response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+![Add template with filled out response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Click **Save**.
 
 The response will be added to the SmartREST template.
+
+For further information see [Templates > SmartREST](/reference/smartrest/#response-templates) in the *Reference guide*.
 
 #### To remove a response
 

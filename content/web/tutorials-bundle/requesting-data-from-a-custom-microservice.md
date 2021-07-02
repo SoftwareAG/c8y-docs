@@ -19,7 +19,7 @@ The client handles HTTP requests from the browser (or if desire from node.js) to
 Currently, there are two possible authentication methods:
 
  - `BasicAuth`: Adds a header to each request with the authentication details (less secure, as the password can be read by JavaScript).
- - `CookieAuth`: Reads a cookie set by the backend which allows accessing the platform. As on each HTTP request a cookie is sent, there is no particular authentication handling in this method except that these methods also set an `XSRF-TOKEN` header to prevent cross-side scripting attacks.
+ - `CookieAuth`: Reads a cookie set by the backend which allows accessing the platform. As on each HTTP request a cookie is sent, there is no particular authentication handling in this method except that these methods also set an `XSRF-TOKEN` header to prevent cross-site scripting attacks.
 
 When you set the authentication method on a new client instance you can define which authentication to use. The client then returns an object with all common endpoints of the platform. For example, the following example requests data from the inventory via `BasicAuth`:
 
@@ -28,7 +28,7 @@ const client = new Client(new BasicAuth({
   user: 'admin',
   password: 'password',
   tenant: 'acme'
-}), 'https://acme.cumulocity.com');
+}), 'https://acme.{{< URL >}}');
 try {
  const { data, paging, res } = await client.inventory.list();
  console.log('Login with admin:password successful');

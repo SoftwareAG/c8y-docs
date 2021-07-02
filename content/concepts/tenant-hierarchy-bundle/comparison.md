@@ -6,15 +6,15 @@ layout: redirect
 
 ### Introduction
 
-When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. Cumulocity IoT can help you with that in two different ways.
+When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-name-1 >}} can help you with that in two different ways.
 
-The first is **role-based access control (RBAC)** that is part of every tenant in the Cumulocity IoT platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
+The first is **role-based access control (RBAC)** that is part of every tenant in the {{< product-name-1 >}} platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
-On top of that the Cumulocity IoT platform in general is a **multi-tenant platform** which also gives you the ability to create your own subtenants, which function like any other tenant in the platform.
+On top of that the {{< product-name-1 >}} platform in general is a **multi-tenant platform** which also gives you the ability to create your own subtenants, which function like any other tenant in the platform.
 
 This will leave you with two options to organize your customers. You can either create a tenant for each of your customers or you can manage multiple customers within a single tenant and protect them from each other using RBAC.
 
-In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. Cumulocity IoT is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
+In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. {{< product-name-1 >}} is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
 
 >**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
 
@@ -47,7 +47,8 @@ The following tasks should be covered by a platform solution:
 
 The following sections discuss how these tasks are handled in both approaches.
 
-#### <a name="customer-onboarding"></a> Customer onboarding
+<a name="customer-onboarding"></a>
+#### Customer onboarding
 
 <table>
 <thead>
@@ -72,7 +73,8 @@ The following sections discuss how these tasks are handled in both approaches.
 
 The creation of a new customer is equally simple. However, you need to consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
 
-#### <a name="device-registration"></a>Device registration
+<a name="device-registration"></a>
+#### Device registration
 
 <table>
 <thead>
@@ -97,7 +99,8 @@ The creation of a new customer is equally simple. However, you need to consider 
 
 There is no technical limitation on who registers the device on the platform. However, care should be taken with the RBAC approach since customers can more easily make an incorrect configuration which registers the device without the customers being able to see it.
 
-#### <a name="access-rights"></a>Access Rights
+<a name="access-rights"></a>
+#### Access Rights
 
 <table>
 <thead>
@@ -112,7 +115,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">There are two types of roles in Cumulocity IoT – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you need to use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles need to be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
+<td style="text-align:left">There are two types of roles in {{< product-name-1 >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you need to use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles need to be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
 <td style="text-align:left">As the tenant is completely separated from all other customers you do not necessarily need to be involved in setting up the access rights of the customer. If customers are given administration rights for their tenants they can set up permissions on their own. It is not possible for customers to have any sight or knowledge of other customers.</td>
 </tr>
 </tbody>
@@ -125,7 +128,8 @@ In the RBAC approach, managing access is the most complicated part as a misconfi
 For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
 
 
-#### <a name="user-management"></a>User management
+<a name="user-management"></a>
+#### User management
 
 <table>
 <thead>
@@ -150,7 +154,8 @@ For security aspects on access control see [Security aspects > Access control](/
 
 Having a separate tenant for each customer they will not be limited with respect to user management and can fully utilize all management functionality. In the RBAC approach you can delegate certain management functionality and the platform will make sure that users can never overstep their boundaries. However, certain functionality like creating roles will only be available to full user management admins.
 
-#### <a name="application management"></a>Application management
+<a name="application management"></a>
+#### Application management
 
 <table>
 <thead>
@@ -166,7 +171,7 @@ Having a separate tenant for each customer they will not be limited with respect
 <tbody>
 <tr>
 <td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the Management tenant. This does not apply for UI applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< tenant-type-3 >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>
@@ -175,7 +180,8 @@ Having a separate tenant for each customer they will not be limited with respect
 
 Application management is only available on tenant level. If you want to give customers the ability to extend the platform on their own you will need to go for a separate customer tenant. In the RBAC approach you need to take care of the application management but it is still possible to have different applications for different customers. This is easily doable for UI applications however if you add microservices you need to manage it via access rights as the microservice is generally available for the whole tenant.
 
-#### <a name="usage-data"></a>Invoicing and usage data
+<a name="usage-data"></a>
+#### Invoicing and usage data
 
 <table>
 <thead>
@@ -201,7 +207,8 @@ Application management is only available on tenant level. If you want to give cu
 
 Choosing the RBAC approach limits you in the options for your business model as it will be impossible to get accurate usage data for the customers. A license based business model (e.g. per device) is far more feasible in the RBAC setup. Dealing with a multi-tenant setup gives you the option to choose typical Cloud-based business models where you charge per API call and storage.
 
-#### <a name="analytics"></a>Analytics
+<a name="analytics"></a>
+#### Analytics
 
 <table>
 <thead>
@@ -227,6 +234,6 @@ Choosing the RBAC approach limits you in the options for your business model as 
 
 If you are dealing with a single tenant it will be easier to do analytics across all devices of all customers but it might be more complicated to do separate analytics for just one customer. Having the data spread across multiple tenants will take additional effort to collect the data in one place for such use cases. However, it will ease deployment of custom analytics solutions per customer.
 
-##### Cumulocity IoT DataHub
+##### {{< product-name-1 >}} DataHub
 
-Cumulocity IoT DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.
+{{< product-name-1 >}} DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.

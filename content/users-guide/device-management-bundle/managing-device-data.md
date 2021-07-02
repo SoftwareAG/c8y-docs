@@ -21,9 +21,10 @@ All features are accessible through the **Management** menu in the navigator:
 
 ![Management menu](/images/users-guide/DeviceManagement/devmgmt-management-menu.png)
 
-### <a name="firmware-repo"></a> Managing device firmware
+<a name="firmware-repo"></a>
+### Managing device firmware
 
-In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
+In the firmware repository, {{< product-name-1 >}} offers to collect reference firmware for devices.
 
 Only one firmware package version can be applied per device.
 
@@ -132,7 +133,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 ##### To install/update firmware on multiple devices
 
-Cumulocity IoT offers the option to execute firmware updates for multiple devices at once.
+{{< product-name-1 >}} offers the option to execute firmware updates for multiple devices at once.
 
 1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
@@ -144,9 +145,10 @@ Moreover, the operation details are shown in the **Control** tab of the selected
 
 >**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
 
-### <a name="software-repo"></a> Managing device software
+<a name="software-repo"></a>
+### Managing device software
 
-In the software repository, Cumulocity IoT offers to collect reference software for devices. Multiple software packages can be installed on a device.
+In the software repository, {{< product-name-1 >}} offers to collect reference software for devices. Multiple software packages can be installed on a device.
 
 #### Viewing software
 
@@ -254,7 +256,7 @@ Hover over the software entry which you want to delete and click the delete icon
 
 ##### To install software on multiple devices
 
-Cumulocity IoT offers the option to execute software updates for multiple devices at once.
+{{< product-name-1 >}} offers the option to execute software updates for multiple devices at once.
 
 1. Execute the software operation (install or update) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
@@ -266,9 +268,10 @@ Moreover, the operation details are shown in the **Control** tab of the selected
 
 >**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
 
-### <a name="configuration-repository"></a>Managing configurations
+<a name="configuration-repository"></a>
+### Managing configurations
 
-Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
+{{< product-name-1 >}} allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
@@ -276,7 +279,8 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### <a name="add-snapshot"></a> To add a configuration snapshot
+<a name="add-snapshot"></a>
+#### To add a configuration snapshot
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique name.
@@ -346,7 +350,8 @@ To apply a configuration snapshot to a device which supports multiple configurat
 
 > **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 
-### <a name="credentials"></a>Managing device credentials
+<a name="credentials"></a>
+### Managing device credentials
 
 The **Device credentials** page lists all credentials that have been generated for your connected devices. Each device that has been [registered](#dev-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
@@ -387,7 +392,8 @@ The device credentials will be permanently deleted.
 
 Deleting device credentials might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](#dev-registration) to re-register the device.
 
-### <a name="device-profiles"></a>Managing device profiles
+<a name="device-profiles"></a>
+### Managing device profiles
 
 Device profiles represent a combination of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
 
@@ -413,7 +419,8 @@ Click **Add device profile** at the right of the top menu bar, to add a new devi
 
 In the **Add device profile** window, provide a name for the profile and optionally enter one or more device types. If a device type is provided, the device profile can only be assigned to devices of the specified type. If left empty, it will be available for all device types.
 
-#### <a name="to-add-items"></a>To add items to a device profile
+<a name="to-add-items"></a>
+#### To add items to a device profile
 
 In the device profile details, you can add firmware versions, software packages and configuration files.
 
@@ -474,7 +481,8 @@ Moreover, you can filter for devices in the devices list based on their applied 
 ![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 
 
-#### <a name="to-apply-profiles-to-single-devices"></a>To apply device profiles to a single device
+<a name="to-apply-profiles-to-single-devices"></a>
+#### To apply device profiles to a single device
 
 Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
 
@@ -484,7 +492,8 @@ Device profiles can be applied to individual devices in the **Device Profile** t
 
 2. Click **Assign device profile** to start the update operation.
 
-#### <a name="to-apply-profiles-to-multiple-devices"></a>To apply device profiles to multiple devices
+<a name="to-apply-profiles-to-multiple-devices"></a>
+#### To apply device profiles to multiple devices
 
 Device profiles can be applied to multiple devices by using bulk operations.
 
@@ -497,9 +506,10 @@ The devices will install the firmware, software and configurations items of the 
 >**Info:** When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
 
 
-### <a name="trusted-certificates"></a> Managing trusted certificates
+<a name="trusted-certificates"></a>
+### Managing trusted certificates
 
-Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. A certificate is trusted when it is added to the trusted certificates and is in activated state.
+{{< product-name-1 >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-name-1 >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 >**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the Device SDK guide.
 
@@ -527,7 +537,7 @@ Before adding a new trusted certificate, make sure that:
 * It s a X.509 certificate in PEM format.
 * It is in version 3.
 * It contains `BasicConstraints:[CA:true]`.
-* It has not already been uploaded to Cumulocity IoT.
+* It has not already been uploaded to {{< product-name-1 >}}.
 * It is still valid (not expired).
 
 To add a certificate perform these steps:
@@ -540,7 +550,7 @@ To add a certificate perform these steps:
 
 | Field             | Description                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| Certificate name  | User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.         |
+| Certificate name  | User-provided name for the certificate. This name is not used by {{< product-name-1 >}} and can serve as a description of the certificate.         |
 | Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.            |
 | Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |

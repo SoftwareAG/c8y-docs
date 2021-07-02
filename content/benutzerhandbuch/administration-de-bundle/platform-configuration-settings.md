@@ -1,0 +1,66 @@
+---
+weight: 80
+title: Plattform-Konfigurationseinstellungen
+layout: redirect
+---
+
+<a name="config-platform"></a>
+
+Vom Management-Mandanten aus können Sie Attribute konfigurieren, die global für die gesamte Cumulocity IoT-Bereitstellung gelten.
+
+Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Konfiguration** aufzurufen.
+
+![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
+
+Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im Enterprise Tenant verfügbar. Weitere Informationen finden Sie unter [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de/#customization).
+
+Darüber hinaus können die folgenden Einstellungen nur im Management-Mandanten konfiguriert werden.
+
+### Passwörter
+
+Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
+
+![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
+
+<a name="config-support-users"></a>
+###  Supportbenutzer
+
+Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
+
+Diese Funktion gibt den Anbietern der Cumulocity IoT-Plattform (im Falle von Public-Cloud-Instanzen die Software AG und bei lokalen Installation der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+
+Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
+
+* *true*: Supportbenutzerzugriff ist standardmäßig für alle Untermandanten aktiviert. Ein Supportbenutzer kann sich bei jedem Untermandanten als beliebiger Benutzer anmelden. Beachten Sie, dass Untermandanten-Benutzer den Zugriff nicht selbst deaktivieren können.
+* *false*: Supportbenutzerzugriff ist für alle Untermandanten deaktiviert, kann aber für einen Untermandanten explizit aktiviert werden. Ein Supportbenutzer kann sich nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
+* Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem der Supportbenutzerzugriff aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
+
+Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
+
+Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
+
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Enterprise Tenant > Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
+
+<a name="configuring-support-users"></a>
+#### Konfigurieren eines Supportbenutzers
+
+Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen. Dieser Benutzer kann sich beim Zielmandanten anmelden und sich als Zielbenutzer ausgeben.
+
+Um einen Benutzer im Management-Mandanten als Supportbenutzer zu konfigurieren, müssen Sie dem Benutzer die entsprechenden Rollen zuweisen. Dies kann entweder durch Verwendung einer globalen Rolle oder durch Verwendung von Stammdatenrollen erfolgen.  
+
+**Verwendung einer globalen Rolle**
+
+1. Erstellen Sie eine Rolle "Support" mit der Berechtigung "Support READ" und "Support ADMIN".
+2. Weisen Sie die Rolle "Support" dem entsprechenden Benutzer zu und entfernen Sie alle anderen Rollen für den Benutzer.
+
+**Verwendung von Stammdatenrollen**
+
+Mit Stammdatenrollen können Sie einen Supportbenutzer selektiv spezifischen Untermandanten zuweisen.
+
+1. Erstellen Sie eine Stammdatenrolle namens "Support" mit Typ = "*" und Berechtigung = "Alle".
+2. Erstellen Sie eine Gruppe aller Untermandanten, die vom Benutzer unterstützt werden sollen.
+3. Weisen Sie die Stammdatenrolle "Support" der oben genannten Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen zu Benutzern](/benutzerhandbuch/administration-de#attach-inventory) beschrieben.
+
+> **Info:** Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.

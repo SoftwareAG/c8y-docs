@@ -4,7 +4,8 @@ title: Troubleshooting
 layout: redirect
 ---
 
-### <a name="lora-loriot-registration-troubleshooting"></a> Device registration
+<a name="lora-loriot-registration-troubleshooting"></a>
+### Device registration
 
 #### No LoRa device registered in Cumulocity IoT after configuring the Loriot agent endpoint in the LORIOT Network Server account.
 

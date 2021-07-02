@@ -12,4 +12,4 @@ After uploading the microservice, the internal deployment and container run may 
 
 ##### I get a message error saying "The current .NET SDK does not support targeting .NET Core 3.1."
 
-This error will appear if you try running the SDK on Visual Studio 2017 or lower. The current version of the Cumulocity IoT Microservices SDK (1006.6.0) is compatible with .NET Core 3.1 and Visual Studio 2019, and it is a prerequisite for developing applications.
+This error will appear if you try running the SDK on Visual Studio 2017 or lower. The current version of the {{< product-name-1 >}} Microservices SDK (1006.6.0) is compatible with .NET Core 3.1 and Visual Studio 2019, and it is a prerequisite for developing applications.

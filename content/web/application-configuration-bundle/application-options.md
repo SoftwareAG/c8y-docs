@@ -43,7 +43,7 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and Enterprise tenant customization.
+Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and {{< tenant-type-2 >}} customization.
 As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options
@@ -56,7 +56,8 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Built-in Options
 
-Refer to the [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options. These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
+Refer to the [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options.
+These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
 
 > **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places:
 >

@@ -6,9 +6,9 @@ aliases:
   -/users-guide/optional-services/#connectivity
 ---
 
-The Connectivity agent, which works from within the Cumulocity IoT Device Management application, provides basic information on mobile devices and additional connectivity details.
+The Connectivity agent, which works from within the {{< product-name-1 >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
-Cumulocity IoT integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, Cumulocity IoT provides an experimental implementation. For more details, please contact [product support](/about-doc/contacting-support).
+{{< product-name-1 >}} integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, {{< product-name-1 >}} provides an experimental implementation. For more details, please contact [product support](/welcome/contacting-support/).
 
 The following features are supported by these providers:
 
@@ -25,6 +25,13 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](https://{{< URL >}}/api/#section/Device-management-library/Device-information) fragment of the managed object. This is used to properly map the managed object in Cumulocity IoT to the associated SIM on the respective provider's platform.
+
+|Requires|Jasper|Ericsson|Comarch|Kite|
+|:------|:-----|:-------|:------|:------|
+|ICCID|x| |x|x|
+|MSISDN| |x| | |
+
 The following description is primarily based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.
 
 <img src="/images/users-guide/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">
@@ -32,16 +39,17 @@ The following description is primarily based on Jasper, but the same configurati
 The following sections describe:
 
 * How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#connectivity) to the SIM provider in your Cumulocity IoT tenant
+* How to configure the [connectivity](#connectivity-configuration) to the SIM provider in your {{< product-name-1 >}} tenant
 * How to [link SIMs](#link-sims) and mobile devices
 * Which information is shown in the [Connectivity tab](#jasperinfo)
 * How to [manage connectivity](#managing) from Device Management
 
-### <a name="link-account"></a>Setting up your Jasper Control Center account
+<a name="link-account"></a>
+### Setting up your Jasper Control Center account
 
-The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from Cumulocity IoT to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity IoT.
+The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-name-1 >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-name-1 >}}.
 
->**Info:** In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to Cumulocity IoT. Ask your administrator or our support team for further information.
+>**Info:** In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-name-1 >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page.
 Your API license key and the API server URL are displayed on the top left.
@@ -51,21 +59,21 @@ To create a user in Jasper Control Center perform the following steps:
 1. As an admin user, navigate to **Admin** and **Users**.
 1. Click **Create New**.
 1. Enter the user name and further details of the user.
-1. If you want to be able to activate and deactivate SIM cards from Cumulocity IoT, or to send SMS from Cumulocity IoT, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
+1. If you want to be able to activate and deactivate SIM cards from {{< product-name-1 >}}, or to send SMS from {{< product-name-1 >}}, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
 1. Click **OK** to create the user, then enter your admin password and click **OK** again.
 
 ![Jasper user management](/images/users-guide/connectivity/connectivity-jasperadmin.png)
 
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
+<a name="connectivity-configuration"></a>
+### Configuring the connectivity for the SIM provider in {{< product-name-1 >}}
 
-### <a name="connectivity"></a>Configuring the connectivity for the SIM provider in Cumulocity IoT
+Process the following step to configure the connectivity in {{< product-name-1 >}}:
 
-Process the following step to configure the connectivity in Cumulocity IoT:
-
-1. Use a Cumulocity IoT administrator user to log into the Cumulocity IoT platform.
+1. Use a {{< product-name-1 >}} administrator user to log into the {{< product-name-1 >}} platform.
 1. Switch to the Administration application.
-1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/about-doc/contacting-support) to make the Connectivity agent available in your tenant.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
@@ -77,7 +85,8 @@ The configuration of the Kite provider differs from other providers as it requir
 
 The Connectivity agent is now set up.
 
-### <a name="link-sims"></a>Linking SIMs and mobile devices
+<a name="link-sims"></a>
+### Linking SIMs and mobile devices
 
 Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown,
 
@@ -89,7 +98,7 @@ To assign permissions, navigate to the Administration application and make sure 
 
 <img src="/images/users-guide/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
-Jasper and Comarch identify SIM cards through their ICCID (Integrated Circuit Card Identifier). Ericsson is using MSISDN (Mobile Station International Subscriber Directory Number) instead. In most cases, devices will report the ICCID and MSISDN of their SIM card automatically to Cumulocity IoT.
+Jasper and Comarch identify SIM cards through their ICCID (Integrated Circuit Card Identifier). Ericsson is using MSISDN (Mobile Station International Subscriber Directory Number) instead. In most cases, devices will report the ICCID and MSISDN of their SIM card automatically to {{< product-name-1 >}}.
 
 If the ICCID is not shown automatically check the following:
 
@@ -97,12 +106,13 @@ If the ICCID is not shown automatically check the following:
 * Enter the ICCID in the **Info** tab, then click **Save**.
 * Click **Reload** in the top menu bar to make the **Connectivity** tab appear.
 
-> Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity IoT checks if the particular SIM card is managed by the SIM provider.
+> Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-name-1 >}} checks if the particular SIM card is managed by the SIM provider.
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
 
-### <a name="jasperinfo"></a>Connectivity tab
+<a name="jasperinfo"></a>
+### Connectivity tab
 
 In the **Connectivity** tab you will find the following sections:
 
@@ -149,22 +159,24 @@ The **Audit logs** section lists all changes to the SIM card and its tariff. It 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
 
-### <a name="managing"></a>Checking connectivity
+<a name="managing"></a>
+### Checking connectivity
 
-If you suspect that a device is not correctly reporting to Cumulocity IoT, or it is not receiving commands, you can verify the connectivity status of the device.
+If you suspect that a device is not correctly reporting to {{< product-name-1 >}}, or it is not receiving commands, you can verify the connectivity status of the device.
 
 In the **Connectivity** tab, check if
 
 * the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/connectivity/connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
- * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.
- * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
-* The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
- * The APN settings are incorrectly configured in the device.
- * The SIM card is over traffic limit.
- * Data roaming is disabled on the device and the device is not in the SIM card's home network.
- * Data roaming for the particular network is not included in the SIM card's plan.
- * The SIM configuration was changed.
+
+  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.
+  * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
+  * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
+  * The APN settings are incorrectly configured in the device.
+  * The SIM card is over traffic limit.
+  * Data roaming is disabled on the device and the device is not in the SIM card's home network.
+  * Data roaming for the particular network is not included in the SIM card's plan.
+  * The SIM configuration was changed.
 
 Data connectivity can be analyzed in various places:
 
@@ -176,7 +188,7 @@ Data connectivity can be analyzed in various places:
 
 > The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
 
-If the device is still not reporting to Cumulocity IoT, there may be a configuration or software problem on the device.
+If the device is still not reporting to {{< product-name-1 >}}, there may be a configuration or software problem on the device.
 
 * The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management/#connecting-devices).
 * There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.

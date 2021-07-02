@@ -5,7 +5,7 @@ title: Events
 layout: redirect
 ---
 
-Events are used to pass real-time information through Cumulocity IoT.
+Events are used to pass real-time information through {{< product-name-1 >}}.
 
 Events come in three types:
 
@@ -87,4 +87,4 @@ This is an example of an alarm that has been cleared:
 	...
 }</code></pre>
 
-More detailed information can be found in [Events](https://cumulocity.com/api/#tag/Events), [Alarms](https://cumulocity.com/api/#tag/Alarms) and [Audits](https://cumulocity.com/api/#tag/Audits) in the Cumulocity IoT OpenAPI Specification.
+More detailed information can be found in [Events](https://{{< URL >}}/api/#tag/Events), [Alarms](https://{{< URL >}}/api/#tag/Alarms) and [Audits](https://{{< URL >}}/api/#tag/Audits) in the {{< OpenAPI >}}.

@@ -5,9 +5,10 @@ layout: redirect
 ---
 
 
-### <a name="map"></a>Locating devices
+<a name="map"></a>
+### Locating devices
 
-Cumulocity IoT provides the option to view all devices in your account on a map.
+{{< product-name-1 >}} provides the option to view all devices in your account on a map.
 
 Click **Map** in the **Devices** menu in the navigator to display a map showing all devices in real time.
 
@@ -15,7 +16,8 @@ Devices are represented as "pins". Click a pin to see the name of the respective
 
 ![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
 
-### <a name="connection-monitoring"></a>Connection monitoring
+<a name="connection-monitoring"></a>
+### Connection monitoring
 
 In the Device Management application you can monitor the connections to your devices.
 
@@ -31,7 +33,7 @@ The connection status is represented by arrows in the **Status** column in the d
 
 **Send connections**
 
-The top arrow represents the send connection (traffic from the device to Cumulocity IoT). The status for the send connections may be one of:
+The top arrow represents the send connection (traffic from the device to {{< product-name-1 >}}). The status for the send connections may be one of:
 
 * Online (data was sent within the required interval)- indicated by a green arrow
 * Offline (data was not sent within the required interval) - indicated by a red arrow
@@ -43,13 +45,13 @@ When a device is detected to be offline (stops sending data within required inte
 
 **Push connections**
 
-The bottom arrow represents the push connection (from Cumulocity IoT to the device). The status for the push connections may be one of:
+The bottom arrow represents the push connection (from {{< product-name-1 >}} to the device). The status for the push connections may be one of:
 
 * Online (connection established)- indicated by a green arrow
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-Push connection means the connection from Cumulocity IoT to /notification/operations API, **not** to real-time API.
+Push connection means the connection from {{< product-name-1 >}} to /notification/operations API, **not** to real-time API.
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
@@ -70,7 +72,7 @@ Below the send connection and push connection status, the time of the last commu
 
 > **Info:** "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
-In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity IoT. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
+In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with {{< product-name-1 >}}. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
 If an interval is set, you will find the **Maintenance** toggle below it.
 
@@ -78,22 +80,23 @@ With the **Maintenance** toggle you can turn the maintenance mode for the device
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
-### <a name="monitoring-services"></a>Service monitoring
+<a name="monitoring-services"></a>
+### Service monitoring
 
-Cumulocity IoT distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with Cumulocity IoT, it does not automatically indicate if it is functional or not.
+{{< product-name-1 >}} distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-name-1 >}}, it does not automatically indicate if it is functional or not.
 
-Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to Cumulocity IoT. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
+Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-name-1 >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
 
-Cumulocity IoT considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
+{{< product-name-1 >}} considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
 
-While a machine is offline, Cumulocity IoT assumes by default
+While a machine is offline, {{< product-name-1 >}} assumes by default
 
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
 There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
-Cumulocity IoT displays service availability at the level of individual devices and across all devices.
+{{< product-name-1 >}} displays service availability at the level of individual devices and across all devices.
 
 #### To view the service monitoring of a particular device
 
@@ -108,13 +111,14 @@ Click **Service monitoring** in the **Device** menu in the navigator to display 
 The **Service monitoring** page shows the availability percentage of devices for the last 24 hours, last 7 days and last 30 days.
 
 
-### <a name="alarm-monitoring"></a>Working with alarms
+<a name="alarm-monitoring"></a>
+### Working with alarms
 
 Devices can raise alarms to indicate that there is a problem requiring an intervention.
 
 #### To view alarms
 
-Cumulocity IoT displays alarms at the level of individual devices and across all devices:
+{{< product-name-1 >}} displays alarms at the level of individual devices and across all devices:
 
 * To check the alarms for all devices, click **Alarms** in the **Overview** menu in the navigator.
 * To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
@@ -126,7 +130,7 @@ By default,
 * only unresolved alarms are shown. If you turn on **Show cleared alarms** at the right of the top menu bar, you will see the entire alarm history.
 * alarms are shown as coming in from the devices in real time. Click **Realtime** in the top menu bar to disable real-time updates.
 
-Alarms are classified according to their severity. Cumulocity IoT includes four different alarm types:
+Alarms are classified according to their severity. {{< product-name-1 >}} includes four different alarm types:
 
 |Severity|Description|
 |:---|:--|
@@ -169,7 +173,7 @@ In each row, the following information for an alarm is provided:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to “Acknowledged” to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to “clear” or when the device detected by itself that the problem has gone.</td>
+<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to "Acknowledged" to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to "clear" or when the device detected by itself that the problem has gone.</td>
 </tr>
 <tr>
 <td align="left">Last occurrence</td>
@@ -199,7 +203,8 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
 * **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
 
-### <a name="operation-monitoring"></a>Working with operations
+<a name="operation-monitoring"></a>
+### Working with operations
 
 Operations are used to remotely control devices.
 
@@ -213,7 +218,8 @@ There are two types of operations in **Device control**, each represented by a t
 * **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
 * **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
-#### <a name="to-view-single-operations"></a>To view single operations
+<a name="to-view-single-operations"></a>
+#### To view single operations
 
 See the list of single operations in the **Single operations** tab.
 
@@ -260,7 +266,7 @@ When you create a [bulk operation](#bulk-operations), the single operations enta
 
 Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
->**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+>**Important:** When using {{< product-name-1 >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
 #### To cancel pending single operations
 
@@ -277,7 +283,8 @@ Click the menu icon at the right of the single operation that you want to create
 
 See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
-#### <a name="to-view-bulk-operations"></a>To view bulk operations
+<a name="to-view-bulk-operations"></a>
+#### To view bulk operations
 
 See the list of bulk operations in the **Bulk operations** tab.
 
@@ -342,14 +349,17 @@ To clear both filters, click **Reset filters** at the bottom of the list (only v
 
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### <a name="bulk-operations"></a><a name="to-add-a-bulk-operation"></a>To add a bulk operation
+<a name="bulk-operations"></a>
+<a name="to-add-a-bulk-operation"></a>
+#### To add a bulk operation
 
 There are two ways of creating a bulk operation:
 
 * Use the [bulk operation wizard](#bulk-operation-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="bulk-operation-wizard"></a>To add a a bulk operation using the wizard
+<a name="bulk-operation-wizard"></a>
+##### To add a a bulk operation using the wizard
 
 Follow these steps:
 
@@ -374,7 +384,8 @@ Follow these steps:
 5. Enter a new title or use the preset title. Optionally enter a description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>To schedule a single operation as bulk operation
+<a name="to-schedule-a-single-operation-as-bulk-operation"></a>
+##### To schedule a single operation as bulk operation
 
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
@@ -382,7 +393,8 @@ Follow these steps:
 1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
 2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#bulk-operation-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#bulk-operation-wizard) and follow it.
 
-#### <a name="bulk-operations"></a>To edit the schedule of bulk operations
+<a name="bulk-operations"></a>
+#### To edit the schedule of bulk operations
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
 
@@ -394,7 +406,8 @@ The changes will be applied to the bulk operation accordingly.
 
 ![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
-#### <a name="bulk-operations"></a>To cancel bulk operations
+<a name="bulk-operations"></a>
+#### To cancel bulk operations
 
 You may only cancel bulk operations with status = SCHEDULED or EXECUTING.
 If it is executing, you may only cancel the operation until all of its single operations are created.
@@ -402,7 +415,8 @@ This way, you can cancel the creation of the remaining single operations.
 
 Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
-#### <a name="to-retry-failed-operations"></a>To retry failed operations
+<a name="to-retry-failed-operations"></a>
+#### To retry failed operations
 
 You may retry the failed operations of a bulk operation that is either executing or completed with failures.
 
@@ -414,19 +428,20 @@ For a bulk operation that completed with failures, you may also click the menu i
 
 #### To manually set failed bulk operations to successful
 
-You may manually set a failed bulk operation to successful.
+You may manually set a failed bulk operation to the status SUCCESSFUL.
 
 To do so, click the menu icon to the right of the bulk operation, then click **Set operation to successful**.
 
 This may be useful if the operation is generally a success, but contains operation failures on devices that are not too important. These failures would otherwise still leave the bulk operation in status FAILED.
 
-### <a name="events-all"></a>Troubleshooting devices
+<a name="events-all"></a>
+### Troubleshooting devices
 
 Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 #### To view events
 
-Cumulocity IoT displays events at the level of individual devices and across all devices:
+{{< product-name-1 >}} displays events at the level of individual devices and across all devices:
 
 * To view the events for all devices, click **Events** in the **Overview** menu in the navigator.
 * To view the events of a particular device, switch to the **Events** tab in the details of this device.

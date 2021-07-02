@@ -4,15 +4,15 @@ title: Node.js microservice
 layout: redirect
 ---
 
-Cumulocity IoT provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/concept/#requirements).
+{{< product-name-1 >}} provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/concept/#requirements).
 
 In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 
-It uses the Cumulocity IoT [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
+It uses the {{< product-name-1 >}} [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
 
 ### Prerequisites
 
-- Cumulocity IoT credentials (tenant, user and password).
+- {{< product-name-1 >}} credentials (tenant, user and password).
 - Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
 - Docker local installation.
 - A *.env* file in the root directory with the following content:
@@ -45,7 +45,7 @@ Eventually, your *package.json* file should look similar to:
 {
   "name": "node-microservice",
   "version": "1.0.0",
-  "description": "Cumulocity IoT microservice application",
+  "description": "{{< product-name-1 >}} microservice application",
   "main": "app.js",
   "dependencies": {
     "@c8y/client": "^1004.0.7",
@@ -64,7 +64,7 @@ Eventually, your *package.json* file should look similar to:
 
 #### Add the source code
 
-Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the Cumulocity IoT and Slack APIs.
+Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-name-1 >}} and Slack APIs.
 
 ```javascript
 "use strict";
@@ -82,7 +82,7 @@ app.use(express.json());
 app.listen(process.env.PORT);
 console.log(`${process.env.APPLICATION_NAME} started on port ${process.env.PORT}`);
 
-// Cumulocity IoT and Slack controllers
+// {{< product-name-1 >}} and Slack controllers
 require("./controllers");
 ```
 
@@ -168,7 +168,7 @@ async function postSlackMessage (adata) {
 }
 
 
-/********************* Cumulocity IoT *********************/
+/********************* {{< product-name-1 >}} *********************/
 
 const { Client, FetchClient, BasicAuth } = require("@c8y/client");
 
@@ -244,7 +244,7 @@ async function getUsers () {
 The code has two parts. The first one needs your Slack OAuth token and channel ID (chat group where the messages will be posted).
 A message is formatted using the colors of the different alarm severities that you may see in the Cockpit application. This message gets posted to the Slack channel.
 
-The second part uses basic authentication to the Cumulocity IoT platform, it gets all active alarms and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the Slack channel each time a new alarm is created in the subscribed tenants.
+The second part uses basic authentication to the {{< product-name-1 >}} platform, it gets all active alarms and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the Slack channel each time a new alarm is created in the subscribed tenants.
 
 #### Dockerfile and application manifest
 
@@ -255,7 +255,7 @@ Create a microservice manifest *cumulocity.json* with the following content:
     "apiVersion": "1",
     "version": "1.0.0-SNAPSHOT",
     "provider": {
-        "name": "Cumulocity GmbH"
+        "name": "{{< company-name-1 >}}"
     },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [
@@ -297,7 +297,7 @@ Then pack _image.tar_ together with the manifest _cumulocity.json_ into a ZIP fi
 $ zip node-microservice cumulocity.json image.tar
 ```
 
-The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the Cumulocity platform.
+The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-name-1 >}} platform.
 Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
 ![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
@@ -337,7 +337,7 @@ dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
 
 and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
 
-If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](https://cumulocity.com/api/#operation/postAlarmCollectionResource) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
+If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](https://{{< URL >}}/api/#operation/postAlarmCollectionResource) using the {{< product-name-1 >}} REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
 ![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
 

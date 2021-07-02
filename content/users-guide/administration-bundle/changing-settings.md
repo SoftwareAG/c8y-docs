@@ -13,7 +13,8 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [connectivity settings](#connectivity).
 
 
-### <a name="authentication"></a>Changing authentication settings
+<a name="authentication"></a>
+### Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
@@ -41,7 +42,7 @@ In the field **Limit password validity for**, you can limit the validity of user
 >
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents devices passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-name-1 >}} platform](/users-guide/getting-started/#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
@@ -74,33 +75,35 @@ Click **Save TFA settings** to apply your settings.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 
-### <a name="oauth-internal"></a>Oauth Internal
+<a name="oauth-internal"></a>
+### Oauth Internal
 
-Cumulocity IoT OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again.
+{{< product-name-1 >}} OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again.
 The default token validity time is two weeks and this can be changed with tenant options: `oauth.internal.basic-token.lifespan.seconds`. The minimum allowed value is 5 minutes.
 
 Cookies used to store a token in a browser have their own validity time that can be changed with tenant options: `oauth.internal.basic-user.cookie.lifespan.seconds`. The default value is two weeks. It can also be set to a negative value so that the cookie will be deleted when the user closes the browser.
 
-Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
+Refer to the [Tenant API](https://{{< URL >}}/api/#tag/Tenant-API) in the {{< OpenAPI >}} for more details.
 
-### <a name="single-sign-on"></a>Configuring single sign-on
+<a name="single-sign-on"></a>
+### Configuring single sign-on
 
-Cumulocity IoT provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
+{{< product-name-1 >}} provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
 > **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
-This feature is enabled since Cumulocity IoT version 10.4.6. For correct behavior any microservice needs to use the microservice SDK with version 10.4.6 or later.
+This feature is enabled since {{< product-name-1 >}} version 10.4.6. For correct behavior any microservice needs to use the microservice SDK with version 10.4.6 or later.
 
 Before switching to the single sign-on option it is mandatory that:
 
 * The authorization server you use supports OAuth2 authorization code grant.
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* The Cumulocity IoT platform is in version 10.4.6 but preferably higher.
+* The {{< product-name-1 >}} platform is in version 10.4.6 but preferably higher.
 * All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
->**Info:** In order to use the single sign-on feature for Enterprise tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
+>**Info:** In order to use the single sign-on feature for {{< tenant-type-2 >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
 
 
 #### Configuration settings
@@ -119,9 +122,9 @@ As the OAuth protocol is based on the execution of HTTP requests and redirects, 
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
->**Info:** Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by Cumulocity IoT. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
+>**Info:** Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-name-1 >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
 
-Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity IoT.
+Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from {{< product-name-1 >}}.
 
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
 
@@ -141,7 +144,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
 |Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
-Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity IoT platform. The following section provides the mapping between JWT claims and access to the platform.
+Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-name-1 >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
 
@@ -159,9 +162,9 @@ The user will be granted access to the global role "business" and the default ap
 
 New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
-New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles “business" and "admin"."
+New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
 
-When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with “cur”. "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
+When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
 In case the asterisk character should be matched literally it has to be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
 
@@ -199,7 +202,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
-3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
+3. By providing the public key of a certificate manually to {{< product-name-1 >}}. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
@@ -208,9 +211,9 @@ Each access token is signed by a signing certificate. Currently there are three 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 
- >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+ >**Info:** {{< product-name-1 >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
 ##### Placeholders
-Inside some fields you can use placeholders that are resolved by Cumulocity IoT at runtime. Available placeholders are:
+Inside some fields you can use placeholders that are resolved by {{< product-name-1 >}} at runtime. Available placeholders are:
 
 |Placeholder|Description|
 |:---|:---|
@@ -222,10 +225,10 @@ Inside some fields you can use placeholders that are resolved by Cumulocity IoT 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
 To use a placeholder in a field, put it inside two curly brackets preceded with a dollar sign:
-![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_standalone.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
 
 Placeholders can also be used as a part of text:
-![OAuth configuration](/images/users-guide/Administration/admin_sso_placeholder_text.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 
@@ -235,9 +238,9 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is `http://documentation.cumulocity.com/tenant/oauth`. There are no additional steps on Azure AD required.
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is "http://documentation.{{< URL >}}/tenant/oauth". There are no additional steps on Azure AD required.
 
-##### Cumulocity IoT configuration
+##### {{< product-name-1 >}} configuration
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
@@ -249,7 +252,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 |Azure AD Address| Address of your Azure AD tenant
 |Tenant| Azure AD tenant name
 |Application ID| Application ID
-|Redirect URI| Address of your Cumulocity IoT tenant followed by /tenant/oauth
+|Redirect URI| Address of your {{< product-name-1 >}} tenant followed by /tenant/oauth
 |Client secret| Azure AD client secret if applicable
 |Button name| Button name
 |Token issuer| Token issuer value in form of a HTTP address
@@ -279,7 +282,8 @@ The contexts of the token will be presented in JSON format.
 ![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
 
 
-### <a name="default-app"></a>Changing application settings
+<a name="default-app"></a>
+### Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.
 
@@ -289,7 +293,7 @@ Under **Default application**, you can select a default application from the lis
 
 >**Info:** All users must have access to this application.
 
-Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity IoT API.
+Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-name-1 >}} API.
 
 The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
@@ -298,21 +302,23 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
-### <a name="properties"></a>Managing the properties library
+<a name="properties"></a>
+### Managing the properties library
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
 
 ![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
 
-With custom properties, you can extend the data model of Cumulocity IoT built-in objects. You may create the following custom values:
+With custom properties, you can extend the data model of {{< product-name-1 >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
 >**Info:** Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
-#### <a name="add-property"></a>To add a custom property
+<a name="add-property"></a>
+#### To add a custom property
 
 1. Select the tab for the desired property and click **Add property**.
 
@@ -322,15 +328,48 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 
 1. Additionally, select validation rules for the new property:
 
-	|Checkbox|Description|
-|:---|:---|
-|Required|If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".
-|Default Value|Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".
-|Minimum|Enter a minimum integer value.
-|Maximum|Enter a maximum integer value.
-|Minimum length|Enter the minimum length required for the string.
-|Maximum length|Enter the maximum length required for the string.
-|Regular expression|Add a regular expression which will be required in order to fill the custom property field.
+<table>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Checkbox</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Required</td>
+<td style="text-align:left">If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".</td>
+</tr>
+<tr>
+<td style="text-align:left">Default Value</td>
+<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum</td>
+<td style="text-align:left">Enter a minimum integer value.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum</td>
+<td style="text-align:left">Enter a maximum integer value.</td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum length</td>
+<td style="text-align:left">Enter the minimum length required for the string.</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum length</td>
+<td style="text-align:left">Enter the maximum length required for the string.</td>
+</tr>
+<tr>
+<td style="text-align:left">Regular expression</td>
+<td style="text-align:left">Add a regular expression which will be required in order to fill the custom property field.</td>
+</tr>
+</tbody>
+</table>
 
 4. Click **Save** to create the new property.
 
@@ -346,7 +385,8 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
-### <a name="sms-provider"></a>Providing SMS provider credentials
+<a name="sms-provider"></a>
+### Providing SMS provider credentials
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
@@ -367,7 +407,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 >**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
 
 
-### <a name="connectivity"></a>Managing the connectivity settings
+<a name="connectivity"></a>
+### Managing the connectivity settings
 
 In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
 
@@ -384,7 +425,7 @@ The following provider settings may currently be specified:
 
 1. Switch to the tab of your desired provider.
 2. Enter the URL of the provider.
-3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
+3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the {{< product-name-1 >}} connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
 Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).

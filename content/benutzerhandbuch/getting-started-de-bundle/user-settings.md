@@ -47,15 +47,16 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tbody>
 </table>
 
-### <a name="user-settings"></a>So ändern Sie Benutzereinstellungen
+<a name="user-settings"></a>
+### So ändern Sie Benutzereinstellungen
 
 Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.  
 2. Nehmen Sie im Dialog **Benutzer bearbeiten** die gewünschten Änderungen vor.
 3. Zum Ändern der Sprache wählen Sie eine [Sprache](#languages) aus der Auswahlliste des Feldes **Sprache**.
-4. Klicken Sie  **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
-5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+4. Klicken Sie auf **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
+5. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 
@@ -65,29 +66,32 @@ Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgef
 *  Die Sprache, die in den Browser-Einstellungen konfiguriert ist.
 * 	Die Sprache des Betriebssystems.
 
-#### <a name="languages"></a>Verfügbare Sprachen
+<a name="languages"></a>
+#### Verfügbare Sprachen
 
 Die Benutzeroberfläche ist in folgenden Sprachen verfügbar:
 
 |Sprache|Sprachcode|
 |:---|:---|
-|Englisch (Standard)|de|
+|Englisch (Standard)|en|
 |Brasilianisches Portugiesisch|pt_BR|
+|Chinesisch|zh_CN|
 |Französisch|fr|
 |Deutsch|de|
 |Japanisch|ja_JP|
 |Koreanisch|ko|
 |Polnisch|pl|
+|Russisch|ru|
 |Spanisch|es|
-|Chinesisch|zh_CN|
 
 
-#### <a name="change-password"></a>So ändern Sie Ihr Passwort
+<a name="change-password"></a>
+#### So ändern Sie Ihr Passwort
 
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.
 2. Klicken Sie im Dialog **Benutzer bearbeiten** auf **Passwort ändern**.
 3. Geben Sie ein Passwort ein und bestätigen Sie es.
-4. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
+4. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 

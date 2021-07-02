@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-The basic life cycle for integrating devices into Cumulocity IoT is discussed in [Interfacing devices](/concepts/interfacing-devices).
+The basic life cycle for integrating devices into {{< product-name-1 >}} is discussed in [Interfacing devices](/concepts/interfacing-devices).
 
 In this section, we will show how this life cycle can be managed using the MQTT implementation.
 
@@ -31,7 +31,7 @@ The cycle phase consists of two kinds of actions:
 
 #### Step 0: Request device credentials
 
-In Cumulocity IoT, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
+In {{< product-name-1 >}}, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
 
 Once the device retrieved the credentials, it needs to store them locally for further connections.
 
@@ -45,9 +45,9 @@ For more information, refer to the [Hello MQTT](/device-sdk/mqtt-examples/#hello
 
 The process works as follows:
 
-* Cumulocity IoT assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
-* When you take a new device into use, you enter this unique ID into **Device registration** in the **Device Management** application in Cumulocity IoT, and start the device.
-* The device will use this ID as part of the [MQTT ClientId](/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from [product support](/about-doc/contacting-support).
+* {{< product-name-1 >}} assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
+* When you take a new device into use, you enter this unique ID into **Device registration** in the **Device Management** application in {{< product-name-1 >}}, and start the device.
+* The device will use this ID as part of the [MQTT ClientId](/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from [product support](/welcome/contacting-support).
 * The device subscribes to the topic <kbd>s/dcr</kbd>.
 * The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you must accept the connection from the device in the **Device Registration** page.
@@ -66,7 +66,7 @@ The device will be linked automatically to the ID the client uses with its MQTT 
 ```text
 100,Device Name,Device Type
 ```
->**Info:** The topic used for Cumulocity IoT's pre-provided static templates is <kbd>s/us</kbd>.
+>**Info:** The topic used for {{< product-name-1 >}}'s pre-provided static templates is <kbd>s/us</kbd>.
 
 #### Step 2: Verify children
 
@@ -88,10 +88,10 @@ If the device supports operations, it should subscribe to all required topics (s
 
 While the device holds an active MQTT connection, it can publish either on the topics for static templates or on the topics for a SmartREST template to send data to the server.
 
-Based on the MQTT ClientId, the physical device is directly connected to the device object in Cumulocity IoT. Therefore, the data you send is automatically connected to the device.
+Based on the MQTT ClientId, the physical device is directly connected to the device object in {{< product-name-1 >}}. Therefore, the data you send is automatically connected to the device.
 
 To send data to a child device, publish the data to the topics described in [Device hierarchies](/device-sdk/mqtt#device-hierarchies).
 
 #### Step B: Receive CSV operations
 
-By subscribing to a topic the device automatically tells Cumulocity IoT that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defines.
+By subscribing to a topic the device automatically tells {{< product-name-1 >}} that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defines.

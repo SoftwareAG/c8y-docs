@@ -7,7 +7,8 @@ layout: redirect
 To process data from LWM2M devices, Cumulocity IoT uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
-### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
+<a name="creating_device_protocols"></a>
+### Creating LWM2M device protocols
 
 Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
@@ -20,7 +21,7 @@ To add a new LWM2M device protocol follow these steps:
 ![Add new protocol](/images/device-protocols/lwm2m/lwm2m-newprotocol.png)
 
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
-If the DDF files for the default mappings are uploaded in the Management tenant, all subscribed user tenants will inherit this behavior. <br><br>
+If the DDF files for the default mappings are uploaded in the {{< tenant-type-3 >}}, all subscribed user tenants will inherit this behavior. <br><br>
 
 ![Upload DDF file](/images/device-protocols/lwm2m/lwm2m-uploadDDF.png)
 
@@ -42,7 +43,8 @@ Example: In the following screenshot you can see an example device protocol. Thi
 
 ![Example protocol2](/images/device-protocols/lwm2m/lwm2m-temperature-example.png)
 
-### <a name="resources"></a>Adding additional functionalities to a resource
+<a name="resources"></a>
+### Adding additional functionalities to a resource
 
 The functionalities that you may enable are the following:
 

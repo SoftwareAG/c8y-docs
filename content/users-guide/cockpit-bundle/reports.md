@@ -37,7 +37,8 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 See [To create a report](#create-report) below for details on how to configure the position in the navigator.
 
 
-### <a name="create-report"></a>To create a report
+<a name="create-report"></a>
+### To create a report
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>

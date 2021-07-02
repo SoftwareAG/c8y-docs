@@ -60,7 +60,8 @@ With the project structure so far, we can already test our application. By addin
 
 For more details on other properties of the manifest, see [Concepts > Manifests](/web-sdk-for-plugins/concepts/#manifests).
 
-### <a name="create-application"></a>Create the application in your tenant
+<a name="create-application"></a>
+### Create the application in your tenant
 
 After successfully logging in into a Cumulocity IoT UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
@@ -125,7 +126,7 @@ Example console output:
 
 ```console
 $ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
-Cumulocity UI development server running in port 9000.
+{{< company-name-1>}} UI development server running in port 9000.
 Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.
@@ -296,7 +297,7 @@ To test your application, use the command ```c8y server``` with the complete URL
 ### Build and deploy your application and plugins
 
 If you run ```c8y --help``` you will list all available commands.
-You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity "Administration" application or you can deploy the app directly to your tenant.
+You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity IoT "Administration" application or you can deploy the app directly to your tenant.
 
 #### build:app
 Builds the application to the specified folder (./build by default).
@@ -341,7 +342,8 @@ The build process for an app includes the following steps:
 5. Copy the application manifest.
 6. Create a zip file with the above contents.
 
-### <a name="target"></a>Deploy your plugin to the core applications
+<a name="target"></a>
+### Deploy your plugin to the core applications
 
 You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
 
@@ -360,7 +362,7 @@ You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in t
 
 The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-If you are not deploying to a Management tenant, you need to include the following fragment to your target .json file:
+If you are not deploying to a {{< tenant-type-3 >}}, you need to include the following fragment to your target .json file:
 
 ```json
 	"allApplications": {

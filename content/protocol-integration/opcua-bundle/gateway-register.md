@@ -97,7 +97,7 @@ gateway:
 
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
-  # Contact product support (https://cumulocity.com/guides/<latest-release>/about-doc/contacting-support/)
+  # Contact product support (https://cumulocity.com/guides/<latest-release>/welcome/contacting-support/)
   # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
@@ -299,7 +299,7 @@ gateway:
 ### Logging
 
 Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
-A sample logging config file may look like this:
+A sample logging configuration file may look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

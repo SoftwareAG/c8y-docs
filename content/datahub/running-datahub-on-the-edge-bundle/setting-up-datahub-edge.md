@@ -11,7 +11,7 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 | Item | Details |
 | -----   | -----   |
 | Cumulocity IoT Edge | The local version of Cumulocity IoT is set up on a Virtual Machine (VM). See also section [Setting up Cumulocity IoT Edge](/edge/installation). |
-| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [Software AG Empower portal](https://empower.softwareag.com/). |
+| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-name-2 >}} {{< company-portal >}}]({{< portal-link >}}). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements
@@ -46,7 +46,7 @@ Run the install script.
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 
-It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
+During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge<em>. During installation, you are also prompted to set the new password of the Dremio <em>admin<em> account. It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
 
@@ -66,6 +66,10 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-server/datalake**: the data lake folder
 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
+
+### Adapting to network changes of Cumulocity IoT Edge
+
+There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
 
 ### Accessing DataHub Edge
 

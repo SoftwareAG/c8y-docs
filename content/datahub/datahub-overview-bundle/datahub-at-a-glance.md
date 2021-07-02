@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](/https://www.cumulocity.com/api/#section/REST-implementation).
+The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of Cumulocity IoT, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity IoT offers a [REST API](https://www.cumulocity.com/api/#section/REST-implementation).
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose.
 
@@ -16,7 +16,7 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity IoT web applications](/concepts/applications/#web-applications))
 
-* Other Software AG products like TrendMiner or Cumulocity IoT Machine Learning Workbench
+* Other {{< company-name-2 >}} products like TrendMiner or Cumulocity IoT Machine Learning Workbench
 
 The main features of the Cumulocity IoT DataHub application are:
 

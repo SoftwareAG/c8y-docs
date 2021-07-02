@@ -203,7 +203,7 @@ Data structure for ServerConnectionConfig:
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
 <td>The status of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
-then the status of the alarm in Cumulocity is expected as ACKNOWLEDGED. They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
+then the status of the alarm in Cumulocity IoT is expected as ACKNOWLEDGED. They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
@@ -216,7 +216,7 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
             "EnabledState != null and EnabledState.text == 'Enabled': "ACTIVE",
             "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' : "ACKNOWLEDGED"
         }
->**Info:** There are three alarm statuses in Cumulocity, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
+>**Info:** There are three alarm statuses in Cumulocity IoT, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
 </td>
 </tr>
@@ -555,7 +555,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 **Endpoint**
 
-`GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
 
 **Description**
 
@@ -812,13 +812,13 @@ Full payload data structure explained:
 <td>mappings</td>
 <td>array&lt;<em>Mapping</em>&gt;</td>
 <td>no</td>
-<td>Define the mappings from OPC UA data into Cumulocity measurements, events and alarms.</td>
+<td>Define the mappings from OPC UA data into Cumulocity IoT measurements, events and alarms.</td>
 </tr>
 <tr>
 <td>uaMappings</td>
 <td>array&lt;<em>UAMapping</em>&gt;</td>
 <td>no</td>
-<td>Define the mappings from OPC UA alarms and events into Cumulocity alarms and events.</td>
+<td>Define the mappings from OPC UA alarms and events into Cumulocity IoT alarms and events.</td>
 </tr>
 <tr>
 <td>referencedNamespaceTable</td>
@@ -836,7 +836,7 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the Cumulocity processing mode for incoming data. Refer to <a href="https://cumulocity.com/api/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the Cumulocity IoT OpenAPI Specification for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the Cumulocity IoT processing mode for incoming data. Refer to <a href="https://cumulocity.com/api/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the Cumulocity IoT OpenAPI Specification for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
 <td>overiddenSubscriptions</td>
@@ -900,7 +900,7 @@ Full payload data structure explained:
 <td><em>AlarmCreation</em></td>
 <td>no</td>
 <td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
-The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value 
+The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
 is changed to "false", or a number that is less than or equals to 0.</td>
 </tr>
 <tr>
@@ -1232,7 +1232,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the alarm.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the alarm to be created. Possible values: PERSISTENT.</td>

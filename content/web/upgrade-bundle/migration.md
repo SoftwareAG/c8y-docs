@@ -1,15 +1,15 @@
 ---
-title: Migration
+title: Migrating applications
 layout: redirect
 weight: 10
 ---
 
 
-This section targets to developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications.
+This section targets developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications.
 
-You should have read and understand the following concepts:
+You should have read and understood the following concepts:
 
-* [Overview](/web/overview/), explaining when to use which SDK.
+* [Appendix: Migration history](/web/background/), explaining when to use which SDK.
 * [Migration history](/web/background), explaining which versions you can use with the new SDK.
 * [c8y Command Line Tool (CLI)](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 
@@ -26,7 +26,7 @@ c8ycli new cockpit cockpit
 
 When you run this command it provides you with a very simple file structure that contains the following files:
 
- - `app.module.ts`: An Angular entry module in which you can hook Angular routes. Note that for a Cumulocity IoT application you don't get access to the root element and therefore there is no root template (index.html) which you can modify.
+ - `app.module.ts`: An Angular entry module in which you can hook Angular routes. Note that for a {{< product-name-1 >}} application you don't get access to the root element and therefore there is no root template (index.html) which you can modify.
  - `package.json`: The package.json describes the dependencies and the application itself. The `c8y.upgrade: true` flag tells our webpack plugins to allow AngularJS plugins.
  - `ng1.ts`: Our default AngularJS plugins for the Cockpit application.
  - `index.ts`: The bootstrapping which is setup to bootstrap a hybrid application.

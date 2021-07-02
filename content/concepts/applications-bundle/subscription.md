@@ -4,9 +4,9 @@ title: Subscribing applications
 layout: redirect
 ---
 
-The application concept of Cumulocity IoT includes a basic application marketplace.
+The application concept of {{< product-name-1 >}} includes a basic application marketplace.
 
-Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
+Tenants can be subscribed to applications which have been deployed by their super tenant ({{< tenant-type-3 >}} or {{< tenant-type-2 >}}).
 
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
@@ -24,4 +24,4 @@ For details refer to [Managing tenants](/users-guide/administration#tenants) in 
 
 A tenant can have multiple available applications but to use an application's functionality a subscription to the application must be established for the tenant. As an example, when a custom decoder microservice is available in the tenant's marketplace, it is not enabled to be used until the tenant subscribes for the microservice application.
 
-To see the list of subscribed applications for the tenant, Cumulocity IoT Rest API can be used to get [specific tenant information](https://cumulocity.com/api/#tag/Tenant-API). Those applications will be listed under the "applications" fragment.
+To see the list of subscribed applications for the tenant, {{< product-name-1 >}} Rest API can be used to get [specific tenant information](https://{{< URL >}}/api/#tag/Tenant-API). Those applications will be listed under the "applications" fragment.

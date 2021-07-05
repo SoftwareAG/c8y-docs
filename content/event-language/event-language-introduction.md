@@ -8,7 +8,7 @@ aliases:
 
 <div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
   <h3 style="color: #1776BF"><strong>IMPORTANT</strong></h3>
-  <p class="lead" style="font-size:22px"> The functionality described in this CEL analytics guide is deprecated. All new Cumulocity IoT installations will use the Apama CEP engine. {{< company-name-2 >}} will terminate support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018. </p>
+  <p class="lead" style="font-size:22px"> The functionality described in this CEL analytics guide is deprecated. All new Cumulocity IoT installations will use the Apama CEP engine. {{< company-name-2 >}} has terminated support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018. </p>
 
   <p style="font-size:16px"><strong>For further information on using Apama's Event Processing Language in Cumulocity IoT refer to the <a href="/apama/introduction">Streaming Analytics guide</a>.</strong></p>
 

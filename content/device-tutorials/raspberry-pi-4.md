@@ -7,11 +7,11 @@ layout: bundle
 
 ### Overview
 
-This tutorial describes how to register a Raspberry Pi 4 Model B device to the Cumulocity IoT platform.
+This tutorial describes how to register a Raspberry Pi 4 Model B device to the {{< product-name-1 >}} platform.
 
 The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a popular, low-cost mini computer. It is ideally suited for prototyping machine-to-machine solutions through its GPIO pins, USB support and inbuilt WLAN support. Its operating system is [Raspbian](http://www.raspberrypi.org/downloads), which is the default Linux distribution of the Raspberry Pi.
 
-The tutorial describes how to install a Cumulocity IoT agent with all relevant drivers on the Raspberry Pi to be able to remotely manage the Raspberry Pi and its connected sensors and controls. This allows you to
+The tutorial describes how to install a {{< product-name-1 >}} agent with all relevant drivers on the Raspberry Pi to be able to remotely manage the Raspberry Pi and its connected sensors and controls. This allows you to
 
 * Use basic device management functionality.
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
@@ -19,7 +19,7 @@ The tutorial describes how to install a Cumulocity IoT agent with all relevant d
 * Use the [PiFace Digital 2](https://www.element14.com/community/docs/DOC-69001) adapter board from the cloud.
 * Use [TinkerForge](/device-tutorials/tinkerforge) sensors and controls from the cloud.
 
-> **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the Cumulocity IoT C++ SDK.
+> **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the {{< product-name-1 >}} C++ SDK.
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ To verify, type
 $ java -version
 ```
 
-You also need to know the serial number of your Raspberry Pi to register it with Cumulocity IoT. To get the serial number, use the following command:
+You also need to know the serial number of your Raspberry Pi to register it with {{< product-name-1 >}}. To get the serial number, use the following command:
 
 ```shell
 $ cat /proc/cpuinfo
@@ -56,11 +56,11 @@ The output of this command contains the serial number in a line like:
 Serial		: 1000000017b769d5
 ```
 
-Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the Cumulocity IoT platform.
+Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the {{< product-name-1 >}} platform.
 
 #### Internet
 
-The tutorial assumes that the Raspberry Pi has an active connection to the internet, so that you can connect to the Cumulocity IoT server. You can use the Raspberry Pi's inbuilt WLAN capabilities for this if there is an available WLAN network, otherwise you could consider adding a mobile broadband network connection by use of an add-on component such as a third-party USB dongle.
+The tutorial assumes that the Raspberry Pi has an active connection to the internet, so that you can connect to the {{< product-name-1 >}} server. You can use the Raspberry Pi's inbuilt WLAN capabilities for this if there is an available WLAN network, otherwise you could consider adding a mobile broadband network connection by use of an add-on component such as a third-party USB dongle.
 
 
 ### Setting up and registering the device
@@ -76,14 +76,14 @@ $ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 
 #### To set up the tenant URL in the cumulocity.properties file
 
-When the Cumulocity IoT agent on the Raspberry Pi connects to Cumulocity IoT, it uses the host URL that is defined in the file
+When the {{< product-name-1 >}} agent on the Raspberry Pi connects to {{< product-name-1 >}}, it uses the host URL that is defined in the file
 */usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties* on the Raspberry Pi. The URL is defined in a line like:
 
 ````shell
-host = https://<YourTenantName>.cumulocity.com
+host = https://<YourTenantName>.{{< URL >}}
 ````
 
-Ensure that you have set up the correct host URL here before proceeding. Here, `<YourTenantName>` is the name of your Cumulocity IoT tenant on the Cumulocity IoT platform.
+Ensure that you have set up the correct host URL here before proceeding. Here, `<YourTenantName>` is the name of your {{< product-name-1 >}} tenant on the {{< product-name-1 >}} platform.
 
 The file is by default read-only, so you need superuser privileges to edit it.
 To go into "su" mode, use the following command on a command line console on the Raspberry Pi:
@@ -124,19 +124,19 @@ Alternatively, you can use the desktop method:
 3.	Set **SPI** to "Enabled".
 
 
-#### To register the device to Cumulocity IoT
+#### To register the device to {{< product-name-1 >}}
 
-1. Open the Cumulocity IoT platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
+1. Open the {{< product-name-1 >}} platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
 2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID.
 
-To view the device in your Cumulocity IoT account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
+To view the device in your {{< product-name-1 >}} account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
-### Interacting with Cumulocity IoT
+### Interacting with {{< product-name-1 >}}
 
-After the Raspberry Pi has been successfully registered, you can view the device's status in the Cumulocity IoT´s standard applications (Device Management, Cockpit and Administration).
+After the Raspberry Pi has been successfully registered, you can view the device's status in the {{< product-name-1 >}}´s standard applications (Device Management, Cockpit and Administration).
 
-If you have reached this part of the tutorial successfully, you have the proof-of-concept that you can attach a device such as a Raspberry Pi to a Cumulocity IoT server and view its status information. Congratulations!
+If you have reached this part of the tutorial successfully, you have the proof-of-concept that you can attach a device such as a Raspberry Pi to a {{< product-name-1 >}} server and view its status information. Congratulations!
 
 The Raspberry Pi by itself delivers only static information, so if you want to view real-time measurements coming from the device, you generally need to attach hardware components that deliver this data, such as components provided by the third-party suppliers Tinkerforge and PiFace Digital. See the following sections for details.
 
@@ -152,7 +152,7 @@ Before using your PiFace Digital make sure you have tested it following the inst
 
 #### Remote firmware upgrade
 
-The Cumulocity IoT agent permits you to upgrade the firmware of a Raspberry Pi through the [rpi-update](https://github.com/Hexxeh/rpi-update) tool. You might want to check from time to time if an upgrade is available.  
+The {{< product-name-1 >}} agent permits you to upgrade the firmware of a Raspberry Pi through the [rpi-update](https://github.com/Hexxeh/rpi-update) tool. You might want to check from time to time if an upgrade is available.  
 
 ##### To configure a firmware version
 

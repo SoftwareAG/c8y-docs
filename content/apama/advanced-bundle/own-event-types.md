@@ -19,4 +19,4 @@ on Measurement() as m1 -> Measurement() as m2 {
 }
 ```
 
->**Info:** Cumulocity IoT deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules.
+>**Info:** {{< product-name-1 >}} deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules.

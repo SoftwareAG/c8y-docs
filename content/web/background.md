@@ -12,7 +12,7 @@ This process involves migration effort, so we believe that providing some backgr
 
 From day one the UI has always had a modular architecture. The units of functionality are grouped in "plugins" that can be composed to build applications. In practice plugins are simply modules.
 
-Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the Cumulocity IoT Web SDK.
+Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the {{< product-name-1 >}} Web SDK.
 
 ### 1st Generation: Runtime loading of plugins
 
@@ -169,7 +169,7 @@ The table can be understood as follows:
  * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
  * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
 
- > **Info**: The Cumulocity IoT platform itself is running as a hybrid application in production since version 9.25.x.
+ > **Info**: The {{< product-name-1 >}} platform itself is running as a hybrid application in production since version 9.25.x.
 
 #### Deprecating custom manifests
 

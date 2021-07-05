@@ -7,18 +7,18 @@ layout: bundle
 
 ### Overview
 
-[TinkerForge](http://tinkerforge.com) is a company that provides generic sensors and controls for diverse use cases ranging from environmental monitoring to industrial automation. Together with Cumulocity IoT, you can:
+[TinkerForge](http://tinkerforge.com) is a company that provides generic sensors and controls for diverse use cases ranging from environmental monitoring to industrial automation. Together with {{< product-name-1 >}}, you can:
 
-* Build complete machine-to-machine use cases by just plugging off-the-shelf hardware components together. No configuration is required -- the components are automatically discovered by the Cumulocity IoT Java agent and connected to the cloud.
+* Build complete machine-to-machine use cases by just plugging off-the-shelf hardware components together. No configuration is required -- the components are automatically discovered by the {{< product-name-1 >}} Java agent and connected to the cloud.
 * Instantly visualize sensor data and remote control devices in real-time.
 
-In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.tinkerforge.com/en/doc/Kits/WeatherStation/WeatherStation.html) to Cumulocity IoT. We will use a Weather Station configuration without an inbuilt Wi-Fi, so we will use a Raspberry Pi 4 (referred to as "RaspPi" in the description below for brevity) as an intermediary device to attach the Weather Station to the Cumulocity IoT platform. The RaspPi must have an active internet connection. The RaspPi can be integrated as a module in the Weather Station, or it can be an external device that you connect to the Weather Station via a USB cable.
+In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.tinkerforge.com/en/doc/Kits/WeatherStation/WeatherStation.html) to {{< product-name-1 >}}. We will use a Weather Station configuration without an inbuilt Wi-Fi, so we will use a Raspberry Pi 4 (referred to as "RaspPi" in the description below for brevity) as an intermediary device to attach the Weather Station to the {{< product-name-1 >}} platform. The RaspPi must have an active internet connection. The RaspPi can be integrated as a module in the Weather Station, or it can be an external device that you connect to the Weather Station via a USB cable.
 
 ### Prerequisites
 
 #### Installing the Tinkerforge Brick Daemon and Brick Viewer on the RaspPi
 
-Before we try to connect to Cumulocity IoT, we need to ensure that the RaspPi and the Weather Station can communicate with each other. 
+Before we try to connect to {{< product-name-1 >}}, we need to ensure that the RaspPi and the Weather Station can communicate with each other.
 
 For the software connection between the devices, you need to install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
 
@@ -32,8 +32,8 @@ sudo brickd
 sudo brickv
 ````
 
-To start the Brick Viewer you can also use the Raspbian main menu entry **Programming > Brick Viewer**. 
-  
+To start the Brick Viewer you can also use the Raspbian main menu entry **Programming > Brick Viewer**.
+
 In the Brick Viewer, there is a **Connect** button/bar at the top of the display. Click it to see what hardware is available. The list shows enties such as the following:
 
 * Master Brick 2.0
@@ -41,7 +41,7 @@ In the Brick Viewer, there is a **Connect** button/bar at the top of the display
 * Barometer Bricklet
 * Ambient Light Bricklet
 * Humidity Bricklet
- 
+
 Each of the hardware items in this list has an associated tab at the top of the Brick Viewer display.
 
 If you see such a list, this is already confirmation that the communication between the Weather Station and the RaspPi is working. As a further simple check, you can send a text message like "Hello World!" from the Brick Viewer to the Weather Station:
@@ -56,21 +56,21 @@ You should now see the text in the LCD display on the Weather Station.
 
 #### To install the agent
 
-The connection between the Tinkerforge Weather Station and Cumulocity IoT is routed over the RaspPi. The connection between the RaspPi and Cumulocity IoT is implemented by installing and running the Cumulocity IoT Java agent on the RaspPi. The Java agent on the RaspPi supports TinkerForge out of the box.
+The connection between the Tinkerforge Weather Station and {{< product-name-1 >}} is routed over the RaspPi. The connection between the RaspPi and {{< product-name-1 >}} is implemented by installing and running the {{< product-name-1 >}} Java agent on the RaspPi. The Java agent on the RaspPi supports TinkerForge out of the box.
 
-For details on installing and running the Cumulocity IoT Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](../raspberry-pi-4).
+For details on installing and running the {{< product-name-1 >}} Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](../raspberry-pi-4).
 
 <!-- ![Raspberry Pi and TinkerForge](/images/device-demos/tinkerforge/tinkerforge.jpg) -->
 
-#### To register the RaspPi device to Cumulocity IoT
+#### To register the RaspPi device to {{< product-name-1 >}}
 
-As a final configuration step, you need to register the RaspPi device to the Cumulocity IoT platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
+As a final configuration step, you need to register the RaspPi device to the {{< product-name-1 >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
 
-### Interacting with Cumulocity IoT
+### Interacting with {{< product-name-1 >}}
 
-To view the device in your Cumulocity IoT account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>". 
+To view the device in your {{< product-name-1 >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
-Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes. 
+Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
 
 Now click the **Child devices** tab of the RaspPi to list the connected TinkerForge components. The display will look similar to the following:
 
@@ -81,7 +81,7 @@ By default, TinkerForge components are named using the name of the device that t
 
 #### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
 
-To visualize the Tinkerforge sensor data, switch to the Cockpit application. Under the **Groups** tab, select the group to which you assigned the RaspPi, and select the RaspPi device from the group. 
+To visualize the Tinkerforge sensor data, switch to the Cockpit application. Under the **Groups** tab, select the group to which you assigned the RaspPi, and select the RaspPi device from the group.
 
 Switch to the **Data explorer** tab of the RaspPi. Under **Data points** you can select which sensor readings from the Weather Station you wish to display. In the example below, the ambient light sensor ("RaspPi... Light kWS") is selected as a device under "SELECT DEVICE", and the data point that this sensor delivers (shown under "SELECT DATA POINT") will be shown in the data explorer as "c8y\_LightMeasurement".
 
@@ -91,13 +91,13 @@ The set of data points that you select are shown in the "Data points" panel, for
 
 ![Selected data points](/images/device-demos/tinkerforge/tinkerforge-selected-data-points.png)
 
-The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last minute). 
+The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last minute).
 
 ![Live sensor graph](/images/device-demos/tinkerforge/tinkerforge-live-sensor-graph.png)
 
 The period of time is selectable via a drop-down box adjacent to the graph.
 
-The data is regularly collected by the Cumulocity IoT agent on the RaspPi. The frequency of the collection can be configured in the **Configuration** tab of the RaspPi. Typical entries in the **Configuration** tab are:
+The data is regularly collected by the {{< product-name-1 >}} agent on the RaspPi. The frequency of the collection can be configured in the **Configuration** tab of the RaspPi. Typical entries in the **Configuration** tab are:
 
 ````console
 c8y.barometer.interval=5000
@@ -107,9 +107,9 @@ c8y.log.alarmLevel=ERROR
 c8y.humidity.interval=5000
 ````
 
-The settings with `.interval` are given in milliseconds. If you want to change any of the settings, change the configuration value accordingly in this display and save your changes. For example, if you change the value of `c8y.light.interval` from 5000 to 10000, the Data Explorer for the RaspPi in the Cockpit will show updated values for the Weather Station's ambient light bricklet every 10 seconds. 
+The settings with `.interval` are given in milliseconds. If you want to change any of the settings, change the configuration value accordingly in this display and save your changes. For example, if you change the value of `c8y.light.interval` from 5000 to 10000, the Data Explorer for the RaspPi in the Cockpit will show updated values for the Weather Station's ambient light bricklet every 10 seconds.
 
-<!-- omitting the PTC bricklet for the updated demo doc 
+<!-- omitting the PTC bricklet for the updated demo doc
 #### PTC bricklet
 
 ![PTC bricklet](/images/device-demos/tinkerforge/ptc.jpg)
@@ -124,14 +124,14 @@ In addition to the polling interval, you can also configure the wire mode of the
 ![LCD 20x4 Display Bricklet](/images/device-demos/tinkerforge/lcd12_20x4.jpg)
 -->
 
-To operate the display from Cumulocity IoT, proceed as follows:
+To operate the display from {{< product-name-1 >}}, proceed as follows:
 
 1. In the Cockpit application, open the group that contains the RaspPi device, and select the RaspPi.
 2. Add a dashboard for the RaspPi, if you haven't defined one yet. For details on adding a dashboard, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
 3. Click **Add widget**.
-4. In the list of available widgets, select **Message sending**. 
+4. In the list of available widgets, select **Message sending**.
 5. Click the **Display** asset of the RaspPi. This adds the "Message sending" widget to the dashboard.
-6. In the message field of the widget, type a text such as "Hello from Cumulocity", then click **Send**.
+6. In the message field of the widget, type a text such as "Hello from {{< product-name-1 >}}", then click **Send**.
 7. The text should now appear on the LCD Bricklet of the Weather Station.
 
 Similarly, if you want to toggle the LCD display's backlight on and off, create a **Relay control** widget, set it up to use the **Display** asset of the RaspPi, and use the on/off setting.
@@ -140,13 +140,13 @@ Similarly, if you want to toggle the LCD display's backlight on and off, create 
 
 ![Display usage](/images/device-demos/tinkerforge/tinkerforgedisplay.png)
 
-The display has four buttons at the bottom. Operating these buttons will send an event to Cumulocity which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
+The display has four buttons at the bottom. Operating these buttons will send an event to {{< product-name-1 >}} which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
 
 ![Events](/images/device-demos/tinkerforge/tinkerforgeevents.png)
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### 4x7 Segment Display bricklet
 
@@ -156,7 +156,7 @@ The 4x7 Segment Display's implementation is similar to that of the LCD Display b
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### Remote Switch bricklet
 
@@ -238,7 +238,7 @@ will turn off "device2" and turn on "device1".
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### Dual Relay Bricklet
 
@@ -261,7 +261,7 @@ For example, the operation above will set the state of relay one to "OPEN" and r
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### IO16 bricklet
 
@@ -306,7 +306,7 @@ This operation will find up to four outputs starting from A0 to B7 and switch th
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### Distance InfraRed and UltraSound bricklets
 
@@ -320,7 +320,7 @@ Note: The DistanceUS bricklet measures distance in percentages, where 0% would b
 
 -->
 
-<!-- omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc
 
 #### GPS bricklet
 

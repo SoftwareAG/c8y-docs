@@ -28,7 +28,7 @@ const client = new Client(new BasicAuth({
   user: 'admin',
   password: 'password',
   tenant: 'acme'
-}), 'https://acme.cumulocity.com');
+}), 'https://acme.{{< URL >}}');
 try {
  const { data, paging, res } = await client.inventory.list();
  console.log('Login with admin:password successful');

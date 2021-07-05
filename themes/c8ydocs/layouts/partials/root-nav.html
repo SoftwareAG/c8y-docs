@@ -64,7 +64,7 @@
       </a>
       {{ end }}
       <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
-        href="{{.Permalink}}">{{replace (replace .Title "var-company-name-2" .Site.Params.companyname2) "var-tenant-type-2" .Site.Params.tenanttype2}}</a>
+        href="{{.Permalink}}">{{replace (replace (replace .Title "var-company-name-2" .Site.Params.companyname2) "var-tenant-type-2" .Site.Params.tenanttype2) "var-product-name-1" .Site.Params.productname1}}</a>
 
       {{ if $headless }}
       {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
@@ -74,7 +74,7 @@
           {{ range $reusablePages }}
           {{if eq $current.Permalink $parentUrl }}
           <a class="list-group-item"
-            href="#{{substr .Name 0 -3}}">{{.Title}}</a>
+            href="#{{substr .Name 0 -3}}">{{replace .Title "var-product-name-1" .Site.Params.productname1}}</a>
           {{else}}
             <a class="list-group-item"
               href="{{$parentUrl }}#{{substr .Name 0 -3}}">{{.Title}}</a>

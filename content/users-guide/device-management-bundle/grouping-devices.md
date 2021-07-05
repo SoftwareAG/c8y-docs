@@ -6,21 +6,39 @@ layout: redirect
 
 Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
 
-Cumulocity IoT distinguishes between top-level groups and subgroups:
+{{< product-name-1 >}} distinguishes between top-level groups and subgroups:
 
-**Top-level groups** are shown in the **Group** menu in the navigator at top-level. <br>**Subgroups** are used to further subdivide top-level groups.
+* **Top-level groups** are shown in the **Group** menu in the navigator at top-level.
+* **Subgroups** can be used to further subdivide top-level groups.
 
+<a name="viewing-groups"></a>
 ### Viewing groups
 
-To display a list of all groups in the account, click **Groups** in the navigator.
+Click **Groups** in the navigator to see all groups in a list format.
 
 ![Groups list](/images/users-guide/DeviceManagement/devmgmt-groups.png)
 
-For each group, the name and the number of children is displayed.
+For each group, various information is provided, for example the type and name. Click **Configure columns** at the right, to add or remove columns and customize the view to your preference. See also [Viewing devices > Configuring columns](/users-guide/device-management/#configuring-columns).
 
-Click a group to view its details.
+To filter the groups for certain criteria, hover over the column headers and click the respective filter icon:
 
-![Group info](/images/users-guide/DeviceManagement/devmgmt-groups-info.png)
+ ![Filter](/images/users-guide/DeviceManagement/devmgmt-group-filter.png)
+
+See also [Viewing devices > Filtering devices](/users-guide/device-management/#filtering-devices).
+
+Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#smart-groups) function.  
+
+Click a group to view its details. Per default, the **Subassets** tab is displayed.
+
+![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
+
+**Subassets** tab
+
+At the top of the **Subassets** tab, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
+
+Below, all assets assigned to the group are listed. For each asset, various information is displayed, for example the type and name. As with the top-level groups list, you can add or remove columns and customize the list to your preference, or you can apply filters to filter the list for certain criteria.
+
+Morover, you can assign devices, see [To assign a device to a group](#assigning-devices).
 
 **Info Tab**
 
@@ -53,13 +71,6 @@ In the **Info** tab, the following information is provided:
 </tbody>
 </table>
 
-**Subassets**
-
-In the **Subassets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
-
-![Subassets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
-
-See also [To add a group](#add-group) and [To assign a device to a group](#assigning-devices).
 
 **Bulk operations**
 
@@ -69,31 +80,29 @@ In the **Bulk operations** tab, bulk operations created for the group can be man
 
 
 <a name="add-group"></a>
-### To create a new group
+### To add a group
 
-1. Click the **Plus** button at the right of the top bar and then click **New group**.<br>
-2. In the resulting dialog box, enter a unique group name to identify your group.
-3. In the search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
-4. Checkmark the devices you want to add from the list.
-5. Click **Create group with # device(s)** to finally create your new group.
+1. Click **Add group** at the right of the top menu bar.
+2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
+3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
+4. Click **Create** to create the new group.
 
 The new group will be added to the groups list.
 
 >**Info:** A group can be created with "0" devices in it.
 
-From the **Groups** page, you can also create a new group by clicking **Add group** in the top menu bar. In the resulting dialog box, enter a name for the group and click **Add group**.
-
-![Add empty group](/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
+To add a new group as a child of an existing group, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
 ### To edit a group
 
 1. In the navigator, click a group to open it.
-2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group.
+2. In the **Subassets** tab, you can edit the name and description of the group. Switch to the **Info** tab, if you want to edit the notes.
+
 For further information on permissions, see [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section.
 
 ### To delete a group
 
-Click the menu icon in a device entry and then click **Delete**.
+Hover over the respective entry you want to delete and click the delete icon at the right.
 
 ### Managing devices in groups
 
@@ -109,13 +118,13 @@ You can quickly assign devices to groups by using the drag and drop functionalit
 Moreover, you can assign devices performing the following steps:
 
 1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
-2. Click **Assign devices** at the right of the top menu bar. In the resulting dialog box search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
-3. Checkmark the devices you want to add from the list.
-4. Click **Assign # device(s)** to assign the selected devices.
+2. Click **Assign devices** at the right of the top menu bar.
+3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
+4. Click **Assign** to assign the selected devices.
 
-The devices will be assigned to the selected group.
+![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
 
-![Assign devices](/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
 
 
 **From the device perspective**
@@ -124,6 +133,10 @@ The devices will be assigned to the selected group.
 2. In the **Info** tab, scroll down to the **Groups assignment** card. From the dropdown field, select the group you want to assign the device to. You can also directly enter a group name here or you can enter just parts of a name to filter the list for it and only show the matching group names.
 3. Click **Assign**.
 
+<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+
+<br>
+
 The device will be assigned to the selected group.
 
 If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
@@ -131,29 +144,30 @@ If you search for a group by its name which does not exist yet, a **New** button
 >**Info:** In order to create a new group, the user must have the permissions
 ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
 
 #### To unassign a device
 
-Click the menu icon in a device entry and then click **Unassign**.
+Hover over the respective device you want to unassign and click the unassign icon at the right.
+
+Unassigning a device does not delete the device, subdevices or any associated data. The device is only removed from this group.
 
 #### To delete a device
 
-Click the menu icon in a device entry and then click **Delete**.
+Hover over the respective device you want to delete and click the delete icon at the right.
 
 The device will be permanently deleted.
 
 #### To view the device details
 
-Click the menu icon in a device entry and then click **Device management**.
+To display the details of a particular device, click its name.
 
-The device details for the specific device stored under **All devices** in the Device Management application will open.
+The device details for the device will be displayed.
 
 <a name="restructuring-groups"></a>
 ### Restructuring groups and devices
 
-You can easily restructure groups, subgroups and devices by a drag and drop functionality.
+You can easily restructure groups, subgroups and devices by a drag & drop functionality.
 
 #### To move a group
 
@@ -174,31 +188,28 @@ You can easily restructure groups, subgroups and devices by a drag and drop func
 
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
-![Smart groups filter](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
-
-Note that smart groups are only available in the Device Management application and not visible in the Cockpit application.
+>**Info:** Smart groups are only available in the Device Management application and not visible in the Cockpit application.
 
 Smart groups can be created from the device list.
 
 #### To create a smart group
 
 1. To open the device list, click **All devices** in the navigator.
-2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on filtering.
+2. Filter the devices in the list to select the desired devices. See [Viewing devices > Filtering devices](#filtering-devices) for details on filtering.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 
-![Create smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-create.png)
-
 The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon.
 
-![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-smartgroups-icon.png)
 
-In the **Subasset** tab you can adjust your selection and modify the filter settings.
+Below the smart group name and description you can see the filter criteria which have been applied on building the smart group. You can edit the filter settings here and adjust your selection.
+
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+
 
 #### To delete a smart group
 
-To delete a smart group, click the menu icon and then click **Delete**.
-
-![Delete smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
+Hover over the respective entry you want to delete and click the delete icon at the right.
 
 > **Important:** Deleting a smart group is irreversible.

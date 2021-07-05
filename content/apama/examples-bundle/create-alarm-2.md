@@ -94,7 +94,7 @@ and therefore create three alarms.
 
 ## Consumption measurements
 
-Assuming we have a sensor which measures the current fill level of something and sends the values on a regular basis to Cumulocity IoT, we can easily create additional consumption values. Calculating the absolute difference between two measurements can be useful, but it will only give you a clear view if the measurements are sent always in the same interval. Therefore, we will put the absolute difference in relation to the time difference and calculate as a per hour consumption.
+Assuming we have a sensor which measures the current fill level of something and sends the values on a regular basis to {{< product-name-1 >}}, we can easily create additional consumption values. Calculating the absolute difference between two measurements can be useful, but it will only give you a clear view if the measurements are sent always in the same interval. Therefore, we will put the absolute difference in relation to the time difference and calculate as a per hour consumption.
 
 We will compare the value and time difference of two adjacent measurements for a device, using a stream retaining 2 entries, and selecting the first and last timestamp and value.
 

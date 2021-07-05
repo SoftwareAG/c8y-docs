@@ -23,7 +23,7 @@ The devices may have one of the following status:
 * **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device.
 * **Accepted** - The user has allowed the credentials to be send to the device.
 
-Devices can be connected to your Cumulocity IoT account in different ways.
+Devices can be connected to your {{< product-name-1 >}} account in different ways.
 
 ### To register devices
 
@@ -63,13 +63,13 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
-> **Info:** In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) or look up the manual of your device.
+> **Info:** In case of any issues, consult the documentation applicable for your device type in the [{{< product-name-1 >}} Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) or look up the manual of your device.
 
 
 <a name="creds-upload"></a>
 #### To bulk-register devices
 
-To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
+To connect larger amounts of devices, {{< product-name-1 >}} offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box select **Bulk device registration**.
@@ -110,8 +110,8 @@ In addition to these columns the file can also contain other columns like ICCID,
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
 
-* User name - the user name for accessing Cumulocity IoT must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
-* Password - the password to access Cumulocity IoT, equals the value "Credentials" in the CSV file.
+* User name - the user name for accessing {{< product-name-1 >}} must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
+* Password - the password to access {{< product-name-1 >}}, equals the value "Credentials" in the CSV file.
 * Device in managed object representation - fields TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in the CSV file.
 
 After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
@@ -124,11 +124,11 @@ For your convenience we provide CSV template files for both bulk registration ty
 
 1. In Microsoft Excel, switch to the **Data** tab.
 2. In the **Data** tab, select **From Text** in the top menu bar.
-3. Select the CSV file you want to import by browsing for it (in this case the template file that you have downloaded from the Cumulocity IoT platform).
+3. Select the CSV file you want to import by browsing for it (in this case the template file that you have downloaded from the {{< product-name-1 >}} platform).
 4. In Step 1 of the **Text Import Wizard**, leave the default settings and click **Next**.
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to
-[Create a bulk device credentials request](https://cumulocity.com/api/#operation/postBulkNewDeviceRequestCollectionResource) in the Cumulocity IoT OpenAPI Specification.
+[Create a bulk device credentials request](https://{{< URL >}}/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< OpenAPI >}}.
 
 >**Info:** In an {{< tenant-type-2 >}} you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the {{< tenant-type-3 >}}.

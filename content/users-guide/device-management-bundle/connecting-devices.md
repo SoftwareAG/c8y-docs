@@ -77,7 +77,10 @@ To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-r
 3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
 
 <br>
-Depending on the format of the uploaded CSV file, one of the following registration types will be processed.
+Depending on the format of the uploaded CSV file, one of the following registration types will be processed:
+
+* Simple registration
+* Full registration
 
 > **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 
@@ -114,7 +117,7 @@ To connect the devices, they are pre-registered with the relevant information. M
 
 After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 
-For your convenience we provide CSV template files for both bulk registration types (simple/full) which you can download to view or copy the structure.
+For your convenience, we provide CSV template files for both bulk registration types (simple/full) which you can download from the registration wizard to view or copy the structure. 
 
 ##### To import CSV data in Microsoft Excel
 

@@ -5,7 +5,7 @@ layout: bundle
 ---
 
 
-Release 10.10.0 includes the following new features or major feature enhancements.
+Release 10.10.0 Core includes the following new features or major feature enhancements.
 
 
 ### New microservice-based data broker
@@ -39,9 +39,9 @@ The search functionality, which can be accessed via the **Search** button in the
 For details, see [Getting started > UI functionalities and features](https://cumulocity.com/guides/users-guide/getting-started/#gui-features) in the *User guide*.
 
 
-### New Telefonica KITE platform connectivity
+### New Telefonica Kite platform connectivity
 
-to be added
+The connectivity functionality has been integrated with the Telefonica Kite platform. This allows monitoring and management of Telefonica SIMs used to connect devices. The new Kite provider can be selected and configured in the **SIM provider settings** tab under **Administration** > **Settings** > **Connectivity**, see also [Administration > Connectivity](https://cumulocity.com/guides/users-guide/administration/#connectivity) in the *User guide*.
 
 
 ### Audit logs enhancements
@@ -50,7 +50,5 @@ The audit logs functionality has been extended. Audit logs now also include:
 
 <li>Information on user logins through the UI for both OAuth Internal and single sign-on logins
 <li>Password changes to local platform users, including the user whose password has changed and the user who initiated the password change
-
-
 
 See also the [Audits](https://www.cumulocity.com/api/#tag/Audits) section in the *Cumulocity IoT OpenAPI Specification*.

@@ -59,7 +59,7 @@ Script to add a device named "DemoDevice" to Cumulocity IoT.
 
 	print("The device id is:" , json.loads(response.text)['id'])
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
 
 #### Upload the model and Apama monitor to Cumulocity IoT
 

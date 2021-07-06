@@ -56,7 +56,7 @@ We use this data to generate a time series model and forecast the next day’s c
 Run the attached *TrainModelandPredict.ipynb* notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
-2. Forecast the next day’s (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
+2. Forecasts the next day’s (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
 
 <img src="/images/zementis/DemandForecasting/traindata.PNG" alt="Download" style="display:inline-block; margin:0">
 <img src="/images/zementis/DemandForecasting/predicted.PNG" alt="Download" style="display:inline-block; margin:0">

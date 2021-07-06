@@ -56,7 +56,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 3. Click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of **Tabs** to list the newly created *isolationForests.pmml* in the **Model** folder.
 
 
-#### Model deployment and predictions using Cumulocity IoT
+#### Model deployment and predictions using {{ < product-name-1 > }}
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions. 
 

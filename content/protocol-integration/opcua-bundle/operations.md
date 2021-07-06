@@ -17,7 +17,7 @@ POST /devicecontrol/operations/
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ScanAddressSpace": {
-            “skipSync”: false
+            "skipSync": false
     },
     "description": "Import address space from root node"
 }
@@ -25,11 +25,11 @@ POST /devicecontrol/operations/
 
 The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `“skipSync”: true`.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
 `skipSync` is an optional property and its default value is false.
 
 When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
-The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `“skipSync”: true` is provided) as well as in the local address space file of the gateway.
+The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
 
 ```
 POST /devicecontrol/operations/

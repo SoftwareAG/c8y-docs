@@ -18,14 +18,14 @@ Follow the steps described in [Cumulocity IoT Sensor App](/users-guide/cumulocit
 
 > **Note:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cumulocity IoT Sensor App.
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. 
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. 
 #### Data collection with Cumulocity IoT
 
-1. Follow the steps described in [ Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
+1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
-2. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *01 merge Data.ipynb* and *CONFIG.json* to Machine Learning Workbench (MLW).
+2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *01 merge Data.ipynb* and *CONFIG.json* to Machine Learning Workbench (MLW).
 
-3. Select *CONFIG.json* in the **Data** folder and click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
+3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
 4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 

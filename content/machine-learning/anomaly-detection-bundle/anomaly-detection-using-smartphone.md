@@ -60,9 +60,9 @@ The following steps illustrate the training of an Isolation Forest machine learn
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions. 
 
-1. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
+1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
 
-2. Follow the steps described in [ Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using *isolationForest* PMML model.
+2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using *isolationForest* PMML model.
 
 #### Create and upload Apama monitor to {{ < product-name-1 > }}
 

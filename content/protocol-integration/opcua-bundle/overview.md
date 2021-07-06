@@ -17,6 +17,6 @@ The gateway has to be registered as {{< product-name-1 >}} device in a specific 
 
 > **Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please contact [product support](/welcome/contacting-support/).
 
-To download the gateway navigate to [{{< company-name-1 >}} resources](http://resources.{{< URL >}}/examples/opc-ua/).
+To download the gateway navigate to [{{< product-name-1 >}} resources](http://resources.{{< URL >}}/examples/opc-ua/).
 
 The gateway requires Java 11 in order to run.

@@ -20,10 +20,10 @@ For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* 
 #### Register a demo device in {{ < product-name-1 > }}
 
 Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank. To do so, follow the steps below:
-We have added a script **RegisterDevice.ipynb** which registers a demo device in {{ < product-name-1 > }}. 
+We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}. 
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }}. Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{ < product-name-1 > }}. 
+2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{ < product-name-1 > }}. 
 3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/DemandForecasting/notebook 1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
@@ -45,7 +45,7 @@ We use this data to generate a time series model and forecast the next day’s c
 
 #### Downlaod the data for model building exercise
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{ < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select **c8y_flow** as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{ < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_flow" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 <img src="/images/zementis/DemandForecasting/hourlyData.PNG" alt="Download" style="display:inline-block; margin:0">
@@ -56,7 +56,7 @@ We use this data to generate a time series model and forecast the next day’s c
 Run the attached *TrainModelandPredict.ipynb* notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
-2. Forecast the next day’s (i.e. Today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
+2. Forecast the next day’s (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
 
 <img src="/images/zementis/DemandForecasting/traindata.PNG" alt="Download" style="display:inline-block; margin:0">
 <img src="/images/zementis/DemandForecasting/predicted.PNG" alt="Download" style="display:inline-block; margin:0">

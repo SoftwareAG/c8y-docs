@@ -20,13 +20,13 @@ For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip
 
 Instead of registering an actual device for the activity recognition use case, a demo device can be registered. This device can be used as a replica of an actual to do human activity. Follow the below steps. We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}. 
 
-1. Open it, click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }}, upon successful execution, a device named "DemoDevice" is registered in {{ < product-name-1 > }}. 
+1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
+2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }} . Upon successful execution, a device named "DemoDevice" is registered in {{ < product-name-1 > }} .
 3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/ActivityRecognition/screenshot1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
-Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{ < product-name-1 > }}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. *CONFIG.json* file is already updated by the code with the device ID.
+Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{ < product-name-1 > }}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
 This device is capable of simulating readings of water flow to {{ < product-name-1 > }} in the form of a measurement named *c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass*.
 

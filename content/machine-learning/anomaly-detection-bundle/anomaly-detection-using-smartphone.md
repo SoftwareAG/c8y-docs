@@ -9,17 +9,17 @@ aliases:
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone. 
 
-> Info: The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
+>**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 #### Register your smartphone in {{ < product-name-1 > }}
 
-Follow the steps described in [{{ < sensor-app > }}](/users-guide/cumulocity-sensor-app) and register a smartphone in Cumulocity IoT. 
+Follow the steps described in [{{ < sensor-app > }}](/users-guide/cumulocity-sensor-app) and register a smartphone in {{ < product-name-1 > }}. 
 
-> Info: Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{ < sensor-app > }}.
+>**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{ < sensor-app > }}.
 
 Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
 
-In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via Cumulocity IoT Machine Learning Workbench that automatically transforms the JSON data into the training data format.
+In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via {{ < product-name-1 > }} Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
 #### Data collection with {{ < product-name-1 > }} Machine Learning Workbench (MLW)
 
@@ -36,7 +36,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 For this use case, the "Isolation Forest", an anomaly detection machine learning algorithm is applied. Isolation Forest is an approach that detects anomalies by isolating instances, without relying on any distance or density measure.
 
-The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. - [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
+The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. See also [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
 The integrated Jupyter Notebook feature within {{ < product-name-1 > }} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. 
 
@@ -62,7 +62,7 @@ Once the model is available in the **Model** folder, it can be deployed to Machi
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
 
-2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using *isolationForest* PMML model.
+2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using the *isolationForest* PMML model.
 
 #### Create and upload Apama monitor to {{ < product-name-1 > }}
 

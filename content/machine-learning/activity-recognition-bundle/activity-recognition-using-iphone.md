@@ -9,14 +9,14 @@ aliases:
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. 
 
-> Info: The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
+>**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 
-#### Register a Smart-Phone in {{ < product-name-1 > }}
+#### Register a smartphone in {{ < product-name-1 > }}
 
 Follow the steps described in [Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) and register a smartphone in Cumulocity IoT. 
 
-> **Note:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cumulocity IoT Sensor App.
+>**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cumulocity IoT Sensor App.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. 
 #### Data collection with Cumulocity IoT
@@ -87,11 +87,11 @@ The following code block contains the data format of the JSON schema that was as
 
 The following steps illustrate the next steps to merge all these file and create a concatenated data with labels which can be used for the machine learning model building exercise using the Jupyter Notebook.
 
-Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *MergeData.ipynb*. This will perform the following actions.
+Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *MergeData.ipynb*. This will perform the following actions:
 
--	Loads all the activity data
--	aggregate them in second wise
--	add labels for each activity
+-	Loads all the activity data,
+-	aggregate them in second wise,
+-	add labels for each activity and
 -	save it in a single file *activityData.csv*.
 
 <img src="/images/zementis/ActivityRecognition/notebook1.PNG" alt="Download" style="display:inline-block; margin:0">
@@ -105,7 +105,7 @@ To train the model we will use the AutoML feature of Cumulocity IoT Machine Lear
 
 2. Select the data resource **activityData.csv** in the **Data** folder, and click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> at the right of the top menu bar to proceed with training the AutoML model on that data.
 
-3. Select **Classification** as problem type at the top left, select **Target Variable** at the right for “label”, clear **USE FOR MODEL** for "time" and click **BUILD**.
+3. Select **Classification** as problem type at the top left, select **Target Variable** at the right for "label", clear **USE FOR MODEL** for "time" and click **BUILD**.
 <img src="/images/zementis/ActivityRecognition/automl1.PNG" alt="Download" style="display:inline-block; margin:0">
 
 4. In the **Training Parameter** section at the right, select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**) and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
@@ -114,7 +114,7 @@ To train the model we will use the AutoML feature of Cumulocity IoT Machine Lear
 
 This will create a new task in the **Tasks** section.
 
-Click **Tasks** in the navigator and click the corresponding task name to display the status of the model training in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name to display the status of the model training in the **Task History** section at the center.
 
 Once the task is completed, all the trained models are listed along with the model evaluation score in descending order.
 

@@ -99,7 +99,7 @@ In the **Properties** tab, all fields are editable except of **ID**, **Domain/ U
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
-#### Support user access
+#### <a name="user-access"> Support user access</a>
 
 At the right of the **Properties** tab, you can find information on the support user requests/access for the subtenants.
 

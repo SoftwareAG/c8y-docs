@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Physical security aspects
+title: Physical security
 layout: redirect
 ---
 

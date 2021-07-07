@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Security management aspects
+title: Management security
 layout: redirect
 ---
 

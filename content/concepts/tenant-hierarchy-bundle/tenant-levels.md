@@ -55,7 +55,7 @@ Moreover, an {{< tenant-type-2 >}} includes the following additional features:
 
 {{< tenant-type-2 >}}s offer standardized functionality combined with some individual customization.
 
-Details on the usage of this additional features and on the additional administration options of the {{< tenant-type-2 >}} can be found in the [{{< tenant-type-2 >}}](/users-guide/enterprise-edition/) section in the *User guide*.
+Details on the usage of this additional features and on the additional administration options of the {{< tenant-type-2 >}} can be found in the [{{< tenant-type-2 >}}](/users-guide/enterprise-tenant/) section in the *User guide*.
 
 <a name="management-tenant"></a>
 ### {{< tenant-type-3 >}}

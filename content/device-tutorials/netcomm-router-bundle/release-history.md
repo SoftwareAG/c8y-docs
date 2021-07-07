@@ -35,7 +35,7 @@ Changes from the previous agent for NTC-6200 and NTC-140W:
 
 #### 1.0.3
 
-* Fixed a Modbus plugin issue in which the agent continues to send measurements after slaves are unavailable.
+* Fixed a Modbus plugin issue in which the agent continues to send measurements after clients are unavailable.
 
 
 #### 1.1.0

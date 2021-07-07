@@ -78,7 +78,7 @@ After completion, a new child device has been added to the terminal and can now 
 <a name="connect-profibus"></a>
 ### Connecting Profibus devices
 
-Connecting Profibus devices slightly differs from the regular plug & play approach of other Cloud Fieldbus protocols. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
+Connecting Profibus devices slightly differs from the regular plug & play approach of other Cloud Fieldbus protocols. The gateway acts as a device on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus device address.
 
 To connect a Profibus device, follow these steps:
 
@@ -86,8 +86,8 @@ To connect a Profibus device, follow these steps:
 2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
 3. The baud rate is automatically detected by the gateway and it is displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity IoT.
-5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041)).
+5. Set the device address of the terminal.
+6. Configure your Profibus controller to communicate to that device address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041)).
 7. Click **Save** to update the gateway with the new settings.
 
 <img src="/images/device-protocols/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">

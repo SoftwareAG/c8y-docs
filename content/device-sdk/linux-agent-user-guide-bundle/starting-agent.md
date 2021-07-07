@@ -6,7 +6,7 @@ weight: 50
 
 * To start the {{< product-name-1 >}} Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
 * To start the {{< product-name-1 >}} Cloud Remote Access service, refer to [Starting the {{< product-name-1 >}} Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
-* To start the {{< product-name-1 >}} CANopen service and CANopen slave simulator, refer to [Starting the {{< product-name-1 >}} CANopen service](#starting-the-cumulocity-canopen-service).
+* To start the {{< product-name-1 >}} CANopen service and CANopen device simulator, refer to [Starting the {{< product-name-1 >}} CANopen service](#starting-the-cumulocity-canopen-service).
 
 <a name="starting-the-agent-process"></a>
 ### Starting the agent process

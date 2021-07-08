@@ -2,6 +2,9 @@
 title: Software libraries
 weight: 20
 slug: software-libraries
+layout: redirect
+aliases:
+  - /concepts/introduction/#hardware-kits-and-software-libraries
 ---
 
 {{< product-name-1 >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-name-1 >}} platform.

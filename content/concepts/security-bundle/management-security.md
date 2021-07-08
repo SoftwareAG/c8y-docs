@@ -2,6 +2,8 @@
 weight: 60
 title: Management security
 layout: redirect
+aliases:
+  - /concepts/security/#management
 ---
 
 Whenever a security-relevant event occurs, it needs to be logged for potential auditing. Security-relevant events may happen both on application level as well as in the IoT network. A simple example of a security-relevant event on application level is a login to the application. An example of a security-relevant event on the network level is using a local software or local control on a device to manipulate the device.

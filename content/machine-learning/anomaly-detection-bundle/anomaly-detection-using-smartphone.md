@@ -13,7 +13,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register your smartphone in {{ < product-name-1 > }}
 
-Follow the steps described in [{{ < sensor-app > }}](/users-guide/sensor-app) and register a smartphone in {{ < product-name-1 > }}. 
+Follow the steps described in [{{ < sensor-app > }}](/users-guide/sensor-app) in the User guide and register a smartphone in {{ < product-name-1 > }}.
 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{ < sensor-app > }}.
 
@@ -46,9 +46,9 @@ After the model is created, the scikit-learn object can be converted to PMML for
 
 The following steps illustrate the training of an Isolation Forest machine learning model using the Jupyter Notebook.
 
-1. Follow the steps described in [ Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *createModel.ipynb* to Machine Learning Workbench (MLW).
+1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *createModel.ipynb* to Machine Learning Workbench (MLW).
 
-2. Follow the steps described in [ Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *createModel.ipynb* to train an Isolation Forest PMML model.
+2. Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *createModel.ipynb* to train an Isolation Forest PMML model.
 
 
 ![Train Model using Jupyter Notebook](/images/zementis/AnomalyDetection/anomaly-jnb.png)

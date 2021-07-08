@@ -19,7 +19,7 @@ The following steps illustrate how to ingest and transform data produced by devi
 
     ![{{< product-name-1 >}} parameters](/images/zementis/mlw-app-c8y-datapull-param.png)
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} data pull in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data is stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 
@@ -37,7 +37,7 @@ The following steps illustrate how to ingest and transform data offloaded by {{<
 
     ![DataHub name](/images/zementis/mlw-app-dh-name.png)
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} Datahub data pull in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} Datahub data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data will be stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 

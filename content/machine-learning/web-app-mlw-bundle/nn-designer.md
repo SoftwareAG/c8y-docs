@@ -50,7 +50,7 @@ Click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" sty
 
 ![NN training parameter](/images/zementis/mlw-app-nn-tl-train.png)
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the model training in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the model training in the **Task History** section at the center.
 
 Once the task is COMPLETED, the trained model will be saved in the **Model** folder of the respective **Project** in ONNX format.
 

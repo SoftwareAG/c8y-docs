@@ -30,7 +30,7 @@ Once registered, you can get the device ID by looking up your device on the **Al
 4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
 
-Recording training data for activity recognition is done by starting the {{ < sensor-app > }}, performing each one of the activities over a few minutes, and noting the exact time.
+Recording training data for activity recognition is done by starting the {{ < sensor-app > }}, performing each of the activities over a few minutes, and noting the exact time.
 
 
 The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
@@ -89,7 +89,7 @@ The following steps illustrate the next steps to merge all these file and create
 
 Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *MergeData.ipynb*. This will perform the following actions:
 
--	Loads all the activity data,
+-	loads all the activity data,
 -	aggregate them in second wise,
 -	add labels for each activity and
 -	save it in a single file *activityData.csv*.

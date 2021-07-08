@@ -15,7 +15,7 @@ A demo device can be registered instead of registering a real phone and used as 
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
 
-2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py* (A script that registers a demo device in {{ < product-name-1 > }}) and *CONFIG.json* to Machine Learning Workbench (MLW).
+2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py*, a script that registers a demo device in {{ < product-name-1 > }}) and *CONFIG.json* to Machine Learning Workbench (MLW).
 
 3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
@@ -24,12 +24,12 @@ A demo device can be registered instead of registering a real phone and used as 
 5. Select *DemoDeviceCreator.py* in the **Code** folder and click the execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 
-Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the center.
 
 Script to add a device named "DemoDevice" to {{ < product-name-1 > }}.
 
 	DemoDeviceCreator.py
-	
+
 	# Register a demo device with {{ < product-name-1 > }}
 	import requests
 	import json
@@ -75,7 +75,7 @@ A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates se
 All you need to do is to upload this script to the MLW and run it as explained before.
 
 	AnomalySimulatorForDemoDevice.py
-    
+
 	# Simulate anamolous and non-anamolous data
 	import requests
 	import json
@@ -107,7 +107,7 @@ All you need to do is to upload this script to the MLW and run it as explained b
 						"gyroZ":{"unit":"°/s","value":-0.0010122909443452952}}
 	}
 
-	response = requests.request("POST", url, data=json.dumps(payload1), 
+	response = requests.request("POST", url, data=json.dumps(payload1),
 							headers=headers,auth=HTTPBasicAuth(data['c_user'], data['c_pass']))
 
 	# Simulated non-anamolous data
@@ -123,7 +123,7 @@ All you need to do is to upload this script to the MLW and run it as explained b
 						"gyroZ":{"unit":"°/s","value":-0.029031118378043175}}
 	}
 
-	response = requests.request("POST", url, data=json.dumps(payload2), 
+	response = requests.request("POST", url, data=json.dumps(payload2),
 							headers=headers,auth=HTTPBasicAuth(data['c_user'], data['c_pass']))
 
 

@@ -14,7 +14,7 @@ Sensor-based activity recognition researchers believe that by empowering ubiquit
 In this use case, we would like to showcase the recognition of the human activities - sitting, jumping and walking. For the purpose of showcasing the same, we followed these steps:
 
 * Collect sensor data from a user performing activities (sitting, jumping and walking).
-* Train an activity recognition model with the collected data and generate the model in PMML format using Cumulocity IoT Machine Learning Workbench.
+* Train an activity recognition model with the collected data and generate the model in PMML format using {{< product-name-1 >}} Machine Learning Workbench.
 * Deploy the model into {{ < product-name-1 > }} the Machine Learning application.
 * Create and upload an EPL rule to {{ < product-name-1 > }} Streaming Analytics which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.

@@ -7,19 +7,19 @@ aliases:
   - /predictive-analytics/activity-recognition/#activity-recognition-using-android
 ---
 
-This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. 
+This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone.
 
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 
 #### Register a smartphone in {{ < product-name-1 > }}
 
-Follow the steps described in [Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) and register a smartphone in Cumulocity IoT. 
+Follow the steps described in [{{< sensor-app >}}](/users-guide/cumulocity-sensor-app) and register a smartphone in {{< product-name-1 >}}.
 
->**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the Cumulocity IoT Sensor App.
+>**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 
-Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. 
-#### Data collection with Cumulocity IoT
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
+#### Data collection with {{< product-name-1 >}}
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
@@ -99,7 +99,7 @@ Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > E
 
 #### Train the PMML model
 
-To train the model we will use the AutoML feature of Cumulocity IoT Machine Learning Workbench.
+To train the model we will use the AutoML feature of {{< product-name-1 >}} Machine Learning Workbench.
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Resources](/machine-learning/web-app-mlw/#automl).
 
@@ -124,7 +124,7 @@ After the training is complete, the best model selected by the evaluation criter
 
 #### Deploy the model to {{ < product-name-1 > }}
 
-Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
+Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions.
 
 Select the model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
 
@@ -132,11 +132,11 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
-#### Create and upload Apama monitor to Cumulocity IoT
+#### Create and upload Apama monitor to {{< product-name-1 >}}
 
 For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to Cumulocity IoT. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to {{< product-name-1 >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
 Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
@@ -155,43 +155,43 @@ using com.softwareag.connectivity.httpclient.HttpTransport;
 using com.softwareag.connectivity.httpclient.Request;
 using com.softwareag.connectivity.httpclient.Response;
 using com.apama.json.JSONPlugin;
- 
+
 monitor RecognizeActivities {
-	
+
     // Replace this value with your device id.
     string deviceId := "";
-         
+
     // Model to be used for recognizing activities
     string modelName := "activityRecognitionModel";
-     
+
     //counter to exclude first five readings
-    integer counter := 0; 
-    
+    integer counter := 0;
+
     // counter to include first five detections for the same activity
     integer similarActivityCount := 0;
-	
+
 	// threshold value for any activity to be predicted consecutively
-	integer thresholdValueForDeterminingActivity := 5; 
-    
+	integer thresholdValueForDeterminingActivity := 5;
+
 	//initializing activity tracker flags to 'idle state'
 	string lastActivity := "idle state";
 	string referenceActivity := "idle state";
-	
+
 	CumulocityRequestInterface cumulocity;
-	
+
 	constant string ALARM_TYPE := "ActivityRecognitionAlarm";
-	
+
     action onload() {
     	cumulocity := CumulocityRequestInterface.connectToCumulocity();
         listenAndActOnMeasurements();
     }
-  
+
     action listenAndActOnMeasurements() {
         monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
         monitor.subscribe(FindAlarmResponse.SUBSCRIBE_CHANNEL);
-        
+
         on all Measurement(source = deviceId) as m {        
-                         
+
             if(m.measurements.hasKey("c8y_Acceleration")){
             	log "Received Measurement from C8Y.";
             	//Gather the data
@@ -200,11 +200,11 @@ monitor RecognizeActivities {
                 Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
 		        zementisRequest.setQueryParameter("record", record);
 		        zementisRequest.execute(responseHandler);
-		        log "EPL execution completed.";	
+		        log "EPL execution completed.";
             }
-        } 
+        }
     }
-     
+
     action convertMeasurementToRecord(Measurement m) returns string
     {
         dictionary<string, any> json := {};
@@ -212,18 +212,18 @@ monitor RecognizeActivities {
     	json["c8y_Acceleration_accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
     	json["c8y_Acceleration_accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
         return JSONPlugin.toJSON(json);
-    } 
-     
+    }
+
     action responseHandler(Response apiResponse) {  	
         integer statusCode := apiResponse.statusCode;
         log "Zementis responded with status -" + statusCode.toString();
-        
+
         // Ignore first 5 records and then starting checking the outputs for 200 responses.
         // First 5 records need to be cached by Zementis Server. Hence send it out but ignore the incoming response.
         if(counter >= 5 and statusCode = 200) {
 	        string currentActivity := apiResponse.payload.getSequence("outputs")[0].getEntry("predicted_activity").valueToString();
 	        log "Last activity was : " + lastActivity + ", Current activity is : " + currentActivity + ", Reference activity is : "+ referenceActivity;
-	            
+
 	        if (currentActivity =  referenceActivity) {
 	        	similarActivityCount := similarActivityCount + 1;
 	        	log "Similarity count is : "+ similarActivityCount.toString();
@@ -233,26 +233,26 @@ monitor RecognizeActivities {
 	        	similarActivityCount := 1;
 	        	log "Similarity count is : "+ similarActivityCount.toString();
 	        }
-	        
+
 	        // Hold on till you get 5 occurences of the same activity and for 6th activity onwards keep ignoring if its the same activity.
 			if (similarActivityCount = thresholdValueForDeterminingActivity and lastActivity != referenceActivity){
 				string alarmMessage := "User switched activity from '" + lastActivity + "' to '" + referenceActivity + "'.";
-				
+
 				clearOldAlarmAndSendNewAlarm(alarmMessage);
-				
+
 				// Overwrite the last activity with the last activity so that it doesn't generate duplicate alarms for the same activity.
 				lastActivity := referenceActivity;
 			}
 	    }
         counter := counter + 1;
     }
-    
+
     action createNewAlarm(string alarmMessage) {
     	send Alarm("", ALARM_TYPE, deviceId, currentTime,
 		           alarmMessage, "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.SEND_CHANNEL;
 		log "Alarm added as - "+alarmMessage;
     }
-    
+
     action clearOldAlarmAndSendNewAlarm(string alarmMessage) {
 	    	integer reqId:= integer.getUnique();
 	        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.SEND_CHANNEL;
@@ -267,7 +267,7 @@ monitor RecognizeActivities {
 	        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.SEND_CHANNEL;
 	        on FindAlarmResponseAck(reqId=reqId){
 	        	//Now create new alarm
-	            createNewAlarm(alarmMessage); 
+	            createNewAlarm(alarmMessage);
 	        }
 	}
 }

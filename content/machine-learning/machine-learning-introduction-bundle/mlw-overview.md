@@ -4,7 +4,7 @@ title: Machine Learning Workbench
 layout: redirect
 ---
 
-Machine Learning Workbench enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code Graphical User Interface and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in Cumulocity IoT operational store or any cloud data lakes with visual tools to ingest and transform the data.
+Machine Learning Workbench enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code Graphical User Interface and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-name-1 >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
 
 Machine Learning Workbench is composed of the following components:
 

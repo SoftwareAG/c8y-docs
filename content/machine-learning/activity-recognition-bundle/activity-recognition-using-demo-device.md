@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/activity-recognition/#activity-recognition-using-demo-device
 ---
 
-A fully functional activity recognition demo can be prepared with the help of a demo device. 
+A fully functional activity recognition demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip* file.
 
 #### Start with {{ < product-name-1 > }} Machine Learning Workbench
@@ -18,7 +18,7 @@ For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip
 
 #### Register a demo device in {{ < product-name-1 > }}
 
-Instead of registering an actual device for the activity recognition use case, a demo device can be registered. This device can be used as a replica of an actual to do human activity. Follow the below steps. We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}. 
+Instead of registering an actual device for the activity recognition use case, a demo device can be registered. This device can be used as a replica of an actual to do human activity. Follow the below steps. We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }} . Upon successful execution, a device named "DemoDevice" is registered in {{ < product-name-1 > }} .
@@ -28,7 +28,7 @@ Instead of registering an actual device for the activity recognition use case, a
 
 Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{ < product-name-1 > }}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
-This device is capable of simulating readings of water flow to {{ < product-name-1 > }} in the form of a measurement named *c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass*.
+This device is capable of simulating readings of water flow to {{ < product-name-1 > }} in the form of a measurement named c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass.
 
 
 

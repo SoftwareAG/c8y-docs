@@ -176,7 +176,7 @@ gateway:
   # OPC UA subscription settings: These settings allow global OPC UA configuration parameters
   # for subscription-based data reporting
   subscription:
-    # The reporting rate corresponds to the publishing rate for monitored items.
+    # The reporting rate (in milliseconds) corresponds to the publishing rate for monitored items.
     reportingRate: 100
     # The maxKeepAliveCount specifies the maximum number of OPC UA reporting intervals with no data that
     # can be skipped before the OPC UA server sends an empty response to the gateway, informing about

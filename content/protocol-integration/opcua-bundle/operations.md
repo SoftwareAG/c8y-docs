@@ -26,7 +26,6 @@ POST /devicecontrol/operations/
 The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
-`skipSync` is an optional property and its default value is false.
 
 When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
 The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
@@ -42,6 +41,38 @@ POST /devicecontrol/operations/
     "description": "Import address space from MyDevice node"
 }
 ```
+
+Available fragments for c8y_ua_command_ScanAddressSpace:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeId</td>
+<td>string</td>
+<td>no</td>
+<td>Scan of the address space starts from this node. If not provided, full scan is done starting from the root node.</td>
+</tr>
+<tr>
+<td>skipSync</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, the address space nodes will not synchronized to Cumulocity IoT Inventory API. Default is false.</td>
+</tr>
+</tbody>
+</table>
 
 > **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
@@ -102,13 +133,13 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. By default it is set to 0</td>
+<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
 <td>string</td>
 <td>no</td>
-<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". By default it is set to "Both"</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
 </tr>
 <tr>
 <td>expirationTime</td>
@@ -264,13 +295,13 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. By default it is set to 0</td>
+<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
 <td>string</td>
 <td>no</td>
-<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". By default it is set to "Both"</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
 </tr>
 <tr>
 <td>expirationTime</td>
@@ -393,13 +424,13 @@ Empty string ("") can be given to not define any range.
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. By default it is set to 0</td>
+<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
 <td>string</td>
 <td>no</td>
-<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". By default it is set to "Both"</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
 </tr>
 <tr>
 <td>expirationTime</td>
@@ -490,13 +521,13 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>processMappings</td>
 <td>boolean</td>
 <td>no</td>
-<td>By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.</td>
+<td>If the value is false then the values will not be processed based on the device protocol mapping. Default is true.</td>
 </tr>
 <tr>
 <td>tagType</td>
 <td>string</td>
 <td>no</td>
-<td>Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings. By default the value is "TAG".</td>
+<td>Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings. Default is "TAG".</td>
 </tr>
 </tbody>
 </table>
@@ -1164,6 +1195,38 @@ This operation allows for testing a device type against a specific node on an OP
 }
 ```
 
+Available fragments for c8y_ua_command_TestDeviceTypeMatching:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>Id of the managed object containing the device protocol</td>
+</tr>
+<tr>
+<td>rootNodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>Id of the root node to execute the operation</td>
+</tr>
+</tbody>
+</table>
+
 If the device type can be applied to the given node, the operation result confirms this:
 
 ```json
@@ -1221,7 +1284,31 @@ As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discove
 
 ```
 
-The `deviceTypeId` is the ID of the managed object containing the device protocol.
+Available fragments for c8y_ua_command_TestDeviceTypeMatching:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>Id of the managed object containing the device protocol</td>
+</tr>
+</tbody>
+</table>
 
 The result of the operation contains the set of nodes that match the device protocol. In addition to that, the fragment `matchednodes` is added to the operation. It contains a JSON representation of the matched nodes.
 
@@ -1288,15 +1375,48 @@ In order to know what is the current state of a device type application, use the
 
 ```json
 {
-	"description": "Query device type application state",
+	"description": "Get device type application state",
 	"deviceId": "{server ID}",
-	"c8y_ua_command_QueryDeviceTypeApplicationState": {
+	"c8y_ua_command_GetDeviceTypeApplicationState": {
 		"deviceTypeId": "{device protocol ID}",
 		"matchingRootNodes": ["{root node ID #1}", "{root node ID #2}"]
 	}
 }
 ```
-The result will be populated into the operation result as a map of nodes telling whether the device type has been applied to that node or not. Note that *matchingRootNodes* is optional. When *matchingRootNodes* is not provided, the application state of all matching nodes will be returned.
+
+Available fragments for c8y_ua_command_GetDeviceTypeApplicationState:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>Id of the managed object containing the device protocol</td>
+</tr>
+<tr>
+<td>matchingRootNodes</td>
+<td>list&lt;string&gt;</td>
+<td>no</td>
+<td>List of Id of the root nodes to execute the operation. When it is not provided, the application state of all matching nodes will be returned.</td>
+</tr>
+</tbody>
+</table>
+
+The result will be populated into the operation result as a map of nodes telling whether the device type has been applied to that node or not.
 
 Sample result when the device type has been applied to node #1 but not node #2:
 ```json

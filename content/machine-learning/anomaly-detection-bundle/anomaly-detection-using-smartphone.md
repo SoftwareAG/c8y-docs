@@ -7,13 +7,13 @@ aliases:
   - /predictive-analytics/anomaly-detection/#anomaly-detection-using-smartphone
 ---
 
-This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone. 
+This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone.
 
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 #### Register your smartphone in {{ < product-name-1 > }}
 
-Follow the steps described in [{{ < sensor-app > }}](/users-guide/cumulocity-sensor-app) and register a smartphone in {{ < product-name-1 > }}. 
+Follow the steps described in [{{ < sensor-app > }}](/users-guide/sensor-app) and register a smartphone in {{ < product-name-1 > }}. 
 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{ < sensor-app > }}.
 
@@ -38,9 +38,9 @@ For this use case, the "Isolation Forest", an anomaly detection machine learning
 
 The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. See also [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The integrated Jupyter Notebook feature within {{ < product-name-1 > }} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model. 
+The integrated Jupyter Notebook feature within {{ < product-name-1 > }} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model.
 
-> **Info:** To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. 
+> **Info:** To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices.
 
 After the model is created, the scikit-learn object can be converted to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
@@ -58,7 +58,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 
 #### Model deployment and predictions using {{ < product-name-1 > }}
 
-Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions. 
+Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
 

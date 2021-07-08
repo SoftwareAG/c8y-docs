@@ -6,11 +6,12 @@ weight: 35
 
 Machine Learning Workbench (MLW) provides connectors to the various data sources such as {{< product-name-1 >}}, DataHub, etc. from where the data could be downloaded to start the machine learning model-building process.
 
+<a name="cumulocity-iot"></a>
 ### {{< product-name-1 >}}
 
-The following steps illustrate how to ingest and transform data produced by devices connected to {{< product-name-1 >}}.
+The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-1 >}}.
 
-1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from Cumulocity**.
+1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from {{< product-name-1 >}}**.
 
 2. Select the device for which you want to pull the data and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
 

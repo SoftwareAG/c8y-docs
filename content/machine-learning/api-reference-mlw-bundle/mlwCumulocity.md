@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT data pull
+title:  Cumulocity data pull
 layout: redirect
 weight: 30
 
@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#autoML
 ---
 
-Operations on MLW data connectors - Data pull from {{< product-name-1 >}}
+Operations on MLW data connectors - Data pull from Cumulocity IoT.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -219,7 +219,7 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 {{url}}/service/mlw/projects/{{projectID}}/resources/importFromCumulocity/data
 ```
 
-Downloads the data in the data section from {{< product-name-1 >}} inventory wih given aggregation, it is a long running process.
+Downloads the data in the data section from Cumulocity IoT inventory wih given aggregation, it is a long running process.
 
 |HEADERS||
 |:---|:---|

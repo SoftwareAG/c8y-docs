@@ -17,7 +17,7 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 
 To enable or disable the microservice hosting feature, use the following endpoints:
 
->**Important:** To enable or disable the microservice hosting feature, you must have the **Tenant Manager** role.
+>**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 
 - [GET /edge/configuration/microservices](/edge/rest-api/#get-edgeconfigurationmicroservices)
 - [POST /edge/configuration/microservices](/edge/rest-api/#post-edgeconfigurationmicroservices)

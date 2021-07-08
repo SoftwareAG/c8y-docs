@@ -101,7 +101,7 @@ mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/devicemanagement.
 mongofiles -d management --prefix cmdata get  114 -l /tmp/apps/administration.zip
 mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
 
-Important: Create a backup of the streaming-analytics-app.zip file separately.
+>**Important:** Create a backup of the streaming-analytics-app.zip file separately.
 ```
 4. Install the ZIP package using the command:
 ```shell
@@ -109,7 +109,7 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 ```
 5. Prepare the applications for deployment using the commands:
 
-   >**Important:** Do not include the `streaming-analytics-app.zip` file in the ZIP package.
+   >**Important:** Do not include the *streaming-analytics-app.zip* file in the ZIP package.
 
 ```shell
 UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
@@ -147,7 +147,7 @@ Wait for Karaf to install the applications. After the installation is complete, 
 ```
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
-10. Copy the `/var/lib/cumulocity-agent/credentials` file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
 11. Restart the services using the commands:
 ```shell
@@ -161,11 +161,11 @@ monit restart opcua_mgmt_service_proc
 
 	- Log in to the Management tenant.
 
-	- Upload the `streaming-analytics-app.zip` file as a web application.
+	- Upload the *streaming-analytics-app.zip* file as a web application.
 
-	- Subscribe the Streaming Analytics app to the edge tenant.
+	- Subscribe the Streaming Analytics application to the edge tenant.
 
-		>**Important:** To subscribe the application, you must have the *Tenant Manager** role.
+		>**Important:** To subscribe the application, you must have the "Tenant Manager" role.
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
@@ -175,7 +175,7 @@ Restoring the Streaming Analytics application completes the migration procedure.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
 
->**Important:** To enable the microservice hosting feature, you must have the **Tenant Manager** role.
+>**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 
@@ -202,7 +202,7 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
 	- ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
     
-    >**Info:** If you do not specify any parameter, the backup archive is saved at `/tmp` directory. The `/tmp` directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
+    >**Info:** If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
    
 	For example:
 	```shell

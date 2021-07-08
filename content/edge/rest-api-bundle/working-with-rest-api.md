@@ -438,7 +438,7 @@ The endpoint returns `"enabled": true` if the microservices hosting feature is e
 
 Use this endpoint to configure the microservices.
 
->**Important:** To enable or disable the microservice hosting feature, you must have the **Tenant Manager** role.
+>**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 
 |HEADERS||
 |:---|:---|

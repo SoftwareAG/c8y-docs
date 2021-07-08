@@ -112,6 +112,8 @@ Enter the actual email message. Available placeholders are {host}, {binaryId}. T
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
+>**Info:**  To create a clickable link in the email, you need to add "https://" to the field.  For example, a file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}.
+
 Click **Create** to create the new export schedule.
 
 The export schedule will be added to the export details.

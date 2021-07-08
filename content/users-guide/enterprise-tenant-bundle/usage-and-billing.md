@@ -2,6 +2,8 @@
 weight: 110
 title: Usage statistics and billing
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#usage-and-billing
 ---
 
 <a name="usage-stats"></a>

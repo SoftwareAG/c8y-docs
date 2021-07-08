@@ -2,6 +2,8 @@
 weight: 90
 title: License management
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#license-management
 ---
 
 The {{< tenant-type-3 >}} may manage the licenses for the domains of the {{< tenant-type-2 >}}s via the UI.

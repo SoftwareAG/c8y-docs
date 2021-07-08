@@ -2,6 +2,8 @@
 weight: 50
 title: Support user access
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#users-in-other-tenants
 ---
 
 The support user access feature enables {{< product-name-1 >}} platform providers ({{< company-name-2 >}} in case of the public cloud instances, or service providers in case of individual on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< tenant-type-3 >}} that has specific permissions, i.e. to access subtenant users in case of any issues.

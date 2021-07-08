@@ -2,6 +2,8 @@
 weight: 10
 title: Managing tenants
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#managing-tenants
 ---
 
 Using the {{< tenant-type-2 >}} of {{< product-name-1 >}}, you can make use of the tenants functionality which allows you to create and a manage subtenants.

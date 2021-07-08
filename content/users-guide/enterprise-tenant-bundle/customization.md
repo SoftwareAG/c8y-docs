@@ -2,6 +2,8 @@
 weight: 40
 title: Customizing your platform
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#customization
 ---
 
 With the {{< tenant-type-2 >}} of {{< product-name-1 >}}, you can customize your platform in various aspects and according to your requirements.

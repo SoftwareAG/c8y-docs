@@ -2,6 +2,8 @@
 weight: 60
 title: Using the data broker
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#data-broker
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:

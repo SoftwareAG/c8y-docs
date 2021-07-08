@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 60
 title: License management
 layout: redirect
 ---

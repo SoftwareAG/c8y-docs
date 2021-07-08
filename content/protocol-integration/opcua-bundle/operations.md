@@ -69,7 +69,7 @@ Available fragments for c8y_ua_command_ScanAddressSpace:
 <td>skipSync</td>
 <td>boolean</td>
 <td>no</td>
-<td>If set to true, the address space nodes will not synchronized to Cumulocity IoT Inventory API. Default is false.</td>
+<td>If set to true, the address space nodes will not be synchronized to Cumulocity IoT Inventory API. Default is false.</td>
 </tr>
 </tbody>
 </table>
@@ -114,26 +114,26 @@ Available fragments for c8y_ua_command_ReadValue:
 <td>nodes</td>
 <td>string array</td>
 <td>yes</td>
-<td>Array of Ids of the nodes to execute the operation</td>
+<td>Array of IDs of the nodes to execute the operation</td>
 </tr>
 <tr>
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges to get subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
 </td>
 </tr>
 <tr>
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
@@ -145,7 +145,7 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -204,13 +204,13 @@ Available fragments for c8y_ua_command_ReadNodeAttributes:
 <td>node</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 <tr>
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -270,32 +270,32 @@ Available fragments for c8y_ua_command_ReadAttribute:
 <td>nodes</td>
 <td>string array</td>
 <td>yes</td>
-<td>Array of Ids of the nodes to execute the operation</td>
+<td>Array of IDs of the nodes to execute the operation</td>
 </tr>
 <tr>
 <td>attribute</td>
 <td>string</td>
 <td>yes</td>
-<td>The Id of the attribute according to the OPC UA specification</td>
+<td>The ID of the attribute according to the OPC UA specification</td>
 </tr>
 <tr>
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges to get subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
 </td>
 </tr>
 <tr>
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
@@ -307,7 +307,7 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -408,15 +408,15 @@ Available fragments for c8y_ua_command_ReadComplex:
 <td>nodeAttrs</td>
 <td>map&lt;string, map&lt;string, string&gt;&gt;</td>
 <td>yes</td>
-<td>Map with Id of the node and inner map with id of the attribute and index range.
-The index ranges are given get the subset of the multi-dimension array from the read attribute.
+<td>Map with ID of the node and inner map with ID of the attribute and the index range.
+The index ranges defines a subset of the multi-dimension array from the read attribute.
 The syntax is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1".
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1".
 Empty string ("") can be given to not define any range.
 </td>
 </tr>
@@ -424,7 +424,7 @@ Empty string ("") can be given to not define any range.
 <td>maxAge</td>
 <td>double</td>
 <td>no</td>
-<td>The maximum age used for the read. If the Server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the Server shall attempt to read a new value from the data source. Default is 0.</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
 </tr>
 <tr>
 <td>timestampsToReturn</td>
@@ -436,7 +436,7 @@ Empty string ("") can be given to not define any range.
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -481,7 +481,7 @@ Available fragments for c8y_ua_command_HistoricReadOperation:
 <td>nodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 <tr>
 <td>dateFrom</td>
@@ -502,13 +502,13 @@ Available fragments for c8y_ua_command_HistoricReadOperation:
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges to get subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
 </td>
 </tr>
 <tr>
@@ -521,7 +521,7 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>processMappings</td>
 <td>boolean</td>
 <td>no</td>
-<td>If the value is false then the values will not be processed based on the device protocol mapping. Default is true.</td>
+<td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true.</td>
 </tr>
 <tr>
 <td>tagType</td>
@@ -573,7 +573,7 @@ Available fragments for c8y_ua_command_HistoricDataUploadOperation:
 <td>nodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 <tr>
 <td>dateFrom</td>
@@ -594,13 +594,13 @@ Available fragments for c8y_ua_command_HistoricDataUploadOperation:
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges to get subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
 </td>
 </tr>
 <tr>
@@ -619,7 +619,7 @@ Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"
 <td>compress</td>
 <td>boolean</td>
 <td>no</td>
-<td>If set the false output chunks are compressed. Default is false.</td>
+<td>If set the false the output chunks are compressed. Default is false.</td>
 </tr>
 </tbody>
 </table>
@@ -664,7 +664,7 @@ Available fragments for c8y_ua_command_ReadFileOperation:
 <td>fileNodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 <tr>
 <td>bufferSize</td>
@@ -766,13 +766,13 @@ Available fragments for c8y_ua_command_WriteValue:
 <td>values</td>
 <td>map&lt;string, rangedValue&gt;</td>
 <td>yes</td>
-<td>Map with Id of the node to execute the operation and RangedValue to set
+<td>Map with ID of the node to execute the operation and RangedValue to set
 </tr>
 <tr>
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -804,13 +804,13 @@ Available fragments for type rangedValue (used as map value in c8y_ua_command_Wr
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges of the subset of an multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"</td>
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"</td>
 </tr>
 </tbody>
 </table>
@@ -859,13 +859,13 @@ Available fragments for c8y_ua_command_WriteAttribute:
 <td>values</td>
 <td>map&lt;string, attributeRangedValue&gt;</td>
 <td>yes</td>
-<td>Map with Id of the node to execute the operation and AttributeRangedValue to set
+<td>Map with ID of the node to execute the operation and AttributeRangedValue to set
 </tr>
 <tr>
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -891,7 +891,7 @@ Available fragments for type attributeRangedValue (used as map value in c8y_ua_c
 <td>attribute</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the attribute according to the OPC UA specification</td>
+<td>ID of the attribute according to the OPC UA specification</td>
 </tr>
 <tr>
 <td>value</td>
@@ -903,13 +903,13 @@ Available fragments for type attributeRangedValue (used as map value in c8y_ua_c
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>The index ranges of the subset of an multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
+<td>The index ranges of a subset of the multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
 
 ```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 ```
-Example values to define range for 1D array "0:1", for 2D array "0:1,0:1"</td>
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"</td>
 </tr>
 </tbody>
 </table>
@@ -967,7 +967,7 @@ Available fragments for c8y_ua_command_GetMethodDescriptionOperation:
 <td>nodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 </tbody>
 </table>
@@ -1059,7 +1059,7 @@ Available fragments for c8y_ua_command_CallMethodOperation:
 <td>expirationTime</td>
 <td>dateTime</td>
 <td>no</td>
-<td>Expiration time to execute the operation. Operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
+<td>Expiration time to execute the operation. The operation is executed if it is before the given expiration time. Otherwise, the operation will fail. In this case, "Operation expired" is returned as failure reason.</td>
 </tr>
 </tbody>
 </table>
@@ -1085,7 +1085,7 @@ Available fragments for type methodRequest (used in c8y_ua_command_CallMethodOpe
 <td>nodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the node to execute the operation</td>
+<td>ID of the node to execute the operation</td>
 </tr>
 <tr>
 <td>arguments</td>
@@ -1097,13 +1097,13 @@ Available fragments for type methodRequest (used in c8y_ua_command_CallMethodOpe
 <td>objectNodeId</td>
 <td>string</td>
 <td>no</td>
-<td>The NodeId of the Object or ObjectType that is the source of a HasComponent Reference (or subtype of HasComponent Reference) to the Method</td>
+<td>The NodeId of the Object or ObjectType that is the source of a HasComponent reference (or subtype of HasComponent reference) to the method</td>
 </tr>
 <tr>
 <td>parseResponse</td>
 <td>boolean</td>
 <td>no</td>
-<td>If set to true, value is converted to json and actual value is stored in rawValue fragment in response. Default is true</td>
+<td>If set to true, the value is converted to JSON and the actual value is stored in the rawValue fragment in response. Default is true</td>
 </tr>
 </tbody>
 </table>
@@ -1147,7 +1147,7 @@ Available fragments for type methodArgument (used in c8y_ua_command_CallMethodOp
 <td>dataTypeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the data type in OPC UA Server</td>
+<td>ID of the data type in OPC UA Server</td>
 </tr>
 <tr>
 <td>value</td>
@@ -1216,13 +1216,13 @@ Available fragments for c8y_ua_command_TestDeviceTypeMatching:
 <td>deviceTypeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the managed object containing the device protocol</td>
+<td>ID of the managed object containing the device protocol</td>
 </tr>
 <tr>
 <td>rootNodeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the root node to execute the operation</td>
+<td>ID of the root node to execute the operation</td>
 </tr>
 </tbody>
 </table>
@@ -1305,7 +1305,7 @@ Available fragments for c8y_ua_command_TestDeviceTypeMatching:
 <td>deviceTypeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the managed object containing the device protocol</td>
+<td>ID of the managed object containing the device protocol</td>
 </tr>
 </tbody>
 </table>
@@ -1405,13 +1405,13 @@ Available fragments for c8y_ua_command_GetDeviceTypeApplicationState:
 <td>deviceTypeId</td>
 <td>string</td>
 <td>yes</td>
-<td>Id of the managed object containing the device protocol</td>
+<td>ID of the managed object containing the device protocol</td>
 </tr>
 <tr>
 <td>matchingRootNodes</td>
 <td>list&lt;string&gt;</td>
 <td>no</td>
-<td>List of Id of the root nodes to execute the operation. When it is not provided, the application state of all matching nodes will be returned.</td>
+<td>List of ID of the root nodes to execute the operation. When it is not provided, the application state of all matching nodes will be returned.</td>
 </tr>
 </tbody>
 </table>

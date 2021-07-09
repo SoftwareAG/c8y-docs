@@ -40,11 +40,11 @@ The following code block contains the data format of the JSON schema that was as
 	measurement.json
 	{
 	    "_id" : ObjectId("5c928ba9b524aca326d727fe"),
-	    "self" : "https://zdev.{{< URL >}}/measurement/measurements/7668082",
+	    "self" : "https://zdev.cumulocity.com/measurement/measurements/7668082",
 	    "time" : "2019-03-18T14:46:15.000-07:00",
 	    "id" : "7668082",
 	    "source" : {
-	        "self" : "https://zdev.{{< URL >}}/inventory/managedObjects/7668076",
+	        "self" : "https://zdev.cumulocity.com/inventory/managedObjects/7668076",
 	        "id" : "7668076"
 	    },
 	    "type" : "c8y_Acceleration",

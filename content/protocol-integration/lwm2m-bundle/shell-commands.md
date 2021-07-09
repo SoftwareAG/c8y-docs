@@ -58,4 +58,4 @@ In the next table you will see all available commands and a brief description of
 |discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Shows all resources of the given object|
 |create /&lt;objectID&gt; [JSON]|Creates a new object. The JSON argument is optional|
 |writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; {pmin=&lt;sec&gt;}{&pmax=&lt;sec&gt;}{&greater=&lt;num&gt;}{&less=&lt;num&gt;}{&step=&lt;num&gt;}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
-|fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_ur&gt;/l|Updates the firmware of the agent|
+|fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_url&gt;/|Updates the firmware of the agent|

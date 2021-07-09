@@ -24,7 +24,7 @@ The following steps illustrate how to train a machine learning model using AutoM
 
 This will create a new task in the **Tasks** section.
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the model training in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the model training in the **Task History** section at the center.
 
 Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
 

@@ -45,7 +45,7 @@ You can select all or a subset of resource files that need to be committed to a 
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
-Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name, to display the status of the commit process in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name, to display the status of the commit process in the **Task History** section at the center.
 
 The project card will show the different versions available for that project.
 

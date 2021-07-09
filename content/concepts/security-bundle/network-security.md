@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Network security aspects
+title: Network security
 layout: redirect
 ---
 

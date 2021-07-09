@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Cumulocity IoT microservices
+title: Microservices
 layout: redirect
 ---
 

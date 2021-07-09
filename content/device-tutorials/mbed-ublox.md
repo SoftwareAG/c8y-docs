@@ -67,7 +67,7 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 | 2.2 | 10. Aug 2015 | [download](/images/device-demos/ublox/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
-#### To register the device to {{< product-name-1 >}}
+#### To register the device to the platform
 
 1. The C027 will now dial up to the internet. You will see the status "updated" in the LCD display. If the device cannot connect to the internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
 2. On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
@@ -78,7 +78,7 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
 7. When the device is connected to {{< product-name-1 >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
-### Interacting with {{< product-name-1 >}}
+### Interacting with the platform
 
 The device is now connected to {{< product-name-1 >}} and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways.
 

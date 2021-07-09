@@ -6,14 +6,14 @@ aliases:
   - /about-doc/online-information
 ---
 
-### Installation and operations documentation on the {{< company-name-2 >}} {{< company-portal >}}
+### Installation and operations documentation
 
-The **Installation and Operations guides** for the {{< product-name-1 >}} platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
+The **Installation and Operations guides** for the {{< product-name-1 >}} platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "{{< product-name-1 >}} Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
 ![Documentation on {{< company-portal >}}](/images/about/about-empower.png)
 
 
-### {{< company-name-2 >}} {{< company-help >}}
+### Developer community
 
 You can find documentation and other technical information on the [{{< company-name-2 >}} {{< company-help >}}]({{< help-link >}}) website.
 
@@ -24,7 +24,7 @@ On this community, you can:
 * Link to external websites that discuss open standards and web technology.
 
 
-### Product support website in the {{< company-name-2 >}} {{< company-portal >}}
+### Product support website
 
 You can find product information on the product support website in the [{{< company-name-2 >}} {{< company-portal >}} ]({{< portal-link >}}).
 
@@ -41,12 +41,12 @@ To get information about fixes and to read early warnings, technical papers, and
 
 If you have any questions, you can find a local or toll-free number for your country in our [Global Support Contact Directory](https://empower.softwareag.com/public_directory.aspx) and give us a call.
 
-### Cumulocity IoT status page
+### Cloud environments status page
 
-For {{< company-cloud-1 >}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
+For {{< company-cloud-1 >}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< URL >}}/](http://status.{{< URL >}}/).
 
-### Cumulocity IoT delta training
+### Releases delta training
 
-To learn what's new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
+To learn what's new in {{< product-name-1 >}} or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
 
 ![Product training](/images/about/about-product-training.png)

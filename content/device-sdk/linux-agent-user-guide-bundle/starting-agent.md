@@ -28,7 +28,7 @@ sudo systemctl start cumulocity-agent
 This way, the agent automatically restarts by a watchdog process in case it crashes.
 
 <a name="starting-the-cumulocity-cloud-remote-access-service"></a>
-### Starting the {{< product-name-1 >}} Cloud Remote Access service
+### Starting the Cloud Remote Access service
 
 Make sure that you have the *vncproxy* file in the _cumulocity-agents-linux/bin_ directory. If this is not the case, refer to the section [Building the agent with Cloud Remote Access service](./#building-the-cumulocity-cloud-remote-access-service).
 
@@ -49,7 +49,7 @@ sudo systemctl start cumulocity-remoteaccess
 ```
 
 <a name="starting-the-cumulocity-canopen-service"></a>
-### Starting the {{< product-name-1 >}} CANopen service
+### Starting the CANopen service
 
 Make sure that you have the *c8y_canopend* file in the _cumulocity-agents-linux/bin_ directory. If this is not the case, refer to the section [Building the agent with CANopen service](./#building-the-cumulocity-canopen-service) first.
 
@@ -59,7 +59,7 @@ In your _cumulocity-agents-linux_ directory, run:
 ./bin/c8y_canopend
 ```
 
-#### {{< product-name-1 >}} CANopen simulator
+#### CANopen simulator
 
 There is also a CANopen simulator included in the repository for testing purposes. To build and run it, execute:
 

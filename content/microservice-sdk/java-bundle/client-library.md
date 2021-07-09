@@ -9,7 +9,7 @@ This section provides an overview on how to access {{< product-name-1 >}} from J
 The client library is tightly linked to the design of the REST interfaces, which are described in [REST implementation](https://{{< URL >}}/api/#section/REST-implementation) in the {{< OpenAPI >}}.
 
 
-### Connecting to {{< product-name-1 >}}
+### Connecting to the platform
 
 The root interface for connecting to {{< product-name-1 >}} from Java is called Platform (see Root interface in [REST implementation](https://{{< URL >}}/api/#section/REST-implementation) in the {{< OpenAPI >}}). It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows:
 

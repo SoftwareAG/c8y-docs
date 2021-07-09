@@ -17,7 +17,7 @@ POST /devicecontrol/operations/
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ScanAddressSpace": {
-            “skipSync”: false
+            "skipSync": false
         },
     "description": "Import address space from root node"
 }
@@ -25,7 +25,7 @@ POST /devicecontrol/operations/
 
 The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide “skipSync”: true.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide "skipSync": true.
 
 > **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
@@ -554,15 +554,15 @@ Sample result when the device type has been applied to node #1 but not node #2:
 
 In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
 
-- Reading the value of a node/nodes 
-- Reading all attributes of a node 
-- Reading an attribute 
+- Reading the value of a node/nodes
+- Reading all attributes of a node
+- Reading an attribute
 - Read complex
 - Write value
 - Write attribute
 - Call method
 
-For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body. 
+For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body.
 
 The following example shows how to mark a read operation as expiring:
 

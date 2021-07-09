@@ -42,7 +42,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-Available fragments for c8y_ua_command_ScanAddressSpace:
+Available arguments for c8y_ua_command_ScanAddressSpace:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -93,7 +93,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-Available fragments for c8y_ua_command_ReadValue:
+Available arguments for c8y_ua_command_ReadValue:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -183,7 +183,7 @@ This operation returns all attributes of specific node.
 }
 ```
 
-Available fragments for c8y_ua_command_ReadNodeAttributes:
+Available arguments for c8y_ua_command_ReadNodeAttributes:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -249,7 +249,7 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 }
 ```
 
-Available fragments for c8y_ua_command_ReadAttribute:
+Available arguments for c8y_ua_command_ReadAttribute:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -387,7 +387,7 @@ This operation reads many attributes from many nodes at single call.
 }
 ```
 
-Available fragments for c8y_ua_command_ReadComplex:
+Available arguments for c8y_ua_command_ReadComplex:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -460,7 +460,7 @@ This operation reads history values and applies the mappings except of alarm map
 }
 ```
 
-Available fragments for c8y_ua_command_HistoricReadOperation:
+Available arguments for c8y_ua_command_HistoricReadOperation:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -552,7 +552,7 @@ This operation reads historic values and only saves those values to a file which
 ```
 The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
 
-Available fragments for c8y_ua_command_HistoricDataUploadOperation:
+Available arguments for c8y_ua_command_HistoricDataUploadOperation:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -643,7 +643,7 @@ With this operation, a file can be downloaded from the OPC UA server at the give
 }
 ```
 
-Available fragments for c8y_ua_command_ReadFileOperation:
+Available arguments for c8y_ua_command_ReadFileOperation:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -745,7 +745,7 @@ This operation writes values to the node/nodes.
 }
 ```
 
-Available fragments for c8y_ua_command_WriteValue:
+Available arguments for c8y_ua_command_WriteValue:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -777,7 +777,7 @@ Available fragments for c8y_ua_command_WriteValue:
 </tbody>
 </table>
 
-Available fragments for type rangedValue (used as map value in c8y_ua_command_WriteValue.values):
+Available arguments for type rangedValue (used as map value in c8y_ua_command_WriteValue.values):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -838,7 +838,7 @@ This operation is similar to the previous one, but instead of writing to the val
 }
 ```
 
-Available fragments for c8y_ua_command_WriteAttribute:
+Available arguments for c8y_ua_command_WriteAttribute:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -870,7 +870,7 @@ Available fragments for c8y_ua_command_WriteAttribute:
 </tbody>
 </table>
 
-Available fragments for type attributeRangedValue (used as map value in c8y_ua_command_WriteAttribute.values):
+Available arguments for type attributeRangedValue (used as map value in c8y_ua_command_WriteAttribute.values):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -946,7 +946,7 @@ This operation reads the description of a method node.
 }
 ```
 
-Available fragments for c8y_ua_command_GetMethodDescriptionOperation:
+Available arguments for c8y_ua_command_GetMethodDescriptionOperation:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1032,7 +1032,7 @@ This operation calls the method on the OPC UA server. It requires complete input
     "description": "call method"
 }
 ```
-Available fragments for c8y_ua_command_CallMethodOperation:
+Available arguments for c8y_ua_command_CallMethodOperation:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1064,7 +1064,7 @@ Available fragments for c8y_ua_command_CallMethodOperation:
 </tbody>
 </table>
 
-Available fragments for type methodRequest (used in c8y_ua_command_CallMethodOperation.request):
+Available arguments for type methodRequest (used in c8y_ua_command_CallMethodOperation.request):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1108,7 +1108,7 @@ Available fragments for type methodRequest (used in c8y_ua_command_CallMethodOpe
 </tbody>
 </table>
 
-Available fragments for type methodArgument (used in c8y_ua_command_CallMethodOperation.request.arguments):
+Available arguments for type methodArgument (used in c8y_ua_command_CallMethodOperation.request.arguments):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1195,7 +1195,7 @@ This operation allows for testing a device type against a specific node on an OP
 }
 ```
 
-Available fragments for c8y_ua_command_TestDeviceTypeMatching:
+Available arguments for c8y_ua_command_TestDeviceTypeMatching:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1284,7 +1284,7 @@ As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discove
 
 ```
 
-Available fragments for c8y_ua_command_TestDeviceTypeMatching:
+Available arguments for c8y_ua_command_TestDeviceTypeMatching:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1384,7 +1384,7 @@ In order to know what is the current state of a device type application, use the
 }
 ```
 
-Available fragments for c8y_ua_command_GetDeviceTypeApplicationState:
+Available arguments for c8y_ua_command_GetDeviceTypeApplicationState:
 <table>
 <colgroup>
 <col style="width: 20%;">

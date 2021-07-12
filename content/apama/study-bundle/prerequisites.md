@@ -8,7 +8,7 @@ layout: redirect
 
 We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside a geofence. This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence. While it is moving outside, it should not create new alarms because the first one will remain active. As soon as the device moves back into the geofence, the alarm will be cleared.
 
-### {{< product-name-1 >}} data model
+### {{< product-c8y-iot >}} data model
 
 Location event structure (the part we need):
 

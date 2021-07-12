@@ -15,25 +15,25 @@ For demonstration purposes, the [mbed application shield](http://mbed.org/compon
 
 ![mbed application shield](/images/device-demos/ublox/ublox_applicationshield.jpg)
 
-The {{< product-name-1 >}} mbed agent connects the C027 application board to {{< product-name-1 >}} and provides the following features:
+The {{< product-c8y-iot >}} mbed agent connects the C027 application board to {{< product-c8y-iot >}} and provides the following features:
 
 * Network dial-up using the C027 modem.
 * Efficient communication through [SmartREST](/microservice-sdk/rest#smartrest).
-* Full auto-registration using {{< product-name-1 >}}'s bootstrap and device registration.
+* Full auto-registration using {{< product-c8y-iot >}}'s bootstrap and device registration.
 * Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
-* Remote control of the device LEDs and LCD display from {{< product-name-1 >}}.
+* Remote control of the device LEDs and LCD display from {{< product-c8y-iot >}}.
 * Status monitoring using the LCD display of the application shield.
 
 #### Prerequisites
 
-To run the {{< product-name-1 >}} mbed agent, the following items are required:
+To run the {{< product-c8y-iot >}} mbed agent, the following items are required:
 
 * [u-blox C027](https://mbed.org/platforms/u-blox-C027/) Internet of Things starter kit, 2G or 3G version.
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the {{< product-name-1 >}} platform. If you do not have access yet, try {{< product-name-1 >}} for free. Go to [{{< company-cloud >}} > {{< product-name-1 >}}]({{< cloud-link >}}) and select "Try for free".
+* You need access to the {{< product-c8y-iot >}} platform. If you do not have access yet, try {{< product-c8y-iot >}} for free. Go to [{{< company-cloud >}} > {{< product-c8y-iot >}}]({{< cloud-link >}}) and select "Try for free".
 
 ### Setting up and registering the device
 
@@ -67,20 +67,20 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 | 2.2 | 10. Aug 2015 | [download](/images/device-demos/ublox/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
-#### To register the device to {{< product-name-1 >}}
+#### To register the device to the platform
 
 1. The C027 will now dial up to the internet. You will see the status "updated" in the LCD display. If the device cannot connect to the internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
 2. On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
-3. Log into the {{< product-name-1 >}} platform.
+3. Log into the {{< product-c8y-iot >}} platform.
 4. Navigate to the Device Management application using the application switcher at the top right.
 5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the User guide.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-7. When the device is connected to {{< product-name-1 >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
+7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
-### Interacting with {{< product-name-1 >}}
+### Interacting with the platform
 
-The device is now connected to {{< product-name-1 >}} and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways.
+The device is now connected to {{< product-c8y-iot >}} and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways.
 
 #### To view measurements
 
@@ -124,7 +124,7 @@ For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets
 #### To interact with control operations
 
 1. In the Device Management application, click **Devices > All Devices** in the navigator and select the "Mbed Test Device" from the device list.
-2. In the **Configuration** tab of the device, the supported configuration parameters are shown with their current values. Currently for the mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which {{< product-name-1 >}} will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab.
+2. In the **Configuration** tab of the device, the supported configuration parameters are shown with their current values. Currently for the mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which {{< product-c8y-iot >}} will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab.
 
 ![Interval Screenshot](/images/device-demos/ublox/ublox_interval.png)
 
@@ -146,7 +146,7 @@ When a u-blox device is already registered under a certain tenant, a factory res
 
 * Press and hold the joystick when (re)starting an already registered device.
 * Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined to the network, you should see "Reset Success" shown on the LCD display, which indicates a successful factory reset. Starting from version 2.1, a factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger. After about 2 seconds, you should see "Reset Success" on the display.
-* Now restart the u-blox device and follow the instructions described in section [To register the device to {{< product-name-1 >}}](#Connecting_the_C027) to register the device again under your tenant.
+* Now restart the u-blox device and follow the instructions described in section [To register the device to {{< product-c8y-iot >}}](#Connecting_the_C027) to register the device again under your tenant.
 
 
 ### Tips and tricks for developers
@@ -208,7 +208,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
 
-* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/welcome/contacting-support/) if you are connecting directly to {{< product-name-1 >}}.
+* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/welcome/contacting-support/) if you are connecting directly to {{< product-c8y-iot >}}.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
@@ -216,8 +216,8 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
 
-* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-name-1 >}} under another user account, a factory reset has to be performed to unregister the device.
+* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-c8y-iot >}} under another user account, a factory reset has to be performed to unregister the device.
 
 * **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 
-* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with {{< product-name-1 >}} and appear again.
+* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with {{< product-c8y-iot >}} and appear again.

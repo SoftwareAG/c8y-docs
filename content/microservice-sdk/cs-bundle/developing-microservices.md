@@ -38,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Platform
 
-The root interface for connecting to {{< product-name-1 >}} from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
+The root interface for connecting to {{< product-c8y-iot >}} from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
 To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice receives a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
 
@@ -149,7 +149,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription
 
-The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-name-1 >}}.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 

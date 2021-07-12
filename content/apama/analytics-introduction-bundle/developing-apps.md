@@ -6,7 +6,7 @@ layout: redirect
 
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
-* You can use the [Streaming Analytics application](#apama-epl-apps) which is available from {{< product-name-1 >}}'s application switcher and develop your EPL apps within {{< product-name-1 >}}.
+* You can use the [Streaming Analytics application](#apama-epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
@@ -18,7 +18,7 @@ The EPL Apps page of the Streaming Analytics application provides an interface f
 
 Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-name-1 >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-name-1 >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support). 
+> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support). 
 
 **Step 1 - Invoke the Streaming Analytics application**
 
@@ -36,7 +36,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-name-1 >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
 * Deploy existing EPL apps. On the card that is shown for an app, change the mode from **Inactive** to **Active**. For more information, see [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
@@ -48,7 +48,7 @@ From this page, you can:
 
 Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app. 
 
-The EPL editor is shown next. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-name-1 >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
+The EPL editor is shown next. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
 
 ![EPL editor](/images/apama/apama-epl-apps-editor.png)
 
@@ -77,7 +77,7 @@ See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 <a name="sag-designer"></a>
 ### Developing apps with {{< sag-designer >}}
 
-{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into {{< product-name-1 >}}.
+{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you then need to import it into {{< product-c8y-iot >}}.
 
 **Step 1 - Install Apama**
 
@@ -89,16 +89,16 @@ Both versions, the licensed version and the freemuim version, include {{< sag-de
 
 **Step 2 - Create a project**
 
-Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-name-1 >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
+Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
 **Step 3 - Add Apama bundles to the project**
 
-Add the following Apama bundles to the newly created Apama project. These are required by {{< product-name-1 >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
+Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
 * **Cumulocity IoT > Event Definitions for Cumulocity** <br>
-Provides event APIs required for sending and receiving data to/from {{< product-name-1 >}}.
+Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
 * **Cumulocity IoT > Utilities for Cumulocity** <br>
-Provides helper utility functions for working with data received from {{< product-name-1 >}}.
+Provides helper utility functions for working with data received from {{< product-c8y-iot >}}.
 * **Any Extractor** <br>
 Provides support for extracting values from the `any` type.
 * **Time Format** <br>
@@ -110,31 +110,31 @@ This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions** <br>
 Allows EPL apps to make HTTP calls.
 * **Cumulocity IoT > Cumulocity Client** <br>
-Exposes the {{< product-name-1 >}} client to EPL apps.
+Exposes the {{< product-c8y-iot >}} client to EPL apps.
 
 
-The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-name-1 >}}.
+The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
 
 **Step 4 - Create a monitor file**
 
 To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
 
-Before you import the newly created monitor file as an EPL app into {{< product-name-1 >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
+Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
 **Step 5 - Run and test the monitor file**
 
-When running the project locally, you will need to provide your {{< product-name-1 >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
+When running the project locally, you will need to provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
 
 ```
 CUMULOCITY_USERNAME=user@example.com 
-CUMULOCITY_SERVER_URL=http://exampleTenant.{{< URL >}} 
+CUMULOCITY_SERVER_URL=http://exampleTenant.{{< domain-c8y >}} 
 CUMULOCITY_PASSWORD=examplePassword 
 CUMULOCITY_APPKEY=apamaAppKey
 ```
 
-> **Info:** You need to [create an application](/users-guide/administration#managing-applications) in {{< product-name-1 >}} to get a value for `CUMULOCITY_APPKEY`.
+> **Info:** You need to [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file: 
 
@@ -144,4 +144,4 @@ CUMULOCITY_TENANT=my_custom_tenant
 
 You can now proceed with testing your EPL in {{< sag-designer >}}.
 
-Once the EPL app is ready, refer to [Deploying apps](/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to {{< product-name-1 >}}.
+Once the EPL app is ready, refer to [Deploying apps](/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.

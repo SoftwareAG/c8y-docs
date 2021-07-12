@@ -4,7 +4,7 @@ weight: 20
 layout: bundle
 ---
 
-In the Device Management application in the {{< product-name-1 >}} platform, click **All devices** in the **Devices** menu and select the desired gateway from the device list.
+In the Device Management application in the {{< product-c8y-iot >}} platform, click **All devices** in the **Devices** menu and select the desired gateway from the device list.
 
 ![Device list](/images/cra/cra-device-list.png)
 

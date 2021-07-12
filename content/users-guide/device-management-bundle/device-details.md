@@ -92,7 +92,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-name-1 >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+>**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -329,7 +329,7 @@ The log information will be requested from the device.
 
 >Requesting a log from a device may take some time.
 
-After the log has been transferred from the device to {{< product-name-1 >}}, it will be listed in the **Logs** tab. The row in the list shows the requested log time range.
+After the log has been transferred from the device to {{< product-c8y-iot >}}, it will be listed in the **Logs** tab. The row in the list shows the requested log time range.
 
 Click on the entry in the list to show the entire log information.
 
@@ -344,7 +344,7 @@ Hover over a row and click the delete icon, to delete the log information.
 <a name="service-monitoring"></a>
 ### Service monitoring
 
-In addition to connection monitoring, {{< product-name-1 >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
 
 <a name="shell"></a>
 ### Shell
@@ -357,11 +357,11 @@ In the command prompt you can enter arbitrary command text. To send the command 
 
 ![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
->**Important:** When using {{< product-name-1 >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+>**Important:** When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
 Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
 
-For your convenience, {{< product-name-1 >}} provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
+For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
 
 ![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
@@ -369,7 +369,7 @@ For your convenience, {{< product-name-1 >}} provides several frequently used co
 <a name="tracking"></a>
 ### Tracking
 
-Devices can record the history of their movements in {{< product-name-1 >}}. This movements may be viewed in the **Tracking** tab.
+Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 
 **Note** that the **Tracking** tab only shows up when a device contains c8y_Position property.
 
@@ -379,12 +379,12 @@ In the dropdown list at the top right you can select a time period (or specify o
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 
-Depending on the type of device and the integration into {{< product-name-1 >}}, you can configure device-side geo-fencing and motion detection.
+Depending on the type of device and the integration into {{< product-c8y-iot >}}, you can configure device-side geo-fencing and motion detection.
 
 
 <a name="identity"></a>
 ### Identity
 
-{{< product-name-1 >}} can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
+{{< product-c8y-iot >}} can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
 This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.

@@ -6,7 +6,7 @@ weight: 110
 
 ### Overview
 
-To ease device integration {{< product-name-1 >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
+To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
 To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for further information.
 
@@ -81,7 +81,7 @@ If a parameter is in square brackets, it is optional.
 
 ### Automatic device creation
 
-The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, {{< product-name-1 >}} will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case {{< product-name-1 >}} will create the device from the template.
+The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, {{< product-c8y-iot >}} will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case {{< product-c8y-iot >}} will create the device from the template.
 
 The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
@@ -293,7 +293,7 @@ Set the list of software installed on the device.
 ##### Set required availability (117)
 
 Set the required interval for availability monitoring as an integer value representing minutes.
-For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.{{< URL >}}/api/#section/Device-management-library/Device-availability) in the {{< OpenAPI >}}.
+For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.{{< domain-c8y >}}/api/#section/Device-management-library/Device-availability) in the {{< openapi >}}.
 This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|
@@ -871,7 +871,7 @@ Open or close the relays in the array.
 <a name="520"></a>
 ##### Upload configuration file (520)
 
-The current configuration is uploaded from {{< product-name-1 >}} to the device.
+The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
 
 **Example**
 
@@ -965,7 +965,7 @@ Install the firmware from the patch.
 <a name="526"></a>
 ##### Upload configuration file with type (526)
 
-Configuration is uploaded from {{< product-name-1 >}} to the device with type.
+Configuration is uploaded from {{< product-c8y-iot >}} to the device with type.
 
 Position|Parameter|
 |:-------|:-------|

@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-The {{< product-name-1 >}} Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
+The {{< product-c8y-iot >}} Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
 
 ### Device ID
 
@@ -23,12 +23,12 @@ A unique device ID is required to register your device. You can specify it using
 
 ### Server URL
 
-The agent by default connects to the {{< URL >}} instance. In case you’re using a different instance, you can change the server URL.
+The agent by default connects to the {{< domain-c8y >}} instance. In case you’re using a different instance, you can change the server URL.
 The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https&#58;//example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
 |Parameter|Example value|
 |---|---|
-|server|server=https://mqtt.{{< URL >}}<br>or<br>server=mqtts://mqtt.{{< URL >}}|
+|server|server=https://mqtt.{{< domain-c8y >}}<br>or<br>server=mqtts://mqtt.{{< domain-c8y >}}|
 
 ### Log settings
 
@@ -86,15 +86,15 @@ Each feature is implemented as a Lua plugin.
 </tr>
 <tr>
 <td>logview</td>
-<td>Allows you to remotely view the device and the agent logs from {{< product-name-1 >}}</td>
+<td>Allows you to remotely view the device and the agent logs from {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>shell</td>
-<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from {{< product-name-1 >}}</td>
+<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>version</td>
-<td>Reports the agent version to {{< product-name-1 >}}</td>
+<td>Reports the agent version to {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>modbus</td>
@@ -129,7 +129,7 @@ You can change various Modbus parameters in the configuration file. The **modbus
 
 |Parameter|Description|Example value|  
 |---|---|---|
-|modbus.transmitrate|The transmit rate for reporting measurements to {{< product-name-1 >}} [in seconds]||
+|modbus.transmitrate|The transmit rate for reporting measurements to {{< product-c8y-iot >}} [in seconds]||
 |modbus.pollingrate|The polling rate for querying the Modbus client for data [in seconds]|modbus.pollingrate=30|
 |modbus.readonly|Controls the ability to write data to clients. 1 is read-only, 0 is writable|modbus.readonly=0|
 |modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus client [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|

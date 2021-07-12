@@ -4,7 +4,7 @@ title: LWM2M device firmware update (FOTA)
 layout: redirect
 ---
 
-Cumulocity IoT LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the Cumulocity IoT platform.
+{{< product-c8y-iot >}} LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the {{< product-c8y-iot >}} platform.
 To upload a firmware, go to **Device Management** &gt; **Management** &gt; **Firmware repository** &gt; **Add firmware**
 
 ![Add new firmware](/images/device-protocols/lwm2m/lwm2m-add-new-firmware.png)
@@ -17,7 +17,7 @@ Assuming that you have already registered and connected your device, go to the d
 
 Once the firmware update has been triggered, the LWM2M agent creates and queues up a PENDING firmware update operation for execution.
 
-> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in Cumulocity IoT LWM2M.
+> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-c8y-iot >}} LWM2M.
 
 ### Firmware update state machine
 
@@ -29,18 +29,18 @@ Let’s have a quick glance at the firmware update state machine as defined by t
 
 Basically the whole update process contains different phases of interactions between the LWM2M server and the device. The above diagram consists of the possible states and transitions that could be introduced during the firmware update process.
 
-If the device goes offline or is considered offline by the LWM2M agent, the firmware update operation is left IN_PROGRESS and the agent will try to resume the firmware update process if possible when the device connects again via a registration or registration update. 
+If the device goes offline or is considered offline by the LWM2M agent, the firmware update operation is left IN_PROGRESS and the agent will try to resume the firmware update process if possible when the device connects again via a registration or registration update.
 
 ### Resetting the state machine
 
 When the firmware operation is being executed, the LWM2M agent first of all tries to reset the firmware state machine to the original state to avoid any leftover downloaded firmware that has not been installed or failures of the previous firmware update attempts on the device.
-Cumulocity IoT LWM2M agent supports the following mechanisms of resetting the firmware update state machine:
+{{< product-c8y-iot >}} LWM2M agent supports the following mechanisms of resetting the firmware update state machine:
 * If only PUSH delivery method is supported by the device, the state machine is reset by writing a byte array of a single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
 * If both PUSH and PULL or only PULL delivery method is supported, the state machine is reset by writing a NULL string to the package URI resource: **write &#47;5&#47;0&#47;1 \0**
 * This mechanism can also be specified in the device managed object by using fragment: **fwUpdateResetMechanism**. When this is set, the delivery method is disregarded. Possible values:
     ** **PACKAGE**: This works the same as when only PUSH delivery method is supported, writing a byte array of a single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
     ** **PACKAGE_URI**: The state machine is reset by writing an empty string ("") to the package URI resource: **write &#47;5&#47;0&#47;1 &lt;empty string&gt;**
- 
+
  If resetting the state machine has failed because the device is not reachable, the firmware update operation stays in PENDING status and will be executed when the device connects. If it's failed by any other reason, the firmware update operation set to FAILED.
  If the state machine is reset successfully, the firmware update operation is marked as IN_PROGRESS and the process continues to the next steps.
 
@@ -56,7 +56,7 @@ Supported firmware delivery methods and delivery protocols can also be specified
 * **fwUpdateDeliveryMethod**. Possible values: PUSH, PULL, BOTH
 * **fwUpdateSupportedDeviceProtocol**. Possible values: COAP, COAPS, HTTP, HTTPS
 
-If they are specified in the device managed object, the values sent by the device are ignored. 
+If they are specified in the device managed object, the values sent by the device are ignored.
 
 
 ### Firmware delivery
@@ -73,7 +73,7 @@ When PUSH is chosen as the deliver method, the agent will try to write the firmw
 
 In both cases, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LWM2M agent. If the device does not specify it, the agent uses its default block size of 512 bytes.
 
-When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded). 
+When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
 
 ### Triggering the firmware update on the device
 

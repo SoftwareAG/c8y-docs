@@ -19,4 +19,4 @@ Ensure that the device you wish to connect to is switched on and in pairing mode
 
 Bring the device close to your smartphone, 30cm or less is ideal.
 
-When the Bluetooth device appears in the list, tap **Pair Device** to start pairing. The Bluetooth device will then be connected to your smartphone and start sending data to {{< product-name-1 >}} if you are currently connected.
+When the Bluetooth device appears in the list, tap **Pair Device** to start pairing. The Bluetooth device will then be connected to your smartphone and start sending data to {{< product-c8y-iot >}} if you are currently connected.

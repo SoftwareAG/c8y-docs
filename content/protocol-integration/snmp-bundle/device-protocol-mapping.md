@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding Cumulocity IoT object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding Cumulocity IoT object/s that are defined in the mapping.
+The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding {{< product-c8y-iot >}} object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding {{< product-c8y-iot >}} object/s that are defined in the mapping.
 
 ### To create mapping from the UI
 
@@ -15,7 +15,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 	![Device protocol details](/images/device-protocols/snmp/snmp-device-protocol-detail.png)
 
 3. Click the menu icon at the right of the component and click **Edit** to configure the mapping for the component.
-4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required Cumulocity IoT model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
+4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required {{< product-c8y-iot >}} model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
 
 	![Edit components details](/images/device-protocols/snmp/snmp-device-protocol-mapping.png)
 

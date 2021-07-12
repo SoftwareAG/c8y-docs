@@ -4,7 +4,7 @@ title: Exporting and importing device protocols
 layout: redirect
 ---
 
-To manage device protocols more conveniently, you can export them to a file. The file can be re-imported to  set up other Cumulocity IoT accounts easily or to restore the protocols from a backup. The import functionality also supports importing ready-made device protocols provided by device manufacturers.
+To manage device protocols more conveniently, you can export them to a file. The file can be re-imported to  set up other {{< product-c8y-iot >}} accounts easily or to restore the protocols from a backup. The import functionality also supports importing ready-made device protocols provided by device manufacturers.
 
 To export a device protocol, click the menu icon at the right of the respective  row and click **Export**.
 

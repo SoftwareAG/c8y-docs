@@ -4,9 +4,9 @@ title: Multi-tenancy
 layout: redirect
 ---
 
-With the {{< tenant-type-2 >}} concept, {{< product-name-1 >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
+With the {{< enterprise-tenant >}} concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-The {{< tenant-type-2 >}} can create subtenants that will then again function like {{< tenant-type-1 >}}s in the platform and have their own tenant management.
+The {{< enterprise-tenant >}} can create subtenants that will then again function like {{< standard-tenant >}}s in the platform and have their own tenant management.
 
 This multi-tenancy approach has various advantages:
 

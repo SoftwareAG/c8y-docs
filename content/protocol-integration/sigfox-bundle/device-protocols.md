@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To process data from Sigfox devices, Cumulocity IoT needs to understand the payload format of the devices. Mapping payload data to Cumulocity IoT data can be done by creating a Sigfox device protocol.
+To process data from Sigfox devices, {{< product-c8y-iot >}} needs to understand the payload format of the devices. Mapping payload data to {{< product-c8y-iot >}} data can be done by creating a Sigfox device protocol.
 
 During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
@@ -62,7 +62,7 @@ In the following window, configure the relevant values as shown in this example.
 **New value window part 2**
 ![Sigfox protocol add new value](/images/device-protocols/sigfox/sigfox-protocols-newvalue2.png)
 
-The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
+The value configuration maps the value in the payload of a message type to the {{< product-c8y-iot >}} data.
 
 Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 

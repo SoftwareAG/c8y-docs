@@ -11,9 +11,9 @@ aliases:
 <a name="screen"></a>
 ### Main screen elements
 
-The general structure common to all {{< product-name-1 >}} applications includes the following screen elements:
+The general structure common to all {{< product-c8y-iot >}} applications includes the following screen elements:
 
-![{{< product-name-1 >}} application](/images/users-guide/getting-started/getting-started-screen-elements.png)
+![{{< product-c8y-iot >}} application](/images/users-guide/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="15%">
@@ -56,7 +56,7 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 <img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
-> **Info:** {{< product-name-1 >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-name-1 >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+> **Info:** {{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
 <a name="app-switcher"></a>
 ### Application switcher
@@ -65,9 +65,9 @@ The application switcher allows you to quickly switch between applications. Clic
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all {{< product-name-1 >}} applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
-If you are using {{< company-cloud >}}, the application switcher also shows other {{< company-cloud >}} applications at the first level, followed by the {{< product-name-1 >}} applications:
+If you are using {{< company-cloud >}}, the application switcher also shows other {{< company-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications:
 
 <img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
@@ -78,9 +78,9 @@ If you are using {{< company-cloud >}}, the application switcher also shows othe
 <a name="searching"></a>
 #### Full text search
 
-{{< product-name-1 >}} provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
+{{< product-c8y-iot >}} provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
 
-On entering a search term into the textbox at the top of the **Search** window, {{< product-name-1 >}} returns all assets (groups, devices, child devices) matching the search criteria.
+On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) matching the search criteria.
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 

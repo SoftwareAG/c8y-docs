@@ -66,16 +66,16 @@ Digital outputs can be controlled using the "Relay array control" widget, see th
 
 ### <a name="modbus"></a> Cloud Fieldbus
 
-You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and serial port, respectively, and manage them remotely in Cumulocity IoT. To do so, you need to follow these steps.
+You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and serial port, respectively, and manage them remotely in {{< product-c8y-iot >}}. To do so, you need to follow these steps.
 
 For Modbus-TCP setup:
 
-* Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP slaves.
-* Configure the Modbus-TCP port in the Cumulocity IoT menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
+* Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP clients.
+* Configure the Modbus-TCP port in the {{< product-c8y-iot >}} menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
 
 For Modbus-RTU setup:
 
-* Connect the router and your Modbus-RTU slaves via a serial cable.
+* Connect the router and your Modbus-RTU clients via a serial cable.
 * Configure the serial port mode via the device shell:
 
 ```shell

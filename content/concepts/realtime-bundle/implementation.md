@@ -4,11 +4,11 @@ title: How is real-time processing implemented in our platform?
 layout: redirect
 ---
 
-There are several processing modes for API requests in {{< product-name-1 >}}: *persistent*, *transient*, *quiescent* and *cep*.
+There are several processing modes for API requests in {{< product-c8y-iot >}}: *persistent*, *transient*, *quiescent* and *cep*.
 
-* **Persistent** - This is the default mode. It will store data in the {{< product-name-1 >}} database as well as send the data to the real-time engine. After both is done, {{< product-name-1 >}} returns the result of the request.
+* **Persistent** - This is the default mode. It will store data in the {{< product-c8y-iot >}} database as well as send the data to the real-time engine. After both is done, {{< product-c8y-iot >}} returns the result of the request.
 
-* **Transient** - Will send data to the real-time engine and immediately return asynchronously and not store it in {{< product-name-1 >}}'s database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
+* **Transient** - Will send data to the real-time engine and immediately return asynchronously and not store it in {{< product-c8y-iot >}}'s database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
 
 * **Quiescent** - Behaves similarly to the persistent mode with the exception that no real-time notifications will be sent. The quiescent processing mode is applicable only for measurements and events.
 

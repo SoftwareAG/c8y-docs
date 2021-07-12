@@ -5,7 +5,7 @@ weight: 20
 ---
 
 
-When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add {{< product-name-1 >}} CLI to it.
+When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add {{< product-c8y-iot >}} CLI to it.
 This functionality is available for Angular 7 from version 10.4.2.0 and for Angular 8 from version 10.5.9.0.
 
 ### Install Angular CLI
@@ -23,7 +23,7 @@ ng new my-first-iot-project
 cd my-first-iot-project
 ```
 
-### Add {{< product-name-1 >}} CLI
+### Add {{< product-c8y-iot >}} CLI
 
 ```sh
 cd my-first-iot-project

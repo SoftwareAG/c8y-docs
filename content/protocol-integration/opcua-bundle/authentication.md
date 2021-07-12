@@ -10,7 +10,7 @@ The following authentication methods can be selected:
 
 - Anonymous - Will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
-- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to {{< product-name-1 >}} as a binary with type “application/octet-stream”. This keystore must follow the following rules:
+- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to {{< product-c8y-iot >}} as a binary with type “application/octet-stream”. This keystore must follow the following rules:
   - It has to be a Java keystore (JKS).
   - The keystore itself has to be password-protected.
   - The keystore has to contain a user certificate with the “opcuauser” alias.
@@ -32,7 +32,7 @@ The keystore can then be verified by using a tool like KeystoreExplorer.
 
 ![Keystore explorer2](/images/device-protocols/opcua/opcua-keystore-explorer2.png)
 
-The keystore can then be uploaded as binary in {{< product-name-1 >}} and it can be used in the server configuration.
+The keystore can then be uploaded as binary in {{< product-c8y-iot >}} and it can be used in the server configuration.
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
 
@@ -46,7 +46,7 @@ All server connections are listed as child devices even if the servers are disco
 
 When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
 
-The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into {{< product-name-1 >}}. Performing another address space operation will update the address space information.
+The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into {{< product-c8y-iot >}}. Performing another address space operation will update the address space information.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 
@@ -355,7 +355,7 @@ The following is the full list of monitoring events created by the gateway:
 <td align="left">Gateway [{gateway identifier}, {gateway name}] started</td>
 <td align="left">c8y_ua_GatewayStarted</td>
 <td align="left">The gateway managed object</td>
-<td align="left">This event is created when the gateway has been started and authenticated with the {{< product-name-1 >}} platform</td>
+<td align="left">This event is created when the gateway has been started and authenticated with the {{< product-c8y-iot >}} platform</td>
 </tr>
 <tr>
 <td align="left">Connection established to server: {server ID}</td>

@@ -3,7 +3,7 @@ title: Overview
 layout: redirect
 weight: 10
 ---
-The {{< product-name-1 >}} Linux agent is a generic device agent for connecting Linux-powered devices to {{< product-name-1 >}}. It runs on all major Linux distributions like Ubuntu, Debian, Raspbian, and CentOS.
+The {{< product-c8y-iot >}} Linux agent is a generic device agent for connecting Linux-powered devices to {{< product-c8y-iot >}}. It runs on all major Linux distributions like Ubuntu, Debian, Raspbian, and CentOS.
 
 ### Supported functionality
 
@@ -15,8 +15,8 @@ The {{< product-name-1 >}} Linux agent is a generic device agent for connecting 
 
 #### Managing devices
 
-- Periodically reporting memory usage and system load to {{< product-name-1 >}}
-- Sending log files (dmesg, syslog, journald, agent log) to {{< product-name-1 >}} on demand
+- Periodically reporting memory usage and system load to {{< product-c8y-iot >}}
+- Sending log files (dmesg, syslog, journald, agent log) to {{< product-c8y-iot >}} on demand
 - Remotely executing commands via the device shell interface
 
 By customizing Lua plugins scripts, the agent can support more features, such as configuration management and network parameters management.

@@ -27,7 +27,7 @@ Most likely  you just want to extend a hybrid app, which we will cover in this r
 
 As we need to make sure that Angular and angularjs run side by side when running a hybrid app, there are some limitations. The following list tries to explain them:
 
- - It is not possible to access the `index.html`: The whole bootstrapping process needs to be handled by {{< product-name-1 >}} to make sure, that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template, you can only add routes.
+ - It is not possible to access the `index.html`: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure, that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template, you can only add routes.
  - As the services need to be loaded first, you can also not inject any service in the root app module. You need to provide them on a route or as `providedIn: root` at the deceleration of the service.
  - Routes in the router must be defined before the `UPGRADED_ROUTES`. The reason for this is that the Angular router has a `**` path match for all angularjs routes which is defined in the `UPGRADED_ROUTES`. If you define a route after it, the `**` will match before your defined route.
  - Every extension needs to be done via a hook. This is because Angular and angularjs is needed in hybrid apps and the hooks can be used by both.

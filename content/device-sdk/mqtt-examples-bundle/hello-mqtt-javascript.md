@@ -4,17 +4,17 @@ title: Hello MQTT browser-based
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the browser-based MQTT client with {{< product-name-1 >}} using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the browser-based MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user, and a password in order to access {{< product-name-1 >}}.
+* You have a valid tenant, a user, and a password in order to access {{< product-c8y-iot >}}.
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-name-1 >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
 
 * create an HTML file and include the MQTT JavaScript client (in this example we will use [Paho JavaScript Client](https://www.eclipse.org/paho/clients/js/)),
 * create a JavaScript application,
@@ -45,7 +45,7 @@ Create a JavaScript file _main.js_ with the following content:
 
 ```javascript
 // client, user and device details
-var serverUrl   = "ws://mqtt.cumulocity.com/mqtt";     /* wss://mqtt.{{< URL >}}/mqtt for a secure connection */
+var serverUrl   = "ws://mqtt.cumulocity.com/mqtt";     /* wss://mqtt.{{< domain-c8y >}}/mqtt for a secure connection */
 var clientId    = "my_mqtt_js_client";
 var device_name = "My JS MQTT device";
 var tenant      = "<<tenant_ID>>";
@@ -55,7 +55,7 @@ var password    = "<<password>>";
 var undeliveredMessages = [];
 var temperature = 25;
 
-// configure the client to {{< product-name-1 >}}
+// configure the client to {{< product-c8y-iot >}}
 var client = new Paho.MQTT.Client(serverUrl, clientId);
 
 // display all incoming messages
@@ -113,7 +113,7 @@ function publish (topic, message, onMessageDeliveredCallback) {
     client.send(message);
 }
 
-// connect the client to {{< product-name-1 >}}
+// connect the client to {{< product-c8y-iot >}}
 function init () {
     client.connect({
         userName: tenant + "/" + username,
@@ -132,14 +132,14 @@ init();
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The {{< product-name-1 >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.{{< URL >}}/mqtt` or `wss://mqtt.{{< URL >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.{{< domain-c8y >}}/mqtt` or `wss://mqtt.{{< domain-c8y >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code do?
 
 -   Configure the MQTT connection.
 -   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a c8y_Restart operation, simulate a device restart.
 -   Register ``onMessageDelivered`` callback function which will be called after a publish message has been delivered.
--   After the page is fully loaded, the function `init` is called and it connects with {{< product-name-1 >}} via a MQTT protocol.
+-   After the page is fully loaded, the function `init` is called and it connects with {{< product-c8y-iot >}} via a MQTT protocol.
 -   When the connection is established, call a ``createDevice`` function.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
@@ -156,4 +156,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

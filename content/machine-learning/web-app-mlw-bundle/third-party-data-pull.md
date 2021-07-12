@@ -4,28 +4,28 @@ layout: redirect
 weight: 35
 ---
 
-Machine Learning Workbench (MLW) provides connectors to the various data sources such as {{< product-name-1 >}}, DataHub, etc. from where the data could be downloaded to start the machine learning model-building process.
+Machine Learning Workbench (MLW) provides connectors to the various data sources such as {{< product-c8y-iot >}}, DataHub, etc. from where the data could be downloaded to start the machine learning model-building process.
 
 <a name="cumulocity-iot"></a>
-### {{< product-name-1 >}}
+### {{< product-c8y-iot >}}
 
-The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-name-1 >}}.
+The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-c8y >}}.
 
-1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from {{< product-name-1 >}}**.
+1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from {{< product-c8y-iot >}}**.
 
 2. Select the device for which you want to pull the data and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
 
 3. As part of data pull, provide the parameters such as data file name, data interval, data aggregation, and sensor name for data extraction. Once these parameters are provided, click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
-    ![{{< product-name-1 >}} parameters](/images/zementis/mlw-app-c8y-datapull-param.png)
+    ![{{< product-c8y-iot >}} parameters](/images/zementis/mlw-app-c8y-datapull-param.png)
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} data pull in the **Task History** section at the center.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-c8y-iot >}} data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data is stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 
 ### DataHub
 
-The following steps illustrate how to ingest and transform data offloaded by {{< product-name-1 >}} DataHub.
+The following steps illustrate how to ingest and transform data offloaded by {{< product-c8y-iot >}} DataHub.
 
 1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from DataHub**.
 
@@ -37,11 +37,11 @@ The following steps illustrate how to ingest and transform data offloaded by {{<
 
     ![DataHub name](/images/zementis/mlw-app-dh-name.png)
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-name-1 >}} Datahub data pull in the **Task History** section at the center.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the {{< product-c8y-iot >}} Datahub data pull in the **Task History** section at the center.
 
 Once the task has reached the status COMPLETED, the data will be stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 
-Once the data is ingested from {{< product-name-1 >}} or DataHub, the corresponding CSV file is available in the **Data** folder of the respective project in Machine Learning Workbench (MLW). You can view the metadata for the newly created CSV file by clicking on the respective file name.
+Once the data is ingested from {{< product-c8y-iot >}} or DataHub, the corresponding CSV file is available in the **Data** folder of the respective project in Machine Learning Workbench (MLW). You can view the metadata for the newly created CSV file by clicking on the respective file name.
 
 Data from the CSV file can be previewed by clicking the preview icon <img src="/images/zementis/mlw-preview-icon.png" alt="Preview" style="display:inline-block; margin:0"> at the right of the top menu bar.
 

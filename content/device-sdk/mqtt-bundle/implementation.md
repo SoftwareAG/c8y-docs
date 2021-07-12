@@ -4,11 +4,11 @@ title: MQTT implementation
 layout: redirect
 ---
 
-This section will list the implementation details for the MQTT protocol. The {{< product-name-1 >}} implementation supports MQTT Version 3.1.1.
+This section will list the implementation details for the MQTT protocol. The {{< product-c8y-iot >}} implementation supports MQTT Version 3.1.1.
 
 ### Connecting via MQTT
 
-{{< product-name-1 >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< URL >}}_) or your tenant domain (e.g. _mytenant.{{< URL >}}/mqtt_).
+{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< domain-c8y >}}_) or your tenant domain (e.g. _mytenant.{{< domain-c8y >}}/mqtt_).
 
 Available ports:
 
@@ -24,8 +24,8 @@ The two-way SSL support is enabled by default since version 10.7.0. To disable i
 
 ### SmartREST payload
 
-The {{< product-name-1 >}} MQTT implementation uses SmartREST as a payload.
-SmartREST is a CSV-like message protocol that uses templates on the server side to create data in {{< product-name-1 >}}.
+The {{< product-c8y-iot >}} MQTT implementation uses SmartREST as a payload.
+SmartREST is a CSV-like message protocol that uses templates on the server side to create data in {{< product-c8y-iot >}}.
 It incorporates the highly expressive strength of the REST API but replaces JSON with comma-separated values (CSV) to avoid the complexity of JSON parsing for embedded devices.
 Additionally, the simple and compact syntax of CSV renders it highly efficient for IoT communication via mobile networks.
 It can save up to 80% of mobile traffic compared to other HTTP APIs.
@@ -76,7 +76,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-The communication with {{< product-name-1 >}} employing MQTT supports authentication in two ways:
+The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
@@ -95,7 +95,7 @@ If the platform is configured to support two-way SSL, your devices have a config
 <a name="MQTT-ClientId"></a>
 #### MQTT ClientId
 
-The MQTT ClientId is a field to uniquely identify each connected client. The {{< product-name-1 >}} implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
+The MQTT ClientId is a field to uniquely identify each connected client. The {{< product-c8y-iot >}} implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 
 `connectionType:deviceIdentifier:defaultTemplateIdentifier`
 
@@ -107,7 +107,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 
-> **Important:** The colon character has a special meaning in {{< product-name-1 >}}. Hence, it must not be used in the `deviceIdentifier`.
+> **Important:** The colon character has a special meaning in {{< product-c8y-iot >}}. Hence, it must not be used in the `deviceIdentifier`.
 
 Examples of ClientIds:
 
@@ -123,7 +123,7 @@ During a SSL connection with certificates, the `deviceIdentifier` has to match t
 
 #### MQTT Quality of Service
 
-The {{< product-name-1 >}} implementation supports all 3 levels of MQTT QoS:
+The {{< product-c8y-iot >}} implementation supports all 3 levels of MQTT QoS:
 
 * QoS 0: At most once
     - The client just sends the message once (fire and forget)
@@ -142,12 +142,12 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** {{< product-name-1 >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
+>**Info:** {{< product-c8y-iot >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
 
 #### MQTT retained flag
 
-In the current {{< product-name-1 >}} implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
-Messages published by {{< product-name-1 >}} like operations and errors do not contain the retained flag.
+In the current {{< product-c8y-iot >}} implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
+Messages published by {{< product-c8y-iot >}} like operations and errors do not contain the retained flag.
 
 #### MQTT last will
 
@@ -164,4 +164,4 @@ To support developers during development, it is possible to subscribe to the top
 ### MQTT broker certificates
 
 MQTT broker uses the certificates which are assigned to the main environment domain. MQTT broker always sends these certificates during TLS handshake to devices.
-Moreover, {{< tenant-type-2 >}}s are not able to customize MQTT broker certificates via the SSL Management feature.
+Moreover, {{< enterprise-tenant >}}s are not able to customize MQTT broker certificates via the SSL Management feature.

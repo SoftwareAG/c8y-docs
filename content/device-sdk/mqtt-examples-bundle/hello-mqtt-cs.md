@@ -4,13 +4,13 @@ title: Hello MQTT C#
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the C# MQTT client with {{< product-name-1 >}} using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the C# MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user and a password in order to access {{< product-name-1 >}}.
+* You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * Verify that you have .NET Core SDK 2.2 installed.
 
 ```shell
@@ -35,10 +35,10 @@ The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.mic
 
 ### Developing the "Hello MQTT world" client
 
-To develop a very simple "Hello world" MQTT client for {{< product-name-1 >}}, you need to:
+To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you need to:
 
 * Create a console project.
-* Add a dependency to the MQTT C# client library (in this example we will use [{{< product-name-1 >}} SDK MQTT](https://bitbucket.org/m2m/cumulocity-sdk-cs/src)).
+* Add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://bitbucket.org/m2m/cumulocity-sdk-cs/src)).
 * Build and run the C# application.
 
 #### Creating a console project
@@ -53,7 +53,7 @@ This will create a new console application _hello-mqtt-cs_ in the current direct
 
 #### Adding the MQTT C# client library
 
-Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder and add a dependency manually to the {{< product-name-1 >}} SDK MQTT.
+Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder and add a dependency manually to the {{< product-c8y-iot >}} SDK MQTT.
 
 ```xml
 <ItemGroup>
@@ -194,12 +194,12 @@ var cDetails = new ConnectionDetailsBuilder()
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-name-1 >}} MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< URL >}}:1883` or `ssl://mqtt.{{< URL >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
+{{< product-c8y-iot >}} MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
 
 What does the code in `Main` do?
 
 -   Configure the MQTT connection.
--   Connect with {{< product-name-1 >}} via MQTT protocol.
+-   Connect with {{< product-c8y-iot >}} via MQTT protocol.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.
@@ -272,4 +272,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

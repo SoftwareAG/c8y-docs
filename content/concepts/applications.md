@@ -10,6 +10,6 @@ aliases:
   - /konzepte/anwendungen
 ---
 
-{{< product-name-1 >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
+{{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
 
-This section introduces the basic concepts around applications in {{< product-name-1 >}}.
+This section introduces the basic concepts around applications in {{< product-c8y-iot >}}.

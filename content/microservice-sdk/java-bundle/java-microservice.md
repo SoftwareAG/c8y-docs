@@ -4,11 +4,11 @@ layout: redirect
 title: Hello world tutorial
 ---
 
-Here you will learn how to create your first microservice that can be deployed on the [{{< product-name-1 >}} platform](https://{{< URL >}}) using the Microservice SDK for Java.
+Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
 
 ### Prerequisites
 
-You need to have {{< product-name-1 >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-name-1 >}} platform](https://{{< URL >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
 Verify that you have Java 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
@@ -23,7 +23,7 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-{{< product-name-1 >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -70,7 +70,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library
 
-You need to specify the version of the {{< product-name-1 >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You need to specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
@@ -86,7 +86,7 @@ The response looks like this:
 }
 ```
 
-See also [Tenants](https://{{< URL >}}/api/#tag/Tenants) in the {{< OpenAPI >}}.
+See also [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}}.
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
@@ -99,7 +99,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 
 #### Add repositories and dependencies
 
-Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the {{< product-name-1 >}} Maven repository which stores the client libraries.
+Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the {{< product-c8y-iot >}} Maven repository which stores the client libraries.
 
 ```xml
 <repositories>
@@ -219,9 +219,9 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the {{< product-name-1 >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
-Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for {{< product-name-1 >}} microservices including:
+Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for {{< product-c8y-iot >}} microservices including:
 
 * Security
 * Subscription
@@ -240,14 +240,14 @@ application.name=my-first-microservice
 server.port=80
 ```
 
-Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the {{< product-name-1 >}} platform.
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the {{< product-c8y-iot >}} platform.
 
 ```json
 {
   "apiVersion": "1",
   "version": "@project.version@",
   "provider": {
-    "name": "{{< company-name-1 >}}"
+    "name": "{{< company-c8y >}}"
   },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [
@@ -272,9 +272,9 @@ hello-microservice-java-1.0.0-SNAPSHOT.zip
 
 ### Deploying the "Hello world" microservice
 
-To deploy your microservice on the {{< product-name-1 >}} platform you need:
+To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 
-* A valid tenant, a user and a password in order to access {{< product-name-1 >}}.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The ZIP file built with Maven on the previous steps.
 
 > **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
@@ -301,7 +301,7 @@ https://<yourTenantDomain>/service/hello-microservice-java/health
 
 You can also use third-party applications or commands to make a GET request to your microservice endpoint. To do so, you need:
 
-* A valid tenant, a user and a password in order to access {{< product-name-1 >}}.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
 For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
@@ -320,16 +320,16 @@ $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/he
 <a name="run-locally"></a>
 ### Running the microservice locally
 
-You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-name-1 >}}.
+You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-c8y-iot >}}.
 
-To run a microservice which uses the {{< product-name-1 >}} API locally, you need:
+To run a microservice which uses the {{< product-c8y-iot >}} API locally, you need:
 
-* A valid tenant, a user and a password in order to access {{< product-name-1 >}}.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
 #### Create the application
 
-If the application does not exist, create a new application on the {{< product-name-1 >}} platform employing a POST request.
+If the application does not exist, create a new application on the {{< product-c8y-iot >}} platform employing a POST request.
 
 ```http
 POST <URL>/application/applications
@@ -347,7 +347,7 @@ BODY:
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your {{< product-name-1 >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You have to replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 

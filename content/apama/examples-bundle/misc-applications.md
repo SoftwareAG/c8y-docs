@@ -3,6 +3,6 @@ weight: 50
 title: Miscellaneous sample apps
 layout: redirect
 ---
-The EPL editor in the Streaming Analytics application provides several sample apps which demonstrate how to use Apama EPL, for example, to query for {{< product-name-1 >}} objects or to create alarms. You can use these samples to build your own apps.
+The EPL editor in the Streaming Analytics application provides several sample apps which demonstrate how to use Apama EPL, for example, to query for {{< product-c8y-iot >}} objects or to create alarms. You can use these samples to build your own apps.
 
 

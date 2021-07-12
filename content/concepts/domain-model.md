@@ -8,4 +8,4 @@ aliases:
   - /konzepte/domain-modell
 ---
 
-The following section describes the general technical concepts behind {{< product-name-1 >}}.
+The following section describes the general technical concepts behind {{< product-c8y-iot >}}.

@@ -4,11 +4,11 @@ title: Customizing your platform
 layout: redirect
 ---
 
-With the {{< tenant-type-2 >}} of {{< product-name-1 >}}, you can customize your platform in various aspects and according to your requirements.
+With the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can customize your platform in various aspects and according to your requirements.
 
 Apart from various [configuration](#configuration) settings, you can use your individual [branding](#branding) and your individual [domain name](#domain-name).
 
-Click **{{< tenant-type-2 >}}** in the **Settings** menu to access these settings.
+Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these settings.
 
 ![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
 
@@ -21,8 +21,8 @@ The following placeholders can be found in the **Configuration** tab:
 
 |Placeholder|Description|
 |:---|:---|
-|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< URL >}}`.
-|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< URL >}}`. In case of an {{< tenant-type-2 >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
+|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.
+|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
 #### Two-factor authentication
@@ -33,7 +33,7 @@ Under **Two-factor authentication**, you can change the SMS template which is se
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< company-help >}} page will be used.
+In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
 
 ![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
@@ -89,7 +89,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** at the bottom to save your settings.
 
-> **Info:** Some additional configuration settings can be specified globally in the {{< tenant-type-3 >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+> **Info:** Some additional configuration settings can be specified globally in the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 
 <a name="branding"></a>
 ### Branding
@@ -194,11 +194,11 @@ The following parameters can be specified:
 <a name="domain-name"></a>
 ### Domain name
 
-A key feature of the {{< tenant-type-2 >}} is the ability to operate the {{< product-name-1 >}} platform using a custom domain name. This
-means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-name-1 >}}. In addition you'll be able to create subtenants
+A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This
+means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}}. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
-> **Info:** The custom domain name functionality is only available for {{< product-name-1 >}} cloud installations or On-Premise installations which don't use a custom load balancer.
+> **Info:** The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or On-Premise installations which don't use a custom load balancer.
 
 There are three prerequisites for using a custom domain:
 
@@ -207,28 +207,28 @@ There are three prerequisites for using a custom domain:
 2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
-   routed to {{< product-name-1 >}}. (see below).
+   routed to {{< product-c8y-iot >}}. (see below).
 
 #### SSL certificate requirements
 
-The following criteria have to be met by any SSL certificate to be used with the {{< tenant-type-2 >}} feature:
+The following criteria have to be met by any SSL certificate to be used with the {{< enterprise-tenant >}} feature:
 
 * The certificate is currently valid and has not expired. More specifically, validFrom points to a point in time in the
   past, and validTo to a point in the future.
 * The certificate has been issued by a well-established certificate authority (CA). Self-signed certificates are
   explicitly not supported.
 * The certificate is a wildcard certificate issued for your domain *\*.iot.mycompany.com*. The use of a wildcard
-  certificate is mandatory, as it will also be used for subdomains created from your {{< tenant-type-2 >}}.
+  certificate is mandatory, as it will also be used for subdomains created from your {{< enterprise-tenant >}}.
 * Every single certificate in the chain is provided using the X509 format.
 * The common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your
   wildcard domain name, e.g. "CN=\*.iot.mycompany.com".
 
-{{< product-name-1 >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
+{{< product-c8y-iot >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.
 
 #### Packaging the SSL certificate in PKCS #12
 
-In order to use a SSL certificate with {{< product-name-1 >}}, the certificate together with its private key have to be uploaded to
+In order to use a SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
 the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two
@@ -237,7 +237,7 @@ protected with a password/passphrase.
 
 Such PEM files can easily be repackaged into #PKCS #12 using [OpenSSL](https://www.openssl.org/). In the following
 example, OpenSSL is used to combine a certificate chain (*chain.cert*) and the corresponding key (*privkey.pem*) into a
-PKCS #12 keystore file (*out_keystore.p12*) that can be used with {{< product-name-1 >}}.
+PKCS #12 keystore file (*out_keystore.p12*) that can be used with {{< product-c8y-iot >}}.
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
@@ -245,21 +245,21 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 #### DNS requirements for enterprise domains
 
-The DNS entries for your custom domain have to be configured in a way that all requests are routed to the {{< product-name-1 >}} platform.
+The DNS entries for your custom domain have to be configured in a way that all requests are routed to the {{< product-c8y-iot >}} platform.
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
-domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of {{< product-name-1 >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
-is *http://mytenant.{{< URL >}}*, the target hostname is *{{< URL >}}*. Please also make sure to delete any
+domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
+is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-name-1 >}} at *{{< URL >}}*, the following CNAME entry has to be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry has to be added to your DNS zone:
 
 ```shell
 NAME                  TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  {{< URL >}}.
+*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
 ```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
@@ -280,11 +280,11 @@ uploaded to the platform.
 
 
 Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
-to your {{< tenant-type-2 >}} using the new domain name. You will also receive an email with information about the
-activation. Note that your {{< tenant-type-3 >}} domain name is static, for example, if your wildcard domain is "*
-.iot.mycompany.com" then your {{< tenant-type-3 >}} domain will be "management.iot.mycompany.com".
+to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the
+activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
+.iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".
 
-> **Info:** After the activation is completed you will no longer be able to access your tenant with the {{< product-name-1 >}} domain name. Instead, use your custom domain name.
+> **Info:** After the activation is completed you will no longer be able to access your tenant with the {{< product-c8y-iot >}} domain name. Instead, use your custom domain name.
 
 #### Updating your certificate
 
@@ -299,13 +299,13 @@ When your certificate expires, you must update your certificate with a new one w
 
 #### Deactivating your certificate
 
-If you wish to return to your old domain at {{< product-name-1 >}}, you can simply deactivate you certificate.
+If you wish to return to your old domain at {{< product-c8y-iot >}}, you can simply deactivate you certificate.
 
 >**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
-In case you cannot reach {{< product-name-1 >}} using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
+In case you cannot reach {{< product-c8y-iot >}} using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
 
 **Check if the DNS entry is correct**
 

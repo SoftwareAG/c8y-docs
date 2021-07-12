@@ -4,9 +4,9 @@ title: Overview
 layout: redirect
 ---
 
-With {{< product-name-1 >}} Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
+With {{< product-c8y-iot >}} Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
 
-* [Connect](#connecting-fieldbus) fieldbus devices to {{< product-name-1 >}}.
+* [Connect](#connecting-fieldbus) fieldbus devices to {{< product-c8y-iot >}}.
 * [Manage](#managing-fieldbus) the connected fieldbus devices.
 * [Configure](#configuring-fieldbus) the remote management capabilities of particular types of devices and [import and export](#exporting-importing-protocols) them.
 

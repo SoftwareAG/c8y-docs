@@ -126,7 +126,7 @@ Example console output:
 
 ```console
 $ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
-{{< company-name-1>}} UI development server running in port 9000.
+{{< company-c8y >}} UI development server running in port 9000.
 Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.
@@ -362,7 +362,7 @@ You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in t
 
 The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-If you are not deploying to a {{< tenant-type-3 >}}, you need to include the following fragment to your target .json file:
+If you are not deploying to a {{< management-tenant >}}, you need to include the following fragment to your target .json file:
 
 ```json
 	"allApplications": {

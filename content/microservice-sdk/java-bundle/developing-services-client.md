@@ -4,7 +4,7 @@ layout: redirect
 title: Services platform and SMS API
 ---
 
-This section describes the {{< product-name-1 >}} SMS API and shows how to access it using the {{< product-name-1 >}} Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
+This section describes the {{< product-c8y-iot >}} SMS API and shows how to access it using the {{< product-c8y-iot >}} Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
 
 ### Using the services platform
 
@@ -14,7 +14,7 @@ The services platform interface is responsible for connecting to the Java servic
 ServicesPlatform platform = new ServicesPlatformImpl("<URL>", new CumulocityCredentials("<tenant>", "<user>", "<password>", "<application key>"));
 ```
 
-The URL pointing to the platform must be of the form *&lt;tenant>.{{< URL >}}*, for example *https://demos.{{< URL >}}*, which will process all the API requests.
+The URL pointing to the platform must be of the form *&lt;tenant>.{{< domain-c8y >}}*, for example *https://demos.{{< domain-c8y >}}*, which will process all the API requests.
 
 **Info**: You need to have appropriate credentials to be able to access the Services API from outside. See the example above.
 

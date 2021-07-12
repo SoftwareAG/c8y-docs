@@ -73,7 +73,7 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 {{url}}/service/mlw/credentials
 ```
 
-Registers the AWS S3 credentials information with {{< product-name-1 >}}.
+Registers the AWS S3 credentials information with {{< product-c8y-iot >}}.
 
 |HEADERS||
 |:---|:---|
@@ -159,7 +159,7 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 {{url}}/service/mlw/credentials
 ```
 
-Deletes the AWS S3 credentials information from {{< product-name-1 >}}.
+Deletes the AWS S3 credentials information from {{< product-c8y-iot >}}.
 
 |HEADERS||
 |:---|:---|

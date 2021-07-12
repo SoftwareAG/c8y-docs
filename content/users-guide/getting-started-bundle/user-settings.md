@@ -34,15 +34,15 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Logout</td>
-<td style="text-align:left">Logs you out from your {{< product-name-1 >}} account. </td>
+<td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
 <tr>
 <td style="text-align:left">Activate support</td>
-<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the {{< tenant-type-3 >}}, see <a href="/users-guide/enterprise-edition/#support-user-access" class="no-ajaxy">Support user access</a> for details. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, see <a href="/users-guide/enterprise-edition/#support-user-access" class="no-ajaxy">Support user access</a> for details. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the {{< product-name-1 >}} version you are using, i.e. 10.5.8, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
+<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using, i.e. 10.5.8, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +62,7 @@ Several account settings can be changed by the user.
 
 The user interface language will be selected along the following criteria, in the order listed below:
 
-*  The language selected in the {{< product-name-1 >}} user settings.
+*  The language selected in the {{< product-c8y-iot >}} user settings.
 *  The language selected in the browser preferences.
 * 	The operating system language.
 

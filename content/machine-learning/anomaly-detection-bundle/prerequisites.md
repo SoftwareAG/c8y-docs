@@ -12,6 +12,6 @@ Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip
 Running the demo requires:
 
 * Prior experience and understanding of data science processes.
-* Familiarity with {{< product-name-1 >}} and its in-built apps.
+* Familiarity with {{< product-c8y-iot >}} and its in-built apps.
 * Subscription of the Zementis microservice (10.5.0.x.x or higher), MLW microservice (10.9.0.x.x or higher), Machine Learning application and the Machine Learning Workbench application on the tenant.
 * Subscription of the Apama-ctrl microservice and the Apama-epl application on the tenant.

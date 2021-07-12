@@ -6,14 +6,14 @@ aliases:
   - /users-guide/enterprise-edition/#ms-data-broker
 ---
 
-The microservice-based data broker is powered by the {{< product-name-1 >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
+The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
-> **Important:** At this time the {{< product-name-1 >}} Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all {{< product-name-1 >}} public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your {{< product-name-1 >}} environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
+> **Important:** At this time the {{< product-c8y-iot >}} Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all {{< product-c8y-iot >}} public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your {{< product-c8y-iot >}} environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
 
 <a name="enabling-ms-data-broker"></a>
 ###  To enable the microservice-based data broker
 
-1. In the {{< tenant-type-3 >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
+1. In the {{< management-tenant >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
 2. In the **Applications** tab, subscribe the tenant to the data broker agent (databroker-agent-server).
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
@@ -38,9 +38,9 @@ After enabling the microservice-based data broker, your existing data connectors
 <a name="troubleshooting-ms-data-broker"></a>
 ###  Troubleshooting
 
-#### {{< tenant-type-3 >}} subscription alert
+#### {{< management-tenant >}} subscription alert
 
-The {{< tenant-type-3 >}} cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a {{< tenant-type-3 >}} to the data broker agent.
+The {{< management-tenant >}} cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a {{< management-tenant >}} to the data broker agent.
 
 #### Data broker connection error
 

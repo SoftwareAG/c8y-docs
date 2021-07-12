@@ -6,7 +6,7 @@ aliases:
   - /users-guide/enterprise-edition/#user-hierarchies
 ---
 
-With user hierarchies you can reflect independent organizational entities in {{< product-name-1 >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
+With user hierarchies you can reflect independent organizational entities in {{< product-c8y-iot >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
 > **Info:** To be able to use this feature, your tenant must be subscribed to the application "feature-user-hierachy".
 
@@ -42,7 +42,7 @@ A user A has the role "business". User A becomes the owner of a new user B. User
 <a name="delegate"></a>
 ### Delegating user hierarchies to other users
 
-In {{< product-name-1 >}}, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation.
+In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation.
 
 You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 

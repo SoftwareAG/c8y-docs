@@ -34,4 +34,4 @@ Similar to the inventory model, fragments are used to identify characteristics o
 
 Readings can hold various additional information that applications may require.
 
-More detailed information can be found in [Measurements](https://{{< URL >}}/api/#tag/Measurements) in the {{< OpenAPI >}}.
+More detailed information can be found in [Measurements](https://{{< domain-c8y >}}/api/#tag/Measurements) in the {{< openapi >}}.

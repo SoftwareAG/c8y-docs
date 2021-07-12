@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="business"></a>
 
-{{< product-name-1 >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.
+{{< product-c8y-iot >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.
 
 The following types are available:
 
@@ -993,7 +993,7 @@ Moreover, the following pattern is supported:
 
 #### Example
 
-**{{< product-name-1 >}} trigger**
+**{{< product-c8y-iot >}} trigger**
 
 ```json
 {

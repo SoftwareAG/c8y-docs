@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: var-tenant-type-2
+title: var-enterprise-tenant
 layout: bundle
 outputs:
 - html

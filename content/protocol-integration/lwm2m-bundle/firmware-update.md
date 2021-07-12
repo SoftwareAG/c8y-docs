@@ -4,7 +4,7 @@ title: LWM2M device firmware update (FOTA)
 layout: redirect
 ---
 
-{{< product-name-1 >}} LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the {{< product-name-1 >}} platform.
+{{< product-c8y-iot >}} LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the {{< product-c8y-iot >}} platform.
 To upload a firmware, go to **Device Management** &gt; **Management** &gt; **Firmware repository** &gt; **Add firmware**
 
 ![Add new firmware](/images/device-protocols/lwm2m/lwm2m-add-new-firmware.png)
@@ -17,7 +17,7 @@ Assuming that you have already registered and connected your device, go to the d
 
 Once the firmware update has been triggered, the LWM2M agent creates and queues up a PENDING firmware update operation for execution.
 
-> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-name-1 >}} LWM2M.
+> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-c8y-iot >}} LWM2M.
 
 ### Firmware update state machine
 
@@ -34,7 +34,7 @@ If the device goes offline or is considered offline by the LWM2M agent, the firm
 ### Resetting the state machine
 
 When the firmware operation is being executed, the LWM2M agent first of all tries to reset the firmware state machine to the original state to avoid any leftover downloaded firmware that has not been installed or failures of the previous firmware update attempts on the device.
-{{< product-name-1 >}} LWM2M agent supports the following mechanisms of resetting the firmware update state machine:
+{{< product-c8y-iot >}} LWM2M agent supports the following mechanisms of resetting the firmware update state machine:
 * If only PUSH delivery method is supported by the device, the state machine is reset by writing a byte array of a single element (value is 0) to the package resource: **write &#47;5&#47;0&#47;0 \0**
 * If both PUSH and PULL or only PULL delivery method is supported, the state machine is reset by writing a NULL string to the package URI resource: **write &#47;5&#47;0&#47;1 \0**
 * This mechanism can also be specified in the device managed object by using fragment: **fwUpdateResetMechanism**. When this is set, the delivery method is disregarded. Possible values:

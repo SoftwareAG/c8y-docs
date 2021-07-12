@@ -90,7 +90,7 @@ Once done, select a target model or model group which will be used for processin
 Use the **Apply across all models** toggle if you want the processing to happen on all the models of a model group. When this option is disabled, processing will happen on primary model of the model group.<br>
 ![Scheduled process 1](/images/zementis/zementis-jobconfig-info.png)
 <br>Click **Next** to proceed.
-3. Each device can have various measurements which are persisted in {{< product-name-1 >}}. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
+3. Each device can have various measurements which are persisted in {{< product-c8y-iot >}}. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
 ![Scheduled process 2](/images/zementis/zementis-jobconfig-mapping.png)
 <br>Click **Next** to proceed.
 4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also need to specify the data range to be used for processing when the job is executed.

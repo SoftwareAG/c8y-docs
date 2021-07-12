@@ -9,7 +9,7 @@ You can use predefined rules (see [Smart rules](/users-guide/cockpit/#smart-rule
 
 | To do this                  | you need the following                                       |
 | --------------------------- | ------------------------------------------------------------ |
-| Use predefined rules        | Apama-ctrl microservice and Smartrule microservice (included in {{< product-name-1 >}}'s {{< tenant-type-1 >}}). |
+| Use predefined rules        | Apama-ctrl microservice and Smartrule microservice (included in {{< product-c8y-iot >}}'s {{< standard-tenant >}}). |
 | Define custom rules         | Apama-ctrl microservice and Streaming Analytics application. |
 | Build analytic models       | Apama-ctrl microservice and Streaming Analytics application. |
 

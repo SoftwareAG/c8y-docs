@@ -55,7 +55,7 @@ Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbi
 
 ### Device lifecycle events
 
-The LWM2M agent creates events of device lifecycle in {{< product-name-1 >}}.
+The LWM2M agent creates events of device lifecycle in {{< product-c8y-iot >}}.
 Following are the specific event types for device bootstrap and registration process.
 The LWM2M agent creates the events with the specific event type during the device bootstrap and registration process.
 

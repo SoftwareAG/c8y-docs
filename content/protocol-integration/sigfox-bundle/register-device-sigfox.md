@@ -23,7 +23,7 @@ In the next window, fill in the required information:
 - **Device protocol:** Select your desired device protocol from the drop-down list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 
-> **Info:** The term "Device type" is used both by Sigfox and {{< product-name-1 >}}, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In {{< product-name-1 >}}, a device type describes the data that is sent by devices of a particular type.
+> **Info:** The term "Device type" is used both by Sigfox and {{< product-c8y-iot >}}, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In {{< product-c8y-iot >}}, a device type describes the data that is sent by devices of a particular type.
 
 ![Register devices1](/images/device-protocols/sigfox/sigfox-registration1.png)
 

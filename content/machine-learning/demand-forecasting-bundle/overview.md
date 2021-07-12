@@ -18,6 +18,6 @@ Technically speaking, the distribution-system operators should adjust the pressu
 In this Demand Forecasting use case, we would like to forecast the peak/non-peak hours of water consumption using a Time Series model. For showcasing this, we would follow these steps.
 
 
-* Create a demo device in {{< product-name-1 >}} that mimics an actual device connected to the reservoir tank.
+* Create a demo device in {{< product-c8y-iot >}} that mimics an actual device connected to the reservoir tank.
 * Simulate measurements for the demo device.
 * Generate forecasts based on the simulated data.

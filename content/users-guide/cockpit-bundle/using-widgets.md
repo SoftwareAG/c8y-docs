@@ -6,7 +6,7 @@ layout: redirect
 
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.
 
-{{< product-name-1 >}} provides preset widget types, for details see the [Widgets collection](#widgets-collection).
+{{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](#widgets-collection).
 
 <a name="adding-widgets"></a>
 ### To add a widget to a dashboard or a report

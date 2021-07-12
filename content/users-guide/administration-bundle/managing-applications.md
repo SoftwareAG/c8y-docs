@@ -4,14 +4,18 @@ title: Managing applications
 layout: redirect
 ---
 
-In the {{< product-name-1 >}} platform we distinguish between two kinds of applications:
+In the {{< product-c8y-iot >}} platform we distinguish between two kinds of applications:
 
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
 * [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#adding-applications) in various ways as own applications.
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
+<<<<<<< HEAD
 Additionally, in {{< tenant-type-2 >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for more details.
+=======
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
+>>>>>>> develop
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
@@ -78,13 +82,17 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
+<<<<<<< HEAD
 In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< tenant-type-2 >}} > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
+=======
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< enterprise-tenant >}} > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
+>>>>>>> develop
 
 
 <a name="subscribed-applications"></a>
 ### Subscribed applications
 
-{{< product-name-1 >}} provides a variety of applications for different purposes.
+{{< product-c8y-iot >}} provides a variety of applications for different purposes.
 
 Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications listed below.
 
@@ -95,9 +103,9 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### {{< tenant-type-1 >}} default applications
+### {{< standard-tenant >}} default applications
 
-In the {{< tenant-type-1 >}} you will find the following default applications:
+In the {{< standard-tenant >}} you will find the following default applications:
 
 <table>
 <col width="200">
@@ -132,7 +140,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the {{< tenant-type-1 >}}. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left"><b>This application is deprecated and no longer a default application in the {{< standard-tenant >}}. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -170,7 +178,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 </table>
 
 
-### {{< tenant-type-2 >}} applications
+### {{< enterprise-tenant >}} applications
 
 <table>
 <col width="200">
@@ -204,8 +212,13 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-name-1 >}} that share the same database.</td>
+=======
+<td style="text-align:left"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
+>>>>>>> develop
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -247,7 +260,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/protocol-integration/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
-<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in {{< product-name-1 >}}.</td>
+<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in {{< product-c8y-iot >}}.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -264,7 +277,7 @@ In the {{< tenant-type-1 >}} you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Host your own microservices on top of {{< product-name-1 >}}.</td>
+<td style="text-align:left">Host your own microservices on top of {{< product-c8y-iot >}}.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -414,14 +427,14 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 #### Uploading archives
 
-Multiple archive file versions can be stored in {{< product-name-1 >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
+Multiple archive file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
 ##### To upload an archive
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
 3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
-4. Click **Upload** to upload the archive to your {{< product-name-1 >}} account.
+4. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
@@ -454,7 +467,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Monitoring microservices
 
-You can monitor microservices hosted by {{< product-name-1 >}} in two ways.
+You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 #### Status information
 
@@ -492,7 +505,7 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 #### Log files
 
-{{< product-name-1 >}} offers viewing logs which provide more details on the status of microservices.
+{{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
 

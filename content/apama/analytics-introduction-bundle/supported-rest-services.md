@@ -12,7 +12,7 @@ To perform these operations, you must have READ and ADMIN permissions for "CEP m
 
 ### Request headers for all operations
 
-Each request must be authenticated to {{< product-name-1 >}}.
+Each request must be authenticated to {{< product-c8y-iot >}}.
 
 | Name   | Description                                        |
 | ------ | -------------------------------------------------- |

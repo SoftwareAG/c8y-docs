@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Registering the gateway as a var-product-name-1 device
+title: Registering the gateway as a var-product-c8y-iot device
 layout: redirect
 ---
 

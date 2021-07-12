@@ -9,7 +9,7 @@ Machine Learning Workbench (MLW) provides connectors to the various data sources
 <a name="cumulocity-iot"></a>
 ### {{< product-name-1 >}}
 
-The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-1 >}}.
+The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-name-1 >}}.
 
 1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from {{< product-name-1 >}}**.
 

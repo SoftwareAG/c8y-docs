@@ -1,19 +1,39 @@
 #!/bin/bash
-
 #
 # Copyright (c) 2021 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
 # Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.
 #
 
-# FUNCTIONS
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
+##################################
+# Example usage
+##################################
+
+# restore.sh # Without any arguments
+# "No archive path given!!!"
+
+# restore.sh /migration_data.tgz
+# Archive path set to /migration_data.tgz
+# Data extracted at /tmp/migration_data
+
+# restore.sh /tmp/migration_data.tgz /output
+# Archive path is set to /tmp/migration_data.tgz
+# Data extracted at /output
+
+##################################
+# Arg parse
+##################################
 
 function usage() {
     echo "Usage:"
-    echo "    restore.sh ARCHIVE_PATH EXTRACT_PATH"
+    echo "    restore.sh ARCHIVE_PATH [EXTRACTED_PATH]"
     echo "    ARCHIVE_PATH is the path to archive created by backup.sh script"
-    echo "    EXTRACT_PATH is the path to where archive will be extracted before applying"
+    echo "    EXTRACTED_PATH is the path to where archive will be extracted before applying"
 }
-# ARGUMENTS
 
 ARCHIVE=$1
 EXTRACTED_PATH=$2
@@ -26,9 +46,7 @@ if [ -z "$ARCHIVE" ]; then
 fi
 
 if [ -z "$EXTRACTED_PATH" ]; then
-   echo "No extraction path given!!!"
-   usage
-   exit 1;
+   EXTRACTED_PATH="/tmp/migration_data/"
 fi
 
 echo "Installing zip package needed for restore procedure"

@@ -48,7 +48,7 @@ aliases:
   - /device-sdk/device-sdk-introduction
 ---
 
-{{< company-name-1>}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
+{{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
 
 This Device SDK guide provides detailed information on device integration using [MQTT](/device-sdk/mqtt), [REST](/device-sdk/rest) and [C++](/device-sdk/cpp).
 

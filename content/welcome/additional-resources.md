@@ -6,33 +6,33 @@ aliases:
   - /about-doc/online-information
 ---
 
-### Installation and operations documentation on the {{< company-name-2 >}} {{< company-portal >}}
+### Installation and operations documentation on the {{< company-sag >}} {{< sag-portal >}}
 
-The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
+The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
-![Documentation on {{< company-portal >}}](/images/about/about-empower.png)
+![Documentation on {{< sag-portal >}}](/images/about/about-empower.png)
 
 
-### {{< company-name-2 >}} {{< company-help >}}
+### {{< company-sag >}} {{< sag-dev-community >}}
 
-You can find documentation and other technical information on the [{{< company-name-2 >}} {{< company-help >}}]({{< help-link >}}) website.
+You can find documentation and other technical information on the [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}) website.
 
 On this community, you can:
 
 * Access articles, code samples, demos, and tutorials.
-* Use the online discussion forums, moderated by {{< company-name-2 >}} professionals, to ask questions, discuss best practices, and learn how other customers are using {{< company-name-2 >}} technology.
+* Use the online discussion forums, moderated by {{< company-sag >}} professionals, to ask questions, discuss best practices, and learn how other customers are using {{< company-sag >}} technology.
 * Link to external websites that discuss open standards and web technology.
 
 
-### Product support website in the {{< company-name-2 >}} {{< company-portal >}}
+### Product support website in the {{< company-sag >}} {{< sag-portal >}}
 
-You can find product information on the product support website in the [{{< company-name-2 >}} {{< company-portal >}} ]({{< portal-link >}}) website.
+You can find product information on the product support website in the [{{< company-sag >}} {{< sag-portal >}} ]({{< link-sag-portal >}}) website.
 
->**Info:** If you do not have an account for the {{< company-portal >}} yet, send an email to [{{< company-email >}}]({{< company-email >}}) with your name, company, and company email address and request an account.
+>**Info:** If you do not have an account for the {{< sag-portal >}} yet, send an email to [{{< email-sag >}}]({{< email-sag >}}) with your name, company, and company email address and request an account.
 
 Once you have an account, you can:
 
-* Open Support Incidents online via the eService section in the {{< company-portal >}}.
+* Open Support Incidents online via the eService section in the {{< sag-portal >}}.
 * Find further product information and product downloads.
 
 To submit feature/enhancement requests, get information about product availability, and download products, go to [Products](https://empower.softwareag.com/Products/default.aspx?).
@@ -47,6 +47,6 @@ For {{< company-cloud-1 >}} shared environments, information on known issues and
 
 ### Cumulocity IoT delta training
 
-To learn what's new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< learning-portal-link >}}) which cover the new and enhanced functionality available in a specific product release:
+To learn what's new in Cumulocity IoT or in a particular area of the platform we offer various eLearning delta trainings on the [{{< learning-portal >}}]({{< link-sag-training >}}) which cover the new and enhanced functionality available in a specific product release:
 
 ![Product training](/images/about/about-product-training.png)

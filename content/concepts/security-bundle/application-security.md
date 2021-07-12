@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Application security aspects
+title: Application security
 layout: redirect
 ---
 

@@ -68,4 +68,4 @@ On the Cumulocity IoT cloud instances, The Management tenant of the Cumulocity I
 
 You will only have access to the Management tenant, when you setup your own Cumulocity IoT instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the Cumulocity IoT Edge offering.
 
-For detailed information on the configuration options of a Cumulocity IoT deployment on platform level, refer to the *Cumulocity IoT Core - Operations guide* available on the [{{< company-name-2 >}} {{< company-portal >}}]({{< documentation-link >}}).
+For detailed information on the configuration options of a Cumulocity IoT deployment on platform level, refer to the *Cumulocity IoT Core - Operations guide* available on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}).

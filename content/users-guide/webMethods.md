@@ -6,7 +6,7 @@ aliases:
   -/users-guide/optional-services/#webMethods
 ---
 
-webMethods.io Integration is {{< company-name-2 >}}'s cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
+webMethods.io Integration is {{< company-sag >}}'s cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
 
 The complete webMethods.io Integration documentation is available at [https://docs.webmethods.io/](https://docs.webmethods.io/).
 
@@ -37,4 +37,4 @@ WebMethods.io also provides pre-configured workflows which are called "recipes".
 
 ![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
-More examples and technical guides can be found on the [{{< company-help >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).
+More examples and technical guides can be found on the [{{< sag-dev-community >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).

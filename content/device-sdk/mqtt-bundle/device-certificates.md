@@ -319,7 +319,7 @@ Go into your caCertificate directory.
         ```
 3. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
 4. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**
-5. Insert the {{< company-name-1>}} URL in the "Broker address" line.
+5. Insert the {{< company-c8y >}} URL in the "Broker address" line.
 6. Insert the SSL port in the "Broker port" line.
 7. In the "Client ID" field, insert the common name of your device certificate.
 8. Select SSL/TLS as the authentication type.

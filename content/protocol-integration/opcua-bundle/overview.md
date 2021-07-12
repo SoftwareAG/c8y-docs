@@ -11,12 +11,12 @@ OPC Unified Architecture (OPC UA) is a standard pushed by the OPC Foundation for
 
 ![Integration overview](/images/device-protocols/opcua/opcua-integration-overview.png)
 
-The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity IoT platform. It stores data into the Cumulocity IoT database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
+The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the {{< product-name-1 >}} platform. It stores data into the {{< product-name-1 >}} database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
 
-The gateway has to be registered as Cumulocity IoT device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
+The gateway has to be registered as {{< product-name-1 >}} device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
 
 > **Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please contact [product support](/welcome/contacting-support/).
 
-To download the gateway navigate to [Cumulocity resources](http://resources.cumulocity.com/examples/opc-ua/).
+To download the gateway navigate to [{{< product-name-1 >}} resources](http://resources.{{< URL >}}/examples/opc-ua/).
 
 The gateway requires Java 11 in order to run.

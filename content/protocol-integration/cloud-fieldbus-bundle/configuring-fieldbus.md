@@ -56,7 +56,7 @@ Click **Add holding register** under **Holding registers** or **Add input regist
 
 1. In the **General** section, specify a name for the register and a display category to structure your data in widgets.
 2. In the **Value selection** section, enter the number of the register in the Modbus device. If the Modbus device used implements the standard Modbus specification, the number of the register is 1. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers".
-3. In the **Normalization** section, specify how the raw value should be transformed before storing it in the platform. To scale the integer value read from the Modbus device, you can enter a **Multiplier**, a **Divisor** and a number of decimal places in the **Right Shift** field. The register value is first multiplied by the multiplier, then divided by the divisor and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to Cumulocity IoT. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to Cumulocity IoT. If you use a divisor of ten and no decimal places, the terminal may send 23 to Cumulocity IoT (depending on its implementation). In the **Unit** field, indicate the unit of the data, for example, "C" for temperature values.
+3. In the **Normalization** section, specify how the raw value should be transformed before storing it in the platform. To scale the integer value read from the Modbus device, you can enter a **Multiplier**, a **Divisor** and a number of decimal places in the **Right Shift** field. The register value is first multiplied by the multiplier, then divided by the divisor and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to {{< product-name-1 >}}. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to {{< product-name-1 >}}. If you use a divisor of ten and no decimal places, the terminal may send 23 to {{< product-name-1 >}} (depending on its implementation). In the **Unit** field, indicate the unit of the data, for example, "C" for temperature values.
 4. In the Options section, select the following options:
 	* **Signed** - If the register value should be interpreted as signed number.
 	* **Enumeration type** - If the register value should be interpreted as 	enumeration of discrete values. If **Enumeration type** is selected, you can 	click **Add value** to add mappings from a discrete value to a text to be 	shown for this value in the widget. Click **Remove value** to remove the 	mapping.
@@ -146,7 +146,7 @@ In the **CANopen communication** section, the following parameters can be config
 
 - **Baud rate:** This field must match with the used baud rate in the CANopen network.
 - **Polling rate:** The rate at which the agent sends requests to the CANopen devices.
-- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular measurements to Cumulocity IoT.
+- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular measurements to {{< product-name-1 >}}.
 
 In the **CANopen** section, up to 127 CANopen devices can be added to the gateway as child devices by providing the following parameters:
 

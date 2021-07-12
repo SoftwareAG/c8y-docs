@@ -7,7 +7,7 @@ layout: redirect
 
 Once connected, you can now manage your device. Switch to the **Child devices** tab of a device to list the connected fieldbus devices and navigate to a fieldbus device.
 
-Depending on the capabilities of the device and its configuration in Cumulocity IoT, you can:
+Depending on the capabilities of the device and its configuration in {{< product-name-1 >}}, you can:
 
 * [Collect measurements](#collect)
 * [Send alarms on coil or register changes](#monitoring-alarms)

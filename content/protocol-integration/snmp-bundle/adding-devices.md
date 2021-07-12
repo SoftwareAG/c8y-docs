@@ -98,7 +98,7 @@ The following REST call schedules autodiscovery for the given interval:
 	</tr>
 	<tr>
 	<td align="left">Device type</td>
-	<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity IoT's model such as alarm/event/measurement.</td>
+	<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the {{< product-name-1 >}}'s model such as alarm/event/measurement.</td>
 	</tr>
 	<tr>
 	<td align="left">IP address</td>

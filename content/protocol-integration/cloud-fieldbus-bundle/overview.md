@@ -4,9 +4,9 @@ title: Overview
 layout: redirect
 ---
 
-With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
+With {{< product-name-1 >}} Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
 
-* [Connect](#connecting-fieldbus) fieldbus devices to Cumulocity IoT.
+* [Connect](#connecting-fieldbus) fieldbus devices to {{< product-name-1 >}}.
 * [Manage](#managing-fieldbus) the connected fieldbus devices.
 * [Configure](#configuring-fieldbus) the remote management capabilities of particular types of devices and [import and export](#exporting-importing-protocols) them.
 

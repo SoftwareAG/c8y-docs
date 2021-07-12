@@ -5,11 +5,11 @@ layout: redirect
 ---
 
 
-Cumulocity IoT operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
+{{< product-name-1 >}} operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
 ### Scanning the address space
 
-This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity IoT platform.
+This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-name-1 >}} platform.
 
 ```
 POST /devicecontrol/operations/
@@ -23,7 +23,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
+The twinned address space information is persisted in the {{< product-name-1 >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
 
@@ -626,7 +626,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Read file
 
-Prerequisites: 
+Prerequisites:
 - Open and Read methods for the file node must be implemented on server side, either as the children of the file node itself or as the children of the data type node
 
 With this operation, a file can be downloaded from the OPC UA server at the given fileNodeId.  
@@ -721,7 +721,7 @@ Now download is possible with the self link provided inside the managedObjects s
 
 For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
 
-For 10.9 and later, refer to [binaries API](https://www.cumulocity.com/api/#tag/Binaries) in the Cumulocity IoT OpenAPI Specification
+For 10.9 and later, refer to [binaries API](https://www.{{< URL >}}/api/#tag/Binaries) in the {{< OpenAPI >}}.
 
 
 ### Write value
@@ -1271,7 +1271,7 @@ Otherwise, the operation result provides an explanation why the device type coul
 
 ### Analyzing the set of nodes to which a device type can be applied (dry run)
 
-As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
+As explained earlier, the {{< product-name-1 >}} OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
 
 ```json
 {
@@ -1429,15 +1429,15 @@ Sample result when the device type has been applied to node #1 but not node #2:
 
 In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
 
-- Reading the value of a node/nodes 
-- Reading all attributes of a node 
-- Reading an attribute 
+- Reading the value of a node/nodes
+- Reading all attributes of a node
+- Reading an attribute
 - Read complex
 - Write value
 - Write attribute
 - Call method
 
-For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body. 
+For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body.
 
 The following example shows how to mark a read operation as expiring:
 
@@ -1453,7 +1453,3 @@ The following example shows how to mark a read operation as expiring:
 ```
 
 The operation above will only perform a read on the OPC UA server if processed by the gateway before the 8th of February, 2021 15:00. Otherwise, the operation will fail. In this case, `Operation expired` is returned as failure reason.
-
-
-
-

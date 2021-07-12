@@ -58,4 +58,4 @@ This warning message shows up when the connectivity plan in ThingPark has reache
 
 <img src="/images/device-protocols/lora-actility/lora-registration-no-freeslots.png" alt="No free slots by device registration" style="max-width: 100%">
 
-To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity IoT.
+To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in {{< product-name-1 >}}.

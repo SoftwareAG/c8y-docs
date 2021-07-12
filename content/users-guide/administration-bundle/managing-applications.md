@@ -11,11 +11,7 @@ In the {{< product-c8y-iot >}} platform we distinguish between two kinds of appl
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
-<<<<<<< HEAD
-Additionally, in {{< tenant-type-2 >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for more details.
-=======
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
->>>>>>> develop
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for more details.
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
@@ -82,11 +78,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-<<<<<<< HEAD
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< tenant-type-2 >}} > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
-=======
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< enterprise-tenant >}} > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
->>>>>>> develop
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< enterprise-tenant >}} > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
 
 
 <a name="subscribed-applications"></a>
@@ -212,13 +204,8 @@ In the {{< standard-tenant >}} you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<<<<<<< HEAD
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
-<td style="text-align:left">Reflect independent organizational entities in {{< product-name-1 >}} that share the same database.</td>
-=======
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
->>>>>>> develop
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>
 </tr>

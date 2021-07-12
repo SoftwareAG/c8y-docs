@@ -55,11 +55,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 
 {{< enterprise-tenant >}}s offer standardized functionality combined with some individual customization.
 
-<<<<<<< HEAD
-Details on the usage of this additional features and on the additional administration options of the {{< tenant-type-2 >}} can be found in the [{{< tenant-type-2 >}}](/users-guide/enterprise-tenant/) section in the *User guide*.
-=======
-Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in the [{{< enterprise-tenant >}}](/users-guide/enterprise-edition/) section in the *User guide*.
->>>>>>> develop
+Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in the [{{< enterprise-tenant >}}](/users-guide/enterprise-tenant/) section in the *User guide*.
 
 <a name="management-tenant"></a>
 ### {{< management-tenant >}}

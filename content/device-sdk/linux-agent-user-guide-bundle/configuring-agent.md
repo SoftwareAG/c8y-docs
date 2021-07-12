@@ -130,9 +130,9 @@ You can change various Modbus parameters in the configuration file. The **modbus
 |Parameter|Description|Example value|  
 |---|---|---|
 |modbus.transmitrate|The transmit rate for reporting measurements to {{< product-c8y-iot >}} [in seconds]||
-|modbus.pollingrate|The polling rate for querying the Modbus slave for data [in seconds]|modbus.pollingrate=30|
-|modbus.readonly|Controls the ability to write data to slaves. 1 is read-only, 0 is writable|modbus.readonly=0|
-|modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus slave [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|
+|modbus.pollingrate|The polling rate for querying the Modbus client for data [in seconds]|modbus.pollingrate=30|
+|modbus.readonly|Controls the ability to write data to clients. 1 is read-only, 0 is writable|modbus.readonly=0|
+|modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus client [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|
 
 > **Info:** We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
 

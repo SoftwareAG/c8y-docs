@@ -10,14 +10,14 @@ aliases:
 A fully functional demand forecasting demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* file.
 
-#### Start with {{ < product-name-1 > }} Machine Learning Workbench
+#### Start with Machine Learning Workbench
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Demand Forecasting" as **Project name** and "Demand forecasting for waster usage" as **Project description**.
 
 2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload all the files extracted to Machine Learning Workbench (MLW). You will get 2 files in the **Data** section and 3 notebooks in the **Code** section.
 
 
-#### Register a demo device in {{ < product-name-1 > }}
+#### Register a demo device in the platform
 
 Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank. To do so, follow the steps below:
 We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}.
@@ -43,7 +43,7 @@ We use this data to generate a time series model and forecast the next day’s c
 
 <img src="/images/zementis/DemandForecasting/2ndNotebook.PNG" alt="Download" style="display:inline-block; margin:0">
 
-#### Downlaod the data for model building exercise
+#### Download the data for model building exercise
 
 * Follow the steps described in [Machine Learning Workbench > Data pull > {{ < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_flow" as **Data points**.
 

@@ -12,7 +12,7 @@ Operations on MLW settings.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Get AWS S3 credentials from {{< product-name-1 >}}
+### GET - Get AWS S3 credentials
 
 ```
 {{url}}/service/mlw/credentials
@@ -67,7 +67,7 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 }
 ```
 
-### POST - Register AWS S3 Credentials with {{< product-name-1 >}}
+### POST - Register AWS S3 Credentials
 
 ```
 {{url}}/service/mlw/credentials
@@ -153,7 +153,7 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 }
 ```
 
-### DELETE - Delete AWS S3 credentials from {{< product-name-1 >}}
+### DELETE - Delete AWS S3 credentials
 
 ```
 {{url}}/service/mlw/credentials

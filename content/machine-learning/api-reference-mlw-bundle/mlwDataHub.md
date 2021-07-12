@@ -11,7 +11,7 @@ Operations on MLW data connectors - Data pull from {{< product-name-1 >}} DataHu
 
 >**Info:** An active subscription of the MLW microservice (mlw-cdh) is required to perform operations.
 
-### POST - Pull data from {{< product-name-1 >}} DataHub
+### POST - Pull data from DataHub
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data

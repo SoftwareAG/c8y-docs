@@ -38,7 +38,8 @@ The keystore can then be uploaded as binary in Cumulocity IoT and it can be used
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
 
-> **Info:** If you don't have the certificate trusted by your OPC UA server, the server will reject the connection. If you have problems trusting a certificate in your OPC UA server, contact your OPC UA server provider.  
+> **Info:** If you don't have the certificate trusted by your OPC UA server, the server will reject the connection. If you have problems trusting a certificate in your OPC UA server, contact your OPC UA server provider.
+> **Info:** Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well. 
 
 ### Child devices
 

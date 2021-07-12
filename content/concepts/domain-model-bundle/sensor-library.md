@@ -33,4 +33,4 @@ To a JavaScript developer, the same check would look like this:
 
 More details can be found in [Sensor library](https://cumulocity.com/api/#section/Sensor-library) in the Cumulocity IoT OpenAPI Specification.
 
-The {{< company-name-1 >}} team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into Cumulocity IoT by contacting our [product support](/about-doc/contacting-support).
+The {{< company-c8y >}} team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into Cumulocity IoT by contacting our [product support](/about-doc/contacting-support).

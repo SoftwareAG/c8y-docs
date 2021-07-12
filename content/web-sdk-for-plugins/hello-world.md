@@ -126,7 +126,7 @@ Example console output:
 
 ```console
 $ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
-{{< company-name-1>}} UI development server running in port 9000.
+{{< company-c8y >}} UI development server running in port 9000.
 Proxying api requests to https://tenant.cumulocity.com
 140 modules loaded.
 5 application manifest loaded.

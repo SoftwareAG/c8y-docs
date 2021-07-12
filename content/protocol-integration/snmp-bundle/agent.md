@@ -8,7 +8,7 @@ layout: redirect
 
 The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity IoT-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity IoT. The agent has to be registered in Cumulocity IoT before serving the device request.
 
->**Info:** If you are using one of the {{< company-name-2 >}} public cloud instances, you need to ensure that your tenant is subscribed to the Mibparser microservice.
+>**Info:** If you are using one of the {{< company-sag >}} public cloud instances, you need to ensure that your tenant is subscribed to the Mibparser microservice.
 >
 >To add the Mibparser microservice to the Cumulocity IoT platform,
 >

@@ -32,4 +32,4 @@ Click on a workflow file in the **Training Workflow** folder to view its metadat
 
 This will create a new task in the **Tasks** section.
 
-Click **Tasks** in the navigator and click the corresponding task name, to display the status of the workflow execution in the **Task History** section at the centre.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the workflow execution in the **Task History** section at the center.

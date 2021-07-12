@@ -7,11 +7,11 @@ The functionality described so far already provides a wide range of device manag
 
 Furthermore it produces custom visualization, new control widgets and custom business logic.
 
-{{< product-name-1 >}} has extensive customization options, for example:
+{{< product-c8y-iot >}} has extensive customization options, for example:
 
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
 * Use [realtime](/concepts/realtime) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
 * Set up a graphical dashboard with your most important KPIs.
-* Subscribe to plugins that contribute new functionality to the {{< product-name-1 >}} application.
+* Subscribe to plugins that contribute new functionality to the {{< product-c8y-iot >}} application.
 
 ![Rules](/images/users-guide/Administration/admin-event-processing.png)

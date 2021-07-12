@@ -7,7 +7,7 @@ aliases:
   - /concepts/introduction/#hardware-kits-and-software-libraries
 ---
 
-{{< product-name-1 >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-name-1 >}} platform.
+{{< product-c8y-iot >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
 We offer a generic client library for [C++](/device-sdk/cpp). If your device uses a completely proprietary runtime environment, you can always  use [MQTT](/device-sdk/mqtt) and [SmartREST 2](/device-sdk/rest). These will work on practically any Internet-connected device today, down to the smallest systems.
 

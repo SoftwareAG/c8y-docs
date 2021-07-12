@@ -4,9 +4,9 @@ title: C++ Device integration
 layout: redirect
 ---
 
-Before we really get started, we need a {{< product-name-1 >}} account. Go to <https://{{< URL >}}> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in {{< product-name-1 >}} using the library.
+Before we really get started, we need a {{< product-c8y-iot >}} account. Go to <https://{{< domain-c8y >}}> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in {{< product-c8y-iot >}} using the library.
 
-![{{< product-name-1 >}} Registration Page](/images/cpp/img/registerd.png)
+![{{< product-c8y-iot >}} Registration Page](/images/cpp/img/registerd.png)
 
 Without any further ado, let's start with the customary *Hello world* example. Open the *cumulocity-sdk-c/examples/ex-01-hello/main.cc* file with the following code:
 
@@ -27,10 +27,10 @@ int main ()
     srLogSetLevel(SRLOG_DEBUG);                 // set log level to debug
     SrAgent agent(server, deviceID);            // instantiate the SmartREST agent
 
-    if (agent.bootstrap(credentialPath))        // bootstrap to {{< product-name-1 >}}
+    if (agent.bootstrap(credentialPath))        // bootstrap to {{< product-c8y-iot >}}
         return 0;
 
-    cout << "Hello world of {{< product-name-1 >}}!" << endl;
+    cout << "Hello world of {{< product-c8y-iot >}}!" << endl;
 
     return 0;
 }
@@ -51,27 +51,27 @@ Finally, it's time to run our first program.
 ```shell
 $ LD_LIBRARY_PATH=$C8Y_LIB_PATH/lib ./a.out
 ...
-Hello world of {{< product-name-1 >}}!
+Hello world of {{< product-c8y-iot >}}!
 ```
 
 Type the `deviceID` into the text field in your registration page as shown in the image below.
 
-![{{< product-name-1 >}} Registration Page](/images/cpp/img/register-deviceID.png)
+![{{< product-c8y-iot >}} Registration Page](/images/cpp/img/register-deviceID.png)
 
 Click **Next** to continue with the registration.
 After the program has run, click **Accept** and your device will be registered and shown in your tenant.
 
-![{{< product-name-1 >}} Registration Page](/images/cpp/img/device-pending.png)
+![{{< product-c8y-iot >}} Registration Page](/images/cpp/img/device-pending.png)
 
-As illustrated previously, the program will print to the standard output *Hello world of {{< product-name-1 >}}!* and then exit. Voila! That's all we need to register a device to {{< product-name-1 >}}.
+As illustrated previously, the program will print to the standard output *Hello world of {{< product-c8y-iot >}}!* and then exit. Voila! That's all we need to register a device to {{< product-c8y-iot >}}.
 
 The obtained device credential is stored in the folder */tmp/helloc8y* as defined in the variable `credentialPath`. You can also find the credential in **Management** > **Device credentials** in the Device Management application.
 
-> **Info**: If you re-run the program a second time, it will print *Hello world of {{< product-name-1 >}}!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+> **Info**: If you re-run the program a second time, it will print *Hello world of {{< product-c8y-iot >}}!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
 
-### Integrating to {{< product-name-1 >}}
+### Integrating to the platform
 
-Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in {{< product-name-1 >}}'s database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the {{< product-name-1 >}}'s database. **Step 8** sets the {{< product-name-1 >}} ID as an alias for the device ID, so that the device can find its {{< product-name-1 >}} ID next time by querying with its device ID.
+Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in {{< product-c8y-iot >}}'s database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the {{< product-c8y-iot >}}'s database. **Step 8** sets the {{< product-c8y-iot >}} ID as an alias for the device ID, so that the device can find its {{< product-c8y-iot >}} ID next time by querying with its device ID.
 
 ![Device integration flowchart](/images/cpp/img/integrate.png)
 
@@ -94,7 +94,7 @@ public:
 #endif /* INTEGRATE_H */
 ```
 
-The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are comma-separated values (CSV) since we are using SmartREST instead of REST APIs directly. It is important to mention that you must store the correct SmartREST *X-ID* and device's *{{< product-name-1 >}} ID* in the inherited member variables `xid` and `id` respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
+The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are comma-separated values (CSV) since we are using SmartREST instead of REST APIs directly. It is important to mention that you must store the correct SmartREST *X-ID* and device's *{{< product-c8y-iot >}} ID* in the inherited member variables `xid` and `id` respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
 
 ```cpp
 // ex-02-integrate: examples/ex-02-integrate/integrate.cc
@@ -135,7 +135,7 @@ int Integrate::integrate(const SrAgent &agent, const string &srv, const string &
 }
 ```
 
-The corresponding SmartREST templates can be found in the snippet below, which extends the code presented above. The only addition inside the `main` function is the call to `SrAgent`'s member function `integrate` for integrating to {{< product-name-1 >}} and `loop` for executing the agent loop. Above the `main` function is the definition of the SmartREST template version number and actual template content.
+The corresponding SmartREST templates can be found in the snippet below, which extends the code presented above. The only addition inside the `main` function is the call to `SrAgent`'s member function `integrate` for integrating to {{< product-c8y-iot >}} and `loop` for executing the agent loop. Above the `main` function is the definition of the SmartREST template version number and actual template content.
 
 
 ```cpp
@@ -174,9 +174,9 @@ int main ()
     Integrate igt;
     SrAgent agent(server, deviceID, &igt); // instantiate SrAgent
 
-    if (agent.bootstrap(credentialPath))   // bootstrap to {{< product-name-1 >}}
+    if (agent.bootstrap(credentialPath))   // bootstrap to {{< product-c8y-iot >}}
         return 0;
-    if (agent.integrate(srversion, srtemplate)) // integrate to {{< product-name-1 >}}
+    if (agent.integrate(srversion, srtemplate)) // integrate to {{< product-c8y-iot >}}
         return 0;
 
     agent.loop();
@@ -186,17 +186,17 @@ int main ()
 
 After running this example, you will see a device named *HelloC8Y-Agent* in the devices list under **Devices** > **All devices** in the Device Management application.
 
-![Created device in {{< product-name-1 >}} after integration process](/images/cpp/img/all-devices.png)
+![Created device in {{< product-c8y-iot >}} after integration process](/images/cpp/img/all-devices.png)
 
 ### Sending measurements
 
-Now that we have successfully integrated a demo device to {{< product-name-1 >}}, we can indeed do something more interesting. Let's try sending CPU measurements every 10 seconds.
+Now that we have successfully integrated a demo device to {{< product-c8y-iot >}}, we can indeed do something more interesting. Let's try sending CPU measurements every 10 seconds.
 
-As shown in [Integrating to {{< product-name-1 >}}](#integrating-to-cumulocity-iot), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
+As shown in [Integrating to {{< product-c8y-iot >}}](#integrating-to-cumulocity-iot), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
 
 In the `main` function, we instantiate a `CPUMEasurement` and register it to a `SrTimer` in the class constructor. `SrTimer` supports millisecond resolution, so 10 seconds are 10,000 milliseconds.
 
-The library is built upon an asynchronous model. Hence, the `SrAgent` class is not responsible for any networking duty, rather it is essentially a scheduler for all timer and message handlers. `SrAgent.send` merely places a message into the `SrAgent.egress` queue and returns immediately after. For actually sending SmartREST requests to {{< product-name-1 >}}, we need to instantiate a `SrReporter` object and execute it in a separate thread.
+The library is built upon an asynchronous model. Hence, the `SrAgent` class is not responsible for any networking duty, rather it is essentially a scheduler for all timer and message handlers. `SrAgent.send` merely places a message into the `SrAgent.egress` queue and returns immediately after. For actually sending SmartREST requests to {{< product-c8y-iot >}}, we need to instantiate a `SrReporter` object and execute it in a separate thread.
 
 ```cpp
 // ex-03-measurement: examples/ex-03-measurement/main.cc
@@ -245,7 +245,7 @@ int main ()
 
 ### Handling operations
 
-Besides sending requests, e.g., measurements to {{< product-name-1 >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-name-1 >}}. The following example shows how to handle the c8y_Restart operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
+Besides sending requests, e.g., measurements to {{< product-c8y-iot >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-c8y-iot >}}. The following example shows how to handle the c8y_Restart operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
 
 ```cpp
 // ex-04-operation: examples/ex-04-operation/main.cc
@@ -277,7 +277,7 @@ public:
 int main()
 {
     // ...
-    // Inform {{< product-name-1 >}} about supported operations
+    // Inform {{< product-c8y-iot >}} about supported operations
     agent.send("104," + agent.ID() + ",\"\"\"c8y_Restart\"\"\"");
     RestartHandler restartHandler;
     agent.addMsgHandler(502, &restartHandler);
@@ -291,9 +291,9 @@ int main()
 }
 ```
 
-In the `main` function, we register the `RestartHandler` for SmartREST template (502), which is the template for the restart operation. We also need to instantiate a `SrDevicePush` object and start executing device push in another thread. From now on, as soon as you execute an operation from your {{< product-name-1 >}} tenant, device push will receive the operation immediately and your message handler will be invoked by the `SrAgent`.
+In the `main` function, we register the `RestartHandler` for SmartREST template (502), which is the template for the restart operation. We also need to instantiate a `SrDevicePush` object and start executing device push in another thread. From now on, as soon as you execute an operation from your {{< product-c8y-iot >}} tenant, device push will receive the operation immediately and your message handler will be invoked by the `SrAgent`.
 
-Now run the program and go to your {{< product-name-1 >}} tenant, execute a restart operation as shown in the image below.
+Now run the program and go to your {{< product-c8y-iot >}} tenant, execute a restart operation as shown in the image below.
 Afterwards, you should see the message printed in the standard output `cout` and the operation status set to SUCCESSFUL in your control tab.
 
 ![Execute a restart operation](/images/cpp/img/restarted-device.png)
@@ -382,7 +382,7 @@ The following example shows how to send CPU measurements, define your own Lua li
 
 ```
 -- ex-06-lua: examples/ex-06-lua/lua/mylib.lua
-myString = "Hello, {{< product-name-1 >}}!"
+myString = "Hello, {{< product-c8y-iot >}}!"
 
 ----------------------------------------
 

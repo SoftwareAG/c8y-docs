@@ -36,7 +36,7 @@ The manager manages offloading pipelines, e.g., defining and starting a pipeline
 The user executes SQL queries against the data in the data lake. For details on querying the data lake see section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
 
 * Dremio UI: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for logging into the Dremio UI and executing queries within that UI.
-* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against that API. {{< company-name-2 >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
+* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against that API. {{< company-sag >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
 * DataHub proxy API: DataHub provides an API which proxies requests to the Dremio API. The Cumulocity IoT user needs the role **DATAHUB_READER** in order to execute queries using the proxy API.
 
 The permissions for the role **DATAHUB_READER** are defined as follows:

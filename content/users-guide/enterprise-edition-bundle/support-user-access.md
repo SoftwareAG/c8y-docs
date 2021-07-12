@@ -2,13 +2,15 @@
 weight: 50
 title: Support user access
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition#users-in-other-tenants
 ---
 
-The support user access feature enables {{< product-name-1 >}} platform providers ({{< company-name-2 >}} in case of the public cloud instances, or service providers in case of individual on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< tenant-type-3 >}} that has specific permissions, i.e. to access subtenant users in case of any issues.
+The support user access feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances, or service providers in case of individual on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, i.e. to access subtenant users in case of any issues.
 
-To use this feature, support user access must be configured and the required support users must be created in the {{< tenant-type-3 >}}, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
+To use this feature, support user access must be configured and the required support users must be created in the {{< management-tenant >}}, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
-> **Info:** On the {{< product-name-1 >}} public cloud instances, the support user functionality can only be used by the [{{< company-support >}}](/welcome/contacting-support/) team for providing customer support. It is not available for {{< tenant-type-2 >}} customers to support their customers/subtenants.
+> **Info:** On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the [{{< sag-support >}}](/welcome/contacting-support/) team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
 
 <a name="configuring-support-access"></a>
 ### Configuring support user access
@@ -18,7 +20,7 @@ Support user access can either be
 * activated for all subtenants by default,
 * deactivated for all subtenants, but explicitly be enabled by a user for their tenant.
 
-This is configured globally in the *{{< tenant-type-3 >}}*, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
+This is configured globally in the *{{< management-tenant >}}*, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
 
 If activated globally, the support user can log in to all allowed subtenants as any user without restriction.
@@ -31,7 +33,7 @@ After a user has activated support access, the menu item changes to **Disable su
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 
-The duration of the active support request can be globally configured in the {{< tenant-type-3 >}} (default is 24 hours), see [Administration > Changing setting > Configuration settings](/users-guide/administration/#config-platform).
+The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours), see [Administration > Changing setting > Configuration settings](/users-guide/administration/#config-platform).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not activated globally).
 
@@ -39,10 +41,10 @@ Details on the status of support requests and support user access for a tenant c
 
 ### To log in as support user
 
-To log in as support user from the {{< tenant-type-3 >}}, you must provide the following information in the Login screen:
+To log in as support user from the {{< management-tenant >}}, you must provide the following information in the Login screen:
 
-* Tenant ID:  The ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI. In some environments, especially in test environments, you can open the destination tenant´s URL (e.g. *testtenant.{{< URL >}}*) and log into the tenant without the tenant ID.
-* Support user: The username of the {{< tenant-type-3 >}} user that executes the support.
+* Tenant ID:  The ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI. In some environments, especially in test environments, you can open the destination tenant´s URL (e.g. *testtenant.{{< domain-c8y >}}*) and log into the tenant without the tenant ID.
+* Support user: The username of the {{< management-tenant >}} user that executes the support.
 * User: The username of the user to be supported.
 
 "Support user" and "user" are entered into the **Username** field in the following notation:
@@ -51,7 +53,7 @@ To log in as support user from the {{< tenant-type-3 >}}, you must provide the f
 
 **Example**
 
-Suppose you get a support call from a user "John" in the tenant *testtenant.{{< URL >}}* (which has the tenant ID *t07007007*). Your username in the {{< tenant-type-3 >}} is "Jill" and you are permitted to carry out support for *testtenant.{{< URL >}}*. In this case, you can log in with the following credentials to reproduce what John is seeing:
+Suppose you get a support call from a user "John" in the tenant *testtenant.{{< domain-c8y >}}* (which has the tenant ID *t07007007*). Your username in the {{< management-tenant >}} is "Jill" and you are permitted to carry out support for *testtenant.{{< domain-c8y >}}*. In this case, you can log in with the following credentials to reproduce what John is seeing:
 
 ![Support user access login](/images/users-guide/enterprise-tenant/et-support-user-access.png)
 

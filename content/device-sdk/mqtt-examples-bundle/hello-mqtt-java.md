@@ -4,13 +4,13 @@ title: Hello MQTT Java
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Java MQTT client with {{< product-name-1 >}} using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use the Java MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user and a password in order to access {{< product-name-1 >}}.
+* You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * Verify that you have Maven 3 and at least Java 7 installed.
 
 ```shell
@@ -25,7 +25,7 @@ Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-name-1 >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
 
 * create a Maven project,
 * add a dependency to the MQTT Java client library to the _pom.xml_ (in this example we will use [Paho Java Client](https://eclipse.org/paho/clients/java/)),
@@ -78,7 +78,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // client, user and device details
-        final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.{{< URL >}}:8883 for a secure connection */
+        final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.{{< domain-c8y >}}:8883 for a secure connection */
         final String clientId    = "my_mqtt_java_client";
         final String device_name = "My Java MQTT device";
         final String tenant      = "<<tenant_ID>>";
@@ -90,7 +90,7 @@ public class App {
         options.setUserName(tenant + "/" + username);
         options.setPassword(password.toCharArray());
 
-        // connect the client to {{< product-name-1 >}}
+        // connect the client to {{< product-c8y-iot >}}
         final MqttClient client = new MqttClient(serverUrl, clientId, null);
         client.connect(options);
 
@@ -153,12 +153,12 @@ public class App {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-name-1 >}} MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< URL >}}:1883` or `ssl://mqtt.{{< URL >}}:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
+{{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code in `main` do?
 
 -   Configure the MQTT connection.
--   Connect with {{< product-name-1 >}} via a MQTT protocol.
+-   Connect with {{< product-c8y-iot >}} via a MQTT protocol.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.
@@ -210,4 +210,4 @@ Additionally, if there will be a new operation created for this device (e.g. c8y
 
 ### Improving the agent
 
-Now that you have done your first step, check out the Section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-name-1 >}} MQTT and improve your application.
+Now that you have done your first step, check out the Section [Hello MQTT](/device-sdk/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

@@ -5,17 +5,17 @@ layout: bundle
 
 ---
 
-The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices on top of {{< product-name-1 >}}.
+The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices on top of {{< product-c8y-iot >}}.
 
 
-#### {{< product-name-1 >}} Microservice SDK
+#### Microservice SDK
 
-Whenever possible, use the {{< product-name-1 >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
+Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
 
 
 #### Disk I/O and local disk
 
-Do not use a local disk, store everything in {{< product-name-1 >}}. You do not have a guaranteed amount of bandwidth for disk I/O and also not guaranteed capacity.
+Do not use a local disk, store everything in {{< product-c8y-iot >}}. You do not have a guaranteed amount of bandwidth for disk I/O and also not guaranteed capacity.
 
 
 #### Liveness probes

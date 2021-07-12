@@ -119,7 +119,7 @@ The following information is provided for each subtenant (not completely visible
 </tr>
 <tr>
 <td align="left">Parent tenant</td>
-<td align="left">Name of the parent tenant (available only for {{< tenant-type-3 >}})</td>
+<td align="left">Name of the parent tenant (available only for {{< management-tenant >}})</td>
 </tr>
 <tr>
 <td align="left">External reference</td>
@@ -153,12 +153,12 @@ The CSV file will be downloaded to your file system.
 <a name="microservice-usage"></a>
 ### Microservice usage
 
-The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables {{< tenant-type-2 >}}s and service providers to charge tenants not only based on subscriptions but also based on resources usage.
+The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables {{< enterprise-tenant >}}s and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 
 
 #### Billing modes
 
-{{< product-name-1 >}} offers two billing modes:
+{{< product-c8y-iot >}} offers two billing modes:
 
 * **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
 
@@ -181,7 +181,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the {{< tenant-type-3 >}} of an {{< tenant-type-3 >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< URL >}}/api/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -224,7 +224,7 @@ The information on the microservice usage is presented in the **Usage Statistics
 
 ![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-For more details, refer to [Tenants](https://{{< URL >}}/api/#tag/Tenants) in the {{< OpenAPI >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 #### Scaling
 
@@ -239,12 +239,12 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-For more information, refer to [Audits](https://{{< URL >}}/api/#tag/Audits) in the {{< OpenAPI >}}.
+For more information, refer to [Audits](https://{{< domain-c8y >}}/api/#tag/Audits) in the {{< openapi >}}.
 
 
 ### Timezone handling
 
->**Important:** {{< product-name-1 >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
+>**Important:** {{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
 
 The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the server timezone. As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
@@ -329,7 +329,7 @@ Usage statistics consist of values that are progressive like the request count a
 
 **Tenant**
 
-A {{< product-name-1 >}} platform tenant can have several states:
+A {{< product-c8y-iot >}} platform tenant can have several states:
 
   * Active - The common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
   * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
@@ -364,7 +364,7 @@ Audit logs and events are stored at tenant space according to the isolation leve
 
 ### Billing pricing models
 
-The {{< product-name-1 >}} platform collects a lot of different usage statistics data which is used for billing customers.
+The {{< product-c8y-iot >}} platform collects a lot of different usage statistics data which is used for billing customers.
 
 Based on the contract, there are two pricing models for billing:
 
@@ -562,7 +562,7 @@ The table below presents which values are used in each model for billing purpose
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://{{< URL >}}/api/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

@@ -4,27 +4,27 @@ title: Overview
 layout: redirect
 ---
 
-Cumulocity IoT can interface with LORIOT Network Server through the Loriot agent microservice. You can:
+{{< product-c8y-iot >}} can interface with LORIOT Network Server through the Loriot agent microservice. You can:
 
-* Configure the Loriot agent endpoint in LORIOT Network Server using Cumulocity IoT data forwarder.
+* Configure the Loriot agent endpoint in LORIOT Network Server using {{< product-c8y-iot >}} data forwarder.
 * Assign a device protocol for the LoRa device for payload processing.
 * Decode upstream payload packets using a web-based user interface.
-* Post-process raw device data through Cumulocity IoT events.
-* Make use of existing Cumulocity IoT features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
+* Post-process raw device data through {{< product-c8y-iot >}} events.
+* Make use of existing {{< product-c8y-iot >}} features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
->**Info:** The Loriot agent automatically creates a LoRa device in the Cumulocity IoT platform if it does not exist so explicit registration is not required.
+>**Info:** The Loriot agent automatically creates a LoRa device in the {{< product-c8y-iot >}} platform if it does not exist so explicit registration is not required.
 
-The following illustration gives an overview of the Cumulocity IoT Loriot LoRa integration.
+The following illustration gives an overview of the {{< product-c8y-iot >}} Loriot LoRa integration.
 
-![Cumulocity IoT Loriot LoRa integration](/images/device-protocols/lora-loriot/loriot-cumulocity-integration.png)
+![{{< product-c8y-iot >}} Loriot LoRa integration](/images/device-protocols/lora-loriot/loriot-cumulocity-integration.png)
 
 The following sections describe how to:
 
 * [Configure Loriot agent endpoint credentials](#configure-loriot-credentials) in LORIOT Network Server.
-* [Assign the Loriot admin role](#assign-loriot-admin-role) to the user in Cumulocity IoT.
-* [Register devices](#register-loriot-device) and visualize Loriot payload using Cumulocity IoT.
+* [Assign the Loriot admin role](#assign-loriot-admin-role) to the user in {{< product-c8y-iot >}}.
+* [Register devices](#register-loriot-device) and visualize Loriot payload using {{< product-c8y-iot >}}.
 * [Create device protocols](#create-loriot-device-protocols) for all devices.
-* [Set device protocol](#assign-loriot-device-protocol) for processing the Loriot LoRa device payload for creating measurements or events in Cumulocity IoT.
+* [Set device protocol](#assign-loriot-device-protocol) for processing the Loriot LoRa device payload for creating measurements or events in {{< product-c8y-iot >}}.
 * [Troubleshoot](#loriot-troubleshooting) for warning messages.
 
 

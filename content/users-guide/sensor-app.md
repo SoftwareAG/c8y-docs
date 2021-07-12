@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: var-product-name-1 Sensor App
+title: var-product-c8y-iot Sensor App
 layout: bundle
 outputs:
 - html

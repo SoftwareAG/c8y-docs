@@ -8,7 +8,7 @@ For the last example, let's write a script to support software management. For d
 
 ### Software management example
 
-This section introduces a Lua plugin that handles `c8y_SoftwareList` operation, sending the installed package list to the {{< product-name-1 >}} platfrom and triggering the installation or removal of packages from there.
+This section introduces a Lua plugin that handles `c8y_SoftwareList` operation, sending the installed package list to the {{< product-c8y-iot >}} platfrom and triggering the installation or removal of packages from there.
 This example assumes that the device supports **Debian** packages.
 
 First, the agent needs to send `c8y_SoftwareList` as `c8y_SupportedOperations` as we did in the restart example section.
@@ -48,7 +48,7 @@ function init()
 end
 ```
 
-Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](https://{{< URL >}}/api/#section/Device-management-library/Device-information).
+Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](https://{{< domain-c8y >}}/api/#section/Device-management-library/Device-information).
 
 `pkg_list()` returns a table. If your package control system is not `apt`, you also need to change how to extract software names and versions from the command you defined.
 
@@ -90,7 +90,7 @@ lua.plugins=hello,cpumeasurments,restart,software
 
 Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Then run the agent.
 
-Now go to your {{< product-name-1 >}} tenant, create a software operation. You'll see the operation is managed by this script.
+Now go to your {{< product-c8y-iot >}} tenant, create a software operation. You'll see the operation is managed by this script.
 
 > **Info:** MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
 If the result of `cmd_list` (e.g. `apt list --installed`) is huge, the agent might fail to send its package list.

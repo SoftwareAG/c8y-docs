@@ -18,7 +18,7 @@ This microservice application creates a warning alarm message (for demonstration
 - Track a user's approximate location and store it in the platform.
 - Get the tracked IPs and locations.
 
-It also uses the {{< product-name-1 >}} UI to display the tracked locations on a map.
+It also uses the {{< product-c8y-iot >}} UI to display the tracked locations on a map.
 
 #### Update the Project Object Model
 
@@ -67,7 +67,7 @@ Your manifest file should look similar to this:
     "apiVersion": "1",
     "version": "@project.version@",
     "provider": {
-        "name": "{{< company-name-1 >}}"
+        "name": "{{< company-c8y >}}"
     },
     "isolation": "PER_TENANT",
     "settings": [
@@ -108,7 +108,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you need to [create a managed object](https://{{< URL >}}/api/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you need to [create a managed object](https://{{< domain-c8y >}}/api/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).
@@ -137,7 +137,7 @@ BODY:
 You will get the ID of your managed object in the response.
 Assign this ID to the `"tracker.id"` key in your _cumulocity.json_ file.
 
-On the {{< product-name-1 >}} platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
+On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
@@ -323,7 +323,7 @@ public class App {
         var apiURL = "http://api.ipstack.com/" + ip + "?access_key=" + c8yEnv.get("ipstack.key");
         var location = rest.getForObject(apiURL, Location.class);
 
-        // Prepare a LocationUpdate event using {{< product-name-1 >}}'s API
+        // Prepare a LocationUpdate event using {{< product-c8y-iot >}}'s API
         var c8y_Position = new JSONObject();
         c8y_Position.put("lat", location.getLatitude());
         c8y_Position.put("lng", location.getLongitude());

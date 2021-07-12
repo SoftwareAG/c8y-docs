@@ -6,7 +6,7 @@ layout: bundle
 
 ### Copyright
 
-This content applies to {{< product-name-1 >}} 10.9.0 and to all subsequent releases.
+This content applies to {{< product-c8y-iot >}} 10.9.0 and to all subsequent releases.
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent release notes or new editions.
 

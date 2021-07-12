@@ -4,7 +4,7 @@ title: Microservice utility tool
 layout: redirect
 ---
 
-{{< product-name-1 >}} provides you a utility tool for easy microservice packaging, deployment and subscription. The script requires a local installation of Docker and jq, which is a lightweight and flexible JSON processor.
+{{< product-c8y-iot >}} provides you a utility tool for easy microservice packaging, deployment and subscription. The script requires a local installation of Docker and jq, which is a lightweight and flexible JSON processor.
 
 ### Prerequisites
 
@@ -108,7 +108,7 @@ It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar
 
 ### Deploying
 
-A microservice becomes available once it has been successfully deployed on the {{< product-name-1 >}} platform. This is done by uploading a ZIP file with the microservice packed as specified above. A user cannot directly push an image to the Docker registry.
+A microservice becomes available once it has been successfully deployed on the {{< product-c8y-iot >}} platform. This is done by uploading a ZIP file with the microservice packed as specified above. A user cannot directly push an image to the Docker registry.
 
 Deploying your microservice application is rather easy, just execute the following command:
 
@@ -119,7 +119,7 @@ $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te 
 Note that you need to have a tenant and user credentials in order to deploy your microservice.    
 The successful execution will create an application on the Cumulucity platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed on **Applications** > **Own Applications** in the Administration application.
 
-For further information on deploying microservices to {{< product-name-1 >}}, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the User guide.
+For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the User guide.
 
 ### Subscribing
 
@@ -141,4 +141,4 @@ $ ./microservice pack deploy subscribe -n hello-world -d <URL> -u <username> -p 
 
 ### Operating microservices
 
-{{< product-name-1 >}} manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-levels) details above.
+{{< product-c8y-iot >}} manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-levels) details above.

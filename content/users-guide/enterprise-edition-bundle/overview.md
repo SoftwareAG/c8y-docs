@@ -4,24 +4,24 @@ title: Overview
 layout: redirect
 ---
 
-An {{< tenant-type-2 >}} offers additional administrative functionality compared to a {{< tenant-type-1 >}}, the major difference being **multi-tenancy**.
+An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
 
-Using an {{< tenant-type-2 >}}, you can
+Using an {{< enterprise-tenant >}}, you can
 
 * create and manage subtenants
 * manage the subscribed applications/features of the subtenants
 * invoice subtenants based on usage statistics
 
-Moreover, an {{< tenant-type-2 >}} includes the following additional features:
+Moreover, an {{< enterprise-tenant >}} includes the following additional features:
 
 * **Branding** -  To configure an individual look & feel
 * **Domain name** - To provide an individual domain name
 * **Support user** - To support users of other tenants
 * **User hierarchy** - To reflect entities with limited permissions to subsets of shared data
 
-For details on the {{< product-name-1 >}} tenant concept see [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide*.
+For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide*.
 
-The following sections describe the following additional functionalities available in the {{< tenant-type-2 >}}:
+The following sections describe the following additional functionalities available in the {{< enterprise-tenant >}}:
 
 <table>
 <thead>
@@ -54,7 +54,7 @@ The following sections describe the following additional functionalities availab
 </tr>
 <tr>
 <td align="left"><a href="#license-management">License management</a></td>
-<td align="left">Manage the licenses for the domains of the {{< tenant-type-2 >}}s via the UI.</td>
+<td align="left">Manage the licenses for the domains of the {{< enterprise-tenant >}}s via the UI.</td>
 </tr>
 <tr>
 <td align="left"><a href="#usage-and-billing">Usage statistics and billing</a></td>

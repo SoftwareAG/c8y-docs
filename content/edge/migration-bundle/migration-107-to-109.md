@@ -14,15 +14,15 @@ For information about upgrading from an earlier version to Cumulocity IoT Edge 1
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7
-- move the backup to Edge 10.9 appliance
+- move the backup to Edge 10.9
 - restore the data on Edge 10.9
 
 ### Before you begin
 
-- Import the Edge 10.9 appliance. See, [Setting up Cumulocity IoT Edge](Setting up Cumulocity IoT Edge).
+- Import the Edge 10.9 appliance. See, [Configuring the Edge infrastructure](/edge/setting-up-edge/).
 - Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing Cumulocity IoT Edge](/edge/installation/)
 
->**Important:** Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
+>**Important:** You can have both the Edge 10.7 and 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
 
 ### Creating a backup on Cumulocity IoT Edge 10.7
 
@@ -39,12 +39,13 @@ mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if mic
 ```
 2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
 3. Create a backup of the `/etc/opcua` directory. 
+4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
 ### Restoring the data on Cumulocity IoT Edge 10.9
 
-To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance. Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance.
+To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance.
 
-For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+>**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 
 Perform these steps as **root** user in your Edge 10.9 appliance.
 
@@ -61,25 +62,25 @@ The command returns the name and ID of the application. For example:
 
 {
   "metadata": {
-    "id": "111",
+    "id": "112",
     "name": "cockpit.zip"
   }
 }
 {
   "metadata": {
-    "id": "112",
+    "id": "113",
     "name": "devicemanagement.zip"
   }
 }
 {
   "metadata": {
-    "id": "113",
+    "id": "114",
     "name": "administration.zip"
   }
 }
 {
   "metadata": {
-    "id": "119",
+    "id": "122",
     "name": "streaming-analytics-app.zip"
   }
 }
@@ -90,14 +91,17 @@ The command returns the name and ID of the application. For example:
 mkdir -p /tmp/apps/
 mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip 
 
-APP_ID refers to the ID of the application. For example, 112
-APP_NAME refers to the name of the application. For example, devicemanagement.zip
+Here:
+ - APP_ID refers to the ID of the application. For example, 112
+ - APP_NAME refers to the name of the application. For example, devicemanagement.zip
 
 For example:
-mongofiles -d management --prefix cmdata get  110 -l /tmp/apps/administration.zip
-mongofiles -d management --prefix cmdata get  111 -l /tmp/apps/cockpit.zip
-mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/devicemanagement.zip
-mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/streaming-analytics.app.zip
+mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
+mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/devicemanagement.zip
+mongofiles -d management --prefix cmdata get  114 -l /tmp/apps/administration.zip
+mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
+
+>**Important:** Create a backup of the streaming-analytics-app.zip file separately.
 ```
 4. Install the ZIP package using the command:
 ```shell
@@ -105,10 +109,12 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 ```
 5. Prepare the applications for deployment using the commands:
 
+   >**Important:** Do not include the *streaming-analytics-app.zip* file in the ZIP package.
+
 ```shell
-UI_VERSION=1009.6.0
+UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
 cd /tmp/apps
-zip package-cumulocity-$UI_VERSION.zip $zip_names #zip_names refers to the application ZIP filenames
+zip package-cumulocity-$UI_VERSION.zip cockpit.zip devicemanagement.zip administration.zip #Do not include the streaming-analytics-app.zip file.
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
@@ -123,11 +129,13 @@ systemctl restart edge-agent
 ```shell
 mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
-PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your 10.9 appliance.
+Here:
+ - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your 10.9 appliance.
 
 For example:
 mongorestore --drop --db edge /home/admin/migration_data/edge/
 mongorestore --drop --db management /home/admin/migration_data/management/
+mongorestore --drop --db docker /home/admin/migration_data/docker/
 ```
 8. Restore the web applications of the Edge 10.9 appliance using the command:
 ```shell
@@ -138,17 +146,38 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
 ```
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+
+10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
   
-10. Restart Karaf and edge-agent using the commands:
+11. Restart the services using the commands:
 ```shell
+systemctl restart cumulocity-agent
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
 monit restart opcua_device_gateway_proc
 monit restart opcua_mgmt_service_proc
 ```
-Restarting Karaf and edge-agent completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+12. Restore the Streaming Analytics application.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance. For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+	- Log in to the Management tenant.
+
+	- Upload the *streaming-analytics-app.zip* file as a web application.
+
+	- Subscribe the Streaming Analytics application to the edge tenant.
+
+		>**Important:** To subscribe the application, you must have the "Tenant Manager" role.
+
+	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
+
+	- Log in to the edge tenant and verify the Streaming Analytics application.
+
+Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
+
+>**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+
+For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 
@@ -163,21 +192,29 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 ##### In 10.7 appliance
 
+>**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+
 1. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-2. Run the `backup.sh` script with the parameters:
-	- TENANT: your tenant name (edge by default)
-	- OUTPUT_DIRECTORY: path to save the backup archive. It can also be an external drive.
-
+2. Run the `backup.sh`.
+  
+   You can also run the script with the parameters:
+	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
+	- ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
+    
+    >**Info:** If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
+   
 	For example:
 	```shell
-	./backup.sh edge /home/admin/
+	./backup.sh /home/admin/
 	```	
 	The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
 
 3. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
 ##### In 10.9 appliance
+
+>**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 
 1. Log in as **root** user.
 
@@ -189,6 +226,6 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 	For example:
 	```shell
-	./restore migration_data.tgz /home/admin/migration_data
+	./restore.sh migration_data.tgz /home/admin/migration_data
 	``` 
 Running the `restore.sh` script successfully completes the migration process.

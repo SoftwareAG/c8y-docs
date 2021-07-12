@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Registering the Sensor App in Cumulocity IoT
+title: Registering the Sensor App in the platform
 layout: redirect
 ---
 

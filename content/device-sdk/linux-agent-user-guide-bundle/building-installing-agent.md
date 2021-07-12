@@ -66,7 +66,7 @@ This section explains how to build the {{< product-name-1 >}} Linux agent withou
     ```
 
 <a name="building-the-cumulocity-cloud-remote-access-service"></a>
-### Building the {{< product-name-1 >}} Cloud Remote Access service
+### Building the Cloud Remote Access service
 
 The {{< product-name-1 >}} Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via {{< product-name-1 >}}. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
 
@@ -94,7 +94,7 @@ PLUGIN_MODBUS:=1
 After you finished this step, continue with step 5 of [Building the basic agent](#basic-agent) to build the agent.
 
 <a name="building-the-cumulocity-canopen-service"></a>
-###  Building the {{< product-name-1 >}} CANopen service
+###  Building the CANopen service
 
 CANopen support is disabled by default. After you have finished all steps described in [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
 

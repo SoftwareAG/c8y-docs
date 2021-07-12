@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 100
 title: Storage quota
 layout: redirect
 aliases:

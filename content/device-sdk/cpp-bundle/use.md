@@ -69,7 +69,7 @@ The obtained device credential is stored in the folder */tmp/helloc8y* as define
 
 > **Info**: If you re-run the program a second time, it will print *Hello world of {{< product-name-1 >}}!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
 
-### Integrating to {{< product-name-1 >}}
+### Integrating to the platform
 
 Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in {{< product-name-1 >}}'s database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the {{< product-name-1 >}}'s database. **Step 8** sets the {{< product-name-1 >}} ID as an alias for the device ID, so that the device can find its {{< product-name-1 >}} ID next time by querying with its device ID.
 

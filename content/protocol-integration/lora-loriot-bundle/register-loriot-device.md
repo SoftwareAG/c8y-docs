@@ -5,16 +5,16 @@ layout: redirect
 ---
 
 
-While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the Cumulocity IoT platform, if it does not yet exist. This means that the user does not need to register the Loriot LoRa device explicitly.
+While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-name-1 >}} platform, if it does not yet exist. This means that the user does not need to register the Loriot LoRa device explicitly.
 
 LORIOT Network Server forwards two types of messages to the Loriot agent: "rx" (uplink message) and "gw" (gateway information).
 
-The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in Cumulocity IoT, because most of the information matches with "gw" message whereas "gw" message also carries
-all gateway information. 
+The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in {{< product-name-1 >}}, because most of the information matches with "gw" message whereas "gw" message also carries
+all gateway information.
 
 >**Info:** You need to enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Configuring the Loriot agent endpoint credentials](#configure-loriot-credentials).
 
-In the below Loriot LoRa device message `gws` represents a list of gateways involved in the network. 
+In the below Loriot LoRa device message `gws` represents a list of gateways involved in the network.
 
 ```
 {
@@ -42,4 +42,4 @@ In the below Loriot LoRa device message `gws` represents a list of gateways invo
 ```
 
 The Loriot Lora agent picks `gw` with the oldest timestamp for processing.
-The Loriot LoRa agent maps the `rssi` value to the standard Cumulocity IoT  SignalStrength object and updates the device managed object with the `lat` and `lon` values.   
+The Loriot LoRa agent maps the `rssi` value to the standard {{< product-name-1 >}}  SignalStrength object and updates the device managed object with the `lat` and `lon` values.   

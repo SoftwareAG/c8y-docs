@@ -62,11 +62,11 @@ For details on installing and running the {{< product-name-1 >}} Java agent on t
 
 <!-- ![Raspberry Pi and TinkerForge](/images/device-demos/tinkerforge/tinkerforge.jpg) -->
 
-#### To register the RaspPi device to {{< product-name-1 >}}
+#### To register the RaspPi device to the platform
 
 As a final configuration step, you need to register the RaspPi device to the {{< product-name-1 >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
 
-### Interacting with {{< product-name-1 >}}
+### Interacting with the platform
 
 To view the device in your {{< product-name-1 >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 

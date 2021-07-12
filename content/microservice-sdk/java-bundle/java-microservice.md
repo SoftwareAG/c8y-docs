@@ -68,7 +68,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 </properties>
 ```
 
-#### Add the {{< product-name-1 >}}'s microservice library
+#### Add the microservice library
 
 You need to specify the version of the {{< product-name-1 >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 

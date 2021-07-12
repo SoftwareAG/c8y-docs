@@ -17,15 +17,17 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 
 To enable or disable the microservice hosting feature, use the following endpoints:
 
+>**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+
 - [GET /edge/configuration/microservices](/edge/rest-api/#get-edgeconfigurationmicroservices)
 - [POST /edge/configuration/microservices](/edge/rest-api/#post-edgeconfigurationmicroservices)
 
-After you enable the microservices, before using the microservices ensure that the microservices are active and healthy.
+After you enable the microservice hosting feature, ensure that the microservices are active and healthy before using the microservices.
 For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
 
 On some hardware configurations, enabling or disabling the microservice hosting feature may take more than 15 minutes.
 
-Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
+Before disabling the microservice hosting feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
 For more information about developing and hosting a microservice, see [Microservices SDK](/microservice-sdk/introduction/).
 

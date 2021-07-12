@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Once the Loriot LoRa device is available in the Cumulocity IoT platform, you need to assign a device protocol from the **LPWAN** tab.
+Once the Loriot LoRa device is available in the {{< product-name-1 >}} platform, you need to assign a device protocol from the **LPWAN** tab.
 
 ![Assign device protocol](/images/device-protocols/lora-loriot/loriot-device-protocol-assignment.png)
 

@@ -4,7 +4,7 @@ title: LWM2M device protocols
 layout: redirect
 ---
 
-To process data from LWM2M devices, Cumulocity IoT uses device protocols.
+To process data from LWM2M devices, {{< product-name-1 >}} uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
 <a name="creating_device_protocols"></a>
@@ -76,11 +76,11 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 #### Custom Actions
 
-Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map LWM2M data into {{< product-name-1 >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
 ![Custom actions](/images/device-protocols/lwm2m/lwm2m-customactions.png)
 
-Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
+{{< product-name-1 >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-name-1 >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 ##### Predefined custom actions
 

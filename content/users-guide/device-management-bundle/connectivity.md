@@ -67,7 +67,7 @@ To create a user in Jasper Control Center perform the following steps:
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
 <a name="connectivity-configuration"></a>
-### Configuring the connectivity for the SIM provider in {{< product-name-1 >}}
+### Configuring the connectivity for the SIM provider
 
 Process the following step to configure the connectivity in {{< product-name-1 >}}:
 

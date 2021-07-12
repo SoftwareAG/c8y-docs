@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/web-app/#home-screen
 ---
 
-In Cumulocity IoT, you access the Machine Learning application through the app switcher. 
+In {{< product-name-1 >}}, you access the Machine Learning application through the app switcher. 
 
 Clicking **Machine Learning** in the app switcher will open the Machine Learning application showing the  **Home screen** of the application.
 

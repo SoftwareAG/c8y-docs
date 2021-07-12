@@ -1,5 +1,5 @@
 ---
-weight: 110
+weight: 70
 title: Usage statistics and billing
 layout: redirect
 aliases:

@@ -27,7 +27,7 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
-Diese Funktion gibt den Anbietern der Cumulocity IoT-Plattform (im Falle von Public-Cloud-Instanzen die Software AG und bei lokalen Installation der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+Diese Funktion gibt den Anbietern der Cumulocity IoT-Plattform (im Falle von Public-Cloud-Instanzen die Software AG und bei lokalen Installation der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#support-user-access).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 

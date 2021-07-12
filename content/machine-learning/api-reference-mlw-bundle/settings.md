@@ -12,7 +12,7 @@ Operations on MLW settings.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Get AWS S3 credentials from Cumulocity IoT
+### GET - Get AWS S3 credentials
 
 ```
 {{url}}/service/mlw/credentials
@@ -52,7 +52,7 @@ curl --location --request GET '{{url}}/service/mlw/credentials' \
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/credentials' 
+curl --location --request GET '{{url}}/service/mlw/credentials'
 ```
 
 **Example Response**
@@ -67,13 +67,13 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 }
 ```
 
-### POST - Register AWS S3 Credentials with Cumulocity IoT
+### POST - Register AWS S3 Credentials
 
 ```
 {{url}}/service/mlw/credentials
 ```
 
-Registers the AWS S3 credentials information with Cumulocity IoT.
+Registers the AWS S3 credentials information with {{< product-name-1 >}}.
 
 |HEADERS||
 |:---|:---|
@@ -83,7 +83,7 @@ Registers the AWS S3 credentials information with Cumulocity IoT.
 |PARAMS||
 |:---|:---|
 |accessKey (string)| required AWS access Key body parameter  
-|secretKey (string)| required AWS secret Key body parameter 
+|secretKey (string)| required AWS secret Key body parameter
 |type (string)| required query parameter to store a particular credentials set (for example: AWS)
 
 
@@ -153,13 +153,13 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 }
 ```
 
-### DELETE - Delete AWS S3 credentials from Cumulocity IoT
+### DELETE - Delete AWS S3 credentials
 
 ```
 {{url}}/service/mlw/credentials
 ```
 
-Deletes the AWS S3 credentials information from Cumulocity IoT.
+Deletes the AWS S3 credentials information from {{< product-name-1 >}}.
 
 |HEADERS||
 |:---|:---|
@@ -195,7 +195,7 @@ curl --location --request DELETE '{{url}}/service/mlw/credentials?type=AWS' \
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/credentials?type=AWS' 
+curl --location --request DELETE '{{url}}/service/mlw/credentials?type=AWS'
 ```
 
 **Example Response**

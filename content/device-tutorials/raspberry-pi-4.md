@@ -74,7 +74,7 @@ $ wget http://resources.cumulocity.com/examples/cumulocity-rpi-agent-latest.deb
 $ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 ```
 
-#### To set up the tenant URL in the cumulocity.properties file
+#### To set up the tenant URL in the properties file
 
 When the {{< product-name-1 >}} agent on the Raspberry Pi connects to {{< product-name-1 >}}, it uses the host URL that is defined in the file
 */usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties* on the Raspberry Pi. The URL is defined in a line like:
@@ -124,7 +124,7 @@ Alternatively, you can use the desktop method:
 3.	Set **SPI** to "Enabled".
 
 
-#### To register the device to {{< product-name-1 >}}
+#### To register the device to the platform
 
 1. Open the {{< product-name-1 >}} platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
@@ -132,7 +132,7 @@ Alternatively, you can use the desktop method:
 
 To view the device in your {{< product-name-1 >}} account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
-### Interacting with {{< product-name-1 >}}
+### Interacting with the platform
 
 After the Raspberry Pi has been successfully registered, you can view the device's status in the {{< product-name-1 >}}´s standard applications (Device Management, Cockpit and Administration).
 

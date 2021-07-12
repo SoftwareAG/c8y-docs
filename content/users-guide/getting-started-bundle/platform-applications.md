@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: var-product-name-1 applications
+title: Standard platform applications
 layout: redirect
 aliases:
   - /users-guide/overview/#cumulocity-applications

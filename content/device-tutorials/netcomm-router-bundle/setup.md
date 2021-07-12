@@ -33,7 +33,7 @@ The agent will automatically start and the router can then be [registered with {
 
 
 <a name="register-device"></a>
-### Registering the router as a device to {{< product-name-1 >}}
+### Registering the router as a device to the platform
 
 <a name="configure"></a>
 #### To configure the router

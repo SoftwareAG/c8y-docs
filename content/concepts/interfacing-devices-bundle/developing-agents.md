@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: How does Cumulocity IoT support developing agents?
+title: How does the platform support developing agents?
 layout: redirect
 ---
 

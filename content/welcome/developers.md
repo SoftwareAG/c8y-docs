@@ -56,7 +56,7 @@ Moreover, the <a href="/apama/overview-analytics/"><i>Streaming Analytics guide<
 A complete Open API Specification for the {{< product-name-1 >}} REST API is available at https://{{< URL >}}/api. The Open API Specification describes the entire {{< product-name-1 >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
-### {{< company-name-2 >}} {{< company-help >}}
+### Developer community
 
 Collaborate with {{< product-name-1 >}} community experts on our [{{< company-name-2 >}} {{< company-help >}}]({{< help-link >}}) website.
 

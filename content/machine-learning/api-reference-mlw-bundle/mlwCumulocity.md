@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT data pull
+title:  Cumulocity data pull
 layout: redirect
 weight: 30
 
@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#autoML
 ---
 
-Operations on MLW data connectors - Data pull from Cumulocity IoT
+Operations on MLW data connectors - Data pull from Cumulocity IoT.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 

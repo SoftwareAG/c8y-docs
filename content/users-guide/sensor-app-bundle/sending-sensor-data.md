@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Sending sensor data to Cumulocity IoT
+title: Sending sensor data to the platform
 layout: redirect
 ---
 

@@ -8,7 +8,7 @@ layout: bundle
 The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices on top of {{< product-name-1 >}}.
 
 
-#### {{< product-name-1 >}} Microservice SDK
+#### Microservice SDK
 
 Whenever possible, use the {{< product-name-1 >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
 

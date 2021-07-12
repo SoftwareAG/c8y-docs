@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: How is real-time processing implemented in Cumulocity IoT?
+title: How is real-time processing implemented in our platform?
 layout: redirect
 ---
 

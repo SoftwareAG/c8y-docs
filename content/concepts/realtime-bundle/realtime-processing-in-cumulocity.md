@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: What is real-time processing in Cumulocity IoT?
+title: What is real-time processing in our platform?
 layout: redirect
 ---
 

@@ -24,7 +24,7 @@ The image below illustrates how SmartREST works. Devices and other clients conne
 
 ![SmartREST architecture](/images/rest/smartrest.png)
 
-##### How can {{< product-name-1 >}} interpret comma-separated values into meaningful REST requests?
+**How can {{< product-name-1 >}} interpret comma-separated values into meaningful REST requests?**
 
 For that purpose, devices register templates with {{< product-name-1 >}}. The templates contain the expanded REST requests together with placeholders into which the {{< product-name-1 >}} SmartREST proxy consecutively inserts the comma-separate values. For responses, the templates describe which values to pick from the structured REST response to construct comma-separated values.
 

@@ -56,7 +56,7 @@ sudo apt install libcurl4-gnutls-dev
 sudo apt install liblua5.3-dev
 ```
 
-### Building the {{< product-name-1 >}} C++ SDK
+### Building the C++ SDK
 
 The agent software requires the [{{< product-name-1 >}} C++ SDK](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/), so you need to build the {{< product-name-1 >}} C++ SDK first, before starting to build the software.
 

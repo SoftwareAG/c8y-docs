@@ -2,6 +2,8 @@
 weight: 50
 title: Supportbenutzerzugriff
 layout: redirect
+aliases:
+  - /benutzerhandbuch/enterprise-edition-de#users-in-other-tenants
 ---
 
 Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der Cumulocity IoT-Plattform (im Falle von Public-Cloud-Instanzen die Software AG und bei lokalen Installation der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen.

@@ -44,7 +44,7 @@ For your convenience find an overview on the content of this document below.
 </tr>
 <tr>
 <td align="left"><a href="#widgets-collection">Widgets collection</a></td>
-<td align="left">Use various types of <a href="#widgets-collection">widgets</a> from the Widgets collection that comes with {{< product-name-1 >}} and configure them according your needs.</td>
+<td align="left">Use various types of <a href="#widgets-collection">widgets</a> from the Widgets collection that comes with {{< product-c8y-iot >}} and configure them according your needs.</td>
 </tr>
 <tr>
 <td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a></td>
@@ -68,7 +68,7 @@ For your convenience find an overview on the content of this document below.
 </tbody>
 </table>
 
-If you want to learn more about general aspects of the {{< product-name-1 >}} platform and its applications, refer to [Getting Started](/users-guide/overview).
+If you want to learn more about general aspects of the {{< product-c8y-iot >}} platform and its applications, refer to [Getting Started](/users-guide/overview).
 
 <a name="home"></a>
 ### Home dashboard

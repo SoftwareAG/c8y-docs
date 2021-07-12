@@ -5,15 +5,15 @@ title: Overview
 ---
 
 
-This section describes how to develop and deploy microservices on top of {{< product-name-1 >}} using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-microservice) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to {{< product-name-1 >}}, you may also continue with the section [Developing microservices](#developing-microservice) to learn more about other features and capabilities of the SDK.
+This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-microservice) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to {{< product-c8y-iot >}}, you may also continue with the section [Developing microservices](#developing-microservice) to learn more about other features and capabilities of the SDK.
 
-> **Info**: You can develop microservices for {{< product-name-1 >}} with any IDE and build tool that you prefer, but this section focuses on Maven and some troubleshooting for Eclipse.
+> **Info**: You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this section focuses on Maven and some troubleshooting for Eclipse.
 
 These are some useful references to get started with the basic technologies underlying the SDK:
 
-- The client libraries use the {{< product-name-1 >}} REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
-- All examples are open source and can be reviewed at the [{{< product-name-1 >}} microservices examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository.
+- The client libraries use the {{< product-c8y-iot >}} REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
+- All examples are open source and can be reviewed at the [{{< product-c8y-iot >}} microservices examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository.
 
 > **Important:** You need to have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 
-If you face any issue or need technical support, please use the [{{< product-name-1 >}} community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+If you face any issue or need technical support, please use the [{{< product-c8y-iot >}} community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.

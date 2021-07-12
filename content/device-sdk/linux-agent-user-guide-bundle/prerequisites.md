@@ -58,7 +58,7 @@ sudo apt install liblua5.3-dev
 
 ### Building the C++ SDK
 
-The agent software requires the [{{< product-name-1 >}} C++ SDK](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/), so you need to build the {{< product-name-1 >}} C++ SDK first, before starting to build the software.
+The agent software requires the [{{< product-c8y-iot >}} C++ SDK](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/), so you need to build the {{< product-c8y-iot >}} C++ SDK first, before starting to build the software.
 
 
 1. Launch a Git client and clone the SDK repository to a directory of your choice. For example:

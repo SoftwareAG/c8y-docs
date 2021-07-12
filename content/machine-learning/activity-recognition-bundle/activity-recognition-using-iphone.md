@@ -14,12 +14,12 @@ This section deals with the basic data science steps of creating an activity rec
 
 #### Register a smartphone in {{ < product-name-1 > }}
 
-Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-name-1 >}}.
+Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-c8y-iot >}}.
 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
-#### Data collection with {{< product-name-1 >}}
+#### Data collection with {{< product-c8y-iot >}}
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
@@ -99,7 +99,7 @@ Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > E
 
 #### Train the PMML model
 
-To train the model we will use the AutoML feature of {{< product-name-1 >}} Machine Learning Workbench.
+To train the model we will use the AutoML feature of {{< product-c8y-iot >}} Machine Learning Workbench.
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Resources](/machine-learning/web-app-mlw/#automl).
 
@@ -132,11 +132,11 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
-#### Create and upload Apama monitor to {{< product-name-1 >}}
+#### Create and upload Apama monitor to {{< product-c8y-iot >}}
 
 For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to {{< product-name-1 >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
 Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 

@@ -5,11 +5,11 @@ layout: redirect
 ---
 
 
-{{< product-name-1 >}} operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
+{{< product-c8y-iot >}} operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
 ### Scanning the address space
 
-This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-name-1 >}} platform.
+This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-c8y-iot >}} platform.
 
 ```
 POST /devicecontrol/operations/
@@ -23,7 +23,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-The twinned address space information is persisted in the {{< product-name-1 >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
+The twinned address space information is persisted in the {{< product-c8y-iot >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
 
@@ -721,7 +721,7 @@ Now download is possible with the self link provided inside the managedObjects s
 
 For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
 
-For 10.9 and later, refer to [binaries API](https://www.{{< URL >}}/api/#tag/Binaries) in the {{< OpenAPI >}}.
+For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value
@@ -1271,7 +1271,7 @@ Otherwise, the operation result provides an explanation why the device type coul
 
 ### Analyzing the set of nodes to which a device type can be applied (dry run)
 
-As explained earlier, the {{< product-name-1 >}} OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
+As explained earlier, the {{< product-c8y-iot >}} OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
 
 ```json
 {

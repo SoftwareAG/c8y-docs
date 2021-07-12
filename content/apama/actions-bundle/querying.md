@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Querying var-product-name-1 data
+title: Querying var-product-c8y-iot data
 layout: redirect
 ---
 

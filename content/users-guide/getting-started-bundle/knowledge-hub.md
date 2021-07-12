@@ -4,13 +4,13 @@ title: Knowledge Hub (trial tenants only)
 layout: redirect
 ---
 
-The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-name-1 >}} platform experience.
+The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.
 
 >**Info:** The Knowledge Hub is only available for users of free trial tenants.
 
 ### To access the Knowledge Hub
 
-At the bottom right of the {{< product-name-1 >}} platform UI, click the **Knowledge Hub** button to access the {{< product-name-1 >}} Knowledge Hub.
+At the bottom right of the {{< product-c8y-iot >}} platform UI, click the **Knowledge Hub** button to access the {{< product-c8y-iot >}} Knowledge Hub.
 
 ![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
 
@@ -22,13 +22,13 @@ The **Knowlegde Hub** dialog opens, presenting a couple of options in a list.
 
 ### Sessions
 
-The first items of the list guide you in a step-by-step manner through the major topics of {{< product-name-1 >}}:
+The first items of the list guide you in a step-by-step manner through the major topics of {{< product-c8y-iot >}}:
 
 |Topic|Description|
 |:---|:---|
-|1- Welcome!|Welcomes you to {{< product-name-1 >}}|
+|1- Welcome!|Welcomes you to {{< product-c8y-iot >}}|
 |2 - Tour your cockpit|Guides you through the main UI areas|
-|3 - See what you can do with IoT|Leads you to a demo project where you can get a first impression of the capabilities of {{< product-name-1 >}}|
+|3 - See what you can do with IoT|Leads you to a demo project where you can get a first impression of the capabilities of {{< product-c8y-iot >}}|
 |4 - Connect & manage devices|Provides a quick link to connect your smartphone using the {{< sensor-app >}}|
 |5 - Create dashboard|Explains how to get started with dashboards|
 |6 - Create smart rules & alarms|Shows you how to put your data to use by creating smart rules & alarms|
@@ -58,6 +58,6 @@ At the bottom of the list in the **Knowledge Hub** dialog, you can find several 
 
 * **Have a question or idea** - Provide feedback via email or send us product ideas or feature requests
 * **Book a demo** - Book a product demo
-* **UPGRADE {{< product-name-1 >}}** - View pricing and purchase {{< product-name-1 >}}
+* **UPGRADE {{< product-c8y-iot >}}** - View pricing and purchase {{< product-c8y-iot >}}
 
 These options may vary from time to time.

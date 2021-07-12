@@ -4,9 +4,9 @@ layout: redirect
 weight: 50
 ---
 
-* To start the {{< product-name-1 >}} Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
-* To start the {{< product-name-1 >}} Cloud Remote Access service, refer to [Starting the {{< product-name-1 >}} Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
-* To start the {{< product-name-1 >}} CANopen service and CANopen slave simulator, refer to [Starting the {{< product-name-1 >}} CANopen service](#starting-the-cumulocity-canopen-service).
+* To start the {{< product-c8y-iot >}} Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
+* To start the {{< product-c8y-iot >}} Cloud Remote Access service, refer to [Starting the {{< product-c8y-iot >}} Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
+* To start the {{< product-c8y-iot >}} CANopen service and CANopen slave simulator, refer to [Starting the {{< product-c8y-iot >}} CANopen service](#starting-the-cumulocity-canopen-service).
 
 <a name="starting-the-agent-process"></a>
 ### Starting the agent process
@@ -69,4 +69,4 @@ make
 ./c8y_canopen_simulator 5 0
 ```
 
-> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number, i.e. `can0`. In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the {{< product-name-1 >}} Linux agent to have the agent create a vcan `can0` interface for you.
+> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number, i.e. `can0`. In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the {{< product-c8y-iot >}} Linux agent to have the agent create a vcan `can0` interface for you.

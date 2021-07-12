@@ -11,7 +11,7 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 | Item | Details |
 | -----   | -----   |
 | Cumulocity IoT Edge | The local version of Cumulocity IoT is set up on a Virtual Machine (VM). See also section [Setting up Cumulocity IoT Edge](/edge/installation). |
-| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-name-2 >}} {{< company-portal >}}]({{< portal-link >}}). |
+| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements

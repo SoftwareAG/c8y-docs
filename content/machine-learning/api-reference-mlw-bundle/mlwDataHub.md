@@ -7,7 +7,7 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#mlwDataHub
 ---
 
-Operations on MLW data connectors - Data pull from {{< product-name-1 >}} DataHub.
+Operations on MLW data connectors - Data pull from {{< product-c8y-iot >}} DataHub.
 
 >**Info:** An active subscription of the MLW microservice (mlw-cdh) is required to perform operations.
 
@@ -17,7 +17,7 @@ Operations on MLW data connectors - Data pull from {{< product-name-1 >}} DataHu
 {{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data
 ```
 
-Pulls the data with the given query from {{< product-name-1 >}} DataHub.
+Pulls the data with the given query from {{< product-c8y-iot >}} DataHub.
 
 |HEADERS||
 |:---|:---|

@@ -13,7 +13,7 @@ First, update the *CONFIG.json* with the appropriate values and save it. Replace
 
 	CONFIG.JSON
 	[cumulocity]
-	c_url=https://yourtenant.{{< URL >}}
+	c_url=https://yourtenant.{{< domain-c8y >}}
 	c_user=user@company.com
 	c_pass=password
 	c_device_source=deviceID

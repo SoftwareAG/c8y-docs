@@ -20,5 +20,5 @@ Download the [CastingDefectDetectionDemo.zip](/files/zementis/CastingDefectDetec
 Running the demo scripts requires:
 
 * Prior experience with Python and understanding of the data science processes.
-* Familiarity with {{< product-name-1 >}} and its in-built apps.
+* Familiarity with {{< product-c8y-iot >}} and its in-built apps.
 * Subscription of the MLW, Zementis, ONNX microservices (10.7.0.x.x or higher) and the Machine Learning Workbench, Machine Learning applications on the tenant.

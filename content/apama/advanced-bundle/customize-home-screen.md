@@ -7,7 +7,7 @@ layout: redirect
 The cards that are shown on the home screen of the Streaming Analytics application contain text and links 
 which you can customize on a per-tenant and per-language basis. To do this, download the *documentation.json* file 
 for the language you wish to customize from the URL */service/cep/apamacorrelator/EN/documentation.json* 
-(that will need to be authenticated for a user in the {{< product-name-1 >}} tenant). Replace the "EN" within the URL with the 
+(that will need to be authenticated for a user in the {{< product-c8y-iot >}} tenant). Replace the "EN" within the URL with the 
 language code for the file you want to download. 
 
 The *documentation.json* file includes the URLs for the documentation links across the Streaming Analytics application 
@@ -36,7 +36,7 @@ See [Administration > Managing applications](/users-guide/administration/#managi
 
 You may need to clear your browser cache for the changes to take effect. 
 
-You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an {{< tenant-type-2 >}}.
+You can include multiple languages in a single ZIP file as needed. You can subscribe this to subtenants as needed from an {{< enterprise-tenant >}}.
 
 On new releases of the platform, it is recommended that you review the source *documentation.json* file for any changes. 
 New entries in this file will be picked up with their default values.

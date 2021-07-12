@@ -7,18 +7,18 @@ layout: bundle
 
 ### Overview
 
-[TinkerForge](http://tinkerforge.com) is a company that provides generic sensors and controls for diverse use cases ranging from environmental monitoring to industrial automation. Together with {{< product-name-1 >}}, you can:
+[TinkerForge](http://tinkerforge.com) is a company that provides generic sensors and controls for diverse use cases ranging from environmental monitoring to industrial automation. Together with {{< product-c8y-iot >}}, you can:
 
-* Build complete machine-to-machine use cases by just plugging off-the-shelf hardware components together. No configuration is required -- the components are automatically discovered by the {{< product-name-1 >}} Java agent and connected to the cloud.
+* Build complete machine-to-machine use cases by just plugging off-the-shelf hardware components together. No configuration is required -- the components are automatically discovered by the {{< product-c8y-iot >}} Java agent and connected to the cloud.
 * Instantly visualize sensor data and remote control devices in real-time.
 
-In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.tinkerforge.com/en/doc/Kits/WeatherStation/WeatherStation.html) to {{< product-name-1 >}}. We will use a Weather Station configuration without an inbuilt Wi-Fi, so we will use a Raspberry Pi 4 (referred to as "RaspPi" in the description below for brevity) as an intermediary device to attach the Weather Station to the {{< product-name-1 >}} platform. The RaspPi must have an active internet connection. The RaspPi can be integrated as a module in the Weather Station, or it can be an external device that you connect to the Weather Station via a USB cable.
+In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.tinkerforge.com/en/doc/Kits/WeatherStation/WeatherStation.html) to {{< product-c8y-iot >}}. We will use a Weather Station configuration without an inbuilt Wi-Fi, so we will use a Raspberry Pi 4 (referred to as "RaspPi" in the description below for brevity) as an intermediary device to attach the Weather Station to the {{< product-c8y-iot >}} platform. The RaspPi must have an active internet connection. The RaspPi can be integrated as a module in the Weather Station, or it can be an external device that you connect to the Weather Station via a USB cable.
 
 ### Prerequisites
 
 #### Installing the Tinkerforge Brick Daemon and Brick Viewer on the RaspPi
 
-Before we try to connect to {{< product-name-1 >}}, we need to ensure that the RaspPi and the Weather Station can communicate with each other.
+Before we try to connect to {{< product-c8y-iot >}}, we need to ensure that the RaspPi and the Weather Station can communicate with each other.
 
 For the software connection between the devices, you need to install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
 
@@ -56,19 +56,19 @@ You should now see the text in the LCD display on the Weather Station.
 
 #### To install the agent
 
-The connection between the Tinkerforge Weather Station and {{< product-name-1 >}} is routed over the RaspPi. The connection between the RaspPi and {{< product-name-1 >}} is implemented by installing and running the {{< product-name-1 >}} Java agent on the RaspPi. The Java agent on the RaspPi supports TinkerForge out of the box.
+The connection between the Tinkerforge Weather Station and {{< product-c8y-iot >}} is routed over the RaspPi. The connection between the RaspPi and {{< product-c8y-iot >}} is implemented by installing and running the {{< product-c8y-iot >}} Java agent on the RaspPi. The Java agent on the RaspPi supports TinkerForge out of the box.
 
-For details on installing and running the {{< product-name-1 >}} Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](../raspberry-pi-4).
+For details on installing and running the {{< product-c8y-iot >}} Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](../raspberry-pi-4).
 
 <!-- ![Raspberry Pi and TinkerForge](/images/device-demos/tinkerforge/tinkerforge.jpg) -->
 
 #### To register the RaspPi device to the platform
 
-As a final configuration step, you need to register the RaspPi device to the {{< product-name-1 >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
+As a final configuration step, you need to register the RaspPi device to the {{< product-c8y-iot >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
 
 ### Interacting with the platform
 
-To view the device in your {{< product-name-1 >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
+To view the device in your {{< product-c8y-iot >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
 Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
 
@@ -97,7 +97,7 @@ The data explorer display updates in real time to show a graph of the sensor dat
 
 The period of time is selectable via a drop-down box adjacent to the graph.
 
-The data is regularly collected by the {{< product-name-1 >}} agent on the RaspPi. The frequency of the collection can be configured in the **Configuration** tab of the RaspPi. Typical entries in the **Configuration** tab are:
+The data is regularly collected by the {{< product-c8y-iot >}} agent on the RaspPi. The frequency of the collection can be configured in the **Configuration** tab of the RaspPi. Typical entries in the **Configuration** tab are:
 
 ````console
 c8y.barometer.interval=5000
@@ -124,14 +124,14 @@ In addition to the polling interval, you can also configure the wire mode of the
 ![LCD 20x4 Display Bricklet](/images/device-demos/tinkerforge/lcd12_20x4.jpg)
 -->
 
-To operate the display from {{< product-name-1 >}}, proceed as follows:
+To operate the display from {{< product-c8y-iot >}}, proceed as follows:
 
 1. In the Cockpit application, open the group that contains the RaspPi device, and select the RaspPi.
 2. Add a dashboard for the RaspPi, if you haven't defined one yet. For details on adding a dashboard, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
 3. Click **Add widget**.
 4. In the list of available widgets, select **Message sending**.
 5. Click the **Display** asset of the RaspPi. This adds the "Message sending" widget to the dashboard.
-6. In the message field of the widget, type a text such as "Hello from {{< product-name-1 >}}", then click **Send**.
+6. In the message field of the widget, type a text such as "Hello from {{< product-c8y-iot >}}", then click **Send**.
 7. The text should now appear on the LCD Bricklet of the Weather Station.
 
 Similarly, if you want to toggle the LCD display's backlight on and off, create a **Relay control** widget, set it up to use the **Display** asset of the RaspPi, and use the on/off setting.
@@ -140,7 +140,7 @@ Similarly, if you want to toggle the LCD display's backlight on and off, create 
 
 ![Display usage](/images/device-demos/tinkerforge/tinkerforgedisplay.png)
 
-The display has four buttons at the bottom. Operating these buttons will send an event to {{< product-name-1 >}} which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
+The display has four buttons at the bottom. Operating these buttons will send an event to {{< product-c8y-iot >}} which is shown on the **Events** tab. You can process this event, for example, using a CEP statement. The event is of type "c8y\_ButtonPressedEvent". The number of the button is part of the text of the event.
 
 ![Events](/images/device-demos/tinkerforge/tinkerforgeevents.png)
 

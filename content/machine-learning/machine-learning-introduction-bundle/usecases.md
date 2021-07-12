@@ -4,7 +4,7 @@ title: Use cases
 layout: redirect
 ---
 
-To get a better understanding of how to leverage Machine Learning capabilities on {{< product-name-1 >}}, we have provided detailed examples as part of this documentation. Each example covers a use case and walks you through the entire machine learning lifecycle from data ingestion, model training/evaluation to model deployment and inferencing.
+To get a better understanding of how to leverage Machine Learning capabilities on {{< product-c8y-iot >}}, we have provided detailed examples as part of this documentation. Each example covers a use case and walks you through the entire machine learning lifecycle from data ingestion, model training/evaluation to model deployment and inferencing.
 
 | Use case  | Description |
 | -----     | -----       |

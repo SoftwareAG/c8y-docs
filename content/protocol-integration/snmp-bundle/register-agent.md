@@ -4,7 +4,7 @@ title: Registering the agent
 layout: redirect
 ---
 
-Before any SNMP device can connect to the {{< product-name-1 >}} platform, first the SNMP agent needs to be registered in the platform.
+Before any SNMP device can connect to the {{< product-c8y-iot >}} platform, first the SNMP agent needs to be registered in the platform.
 
 ### To register the agent from the UI
 

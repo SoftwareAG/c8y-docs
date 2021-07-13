@@ -9,13 +9,13 @@ aliases:
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artifacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
-#### Register a demo device in {{ < product-name-1 > }}
+#### Register a demo device in {{< product-c8y-iot >}}
 
 A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
 
-2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py*, a script that registers a demo device in {{ < product-name-1 > }}) and *CONFIG.json* to Machine Learning Workbench (MLW).
+2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py*, a script that registers a demo device in {{< product-c8y-iot >}}) and *CONFIG.json* to Machine Learning Workbench (MLW).
 
 3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
@@ -26,11 +26,11 @@ A demo device can be registered instead of registering a real phone and used as 
 
 Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the center.
 
-Script to add a device named "DemoDevice" to {{ < product-name-1 > }}.
+Script to add a device named "DemoDevice" to {{< product-c8y-iot >}}.
 
 	DemoDeviceCreator.py
 
-	# Register a demo device with {{ < product-name-1 > }}
+	# Register a demo device with {{< product-c8y-iot >}}
 	import requests
 	import json
 	from requests.auth import HTTPBasicAuth
@@ -61,16 +61,16 @@ Script to add a device named "DemoDevice" to {{ < product-name-1 > }}.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
 
-#### Upload the model and Apama monitor to {{ < product-name-1 > }}
+#### Upload the model and Apama monitor to {{< product-c8y-iot >}}
 
-1. Upload the attached model *iforest_model.pmml* to {{ < product-name-1 > }}. To upload the model to {{ < product-name-1 > }}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
+1. Upload the attached model *iforest_model.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of `c_device_source` with the ID of your registered device.
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
 
 #### Trigger an Anomaly Alert
 
-A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{ < product-name-1 > }} from our demo device. This script can be used to depict the generation of anomalies.
+A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{< product-c8y-iot >}} from our demo device. This script can be used to depict the generation of anomalies.
 
 All you need to do is to upload this script to the MLW and run it as explained before.
 
@@ -128,6 +128,6 @@ All you need to do is to upload this script to the MLW and run it as explained b
 
 
 
-This should send alternate anomalous and non-anomalous measurements to {{ < product-name-1 > }} on behalf of your demo device.
+This should send alternate anomalous and non-anomalous measurements to {{< product-c8y-iot >}} on behalf of your demo device.
 
 You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device Management application.

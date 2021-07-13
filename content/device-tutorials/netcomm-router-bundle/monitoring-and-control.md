@@ -73,7 +73,7 @@ You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and seri
 For Modbus-TCP setup:
 
 * Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP clients.
-* Configure the Modbus-TCP port in the {{< product-name-1 >}} menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
+* Configure the Modbus-TCP port in the {{< product-c8y-iot >}} menu in the web UI of the router if you are using a different port than the default 502, see [Configuring the router](#configure).
 
 For Modbus-RTU setup:
 

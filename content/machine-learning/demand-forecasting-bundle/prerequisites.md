@@ -12,5 +12,5 @@ aliases:
 Running the demo scripts requires 
 
 * Prior experience with Python, Jupyter Notebook, JSON, REST and understanding of data science processes.
-* Familiarity with {{ < product-name-1 > }} and its in-built apps.
-* Subscription of the {{ < product-name-1 > }} Machine Learning Workbench microservice (10.7.0.x.x or higher), Zementis microservice (10.6.0.x.x or higher) and Nyoka microservice (10.6.0.x.x or higher) in the tenant.
+* Familiarity with {{< product-c8y-iot >}} and its in-built apps.
+* Subscription of the {{< product-c8y-iot >}} Machine Learning Workbench microservice (10.7.0.x.x or higher), Zementis microservice (10.6.0.x.x or higher) and Nyoka microservice (10.6.0.x.x or higher) in the tenant.

@@ -12,7 +12,7 @@ This section deals with the basic data science steps of creating an activity rec
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 
-#### Register a smartphone in {{ < product-name-1 > }}
+#### Register a smartphone in {{< product-c8y-iot >}}
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-c8y-iot >}}.
 
@@ -30,7 +30,7 @@ Once registered, you can get the device ID by looking up your device on the **Al
 4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
 
-Recording training data for activity recognition is done by starting the {{ < sensor-app > }}, performing each of the activities over a few minutes, and noting the exact time.
+Recording training data for activity recognition is done by starting the {{< sensor-app >}}, performing each of the activities over a few minutes, and noting the exact time.
 
 
 The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
@@ -122,7 +122,7 @@ The hyper-parameters for each model can be viewed by clicking on the correspondi
 
 After the training is complete, the best model selected by the evaluation criteria will be saved in the **Model** folder of the respective **Project** in PMML format.
 
-#### Deploy the model to {{ < product-name-1 > }}
+#### Deploy the model to {{< product-c8y-iot >}}
 
 Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions.
 

@@ -11,23 +11,23 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
-#### Register your smartphone in {{ < product-name-1 > }}
+#### Register your smartphone in {{< product-c8y-iot >}}
 
-Follow the steps described in [{{ < sensor-app > }}](/users-guide/sensor-app) in the User guide and register a smartphone in {{ < product-name-1 > }}.
+Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in the User guide and register a smartphone in {{< product-c8y-iot >}}.
 
->**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{ < sensor-app > }}.
+>**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 
 Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
 
-In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via {{ < product-name-1 > }} Machine Learning Workbench that automatically transforms the JSON data into the training data format.
+In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via {{< product-c8y-iot >}} Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
-#### Data collection with {{ < product-name-1 > }} Machine Learning Workbench (MLW)
+#### Data collection with {{< product-c8y-iot >}} Machine Learning Workbench (MLW)
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using smartphone" as **Project description**.
 
 2. Either you can download the recorded measurements of your smartphone or use the data provided within the ZIP file for model-building purposes.
 
-    * Follow the steps described in [Machine Learning Workbench > Data pull > {{ < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
+    * Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
 
     * Alternatively, follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *anomalyTrainingData.csv* to Machine Learning Workbench (MLW).
 
@@ -38,7 +38,7 @@ For this use case, the "Isolation Forest", an anomaly detection machine learning
 
 The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. See also [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The integrated Jupyter Notebook feature within {{ < product-name-1 > }} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model.
+The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model.
 
 > **Info:** To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices.
 
@@ -56,7 +56,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 3. Click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of **Tabs** to list the newly created *isolationForests.pmml* in the **Model** folder.
 
 
-#### Model deployment and predictions using {{ < product-name-1 > }}
+#### Model deployment and predictions using {{< product-c8y-iot >}}
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
 
@@ -64,11 +64,11 @@ Once the model is available in the **Model** folder, it can be deployed to Machi
 
 2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using the *isolationForest* PMML model.
 
-#### Create and upload Apama monitor to {{ < product-name-1 > }}
+#### Create and upload Apama monitor to {{< product-c8y-iot >}}
 
 For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to {{ < product-name-1 > }}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
 
 Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 

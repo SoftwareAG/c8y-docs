@@ -20,15 +20,15 @@ For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* 
 #### Register a demo device in the platform
 
 Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank. To do so, follow the steps below:
-We have added a script *RegisterDevice.ipynb* which registers a demo device in {{ < product-name-1 > }}.
+We have added a script *RegisterDevice.ipynb* which registers a demo device in {{< product-c8y-iot >}}.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{ < product-name-1 > }}.
+2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}.
 3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/DemandForecasting/notebook 1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
-Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{ < product-name-1 > }}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
+Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named *c8y_Flow*. <br>A higher value of c8y_Flow signifies higher water consumption.
 
@@ -37,7 +37,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{ < product-name-1 > }}. Upon successful execution, c8y_Flow measurements are sent to {{ < product-name-1 > }} on behalf of the demo device. The measurements are simulated dynamically for the last days period and for every two hours (i.e. 12 observations per day).
+2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Flow measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last days period and for every two hours (i.e. 12 observations per day).
 
 We use this data to generate a time series model and forecast the next day’s c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
 
@@ -45,7 +45,7 @@ We use this data to generate a time series model and forecast the next day’s c
 
 #### Download the data for model building exercise
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{ < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_flow" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_flow" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 <img src="/images/zementis/DemandForecasting/hourlyData.PNG" alt="Download" style="display:inline-block; margin:0">

@@ -43,7 +43,7 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 ### Cloud environments status page
 
-For {{< company-cloud-1 >}} shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
+For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
 
 ### Releases delta training
 

@@ -1284,7 +1284,7 @@ As explained earlier, the {{< product-c8y-iot >}} OPC UA gateway performs an aut
 
 ```
 
-Available arguments for c8y_ua_command_TestDeviceTypeMatching:
+Available arguments for c8y_ua_command_DryRunDeviceTypeMatching:
 <table>
 <colgroup>
 <col style="width: 20%;">

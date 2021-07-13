@@ -1,12 +1,15 @@
 ---
 weight: 25
-title: Accessing the Cumulocity IoT Edge appliance
+title: Accessing the Edge appliance
 layout: redirect
+aliases:
+  - /edge/installation/#accessing-cumulocity
+
 ---
 
 ### Configuring the access through domain name
 
-The Cumulocity IoT Edge appliance is accessible using the domain name configured as part of the installation.
+The {{< product-c8y-iot >}} Edge appliance is accessible using the domain name configured as part of the installation.
 
 There are two ways to configure the accessibility with the domain names:
 

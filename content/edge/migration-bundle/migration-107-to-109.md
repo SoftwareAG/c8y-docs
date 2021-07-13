@@ -1,16 +1,16 @@
 ---
 weight: 10
-title: Migrating Cumulocity IoT Edge 10.7 to 10.9
+title: Migrating Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from Cumulocity IoT Edge 10.7 to Cumulocity IoT Edge 10.9. If you are using a version earlier than Cumulocity IoT Edge 10.7 and plan to upgrade to Cumulocity IoT Edge 10.9, you must first upgrade to Cumulocity IoT Edge 10.7 and then migrate from Cumulocity IoT Edge 10.7 to version 10.9.
+This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7 and then migrate from {{< product-c8y-iot >}} Edge 10.7 to version 10.9.
 
-For information about upgrading from an earlier version to Cumulocity IoT Edge 10.7, see:
+For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_esxi
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_hyper_v
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7
@@ -20,11 +20,11 @@ To migrate from Edge 10.7 to 10.9, you must:
 ### Before you begin
 
 - Import the Edge 10.9 appliance. See, [Configuring the Edge infrastructure](/edge/setting-up-edge/).
-- Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing Cumulocity IoT Edge](/edge/installation/)
+- Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/)
 
 >**Important:** You can have both the Edge 10.7 and 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
 
-### Creating a backup on Cumulocity IoT Edge 10.7
+### Creating a backup on Edge 10.7
 
 In your Edge 10.7 setup, you must back up the data for each tenant and docker collection, and note down the device ID.
 
@@ -38,10 +38,10 @@ mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
 2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
-3. Create a backup of the `/etc/opcua` directory. 
+3. Create a backup of the `/etc/opcua` directory.
 4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
-### Restoring the data on Cumulocity IoT Edge 10.9
+### Restoring the data on Edge 10.9
 
 To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance.
 
@@ -51,7 +51,7 @@ Perform these steps as **root** user in your Edge 10.9 appliance.
 
 1. Copy the backup folders from your Edge 10.7 appliance to Edge 10.9 appliance using any file transfer tool like WINSCP, SCP, or FTP.
 
-   You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance. 
+   You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 
 2. Backup the web applications in the Edge 10.9 appliance. To do this, you must first detect the IDs of the applications using the command:
 
@@ -89,7 +89,7 @@ The command returns the name and ID of the application. For example:
 
 ```shell
 mkdir -p /tmp/apps/
-mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip 
+mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip
 
 Here:
  - APP_ID refers to the ID of the application. For example, 112
@@ -148,7 +148,7 @@ Wait for Karaf to install the applications. After the installation is complete, 
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
 10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
-  
+
 11. Restart the services using the commands:
 ```shell
 systemctl restart cumulocity-agent
@@ -159,7 +159,7 @@ monit restart opcua_mgmt_service_proc
 ```
 12. Restore the Streaming Analytics application.
 
-	- Log in to the Management tenant.
+	- Log in to the {{< management-tenant >}}.
 
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
@@ -173,7 +173,7 @@ monit restart opcua_mgmt_service_proc
 
 Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
 >**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
 
@@ -181,12 +181,12 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 ### Sample scripts to automate the migration
 
-Software AG provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
+{{< company-sag >}} provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
 
 - [backup.sh](/files/edge/backup.sh)
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 
->**IMPORTANT:** Software AG does not officially support these scripts. These scripts are only for your reference.
+>**IMPORTANT:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
 
 #### Using the scripts
 
@@ -197,17 +197,17 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 1. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
 2. Run the `backup.sh`.
-  
+
    You can also run the script with the parameters:
 	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
 	- ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
-    
+
     >**Info:** If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
-   
+
 	For example:
 	```shell
 	./backup.sh /home/admin/
-	```	
+	```
 	The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
 
 3. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
@@ -227,5 +227,5 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 	For example:
 	```shell
 	./restore.sh migration_data.tgz /home/admin/migration_data
-	``` 
+	```
 Running the `restore.sh` script successfully completes the migration process.

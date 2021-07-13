@@ -33,7 +33,7 @@ To run the {{< product-c8y-iot >}} mbed agent, the following items are required:
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the {{< product-c8y-iot >}} platform. If you do not have access yet, try {{< product-c8y-iot >}} for free. Go to [{{< company-cloud >}} > {{< product-c8y-iot >}}]({{< cloud-link >}}) and select "Try for free".
+* You need access to the {{< product-c8y-iot >}} platform. If you do not have access yet, try {{< product-c8y-iot >}} for free. Go to [{{< sag-cloud >}} > {{< product-c8y-iot >}}]({{< cloud-link >}}) and select "Try for free".
 
 ### Setting up and registering the device
 

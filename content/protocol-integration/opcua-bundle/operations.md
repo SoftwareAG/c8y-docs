@@ -1284,7 +1284,7 @@ As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discove
 
 ```
 
-Available arguments for c8y_ua_command_TestDeviceTypeMatching:
+Available arguments for c8y_ua_command_DryRunDeviceTypeMatching:
 <table>
 <colgroup>
 <col style="width: 20%;">

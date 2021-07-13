@@ -1,10 +1,10 @@
 ---
 weight: 25
-title: Configuring the microservice hosting feature 
+title: Configuring the microservice hosting feature
 layout: redirect
 ---
 
-Microservices are server-side applications which may be used to extend the Cumulocity IoT Edge platform with customer-specific functionality. For more information, see [Microservices SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device simulator microservice also gets enabled or disabled. To use the Device simulator, add the **Simulator** permission. For more information, see [Global roles](/users-guide/administration/#a-nameglobalaglobal-roles).
+Microservices are server-side applications which may be used to extend the {{< product-c8y-iot >}} Edge platform with customer-specific functionality. For more information, see [Microservice SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device simulator microservice also gets enabled or disabled. To use the Device simulator, add the **Simulator** permission. For more information, see [Global roles](/users-guide/administration/#a-nameglobalaglobal-roles).
 
 For more information about Device simulator, see [Working with simulators](/users-guide/device-management/#simulator).
 
@@ -31,6 +31,4 @@ Before disabling the microservice hosting feature, you should unsubscribe from a
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
 For more information about developing and hosting a microservice, see [Microservices SDK](/microservice-sdk/introduction/).
 
->**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
-
-
+>**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.

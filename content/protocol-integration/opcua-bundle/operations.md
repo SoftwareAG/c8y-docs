@@ -481,7 +481,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 <td>tagType</td>
 <td>string</td>
 <td>no</td>
-<td>Possible tagType values are â€œTAGâ€ and â€œNO_TAGâ€. "TAG" appends â€œ_Historicâ€ for both the mapping types and for the measurement mappings. Default is "TAG".</td>
+<td>Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings. Default is "TAG".</td>
 </tr>
 </tbody>
 </table>

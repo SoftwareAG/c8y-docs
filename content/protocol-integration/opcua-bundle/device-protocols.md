@@ -60,7 +60,7 @@ Specify the following parameters (all mandatory):
 - Text
 
 >**Info:** If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
-The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value 
+The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
 is changed to "false", or a number that is less than or equals to 0.
 
 **Send Event**
@@ -72,7 +72,7 @@ Specify the following parameters:
 - Enter the type of the event, for example, “com_cumulocity_model_DoorSensorEvent”.
 - Enter the text which will be sent, for example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
 
-	```plain
+```plain
 Door sensor was triggered, event value: ${value}
 ```
 
@@ -157,21 +157,21 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 #### Device type has been un-applied
 
 - Event type - c8y_ua_DeviceTypeUnapplied
-- Event text - 
+- Event text -
     * If the device type has been un-applied from all nodes on the server: *Device type: {device type ID} is un-applied from all nodes of server: {server ID}*
     * If the device type has been un-applied from a specific node on the server: *Device type: {device type ID} is un-applied from root node: {root node ID} of server: {server ID}*
-    * If all device types have been un-applied for the server: *All device types are un-applied for server: {server ID}* 
+    * If all device types have been un-applied for the server: *All device types are un-applied for server: {server ID}*
 - Event source - The server managed object
 
 ![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
 
 #### Custom action retry mechanism on external server failure
 
-If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository. 
- 
+If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository.
+
 Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action. The collection has a defined size in _failedCustomActionQueueSize_ and a maximum number of retries in _maxRetries_.  
 
-A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. 
+A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository.
 
 All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out when the reach they _pendingMaxAge_ to reduce the load of the scheduler task.
 

@@ -27,6 +27,32 @@ The twinned address space information is persisted in the Cumulocity IoT invento
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide "skipSync": true.
 
+Available arguments for c8y_ua_command_ScanAddressSpace:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>skipSync</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, the address space nodes will not be synchronized to Cumulocity IoT Inventory API. Default is false.</td>
+</tr>
+</tbody>
+</table>
+
 > **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
 ### Reading the value of a node/nodes
@@ -40,13 +66,62 @@ POST /devicecontrol/operations/
     "deviceId" : "<server-device-Id>",
     "c8y_ua_command_ReadValue": {
     "nodes": ["NODE_ID"],
-     “timestampsToReturn”: “Neither”
+    "timestampsToReturn": "Neither"
     },
     "description":"read value"
 }
 ```
 
-Other possible values for `timestampsToReturn`: “Source”, “Server” or “Both”.
+Available arguments for c8y_ua_command_ReadValue:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodes</td>
+<td>string array</td>
+<td>yes</td>
+<td>Array of IDs of the nodes to execute the operation</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
+</td>
+</tr>
+<tr>
+<td>maxAge</td>
+<td>double</td>
+<td>no</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
+</tr>
+<tr>
+<td>timestampsToReturn</td>
+<td>string</td>
+<td>no</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
+</tr>
+</tbody>
+</table>
 
 The result of this operation will contain output in the following format:
 
@@ -81,6 +156,32 @@ This operation returns all attributes of specific node.
 }
 ```
 
+Available arguments for c8y_ua_command_ReadNodeAttributes:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the node to execute the operation</td>
+</tr>
+</tbody>
+</table>
+
 The result may differ depending on the node type.
 
 ```json
@@ -110,10 +211,67 @@ This operation supports to read one or more attributes of one or more nodes. Thi
     "c8y_ua_command_ReadAttribute": {
          "nodes": ["ns=3;s=FloatArray"],
          "attribute":"13"
-    }
-    "description": "Read attribute from ns=3;s=FloatArray",
+    },
+    "description": "Read attribute from ns=3;s=FloatArray"
 }
 ```
+
+Available arguments for c8y_ua_command_ReadAttribute:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodes</td>
+<td>string array</td>
+<td>yes</td>
+<td>Array of IDs of the nodes to execute the operation</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>string</td>
+<td>yes</td>
+<td>The ID of the attribute according to the OPC UA specification</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
+</td>
+</tr>
+<tr>
+<td>maxAge</td>
+<td>double</td>
+<td>no</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
+</tr>
+<tr>
+<td>timestampsToReturn</td>
+<td>string</td>
+<td>no</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
+</tr>
+</tbody>
+</table>
 
 The result may differ depending on the node type.
 
@@ -136,14 +294,7 @@ The result may differ depending on the node type.
 }
 ```
 
-The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange.
-
-The syntax is as following:
-
-```
-    NumericRange: <dimension> [',' <dimension>]
-    <dimension>: <index> [':' <index>]
-```
+Example operation with ranges fragment:
 
 ```json
 {
@@ -197,6 +348,54 @@ This operation reads many attributes from many nodes at single call.
 }
 ```
 
+Available arguments for c8y_ua_command_ReadComplex:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeAttrs</td>
+<td>map&lt;string, map&lt;string, string&gt;&gt;</td>
+<td>yes</td>
+<td>Map with ID of the node and inner map with ID of the attribute and the index range.
+The index ranges defines a subset of the multi-dimension array from the read attribute.
+The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1".
+Empty string ("") can be given to not define any range.
+</td>
+</tr>
+<tr>
+<td>maxAge</td>
+<td>double</td>
+<td>no</td>
+<td>The maximum age used for the read. If the server does not have a value that is within the maximum age, it shall attempt to read a new value from the data source. If maxAge is set to 0, the server shall attempt to read a new value from the data source. Default is 0.</td>
+</tr>
+<tr>
+<td>timestampsToReturn</td>
+<td>string</td>
+<td>no</td>
+<td>Time stamps to return for the read attributes in the operation result. Available options are "Source", "Server", "Both", "Neither". Default is "Both".</td>
+</tr>
+</tbody>
+</table>
+
 ### Historic read
 
 This operation reads history values and applies the mappings except of alarm mappings.
@@ -206,7 +405,7 @@ This operation reads history values and applies the mappings except of alarm map
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricReadOperation": {
         "nodeId": "ns=2;s=MyLevel",
-       "processMappings": true,
+        "processMappings": true,
         "dateFrom": "2019-06-13T10:43:00+02:00",
         "dateTo": "2019-06-13T10:52:00+02:00",
         "tagType": "TAG"
@@ -215,10 +414,77 @@ This operation reads history values and applies the mappings except of alarm map
 }
 ```
 
-- tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
-- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
-- processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
-- batchSize (optional) - Batch size for each history read call to the OPC UA server. Default is 200.
+Available arguments for c8y_ua_command_HistoricReadOperation:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the node to execute the operation</td>
+</tr>
+<tr>
+<td>dateFrom</td>
+<td>dateTime</td>
+<td>yes</td>
+<td>The values are read starting from this time</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>dateTo</td>
+<td>dateTime</td>
+<td>yes</td>
+<td>The values are read until this time
+</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
+</td>
+</tr>
+<tr>
+<td>batchSize</td>
+<td>integer</td>
+<td>no</td>
+<td>Batch size for each history read call to the OPC UA server. Default is 200.</td>
+</tr>
+<tr>
+<td>processMappings</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true.</td>
+</tr>
+<tr>
+<td>tagType</td>
+<td>string</td>
+<td>no</td>
+<td>Possible tagType values are â€œTAGâ€ and â€œNO_TAGâ€. "TAG" appends â€œ_Historicâ€ for both the mapping types and for the measurement mappings. Default is "TAG".</td>
+</tr>
+</tbody>
+</table>
 
 ### Historic data binary upload
 
@@ -240,6 +506,78 @@ This operation reads historic values and only saves those values to a file which
 
 The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
 
+Available arguments for c8y_ua_command_HistoricDataUploadOperation:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the node to execute the operation</td>
+</tr>
+<tr>
+<td>dateFrom</td>
+<td>dateTime</td>
+<td>yes</td>
+<td>The values are read starting from this time</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>dateTo</td>
+<td>dateTime</td>
+<td>yes</td>
+<td>The values are read until this time
+</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array from the read attribute. The syntax is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"
+</td>
+</tr>
+<tr>
+<td>batchSize</td>
+<td>integer</td>
+<td>no</td>
+<td>Batch size for each history read call to the OPC UA server. Default is 100000.</td>
+</tr>
+<tr>
+<td>chunkSize</td>
+<td>integer</td>
+<td>no</td>
+<td>The maximum file size in Mb for the output binary file. For each batch, the files can be divided based on this limit.</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set the false the output chunks are compressed. Default is false.</td>
+</tr>
+</tbody>
+</table>
+
 ### Write value
 
 This operation writes values to the node/nodes.
@@ -260,6 +598,70 @@ This operation writes values to the node/nodes.
     "description": "Write values to different nodes"
 }
 ```
+
+Available arguments for c8y_ua_command_WriteValue:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>values</td>
+<td>map&lt;string, rangedValue&gt;</td>
+<td>yes</td>
+<td>Map with ID of the node to execute the operation and RangedValue to set
+</tr>
+</tbody>
+</table>
+
+Available arguments for type rangedValue (used as map value in c8y_ua_command_WriteValue.values):
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>yes</td>
+<td>Value to set to the node attribute</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"</td>
+</tr>
+</tbody>
+</table>
 
 ### Write attribute
 
@@ -284,7 +686,77 @@ This operation is similar to the previous one, but instead of writing to the val
 }
 ```
 
-Optionally, it is possible to write a value range when the attribute value is an array.
+Available arguments for c8y_ua_command_WriteAttribute:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>values</td>
+<td>map&lt;string, attributeRangedValue&gt;</td>
+<td>yes</td>
+<td>Map with ID of the node to execute the operation and AttributeRangedValue to set
+</tr>
+</tbody>
+</table>
+
+Available arguments for type attributeRangedValue (used as map value in c8y_ua_command_WriteAttribute.values):
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attribute</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the attribute according to the OPC UA specification</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>yes</td>
+<td>Value to set to the node attribute</td>
+</tr>
+<tr>
+<td>ranges</td>
+<td>string</td>
+<td>no</td>
+<td>The index ranges of a subset of the multi-dimension array. The syntax for the ranges is according to the OPC UA specification and will be transformed to NumericRange.
+
+```
+    NumericRange: <dimension> [',' <dimension>]
+    <dimension>: <index> [':' <index>]
+```
+Example values to define the range for a 1D array is "0:1", for a 2D array is "0:1,0:1"</td>
+</tr>
+</tbody>
+</table>
+
+Example operation with ranges fragment:
 
 ```json
 {
@@ -315,6 +787,32 @@ This operation reads the description of a method node.
     "description": "get method description"
 }
 ```
+
+Available arguments for c8y_ua_command_GetMethodDescriptionOperation:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the node to execute the operation</td>
+</tr>
+</tbody>
+</table>
 
 The result describes a method, it’s parent object, input and output arguments.
 
@@ -376,6 +874,131 @@ This operation calls the method on the OPC UA server. It requires complete input
     "description": "call method"
 }
 ```
+Available arguments for c8y_ua_command_CallMethodOperation:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>methodRequest</td>
+<td>yes</td>
+<td>Request to send to the OPC UA Server
+</tr>
+</tbody>
+</table>
+
+Available arguments for type methodRequest (used in c8y_ua_command_CallMethodOperation.request):
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the node to execute the operation</td>
+</tr>
+<tr>
+<td>arguments</td>
+<td>list&lt;methodArgument&gt;</td>
+<td>no</td>
+<td>List of arguments for the method request</td>
+</tr>
+<tr>
+<td>objectNodeId</td>
+<td>string</td>
+<td>no</td>
+<td>The NodeId of the Object or ObjectType that is the source of a HasComponent reference (or subtype of HasComponent reference) to the method</td>
+</tr>
+<tr>
+<td>parseResponse</td>
+<td>boolean</td>
+<td>no</td>
+<td>If set to true, the value is converted to JSON and the actual value is stored in the rawValue fragment in response. Default is true</td>
+</tr>
+</tbody>
+</table>
+
+Available arguments for type methodArgument (used in c8y_ua_command_CallMethodOperation.request.arguments):
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>no</td>
+<td>Name of the method argument</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>no</td>
+<td>Description of the method argument</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>string</td>
+<td>yes</td>
+<td>Data type of the method argument</td>
+</tr>
+<tr>
+<td>dataTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the data type in OPC UA Server</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>yes</td>
+<td>Value for the method argument</td>
+</tr>
+<tr>
+<td>arrayDimension</td>
+<td>string</td>
+<td>no</td>
+<td>Array dimension for the value to set if the value is an array</td>
+</tr>
+</tbody>
+</table>
 
 The result contains all output arguments with values set by the OPC UA server.
 Power of 5 is 25:
@@ -407,6 +1030,38 @@ This operation allows for testing a device type against a specific node on an OP
    "description":"Test Device Type"
 }
 ```
+
+Available arguments for c8y_ua_command_TestDeviceTypeMatching:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the managed object containing the device protocol</td>
+</tr>
+<tr>
+<td>rootNodeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the root node to execute the operation</td>
+</tr>
+</tbody>
+</table>
 
 If the device type can be applied to the given node, the operation result confirms this:
 
@@ -450,97 +1105,53 @@ Otherwise, the operation result provides an explanation why the device type coul
 }
 ```
 
-
-### Analyzing the set of nodes to which a device type can be applied (dry run)
-
-As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
-
-```json
-{
-   "deviceId":"<server-device-Id>",
-   "c8y_ua_command_DryRunDeviceTypeMatching":{
-      "deviceTypeId":"<device-type-id>"
-   },
-   "description":"Dry Run Device Type"
-}
-
-```
-
-The `deviceTypeId` is the ID of the managed object containing the device protocol.
-
-The result of the operation contains the set of nodes that match the device protocol. In addition to that, the fragment `matchednodes` is added to the operation. It contains a JSON representation of the matched nodes.
-
-```json
-{
-   "creationTime":"2020-08-20T12:22:07.947Z",
-   "deviceId":"12789",
-   "deviceName":"Test Server",
-   "id":"15187",
-   "status":"SUCCESSFUL",
-   "c8y_Command":{
-      "result":"Device protocol is currently disabled. Device protocol would be applied to the following nodes: [\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3\"\n      }\n    ],\n    \"attrs\": {}\n  }\n]",
-      "matchedNodes":[
-         {
-            "mappedTargetNodes":[
-               {
-                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2",
-                  "browsePath":[
-                     "urn:cumulocity:opcua:test:server:Double"
-                  ]
-               }
-            ],
-            "deviceTypeId":"14989",
-            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
-         },
-         {
-            "mappedTargetNodes":[
-               {
-                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1",
-                  "browsePath":[
-                     "urn:cumulocity:opcua:test:server:Double"
-                  ]
-               }
-            ],
-            "deviceTypeId":"14989",
-            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1"
-         },
-         {
-            "mappedTargetNodes":[
-               {
-                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3",
-                  "browsePath":[
-                     "urn:cumulocity:opcua:test:server:Double"
-                  ]
-               }
-            ],
-            "deviceTypeId":"14989",
-            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3"
-         }
-      ],
-      "syntax":null,
-      "text":null
-   },
-   "description":"Dry Run Device Type",
-   "c8y_ua_command_DryRunDeviceTypeMatching":{
-      "deviceTypeId":"14989"
-   }
-}
-```
-
 ### Get the current application state of a device type
 
 In order to know what is the current state of a device type application, use the following operation:
 
 ```json
 {
-	"description": "Query device type application state",
+	"description": "Get device type application state",
 	"deviceId": "{server ID}",
-	"c8y_ua_command_QueryDeviceTypeApplicationState": {
+	"c8y_ua_command_GetDeviceTypeApplicationState": {
 		"deviceTypeId": "{device protocol ID}",
 		"matchingRootNodes": ["{root node ID #1}", "{root node ID #2}"]
 	}
 }
 ```
+
+Available arguments for c8y_ua_command_GetDeviceTypeApplicationState:
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviceTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>ID of the managed object containing the device protocol</td>
+</tr>
+<tr>
+<td>matchingRootNodes</td>
+<td>list&lt;string&gt;</td>
+<td>no</td>
+<td>List of ID of the root nodes to execute the operation. When it is not provided, the application state of all matching nodes will be returned.</td>
+</tr>
+</tbody>
+</table>
+
 The result will be populated into the operation result as a map of nodes telling whether the device type has been applied to that node or not. Note that *matchingRootNodes* is optional. When *matchingRootNodes* is not provided, the application state of all matching nodes will be returned.
 
 Sample result when the device type has been applied to node #1 but not node #2:
@@ -550,31 +1161,3 @@ Sample result when the device type has been applied to node #1 but not node #2:
     "{root node ID #2}": false
 }
 ```
-### Expiring operations
-
-In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
-
-- Reading the value of a node/nodes
-- Reading all attributes of a node
-- Reading an attribute
-- Read complex
-- Write value
-- Write attribute
-- Call method
-
-For all the given operations this expiry mechanism can be activated by supplying an `expirationTime` fragment inside the operation body.
-
-The following example shows how to mark a read operation as expiring:
-
-```json
-{
-  "deviceId" : "<server-device-Id>",
-  "c8y_ua_command_ReadValue": {
-    "nodes": ["ns=3;s=FloatArray"],
-    "expirationTime": "2021-02-08T15:00:00.000Z"
-  },
-  "description":"Expiring read value"
-}
-```
-
-The operation above will only perform a read on the OPC UA server if processed by the gateway before the 8th of February, 2021 15:00. Otherwise, the operation will fail. In this case, `Operation expired` is returned as failure reason.

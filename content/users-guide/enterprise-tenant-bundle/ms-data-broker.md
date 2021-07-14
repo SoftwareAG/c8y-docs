@@ -2,6 +2,8 @@
 weight: 90
 title: Microservice-based data broker
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#ms-data-broker
 ---
 
 The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.

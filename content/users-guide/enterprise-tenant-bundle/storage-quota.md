@@ -2,6 +2,8 @@
 weight: 100
 title: Storage quota
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#storage-quota
 ---
 
 

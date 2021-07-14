@@ -44,7 +44,7 @@ To filter the list, you can use the search field at the left of the top menu bar
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
-Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition/#user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
 
 <a name="creating-users"></a>
 ### To add a user
@@ -97,11 +97,11 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </tr>
 <tr>
 <td align="left">Owner</td>
-<td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+<td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
 </tr>
 <tr>
 <td align="left">Delegated by</td>
-<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
 </tr>
 </tbody>
 </table>
@@ -143,7 +143,7 @@ Click the menu icon at the right of the respective row and then click **Delegate
 
 Click **Undelegate** to remove a delegation.
 
-Refer to [Managing User Hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
+Refer to [Managing User Hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
 
 > **Info:** You need a role with user management permission to perform this option.
 

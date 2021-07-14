@@ -11,7 +11,7 @@ In the {{< product-c8y-iot >}} platform we distinguish between two kinds of appl
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-edition/#default-subscriptions) for more details.
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. See [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for more details.
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
@@ -78,7 +78,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< enterprise-tenant >}} > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [{{< enterprise-tenant >}} > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
 
 
 <a name="subscribed-applications"></a>
@@ -186,25 +186,25 @@ In the {{< standard-tenant >}} you will find the following default applications:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
 <td style="text-align:left">feature-branding</td>
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Lets you share data selectively with other tenants.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">SSL management</a></td>
 <td style="text-align:left">Activate your own custom domain name by using a SSL certificate.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>

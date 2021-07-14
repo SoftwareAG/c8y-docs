@@ -2,6 +2,8 @@
 weight: 40
 title: Customizing your platform
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#customization
 ---
 
 With the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can customize your platform in various aspects and according to your requirements.

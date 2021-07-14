@@ -101,8 +101,8 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 
 5. Click **Save** to save the configuration.
 
-**Warning on the usage of All objects**
-
+>**Warning on the usage of All objects**
+<br><br>
 The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
 <br><br>
 When selected, {{< product-c8y-iot >}} will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.

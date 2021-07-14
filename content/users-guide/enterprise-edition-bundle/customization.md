@@ -68,7 +68,7 @@ Provide the host, port, username, password and sender address for the email serv
 
 ### Data export
 
-In the**Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
+In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
 ![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 

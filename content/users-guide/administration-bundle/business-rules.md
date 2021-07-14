@@ -56,7 +56,7 @@ Click **Alarm mapping** in the **Business Rules** menu to see a list of all alar
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
-For each alarm mapping, the alarm severity, the alarm type and a new description (optional) is shown.
+For each alarm mapping, the alarm severity, the alarm type and a description (optional) is shown.
 
 <a name="add-alarm-mapping"></a>
 #### To add alarm mapping
@@ -66,6 +66,8 @@ For each alarm mapping, the alarm severity, the alarm type and a new description
 3. In the **New description** field, optionally enter a new description for the alarm. If you leave this field empty, the original text from the alarm will be kept.
 4. Select the desired new severity, or select "Drop" to not show the alarm at all.
 5. Click **Save** to save your settings.
+
+> **Info**: If you create an alarm mapping to address for example alarms of type "crit-alarm", the mapping is effective for any type of alarm that starts with this value e.g. "crit-alarm-1", "crit-alarm-2", or crit-alarm-xyz".
 
 #### To edit an alarm mapping
 

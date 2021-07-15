@@ -100,14 +100,14 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 5. Click **Save** to save the configuration.
 
 >**Warning on the usage of All objects**
-
->The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
-
->When selected, Cumulocity IoT will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
-
->This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
-
->For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
+<br><br>
+The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
+<br><br>
+When selected, Cumulocity IoT will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
+<br><br>
+This concerns items such as SmartREST templates, device protocols, smart rule configurations and dashboards.
+<br><br>
+For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
 
 
 If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
@@ -151,7 +151,7 @@ Click the menu icon at the right of a data connector entry and then click **Dele
 
 #### To view alarms for a data connector
 
-Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector. 
+Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
@@ -196,5 +196,5 @@ On the source tenant, data broker queues data that cannot be forwarded immediate
 ![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
 
 Similarly, an alarm is raised when the input queue is overflown.
- 
+
 To reduce the number of alarms, alarms are not triggered more often than once per minute.

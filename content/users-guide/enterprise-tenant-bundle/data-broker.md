@@ -109,7 +109,7 @@ The option **All Objects** is left in the UI to ensure backward compatibility wi
 <br><br>
 When selected, {{< product-c8y-iot >}} will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
 <br><br>
-This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
+This concerns items such as SmartREST templates, device protocols, smart rule configurations and dashboards.
 <br><br>
 For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
 

@@ -55,58 +55,58 @@ Initially, the **User** page only shows the top-level users. To see all users in
 2. At the left of the **New user** window, provide the following information to identify the user:
 
 	<table>
-<thead>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tr>
-<th align="left">Field</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Username</td>
-<td align="left">Serves as a user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.</td>
-</tr>
-<tr>
-<td align="left">Login alias</td>
-<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
-</tr>
-<tr>
-<td align="left">Active</td>
-<td align="left">Enable/disable the user account here. If the user account is disabled the user cannot login.</td>
-</tr>
-<tr>
-<td align="left">E-mail</td>
-<td align="left">A valid email address. This is required to enable the user to reset the password. This field is mandatory.</td>
-</tr>
-<tr>
-<td align="left">First name</td>
-<td align="left">First name of the user. When the user is logged in, this name appears at the right of the top bar on the <strong>User</strong> button.</td>
-</tr>
-<tr>
-<td align="left">Last name</td>
-<td align="left">Last name of the user.</td>
-</tr>
-<tr>
-<td align="left">Telephone</td>
-<td align="left">A valid phone number. The phone number is required if the user is configured to use two-factor authentication.</td>
-</tr>
-<tr>
-<td align="left">Owner</td>
-<td align="left">Another user that manages (“owns”) the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
-</tr>
-<tr>
-<td align="left">Delegated by</td>
-<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
-</tr>
-</tbody>
-</table>
+	<thead>
+	<colgroup>
+	<col style="width: 20%;">
+	<col style="width: 80%;">
+	</colgroup>
+	<tr>
+	<th align="left">Field</th>
+	<th align="left">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td align="left">Username</td>
+	<td align="left">Serves as a user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.</td>
+	</tr>
+	<tr>
+	<td align="left">Login alias</td>
+	<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
+	</tr>
+	<tr>
+	<td align="left">Active</td>
+	<td align="left">Enable/disable the user account here. If the user account is disabled the user cannot login.</td>
+	</tr>
+	<tr>
+	<td align="left">E-mail</td>
+	<td align="left">A valid email address. This is required to enable the user to reset the password. This field is mandatory.</td>
+	</tr>
+	<tr>
+	<td align="left">First name</td>
+	<td align="left">First name of the user. When the user is logged in, this name appears at the right of the top bar on the <strong>User</strong> button.</td>
+	</tr>
+	<tr>
+	<td align="left">Last name</td>
+	<td align="left">Last name of the user.</td>
+	</tr>
+	<tr>
+	<td align="left">Telephone</td>
+	<td align="left">A valid phone number. The phone number is required if the user is configured to use two-factor authentication.</td>
+	</tr>
+	<tr>
+	<td align="left">Owner</td>
+	<td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+	</tr>
+	<tr>
+	<td align="left">Delegated by</td>
+	<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+	</tr>
+	</tbody>
+	</table>
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa). 
+	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
 	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To log into the Cumulocity IoT platform](/users-guide/getting-started/#login) for further information on password strength.  
 	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 

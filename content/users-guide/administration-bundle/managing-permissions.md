@@ -277,7 +277,7 @@ Click **Save** to save your settings.
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
-To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
+To view the currently configured inventory roles, click **Roles** in the **Account** menu and switch to the **Inventory roles** tab.
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 

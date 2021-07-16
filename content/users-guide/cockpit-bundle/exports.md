@@ -107,8 +107,10 @@ Optionally, add the email address of the sender for reply.
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
 Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
+Note that to create a clickable link in the email, you need to add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
+
 
 Click **Create** to create the new export schedule.
 

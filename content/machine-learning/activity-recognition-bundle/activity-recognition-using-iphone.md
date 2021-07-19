@@ -12,14 +12,14 @@ This section deals with the basic data science steps of creating an activity rec
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
 
-#### Register a smartphone in {{< product-c8y-iot >}}
+#### Register a smartphone in the platform
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-c8y-iot >}}.
 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
-#### Data collection with {{< product-c8y-iot >}}
+#### Data collection with the platform
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
@@ -122,7 +122,7 @@ The hyper-parameters for each model can be viewed by clicking on the correspondi
 
 After the training is complete, the best model selected by the evaluation criteria will be saved in the **Model** folder of the respective **Project** in PMML format.
 
-#### Deploy the model to {{< product-c8y-iot >}}
+#### Deploy the model to the platform
 
 Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions.
 
@@ -132,7 +132,7 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
-#### Create and upload Apama monitor to {{< product-c8y-iot >}}
+#### Create and upload Apama monitor to the platform
 
 For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 

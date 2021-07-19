@@ -10,13 +10,13 @@ aliases:
 A fully functional activity recognition demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip* file.
 
-#### Start with {{< product-c8y-iot >}} Machine Learning Workbench
+#### Start with Machine Learning Workbench
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity Recognition Demo" as **Project description**.
 
 2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload all the files extracted to Machine Learning Workbench (MLW). You will get 2 files in the **Data** section and 3 notebooks in the **Code** section. Exclude the PMML file and .mon file.
 
-#### Register a demo device in {{< product-c8y-iot >}}
+#### Register a demo device in the platform
 
 Instead of registering an actual device for the activity recognition use case, a demo device can be registered. This device can be used as a replica of an actual to do human activity. Follow the below steps. We have added a script *RegisterDevice.ipynb* which registers a demo device in {{< product-c8y-iot >}}.
 
@@ -33,7 +33,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 
 
 
-#### Upload the model and Apama monitor to {{< product-c8y-iot >}}
+#### Upload the model and Apama monitor to the platform
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 

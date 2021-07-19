@@ -11,7 +11,7 @@ The Cumulocity IoT Sensor App is a free smartphone application available for iOS
 
 The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the Cumulocity IoT platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into Cumulocity IoT.
 
-If you are using the Cumulocity IoT free trial available via {{< company-cloud >}}, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
+If you are using the Cumulocity IoT free trial available via {{< sag-cloud >}}, the app ideally helps you to quickly get familiar with the platform as it provides an easy way to connect devices and sensors. Capturing data from Bluetooth devices with Cumulocity IoT moreover saves a lot of implementation effort.
 
 Besides sending data to the platform, the Cumulocity IoT Sensor App can also send commands to the smartphone directly from the phone dashboard. Commands currently available in the dashboard include alert messages and vibration.
 

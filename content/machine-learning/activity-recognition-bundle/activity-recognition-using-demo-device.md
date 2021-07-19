@@ -31,9 +31,7 @@ Upon successful execution, a device named *DemandForecastDemoDevice* is register
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass.
 
 
-
-
-#### Upload the model and Apama monitor to the platform
+#### Upload the model and Apama monitor file
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 

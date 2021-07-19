@@ -68,12 +68,10 @@ Once you see this alarm, you can be sure that your change is effective.
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
 - Alarm type: `apama_safe_mode`
-- Alarm text: Apama has exited unexpectedly more than once. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
+- Alarm text: Apama appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, safe mode is activated, resulting in all user-provided content being disabled.
-
-On every restart, the microservice checks the number of restarts that happened in the last 20 minutes. If the number is greater than 2, it enables safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by a user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts. The restart count is reset once safe mode is enabled or if the restart happens after more than 20 minutes since the previous restart.
+Apama detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, models, extensions), Apama disables them all as a precaution. 
 
 You can check the mode of the microservice (either normal or safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 

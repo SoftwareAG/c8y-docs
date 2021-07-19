@@ -239,3 +239,9 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 	```
 
 Running the `restore_analytics.sh` script completes the migration process.
+
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+
+>**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+
+For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

@@ -19,7 +19,8 @@ Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
-#### Data collection with the platform
+
+#### Data collection
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity recognition using smartphone" as **Project description**.
 
@@ -132,7 +133,7 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
-#### Create and upload Apama monitor to the platform
+#### Create and upload Apama monitor file
 
 For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 

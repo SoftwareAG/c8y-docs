@@ -9,7 +9,7 @@ aliases:
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artifacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
-#### Register a demo device in {{< product-c8y-iot >}}
+#### Register a demo device in the platform
 
 A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
@@ -61,14 +61,14 @@ Script to add a device named "DemoDevice" to {{< product-c8y-iot >}}.
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
 
-#### Upload the model and Apama monitor to {{< product-c8y-iot >}}
+#### Upload the model and Apama monitor file
 
 1. Upload the attached model *iforest_model.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of `c_device_source` with the ID of your registered device.
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
 
 
-#### Trigger an Anomaly Alert
+#### Trigger an anomaly alert
 
 A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{< product-c8y-iot >}} from our demo device. This script can be used to depict the generation of anomalies.
 

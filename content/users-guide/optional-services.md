@@ -20,5 +20,7 @@ aliases:
   - /benutzerhandbuch/jasper-deutsch
   - /benutzerhandbuch/saas-integration-deutsch
   - /benutzerhandbuch/android-cloud-remote-access-deutsch
+  - /cloud-remote-access/supported-protocols/
+  - /cloud-remote-access/communication/
 ---
 In addition to the standard and built-in applications that come with Cumulocity IoT, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.

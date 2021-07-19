@@ -2,6 +2,9 @@
 weight: 50
 title: Enterprise Tenant
 layout: bundle
+aliases:
+  - /users-guide/enterprise-edition/
+  - /users-guide/enterprise-tenant/
 ---
 
 

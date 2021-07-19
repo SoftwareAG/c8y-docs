@@ -25,6 +25,8 @@ aliases:
   - /cloud-remote-access/supported-protocols
   - /cloud-remote-access/using-cloud-remote-access
   - /cloud-remote-access/cra-api
+  - /cloud-remote-access/supported-protocols/
+  - /cloud-remote-access/communication/
   - /protocol-integration
   - /protocol-integration/overview
   - /protocol-integration/cloud-fieldbus

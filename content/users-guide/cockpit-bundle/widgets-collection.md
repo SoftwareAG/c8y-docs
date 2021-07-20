@@ -389,7 +389,7 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
-> **Info:** When using links in the HTML code field, e.g. linking to a dashboard, the following format must be used:
+> **Info:** If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
 
 ```html
 <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />

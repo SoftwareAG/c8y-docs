@@ -38,7 +38,7 @@ mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
 2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
-3. Create a backup of the `/etc/opcua` directory. 
+3. Create a backup of the `/etc/opcua` directory.
 4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
 ### Restoring the data on Cumulocity IoT Edge 10.9
@@ -51,7 +51,7 @@ Perform these steps as **root** user in your Edge 10.9 appliance.
 
 1. Copy the backup folders from your Edge 10.7 appliance to Edge 10.9 appliance using any file transfer tool like WINSCP, SCP, or FTP.
 
-   You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance. 
+   You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 
 2. Backup the web applications in the Edge 10.9 appliance. To do this, you must first detect the IDs of the applications using the command:
 
@@ -89,7 +89,7 @@ The command returns the name and ID of the application. For example:
 
 ```shell
 mkdir -p /tmp/apps/
-mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip 
+mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip
 
 Here:
  - APP_ID refers to the ID of the application. For example, 112
@@ -148,7 +148,7 @@ Wait for Karaf to install the applications. After the installation is complete, 
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
 10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
-  
+
 11. Restart the services using the commands:
 ```shell
 systemctl restart cumulocity-agent
@@ -185,6 +185,7 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 - [backup.sh](/files/edge/backup.sh)
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
+- [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
 >**IMPORTANT:** Software AG does not officially support these scripts. These scripts are only for your reference.
 
@@ -196,18 +197,18 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 1. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-2. Run the `backup.sh`.
-  
+2. Run the `backup.sh` as a **root** user.
+
    You can also run the script with the parameters:
 	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
 	- ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
-    
+
     >**Info:** If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
-   
+
 	For example:
 	```shell
 	./backup.sh /home/admin/
-	```	
+	```
 	The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
 
 3. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
@@ -218,7 +219,7 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 
 1. Log in as **root** user.
 
-2. Copy the `restore.sh` script to your Edge 10.9 appliance.
+2. Copy the `restore.sh` and `restore_analytics.sh` scripts to your Edge 10.9 appliance.
 
 3. Run the `restore.sh` script with the parameters:
 	- ARCHIVE_PATH: path to the ZIP with 10.7 migration data
@@ -227,5 +228,20 @@ Software AG provides the `backup.sh` and `restore.sh` scripts for your reference
 	For example:
 	```shell
 	./restore.sh migration_data.tgz /home/admin/migration_data
-	``` 
-Running the `restore.sh` script successfully completes the migration process.
+	```
+4. Run the `restore_analytics.sh` script. This script restores the Streaming Analytics application.
+
+	```shell
+	./restore_analytics.sh USERNAME PASSWORD /tmp/streaming-analytics-app.zip
+
+	Here:
+	- USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
+	```
+
+Running the `restore_analytics.sh` script completes the migration process.
+
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+
+>**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+
+For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

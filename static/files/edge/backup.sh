@@ -63,9 +63,11 @@ OUTPUT_DATA=$OUTPUT/data
 OUTPUT_COLLECTIONS=$OUTPUT_DATA/collections
 OUTPUT_CONFIGS=$OUTPUT_DATA/configs
 OUTPUT_OPCUA=$OUTPUT_DATA/opcua_data
+OUTPUT_CUMULO_AGENT=$OUTPUT_DATA/cumulocity-agent
 mkdir -p $OUTPUT_COLLECTIONS
 mkdir -p $OUTPUT_CONFIGS
 mkdir -p $OUTPUT_OPCUA
+mkdir -p $OUTPUT_CUMULO_AGENT
 
 mongodump --db=management --out "$OUTPUT_COLLECTIONS"
 mongodump --db=edge --out "$OUTPUT_COLLECTIONS"
@@ -74,6 +76,8 @@ mongodump --db=docker --out "$OUTPUT_COLLECTIONS"
 cp -rp /usr/edge/properties/edge-agent/device-id $OUTPUT_CONFIGS/edge-agent_device-id
 
 cp -rp /etc/opcua $OUTPUT_OPCUA
+
+cp -rp /var/lib/cumulocity-agent/credentials $OUTPUT_CUMULO_AGENT/credentials
 
 tar -C $OUTPUT_DATA -cvzf $ARCHIVE_PATH ./
 # rm -rf $OUTPUT_DATA

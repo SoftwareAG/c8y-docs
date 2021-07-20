@@ -22,7 +22,7 @@ Instead of registering an actual device for the activity recognition use case, a
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}} . Upon successful execution, a device named "DemoDevice" is registered in {{< product-c8y-iot >}} .
-3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/ActivityRecognition/screenshot1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 

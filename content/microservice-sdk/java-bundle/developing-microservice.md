@@ -102,7 +102,7 @@ On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered fo
 ### Heap and perm/metadata
 
 To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
-10% is reserved for “system”, but not less than 50 MB. <br>
+10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
 

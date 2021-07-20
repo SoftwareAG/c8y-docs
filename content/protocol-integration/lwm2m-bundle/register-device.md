@@ -41,7 +41,7 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing {{< product-c8y-iot >}} devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
+<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing {{< product-c8y-iot >}} devices usually requires a password (the value of the "Credentials" field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -49,11 +49,11 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">TYPE</td>
-<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to mark the device as a LWM2M device.</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m" to mark the device as a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">SHELL</td>
-<td style="text-align:left">To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see <a href="#shell-commands" class="no-ajaxy">Shell commands</a>.</td>
+<td style="text-align:left">To enable "Shell", the value of this field must be "1". If you want to disable "Shell" the value must be "0". For more info about the shell commands, see <a href="#shell-commands" class="no-ajaxy">Shell commands</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>
@@ -61,7 +61,7 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">endpoint id</td>
-<td style="text-align:left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align:left">Indicates the LWM2M client's "endpoint ID" in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 </tr>
 <tr>
 <td style="text-align:left">lwm2m server uri</td>
@@ -69,7 +69,7 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only “NO_SEC” and “PSK”.</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +99,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align: left">Indicates the LWM2M client's "endpoint ID" in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
@@ -111,7 +111,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only “NO_SEC” and “PSK”.</td>
+<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
@@ -309,7 +309,7 @@ Can be either "PUSH" or "PULL" or "BOTH".</td>
 <td style="text-align: left">fwUpdateResetMechanism</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
-Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL (‘\0’). If this field is not used the default reset state machine mechanism is used in which for PUSH reset is done via package resource and for PULL reset is done via package URI.</td>
+Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('$1'). If this field is not used the default reset state machine mechanism is used in which for PUSH reset is done via package resource and for PULL reset is done via package URI.</td>
 </tr>
 <tr>
 <td style="text-align: left">fwUpdateURL</td>

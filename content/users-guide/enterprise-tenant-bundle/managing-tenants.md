@@ -141,7 +141,7 @@ The following information is displayed here:
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
+If a tenant is suspended, the tenant's data remains in the database and can be made available later by clicking **Activate**.
 
 >**Important:** Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
 >

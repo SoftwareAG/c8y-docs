@@ -18,7 +18,7 @@ The microservice-based data broker is powered by the {{< product-c8y-iot >}} Mes
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
 
-> **Info:** Tenants subscribing to a data connector don’t need the data broker agent subscription.
+> **Info:** Tenants subscribing to a data connector don't need the data broker agent subscription.
 
 <a name="ms-data-broker-connectors"></a>
 ###  Data connectors

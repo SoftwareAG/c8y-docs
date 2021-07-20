@@ -24,7 +24,7 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/DemandForecasting/notebook 1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
@@ -39,7 +39,7 @@ Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Flow measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last days period and for every two hours (i.e. 12 observations per day).
 
-We use this data to generate a time series model and forecast the next day’s c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
+We use this data to generate a time series model and forecast the next day's c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
 
 <img src="/images/zementis/DemandForecasting/2ndNotebook.PNG" alt="Download" style="display:inline-block; margin:0">
 
@@ -56,7 +56,7 @@ We use this data to generate a time series model and forecast the next day’s c
 Run the attached *TrainModelandPredict.ipynb* notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
-2. Forecasts the next day’s (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
+2. Forecasts the next day's (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
 
 <img src="/images/zementis/DemandForecasting/traindata.PNG" alt="Download" style="display:inline-block; margin:0">
 <img src="/images/zementis/DemandForecasting/predicted.PNG" alt="Download" style="display:inline-block; margin:0">

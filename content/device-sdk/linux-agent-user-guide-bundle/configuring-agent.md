@@ -23,7 +23,7 @@ A unique device ID is required to register your device. You can specify it using
 
 ### Server URL
 
-The agent by default connects to the {{< domain-c8y >}} instance. In case you’re using a different instance, you can change the server URL.
+The agent by default connects to the {{< domain-c8y >}} instance. In case you're using a different instance, you can change the server URL.
 The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https&#58;//example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
 |Parameter|Example value|
@@ -48,7 +48,7 @@ The URL supports two protocol schemas. To use the HTTP version, set the URL to t
 <tbody>
 <tr>
 <td>log.path</td>
-<td>The file location for storing the agent’s logs</td>
+<td>The file location for storing the agent's logs</td>
 <td>log.path=/var/log/cumulocity-agent.log</td>
 </tr>
 <tr>

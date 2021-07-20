@@ -7,7 +7,7 @@ layout: redirect
 
 Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource.
 
-Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon:
+Validation rules can only be added to resources which have "write" permissions. Resources which can have validation rules are marked by the following icon:
 
 ![Validation rule icon](/images/device-protocols/lwm2m/lwm2m-protocols-rules.png)
 
@@ -20,10 +20,10 @@ Add a new validation rule by clicking on the desired resource and then click **A
 Validation rules can have the following types:
 
 - **Date:** Simply enter a date and choose your desired rule.
-- **Number:** Only values of “Integer” or “Float” type are allowed depending on the resource.
-- **ObjectLink:** Reference to another object using the format “/Object/Instance/Resource”.
-- **Regex:** Add a string which describes the validation pattern. For example, “.*dd” means that the string must end with “dd”.
-- **String:** Enter a string value which can be either “True” or “False".
+- **Number:** Only values of "Integer" or "Float" type are allowed depending on the resource.
+- **ObjectLink:** Reference to another object using the format "/Object/Instance/Resource".
+- **Regex:** Add a string which describes the validation pattern. For example, ".*dd" means that the string must end with "dd".
+- **String:** Enter a string value which can be either "True" or "False".
 
 After selecting a type, the following rules can be chosen:
 
@@ -49,7 +49,7 @@ In order to enable more complex conditions,  multiple validation rules can be de
 - Multiple rules can be defined in a validation rule group. A user input is only valid if each of the rules in the validation rule group is satisfied (logical AND).
 - It is possible to declare multiple validation rule groups. If multiple validation rule groups are declared, user input is valid if any of the validation rule groups is satisfied (logical OR).
 
-The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.
+The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match "test" (equals not). It is also valid if it ends with "asd" and it matches the contents of the LWM2M resource /3/0/15.
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
 

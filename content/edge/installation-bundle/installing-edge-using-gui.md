@@ -47,7 +47,7 @@ To install {{< product-c8y-iot >}} Edge using the GUI:
 
 12. Click **Finish Installation**.
 
-During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the “{{< product-c8y-iot >}} Edge installation is now complete” message appears.
+During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
 
 >**Info:** If you still see the installation in progress, refresh the browser.
 

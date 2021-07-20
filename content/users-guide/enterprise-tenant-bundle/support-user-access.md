@@ -29,7 +29,7 @@ If deactivated globally, support user access can still be enabled by a subtenant
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
-> **Info:** If you don’t see either the **Enable support** or **Disable support** button in the **User** menu, support user access has been activated globally. Contact [product support](/welcome/contacting-support/) for more details.
+> **Info:** If you don't see either the **Enable support** or **Disable support** button in the **User** menu, support user access has been activated globally. Contact [product support](/welcome/contacting-support/) for more details.
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 

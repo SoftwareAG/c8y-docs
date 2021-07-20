@@ -71,7 +71,7 @@ This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 - Alarm text: Apama appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Apama detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, models, extensions), Apama disables them all as a precaution. 
+Apama detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, analytic models, extensions), Apama disables them all as a precaution. Potential causes are, for example, an EPL app that consumes more memory than is available or an extension containing bugs.
 
 You can check the mode of the microservice (either normal or safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 

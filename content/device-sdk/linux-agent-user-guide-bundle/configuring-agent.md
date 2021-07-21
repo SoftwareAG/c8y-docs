@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
+The {{< product-c8y-iot >}} Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
 
 ### Device ID
 
@@ -23,12 +23,12 @@ A unique device ID is required to register your device. You can specify it using
 
 ### Server URL
 
-The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.
+The agent by default connects to the {{< domain-c8y >}} instance. In case you're using a different instance, you can change the server URL.
 The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https&#58;//example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
 |Parameter|Example value|
 |---|---|
-|server|server=https://mqtt.cumulocity.com<br>or<br>server=mqtts://mqtt.cumulocity.com|
+|server|server=https://mqtt.{{< domain-c8y >}}<br>or<br>server=mqtts://mqtt.{{< domain-c8y >}}|
 
 ### Log settings
 
@@ -48,7 +48,7 @@ The URL supports two protocol schemas. To use the HTTP version, set the URL to t
 <tbody>
 <tr>
 <td>log.path</td>
-<td>The file location for storing the agent’s logs</td>
+<td>The file location for storing the agent's logs</td>
 <td>log.path=/var/log/cumulocity-agent.log</td>
 </tr>
 <tr>
@@ -86,15 +86,15 @@ Each feature is implemented as a Lua plugin.
 </tr>
 <tr>
 <td>logview</td>
-<td>Allows you to remotely view the device and the agent logs from Cumulocity IoT</td>
+<td>Allows you to remotely view the device and the agent logs from {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>shell</td>
-<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from Cumulocity IoT</td>
+<td>Allows you to change all these parameters in the configuration file remotely from the device shell functionality from {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>version</td>
-<td>Reports the agent version to Cumulocity IoT</td>
+<td>Reports the agent version to {{< product-c8y-iot >}}</td>
 </tr>
 <tr>
 <td>modbus</td>

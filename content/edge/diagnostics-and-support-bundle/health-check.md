@@ -114,7 +114,7 @@ You can check the status of the platform by running the following command:
 	}
 
 
-The ‘status:”UP”’ shows that all services are running.
+The 'status:"UP"' shows that all services are running.
 
 If something fails, the endpoint should respond a different error code. The response should contain something like:
 
@@ -199,4 +199,4 @@ Run the following command to check the REST API availability:
 	<
 	{"alarm":{"alarms":{"alarms":null,"self":"http://management.<base_url>/alarm/alarms"},"alarmsForSource":"http://management.<base_url>/alarm/alarms?source={source}","alarmsForSourceAndStatus":"http://management.<base_url>/alarm/alarms?source={source}&status={status}","alarmsForSourceAndStatusAndTime":"http://management.<base_url>/alarm/alarms?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForSourceAndTime":"http://management.<base_url>/alarm/alarms?source={source}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForStatus":"http://management.<base_url>/alarm/alarms?status={status}","alarmsForStatusAndTime":"http://management.<base_url>/alarm/alarms?status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForTime":"http://management.<base_url>/alarm/alarms?dateFrom={dateFrom}&dateTo={dateTo}","self":"http://management.<base_url>/alarm"},…}
 
-This example shows the correct response of the platform. The username and password need to have full read access to the management tenant. The &#60;base_url> needs to be given to connect to the correct platform and the management tenant must not be blocked from outside.  
+This example shows the correct response of the platform. The username and password need to have full read access to the {{< management-tenant >}}. The &#60;base_url> needs to be given to connect to the correct platform and the {{< management-tenant >}} must not be blocked from outside.  

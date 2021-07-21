@@ -44,8 +44,8 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 ```
 200 - OK
 
-curl --request POST “{{url}}/service/zementis/train/clustering?autoDeploy=false” --header “Authorization: {{auth}}” \
-	--header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/clustering?autoDeploy=false" --header "Authorization: {{auth}}" \
+	--header "Content-Type: application/json"
 
 {
      "data": [
@@ -74,8 +74,8 @@ curl --request POST “{{url}}/service/zementis/train/clustering?autoDeploy=fals
 ```
 400 - Bad Request
 
-curl --request POST “{{url}}/service/zementis/train/clustering” --header “Authorization: {{auth}}” \
-	--header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/clustering" --header "Authorization: {{auth}}" \
+	--header "Content-Type: application/json"
 
 {
     "data": [
@@ -103,7 +103,7 @@ curl --request POST “{{url}}/service/zementis/train/clustering” --header “
 ```
 401 - Unauthorized
 
-curl --request POST “{{url}}/service/zementis/train/clustering” --header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/clustering" --header "Content-Type: application/json"
 ```
 
 **Example Response**
@@ -142,7 +142,7 @@ If the status is FAILURE, the `errorMessage` attribute in the response holds the
 ```
 200 - OK
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -160,7 +160,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status"
 ```
 
 **Example Response**
@@ -180,7 +180,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 404 – Not Found
 
-curl --request GET “{{url}}/service/zementis/train/clustering/dummy/status” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/dummy/status" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -218,7 +218,7 @@ Get the PMML file of the generated clustering model.
 ```
 200 - OK
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -251,7 +251,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml"
 ```
 
 **Example Response**
@@ -271,7 +271,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 404 – Not Found
 
-curl --request GET “{{url}}/service/zementis/train/clustering/dummy/pmml” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/dummy/pmml" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -309,7 +309,7 @@ Get the information of clusters identified by the clustering model.
 ```
 200 - OK
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -345,7 +345,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj”
+curl --request GET "{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj"
 ```
 
 **Example Response**
@@ -365,7 +365,7 @@ curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10
 ```
 404 – Not Found
 
-curl --request GET “{{url}}/service/zementis/train/clustering/dummy” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/clustering/dummy" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**

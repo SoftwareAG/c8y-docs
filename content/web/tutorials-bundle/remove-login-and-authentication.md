@@ -29,7 +29,7 @@ Next, you need to install all dependencies. Switch to the new folder and run `np
 
 ### 2. Add logic for default authentication
 
-First you need to make sure to add the default authentication before Angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. For that, use Angular’s injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
+First you need to make sure to add the default authentication before Angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. For that, use Angular's injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
 
 ```js
 providers: [

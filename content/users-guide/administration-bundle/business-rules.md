@@ -8,7 +8,7 @@ title: Managing business rules
 
 >**Important:** The **Event processing** functionality described here is only available if your tenant has Esper subscribed, not Apama. Apama is the standard CEP engine for new tenants. For tenants using Apama, similar functionality is available via the **Streaming Analytics EPL Apps** page, see [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). If migrating, any CEL (Cumulocity Event Language) code will need to be translated to EPL apps. For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
 
-Using event processing, you can specify real-time business logic that is automatically run by Cumulocity IoT as soon as new data arrives or existing data is modified. The logic is deployed in so-called "rules" which consist of a set of CEP statements.
+Using event processing, you can specify real-time business logic that is automatically run by {{< product-c8y-iot >}} as soon as new data arrives or existing data is modified. The logic is deployed in so-called "rules" which consist of a set of CEP statements.
 
 >**Info:** A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart rules](/users-guide/cockpit#smart-rules)". Smart rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit smart rules from here.  
 

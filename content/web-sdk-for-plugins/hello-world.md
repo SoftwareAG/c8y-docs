@@ -362,7 +362,7 @@ You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in t
 
 The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-If you are not deploying to a Management tenant, you need to include the following fragment to your target .json file:
+If you are not deploying to a {{< management-tenant >}}, you need to include the following fragment to your target .json file:
 
 ```json
 	"allApplications": {

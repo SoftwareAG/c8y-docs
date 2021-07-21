@@ -4,7 +4,7 @@ layout: redirect
 title: Hello world tutorial
 ---
 
-This example provides a step-by-step guide to develop a simple microservice in Cumulocity IoT. It uses Cake (C# Make), which is a cross-platform build automation system.
+This example provides a step-by-step guide to develop a simple microservice in {{< product-c8y-iot >}}. It uses Cake (C# Make), which is a cross-platform build automation system.
 
 To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 3.1.
 
@@ -61,18 +61,18 @@ Execute the bootstrapper script to build the application and an image from a Doc
 ./build.ps1
 ```
 
-After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity IoT platform as described in the Deployment section.
+After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the {{< product-c8y-iot >}} platform as described in the Deployment section.
 
 <a name="run-locally"></a>
 ### Running the microservice locally
 
-In order to test the microservice calls to Cumulocity IoT, you can run the Docker container locally.
+In order to test the microservice calls to {{< product-c8y-iot >}}, you can run the Docker container locally.
 
-The microservice must be deployed  to verify calls from Cumulocity IoT.
+The microservice must be deployed  to verify calls from {{< product-c8y-iot >}}.
 
-To run a microservice which uses Cumulocity IoT API locally you need the following:
+To run a microservice which uses {{< product-c8y-iot >}} API locally you need the following:
 
-*   URL address of the Cumulocity IoT host of your tenant
+*   URL address of the {{< product-c8y-iot >}} host of your tenant
 *   Authorization header = "Basic &lt;Base64(&lt;username>:&lt;password>)>"
 *   Tenant - tenant ID
 
@@ -285,7 +285,7 @@ It is possible to check if the application communicates with the platform by def
 
 ### Microservice package and deploy
 
-Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
+{{< product-c8y-iot >}} provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -305,7 +305,7 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on the platform, you need the following:
 
-* URL address of the Cumulocity IoT host of your tenant
+* URL address of the {{< product-c8y-iot >}} host of your tenant
 * Username and password to log in with
 * An application created on the platform
 * ZIP build from previous steps for deployment
@@ -470,11 +470,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
+For further information, refer to the [Device SDK guide](https://{{< domain-c8y >}}/guides/device-sdk/).
 
 #### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://{{< domain-c8y >}}/guides/device-sdk/mqtt-examples) in the Device SDK guide.
 
 
 ### Building and deploying on Linux
@@ -543,7 +543,7 @@ In order to deploy the application, run the deploy script. You must provide the 
 
 #### Microservice package and deploy
 
-Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
+{{< product-c8y-iot >}} provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
 
 Next, add execution permissions
 
@@ -557,7 +557,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [General aspects > Packing](https://cumulocity.com/guides/microservice-sdk/concept/#packing) in this guide.
+For further information, refer to [General aspects > Packing](https://{{< domain-c8y >}}/guides/microservice-sdk/concept/#packing) in this guide.
 
 **Deployment**
 
@@ -565,7 +565,7 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on an environment you need the following:
 
-* URL address of the Cumulocity IoT host of your tenant
+* URL address of the {{< product-c8y-iot >}} host of your tenant
 * username and password to log in with
 * application name created on the platform
 * ZIP build from previous steps for deployment

@@ -8,7 +8,7 @@ Some common problems and their solutions have been identified and documented bel
 
 ##### SSL or certificate errors
 
-You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity IoT production certificate into your Java Runtime Environment. Download the certificate with the following command:
+You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the {{< product-c8y-iot >}} production certificate into your Java Runtime Environment. Download the certificate with the following command:
 
 ```shell
 $ echo | openssl s_client -servername *.cumulocity.com -connect *.cumulocity.com:443 |sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.crt
@@ -52,7 +52,7 @@ Verify that all required plug-ins are checked in your launch configuration. Go t
 
 Check if the required plug-ins are started. While the application or microservice is running, type "ss" into the console and hit the return key. All listed plug-ins should be either in the ACTIVE or RESOLVED state.
 
-Check if you are using the correct target platform. Go to the **Target Platform** page in the preferences and check if "Cumulocity runtime" is checked.
+Check if you are using the correct target platform. Go to the **Target Platform** page in the preferences and check if "{{< company-c8y >}} runtime" is checked.
 
 ##### The microservice application does not compile. I get "Access Restriction" messages
 

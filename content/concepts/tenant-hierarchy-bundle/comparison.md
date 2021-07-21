@@ -6,15 +6,15 @@ layout: redirect
 
 ### Introduction
 
-When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. Cumulocity IoT can help you with that in two different ways.
+When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
 
-The first is **role-based access control (RBAC)** that is part of every tenant in the Cumulocity IoT platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
+The first is **role-based access control (RBAC)** that is part of every tenant in the {{< product-c8y-iot >}} platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
-On top of that the Cumulocity IoT platform in general is a **multi-tenant platform** which also gives you the ability to create your own subtenants, which function like any other tenant in the platform.
+On top of that the {{< product-c8y-iot >}} platform in general is a **multi-tenant platform** which also gives you the ability to create your own subtenants, which function like any other tenant in the platform.
 
 This will leave you with two options to organize your customers. You can either create a tenant for each of your customers or you can manage multiple customers within a single tenant and protect them from each other using RBAC.
 
-In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. Cumulocity IoT is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
+In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. {{< product-c8y-iot >}} is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
 
 >**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
 
@@ -89,7 +89,7 @@ The creation of a new customer is equally simple. However, you need to consider 
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer needs to specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn’t be able to see the device.</td>
+<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer needs to specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn't be able to see the device.</td>
 <td style="text-align:left">As customers have full access to their tenants they are free to register devices without any further limitations.</td>
 </tr>
 </tbody>
@@ -115,7 +115,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">There are two types of roles in Cumulocity IoT – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you need to use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles need to be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
+<td style="text-align:left">There are two types of roles in {{< product-c8y-iot >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you need to use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles need to be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
 <td style="text-align:left">As the tenant is completely separated from all other customers you do not necessarily need to be involved in setting up the access rights of the customer. If customers are given administration rights for their tenants they can set up permissions on their own. It is not possible for customers to have any sight or knowledge of other customers.</td>
 </tr>
 </tbody>
@@ -123,7 +123,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 
 **Comparison:**
 
-In the RBAC approach, managing access is the most complicated part as a misconfiguration can potentially give customers access to data that they mustn’t see, like other customers’ data. The inventory roles allow you to granularly define access for only certain parts of data but they don’t protect you from accidental misconfigurations. Another limitation here is that customers won’t be able to create their own roles.
+In the RBAC approach, managing access is the most complicated part as a misconfiguration can potentially give customers access to data that they mustn't see, like other customers' data. The inventory roles allow you to granularly define access for only certain parts of data but they don't protect you from accidental misconfigurations. Another limitation here is that customers won't be able to create their own roles.
 
 For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
 
@@ -170,8 +170,8 @@ Having a separate tenant for each customer they will not be limited with respect
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the Management tenant. This does not apply for UI applications.</td>
+<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won't be able to create own applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>
@@ -234,6 +234,6 @@ Choosing the RBAC approach limits you in the options for your business model as 
 
 If you are dealing with a single tenant it will be easier to do analytics across all devices of all customers but it might be more complicated to do separate analytics for just one customer. Having the data spread across multiple tenants will take additional effort to collect the data in one place for such use cases. However, it will ease deployment of custom analytics solutions per customer.
 
-##### Cumulocity IoT DataHub
+##### {{< product-c8y-iot >}} DataHub
 
-Cumulocity IoT DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.
+{{< product-c8y-iot >}} DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.

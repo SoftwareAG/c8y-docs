@@ -54,4 +54,4 @@ Jun 16 12:57:05 ERROR: Error message
 Jun 16 12:57:05 CRITICAL: Critical message
 ```
 
-> **Info:** Once you started the agent and changed some parameters from the Cumulocity IoT tenant (i.e. Measurement sending interval), the agent loads the configurations from _/var/lib/cumulocity-agent/cumulocity-agent.conf_. In this case, run `sudo make uninstall` to remove the file before copying the modified _cumulocity-agent.conf_ file.
+> **Info:** Once you started the agent and changed some parameters from the {{< product-c8y-iot >}} tenant (i.e. Measurement sending interval), the agent loads the configurations from _/var/lib/cumulocity-agent/cumulocity-agent.conf_. In this case, run `sudo make uninstall` to remove the file before copying the modified _cumulocity-agent.conf_ file.

@@ -4,9 +4,9 @@ title: Using widgets in dashboards and reports
 layout: redirect
 ---
 
-Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.
+Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.
 
-Cumulocity IoT provides preset widget types, for details see the [Widgets collection](#widgets-collection).
+{{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](#widgets-collection).
 
 <a name="adding-widgets"></a>
 ### To add a widget to a dashboard or a report
@@ -22,6 +22,8 @@ Cumulocity IoT provides preset widget types, for details see the [Widgets collec
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](#creating-dashboards).
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
+
+	>**Info:** The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used. 
 
 5. Click **Save** to add the widget to the dashboard or report.
 

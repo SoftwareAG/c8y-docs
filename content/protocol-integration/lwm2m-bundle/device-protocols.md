@@ -4,7 +4,7 @@ title: LWM2M device protocols
 layout: redirect
 ---
 
-To process data from LWM2M devices, Cumulocity IoT uses device protocols.
+To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
 <a name="creating_device_protocols"></a>
@@ -21,7 +21,7 @@ To add a new LWM2M device protocol follow these steps:
 ![Add new protocol](/images/device-protocols/lwm2m/lwm2m-newprotocol.png)
 
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
-If the DDF files for the default mappings are uploaded in the Management tenant, all subscribed user tenants will inherit this behavior. <br><br>
+If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior. <br><br>
 
 ![Upload DDF file](/images/device-protocols/lwm2m/lwm2m-uploadDDF.png)
 
@@ -39,7 +39,7 @@ Below, a list of resources configured for the device will be listed (which is em
 
 > **Info**: LWM2M protocol resources cannot be edited.
 
-Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
+Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
 ![Example protocol2](/images/device-protocols/lwm2m/lwm2m-temperature-example.png)
 
@@ -54,9 +54,9 @@ The functionalities that you may enable are the following:
 
 Turn on **Send measurement** to specify a measurement.
 
-- Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”.
-- The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.
+- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
+- The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
 #### Create alarm
 
@@ -76,11 +76,11 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 #### Custom Actions
 
-Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
 ![Custom actions](/images/device-protocols/lwm2m/lwm2m-customactions.png)
 
-Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
+{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 ##### Predefined custom actions
 

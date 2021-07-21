@@ -1,7 +1,6 @@
 ---
-weight: 40
+
 title: Working with dashboards
-layout: redirect
 helpcontent: >-
   Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
 
@@ -15,12 +14,14 @@ helpcontent: >-
   Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration.
+  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration.
+weight: 40
 ---
+
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
 
-Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
+{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK guide](/web/) for details.
 
 <a name="creating-dashboards"></a>
 ### To create a dashboard
@@ -86,7 +87,7 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
 
-	<img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
+  <img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

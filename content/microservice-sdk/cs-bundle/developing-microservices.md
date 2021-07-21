@@ -38,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Platform
 
-The root interface for connecting to Cumulocity IoT from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
+The root interface for connecting to {{< product-c8y-iot >}} from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
 To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice receives a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
 
@@ -149,7 +149,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription
 
-The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity IoT.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 
@@ -165,7 +165,7 @@ services.AddScheduler((sender, args) =>
 
 It should get all subscriptions and make it available for any other part of your application to work with.
 
-As you can see, the `AddScheduler` takes a delegate that handles unobserved exceptions. In our scheduler code, `TaskFactory.StartNew()` is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. Therefore, you may want to do some logging. This is normally done by setting `TaskScheduler.UnobservedTaskException`, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
+As you can see, the `AddScheduler` takes a delegate that handles unobserved exceptions. In our scheduler code, `TaskFactory.StartNew()` is used to run the task's code. If there is an unhandled exception, you won't see this exception. Therefore, you may want to do some logging. This is normally done by setting `TaskScheduler.UnobservedTaskException`, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
 The SDK allows you to subscribe to the event application subscriptions changed.
 
@@ -377,7 +377,7 @@ Each microservice exposes the endpoint <kbd>/health</kbd>. This endpoint is crea
 
 The `UseHealthChecks` method expects a port or a path. That port or path is the endpoint to use to check the health state of the service. For instance, the catalog microservice uses the path <kbd>/health</kbd>.
 
-The basic flow is that you register your health checks in your IoC container. You register these health checks via a fluent HealthCheckBuilder API in your Startup‘s `ConfigureServices` method. This HealthCheckBuilder will build a `HealthCheckService` and register it as an `IHealthCheckService` in your IoC container.
+The basic flow is that you register your health checks in your IoC container. You register these health checks via a fluent HealthCheckBuilder API in your Startup's `ConfigureServices` method. This HealthCheckBuilder will build a `HealthCheckService` and register it as an `IHealthCheckService` in your IoC container.
 
 #### Built-in platform health checks
 

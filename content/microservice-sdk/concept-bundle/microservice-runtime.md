@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific Cumulocity IoT cluster they run in. For example, a microservice needs to know the endpoint address of the Cumulocity IoT REST APIs. This information is provided by environment variables and they are injected by Cumulocity IoT when the container is started.
+Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
 
 ### Environment variables
 
@@ -172,7 +172,7 @@ SOCKS_HTTP_HOST=10.11.12.13
 
 ### Platform access and other microservices
 
-To execute requests against the Cumulocity IoT platform running a microservice, you have to send requests to the host specified by the `C8Y_BASEURL` variable.
+To execute requests against the {{< product-c8y-iot >}} platform running a microservice, you have to send requests to the host specified by the `C8Y_BASEURL` variable.
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 

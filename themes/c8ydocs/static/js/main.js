@@ -32,14 +32,7 @@ var main = (function ($) {
 
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
-          var href_url = el.url;
-          if (el.url.endsWith('releasenotes')) {
-            href_url = el.url + '/about/';
-          } else if (el.url.endsWith('/')) {
-            href_url = el.url + suffix;
-          } else {
-            href_url = el.url + '/' + suffix;
-          }
+          var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;
           if (loc.href.includes(el.label)) {
             active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
@@ -53,20 +46,19 @@ var main = (function ($) {
           }
         }
 
-        if (false) {
+        if (true) {
           offset = 45;
           $('<div/>', {
             id: 'preview-banner',
             style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #fff794; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
 
-          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);
           $('.dropdown.version').css('top', (offset + 10));
         }
-
 
         if (vs.indexOf(v) < 0) {
           active = true;

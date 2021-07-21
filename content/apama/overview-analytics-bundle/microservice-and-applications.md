@@ -9,7 +9,7 @@ You can use predefined rules (see [Smart rules](/users-guide/cockpit/#smart-rule
 
 | To do this                  | you need the following                                       |
 | --------------------------- | ------------------------------------------------------------ |
-| Use predefined rules        | Apama-ctrl microservice and Smartrule microservice (included in Cumulocity IoT's Standard Tenant). |
+| Use predefined rules        | Apama-ctrl microservice and Smartrule microservice (included in {{< product-c8y-iot >}}'s {{< standard-tenant >}}). |
 | Define custom rules         | Apama-ctrl microservice and Streaming Analytics application. |
 | Build analytic models       | Apama-ctrl microservice and Streaming Analytics application. |
 
@@ -21,6 +21,6 @@ If your tenant is subscribed to the Apama Starter microservice (instead of other
 - Limited number of at most 3 active models. Custom blocks written with the Analytics Builder Block SDK cannot be used. 
 - The EPL Apps page is not available in the Streaming Analytics application.
 
-Contact [product support](/about-doc/contacting-support) to discuss adding more capabilities.
+Contact [product support](/welcome/contacting-support) to discuss adding more capabilities.
 
 > **Info:** If your tenant is subscribed to the Apama Smart Rules-only microservice (also called Apama-ctrl-smartrules), the EPL Apps and Analytics Builder pages are not available in the Streaming Analytics application.

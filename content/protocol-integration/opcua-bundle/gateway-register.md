@@ -16,7 +16,7 @@ For example, to connect to a tenant, first a profile named *application-myTenant
 
 ```yaml
 C8Y:
-    baseUrl: https://<<yourTenant>>.cumulocity.com
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
@@ -45,15 +45,15 @@ Mac OS
     /opt/opcua/data
 ```
 
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let's use the previously created profile. Start a terminal and use the following command:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
-**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
+**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
@@ -72,12 +72,12 @@ The following properties can be manually configured in the YAML file:
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-  # This is the base URL pointing to the Cumulocity IoT platform. This must always be customized in an application profile.
+  # This is the base URL pointing to the {{< product-c8y-iot >}} platform. This must always be customized in an application profile.
   baseUrl: http://localhost
-  # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
-  # want to configure the Cumulocity IoT SDK to always use the baseURL provided during initialization.
+  # This is an internal setting of the {{< product-c8y-iot >}} SDK. It is set to true, because we typically
+  # want to configure the {{< product-c8y-iot >}} SDK to always use the baseURL provided during initialization.
   # Otherwise, the gateway would use the links in the `self` fragment of the core API responses as the host name.
-  # This is helpful in deployment scenarios where the Cumulocity IoT instance is
+  # This is helpful in deployment scenarios where the {{< product-c8y-iot >}} instance is
   # reachable only with an IP address.
   forceInitialHost: true
 
@@ -97,7 +97,7 @@ gateway:
 
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
-  # Contact product support (https://cumulocity.com/guides/<latest-release>/about-doc/contacting-support/)
+  # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/)
   # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
@@ -136,7 +136,7 @@ gateway:
       # Socket timeout (milliseconds)
       socketTimeout: 5000
       # Maximum number of connections via HTTP route
-      maxPerRoute: 50
+      maxPerRoute: 100
       # Maximum total size of the HTTP connection pool used for external, custom actions.
       maxTotal: 100
       # The inactivityLeaseTimeout setting defines a period, after which persistent connections to
@@ -147,20 +147,18 @@ gateway:
       # How often is the alarm aggregation for failed external calls invoked?
       failureAlarmFixedDelay: 15 # seconds
       failureHandling:
-        # activate custom action rescheduled
-        enabled: true
-        # Time in seconds queue will be flushed to event repository
-        flushQueueDelay: 60
-        # Time in seconds reschedule will start
-        reScheduleDelay: 150
-        # Count of elements per page within one retry
-        reScheduleElements: 100
-        # Maximum size of the queue before automatic be flushed to event repository
-        failedCustomActionQueueSize: 100
-        # Number of retries failed custom action will resend again
+        # Whether a failed HTTP POST should be retried later or not. This can be overridden by the configuration in device type. Default is false
+        enabled: false
+        # Number of retries a failed HTTP POST will be resent
         maxRetries: 5
-        # oldest age of events to get from event repository
-        pendingMaxAge: 86400
+        # If retry is enabled, the exceptions of HTTP status codes can be provided here, comma separated. A HTTP POST which failed with one of these codes will not be retried. This can be overridden by the configuration in the device type. Default is empty which means that all failed http posts will be retried if enabled. Example: 400,500
+        noRetryHttpCodes:
+        # Minimum delay in seconds between two retries
+        retryDelay: 120
+      # Max queue size of the HTTP POST actions queue
+      maxQueueSize: 50000
+      # Worker thread (which performs the actual HTTP request) pool size
+      threadPoolSize: 200
 
     # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
     # configures how often this happens.
@@ -173,10 +171,19 @@ gateway:
     threadpool:
       size: 200
 
+    # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
+    alarmStatusStore:
+      # Expected number of maximum alarms at the same time
+      maxEntries: 100000
+      # The average size of the keys on the map. Needed for calculation of the size of the database file.
+      averageKeySize: 30
+      # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
+      maxBloatFactor: 5.0
+
   # Mapping-specific settings
   mappings:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-    # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels.
+    # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels.
     alarmSeverityMap:
       1001: CRITICAL
       801: CRITICAL
@@ -231,6 +238,19 @@ gateway:
 
   # The settings below describe platform-specific connection parameters.
   platform:
+    inventory:
+      update:
+        # Default processing mode for inventory managed objects update to the {{< product-c8y-iot >}} platform.
+        defaultProcessingMode: QUIESCENT
+        # Processing mode for inventory update of the gateway device managed objects to the {{< product-c8y-iot >}} platform.
+        gateway:
+          processingMode: QUIESCENT
+        # Processing mode for inventory update of the OPC UA server device managed objects to the {{< product-c8y-iot >}} platform.
+        server:
+          processingMode: QUIESCENT
+        # Processing mode for inventory update of value-map managed objects to the {{< product-c8y-iot >}} platform.
+        valuemap:
+          processingMode: QUIESCENT
     # Connection pool configuration
     connectionPool:
       # Overall maximum size of the connection pool
@@ -278,7 +298,7 @@ gateway:
 
 ### Logging
 
-Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
+Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the ["Logback" documentation](http://logback.qos.ch/manual/configuration.html).
 A sample logging configuration file may look like this:
 
 ```xml
@@ -340,5 +360,5 @@ The process of deletion is asynchronous for both cases, so it may take a while t
 completely remove all the associated managed objects. Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox
 **Also delete associated device owner "device&#95;&#60;gateway&#95;name&#62;"**.
 
-If the gateway is directly deleted from the list of devices before deleting gateway’s servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
+If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.

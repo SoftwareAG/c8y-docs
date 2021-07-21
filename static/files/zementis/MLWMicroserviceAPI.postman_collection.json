@@ -2703,6 +2703,264 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "AWS S3 Integration",
+			"item": [
+				{
+					"name": "Get AWS S3 credential information",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/credentials",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register AWS S3 Credentials securely in Cumulocity",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accessKey\": \"AKIA4CCI******\",\r\n    \"secretKey\": \"***********************\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/credentials?type=AWS",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"credentials"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "AWS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete AWS S3 credentials from Cumulocity",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/credentials?type=AWS",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"credentials"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "AWS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the names of all AWS S3 buckets",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/mlw/downloadFromS3/buckets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"downloadFromS3",
+								"buckets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the names of all the files from a particular AWS S3 bucket",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/mlw/downloadFromS3/mlwbucket/files",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"downloadFromS3",
+								"mlwbucket",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download a specific file from an AWS S3 bucket",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vran",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"mlwfiles/anomalySampleData.csv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/projects/1609148788_Project/resources/downloadFromS3/mlwbucket/download",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"projects",
+								"1609148788_Project",
+								"resources",
+								"downloadFromS3",
+								"mlwbucket",
+								"download"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

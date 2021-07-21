@@ -6,14 +6,14 @@ layout: redirect
 
 ### Introduction
 
-The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity IoT-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity IoT. The agent has to be registered in Cumulocity IoT before serving the device request.
+The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent has to be registered in {{< product-c8y-iot >}} before serving the device request.
 
 >**Info:** If you are using one of the {{< company-sag >}} public cloud instances, you need to ensure that your tenant is subscribed to the Mibparser microservice.
 >
->To add the Mibparser microservice to the Cumulocity IoT platform,
+>To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 >
 >* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
->* Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/administration/#managing-applications) in the User guide for details on how to upload microservices into Cumulocity IoT.
+>* Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/administration/#managing-applications) in the User guide for details on how to upload microservices into {{< product-c8y-iot >}}.
 
 ### Installation
 
@@ -23,7 +23,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 | ------------- |:-------------|
 | Java version  | Java Runtime Environment 8 or newer version.|
 | Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
-| Disk space    | The Cumulocity IoT representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
+| Disk space    | The {{< product-c8y-iot >}} representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
 | Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
 
 #### To install the agent
@@ -57,7 +57,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
    				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
 
-   * Change the properties according to the Cumulocity IoT environment (e.g. gateway.identifier, Cumulocity IoT bootstrap details, SNMP Community target).
+   * Change the properties according to the {{< product-c8y-iot >}} environment (e.g. gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
 
 6. Start the service:
 
@@ -118,7 +118,7 @@ The SNMP agent has undergone a major revamp in-terms of persistence storage mech
 		rpm -e <snmp-package-name>
 
 6. Delete the contents inside *$HOME/.snmp/* and */etc/snmp* folder (if present).
-7. Delete the snmp-agent device in Cumulocity IoT which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
+7. Delete the snmp-agent device in {{< product-c8y-iot >}} which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
 8. Follow the installation procedure described above, to install/move to GA version.
 
 > **Info:** SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).

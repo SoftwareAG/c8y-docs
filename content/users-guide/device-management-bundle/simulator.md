@@ -4,7 +4,7 @@ title: Working with simulators
 layout: redirect
 ---
 
-With the Cumulocity IoT simulator all aspects of IoT devices can be simulated, as
+With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, as
 
 * setting up a simulated device or a network of simulated devices
 * specifying the operations which a device can process
@@ -17,7 +17,7 @@ With the Cumulocity IoT simulator all aspects of IoT devices can be simulated, a
 
 With the simulator you can create artificial devices that have the same level of functionality as connected hardware devices.
 
-A simulator uses a playlist to simulate messages that the device sends to the Cumulocity IoT platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
+A simulator uses a playlist to simulate messages that the device sends to the {{< product-c8y-iot >}} platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
 
 An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).
 
@@ -81,7 +81,7 @@ The panel at the right changes according to the type of instruction selected at 
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](https://cumulocity.com/api/#section/Sensor-library) in the Cumulocity IoT OpenAPI Specification.
+The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](https://{{< domain-c8y >}}/api/#section/Sensor-library) in the {{< openapi >}}.
 
 The "Sleep" instruction requires one value for its duration in seconds.
 

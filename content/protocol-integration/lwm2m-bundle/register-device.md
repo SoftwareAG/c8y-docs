@@ -4,15 +4,15 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-To register a LWM2M device in Cumulocity IoT, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application 
+To register a LWM2M device in {{< product-c8y-iot >}}, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application
 see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
 This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
-Cumulocity IoT supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
+{{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
 <a name="registration-of-unsecured-device"></a>
 ### Registration of unsecured devices
 
-Unsecured devices connect during bootstrap connection and server connection through unsecured ports: 
+Unsecured devices connect during bootstrap connection and server connection through unsecured ports:
 * **5683**: unsecure bootstrap connection
 * **5783**: unsecure direct server connection
 
@@ -37,11 +37,11 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
-<td style="text-align:left">The type of the external ID. This type must be "c8y_Id" to allow Cumulocity IoT to create an external ID for the LWM2M device.</td>
+<td style="text-align:left">The type of the external ID. This type must be "c8y_Id" to allow {{< product-c8y-iot >}} to create an external ID for the LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing Cumulocity IoT devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
+<td style="text-align:left">The device credentials. The content of this field is not used by the LWM2M feature. However, this field is still mandatory. Accessing {{< product-c8y-iot >}} devices usually requires a password (the value of the "Credentials" field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter. The credentials must contain a minimum of 12 characters with an uppercase letter, a lowercase letter, a digit and a special character.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -49,11 +49,11 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">TYPE</td>
-<td style="text-align:left">This field needs to have the value "c8y_lwm2m” to mark the device as a LWM2M device.</td>
+<td style="text-align:left">This field needs to have the value "c8y_lwm2m" to mark the device as a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">SHELL</td>
-<td style="text-align:left">To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see <a href="#shell-commands" class="no-ajaxy">Shell commands</a>.</td>
+<td style="text-align:left">To enable "Shell", the value of this field must be "1". If you want to disable "Shell" the value must be "0". For more info about the shell commands, see <a href="#shell-commands" class="no-ajaxy">Shell commands</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">com_cumulocity_model_Agent</td>
@@ -61,22 +61,22 @@ The CSV file must at least contain the following fields to be able to establish 
 </tr>
 <tr>
 <td style="text-align:left">endpoint id</td>
-<td style="text-align:left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align:left">Indicates the LWM2M client's "endpoint ID" in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 </tr>
 <tr>
 <td style="text-align:left">lwm2m server uri</td>
-<td style="text-align:left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align:left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-c8y-iot >}} service the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 </tr>
 </tbody>
 </table>
 
-> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+> **Info:** The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
-Upon upload of the CSV file in Cumulocity IoT we should see that our "nosec_device" device has been created.
+Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "nosec_device" device has been created.
 
 ![Unsecure device created](/images/device-protocols/lwm2m/lwm2m-nosec_device-created.png)
 
@@ -99,25 +99,25 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the LWM2M client’s “endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align: left">Indicates the LWM2M client's "endpoint ID" in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
 <td style="text-align: left">lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-c8y-iot >}} service the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
 <td style="text-align: left">securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. “NO_SEC” is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With “PSK”, the client and server have a common secret symmetric cryptography. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”.</td>
+<td style="text-align: left; height: 40px;">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
 <td style="text-align: left">awakeTimeRegistrationParameter</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to Cumulocity IoT.
+<td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to {{< product-c8y-iot >}}.
 If set to 0, the device will be considered as always online.
 If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute &ldquo;at&rdquo; or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
 </td>
@@ -132,7 +132,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr>
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">Toggles if Cumulocity IoT generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align: left">Toggles if {{< product-c8y-iot >}} generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -174,7 +174,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr style="height: 26px;">
 <td style="text-align: left">bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity IoT will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that {{< product-c8y-iot >}} will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -273,7 +273,7 @@ The table below lists the information of the additional fields:
 </tbody>
 </table>
 
-Upon upload of the CSV file in Cumulocity IoT we should see that our "psk_device" device has been created with the appropriate external IDs.
+Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "psk_device" device has been created with the appropriate external IDs.
 
 ![PSK device created](/images/device-protocols/lwm2m/lwm2m-psk-device-created.png)
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
@@ -309,7 +309,7 @@ Can be either "PUSH" or "PULL" or "BOTH".</td>
 <td style="text-align: left">fwUpdateResetMechanism</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
-Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL (‘\0’). If this field is not used the default reset state machine mechanism is used in which for PUSH reset is done via package resource and for PULL reset is done via package URI.</td>
+Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used the default reset state machine mechanism is used in which for PUSH reset is done via package resource and for PULL reset is done via package URI.</td>
 </tr>
 <tr>
 <td style="text-align: left">fwUpdateURL</td>

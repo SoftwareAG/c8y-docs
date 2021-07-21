@@ -3,7 +3,7 @@ weight: 45
 title: Working with reports
 layout: redirect
 helpcontent: >-
-  Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
+  Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy. 
 
 
   Click **Add report** in the top menu bar to configure a new report, or use the menu icon to editor delete exports.
@@ -15,10 +15,12 @@ helpcontent: >-
   Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
 
 
-  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration.
+  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration.
 ---
 
-Reports enable you to track applications, alarms, assets, events and many other widgets in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
+<!-- -->
+
+Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
 
 To show all reports, click **Reports** in the navigator.
 
@@ -39,7 +41,7 @@ See [To create a report](#create-report) below for details on how to configure t
 ### To create a report
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
-	<br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
+  <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
 2. In the **Menu label** field, enter a name for the report and optionally provide a description below.
 3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If for example "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
 4. In the **Layout** section you can select a theme for the report (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).

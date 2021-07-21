@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Before using LoRa devices with Cumulocity IoT, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator.
+Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator.
 
 ### <a name="create-new-credentials">Creating new account credentials</a>
 

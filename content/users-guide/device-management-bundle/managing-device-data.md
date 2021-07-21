@@ -24,7 +24,7 @@ All features are accessible through the **Management** menu in the navigator:
 <a name="firmware-repo"></a>
 ### Managing device firmware
 
-In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
+In the firmware repository, {{< product-c8y-iot >}} offers to collect reference firmware for devices.
 
 Only one firmware package version can be applied per device.
 
@@ -133,7 +133,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 ##### To install/update firmware on multiple devices
 
-Cumulocity IoT offers the option to execute firmware updates for multiple devices at once.
+{{< product-c8y-iot >}} offers the option to execute firmware updates for multiple devices at once.
 
 1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
@@ -148,7 +148,7 @@ Moreover, the operation details are shown in the **Control** tab of the selected
 <a name="software-repo"></a>
 ### Managing device software
 
-In the software repository, Cumulocity IoT offers to collect reference software for devices. Multiple software packages can be installed on a device.
+In the software repository, {{< product-c8y-iot >}} offers to collect reference software for devices. Multiple software packages can be installed on a device.
 
 #### Viewing software
 
@@ -256,7 +256,7 @@ Hover over the software entry which you want to delete and click the delete icon
 
 ##### To install software on multiple devices
 
-Cumulocity IoT offers the option to execute software updates for multiple devices at once.
+{{< product-c8y-iot >}} offers the option to execute software updates for multiple devices at once.
 
 1. Execute the software operation (install or update) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
@@ -271,7 +271,7 @@ Moreover, the operation details are shown in the **Control** tab of the selected
 <a name="configuration-repository"></a>
 ### Managing configurations
 
-Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
+{{< product-c8y-iot >}} allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
@@ -509,7 +509,7 @@ The devices will install the firmware, software and configurations items of the 
 <a name="trusted-certificates"></a>
 ### Managing trusted certificates
 
-Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. A certificate is trusted when it is added to the trusted certificates and is in activated state.
+{{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 >**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the Device SDK guide.
 
@@ -537,7 +537,7 @@ Before adding a new trusted certificate, make sure that:
 * It s a X.509 certificate in PEM format.
 * It is in version 3.
 * It contains `BasicConstraints:[CA:true]`.
-* It has not already been uploaded to Cumulocity IoT.
+* It has not already been uploaded to {{< product-c8y-iot >}}.
 * It is still valid (not expired).
 
 To add a certificate perform these steps:
@@ -550,7 +550,7 @@ To add a certificate perform these steps:
 
 | Field             | Description                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| Certificate name  | User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.         |
+| Certificate name  | User-provided name for the certificate. This name is not used by {{< product-c8y-iot >}} and can serve as a description of the certificate.         |
 | Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.            |
 | Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |

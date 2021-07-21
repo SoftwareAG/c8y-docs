@@ -25,7 +25,25 @@ To verify whether your setup is correct, execute the following REST API request:
 	GET {{url}}/tenant/currentTenant
 	```
 
-> **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification.
+> **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}}.
+
+#### No Sigfox provider settings are found
+
+This warning message shows up when there are no credentials set up for the Sigfox account.
+
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without credentials" style="max-width: 100%">
+<br>
+
+To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
+
+#### No device protocols configured
+
+This warning message shows up when no Sigfox device protocol exists to be used for device registration.
+
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
+
+To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
+
 
 ### Issues with alarm provisioning
 

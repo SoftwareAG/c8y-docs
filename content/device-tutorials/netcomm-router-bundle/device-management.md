@@ -10,7 +10,7 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponds to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for details.
+For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for details.
 
 For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the User guide.
 
@@ -18,18 +18,18 @@ For more information on the **Network** tab, see [Device Management > Device det
 
 ![Network Parameters](/images/device-demos/casa-system-router/router-network-info.png)
 
-LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
+LAN and DHCP parameters can be directly configured from {{< product-c8y-iot >}} as well.
 
 <a name="software-and-firmware"></a>
 ### Managing software and firmware
 
-The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
+The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from {{< product-c8y-iot >}}. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
 
-Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, make sure to install these first.
+Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
 
-> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from Cumulocity IoT.
+> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-c8y-iot >}}.
 
-Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm’s naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
+Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm's naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
 
 > **Info:** If the agent package is not included in the target firmware, the agent will not start after the installation.
 
@@ -38,7 +38,7 @@ Firmware can be uploaded and installed on the router as well. To successfully up
 <a name="system-resources"></a>
 ### Monitoring system resources
 
-You can record statistics of the router’s system resources usage for troubleshooting purposes. The following statistics are available:
+You can record statistics of the router's system resources usage for troubleshooting purposes. The following statistics are available:
 
 * CPU load in percent.
 * Used and total memory in MB.
@@ -55,7 +55,7 @@ Collected data can be accessed in the **Measurements** tab or in a dashboard.
 <a name="cellular"></a>
 ### Monitoring cellular signal strength
 
-You can also record statistics of the router’s cellular signal strength.
+You can also record statistics of the router's cellular signal strength.
 
 By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
@@ -95,9 +95,9 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 
 With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details > Device shell](/users-guide/device-management/#shell) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
 
-* “get &#60;parameter&#62;” to read a parameter from the device.
-* “set &#60;parameter&#62;=&#60;value&#62;” to write a parameter to the device.
-* “execute &#60;command&#62;” to execute a diagnostic command on the device.
+* "get &#60;parameter&#62;" to read a parameter from the device.
+* "set &#60;parameter&#62;=&#60;value&#62;" to write a parameter to the device.
+* "execute &#60;command&#62;" to execute a diagnostic command on the device.
 
 Multiple get, set and execute commands can be sent using a semicolon as a separator.
 Click the **Get Predefined** link to access frequently used parameters and commands.
@@ -116,7 +116,7 @@ For more information about logs, see [Device Management > Device details > Logs]
 <a name="notification"></a>
 ### Event notifications
 
-The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT platform as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
+The router reports certain system events as notifications, which can be forwarded to the {{< product-c8y-iot >}} platform as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
 
 ![Notification](/images/device-demos/casa-system-router/router-alarms.png)
 
@@ -129,7 +129,7 @@ The agent supports the MQTT protocol. MQTT is set as a default protocol. However
 set service.cumulocity.mqtt.enable = <0|1>
 ```
 
-The configured server URL remains the same. For example, `http://mqtt.cumulocity.com` if you want to use plain MQTT, or `https://mqtt.cumulocity.com` if you want secure MQTT + TLS.
+The configured server URL remains the same. For example, `http://mqtt.{{< domain-c8y >}}` if you want to use plain MQTT, or `https://mqtt.{{< domain-c8y >}}` if you want secure MQTT + TLS.
 
 To configure the MQTT keepalive interval (default is 240 seconds), run the following command via the [device shell](#device-shell) to change the keepalive interval.
 

@@ -16,7 +16,7 @@ The SNMP agent provides the capability to poll for SNMP device data by the OID. 
 <br>
 ![SNMP Device polling](/images/device-protocols/snmp/snmp-polling.png)
 
-The data received via polling is mapped to the Cumulocity IoT model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
+The data received via polling is mapped to the {{< product-c8y-iot >}} model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
 
 ![SNMP device measurement graph](/images/device-protocols/snmp/snmp-measurement-graph.png)
 
@@ -107,7 +107,7 @@ Edit the following startup file and change the heap memory settings (-Xms128m -X
 In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in `$HOME/.snmp/snmp-agent-gateway.properties`.
 On saving the changes, restart the agent service for the changes to take effect.
 
-#### Which Cumulocity IoT services does the agent use?
+#### Which {{< product-c8y-iot >}} services does the agent use?
 
 The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform.
 

@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see the section on [Log files](#log-files)
 - Monitor the system processes, see the section on [Monitoring](#monitoring)
 
-If you still need to contact [product support](/about-doc/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/operation/#diagnostics) for details of how to run it.
+If you still need to contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/operation/#diagnostics) for details of how to run it.
 
 <a name="health-check"></a>
 #### Health check
@@ -79,7 +79,7 @@ The data disk is used for storing the state of DataHub and Dremio and serves as 
 
 #### Cleanup of Dremio job history
 
-Dremio maintains a history of job details and profiles, which can be inspected in Dremio’s job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
+Dremio maintains a history of job details and profiles, which can be inspected in Dremio's job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
 Dremio is configured to perform the cleanup of job results automatically without downtime. The default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator has to modify the support property *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio.
 

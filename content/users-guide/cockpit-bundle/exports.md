@@ -2,14 +2,16 @@
 weight: 65
 title: Managing exports
 layout: redirect
-aliases:
-  - /users-guide/cockpit/#export
 helpcontent: >-
   The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
 
 
   Click **Add export** in the top menu bar to configure a new export, or use the menu icon to edit, duplicate or delete exports.
+aliases:
+  - /users-guide/cockpit/#export
 ---
+
+
 
 The export functionality lets you export specific data to either CSV or Excel files.
 

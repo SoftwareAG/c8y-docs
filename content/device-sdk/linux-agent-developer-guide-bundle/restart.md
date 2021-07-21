@@ -4,8 +4,8 @@ layout: redirect
 weight: 40
 ---
 
-Besides sending requests, e.g., measurements to the Cumulocity IoT platform, another important function is handling incoming messages from Cumulocity IoT; either responses from GET queries or real-time operations.  
-Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
+Besides sending requests, e.g., measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
+Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the {{< product-c8y-iot >}} C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
 <a name="restart"></a>
@@ -88,7 +88,7 @@ lua.plugins=hello,cpumeasurments,restart-simple
 
 Deploy _restart-simple.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
 
-Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
+Now go to your {{< product-c8y-iot >}} tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
 ![restarted-device](/images/device-sdk/restarted-device.png)
 
 

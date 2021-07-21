@@ -8,4 +8,4 @@ aliases:
   - /konzepte/interfacing-geraete
 ---
 
-To interface IoT data sources such as devices and external IT systems, Cumulocity IoT provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.
+To interface IoT data sources such as devices and external IT systems, {{< product-c8y-iot >}} provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.

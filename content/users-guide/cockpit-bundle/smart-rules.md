@@ -9,10 +9,11 @@ helpcontent: >-
   Click **Add smart rule** in the top menu bar to add a new global smart rule. Use the menu icon to edit, duplicate or delete global smart rules.
 
 
-  Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See *Cockpit > Smart rules collection* in the *User guide* for details on each smart rule template and its configuration. 
+  Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration. 
 ---
 
-Cumulocity IoT includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
+
+{{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
@@ -27,33 +28,33 @@ There are two different types of smart rules:
 
 * **Global smart rules**
 
-	Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.).
 
-	They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
+  They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
 
-	* Smartrule = READ permission
-	* Smartrule = ADMIN permission
-	* CEP management = ADMIN permission
+  * Smartrule = READ permission
+  * Smartrule = ADMIN permission
+  * CEP management = ADMIN permission
 <br>
 <br>
 * **Local smart rules**
 
-	Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
+  Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
 
 Smart rules can be seen in two places:
 
 * In the **Global smart rules** page accessible from the **Configuration** menu.
 
-	![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+  ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
-	In the **Global smart rules** page, only the global smart rules are shown.
+  In the **Global smart rules** page, only the global smart rules are shown.
 
 * In the **Info** tab of a device or group.
 
-	![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
+  ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
-	In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
+  In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
 
 
 

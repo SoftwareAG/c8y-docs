@@ -16,4 +16,6 @@ aliases:
 
 You can access the release notes page from a link in the top navigation on the documentation website or using the URL <a href="https://cumulocity.com/guides/releasenotes/about">https://cumulocity.com/guides/releasenotes/about</a>.
 
+
+
 </div>

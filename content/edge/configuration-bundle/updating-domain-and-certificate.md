@@ -8,7 +8,7 @@ You must always have an SSL certificate for your domain name that is configured.
 
 ### Updating the SSL certificate using the GUI
 
-1. Log in to the Management tenant.
+1. Log in to the {{< management-tenant >}}.
 
 	- Username: management/<*username*>
 	- Password: password provided during the installation
@@ -33,7 +33,3 @@ To upload the new SSL certificate and the key file, use the following endpoints:
 
 - [GET /edge/configuration/certificate](/edge/rest-api/#get-edgeconfigurationcertificate)
 - [POST /edge/configuration/certificate](/edge/rest-api/#post-edgeconfigurationcertificate)
-
-
-
-

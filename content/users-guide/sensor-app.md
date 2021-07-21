@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: var-product-c8y-iot Sensor App
+title: Cumulocity IoT Sensor App
 layout: bundle
 outputs:
 - html

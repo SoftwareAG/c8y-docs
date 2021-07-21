@@ -7,7 +7,7 @@ layout: redirect
 With the event notification API it is possible to receive updates for all events for a specific device.
 The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/reference/real-time-notifications)". The URL is
 
-    /notification/realtime
+    /cep/realtime
 
 The subscription channel needs to contain the managed object ID of the device or a "*" as placeholder to receive notifications for the events of all devices
 

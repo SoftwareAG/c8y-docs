@@ -69,7 +69,7 @@ The device issues this request repeatedly. While the user has not yet registered
 
 The device can now connect to Cumulocity IoT using the tenant ID, username and password. User alias is not supported for devices.
 
-With the introduction of the concept of Enterprise Tenants, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant. 
+With the introduction of the concept of Enterprise Tenants, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant.
 
 Request header should be:
 
@@ -329,7 +329,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
 Then, listen to new operations created in Cumulocity IoT. The mechanism for listening to real-time data in Cumulocity IoT is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity IoT what protocols the agent supports for notifications and allocates a client ID to the agent.
 
-    POST /notification/operations HTTP/1.1
+    POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -353,7 +353,7 @@ Then, listen to new operations created in Cumulocity IoT. The mechanism for list
 
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
-    POST /notification/operations HTTP/1.1
+    POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -374,7 +374,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
 
 Finally, the device connects and waits for operations to be sent to it.
 
-    POST /notification/operations HTTP/1.1
+    POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -419,7 +419,7 @@ Assume now that an operation is queued for the agent. This will make the long po
         }
     ]
 
-When the agent picks up the operation, it sets it to EXECUTING status in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/notification/operations" as described above and wait for the next operation.
+When the agent picks up the operation, it sets it to EXECUTING status in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
 
 The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that Cumulocity IoT buffers real-time data. The interval can be specified upon handshake.
 

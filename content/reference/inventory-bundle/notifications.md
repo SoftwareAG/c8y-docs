@@ -11,7 +11,7 @@ The basic protocol for receiving notifications is described in [Real-time notifi
 The URL is:
 
 ```http
-    /notification/realtime
+    /cep/realtime
 ```
 
 The subscription channel must contain the managed object ID of the object in the inventory to be monitored or a "*" as placeholder to receive notifications for the entire inventory.

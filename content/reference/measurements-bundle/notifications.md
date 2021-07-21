@@ -8,7 +8,7 @@ The measurement notification API permits to receive updates for all measurements
 The basic protocol for receiving notifications is described in [Real-time notifications](/reference/real-time-notifications). The URL is
 
 ```http
-/notification/realtime
+/cep/realtime
 ```
 The subscription channel needs to contain the managed object ID of the device or an asterisk (*) as placeholder to receive notifications for the measurements of all devices.
 

@@ -49,7 +49,7 @@ The bottom arrow represents the push connection (from Cumulocity IoT to the devi
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-Push connection means the connection from Cumulocity IoT to /notification/operations API, **not** to real-time API.
+Push connection means the connection from Cumulocity IoT to /devicecontrol/notifications API, **not** to real-time API.
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 

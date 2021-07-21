@@ -7,7 +7,7 @@ layout: redirect
 The alarm notification API permits the monitoring of alarms of specific devices.
 The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/reference/real-time-notifications)". The URL is
 
-    /notification/realtime
+    /cep/realtime
 
 The subscription channel needs to contain the managed object ID of the device or a "*" as placeholder to receive notifications for the alarms of all devices
 

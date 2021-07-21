@@ -72,7 +72,7 @@ This topic can be subscribed by the client.
 
 ### Receiving operations
 
-SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.
+SmartREST 1.0 via HTTP offers the <kbd>/devicecontrol/notifications</kbd> endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.
 
 ```http
 s/ol/<X-ID>

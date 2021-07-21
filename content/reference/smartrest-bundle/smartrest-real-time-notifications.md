@@ -100,7 +100,7 @@ If your device uses multiple templates (e.g. child devices have a different temp
 
 Example request:
 
-	POST /notification/operations HTTP/1.0
+	POST /devicecontrol/notifications HTTP/1.0
 	Authorization: Basic ...
 	X-Id: mytemplate1
 

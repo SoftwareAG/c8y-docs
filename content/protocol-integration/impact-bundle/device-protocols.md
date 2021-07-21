@@ -80,7 +80,7 @@ For each resource you may specify the following parameters:
 
 <tr>
 <td align="left">Instance Type</td>
-<td align="left">The instance type for the parameter. May be one of “Single” or “Multiple”. The default value is “Single”.</td>
+<td align="left">The instance type for the parameter. May be one of "Single" or "Multiple". The default value is "Single".</td>
 <td align="left">Optional</td>
 </tr>
 
@@ -100,9 +100,9 @@ Optionally, you may turn on several functionalities for the resource:
 
 Turn on **Send measurements** to specify a measurement.
 
-* In the **Type** field, enter the type of the measurement, for example “c8y_AccelerationMeasurement”.
-* Series are any fragments in measurements that contain a “value” property. In the **Series** field you can enter for example “c8y_AccelerationMeasurement.acceleration”.
-* The **Unit** field specifies the unit of the given measurement, for example “m/s” for velocity.
+* In the **Type** field, enter the type of the measurement, for example "c8y_AccelerationMeasurement".
+* Series are any fragments in measurements that contain a "value" property. In the **Series** field you can enter for example "c8y_AccelerationMeasurement.acceleration".
+* The **Unit** field specifies the unit of the given measurement, for example "m/s" for velocity.
 
 
 #### Create alarm

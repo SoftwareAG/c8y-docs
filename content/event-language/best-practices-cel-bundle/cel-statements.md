@@ -17,5 +17,5 @@ Make sure that your event processing rules do not keep too many events in window
 **Troubleshoot from getting disabled due to too high amount of errors:**
 
 Monitor the amount of statements for errors. To see errors you will need to read through the details. In case of an error, correct the statement.
-An example of a wrong statement: "insert into UpdateAlarm select "CLEARED" as status from...” is regarded as an error statement.
+An example of a wrong statement: 'insert into UpdateAlarm select "CLEARED" as status from...' is regarded as an error statement.
 An example of a corrected statement is: "insert into UpdateAlarm select "10201" as ID, "CLEARED" as status from..."

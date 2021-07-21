@@ -28,7 +28,7 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
-<td style="text-align:left">Allows to interface with LoRa devices through Actility’s ThingPark Wireless.</td>
+<td style="text-align:left">Allows to interface with LoRa devices through Actility's ThingPark Wireless.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>

@@ -9,7 +9,7 @@ layout: redirect
 
 ### Scanning the address space
 
-This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-c8y-iot >}} platform.
+This operation triggers importing address space for a specific OPC-UA server. The server's ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-c8y-iot >}} platform.
 
 ```
 POST /devicecontrol/operations/
@@ -25,7 +25,7 @@ POST /devicecontrol/operations/
 
 The twinned address space information is persisted in the {{< product-c8y-iot >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server's address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
 
 When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
 The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
@@ -527,7 +527,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 <td>tagType</td>
 <td>string</td>
 <td>no</td>
-<td>Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings. Default is "TAG".</td>
+<td>Possible tagType values are "TAG" and "NO_TAG". "TAG" appends "_Historic" for both the mapping types and for the measurement mappings. Default is "TAG".</td>
 </tr>
 </tbody>
 </table>
@@ -550,7 +550,7 @@ This operation reads historic values and only saves those values to a file which
     "description": "Upload history data"
 }
 ```
-The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
+The binary file representations, which can be queried using binary API, are created with the type "c8y_ua_HistoricData" and an operationId with the value of the operation with which it has been generated.
 
 Available arguments for c8y_ua_command_HistoricDataUploadOperation:
 <table>
@@ -817,7 +817,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 
 ### Write attribute
 
-This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes’ values to any writable attributes. The following example writes two different attributes to two different nodes.
+This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes.
 
 ```json
 {
@@ -834,7 +834,7 @@ This operation is similar to the previous one, but instead of writing to the val
             }
         }
     },
-    "description": "Write attributes’ values to different attributes of different nodes"
+    "description": "Write attributes' values to different attributes of different nodes"
 }
 ```
 
@@ -972,7 +972,7 @@ Available arguments for c8y_ua_command_GetMethodDescriptionOperation:
 </tbody>
 </table>
 
-The result describes a method, it’s parent object, input and output arguments.
+The result describes a method, it's parent object, input and output arguments.
 
 ```json
 {
@@ -1004,7 +1004,7 @@ The result describes a method, it’s parent object, input and output arguments.
 
 ### Call method
 
-This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment.
+This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment.
 
 ```json
 {

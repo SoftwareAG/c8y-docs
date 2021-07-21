@@ -38,8 +38,8 @@ Moreover, the {{< product-c8y-iot >}} NetComm Agent offers a large variety of de
 *  Updating [software and firmware](#software-and-firmware) remotely.
 * Collecting metrics like [system resources](#system-resources) and [cellular signal strength](#cellular) as measurements.
 * Updating and tracking [GPS](#gps) locations.
-* Getting and applying router’s [configuration snapshots](#snapshots).
-* Sending router’s [event notifications](#notification) as alarms.
+* Getting and applying router's [configuration snapshots](#snapshots).
+* Sending router's [event notifications](#notification) as alarms.
 * Remotely executing commands via the [device shell](#device-shell) interface.
 * Retrieving system, ipsec and agent [log files](#logs).
 

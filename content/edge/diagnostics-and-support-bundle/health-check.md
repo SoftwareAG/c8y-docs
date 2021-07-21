@@ -114,7 +114,7 @@ You can check the status of the platform by running the following command:
 	}
 
 
-The ‘status:”UP”’ shows that all services are running.
+The 'status:"UP"' shows that all services are running.
 
 If something fails, the endpoint should respond a different error code. The response should contain something like:
 

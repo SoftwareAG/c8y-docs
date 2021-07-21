@@ -101,7 +101,7 @@ CANopen device protocols can be configured in the following way:
 
 In the **CANopen device type** field, specify the device type as a hex number.
 
-In the **Variables** section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can later be accessed by adding the variables to the device type definition.
+In the **Variables** section, you determine the CANopen variables. Variables inside the "Object Dictionary"(OD) of the CANopen device can later be accessed by adding the variables to the device type definition.
 
 Click **Add variable** to configure a new variable.
 

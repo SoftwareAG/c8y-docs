@@ -26,7 +26,7 @@ aliases:
 In the following section you will get an overview on the Web SDK for Plugins which allows you to:
 
 * Extend applications with your own plugins.
-* Add your own applications to Cumulocity IoT’s web application.
+* Add your own applications to Cumulocity IoT's web application.
 * Enhance the visualization of data with custom widgets.
 * Implement functionalities tailored to your use case.
 

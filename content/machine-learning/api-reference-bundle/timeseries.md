@@ -23,7 +23,7 @@ Operations for time series data/model.
 #### TimePeriod
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|timeUnit|ChronoUnit|The value has to be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – “SECONDS”, “MINUTES”, “HOURS”, “DAYS”, “MONTHS”, “YEARS” etc.|
+|timeUnit|ChronoUnit|The value has to be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – "SECONDS", "MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS" etc.|
 |periodLength|Number|Length of the period.|
 
 
@@ -66,8 +66,8 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 ```
 200 - OK
 
-curl --request POST “{{url}}/service/zementis/train/timeseries?autoDeploy=true --header “Authorization: {{auth}}” \
-	--header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true --header "Authorization: {{auth}}" \
+	--header "Content-Type: application/json"
 
 {
     "series": [
@@ -102,8 +102,8 @@ curl --request POST “{{url}}/service/zementis/train/timeseries?autoDeploy=true
 200 - OK
 
 {
-	“modelName”: “Timeseries_19-10-2020_14-23-00_jJgQK”,
-	“statusUrl”: "/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status"
+	"modelName": "Timeseries_19-10-2020_14-23-00_jJgQK",
+	"statusUrl": "/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status"
 }
 ```
 
@@ -113,8 +113,8 @@ curl --request POST “{{url}}/service/zementis/train/timeseries?autoDeploy=true
 ```
 400 - Bad Request
 
-curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Authorization: {{auth}}” \
-	--header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Authorization: {{auth}}" \
+	--header "Content-Type: application/json"
 
 {
     "series": [
@@ -160,7 +160,7 @@ curl --request POST “{{url}}/service/zementis/train/timeseries” --header “
 ```
 401 - Unauthorized
 
-curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Content-Type: application/json”
+curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Content-Type: application/json"
 ```
 
 **Example Response**
@@ -201,7 +201,7 @@ If the status is FAILURE, the `errorMessage` attribute in the response holds the
 ```
 200 - OK
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -219,7 +219,7 @@ curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status”
+curl --request GET "{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status"
 ```
 
 **Example Response**
@@ -239,7 +239,7 @@ curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10
 ```
 404 – Not Found
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/dummy/status” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/timeseries/dummy/status" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -277,7 +277,7 @@ Get the PMML file of the generated time series model.
 ```
 200 - OK
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -307,7 +307,7 @@ curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml”
+curl --request GET "{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml"
 ```
 
 **Example Response**
@@ -327,7 +327,7 @@ curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10
 ```
 404 – Not Found
 
-curl --request GET “{{url}}/service/zementis/train/timeseries/dummy/pmml” --header “Authorization: {{auth}}”
+curl --request GET "{{url}}/service/zementis/train/timeseries/dummy/pmml" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**

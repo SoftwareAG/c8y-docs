@@ -1,4 +1,4 @@
----
+header style---
 weight: 40
 title: Dashboards
 layout: redirect
@@ -54,6 +54,8 @@ Since there will be no widgets on the dashboard yet, you will see an **Add Widge
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of the [dashboard](#creating-dashboards).
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
+
+	>**Info:** The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used. 
 
 5. Click **Save** to add the widget to the dashboard.
 

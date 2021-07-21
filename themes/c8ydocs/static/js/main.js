@@ -53,7 +53,7 @@ var main = (function ($) {
             style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #fff794; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
 
-          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);

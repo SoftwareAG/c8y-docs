@@ -21,7 +21,7 @@ These three levels differ in their scope, particularly with regards to administr
 >
 
 <a name="standard-tenant"></a>
-### {{< standard-tenant >}}
+### Standard tenant
 
 At the bottom of the hierarchy you can find single tenants which are represented by the concept of {{< standard-tenant >}}s in {{< product-c8y-iot >}}.
 
@@ -34,7 +34,7 @@ In a {{< standard-tenant >}}, multiple parties are reflected by separate users. 
 Details on the administration of {{< standard-tenant >}}s are described in the [Administration](/users-guide/administration/) section in the *User guide*.
 
 <a name="enterprise-tenant"></a>
-### {{< enterprise-tenant >}}
+### Enterprise tenant
 
 An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
 
@@ -58,7 +58,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in the [{{< enterprise-tenant >}}](/users-guide/enterprise-tenant/) section in the *User guide*.
 
 <a name="management-tenant"></a>
-### {{< management-tenant >}}
+### Management tenant
 
 The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} tenant hierarchy.
 

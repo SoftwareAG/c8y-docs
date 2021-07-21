@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Invoking other parts of the var-product-c8y-iot REST API
+title: Invoking other parts of the Cumulocity IoT REST API
 layout: redirect
 ---
 

@@ -78,8 +78,8 @@ Click **Save TFA settings** to apply your settings.
 <a name="oauth-internal"></a>
 ### Oauth Internal
 
-{{< product-c8y-iot >}} OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again. 
-The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`. 
+{{< product-c8y-iot >}} OAuth Internal is based on JWT stored in a browser cookie. However, it doesn't support refresh and after the token validity time has ended, the user will have to log in again.
+The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
 
 #### Token settings
 The default token validity time is two weeks and this can be changed with tenant options:
@@ -89,7 +89,7 @@ The default token validity time is two weeks and this can be changed with tenant
 The minimum allowed value is 5 minutes.
 
 #### Cookies settings
-Cookies used to store a token in a browser have their own validity time that can be changed with tenant options: 
+Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
@@ -252,7 +252,7 @@ The integration was successfully verified against Azure AD. The configuration st
 
 While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". There are no additional steps on Azure AD required.
 
-##### {{< product-c8y-iot >}} configuration
+##### Cumulocity IoT configuration
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 

@@ -7,7 +7,7 @@ weight: 35
 Machine Learning Workbench (MLW) provides connectors to the various data sources such as {{< product-c8y-iot >}}, DataHub, etc. from where the data could be downloaded to start the machine learning model-building process.
 
 <a name="cumulocity-iot"></a>
-### {{< product-c8y-iot >}}
+### Cumulocity IoT
 
 The following steps illustrate how to ingest and transform data produced by devices connected to {{< company-c8y >}}.
 

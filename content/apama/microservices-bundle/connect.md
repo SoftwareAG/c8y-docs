@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Connecting to the var-product-c8y-iot platform
+title: Connecting to the Cumulocity IoT platform
 layout: redirect
 ---
 

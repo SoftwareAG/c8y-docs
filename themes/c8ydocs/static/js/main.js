@@ -57,6 +57,22 @@ var main = (function ($) {
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);
+
+          $('.dropdown.version').hide();
+
+          offset = 45;
+
+          $('<div/>', {
+            id: 'deprecation-banner',
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff9301; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+          }).prependTo('body');
+
+          backURL = prefix + suffix;
+
+          $('<p style="text-align: center; vertical-align: center;">This documentation refers to a Cumulocity IoT release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to switch to the latest version.</p>').appendTo('#deprecation-banner');
+
+          $('.main-top-bar').css('top', offset);
+          $('.main-nav.navbar').css('top', offset);
         }
 
         if (!active) {

@@ -39,7 +39,7 @@ Below, a list of resources configured for the device will be listed (which is em
 
 > **Info**: LWM2M protocol resources cannot be edited.
 
-Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
+Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
 ![Example protocol2](/images/device-protocols/lwm2m/lwm2m-temperature-example.png)
 
@@ -54,9 +54,9 @@ The functionalities that you may enable are the following:
 
 Turn on **Send measurement** to specify a measurement.
 
-- Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”.
-- The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.
+- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
+- The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
 #### Create alarm
 

@@ -85,10 +85,10 @@ The communication with {{< product-c8y-iot >}} employing MQTT supports authentic
 
 ##### A device sends correct username and password, but incorrect certificate at the same time
 
-If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device's software. If that is not possible, make sure of the following to make the connection work:
 
 * The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
-* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the MQTT client and Java 11. However, it works with Java 8.
+* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/welcome/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 

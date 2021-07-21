@@ -1426,7 +1426,7 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>When the subcribed node is array type, you can provide the data range you want to get. For example: <em>“0:3”</em> to get elements from index 0 to 3 from the array.</td>
+<td>When the subcribed node is array type, you can provide the data range you want to get. For example: <em>"0:3"</em> to get elements from index 0 to 3 from the array.</td>
 </tr>
 </tbody>
 </table>

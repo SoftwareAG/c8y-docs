@@ -61,7 +61,7 @@ The inputs are checked every second for changes.
 
 #### Digital output
 
-Digital outputs can be controlled using the "Relay array control" widget, see the screenshot below. The green icon means “closed (low value)” and the red icon means “opened (high value)”. The numbering of the GPIO pins are the same as listed on the router. For the NTC-220 model, three GPIO pins can be set.
+Digital outputs can be controlled using the "Relay array control" widget, see the screenshot below. The green icon means "closed (low value)" and the red icon means "opened (high value)". The numbering of the GPIO pins are the same as listed on the router. For the NTC-220 model, three GPIO pins can be set.
 
 ![Relay Array Widget](/images/device-demos/casa-system-router/router-relay-array.png)
 
@@ -88,15 +88,15 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router a
 
 * Make sure to turn off all serial port related functionalities on the router, e.g. PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
-> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it’s empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
+> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
 >
->Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter’s manufacturer about how to disable it.
+>Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
 
 Then:
 
 * Subscribe your account to the Cloud Fieldbus feature by contacting [product support](/welcome/contacting-support/).
 * Configure the Modbus communication as described in [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) in the *Protocol integration guide*.
-* Enable or disable write permission by setting the “Modbus read only” property in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
+* Enable or disable write permission by setting the "Modbus read only" property in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
 
 <a name="remote-access"></a>
 ### Cloud Remote Access

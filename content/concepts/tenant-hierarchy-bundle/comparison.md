@@ -89,7 +89,7 @@ The creation of a new customer is equally simple. However, you need to consider 
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer needs to specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn’t be able to see the device.</td>
+<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer needs to specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn't be able to see the device.</td>
 <td style="text-align:left">As customers have full access to their tenants they are free to register devices without any further limitations.</td>
 </tr>
 </tbody>
@@ -123,7 +123,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 
 **Comparison:**
 
-In the RBAC approach, managing access is the most complicated part as a misconfiguration can potentially give customers access to data that they mustn’t see, like other customers’ data. The inventory roles allow you to granularly define access for only certain parts of data but they don’t protect you from accidental misconfigurations. Another limitation here is that customers won’t be able to create their own roles.
+In the RBAC approach, managing access is the most complicated part as a misconfiguration can potentially give customers access to data that they mustn't see, like other customers' data. The inventory roles allow you to granularly define access for only certain parts of data but they don't protect you from accidental misconfigurations. Another limitation here is that customers won't be able to create their own roles.
 
 For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
 
@@ -170,7 +170,7 @@ Having a separate tenant for each customer they will not be limited with respect
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
+<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won't be able to create own applications.</td>
 <td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>

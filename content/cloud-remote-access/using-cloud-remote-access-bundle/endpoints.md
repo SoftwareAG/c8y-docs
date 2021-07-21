@@ -26,7 +26,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 ![Remote access endpoint](/images/cra/cra-endpoint-vnc.png)
 
-Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting.
+Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show "starting VNC handshake" when the process is starting.
 
 #### To add a remote access endpoint via Telnet
 

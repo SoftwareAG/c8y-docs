@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is “Gateway_Device”) and then click **Next**.
+Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is "Gateway_Device") and then click **Next**.
 
 Click **Accept** to complete the registration.
 

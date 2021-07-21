@@ -92,7 +92,7 @@ Change the following entries to adjust the log levels:
 
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
-Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
+Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all "lower" log levels, e.g. when you set the level to WARN you will also get ERROR events.
 
 |Level|Description|
 |:---|:---

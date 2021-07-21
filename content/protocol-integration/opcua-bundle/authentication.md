@@ -10,10 +10,10 @@ The following authentication methods can be selected:
 
 - Anonymous - Will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
-- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to {{< product-c8y-iot >}} as a binary with type “application/octet-stream”. This keystore must follow the following rules:
+- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to {{< product-c8y-iot >}} as a binary with type "application/octet-stream". This keystore must follow the following rules:
   - It has to be a Java keystore (JKS).
   - The keystore itself has to be password-protected.
-  - The keystore has to contain a user certificate with the “opcuauser” alias.
+  - The keystore has to contain a user certificate with the "opcuauser" alias.
   - The user certificate has to be password-protected.
 
 > **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in case a keystore file should contain more data.
@@ -44,7 +44,7 @@ All server connections are listed as child devices even if the servers are disco
 
 ### Address space
 
-When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
+When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find "nodeId", "browserName" or "displayName" of an attribute. In case of multiple "ancestorNodeIds", you can click on the desired node to be redirected.
 
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into {{< product-c8y-iot >}}. Performing another address space operation will update the address space information.
 
@@ -84,7 +84,7 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 
 <tr>
 <td align="left">Gateway memory</td>
-<td align="left">Represents the “free”,”max” and “allocated” memory values of the gateway.</td>
+<td align="left">Represents the "free", "max" and "allocated" memory values of the gateway.</td>
 </tr>
 
 <tr>

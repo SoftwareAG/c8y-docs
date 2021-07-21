@@ -100,7 +100,7 @@ The monitor script supports only one optional startup parameter:
 The logs of the Kubernetes components are captured at:
 */tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
 
-The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at "kube-system" path in the archive. The components captured are:
 
 * heapster-*XX*
 * kube-apiserver-server

@@ -22,7 +22,7 @@ Once the firmware update has been triggered, the LWM2M agent creates and queues 
 ### Firmware update state machine
 
 The firmware update procedure is well standardized within the LWM2M specification, and a standard Firmware Update Object (&#47;5) is used to perform the process.
-Let’s have a quick glance at the firmware update state machine as defined by the LWM2M specification:
+Let's have a quick glance at the firmware update state machine as defined by the LWM2M specification:
 
  ![Firmware update state machine](/images/device-protocols/lwm2m/lwm2m-fota-state-machine.png)
  (Source: openmobilealliance.org)

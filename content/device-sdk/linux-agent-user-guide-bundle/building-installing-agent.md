@@ -1,5 +1,5 @@
 ---
-title: Building and installing the var-product-c8y-iot Linux agent
+title: Building and installing the Cumulocity IoT Linux agent
 layout: redirect
 weight: 30
 ---

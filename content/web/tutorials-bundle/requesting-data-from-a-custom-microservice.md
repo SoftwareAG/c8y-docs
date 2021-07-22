@@ -4,7 +4,7 @@ layout: redirect
 weight: 50
 ---
 
- **Version:** 10.4.11.0 | **Packages:** @c8y/client and @c8y/ngx-components
+**Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (e.g. the `HttpModule` from Angular) you might want to have authentication out of the box.
 
@@ -79,14 +79,14 @@ The basic gives an overview on how to use the common endpoints. The following re
 As a starting point, you need an application showing dashboards. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
+c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `1009.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
@@ -126,8 +126,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule } from '@c8y/ngx-components';
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
 
 // ---- 8< added part ----
 import { AcmeComponent } from './acme.component';
@@ -135,20 +139,25 @@ import { AcmeComponent } from './acme.component';
 
 @NgModule({
   imports: [
+    // Upgrade module must be the first
+    UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-
     // ---- 8< added part ----
     NgRouterModule.forRoot([
       { path: 'acme', component: AcmeComponent },
       ...UPGRADE_ROUTES,
     ], { enableTracing: false, useHash: true }),
     // ---- >8 ----
-
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    UpgradeModule
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule
   ],
 
   // ---- 8< added part ----

@@ -34,6 +34,7 @@ Input fields whose meaning may not be obvious are equipped with a help icon prov
 |If the collection to be offloaded has more than 800 JSON attributes, its data cannot be offloaded.|
 |If an attribute of a collection has varying types associated, the result table will contain a mixed type which may render query writing difficult or lead to problems with subsequent consumer applications.|
 |DataHub does not work with Kubernetes version prior to 1.9.|
+|Duplicate attribute names wrt. case-insensitivity may lead to data loss during offloading. This refers to the case that the data has two or more attributes with the same name in terms of case-insensitivity, e.g. *myDevice* and *Mydevice* would be equal. Instead of the actual payload of the data, the value *null* will be offloaded for one of the two attributes, as case-insensitive handling of attributes is not properly supported.|
 
 ### Known issues
 

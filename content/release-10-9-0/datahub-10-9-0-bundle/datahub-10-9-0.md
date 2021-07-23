@@ -23,6 +23,7 @@ DataHub introduces a new wizard for creating offloading configurations. Offloadi
 |If an attribute of a collection has varying types associated, the result table will contain a mixed type which may render query writing difficult or lead to problems with subsequent consumer applications.|
 |DataHub does not work with Kubernetes version prior to 1.9.|
 |Dremio has announced in its [Dremio 4.0 release notes](https://docs.dremio.com/release-notes/40-release-notes.html#deprecations) to deprecate some functionality on mixed types. In Dremio 13.2, GROUP BY or DISTINCT over mixed type expressions are no longer supported. It is necessary to cast these expressions to a simple type before using them in a GROUP BY or DISTINCT clause. Also mixed type expressions cannot be used in the SELECT clause, when retrieving data over ODBC or JDBC.|
+|Duplicate attribute names wrt. case-insensitivity may lead to data loss during offloading. This refers to the case that the data has two or more attributes with the same name in terms of case-insensitivity, e.g. *myDevice* and *Mydevice* would be equal. Instead of the actual payload of the data, the value *null* will be offloaded for one of the two attributes, as case-insensitive handling of attributes is not properly supported.|
 
 ### Known issues
 

@@ -83,18 +83,18 @@ Click **Next** to proceed with the next configuration step. Click **Finish** to 
 
 If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your DataHub queries, then you can include them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
 
-###### Auto-detected columns
+**Auto-detected columns**
 
 To ease the configuration process, DataHub auto-detects additional result columns. Using a sample of the base collection, DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
  
-###### Structure of additional result columns
+**Structure of additional result columns**
 
-Each additional result column, whether it is a manually configured or an auto-detected one, has the following properties:
+Each additional result column, whether it is manually configured or auto-detected, has the following properties:
 
 - **Selected**: With this checkbox, you define if the column is included in the offloading pipeline or not.
 - **Column name**: The column name is the name the column will have in the target table. The column name must be unique.
-- **Auto-detected**: This property denotes whether the column has been auto-detected of manually added by the user.
-- **Source definition**: The source definition is the actual SQL expression, which defines how the data in this column looks like. 
+- **Auto-detected**: This property denotes whether the column has been auto-detected or manually added by the user.
+- **Source definition**: The source definition is the actual SQL expression, which defines what the data in this column looks like. 
 - **Column type**: The column type defines which kind of data the column contains, e.g. DOUBLE for double values or VARCHAR for strings.
 
 When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. In the top right corner the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, a collapse button and a context menu is available. With the collapse button you can expand/collapse more details of the column. In the details section you can explore the source definition as well as sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field. 
@@ -105,9 +105,9 @@ If you enter the additional result columns step for a running offloading pipelin
 
 <img src="/images/datahub-guide/datahub-configure-addtl-cols.png" alt="Overview of additional result columns" style="max-width: 100%">
 
-###### Add an additional result column
+**Add an additional result column**
 
-When adding an additional result column, a modal dialog for defining the column opens. You have to define a unique column name, i.e., no other column has this name. Then the source definition needs to be specified.
+When adding an additional result column, a modal dialog for defining the column opens. You must define a unique column name. Then the source definition needs to be specified.
 
 First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, e.g., by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting.
 
@@ -115,41 +115,41 @@ If you want to derive additional result columns from nested content, you can spe
 
 <img src="/images/datahub-guide/datahub-add-addtl-col.png" alt="Add additional result column" style="max-width: 40%">
 
-Click **Apply** to add the column, which will per default be selected for offloading. If the source definition is invalid, e.g. when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You have to fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
+Click **Apply** to add the column, which will be selected for offloading by default. If the source definition is invalid, e.g. when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You have to fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
 
-###### Edit an additional result column
+**Edit an additional result column**
 
 In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Apply** to update the column with the new settings. The new column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
 
 Note that for auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you have to duplicate the auto-detected column.
 
-###### Duplicate an additional result column
+**Duplicate an additional result column**
 
 In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The column name uses the original column name plus a counter as suffix to make the name unique. You can adapt the name to your needs, provided the name is unique.
 
 Click **Apply** to complete and **Cancel** to quit duplicating the column.
 
-###### Delete an additional result column
+**Delete an additional result column**
 
 In the context menu of an additional result column, select **Delete** to open the dialog for deleting the column. Click **Confirm** to proceed or **Cancel** to cancel the deletion.
 
 Auto-detected columns cannot be deleted.
 
-When deleting an additional result column, in the next offloading run the data will no more be included. Data already being offloaded to the data lake is not affected by the deletion of the column.  
+When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column.  
 
-###### Migration of additional result columns
+**Migration of additional result columns**
 
-DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes in its version upgrade process an auto-migration procedure to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified. 
+DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified. 
 
 To migrate to the new format manually, proceed as follows:
 
-- In the context menu of the column click **Show** and navigate through the configuration.
-- Copy the task name, the additional result columns definition, and the target table name to a text editor.
-- Create a new configuration with an arbitrary target table name and an arbitrary task name. 
-- Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "EXPR$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
-- Delete the old configuration.
-- Edit the new configuration and set the task name and the target table name of the old configuration.
-- When activating the new configuration, you are prompted for either flushing or appending to the existing data. Use the latter option to base the new configuration on the data the old configuration has offloaded so far.
+1. In the context menu of the column click **Show** and navigate through the configuration.
+2. Copy the task name, the additional result columns definition, and the target table name to a text editor.
+3. Create a new configuration with an arbitrary target table name and an arbitrary task name. 
+4. Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "EXPR$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
+5. Delete the old configuration.
+6. Edit the new configuration and set the task name and the target table name of the old configuration.
+7. When activating the new configuration, you are prompted for either flushing or appending to the existing data. Use the latter option to base the new configuration on the data the old configuration has offloaded so far.
 
 Click **Next** to proceed with the next configuration step. Click **Previous** to go one configuration step back. Click **Cancel** to cancel the offloading configuration.
 
@@ -180,7 +180,7 @@ Click **Next** to proceed with the next configuration step. Click **Previous** t
 
 The final step provides a summary of your settings as well as a result preview. The summary includes the settings from the previous steps as well as the internal UUID of this configuration. The UUID is generated by the system and cannot be modified. With the UUID you can distinguish configurations having the same task name, e.g., when browsing the audit log or the offloading status. In the summary, you also get the schedule with which the offloading pipeline will be executed once it is started, e.g., "every hour at minute 6". The schedule cannot be modified. With the **Inactive**/**Active** toggle at the end of the summary you choose whether the periodic offloading execution should be activated upon save or not.  
 
-In the offloading preview you can inspect how the actual data that will be offloaded looks like. For this purpose, the offloading is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Use **Hide time columns** to either show the default columns with a temporal notion or not. Note that no data is permanently persisted to the data lake when running the preview.
+In the offloading preview you can inspect what the actual data that will be offloaded looks like. For this purpose, the offloading is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Use **Hide time columns** to either show the default columns with a temporal notion or not. Note that no data is persisted to the data lake when running the preview.
 
 Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
 
@@ -413,7 +413,7 @@ When using the default layout, you have to select a measurement type, so that al
 
 The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment_` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment_attribute1_name_value` to `fragment_attributeN_name_value`.
 
-###### Example mapping
+**Example mapping**
 
 The following excerpt of a measurement document in the base collection
 
@@ -457,7 +457,7 @@ The resulting schema is defined as follows:
 | value | VARCHAR |
 | unit | VARCHAR |
 
-###### Example mapping
+**Example mapping**
 
 The following excerpt of a measurement document in the base collection
 

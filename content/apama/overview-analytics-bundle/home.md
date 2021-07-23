@@ -14,12 +14,13 @@ You can access these pages using the corresponding **Open** button on the home s
 
 If you need more space for a page, you can hide the navigator. Click the small arrow at the very left of the top bar to toggle the display of the navigator.
 
-The home screen also lets you navigate to the Cockpit application in which you can maintain your smart rules. 
+The home screen also provides information on smart rules. You create and maintain them with the Cockpit application.
 See [Smart rules](/users-guide/cockpit/#smart-rules) in the *User guide* for detailed information.
 
 The home screen and navigator only show entries for the items that you are allowed to use, 
 depending on the version of the Apama-ctrl microservice to which your tenant is subscribed. 
-See also [Microservice runtime and applications](#microservice-and-applications).
+See also [Microservice runtime and applications](#microservice-and-applications) and 
+[Customizing the home screen of the Streaming Analytics application](/apama/advanced/#customize-home-screen).
 
 
 

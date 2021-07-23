@@ -21,7 +21,7 @@ The `/cep/realtime` endpoint is deprecated. We recommend you to use the `/notifi
 #### Enforcement of usage of bootstrap credentials
 
 In order to improve the security posture of the platform as of release 10.10 we shall be enforcing the use of the bootstrap user when subscribing to `dcr/ucr`. With this enforcement of behaviour any subscription to `s/ucr` or `s/dcr` topics with other credentials than the bootstrap user will fail.
-The requirement to use the bootstrap user is documented at [Device integration using MQTT](https://cumulocity.com/guides/device-sdk/mqtt/) in the <i>Device SDK guide</i>.
+The requirement to use the bootstrap user is documented at [Device integration using MQTT](https://cumulocity.com/guides/10.9.0/device-sdk/mqtt/) in the <i>Device SDK guide</i>.
 
 
 #### Disallow to use special characters for category and key for Tenant Option Collection API
@@ -31,13 +31,21 @@ Currently the Tenant Option Collection API returns 400 instead of collection res
 For reference, we disable all HTTP-encoded and control characters (like \u0000). The full list of HTTP-encoded characters equals the one here: https://secure.n-able.com/webhelp/NC_9-1-0_SO_en/Content/SA_docs/API_Level_Integration/API_Integration_URLEncoding.html).
 
 
+#### Link in schedule export email
+
+The template for emails, which are sent out when exporting reports, contains a placeholder for {tenant-domain}. In emails, the fully qualified domain name, for example "demo.cumulocity.com", was used without specification of the protocol. Since the prefix "https://" was missing in the email users couldn’t just klick on a link to open the report.
+
+In 10.9 GA release, the prefix has been added, i.e. the email now contains the proper link starting with "https", for example "https://demo.cumulocity.com".
+
+In case users added the prefix as a workaround manually in the template, they now need to revert this workaround.
+
 #### Removal of Basic Auth browser-based authentication
 
 With the 10.5 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
 With the 10.11 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.12, release the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
-If not done already, we recommend you not to wait for the 10.12 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the *User guide*.
+If not done already, we recommend you not to wait for the 10.12 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/10.9.0/users-guide/administration/#changing-settings) in the *User guide*.
 
 In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5 or higher as well as the Microservice SDK 10.5 or higher.
 
@@ -93,7 +101,7 @@ As announced previously, Cumulocity IoT no longer supports Internet Explorer 11.
 
 #### Removal of older documentation versions from the documentation website
 
-With the 10.10 release, product documentation for releases that are no longer in maintenance will be hidden from the version dropdown list at [https://cumulocity.com/guides/about-doc/intro-documentation/](https://cumulocity.com/guides/about-doc/intro-documentation/).  
+With the 10.10 release, product documentation for releases that are no longer in maintenance will be hidden from the version dropdown list at [https://cumulocity.com/guides/10.9.0/about-doc/intro-documentation/](https://cumulocity.com/guides/10.9.0/about-doc/intro-documentation/).  
 
 However, the documentation is still available and all links to it still work. To access it, use the full URL including the respective version number, for example [https://cumulocity.com/guides/**10.5.7**/about-doc/intro-documentation/](https://cumulocity.com/guides/10.5.7/about-doc/intro-documentation/).
 
@@ -107,7 +115,7 @@ Where previously Apama Analytics Builder and Apama EPL Apps were separate applic
 The Streaming Analytics application provides mechanisms to control visibility of the Analytics Builder and EPL Apps pages.
 If the old Apama Analytics Builder or Apama EPL Apps applications had been assigned to specific groups or users, a tenant will need to
 configure role-based access and assign roles to control the visibility of the corresponding pages within the Streaming Analytics application.
-See [Controlling access to the Streaming Analytics application](https://cumulocity.com/guides/apama/advanced/#control-access) for more information.
+See [Controlling access to the Streaming Analytics application](https://cumulocity.com/guides/10.9.0/apama/advanced/#control-access) for more information.
 This migration is a one-time step that needs to be performed manually.
 
 #### Backwards incompatibility change to the Cumulocity IoT bundles in Apama
@@ -131,26 +139,20 @@ See the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Ro
 
 #### Cumulocity IoT transport in Apama
 
-Generic requests that are sent using the Cumulocity IoT transport now return the response body with exactly what is returned from Cumulocity IoT.
-In previous versions, this was put into a dictionary with an empty key. So if you have existing code such as the following
-
+The contents of the `com.apama.cumulocity.GenericResponse` event have changed. You are recommended to change EPL apps which use the `body` field in the following ways
 ```
 AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("")[""]);
 ```
-
-You have to replace this with:
-
+or:
 ```
 AnyExtractor dict := AnyExtractor(response.body);
 ```
-
-Alternatively, you can change your code to the following form in advance of the upgrade, since it works with both versions:
+to:
 
 ```
-AnyExtractor dict := AnyExtractor(AnyExtractor(response.body).getDictionary("").getOr("", response.body));
+AnyExtractor dict := AnyExtractor(response.getBody());
 ```
-
-See also [Invoking other parts of the Cumulocity IoT REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+which is compatible with both current and previous versions of the `GenericResponse` API.
 
 #### Cumulocity API in Apama
 

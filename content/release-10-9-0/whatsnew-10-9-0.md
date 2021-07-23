@@ -27,7 +27,7 @@ Cumulocity IoT can now interface with LORIOT Network Server through the Loriot a
 * Post-process raw device data through Cumulocity IoT events.
 * Make use of existing Cumulocity IoT features with LoRa devices, like connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-For details, refer to [Loriot LoRa](https://cumulocity.com/guides/protocol-integration/lora-loriot/) in the *Protocol integration guide*.
+For details, refer to [Loriot LoRa](https://cumulocity.com/guides/10.9.0/protocol-integration/lora-loriot/) in the *Protocol integration guide*.
 
 ### Cockpit
 
@@ -39,7 +39,7 @@ The <b>Exports</b> menu item has been moved under the <b>Configuration</b> menu.
 
 ![Report page](/images/release-notes/cockpit-reports-list.png)
 
-For details, see <a href="https://cumulocity.com/guides/users-guide/cockpit/#reports" class="no-ajaxy">Cockpit > Managing reports and exports</a> in the <em>User guide</em>.
+For details, see <a href="https://cumulocity.com/guides/10.9.0/users-guide/cockpit/#reports" class="no-ajaxy">Cockpit > Managing reports and exports</a> in the <em>User guide</em>.
 
 ### Administration
 
@@ -51,7 +51,7 @@ A new <b>Default subscriptions</b> page is available in the <b>Applications</b> 
 
 ![Default subscriptions](/images/release-notes/admin-default-subscriptions-inherited.png)
 
-For details, see <a href="https://cumulocity.com/guides/users-guide/enterprise-edition/#managing-tenants" class="no-ajaxy">Enterprise tenant > Managing tenants</a> in the <em>User guide</em>.
+For details, see <a href="https://cumulocity.com/guides/10.9.0/users-guide/enterprise-edition/#managing-tenants" class="no-ajaxy">Enterprise tenant > Managing tenants</a> in the <em>User guide</em>.
 
 
 #### SMS provider configuration
@@ -60,7 +60,7 @@ The <b>SMS provider</b> page has been updated. New providers have been added to 
 
 ![SMS providers](/images/release-notes/admin-settings-sms-provider.png)
 
-See also <a href="https://cumulocity.com/guides/users-guide/administration/#openIT-credentials" class="no-ajaxy">Administration > Changing settings > Providing SMS provider credentials</a> in the <em>User guide</em>.
+See also <a href="https://cumulocity.com/guides/10.9.0/users-guide/administration/#openIT-credentials" class="no-ajaxy">Administration > Changing settings > Providing SMS provider credentials</a> in the <em>User guide</em>.
 
 ### Device Management
 
@@ -74,7 +74,7 @@ The bulk operations user experience has been enhanced. Among others, the followi
 * If a bulk operations fails, the user can now manually set the status to successful.
 * Devices for bulk operations can now be filtered by groups and subgroups via checkboxes.
 
-For details, see <a href="https://cumulocity.com/guides/users-guide/device-management/#operation-monitoring" class="no-ajaxy">Device Management > Monitoring  and controlling devices > Working with operations</a> in the <em>User guide</em>. </td>
+For details, see <a href="https://cumulocity.com/guides/10.9.0/users-guide/device-management/#operation-monitoring" class="no-ajaxy">Device Management > Monitoring  and controlling devices > Working with operations</a> in the <em>User guide</em>. </td>
 
 #### OPC UA device gateway
 
@@ -95,7 +95,7 @@ The functionality of the OPC UA device gateway has been enhanced including the f
 - Support for partial scanning of address space.
 - Support for boolean value node mapping to measurements.
 
- For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/protocol-integration/opcua" class="no-ajaxy">OPC UA</a> in the *Protocol integration guide*.
+ For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/10.9.0/protocol-integration/opcua" class="no-ajaxy">OPC UA</a> in the *Protocol integration guide*.
 
 #### LWM2M
 
@@ -111,4 +111,4 @@ The functionality of the LWM2M microservice has been enhanced including the foll
 - Object ID is shown as part of the device type in the UI.
 - Improvements in device communication.
 
-For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/protocol-integration/lwm2m" class="no-ajaxy">LWM2M</a> in the *Protocol integration guide*.
+For details see the <a href="/release-10-9-0/devices-10-9-0" class="no-ajaxy">10.9 release notes for Device management & connectivity</a> or <a href="https://cumulocity.com/guides/10.9.0/protocol-integration/lwm2m" class="no-ajaxy">LWM2M</a> in the *Protocol integration guide*.

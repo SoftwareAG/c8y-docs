@@ -6,11 +6,11 @@ layout: redirect
 
 ### Ideal Cycle Amount and Ideal Cycle Time (1), (2), (3)
 
-The Ideal Cycle Amount describes the maximum quantity that can be applied within a certain period of time, see formula (1). Due to the fact that this value can only be achieved by an ideal machine, the cycle quantity is described as ideal (this applies to all sizes described as ideal).
+The Ideal Cycle Amount describes the maximum quantity that can be applied within a certain period of time, see formula (1). This value can only be achieved by an ideal machine, therefore the cycle quantity is described as ideal. This applies to all sizes described as ideal.
 
 ![Ideal cycle amount](/images/oee/theory/theory-ideal-cycle-amount-formula.png)
 
-Its equivalent represents the Ideal Cycle Time, see formula (2).
+Its counterpart represents the Ideal Cycle Time, see formula (2).
 
 ![Ideal cycle time](/images/oee/theory/theory-ideal-cycle-time-formula.png)
 

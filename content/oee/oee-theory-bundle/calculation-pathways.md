@@ -6,7 +6,7 @@ layout: redirect
 
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 
-You will find these namings again, while creating a new profile under the section 'Computation'.
+You will find these namings again, while creating a new profile under the section Computation.
 
 ### Calculation pathway #1
 
@@ -58,7 +58,6 @@ x
 x
 </td>
 <td>
-
 </td>
 <td>
 x
@@ -67,16 +66,14 @@ x
 x
 </td>
 <td>
-
 </td>
 <td>
 1
 </td>
-
 </tr>
 </table>
 
-In the table it is shown which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas in red are those only necessary for the calculation of the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 1](/images/oee/theory/theory-calculation-pathway-1.png)
 
@@ -272,7 +269,7 @@ x
 </tr>
 </table>
 
-Again it is shown with which variables, starting from the input variables, all variables including the OEE can be calculated. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas which are only necessary for the calculation of the OEE are colored red.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 2](/images/oee/theory/theory-calculation-pathway-2.png)
 
@@ -468,7 +465,7 @@ x
 </tr>
 </table>
 
-Again, it is shown with which variables, starting from the input variables, all variables including the OEE can be calculated. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas which are only necessary for the calculation of the OEE are colored red.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 3](/images/oee/theory/theory-calculation-pathway-3.png)
 
@@ -664,7 +661,7 @@ x
 </tr>
 </table>
 
-Again, it is shown with which variables, starting from the input variables, all variables including the OEE can be calculated. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas which are only necessary for the calculation of the OEE are colored red.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 4](/images/oee/theory/theory-calculation-pathway-4.png)
 
@@ -860,7 +857,7 @@ x
 </tr>
 </table>
 
-Again, it is shown with which variables, starting from the input variables, all variables including the OEE can be calculated. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas which are only necessary for the calculation of the OEE are colored red.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 5](/images/oee/theory/theory-calculation-pathway-5.png)
 
@@ -1056,7 +1053,7 @@ x
 </tr>
 </table>
 
-Again, it is shown with which variables, starting from the input variables, all variables including the OEE can be calculated. The different colors have no meaning, but simply serve the purpose of clarity. On the next page the corresponding formulas are shown. The formulas which are only necessary for the calculation of the OEE are colored red.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
 
 ![Calculation pathway 6](/images/oee/theory/theory-calculation-pathway-6.png)
 

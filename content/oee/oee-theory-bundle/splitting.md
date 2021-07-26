@@ -4,11 +4,11 @@ title: Splitting
 layout: redirect
 ---
 
-The term 'Splitting' describes the allocation of machine data to the OEE input parameters. In this chapter 3 examples follow which explain the methodology used.
+The term Splitting describes the allocation of machine data to the OEE input parameters. This sections shows examples which explain the methodology used.
 
 ### Input variable calculation - Example 1
 
-It is crucial for the OEE application to correctly allocate the input data to the corresponding intervals of the possible production time or resolution time. This allocation is explained below using an example with reference to the single view. Within three intervals of the possible production time, the machine sends four measured values (shown in blue), which indicate the number of products since the last measured value, i.e. the actual production quantity.
+It is crucial for the OEE application to correctly allocate the input data to the corresponding intervals of the Possible Production Time or resolution time. This allocation is explained below using an example with reference to the single view. Within three intervals of the Possible Production Time, the machine sends four measured values (shown in blue), which indicate the number of products since the last measured value, i.e. the actual production quantity.
 
 The first measured value is 20 pieces. The previous measured value was 16 seconds ago, outside the display range. Thus it is proportionally taken into account to 25% of the first interval. With the same logic, 75% of the second measured value is calculated for the first interval. The total of the proportional allocation results in the actual production quantity for the first interval of 35 pieces. This results in a value of 30 pieces for the second interval. In this example, measured value number four is the most recent measured value sent by the machine. To be able to calculate the actual production quantity for the third interval, you must wait for the next measured value z, which is received after y seconds.
 
@@ -16,7 +16,7 @@ The first measured value is 20 pieces. The previous measured value was 16 second
 
 ### Input variable calculation - Example 2
 
-If no measurement is received within an interval the next measurement will be calculated proportionally. The actual production amount for the second interval will therefore be 35 pieces even if there was no measurement received.
+If no measurement is received within an interval the next measurement will be calculated proportionally. The Actual Production Amount for the second interval will therefore be 35 pieces even if there was no measurement received.
 
 ![Splitting example 2](/images/oee/theory/theory-splitting-example-2.png)
 

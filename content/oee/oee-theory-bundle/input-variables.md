@@ -117,7 +117,7 @@ x
 Actual Production Time
 </td>
 <td>
-Describes the time period during which the machine is actually running and producing products, regardless of speed or quality. Since availability losses prevent production, the actual production time, unless it is an ideal machine, is always shorter than the possible production time.
+Describes the time period during which the machine is actually running and producing products, regardless of speed or quality. Since availability losses prevent production, the actual production time, unless it is an ideal machine, is always shorter than the Possible Production Time.
 </td>
 <td>
 Automatic reference
@@ -143,7 +143,7 @@ x
 Availability Losses
 </td>
 <td>
-For availability losses, it is recommended to record unplanned downtimes such as malfunctions, maintenance, line restrictions and, if necessary, planned downtimes such as maintenance, inspection, cleaning, repair and equipping, modification or format change.
+For Availability Losses, it is recommended to record unplanned downtimes such as malfunctions, maintenance, line restrictions and, if necessary, planned downtimes such as maintenance, inspection, cleaning, repair and equipping, modification or format change.
 </td>
 <td>
 Automatic reference
@@ -169,7 +169,7 @@ x
 Actual Production Amount
 </td>
 <td>
-Reflects the products manufactured in reality within the actual and possible production time.
+Reflects the products manufactured in reality within the actual and Possible Production Time.
 </td>
 <td>
 Automatic reference
@@ -223,7 +223,7 @@ x
 Actual Quality Amount
 </td>
 <td>
-The quality quantity is therefore calculated as follows: Actual quality amount=actual production amount - Quality losses (amount).
+The quality quantity is therefore calculated as follows: Actual Quality Amount = Actual Production Amount - Quality losses (amount).
 </td>
 <td>
 Automatic reference

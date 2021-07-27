@@ -4,6 +4,8 @@ title: Overview
 layout: redirect
 ---
 
+Cloud Fieldbus enables you to connect any fieldbus device to {{< product-c8y-iot >}}. This connection can be done within minutes and at minimal cost and provides high levels of security and reliability. Connected devices can be completely managed from {{< product-c8y-iot >}} including data collection, visualization, fault management and remote control. 
+
 With {{< product-c8y-iot >}} Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
 
 * [Connect](#connecting-fieldbus) fieldbus devices to {{< product-c8y-iot >}}.

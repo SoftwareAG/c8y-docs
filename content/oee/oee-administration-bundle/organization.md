@@ -4,7 +4,7 @@ title: Organization
 layout: redirect
 ---
 
-This section can be used to customize the Machine Park Overview. Sites, Areas and Lines can be can arrange in any way you want.
+In the **Organization settings** page, admin users can customize the machine park **Overview**. Sites, areas and lines can be can arranged according to your needs.
 
 ![organization](/images/oee/administration/admin-organization.png)
 

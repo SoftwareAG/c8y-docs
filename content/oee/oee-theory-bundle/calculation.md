@@ -14,13 +14,13 @@ Its counterpart represents the Ideal Cycle Time, see formula (2).
 
 ![Ideal cycle time](/images/oee/theory/theory-ideal-cycle-time-formula.png)
 
-The quantities can be converted into each other by simply applying the exponent '-1'.
+The quantities can be converted into each other by simply applying the exponent "-1".
 
 ![Ideal cycle amount inverse](/images/oee/theory/theory-ideal-cycle-amount-inverse-formula.png)
 
 ### Potential Production Time (4)
 
-The Potential Production Time describes the period of time in which production is planned for the machine. This production time is given the adjective 'potential' and not 'ideal', since the organization defines it as a possible time period for production without any direct connection to the ideal machine.
+The Potential Production Time describes the period of time in which production is planned for the machine. This production time is given the adjective "potential" and not "ideal", since the organization defines it as a possible time period for production without any direct connection to the ideal machine.
 
 ![Potential production time](/images/oee/theory/theory-potential-production-time-formula.png)
 
@@ -32,7 +32,7 @@ The Ideal Amount describes the maximum possible quantity to be produced within t
 
 ### Actual Production Time (6)
 
-The Actual Production Time describes the actual time period during which the machine produces products, regardless of speed or quality. In this respect, the adjective 'actual' is added to this variable to make it easier to understand (this also applies to the following variables). Since availability losses, see below, prevent production, the Actual Production Time is always shorter than the Potential Production Time, unless it is an ideal machine.
+The Actual Production Time describes the actual time period during which the machine produces products, regardless of speed or quality. In this respect, the adjective "actual" is added to this variable to make it easier to understand (this also applies to the following variables). Since Availability Losses, see below, prevent production, the Actual Production Time is always shorter than the Potential Production Time, unless it is an ideal machine.
 
 ![Actual production time](/images/oee/theory/theory-actual-production-time-formula.png)
 
@@ -64,25 +64,25 @@ As the diagram shows, the Ideal Machine Runtime can also be represented as  Actu
 
 ### Actual Production Amount (11)
 
-The Actual Production Amount reflects the products manufactured in reality within the Actual- and Possible Production Time.
+The Actual Production Amount reflects the products manufactured in reality within the Actual Production Time and Possible Production Time.
 
 ![Actual production amount](/images/oee/theory/theory-actual-production-amount-formula.png)
 
 ### Ideal Quality Time (12)
 
-The Ideal Quality Time is calculated by subtracting the Quality Losses , see chapter losses below, from the Ideal Machine Runtime. It reflects the time that an ideal machine, which ultimately only produces good parts, would have needed to produce the Actual Quality Amount.
+The Ideal Quality Time is calculated by subtracting the Quality Losses from the Ideal Machine Runtime, see [Losses](#losses). It reflects the time that an ideal machine, which ultimately only produces good parts, would have needed to produce the Actual Quality Amount.
 
 ![Ideal quality time](/images/oee/theory/theory-ideal-quality-time-formula.png)
 
 ### Actual Quality Amount (13)
 
-The Actual Quality Amount reflects the produced good parts . It is also calculated using the Ideal Cycle Amount.
+The Actual Quality Amount reflects the produced good parts. It is also calculated using the Ideal Cycle Amount.
 
 ![Actual quality amount](/images/oee/theory/theory-actual-quality-amount-formula.png)
 
 ### Availability (14)
 
-Availability can be represented either by the ratio of Actual Production Time to Potential Production Time, or by the ratio of Ideal Production Amount to Ideal Amount. This results in a percentage value for Availability , which must be less than 100% if the machine is not ideal.
+Availability can be represented either by the ratio of Actual Production Time to Potential Production Time, or by the ratio of Ideal Production Amount to Ideal Amount. This results in a percentage value for Availability, which must be less than 100% if the machine is not ideal.
 
 ![Availability](/images/oee/theory/theory-availability-formula.png)
 

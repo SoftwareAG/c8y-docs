@@ -6,7 +6,9 @@ layout: redirect
 
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 
-You will find these namings again, while creating a new profile under the section Computation.
+These terms appear throughout the OEE documentation.
+
+<!--You will find these namings again, while creating a new profile under the section Computation. -->
 
 ### Calculation pathway #1
 
@@ -83,7 +85,7 @@ This overview shows the formulas of variables needed to calculate each variable,
 1.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Time
+Ideal Amount = Potential Production Time x Ideal Cycle Time
 </td>
 </tr>
 <tr>
@@ -99,7 +101,7 @@ Ideal Cycle Time = Ideal Cycle Amount<sup>-1</sup>
 3.
 </td>
 <td>
-Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
+Ideal Production Amount = Actual Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -107,7 +109,7 @@ Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
 4.
 </td>
 <td>
-Ideal Quality Time = Actual Quality Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Quality Time = Actual Quality Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -115,7 +117,7 @@ Ideal Quality Time = Actual Quality Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
 5.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -155,7 +157,7 @@ Performance Losses (Time) = Actual Production Time - Ideal Machine Runtime
 10.
 </td>
 <td>
-Quality Losses (Time) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Quality Losses (Time) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -163,7 +165,7 @@ Quality Losses (Time) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</s
 11.
 </td>
 <td>
-Availability Losses (Time) = Availability Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Availability Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -195,7 +197,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>
@@ -295,7 +297,7 @@ Availability Losses (Amount) = Potential Production Time - Actual Production Tim
 3.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
+Ideal Amount = Potential Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -303,7 +305,7 @@ Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
 4.
 </td>
 <td>
-Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
+Ideal Production Amount = Actual Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -311,7 +313,7 @@ Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
 5.
 </td>
 <td>
-Ideal Quality Time = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Quality Time = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -319,7 +321,7 @@ Ideal Quality Time = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup
 6.
 </td>
 <td>
-Quality Losses (Time) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Quality Losses (Time) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -335,7 +337,7 @@ Actual Production Amount = Actual Quality Amount + Quality Losses (Amount)
 8.
 </td>
 <td>
-Performance Losses (Amount) = Performance Losses (Time) ⋅ Ideal Cycle Amount
+Performance Losses (Amount) = Performance Losses (Time) x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -343,7 +345,7 @@ Performance Losses (Amount) = Performance Losses (Time) ⋅ Ideal Cycle Amount
 9.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -359,7 +361,7 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 11.
 </td>
 <td>
-Performance Losses (Time) = Availability Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Performance Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -391,7 +393,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>
@@ -483,7 +485,7 @@ Ideal Cycle Time = Ideal Cycle Amount<sup>-1</sup>
 2.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
+Ideal Amount = Potential Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -491,7 +493,7 @@ Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
 3.
 </td>
 <td>
-Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
+Ideal Production Amount = Actual Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -499,7 +501,7 @@ Ideal Production Amount = Actual Production Time ⋅ Ideal Cycle Amount
 4.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Time ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Machine Runtime = Actual Production Time x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -515,7 +517,7 @@ Actual Quality Amount = Actual Production Amount - Quality Losses (Amount)
 6.
 </td>
 <td>
-Quality Losses (Time) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Quality Losses (Time) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -539,7 +541,7 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 9.
 </td>
 <td>
-Ideal Quality Time = Actual Quality Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Quality Time = Actual Quality Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -555,7 +557,7 @@ Availability Losses (Time) = Availability Losses (Amount) - Ideal Cycle Amount<s
 11.
 </td>
 <td>
-Performance Losses (Time) = Performance Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Performance Losses (Time) = Performance Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -587,7 +589,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>
@@ -679,7 +681,7 @@ Ideal Cycle Time = Ideal Cycle Amount<sup>-1</sup>
 2.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
+Ideal Amount = Potential Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -687,7 +689,7 @@ Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
 3.
 </td>
 <td>
-Availability Losses (Amount) = Availability Losses (Time) ⋅ Ideal Cycle Amount
+Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -711,7 +713,7 @@ Ideal Machine Runtime = Actual Production Amount - Ideal Cycle Amount<sup>-1</su
 6.
 </td>
 <td>
-Ideal Quality Time = Actual Quality Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Quality Time = Actual Quality Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -727,7 +729,7 @@ Quality Losses (Amount) = Actual Production Amount - Actual Quality Amount
 8.
 </td>
 <td>
-Ideal Production Amount = Actual Production Amount ⋅ Ideal Cycle Amount
+Ideal Production Amount = Actual Production Amount x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -751,7 +753,7 @@ Quality Losses (Time) = Ideal Machine Runtime - Ideal Quality Time
 11.
 </td>
 <td>
-Performance Losses (Time) = Ideal Production Amount ⋅ Actual Production Amount
+Performance Losses (Time) = Ideal Production Amount x Actual Production Amount
 </td>
 </tr>
 <tr>
@@ -783,7 +785,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>
@@ -875,7 +877,7 @@ Ideal Cycle Time = Ideal Cycle Amount<sup>-1</sup>
 2.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
+Ideal Amount = Potential Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -883,7 +885,7 @@ Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
 3.
 </td>
 <td>
-Availability Losses (Amount) = Availability Losses (Time) ⋅ Ideal Cycle Amount
+Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -899,7 +901,7 @@ Actual Production Time = Potential Production Time - Availability Losses (Time)
 5.
 </td>
 <td>
-Ideal Quality Time = Actual Quality Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Quality Time = Actual Quality Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -915,7 +917,7 @@ Actual Production Amount = Actual Quality Amount + Quality Losses (Amount)
 7.
 </td>
 <td>
-Quality Losses (Amount) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1</sup>
+Quality Losses (Amount) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -923,7 +925,7 @@ Quality Losses (Amount) = Quality Losses (Amount) ⋅ Ideal Cycle Amount<sup>-1<
 8.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -931,7 +933,7 @@ Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</
 9.
 </td>
 <td>
-Ideal Production Amount = Actual Production Time  ⋅  Ideal Cycle Amount
+Ideal Production Amount = Actual Production Time  x  Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -979,7 +981,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>
@@ -1071,7 +1073,7 @@ Ideal Cycle Time = Ideal Cycle Amount<sup>-1</sup>
 2.
 </td>
 <td>
-Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
+Ideal Amount = Potential Production Time x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -1079,7 +1081,7 @@ Ideal Amount = Potential Production Time ⋅ Ideal Cycle Amount
 3.
 </td>
 <td>
-Availability Losses (Amount) = Availability Losses (Time) ⋅ Ideal Cycle Amount
+Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 </td>
 </tr>
 <tr>
@@ -1095,7 +1097,7 @@ Actual Production Time = Potential Production Time - Availability Losses (Time)
 5.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</sup>
+Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -1103,7 +1105,7 @@ Ideal Machine Runtime = Actual Production Amount ⋅ Ideal Cycle Amount<sup>-1</
 6.
 </td>
 <td>
-Quality Losses (Time) = Quality Losses (Time) ⋅ Ideal Cycle Time<sup>-1</sup>
+Quality Losses (Time) = Quality Losses (Time) x Ideal Cycle Time<sup>-1</sup>
 </td>
 </tr>
 <tr>
@@ -1175,7 +1177,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability ⋅ Performance ⋅ Quality
+OEE = Availability x Performance x Quality
 </td>
 </tr>
 <tr>

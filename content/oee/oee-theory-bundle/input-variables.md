@@ -4,7 +4,7 @@ title: Input variables for the OEE calculation
 layout: redirect
 ---
 
-In the OEE Application you can select **different calculation methods** that require different input variables.
+In the OEE application you can select different calculation methods that require different input variables.
 
 A total of 5 out of 7 input variables are required to calculate the OEE.
 
@@ -25,7 +25,7 @@ The following table shows the input variables and the relationship to the differ
 </colgroup>
 <tr>
 <th>
-Input varaibles
+Input variables
 </th>
 <th>
 Description
@@ -59,10 +59,10 @@ Model LPL/6
 Ideal Cycle Amount
 </td>
 <td>
-Ideal Production Speed
+Ideal production speed
 </td>
 <td>
-Link to the production plan or manual entry in the app.
+Link to the production plan or manual entry in the application
 </td>
 <td>
 x
@@ -91,7 +91,7 @@ Potential Production Time
 The period in which the machine is scheduled for production.
 </td>
 <td>
-Link to shift plan or manual entry in the app.
+Link to shift plan or manual entry in the application
 </td>
 <td>
 x
@@ -117,7 +117,7 @@ x
 Actual Production Time
 </td>
 <td>
-Describes the time period during which the machine is actually running and producing products, regardless of speed or quality. Since availability losses prevent production, the actual production time, unless it is an ideal machine, is always shorter than the Possible Production Time.
+Describes the time period during which the machine is actually running and producing products, regardless of speed or quality. Since Availability Losses prevent production, the Actual Production Time, unless it is an ideal machine, is always shorter than the Possible Production Time.
 </td>
 <td>
 Automatic reference
@@ -169,7 +169,7 @@ x
 Actual Production Amount
 </td>
 <td>
-Reflects the products manufactured in reality within the actual and Possible Production Time.
+Reflects the products manufactured in reality within the Actual Production Time and Possible Production Time.
 </td>
 <td>
 Automatic reference
@@ -196,7 +196,7 @@ x
 Quality Losses
 </td>
 <td>
-It is recommended to define quality losses in such a way that they include all products that do not immediately meet the required quality requirements, including rework, B-goods and start-up losses. The quality losses are concentrated on the parts produced by the plant and their quality and can be recorded quantitatively.
+It is recommended to define Quality Losses in such a way that they include all products that do not immediately meet the required quality requirements, including rework, B-goods and start-up losses. The Quality Losses are concentrated on the parts produced by the plant and their quality and can be recorded quantitatively.
 </td>
 <td>
 Automatic reference
@@ -223,7 +223,7 @@ x
 Actual Quality Amount
 </td>
 <td>
-The quality quantity is therefore calculated as follows: Actual Quality Amount = Actual Production Amount - Quality losses (amount).
+The quality quantity is therefore calculated as follows: Actual Quality Amount = Actual Production Amount - Quality Losses (amount).
 </td>
 <td>
 Automatic reference

@@ -63,7 +63,7 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 ### Additional customizations
 
-> **Info**: If no additional customizations are required, you can skip this section.
+> **Info:** If no additional customizations are required, you can skip this section.
 
 The following properties can be manually configured in the YAML file:
 

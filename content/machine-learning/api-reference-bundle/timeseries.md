@@ -30,7 +30,6 @@ Operations for time series data/model.
 ### POST – Generate time series model using time series data
 
 ```
-{{url}}/service/zementis/timeseries (deprecated)
 {{url}}/service/zementis/train/timeseries
 ```
 
@@ -179,7 +178,6 @@ curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Conten
 ### GET – Get status of generation of the time series model
 
 ```
-{{url}}/service/zementis/timeseries/{{model_name}}/status (deprecated)
 {{url}}/service/zementis/train/timeseries/{{model_name}}/status
 
 ```

@@ -17,6 +17,8 @@ If Activation by Personalization (ABP) is required to be used, refer to the [LoR
 In the next window fill in the required information:
 
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
+  
+    The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration
 - **Device protocol**: Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-device-protocols).
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.

@@ -11,4 +11,4 @@ If devices have previously been registered via the general device registration t
 - `https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceStatusCallback`.
 - `https://sigfox-agent.cumulocity.com/sigfoxErrorCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxErrorCallback`.
 
-> **Info**: General device registration for Sigfox devices is no longer supported.
+> **Info:** General device registration for Sigfox devices is no longer supported.

@@ -4,7 +4,7 @@ title: LWM2M device details
 layout: redirect
 ---
 
->**Info**: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
+>**Info:** In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
 
 ### <a name="objects"></a> Objects
 
@@ -12,7 +12,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 
 ![Objects view](/images/device-protocols/lwm2m/lwm2m-objects.png)
 
-> **Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
+> **Info:** In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
 
 The following operations may be available in each instance:
 
@@ -56,7 +56,7 @@ Click **Audit configuration** in the right of the top menu bar to navigate to th
 
 To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
 
-> **Info**: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
+> **Info:** The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 
 ![Sync properties](/images/device-protocols/lwm2m/lwm2m-devices-sync.png)
 

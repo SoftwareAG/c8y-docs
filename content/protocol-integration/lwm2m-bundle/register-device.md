@@ -281,7 +281,7 @@ Upon upload of the CSV file in Cumulocity IoT we should see that our "psk_device
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
 
 
-> **Info**: Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the *User guide*.
+> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the *User guide*.
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

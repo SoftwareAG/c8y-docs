@@ -27,20 +27,6 @@ In this case, it could happen the breadcrump navigation for Machine: "Drilling 3
 
 To save OEE data longer than 60 please change your platform settings. You can find the documentation how to change the retention rules [here](/users-guide/administration/#data-retention).
 
-### Can I use my ADAMOS HUB credentials to Log-In?
-
-The login automatically works with Singe-Sign-On.
-
-![Login](/images/oee/faq/faq-login.png)
-
-There are two ways to log in to the OEE-App:
-
-* The shown mask is to log in to the OEE-App directly via the Cumulocity tenant user.
-* Please click on "Log in with myADAMOS" to get two the other login mask, to login with your ADAMOS HUB user.
-
-We recommend using the ADAMOS HUB Login to effortlessly switch between different apps.
-Basically the chosen way of logging in has no effect on the usage of the OEE-APP.
-
 ### Which roles are distinguished by the application?
 
 #### Default User
@@ -69,7 +55,3 @@ Only *Admis Users* are allowed to change and create machine profiles, etc.
 #### Andon User (Soon)
 
 Access only to the *Andon Board*.
-
-### Why the app seems to be broken? (Hint for password)
-
-Please don't use "/" in your password since this leads to an error, that will be fixed with Cumulocity version 10.6.12.0.

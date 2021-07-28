@@ -32,10 +32,3 @@ That is not a calculation error, this is only an UI issue. All values have been 
 Please reduce the time span or choose a lower resolution (longer interval).
 
 ![Dashboard alarm](/images/oee/faq/faq-chart-loading-issue.png)
-
-### How can I provide a picture for a machine in the machine dashboard?
-
-The behavior is as follows:
-1. If the ADAMOS Hub provides an image, the high resolution image will be used
-2. If ADAMOS Hub provides no image or the request fails, the low resolution image will be used
-3. If the low resolution image is not available, we show the default image

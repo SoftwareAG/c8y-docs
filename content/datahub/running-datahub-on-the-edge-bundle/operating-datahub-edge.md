@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-Cumulocity IoT Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 
@@ -97,4 +97,4 @@ ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
 
 #### Backup and Restore
 
-DataHub's runtime state as well as the data lake containing offloaded data reside in the Cumulocity IoT Edge server VM. In order to back up and restore DataHub, its runtime state, and its data we recommend you to back up and recover the Cumulocity IoT Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).
+DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).

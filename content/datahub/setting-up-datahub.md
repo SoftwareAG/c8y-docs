@@ -4,4 +4,4 @@ weight: 30
 layout: bundle
 ---
 
-This section describes how to set up Cumulocity IoT DataHub.
+This section describes how to set up {{< product-c8y-iot >}} DataHub.

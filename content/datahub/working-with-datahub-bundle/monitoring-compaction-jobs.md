@@ -4,7 +4,7 @@ title: Monitoring compaction jobs
 layout: redirect
 ---
 
-During offloading, data from the Operational Store of Cumulocity IoT is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
 You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 
@@ -46,7 +46,7 @@ The list shows the execution history with each execution consisting of the follo
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled
 
-The system is configured to keep a limited history of the last compaction jobs. 
+The system is configured to keep a limited history of the last compaction jobs.
 
 Click **Reload** to refresh the list.
 
@@ -56,7 +56,7 @@ You can filter the entries by their status by using the filter control at the to
 
 <a id="details-compaction-job"></a>
 
-For a given compaction job, you can examine additional details of its execution. 
+For a given compaction job, you can examine additional details of its execution.
 
 Select a compaction job overview in the compaction history per offloading job or in the status of all compaction jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 

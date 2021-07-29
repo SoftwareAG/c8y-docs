@@ -66,3 +66,9 @@ or, to offload all data received by the platform after 2020-02-08 14:00:00.000, 
 ```
 src."creationTime"."date" > {ts '2020-02-08 14:00:00.000'}
 ```
+
+### Querying additional data with DataHub
+
+Main use-case of DataHub is to offload data from the internal Cumulocity IoT database to a data lake and query the data lake contents afterwards. In some use cases DataHub is required to query additional data which is not kept in the Cumulocity IoT database. For a cloud environment, the additional data must be provided as Parquet files and must be located in the specific bucket of the data lake as configured in the offloading settings of DataHub. The Parquet files must not be in folders that are used as target tables for offloadings as this would corrupt query processing of DataHub. The Parquet files themselves must be compliant with the [https://docs.dremio.com/data-formats/parquet-files/](Dremio limitations for Parquet files).
+
+For a dedicated environment, the additional data can be located somewhere else, provided it can be accessed via Dremio, e.g. in a relational database. For performance and cost reasons, however, data and processing should always be colocated.

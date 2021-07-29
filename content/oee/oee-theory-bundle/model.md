@@ -4,7 +4,17 @@ title: OEE model
 layout: redirect
 ---
 
-In the OEE model the capturability of values as well as the identification of capturable values is indicated by the adjectives "actual", "ideal" and "potential" in the respective terms. "Actual" quantities are real quantities and can be measured. "Potential" key figures cannot be measured at the machine, but can be derived from planning values of the organization. "Ideal" values, on the other hand, must be calculated and cannot be recorded directly.
+The {{< product-c8y-iot >}} OEE application, Overall Equipment Efficiency or OEE for short, is a metric used mainly in manufacturing companies that describes the performance of a machine, production line or factory as a single number. The metric is composed of the factors of availability, performance and quality. The application uses machine data, master data and planning data, for example from an ERP or MES, to calculate the factors of the OEE calculation. This way different OEE calculation methods can be based on the available data.
+
+The {{< product-c8y-iot >}} OEE allows you to create OEE calculation configurations for machines and machine lines. Each configuration is associated with a specific machine or machine line and defines how inputs are used in the OEE calculation formula. Possible data input can be:
+
+* live machine data, for example measurements, events, etc.,
+* CSV data and
+* ERP/MES data, for example factory shift plans or production schedules.
+
+Based on the calculation configurations and inputs, {{< product-c8y-iot >}} OEE then calculates the OEE, availability, performance, quality and various other metrics. The results are then displayed in the application dashboards. 
+
+In the OEE model the capturability of values as well as the identification of capturable values is indicated by the adjectives "actual", "ideal", and "potential" in the respective terms. "Actual" quantities are real quantities and can be measured. "Potential" key figures cannot be measured at the machine, but can be derived from planning values of the organization. "Ideal" values, on the other hand, must be calculated and cannot be recorded directly.
 
 ![OEE model](/images/oee/theory/theory-oee-model.png)
 

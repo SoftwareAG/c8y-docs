@@ -172,7 +172,9 @@ Each time a user logs in, the content of the access token is verified and is a b
 
 The user will be granted access to the global role "business" and the default application "cockpit".
 
-New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
+In a situation when no access mapping match against user access token, user will get "access denied" message when trying to log in. This will also happen when there is no access mapping defined causing all users to be unable to log in using SSO.
+
+New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
 New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
 
@@ -250,7 +252,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". There are no additional steps on Azure AD required.
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". Redirect URI should be set for a Web Application and not a Single Page Application. There are no additional steps on Azure AD required.
 
 ##### Cumulocity IoT configuration
 

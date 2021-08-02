@@ -1,5 +1,7 @@
 ---
 weight: 40
-title: Categories
+title: Calculation categories
 layout: redirect
 ---
+
+to be added

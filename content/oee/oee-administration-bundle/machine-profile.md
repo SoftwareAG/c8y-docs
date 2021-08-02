@@ -1,42 +1,60 @@
 ---
 weight: 21
-title: Creating a new machine profile
+title: Creating machine profiles
 layout: redirect
 ---
 
+Click **Create a machine profile** at the right of the top menu bar to start the configuration of a new machine profile in the profile configurator.  
+
 ### Profile
 
-After giving the machine profile a unique name, you can select between two different types of profiles:
+In the first step, you specify the profile name and type.
 
-**Internal profile:** <br>
-To setup a machine profile, that is using internal machine data and calculating the values for OEE, Availability, Performance and Quality itself you have to create an '*Internal profile*'. If you want to use the existing specifications of an existing machine profile as a template, you can select this profile in the box. The settings of the selected profile are then automatically adjusted in the profile modificator.
+![Profile tab](/images/oee/administration/machine-profile-create.png)
 
-**External profile:** For the inbound of external OEE data you can create an 'external profile'. After giving the profile a name and setting goals for OEE, Availability, Performance and Quality the tethered external OEE data will be displayed without any calculation. It is not possible to set rules or a timeframe because there is no splitting. The incoming data form the external source will just be split and displayed.
+1. In the **Profile name** field, provide a name for the new profile.
 
-For the tethered external OEE data, please ensure that the format of the values is in accordance with the demands of the OEE-App.
+2. Select the profile type:
 
-![External profile](/images/oee/administration/admin-external-profile.png)
+    **Standard profile**<br>
+    To set up a machine profile that is using internal machine data and calculating the values for OEE, Availability, Performance and Quality. At the right, you can select an existing machine profile as a template. The settings of the selected profile are then automatically adjusted in the profile modificator.
+
+    **External profile**<br>
+    To integrate external OEE data. After setting goals for OEE, availability, performance and quality the tethered external OEE data will be displayed without any calculation. It is not possible to set rules or a timeframe because there is no splitting. The incoming data from the external source will just be split and displayed.
+
+    >**Info:** For the tethered external OEE data, make sure that the format of the values is in accordance with the demands of the OEE application.
+
+3. Click **Save and continue** to proceed.
+
 
 ### Machine
 
-In this section of the modificator you can select the desired machine that will be connected to the profile.
+Next, select a machine to be connected with the profile.
 
-In case you have already selected an existing machine profile in the '*Profile*' step before, the machine will already be set accordingly.
+![Machine tab](/images/oee/administration/machine-profile-machine.png)
 
-![Machine profile](/images/oee/administration/admin-machine-profile.png)
+1. At the top, you may optionally enter a machine location. The machine location is used to associate shift plans with the machine. In the **Machine location** field you can enter free text for any type of location.
+
+2. Next, select the machine that will be connected with the profile from the provided list. In the search field, you may filter the selection by the machine name or ID. If you have selected an existing machine profile in the previous step, the machine will already be set accordingly.
+
+3. Click **Save and continue** to proceed.
+
 
 ### Workpiece
 
-You can either define a static workpiece that you want to process or you can use a production plan. The actual unit in the production is milliseconds.
+Next, specify the workpiece.
 
-1. **Static workpiece:**
+![Workpiece tab](/images/oee/administration/profile-workpiece.png)
 
-  * First enter a name for the workpiece.
-  * Second define the quantity characteristics. Therefor define the amount, the unit (either in pcs. or cbm.) per time (either seconds or minutes).
+1. Provide a name for the workpiece.
+2. Specify the quantity settings. Enter an amount, a unit (either "pcs" or "CMB") and a frequency (per minute or second).
 
-2. **Production Plan:**
+You can either define a static workpiece or use a production plan by activating the toggle **Allow production plan workpiece**.
 
-    By activating the toggle bar '*Allow Production Plan for Workpiece*' the filed production plan will be enabled. To file a production plan for a specific machine follow these steps:
+The production plan of a machine defines what is to be produced at any given time. If this option is enabled the ideal cycle time (e.g. 10 pcs/min) from the production plan is used as the Ideal Cycle Time of the OEE calculation.
+
+
+a production plan for a specific machine follow these steps:
   * First you need the required data objects in xHub: the machine needs to be created in the machine book and have a location, and you need a production plan for that location with an entry for the machine.
   * The ideal cycle time (e.g. 10 pcs/min) from the production plan for a workpiece machine combination is used as the ideal cycle time of the calculation. The cycle length is currently derived from the ideal cycle time and can either be 1 minute, 1 hour, or 1 day. Ideal cycle amount then is cycleLength/idealCycleTime.
   * Two things need to be configured in the profile (see 32022 on DEV for an example):
@@ -46,74 +64,82 @@ You can either define a static workpiece that you want to process or you can use
   * If no production plan is found, an error is logged and an alarm is raised that no production plan is available for the machine (most likely another alarm will be raised as the following OEE calculation is implausible)
   * [Swagger documentation](https://services.adamos-hub.dev/productionschedule-service/swagger-ui.html#/production-schedule-controller/createProductionScheduleUsingPOST)
 
-![Workpiece profile](/images/oee/administration/admin-workpiece-profile.png)
 
 ### Resolution
 
-In this section you can define up to 4 different resolution intervals. These intervals for the *Potential Production Time* will be available for the single- and section view of the profile in the OEE Chart.
+Next, define the resolution intervals.
 
-![Resolution profile](/images/oee/administration/admin-resolution-profile.png)
+![Resolution tab](/images/oee/administration/profile-resolution.png)
+
+For each resolution interval, provide an interval and a unit (one of min, hour, days).
+
+These resolution intervals are used as incremental Potential Production Time for the calculation, based on the OEE model.
 
 ### Computation
 
-Here you can choose the values which you want to enter for the mapping of the OEE input variables. You have the choice between 6 different calculation methods. For each of the calculation methods there have to exist 3 out of the 5 values, see schema on the left side. For more information about the input variables and the naming conventions of the pathways check the [General Information](/oee/oee-theory/) section
+Next, select a calculation method, i.e. the values for the mapping of the OEE input variables.
 
+![Computation](/images/oee/administration/profile-computation.png)
 
-**Note for pathway PQL(2) & LQL(5):**
-You should not use 'status event' in the mapping formula for both *Actual Quality Amount* and *Quality Losses (Amount)*, because as a sum they form the *Actual Production Amount*. Unlike the other calculation methods, no subset of the *Actual Production Amount* can be derived using the 'status event', since calculation methods 2 & 5 only consist out of subsets.
+You can select one of 6 different calculation methods. *For each of the calculation methods there have to exist 3 out of the 5 values, see schema on the left side. *
 
-![Resolution profile](/images/oee/administration/admin-computation-profile.png)
+For more information on the input variables and the naming conventions of the pathways, see [OEE theory](/oee/oee-theory/).
+
+>**Info:** For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
+
 
 ### Matching
 
-#### Functional overview (0)
+Next, define rules to determine which machine data is used for the OEE input variables.
+
+The following image provides an overview on the matching capabilities.
 
 ![Functional overview](/images/oee/administration/admin-matching-functional-overview.png)
 
-#### General (1)
+You can either define a calculation rule or set the calulation by at least two categories for every input variable. The categories need to be created under **Calculation categories**, see [Calculation categories](/oee/administration/#categories). The different categories are calculated together and result in the final input variable. But unlike the input variable, different lines will be displayed in the chart of the **Machine Dashboard** for the categories in addition to the input variable.
 
-Define rules to determine which machine data is used for the OEE input variables.
+#### Calculation rules
 
-You can define one calculation rule or at least two categories for every input variable. You can choose between the categories that you have created in the *Admin View*, see more in the categories section. The different categories are calculated together and result in the final input variable. But unlike the input variable, now different lines are displayed in the chart of the machine dashboard for the categories in addition to the input variable.
+Calculation rules can be defined as
 
-**Calculation Rules:**
+* Transformation rules ("Define quality status event" is not activated): This enables you to count parts, for example, and thus determine the actual production amount.
 
-* Calculation rules can be defined as transformation rules ('Define quality status event' is not activated): This enables you to count parts, for example, and thus determine the actual production amount. More examples with pictures are coming soon!
-
-* Calculation rules can be defined as Machine Status Events ('Define quality status event' is activated): Here you can specify, for example, that all parts of the actual production amount are counted towards the Actual Quality Amount while the machine has sent the status 'Quality OK'. In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine Status is possible for the input variables: 'Actual Production Time', 'Availability Losses', 'Actual Quality Amount' and 'Quality Losses'. See the example mappings below.
+* Machine status events ("Define quality status event" is activated): Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
 
 
-**Calculation Reset:**
+#### Calculation reset
 
-You can keep input values valid as long as a new values arrives, that replaces the old one, (false) or you can delete the value after using it *once* and stop the calculation until a new value arrives, which replaces the old one (*true*).
+You can keep input values valid as long as a new value arrives, that replaces the old one, (*false*) or you can delete the value after using it *once* and stop the calculation until a new value arrives, which replaces the old one (*true*).
 
-e.g. measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
+Example:
 
-For example, if the value is *false*, the calculation can be continued with an old value for the quality, whereas if the value is*true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
+measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
 
-**Extraordinary - fixed values:**
+If the value is *false*, the calculation can be continued with an old value for the quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
 
-If you want to have fixed KPIs or Inputs please follow the instructions:
+#### Extraordinary - fixed values
 
-Fixed KPIs
+If you want to have fixed KPIs or inputs follow these instructions:
 
-* *Fixed quality:* define the Actual Quality Amount or Quality Loss (amount) and take the Actual Production Amount formula and multiply it by the intended quality factor.
-* *Fixed availability:* define a formula for Actual Production Time or Availability Loss (time) using the intended availability factor multiplied by the constant 'intervalLength' e.g. '0.8 * intervalLength' for availability 80%.
-* *Fixed performance:* does not make much sense as it is dependant on multiple inputs.
+**Fixed KPIs**
+
+* Fixed quality: Define the Actual Quality Amount or Quality Loss (amount) and take the Actual Production Amount formula and multiply it by the intended quality factor.
+* Fixed availability: Define a formula for Actual Production Time or Availability Loss (time) using the intended availability factor multiplied by the constant "intervalLength", for example "0.8 * intervalLength" for availability 80%.
+* Fixed performance: Does not make much sense as it is dependant on multiple inputs.
 
 **Fixed Inputs**
 
-* *Actual Production Time:* can be provided as a static value, use 'intervalLength' to ensure correct value per interval.
-* *Availability Loss (time):* can be provided as a static value, use 'intervalLength' to ensure correct value per interval.
-* *Actual Production Amount:* needs to be derived from actual measurements.
-* *Actual Quality Amount & Quality Loss (amount):* can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2&5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
+* Actual Production Time: Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
+* Availability Loss (time): Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
+* Actual Production Amount: Needs to be derived from actual measurements.
+* Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
 
-![General](/images/oee/administration/admin-matching-general.png)
 
-#### Conditional Splitting for “Actual Productionamount”, ”Actual Qualityamount“, “Quality Loss Amount“
+#### Conditional splitting for Actual Production Amount, Actual Quality Amount, Quality Loss Amount
 
-The actual production amount can be determined, among other ways, with an If-Then rule.<br>
-In this example we derive the produced amount from an event "SateEvent" of the machine "CCS_804". As soon as the "content$sub_state$id" of the event has the content "3", it can be deduced that a workpiece has been produced. The same would of course also work with measurements or alarms.
+The actual production amount can be determined, among other ways, with an If-Then rule.
+
+In this example we derive the produced amount from an event "StateEvent" of the machine "CCS_804". As soon as the "content$sub_state$id" of the event has the content "3", it can be deduced that a workpiece has been produced. The same also works for measurements or alarms.
 
 ![Mapping view for splitting](/images/oee/administration/admin-mapping-view-for-splitting-1.png)
 
@@ -133,63 +159,60 @@ A possible extension would be to specify that the created workpieces are only sp
 
 #### Measurements
 
-Matching capabilities for measurements.
+The following image provides an overview on the matching capabilities for measurements.
 
-![Measurement](/images/oee/administration/admin-matching-measurements.png)
+![Measurement](/images/oee/administration/matching-measurements.png)
 
-#### Events & Alarms
+#### Events & alarms
 
-Matching capabilities for events and alarms.
+The following image provides an overview on the matching capabilities for events and alarms.
 
-![Events & alarms](/images/oee/administration/admin-matching-events-alarms.png)
+![Events & alarms](/images/oee/administration/matching-events-alarms.png)
 
-#### Events with Path
+#### Events with path
 
-There is no limit on the number of event types, but for each type there's a limit (150) to the number of unique 'paths' that are stored.
+There is no limit on the number of event types, but for each type there is a limit (150) to the number of unique paths that are stored.
 
 Is it also possible to manually address events with path through the text editor during mapping if the 150 paths are not sufficient.
 
-![Events with path](/images/oee/administration/admin-matching-events-with-path.png)
 
-### Correlation
+#### Correlation
 
-It is possibel to define correlations for the matchin parameters:
+It is possible to define correlations for the matching parameters.
 
-**(a)** no correlation
-<br><br>
-**(b)** correlation offset
-<br><br>
-**(c)** the correlation identifier
+* **(a)** no correlation
+* **(b)** correlation offset
+* **(c)** the correlation identifier
 
-In case **(b)** or **(c)** is defined, all values of every input are necessary to be provided, otherwise the step can't be saved.
+If **(b)** or **(c)** is defined, all values of every input are must be provided, otherwise the step cannot be saved.
 
 **Correlation Offset (b):**
 
-The user needs to define the amount and the unit of time (e.g. '*5*' and '*minutes*'). Only values >= 0 are accepted for the amount. As the configuration only consists of the *correlation offset* in seconds as part of the input, an additional UI fragment has been introduced which contains the values and the respective units. This fragment is required to properly restore the UI state (if we would only persist seconds, we could not restore the proper units).
+You must define the amount and the unit of time (for example "5" and "minutes"). Only values >= 0 are accepted for the amount. As the configuration only consists of the correlation offset in seconds as part of the input, an additional UI fragment has been introduced which contains the values and the respective units. This fragment is required to properly restore the UI state (if we only persist seconds, we cannot restore the proper units).
 
 **Correlation Identifier (c):**
 
-The user needs to define an identifier which can either be a transformation or a machine event. If a machine event is defined, it might overwrite an existing event (e.g. quality event is defined in the matching step and in the correlation step) as the current configuration model is supposed to only hold one quality and one machine event. The respective subscriptions will be also created for all defined correlation identifiers (and potentially their machine events). The new created subscriptions are appended to those coming from the matching rules (duplicates are filtered beforehand).
+You must define an identifier which can either be a transformation or a machine event. If a machine event is defined, it might overwrite an existing event (for example quality event is defined in the matching step and in the correlation step) as the current configuration model is supposed to only hold one quality and one machine event. The respective subscriptions will also be created for all defined correlation identifiers (and potentially their machine events). The new created subscriptions are appended to those coming from the matching rules (duplicates are filtered beforehand).
 
-- the definition of correlations will be allowed for machine and line profiles
-- depending on the mode while saving the step, unused attributes are removed (e.g. when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
-- correlation step gets also validated as part of the summary step, e.g. to show that the step is not yet completed
-- all values are properly written to the BE
+- The definition of correlations will be allowed for machine and line profiles.
+- Depending on the mode while saving the step, unused attributes are removed (e.g. when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
+- Correlation step gets also validated as part of the summary step, e.g. to show that the step is not yet completed.
+- All values are properly written to the BE.
 
 ![Correlation](/images/oee/administration/admin-correlation.png)
 
-### Short Stoppages
+### Short stoppages
 
-You can decide whether you would like to record short stoppages or not. All *Availability Losses* shorter than the set duration are no longer treated as *Availability Losses* but instead as *Performance Losses*.
+Optionally, you can record short stoppages. By default, short stoppages are not tracked.
 
-When the duration is set to one minute and an *Availability Loss (time)* is shorter than 60 seconds it will be deducted from the *Availability Losses (time)* and added to the *Performance Losses (time)* and the *Actual Production Time*.
+1. Select **Yes, should be tracked** to turn on the tracking.
+2. Provide a duration in minutes and click **Save and Proceed**.
 
-Please note:
+![Short stoppages](/images/oee/administration/profile-shortstoppages.png)
 
+All Availability Losses shorter than the set duration are no longer treated as Availability Losses but instead as Performance Losses. When the duration is set to one minute and an Availability Loss (time) is shorter than 60 seconds it will be deducted from the Availability Losses (time) and added to the Performance Losses (time) and the Actual Production Time.
 
-Short shutdowns currently only work if the *Actual Production Time* or the *Availability Losses* (time) are configured via machine status events. The reason is that you can only properly observe machine up- or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the availability loss time is one long shutdown or consists out of multiple short shutdowns.
-
-![Short stoppages](/images/oee/administration/admin-short-stoppages.png)
+>**Info:** Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the availability loss time is one long shutdown or consists out of multiple short shutdowns.
 
 ### Goals
 
@@ -208,25 +231,3 @@ The target is only fulfilled if the current value is above (>) the target value.
 In case you didn't fill out all the needed information about the machine profile the open tasks will be listed here.
 
 ![Summary](/images/oee/administration/admin-summary.png)
-
-
-### Example matching
-
-#### Machine status events for the Actual Quality Amount
-
-This is an example of the case 'Define quality status event' for the Actual Quality Amount:
-
-
-If the measurement 'torque' is below 100 then quality is 'true'.<br>
-All new produced parts (Actual Production Amount) are from now on good parts, until 'Tatsächliche_Produktionsmenge' is < 100.
-
-![Example matching](/images/oee/administration/admin-example-matching.png)
-
-####  Using IF THEN in a machine status
-
-For example there is an event that is telling what is being produced (=flowing through a pipe) and besides that there is a measurement that represents the pressure on a sensor. The threshold pressure signaling that the machine is producing or that the quality is ok might be dependent on the product that is being produced. This can be captured this by:
-
-if event(...) = "productA" then measurement(...) > 300.0; if event(...) = "productB" then measurement(...) > 210.0
-
-
-So if productA is produced and the pressure is above 300 the machine status for Actual Production Time would be true and the future timeframe will be valued as Production Time.

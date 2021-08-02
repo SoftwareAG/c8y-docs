@@ -4,28 +4,56 @@ title: Organization
 layout: redirect
 ---
 
-In the **Organization settings** page, admin users can customize the machine park **Overview**. Sites, areas and lines can be can arranged according to your needs.
+In the **Organization** page under **Administration**, you can customize the [**Machine Park Overview**](/oee/dashboards/#machine-park). Various entities, i.e. sites, areas and lines, can be created from here and can be arranged according to your needs.
 
-![organization](/images/oee/administration/admin-organization.png)
+![Organization](/images/oee/administration/admin-organization.png)
 
-### (1) Reordering
+The **Organization structure** area reflects the structure of the **Machine Park Overview**.
 
-By activating the toggle, the entities in the lower area (3) can be moved freely, thus changing the machine park overview.
+The entities listed in the **Unassigned entities** area, are not shown in the **Machine Park Overview** and no calculation is performed for them.
 
-### (2) Create a new entity
+Click the arrow icon at the right to expand or collapse the entity and show or hide its details.
 
-New entities (Site, Area, Line) can be created here.<br>
-Each entity must have a target, the description can be added optionally.
+<a name="create-entity"></a>
+### To create a new entity
 
-The created entity can then be found at the bottom of the page under "Unassigned entities" and must be moved to the active area (3).
+1. Click **Add a new entity** at the right of the top menu bar to create a new entity.
+2. In the dialog box, select the entity type (one of "Site", "Line", or "Area").
+3. Enter a unique name for the entity (mandatory) and an optional description.
+4. Specify a value for the OEE target in percent.
+5. Click **Add** to add the new entity.
 
-### (3) Edit organization structure
+![Creating a new site](/images/oee/administration/admin-create-site.png)
 
-This area represents the structure of the Machine Park Overview.
+The entity will be added to the bottom of the **Organization** page under **Unassigned entities**.
 
-* Using the plus icon, entities can be added to other entities.
-* Using the pencil icon, the entity can be edited.
-* Using the trashcan icon entities can be deleted or unassigned.
-* Using the arrow icon the entity can be expanded and collapsed.
+Lines have to be assigned to sites or areas.
 
-<br> Below this area is the "Unassigned entities" area, these entities are not shown in the Machine Park Overview and no calculation is performed for them.
+### To edit an entity
+
+Click the pencil icon next to the entity name to open the entity editor and edit the entity.
+
+### To assign an entity
+
+Click the **Add** button to add an entity (line, area, or machine) to another entity.
+
+#### Example: To attach a line to a site
+
+1. Click the **Add** button on the site to which you want to attach a line (entity).
+2. Select your desired line and click **Add**.
+
+The line will be added to the site in the **Organization structure** and get represented in the [**Machine Park Overview**](/oee/dashboards/#machine-park).
+
+### To unassign an entity
+
+Click the **Unassign** button at the right of an entity to unassign a previously attached entity.
+
+### To delete an entity
+
+Click the **Delete** button at the right of an entity to delete (and unassign) an entity.
+
+Deleting an entity will result in unassigning all entities previously assigned to this entity.
+
+### To rearrange entities
+
+By activating the **Enable drag and drop** toggle in the top menu bar, you can rearrange the entities under **Organization structure** and **Unassigned entities** by dragging and dropping them freely, thus modifying the **Machine park Overview**.

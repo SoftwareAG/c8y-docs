@@ -1,10 +1,8 @@
 ---
 weight: 20
-title: Profiles
+title: Managing profiles
 layout: redirect
 ---
-
-### Profile settings
 
 As an admin user you can manage profiles of lines and machines in the **Profile settings** page.
 
@@ -30,7 +28,7 @@ For each profile, the following information is provided:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left"> Profile status. One of: in use, not in use, not completed</td>
+<td align="left"> Profile status. One of "Active", "Inactive", "Not complete"</td>
 </tr>
 <tr>
 <td align="left">Profile type</td>
@@ -38,14 +36,18 @@ For each profile, the following information is provided:
 </tr>
 <tr>
 <td align="left">Entity ID</td>
-<td align="left"></td>
+<td align="left">Unique ID of the entity</td>
 </tr>
 <tr>
 <td align="left">Profile ID</td>
-<td align="left"></td>
+<td align="left">Unique ID of the profile</td>
 </tr>
 </tbody>
 </table>
+
+#### To view profile details
+
+Click the arrow icon on the left of an entry to expand or collapse it and show or hide the profile details, for example the machine name and the machine profile in case of machine profiles.
 
 #### To edit a profile
 

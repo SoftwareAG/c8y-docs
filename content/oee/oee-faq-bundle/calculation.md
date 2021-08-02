@@ -90,15 +90,19 @@ However, if your machine always sends the information that a workpiece has been 
 
 ![Status report](/images/oee/faq/faq-status-report.png)
 
-### Why does the ideal amount change?
+### Why does the Ideal Amount change?
 
-![Ideal amount change](/images/oee/faq/faq-ideal-amount.png)
+![Ideal Amount change](/images/oee/faq/faq-ideal-amount.png)
 
-The ideal amount is calculated based on the values you have entered for the workpiece while creating the profile.
+The Ideal Amount is calculated based on the values you have entered for the workpiece while creating the profile.
 
-The displayed ideal amount in the chart of the machine overview can change over the time, if you have activated the usage of a production plan.
+The displayed Ideal Amount in the chart of the machine overview can change over the time, if you have activated the usage of a production plan.
 
-Another reason can be that you have changed the resolution. The displayed ideal amount is always calculated for the corresponding resolution.
-e.g. You have entered "1.1 pcs/minute" on the workpiece section, while setting up the profile. 	
-* If you choose the resolution "1 mins" on the machine overview the displayed ideal amount for an interval will be 1,1 pcs
-* If you choose the resolution "10 mins" on the machine overview the displayed ideal amount for an interval will be 11 pcs.
+Another reason can be that you have changed the resolution. The displayed Ideal Amount is always calculated for the corresponding resolution.
+
+**Examples:**
+
+You have entered "1.1 pcs/minute" on the workpiece section, while setting up the profile. 	
+
+* If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs
+* If you choose the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.

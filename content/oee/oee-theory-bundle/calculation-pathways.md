@@ -4,11 +4,12 @@ title: Calculation pathways
 layout: redirect
 ---
 
+The following image explains the naming conventions of the pathways.
+
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 
-These terms appear throughout the OEE documentation.
 
-<!--You will find these namings again, while creating a new profile under the section Computation. -->
+The same terminology is used when creating a new profile in the **Computation** tab, see Administration > Creating machine profiles.
 
 ### Calculation pathway #1
 

@@ -6,7 +6,7 @@ aliases:
   - /event-language/advanced#custom-fragments
 ---
 
-Cumulocity IoT APIs give you the possibility to structure your data freely. In the Cumulocity Event Language this is also the case.
+{{< product-c8y-iot >}} APIs give you the possibility to structure your data freely. In the {{< c8y-event-language >}} this is also the case.
 Each of the output streams can be extended with custom fragments.
 You can add fragments by setting the fragments field in the stream with a list of key, value pairs. The key is the full JsonPath to the value.
 

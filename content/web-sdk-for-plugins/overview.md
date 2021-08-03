@@ -26,7 +26,7 @@ aliases:
 In the following section you will get an overview on the Web SDK for Plugins which allows you to:
 
 * Extend applications with your own plugins.
-* Add your own applications to Cumulocity IoT's web application.
+* Add your own applications to {{< product-c8y-iot >}}'s web application.
 * Enhance the visualization of data with custom widgets.
 * Implement functionalities tailored to your use case.
 
@@ -34,7 +34,7 @@ In the following section you will get an overview on the Web SDK for Plugins whi
 
 The illustration above shows the structure which lies behind the application and plugin development.
 
-As the default applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Both modules offer you services to interact with the Cumulocity IoT web application. While the module "c8y.core" provides services to access different kinds of data, such as users and managed objects as well as basic functionalities, the module "c8y.ui" provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the [REST API](/rest/introduction) provided by Cumulocity IoT. You can find examples on how to use the services in the plugin examples.
+As the default applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Both modules offer you services to interact with the {{< product-c8y-iot >}} web application. While the module "c8y.core" provides services to access different kinds of data, such as users and managed objects as well as basic functionalities, the module "c8y.ui" provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the [REST API](/rest/introduction) provided by {{< product-c8y-iot >}}. You can find examples on how to use the services in the plugin examples.
 
 The following section describes the [concepts](/web-sdk-for-plugins/concepts/) behind applications and plugins and specifies the required folder structure and different configuration options for applications and plugins. Next, the [setup](/web-sdk-for-plugins/setup/) necessary for developing applications and plugins is described.
 
@@ -46,4 +46,4 @@ Additionally, more complex examples are provided:
 * [Widget plugin](/web-sdk-for-plugins/widget-plugin/)
 * [Tab plugin](/web-sdk-for-plugins/tab-plugin/)
 
-Although an overview of the concepts of applications and plugins will be provided in the following, we recommend you to take a look at the basic concept of Cumulocity IoT applications described in [Developing applications](/concepts/applications).
+Although an overview of the concepts of applications and plugins will be provided in the following, we recommend you to take a look at the basic concept of {{< product-c8y-iot >}} applications described in [Developing applications](/concepts/applications).

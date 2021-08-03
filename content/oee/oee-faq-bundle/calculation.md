@@ -4,9 +4,9 @@ title: Calculation
 layout: redirect
 ---
 
-### How accurate are the calculations of the OEE Application?
+### How accurate are the calculations of the OEE application?
 
-After the OEE values are calculated, they are then checked again for consistency and plausibility. No deviations greater than 0.0002 are allowed. However, it should be considered that OEE is fundamentally a statistical value.
+After the OEE values are calculated, they are then checked for consistency and plausibility. No deviations greater than 0.0002 are allowed. However, it should be considered that OEE is fundamentally a statistical value.
 
 ### Are resolved alarms still considered in the calculations?
 
@@ -41,13 +41,13 @@ If the connection is interrupted and no machine data is received for an interval
 
 **Example:**
 
-The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the application. Therefore, no calculation was triggered. These intervals are thus ignored in the section view, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the picture indicate the that a new calculation is triggered.
+The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the application. Therefore, no calculation was triggered. These intervals are thus ignored in the section view, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the picture indicate that a new calculation is triggered.
 
 ![Loss of connection](/images/oee/faq/faq-loss-of-connection.png)
 
 ### If I recalculate the values myself I get different values.
 
-If the calculation is attempted on the basis of the input parameters (e.g.: Actual Production Time 60,3454 minutes), the following must be observed:
+If the calculation is attempted on the basis of the input parameters (for example, Actual Production Time 60,3454 minutes), the following must be observed:
 * The algorithm of the pathways must be followed
 * The calculation is done on a millisecond basis (2019-12-09T10:07:04.773)
 * No rounding is performed during the calculation in order not to multiply rounding errors. Only when the data is saved it is rounded to 4 decimal places, as can be seen when the data is exported (in the UI, it is rounded to 2 decimal places).

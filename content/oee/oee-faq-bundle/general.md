@@ -10,7 +10,7 @@ If an entity is assigned twice to another entity the breadcrumb navigation can b
 
 **Example:**
 
- Two lines with the same name "Production Line" (the profile name " - Line Profile" will not be taken into account) are assigned to the same site. One line is subordinate to an area.
+ Two lines with the same name "Production Line" (the profile name "Line Profile" will not be taken into account) are assigned to the same site. One line is subordinate to an area.
 
 * Site: "Darmstadt Hall 2"
   * Line: "Production Line"
@@ -23,35 +23,35 @@ If an entity is assigned twice to another entity the breadcrumb navigation can b
       * Machine: "Drilling 2"
       * Machine: "Drilling 3"
 
-In this case, it could happen the breadcrumb navigation for Machine: "Drilling 3" looks like this "Dashboard > Darmstadt Hall 2 > Production Line > Machine Dashboard" instead of "Dashboard > Darmstadt Hall 2 > Innovative Production > Production Line > Machine Dashboard".
+In this case, it may happen that the breadcrumb navigation for "Machine: Drilling 3" looks like this:
 
-### Values older than 60 days?
+ "Dashboard > Darmstadt Hall 2 > Production Line > Machine Dashboard"
 
-To save OEE data longer than 60 please change your platform settings. For more information on how to change the retention rules see [Administration > Data retention](/users-guide/administration/#data-retention) in the User guide.
+ instead of
 
-### Different roles in the application / Roles distinguished in application
+ "Dashboard > Darmstadt Hall 2 > Innovative Production > Production Line > Machine Dashboard".
 
-#### Default User
+### Where do I find values older than 60 days?
 
-The Default user has access to:
+To save OEE data longer than 60 days, you can change the data retention in your platform settings. For more information on how to change the retention rules, see [Administration > Data retention](/users-guide/administration/#data-retention) in the *User guide*.
+
+### Which roles are distinguished by the application?
+
+#### Default user
+
+The default user has access to:
 
 * Machine Park Overview
 * Machine Dashboard
-* Set Alarms
-* Glossary
 * Andon Board
+* Set alarms
 
-#### Admin User
+#### Admin user
 
-Only Admim Users are allowed to change and create machine profiles, etc.. It has access to:
+Only admim users are allowed to change and create machine and line profiles. Admin users have access to:
 
-* Admin View
+* Organization, Profiles, Calculation categories under Administration
 * Machine Park Overview
 * Machine Dashboard
-* Set Alarms
-* Glossary
 * Andon Board
-
-#### Andon User (Coming Soon)
-
-Access only to the Andon Board.
+* Set alarms

@@ -4,7 +4,7 @@ title: Dashboards
 layout: redirect
 ---
 
-### Are missing data points considered?
+### Does {{< product-c8y-iot >}} OEE consider missing data points?
 
 Connection lines are displayed for all consecutive points in the diagram. This happens even if values are "missing" between the points.
 
@@ -17,7 +17,6 @@ In the example on the left the selected calculation interval is '1 minute'. Ther
 If an alarm occurs in the OEE Machine Dashboard, this indicates that the mapping needs to be revised and adapted again. If this has been done, no further alarms should occur. Nevertheless, it is recommended to clear the alarm in the {{< product-c8y-iot >}} Device Management of the profile. This is the only way, the parameters displayed in the alarm will be renewed if a similar alarm occurs. The time stamp is also updated automatically without further action.
 
 ![Dashboard alarm](/images/oee/faq/faq-dashboard-alarm.png)
-
 
 ### An alarm has been raised but I can't see it in the dashboard
 

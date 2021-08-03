@@ -146,7 +146,7 @@ The following permission categories are available by default:
 <tbody>
 <tr>
 <td align="left">Alarms</td>
-<td align="left">View or edit alarms for devices.</td>
+<td align="left">View or edit alarms.</td>
 </tr>
 
 <tr>
@@ -156,7 +156,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Audits</td>
-<td align="left">View or create audit logs for devices.</td>
+<td align="left">View or create audit logs.</td>
 </tr>
 
 <tr>
@@ -181,7 +181,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Events</td>
-<td align="left">View or create events for devices.</td>
+<td align="left">View or create events.</td>
 </tr>
 
 <tr>
@@ -201,7 +201,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Measurements</td>
-<td align="left">View or create measurements for devices.</td>
+<td align="left">View or create measurements.</td>
 </tr>
 
 <tr>

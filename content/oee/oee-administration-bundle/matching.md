@@ -10,7 +10,7 @@ In the Matching section of a profile configuration, you define rules to determin
 
 The following image provides an overview on the matching capabilities.
 
-![Functional overview](/images/oee/administration/admin-matching-functional-overview.png)
+![Functional overview](/images/oee/administration/matching-functional-overview.png)
 
 You can either define a calculation rule or set the calculation by at least two categories for every input variable. The categories need to be created under **Calculation categories** first, see [Calculation categories](/oee/administration/#categories). The different categories are calculated together and result in the final input variable. But unlike the input variable, different lines will be displayed in the chart of the **Machine Dashboard** for the categories in addition to the input variable.
 
@@ -57,21 +57,21 @@ The Actual Production Amount can be determined, among other methods, with an IF-
 
 In this example we derive the produced amount from an event "StateEvent" of the machine "CCS_804". As soon as the "content$sub_state$id" of the event has the content "3", it can be deduced that a workpiece has been produced. The same also works for measurements or alarms.
 
-![Mapping view for splitting](/images/oee/administration/admin-mapping-view-for-splitting-1.png)
+![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-1.png)
 
 This rule looks like this in text form: "if evt("342", "StateEvent", "content$sub_state$id",false) = 3 then 1"
 
 If the IF condition is fulfilled, this means for the OEE app that a workpiece has been created, see green events.<br>
 If an IF condition is fulfilled, the created workpiece (quantity = 1) is split up to the last event, regardless of whether the event fulfills the If condition or not. The splitting is shown in red.
 
-![Mapping view for splitting](/images/oee/administration/admin-mapping-view-for-splitting-2.png)
+![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-2.png)
 
 This logic can also be applied to the "Actual quality amount" and "Quality loss amount".<br>
 Of course, all three input parameters can also be derived directly from MEAs, or the number of an MEA. The "Actual Quality Amount" and "Quality Loss Quantity" can also be determined by the machine status.
 
 A possible extension would be to specify that the created workpieces are only split up to the last event that also fulfills the If condition. This function is currently not yet available. (Internal note #5915)
 
-![Mapping view for splitting](/images/oee/administration/admin-mapping-view-for-splitting-3.png)
+![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-3.png)
 
 ### Measurements
 
@@ -126,7 +126,7 @@ This is an example of the case "Define quality status event" for the Actual Qual
 If the measurement "torque" is below 100 then quality is "true".<br>
 All new produced parts (Actual Production Amount) are from now on good parts, until 'Tatsächliche_Produktionsmenge' is < 100.
 
-![Example matching](/images/oee/administration/admin-example-matching.png)
+![Example matching](/images/oee/administration/example-matching.png)
 
 ####  Using IF-THEN in a machine status
 

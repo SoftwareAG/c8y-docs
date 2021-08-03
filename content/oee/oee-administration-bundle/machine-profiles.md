@@ -13,7 +13,7 @@ Click **Create a machine profile** at the right of the top menu bar to start the
 
 In the first step, you specify the profile name and type.
 
-![Profile tab](/images/oee/administration/machine-profile-create.png)
+![Profile tab](/images/oee/administration/profile-create.png)
 
 1. In the **Profile name** field, provide a name for the new profile.
 

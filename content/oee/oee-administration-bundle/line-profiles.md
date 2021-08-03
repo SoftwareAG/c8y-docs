@@ -48,8 +48,7 @@ For details on all steps of the profile configuration refer to [**Creating machi
 ### Step 6 - Activate the line profile
 
 To complete the creation of a new line profile you have to activate it in the **Organization** page under **Administration**.
+
 *The grey button indicates, that the profile is inactive and by clicking on it the profile will get activated, see picture.*
 
 **Info:** Make sure that all machine profiles of the line are activated.
-
-![Activate line](/images/oee/administration/admin-activate-line.png)

@@ -1,110 +1,55 @@
 ---
-weight: 22
+weight: 40
 title: Creating line profiles
 layout: redirect
 ---
 The following section walks you through the steps required to create a new line profile.
 
-### Create a new site
+### Step 1 - Create a new site
 
-Since lines are attached to a site or an area, we start by creating such an entity (here a site as an example).
+Since lines are attached to a site or an area, you first need to have such an entity available.
 
-To create a site, switch to the [Organization](/oee/oee-administration/#organization) page under **Administration**.
+Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [Organization > To create a new entity](/oee/oee-administration/#create-entity).
 
-1. Click **Create a new entity** at the right of the top menu bar.
-2. In the resulting window, select "Site" as entity type.
-3. Enter a unique name for the entity (mandatory) and an optional description.
-4. Specify a value for the OEE target in percent.
-5. Click add to add the new site.
+You can skip this step if you have already a site or area available to which you want to attach the new line profile.
 
-![Creating a new site](/images/oee/administration/admin-create-site.png)
+### Step 2 - Create a new line
 
-### Create a new line
+Next, create a new line in a similar way, this time selecting "Line" as entity type.
 
-Next, create a new line profile.
+### Step 3 - Attach the line to a site
 
-1. Click **Create a new entity** at the right of the top menu bar.
-2. In the resulting window, select "Line" as entity type.
-3. Enter a unique name for the entity (mandatory) and an optional description.
-4. Specify a value for the OEE target in percent.
-5. Click add to add the new line.
+1. Click the **Add** button on the site to which you want to attach a line (entity).
+2. Select your desired line and click **Add**.
 
-The line will be added to the **Organization structure**.
+The line will be added to the site in the **Organization structure** and get represented in the [**Machine Park Overview**](/oee/dashboards/#machine-park).
 
-![Creating a new line](/images/oee/administration/admin-create-line.png)
+### Step 4 Add machines to the line
 
-### Attach a line to a site
-
-1. Click the Add (+) button on the site to which you want to attach the line (entity).
-2. Select your desired line and click confirm by clicking add
+1. Click the **Add** button at the right of the line.
+2. Select the machines you want to assign to the line and click **Add**.
 
 
-The line will be added to the site in the **Organization structure** and get represented in the [Machine park](/oee/dashboards/#machine-park).
+### Step 5 - Create a line profile
 
-![Attach line](/images/oee/administration/admin-attach-line.png)
+Switch to the **Profile** Page under **Administration**. Click **Create a line profile** at the right of the top menu bar to start the configuration of a new line profile in the profile configurator.  
 
-### Add machines to a line
+1. In the first step (**Profile**), specify a profile name and type (either **Standard profile** or **External profile**). As with machine profiles, you can also create a new line profile based on an existing profile.
 
-Add the desired machines to the line.
+2. Next, select a line.
 
-![Add machines](/images/oee/administration/admin-add-machines.png)
+  ![Line](/images/oee/administration/line-profile-line.png)
 
-### Create a line profile
+3. Continue with the line mapping. You can now use the data of the machines you have previously assigned to the line.
 
-Create a new line profile in the profile tab of the admin page.
+For details on all steps of the profile configuration refer to [**Creating machine profiles**](#machine-profiles).
 
-1. Give the profile a name
-2. Save and continue
-3. Select the desired line as shown in the picture to the left</p>
 
-It is also possible to create a new line profile on the basis of an already existing profile just like it is possible with machine profiles.
+### Step 6 - Activate the line profile
 
-Continue with the line mapping >; You are now able to use the data of the machines you have previously assigned to the line.
-
-![Create a new line](/images/oee/administration/admin-line-creation.png)
-
-### Delete a line from a site
-
-In the **Organization** page, unassign a previously attached line from a site by clicking on the red delete button.
-
-> **Info:** Make sure to unassign but not to delete the entity. If you completely delete the line, the created profile will be treated as an external profile.
-
-### Attach a line profile to the site
-
-Attach the created line profile to the previously created entity (Site, Area, ...) by clicking the add button (+) in the Organizations Tab.
-
-![Attach line profile](/images/oee/administration/admin-attach-line-profile.png)
-
-### Activate the line profile
-
-To finalize the creation of a new line profile you have to activate it in the *Organization* tab of the admin view. The grey button indicates, that the profile is inactive and by clicking on it the profile will get activated, see picture.
+To complete the creation of a new line profile you have to activate it in the **Organization** page under **Administration**.
+*The grey button indicates, that the profile is inactive and by clicking on it the profile will get activated, see picture.*
 
 **Info:** Make sure that all machine profiles of the line are activated.
 
 ![Activate line](/images/oee/administration/admin-activate-line.png)
-
-### Calculation example of a line profile
-
-#### Initial situation
-
-In a production line there are two machine tools and one measuring machine in a row. The workpiece first passes through machine tool 1, then machine tool 2 and finally the measuring machine.
-
-The quality of the workpiece is measured at the measuring machine and not derived from the process parameters of the machine tools.
-
-#### Mapping + calculation logic (streaming analytics)
-
-##### Calculation of the availability
-
-To calculate the availability of the entire line, all three machines are considered. For each machine a machine profile is created which determines the production time based on the measured value "ActCycle", see figure on the left.
-
-To calculate the availability of the line, all three values (Actual Production Time) of the machine profiles are combined and divided by the number of machines. The aim here is a static consideration of availability and no availability is calculated in relation to a single workpiece. In this respect, this logic is also applicable to discrete as well as process manufacturing.
-
-##### Calculation of the performance
-
-The run rate is determined at the bottleneck machine, for example at the output rate of the last machine, here the measuring machine. Thus, the total run time of the workpiece is not considered.
-
-##### Calculation of the quality
-
-The quality quantity is derived directly from the quality events. This event is generated by the measuring machine.
-
-![Line example](/images/oee/administration/admin-line-example.png)

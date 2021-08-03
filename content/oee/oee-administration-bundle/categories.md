@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 70
 title: Calculation categories
 layout: redirect
 ---

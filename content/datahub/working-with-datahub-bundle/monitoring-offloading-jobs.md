@@ -47,10 +47,10 @@ The list shows the execution history, with each execution consisting of the foll
 | Job name | The name of the pipeline
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
-| Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty 
+| Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
 | \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
-The system is configured to keep a limited history of the last job executions. 
+The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
@@ -60,7 +60,7 @@ You can filter the entries by their status by using the filter control at the to
 
 <a id="details-offloading-job"></a>
 
-For a given offloading job, you can examine additional details of its execution. 
+For a given offloading job, you can examine additional details of its execution.
 
 >**Info**: You need administration permissions to access the job details.
 
@@ -90,10 +90,10 @@ Select a job overview in the history per offloading job or in the status of all 
 | Job name | The name of the pipeline
 | Job id | The internal ID of the job
 | Job execution id | The Dremio ID of this execution
-| Source collection | The name of the Cumulocity IoT base collection
+| Source collection | The name of the {{< product-c8y-iot >}} base collection
 | Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
-| Last watermark | The last watermark which indicates the data in the Cumulocity IoT collection that has already been processed
+| Last watermark | The last watermark which indicates the data in the {{< product-c8y-iot >}} collection that has already been processed
 
 **Offloading results**
 

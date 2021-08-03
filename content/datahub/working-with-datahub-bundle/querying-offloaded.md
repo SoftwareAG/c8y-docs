@@ -4,11 +4,11 @@ title: Querying offloaded Cumulocity IoT data
 layout: redirect
 ---
 
-Cumulocity IoT DataHub offers an SQL interface so that you can efficiently query offloaded (device) data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of Cumulocity IoT to the data lake.
+{{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded (device) data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
 
 ### Overview
 
-As described in section [Cumulocity IoT DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), Cumulocity IoT DataHub manages offloading pipelines which periodically extract data from the Operational Store of Cumulocity IoT, transform the data into a relational format, and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
+As described in section [DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), {{< product-c8y-iot >}} DataHub manages offloading pipelines which periodically extract data from the Operational Store of {{< product-c8y-iot >}}, transform the data into a relational format, and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
 
 Different standard interfaces exist for that purpose, namely JDBC, ODBC, and REST. In order to work with one of those interfaces, select **Home** in the navigation bar. Under **Quick links** you will find starting points for the different interfaces.
 

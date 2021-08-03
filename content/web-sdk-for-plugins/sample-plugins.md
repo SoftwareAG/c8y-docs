@@ -8,7 +8,7 @@ After setting up everything and getting an insight into the folder structure and
 
 * Clone or download and unpack the "Hello World!" plugin from [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 * Change into the directory that you just created.
-* Run "c8y install latest" to install the Cumulocity IoT UI package.
+* Run "c8y install latest" to install the {{< product-c8y-iot >}} UI package.
 * Run "c8y deploy:app myapplication". "myapplication" is the name of the "Hello World!" application specified in the "cumulocity.json" file.
 
 You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```. For example, type "export C8Y_TENANT=demos" on a Unix system to by default create your application in the tenant "demos".

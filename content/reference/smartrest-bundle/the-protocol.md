@@ -26,7 +26,7 @@ The *SmartREST* endpoint yields the following response. Note that the *HTTP* res
 
 Each row yielded by the *SmartREST* endpoint represents a set of extracted values from the result of a *SmartREST* request containing a unique unsigned integer, the *SmartREST* request line number and the extracted data values, respectively.
 
-Note: If response from Cumulocity IoT REST API would be empty (e.g. like after deleting a Managed Object) then response from *SmartREST* would be empty as well. Regardless of registered response templates.
+Note: If response from {{< product-c8y-iot >}} REST API would be empty (e.g. like after deleting a Managed Object) then response from *SmartREST* would be empty as well. Regardless of registered response templates.
 
 ### Data format
 
@@ -52,7 +52,7 @@ The following examples illustrate the rules stated above:
 
 ### Processing mode
 
-Similar to [Cumulocity IoT REST implementation](https://www.cumulocity.com/api/#section/REST-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, *PERSISTENT*, *TRANSIENT*, *QUIESCENT* or *CEP*. If the data sent to the *SmartREST* endpoint must be both stored in Cumulocity IoT database and be transferred to real-time processing, then *PERSISTENT* mode should be set. It is also enabled by default and does not require additional configuration.
+Similar to [{{< product-c8y-iot >}} REST implementation](https://www.{{< domain-c8y >}}/api/#section/REST-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, *PERSISTENT*, *TRANSIENT*, *QUIESCENT* or *CEP*. If the data sent to the *SmartREST* endpoint must be both stored in {{< product-c8y-iot >}} database and be transferred to real-time processing, then *PERSISTENT* mode should be set. It is also enabled by default and does not require additional configuration.
 
 In case when it is only needed to communicate data to real-time processing, the *TRANSIENT* processing mode should be specified by adding it to the header of *HTTP* request:
 
@@ -64,10 +64,10 @@ In case when it is only needed to communicate data to real-time processing, the 
 
 	100,1234456
 
-Please, note that with *TRANSIENT* mode in the header the body data is not persisted in Cumulocity IoT database.
+Please, note that with *TRANSIENT* mode in the header the body data is not persisted in {{< product-c8y-iot >}} database.
 
 During real-time processing, CEP scripts can be used to define if updates should be stored in the database or not.
 
-The *QUIESCENT* processing mode should be specified if data sent to the *SmartREST* endpoint must be both stored in the Cumulocity IoT database and be transferred to real-time processing but real-time notifications must be disabled. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
+The *QUIESCENT* processing mode should be specified if data sent to the *SmartREST* endpoint must be both stored in the {{< product-c8y-iot >}} database and be transferred to real-time processing but real-time notifications must be disabled. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
 
 The *CEP* processing mode should be specified if data sent to the *SmartREST* endpoint must only be transiently sent to real-time processing engine with real-time notifications disabled. Currently, the CEP processing mode is applicable for measurements and events only.

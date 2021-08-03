@@ -24,7 +24,7 @@ In order to achieve this goal you need to do the following steps:
 * Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
 * Add a tab to devices.
 * Display data in the tab.
-* Persist the data to Cumulocity IoT backend.
+* Persist the data to {{< product-c8y-iot >}} backend.
 
 We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/deviceContact".
 
@@ -91,7 +91,7 @@ Update the application manifest to add this new plugin to the import list.
 ### Add a tab to devices
 
 Now, we create an empty "Contact" tab in the device details view, which we will fill with contents in the following step.
-Inside the plugin folder, create a file "deviceContact.config.js" with the content below. Just like in the ["Hello world!" example](/web-sdk-for-plugins/hello-world), we will use the "c8yViewsProvider" service provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules) to add a new view to our application.
+Inside the plugin folder, create a file "deviceContact.config.js" with the content below. Just like in the ["Hello world!" example](/web-sdk-for-plugins/hello-world), we will use the "c8yViewsProvider" service provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules) to add a new view to our application.
 
 ```js
 (function() {
@@ -248,7 +248,7 @@ Edit the device contact view in deviceContact.html with the content below.
 
 After completing the following steps, you will be able to save the data entered in the new contact form.
 
-Update the controller in "deviceContact.controller.js" to also save data by adding another injection dependency and the content below just after the closing brace of the load function. "c8yDevices.save" is a [library function](http://resources.cumulocity.com/documentation/websdk/ng1-modules) that stores a device using the Cumulocity IoT REST API. "c8yAlert.success" is a library function that displays a green confirmation box at the top of the user interface.
+Update the controller in "deviceContact.controller.js" to also save data by adding another injection dependency and the content below just after the closing brace of the load function. "c8yDevices.save" is a [library function](http://resources.cumulocity.com/documentation/websdk/ng1-modules) that stores a device using the {{< product-c8y-iot >}} REST API. "c8yAlert.success" is a library function that displays a green confirmation box at the top of the user interface.
 
 
 ```js

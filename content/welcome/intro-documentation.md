@@ -19,6 +19,6 @@ This documentation includes all new features and functionality introduced with r
 
 To access the documentation index, click the arrow icon in the selection field below the logo on the top left:
 
-![Select guide](/images/about/about-docs-selection.png)
+![Select guide](/images/about/welcome-selection.png)
 
 >**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}), see [Additional resources](/welcome/additional-resources/).

@@ -411,7 +411,7 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
     <artifactId>microservice-package-maven-plugin</artifactId>
     <configuration>
         <application>
-            <name>cep</name>
+            <name>helloworld</name>
         </application>
 
         <!-- please note that the credentials are optional if they are already configured in settings.xml -->
@@ -429,7 +429,7 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
 To pass the configuration only to the particular build, execute the following command:
 
 ```shell
-$ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+$ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
 ```
 
 

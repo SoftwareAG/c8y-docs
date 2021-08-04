@@ -16,4 +16,8 @@ These are some useful references to get started with the basic technologies unde
 
 > **Important:** You need to have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 
+<<<<<<< HEAD
 If you face any issue or need technical support, please use the [Cumulocity IoT community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+=======
+If you face any issue or need technical support, refer to [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find there many useful questions and answers.
+>>>>>>> c5bd3997a (Merged in improvement/bugherd/task-346 (pull request #989))

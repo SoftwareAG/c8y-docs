@@ -209,6 +209,7 @@ The example below shows that the keys of the map are the user-defined expression
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
 (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes, they are considered as null.
+If the alarm status is explicitly provided in the alarm mapping of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
 
 <br><strong><em>Example:</em></strong></br>

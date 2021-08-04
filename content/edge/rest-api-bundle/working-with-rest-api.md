@@ -392,7 +392,7 @@ The servers must be NTP servers. If you specify multiple servers, any server spe
 
 **Response**
 
-The endpoint returns HTTP status 200.
+The endpoint returns HTTP status 201.
 
 ```json
 {
@@ -414,7 +414,7 @@ The endpoint returns HTTP status 200.
 {
     "enabled": true,
     "interval": 10,
-    "servers": ["timenet.eur.ad.sag"]
+    "servers": ["pool.ntp.org"]
 }
 ```
 
@@ -436,7 +436,7 @@ The endpoint returns `"enabled": true` if the microservices hosting feature is e
 
 ### POST /edge/configuration/microservices
 
-Use this endpoint to configure the microservices.
+Use this endpoint to configure the microservice hosting feature.
 
 >**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 

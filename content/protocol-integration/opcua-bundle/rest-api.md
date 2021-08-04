@@ -215,12 +215,12 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 <br><strong><em>Example:</em></strong></br>
 ```json
 {
-"alarmStatusMappings": {
-    "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
-    "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
-    "['0:ActiveState'].text == 'Inactive'": "CLEARED",
-    "default": "ACTIVE"
-  }
+    "alarmStatusMappings": {
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
+        "['0:ActiveState'].text == 'Inactive'": "CLEARED",
+        "default": "ACTIVE"
+    }
 }
 ```
 

@@ -9,7 +9,7 @@ The following image explains the naming conventions of the pathways.
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 
 
-The same terminology is used when creating a new profile in the **Computation** tab, see Administration > Creating machine profiles.
+The same terminology is used in the Computation section when creating a new profile, see [Administration > Creating machine profiles > Computation](/oee/administration/#machine-profiles).
 
 ### Calculation pathway #1
 

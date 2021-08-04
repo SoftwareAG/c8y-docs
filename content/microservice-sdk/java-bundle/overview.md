@@ -16,4 +16,4 @@ These are some useful references to get started with the basic technologies unde
 
 > **Important:** You need to have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 
-If you face any issue or need technical support, refer to [Software AG Tech Community](https://techcommunity.softwareag.com/en_en/cumulocity-iot.html). You will find there plenty of useful information there.
+If you face any issue or need technical support, refer to [Software AG Tech Community](https://techcommunity.softwareag.com/en_en/cumulocity-iot.html). You will find plenty of useful information there.

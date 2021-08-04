@@ -6,7 +6,7 @@ aliases:
   - /event-language/advanced#own-streams
 ---
 
-Creating complex modules is not doable in a single statement. While Cumulocity IoT already provides certain streams it is possible to create additional ones to control your event flow.
+Creating complex modules is not doable in a single statement. While {{< product-c8y-iot >}} already provides certain streams it is possible to create additional ones to control your event flow.
 It is not required to define a stream. If you use a unknown stream name it will automatically be created and defined with the input you set.
 
     insert into MyEvent
@@ -40,7 +40,7 @@ The general syntax is:
       var3Name var3Type
     );
 
-You can use every basic Java data type, data types from the imported [Java libraries](/event-language/functions#java-functions), Cumulocity IoT data types (like Event, Measurement, ManagedObject, ...) and other streams.
+You can use every basic Java data type, data types from the imported [Java libraries](/event-language/functions#java-functions), {{< product-c8y-iot >}} data types (like Event, Measurement, ManagedObject, ...) and other streams.
 
     create schema TwoMyEvents(
       firstEvent MyEvent,

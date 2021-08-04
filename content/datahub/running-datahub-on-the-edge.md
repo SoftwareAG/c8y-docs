@@ -4,4 +4,4 @@ weight: 60
 layout: bundle
 ---
 
-This section describes how to run Cumulocity IoT DataHub on the Cumulocity IoT Edge, the local version of Cumulocity IoT.
+This section describes how to run {{< product-c8y-iot >}} DataHub on the {{< product-c8y-iot >}} Edge, the local version of {{< product-c8y-iot >}}.

@@ -4,9 +4,9 @@ title: Concepts
 layout: bundle
 ---
 
-Before building an application or plugin, it is important to understand what is exactly meant by applications and plugins in Cumulocity IoT.
+Before building an application or plugin, it is important to understand what is exactly meant by applications and plugins in {{< product-c8y-iot >}}.
 
-In this context, applications are based on the Cumulocity IoT UI framework and make up the Cumulocity IoT UI. By default, the Cumulocity IoT UI consists of three core applications, namely "[Device Management](/users-guide/device-management/)", "[Administration](/users-guide/administration/)" and "[Cockpit](/users-guide/cockpit/)".
+In this context, applications are based on the {{< product-c8y-iot >}} UI framework and make up the {{< product-c8y-iot >}} UI. By default, the {{< product-c8y-iot >}} UI consists of three core applications, namely "[Device Management](/users-guide/device-management/)", "[Administration](/users-guide/administration/)" and "[Cockpit](/users-guide/cockpit/)".
 
 In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
 
@@ -27,7 +27,7 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 * Dashboard: Adds a new view/tab to groups and devices, functioning as a container for widgets.
 * Data point table: Adds a widget to dashboards providing a visualization of measurements in tabular form.
 
-> **Info:** You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of Cumulocity IoT (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
+> **Info:** You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of {{< product-c8y-iot >}} (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
 
 ### Project structure
 
@@ -70,7 +70,7 @@ Create an explicit root folder for your project. The Web SDK assumes that the pa
 <a name="application-manifest"></a>
 #### Application manifest
 
-The application manifest describes where your application is stored and how it is exposed to Cumulocity IoT.
+The application manifest describes where your application is stored and how it is exposed to {{< product-c8y-iot >}}.
 
 The following properties are available:
 
@@ -79,7 +79,7 @@ The following properties are available:
 * **contextPath**: The path to be used for hosted applications. The URL of the application will be `<<yourURL>>/apps/<<contextPath>>`.
 * **key**: The application key which is used for associating requests of an application with the application and for subscribing to applications.
 * **resourcesUrl**: If the application is serving an upload ZIP file (which is the case for Smartapps) this value will be '/'. If it is a full URL all requests will be proxied to that address.
-* **type**: *HOSTED*, if the application is hosted through Cumulocity IoT, *EXTERNAL*, if the application is hosted elsewhere.
+* **type**: *HOSTED*, if the application is hosted through {{< product-c8y-iot >}}, *EXTERNAL*, if the application is hosted elsewhere.
 * **imports**: A list of plugins used by the application. List of `<<applicationName>>/<<pluginName>>`.
 * **noAppSwitcher**: [optional] If set to true, the application will not appear in the app switcher menu. You might want to use this, for example, if the application only exposes plugins.
 * **options**:
@@ -91,7 +91,7 @@ The following properties are available:
 <a name="plugin-manifest"></a>
 #### Plugin manifest
 
-The plugin manifest describes how your plugin is shown in the Cumulocity IoT Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
+The plugin manifest describes how your plugin is shown in the {{< product-c8y-iot >}} Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 
 * **name**: [required] A descriptive name for the plugin.
 * **description**: [optional] A longer description of the plugin.
@@ -102,4 +102,4 @@ The plugin manifest describes how your plugin is shown in the Cumulocity IoT Adm
 * **less**: [optional] A list of LESS files to be loaded, paths relative to the plugin's root folder.
 * **copy**: [optional] A list of files that should be copied into the built.
 
-Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](https://cumulocity.com/api/#tag/Application-API). Examples of manifest files can be found in [the bitbucket repository](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](https://{{< domain-c8y >}}/api/#tag/Application-API). Examples of manifest files can be found in [the bitbucket repository](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).

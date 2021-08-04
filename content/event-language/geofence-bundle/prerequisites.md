@@ -11,7 +11,7 @@ This geofence will be a circle and should be configurable for each device separa
 While it is moving outside it should not create new alarms because the first one will keep active.
 As soon as the device moves back into the geofence the alarm will be cleared.
 
-### Cumulocity data model
+### Data model
 
 Location event structure (the part we need):
 

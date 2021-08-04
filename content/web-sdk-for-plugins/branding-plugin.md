@@ -14,7 +14,7 @@ You can find this and all the other plugins described in the documentation insid
 
 ![Branding example](/images/plugins/branding.png)
 
-Our main CSS is based on the popular CSS framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on Cumulocity IoT's own base branding simply by overriding less variables.
+Our main CSS is based on the popular CSS framework [Bootstrap 3](http://getbootstrap.com/). It is possible to build a branding plugin based on {{< product-c8y-iot >}}'s own base branding simply by overriding less variables.
 
 As the myBranding example is much more extensive than the other plugins, copy over the myBranding folder into your plugins folder.
 

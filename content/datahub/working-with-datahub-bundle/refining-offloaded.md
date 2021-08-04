@@ -25,7 +25,7 @@ To access Dremio, navigate to the home page. Under **Quick links** click on the 
 
 On the **Login** screen, enter your Dremio account credentials. Click **Login** to enter Dremio.
 
-When you log in successfully, you will be taken to the home page of Dremio. 
+When you log in successfully, you will be taken to the home page of Dremio.
 
 When you want to log out, click on your user name at the right of the top bar  and then select **Log out**.
 
@@ -37,7 +37,7 @@ On the home page of Dremio you will find at the left under **Datasets** two pane
 
 In the **Sources** panel there is the data source `YourTenantIdDataLake`. This source has been auto-configured for you and points to your data lake.
 
-> **Info:** Terminology-wise, Cumulocity IoT DataHub replicates data from the Operational Store of Cumulocity IoT into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
+> **Info:** Terminology-wise, {{< product-c8y-iot >}} DataHub replicates data from the Operational Store of {{< product-c8y-iot >}} into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
 
 When you click on your data source it will be shown in the main panel. Clicking on the source in the main panel navigates into the data source. Here, you see a list of all target tables of your offloading pipelines. Clicking one of these target tables opens an SQL editor which allows you to run queries against that target table.
 
@@ -45,7 +45,7 @@ When you click on your data source it will be shown in the main panel. Clicking 
 
 #### Spaces
 
-A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdSpace`, e.g. `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), for the inventory, events, and alarms collections there is a pair of preconfigured views providing either all or latest data.
+A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, e.g. `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), for the inventory, events, and alarms collections there is a pair of preconfigured views providing either all or latest data.
 
 #### Job history
 
@@ -55,7 +55,7 @@ The **Job History** tab at the top of the screen displays jobs/queries you have 
 
 ### Creating views
 
-With Cumulocity IoT DataHub, you can replicate data from a Cumulocity IoT collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included. 
+With {{< product-c8y-iot >}} DataHub, you can replicate data from a {{< product-c8y-iot >}} collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included.
 
 Depending on your use cases, you will often find the need to provide a view on the data, which limits, filters, or transforms the data, e.g. converting Celsius to Fahrenheit or extracting data from JSON fragments.
 

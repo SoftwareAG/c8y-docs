@@ -87,12 +87,12 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 
 <img src="/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
-For example, assume that your tenant ID is "t07007007", your username is "winter" and your password is "jh0nS0nw". A simple way to determine the correct value for the "auth" key is using the Base64 command as follows:
+For example, assume that your tenant ID is "t07007007", your username is "winter" and your password is "jh0nS0nw". A simple way to determine the correct value for the `auth` key is using the Base64 command as follows:
 
 ```shell
 $ echo -n t07007007/winter:jh0nS0nw | base64
 ```
 
-The resulting text is "dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==" and you need to use `Basic dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==` as value for the "auth" key. You can achieve the same result also by using an online Base64 encode/decode tool.
+The resulting text is "dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==" and you need to use `Basic dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==` as value for the `auth` key. You can achieve the same result also by using an online Base64 encode/decode tool.
 
 Now it is time to start exploring the API!

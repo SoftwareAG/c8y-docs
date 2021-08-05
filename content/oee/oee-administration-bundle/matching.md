@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Matching
+title: Matching data
 layout: redirect
 ---
 
@@ -33,7 +33,7 @@ measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
 
 If the value is *false*, the calculation can be continued with an old value for the quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
 
-#### Extraordinary - fixed values
+#### Exception: Fixed values
 
 If you want to have fixed KPIs or inputs follow these instructions:
 
@@ -51,7 +51,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 * Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
 
 
-### Conditional splitting for Actual Production Amount, Actual Quality Amount, Quality Loss Amount
+### Conditional splitting
 
 The Actual Production Amount can be determined, among other methods, with an IF-THEN rule.
 

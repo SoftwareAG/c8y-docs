@@ -76,7 +76,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE.
 
 ![Calculation pathway 1](/images/oee/theory/theory-calculation-pathway-1.png)
 

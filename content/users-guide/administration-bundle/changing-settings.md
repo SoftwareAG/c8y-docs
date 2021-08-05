@@ -452,7 +452,6 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
 - [LoRa](/users-guide/optional-services#lora)
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)

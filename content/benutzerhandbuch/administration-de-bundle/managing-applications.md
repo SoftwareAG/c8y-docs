@@ -269,12 +269,6 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
-<td style="text-align:left">impact</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPCUA</a></td>
 <td style="text-align:left">Kommunizieren Sie mit OPC UA-Servern über ein OPC UA-Geräte-Gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>

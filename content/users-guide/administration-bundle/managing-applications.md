@@ -344,7 +344,7 @@ In the resulting dialog box, choose one of the following methods:
 
 The application is created once the ZIP file has been successfully uploaded.
 
-<img src="/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+>**Important:** The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 
 ##### <a name="uploading-microservices"></a>To upload a microservice
 

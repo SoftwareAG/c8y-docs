@@ -4,6 +4,7 @@ title: Overview
 layout: bundle
 aliases:
   - /protocol-integration/lora-loriot
+  - /protocol-integration/impact
 ---
 
 IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols.

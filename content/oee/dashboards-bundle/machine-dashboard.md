@@ -8,9 +8,10 @@ The machine dashboard offers a detailed view about the current status and develo
 
 ![Machine dashboard](/images/oee/dashboards/dashboard-machine-dashboard.png)
 
-### (1) Open Andon Board
+### Opening the Andon Board
 
-By clicking on this button a new tab will open displaying the 'Andon Board' of the specific machine: [Andon Board](/oee/dashboards/#andon-board)
+Click **Andon Board** at the right of the top menu bar to switch to the **Andon Board** of this particular machine, see   [Andon Board](#andon-board).
+
 
 ### (2) Enter Quality Data
 
@@ -42,43 +43,24 @@ Example: See illustration on the left.
 
 ![Entering data 3](/images/oee/dashboards/dashboard-manual-date-entry-3.png)
 
-### (3) CSV-Upload
 
-In the Machine Dashboard, OEE values and input parameters can be uploaded as CSV. The CSV upload function and the quality data input are based on the same logic.
 
-By clicking the button '*Upload CSV*' an interface will open where you can upload OEE values and input parameters in the form of a CSV file which will directly be assigned to the machine using the provided mask.
+### Export CSV
 
-This functionality will be available soon. After completion, detailed information about this function can be found on the following page: [CSV upload](/oee/csv-upload/)
+Click **Export as CSV** at the right. The **Export** page in the Cockpit application will open.
 
-### (4) Export CSV
+1. Click **Add export** in the top menu bar.
+2. Enter a name for the export and select the file type (CSV is the default) for the output.
+3. Under **Filters**, select **Objects to export**, enter the profile name to be exported and select it from the list.
+4. Under **Fields**, turn **Managed objects** on, and add the following columns:
+  * <br>"OEE Profile" - > "@com_adamos_oee_datamodel_MachineOEEConfiguration"
+  * <br>"Cumulocity Id" - >id
+  * <br>"Name" -> name
 
-**Step 1**<br>
-Click the "**Export as csv**" button in machine dashboard.
+>**Info**: Column names are user defined, whereas the path is the fragment name of the managed object.
 
-![Step 1](/images/oee/dashboards/dashboard-export-csv-1.png)
 
-**Step 2**<br>
-You’re redirected to the export page of Cockpit (Note: you might ask to login again).
-
-![Step 2](/images/oee/dashboards/dashboard-export-csv-2.png)
-
-**Step 3**<br>
-Click on "**Add export**" button top-right corner.
-
-![Step 3](/images/oee/dashboards/dashboard-export-csv-3.png)
-
-**Step 4**<br>
-Following form is opened, fill the mandatory field such as Name and filters
-  1. Fill the “Name” field
-  2. Select the “File type” you want to export (by default set to csv)
-  3. In Filters, “Object to export” value should be filled, enter the profile name which needs to be exported and select the profile from the list.
-  4. In Fields, Switch the “Managed objects” to ON and fill the following column<br>
-  "OEE Profile" - > "@com_adamos_oee_datamodel_MachineOEEConfiguration"<br>
-  "Cumulocity Id" - >id<br>
-  "Name" -> name
-
-Note:
-Column names are user defined, where as path is the fragment name of managed object.
+See also [Cockpit > Managing exports](/users-guide/cockpit/#exports/) for details on the export functionality. 
 
 ![Step 4](/images/oee/dashboards/dashboard-export-csv-4-1.png)
 ![Step 4](/images/oee/dashboards/dashboard-export-csv-4-2.png)

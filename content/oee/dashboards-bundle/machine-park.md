@@ -1,42 +1,48 @@
 ---
 weight: 20
-title: Machine park
+title: Machine park overview
 layout: redirect
 ---
 
-This is your landing page. Here you can find aggregated information about your machine park, see picture below. In the following you will receive an explanation of every segment displayed on the *'Machine Park Overview'*.
+The **Overview** page is the landing page of the OEE application. Here you can find aggregated information on the OEE values of your machine park.
 
-*(The color indicates if a group, line or machine is above or below a defined target value.)*
+**add image**
 
-*(Every 10 minutes a new value is calculated for the elapsed 10 minutes.)*
+Depending on the defined target value, the OEE box for an entity is either displayed in green (above threshold) or in red (below threshold). The particular value and the threshold are also shown in the OEE box.
+
+Every 10 minutes a new value is calculated. The precise timestamp is shown in the latest update information.
 
 ### Overview
 
-![Dashboard](/images/oee/dashboards/dashboard-overview.png)
+In the upper section, the OEE overview for the entire machine park is shown, i.e. the average OEE value of all sites, lines and machines listed on the **Machine Park Dashboard**.
 
-### (1) Machine Park OEE
+### Areas, sites and lines
 
-The '*Machine Park OEE*' displays the average OEE value of all Sites, Lines and Machines listed on the *Machine Park Dashboard*. Depending on the defined target value for the OEE of a Site, Line or Machine the OEE is either displayed in green (above threshold) or in red (below threshold).
+Below, the OEE for the areas, sites and lines is displayed.
 
-### (2) Search and Filter
+Clicking the arrows expands (or collapses) an entity and shows (or hides) the entities attached to it.
 
-In the search bar you can search for specific sites, areas, lines and machines by searching for their profile name. By clicking the checkbox 'Show only items with todos' only sites, areas, lines and machines with open to-do's will be displayed. The button '*Expand all*' expands all lines, areas and sites and the button '*Collapse all*' folds them up again.
+**add image**
 
-### (3) Areas, Sites and Lines</h3>
+The OEE value for an entity is calculated as the average or the product (see below) of the associated entities that follow in the hierarchy. The hierarchy is as follows: Site < Area < Line < Machine.
 
-Clicking on the text of an area, site or line will expand the view so that you can see the entities attached to it, as shown in the picture.
+For sites, areas and lines you can select one of the following options for the OEE calculation:
+
+* the average of the attached entities
+* the product (percentages) of the attached entities
+
+This can either be configured when creating an area, site or line profile or set later under **Administration** > **Organization**, see [Administration](/oee/administration/).
 
 
-The OEE value for an entity is calculated as the average or the product of the associated entities that are next in hierarchy. Hierarchy is as follows: Site < Area < Line < Machine.
+In the search field at the top left you can search for specific sites, areas, lines and machines by searching for their profile name.
 
-For sites, areas and lines you can chose between the following options for their OEE calculation:
+By clicking the checkbox 'Show only items with todos' only sites, areas, lines and machines with open to-do's will be displayed.
 
-* as the average of the attached entities
-* as the product (percentages) of the attached entities
+An orange alarm icon at the right of an entry indicates an alarm within this entity, together with the number of alarms  shown in red.
 
-This can be adjusted by a toggle bar either whilst creating the area, site or line profile and can be adjusted later in the '*Organization*' tab of the admin view. More information in the section '*Organization*' in the admin view paragraph of this documentation.
+Alarm status?
 
-![Sites](/images/oee/dashboards/dashboard-machine-site.png)
+
 
 ### (4) Legend
 

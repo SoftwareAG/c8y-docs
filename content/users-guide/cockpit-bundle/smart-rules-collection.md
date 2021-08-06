@@ -698,7 +698,6 @@ and the measured value is 55, a MINOR alarm (yellow) will be created.
 
 Using these mechanisms, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
 
-
 **Parameters**
 
 The rule uses the following parameters:
@@ -782,6 +781,9 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
+>**Info:** Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+
+
 <a name="threshold-explicit"></a>
 ### On measurement explicit threshold create alarm
 
@@ -854,6 +856,8 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+
+>**Info:** ​Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 <a name="smart-rules-variables"></a>
 ### Smart rule variables

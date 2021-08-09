@@ -411,7 +411,6 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
 - [LoRa](/users-guide/optional-services#lora)
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)

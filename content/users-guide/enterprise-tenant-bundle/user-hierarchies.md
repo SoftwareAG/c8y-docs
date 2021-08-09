@@ -29,9 +29,9 @@ User hierarchies are created by assigning an "owner" to a user. The owner can ma
 
 ![Select owner](/images/users-guide/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
->**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "User" ADMIN permission can assign an owner to a user.
-
-> If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.
+>**Info:** When creating a new user, the owner is automatically set to the user who is logged in if the logged-in user has only "User management" CREATE permission. The owner can be changed later, but only by a user with "User management" ADMIN permission.
+<br><br>
+>If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with "User management" permission for all users.
 
 **Example**
 

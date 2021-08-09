@@ -4,8 +4,6 @@ title: OEE model
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} OEE application, Overall Equipment Efficiency or OEE for short, is a metric used mainly in manufacturing companies that describes the performance of a machine, production line or factory as a single number. The metric is composed of the factors of availability, performance and quality. The application uses machine data, master data and planning data, for example from an ERP or MES, to calculate the factors of the OEE calculation. This way different OEE calculation methods can be based on the available data.
-
 The {{< product-c8y-iot >}} OEE allows you to create OEE calculation configurations for machines and machine lines. Each configuration is associated with a specific machine or machine line and defines how inputs are used in the OEE calculation formula. Possible data input can be:
 
 * live machine data, for example measurements, events, etc.,

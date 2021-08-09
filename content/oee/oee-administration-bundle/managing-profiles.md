@@ -4,7 +4,7 @@ title: Managing profiles
 layout: redirect
 ---
 
-As an admin user you can manage profiles of lines and machines in the **Profile settings** page.
+In the **Profile settings** page, you can manage profiles of lines and machines.
 
 The **Profile settings** page shows a list of all available profiles.
 
@@ -36,11 +36,11 @@ For each profile, the following information is provided:
 </tr>
 <tr>
 <td align="left">Entity ID</td>
-<td align="left">Unique ID of the entity</td>
+<td align="left">Unique managed object ID of the machine or line for which the profile calculates the OEE</td>
 </tr>
 <tr>
 <td align="left">Profile ID</td>
-<td align="left">Unique ID of the profile</td>
+<td align="left">Unique managed object ID of the OEE calculation profile</td>
 </tr>
 </tbody>
 </table>
@@ -48,6 +48,13 @@ For each profile, the following information is provided:
 #### To view profile details
 
 Click the arrow icon on the left of an entry to expand or collapse it and show or hide the profile details, for example the machine name and the machine profile in case of machine profiles.
+
+#### To create a new profile
+
+Click **Create new machine profile** or **Create new line profile** at the right of the top menu bar to create a new profile.
+
+For details, see [Creating machine profiles](#machine-profiles) or [Creating line profiles](#line-profiles).
+
 
 #### To edit a profile
 
@@ -57,8 +64,4 @@ In the context menu of an entry, click **Edit** to edit a profile.
 
 In the context menu of an entry, click **Delete** to delete a profile.
 
-#### To create a new profile
-
-Click **Create new machine profile** or **Create new line profile** at the right of the top menu bar to create a new profile.
-
-For details, see [Creating machine profiles](#machine-profiles) or [Creating line profiles](#line-profiles).
+#### To activate a profile

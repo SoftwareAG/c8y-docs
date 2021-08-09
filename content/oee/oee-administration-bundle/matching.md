@@ -91,6 +91,7 @@ There is no limit on the number of event types, but for each type there is a lim
 
 Is it also possible to manually address events with path through the text editor during mapping if the 150 paths are not sufficient.
 
+<!-- This feature won’t be available in this version but it will be added back at a later date.
 
 ### Correlation
 
@@ -116,6 +117,8 @@ You must define an identifier which can either be a transformation or a machine 
 - All values are properly written to the BE.
 
 ![Correlation](/images/oee/administration/admin-correlation.png)
+
+-->
 
 ### Example matching
 

@@ -44,7 +44,7 @@ pipeline {
           sh '''bash --login
           echo ${params.BRANCH}
 
-          splitBranch = ${params.BRANCH} | sh '''sed -e "s/.*\///g"'''
+          splitBranch = ${params.BRANCH} | sh '''sed -e "s/.*\\///g"'''
 
           echo splitBranch
 

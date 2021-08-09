@@ -34,6 +34,7 @@ To configure remote-connectivity, use the following endpoints:
 - [POST /edge/configuration/remote-connectivity](/edge/rest-api/#post-edgeconfigurationremote-connectivity)
 - [GET /edge/configuration/remote-connectivity](/edge/rest-api/#get-edgeconfigurationremote-connectivity)
 
+<a name="registering-the-edge-appliance-in-the-cumulocity-iot-tenant"></a>
 ### Registering the Edge appliance in the {{< product-c8y-iot >}} tenant
 
 Before performing these steps, ensure that you have configured the URL for the {{< product-c8y-iot >}} tenant in the Edge appliance.   
@@ -53,6 +54,7 @@ Before performing these steps, ensure that you have configured the URL for the {
    Once the device is connected, the device status changes to **Pending acceptance**.
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.
 
+<a name="accessing-the-edge-appliance-from-the-cumulocity-iot-tenant"></a>
 ### Accessing the Edge appliance from the {{< product-c8y-iot >}} tenant
 
 The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of {{< product-c8y-iot >}}.
@@ -84,7 +86,7 @@ For more information about remote access, see [Cloud Remote Access](/cloud-remot
 
 You can access the Edge appliance from the {{< product-c8y-iot >}} tenant by installing the VNC components on your Edge appliance.
 
-**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 #### Step 1: Installing the VNC components
 
@@ -134,7 +136,7 @@ You can change the VNC password for the current user by running the *vnc-user-se
 
 You can access the Edge appliance from the {{< product-c8y-iot >}} tenant through SSH.
 
-**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 To access and connect to the Edge appliance:
 

@@ -4,8 +4,8 @@ layout: bundle
 title: Introduction
 ---
 
-Welcome to the Cumulocity IoT OEE application.
+Welcome to the {{< product-c8y-iot >}} OEE application.
 
-**OEE (Overall Equipment Effectiveness)** is a framework for measuring the efficiency and effectiveness of production processes, by breaking them down into the three components availability, performance, and quality. OEE helps you identify and measure problems, and provides a standard method of benchmarking progress.
+**OEE (Overall Equipment Effectiveness)** is a framework for measuring the efficiency and effectiveness of production processes, by breaking them down into the three components Availability, Performance, and Quality. The {{< product-c8y-iot >}} OEE application uses machine data, master data and planning data, for example from an ERP or MES, to calculate the factors of the OEE calculation. This way different OEE calculation methods can be based on the available data to help you identify and measure problems, and to  provide a standard method of benchmarking progress to optimize your production processes.
 
-The Cumulocity IoT OEE application provides a flexible and convenient way to use OEE in the IIoT context - providing a platform to create a semantic for machine and operating data, and the capability to connect different systems and services.
+The {{< product-c8y-iot >}} OEE application provides a flexible and convenient way to use OEE in the IoT context - providing a platform to create a semantic for machine and operating data, and the capability to connect different systems and services.

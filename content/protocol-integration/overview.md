@@ -2,6 +2,8 @@
 weight: 10
 title: Overview
 layout: bundle
+aliases:
+  - /protocol-integration/impact
 ---
 
 IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols.
@@ -21,10 +23,6 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
 <td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="../../protocol-integration/impact">IMPACT</a></td>
-<td style="text-align:left">Enables the integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>

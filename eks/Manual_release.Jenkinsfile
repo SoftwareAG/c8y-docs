@@ -44,7 +44,7 @@ pipeline {
           sh '''bash --login
           echo ${params.BRANCH}
 
-          splitBranch=(${paramsBRANCH//\// })
+          splitBranch=(${paramsBRANCH///// })
           echo ${splitBranch[1]}
 
           DOC_VERSION=$( jq -r '.name' < properties.json )

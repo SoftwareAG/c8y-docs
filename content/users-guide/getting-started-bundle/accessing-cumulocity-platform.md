@@ -65,9 +65,6 @@ If you use one of the public cloud instances of the Cumulocity IoT platform and 
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
 	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.
-<br>
-    <img src="/images/users-guide/getting-started/getting-started-cookie-selection.png" alt="Login prompt">
-<br>
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
@@ -77,7 +74,7 @@ Finally, click **Login** to enter the Cumulocity IoT platform. Initially, you wi
 
 To explicitly logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 
-<img src="/images/users-guide/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
+>**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 
 <a name="reset-password"></a>
 ### To reset your password

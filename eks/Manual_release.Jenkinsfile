@@ -44,9 +44,12 @@ pipeline {
           sh '''bash --login
           echo ${params.BRANCH}
 
-          splitBranch = ${params.BRANCH} | sh '''sed -e "s/.*\\///g"'''
+          splitBranch = IFS=';' read -ra my_array <<< ${params.BRANCH}
 
-          echo splitBranch
+          for i in "${my_array[@]}"
+          do
+              echo $i
+          done
 
           DOC_VERSION=$( jq -r '.name' < properties.json )
           echo ${DOC_VERSION}

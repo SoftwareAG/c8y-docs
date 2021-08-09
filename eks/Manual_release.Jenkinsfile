@@ -42,7 +42,6 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          echo ${parameters}
           DOC_VERSION=$( jq -r '.name' < properties.json )
           echo ${DOC_VERSION}
           rsync -e "ssh -o StrictHostKeyChecking=no" -avh ./${DOC_VERSION} ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete

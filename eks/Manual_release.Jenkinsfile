@@ -42,8 +42,12 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          echo ${PARAMETERS}
-          echo parameters
+          echo ${params.BRANCH}
+
+          IN="bla@some.com;john@home.com"
+          splitBranch=(${paramsBRANCH//\// })
+          echo ${splitBranch[1]}   
+
           DOC_VERSION=$( jq -r '.name' < properties.json )
           echo ${DOC_VERSION}
           rsync -e "ssh -o StrictHostKeyChecking=no" -avh ./${DOC_VERSION} ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete

@@ -118,7 +118,7 @@ Ideal Quality Time = Actual Quality Amount x Ideal Cycle Amount<sup>-1</sup>
 5.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
+<i>Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup></i>
 </td>
 </tr>
 <tr>
@@ -174,7 +174,7 @@ Availability Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<s
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
+<i>Availability = <box>Actual Production Time&frasl;Potential Production Time</i></box>
 </td>
 </tr>
 <tr>
@@ -182,7 +182,7 @@ Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -190,7 +190,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -198,7 +198,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>
@@ -272,7 +272,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
 
 ![Calculation pathway 2](/images/oee/theory/theory-calculation-pathway-2.png)
 
@@ -330,7 +330,7 @@ Quality Losses (Time) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</sup
 7.
 </td>
 <td>
-Actual Production Amount = Actual Quality Amount + Quality Losses (Amount)
+<i>Actual Production Amount = Actual Quality Amount + Quality Losses (Amount)</i>
 </td>
 </tr>
 <tr>
@@ -346,7 +346,7 @@ Performance Losses (Amount) = Performance Losses (Time) x Ideal Cycle Amount
 9.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
+<i>Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup></i>
 </td>
 </tr>
 <tr>
@@ -370,7 +370,7 @@ Performance Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<su
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
+<i>Availability = <box>Actual Production Time&frasl;Potential Production Time</box></i>
 </td>
 </tr>
 <tr>
@@ -378,7 +378,7 @@ Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -386,7 +386,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -394,7 +394,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>
@@ -468,7 +468,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
 
 ![Calculation pathway 3](/images/oee/theory/theory-calculation-pathway-3.png)
 
@@ -502,7 +502,7 @@ Ideal Production Amount = Actual Production Time x Ideal Cycle Amount
 4.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Time x Ideal Cycle Amount<sup>-1</sup>
+<i>Ideal Machine Runtime = Actual Production Time x Ideal Cycle Amount<sup>-1</sup></i>
 </td>
 </tr>
 <tr>
@@ -510,7 +510,7 @@ Ideal Machine Runtime = Actual Production Time x Ideal Cycle Amount<sup>-1</sup>
 5.
 </td>
 <td>
-Actual Quality Amount = Actual Production Amount - Quality Losses (Amount)
+<i>Actual Quality Amount = Actual Production Amount - Quality Losses (Amount)</i>
 </td>
 </tr>
 <tr>
@@ -566,7 +566,7 @@ Performance Losses (Time) = Performance Losses (Amount) x Ideal Cycle Amount<sup
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
+<i>Availability = <box>Actual Production Time&frasl;Potential Production Time</box></i>
 </td>
 </tr>
 <tr>
@@ -574,7 +574,7 @@ Availability = <box>Actual Production Time&frasl;Potential Production Time</box>
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -582,7 +582,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>
@@ -664,7 +664,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
 
 ![Calculation pathway 4](/images/oee/theory/theory-calculation-pathway-4.png)
 
@@ -698,7 +698,7 @@ Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 4.
 </td>
 <td>
-Actual Production Time = Potential Production Time - Availability Losses (Time)
+<i>Actual Production Time = Potential Production Time - Availability Losses (Time)</i>
 </td>
 </tr>
 <tr>
@@ -706,7 +706,7 @@ Actual Production Time = Potential Production Time - Availability Losses (Time)
 5.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount - Ideal Cycle Amount<sup>-1</sup>
+<i>Ideal Machine Runtime = Actual Production Amount - Ideal Cycle Amount<sup>-1</sup></i>
 </td>
 </tr>
 <tr>
@@ -762,7 +762,7 @@ Performance Losses (Time) = Ideal Production Amount x Actual Production Amount
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time &frasl; Potential Production Time</box>
+<i>Availability = <box>Actual Production Time &frasl; Potential Production Time</box></i>
 </td>
 </tr>
 <tr>
@@ -770,7 +770,7 @@ Availability = <box>Actual Production Time &frasl; Potential Production Time</bo
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -778,7 +778,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -786,7 +786,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>
@@ -860,7 +860,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
 
 ![Calculation pathway 5](/images/oee/theory/theory-calculation-pathway-5.png)
 
@@ -894,7 +894,7 @@ Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 4.
 </td>
 <td>
-Actual Production Time = Potential Production Time - Availability Losses (Time)
+<i>Actual Production Time = Potential Production Time - Availability Losses (Time)</i>
 </td>
 </tr>
 <tr>
@@ -926,7 +926,7 @@ Quality Losses (Amount) = Quality Losses (Amount) x Ideal Cycle Amount<sup>-1</s
 8.
 </td>
 <td>
-Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup>
+<i>Ideal Machine Runtime = Actual Production Amount x Ideal Cycle Amount<sup>-1</sup></i>
 </td>
 </tr>
 <tr>
@@ -958,7 +958,7 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time &frasl; Potential Production Time</box>
+<i>Availability = <box>Actual Production Time &frasl; Potential Production Time</box></i>
 </td>
 </tr>
 <tr>
@@ -966,7 +966,7 @@ Availability = <box>Actual Production Time &frasl; Potential Production Time</bo
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -974,7 +974,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -982,7 +982,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>
@@ -1056,7 +1056,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked red are necessary to calculate the OEE.
+This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
 
 ![Calculation pathway 6](/images/oee/theory/theory-calculation-pathway-6.png)
 
@@ -1090,7 +1090,7 @@ Availability Losses (Amount) = Availability Losses (Time) x Ideal Cycle Amount
 4.
 </td>
 <td>
-Actual Production Time = Potential Production Time - Availability Losses (Time)
+<i>Actual Production Time = Potential Production Time - Availability Losses (Time)</i>
 </td>
 </tr>
 <tr>
@@ -1114,7 +1114,7 @@ Quality Losses (Time) = Quality Losses (Time) x Ideal Cycle Time<sup>-1</sup>
 7.
 </td>
 <td>
-Actual Quality Amount (Amount) = Actual Production Amount - Quality Losses (Amount)
+<i>Actual Quality Amount (Amount) = Actual Production Amount - Quality Losses (Amount)</i>
 </td>
 </tr>
 <tr>
@@ -1154,7 +1154,7 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 12.
 </td>
 <td>
-Availability = <box>Actual Production Time &frasl; Potential Production Time</box>
+<i>Availability = <box>Actual Production Time &frasl; Potential Production Time</box></i>
 </td>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@ Availability = <box>Actual Production Time &frasl; Potential Production Time</bo
 13.
 </td>
 <td>
-Performance = Ideal Machine Runtime &frasl; Actual Production Time
+<i>Performance = Ideal Machine Runtime &frasl; Actual Production Time</i>
 </td>
 </tr>
 <tr>
@@ -1170,7 +1170,7 @@ Performance = Ideal Machine Runtime &frasl; Actual Production Time
 14.
 </td>
 <td>
-Quality = Actual Quality Amount &frasl; Actual Production Amount
+<i>Quality = Actual Quality Amount &frasl; Actual Production Amount</i>
 </td>
 </tr>
 <tr>
@@ -1178,7 +1178,7 @@ Quality = Actual Quality Amount &frasl; Actual Production Amount
 15.
 </td>
 <td>
-OEE = Availability x Performance x Quality
+<i>OEE = Availability x Performance x Quality</i>
 </td>
 </tr>
 <tr>

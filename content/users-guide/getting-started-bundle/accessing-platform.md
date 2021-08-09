@@ -75,7 +75,7 @@ Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initiall
 
 To explicitly logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
 
->**Info:** The maximum number of failed logins (due to entering an invalid password), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+>**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 
 <a name="reset-password"></a>
 ### To reset your password

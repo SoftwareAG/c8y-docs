@@ -30,7 +30,7 @@ The Ideal Amount describes the maximum possible quantity to be produced within t
 
 ![Ideal amount](/images/oee/theory/theory-ideal-amount-formula.png)
 
-### Actual Production Time (6)
+### Actual Production Time (APT) (6)
 
 The Actual Production Time describes the actual time period during which the machine produces products, regardless of speed or quality. In this respect, the adjective "actual" is added to this variable to make it easier to understand (this also applies to the following variables). Since Availability Losses, see below, prevent production the Actual Production Time is always shorter than the Potential Production Time, unless it is an ideal machine.
 
@@ -62,7 +62,7 @@ The Ideal Machine Runtime describes the time it would have taken for an ideal ma
 
 As the diagram shows, the Ideal Machine Runtime can also be represented as  Actual Production Amount.
 
-### Actual Production Amount (11)
+### Actual Production Amount (APA) (11)
 
 The Actual Production Amount reflects the products manufactured in reality within the Actual Production Time and Possible Production Time.
 

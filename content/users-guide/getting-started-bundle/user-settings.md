@@ -101,7 +101,7 @@ Make sure to select a strong password. To support you in doing so, a password st
 
 By default, the password must meet the following conditions:
 
-* Consist of at least eight characters (this is the default and can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
 * Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

@@ -93,10 +93,13 @@ The UI is available in the following languages:
 3. Enter a password and confirm it.
 4. Click **Save** to apply your settings.
 
-Make sure to select a strong password. To support you in doing so a password strength indicator is displayed along with a password change.
+Make sure to select a strong password. To support you in doing so, a password strength indicator is displayed along with a password change.
 
 <img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
 
-By default, the password must consist of at least eight characters. For a strong password you must include at least three of the following character types: uppercase letters, lowercase letters, numbers and symbols.
+By default, the password must meet the following conditions:
+
+* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+* Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

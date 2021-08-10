@@ -34,7 +34,6 @@ pipeline {
     hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
   else
   	echo "Properties not found."
-    echo ${BRANCH}
       exit 1
   fi
           '''

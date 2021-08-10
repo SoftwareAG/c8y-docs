@@ -12,7 +12,7 @@ After the OEE values are calculated, they are then checked for consistency and p
 
 The calculation does not take resolved alarms into account.
 
-### Can the APA be calculated without using the APT?
+### Can the Actual Production Amount be calculated without using the Actual Production Time?
 
 If the APT is not calculated using a machine event, it is not used to calculate the APA.
 Instead, the APA is split from event to event.
@@ -84,9 +84,7 @@ After entering a profile (via the profile modificator), all OEE machine statuses
 
 ### What happens if the machine reports a produced part although its status is "not producing"?
 
-If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and we are receiving a WP event, the first event will still be split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts will still be displayed in the machine dashboard and is still taken into account for the section view.
-
-However, if your machine always sends the information that a workpiece has been completed with a delay, e.g. by one minute, while the machine is already in a non-production status, this problem can be solved with the Correlation Offset. The Correlation Offset can be setup with in the profile modificator. This way, the status can also be delayed for a certain time, so that the incoming information on a finished workpiece is received within the production status. In this case the availability loss time is shifted, but in total the OEE calculation is correct.
+If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you reveice a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the section view.
 
 ![Status report](/images/oee/faq/faq-status-report.png)
 
@@ -102,7 +100,11 @@ Another reason can be that you have changed the resolution. The displayed Ideal 
 
 **Examples:**
 
-You have entered "1.1 pcs/minute" on the workpiece section, while setting up the profile. 	
+You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the profile. 	
 
-* If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs
+* If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs.
 * If you choose the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.
+
+### Can the calculated OEE values be used in a platform widget?
+
+The calculated OEE values are stored as measurements linked to the managed object of the OEE calculation profile. The OEE calculation profile is a child device of the machine for which the OEE is calculated. OEE values can be used in {{< product-c8y-iot >}} widgets by selecting the OEE calculation profile as the source device and the selecting the OEE measurement to be displayed, for example the final OEE or one of its components like Availability.

@@ -33,7 +33,7 @@ In this case, it may happen that the breadcrumb navigation for "Machine: Drillin
 
 ### Where do I find values older than 60 days?
 
-To save OEE data longer than 60 days, you can change the data retention in your platform settings. For more information on how to change the retention rules, see [Administration > Data retention](/users-guide/administration/#data-retention) in the *User guide*.
+The standard retention for data on {{< product-c8y-iot >}} is 60 days. To save OEE data longer than 60 days, you can change the data retention in your platform settings. For more information on how to change the retention rules, see [Administration > Data retention](/users-guide/administration/#data-retention) in the *User guide*.
 
 ### Which roles are distinguished by the application?
 
@@ -44,7 +44,6 @@ The default user has access to:
 * Machine Park Overview
 * Machine Dashboard
 * Andon Board
-* Set alarms
 
 #### Admin user
 
@@ -54,4 +53,3 @@ Only admim users are allowed to change and create machine and line profiles. Adm
 * Machine Park Overview
 * Machine Dashboard
 * Andon Board
-* Set alarms

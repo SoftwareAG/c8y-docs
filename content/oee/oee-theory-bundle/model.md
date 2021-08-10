@@ -4,7 +4,7 @@ title: OEE model
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} OEE allows you to create OEE calculation configurations for machines and machine lines. Each configuration is associated with a specific machine or machine line and defines how inputs are used in the OEE calculation formula. Possible data input can be:
+The {{< product-c8y-iot >}} OEE application allows you to create OEE calculation configurations for machines and machine lines. Each configuration is associated with a specific machine or machine line and defines how inputs are used in the OEE calculation formula. Possible data input can be:
 
 * live machine data, for example measurements, events, etc.,
 * CSV data and

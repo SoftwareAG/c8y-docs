@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment. 
+From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
@@ -14,7 +14,7 @@ Click **Configuration** in the **Settings** menu, to access the **Configuration*
 
 Most of the settings you can configure here are also available in the Enterprise tenant. For details, refer to [Enterprise tenant > Customizing your platform](/users-guide/enterprise-edition/#customization).
 
-In addition, the following settings can be configured in the Management tenant only. 
+In addition, the following settings can be configured in the Management tenant only.
 
 ### Passwords
 
@@ -22,7 +22,15 @@ In the **Passwords** section, you can specify password settings like default str
 
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
-### <a name="config-support-users"></a> Support user
+Select the checkbox **Enforce "green" passwords for all users** to enforce the users in your tenant to use passwords that meet the conditions for "green" passwords, see also [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
+
+* **Password validity limit (days)** - The number of days a password may be valid before it must be reset; minimum value is  "0", maximum value is "999999". Leave empty to use the value from the tenant options configured in the {{< management-tenant >}}, see *{{< product-c8y-iot >}} Core - Operations guide*.
+* **Password history size** - The number of times before the current password can be reused.  Minimum value is "0", preset value is "10".  
+* **Minimum length of "green" password** - The minimum number of characters which are required for a safe password. Minimum (and preset) value is "8", maximum value is "32".  Leave empty to skip this constraint.
+
+
+<a name="config-support-users"></a>
+### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
@@ -55,11 +63,10 @@ To configure a user in the Management tenant as support user, you need to assign
 
 **Using inventory roles**
 
-Using inventory roles, you can selectively assign a support user for specific subtenants. 
+Using inventory roles, you can selectively assign a support user for specific subtenants.
 
 1. Create an inventory role called “Support” with type = "*" and permission = "All".
 2. Create a group of all subtenants which you want to be supported by the user.
 3. Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.
-

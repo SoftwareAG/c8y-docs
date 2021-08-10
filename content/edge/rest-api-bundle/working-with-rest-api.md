@@ -10,7 +10,7 @@ During the installation, the certificate changes from using the IP address to th
 
 You can either upload a certificate (self-signed) issued by a certificate authority or have {{< product-c8y-iot >}} Edge generate a self-signed certificate for the domain name. Some of the endpoints could be temporarily unavailable during the installation. For example, the `edge/configuration/network` endpoint can be used only after the installation.
 
-When you use a POST endpoint, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
+When you use a POST request, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
 >**Important:** You cannot run two tasks at the same time. If you attempt to run a task when another task is in progress, then you will get a HTTP status 409.
 

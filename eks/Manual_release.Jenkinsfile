@@ -29,14 +29,13 @@ pipeline {
       steps {
         sh '''bash --login
           if [ -f "properties.json" ]
-          then
-          	DOC_VERSION = $( jq -r '.name' < properties.json )
-            hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
-          else
-          	echo "Properties not found."
-          	DOC_VERSION = ${params.PATH}
-            hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
-          fi
+  then
+  	DOC_VERSION=$( jq -r '.name' < properties.json )
+    hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
+  else
+  	echo "Properties not found."
+      exit 1
+  fi
           '''
       }
     }
@@ -44,7 +43,6 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          echo ${params.BRANCH}
           DOC_VERSION=$( jq -r '.name' < properties.json )
           echo ${DOC_VERSION}
           rsync -e "ssh -o StrictHostKeyChecking=no" -avh ./${DOC_VERSION} ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete

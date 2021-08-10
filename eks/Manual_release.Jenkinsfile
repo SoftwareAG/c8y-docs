@@ -11,6 +11,7 @@ pipeline {
   }
   parameters {
     string(defaultValue: 'release/r10.4.6-BB', description: 'branch/revison', name: 'BRANCH')
+    string(defaultValue: '10.4.6', description: 'path revison', name: 'PATH')
   }
   environment {
     YUM_SRV = 'yum.cumulocity.com'
@@ -29,12 +30,14 @@ pipeline {
       steps {
         sh '''bash --login
           if [ -f "properties.json" ]
-  then
-  	DOC_VERSION=$( jq -r '.name' < properties.json )
-    hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
-  else
-  	echo "Properties not found."
-  fi
+          then
+          	DOC_VERSION = $( jq -r '.name' < properties.json )
+            hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
+          else
+          	echo "Properties not found."
+          	DOC_VERSION = ${params.PATH}
+            hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
+          fi
           '''
       }
     }
@@ -42,7 +45,6 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          echo ${params.BRANCH}
           DOC_VERSION=$( jq -r '.name' < properties.json )
           echo ${DOC_VERSION}
           rsync -e "ssh -o StrictHostKeyChecking=no" -avh ./${DOC_VERSION} ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete

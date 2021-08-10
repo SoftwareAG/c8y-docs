@@ -4,14 +4,6 @@ title: OEE model
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} OEE application allows you to create OEE calculation configurations for machines and machine lines. Each configuration is associated with a specific machine or machine line and defines how inputs are used in the OEE calculation formula. Possible data input can be:
-
-* live machine data, for example measurements, events, etc.,
-* CSV data and
-* ERP/MES data, for example factory shift plans or production schedules.
-
-Based on the calculation configurations and inputs, {{< product-c8y-iot >}} OEE then calculates the OEE, availability, performance, quality and various other metrics. The results are then displayed in the application dashboards.
-
 In the OEE model the capturability of values as well as the identification of capturable values is indicated by the adjectives "actual", "ideal", and "potential" in the respective terms. "Actual" quantities are real quantities and can be measured. "Potential" key figures cannot be measured at the machine, but can be derived from planning values of the organization. "Ideal" values, on the other hand, must be calculated and cannot be recorded directly.
 
 ![OEE model](/images/oee/theory/theory-oee-model.png)

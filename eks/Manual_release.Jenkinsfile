@@ -11,7 +11,6 @@ pipeline {
   }
   parameters {
     string(defaultValue: 'release/r10.4.6-BB', description: 'branch/revison', name: 'BRANCH')
-    string(defaultValue: '10.4.6', description: 'path revison', name: 'PATH')
   }
   environment {
     YUM_SRV = 'yum.cumulocity.com'
@@ -35,7 +34,6 @@ pipeline {
     hugo ${HUGO_PARAMS} -d ./${DOC_VERSION}
   else
   	echo "Properties not found."
-      exit 1
   fi
           '''
       }

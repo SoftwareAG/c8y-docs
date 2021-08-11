@@ -70,7 +70,7 @@ If the performance is determined on the basis of the two machines working in par
 
 * The performance is determined on the first machine, if possible.
 * The smallest of the four defined intervals of a profile is x times larger than the machining time of a workpiece. This way the values average again. However, this means that the 10 minutes interval display in the Machine Park Overview most of the time shows incorrect values.
-* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also (Administration > Calculation example of a line profile)[].
+* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also [Administration > Calculation example of a line profile](/oee/oee-administration#calculation-example).
 
 Alternative starting situation:
 

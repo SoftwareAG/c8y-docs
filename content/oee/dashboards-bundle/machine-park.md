@@ -31,9 +31,6 @@ This can either be configured when creating an area, site or line profile or set
 
 In the search field at the top left you can search for specific sites, areas, lines and machines by searching for their profile name.
 
-<!-- This sentence is no longer required, is it?
-*By clicking the checkbox 'Show only items with todos' only sites, areas, lines and machines with open to-do's will be displayed.*-->
-
 Click **Andon Board** at the right of an entry to switch to the respective **Andon board**, see [Andon board](#andon-board).
 
 Click **Machine dashboard** at the right of machine to switch to its **Machine dashboard**, see [Machine dashboard](#machine-dashboard).

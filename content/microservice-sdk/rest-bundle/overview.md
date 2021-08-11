@@ -87,12 +87,12 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 
 <img src="/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
-A simple way to determine the correct value for the "auth" key is using an online Base64 encode/decode tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to [ostermiller.org/calc/encode.html](http://ostermiller.org/calc/encode.html), type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for the "auth" key.
-
-You can achieve the same result also by using the Base64 command as follows:
+For example, assume that your tenant ID is "t07007007", your username is "winter" and your password is "jh0nS0nw". A simple way to determine the correct value for the `auth` key is using the Base64 command as follows:
 
 ```shell
-$ echo -n tenant/me:secret | base64
+$ echo -n t07007007/winter:jh0nS0nw | base64
 ```
+
+The resulting text is "dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==" and you need to use `Basic dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==` as value for the `auth` key. You can achieve the same result also by using an online Base64 encode/decode tool.
 
 Now it is time to start exploring the API!

@@ -47,7 +47,7 @@ The default user has access to:
 
 #### Admin user
 
-Only admim users are allowed to change and create machine and line profiles. Admin users have access to:
+Only admin users are allowed to change and create machine and line profiles. Admin users have access to:
 
 * Organization, Profiles, Calculation categories under Administration
 * Machine Park Overview

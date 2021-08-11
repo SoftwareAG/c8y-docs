@@ -25,7 +25,7 @@ When naming a measurement, make sure not to use umlauts in the measurement name.
 
 ![Device and profile ID](/images/oee/faq/faq-device-id.png)
 
-###  Why does a measurement/event/alarm in {{< product-c8y-iot >}} have multiple timestamps?
+###  Why does a measurement/event/alarm in the OEE application have multiple timestamps?
 
 The first timestamp describes the creation time. It is the time when the specific measurement/event/alarm has been created for the first time.
 
@@ -39,7 +39,7 @@ Umlauts are not permitted when naming measured values.
 
 For more details on how to correctly set up property names and series names see [Inventory > Inventory API](https://{{<domain-c8y>}}/api/#tag/Inventory-API) in the {{< openapi >}}.
 
-### Where do I find the calculated OEE measurements of a profile in {{< product-c8y-iot >}}?
+### Where do I find the calculated OEE measurements of a profile in the platform?
 
 1. Go to the parent machine in the {{< product-c8y-iot >}} Device Management application and navigate to the **Measurements** tab, see "HANNAH Machine" in the screenshot below.
 2. Manually replace the device ID by the profile ID and press enter. You are redirected to the mother machine.

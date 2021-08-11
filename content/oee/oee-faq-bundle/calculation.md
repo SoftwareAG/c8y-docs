@@ -12,7 +12,7 @@ After the OEE values are calculated, they are then checked for consistency and p
 
 The calculation does not take resolved alarms into account.
 
-### Can the Actual Production Amount be calculated without using the Actual Production Time?
+### Can the Actual Production Amount (APA) be calculated without using the Actual Production Time (APT)?
 
 If the APT is not calculated using a machine event, it is not used to calculate the APA.
 Instead, the APA is split from event to event.
@@ -52,7 +52,7 @@ If the calculation is attempted on the basis of the input parameters (for exampl
 * The calculation is done on a millisecond basis (2019-12-09T10:07:04.773).
 * No rounding is performed during the calculation in order to not multiply rounding errors. Only when the data is saved it is rounded to 4 decimal places, as can be seen when the data is exported (in the UI, it is rounded to 2 decimal places).
 
-### How are measurements of lines working in parallel calculated?
+### How are measurements of lines that work in parallel calculated?
 
 ![Line calculation of machines working in parallel](/images/oee/faq/faq-parallel-machine.png)
 
@@ -69,12 +69,12 @@ If the performance is determined on the basis of the two machines working in par
 **Solution:**
 
 * The performance is determined on the first machine, if possible.
-* The smallest of the four defined intervals of a profile is x times larger than the machining time of a workpiece. This way the values average again. However, this means that the 10 min. interval display in the Machine Park Overview most of the time shows incorrect values.
-* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also Administration > Calculation example of a line profile.
+* The smallest of the four defined intervals of a profile is x times larger than the machining time of a workpiece. This way the values average again. However, this means that the 10 minutes interval display in the Machine Park Overview most of the time shows incorrect values.
+* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also (Administration > Calculation example of a line profile)[].
 
 Alternative starting situation:
 
-If after machine 2 & 3 the workpieces would converge again in machine 4, these machines could be used for bottleneck analysis and there were no more problems with the performance.
+If after machine 2 & 3 the workpieces would converge again in machine 4, these machines could be used for bottleneck analysis and there were no performance issues.
 
 ### Why are there implausible values shortly after changing and saving the profile?
 
@@ -84,7 +84,7 @@ After entering a profile (via the profile modificator), all OEE machine statuses
 
 ### What happens if the machine reports a produced part although its status is "not producing"?
 
-If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you reveice a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the section view.
+If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you receive a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the section view.
 
 ![Status report](/images/oee/faq/faq-status-report.png)
 
@@ -105,6 +105,6 @@ You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the
 * If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs.
 * If you choose the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.
 
-### Can the calculated OEE values be used in a platform widget?
+### Can the calculated OEE values be used in a Cockpit widget?
 
-The calculated OEE values are stored as measurements linked to the managed object of the OEE calculation profile. The OEE calculation profile is a child device of the machine for which the OEE is calculated. OEE values can be used in {{< product-c8y-iot >}} widgets by selecting the OEE calculation profile as the source device and the selecting the OEE measurement to be displayed, for example the final OEE or one of its components like Availability.
+The calculated OEE values are stored as measurements linked to the managed object of the OEE calculation profile. The OEE calculation profile is a child device of the machine for which the OEE is calculated. OEE values can be used in {{< product-c8y-iot >}} widgets by selecting the OEE calculation profile as the source device and then selecting the OEE measurement to be displayed, for example the final OEE or one of its components like Availability.

@@ -10,7 +10,7 @@ Here you will learn how to create your first microservice that can be deployed o
 
 You need to have Cumulocity IoT credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity IoT platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Verify that you have Java 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
+Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -190,6 +190,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
     </plugins>
 </build>   
 ```
+
+The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
 <a name="java-example"></a>
 #### Create a Java application

@@ -10,11 +10,7 @@ The following list is a collection of best practices you should take into consid
 
 #### Cumulocity IoT Microservice SDK
 
-<<<<<<< HEAD
-Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
-=======
-Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The {{< product-c8y-iot >}} Microservice SDK can be found [here](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/microservice/). See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
->>>>>>> 02d61dccb (Merged in improvement/bugherd-task-407 (pull request #1029))
+Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The Cumulocity IoT Microservice SDK can be found [here](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/microservice/.).See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
 
 
 #### Disk I/O and local disk

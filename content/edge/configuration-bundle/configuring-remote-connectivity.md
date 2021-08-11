@@ -34,11 +34,12 @@ To configure remote-connectivity, use the following endpoints:
 - [POST /edge/configuration/remote-connectivity](/edge/rest-api/#post-edgeconfigurationremote-connectivity)
 - [GET /edge/configuration/remote-connectivity](/edge/rest-api/#get-edgeconfigurationremote-connectivity)
 
+<a name="registering-the-edge-appliance-in-the-cumulocity-iot-tenant"></a>
 ### Registering the Edge appliance in the Cumulocity IoT tenant
 
 Before performing these steps, ensure that you have configured the URL for the Cumulocity IoT tenant in the Edge appliance.   
 
-1. Log in to your Cumulocity IoT tenant. 
+1. Log in to your Cumulocity IoT tenant.
 2. Go to **Device Management**.
 3. Click **Registration** in the **Devices** menu and then click **Register device**.
 4. Select **General device registration**.
@@ -53,6 +54,7 @@ Before performing these steps, ensure that you have configured the URL for the C
    Once the device is connected, the device status changes to **Pending acceptance**.
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.
 
+<a name="accessing-the-edge-appliance-from-the-cumulocity-iot-tenant"></a>
 ### Accessing the Edge appliance from the Cumulocity IoT tenant
 
 The Cumulocity IoT Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of Cumulocity IoT.
@@ -82,9 +84,9 @@ For more information about remote access, see [Cloud Remote Access](/cloud-remot
 
 ### Accessing the Edge appliance remotely through VNC
 
-You can access the Edge appliance from the Cumulocity IoT tenant by installing the VNC components on your Edge appliance. 
+You can access the Edge appliance from the Cumulocity IoT tenant by installing the VNC components on your Edge appliance.
 
-**Info:** Ensure that you have registered your Edge appliance with the Cumulocity IoT tenant. See [Registering the Edge appliance in the Cumulocity IoT tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 #### Step 1: Installing the VNC components
 
@@ -98,8 +100,8 @@ The *vnc-setup.sh* script installs the VNC components. After installing the VNC 
 
 #### Step 2: Configuring VNC server for a user
 
-To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge appliance. The *vnc-user-setup.sh* script enables the current user to use VNC functionality and set a VNC password for the current user. 
- 
+To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge appliance. The *vnc-user-setup.sh* script enables the current user to use VNC functionality and set a VNC password for the current user.
+
 1. Run the script *vnc-user-setup.sh*.
 
 	` [admin@iot-edge-server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
@@ -132,9 +134,9 @@ You can change the VNC password for the current user by running the *vnc-user-se
 
 ### Accessing the Edge appliance remotely through SSH
 
-You can access the Edge appliance from the Cumulocity IoT tenant through SSH. 
+You can access the Edge appliance from the Cumulocity IoT tenant through SSH.
 
-**Info:** Ensure that you have registered your Edge appliance with the Cumulocity IoT tenant. See [Registering the Edge appliance in the Cumulocity IoT tenant](/edge/configuration/#registering-the-edge-appliance-in-the-remote-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 To access and connect to the Edge appliance:
 
@@ -155,12 +157,10 @@ You can share the following data:
 
 >**Important:** Data Broker in Cumulocity IoT Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
 
-Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account. 
+Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account.
 
 Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
 
 For more information about sending and receiving data in Cumulocity IoT, see [Enterprise tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker).
-
-

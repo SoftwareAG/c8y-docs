@@ -5,35 +5,28 @@ layout: redirect
 ---
 
 ### Design principles
-The primary goal of thin-edge.io is to simplify the connection of edge devices to the cloud
-by providing a secure and reliable cloud connectivity as well as a device management agent.
-The primary goal of thin-edge.io is the ability to build IoT applications
-around a large diversity of components provided by independent actors.
+The primary goal of thin-edge.io is to simplify the connection of edge devices to the cloud by providing a secure and reliable cloud connectivity as well as a device management agent. The primary goal of thin-edge.io is the ability to build IoT applications around a large diversity of components provided by independent actors.
 
 For that purpose, thin-edge.io focuses on:
 
 * __Interoperability__ -
-  Thin-edge.io lets the users integrate components producing or consuming telemetry data,
-  northbound with cloud platforms, southbound with sensors
+  Thin-edge.io lets the users integrate components producing or consuming telemetry data, northbound with cloud platforms, southbound with sensors
   as well as for east-west communication between analytics components.
 * __Flexibility__ -
-  Thin-edge.io lets users integrate component provided by different IoT actors,
-  not even originally designed with thin-edge.io in-mind,
+  Thin-edge.io lets users integrate component provided by different IoT actors, not even originally designed with thin-edge.io in-mind,
   using various technologies and programming languages.
 * __Security__ -
-  Thin-edge.io provides a secure and stable foundation for cloud connections, software/firmware updates,
-  and remote device management.
+  Thin-edge.io provides a secure and stable foundation for cloud connections, software/firmware updates, and remote device management.
 * __Reliability__ -
   Thin-edge.io components can survive in chaotic environments as network outages and process restarts happen.
 * __Efficiency__ -
   Thin-edge.io lets users build applications that can run on constrained device hardware and with limited bandwidth networks.
 * __Multi-cloud__ -
-  Thin-edge.io enables users to connect their edge devices with multiple clouds.
-  The actual cloud used can be decided at run-time by the end-user.
+  Thin-edge.io enables users to connect their edge devices with multiple clouds. The actual cloud used can be decided at run-time by the end-user.
 
 ### Why is thin-edge.io an executable binary and not a library?
-Interoperability of software components can be addressed along very different approaches.
-Thin-edge.io uses dynamic and loose inter-process communication (IPC) using messages exchange over an MQTT bus.
+
+Interoperability of software components can be addressed along very different approaches. Thin-edge.io uses dynamic and loose inter-process communication (IPC) using messages exchange over an MQTT bus.
 
 In the past and even today, many clouds provide a library (SDK) to help you connect your code to the cloud.
 
@@ -71,40 +64,25 @@ Alternatives considered where: DBus, gRPC and REST over HTTP.
 
 ### Why does thin-edge.io use MQTT for cloud communication?
 
-[MQTT](https://mqtt.org/) is a lightweight and flexible messaging protocol widely used by IoT applications.
-Nearly all the IoT cloud platforms provide an MQTT endpoint to consume and publish messages from a fleet of devices.
-Therefore, MQTT was an obvious choice for edge to cloud communication.
+[MQTT](https://mqtt.org/) is a lightweight and flexible messaging protocol widely used by IoT applications. Nearly all the IoT cloud platforms provide an MQTT endpoint to consume and publish messages from a fleet of devices. Therefore, MQTT was an obvious choice for edge to cloud communication.
 
-Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT:
-Because thin-edge.io has an internal bus, you can implement a bridge to another protocol (e.g. LWM2M or plain HTTPS).
-In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
+Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT. Because thin-edge.io has an internal bus, you can implement a bridge to another protocol (e.g. LWM2M or plain HTTPS). In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
 
 ### Why is the thin-edge.io canonical format based on JSON?
 
 [Thin-Edge-Json](./thin-edge-json.md), the cloud-agnostic message format of thin-edge.io, is based on JSON.
 
-Supported by nearly all programming languages, JSON provides a nice compromise between simplicity and flexibility.
-Notably, it features [duck typing](https://en.wikipedia.org/wiki/Duck_typing),
-a flexible way to group different data fields that can be read
-by consumers with different expectations over the message content.
-For instance, a consumer expecting a temperature can process messages
-where the temperature measurements are produced along with other kinds of measurements.
+Supported by nearly all programming languages, JSON provides a nice compromise between simplicity and flexibility. Notably, it features [duck typing](https://en.wikipedia.org/wiki/Duck_typing), a flexible way to group different data fields that can be read by consumers with different expectations over the message content. For instance, a consumer expecting a temperature can process messages where the temperature measurements are produced along with other kinds of measurements.
 
 Additionally, JSON is supported by most (if not all) cloud vendors, which makes the transformation easier.
 
 JSON is also used by other (Industrial) IoT standards, including OPC/UA and LWM2M.
 
 ### Why use Rust?
-The command line interface, and the daemon processes of thin-edge.io are implemented in [Rust](https://www.rust-lang.org/),
-*a language empowering everyone to build reliable and efficient software*.
+The command line interface, and the daemon processes of thin-edge.io are implemented in [Rust](https://www.rust-lang.org/), *a language empowering everyone to build reliable and efficient software*.
 
-The main motivation to use Rust is security: Rust avoids many security vulnerabilities and threading issues at compile time.
-With the type system of Rust you write software that is free from typical security flaws:
-undefined behavior, data races or any memory safety issues.
+The main motivation to use Rust is security: Rust avoids many security vulnerabilities and threading issues at compile time. With the type system of Rust you write software that is free from typical security flaws: undefined behavior, data races or any memory safety issues.
 
-The second motivation is efficiency. Rust software is typically as efficient as C/C++ software.
-One reason is that Rust does not have (by default) a garbage collector. Instead, memory lifetime is calculated at compile time.
+The second motivation is efficiency. Rust software is typically as efficient as C/C++ software. One reason is that Rust does not have (by default) a garbage collector. Instead, memory lifetime is calculated at compile time.
 
-Note that, even if the core of thin-edge.io is written in Rust,
-any programming language can be used to implement thin-edge.io components.
-For that, one just needs an MQTT library that lets them interact with the thin-edge.io MQTT broker.
+Note that, even if the core of thin-edge.io is written in Rust, any programming language can be used to implement thin-edge.io components. For that, one just needs an MQTT library that lets them interact with the thin-edge.io MQTT broker.

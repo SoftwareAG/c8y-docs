@@ -4,8 +4,7 @@ title: Software Management with thin-edge.io
 layout: redirect
 ---
 
-With thin-edge.io you can ease the burden of managing packages on your device.
-Software Management operates end to end from a cloud down to the OS of your device and reports statuses accordingly.
+With thin-edge.io you can ease the burden of managing packages on your device. Software Management operates end to end from a cloud down to the OS of your device and reports statuses accordingly.
 
 ### Software management components
 
@@ -33,8 +32,7 @@ TBD
 sudo dpkg -i tedge_agent
 ```
 
-The installation will add `systemd` service `tedge-agent.service` and new user specific to the agent (`tedge-agent`).
-As some of the operations may require `root` permissions or `sudo` access it is advised that the tedge-agent user is added to the `sudo` group which will allow it to execute elevated commands.
+The installation will add `systemd` service `tedge-agent.service` and new user specific to the agent (`tedge-agent`). As some of the operations may require `root` permissions or `sudo` access it is advised that the tedge-agent user is added to the `sudo` group which will allow it to execute elevated commands.
 
 You can do with following command:
 

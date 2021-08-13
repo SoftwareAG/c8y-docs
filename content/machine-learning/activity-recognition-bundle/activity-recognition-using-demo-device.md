@@ -10,19 +10,19 @@ aliases:
 A fully functional activity recognition demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip* file.
 
-#### Start with {{< product-c8y-iot >}} Machine Learning Workbench
+#### Start with Machine Learning Workbench
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity Recognition Demo" as **Project description**.
 
 2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload all the files extracted to Machine Learning Workbench (MLW). You will get 2 files in the **Data** section and 3 notebooks in the **Code** section. Exclude the PMML file and .mon file.
 
-#### Register a demo device in {{< product-c8y-iot >}}
+#### Register a demo device in the platform
 
 Instead of registering an actual device for the activity recognition use case, a demo device can be registered. This device can be used as a replica of an actual to do human activity. Follow the below steps. We have added a script *RegisterDevice.ipynb* which registers a demo device in {{< product-c8y-iot >}}.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}} . Upon successful execution, a device named "DemoDevice" is registered in {{< product-c8y-iot >}} .
-3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant’s Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 <img src="/images/zementis/ActivityRecognition/screenshot1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
@@ -31,9 +31,7 @@ Upon successful execution, a device named *DemandForecastDemoDevice* is register
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass.
 
 
-
-
-#### Upload the model and Apama monitor to {{< product-c8y-iot >}}
+#### Upload the model and Apama monitor file
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 

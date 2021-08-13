@@ -39,7 +39,7 @@ The following table provides an overview on the currently supported applications
 <tbody>
 <tr>
 <td>application</td>
-<td>An empty application to quickly bootstrap new applications. It is the default application and used if you don’t specify an <code>[example-name]</code>.</td>
+<td>An empty application to quickly bootstrap new applications. It is the default application and used if you don't specify an <code>[example-name]</code>.</td>
 </tr>
 <tr>
 <td>tutorial</td>

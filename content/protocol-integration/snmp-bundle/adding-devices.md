@@ -188,21 +188,21 @@ Security level and protocols can have the following values:
 
 **securityLevel**
 
-    “securityLevel”: 1 //NOAUTH_NOPRIV
-    “securityLevel”: 2 //AUTH_NOPRIV
-    “securityLevel”: 3 //AUTH_PRIV
+    "securityLevel": 1 //NOAUTH_NOPRIV
+    "securityLevel": 2 //AUTH_NOPRIV
+    "securityLevel": 3 //AUTH_PRIV
 
 **authProtocol**
 
-    “authProtocol”: 1 // MD5
-    “authProtocol”: 2 // SHA
+    "authProtocol": 1 // MD5
+    "authProtocol": 2 // SHA
 
 **privProtocol**
 
-    “privProtocol”: 1 // DES
-    “privProtocol”: 2 // AES128
-    “privProtocol”: 3 // AES192
-    “privProtocol”: 4 // AES256
+    "privProtocol": 1 // DES
+    "privProtocol": 2 // AES128
+    "privProtocol": 3 // AES192
+    "privProtocol": 4 // AES256
 
 **Step-2:** Add the SNMP device as a child device under the agent:
 

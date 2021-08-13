@@ -11,7 +11,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 >**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
 
-#### Register your smartphone in {{< product-c8y-iot >}}
+#### Register a smartphone in the platform
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in the User guide and register a smartphone in {{< product-c8y-iot >}}.
 
@@ -21,7 +21,7 @@ Once registered, note down the device ID by looking up your device on the **All 
 
 In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via {{< product-c8y-iot >}} Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
-#### Data collection with {{< product-c8y-iot >}} Machine Learning Workbench (MLW)
+#### Data collection with Machine Learning Workbench (MLW)
 
 1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using smartphone" as **Project description**.
 
@@ -56,7 +56,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 3. Click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of **Tabs** to list the newly created *isolationForests.pmml* in the **Model** folder.
 
 
-#### Model deployment and predictions using {{< product-c8y-iot >}}
+#### Model deployment and predictions
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
 
@@ -64,7 +64,7 @@ Once the model is available in the **Model** folder, it can be deployed to Machi
 
 2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using the *isolationForest* PMML model.
 
-#### Create and upload Apama monitor to {{< product-c8y-iot >}}
+#### Create and upload Apama monitor file
 
 For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 

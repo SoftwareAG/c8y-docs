@@ -4,13 +4,13 @@ title: Configuring offloading jobs
 layout: redirect
 ---
 
-Cumulocity IoT DataHub provides functionality to configure, manage, and execute offloading pipelines that extract and transform data from the Operational Store of Cumulocity IoT and offload it to a data lake.
+{{< product-c8y-iot >}} DataHub provides functionality to configure, manage, and execute offloading pipelines that extract and transform data from the Operational Store of {{< product-c8y-iot >}} and offload it to a data lake.
 
 ### Basic functionality
 
 On the **Offloading** page you do the offloading management and monitoring tasks:
 
-* Selecting a Cumulocity IoT collection to offload
+* Selecting a {{< product-c8y-iot >}} collection to offload
 * Defining and validating an offloading configuration
 * Editing, copying, or deleting an offloading configuration
 * Importing/exporting offloading configurations
@@ -39,18 +39,20 @@ The wizard prepopulates settings for the different steps to ease the configurati
 <a name="select-collection"></a>
 ##### Select collection
 
-In the dropdown box select one of the Cumulocity IoT base collections, which are:
+In the dropdown box select one of the {{< product-c8y-iot >}} base collections, which are:
 
 * alarms
 * events
 * inventory
 * measurements
 
-> **Info:** You can define multiple offloading pipelines for each Cumulocity IoT collection, except for the case of a TrendMiner offloading configuration, which must be singleton. For example, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
+> **Info:** You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection, except for the case of a TrendMiner offloading configuration, which must be singleton. For example, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
 
-Later in this section you will find a summary of the default attributes being offloaded per base collection. 
+Later in this section you will find a summary of the default attributes being offloaded per base collection.
 
 <img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task" style="max-width: 100%">
+
+Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
 <a name="configure-target-table"></a>
 ##### Configure target table
@@ -72,23 +74,97 @@ The layout **One table for one measurement type (Default)** will create a table 
 
 The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
+For each base collection, a corresponding pipeline extracts a default set of data fields during offloading. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
+
+Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you have to ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go one configuration step back. Click **Cancel** to cancel the offloading configuration.
+
 <a name="set-addtl-cols"></a>
 ##### Set additional result columns
 
-Optionally you can define additional result columns, except for the TrendMiner case, which does not support this option. For each base collection, the associated default set of data fields is extracted. If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your DataHub queries, then you can include them as additional result columns. In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For example, if you feed in measurements with the additional fields "myCustomField1" and "myCustomField2", you just need to enter "myCustomField1, myCustomField2" into the input field to add both fields to the offloading configuration. If you only want to offload "myCustomField2", just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. "BTRIM(myCustomField1, '~')" to trim leading and trailing '~' from the text in field "myCustomField1".
+If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your DataHub queries, then you can include them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
 
-If you want to derive additional columns from nested content, you can specify the nested fields in the input field as well using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional column to access the first array entry.
+**Auto-detected columns**
 
-When defining additional columns, you can click **Validate** to validate them. If the validation fails, you will get an error description. For example, if you specify a non-existing "UnknownColumn" as an additional result column, you get an error message like *Column "UnknownColumn" not found in any table*. You should fix these errors as otherwise the offloading execution will fail. If the underlying collection is empty and no schema information is available, the validation step cannot be executed due to lack of data.
+To ease the configuration process, DataHub auto-detects additional result columns. Using a sample of the base collection, DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+
+**Structure of additional result columns**
+
+Each additional result column, whether it is manually configured or auto-detected, has the following properties:
+
+- **Selected**: With this checkbox, you define if the column is included in the offloading pipeline or not.
+- **Column name**: The column name is the name the column will have in the target table. The column name must be unique.
+- **Auto-detected**: This property denotes whether the column has been auto-detected or manually added by the user.
+- **Source definition**: The source definition is the actual SQL expression, which defines what the data in this column looks like.
+- **Column type**: The column type defines which kind of data the column contains, e.g. DOUBLE for double values or VARCHAR for strings.
+
+When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. In the top right corner the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, a collapse button and a context menu is available. With the collapse button you can expand/collapse more details of the column. In the details section you can explore the source definition as well as sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field.
+
+In the top-right corner of the table you find a button for manually adding an additional result column.
+
+If you enter the additional result columns step for a running offloading pipeline, i.e., the pipeline is scheduled, you cannot modify the columns.
+
+<img src="/images/datahub-guide/datahub-configure-addtl-cols.png" alt="Overview of additional result columns" style="max-width: 100%">
+
+**Add an additional result column**
+
+When adding an additional result column, a modal dialog for defining the column opens. You must define a unique column name. Then the source definition needs to be specified.
+
+First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, e.g., by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting.
+
+If you want to derive additional result columns from nested content, you can specify the nested fields using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional result column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional result column to access the first array entry.
+
+<img src="/images/datahub-guide/datahub-add-addtl-col.png" alt="Add additional result column" style="max-width: 40%">
+
+Click **Apply** to add the column, which will be selected for offloading by default. If the source definition is invalid, e.g. when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You have to fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
+
+**Edit an additional result column**
+
+In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Apply** to update the column with the new settings. The new column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
+
+Note that for auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you have to duplicate the auto-detected column.
+
+**Duplicate an additional result column**
+
+In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The column name uses the original column name plus a counter as suffix to make the name unique. You can adapt the name to your needs, provided the name is unique.
+
+Click **Apply** to complete and **Cancel** to quit duplicating the column.
+
+**Delete an additional result column**
+
+In the context menu of an additional result column, select **Delete** to open the dialog for deleting the column. Click **Confirm** to proceed or **Cancel** to cancel the deletion.
+
+Auto-detected columns cannot be deleted.
+
+When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column.  
+
+**Migration of additional result columns**
+
+DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
+
+To migrate to the new format manually, proceed as follows:
+
+1. In the context menu of the column click **Show** and navigate through the configuration.
+2. Copy the task name, the additional result columns definition, and the target table name to a text editor.
+3. Create a new configuration with an arbitrary target table name and an arbitrary task name.
+4. Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "EXPR$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
+5. Delete the old configuration.
+6. Edit the new configuration and set the task name and the target table name of the old configuration.
+7. When activating the new configuration, you are prompted for either flushing or appending to the existing data. Use the latter option to base the new configuration on the data the old configuration has offloaded so far.
+
+Click **Next** to proceed with the next configuration step. Click **Previous** to go one configuration step back. Click **Cancel** to cancel the offloading configuration.
 
 <a name="set-filter-predicate"></a>
 ##### Set filter predicate
 
 Optionally you can define an additional filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be "status='ACTIVE' AND severity='WARNING'" to only persist active alarms with severity warning. The filter predicate functionality supports complex SQL statements, i.e., a combination of AND/OR, clauses like "IN(...)" / "NOT IN(...)", and functions, e.g. "REGEXP_LIKE(text, 'MyText\S+')".
 
-In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. For querying the attribute "id", you have to use "_id". For querying the time attributes, see also [Working with DataHub > DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets for widely-used temporal filter predicates.
+In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You have to use the source definition as defined in the corresponding column instead.
+
+> **Info:** For querying the attribute "id", you have to use "_id". For querying the time attributes, see also [Working with DataHub > DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets for widely-used temporal filter predicates.
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You should fix these errors as otherwise the offloading execution will fail. If the underlying collection is empty and no schema information is available, the validation step cannot be executed.
+
+Click **Next** to proceed with the next configuration step. Click **Previous** to go one configuration step back. Click **Cancel** to cancel the offloading configuration.
 
 <a name="configure-task"></a>
 ##### Configure task
@@ -97,14 +173,16 @@ The task configuration step includes the offloading task name and the descriptio
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but we recommend you to use it, as it provides additional information about the pipeline and its purpose.
 
+Click **Next** to proceed with the next configuration step. Click **Previous** to go one configuration step back. Click **Cancel** to cancel the offloading configuration.
+
 <a name="finish"></a>
 ##### Finish configuration
 
 The final step provides a summary of your settings as well as a result preview. The summary includes the settings from the previous steps as well as the internal UUID of this configuration. The UUID is generated by the system and cannot be modified. With the UUID you can distinguish configurations having the same task name, e.g., when browsing the audit log or the offloading status. In the summary, you also get the schedule with which the offloading pipeline will be executed once it is started, e.g., "every hour at minute 6". The schedule cannot be modified. With the **Inactive**/**Active** toggle at the end of the summary you choose whether the periodic offloading execution should be activated upon save or not.  
 
-In the offloading preview you can inspect how the actual data that will be offloaded looks like. For this purpose, the offloading is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Note that no data is permanently persisted to the data lake when running the preview.
+In the offloading preview you can inspect what the actual data that will be offloaded looks like. For this purpose, the offloading is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Use **Hide time columns** to either show the default columns with a temporal notion or not. Note that no data is persisted to the data lake when running the preview.
 
-Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the pipeline creation. You can also navigate back to adapt previous settings, using the **Previous** buttons.
+Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
 
 <img src="/images/datahub-guide/datahub-validate-an-offloading-configuration.png" alt="Validate an offloading configuration"  style="max-width: 100%">
 
@@ -122,7 +200,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 Click the **Active**/**Inactive** toggle in an offloading card to start the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of DataHub will then periodically trigger the pipeline.
 
-The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all collection data from the Operational Store of Cumulocity IoT to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For this reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
+The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all collection data from the Operational Store of {{< product-c8y-iot >}} to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For this reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
 If the same pipeline has already been started and stopped in the past, a new start of the pipeline opens a dialog asking you whether you want to flush the existing data or append the data to the existing data. The latter option offloads only data that has been added after the last execution. The first option flushes the data lake. Then the next execution will offload the complete collection. This option should be used with caution.
 
@@ -132,7 +210,7 @@ A previous offloading pipeline may have already written into the same target tab
 
 ##### Scheduling settings
 
-The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of Cumulocity IoT, i.e., to avoid that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
+The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, i.e., to avoid that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
 
 ##### Stopping periodic offloading
 
@@ -154,7 +232,7 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the Cumulocity IoT base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data, i.e., a change to the offloading pipeline only affects data to be exported in the future.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data, i.e., a change to the offloading pipeline only affects data to be exported in the future.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -162,7 +240,7 @@ For active pipelines, click **Show** to browse through the configuration. You ca
 
 Click **Copy** to copy the current configuration. The new configuration is an identical copy of the selected configuration except for the task name and the target table, both of which will have a unique suffix appended. You can change the settings according to your needs.
 
-A TrendMiner offloading configuration cannot be copied, as only one TrendMiner configuration is allowed. 
+A TrendMiner offloading configuration cannot be copied, as only one TrendMiner configuration is allowed.
 
 ##### Deleting an offloading pipeline
 
@@ -200,7 +278,7 @@ To change the import file, click the delete icon next to the file name and selec
 
 ### Offloading the base collections
 
-The following tables summarize the resulting schemas for each of the Cumulocity IoT standard collections. These schemas additionally include virtual columns "dir0", ..., "dir3", which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of Cumulocity IoT, nor are they persisted in the data lake. You must not use "dir0", ..., "dir3" as additional columns or you must rename them accordingly in your offloading configuration.
+The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} standard collections. These schemas additionally include virtual columns "dir0", ..., "dir3", which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. You must not use "dir0", ..., "dir3" as additional columns or you must rename them accordingly in your offloading configuration.
 
 #### Offloading the alarms collection
 
@@ -232,7 +310,7 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 
 The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses additional steps:
 
-1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
+1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus "_all" and "_latest" respectively. The following examples use "alarms" as target table name:
     * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
     * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
@@ -262,13 +340,13 @@ The events collection manages the events. During offloading, the data of the eve
 | text | VARCHAR |
 | type | VARCHAR |
 
-Events, just like alarms, are mutable, i.e., they can be changed after their creation. Thus, the same logic as for alarms applies. 
+Events, just like alarms, are mutable, i.e., they can be changed after their creation. Thus, the same logic as for alarms applies.
 
 Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
 
-* **events_all**: Contains all states (that were captured by DataHub's period offloading) of all events 
+* **events_all**: Contains all states (that were captured by DataHub's period offloading) of all events
 * **events_latest**: Contains only the latest state of all events without prior states
-  
+
 #### Offloading the inventory collection
 
 The inventory collection keeps track of managed objects. During offloading, the data of the inventory collection is flattened, with the resulting schema being defined as follows:
@@ -293,9 +371,9 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | childAssets | OTHER |
 | childDevices | OTHER |
 
-The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps: 
+The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
-1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. 
+1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
     * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
     * **inventory_latest**: a view with the latest status of all managed objects, with all previous transitions being discarded.
@@ -304,7 +382,7 @@ Both views are provided in your Dremio space. For details on views and spaces in
 
 #### Offloading the measurements collection
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you have to explicitly select a target table layout, which is either having one table for one type or for the TrendMiner case one table with measurements of all types. 
+The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you have to explicitly select a target table layout, which is either having one table for one type or for the TrendMiner case one table with measurements of all types.
 
 ##### Offloading measurements with the default target table layout
 
@@ -335,7 +413,7 @@ When using the default layout, you have to select a measurement type, so that al
 
 The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment_` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment_attribute1_name_value` to `fragment_attributeN_name_value`.
 
-###### Example mapping
+**Example mapping**
 
 The following excerpt of a measurement document in the base collection
 
@@ -360,7 +438,7 @@ is represented in the target table in the data lake as
 
 ##### Offloading measurements with the TrendMiner target table layout
 
-When using the TrendMiner layout, all measurements are offloaded into one table. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection. 
+When using the TrendMiner layout, all measurements are offloaded into one table. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
 
 The resulting schema is defined as follows:
 
@@ -379,7 +457,7 @@ The resulting schema is defined as follows:
 | value | VARCHAR |
 | unit | VARCHAR |
 
-###### Example mapping
+**Example mapping**
 
 The following excerpt of a measurement document in the base collection
 

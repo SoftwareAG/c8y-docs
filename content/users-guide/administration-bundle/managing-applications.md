@@ -269,12 +269,6 @@ In the {{< standard-tenant >}} you will find the following default applications:
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">Interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
-<td style="text-align:left">impact</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPC UA</a></td>
 <td style="text-align:left">Communicate with OPC UA servers through an OPC UA device gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
@@ -339,7 +333,7 @@ In the resulting dialog box, choose one of the following methods:
 
 The application is created once the ZIP file has been successfully uploaded.
 
-<img src="/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+>**Important:** The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 
 <a name="uploading-microservices"></a>
 ##### To upload a microservice

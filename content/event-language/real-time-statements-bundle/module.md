@@ -47,7 +47,7 @@ Example response:
 
     @Name('test1')select * from EventCreated.win:time(1 hour)@Name('test2')select id, count(*) from MyOffOnStream.win:time(1 hour) group by id;
 
-Warning: if given statement has default name assigned by cumulocity platform, annotation @Name will not appear.
+Warning: if given statement has default name assigned by the {{< product-c8y-iot >}} platform, annotation @Name will not appear.
 
 ### Update Module
 

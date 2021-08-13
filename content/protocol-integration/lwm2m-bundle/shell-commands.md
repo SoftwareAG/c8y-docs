@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:
+In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. "objectID", "instanceID") and commands with their respective descriptions below:
 
 <table>
 <col style="width:30%">
@@ -23,7 +23,7 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">instanceID</td>
-<td align="left">The ID of the instance. Some objects can have multiple instances. For example, “3300” is a temperature sensor object. Each device can have up to 10 sensors. In this case the instance ID would be 3300/1…10 depending on the sensor that you would like to focus.</td>
+<td align="left">The ID of the instance. Some objects can have multiple instances. For example, "3300" is a temperature sensor object. Each device can have up to 10 sensors. In this case the instance ID would be 3300/1…10 depending on the sensor that you would like to focus.</td>
 </tr>
 <tr>
 <td align="left">resourceID</td>

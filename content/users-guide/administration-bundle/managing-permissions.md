@@ -146,7 +146,7 @@ The following permission categories are available by default:
 <tbody>
 <tr>
 <td align="left">Alarms</td>
-<td align="left">View or edit alarms for devices.</td>
+<td align="left">View or edit alarms.</td>
 </tr>
 
 <tr>
@@ -156,7 +156,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Audits</td>
-<td align="left">View or create audit logs for devices.</td>
+<td align="left">View or create audit logs.</td>
 </tr>
 
 <tr>
@@ -181,7 +181,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Events</td>
-<td align="left">View or create events for devices.</td>
+<td align="left">View or create events.</td>
 </tr>
 
 <tr>
@@ -201,7 +201,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Measurements</td>
-<td align="left">View or create measurements for devices.</td>
+<td align="left">View or create measurements.</td>
 </tr>
 
 <tr>
@@ -281,7 +281,7 @@ Click **Save** to save your settings.
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
-To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
+To view the currently configured inventory roles, click **Roles** in the **Account** menu and switch to the **Inventory roles** tab.
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 

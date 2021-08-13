@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Apama limitations in var-product-c8y-iot
+title: Apama limitations in Cumulocity IoT
 layout: redirect
 ---
 

@@ -37,9 +37,9 @@ In the device protocol page, you will see the description at the top left and th
 
 Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
-> **Info**: LWM2M protocol resources cannot be edited.
+> **Info:** LWM2M protocol resources cannot be edited.
 
-Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
+Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
 ![Example protocol2](/images/device-protocols/lwm2m/lwm2m-temperature-example.png)
 
@@ -54,9 +54,9 @@ The functionalities that you may enable are the following:
 
 Turn on **Send measurement** to specify a measurement.
 
-- Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”.
-- The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.
+- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
+- The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
 #### Create alarm
 
@@ -117,6 +117,6 @@ Below is an example where the &ldquo;connectivity:updateRssi&rdquo; custom actio
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
-> **Info**: At least one functionality must be set to enable "Auto observe".
+> **Info:** At least one functionality must be set to enable "Auto observe".
 
 ![Resource](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)

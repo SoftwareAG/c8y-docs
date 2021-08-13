@@ -49,6 +49,10 @@ if [ -z "$EXTRACTED_PATH" ]; then
    EXTRACTED_PATH="/tmp/migration_data/"
 fi
 
+##################################
+# Main
+##################################
+
 echo "Installing zip package needed for restore procedure"
 # This will install zip package which is needed to install ui
 rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
@@ -71,6 +75,7 @@ echo "Done downloading application zips from 10.9"
 echo "Packaging apps to be visible by karaf"
 CPWD=$PWD
 cd /tmp/apps
+mv /tmp/apps/*streaming-analytics-app* /tmp
 zip package-cumulocity-$UI_VERSION.zip $zip_names
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
@@ -104,6 +109,11 @@ echo "Restoring opcua"
 rm -rf /etc/opcua
 cp -rp $EXTRACTED_PATH/opcua_data/opcua /etc/
 
+echo "Restoring cumulocity-agent credentials"
+cp -rp $EXTRACTED_PATH/cumulocity-agent/credentials /var/lib/cumulocity-agent/credentials
+
+echo "Restarting services"
+systemctl restart cumulocity-agent
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
 monit restart opcua_device_gateway_proc

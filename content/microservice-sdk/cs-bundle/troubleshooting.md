@@ -6,7 +6,7 @@ title: Troubleshooting
 
 Some common problems and their solutions have been identified and documented below.
 
-##### After deploying my microservice, requests to any endpoint return an error message “Microservice not available Connection refused”
+##### After deploying my microservice, requests to any endpoint return an error message "Microservice not available Connection refused"
 
 After uploading the microservice, the internal deployment and container run may take a couple of minutes. Once completed, the error message will disappear.
 

@@ -6,7 +6,7 @@ title: Managing business rules
 <a name="event-processing"></a>
 ### Event processing
 
->**Important:** The **Event processing** functionality described here is only available if your tenant has Esper subscribed, not Apama. Apama is the standard CEP engine for new tenants. For tenants using Apama, similar functionality is available via the **Streaming Analytics EPL Apps** page, see [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). If migrating, any CEL (Cumulocity Event Language) code will need to be translated to EPL apps. For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
+>**Important:** The **Event processing** functionality described here is only available if your tenant has Esper subscribed, not Apama. Apama is the standard CEP engine for new tenants. For tenants using Apama, similar functionality is available via the **Streaming Analytics EPL Apps** page, see [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). If migrating, any CEL ({{< c8y-event-language >}}) code will need to be translated to EPL apps. For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
 
 Using event processing, you can specify real-time business logic that is automatically run by {{< product-c8y-iot >}} as soon as new data arrives or existing data is modified. The logic is deployed in so-called "rules" which consist of a set of CEP statements.
 
@@ -56,7 +56,7 @@ Click **Alarm mapping** in the **Business Rules** menu to see a list of all alar
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
-For each alarm mapping, the alarm severity, the alarm type and a new description (optional) is shown.
+For each alarm mapping, the alarm severity, the alarm type and a description (optional) are shown.
 
 <a name="add-alarm-mapping"></a>
 #### To add alarm mapping
@@ -66,6 +66,8 @@ For each alarm mapping, the alarm severity, the alarm type and a new description
 3. In the **New description** field, optionally enter a new description for the alarm. If you leave this field empty, the original text from the alarm will be kept.
 4. Select the desired new severity, or select "Drop" to not show the alarm at all.
 5. Click **Save** to save your settings.
+
+> **Info:** The alarm type set in an alarm mapping is interpreted as &quot;&#60;type&#62;*&quot;. If you create for example an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value e.g. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
 
 #### To edit an alarm mapping
 

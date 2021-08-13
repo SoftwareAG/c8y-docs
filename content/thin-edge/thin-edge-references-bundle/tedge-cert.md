@@ -86,6 +86,6 @@ FLAGS:
 
 
 SUBCOMMANDS:
-    c8y     Upload root certificate to Cumulocity
+    c8y     Upload root certificate to {{< company-c8y >}}
     help    Prints this message or the help of the given subcommand(s)
 ```

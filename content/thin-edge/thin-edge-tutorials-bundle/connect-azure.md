@@ -11,18 +11,18 @@ The very first step to enable **thin-edge.io** is to connect your device to the 
 * Sending data to the cloud will then be as simple as sending data locally.
 
 The focus is here on connecting the device to Azure IoT.
-See this [tutorial](connect-c8y.md), if you want to connect Cumulocity IoT instead.
+See this [tutorial](/thin-edge/thin-edge-tutorials/#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
 Before you try to connect your device to Azure IoT, you need:
 * Create a Azure **IoT Hub** in Azure portal as described [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal).
-* [Install `thin-edge.io` on your device](../howto-guides/002_installation.md).
+* [Install `thin-edge.io` on your device](/thin-edge/thin-edge-howto-guides/#installation).
 
-You can now use [`tedge` command](../references/tedge.md) to:
-* [create a certificate for your device](connect-azure.md#create-the-certificate),
-* [register the device on Azure IoT Hub](connect-azure.md#register-the-device-on-Azure),
-* [configure the device](connect-azure.md#configure-the-device),
-* [connect the device](connect-azure.md#connect-the-device), and
-* [send your first telemetry data](#sending-your-first-telemetry-data).
+You can now use [`tedge` command](/thin-edge/thin-edge-references/#tedge) to:
+* [create a certificate for your device](/thin-edge/thin-edge-tutorials/#create-the-certificate),
+* [register the device on Azure IoT Hub](/thin-edge/thin-edge-tutorials/#register-the-device-on-azure-iot-hub),
+* [configure the device](/thin-edge/thin-edge-tutorials/#configure-the-device),
+* [connect the device](/thin-edge/thin-edge-tutorials/#connect-the-device), and
+* [send your first telemetry data](/thin-edge/thin-edge-tutorials/#sending-your-first-telemetry-data).
 
 ### Create the certificate
 
@@ -56,7 +56,7 @@ This is a self-signed certificate.
 The Thumbprint is the Sha1sum of the certificate. This is required for registering the
 device using the self-signed certificate on Azure IoT Hub.
 To use a certificate signed by your Certificate Authority,
-see the reference guide of [`tedge cert`](../references/tedge-cert.md).
+see the reference guide of [`tedge cert`](/thin-edge/thin-edge-references/#tedge-cert).
 
 ### Register the device on Azure IoT Hub
 
@@ -66,7 +66,7 @@ In the Azure IoT Hub Portal, navigate to "Explores"->"IoT Devices" click on "+ N
 Here provide the configuration parameters that are required to create the device as described below.
    * Device ID: Should be the same as the Subject of the certificate.
    * Authentication type: Select **X.509 Self-Signed** option.
-      * Provide the Primary Thumbprint that was displayed in [`tedge cert show`](connect-azure.md#show-certificate-details).
+      * Provide the Primary Thumbprint that was displayed in [`tedge cert show`](/thin-edge/thin-edge-tutorials/#show-certificate-details).
       * Use the same for the Secondary Thumbprint as well (Since we are using a single certificate).
    * Set "Connect this device to an IoT Hub" to **Enable**.
    * Then save the configuration.
@@ -154,7 +154,7 @@ More info about sending telemetry to Azure can be found [here](https://docs.micr
 ### Next Steps
 
 You can now:
-* learn how to [send various kind of telemetry data](send-thin-edge-data.md)
-  using the cloud-agnostic [Thin-Edge-Json data format](../architecture/thin-edge-json.md),
-* or have a detailed view of the [topics mapped to and from Azure](../references/bridged-topics.md#azure-mqtt-topics)
+* learn how to [send various kind of telemetry data](/thin-edge/thin-edge-tutorials/#send-thin-edge-data)
+  using the cloud-agnostic [Thin-Edge-Json data format](/thin-edge/thin-edge-architecture/#thin-edge-json),
+* or have a detailed view of the [topics mapped to and from Azure](/thin-edge/thin-edge-references/#azure-mqtt-topics)
   if you prefer to use directly Azure specific formats and protocols.

@@ -81,7 +81,7 @@ In that case, MQTT is used inside the edge devices, and another protocol is used
 
 ### Why is the thin-edge.io canonical format based on JSON?
 
-[Thin-Edge-Json](./thin-edge-json.md), the cloud-agnostic message format of thin-edge.io, is based on JSON.
+[Thin-Edge Json](/thin-edge/thin-edge-architecture/#thin-edge-json), the cloud-agnostic message format of thin-edge.io, is based on JSON.
 
 Supported by nearly all programming languages, JSON provides a nice compromise between simplicity and flexibility.
 Notably, it features [duck typing](https://en.wikipedia.org/wiki/Duck_typing),

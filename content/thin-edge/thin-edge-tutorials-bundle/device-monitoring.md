@@ -12,13 +12,13 @@ and can proactively initiate actions in case the device seems to malfunction.
 Additionally, the metrics can be used to help the customer troubleshoot when problems with the device are reported.
 
 Thin-edge.io uses the open source component [`collectd`](https://collectd.org/) to collect the metrics from the device.
-Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](../architecture/thin-edge-json.md) format
-and then into the [cloud-vendor specific format](../architecture/mapper.md).
+Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format
+and then into the [cloud-vendor specific format](/thin-edge/thin-edge-architecture/#mapper).
 
 Enabling monitoring on your device is a 3-steps process:
-1. [Install `collectd`](#install-collectd),
-2. [Configure `collectd`](#configure-collectd),
-3. [Enable thin-edge.io monitoring](#enable-thin-edge-monitoring).
+1. [Install `collectd`](/thin-edge/thin-edge-tutorials/#install-collectd),
+2. [Configure `collectd`](/thin-edge/thin-edge-tutorials/#configure-collectd),
+3. [Enable thin-edge.io monitoring](/thin-edge/thin-edge-tutorials/#enable-thin-edge-monitoring).
 
 ### Install `mosquitto` client library
 Since thin-edge.io uses the MQTT plugin of `collectd`, one needs to install the mosquitto client library
@@ -147,8 +147,8 @@ $ tedge mqtt sub 'collectd/#'
 
 ```
 
-The `tedge-mapper-collectd` translates these collectd measurements into the [thin-edge.io JSON](../architecture/thin-edge-json.md) format,
-[grouping the measurements](../references/bridged-topics.md#collectd-topics) emitted by each plugin:
+The `tedge-mapper-collectd` translates these collectd measurements into the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format,
+[grouping the measurements](http://localhost:1313/guides/thin-edge/thin-edge-references/#azure-mqtt-topics) emitted by each plugin:
 
 ```
 tedge mqtt sub 'tedge/measurements'
@@ -157,7 +157,7 @@ tedge mqtt sub 'tedge/measurements'
 [tedge/measurements] {"time":"2021-06-07T15:39:00.154967388+01:00","cpu":{"percent-active":0},"df-root":{"percent_bytes-used":71.3110656738281},"memory":{"percent-used":1.12107875001658}}
 ```
 
-From there, if the device is actually connected to a cloud platform like Cumulocity,
+From there, if the device is actually connected to a cloud platform like {{< company-c8y >}},
 these monitoring metrics will be forwarded to the cloud.
 
 ```
@@ -167,9 +167,9 @@ tedge mqtt sub 'c8y/#'
 ```
 
 If your device is not connected yet see:
-* [Connect my device to Cumulocity IoT](./connect-c8y.md)
-* [Connect my device to Azure IoT](./connect-azure.md)
+* [Connect my device to {{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y)
+* [Connect my device to Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure)
 
 ### Trouble shooting
 
-See here for [how to trouble shoot device monitoring?](../howto-guides/009_touble_shooting_monitoring.md)
+See here for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides/#touble-shooting-monitoring)

@@ -4,7 +4,7 @@ title: Thin-edge JSON format
 layout: redirect
 ---
 
-Thin Edge JSON is a lightweight format used in `thin-edge.io` to represent measurements data.
+Thin-Edge JSON is a lightweight format used in `thin-edge.io` to represent measurements data.
 This format can be used to represent single-valued measurements, multi-valued measurements
 or a combination of both along with some auxiliary data like the timestamp at which the measurement(s) was generated.
 
@@ -63,7 +63,7 @@ because the values at the second level(`phase1`, `phase2` and `phase3`) are not 
 
 ### Grouping measurements
 
-Multiple single-valued and multi-valued measurements can be grouped into a single Thin Edge JSON message as follows:
+Multiple single-valued and multi-valued measurements can be grouped into a single Thin-Edge JSON message as follows:
 
 ```json
 {
@@ -122,11 +122,11 @@ subscribing to various MQTT topics.
 Any data can be forwarded to the connected cloud-provider as well, by publishing the data to some standard topics.
 
 All topics with the prefix `tedge/` are reserved by `thin-edge.io` for this purpose.
-To send measurements to `thin-edge.io`, the measurements represented in Thin Edge JSON format can be published
+To send measurements to `thin-edge.io`, the measurements represented in Thin-Edge JSON format can be published
 to the `tedge/measurements` topic.
 Other processes running on the thin-edge device can subscribe to this topic to process these measurements.
 
-If the messages published to this `tedge/measurements` topic is not a well-formed Thin Edge JSON,
+If the messages published to this `tedge/measurements` topic is not a well-formed Thin-Edge JSON,
 then that message won’t be processed by `thin-edge.io`, not even partially,
 and an appropriate error message on why the validation failed will be published to a dedicated `tedge/errors` topic.
 The messages published to this topic will be highly verbose error messages and can be used for any debugging during development.
@@ -150,5 +150,5 @@ The `thin-edge.io` framework allows users forward all the measurements generated
 `tedge/measurements` MQTT topic in the thin-edge device to any IoT cloud provider that it is connected to,
 with the help of a *mapper* component designed for that cloud.
 The responsibility of a mapper is to subscribe to the `tedge/measurements` topic to receive all incoming measurements
-represented in the cloud vendor neutral Thin Edge JSON format, to a format that the connected cloud understands.
-Refer to [Cloud Message Mapper Architecture](./mapper.md) for more details on the mapper component.
+represented in the cloud vendor neutral Thin-Edge JSON format, to a format that the connected cloud understands.
+Refer to [Cloud Message Mapper Architecture](/thin-edge/thin-edge-architecture/#mapper) for more details on the mapper component.

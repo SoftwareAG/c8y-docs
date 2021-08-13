@@ -6,12 +6,12 @@ layout: redirect
 
 ### Overview
 
-In order to [authenticate HTTP requests on Cumulocity](https://cumulocity.com/guides/10.5.0/reference/rest-implementation/#authentication),
+In order to [authenticate HTTP requests on {{< company-c8y >}}](https://{{< domain-c8y >}}/api/#section/Authentication),
 a device can retrieve a JWT token using MQTT.
 
 ### Retrieving the token
 
-Follow the below steps in order to retrieve the token from the Cumulocity cloud using MQTT.
+Follow the below steps in order to retrieve the token from the {{< company-c8y >}} cloud using MQTT.
 
 Subscribe to `c8y/s/dat` topic
 

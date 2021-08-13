@@ -89,33 +89,33 @@ When thin-edge.io receives a measurement, it will add a timestamp to the measure
 }
 ```
 
-The 'time' key is a reserved keyword and hence can not be used as a measurement key. The 'time' field must be defined at the root level of the measurement JSON and not allowed at any other level, like inside the object value of a multi-valued measurement. Non-numeric values like the ISO 8601 timestamp string are allowed only for such reserved keys and not for regular measurements.
+The 'time' key is a reserved keyword and hence can not be used as a measurement key. The 'time' field must be defined at the root level of the measurement JSON. The 'time' field not allowed at any other level, for example inside the object value of a multi-valued measurement. Non-numeric values like the ISO 8601 timestamp string are solely allowed for these reserved keys and not for regular measurements.
 
 Here is the complete list of reserved keys that has special meanings inside the thin-edge.io framework and hence must not be used as measurement keys:
 
 | Key | Description |
 | --- | --- |
 | time | Timestamp in ISO 8601 string format |
-| type | Internal to `thin-edge.io` |
+| type | Internal to thin-edge.io |
 
 ### Sending measurements to thin-edge.io
 
-The thin-edge.io framework exposes some MQTT endpoints that can be used by local processes to exchange data between themselves as well as to get some data forwarded to the cloud. It will essentially act like an MQTT broker against which you can write your application logic. Other thin-edge processes can use this broker as an inter-process communication mechanism by publishing and subscribing to various MQTT topics. Any data can be forwarded to the connected cloud-provider as well, by publishing the data to some standard topics.
+The thin-edge.io framework exposes some MQTT endpoints that can be used by local processes to exchange data and to forward data to the cloud. It acts as an MQTT broker against which you can write your application logic. Other thin-edge processes can use this broker as an inter-process communication mechanism by publishing and subscribing to various MQTT topics. To forward data to the connected cloud provider, publish the respective data to some standard topics.
 
 All topics with the prefix `tedge/` are reserved by thin-edge.io for this purpose. To send measurements to thin-edge.io, the measurements represented in Thin Edge JSON format can be published to the 'tedge/measurements' topic. Other processes running on the thin-edge device can subscribe to this topic to process these measurements.
 
-If the messages published to this `tedge/measurements` topic is not a well-formed Thin Edge JSON, then that message won’t be processed by thin-edge.io, not even partially, and an appropriate error message on why the validation failed will be published to a dedicated `tedge/errors` topic. The messages published to this topic will be highly verbose error messages and can be used for any debugging during development. You should not rely on the structure of these error messages to automate any actions as they are purely textual data and bound to change from time-to-time.
+If the messages published to this `tedge/measurements` topic is not a well-formed Thin Edge JSON, that message will not be processed by thin-edge.io in any way.  An appropriate error message including the reason why the validation failed is published to a dedicated `tedge/errors` topic. The messages published to this topic will be highly verbose error messages and can be used for any debugging during development. You should not rely on the structure of these error messages to automate any actions as they are purely textual data and bound to change from time-to-time.
 
 More topics will be added under the `tedge/` topic in future to support more data types like events, alarms etc. So, it is advised to avoid any sub-topics under `tedge/` for any other data exchange between processes.
 
-Here is the complete list of topics reserved by `thin-edge.io` for its internal working:
+Here is the complete list of topics reserved by thin-edge.io for its internal working:
 
 | Topic | Description |
 | --- | --- |
-| `tedge/` | Reserved root topic of `thin-edge.io` |
-| `tedge/measurements` | Topic to publish measurements to `thin-edge.io` |
-| `tedge/errors` | Topic to subscribe to receive any error messages emitted by `thin-edge.io` while processing measurements|
+| `tedge/` | Reserved root topic of thin-edge.io |
+| `tedge/measurements` | Topic to publish measurements to thin-edge.io |
+| `tedge/errors` | Topic to subscribe to receive any error messages emitted by thin-edge.io while processing measurements|
 
 ### Sending measurements to the cloud
 
-The `thin-edge.io` framework allows users forward all the measurements generated and published to `tedge/measurements` MQTT topic in the thin-edge device to any IoT cloud provider that it is connected to, with the help of a *mapper* component designed for that cloud. The responsibility of a mapper is to subscribe to the `tedge/measurements` topic to receive all incoming measurements represented in the cloud vendor neutral Thin Edge JSON format, to a format that the connected cloud understands. Refer to [Cloud Message Mapper Architecture](./mapper.md) for more details on the mapper component.
+The thin-edge.io framework allows users forward all the measurements generated and published to `tedge/measurements` MQTT topic in the thin-edge device to any IoT cloud provider that it is connected to, with the help of a *mapper* component designed for that cloud. The responsibility of a mapper is to subscribe to the `tedge/measurements` topic to receive all incoming measurements represented in the cloud vendor neutral Thin Edge JSON format, to a format that the connected cloud understands. Refer to [Cloud Message Mapper Architecture](./mapper.md) for more details on the mapper component.

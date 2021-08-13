@@ -86,7 +86,7 @@ The topic for static templates supports an automatic creation of devices. Whenev
 The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
 
-### Handling none mandatory parameters
+### Handling non-mandatory parameters
 
 If a parameter is not declared as mandatory, the client can send an empty string in that place.
 

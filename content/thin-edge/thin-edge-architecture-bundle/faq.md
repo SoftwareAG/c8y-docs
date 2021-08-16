@@ -9,19 +9,19 @@ The primary goal of thin-edge.io is to simplify the connection of edge devices t
 
 For that purpose, thin-edge.io focuses on:
 
-* __Interoperability__ -
+* **Interoperability** -
   Thin-edge.io lets the users integrate components producing or consuming telemetry data, northbound with cloud platforms, southbound with sensors
   as well as for east-west communication between analytics components.
-* __Flexibility__ -
+* **Flexibility** -
   Thin-edge.io lets users integrate component provided by different IoT actors, not even originally designed with thin-edge.io in-mind,
   using various technologies and programming languages.
-* __Security__ -
+* **Security** -
   Thin-edge.io provides a secure and stable foundation for cloud connections, software/firmware updates, and remote device management.
-* __Reliability__ -
+* **Reliability** -
   Thin-edge.io components can survive in chaotic environments as network outages and process restarts happen.
-* __Efficiency__ -
+* **Efficiency** -
   Thin-edge.io lets users build applications that can run on constrained device hardware and with limited bandwidth networks.
-* __Multi-cloud__ -
+* **Multi-cloud** -
   Thin-edge.io enables users to connect their edge devices with multiple clouds. The actual cloud used can be decided at run-time by the end-user.
 
 ### Why is thin-edge.io an executable binary and not a library?

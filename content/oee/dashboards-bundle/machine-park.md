@@ -35,7 +35,7 @@ Click **Andon Board** at the right of an entry to switch to the respective **And
 
 Click **Machine dashboard** at the right of machine to switch to its **Machine dashboard**, see [Machine dashboard](#machine-dashboard).
 
-An orange alarm icon at the right of an entry indicates an alarm within this entity, together with the number of alarms  shown in red.
+An orange alarm icon at the right of an entry indicates an alarm within this entity, together with the number of alarms shown in red.
 
 <!-- What about this legend? What are the equivalents now?
 

@@ -8,6 +8,6 @@ The **Andon Board** displays and constantly updates the values OEE, Availability
 
 The update interval of the values in the **Andon Board** for sites, areas and lines is set to 10 minutes.
 
-The update interval for machines is set to 10 minutes by default but can be adjusted in the upper right corner of the *Andon Board, as displayed in the picture below*
+For machines, the update interval by default is also set to 10 minutes but can be adjusted by clicking **Interval** at the top right.
 
 ![Andon board](/images/oee/dashboards/dashboard-andon-board.png)

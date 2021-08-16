@@ -15,6 +15,8 @@ When naming a measurement, make sure not to use umlauts in the measurement name.
 
 ### Where can I find the device and profile ID?
 
+You can find the device ID and profile ID at the end of the URL shown in your browser when accessing the Machine Dashboard. The device ID comprises of the first seven numbers at the end of the URL. The remaining nine numbers are the profile ID, see screenshot below.
+
 ![Device and profile ID](/images/oee/faq/faq-device-id.png)
 
 ###  Why does a measurement/event/alarm in the OEE application have multiple timestamps?
@@ -33,9 +35,9 @@ For more details on how to correctly set up property names and series names see 
 
 ### Where do I find the calculated OEE measurements of a profile in the platform?
 
-1. Go to the parent machine in the {{< product-c8y-iot >}} Device Management application and open the child devices of the machine (TODO screenshot of child devices tab).
+1. Go to the parent machine in the Device Management application and open the child devices of the machine.
 2. The profile is a child device of the machine. You can identify it via <profile-name>[OEE calculation profile]. Click the name of the profile to open it.
-3. Navigate to the Measurements tab of the child device. You should see the OEE measurements.
+3. Navigate to the **Measurements tab** of the child device. You should see the OEE measurements.
 
 Alternatively, you can also use the built-in search in {{< product-c8y-iot >}} Device Management application to search for the name of the profile.
 

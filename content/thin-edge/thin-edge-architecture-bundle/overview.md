@@ -10,11 +10,11 @@ The cloud agnostic thin-edge.io provides the foundations for cloud connectivity 
 
 On top of these foundations, you can build telemetry applications using a combination of components provided by various IoT actors. The features provided by these components can include for example low-level connectivity to IoT protocols, event-stream analytics, machine-learning-powered systems, or application specific processors.
 
-Thin-edge.io can be extended in various programming languages due to its extensible architecture. The following list showsr the key aspects of the thin-edge.io architecture:
+Thin-edge.io can be extended in various programming languages due to its extensible architecture. The following list shows the key aspects of the thin-edge.io architecture:
 
 1. The components are processes exchanging messages over an MQTT bus.
 2. The MQTT bus is connected to the cloud, forwarding the messages published on cloud specific topics.
-2. A [canonical data format](thin-edge-json.md) lets the components exchange telemetry data independently of the connected cloud. This is an optional feature and the components are free to also use cloud specific data formats.
+2. A [canonical data format](#thin-edge-json) lets the components exchange telemetry data independently of the connected cloud. This is an optional feature and the components are free to also use cloud specific data formats.
 3. The mapper processes are responsible for translating the canonical data format into cloud specific messages and vice versa.
 
 ![Overview](./thin-edge-overview.png)

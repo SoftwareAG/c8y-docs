@@ -6,7 +6,8 @@ layout: redirect
 
 ### Can the calculated OEE values be used in a Cockpit widget?
 
-Profiles are child devices of the machine for which they calculate the OEE. Calculated OEE values can be used in any Cockpit widget like the regular machine measurements by selecting the profile as the source device.
+* Profiles are child devices of the machine for which they calculate the OEE.
+* Calculated OEE values can be used in any Cockpit widget like the regular machine measurements by selecting the profile as the source device.
 
 ### Can I use umlauts in measurement names?
 
@@ -38,6 +39,6 @@ For more details on how to correctly set up property names and series names see 
 2. The profile is a child device of the machine. You can identify it via <profile-name>[OEE calculation profile]. Click the name of the profile to open it.
 3. Navigate to the **Measurements tab** of the child device. You should see the OEE measurements.
 
-Alternatively, you can also use the built-in search in {{< product-c8y-iot >}} Device Management application to search for the name of the profile.
+Alternatively, you can also use the built-in search in the Device Management application to search for the name of the profile.
 
 ![Calculated OEE measurements in a profile in {{< product-c8y-iot >}}](/images/oee/faq/faq-calculated-oee-measurement.png)

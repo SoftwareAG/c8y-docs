@@ -22,7 +22,7 @@ Level 1 supported platforms are officially supported and are actively tested in 
 
 ### Level 2
 
-Level 2 platforms are not officially supported and tested yet, but we know from our experiences that these systems used to work for some maintainers or users. If your os is not listed here, this does not mean it is not working, just give it a try. We are happy to hear about your experience in the Github discussions.
-* Ubuntu 20.04 in WSL (only for development, not for running thin-edge.io due to missing systemd)
+Level 2 platforms are not officially supported and tested yet. <!---but we know from our experiences that these systems used to work for some maintainers or users.---> If your OS is not listed here, this does not mean it is not working. We recommend trying your OS with our level 2 platforms.   <!---We are happy to hear about your experience in the Github discussions.--->
+* Ubuntu 20.04 in WSL: only for development, not for running thin-edge.io due to missing `systemd`.
 * AMD64 Debian 10
 * ARMv6 Raspberry Pi OS 10 (needs to be built for this specific target, please refer to [Issue-161](https://github.com/thin-edge/thin-edge.io/issues/161))

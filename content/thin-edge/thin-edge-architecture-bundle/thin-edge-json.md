@@ -74,7 +74,7 @@ The grouping of measurements allows you to represent measurements collected at t
 
 ### Auxiliary measurement data
 
-When thin-edge.io receives a measurement, it adds a generated timestamp to the measurement before any further processing. If the user doesn't want to rely on this timestamp, an explicit timestamp can be provided in the measurement message itself by adding the time value as a string in ISO 8601 format using 'time' as the key name. See the example below:
+When thin-edge.io receives a measurement, it adds a generated timestamp to the measurement before any further processing. If you do not want to rely on this timestamp, an explicit timestamp can be provided in the measurement message itself by adding the time value as a string in ISO 8601 format using 'time' as the key name. See the example below:
 
 ```json
 {

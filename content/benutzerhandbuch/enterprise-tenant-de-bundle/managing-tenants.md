@@ -2,15 +2,17 @@
 weight: 10
 title: Verwalten von Mandanten
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#managing-tenants
 ---
 
-Über den Enterprise Tenant von Cumulocity IoT können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
+Über den {{< enterprise-tenant >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
-> **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten.
+> **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
 
->**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support).
+>**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
 
-Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um eine sensible Operation handelt, sind die entsprechenden Berechtigungen granularer:
 
 - LESEN: Durchsuchen und Ansehen von Mandanten.
 - ERSTELLEN: Erstellen neuer Mandanten.
@@ -29,7 +31,7 @@ Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandan
 * Das Erstellungsdatum für den Mandanten.
 * Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
+Im {{< management-tenant >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
 
 <a name="creating-tenants"></a>
 ### So erstellen Sie einen Untermandanten
@@ -41,8 +43,8 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 2. Geben Sie die folgenden Attribute an:
 
 	<table>
-	<col style="width:30%">
-	<col style="width:70%">
+	<col style="width:20%">
+	<col style="width:80%">
 	<thead>
 	<tr>
 	<th style="text-align:left">Feld</th>
@@ -52,7 +54,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 	<tbody>
 	<tr>
 	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.cumulocity.com" auf cumulocity.com. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. Beachten Sie, dass die Verwendung von Unterstrichen zwar veraltet, aber aus Gründen der Rückwärtskompatibilität noch möglich ist.  </td>
+	<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.{{< domain-c8y >}}" auf {{< domain-c8y >}}. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.{{< domain-c8y >}}" auf {{< domain-c8y >}} verwenden. Sie können aber nicht "mycustomer.acme.{{< domain-c8y >}}" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche (-) enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. </td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
@@ -76,7 +78,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 	</tr>
 	<tr>
 	<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
+	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform</a>.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Mandantenregel</td>
@@ -89,7 +91,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 
 Wenn der Untermandant erstellt wird, erhält er eine automatisch generierte ID, die nicht geändert werden kann. Zudem wird er automatisch mit einem ersten Administrator-Benutzer ("Benutzername des Administrators") eingerichtet. Dieser Administrator kann andere Benutzer erstellen und Berechtigungen vergeben. Der erste Benutzer kann nicht gelöscht werden, um ein Aussperren zu verhindern.
 
-Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Aktivieren Sie hierzu die Option **Erstellen von Untermandanten zulassen** im Mandanten-Editor.
+Vom {{< management-tenant >}} aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Aktivieren Sie hierzu die Option **Erstellen von Untermandanten zulassen** im Mandanten-Editor.
 
 ### So können Sie Untermandanten-Attribute anzeigen oder bearbeiten
 
@@ -122,11 +124,11 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im Management-Mandanten global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
-<td style="text-align:left">Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im Management-Mandanten eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.</td>
+<td style="text-align:left">Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im {{< management-tenant >}}eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.</td>
 </tr>
 <tr>
 <td style="text-align:left">Ablaufdatum</td>
@@ -135,14 +137,13 @@ Hier werden die folgenden Informationen angezeigt:
 </tbody>
 </table>
 
-
 ### Sperren von Untermandanten
 
 Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über ein Gerät, einen Benutzer oder eine andere Anwendung erfolgt.
 
 Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und können später durch Klicken auf **Einschalten** wieder bereitgestellt werden.
 
->**Wichtig:** Mandanten, die für alle Cumulocity IoT Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
+>**Wichtig:** Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
 >
 > **Info:** Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
 
@@ -162,9 +163,9 @@ Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten g
 
 ### Löschen von Untermandanten
 
->**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im Management-Mandanten verfügbar. Mandanten können ausschließlich vom Management-Mandanten aus gelöscht werden.
+>**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant >}} aus gelöscht werden.
 >
->Administratoren in Enterprise Tenants dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+>Administratoren in {{< enterprise-tenant >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 
 #### So löschen Sie einen Untermandanten
 
@@ -174,7 +175,7 @@ Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und 
 <a name="subscribe"></a>
 ### Anwendungen
 
-In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity IoT abonniert.
+In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von {{< product-c8y-iot >}} abonniert.
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -188,7 +189,7 @@ Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der li
 
 #### Überwachen von Microservices
 
-Für alle Anwendungen, die als Microservices von Cumulocity IoT gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
+Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
 
@@ -216,15 +217,9 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 <a name="tenants-custom-properties"></a>
 ### Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing) angezeigt.
 
 ![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
-
-#### Begrenzen der Geräteanzahl für Untermandanten
-
-Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
-
-Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Begrenzen der Anfragerate für Untermandanten
 
@@ -235,16 +230,28 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 * Stream-Puffer begrenzen - Begrenzung des MQTT-Anfragenpuffers für den Mandanten
 * Stream-Anfragen begrenzen - Begrenzung der MQTT-Anfragen für den Mandanten pro Sekunde
 
-Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom Management-Mandanten aus durchgeführt werden:
+Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant >}} aus durchgeführt werden:
 
  - cep.queue.limit
  - data-broker.queue.limit
 
 Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzungsfunktion als deaktiviert betrachtet und der Mandant erhält unbegrenzten Zugriff. Um die Begrenzung der Anfragerate wieder abzuschalten, setzen Sie den Wert auf "-1".
 
+#### Begrenzen der Geräteanzahl für Untermandanten
+
+Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
+
+Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+
+#### Produkterfahrungs-Tracking
+
+Über das Kontrollkästchen **Gainsight-Tracking aktivieren** kann ein übergeordneter Mandant das Produkterfahrungs-Tracking über die Produkterfahrungssoftware [Gainsight PX](https://www.gainsight.com/product-experience/) für den jeweiligen untergeordneten Mandanten aktivieren/deaktivieren.
+
+Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
+
 
 <a name="tenant-policies"></a>
-###  Mandantenregeln
+### Mandantenregeln
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
 
@@ -273,7 +280,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
 
->**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom Management-Mandanten aus eine Aktualisierung starten.
+>**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant >}} aus eine Aktualisierung starten.
 
 #### So bearbeiten Sie eine Mandantenregel
 
@@ -294,7 +301,7 @@ Klicken Sie auf das Menüsymbol in dem Mandantenregel-Eintrag, den Sie löschen 
 <a name="default-subscriptions"></a>
 ### Standardabonnements
 
-In der Cumulocity IoT-Plattform können Sie konfigurieren, welche Anwendungen und Microservices bei der Erstellung eines Mandanten für diesen abonniert sind. Wenn Sie einen neuen Mandanten erstellen, werden die angegebenen Anwendungen und Microservices automatisch für ihn abonniert.
+In der {{< product-c8y-iot >}}-Plattform können Sie konfigurieren, welche Anwendungen und Microservices bei der Erstellung eines Mandanten für diesen abonniert sind. Wenn Sie einen neuen Mandanten erstellen, werden die angegebenen Anwendungen und Microservices automatisch für ihn abonniert.
 
 Zusätzlich können Sie festlegen, welche Anwendungen und Microservices für einen Mandanten abonniert werden, wenn ein System-Upgrade durchgeführt wird. Diese Liste kann von den Standardabonnements bei der Mandantenerstellung abweichen. Beispielsweise könnten bestimmte Standardanwendungen für einen Mandanten nach der Erstellung abbestellt worden sein und Sie wollen nicht, dass diese Anwendungen erneut für ihn abonniert werden, oder Sie möchten andere Anwendungen für ihn abonnieren.
 
@@ -303,7 +310,7 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden neuen Mandanten bei dessen Erstellung,
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
-> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](https://cumulocity.com/api/#operation/postTenantApplicationReferenceCollectionResource) unten oder [Mandanten](https://cumulocity.com/api/#tag/Tenants) in der Cumulocity IoT OpenAPI Specification.
+> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in der {{< openapi >}}.
 
 In der Mitte der Seite wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
 

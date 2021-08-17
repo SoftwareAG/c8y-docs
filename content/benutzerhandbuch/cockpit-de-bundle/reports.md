@@ -2,9 +2,25 @@
 weight: 45
 title: Verwenden von Berichten
 layout: redirect
+helpcontent: >-
+  Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten über eine Reihe von Widgets in einem Dashboard-Layout. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Im Gegensatz zu Dashboards zeigen Berichte globale Daten, unabhängig von der Asset-Hierarchie. 
+
+
+  Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um einen neuen Bericht zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten oder zu löschen.
+
+
+  In einem Bericht-Dashboard können Sie Widgets durch Ziehen und Ablegen neu anordnen oder mit Hilfe des Pfeilsymbols deren Größe ändern.
+
+
+  Klicken Sie in der oberen Menüleiste auf **Widget hinzufügen**, um dem Bericht ein neues Widget hinzuzufügen, oder verwenden Sie das Zahnrad-Symbol, um Widgets zu bearbeiten oder zu entfernen.
+
+
+  Cumulocity IoT enthält vordefinierte Widget-Typen, z. B. Alarm- oder Datenpunktlisten, lineare Zeiger oder Tachos. Da jeder Widget-Typ andere Daten anzeigt, sind zu seiner Konfiguration unterschiedliche Parameter notwendig. Nähere Informationen zu den einzelnen Widget-Typen und ihrer Konfiguration finden Sie in der Dokumentation der Widgets-Sammlung.
 ---
 
-Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und vielen anderen Widgets in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
+<!-- -->
+
+Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
 Klicken Sie im Navigator auf **Berichte**, um alle Berichte anzuzeigen.
 
@@ -25,7 +41,7 @@ Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden S
 ### So erstellen Sie einen Bericht
 
 1. Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um den Dialog **Bericht hinzufügen** zu öffnen.
-	<br>![Add report](/images/benutzerhandbuch/cockpit/cockpit-report-add.png)<br>
+  <br>![Add report](/images/benutzerhandbuch/cockpit/cockpit-report-add.png)<br>
 2. Geben Sie im Feld **Menübeschriftung** einen Namen für den Bericht ein und fügen Sie darunter optional eine Beschreibung hinzu.
 3. Wählen Sie **Im Navigator anzeigen**, wenn der Bericht im Navigator angezeigt werden soll. Wählen Sie die Position des Berichts im Navigator. Er wird je nach gewähltem Wert relativ zu bestehenden Elementen positioniert. Hat beispielsweise "Startseite" den Wert "10000", so wird der Bericht über "Startseite" positioniert, wenn der Wert "10001" oder mehr beträgt.
 4. Im Abschnitt **Layout** können Sie ein Design für den Bericht wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).

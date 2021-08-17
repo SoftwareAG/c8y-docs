@@ -3,10 +3,12 @@ weight: 50
 title: Anwenden von Geschäftsregeln
 
 ---
-<a name="event-processing">
+<a name="event-processing"></a>
 ### Echtzeitverarbeitung
 
-Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von Cumulocity IoT automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
+>**Wichtig:** Die hier beschriebene Funktionalität **Echtzeitverarbeitung** ist nur verfügbar, wenn Ihr Mandant Esper und nicht Apama abonniert hat. Apama ist die Standard-CEP-Engine für neue Mandanten. Für Mandanten, die Apama verwenden, ist eine ähnliche Funktionalität über die Seite **Streaming Analytics EPL Apps** verfügbar, siehe [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). Im Falle einer Migration muss jeglicher CEL-Code (Cumulocity Event Language) in EPL-Apps übersetzt werden. Näheres zur Migration finden Sie unter [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) im *Streaming Analytics Guide*.
+
+Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von {{< product-c8y-iot >}} automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 
 >**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
 
@@ -14,7 +16,7 @@ Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle 
 
 <img src="/images/benutzerhandbuch/Administration/admin-event-processing.png" alt="Event processing">
 
-<br>Für jede Regel in der Liste wird der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
+<br>Für jede Regel wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
 Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die Anweisung erzeugte Ausgabe unterhalb des Häkchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie auf **Alle löschen**, um die Ausgabe zu entfernen.
 
@@ -44,6 +46,7 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Anstatt eine Regel zu löschen, können Sie sie auch zeitweise deaktivieren, indem Sie den Status auf "Nicht gestartet" setzen.
 
+
 <a name="reprio-alarms"></a>
 ### Alarmregeln
 
@@ -56,7 +59,7 @@ Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste all
 Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Beschreibung (optional) angezeigt.
 
 <a name="add-alarm-mapping"></a>
-####  So fügen Sie eine Alarmregel hinzu
+#### So fügen Sie eine Alarmregel hinzu
 
 1. Klicken Sie auf **Alarmregel hinzufügen** in der oberen Menüleiste.
 2. Geben Sie den Alarmtypen ein, den Sie ändern möchten.

@@ -2,9 +2,11 @@
 weight: 20
 title: Verwalten von Benutzerhierarchien
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#user-hierarchies
 ---
 
-Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity IoT getrennt verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
+Mit Benutzerhierarchien können Sie verschiedene Organisationen in {{< product-c8y-iot >}} verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
 
 > **Info:** Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchy".
 
@@ -17,7 +19,7 @@ Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkt untergeordnet
 ![User hierarchies](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy.png)
 
 <a name="sub-users"></a>
-###  So erstellen Sie einen untergeordneten Benutzer
+### So erstellen Sie einen untergeordneten Benutzer
 
 Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewiesen wird. Dieser Besitzer kann den Benutzer verwalten. Der Benutzer kann maximal die Berechtigungen des Besitzers haben.
 
@@ -40,7 +42,7 @@ Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neue
 <a name="delegate"></a>
 ### Delegieren von Benutzerhierarchien
 
-In Cumulocity IoT können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.
+In {{< product-c8y-iot >}} können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.
 
 Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.
 

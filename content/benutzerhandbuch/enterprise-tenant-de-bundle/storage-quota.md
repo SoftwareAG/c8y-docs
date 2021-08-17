@@ -1,7 +1,9 @@
 ---
-weight: 80
+weight: 100
 title: Speicherbegrenzung
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#storage-quota
 ---
 
 

@@ -2,9 +2,16 @@
 weight: 65
 title: Verwalten von Exporten
 layout: redirect
+helpcontent: >-
+  Mit der Export-Funktionalität können Sie spezifische Daten in Dateien exportieren. Bei jedem Export können Sie den Ausgangsdateityp (Excel oder CSV) festlegen, den Export planen, die Ziel-E-Mail-Adresse(n) angeben und optional Filter für bestimmte Geräte, Zeitintervalle oder Felder auswählen.
+
+
+  Klicken Sie in der oberen Menüleiste auf **Export hinzufügen**, um einen neuen Export zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten, zu duplizieren oder zu löschen.
 aliases:
   - /benutzerhandbuch/cockpit-de/#export
 ---
+
+
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
@@ -102,8 +109,10 @@ Optional können Sie die E-Mail-Adresse des Absenders für Antworten hinzufügen
 Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber bearbeitet werden.
 
 Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet "Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden".
+Beachten Sie, dass Sie zum Erstellen eines anklickbaren Links in der E-Mail "https://" zum Link hinzufügen müssen. Beispiel: "Eine Datei mit exportierten Daten kann unter https://{tenant-domain}/inventory/binaries/{binaryId} heruntergeladen werden."
 
 >**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
+
 
 Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 

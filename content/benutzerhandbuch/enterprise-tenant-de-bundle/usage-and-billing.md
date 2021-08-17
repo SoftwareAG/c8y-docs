@@ -1,11 +1,13 @@
 ---
-weight: 110
+weight: 70
 title: Nutzungsstatistiken und Abrechnung
 layout: redirect
+aliases:
+  - /users-guide/enterprise-edition/#usage-and-billing
 ---
 
 <a name="usage-stats"></a>
-###  Anzeigen von Nutzungsstatistiken
+### Anzeigen von Nutzungsstatistiken
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
@@ -39,7 +41,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 </tr>
 <tr>
 <td align="left">API-Anfrage von Geräten</td>
-<td align="left">ID des Untermandanten</td>
+<td align="left">Anzahl der API-Anfragen von Geräten</td>
 </tr>
 <tr>
 <td align="left">Speicherplatz (MB)</td>
@@ -67,10 +69,6 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 </tr>
 <tr>
 <td align="left">Endpunktgeräte</td>
-<td align="left">ID des Untermandanten</td>
-</tr>
-<tr>
-<td align="left">ID</td>
 <td align="left">Blattgeräte (ohne Gateways und Kinder)</td>
 </tr>
 <tr>
@@ -123,7 +121,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 </tr>
 <tr>
 <td align="left">Übergeordneter Mandant</td>
-<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)</td>
+<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den {{< management-tenant >}})</td>
 </tr>
 <tr>
 <td align="left">Externe Referenz</td>
@@ -157,12 +155,12 @@ Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 <a name="microservice-usage"></a>
 ### Microservice-Nutzung
 
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können Enterprise Tenants und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
+Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 
 
 #### Abrechnungsmodi
 
-Cumulocity IoT bietet zwei Abrechnungsmodi:
+{{< product-c8y-iot >}} bietet zwei Abrechnungsmodi:
 
 * **Abonnementbasierte Abrechnung**: Berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
 
@@ -185,7 +183,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://cumulocity.com/api/#tag/Tenant-applications) verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant >}} eines {{< management-tenant >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -228,7 +226,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) in der Cumulocity IoT OpenAPI Specification. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -243,14 +241,14 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) in der Cumulocity IoT OpenAPI Specification.
+Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/#tag/Audits) in der {{< openapi >}}.
 
 
 ### Handhabung von Zeitzonen
 
->**Wichtig:** Die Server der Cumulocity IoT-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
+>**Wichtig:** {{< product-c8y-iot >}} Plattform-Server laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
 
-Die Mandanten-Nutzungsstatistiken werden täglich entsprechend dem durch die Zeitzone des Servers bestimmten Beginn des Tages (`BOD`) und Ende des Tages (`EOD`) erfasst. Wenn die lokale Zeitzone eines Benutzers nicht mit der Zeitzone des Servers übereinstimmt, kann folglich ein vom Benutzer gestartetes Kommando je nach Serverzeit einem anderen Tag zugewiesen werden.
+Die Mandanten-Nutzungsstatistiken werden täglich entsprechend dem durch die Zeitzone des Servers bestimmten Beginn des Tages (`BOD`) und Ende des Tages (`EOD`) erfasst. Wenn die lokale Zeitzone eines Benutzers nicht mit der Zeitzone des Servers übereinstimmt, kann folglich eine vom Benutzer gestartete Operation je nach Serverzeit einem anderen Tag zugewiesen werden.
 
 #### Beispiele
 
@@ -333,7 +331,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 
 **Mandant**
 
-Ein Mandant der Cumulocity IoT-Platform kann mehrere Status besitzen:
+Ein Mandant der {{< product-c8y-iot >}}-Platform kann mehrere Status besitzen:
 
   * Aktiv - Der allgemeine Status, wenn der Mandant mit der Plattform interagieren kann. In diesem Status werden alle Abrechnungswerte gespeichert und aktualisiert.
   * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d.h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, sodass keine Ressourcen berechnet werden können.
@@ -368,7 +366,7 @@ Audit-Logs und Ereignisse werden entsprechend der Isolationsstufe im Mandantenbe
 
 ### Gebührenabrechnungsmodelle
 
-Die Cumulocity IoT-Plattform sammelt zahlreiche unterschiedliche Nutzungsstatistik-Daten, die zur Gebührenabrechnung verwendet werden.
+Die {{< product-c8y-iot >}}-Plattform sammelt zahlreiche unterschiedliche Nutzungsstatistik-Daten, die zur Gebührenabrechnung verwendet werden.
 
 Je nach Vertrag gibt es zwei Abrechnungs-Preismodelle:
 
@@ -566,7 +564,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://cumulocity.com/api/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

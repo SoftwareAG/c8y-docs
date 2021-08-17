@@ -146,9 +146,9 @@ To access and connect to the Edge appliance:
 
 ### Data exchange using Data Broker
 
-{{< product-c8y-iot >}} Edge provides the option to upload the data to a {{< product-c8y-iot >}} tenant account selectively. Note that you must first create a {{< product-c8y-iot >}} tenant account.
+Data broker lets you upload the data to a {{< product-c8y-iot >}} tenant account selectively. Note that you must first create a {{< product-c8y-iot >}} tenant account.
 
-You can share the following data:
+You can share the following data with the tenant account:
 
 * devices (and more generically, managed objects)
 * events
@@ -157,9 +157,23 @@ You can share the following data:
 
 >**Important:** Data Broker in {{< product-c8y-iot >}} Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
 
-Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account.
+To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account. 
 
-Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
+A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [{{< enterprise-tenant >}} > Using the Data Broker > Data connector](/users-guide/enterprise-tenant/#data-connectors).
+
+To create a data and connector and upload the data to tenant account, perform the following steps in your Edge appliance:
+
+1. In the Administration application, go to **Data Broker** > **Data connectors**.
+
+2. Click **Add data connector** and provide all the information and filters. See [{{< enterprise-tenant >}} > Using the Data Broker > Data connector > To add a data connector](/users-guide/enterprise-tenant/#to-add-a-data-connector) in the User guide.
+
+   Note down the security code. This security code will be used to subscribe the connector in the tenant account.
+
+3. In the tenant account, go to Administration application > **Data Broker** > **Data subscriptions** to subscribe the connector created in your Edge appliance.
+
+   Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [{{< enterprise-tenant >}} > Using the Data Broker > Data subscriptions(/users-guide/enterprise-tenant/#data-subscriptions).
+
+   You can now navigate to the Device Management application or the Cockpit application. You will find a new “virtual group” with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
 

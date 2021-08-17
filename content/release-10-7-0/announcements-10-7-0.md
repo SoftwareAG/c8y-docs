@@ -78,10 +78,6 @@ With the 10.10 GA release in July 2021, all Cumulocity IoT UIs will be upgraded 
 
 With the 10.10 GA release in July 2021, it will no longer be allowed to use underscores in tenant domain names, in accordance with RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenants with underscores in the domain name will still be working correctly. However, each customer having underscores in tenant domain names should contact [product support](https://cumulocity.com/guides/10.7.0/about-doc/contacting-support/) in order to plan the migration for those affected tenants.
 
-#### Deprecation of `/cep/realtime` endpoint
-
-The `/cep/realtime` endpoint is deprecated. We recommend you to use the `/notification/realtime` endpoint instead. With the 10.11 GA release in October 2021, the `/cep/realtime` endpoint is supposed to be removed.
-
 
 ### Implemented measures
 

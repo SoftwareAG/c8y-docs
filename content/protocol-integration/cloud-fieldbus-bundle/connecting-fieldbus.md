@@ -87,7 +87,7 @@ To connect a Profibus device, follow these steps:
 3. The baud rate is automatically detected by the gateway and it is displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to {{< product-c8y-iot >}}.
 5. Set the device address of the terminal.
-6. Configure your Profibus controller to communicate to that device address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041)).
+6. Configure your Profibus controller to communicate to that device address. To do so, refer to the gateway manual (see for example Smart box at the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}})).
 7. Click **Save** to update the gateway with the new settings.
 
 <img src="/images/device-protocols/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">

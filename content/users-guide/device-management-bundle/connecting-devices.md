@@ -63,7 +63,7 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
-> **Info:** In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) or look up the manual of your device.
+> **Info:** In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 
 
 <a name="creds-upload"></a>
@@ -119,7 +119,7 @@ To connect the devices, they are pre-registered with the relevant information. M
 
 After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.
 
-For your convenience, we provide CSV template files for both bulk registration types (simple/full) which you can download from the registration wizard to view or copy the structure. 
+For your convenience, we provide CSV template files for both bulk registration types (simple/full) which you can download from the registration wizard to view or copy the structure.
 
 >**Info:** If the device with the given identifier already exists, it will be updated with the data from the CSV file.
 

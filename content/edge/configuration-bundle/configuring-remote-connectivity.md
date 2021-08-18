@@ -177,7 +177,7 @@ To create a data connector and upload the data to the tenant account, perform th
 
 5. In the tenant account, go to the Administration application. Click **Data Broker** > **Data subscriptions** to subscribe the connector created in your Edge appliance.
 
-   Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [{{< enterprise-tenant >}} > Using the Data Broker > Data subscriptions(/users-guide/enterprise-tenant/#data-subscriptions).
+   Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [{{< enterprise-tenant >}} > Using the Data Broker > Data subscriptions](/users-guide/enterprise-tenant/#data-subscriptions).
 
    You can now navigate to the Device Management application or the Cockpit application. You will find a new “virtual group” with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
 

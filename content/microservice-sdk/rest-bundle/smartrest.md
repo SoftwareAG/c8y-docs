@@ -16,7 +16,9 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 * It is based on CSV (comma-separated values), hence, it is easy to handle from C-based environments.
 * It supports server-generated timestamps for devices without clocks.
 
-In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/reference/smartrest).
+In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
+
+> **Info**: The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest).
 
 ### How does SmartREST work?
 

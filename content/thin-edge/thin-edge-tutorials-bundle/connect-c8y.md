@@ -4,35 +4,35 @@ title: Connect your device to Cumulocity IoT
 layout: redirect
 ---
 
-The very first step to enable `thin-edge.io` is to connect your device to the cloud.
+The very first step to enable thin-edge.io is to connect your device to the cloud.
 * This is a 10 minutes operation to be done only once.
 * It establishes a permanent connection from your device to the cloud end-point.
 * This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates.
-* Sending data to the cloud will then be as simple as sending data locally.
+* Sending data to the cloud is then as simple as sending data locally.
 
-The focus is here on connecting to [Cumulocity IoT](https://www.cumulocity.com/guides/concepts/introduction/).
-See this [tutorial](connect-azure.md), if you want to connect Azure IoT instead.
+The focus is here on connecting to [{{< product-c8y-iot >}}](https://www.{{< domain-c8y >}}/guides/concepts/introduction/).
+If you want to connect Azure IoT instead, see the following [tutorial](connect-azure.md),
 
-Before you try to connect your device to Cumulocity IoT, you need:
+Before you try to connect your device to {{< product-c8y-iot >}}, you need:
 * The url of the endpoint to connect (e.g. `eu-latest.cumulocity.com`).
-* Your credentials to connect Cumulocity:
+* Your credentials to connect {{< product-c8y-iot >}}:
     * Your tenant identifier (e.g. `t00000007`), a user name and password.
     * None of these credentials will be stored on the device.
     * These are only required once, to register the device.
 
-If not done yet, [install `thin-edge.io` on your device](../howto-guides/002_installation.md).
+If not done yet, install [thin-edge.io](../howto-guides/002_installation.md) on your device.
 
 You can now use the [`tedge` command](../references/tedge.md) to:
 * [create a certificate for you device](connect-c8y.md#create-the-certificate),
-* [make the device certificate trusted by Cumulocity](connect-c8y.md#make-the-device-trusted-by-cumulocity),
+* [make the device certificate trusted by {{< product-c8y-iot >}}](connect-c8y.md#make-the-device-trusted-by-cumulocity),
 * [connect the device](connect-c8y.md#connect-the-device), and
 * [send your first telemetry data](#sending-your-first-telemetry-data).
 
 ### Configure the device
 
-To connect the device to the Cumulocity IoT, one needs to set the URL of your Cumulocity IoT tenant and the root certificate as below.
+To connect the device to the {{< product-c8y-iot >}}, one needs to set the URL of your {{< product-c8y-iot >}} tenant and the root certificate as below.
 
-Set the URL of your Cumulocity IoT tenant.
+Set the URL of your {{< product-c8y-iot >}} tenant.
 
 ```
 $ sudo tedge config set c8y.url your-tenant.cumulocity.com
@@ -44,7 +44,7 @@ Set the path to the root certificate if necessary. The default is `/etc/ssl/cert
 $ sudo tedge config set c8y.root.cert.path /etc/ssl/certs
 ```
 
-This will set the root certificate path of the Cumulocity IoT.
+This will set the root certificate path of the {{< product-c8y-iot >}}.
 In most of the Linux flavors, the certificate will be present in /etc/ssl/certs.
 If not found download it from [here](https://www.identrust.com/dst-root-ca-x3).
 
@@ -78,12 +78,12 @@ This is a self-signed certificate.
 To use a certificate signed by your Certificate Authority,
 see the reference guide of [`tedge cert`](../references/tedge-cert.md).
 
-### Make the device trusted by Cumulocity
+### Make the device trusted by {{< product-c8y-iot >}}
 
-For a certificate to be trusted by Cumulocity,
+For a certificate to be trusted by {{< product-c8y-iot >}},
 one needs to add the certificate of the signing authority to the list of trusted certificates.
-In the Cumulocity GUI, navigate to "Device Management/Management/Trusted certificates"
-in order to see this list for your Cumulocity tenant.
+In the {{< product-c8y-iot >}} GUI, navigate to "Device Management/Management/Trusted certificates"
+in order to see this list for your {{< product-c8y-iot >}} tenant.
 
 Here, the device certificate is self-signed and has to be directly trusted by Certificate.
 This can be done:
@@ -103,7 +103,7 @@ This command configures the MQTT broker:
 * to forward local messages to the cloud and vice versa.
 
 Also, if you have installed `tedge_mapper`, this command starts and enables the tedge-mapper-c8y systemd service.
-At last, it sends packets to Cumulocity to check the connection.
+At last, it sends packets to {{< product-c8y-iot >}} to check the connection.
 If your device is not yet registered, you will find the digital-twin created in your tenant after `tedge connect c8y`!
 
 ```
@@ -134,22 +134,22 @@ tedge-mapper service successfully started and enabled!
 
 Sending packets to check connection. This may take up to 10 seconds.
 
-Try 1 / 2: Sending a message to Cumulocity. ... No response. If the device is new, it's normal to get no response in the first try.
-Try 2 / 2: Sending a message to Cumulocity. Received expected response message, connection check is successful.
+Try 1 / 2: Sending a message to {{< product-c8y-iot >}}. ... No response. If the device is new, it's normal to get no response in the first try.
+Try 2 / 2: Sending a message to {{< product-c8y-iot >}}. Received expected response message, connection check is successful.
 ```
 
 ### Sending your first telemetry data
 
-Sending data to Cumulocity is done using MQTT over topics prefixed with `c8y`.
-Any messages sent to one of these topics will be forwarded to Cumulocity.
+Sending data to {{< product-c8y-iot >}} is done using MQTT over topics prefixed with `c8y`.
+Any messages sent to one of these topics will be forwarded to {{< product-c8y-iot >}}.
 The messages are expected to have a format specific to each topic.
-Here, we use `tedge mqtt pub` a raw Cumulocity SmartRest message to be understood as a temperature of 20 Celsius.
+Here, we use `tedge mqtt pub` a raw {{< product-c8y-iot >}} SmartRest message to be understood as a temperature of 20 Celsius.
 
 ```
 $ tedge mqtt pub c8y/s/us 211,20
 ```
 
-To check that this message has been received by Cumulocity,
+To check that this message has been received by {{< product-c8y-iot >}},
 navigate to "Device Management/Devices/All devices/<your device id>/Measurements".
 You should observe a "temperature measurement" graph with the new data point.
 
@@ -159,5 +159,5 @@ You should observe a "temperature measurement" graph with the new data point.
 You can now:
 * learn how to [send various kind of telemetry data](send-thin-edge-data.md)
   using the cloud-agnostic [Thin-Edge-Json data format](../architecture/thin-edge-json.md),
-* or have a detailed view of the [topics mapped to and from Cumulocity](../references/bridged-topics.md#cumulocity-mqtt-topics)
-  if you prefer to use directly Cumulocity specific formats and protocols.
+* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](../references/bridged-topics.md#cumulocity-mqtt-topics)
+  if you prefer to use directly {{< product-c8y-iot >}} specific formats and protocols.

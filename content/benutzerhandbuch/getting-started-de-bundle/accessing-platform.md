@@ -3,6 +3,8 @@ weight: 20
 title: Aufrufen und Anmelden an der Plattform
 layout: redirect
 aliases:
+  - /benutzerhandbuch/overview-de/#accessing-cumulocity-platform
+  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
   - /benutzerhandbuch/overview/#accessing-cumulocity-platform
   - /benutzerhandbuch/getting-started/#accessing-cumulocity-platform
 ---

@@ -3,7 +3,7 @@ weight: 50
 title: Supportbenutzerzugriff
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition#users-in-other-tenants
+  - /benutzerhandbuch/enterprise-edition-de/#users-in-other-tenants
 ---
 
 Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und im Falle von individuellen lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen.

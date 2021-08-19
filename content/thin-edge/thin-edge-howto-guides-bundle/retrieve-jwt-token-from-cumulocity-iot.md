@@ -6,12 +6,12 @@ layout: redirect
 
 ### Overview
 
-In order to [authenticate HTTP requests on {{< company-c8y >}}](https://{{< domain-c8y >}}/api/#section/Authentication),
+In order to [authenticate HTTP requests on {{< product-c8y-iot >}}](https://{{< domain-c8y >}}/api/#section/Authentication),
 a device can retrieve a JWT token using MQTT.
 
 ### Retrieving the token
 
-Follow the below steps in order to retrieve the token from the {{< company-c8y >}} cloud using MQTT.
+Follow the below steps in order to retrieve the token from the {{< product-c8y-iot >}} cloud using MQTT.
 
 Subscribe to `c8y/s/dat` topic
 

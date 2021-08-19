@@ -157,7 +157,7 @@ tedge mqtt sub 'tedge/measurements'
 [tedge/measurements] {"time":"2021-06-07T15:39:00.154967388+01:00","cpu":{"percent-active":0},"df-root":{"percent_bytes-used":71.3110656738281},"memory":{"percent-used":1.12107875001658}}
 ```
 
-From there, if the device is actually connected to a cloud platform like {{< company-c8y >}},
+From there, if the device is actually connected to a cloud platform like {{< product-c8y-iot >}},
 these monitoring metrics will be forwarded to the cloud.
 
 ```

@@ -33,10 +33,10 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 
 ___
 
-The next step is to have the device certificate trusted by {{< company-c8y >}}. This is done by uploading the certificate of the signee.
-You can upload root certificate via [{{< company-c8y >}} UI](/device-sdk/mqtt/#device-certificates) or with [`tedge cert upload`](/thin-edge/thin-edge-references/#upload) as described below.
+The next step is to have the device certificate trusted by {{< product-c8y-iot >}}. This is done by uploading the certificate of the signee.
+You can upload root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [`tedge cert upload`](/thin-edge/thin-edge-references/#upload) as described below.
 
-> Note: This command takes parameter `user`, this is due to upload mechanism to {{< company-c8y >}} cloud which uses username and password for authentication.
+> Note: This command takes parameter `user`, this is due to upload mechanism to {{< product-c8y-iot >}} cloud which uses username and password for authentication.
 >
 > After issuing this command you are going to be prompted for a password. Users usernames and passwords are not stored in configuration due to security.
 
@@ -46,7 +46,7 @@ Password:
 ```
 
 where:
-> `username` -> user in {{< company-c8y >}} with permissions to upload new certificates
+> `username` -> user in {{< product-c8y-iot >}} with permissions to upload new certificates
 
 ___
 
@@ -80,7 +80,7 @@ tedge-mapper service successfully started and enabled!
 
 Sending packets to check connection. This may take up to 10 seconds.
 
-Try 1 / 2: Sending a message to {{< company-c8y >}}. Received expected response message, connection check is successful.
+Try 1 / 2: Sending a message to {{< product-c8y-iot >}}. Received expected response message, connection check is successful.
 ```
 
 #### Errors
@@ -95,7 +95,7 @@ Checking if systemd is available.
 
 Checking if configuration for requested bridge already exists.
 
-Error: failed to create bridge to connect {{< company-c8y >}} cloud.
+Error: failed to create bridge to connect {{< product-c8y-iot >}} cloud.
 
 Caused by:
     Connection is already established. To remove existing connection use 'tedge disconnect c8y' and try again.
@@ -166,7 +166,7 @@ This error may be caused by some of the following reasons:
 
 Local bridge has been configured and is running but the connection check has failed due to no access to the northbound endpoint.
 
-- {{< company-c8y >}} tenant not available
+- {{< product-c8y-iot >}} tenant not available
 
 Tenant couldn't be reached and therefore connection check has failed.
 
@@ -196,7 +196,7 @@ Validating the bridge certificates.
 
 Saving configuration for requested bridge.
 
-Error: failed to create bridge to connect {{< company-c8y >}} cloud.
+Error: failed to create bridge to connect {{< product-c8y-iot >}} cloud.
 
 Caused by:
     0: File Error. Check permissions for /etc/tedge/mosquitto-conf/tedge-mosquitto.conf.

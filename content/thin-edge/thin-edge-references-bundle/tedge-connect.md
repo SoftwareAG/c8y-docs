@@ -47,7 +47,7 @@ FLAGS:
             Prints version information
 ```
 
-### {{< company-c8y >}}
+### Cumulocity IoT
 
 ```
 tedge-connect-c8y 0.2.0

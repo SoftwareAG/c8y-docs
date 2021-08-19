@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 Once your Thin-Edge device is configured and connected to an IoT cloud provider, you can start sending measurements.
-Refer to [Connecting to {{< company-c8y >}}](/thin-edge/thin-edge-tutorials/#connect-c8y) or tutorials for other cloud providers
+Refer to [Connecting to {{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y) or tutorials for other cloud providers
 to learn how to connect your Thin-Edge device to an IoT cloud provider.
 
 In this tutorial, we'll see how different kinds of measurements are represented in Thin-Edge JSON format and
@@ -40,8 +40,8 @@ listening to any measurements published to `tedge/measurements`.
 The mapper, on receipt of these Thin-Edge JSON measurements, will map those measurements to their equivalent
 cloud provider native representation and send it to that cloud.
 
-For example, when the device is connected to {{< company-c8y >}}, the {{< company-c8y >}} mapper component will be performing these actions.
-To check if these measurements have reached {{< company-c8y >}}, login to your {{< company-c8y >}} dashboard and navigate to
+For example, when the device is connected to {{< product-c8y-iot >}}, the {{< product-c8y-iot >}} mapper component will be performing these actions.
+To check if these measurements have reached {{< product-c8y-iot >}}, login to your {{< product-c8y-iot >}} dashboard and navigate to
 _Device Management => Devices => All devices => <your device id> => Measurements_
 and see if your temperature measurement is appearing in the dashboard.
 

@@ -12,7 +12,7 @@ To send the Thin-Edge JSON measurements to a supported IoT cloud, the device sho
 **tedge/measurements** topic. Internally the tedge-mapper will consume the measurements from this topic, translates and
 send them to the cloud that the device has been connected to by the `tedge connect` command.
 
-### {{< company-c8y >}} MQTT Topics
+### Cumulocity IoT MQTT Topics
 
 The topics follow the below format
 `<protocol>/<direction><type>[/<template>][/<child id>] `
@@ -26,7 +26,7 @@ The topics follow the below format
 |               |           | cr = credentials
 
    ### SmartREST2.0 topics
-   All {{< company-c8y >}} topics have been prefixed by `c8y/`.
+   All {{< product-c8y-iot >}} topics have been prefixed by `c8y/`.
    * Registration topics
      c8y/s/dcr
      c8y/s/ucr
@@ -56,7 +56,7 @@ The topics follow the below format
     c8y/measurement/measurements/create
     c8y/error
 
-You can find more information about {{< company-c8y >}} topics [Here]({{< link-sag-tech-forum >}}/t/{{< company-c8y >}}-iot-tips-and-tricks-mqtt-cheat-sheet/237187)
+You can find more information about {{< product-c8y-iot >}} topics [Here]({{< link-sag-tech-forum >}}/t/cumulocity-iot-tips-and-tricks-mqtt-cheat-sheet/237187)
 
 ### Azure MQTT Topics
 

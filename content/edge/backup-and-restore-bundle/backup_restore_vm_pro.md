@@ -6,7 +6,7 @@ layout: redirect
 
 ### Creating a backup in VMware Workstation Pro
 
-1. Power off the Edge appliance. <br><br>
+1. Shut down the Edge appliance. <br><br>
 <img src="/images/edge/edge-backup-vmware-pro-power-off.png" name="Power Off" style="width:75%;"/>
 
 2. Select the Edge appliance that you want to back up.

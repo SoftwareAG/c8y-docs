@@ -206,6 +206,14 @@ When a user logs in with an access token, the username can be derived from a JWT
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
+Next section is related to **user data mapping** configuration:
+
+![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
+
+When user login also user data like first name, last name, email and phone number can be derived from a JWT claims. Each field represents claim name that is used to retrieve data from JWT. User data mappings configuration is optional and admin manager can use only required fields. If configuration is empty or cannot find claim name in JWT token then values in user data are set as empty.
+
+Mapping for alias is not available because it is not used in context of Single Sign-On login.
+
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
 1. By specifying the Azure AD certificate discovery address.
@@ -280,7 +288,7 @@ Optionally single logout can be configured:
 |Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
 |Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
-The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
+The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 

@@ -206,7 +206,7 @@ When a user logs in with an access token, the username can be derived from a JWT
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
-Next, the **user data mapping** can be configured:
+Next, the **User data mappings** can be configured:
 
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
 

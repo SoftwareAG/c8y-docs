@@ -260,7 +260,7 @@ Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#managing-firmware-on-a-device), [Software](/benutzerhandbuch/device-management-de/#managing-software-on-a-device), [Konfigurationen](/benutzerhandbuch/device-management-de/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#verwalten-von-firmware-auf-einem-gerät), [Software](/benutzerhandbuch/device-management-de//#verwalten-von-software-auf-einem-gerät), [Konfigurationen](/benutzerhandbuch/device-management-de/#so-laden-sie-einen-konfigurationssnapshot-und-wenden-ihn-auf-ein-gerät-an-das-mehrere-konfigurationstypen-unterstützt) etc.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 

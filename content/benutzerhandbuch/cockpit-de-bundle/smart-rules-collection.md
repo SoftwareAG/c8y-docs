@@ -70,7 +70,7 @@ Folgende Typen sind verfügbar:
 </tbody>
 </table>
 
->**Info:** In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden, siehe [Smart Rule-Variablen](#smart-rule-variables) am Ende dieses Abschnitts.  
+>**Info:** In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden, siehe [Smart Rule-Variablen](#smart-rules-variables) am Ende dieses Abschnitts.  
 
 
 <a name="alarm-sms"></a>
@@ -115,7 +115,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">SMS senden</td>
-<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" or "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
+<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" or "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -182,7 +182,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -436,7 +436,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>

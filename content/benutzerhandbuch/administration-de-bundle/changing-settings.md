@@ -78,8 +78,8 @@ Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speich
 <a name="oauth-internal"></a>
 ### OAuth Internal
 
-{{< product-c8y-iot >}} OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden. 
-Die Lebensdauer ist für Tokens wie auch für Cookies über Mandantenoptionen konfigurierbar, die der Kategorie `oauth.internal` angehören. 
+{{< product-c8y-iot >}} OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden.
+Die Lebensdauer ist für Tokens wie auch für Cookies über Mandantenoptionen konfigurierbar, die der Kategorie `oauth.internal` angehören.
 
 #### Token-Einstellungen
 Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit Mandantenoptionen geändert werden:
@@ -89,7 +89,7 @@ Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit
 Der minimal zulässige Wert ist 5 Minuten.
 
 #### Cookie-Einstellungen
-Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann: 
+Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
@@ -115,7 +115,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * alle Microservices mit dem Microservice Java SDK 10.4.6 oder vorzugsweise höher erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
->**Info:** Um die Single-Sign-On-Funktion für {{< enterprise-tenant >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+>**Info:** Um die Single-Sign-On-Funktion für {{< enterprise-tenant-de >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 
 
 #### Konfigurationseinstellungen
@@ -248,7 +248,7 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
 Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". In Azure AD sind keine weiteren Schritte erforderlich.
 

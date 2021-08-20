@@ -23,7 +23,7 @@ Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie a
 Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
 * Cloud Remote Access kann beim Zielmandanten nicht verwendet werden.
-* Der {{< management-tenant >}} kann nicht als Data Broker-Ursprungsmandant verwendet werden.
+* Der {{< management-tenant-de >}} kann nicht als Data Broker-Ursprungsmandant verwendet werden.
 * Derzeit funktioniert das Fieldbus-Widget nicht bei Mandanten, die die Fieldbus-Geräte über Data Broker empfangen, da die entsprechenden Datenmodelle nicht synchronisiert sind.
 * Data Broker garantiert nicht, dass die Zielmandanten dieselbe Nachrichtenreihenfolge aufweisen wie der Ursprungsmandant.
 * Wenngleich wir für Rückwärtskompatibilität sorgen, können wir nicht sicherstellen, dass Data Broker Daten an {{< product-c8y-iot >}}-Mandanten senden kann, die in älteren {{< product-c8y-iot >}}-Versionen als der Ursprungsmandant ausgeführt werden.

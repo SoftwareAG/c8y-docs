@@ -68,7 +68,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/overview).
+Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de/).
 
 <a name="home"></a>
 ### Startseite

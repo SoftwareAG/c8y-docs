@@ -4,15 +4,15 @@ title: Übersicht
 layout: redirect
 ---
 
-Ein {{< enterprise-tenant >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
+Ein {{< enterprise-tenant-de >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant-de >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
 
-Mit einem {{< enterprise-tenant >}} können Sie
+Mit einem {{< enterprise-tenant-de >}} können Sie
 
 * Untermandanten erstellen und verwalten
 * die abonnierten Anwendungen/Funktionen der Untermandanten verwalten
 * Untermandanten anhand der Verbrauchsstatistiken Rechnungen stellen
 
-Darüber hinaus bietet ein {{< enterprise-tenant >}} folgende Zusatzfunktionen:
+Darüber hinaus bietet ein {{< enterprise-tenant-de >}} folgende Zusatzfunktionen:
 
 * **Branding** - zum Konfigurieren eines individuellen Look & Feel
 * **Domain-Name** - zum Bereitstellen eines individuellen Domain-Namens
@@ -21,7 +21,7 @@ Darüber hinaus bietet ein {{< enterprise-tenant >}} folgende Zusatzfunktionen:
 
 Näheres zum {{< product-c8y-iot >}}-Mandantenkonzept finden Sie unter [Mandantenhierarchie](/concepts/tenant-hierarchy) im *Concepts Guide*.
 
-Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterprise-tenant >}} verfügbar sind:
+Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterprise-tenant-de >}} verfügbar sind:
 
 <table>
 <thead>
@@ -37,7 +37,7 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 <tbody>
 <tr>
 <td align="left"><a href="#managing-tenants">Verwalten von Mandanten</a></td>
-<td align="left">Erstellen und verwalten Sie Untermandanten und verwalten Sie deren Attribute und abonnierte <a href="#applications">Anwendungen</a>.</td>
+<td align="left">Erstellen und verwalten Sie Untermandanten und verwalten Sie deren Attribute und abonnierte <a href="#anwendungen">Anwendungen</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Verwalten von Benutzerhierarchien</a></td>
@@ -54,14 +54,14 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 </tr>
 <tr>
 <td align="left"><a href="#license-management">Lizenzverwaltung</a></td>
-<td align="left">Verwalten Sie Lizenzen für die Domains der {{< enterprise-tenant >}}s über die Benutzeroberfläche.</td>
+<td align="left">Verwalten Sie Lizenzen für die Domains der {{< enterprise-tenant-de >}}s über die Benutzeroberfläche.</td>
 </tr>
 <tr>
 <td align="left"><a href="#usage-and-billing">Nutzungsstatistiken und Abrechnung</a></td>
-<td align="left">Zeigen Sie <a href="#viewing-usage-statistics">statistische Informationen</a> zu den einzelnen Mandanten an, z. B. die Anzahl der erstellten Geräte oder Alarme, sowie zur <a href="#microservice-usage">Ressourcennutzung für jeden Microservice</a> zu jedem Mandanten zu Anrechnungszwecken. </td>
+<td align="left">Zeigen Sie <a href="#anzeigen-von-nutzungsstatistiken">statistische Informationen</a> zu den einzelnen Mandanten an, z. B. die Anzahl der erstellten Geräte oder Alarme, sowie zur <a href="#microservice-usage">Ressourcennutzung für jeden Microservice</a> zu jedem Mandanten zu Anrechnungszwecken. </td>
 <tr>
 <td align="left"><a href="#data-broker">Data Broker</a></td>
-<td align="left">Teilen Sie Daten selektiv mit anderen Mandanten mit Hilfe von <a href="#data-connectors">Datenkonnektoren</a> und <a href="#data-subscriptions">Datenabonnements</a>.</td>
+<td align="left">Teilen Sie Daten selektiv mit anderen Mandanten mit Hilfe von <a href="#datenkonnektoren">Datenkonnektoren</a> und <a href="#datenabonnements">Datenabonnements</a>.</td>
 </tr>
 </tbody>
 </table>

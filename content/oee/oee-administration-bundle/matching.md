@@ -12,7 +12,7 @@ The following image provides an overview on the matching capabilities.
 
 ![Functional overview](/images/oee/administration/matching-functional-overview.png)
 
-You can either define a calculation rule or set the calculation by at least two categories for every input variable. The categories need to be created under **Calculation categories** first, see [Calculation categories](/oee/administration/#categories). The different categories are calculated together and result in the final input variable. But unlike the input variable, different lines will be displayed in the chart of the **Machine Dashboard** for the categories in addition to the input variable.
+You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories need to be created under **Calculation categories** first, see [Calculation categories](/oee/administration/#categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
 
 #### Calculation rules
 

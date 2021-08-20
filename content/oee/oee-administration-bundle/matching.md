@@ -18,9 +18,9 @@ You can either define a single calculation rule or use categories to define at l
 
 Calculation rules can be defined as
 
-* Transformation rules ("Define quality status event" is not activated): This enables you to count parts, for example, and thus determine the actual production amount.
+* Transformation rules ("Define quality status event" or "Define machine status event" is not activated): This enables you to count parts, for example, and thus determine the Actual Production Amount.
 
-* Machine status events ("Define quality status event" is activated): Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
+* Machine status events ("Define quality status event" or "Define machine status event" is activated): Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
 
 
 #### Calculation reset
@@ -33,7 +33,7 @@ measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
 
 If the value is *false*, the calculation can be continued with an old value for the quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
 
-#### Exception: Fixed values
+#### Providing fixed values for inputs & KPIs
 
 If you want to have fixed KPIs or inputs follow these instructions:
 
@@ -61,15 +61,13 @@ In this example we derive the produced amount from an event "StateEvent" of the 
 
 This rule looks like this in text form: "if evt("342", "StateEvent", "content$sub_state$id",false) = 3 then 1"
 
-If the IF condition is fulfilled, this means for the OEE app that a workpiece has been created, see green events.<br>
+If the IF condition is fulfilled, this means for the OEE application that a workpiece has been created, see green events.<br>
 If an IF condition is fulfilled, the created workpiece (quantity = 1) is split up to the last event, regardless of whether the event fulfills the If condition or not. The splitting is shown in red.
 
 ![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-2.png)
 
-This logic can also be applied to the "Actual quality amount" and "Quality loss amount".<br>
-Of course, all three input parameters can also be derived directly from MEAs, or the number of an MEA. The "Actual Quality Amount" and "Quality Loss Quantity" can also be determined by the machine status.
-
-A possible extension would be to specify that the created workpieces are only split up to the last event that also fulfills the If condition. This function is currently not yet available. (Internal note #5915)
+This logic can also be applied to the Actual Quality Amount and Quality Loss Amount.<br>
+Of course, all three input parameters can also be derived directly from MEAs, or the number of an MEA. The Actual Quality Amount and Quality Loss Quantity can also be determined by the machine status.
 
 ![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-3.png)
 
@@ -126,7 +124,7 @@ You must define an identifier which can either be a transformation or a machine 
 
 This is an example of the case "Define quality status event" for the Actual Quality Amount:
 
-If the measurement "torque" is below 100 then quality is "true".<br>
+If the measurement "torque" is below 100 then Quality is "true".<br>
 All new produced parts (Actual Production Amount) are from now on good parts, until 'Tatsächliche_Produktionsmenge' is < 100.
 
 ![Example matching](/images/oee/administration/example-matching.png)

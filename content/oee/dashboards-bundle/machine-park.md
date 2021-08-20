@@ -16,11 +16,11 @@ In the upper section, the average OEE for the entire machine park is shown, i.e.
 
 Below, the OEE for the areas, sites and lines is displayed.
 
-Clicking the arrows expands (or collapses) an entity and shows (or hides) the entities attached to it.
+Clicking the arrows expands (or collapses) an entity and shows (or hides) the entities assigned to it.
 
 ![Entity details](/images/oee/dashboards/dashboard-entity-details.png)
 
-The OEE value for an entity is calculated as the average or the product (see below) of the associated entities that follow in the hierarchy. The hierarchy is as follows: Site < Area < Line < Machine.
+The OEE value for an entity is calculated as the average or the product (see below) of the associated entities that follow in the hierarchy. The hierarchy is as follows: Site > Area > Line > Machine.
 
 For sites, areas and lines you can select one of the following options for the OEE calculation:
 

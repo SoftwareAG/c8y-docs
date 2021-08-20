@@ -206,13 +206,13 @@ When a user logs in with an access token, the username can be derived from a JWT
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
-Next section is related to **user data mapping** configuration:
+Next, the **user data mapping** can be configured:
 
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
 
-When user login also user data like first name, last name, email and phone number can be derived from a JWT claims. Each field represents claim name that is used to retrieve data from JWT. User data mappings configuration is optional and admin manager can use only required fields. If configuration is empty or cannot find claim name in JWT token then values in user data are set as empty.
+On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
 
-Mapping for alias is not available because it is not used in context of Single Sign-On login.
+Mapping for alias is not available because it is not used in the context of single sign-on login.
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 

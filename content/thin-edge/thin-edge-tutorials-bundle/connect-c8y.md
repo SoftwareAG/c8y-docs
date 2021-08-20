@@ -140,24 +140,24 @@ Try 2 / 2: Sending a message to {{< product-c8y-iot >}}. Received expected respo
 
 ### Sending your first telemetry data
 
-Sending data to {{< product-c8y-iot >}} is done using MQTT over topics prefixed with `c8y`.
-Any messages sent to one of these topics will be forwarded to {{< product-c8y-iot >}}.
-The messages are expected to have a format specific to each topic.
-Here, we use `tedge mqtt pub` a raw {{< product-c8y-iot >}} SmartRest message to be understood as a temperature of 20 Celsius.
+To send data to {{< product-c8y-iot >}} use MQTT over topics prefixed with `c8y`.
+Any messages sent to one of these topics is forwarded to {{< product-c8y-iot >}}.
+The messages have to have a format specific to each topic.
+Here, the example below uses `tedge mqtt pub` a raw {{< product-c8y-iot >}} SmartRest message to be understood as a temperature of 20 Celsius.
 
 ```
 $ tedge mqtt pub c8y/s/us 211,20
 ```
 
 To check that this message has been received by {{< product-c8y-iot >}},
-navigate to "Device Management/Devices/All devices/<your device id>/Measurements".
-You should observe a "temperature measurement" graph with the new data point.
+navigate to Device Management > Devices > All devices > <your device id> > Measurements.
+You see a temperature measurement graph with the new data point.
 
 
 ### Next Steps
 
 You can now:
-* learn how to [send various kind of telemetry data](send-thin-edge-data.md)
-  using the cloud-agnostic [Thin-Edge-Json data format](../architecture/thin-edge-json.md),
-* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](../references/bridged-topics.md#cumulocity-mqtt-topics)
+* learn how to [send various kind of telemetry data](#send-thin-edge-data)
+  using the cloud-agnostic [Thin-Edge-Json data format](/thin-edge/thin-edge-architecture#thin-edge-json),
+* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](../reference/bridged-topics.md#cumulocity-mqtt-topics)
   if you prefer to use directly {{< product-c8y-iot >}} specific formats and protocols.

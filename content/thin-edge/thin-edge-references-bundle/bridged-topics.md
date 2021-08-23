@@ -6,12 +6,12 @@ layout: redirect
 
 This document lists the MQTT topics that are supported by thin-edge.io.
 
-### Thin-edge JSON MQTT Topics
+### Thin-edge JSON MQTT topics
 
 To send the thin-edge JSON measurements to a supported IoT cloud, the device should publish the measurements on the **tedge/measurements** topic.
 Internally the tedge-mapper will consume the measurements from this topic and translate and send them to the cloud that the device has been connected to by the `tedge connect` command.
 
-### Cumulocity MQTT Topics
+### Cumulocity IoT MQTT topics
 
 The topics follow the below format
 `<protocol>/<direction><type>[/<template>][/<child id>]`
@@ -26,7 +26,7 @@ The topics follow the below format
 
 ### SmartREST 2.0 topics
 
-All Cumulocity topics have been prefixed by `c8y/`.
+All {{< product-c8y-iot >}} topics have been prefixed by `c8y/`.
 
 * Registration topics
   * c8y/s/dcr
@@ -54,11 +54,11 @@ All Cumulocity topics have been prefixed by `c8y/`.
 * c8y/measurement/measurements/create
 * c8y/error
 
-You can find more information about Cumulocity topics [here](https://tech.forums.softwareag.com/t/cumulocity-iot-tips-and-tricks-mqtt-cheat-sheet/237187).
+You can find more information about {{< product-c8y-iot >}} topics in our [{{< sag-dev-community >}} ](https://tech.forums.softwareag.com/t/cumulocity-iot-tips-and-tricks-mqtt-cheat-sheet/237187).
 
-### Azure MQTT Topics
+### Azure MQTT topics
 
-MQTT clients on thin-edge device must use the below topics to communicate with the Azure cloud.
+MQTT clients on thin-edge devices must use the below topics to communicate with the Azure cloud.
 The Azure topics are prefixed by `az/`.
 
  * `az/messages/events/` - Use this topic to send messages from the device to the cloud.

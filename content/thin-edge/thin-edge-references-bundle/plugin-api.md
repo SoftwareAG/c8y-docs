@@ -20,12 +20,12 @@ Thin-edge uses plugins to delegate all the software management operations to the
 
 ## Plugin repository
 
-* To be used by thin-edge, a plugin has to be stored in the directory `/etc/tedge/sm-plugins`.
+* To be used by thin-edge, a plugin has to be stored in the directory */etc/tedge/sm-plugins*.
 * The same plugin can have different names, using virtual links.
 * One of the plugins can have the name `default`. This plugin is then used as the default plugin.
 
 On start-up and sign-up, the sm-agent registers the plugins as follows:
-1. Iterate over the executable file of the directory `/etc/tedge/sm-plugins`.
+1. Iterate over the executable file of the directory */etc/tedge/sm-plugins*.
 2. Check if the executable is indeed a plugin, calling the [`list`](./#the_list_command) command.
 
 ## Plugin API
@@ -35,9 +35,11 @@ On start-up and sign-up, the sm-agent registers the plugins as follows:
 * A plugin should not support additional commands or options.
 * A plugin might have a configuration file.
   * It can be a list of remote repositories, or a list of software modules to be excluded.
-  * These configuration files can be managed from the cloud via the sm-agent (TODO: how).
+  * These configuration files can be managed from the cloud via the sm-agent.
 
-### Input, Output and Errors
+[comment]: # (TODO: how?)
+
+### Input, output and errors
 
 * The plugins are called by the sm-agent using a child process for each action.
 * For the current list of commands there is no input beyond the command arguments, and a plugin can close its `stdin`.
@@ -69,8 +71,8 @@ Contract:
 * This command takes no arguments.
 * If an error status is returned, the executable is removed from the list of plugins.
 * The list is returned using the [jsonlines](https://jsonlines.org/) format.
-    * `name`: the name of the module. This is the name that has been used to install it and must be used to remove it.
-    * `version`: the version currently installed. This is a string that can only been interpreted in the context of the plugin.
+    * `name`: The name of the module. This is the name that has been used to install it and must be used to remove it.
+    * `version`: The version currently installed. This is a string that can only been interpreted in the context of the plugin.
 
 ### The `prepare` command
 
@@ -85,7 +87,7 @@ $ /etc/tedge/sm-plugins/debian finalize
 ```
 
 For many plugins this command will do nothing.
-However, It gives the plugin an opportunity to:
+However, it gives the plugin an opportunity to:
 * Update the dependencies before an operation, i.e. a sequence of actions.
    Notably, a debian plugin can update the `apt` cache issuing an `apt-get update`.
 * Start a transaction, in case the plugin is able to manage rollbacks.
@@ -135,7 +137,7 @@ Contract:
   * After a successful sequence `prepare; install foo; finalize` the module `foo` must be reported by the `list` command.
   * After a successful sequence `prepare; install foo --version v; finalize` the module `foo` must be reported by the `list` command with the version `v`. If the plugin manages concurrent versions, the module `foo` might also be reported with versions already installed before the operation.
   * A plugin is not required to detect inconsistent actions as `prepare; install a; remove a-dependency; finalize`.
-  * It will not result in an error if you run this command twice or when the module is already installed.  
+  * It will not result in an error if you run this command twice or if the module is already installed.  
 * An error is reported if:
   * The module name is unknown.
   * There is no version for the module that matches the constraint provided by the `--version` option.
@@ -165,7 +167,7 @@ Contract:
   * After a successful sequence `prepare; remove foo; finalize` the module `foo` must no more be reported by the `list` command.
   * After a successful sequence `prepare; remove foo --version v; finalize` the module `foo` is no longer reported by the `list` command with the version `v`. If the plugin manages concurrent versions, the module `foo` might still be reported with versions already installed before the operation.
   * A plugin is not required to detect inconsistent actions as `prepare; remove a; install a-reverse-dependency; finalize`.
-  * It will not result in an error to run this command twice or when the module is not installed.  
+  * It will not result in an error if you run this command twice or if the module is not installed.  
 * An error is reported if:
   * The module name is unknown.
   * The module cannot be uninstalled.

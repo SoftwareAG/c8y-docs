@@ -109,11 +109,21 @@ Next, select a calculation method, i.e. the values for the mapping of the OEE in
 
 ![Computation](/images/oee/administration/profile-computation.png)
 
-You can select one of 6 different calculation methods. *For each of the calculation methods there have to exist 3 out of the 5 values, see schema on the left side. *
+You can select one of six supported calculation methods. The calculation methods differ in what input parameters they require. There are five potential input parameters of which each of the calculation methods requires three. The five input parameters are:
+
+* Actual Production Time
+* Availability Losses (Time)
+* Actual Production Amount
+* Actual Quality Amount
+* Quality Losses (Time)
+
+Either Actual Production Time or Availability Losses (Time) are required as the other one can be derived from the one provided. As Actual Production Amount is the sum of Actual Quality Amount and Quality Losses (Time), only two of the three inputs are required as the remaining one can be derived from the other two.
+
+The six calculation methods shown in the screenshot represent the possible combinations of the five input parameters following the rule described above.
 
 For more information on the input variables and the naming conventions of the pathways, see [OEE theory](/oee/oee-theory/).
 
->**Info:** For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
+>**Info:** For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (Amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
 
 
 ### Matching

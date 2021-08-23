@@ -124,8 +124,7 @@ You must define an identifier which can either be a transformation or a machine 
 
 This is an example of the case "Define quality status event" for the Actual Quality Amount:
 
-If the measurement "torque" is below 100 then Quality is "true".<br>
-All new produced parts (Actual Production Amount) are from now on good parts, until 'Tatsächliche_Produktionsmenge' is < 100.
+If the measurement “torque” is below 100, the condition evaluates to “true” indicating good quality. All new produced parts (Actual Production Amount) are now counted as good parts towards the Actual Quality Amount while “torque” stays below 100.
 
 ![Example matching](/images/oee/administration/example-matching.png)
 

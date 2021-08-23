@@ -16,7 +16,7 @@ If you prefer to have a little more control over the installation or the script 
 
 ### Manual installation steps
 
-To install thin edge package it is required to use `curl` to download the package and `dpkg` to install it.
+To install thin-edge package it is required to use `curl` to download the package and `dpkg` to install it.
 
 ### Dependency installation
 
@@ -109,5 +109,5 @@ sudo adduser <user> tedge-users
 
 ### Next steps
 
-1. [How to register?](./003_registration.md)
-2. [How to connect?](./004_connect.md)
+1. [How to register?](/thin-edge/thin-edge-howto-guides/#registration)
+2. [How to connect?](/thin-edge/thin-edge-howto-guides/#connect)

@@ -4,11 +4,12 @@ title: How to configure the local port
 layout: redirect
 ---
 
-Configuring a mosquitto port in thin edge is a three step process.
+Configuring a mosquitto port in thin-edge is a three step process.
 
-### Step 1: Disconnect the thin edge device
+<a name="step-1"></a>
+### Step 1: Disconnect the thin-edge device
 
-The thin edge device has to be disconnected from the cloud using the `tedge` command
+The thin-edge device has to be disconnected from the cloud using the `tedge` command
 
 ```shell
 tedge disconnect c8y/az
@@ -32,7 +33,8 @@ tedge config get mqtt.port
 ```
 This prints out the port that has been set.
 
-### Step 3: Connect the thin edge device to cloud
+<a name="step-3"></a>
+### Step 3: Connect the thin-edge device to cloud
 
 Using `tedge` command connect to the desired cloud as below.
 
@@ -56,8 +58,8 @@ To use the default port (1883), the mqtt.port has to be unset using the `tedge` 
 ```shell
 tedge config unset mqtt.port
 ```
-Once the port is reverted to default, the [step 1](#Step-3:-Connect-the-thin-edge-device-to-cloud)
-and 3 has to be followed to use the default port.
+Once the port is reverted to default, [step 1](/thin-edge/thin-edge-howto-guides/#step-1-disconnect-the-thin-edge-device)
+and [step 3](/thin-edge/thin-edge-howto-guides/#step-3-connect-the-thin-edge-device-to-cloud) has to be followed to use the default port.
 
 ### Error case
 

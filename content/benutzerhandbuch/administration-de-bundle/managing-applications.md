@@ -95,7 +95,7 @@ Die Spalten enthalten folgende Informationen:
 * **Name**: Identifikation der Anwendung in der API. Wenn Sie die Anwendung über eine API für einen Mandanten abonnieren möchten, verwenden Sie diese Zeichenkette im Argument (als Name).
 * **Typ**: Technischer Typ der Anwendung. "Funktion" bezieht sich auf integrierte Anwendungsabonnements, d. h., diese Anwendungen werden nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt.
 
-### {{< standard-tenant-de >}} Standardanwendungen
+### Standardanwendungen
 
 Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 

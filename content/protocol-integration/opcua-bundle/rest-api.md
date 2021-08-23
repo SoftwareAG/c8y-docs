@@ -208,16 +208,25 @@ from the event type nodes of the OPC UA server) while creating alarms via UA eve
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
 (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
+If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
 
 <br><strong><em>Example:</em></strong></br>
-"alarmStatusMappings": {
-            "default": "CLEARED",
-            "EnabledState != null and EnabledState.text == 'Enabled': "ACTIVE",
-            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' : "ACKNOWLEDGED"
-        }
->**Info:** There are three alarm statuses in Cumulocity IoT, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
-> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
+```json
+{
+    "alarmStatusMappings": {
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
+        "['0:ActiveState'].text == 'Inactive'": "CLEARED",
+        "default": "ACTIVE"
+    }
+}
+```
+
+>**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
+> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
+> the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
 </td>
 </tr>
 <tr>

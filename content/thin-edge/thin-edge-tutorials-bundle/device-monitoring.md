@@ -36,7 +36,7 @@ sudo apt-get install mosquitto-clients
 
 ### Install `collectd`
 
-Device monitoring is not enabled by default when you install thin edge.
+Device monitoring is not enabled by default when you install Thin Edge.
 You will have to install and configure [`collectd`](https://collectd.org/) first.
 
 To install collectd, follow the [collectd installation process](https://collectd.org/download.shtml)

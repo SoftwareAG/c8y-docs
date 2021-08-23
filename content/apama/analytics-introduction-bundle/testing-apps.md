@@ -8,4 +8,4 @@ You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL app
 
 Apama EPL Apps Tools is available from [https://github.com/SoftwareAG/apama-eplapps-tools](https://github.com/SoftwareAG/apama-eplapps-tools). See the [documentation in GitHub](https://softwareag.github.io/apama-eplapps-tools/doc/pydoc/) for detailed information.
 
-For more information on PySys, see the [API Reference for Python](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/#page/apama-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
+For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.

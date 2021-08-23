@@ -37,4 +37,4 @@ Cloud Remote Access supports the following gateways:
 	* Can be used on any linux-based gateway device
 	* Version 4.0.0 or later
 * Third-party devices
-	* Many third-party devices are supported, for details see [{{< product-c8y-iot >}} Device Partner Portal](https://devicepartnerportal.softwareag.com/devices).
+	* Many third-party devices are supported, for details see [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}).

@@ -17,4 +17,4 @@ These features are provided through a cloud-based subscription service making th
 
 ![Solution building](/images/concepts-guide/solution.gif)
 
-Terms and Conditions to use {{< product-c8y-iot >}} are described at [https://www.softwareag.cloud/site/terms.html#/](https://www.softwareag.cloud/site/terms.html#/).
+Terms and Conditions to use {{< product-c8y-iot >}} are described at [{{< link-sag-terms >}}]({{< link-sag-terms >}}).

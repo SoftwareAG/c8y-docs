@@ -170,7 +170,7 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### {{< enterprise-tenant-de >}} Anwendungen
+### Enterprise-Anwendungen
 
 <table>
 <col width="200">

@@ -6,7 +6,7 @@ layout: redirect
 
 ### Creating a backup in VMware ESXi
 
-1. Shutdown the Edge appliance in the ESXi console.
+1. Shut down the Edge appliance in the ESXi console.
 
 2. Select the Edge appliance and click **Actions** > **Export**.
 

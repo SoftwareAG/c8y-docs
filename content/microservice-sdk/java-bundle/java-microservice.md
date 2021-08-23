@@ -6,6 +6,8 @@ title: Hello world tutorial
 
 Here you will learn how to create your first microservice that can be deployed on the [Cumulocity IoT platform](https://cumulocity.com) using the Microservice SDK for Java.
 
+Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/concept/#authentication-and-authorization) for more details.
+
 ### Prerequisites
 
 You need to have Cumulocity IoT credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity IoT platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.

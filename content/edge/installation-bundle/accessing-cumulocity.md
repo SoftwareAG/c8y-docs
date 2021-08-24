@@ -49,7 +49,6 @@ Enter the URL in the browser:
 ```http
 https://<domain_name>
 ```
-
 The Edge appliance login screen appears. Log in with your credentials created during the installation.
 
 <img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>

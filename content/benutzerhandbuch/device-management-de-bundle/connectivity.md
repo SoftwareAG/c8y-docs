@@ -3,8 +3,7 @@ weight: 100
 title: Connectivity
 layout: redirect
 aliases:
-  - /benutzerhandbuch/optional-services/#connectivity
-  - /benutzerhandbuch/optional-services-de/#connectivity
+  -/users-guide/optional-services/#connectivity
 ---
 
 Der Connectivity-Agent, der von der Anwendung {{< product-c8y-iot >}} Device Management aus arbeitet, liefert grundlegende Informationen zu Mobilgeräten sowie zusätzliche Details zur Konnektivität.

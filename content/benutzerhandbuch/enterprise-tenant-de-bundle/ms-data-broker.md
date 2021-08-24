@@ -38,7 +38,7 @@ Nach dem Aktivieren des Microservice-basierten Data Brokers sollten Ihre vorhand
 <a name="troubleshooting-ms-data-broker"></a>
 ###  Troubleshooting
 
-#### {{< management-tenant-de >}} Abonnement-Alarm
+#### Abonnement-Alarm
 
 Der {{< management-tenant-de >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant-de >}} zu abonnieren.
 

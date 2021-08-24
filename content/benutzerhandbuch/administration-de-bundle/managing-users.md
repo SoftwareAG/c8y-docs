@@ -56,62 +56,64 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
 	<table>
-<thead>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tr>
-<th align="left">Feld</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Benutzername</td>
-<td align="left">Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.</td>
-</tr>
-<tr>
-<td align="left">Login alias</td>
-<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden. Für Geräte wird kein Benutzeralias unterstützt.</td>
-</tr>
-<tr>
-<td align="left">Aktiv</td>
-<td align="left">Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.</td>
-</tr>
-<tr>
-<td align="left">E-Mail</td>
-<td align="left">Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.</td>
-</tr>
-<tr>
-<td align="left">Vorname</td>
-<td align="left">Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche <strong>Benutzer</strong>.</td>
-</tr>
-<tr>
-<td align="left">Nachname</td>
-<td align="left">Nachname des Benutzers.</td>
-</tr>
-<tr>
-<td align="left">Telefon</td>
-<td align="left">Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.</td>
-</tr>
-<tr>
-<td align="left">Eigentümer</td>
-<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
-</tr>
-<tr>
-<td align="left">Delegiert von</td>
-<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
-</tr>
-</tbody>
-</table>
+	<thead>
+	<colgroup>
+	<col style="width: 20%;">
+	<col style="width: 80%;">
+	</colgroup>
+	<tr>
+	<th align="left">Feld</th>
+	<th align="left">Beschreibung</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td align="left">Benutzername</td>
+	<td align="left">Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.</td>
+	</tr>
+	<tr>
+	<td align="left">Login alias</td>
+	<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden. Für Geräte wird kein Benutzeralias unterstützt.</td>
+	</tr>
+	<tr>
+	<td align="left">Aktiv</td>
+	<td align="left">Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.</td>
+	</tr>
+	<tr>
+	<td align="left">E-Mail</td>
+	<td align="left">Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.</td>
+	</tr>
+	<tr>
+	<td align="left">Vorname</td>
+	<td align="left">Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche <strong>Benutzer</strong>.</td>
+	</tr>
+	<tr>
+	<td align="left">Nachname</td>
+	<td align="left">Nachname des Benutzers.</td>
+	</tr>
+	<tr>
+	<td align="left">Telefon</td>
+	<td align="left">Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.</td>
+	</tr>
+	<tr>
+	<td align="left">Eigentümer</td>
+	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	</tr>
+	<tr>
+	<td align="left">Delegiert von</td>
+	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	</tr>
+	</tbody>
+	</table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa).
 	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der {{< product-c8y-iot >}}-Plattform an](/benutzerhandbuch/getting-started-de/#login).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
+<br><br>
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
+
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.

@@ -5,7 +5,6 @@ layout: redirect
 aliases:
   - /benutzerhandbuch/overview-de/#cumulocity-applications
   - /benutzerhandbuch/overview/#cumulocity-applications
-  - /benutzerhandbuch/getting-started-de/#cumulocity-applications
   - /benutzerhandbuch/getting-started/#cumulocity-applications
 ---
 

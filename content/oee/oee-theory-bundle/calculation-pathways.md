@@ -4,14 +4,13 @@ title: Calculation pathways
 layout: redirect
 ---
 
-The following image explains the naming conventions of the pathways.
+The following image explains the naming conventions of the pathways. The same terminology is used in the Computation section when creating a new profile, see [Administration > Creating machine profiles > Computation](/oee/administration/#machine-profiles).
 
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 
+In the following, details on each calculation pathway are provided.
 
-The same terminology is used in the Computation section when creating a new profile, see [Administration > Creating machine profiles > Computation](/oee/administration/#machine-profiles).
-
->**Info:** The following examples give you an example of different use cases. Each example contains a table that shows which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors used in the image are used only for better understanding and clarity. Below the image you find the corresponding formulas. The formulas marked in italics in the table are necessary to calculate the OEE.
+>**Info:** The tables at the top show which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors used in the images are used only for better understanding and clarity. Below the image you find the corresponding formulas. The formulas which are necessary to calculate the OEE are marked in italics in the table.
 
 
 ### Calculation pathway #1

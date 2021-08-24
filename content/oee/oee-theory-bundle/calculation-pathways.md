@@ -11,6 +11,9 @@ The following image explains the naming conventions of the pathways.
 
 The same terminology is used in the Computation section when creating a new profile, see [Administration > Creating machine profiles > Computation](/oee/administration/#machine-profiles).
 
+>**Info:** The following examples give you an example of different use cases. Each example contains a table that shows which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors used in the image are used only for better understanding and clarity. Below the image you find the corresponding formulas. The formulas marked in italics in the table are necessary to calculate the OEE.
+
+
 ### Calculation pathway #1
 
 <table>
@@ -76,7 +79,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 1](/images/oee/theory/theory-calculation-pathway-1.png)
 
@@ -272,7 +275,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 2](/images/oee/theory/theory-calculation-pathway-2.png)
 
@@ -468,7 +471,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 3](/images/oee/theory/theory-calculation-pathway-3.png)
 
@@ -664,7 +667,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 4](/images/oee/theory/theory-calculation-pathway-4.png)
 
@@ -860,7 +863,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 5](/images/oee/theory/theory-calculation-pathway-5.png)
 
@@ -1056,7 +1059,7 @@ x
 </tr>
 </table>
 
-This overview shows the formulas of variables needed to calculate each variable, including the OEE. The formulas marked in italics are necessary to calculate the OEE.
+This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
 ![Calculation pathway 6](/images/oee/theory/theory-calculation-pathway-6.png)
 

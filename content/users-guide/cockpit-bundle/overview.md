@@ -68,7 +68,7 @@ For your convenience find an overview on the content of this document below.
 </tbody>
 </table>
 
-If you want to learn more about general aspects of the {{< product-c8y-iot >}} platform and its applications, refer to [Getting Started](/users-guide/overview).
+If you want to learn more about general aspects of the {{< product-c8y-iot >}} platform and its applications, refer to [Getting Started](/users-guide/getting-started).
 
 <a name="home"></a>
 ### Home dashboard

@@ -3,7 +3,7 @@ weight: 10
 title: Verwalten von Mandanten
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#managing-tenants
+  - /benutzerhandbuch/enterprise-edition-de/#managing-tenants
 ---
 
 Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.

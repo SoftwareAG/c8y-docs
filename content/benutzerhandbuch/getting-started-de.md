@@ -4,6 +4,7 @@ weight: 10
 layout: bundle
 aliases:
   - /benutzerhandbuch/overview
-  - /benutzerhandbuch/optional-services
+  - /benutzerhandbuch/overview-de
+  - /benutzerhandbuch/optional-services-de
 ---
-Der Abschnitt *Erste Schritte* beschreibt, wie Sie die Cumulocity IoT-Plattform aufrufen und sich anmelden, und erkl√§rt die wesentlichen Funktionen, die in allen Anwendungen auf der Plattform identisch sind.
+Der Abschnitt *Erste Schritte* beschreibt, wie Sie die Cumulocity IoT-Plattform aufrufen und sich anmelden, und erkl‰rt die wesentlichen Funktionen, die in allen Anwendungen auf der Plattform identisch sind.

@@ -3,6 +3,7 @@ weight: 30
 title: Cumulocity IoT-Anwendungen
 layout: redirect
 aliases:
+  - /benutzerhandbuch/overview-de/#cumulocity-applications
   - /benutzerhandbuch/overview/#cumulocity-applications
   - /benutzerhandbuch/getting-started/#cumulocity-applications
 ---

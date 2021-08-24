@@ -1,5 +1,5 @@
 ---
 weight: 40
-title: Reference guides
+title: Developer tools
 layout: bundle
 ---

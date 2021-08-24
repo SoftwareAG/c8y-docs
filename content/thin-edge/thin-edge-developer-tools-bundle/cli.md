@@ -200,7 +200,7 @@ FLAGS:
 
 
 SUBCOMMANDS:
-    c8y     Upload root certificate to Cumulocity
+    c8y     Upload root certificate to {{< product-c8y-iot >}}
     help    Prints this message or the help of the given subcommand(s)
 ```
 
@@ -223,7 +223,7 @@ FLAGS:
 
 SUBCOMMANDS:
     az      Create connection to Azure
-    c8y     Create connection to Cumulocity
+    c8y     Create connection to {{< product-c8y-iot >}}
     help    Prints this message or the help of the given subcommand(s)
 ```
 
@@ -249,11 +249,11 @@ FLAGS:
             Prints version information
 ```
 
-#### Cumulocity
+#### Cumulocity IoT
 
 ```
 tedge-connect-c8y 0.2.0
-Create connection to Cumulocity
+Create connection to {{< product-c8y-iot >}}
 
 The command will create config and start edge relay from the device to c8y instance
 
@@ -265,7 +265,7 @@ FLAGS:
             Prints help information
 
         --test       
-            Test connection to Cumulocity
+            Test connection to {{< product-c8y-iot >}}
 
     -V, --version    
             Prints version information
@@ -286,7 +286,7 @@ FLAGS:
 
 SUBCOMMANDS:
     az      Remove bridge connection to Azure
-    c8y     Remove bridge connection to Cumulocity
+    c8y     Remove bridge connection to {{< product-c8y-iot >}}
     help    Prints this message or the help of the given subcommand(s)
 ```
 
@@ -304,11 +304,11 @@ FLAGS:
     -V, --version    Prints version information
 ```
 
-#### Cumulocity
+#### Cumulocity IoT
 
 ```
 tedge-disconnect-c8y 0.2.0
-Remove bridge connection to Cumulocity
+Remove bridge connection to {{< product-c8y-iot >}}
 
 USAGE:
     tedge disconnect c8y

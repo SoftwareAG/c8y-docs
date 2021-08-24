@@ -6,6 +6,8 @@ title: Hello world tutorial
 
 Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
 
+Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/concept/#authentication-and-authorization) for more details.
+
 ### Prerequisites
 
 You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.

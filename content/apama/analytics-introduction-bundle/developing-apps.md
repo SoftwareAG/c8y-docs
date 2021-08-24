@@ -89,11 +89,11 @@ Both versions, the licensed version and the freemuim version, include {{< sag-de
 
 **Step 2 - Create a project**
 
-Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
+Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
 **Step 3 - Add Apama bundles to the project**
 
-Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
+Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
 * **Cumulocity IoT > Event Definitions for Cumulocity** <br>
 Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
@@ -117,11 +117,11 @@ The bundles above are the only ones that are permissible in an EPL app, so be ca
 
 **Step 4 - Create a monitor file**
 
-To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
+To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
 
 Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
-For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
+For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
 **Step 5 - Run and test the monitor file**
 

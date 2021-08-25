@@ -163,7 +163,7 @@ A data connector describes the subset of the data that you would like to send to
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
-1. In your Edge applaince, log in to the *edge* tenant.
+1. In your Edge appliance, log in to the *edge* tenant.
 
 2. In your Edge appliance, go to the Administration application. Click **Data broker** > **Data connectors**.
 
@@ -179,6 +179,6 @@ To create a data connector and upload the data to the tenant account, perform th
 
    Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [{{< enterprise-tenant >}} > Using the data broker > Data subscriptions](/users-guide/enterprise-edition/#data-subscriptions) in the *User guide*.
 
-   You can now navigate to the Device Management application or the Cockpit application. You will find a new “virtual group” with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
+   You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
 
 For more information about sending and receiving data in {{< product-c8y-iot >}}, see [{{< enterprise-tenant >}} > Using the data broker](/users-guide/enterprise-edition#data-broker).

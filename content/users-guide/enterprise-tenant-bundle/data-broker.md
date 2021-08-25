@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Using the data broker
+title: Using the Data broker
 layout: redirect
 aliases:
   - /users-guide/enterprise-edition/#data-broker
@@ -14,7 +14,7 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
-Navigate to **Data connectors** in the **Data Broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
+Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 

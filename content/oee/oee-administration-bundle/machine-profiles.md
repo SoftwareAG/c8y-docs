@@ -4,7 +4,7 @@ title: Creating machine profiles
 layout: redirect
 ---
 
-Click **Create a machine profile** at the right of the top menu bar to start the configuration of a new machine profile in the profile configurator.  
+Click **Create a machine profile** at the right of the top menu bar to start the configuration of a new machine profile in the profile settings.  
 
 >**Info:** After saving the general profile information in the first step you may skip one or more of the following steps and provide the requested information at a later point in time.
 
@@ -80,7 +80,7 @@ Activate the toggle **Allow production plan workpiece** if you want to use a pro
 
 The production plan of a machine defines how many products are to be produced at any given time and controls the way the OEE calculation is performed. It provides the baseline for the performance calculation. If no production plan is available, the work piece information from the calculation profile is used.
 
-If the **Allow production plan workpiece** option is enabled the Ideal Cycle Time (for example 60.000 milliseconds/pcs) from the production plan is used as the Ideal Cycle Time of the OEE calculation.
+If the **Allow production plan workpiece** option is enabled the Ideal Cycle Time (for example 60,000 milliseconds/pcs) from the production plan is used as the Ideal Cycle Time of the OEE calculation.
 
 The OEE application provides a REST API to push the production plans to the application. This REST API can either be invoked from Postman, the Cumulocity IOT UI, or any other system that can access the Cumulocity IoT tenant.
 

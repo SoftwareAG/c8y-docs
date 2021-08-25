@@ -8,7 +8,7 @@ layout: redirect
 
 Connection lines are displayed for all consecutive points in the diagram. This happens even if values are "missing" between the points.
 
-In the example below the selected calculation interval is '1 minute'. There are no values received for 07:48 and 07:49, but as there are values for 07:47 and 07:50 these two points were connected by a line. This line starts from the value of 07:50 and extends to 07:47.
+In the example below the selected calculation interval is '1 minute'. There are no values received for 07:48 and 07:49, but as there are values for 07:47 and 07:50 these two points were connected by a line. This line starts from the value of 07:47 and extends to the value 07:50.
 
 ![Connection of lines](/images/oee/faq/faq-connection-of-lines.png)
 

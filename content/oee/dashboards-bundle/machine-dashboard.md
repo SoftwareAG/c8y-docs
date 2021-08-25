@@ -4,13 +4,13 @@ title: Machine dashboard
 layout: redirect
 ---
 
-The machine dashboard offers a detailed view about the current status and development of the OEE of the machine or line (if a line profile exists).
+The machine dashboard offers a detailed view about the current status and development of the OEE of the machine.
 
 ![Machine dashboard](/images/oee/dashboards/dashboard-machine-dashboard.png)
 
-At the top you find the general information (profile name, alarm status etc.) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#oee-data) section.
+At the top you find the general information (profile name, alarm status etc.) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#data) section.
 
-By default, the **Auto-refresh** option at the top left is activated and [**OEE status**](#oee-status) and [**OEE data**](#oee-data) information is updated automatically according to the selected resolution. Switch the toggle to deactivate it.
+By default, the **Auto-refresh** option at the top left is activated and [**OEE status**](#oee-status) and [**OEE data**](#data) information is updated automatically according to the selected resolution. Switch the toggle to deactivate it.
 
 Click **Andon Board** at the right of the top menu bar to switch to the **Andon Board** of this particular machine, see [Andon Board](#andon-board).
 
@@ -18,7 +18,7 @@ Click **Edit configuration** at the right of the top menu bar to edit the machin
 
 #### Time period and resolution
 
-In the **Time frame** dropdown field you can select a time period (for example "Last hour", "Last week") for which the OEE values will be displayed in the [**OEE status**](#oee-status) and [**OEE data**](#oee-data) sections. Select "User-defined" from the dropdown list to specify an individual time period.
+In the **Time frame** dropdown field you can select a time period (for example "Last hour", "Last week") for which the OEE values will be displayed in the [**OEE status**](#oee-status) and [**OEE data**](#data) sections. Select "User-defined" from the dropdown list to specify an individual time period.
 
 In the **Resolution** dropdown field you can select the resolution for the selected time period. The available resolutions (up to 4; for example 1 minute, 10 minutes, 1 hour, 8 hours) are configured during the profile creation, see [Creating machine profiles](/oee/oee-administration/#machine-profiles).
 

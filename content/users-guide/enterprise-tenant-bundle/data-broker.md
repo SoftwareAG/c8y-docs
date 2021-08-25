@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Using the Data broker
+title: Using the data broker
 layout: redirect
 aliases:
   - /users-guide/enterprise-edition/#data-broker

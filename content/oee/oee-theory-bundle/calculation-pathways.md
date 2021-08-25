@@ -17,66 +17,47 @@ In the following, details on each calculation pathway are provided.
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-</td>
-<td>
-1
-</td>
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td></td>
+</tr>
+</tbody>
 </table>
+
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
@@ -210,69 +191,47 @@ Availability Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<s
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-2
-</td>
-
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td>x</td>
+</tr>
+</tbody>
 </table>
+
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
@@ -406,69 +365,47 @@ Performance Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<su
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Cycle Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-3
-</td>
-
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td></td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td>x</td>
+</tr>
+</tbody>
 </table>
+
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 
@@ -602,68 +539,45 @@ Performance Losses (Time) = Performance Losses (Amount) x Ideal Cycle Amount<sup
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Cycle Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-4
-</td>
-
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td></td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td></td>
+</tr>
+</tbody>
 </table>
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
@@ -798,68 +712,45 @@ Performance Losses (Time) = Ideal Production Amount x Actual Production Amount
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Cycle Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-5
-</td>
-
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td></td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td>x</td>
+</tr>
+</tbody>
 </table>
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
@@ -994,69 +885,47 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 
 <table>
 <colgroup>
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
-<col width="12.5%">
+<col width="50%">
+<col width="50%">
 </colgroup>
+<thead>
 <tr>
-<th>
-Ideal Cycle Amount
-</th>
-<th>
-Potential Production Time
-</th>
-<th>
-Actual Production Time
-</th>
-<th>
-Availability Losses (Time)
-</th>
-<th>
-Actual Production Amount
-</th>
-<th>
-Actual Quality Amount
-</th>
-<th>
-Quality Losses (Amount)
-</th>
-<th>
-Calculation Pathway #
-</th>
+<th>Input Variables</th>
+<th>Selected Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Amount</td>
+<td>x</td>
 </tr>
 <tr>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-x
-</td>
-<td>
-
-</td>
-<td>
-x
-</td>
-<td>
-6
-</td>
-
+<td>Potential Production Time</td>
+<td>x</td>
 </tr>
+<tr>
+<td>Actual Production Time</td>
+<td></td>
+</tr>
+<tr>
+<td>Availability Losses (Time)</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Production Amount</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Actual Quality Amount</td>
+<td></td>
+</tr>
+<tr>
+<td>Quality Losses (Amount)</td>
+<td>x</td>
+</tr>
+</tbody>
 </table>
+
 
 This overview shows which variables are needed to calculate each variable, including the OEE. The formulas marked in italics in the table below are necessary to calculate the OEE.
 

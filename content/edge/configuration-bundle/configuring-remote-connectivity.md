@@ -159,7 +159,7 @@ You can share the following data with the tenant account:
 
 To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account. 
 
-A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [{{< enterprise-tenant >}} > Using the data broker > Data connector](/users-guide/enterprise-edition/#data-connectors).
+A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [{{< enterprise-tenant >}} > Using the data broker > Data connector](/users-guide/enterprise-edition/#data-connectors) in the *User guide*.
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 

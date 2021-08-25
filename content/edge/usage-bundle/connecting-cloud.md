@@ -123,7 +123,7 @@ You can share the following data with the tenant account:
 
 To upload the data to a Cumulocity IoT tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account. 
 
-A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [Enterprise Tenant > Using the data broker > Data connector](/users-guide/enterprise-edition/#a-namedata-broker-connectorsa-data-connectors).
+A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [Enterprise Tenant > Using the data broker > Data connector](/users-guide/enterprise-edition/#a-namedata-broker-connectorsa-data-connectors) in the *User guide*.
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
@@ -143,7 +143,7 @@ To create a data connector and upload the data to the tenant account, perform th
 
    Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [Enterprise Tenant > Using the data broker > Data subscriptions](/users-guide/enterprise-edition/#a-namedata-broker-subscriptionsa-data-subscriptions) in the *User guide*.
 
-   You can now navigate to the Device Management application or the Cockpit application. You will find a new “virtual group” with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
+   You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon showing the forwarded devices. The group will have the same name as your subscription. 
 
 For more information about sending and receiving data in Cumulocity IoT, see [Enterprise Tenant > Using the data broker](/users-guide/enterprise-edition#data-broker).
 

@@ -130,7 +130,7 @@ For more information on the input variables and the naming conventions of the pa
 
 Next, define rules to determine which machine data is used for the OEE input variables.
 
-For details on matching data, see [Matching](/oee/administration/#matching).
+For details on matching data, see [Matching data](/oee/oee-administration/#matching-data).
 
 
 ### Short stoppages
@@ -148,7 +148,7 @@ All Availability Losses shorter than the set duration are no longer treated as A
 
 ### Goals
 
-Next, you may  specify OEE target goal values in percentage. These values will be displayed in the [Andon Board](/oee/dashboards/#andon-board).
+Next, you may  specify OEE target goal values in percentage. These values will be displayed in the [Andon Board](/oee/oee-dashboards/#andon-board).
 
 ![Goals](/images/oee/administration/profile-goals.png)
 

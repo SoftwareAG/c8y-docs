@@ -23,12 +23,12 @@ In the following, details on each calculation pathway are provided.
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>
@@ -197,12 +197,12 @@ Availability Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<s
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>
@@ -371,12 +371,12 @@ Performance Losses (Time) = Availability Losses (Amount) x Ideal Cycle Amount<su
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>
@@ -545,12 +545,12 @@ Performance Losses (Time) = Performance Losses (Amount) x Ideal Cycle Amount<sup
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>
@@ -718,12 +718,12 @@ Performance Losses (Time) = Ideal Production Amount x Actual Production Amount
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>
@@ -891,12 +891,12 @@ Performance Losses (Amount) = Ideal Production Amount - Actual Production Amount
 <thead>
 <tr>
 <th>Input Variables</th>
-<th>Selected Variables</th>
+<th>Variables needed for calculation pathway</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ideal Amount</td>
+<td>Ideal Cycle Amount</td>
 <td>x</td>
 </tr>
 <tr>

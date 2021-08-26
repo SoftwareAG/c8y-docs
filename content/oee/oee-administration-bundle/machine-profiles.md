@@ -50,7 +50,7 @@ Next, select a machine to be connected with the profile.
 
 Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (e.g. weekends). It provides the baseline for the availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% availability.
 
-The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the Cumulocity IOT UI, or any other system that can access the Cumulocity IoT tenant.
+The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
 
 The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan and offers two methods:
 
@@ -82,7 +82,7 @@ The production plan of a machine defines how many products are to be produced at
 
 If the **Allow production plan workpiece** option is enabled the Ideal Cycle Time (for example 60,000 milliseconds/pcs) from the production plan is used as the Ideal Cycle Time of the OEE calculation.
 
-The OEE application provides a REST API to push the production plans to the application. This REST API can either be invoked from Postman, the Cumulocity IOT UI, or any other system that can access the Cumulocity IoT tenant.
+The OEE application provides a REST API to push the production plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
 
 The REST API can be reached at https://[server]/service/oee-bundle/mes/productionplanlist and offers two methods:
 

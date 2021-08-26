@@ -56,7 +56,7 @@ Each application will show the following properties, depending on the applicatio
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy"><i>Concepts Guide</i></a>.</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
@@ -346,7 +346,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the *Microservice SDK guide* under **General aspects** in order to prepare and deploy the microservice package.
 
 
 <a name="external-application"></a>

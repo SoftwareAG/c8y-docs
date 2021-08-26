@@ -74,7 +74,7 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
 3. Log into the {{< product-c8y-iot >}} platform.
 4. Navigate to the Device Management application using the application switcher at the top right.
-5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the User guide.
+5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the *User guide*.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
 7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
@@ -118,7 +118,7 @@ An example dashboard created for an mbed device is shown below:
 
 ![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
-For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the User guide.
+For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the *User guide*.
 
 <a id="Interacting_with_the_control_operations"></a>
 #### To interact with control operations

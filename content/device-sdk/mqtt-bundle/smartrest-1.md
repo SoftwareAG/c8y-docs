@@ -12,7 +12,7 @@ The support for SmartREST 1.0 was added to ease transition if you have an existi
 
 >**Info**: If you start a new device integration, we highly recommend to use SmartREST 2.0.
 
-For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide.
+For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
 
 ### MQTT ClientId
 

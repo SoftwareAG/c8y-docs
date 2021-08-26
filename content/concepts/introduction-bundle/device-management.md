@@ -14,6 +14,6 @@ weight: 40
 * Frequently used remote controls (for example, restart button, switches).
 * Troubleshooting features such as events list and operations queue.
 
-The level of depth in device management may depend on device features (for example, if a device does not support remote firmware upgrade, it will also not be available through {{< product-c8y-iot >}}). For interfacing devices not yet certified with {{< product-c8y-iot >}}, the [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) and the [Device SDK guide](/device-sdk/rest#device-integration) is publicly available.
+The level of depth in device management may depend on device features (for example, if a device does not support remote firmware upgrade, it will also not be available through {{< product-c8y-iot >}}). For interfacing devices not yet certified with {{< product-c8y-iot >}}, the [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) and the [*Device SDK guide*](/device-sdk/rest#device-integration) is publicly available.
 
 ![Device Management](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)

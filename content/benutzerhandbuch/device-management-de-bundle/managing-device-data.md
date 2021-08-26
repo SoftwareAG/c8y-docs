@@ -511,7 +511,7 @@ Die Geräte installieren die Firmware, Software und Konfigurationselemente des P
 
 In Cumulocity IoT können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von Cumulocity IoT als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
 
->**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im Device SDK Guide.
+>**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im *Device SDK Guide*.
 
 Klicken Sie im Menü **Verwaltung** des Navigators auf **Vertrauenswürdige Zertifikate**.
 

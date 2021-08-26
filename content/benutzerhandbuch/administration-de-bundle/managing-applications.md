@@ -56,7 +56,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
-<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/concepts/applications" class="no-ajaxy"><i>Concepts Guide</i></a>.</td>
 <td style="text-align:left">Automatisch generiert</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>
@@ -344,7 +344,7 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
+>**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im *Microservice SDK Guide*.
 
 
 <a name="external-application"></a>

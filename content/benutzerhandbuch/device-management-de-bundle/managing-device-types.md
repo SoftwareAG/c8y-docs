@@ -25,7 +25,7 @@ Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste.
 3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie auf **Erstellen**.
 4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
-Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Dokumentation des jeweiligen Gerätetyps, den Sie anlegen möchten, siehe [Protocol Integration Guide](/protocol-integration/overview).
+Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Dokumentation des jeweiligen Gerätetyps, den Sie anlegen möchten, siehe [*Protocol Integration Guide*](/protocol-integration/overview).
 5. Klicken Sie auf **Speichern**.
 
 Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
@@ -45,7 +45,7 @@ Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
 Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll oder auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**.
 
-Weitere Informationen zu den Feldern finden Sie in der Dokumentation des jeweiligen Gerätetyps, siehe [Protocol Integration Guide](/protocol-integration/overview).
+Weitere Informationen zu den Feldern finden Sie in der Dokumentation des jeweiligen Gerätetyps, siehe [*Protocol Integration Guide*](/protocol-integration/overview).
 
 ### So löschen Sie ein Geräteprotokoll
 

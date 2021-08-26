@@ -144,7 +144,7 @@ Uploading the _hello-microservice.zip_ into the platform can be done via the UI.
 
 ![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
-For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/users-guide/administration#adding-applications) under the Administration section in the User guide.
+For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/users-guide/administration#adding-applications) under the Administration section in the *User guide*.
 
 ### Using the microservice utility tool
 

@@ -7,7 +7,7 @@ aliases:
   - /users-guide/LoRa
   - /users-guide/jasper
   - /users-guide/android-cloud-sensor-app
-    - /users-guide/saas-integration
+  - /users-guide/saas-integration
   - /users-guide/cloud-fieldbus
   - /users-guide/cloud-remote-access
   - /users-guide/zapier

@@ -320,6 +320,8 @@ Set the supported configurations of the device.
 119,modbus,system
 ```
 
+#### <a name="measurement-templates">Measurement templates (2xx)</a>
+
 ##### <a name="200">Create custom measurement (200)</a>
 
 Create a measurement with a given fragment and series.

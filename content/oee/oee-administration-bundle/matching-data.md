@@ -31,7 +31,7 @@ Example:
 
 measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
 
-If the value is *false*, the calculation can be continued with an old value for the quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
+If the value is *false*, the calculation can be continued with an old value for the Quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
 
 #### Providing fixed values for inputs & KPIs
 
@@ -39,9 +39,9 @@ If you want to have fixed KPIs or inputs follow these instructions:
 
 **Fixed KPIs**
 
-* Fixed quality: Define the Actual Quality Amount or Quality Loss (amount) and take the Actual Production Amount formula and multiply it by the intended quality factor.
-* Fixed availability: Define a formula for Actual Production Time or Availability Loss (time) using the intended availability factor multiplied by the constant "intervalLength", for example "0.8 * intervalLength" for availability 80%.
-* Fixed performance: Does not make much sense as it is dependant on multiple inputs.
+* Fixed Quality: Define the Actual Quality Amount or Quality Loss (amount) and take the Actual Production Amount formula and multiply it by the intended quality factor.
+* Fixed Availability: Define a formula for Actual Production Time or Availability Loss (time) using the intended availability factor multiplied by the constant "intervalLength", for example "0.8 * intervalLength" for availability 80%.
+* Fixed Performance: Does not make much sense as it is dependant on multiple inputs.
 
 **Fixed Inputs**
 

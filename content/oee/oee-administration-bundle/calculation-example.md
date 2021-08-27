@@ -12,13 +12,13 @@ The quality of the workpiece is measured at the measuring machine and not derive
 
 #### Mapping + calculation logic (streaming analytics)
 
-##### Calculation of the availability
+##### Calculation of the Availability
 
-To calculate the availability of the entire line, all three machines are considered. For each machine a machine profile is created which determines the production time based on the measured value "ActCycle", see the image below.
+To calculate the Availability of the entire line, all three machines are considered. For each machine a machine profile is created which determines the production time based on the measured value "ActCycle", see the image below.
 
-To calculate the availability of the line, all three values (Actual Production Time) of the machine profiles are combined and divided by the number of machines. The aim here is a static consideration of availability and no availability is calculated in relation to a single workpiece. In this respect, this logic is also applicable to discrete as well as process manufacturing.
+To calculate the Availability of the line, all three values (Actual Production Time) of the machine profiles are combined and divided by the number of machines. The aim here is a static consideration of Availability and no Availability is calculated in relation to a single workpiece. In this respect, this logic is also applicable to discrete as well as process manufacturing.
 
-##### Calculation of the performance
+##### Calculation of the Performance
 
 The run rate is determined at the bottleneck machine, for example at the output rate of the last machine, here the measuring machine. Thus, the total run time of the workpiece is not considered.
 

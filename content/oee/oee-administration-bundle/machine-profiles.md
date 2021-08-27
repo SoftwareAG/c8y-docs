@@ -25,7 +25,7 @@ In the first step, you specify the profile name and type.
     At the right, you can select an existing machine profile to use its configuration as a template. After clicking **Save and proceed**, all settings will automatically be pre-populated with the configuration of the selected profile.
 
     **External profile**<br>
-    To integrate external OEE data. After setting goals for OEE, availability, performance and quality the tethered external OEE data will be displayed without any calculation. It is not possible to set rules or a timeframe because there is no splitting. The incoming data from the external source will just be split and displayed.
+    To integrate external OEE data. After setting goals for OEE, Availability, Performance and Quality the tethered external OEE data will be displayed without any calculation. It is not possible to set rules or a timeframe because there is no splitting. The incoming data from the external source will just be split and displayed.
 
     >**Info:** For the tethered external OEE data, make sure that the format of the values is in accordance with the demands of the OEE application.
 
@@ -48,7 +48,7 @@ Next, select a machine to be connected with the profile.
 
 #### Using a shift plan
 
-Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (e.g. weekends). It provides the baseline for the availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% availability.
+Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (e.g. weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
 
 The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
 
@@ -144,7 +144,7 @@ Optionally, you can record short stoppages. By default, short stoppages are not 
 
 All Availability Losses shorter than the set duration are no longer treated as Availability Losses but instead as Performance Losses. When the duration is set to one minute and an Availability Loss (time) is shorter than 60 seconds it will be deducted from the Availability Losses (time) and added to the Performance Losses (time) and the Actual Production Time.
 
->**Info:** Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the availability loss time is one long shutdown or consists out of multiple short shutdowns.
+>**Info:** Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the Availability Loss Time is one long shutdown or consists out of multiple short shutdowns.
 
 ### Goals
 

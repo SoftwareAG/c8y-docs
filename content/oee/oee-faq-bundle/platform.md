@@ -17,10 +17,11 @@ When naming a measurement, make sure not to use umlauts in the measurement name.
 ### Where can I find the device and profile ID?
 
 You can find the device ID and profile ID at the end of the URL shown in your browser when accessing the Machine Dashboard. The device ID comprises of the first seven numbers at the end of the URL. The remaining nine numbers are the profile ID.
+
+The example below shows an exemplary URL with the placement of both device ID and profile ID.
+
 `https://<<tenant>>/apps/oee/index.html#/machine_dashboard/<<device ID>>/<<profile ID>>
 `
-
-
 ###  Why does a measurement/event/alarm in the OEE application have multiple timestamps?
 
 The first timestamp describes the creation time. It is the time when the specific measurement/event/alarm has been created for the first time.

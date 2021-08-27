@@ -55,13 +55,14 @@ Click **Create new machine profile** or **Create new line profile** at the right
 
 For details, see [Creating machine profiles](#machine-profiles) or [Creating line profiles](#line-profiles).
 
-
 #### To edit a profile
 
 In the context menu of an entry, click **Edit** to edit a profile.
 
+#### To change the the status of a profile
+
+The status column shows the current status of the profile. A completed profile can be switched activated to deactivated and vice versa by clicking on the toggle button.
+
 #### To delete a profile
 
 In the context menu of an entry, click **Delete** to delete a profile.
-
-#### To activate a profile

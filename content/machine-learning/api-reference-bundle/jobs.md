@@ -50,6 +50,8 @@ Create a new job for scheduled data processing.
 
 On creation, a `jobId` is automatically assigned to the job and `jobCreationDate` will also be added to the response.
 
+Note that if the job name and description contain any unsafe characters, all such characters would be converted to underscore automatically.
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}

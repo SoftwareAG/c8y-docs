@@ -63,7 +63,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 **Example Request**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true --header "Authorization: {{auth}}" \
 	--header "Content-Type: application/json"
@@ -98,7 +98,7 @@ curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true -
 **Example Response**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 {
 	"modelName": "Timeseries_19-10-2020_14-23-00_jJgQK",

@@ -42,7 +42,7 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 **Example Request**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 curl --request POST "{{url}}/service/zementis/train/clustering?autoDeploy=false" --header "Authorization: {{auth}}" \
 	--header "Content-Type: application/json"
@@ -60,7 +60,7 @@ curl --request POST "{{url}}/service/zementis/train/clustering?autoDeploy=false"
 **Example Response**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 {
     "modelName": "Clustering_19-10-2020_11-06-01_umGoj",

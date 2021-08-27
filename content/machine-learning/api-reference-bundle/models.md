@@ -508,6 +508,8 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/source" --header "Autho
 
 Get binary file containing serialized representation of the model.
 
+Note that this binary file downloaded from a particular version of zementis microservice can only be uploaded back to a zementis microservice of the same version.
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -662,8 +664,10 @@ curl --request GET "{{url}}/service/zementis/model/dummy/metrics" --header "Auth
 ```
 
 Upload new PMML model. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
-
 Note that the size of the uploaded PMML file/zip must not exceed 500 MB.
+
+If the model name contains any unsafe characters, all such characters would be converted to underscore automatically.
+Hence, all subsequest calls should refer to the converted name as listed in the properties of the model.
 
 |HEADERS||
 |:---|:---|

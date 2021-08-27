@@ -241,6 +241,9 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 
 Upload a new resource file associated with a PMML model. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
+If the resource file name contains any unsafe characters, all such characters would be converted to underscore automatically.
+Hence, all subsequest calls should refer to the converted name as listed in the properties of the resource.
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}

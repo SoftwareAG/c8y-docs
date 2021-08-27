@@ -105,4 +105,4 @@ You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the
 
 ### Can the calculated OEE values be used in a Cockpit widget?
 
-The calculated OEE values are stored as measurements linked to the managed object of the OEE calculation profile. The OEE calculation profile is a child device of the machine for which the OEE is calculated. OEE values can be used in {{< product-c8y-iot >}} widgets by selecting the OEE calculation profile as the source device and then selecting the OEE measurement to be displayed, for example the final OEE or one of its components like Availability.
+For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [FAQ > Cumulocity IoT](/oee/oee-faq/#platform)

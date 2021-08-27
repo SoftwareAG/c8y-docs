@@ -6,8 +6,9 @@ layout: redirect
 
 ### Can the calculated OEE values be used in a Cockpit widget?
 
+* Calculated OEE values are stored as measurements linked to the managed object of the OEE calculation profile.
 * Profiles are child devices of the machine for which they calculate the OEE.
-* Calculated OEE values can be used in any Cockpit widget like the regular machine measurements by selecting the profile as the source device.
+* Calculated OEE values can be used in any Cockpit widget like the regular machine measurements by selecting the OEE calculation profile as the source device,  and then selecting the OEE measurement to be displayed, for example the final OEE or one of its components like Availability.
 
 ### Can I use umlauts in measurement names?
 

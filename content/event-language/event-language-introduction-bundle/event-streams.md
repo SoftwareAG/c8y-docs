@@ -4,12 +4,12 @@ title: Event streams
 layout: redirect
 ---
 
-In the Cumulocity Event Language data flows in streams. You can create events in streams and listen to events created in streams.
+In the {{< c8y-event-language >}} data flows in streams. You can create events in streams and listen to events created in streams.
 
 ### Predefined streams
 
-There are some predefined streams to interact with several Cumulocity APIs. For each input stream, Cumulocity will automatically create a new event when the respective API call was made. If a measurement was created via REST API there will be a new event in the MeasurementCreated stream.
-For interacting with the Cumulocity backend you can create an event on the respective output stream and Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, sms, or similar. To create a new alarm in the database you can create a new event in the CreateAlarm stream.
+There are some predefined streams to interact with several {{< product-c8y-iot >}} APIs. For each input stream, {{< product-c8y-iot >}} will automatically create a new event when the respective API call was made. If a measurement was created via REST API there will be a new event in the MeasurementCreated stream.
+For interacting with the {{< product-c8y-iot >}} backend you can create an event on the respective output stream and {{< product-c8y-iot >}} will automatically execute either the database query or create the API calls necessary for sending mails, sms, or similar. To create a new alarm in the database you can create a new event in the CreateAlarm stream.
 
 |API|Input streams|Output streams|Description|
 |:--|:----------|:-------------|:----------|

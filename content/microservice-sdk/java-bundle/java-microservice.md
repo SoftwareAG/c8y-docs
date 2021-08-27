@@ -10,7 +10,7 @@ Here you will learn how to create your first microservice that can be deployed o
 
 You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Verify that you have Java 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
+Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -41,7 +41,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice
 
-You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
+You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/hello-world-microservice/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
 > **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
@@ -190,6 +190,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
     </plugins>
 </build>   
 ```
+
+The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
 <a name="java-example"></a>
 #### Create a Java application

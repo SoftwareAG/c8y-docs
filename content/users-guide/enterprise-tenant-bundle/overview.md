@@ -19,7 +19,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 * **Support user** - To support users of other tenants
 * **User hierarchy** - To reflect entities with limited permissions to subsets of shared data
 
-For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide*.
+For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/concepts/tenant-hierarchy) in the *Concepts guide*.
 
 The following sections describe the following additional functionalities available in the {{< enterprise-tenant >}}:
 

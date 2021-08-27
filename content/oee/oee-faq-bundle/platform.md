@@ -40,5 +40,3 @@ For more details on how to correctly set up property names and series names see 
 3. Navigate to the **Measurements tab** of the child device. You should see the OEE measurements.
 
 Alternatively, you can also use the built-in search in the Device Management application to search for the name of the profile.
-
-![Calculated OEE measurements in a profile in {{< product-c8y-iot >}}](/images/oee/faq/faq-calculated-oee-measurement.png)

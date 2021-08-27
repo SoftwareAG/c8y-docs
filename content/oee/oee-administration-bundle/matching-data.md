@@ -31,7 +31,7 @@ Example:
 
 measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
 
-If the value is *false*, the calculation can be continued with an old value for the Quality, whereas if the value is *true*, the calculation is performed only once, if the quality value was the last missing part for the calculation.
+If the value is *false*, the calculation can be continued with an old value for the Quality, whereas if the value is *true*, the calculation is performed only once, if the Quality value was the last missing part for the calculation.
 
 #### Providing fixed values for inputs & KPIs
 

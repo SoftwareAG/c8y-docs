@@ -61,8 +61,10 @@ In the context menu of an entry, click **Edit** to edit a profile.
 
 #### To change the the status of a profile
 
-The status column shows the current status of the profile. A completed profile can be switched activated to deactivated and vice versa by clicking on the toggle button.
+The status column shows the current status of the profile. To switch a completed profile from activated to deactivated and vice versa click the toggle button.
 
 #### To delete a profile
 
 In the context menu of an entry, click **Delete** to delete a profile.
+
+For further information on the OEE dashboard, see [Dashboards > Machine dashboards](/oee/oee-dashboards/#machine-dashboard).

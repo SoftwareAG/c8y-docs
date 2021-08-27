@@ -4,6 +4,9 @@ title: Machine dashboard
 layout: redirect
 ---
 
+
+
+
 The machine dashboard offers a detailed view about the current status and development of the OEE of the machine.
 
 ![Machine dashboard](/images/oee/dashboards/dashboard-machine-dashboard.png)
@@ -15,6 +18,8 @@ By default, the **Auto-refresh** option at the top left is activated and [**OEE 
 Click **Andon Board** at the right of the top menu bar to switch to the **Andon Board** of this particular machine, see [Andon Board](#andon-board).
 
 Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). This link is only visible if the user has the role "OEE Admin".
+
+>**Info:** To access the OEE Dashboards, the Oeeconfigurator type Read or Admin permissions need to be enabled for the user/role. Without the required permission you might see error messages or not see any data in the Machine dashboard.
 
 #### Time period and resolution
 

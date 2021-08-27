@@ -27,7 +27,7 @@ For sites, areas and lines you can select one of the following options for the O
 * the average of the attached entities
 * the product (percentages) of the attached entities
 
-This can either be configured when creating an area, site or line profile or set later under **Administration** > **Organization**, see [Administration](/oee/oee-administration/#overview).
+This can either be configured when creating an area, site or line profile or set later under **Administration** > **Organization**, see [Organization](/oee/oee-administration/#organization).
 
 In the search field at the top left you can search for specific sites, areas, lines and machines by searching for their profile name.
 

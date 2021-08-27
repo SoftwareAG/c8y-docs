@@ -95,7 +95,7 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### {{< standard-tenant >}} default applications
+### Default applications
 
 In the {{< standard-tenant >}} you will find the following default applications:
 
@@ -170,7 +170,9 @@ In the {{< standard-tenant >}} you will find the following default applications:
 </table>
 
 
-### {{< enterprise-tenant >}} applications
+### Enterprise applications
+
+In the {{< enterprise-tenant >}} you will find the following additional applications:
 
 <table>
 <col width="200">

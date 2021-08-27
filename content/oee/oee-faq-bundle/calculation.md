@@ -90,8 +90,6 @@ If the information of a produced workpiece comes in while the machine is online,
 
 ### Why does the Ideal Amount change?
 
-![Ideal Amount change](/images/oee/faq/faq-ideal-amount.png)
-
 The Ideal Amount is calculated based on the values you have entered for the workpiece while creating the profile.
 
 The displayed Ideal Amount in the chart of the machine overview can change over the time, if you have activated the usage of a production plan.

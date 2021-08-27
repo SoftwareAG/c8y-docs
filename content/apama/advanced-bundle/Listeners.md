@@ -4,7 +4,7 @@ title: Listeners
 layout: redirect
 ---
 
-Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
+Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
 
 ### Filters
 
@@ -63,8 +63,8 @@ on Event() -> wait(600.0) and not Alarm() { ... }
 ```
 This will trigger if there is an event and within 10 minutes (600 seconds) there is no alarm. Note the use of `not` which terminates the listener if the event occurs.
 
-You can use a tenant option to set the time zone used for `on all at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key. 
-For example: 
+You can use a tenant option to set the time zone used for `on all at` timers. To set the tenant option, specify the `microservice.runtime` category and the `timezone` key.
+For example:
 
 ```
 {
@@ -74,11 +74,11 @@ For example:
 }
 ```
 
-See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in the *Microservice SDK guide* 
-and [Supported time zones](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in the *Microservice SDK guide*
+and [Supported time zones]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
 
 
-> **Info:** This tenant option is only read when the microservice starts. 
+> **Info:** This tenant option is only read when the microservice starts.
 If the tenant option is changed, the microservice only picks this up on the next microservice subscription.
 
 ### Streams - windows
@@ -112,4 +112,4 @@ from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 
 from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
 ```
 
-See the Apama documentation for [built-in aggregate functions](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).
+See the Apama documentation for [built-in aggregate functions]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).

@@ -407,7 +407,6 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
-- [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/benutzerhandbuch/device-management-de/#connectivity)

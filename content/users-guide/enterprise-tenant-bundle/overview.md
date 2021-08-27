@@ -19,7 +19,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 * **Support user** - To support users of other tenants
 * **User hierarchy** - To reflect entities with limited permissions to subsets of shared data
 
-For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide*.
+For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/concepts/tenant-hierarchy) in the *Concepts guide*.
 
 The following sections describe the following additional functionalities available in the {{< enterprise-tenant >}}:
 
@@ -37,7 +37,7 @@ The following sections describe the following additional functionalities availab
 <tbody>
 <tr>
 <td align="left"><a href="#managing-tenants">Managing tenants</a></td>
-<td align="left">Create and manage subtenants, and manage their properties and subscribed <a href="#applications">applications</a>.</td>
+<td align="left">Create and manage subtenants, and manage their properties and <a href="<a name="#subscribe"></a>">subscribed applications</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Managing user hierarchies</a></td>
@@ -58,10 +58,10 @@ The following sections describe the following additional functionalities availab
 </tr>
 <tr>
 <td align="left"><a href="#usage-and-billing">Usage statistics and billing</a></td>
-<td align="left">View <a href="#viewing-usage-statistics">statistical information</a> per tenant like the number of devices or alarms created, and on the <a href="#microservice-usage">resource usage for each microservice</a>  per subtenant for billing purposes. </td>
+<td align="left">View <a href="#usage-stats">statistical information</a> per tenant like the number of devices or alarms created, and on the <a href="#microservice-usage">resource usage for each microservice</a>  per subtenant for billing purposes. </td>
 <tr>
 <td align="left"><a href="#data-broker">Using the data broker</a></td>
-<td align="left">Share data selectively with other tenants using <a href="#data-connectors">data connectors</a> and <a href="#data-subscriptions">data subscriptions</a>.</td>
+<td align="left">Share data selectively with other tenants using <a href="#data-broker-connectors">data connectors</a> and <a href="#data-broker-subscriptions">data subscriptions</a>.</td>
 </tr>
 </tbody>
 </table>

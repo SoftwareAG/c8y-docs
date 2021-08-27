@@ -18,7 +18,7 @@ The following prerequisites are required to develop plugins and to execute the e
 
 * [Node.js](http://nodejs.org/) (6.7 or later)
 * [npm](https://www.npmjs.com/) (installed with Node.js)
-* Access to your Cumulocity IoT account, i.e. you need your tenant ID, username and password.
+* Access to your {{< product-c8y-iot >}} account, i.e. you need your tenant ID, username and password.
 
 <a name="cli-tool"></a>
 ### Cumulocity IoT CLI tool
@@ -50,7 +50,7 @@ $ npm init
 
 This command prompts you to enter values for several properties which will be included in the *package.json* file. The *package.json* file should include at least a name and version. To skip a property, press enter.
 
-Then proceed to install the Cumulocity IoT UI package containing the set of plugins by typing in the following command:
+Then proceed to install the {{< product-c8y-iot >}} UI package containing the set of plugins by typing in the following command:
 
 ```bash
 $ c8y install latest
@@ -58,12 +58,12 @@ $ c8y install latest
 
 This command will:
 
-- Check for the latest version of the Cumulocity IoT UI package.
+- Check for the latest version of the {{< product-c8y-iot >}} UI package.
 - Download the package.
 - Add it as a dependency inside the *package.json* file.
 
 Instead of "latest", you can also specify a certain version number, but this version has to be the same or less than the backend version number.
 
-> **Info:** When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the Cumulocity IoT UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
+> **Info:** When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
 
 > You can see the list of plugins which an application uses by utilizing the command `c8y util:showimports \[appContextPath\]`.

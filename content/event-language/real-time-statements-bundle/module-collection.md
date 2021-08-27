@@ -69,7 +69,7 @@ Example file:
     module testmodule;
     @Name('test1')select * from EventCreated.win:time(1 hour)
 
-Annotation @Name can be skipped - in this case cumulocity platform will assign default name to the statement.
+Annotation @Name can be skipped - in this case {{< product-c8y-iot >}} platform will assign default name to the statement.
 
 Example response:
 

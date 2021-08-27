@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Knowledge Hub (trial tenants only)
+title: Knowledge Hub
 layout: redirect
 ---
 

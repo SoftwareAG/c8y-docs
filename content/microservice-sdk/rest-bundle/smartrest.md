@@ -16,7 +16,9 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 * It is based on CSV (comma-separated values), hence, it is easy to handle from C-based environments.
 * It supports server-generated timestamps for devices without clocks.
 
-In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/reference/smartrest).
+In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
+
+> **Info:** The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest).
 
 ### How does SmartREST work?
 
@@ -56,7 +58,7 @@ Using the above example, a SmartREST request would be as follows:
 
 ```http
 POST /s HTTP/1.1
-Authorization: Basic ...
+Authorization: <AUTHORIZATION>
 X-Id: Device_1.0
 
 1,200,20.5
@@ -80,7 +82,7 @@ As described above, a client using SmartREST will first ask if its SmartREST tem
 
 ```http
 POST /s HTTP/1.1
-Authorization: Basic ...
+Authorization: <AUTHORIZATION>
 X-Id: Device_1.0
 ```
 
@@ -104,11 +106,10 @@ In this case, create all templates used in your device implementation.
 
 ```http
 POST /s HTTP/1.1
-Authorization: Basic ...
+Authorization: <AUTHORIZATION>
 X-Id: Device_1.0
 
 10,1,POST,/measurement/measurements,application/vnd.com.nsn.cumulocity.measurement+json,,%%,NOW UNSIGNED NUMBER,{ "time": "%%", "type": ... }
-...
 ```
 
 In this example, `10` refers to a request template (whereas "11" would refer to a response template). The template is number `1`, so SmartREST requests using this template have a "1" in their first column. The template refers to a `POST` request to the endpoint <kbd>/measurement/measurements</kbd> with a content type of `application/vnd.com.nsn.cumulocity.measurement+json`. The placeholder used in the template is `%%`. The placeholders are a time stamp (`NOW`), an unsigned number and a general number. Finally, the last column contains the body of the template to be filled in a POST request.
@@ -123,9 +124,8 @@ The above example illustrated the handling of requests and request templates. Fo
 		"text": "Hello, world!"
 	},
 	"creationTime": "2019-02-25T08:32:45.435+01:00",
-		"deviceId": "8789602",
-		"status": "PENDING",
-		...
+	"deviceId": "8789602",
+	"status": "PENDING"
 }
 ```
 
@@ -147,13 +147,11 @@ A device usually queries for all operations that are associated with it and that
 		},
 		"creationTime": "2014-02-25T08:32:45.435+01:00",
 		"deviceId": "8789602",
-		"status": "PENDING",
-		...
+		"status": "PENDING"
 	}, {
 		"c8y_Relay": {
-			...
+			"status": "OPEN"
 		}
-	...
 	}]
 }
 ```

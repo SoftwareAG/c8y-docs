@@ -172,7 +172,9 @@ Each time a user logs in, the content of the access token is verified and is a b
 
 The user will be granted access to the global role "business" and the default application "cockpit".
 
-New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
+If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
+
+New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
 New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
 
@@ -203,6 +205,14 @@ As you can see, there is an option to verify if a value exists in a list via the
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+
+Next, the **User data mappings** can be configured:
+
+![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
+
+On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
+
+Mapping for alias is not available because it is not used in the context of single sign-on login.
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
@@ -250,7 +260,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". There are no additional steps on Azure AD required.
+When configuring your Azure AD, use your full domain address as redirect URI. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". The redirect URI must be set for a web application and not for a single-page application. There are no additional steps on Azure AD required.
 
 ##### Cumulocity IoT configuration
 
@@ -278,7 +288,7 @@ Optionally single logout can be configured:
 |Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
 |Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
-The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
+The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
@@ -426,7 +436,6 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/users-guide/device-management/#connectivity)

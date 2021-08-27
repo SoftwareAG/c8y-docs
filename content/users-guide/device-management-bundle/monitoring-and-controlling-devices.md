@@ -260,7 +260,7 @@ Click **Reload** to update the list once manually.
 
 #### To add and execute a single operation
 
-Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#managing-firmware-on-a-device), [software](/users-guide/device-management/#managing-software-on-a-device), [configurations](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#firmware-repo), [software](/users-guide/device-management/#software-repo), [configurations](/users-guide/device-management/#configuration-repository) etc.
 
 When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 

@@ -38,7 +38,7 @@ After enabling the microservice-based data broker, your existing data connectors
 <a name="troubleshooting-ms-data-broker"></a>
 ###  Troubleshooting
 
-#### {{< management-tenant >}} subscription alert
+#### Subscription alert
 
 The {{< management-tenant >}} cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a {{< management-tenant >}} to the data broker agent.
 

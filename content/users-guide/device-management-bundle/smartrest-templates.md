@@ -115,7 +115,7 @@ A response template contains the necessary information to extract data values fr
 
 The response will be added to the SmartREST template.
 
-For further information see [Templates > SmartREST](/reference/smartrest/#response-templates) in the *Reference guide*.
+For further information see [SmartREST > Templates](/reference/smartrest/#response-templates) in the *Reference guide*.
 
 #### To remove a response
 

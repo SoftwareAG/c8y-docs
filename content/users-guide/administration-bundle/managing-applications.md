@@ -95,7 +95,7 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### {{< standard-tenant >}} default applications
+### Default applications
 
 In the {{< standard-tenant >}} you will find the following default applications:
 
@@ -170,7 +170,9 @@ In the {{< standard-tenant >}} you will find the following default applications:
 </table>
 
 
-### {{< enterprise-tenant >}} applications
+### Enterprise applications
+
+In the {{< enterprise-tenant >}} you will find the following additional applications:
 
 <table>
 <col width="200">
@@ -269,12 +271,6 @@ In the {{< standard-tenant >}} you will find the following default applications:
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">Interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
-<td style="text-align:left">impact</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPC UA</a></td>
 <td style="text-align:left">Communicate with OPC UA servers through an OPC UA device gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
@@ -339,7 +335,7 @@ In the resulting dialog box, choose one of the following methods:
 
 The application is created once the ZIP file has been successfully uploaded.
 
-<img src="/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+>**Important:** The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 
 <a name="uploading-microservices"></a>
 ##### To upload a microservice

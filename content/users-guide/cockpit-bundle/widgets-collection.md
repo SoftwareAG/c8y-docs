@@ -72,16 +72,16 @@ The following types are available:
 <td align="left">Displays links to help and service resources.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-html">HTML</a></td>
+<td align="left">Shows user-defined content formatted in HTML.</td>
+</tr>
+<tr>
 <td align="left"><a href="#widget-image">Image</a></td>
 <td align="left">Shows a single image to be selected from your file system by browsing.</td>
 </tr>
 <tr>
 <td align="left"><a href="#info-gauge">Info Gauge</a></td>
 <td align="left">Visualizes one data point in form of a radial gauge and multiple data points as labels.</td>
-</tr>
-<tr>
-<td align="left"><a href="#widget-html">HTML</a></td>
-<td align="left">Shows user-defined content formatted in HTML.</td>
 </tr>
 <tr>
 <td align="left"><a href="#linear-gauge">Linear Gauge</a></td>
@@ -389,10 +389,10 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
-> **Info:** If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
+If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
 
 ```html
-<a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
+  <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
 ```
 
 <a name="linear-gauge"></a>

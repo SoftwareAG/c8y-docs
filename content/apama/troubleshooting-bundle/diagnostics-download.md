@@ -13,7 +13,10 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 
-    > **Info:** In case of Cumulocity IoT Edge 10.6.0, since Apama is not a microservice, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operation/#apama-log-file-locations) and [Diagnostics](/edge/operation/#diagnostics) both in the *Cumulocity IoT Edge* guide.
+    > **Info:** In case of Cumulocity IoT Edge, since Apama-ctrl is not deployed as a microservice in Edge, 
+    Apama logs can be retrieved using the diagnostic utility. 
+    For more details, see [Apama log file locations](/edge/diagnostics-and-support/#apama-log-file-locations) 
+    and [Diagnostics](/edge/diagnostics-and-support/#diagnostics) both in the *Cumulocity IoT Edge guide*.
 
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
 

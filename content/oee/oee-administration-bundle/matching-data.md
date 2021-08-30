@@ -18,9 +18,9 @@ You can either define a single calculation rule or use categories to define at l
 
 Calculation rules can be defined as
 
-* Transformation rules ("Define quality status event" or "Define machine status event" is not activated): This enables you to count parts, for example, and thus determine the Actual Production Amount.
+* Transformation rules ("Define quality status event" or "Define machine status event" is not activated): The result of transformation rules is a value. This enables you to count parts, for example, and thus determine the Actual Production Amount.
 
-* Machine status events ("Define quality status event" or "Define machine status event" is activated): Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
+* Machine status events ("Define quality status event" or "Define machine status event" is activated): The result machine status events is a Boolean. Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
 
 
 #### Calculation reset
@@ -29,7 +29,7 @@ You can keep input values valid as long as a new value arrives, that replaces th
 
 Example:
 
-measurement(564135,DMG MORI - DMF 600,ActCycle,ActCycle,*false*)
+measurement(564135,Drill machine 500,ActCycle,ActCycle,*false*)
 
 If the value is *false*, the calculation can be continued with an old value for the Quality, whereas if the value is *true*, the calculation is performed only once, if the Quality value was the last missing part for the calculation.
 
@@ -55,7 +55,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 
 The Actual Production Amount can be determined, among other methods, with an IF-THEN rule.
 
-In this example we derive the produced amount from an event "StateEvent" of the machine "CCS_804". As soon as the "content$sub_state$id" of the event has the content "3", it can be deduced that a workpiece has been produced. The same also works for measurements or alarms.
+In this example we derive the produced amount from an event "StateEvent" of the machine "Slicer". As soon as the "content$sub_state$id" of the event has the content "3", it can be deduced that a workpiece has been produced. The same also works for measurements or alarms.
 
 ![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-1.png)
 

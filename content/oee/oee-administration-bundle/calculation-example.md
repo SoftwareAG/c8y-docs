@@ -10,7 +10,7 @@ In a production line there are two machine tools and one measuring machine in a 
 
 The quality of the workpiece is measured at the measuring machine and not derived from the process parameters of the machine tools.
 
-#### Mapping + calculation logic (streaming analytics)
+<!-- #### Mapping + calculation logic (Streaming Analytics)-->
 
 ##### Calculation of the Availability
 

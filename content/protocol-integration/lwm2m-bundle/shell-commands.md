@@ -47,15 +47,56 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 
 In the next table you will see all available commands and a brief description of their functionality.
 
-|Command|Description|
-|:------|:----------|
-|read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Reads a resource path|
-|observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Enables the observe functionality|
-|execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Executes a resource on the device|
-|write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;|Writes value to a resource on the device|
-|cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Cancels the observation functionality from the desired resource|
-|delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]|Deletes a given object/instance/resource|
-|discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Shows all resources of the given object|
-|create /&lt;objectID&gt; [JSON]|Creates a new object. The JSON argument is optional|
-|writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; {pmin=&lt;sec&gt;}{&pmax=&lt;sec&gt;}{&greater=&lt;num&gt;}{&less=&lt;num&gt;}{&step=&lt;num&gt;}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
-|fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_url&gt;/|Updates the firmware of the agent|
+<table>
+<col style="width:60%">
+<col style="width:40%">
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
+<td align="left">Reads a resource path.</td>
+</tr>
+<tr>
+<td align="left">observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
+<td align="left">Enables the observe functionality.</td>
+</tr>
+<tr>
+<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
+<td align="left">Executes a resource on the device.</td>
+</tr>
+<tr>
+<td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
+<td align="left">Writes value to a resource on the device.</td>
+</tr>
+<tr>
+<td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
+<td align="left">Cancels the observation functionality from the desired resource.</td>
+</tr>
+<tr>
+<td align="left">delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]</td>
+<td align="left">Deletes a given object/instance/resource.</td>
+</tr>
+<tr>
+<td align="left">discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
+<td align="left">Shows all resources of the given object.</td>
+</tr>
+<tr>
+<td align="left">create /&lt;objectID&gt; [JSON]</td>
+<td align="left">Creates a new object. The JSON argument is optional.</td>
+</tr>
+<tr>
+<td align="left">writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; pmin=&lt;sec&gt;&pmax=&lt;sec&gt;&amp;gt=&lt;num&gt;&amp;lt=&lt;num&gt;&st=&lt;num&gt;&cancel
+</td>
+<td align="left">Writes additional attributes to the object. Typically used for conditional observes.</td>
+</tr>
+<tr>
+<td align="left">fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_url&gt;/</td>
+<td align="left">Updates the firmware of the agent.</td>
+</tr>
+</tbody>
+</table>

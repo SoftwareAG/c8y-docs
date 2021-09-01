@@ -83,9 +83,9 @@ Data structure for ServerConnectionConfig:
 <table>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 13%;">
-<col style="width: 7%;">
-<col style="width: 55%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -199,7 +199,7 @@ Data structure for ServerConnectionConfig:
 <td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
 </tr>
 <tr>
-<td>alarmStatusMappings</td>
+<td rowspan="1">alarmStatusMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
 <td>The status of an alarm in {{< product-c8y-iot >}} is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
@@ -211,8 +211,13 @@ attributes provided in the subscription definition of the device type. It can be
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
+</td>
+</tr>
 
+<tr>
+<td colspan="4">
 <br><strong><em>Example:</em></strong></br>
+
 ```json
 {
     "alarmStatusMappings": {
@@ -224,11 +229,28 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 }
 ```
 
+</td>
+</tr>
+
+<tr>
+<td colspan="4">
+
 >**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
 > the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+
+
+
 </td>
 </tr>
+
+
+
+
+
+
+
+
 <tr>
 <td>subscribeModelChangeEvent</td>
 <td>boolean</td>

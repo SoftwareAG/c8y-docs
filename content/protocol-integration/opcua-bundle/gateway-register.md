@@ -185,7 +185,6 @@ gateway:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
     # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels.
     alarmSeverityMap:
-      1001: CRITICAL
       801: CRITICAL
       601: MAJOR
       401: MINOR

@@ -3,7 +3,7 @@ weight: 90
 title: Microservice-basierter Data Broker
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#ms-data-broker
+  - /benutzerhandbuch/enterprise-edition-de/#ms-data-broker
 ---
 
 Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messaging Service, der eine zuverlässige, skalierbare und hochleistungsfähige Bewegung von IoT-Daten ermöglicht. Der Microservice-basierte Data Broker ähnelt in seiner Funktionalität dem bisherigen Data Broker, außer dass zu seiner Nutzung ein Microservice, der `databroker-agent-server`, aktiviert werden muss.
@@ -13,7 +13,7 @@ Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messagin
 <a name="enabling-ms-data-broker"></a>
 ###  So aktivieren Sie den Microservice-basierten Data Broker
 
-1. Navigieren Sie im {{< management-tenant >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
+1. Navigieren Sie im {{< management-tenant-de >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
 2. Abonnieren Sie in der Registerkarte **Anwendungen** den Data Broker-Agenten (databroker-agent-server) für den Mandanten.
 
 ![Databroker-Agent-Server](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-agent.png)
@@ -38,9 +38,9 @@ Nach dem Aktivieren des Microservice-basierten Data Brokers sollten Ihre vorhand
 <a name="troubleshooting-ms-data-broker"></a>
 ###  Troubleshooting
 
-#### {{< management-tenant >}} Abonnement-Alarm
+#### Abonnement-Alarm
 
-Der {{< management-tenant >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant >}} zu abonnieren.
+Der {{< management-tenant-de >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant-de >}} zu abonnieren.
 
 #### Data Broker-Verbindungsfehler
 

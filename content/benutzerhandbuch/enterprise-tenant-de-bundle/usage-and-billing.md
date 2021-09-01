@@ -3,7 +3,7 @@ weight: 70
 title: Nutzungsstatistiken und Abrechnung
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#usage-and-billing
+  - /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
 ---
 
 <a name="usage-stats"></a>
@@ -121,7 +121,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 </tr>
 <tr>
 <td align="left">Übergeordneter Mandant</td>
-<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den {{< management-tenant >}})</td>
+<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den {{< management-tenant-de >}})</td>
 </tr>
 <tr>
 <td align="left">Externe Referenz</td>
@@ -155,7 +155,7 @@ Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 <a name="microservice-usage"></a>
 ### Microservice-Nutzung
 
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
+Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant-de >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 
 
 #### Abrechnungsmodi
@@ -183,7 +183,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant >}} eines {{< management-tenant >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 

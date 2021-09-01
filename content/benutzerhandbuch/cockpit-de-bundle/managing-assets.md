@@ -123,7 +123,7 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
-![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assign.png)
+![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
 

@@ -11,7 +11,7 @@ In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
-Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
@@ -78,7 +78,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tbody>
 </table>
 
-Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [{{< enterprise-tenant >}} > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).  
+Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [{{< enterprise-tenant-de >}} > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).  
 
 
 <a name="subscribed-applications"></a>
@@ -95,9 +95,9 @@ Die Spalten enthalten folgende Informationen:
 * **Name**: Identifikation der Anwendung in der API. Wenn Sie die Anwendung über eine API für einen Mandanten abonnieren möchten, verwenden Sie diese Zeichenkette im Argument (als Name).
 * **Typ**: Technischer Typ der Anwendung. "Funktion" bezieht sich auf integrierte Anwendungsabonnements, d. h., diese Anwendungen werden nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt.
 
-### {{< standard-tenant >}} Standardanwendungen
+### Standardanwendungen
 
-Im {{< standard-tenant >}} finden Sie die folgenden Standardanwendungen:
+Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 
 <table>
 <col width="200">
@@ -132,7 +132,7 @@ Im {{< standard-tenant >}} finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im {{< standard-tenant >}} mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Operationen anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
+<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im {{< standard-tenant-de >}} mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Operationen anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -170,7 +170,7 @@ Im {{< standard-tenant >}} finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### {{< enterprise-tenant >}} Anwendungen
+### Enterprise-Anwendungen
 
 <table>
 <col width="200">

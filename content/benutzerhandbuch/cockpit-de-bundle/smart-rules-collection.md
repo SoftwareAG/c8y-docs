@@ -182,7 +182,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -436,7 +436,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rules-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -855,7 +855,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 > **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
 
-<a name="smart-rules-variables"></a>
+<a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen
 
 In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte dieser Auslösefelder ersetzt.

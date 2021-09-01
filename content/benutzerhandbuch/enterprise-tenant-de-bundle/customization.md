@@ -127,7 +127,7 @@ Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab ve
 
 Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
-* Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.
+* Das "Favicon", das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist "ico".
 * Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind "png" und "svg".
 * Die Höhe des Markenlogos.
 
@@ -283,8 +283,7 @@ an die Plattform hochgeladen werden.
 
 Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
 über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
-.iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" ist, lautet die Domain des Management-Mandanten "management.iot.mycompany.com".
 
 > **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 

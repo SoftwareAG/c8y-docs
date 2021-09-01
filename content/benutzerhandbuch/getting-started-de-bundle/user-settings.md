@@ -34,7 +34,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tr>
 <tr>
 <td style="text-align:left">Abmelden</td>
-<td style="text-align:left">Meldet Sie aus Ihrem Cumulocity IoT-Konto ab. </td>
+<td style="text-align:left">Meldet Sie aus Ihrem {{< product-c8y-iot >}}-Konto ab. </td>
 </tr>
 <tr>
 <td style="text-align:left">Support aktivieren</td>
@@ -42,7 +42,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
-<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten Cumulocity IoT-Version an, zum Beispiel 10.5.8, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
+<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version an, zum Beispiel 10.5.8, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +62,7 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
 
-*  Die in den Cumulocity IoT-Benutzereinstellungen ausgewählte Sprache.
+*  Die in den {{< product-c8y-iot >}}-Benutzereinstellungen ausgewählte Sprache.
 *  Die Sprache, die in den Browser-Einstellungen konfiguriert ist.
 * 	Die Sprache des Betriebssystems.
 

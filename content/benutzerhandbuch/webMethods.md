@@ -30,13 +30,13 @@ Um die webMethods.io Integration zu abonnieren, gehen Sie folgendermaßen vor:
 
 ### Beispiele
 
-Integrationen in webMethods.io werden „Workflows“ genannt. Ein Workflow ist eine Verbindung zwischen zwei oder mehr Web-Anwendungen oder -Services. Es handelt sich dabei gewissermaßen um eine Reihe von Schritten, die zur Ausübung einer Aufgabe notwendig sind.
+Integrationen in webMethods.io werden "Workflows" genannt. Ein Workflow ist eine Verbindung zwischen zwei oder mehr Web-Anwendungen oder -Services. Es handelt sich dabei gewissermaßen um eine Reihe von Schritten, die zur Ausübung einer Aufgabe notwendig sind.
 
 Im folgenden Beispiel wird ein Workflow durch einen Alarm in {{< product-c8y-iot >}} ausgelöst, ein Ticket in Zendesk erstellt und eine SMS versandt.
 
 ![webMethods.io Example Workflow](/images/benutzerhandbuch/webMethods.io/wmio-example1.png)
 
-webMethods.io stellt Ihnen auch vorkonfigurierte Workflows zur Verfügung, die sogenannten „Recipes“.
+webMethods.io stellt Ihnen auch vorkonfigurierte Workflows zur Verfügung, die sogenannten "Recipes".
 
 ![webMethods.io Example Recipe](/images/benutzerhandbuch/webMethods.io/wmio-recipe-salesforce.png)
 

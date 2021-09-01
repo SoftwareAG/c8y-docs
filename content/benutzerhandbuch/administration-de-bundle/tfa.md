@@ -45,7 +45,7 @@ Nach diesem Vorgang generiert die TOTP-App alle 30 Sekunden einen neuen Code, de
 
 #### Zurücksetzen des Secrets
 
-><b>Info:</b> Wenngleich die Einrichtung von jedem einzelnen Benutzer vorgenommen werden muss, kann das Zurücksetzen des Secrets nur durch einen Benutzer mit der Berechtigung "Benutzerverwaltung ADMIN" in der "Administration"-Anwendung erfolgen. Wenn der Benutzer also sein Smartphone verliert oder die App deinstalliert, muss er einen Benutzer mit genau dieser Berechtigung kontaktieren.
+**Info:** Wenngleich die Einrichtung von jedem einzelnen Benutzer vorgenommen werden muss, kann das Zurücksetzen des Secrets nur durch einen Benutzer mit der Berechtigung "Benutzerverwaltung ADMIN" in der "Administration"-Anwendung erfolgen. Wenn der Benutzer also sein Smartphone verliert oder die App deinstalliert, muss er einen Benutzer mit genau dieser Berechtigung kontaktieren.
 
 Zum Zurücksetzen des Schlüssels führen Sie folgende Schritte durch:
 

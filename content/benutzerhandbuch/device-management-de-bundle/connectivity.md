@@ -25,7 +25,7 @@ Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 
 Wie Sie sehen, bietet Jasper derzeit den größten Funktionsumfang.
 
-Für jeden Anbieter muss entweder ICCID oder MSISDN im Fragment [c8y_Mobile](https://{{< domain-c8y >}}/api/#section/Device-management-library/Device-information) des Objekts eingestellt werden. Dies ist erforderlich, um das Objekt in Cumulocity IoT korrekt der zugehörigen SIM auf der Plattform des entsprechenden Anbieters zuordnen zu können.
+Für jeden Anbieter muss entweder ICCID oder MSISDN im Fragment [c8y_Mobile](https://{{< domain-c8y >}}/api/#section/Device-management-library/Device-information) des Objekts eingestellt werden. Dies ist erforderlich, um das Objekt in {{< product-c8y-iot >}} korrekt der zugehörigen SIM auf der Plattform des entsprechenden Anbieters zuordnen zu können.
 
 |Erforderlich|Jasper|Ericsson|Comarch|Kite|
 |:------|:-----|:-------|:------|:------|

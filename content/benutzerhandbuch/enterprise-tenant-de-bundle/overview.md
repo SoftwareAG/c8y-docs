@@ -41,7 +41,7 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Verwalten von Benutzerhierarchien</a></td>
-<td align="left">Hiermit können Sie in Cumulocity IoT verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
+<td align="left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 </tr>
 <tr>
 <td align="left"><a href="#customization">Anpassen der Plattform</a></td>

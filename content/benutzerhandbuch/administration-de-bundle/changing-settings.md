@@ -78,8 +78,8 @@ Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speich
 <a name="oauth-internal"></a>
 ### OAuth Internal
 
-{{< product-c8y-iot >}} OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden. 
-Die Lebensdauer ist für Tokens wie auch für Cookies über Mandantenoptionen konfigurierbar, die der Kategorie `oauth.internal` angehören. 
+{{< product-c8y-iot >}} OAuth Internal basiert auf JWT, das in einem Browser-Cookie gespeichert wird. Es unterstützt jedoch keine Aktualisierung und der Benutzer muss sich nach Ablauf der Gültigkeitsdauer des Tokens erneut anmelden.
+Die Lebensdauer ist für Tokens wie auch für Cookies über Mandantenoptionen konfigurierbar, die der Kategorie `oauth.internal` angehören.
 
 #### Token-Einstellungen
 Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit Mandantenoptionen geändert werden:
@@ -89,7 +89,7 @@ Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit
 Der minimal zulässige Wert ist 5 Minuten.
 
 #### Cookie-Einstellungen
-Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann: 
+Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
@@ -156,7 +156,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 |Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 |Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 
-Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
+Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
 
@@ -165,7 +165,7 @@ Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ver
 ```json
 {
 ...
-„user": "john.wick",
+"user": "john.wick",
 ...
 }
 ```
@@ -174,7 +174,7 @@ Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cock
 
 Klicken Sie auf **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie auf **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie auf das Minus-Symbol, um eine Regel zu entfernen.
 
-Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen “business" und "admin".
+Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen "business" und "admin".
 
 Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit "cur" beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
 
@@ -188,7 +188,7 @@ In diesem Fall sieht der JWT-Claim folgendermaßen aus:
  ```json
  {
  ...
- „user": {
+ "user": {
     "type": "human"
  },
  "role": [
@@ -223,7 +223,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
 
 
- >**Info:** {{< product-c8y-iot >}} Unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (zum Beispiel Elliptic-Curves) werden nicht unterstützt.
+ >**Info:** {{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (zum Beispiel Elliptic-Curves) werden nicht unterstützt.
 ##### Platzhalter
 In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit von {{< product-c8y-iot >}} aufgelöst werden. Folgende Platzhalter sind verfügbar:
 

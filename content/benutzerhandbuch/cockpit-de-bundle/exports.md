@@ -11,8 +11,6 @@ aliases:
   - /benutzerhandbuch/cockpit-de/#export
 ---
 
-
-
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
 Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Exportdaten enthalten so lediglich Informationen über die gefilterten Daten und aktivierten Felder.

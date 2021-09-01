@@ -4,13 +4,13 @@ title: Knowledge Hub (nur Trial Tenants)
 layout: redirect
 ---
 
-Der Knowledge Hub bietet Ihnen Zugriff auf Kurzvideos, Führungen, Artikel, Hilfe und Verknüpfungen und dient so als Einstiegspunkt für Ihre Arbeit mit der Cumulocity IoT-Plattform.
+Der Knowledge Hub bietet Ihnen Zugriff auf Kurzvideos, Führungen, Artikel, Hilfe und Verknüpfungen und dient so als Einstiegspunkt für Ihre Arbeit mit der {{< product-c8y-iot >}}-Plattform.
 
 >**Info:** Der Knowledge Hub ist nur für Benutzer von kostenlosen Trial Tenants verfügbar.
 
 ### So rufen Sie den Knowledge Hub auf
 
-Klicken Sie rechts unten in der Benutzeroberfläche der Cumulocity IoT-Plattform auf die Schaltfläche **Knowledge Hub**, um den Cumulocity IoT Knowledge Hub aufzurufen.
+Klicken Sie rechts unten in der Benutzeroberfläche der {{< product-c8y-iot >}}-Plattform auf die Schaltfläche **Knowledge Hub**, um den {{< product-c8y-iot >}} Knowledge Hub aufzurufen.
 
 ![Knowledge Hub button](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-button.png)
 
@@ -22,14 +22,14 @@ Der Dialog **Knowlegde Hub** wird geöffnet und zeigt eine Reihe von Optionen.
 
 ### Sitzungen
 
-Die ersten Elemente in der Liste führen Sie schrittweise durch die wichtigsten Themem von Cumulocity IoT:
+Die ersten Elemente in der Liste führen Sie schrittweise durch die wichtigsten Themem von {{< product-c8y-iot >}}:
 
 |Thema|Beschreibung|
 |:---|:---|
-|1- Welcome!|Heißt Sie bei Cumulocity IoT willkommen|
+|1- Welcome!|Heißt Sie bei {{< product-c8y-iot >}} willkommen|
 |2 - Tour your cockpit|Führt Sie durch die wichtigsten Bereiche der Benutzeroberfläche|
-|3 - See what you can do with IoT|Führt Sie zu einem Demoprojekt, durch das Sie einen ersten Eindruck von den Fähigkeiten von Cumulocity IoT gewinnen können|
-|4 - Connect & manage devices|Bietet einen Quick Link zum Verbinden Ihres Smartphones über die Cumulocity IoT Sensor-App|
+|3 - See what you can do with IoT|Führt Sie zu einem Demoprojekt, durch das Sie einen ersten Eindruck von den Fähigkeiten von {{< product-c8y-iot >}} gewinnen können|
+|4 - Connect & manage devices|Bietet einen Quick Link zum Verbinden Ihres Smartphones über die {{< product-c8y-iot >}} Sensor-App|
 |5 - Create dashboard|Erläutert die ersten Schritte mit Dashboards|
 |6 - Create smart rules & alarms|Zeigt Ihnen, wie Sie Ihre Daten nutzen können, indem Sie Smart Rules und Alarme erstellen|
 |7 - View advanced analytics|Bietet eine Einführung in das Analysieren Ihrer Daten mittels Streaming Analytics und Predictive Analytics|
@@ -58,6 +58,6 @@ Am Ende der Liste im Dialog **Knowledge Hub** finden Sie verschiedene Optionen, 
 
 * **Have a question or idea** - Geben Sie uns Feedback per E-Mail oder senden Sie uns Ideen zu Produkten oder Anfragen zu Funktionen
 * **Book a demo** - Buchen Sie eine Produktdemo
-* **UPGRADE Cumulocity IoT** - Lassen Sie sich Preise anzeigen und erwerben Sie Cumulocity IoT
+* **UPGRADE {{< product-c8y-iot >}}** - Lassen Sie sich Preise anzeigen und erwerben Sie {{< product-c8y-iot >}}
 
 Diese Optionen können von Zeit zu Zeit variieren.

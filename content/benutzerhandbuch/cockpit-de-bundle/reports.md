@@ -3,7 +3,7 @@ weight: 45
 title: Verwenden von Berichten
 layout: redirect
 helpcontent: >-
-  Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten über eine Reihe von Widgets in einem Dashboard-Layout. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Im Gegensatz zu Dashboards zeigen Berichte globale Daten, unabhängig von der Asset-Hierarchie. 
+  Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten über eine Reihe von Widgets in einem Dashboard-Layout. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Im Gegensatz zu Dashboards zeigen Berichte globale Daten, unabhängig von der Asset-Hierarchie.
 
 
   Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um einen neuen Bericht zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten oder zu löschen.
@@ -15,10 +15,8 @@ helpcontent: >-
   Klicken Sie in der oberen Menüleiste auf **Widget hinzufügen**, um dem Bericht ein neues Widget hinzuzufügen, oder verwenden Sie das Zahnrad-Symbol, um Widgets zu bearbeiten oder zu entfernen.
 
 
-  Cumulocity IoT enthält vordefinierte Widget-Typen, z. B. Alarm- oder Datenpunktlisten, lineare Zeiger oder Tachos. Da jeder Widget-Typ andere Daten anzeigt, sind zu seiner Konfiguration unterschiedliche Parameter notwendig. Nähere Informationen zu den einzelnen Widget-Typen und ihrer Konfiguration finden Sie in der Dokumentation der Widgets-Sammlung.
+  {{< product-c8y-iot >}} enthält vordefinierte Widget-Typen, z. B. Alarm- oder Datenpunktlisten, lineare Zeiger oder Tachos. Da jeder Widget-Typ andere Daten anzeigt, sind zu seiner Konfiguration unterschiedliche Parameter notwendig. Nähere Informationen zu den einzelnen Widget-Typen und ihrer Konfiguration finden Sie in der Dokumentation der Widgets-Sammlung.
 ---
-
-<!-- -->
 
 Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 

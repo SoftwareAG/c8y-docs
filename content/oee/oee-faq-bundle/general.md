@@ -45,6 +45,8 @@ The default user has access to:
 * Machine Dashboard
 * Andon Board
 
+The default user needs a role assigned with the Oeeconfiguratior Read permission enabled.
+
 #### Admin user
 
 Only admin users are allowed to change and create machine and line profiles. Admin users have access to:
@@ -53,3 +55,5 @@ Only admin users are allowed to change and create machine and line profiles. Adm
 * Machine Park Overview
 * Machine Dashboard
 * Andon Board
+
+The admin user needs a role assigned with the Oeeconfigurator Admin permission enabled.

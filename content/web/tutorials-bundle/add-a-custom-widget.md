@@ -99,7 +99,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
   template: `<div class="form-group">
     <c8y-form-group>
       <label translate>Text</label>
-      <textarea style="width:100%" [(ngModel)]="config.text"></textarea>
+      <textarea style="width:100%" [(ngModel)]="config.text" name="text"></textarea>
     </c8y-form-group>
   </div>`,
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]

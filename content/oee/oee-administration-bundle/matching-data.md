@@ -50,6 +50,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 * Actual Production Amount: Needs to be derived from actual measurements.
 * Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
 
+![Matching](/images/oee/administration/matching-general.png)
 
 ### Conditional splitting
 
@@ -88,6 +89,8 @@ The following image provides an overview on the matching capabilities for events
 There is no limit on the number of event types, but for each type there is a limit (150) to the number of unique paths that are stored.
 
 Is it also possible to manually address events with path through the text editor during mapping if the 150 paths are not sufficient.
+
+![Events with path](/images/oee/administration/matching-events-with-path.png)
 
 <!-- This feature won’t be available in this version but it will be added back at a later date.
 

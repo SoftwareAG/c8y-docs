@@ -4,20 +4,21 @@ title: How to register
 layout: redirect
 ---
 
-### Create self-signed certificate
+### Create a self-signed certificate
 
-To create new certificate you can use [`tedge cert create`](/thin-edge/thin-edge-references/#create) thin-edge.io command:
+To create a new certificate you can use the [`tedge cert create`](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) thin-edge.io command:
 
 ```shell
 sudo tedge cert create --device-id alpha
 ```
 
-> Note: `tedge cert` requires `sudo` privilege. This command provides no output on success.
+>**Note:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
 
-[`sudo tedge cert create`](/thin-edge/thin-edge-references/#create) will create certificate in a default location (`/etc/tedge/device-certs/`).
-To use a custom location, refer to [`tedge config`](/thin-edge/thin-edge-references/#tedge-config).
+[`sudo tedge cert create`](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) will create a certificate in a default location (`/etc/tedge/device-certs/`).
+To use a custom location, refer to [`tedge config`](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command).
 
 Now you should have a certificate in the `/etc/tedge/device-certs/` directory.
+Verify with the following command:
 
 ```shell
 $ ls /etc/tedge/device-certs/
@@ -26,9 +27,9 @@ $ ls /etc/tedge/device-certs/
 
 #### Errors
 
-##### Certificate creation fails due to invalid device id
+##### Certificate creation fails due to invalid device ID
 
-If non-supported characters are used for the device id then the cert create will fail with below error:
+If the device ID contains unsupported characters, `tedge cert create` will fail with the below error:
 
 ```plain
 Error: failed to create a test certificate for the device +.
@@ -52,7 +53,7 @@ Caused by:
             Run `tedge cert remove` first to generate a new certificate.
 ```
 
-> Warning! Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
+>**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
 
 Follow the instruction to remove the existing certificate and issue [`tedge cert remove`](/thin-edge/thin-edge-references/#remove):
 

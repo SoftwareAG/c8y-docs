@@ -46,7 +46,7 @@ https://<tenant-domain>.cumulocity.com/
 
 Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants > Tenant ID and tenant domain](https://cumulocity.com/api/#tag/Tenants) im **{{< product-c8y-iot >}} OpenAPI Specification**.
 
->**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} Standard Tenant nutzen. Die URL für die Enterprise Tenants von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+>**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}} nutzen. Die URL für die {{< enterprise-tenant-de >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der {{< product-c8y-iot >}}-Plattform verbunden sind.
 

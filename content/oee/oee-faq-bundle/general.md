@@ -45,7 +45,7 @@ The default user has access to:
 * Machine Dashboard
 * Andon Board
 
-The default user needs a role assigned with the Oeeconfiguratior Read permission enabled.
+The default user needs a role assigned with the Oeeconfigurator Read permission enabled.
 
 #### Admin user
 

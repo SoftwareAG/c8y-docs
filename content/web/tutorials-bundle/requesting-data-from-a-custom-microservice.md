@@ -92,7 +92,7 @@ Next, you need to install all dependencies. Switch to the new folder and run `np
 
 ### 2. Request data directly with fetch
 
-Let's say you want to access data from the endpoint `service/acme` via HTTP GET. The easiest way to archive this with authentification is to reuse the `fetch` implementation of the client. So we first add a file to the application and call it `acme.component.ts`:
+Let's say you want to access data from the endpoint `service/acme` via HTTP GET. The easiest way to archive this with authentication is to reuse the `fetch` implementation of the client. So we first add a file to the application and call it `acme.component.ts`:
 
 ```js
 import { Component, OnInit } from '@angular/core';

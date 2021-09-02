@@ -43,7 +43,7 @@ To achieve this, add the following code to the `app.module.ts`:
 
 ```js
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 // ---- 8< changed part ----

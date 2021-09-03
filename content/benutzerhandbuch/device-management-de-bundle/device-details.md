@@ -282,7 +282,7 @@ Die Registerkarte **Software** ermöglicht es, die Firmware eines Geräts sowie 
 
 #### So installieren Sie Firmware/Software
 
-Wählen Sie eine Firmware aus der Auswahlliste, die sämtliche im [Firmware Repository](#software-repo) verfügbare Firmware enthält, und klicken Sie auf **Installieren**.
+Wählen Sie eine Firmware aus der Auswahlliste, die sämtliche im [Firmware Repository](#firmware-repo) verfügbare Firmware enthält, und klicken Sie auf **Installieren**.
 
 Ähnliches gilt für das Installieren einer Software auf dem Gerät: Wählen Sie ein Software-Paket aus der Auswahlliste, die sämtliche im [Software Repository](#software-repo) verfügbare Software enthält, und klicken Sie auf **Installieren**.
 

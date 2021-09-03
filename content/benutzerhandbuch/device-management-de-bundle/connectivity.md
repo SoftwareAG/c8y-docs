@@ -8,7 +8,7 @@ aliases:
 
 Der Connectivity-Agent, der von der Anwendung {{< product-c8y-iot >}} Device Management aus arbeitet, liefert grundlegende Informationen zu Mobilgeräten sowie zusätzliche Details zur Konnektivität.
 
-{{< product-c8y-iot >}} lässt sich mit der SIM-Connectivity-Management-Plattform Jasper integrieren. Für die SIM-Connectivity-Management-Plattformen Comarch und Ericsson bietet {{< product-c8y-iot >}} eine experimentelle Implementierung. Weitere Details erfragen Sie bitte beim Produkt-Support (/welcome/contacting-support/).
+{{< product-c8y-iot >}} lässt sich mit der SIM-Connectivity-Management-Plattform Jasper integrieren. Für die SIM-Connectivity-Management-Plattformen Comarch und Ericsson bietet {{< product-c8y-iot >}} eine experimentelle Implementierung. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support/).
 
 Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 

@@ -6,7 +6,7 @@ layout: redirect
 
 Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Widgets sind nützlich zum Verfolgen von Informationen, etwa bei Alarmen, Assets oder Anwendungen, oder zum Bereitstellen von Karten, Quick Links und anderem in Dashboards oder Berichten.
 
-{{< product-c8y-iot >}} stellt vordefinierte Widget-Typen zur Verfügung, Näheres siehe Widgets-Sammlung (#widgets-collection).
+{{< product-c8y-iot >}} stellt vordefinierte Widget-Typen zur Verfügung, näheres siehe [Widgets-Sammlung](#widgets-collection).
 
 <a name="adding-widgets"></a>
 ### So fügen Sie ein Widget zu einem Dashboard oder Bericht hinzu

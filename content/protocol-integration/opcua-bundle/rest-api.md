@@ -211,46 +211,15 @@ attributes provided in the subscription definition of the device type. It can be
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
-</td>
-</tr>
 
-<tr>
-<td colspan="4">
-<br><strong><em>Example:</em></strong></br>
-
-```json
-{
-    "alarmStatusMappings": {
-        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
-        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
-        "['0:ActiveState'].text == 'Inactive'": "CLEARED",
-        "default": "ACTIVE"
-    }
-}
-```
-
-</td>
-</tr>
-
-<tr>
-<td colspan="4">
+See the **example** below the table.
 
 >**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
 > then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
 > the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
 
-
-
 </td>
 </tr>
-
-
-
-
-
-
-
-
 <tr>
 <td>subscribeModelChangeEvent</td>
 <td>boolean</td>
@@ -262,6 +231,19 @@ This property has to be explicitly set to "true" to detect and persist the addre
 
 </tbody>
 </table>
+
+**alarmStatusMappings example**
+
+```json
+{
+    "alarmStatusMappings": {
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
+        "['0:ActiveState'].text == 'Inactive'": "CLEARED",
+        "default": "ACTIVE"
+    }
+}
+```
 
 **Alarms status changed by OPC UA server**
 

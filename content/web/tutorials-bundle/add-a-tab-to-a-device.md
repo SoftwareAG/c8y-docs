@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
- **Version:** 10.4.11.0 | **Packages:** @c8y/cli and @c8y/ngx-components
+**Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 It is a common use case that you want to show additional information to a user in a details view (e.g. for a device or a group).
 
@@ -23,14 +23,14 @@ In the following, we will guide you through the process of creating a new tab to
 As a starting point, you need an application supporting context routes. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit  -a @c8y/apps@1004.11.0
+c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 ```
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `1009.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
@@ -43,27 +43,36 @@ To achieve this, add the following code to the `app.module.ts`:
 
 ```js
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 // ---- 8< changed part ----
 import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
 // ---- >8 ----
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    // Upgrade module must be the first
+    UpgradeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([
-      ...UPGRADE_ROUTES,
-    ], { enableTracing: false, useHash: true }),
+    NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    UpgradeModule
-    ]
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule
+  ],
 
   // ---- 8< added part ----
   providers: [{
@@ -134,27 +143,36 @@ Adding this to the `entryComponents` in `app.module.ts` will allow to compile th
 ```js
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
 // ---- 8< added part ----
 import { HelloComponent } from './hello.component';
 // ---- >8 ----
 
 @NgModule({
   imports: [
-    BrowserModule,
+    // Upgrade module must be the first
+    UpgradeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([
-      ...UPGRADE_ROUTES,
-    ], { enableTracing: false, useHash: true }),
+    NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    UpgradeModule
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule
   ],
 
   // ---- 8< added part ----
@@ -199,12 +217,16 @@ To add a guard, you simply need to add the `canActivate` property to the route d
 
 ```js
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
 import { HelloComponent } from './hello.component';
 
 // ---- 8< added part ----
@@ -213,15 +235,20 @@ import { HelloGuard } from './hello.guard';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    // Upgrade module must be the first
+    UpgradeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([
-      ...UPGRADE_ROUTES,
-    ], { enableTracing: false, useHash: true }),
+    NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    UpgradeModule
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule
   ],
   declarations: [HelloComponent],
   entryComponents: [HelloComponent],

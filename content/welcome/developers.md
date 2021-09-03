@@ -51,9 +51,9 @@ Check out the following developer guides if you are looking for step-by-step ins
 
 Moreover, the <a href="/apama/overview-analytics/"><i>Streaming Analytics guide</i></a> provides basics for understanding how to create your own analytics or other business logic in Cumulocity IoT with Apama EPL.
 
-### Open API Specification
+### OpenAPI Specification
 
-A complete Open API Specification for the Cumulocity IoT REST API is available at https://cumulocity.com/api. The Open API Specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A complete OpenAPI Specification for the Cumulocity IoT REST API is available at https://cumulocity.com/api. The OpenAPI Specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
 ### {{< company-sag >}} {{< sag-dev-community >}}

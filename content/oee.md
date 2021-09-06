@@ -1,5 +1,5 @@
 ---
-title: OEE application
+title: Cumulocity IoT OEE guide
 bundle: oee
 icon: "c8y-icon c8y-icon-tools"
 type: root

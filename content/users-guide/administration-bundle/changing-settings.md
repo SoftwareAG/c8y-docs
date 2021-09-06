@@ -112,7 +112,7 @@ Before switching to the single sign-on option it is mandatory that:
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
 * The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
-* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
+* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
 >**Info:** In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.

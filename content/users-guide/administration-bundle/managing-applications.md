@@ -346,7 +346,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the *Microservice SDK guide* under **General aspects** in order to prepare and deploy the microservice package.
 
 
 <a name="external-application"></a>

@@ -41,7 +41,7 @@ Sie können {{< product-c8y-iot >}} auch auf gängigen Smartphones und Tablets n
 Um auf die Anwendungen Ihres {{< product-c8y-iot >}}-Mandanten zuzugreifen, verwenden Sie die folgende URL:
 
 ```http
-https://<tenant-domain>.cumulocity.com/
+https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
 Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants > Tenant ID and tenant domain](https://cumulocity.com/api/#tag/Tenants) im **{{< product-c8y-iot >}} OpenAPI Specification**.
@@ -87,7 +87,7 @@ Wenn Sie selbst der Hauptadministrator sind, wird die E-Mail-Adresse, die Sie be
 Sie können unmittelbar an jede Stelle in einer {{< product-c8y-iot >}}-Anwendung navigieren, indem Sie die entsprechende URL verwenden. So können Sie etwa, um allgemeine Information zu einem Gerät anzuzeigen, die folgende URL eingeben:
 
 ```http
-https://<tenant-domain>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+https://<tenant-domain>.{{< domain-c8y >}}/apps/devicemanagement/index.html#/device/<id>/info
 ```
 
 Durch die Verwendung einer URL können Sie:

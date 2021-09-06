@@ -2,15 +2,19 @@
 weight: 75
 title: Datenpunktbibliothek
 layout: redirect
+helpcontent: >-
+  Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Diese dienen als Vorlagen, die sich leicht von verschiedenen Geräten auf Ihre Datenpunkte anwenden lassen. Um Standardwerte für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die {{< product-c8y-iot >}}-Plattform die Datenpunktbibliothek nach einem passenden Eintrag. Wenn ein Eintrag passt, werden die entsprechenden Datenpunktattribute für die Standardvisualisierung verwendet.
+
+
+  Wählen Sie entweder einen der vorhandenen Datenpunkte aus der Liste aus oder fügen Sie der Bibliothek einen neuen Datenpunkt hinzu, um Ihren eigenen Erfordernissen gerecht zu werden.
 ---
+
 
 Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute.
 
-Datenpunktattribute ähneln den Absatzformaten in Textverarbeitungsanwendungen. Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden.
+Datenpunktattribute ähneln den Absatzformaten in Textverarbeitungsanwendungen. Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte. Sie bietet eine Reihe von standardisierten Datenpunkt-Templates, die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.
 
-Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte. Sie bietet eine Reihe von standardisierten Datenpunkt-Templates, die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.
-
-Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standardvisualisierung für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die Cockpit-Anwendung die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "passend", wenn die Werte für Fragment und Serie in der Datenpunktbibliothek mit den Messwerten übereinstimmen. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.
+Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standardvisualisierung für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die {{< product-c8y-iot >}}-Plattform die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "passend", wenn die Werte für Fragment und Serie in der Datenpunktbibliothek mit den Messwerten übereinstimmen. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.
 
 Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von Schwellwertregeln verwendet, um Alarme auszulösen.
 
@@ -30,7 +34,7 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 1. Klicken Sie auf **Datenpunkt hinzufügen** in der oberen Menüleiste.
 2. Geben Sie die folgenden Informationen ein:
 
-	|Feld|Beschreibung|
+  |Feld|Beschreibung|
 |:---|:---|
 |Farbe|Farbe für die Datenpunktvisualisierung
 |Beschriftung|Beschriftung für die Datenpunktvisualisierung

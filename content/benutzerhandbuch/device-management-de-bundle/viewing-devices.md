@@ -68,6 +68,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 
 Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie auf **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
 
+<a name="configuring-columns"></a>
 ### Konfigurieren von Spalten
 
 Die Spalten der Geräteliste können nach Bedarf angepasst werden.
@@ -88,11 +89,11 @@ Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zus
 1. Klicken Sie im Dialog **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
 ![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.  
-3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur Cumulocity IoT-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
+3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur {{< product-c8y-iot >}}-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, erfolgt die Filterung durch Anwenden der Kriterien, die ein Benutzer in dem Dialogfeld festlegen kann, das beim Klicken auf das Spaltenfilter-Symbol angezeigt wird.<br>
 ![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.   
+<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
 5. Klicken Sie auf **Hinzufügen**.
 
 Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
@@ -106,13 +107,13 @@ Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
-> **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity IoT-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
+> **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
 
 <a name="searching-devices"></a>
 ### So suchen Sie nach Geräten
 
-Cumulocity IoT umfasst eine Volltextsuche nach Geräten.
+{{< product-c8y-iot >}} umfasst eine Volltextsuche nach Geräten.
 
 Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein.
 

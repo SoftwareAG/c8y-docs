@@ -2,6 +2,17 @@
 weight: 30
 title: Daten-Explorer
 layout: redirect
+helpcontent: >-
+  Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden. Rechts finden Sie eine Liste aller verfügbaren Datenpunkte. Links sehen Sie die entsprechende Visualisierung.
+
+
+  Klicken Sie auf **Datenpunkt hinzufügen**, um weitere Datenpunkte zur Liste hinzuzufügen. Zusätzlich können Sie auch Alarme oder Ereignisse hinzufügen.
+
+
+  Sie können Änderungen an der Visualisierung des Daten-Explorers vornehmen, z. B. das angezeigte Zeitintervall ändern oder die dargestellten Daten aggregieren, um einen effizienten Überblick über längere Zeiträume zu erhalten. Näheres hierzu finden Sie in der Daten-Explorer-Dokumentation.
+
+
+  Außerdem kann der Daten-Explorer als Widget einem Dashboard hinzugefügt oder als CSV- oder Excel-Datei heruntergeladen werden.
 ---
 
 <a name="data explorer"></a>
@@ -26,7 +37,7 @@ Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
 * Wenn diese Attribute bereits zuvor angepasst wurden, werden die entsprechenden Werte verwendet, siehe [Anpassen von Datenpunktattributen](#customize-data-points).
 
-* Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet.
+* Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte aus der Datenpunktbibliothek verwendet.
 
 In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen.
 
@@ -81,7 +92,7 @@ Klicken Sie auf **Echtzeit** in der oberen Menüleiste, um die Aktualisierung in
 Die Sichtbarkeit eines Datenpunkts kann mit dem Umschalter links neben dem Datenpunktnamen aktiviert bzw. deaktiviert werden.
 
 <a name="add-data-points"></a>
-### Hinzufügen von Datenpunkten
+### So fügen Sie einen Datenpunkt hinzu
 
 Klicken Sie auf **Datenpunkt hinzufügen** am Ende der Karte **Datenpunkte**, um einen Datenpunkt zum Daten-Explorer hinzuzufügen.
 
@@ -91,7 +102,11 @@ Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wi
 
 Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. Wählen Sie die Datenpunkte aus, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie auf **Hinzufügen**, um alle ausgewählten Datenpunkte zur Datenpunktliste hinzuzufügen.
 
-Um einen Datenpunkt in die Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**.
+Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
+
+![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
+
+Um einen Datenpunkt in der Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**.
 
 ![Save data point to library](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-savedatapoint.png)
 

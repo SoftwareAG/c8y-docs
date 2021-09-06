@@ -4,7 +4,7 @@ title: Verwenden von Simulatoren
 layout: redirect
 ---
 
-Mit dem Simulator in Cumulocity IoT können alle Aspekte von IoT-Geräten simuliert werden, wie:
+Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Geräten simuliert werden, wie:
 
 * Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten
 * Bestimmen der Operationen, die ein Gerät verarbeiten kann
@@ -17,7 +17,7 @@ Mit dem Simulator in Cumulocity IoT können alle Aspekte von IoT-Geräten simuli
 
 Mit dem Simulator können Sie "künstliche" Geräte erstellen, die den gleichen Grad an Funktionalität aufweisen, wie verbundene Hardwaregeräte.
 
-Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity IoT-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
+Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die {{< product-c8y-iot >}}-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
 
 Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.
 
@@ -81,7 +81,7 @@ Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten An
 
 ![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](https://cumulocity.com/api/#section/Sensor-library) im Cumulocity IoT OpenAPI Specification.
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter [Sensor Library](https://{{< domain-c8y >}}/api/#section/Sensor-library) in der {{< openapi >}}.
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 

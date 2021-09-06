@@ -8,7 +8,7 @@ layout: redirect
 <a name="map"></a>
 ### Lokalisieren von Geräten
 
-Cumulocity IoT bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf einer Karte anzuzeigen.
+{{< product-c8y-iot >}} bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf einer Karte anzuzeigen.
 
 Klicken Sie auf **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt.
 
@@ -33,7 +33,7 @@ Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Gerätel
 
 **Sendeverbindungen**
 
-Der obere Pfeil symbolisiert die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity IoT). Der Status der Sendeverbindungen kann einer der folgenden sein:
+Der obere Pfeil symbolisiert die Sendeverbindungen (Verkehr vom Gerät zu {{< product-c8y-iot >}}). Der Status der Sendeverbindungen kann einer der folgenden sein:
 
 * Grüner Pfeil - online (Daten wurden im erwarteten Intervall gesendet)
 * Roter Pfeil - offline (Daten wurden nicht im erwarteten Intervall gesendet)
@@ -45,13 +45,13 @@ Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Inter
 
 **Push-Verbindungen**
 
-Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity IoT zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:
+Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}} zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:
 
 * Grüner Pfeil - online (Verbindung hergestellt)
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /notification/operations API, **nicht** zu Echtzeit-API.
+Push-Verbindung bedeutet Verbindung von {{< product-c8y-iot >}} zu /notification/operations API, **nicht** zu Echtzeit-API.
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
@@ -72,7 +72,7 @@ Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der le
 
 > **Info:** "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
 
-Im Feld **Erwartetes Sendeintervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunde mit Cumulocity IoT kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.
+Im Feld **Erwartetes Sendeintervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunde mit {{< product-c8y-iot >}} kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.
 
 Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartung**.
 
@@ -83,20 +83,20 @@ Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein
 <a name="monitoring-services"></a>
 ### Serviceüberwachung
 
-Cumulocity IoT unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit Cumulocity IoT kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
+{{< product-c8y-iot >}} unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit {{< product-c8y-iot >}} kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
 
-Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu Cumulocity IoT gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde.
+Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu {{< product-c8y-iot >}} gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde.
 
-Cumulocity IoT betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen aktiven Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es zu 100% in Betrieb. Gab es während der Hälfte der Zeit kritische aktive Alarme, war es zu 50% in Betrieb.
+{{< product-c8y-iot >}} betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen aktiven Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es zu 100% in Betrieb. Gab es während der Hälfte der Zeit kritische aktive Alarme, war es zu 50% in Betrieb.
 
-Ist ein Gerät offline, nimmt Cumulocity IoT standardmäßig an,
+Ist ein Gerät offline, nimmt {{< product-c8y-iot >}} standardmäßig an,
 
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
 Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
-Cumulocity IoT zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
+{{< product-c8y-iot >}} zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
 #### So zeigen Sie die Serviceüberwachung eines bestimmten Geräts an
 
@@ -118,7 +118,7 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 #### So zeigen Sie Alarme an
 
-Cumulocity IoT zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
+{{< product-c8y-iot >}} zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
 
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
@@ -127,10 +127,10 @@ Cumulocity IoT zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
 
 Standardmäßig
 
-* werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
+* werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
 * werden Alarme in Echtzeit angezeigt, sobald sie vom Gerät gemeldet werden. Klicken Sie auf **Echtzeit** in der oberen Menüleiste, um Echtzeitaktualisierungen zu deaktivieren.
 
-Alarme werden nach Schweregraden klassifiziert. Cumulocity IoT enthält vier verschiedene Alarmtypen:
+Alarme werden nach Schweregraden klassifiziert. {{< product-c8y-iot >}} enthält vier verschiedene Alarmtypen:
 
 |Schweregrad|Beschreibung|
 |:---|:--|
@@ -266,7 +266,7 @@ Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Op
 
 Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
->**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remotevorgänge den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
 #### So brechen Sie ausstehende Einzel-Operationen ab
 
@@ -327,7 +327,7 @@ Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die 
 
 * **Details**: Informationen zu Startdatum, Verzögerung, Status und Ergebnis der Bulk-Operation. Das Ergebnis listet die Anzahl der erfolgreich abgeschlossenen, fehlgeschlagenen und ausstehenden Operationen auf. Handelt es sich bei der Bulk-Operation um einen [Wiederholungsversuch für fehlgeschlagene Operationen](#to-retry-failed-operations), wird eine zusätzliche Zeile mit dem Index der Bulk-Operation angezeigt, die erneut ausgeführt werden soll. Klicken Sie auf den Index, um zu dieser Bulk-Operation zu scrollen. Wenn beim [Erstellen der Bulk-Operation](#to-add-a-bulk-operation) eine Beschreibung hinzugefügt wurde, wird eine zusätzliche Zeile mit dieser Beschreibung angezeigt.
 * **Operation**: Informationen zur Operation in Form eines JSON-Objekts.
-* **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen**  klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
+* **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen** klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
 * **Änderungshistorie**: In einer zweiten Registerkarte werden Informationen zu den letzten Änderungen der Operation angezeigt.
 
 ![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
@@ -428,7 +428,7 @@ Bei einer Bulk-Operation, die mit Fehlern abgeschlossen wurde, können Sie auch 
 
 #### So setzen Sie fehlgeschlagene Bulk-Operation manuell auf "erfolgreich"
 
-Sie können fehlgeschlagene Bulk-Operation manuell auf "erfolgreich" setzen.
+Sie können eine fehlgeschlagene Bulk-Operation manuell auf den Status ERFOLGREICH setzen.
 
 Klicken Sie dazu auf das Menüsymbol rechts neben der Bulk-Operation und anschließend auf **Operation auf ERFOLGREICH setzen**.
 
@@ -441,7 +441,7 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 
 #### So zeigen Sie Ereignisse an
 
-Cumulocity IoT zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
+{{< product-c8y-iot >}} zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
 
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.

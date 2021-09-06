@@ -4,7 +4,7 @@ title: Verwalten von Gerätetypen
 layout: redirect
 ---
 
-Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity IoT sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
+Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet {{< product-c8y-iot >}} sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
 
 Klicken Sie auf **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
 
@@ -14,7 +14,7 @@ Die Seite **Geräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbar
 
 Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 
-* den Geräteprotokolltypen (z. B. Modbus, CANOpen, LoRa)
+* den Geräteprotokolltypen (z. B. Modbus, CANOpen, LoRa, IMPACT)
 * den Gerätetypnamen
 * die Anzahl der Ressourcen für das Gerät (auf der rechten Seite)
 

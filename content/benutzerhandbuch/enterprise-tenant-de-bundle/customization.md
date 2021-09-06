@@ -2,13 +2,15 @@
 weight: 40
 title: Anpassen der Plattform
 layout: redirect
+aliases:
+  - /benutzerhandbuch/enterprise-edition-de/#customization
 ---
 
-Mit dem Enterprise Tenant von Cumulocity IoT können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
+Mit dem {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
 
 Neben verschiedenen [Konfigurationseinstellungen](#configuration) können Sie auch Ihr eigenes [Branding](#branding) und Ihren eigenen [Domain-Namen](#domain-name) verwenden.
 
-Klicken Sie auf **Enterprise Tenant** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
+Klicken Sie auf **{{< enterprise-tenant-de >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
 
 ![Custom settings](/images/benutzerhandbuch/enterprise-tenant/et-custom-settings.png)
 
@@ -21,8 +23,8 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 
 |Platzhalter|Beschreibung|
 |:---|:---|
-|{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.cumulocity.com`.
-|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.cumulocity.com` sein. Bei einem Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
+|{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.{{< domain-c8y >}}`.
+|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant-de >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 |{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 
 #### Zwei-Faktor-Authentifizierung
@@ -33,7 +35,7 @@ Unter **Zwei-Faktor-Authentifizierung** können Sie das SMS-Template, das an die
 
 #### Support-Link
 
-Im Bereich **Support-Link** können Sie eine URL eingeben, die als Link zu einer Support-Seite verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Seite der Software AG TechCommunity verwendet.
+Im Bereich **Support-Link** können Sie eine URL eingeben, die als Link zu einer Support-Seite verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur {{< sag-dev-community >}}-Seite verwendet.
 
 ![Support link configuration](/images/benutzerhandbuch/enterprise-tenant/et-configuration-support-link.png)
 
@@ -67,19 +69,19 @@ Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschl�
 
 Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an.
 
-### Datenexport
+#### Datenexport
 
 Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
 
 ![Data export settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-data-export.png)
 
-### Speicherbegrenzung
+#### Speicherbegrenzung
 
 Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden (Warnung) und *nachdem* Daten gelöscht wurden (Begrenzung überschritten).
 
 ![Storage limit settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-storage-limit.png)
 
-### Mandanten werden gesperrt
+#### Mandanten werden gesperrt
 
 Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
@@ -89,8 +91,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-**Info:** Einige zusätzliche Konfigurationseinstellungen können global im Management-Mandanten festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
-
+> **Info:** Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 
 <a name="branding"></a>
 ### Branding
@@ -170,21 +171,21 @@ Unter **Navigator** definieren Sie die Parameter für den Navigator.
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* Hintergrundfarbe. Der Standardwert ist "#2c3637".
+* Hintergrundfarbe. Der Standardwert ist "2c3637".
 * Hintergrundfarbe der Logoumrandung. Der Standardwert ist "Transparent".
-* Titelfarbe. Der Standardwert ist "#FFFFF".
+* Titelfarbe. Der Standardwert ist "FFFFF".
 * Farbe für Texte und Schaltflächen. Der Standardwert ist "#FAFAFA".
-* Farbe für Trennlinien. Der Standardwert ist #FAFAFA".
+* Farbe für Trennlinien. Der Standardwert ist "#FAFAFA".
 * Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist "#FAFAFA".
 * Hintergrundfarbe des aktuellen Elements im Navigator mit der Haupt-Branding-Farbe als Standard.
 
 **Sonstiges**
 
-Im Bereich **Sonstiges** legen Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) fest.
+Im Bereich **Sonstiges** legen Sie den "Rand-Radius für Schaltflächen" durch Angabe eines Werts in Pixel (px) fest.
 
 **Cookie-Banner**
 
-Im Abschnitt **Cookie-Banner** legen Sie die Einstellungen für das Banner mit den Cookie-Nutzungsinformationen fest. Das Banner wird für alle Benutzer des aktuellen Mandanten und der Untermandanten angezeigt, bis ein Benutzer **Akzeptieren und fortfahren** klickt.
+Im Abschnitt **Cookie-Banner** legen Sie die Einstellungen für das Banner mit den Cookie-Nutzungsinformationen fest. Sofern es hier nicht deaktiviert ist, wird das Banner für alle Benutzer des aktuellen Mandanten und der Untermandanten angezeigt, bis ein Benutzer auf **Akzeptieren und fortfahren** klickt.
 
 Folgende Parameter können festgelegt werden:
 
@@ -195,41 +196,41 @@ Folgende Parameter können festgelegt werden:
 <a name="domain-name"></a>
 ### Domain-Name
 
-Ein entscheidendes Merkmal des Enterprise Tenant ist die Fähigkeit, die Cumulocity IoT-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
-bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von Cumulocity IoT. Zudem haben Sie die Möglichkeit, Untermandanten
+Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
+bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
-> **Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für Cumulocity IoT-Cloud- oder lokale Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
+> **Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für {{< product-c8y-iot >}}-Cloud- oder lokale Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
 Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen:
 
 1. Zum Aktivieren Ihrer Domain ist eine gültige Lizenz erforderlich, die Ihre Wildcard-Domain abdeckt.
-   Bitte kontaktieren Sie den [Produkt-Support](/welcome/contacting-support), um eine Lizenz für Ihre Domain zu installieren.
+   Bitte kontaktieren Sie den [Produkt-Support](/welcome/contacting-support/), um eine Lizenz für Ihre Domain zu installieren.
 2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
    ein Zertifikat für *\*.iot.mycompany.com*.
 3. Es gibt eine gültige DNS-Konfiguration für Ihre Domain, die dafür sorgt, dass alle Anfragen an *\*.iot.mycompany.com* an
-   Cumulocity IoT geleitet werden. (siehe unten).
+   {{< product-c8y-iot >}} geleitet werden. (siehe unten).
 
 #### Anforderungen an das SSL-Zertifikat
 
-Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der Enterprise Tenant-Funktion verwendet werden zu können:
+Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterprise-tenant-de >}}-Funktion verwendet werden zu können:
 
 * Das Zertifikat ist aktuell gültig und ist nicht abgelaufen. Konkret muss "validFrom" auf einen Zeitpunkt in der
   Vergangenheit und "validTo" auf einen Zeitpunkt in der Zukunft verweisen.
 * Das Zertifikat wurde von einer anerkannten Zertifizierungsstelle (CA) herausgegeben. Selbstsignierte Zertifikate werden
   ausdrücklich nicht unterstützt.
 * Das Zertifikat ist ein für Ihre Domain *\*.iot.mycompany.com* herausgegebenes Wildcard-Zertifikat. Die Verwendung eines Wildcard-Zertifikats
-  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren Enterprise Tenant erstellt werden.
+  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant-de >}} erstellt werden.
 * Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
 * Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
   Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
 
-Cumulocity IoT unterstützt ein Einzelzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das
+{{< product-c8y-iot >}} unterstützt ein Einzelzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das
 ein oder mehrere Zwischenzertifikate enthält.
 
 #### Verpacken des SSL-Zertifikats in PKCS #12
 
-Um ein SSL-Zertifikat mit Cumulocity IoT verwenden zu können, muss das Zertifikat zusammen mit seinem privaten Schlüssel
+Um ein SSL-Zertifikat mit {{< product-c8y-iot >}} verwenden zu können, muss das Zertifikat zusammen mit seinem privaten Schlüssel
 in einer einzelnen Datei im Dateiformat PKCS #12 an die Plattform hochgeladen werden.
 
 Die meisten Zertifizierungsstellen liefern ihre Zertifikate und zugehörigen privaten Schlüssel im Dateiformat PEM, wobei zwei
@@ -238,7 +239,7 @@ durch ein Passwort oder eine Passphrase geschützt ist.
 
 Solche PEM-Dateien lassen sich mittels [OpenSSL](https://www.openssl.org/) leicht in das Format #PKCS #12 umverpacken. Im folgenden
 Beispiel dient OpenSSL zum Zusammenführen einer Zertifikatkette (*chain.cert*) und des entsprechenden Schlüssels (*privkey.pem*) zu einer
-PKCS #12-Keystore-Datei (*out_keystore.p12*), die mit Cumulocity IoT verwendet werden kann.
+PKCS #12-Keystore-Datei (*out_keystore.p12*), die mit {{< product-c8y-iot >}} verwendet werden kann.
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
@@ -246,21 +247,21 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 #### DNS-Anforderungen an Enterprise-Domains
 
-Die DNS-Einträge für Ihre benutzerdefinierte Domain müssen so konfiguriert werden, dass alle Anfragen an die Cumulocity IoT-Plattform geleitet werden.
+Die DNS-Einträge für Ihre benutzerdefinierte Domain müssen so konfiguriert werden, dass alle Anfragen an die {{< product-c8y-iot >}}-Plattform geleitet werden.
 
 Wir **empfehlen dringend**, zu diesem Zweck den Wildcard-Eintrag CNAME zu verwenden. Der CNAME muss Ihre Wildcard-Domain
-aus dem Zertifikat im Feld NAME enthalten. Das Feld VALUE des CNAME-Eintrags muss auf den Hostnamen von Cumulocity IoT verweisen. Dieser Ziel-Hostname lässt sich leicht anhand Ihrer aktuellen Mandanten-URL ermitteln. Wenn Ihre Mandanten-URL
-*http://mytenant.cumulocity.com* lautet, ist der Ziel-Hostname *cumulocity.com*. Achten Sie außerdem darauf, eventuell miteinander
+aus dem Zertifikat im Feld NAME enthalten. Das Feld VALUE des CNAME-Eintrags muss auf den Hostnamen von {{< product-c8y-iot >}}verweisen. Dieser Ziel-Hostname lässt sich leicht anhand Ihrer aktuellen Mandanten-URL ermitteln. Wenn Ihre Mandanten-URL
+*http://mytenant.{{< domain-c8y >}}* lautet, ist der Ziel-Hostname *{{< domain-c8y >}}*. Achten Sie außerdem darauf, eventuell miteinander
 in Konflikt stehende A-Einträge zu löschen.
 
 **Beispiel:**
 
-Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und Cumululocity IoT unter *cumulocity.com* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
+Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und {{< product-c8y-iot >}} unter *{{< domain-c8y >}}* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
 
 ```shell
 NAME                  TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  cumulocity.com.
+*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
 ```
 
 Aus folgenden Gründen raten wir dringend von der Verwendung alternativer DNS-Konfigurationen ab:
@@ -280,11 +281,10 @@ an die Plattform hochgeladen werden.
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 
-Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
-über den neuen Domain-Namen zu Ihrem Enterprise Tenant umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "** .iot.mycompany.com" ist, lautet die Domain des Management-Mandanten "management.iot.mycompany.com".
+Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" ist, lautet die Domain des Management-Mandanten "management.iot.mycompany.com".
 
-> **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
+> **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 #### Aktualisieren des Zertifikats
 
@@ -299,27 +299,27 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 
 #### Deaktivieren eines Zertifikats
 
-Wenn Sie zu Ihrer alten Domain auf Cumulocity IoT zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
+Wenn Sie zu Ihrer alten Domain auf {{< product-c8y-iot >}} zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
 >**Wichtig:** Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
 #### Troubleshooting
 
-Für den Fall, dass Sie Cumulocity IoT mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir Ihnen, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
+Für den Fall, dass Sie {{< product-c8y-iot >}} mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir Ihnen, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
 
 **Prüfen, ob der DNS-Eintrag korrekt ist**
 
 Führen Sie folgendes Kommando aus:
 
 ```shell
-host management.<ihr domain name>
+host management.<Ihr Domain-Name>
 ```
 
 Es sollte das folgende Ergebnis angezeigt werden:
 
 ```shell
-management.<ihr domain name> ist ein Alias für <instanz domain name>
-<instanz domain name> hat die Adresse <IP-Adresse>
+management.<ihr domain name> ist ein Alias für <Instanz-Domain-Name>
+<Instanz-Domain-Name> hat die Adresse <IP-Adresse>
 ```
 
 

@@ -4,14 +4,14 @@ title: Verwalten von Anwendungen
 layout: redirect
 ---
 
-In der Cumulocity IoT-Plattform gibt es zwei Arten von Anwendungen:
+In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
 
 * [Abonnierte Anwendungen](#subscribed-applications) - alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt. Diese können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden.
 * [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications).
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
-Zudem gibt es in Enterprise Tenants die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-edition-de/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
@@ -78,13 +78,13 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tbody>
 </table>
 
-Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
+Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [{{< enterprise-tenant-de >}} > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).  
 
 
 <a name="subscribed-applications"></a>
 ### Abonnierte Anwendungen
 
-Cumulocity IoT stellt vielerlei Anwendungen für verschiedene Zwecke bereit.
+{{< product-c8y-iot >}} stellt vielerlei Anwendungen für verschiedene Zwecke bereit.
 
 Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der unten genannten potenziell verfügbaren Anwendungen an.
 
@@ -95,9 +95,9 @@ Die Spalten enthalten folgende Informationen:
 * **Name**: Identifikation der Anwendung in der API. Wenn Sie die Anwendung über eine API für einen Mandanten abonnieren möchten, verwenden Sie diese Zeichenkette im Argument (als Name).
 * **Typ**: Technischer Typ der Anwendung. "Funktion" bezieht sich auf integrierte Anwendungsabonnements, d. h., diese Anwendungen werden nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt.
 
-### Standardanwendungen des Standard Tenant
+### Standardanwendungen
 
-Im Standard Tenant finden Sie die folgenden Standardanwendungen:
+Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 
 <table>
 <col width="200">
@@ -132,7 +132,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im Standard Tenant mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Aktivitäten anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
+<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im {{< standard-tenant-de >}} mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Operationen anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -170,7 +170,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </table>
 
 
-### Enterprise Tenant-Anwendungen
+### Enterprise-Anwendungen
 
 <table>
 <col width="200">
@@ -186,26 +186,26 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
-<td style="text-align:left">branding</td>
+<td style="text-align:left">feature-branding</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Bietet die Möglichkeit, Daten gezielt mit anderen Mandanten zu teilen.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de#customization" class="no-ajaxy">SSL-Verwaltung</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de#customization" class="no-ajaxy">SSL-Verwaltung</a></td>
 <td style="text-align:left">Aktivieren Sie einen eigenen benutzerdefinierten Domain-Namen durch Verwendung eines SSL-Zertifikats.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
-<td style="text-align:left">Hiermit können Sie in Cumulocity IoT verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -247,7 +247,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/protocol-integration/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
-<td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity IoT.</td>
+<td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in {{< product-c8y-iot >}}.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -264,9 +264,15 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Hosten Sie Ihre eigenen Microservices in Cumulocity IoT.</td>
+<td style="text-align:left">Hosten Sie Ihre eigenen Microservices in {{< product-c8y-iot >}}.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Funktion</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
+<td style="text-align:left">impact</td>
+<td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPCUA</a></td>
@@ -344,7 +350,7 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
+>**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im *Microservice SDK Guide*.
 
 
 <a name="external-application"></a>
@@ -408,14 +414,14 @@ Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den E
 
 #### Hochladen von Archiven
 
-Es können mehrere Anwendungsversionen in Cumulocity IoT gespeichert werden, indem sie als ZIP- oder MON-Dateien hochgeladen werden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
+Es können mehrere Anwendungsversionen in {{< product-c8y-iot >}} gespeichert werden, indem sie als ZIP- oder MON-Dateien hochgeladen werden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
 
 ##### So laden Sie ein Archiv hoch
 
 1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
 2. Wechseln Sie zur Registerkarte **Archiv**.
 3. Klicken Sie auf **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
-4. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr Cumulocity IoT-Konto hochzuladen.
+4. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr {{< product-c8y-iot >}}-Konto hochzuladen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
@@ -448,7 +454,7 @@ Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien 
 
 ### Überwachen von Microservices
 
-Es gibt zwei Möglichkeiten, Microservices in der Cumulocity IoT-Plattform zu überwachen.
+Es gibt zwei Möglichkeiten, Microservices in der {{< product-c8y-iot >}}-Plattform zu überwachen.
 
 #### Statusinformation
 
@@ -486,7 +492,7 @@ Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Dow
 
 #### Logdateien
 
-Cumulocity IoT ermöglicht das Anzeigen von Logdaten, die weitere Informationen zum Status von Microservices liefern.
+{{< product-c8y-iot >}} ermöglicht das Anzeigen von Logdaten, die weitere Informationen zum Status von Microservices liefern.
 
 Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice.
 

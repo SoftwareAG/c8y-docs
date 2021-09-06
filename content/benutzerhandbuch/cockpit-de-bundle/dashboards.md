@@ -1,12 +1,27 @@
 ---
-weight: 40
+
 title: Verwenden von Dashboards
-layout: redirect
+helpcontent: >-
+  Dashboards ermöglichen eine Visualisierung Ihrer Daten mit Hilfe verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.
+
+
+  Klicken Sie rechts oben auf die Schaltfläche **Plus**, um ein Dashboard hinzuzufügen. Sie können ein Dashboard von einem Gerät auf ein anderes kopieren oder ein Dashboard mit allen Geräten eines bestimmten Typs teilen. Näheres dazu finden Sie in der Dokumentation.
+
+
+  In einem Dashboard können Sie Widgets durch Ziehen und Ablegen neu anordnen oder mit Hilfe des Pfeilsymbols deren Größe ändern.
+
+
+  Klicken Sie in der oberen Menüleiste auf **Widget hinzufügen**, um dem Dashboard ein neues Widget hinzuzufügen, oder verwenden Sie das Zahnrad-Symbol, um Widgets zu bearbeiten oder zu entfernen.
+
+
+  {{< product-c8y-iot >}} enthält vordefinierte Widget-Typen, z. B. Alarm- oder Datenpunktlisten, lineare Zeiger oder Tachos. Da jeder Widget-Typ andere Daten anzeigt, sind zu seiner Konfiguration unterschiedliche Parameter notwendig. Nähere Informationen zu den einzelnen Widget-Typen und ihrer Konfiguration finden Sie in der Dokumentation der Widgets-Sammlung.
+weight: 40
 ---
+
 
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.
 
-Cumulocity IoT bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets-collection)). Sie können auch eigene Widgets entwickeln und Ihrem Cumulocity IoT-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK guide](/web/).
+{{< product-c8y-iot >}} bietet eine Reihe voreingestellter Widgets Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets-collection). Sie können auch eigene Widgets entwickeln und Ihrem {{< product-c8y-iot >}}-Konto hinzufügen, siehe [Web SDK guide](/web/).
 
 <a name="creating-dashboards"></a>
 ### So erstellen Sie ein Dashboard
@@ -72,7 +87,7 @@ Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen
 
 1. Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmenü **Dashboard kopieren**.
 
-	<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
+  <img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 

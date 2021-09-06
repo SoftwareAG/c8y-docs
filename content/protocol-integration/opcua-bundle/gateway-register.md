@@ -98,6 +98,7 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
+    addressSpace:
       # Starting from version 10.11, the opcua-device-gateway process creates the address space local db files are with a new filename
       # (cumulocity-opcua-server-<serverId>-address-space-pv4.bin) due to a dependency change to avoid conflicts.
       # The legacy address space local db files can be cleaned up at the start of the opcua-device-gateway process

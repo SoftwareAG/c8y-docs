@@ -6,15 +6,15 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-Vom Management-Mandanten aus können Sie Attribute konfigurieren, die global für die gesamte Cumulocity IoT-Bereitstellung gelten.
+Vom {{< management-tenant-de >}} aus können Sie Attribute konfigurieren, die global für die gesamte {{< product-c8y-iot >}}-Bereitstellung gelten.
 
 Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Konfiguration** aufzurufen.
 
 ![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
-Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im Enterprise Tenant verfügbar. Weitere Informationen finden Sie unter [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de/#customization).
+Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant-de >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant-de >}} > Anpassen der Plattform](/benutzerhandbuch/enterprise-tenant-de/#customization).
 
-Darüber hinaus können die folgenden Einstellungen nur im Management-Mandanten konfiguriert werden.
+Darüber hinaus können die folgenden Einstellungen nur im {{< management-tenant-de >}} konfiguriert werden.
 
 ### Passwörter
 
@@ -22,12 +22,13 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 ![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
+
 <a name="config-support-users"></a>
-###  Supportbenutzer
+### Supportbenutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
-Diese Funktion gibt den Anbietern der Cumulocity IoT-Plattform (im Falle von Public-Cloud-Instanzen die Software AG und bei lokalen Installation der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#support-user-access).
+Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -41,14 +42,14 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Enterprise Tenant > Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [{{< enterprise-tenant-de >}}> Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant-de/#managing-tenants).
 
 <a name="configuring-support-users"></a>
 #### Konfigurieren eines Supportbenutzers
 
-Ein Supportbenutzer ist ein Benutzer im Management-Mandanten mit spezifischen Berechtigungen. Dieser Benutzer kann sich beim Zielmandanten anmelden und sich als Zielbenutzer ausgeben.
+Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen. Dieser Benutzer kann sich beim Zielmandanten anmelden und sich als Zielbenutzer ausgeben.
 
-Um einen Benutzer im Management-Mandanten als Supportbenutzer zu konfigurieren, müssen Sie dem Benutzer die entsprechenden Rollen zuweisen. Dies kann entweder durch Verwendung einer globalen Rolle oder durch Verwendung von Stammdatenrollen erfolgen.  
+Um einen Benutzer im {{< management-tenant-de >}} als Supportbenutzer zu konfigurieren, müssen Sie dem Benutzer die entsprechenden Rollen zuweisen. Dies kann entweder durch Verwendung einer globalen Rolle oder durch Verwendung von Stammdatenrollen erfolgen.  
 
 **Verwendung einer globalen Rolle**
 

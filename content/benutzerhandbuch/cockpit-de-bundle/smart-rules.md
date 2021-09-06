@@ -2,9 +2,18 @@
 weight: 80
 title: Smart Rules
 layout: redirect
+helpcontent: >-
+  Smart Rules sind ein nützliches Mittel, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Die hier angezeigten globalen Smart Rules gelten für einen globalen Kontext (im Gegensatz zu lokalen Smart Rules für spezifische Gruppen oder Geräte). Beachten Sie, dass Sie bestimmte Berechtigungen benötigen, um Smart Rules anzeigen und verwalten zu können.
+
+
+  Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste, um eine neue globale Smart Rule hinzuzufügen. Verwenden Sie das Menüsymbol, um globale Smart Rules zu bearbeiten, zu duplizieren oder zu löschen.
+
+
+  {{< product-c8y-iot >}} enthält vordefinierte Smart Rule-Vorlagen, z. B. "Bei Schwellwert Alarm erzeugen". Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart Rule-Vorlagen und ihrer Konfiguration finden Sie in der Dokumentation der Smart Rule-Sammlung.
 ---
 
-Cumulocity IoT enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
+
+{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de/#overview) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
@@ -19,33 +28,33 @@ Es gibt zwei Typen von Smart Rules:
 
 * **Globale Smart Rules**
 
-	Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer etc.).
+  Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer etc.).
 
-	In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
+  In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
 
-	* Smartrule = LESEN-Berechtigung
-	* Smartrule = ADMIN-Berechtigung
-	* CEP management = ADMIN-Berechtigung
+  * Smartrule = LESEN-Berechtigung
+  * Smartrule = ADMIN-Berechtigung
+  * CEP management = ADMIN-Berechtigung
 <br>
 <br>
 * **Lokale Smart Rules**
 
-	Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
+  Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
 
 
 Smart Rules sind an zwei Orten zu sehen:
 
 * Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
 
-	![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
+  ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
-	Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
+  Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
 * In der Registerkarte **Info** eines Geräts oder einer Gruppe.
 
-	![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
+  ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
-	In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
+  In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
 
 
 
@@ -89,7 +98,7 @@ Um die Fehlersuche zu vereinfachen, gibt es einen direkten Link von einer Smart 
 Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Quelltext ansehen**, um diesen Link zu verwenden.
 
 <a name="toggle-rules"></a>
-###  So schalten Sie eine Smart Rule ein/aus
+### So schalten Sie eine Smart Rule ein/aus
 
 Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 

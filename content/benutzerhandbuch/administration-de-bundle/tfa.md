@@ -23,7 +23,7 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefo
 
 ![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
 
->**Info:** Dieser Prozess kann nur über die Administrationsoberfläche ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
+>**Info:** Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
 
 
 ### TOTP (Google Authenticator)
@@ -43,11 +43,11 @@ Alternativ kann das Secret auch manuell eingegeben werden, falls das Scannen des
 
 Nach diesem Vorgang generiert die TOTP-App alle 30 Sekunden einen neuen Code, der zum Abschließen des Authentifizierungsprozesses verwendet werden kann.
 
-#### Zurücksetzen
+#### Zurücksetzen des Secrets
 
-Wenngleich die Einrichtung von jedem einzelnen Benutzer vorgenommen werden muss, kann das Zurücksetzen des Secrets nur durch einen Administrator in der "Administration"-Anwendung erfolgen. Wenn der Benutzer also sein Smartphone verliert oder die App deinstalliert, muss er den Mandantenadministrator kontaktieren.
+>**Info:** Wenngleich die Einrichtung von jedem einzelnen Benutzer vorgenommen werden muss, kann das Zurücksetzen des Secrets nur durch einen Benutzer mit der Berechtigung "Benutzerverwaltung ADMIN" in der "Administration"-Anwendung erfolgen. Wenn der Benutzer also sein Smartphone verliert oder die App deinstalliert, muss er einen Benutzer mit genau dieser Berechtigung kontaktieren.
 
-Zum Zurücksetzen des Schlüssels muss der Mandantenadministrator folgende Schritte durchführen:
+Zum Zurücksetzen des Schlüssels führen Sie folgende Schritte durch:
 
 1. Navigieren Sie zur "Administration"-Anwendung.
 2. Klicken Sie auf den gewünschten Benutzer in der Seite **Benutzer**.

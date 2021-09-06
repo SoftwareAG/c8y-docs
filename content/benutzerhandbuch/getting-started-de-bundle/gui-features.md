@@ -3,7 +3,8 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+  - /benutzerhandbuch/overview-de/#gui-features
+  - /benutzerhandbuch/overview/#gui-features
 ---
 
 
@@ -11,9 +12,9 @@ aliases:
 <a name="screen"></a>
 ### Hauptbildschirmelemente
 
-Die grundsätzliche Struktur, die in allen Cumulocity IoT-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
+Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![Cumulocity IoT application](/images/benutzerhandbuch/getting-started/getting-started-screen-elements.png)
+![{{< product-c8y-iot >}} application](/images/benutzerhandbuch/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="15%">
@@ -56,7 +57,7 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
-> **Info:** Die Cumulocity IoT-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
+> **Info:** Die {{< product-c8y-iot >}}-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
 <a name="app-switcher"></a>
 ### Application Switcher
@@ -65,9 +66,9 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-Der Application Switcher zeigt alle Cumulocity IoT-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
-Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von Cumulocity IoT-Anwendungen, angezeigt:
+Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
@@ -78,11 +79,11 @@ Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle w
 <a name="searching"></a>
 #### Volltextsuche
 
-Cumulocity IoT bietet eine Volltextsuche, die über das Suchfeld rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
+{{< product-c8y-iot >}} bietet eine Volltextsuche, die über das Suchfeld rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
 
 ![Search field](/images/benutzerhandbuch/getting-started/getting-started-search-button.png)
 
-Das Suchergebnis umfasst Gruppen, Geräte und Kindgeräte. Bei Eingabe eines Suchbegriffs in das Textfeld gibt Cumulocity IoT alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente).
+Das Suchergebnis umfasst Gruppen, Geräte und Kindgeräte. Bei Eingabe eines Suchbegriffs in das Textfeld gibt {{< product-c8y-iot >}} alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente).
 
 Die Suchfunktion basiert auf der [MongoDB-Volltextsuche](https://docs.mongodb.com/manual/text-search/).
 

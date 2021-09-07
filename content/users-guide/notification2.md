@@ -8,7 +8,7 @@ In 10.11, notifications 2.0 needs to be enabled in the platform as it depends on
 
 To receive notifications over the 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about particular managed objects or in a wider per-tenant context.
 
-For managed objects an objects global identifier must be used to subscribe in the managed object ("mo") context. There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties. This subscribed object is known as the source object for the notification/event and is included in the notifications delivered to subscribers. Subscriptions are set up using the Notification2 subscription REST API. This API requires the calling user to be an authenticated Cumulocity user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
+For managed objects an objects global identifier must be used to subscribe in the managed object ("mo") context. There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties. This subscribed object is known as the source object for the notification/event and is included in the notifications delivered to subscribers. Subscriptions are set up using the Notification2 subscription REST API. This API requires the calling user to be an authenticated Cumulocity user and to have the new ROLE_NOTIFICATION___ADMIN role.
 
 In order to receive subscribed notifications a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications. This token is in the form of a string conforming to the JWT (Java Web Token) standard that is obtained from the new Notification 2.0 token API.  This API requires the calling user to be an authenticated Cumulocity user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
@@ -137,3 +137,4 @@ header /tenant-a170/alarmsWithChildren/111
 header CREATE
 notification {"severity":"MAJOR","creationTime":"2021-09-03T12:29:02.092Z","count":1,"history":{"auditRecords":[],"self":"http://cumulocity.default.svc.cluster.local/audit/auditRecords"},"source":{"name":"a switch","self":"http://cumulocity.default.svc.cluster.local/inventory/managedObjects/111","id":"111"},"type":"com_cumulocity_events_TamperEvent","self":"http://cumulocity.default.svc.cluster.local/alarm/alarms/119","time":"2021-09-03T12:29:01.664Z","id":"119","text":"Tamper sensor triggered","status":"ACTIVE","com_mycorp_MyProp":{"key1":"value1"}}
 '''
+

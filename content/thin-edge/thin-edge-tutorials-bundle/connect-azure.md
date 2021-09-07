@@ -4,18 +4,12 @@ title: Connect your device to Azure IoT
 layout: redirect
 ---
 
-The very first step to enable thin-edge.io is to connect your device to the cloud.
-* This is a 10 minutes operation to be done only once.
-* It establishes a permanent connection from your device to the cloud end-point.
-* This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates.
-* Sending data to the cloud is then as simple as sending data locally.
+The very first step to enable thin-edge.io is to connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud is then as simple as sending data locally.
 
 The focus is here on connecting the device to Azure IoT.
 See this [tutorial](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
-Before you try to connect your device to Azure IoT, you need:
-* Create an Azure IoT Hub in Azure portal as described [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal).
-* [Install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation.md).
+Before you try to connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation.md).
 
 You can now use the [`tedge` command](/thin-edge/thin-edge-references#tedge) to:
 * [create a certificate for your device](#create-the-certificate),
@@ -29,9 +23,9 @@ You can now use the [`tedge` command](/thin-edge/thin-edge-references#tedge) to:
 The `tedge cert create` command creates a self-signed certificate which can be used for testing purpose.
 
 A single argument is required: an identifier for the device.
-This identifier is used to uniquely identify your devices among others in your cloud tenant.
-This identifier is also used as the Common Name (CN) of the certificate.
-This certificate aims to authenticate that this device is the device with that identity.
+This identifier will be used to uniquely identify your devices among others in your cloud tenant.
+This identifier will be also used as the Common Name (CN) of the certificate.
+This certificate aims to validate that this device is the device with that identity.
 
 ```
 $ sudo tedge cert create --device-id my-device
@@ -68,13 +62,13 @@ Here provide the configuration parameters that are required to create the device
    * Authentication type: Select **X.509 Self-Signed** option.
       * Provide the Primary Thumbprint that was displayed in [tedge cert show](#show-certificate-details).
       * Use the same thumbprint for the Secondary Thumbprint, since Azure IoT hub uses a single certificate.
-   * Set Connect this device to an IoT Hub" to **Enable**.
+   * Set "Connect this device to an IoT Hub" to **Enable**.
    * Save the configuration.
 
 After saving the configuration successfully, a new device has been created on the IoT Hub.
 You can see the new device on the IoT Hub portal by navigating to **Explores** > **IoT Devices**.
 
-You find mMore info about registering a device on the Azure IoT Hub website: [https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06)
+You can find more info about registering a device on the Azure IoT Hub website: [https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06)
 
 ### Configure the device
 
@@ -95,7 +89,7 @@ sudo tedge config set az.root.cert.path /etc/ssl/certs/Baltimore_CyberTrust_Root
 ```
 
 This will set the root certificate path of the Azure IoT Hub.
-In most Linux flavors, the certificate will be present in /etc/ssl/certs. If you cannot find it, download it from [https://www.digicert.com/kb/digicert-root-certificates.htm](https://www.digicert.com/kb/digicert-root-certificates.htm).
+In most Linux flavors, the certificate will be present in */etc/ssl/certs*. If you cannot find it, download it from [https://www.digicert.com/kb/digicert-root-certificates.htm](https://www.digicert.com/kb/digicert-root-certificates.htm).
 
 ### Connect the device
 
@@ -143,7 +137,7 @@ Received expected response message, connection check is successful.
 
 To send data to Azure use MQTT over topics prefixed with `az`.
 Any messages sent on the topic are forwarded to Azure.
-THere, the example below uses `tedge mqtt pub az/messages/events/`, a message to be understood as a temperature of 20 Degree.
+The example below uses `tedge mqtt pub az/messages/events/`, a message to be understood as a temperature of 20 degree.
 
 ```
 $ tedge mqtt pub az/messages/events/ '{"temperature": 20}'

@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Monitor your device with collectd
+title: Monitor your device with collected
 layout: redirect
 ---
 

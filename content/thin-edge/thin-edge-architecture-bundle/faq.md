@@ -22,7 +22,7 @@ For that purpose, thin-edge.io focuses on:
 * **Efficiency** -
   Thin-edge.io lets you build applications that can run on constrained device hardware and with limited bandwidth networks.
 * **Multi-cloud** -
-  Thin-edge.io enables you to connect your edge devices with multiple clouds.  Which cloud to use can be decided at run-time by the end-user.
+  Thin-edge.io enables you to connect your edge devices with multiple clouds.  Which cloud to use can be decided at runtime by the end-user.
 
 ### Why is thin-edge.io an executable binary and not a library?
 

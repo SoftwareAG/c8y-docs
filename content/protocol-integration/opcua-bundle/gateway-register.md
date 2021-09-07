@@ -65,7 +65,7 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 > **Info:** If no additional customizations are required, you can skip this section.
 
-> **Info:** Starting from version 10.11, the opcua-device-gateway processs creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+> **Info:** Starting from version 10.11.0, the opcua-device-gateway processs creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
 The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
 Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
 

@@ -65,6 +65,10 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 > **Info:** If no additional customizations are required, you can skip this section.
 
+> **Info:** Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
+Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
+
 The following properties can be manually configured in the YAML file:
 
 ```yaml
@@ -94,6 +98,13 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
+    addressSpace:
+      # Starting from version 10.11, the opcua-device-gateway process creates the address space local db files are with a new filename
+      # (cumulocity-opcua-server-<serverId>-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+      # The legacy address space local db files can be cleaned up at the start of the opcua-device-gateway process
+      # automatically when the legacyCleanup is set to true, which is the default setting.
+      # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
+      legacyCleanup: true
 
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.

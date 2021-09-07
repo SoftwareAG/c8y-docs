@@ -1,26 +1,26 @@
 ---
 weight: 40
-title: Software Management with thin-edge.io
+title: Software management with thin-edge.io
 layout: redirect
 ---
 
-With thin-edge.io you can ease the burden of managing packages on your device. Software Management operates end-to-end from a cloud to the OS of your device and reports the statuses accordingly.
+With thin-edge.io you can ease the burden of managing packages on your device. Software management operates end-to-end from a cloud to the OS of your device and reports the statuses accordingly.
 
 ### Software management components
 
-Software Management uses the following components to perform software operations:
+Software management uses the following components to perform software operations:
 
 TBD
 
-#### Cloud Mapper
+#### Cloud mapper
 
 TBD
 
-#### Tedge Agent
+#### Tedge agent
 
 TBD
 
-#### Software Manager Plugin
+#### Software manager plugin
 
 TBD
 
@@ -28,13 +28,13 @@ TBD
 
 #### tegde_agent
 
-The `tedge_agent` is distributed as a debian package and can be installed with following command:
+The tedge_agent is distributed as a Debian package and can be installed with following command:
 
 ```shell
 sudo dpkg -i tedge_agent
 ```
 
-The installation adds `systemd` service `tedge-agent.service` and new user specific to the agent (`tedge-agent`). As some of the operations may require `root` permissions or `sudo` access we reccomend that the tedge-agent user is added to the `sudo` group which allows it to execute elevated commands.
+The installation adds systemd service `tedge-agent.service` and new user specific to the agent (tedge-agent). As some of the operations may require root permissions or sudo access we reccomend you to add the tedge-agent user to the sudo group which allows it to execute elevated commands.
 
 This is executed using the following command:
 
@@ -50,4 +50,4 @@ sudo systemctl restart tedge-agent
 
 ##### Plugins
 
-SM Plugins must be stored in the `/etc/tedge/sm-plugins` directory.
+SM plugins must be stored in the */etc/tedge/sm-plugins* directory.

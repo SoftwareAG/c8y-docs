@@ -8,7 +8,7 @@ The tedge-mapper is a key concept to support multiple cloud providers. The purpo
 
 The tedge-mapper is composed of multiple cloud-specific mappers, such as {{< product-c8y-iot >}} mapper and Azure mapper. Each mapper is responsible for its dedicated cloud. These specific mappers are launched by the respective `tedge connect` command. For instance, `tedge connect c8y` establishes a bridge to {{< product-c8y-iot >}} and launches a {{< product-c8y-iot >}} mapper that translates the messages in the background.
 
-A mapper subscribes to the reserved MQTT topic `tedge/measurements` with the QoS level 1 at least once. The messages that arrive in the mapper have to be formed in the [Thin Edge JSON](#thin-edge-json) format. The mapper verifies if the arrived messages are correctly formatted. If the verification fails, the mapper publishes a corresponded error message on the topic `tedge/errors` with the QoS level 1 at least once.
+A mapper subscribes to the reserved MQTT topic `tedge/measurements` with the QoS level 1 at least once. The messages that arrive in the mapper have to be formed in the [Thin Edge JSON](#thin-edge-json) format. The mapper verifies if the arrived messages are correctly formatted. If the verification fails, the mapper publishes a corresponding error message on the topic `tedge/errors` with the QoS level 1 at least once.
 
 When the mapper receives a correctly formatted message, it translates the message into a cloud-specific format.
 
@@ -52,13 +52,13 @@ String `temperature` is used as fragment and series.
 
 (3) The mapper uses a measurement name, for example "temperature", as both a fragment type and a fragment series in [{{< product-c8y-iot >}} measurements](https://cumulocity.com/guides/reference/measurements/#examples).
 
-After the mapper publishes a message on the topic `c8y/measurement/measurements/create`, the message are transferred to the topic `measurement/measurements/create` by [the MQTT bridge](https://cumulocity.com/guides/reference/measurements/#bridged-topics).
+After the mapper publishes a message on the topic `c8y/measurement/measurements/create`, the message is transferred to the topic `measurement/measurements/create` by [the MQTT bridge](https://www.cumulocity.com/api/#tag/Measurements).
 
 ### Azure IoT Hub mapper
 
 The Azure IoT Hub mapper takes messages formatted in the [Thin Edge JSON](thin-edge-json.md) as input. It validates if the incoming message is correctly formatted in Thin Edge JSON and outputs the message. The validated messages are published on the topic `az/messages/events/` from where they are forwarded to Azure IoT Hub. This mapper is launched by the `tedge connect az` command, and stopped by the `tedge disconnect az` command.
 
-The Azure IoT Hub Mapper processes a message in the following ways.
+The Azure IoT Hub mapper processes a message in the following ways.
 
 1. Validates if it is a correct Thin Edge JSON message or not.
 2. Validates if the incoming message size is below 255 KB.
@@ -66,7 +66,7 @@ The size of all device-to-cloud messages must be up to 256 KB, see [Azure IoT Hu
 The mapper keeps 1 KB as a buffer for the strings added by Azure.
 3. Adds a current timestamp if a timestamp is not included in an incoming message (default). To stop this behavior, refer to the following instruction:
 
-If the input is below,
+If the input is the following,
 
 ```json
 {
@@ -85,7 +85,7 @@ the output of the mapper is
 
 #### Configure whether adding a timestamp or not
 
-If you do not want to add a timestamp in the output of Azure IoT Hub Mapper, you can change the behavior by running the following command:
+If you do not want to add a timestamp in the output of Azure IoT Hub mapper, you can change the behavior by running the following command:
 
 ```shell
 sudo tedge config set az.mapper.timestamp false

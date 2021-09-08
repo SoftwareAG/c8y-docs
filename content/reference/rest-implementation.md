@@ -12,9 +12,9 @@ aliases:
   <h3 style="color: #1776BF"><strong>IMPORTANT</strong></h3>
   <p class="lead" style="font-size:22px">
 
-  With the Cumulocity IoT 10.9.0 release, we started using Open API to maintain our API documentation. Visit [our new API documentation](https://cumulocity.com/api) and have a look.
+  With the Cumulocity IoT 10.9.0 release, we started using OpenAPI to maintain our API documentation. Visit [our new API documentation](https://cumulocity.com/api) and have a look.
 
-  The new Open API documentation has been improved with regards to completeness and provides more examples. Even if it applies to a later release, it might contain more detailed information.
+  The new OpenAPI documentation has been improved with regards to completeness and provides more examples. Even if it applies to a later release, it might contain more detailed information.
 
   </p>
 

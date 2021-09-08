@@ -29,7 +29,7 @@ Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gru
 
 {{< product-c8y-iot >}} unterstützt zwei Hierarchietypen: die Gerätehierarchie und die Asset-Hierarchie.
 
-Die Gerätehierarchie bildet die Verknüpfung von Geräten mit {{< product-c8y-iot >}} aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die IoT-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [{{< product-c8y-iot >}}'s Domain Model](/concepts/domain-model) im Concepts Guide.
+Die Gerätehierarchie bildet die Verknüpfung von Geräten mit {{< product-c8y-iot >}} aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die IoT-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [{{< product-c8y-iot >}}'s Domain Model](/concepts/domain-model) im *Concepts Guide*.
 
 In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:
 

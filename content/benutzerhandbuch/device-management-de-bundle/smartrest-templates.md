@@ -6,9 +6,9 @@ layout: redirect
 
 ### Einführung
 
-Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity IoT Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben.
+Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und {{< product-c8y-iot >}} Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben.
 
-Um die Geräteintegration zu vereinfachen, stellt Cumulocity IoT auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [*Device SDK Guide*](/device-sdk/mqtt#static-templates).
+Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Device SDK Guide](/device-sdk/mqtt#static-templates).
 
 Öffnen Sie die Seite **SmartREST-Template** im Menü **Gerätetypen** des Navigators.
 
@@ -80,19 +80,42 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 2. Füllen Sie die folgenden Felder aus:
 
-	|Feld|Beschreibung|
-|:---|:---|
-|Antwort-ID|Eindeutiger Integer-Wert zur Identifizierung der Antwort.
-|Name|Name für die Antwort. Erforderlich.
-|Basis-Pattern|Basis-Pattern für die Antwort.
-|Bedingung|Bedingungswert der Antwort.
-|Pattern|Mindestens ein Pattern ist erforderlich. Klicken Sie auf **Pattern hinzufügen** und geben Sie einen Pattern-Wert an.
+<table>
+<col style="width: 10%;">
+<col style="width: 90%;">
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Antwort-ID</td>
+<td align="left">Eindeutiger Integer-Wert zur Identifizierung der Antwort.</td>
+</tr>
+<tr>
+<td align="left">Basis-Pattern</td>
+<td align="left">Pfad in einem JSON-Dokument. Das Basis-Pattern dient als Präfix für alle Patterns. Sie können hier entweder ein Basis-Pattern eingeben und Patterns nur mit dem untergeordneten Pfad unter dem Basis-Pattern hinzufügen oder dieses Feld frei lassen und Patterns mit dem vollständigen Pfad bereitstellen.</td>
+</tr>
+<tr>
+<td align="left">Bedingung</td>
+<td align="left">Bedingungswert der Antwort.</td>
+</tr>
+<tr>
+<td align="left">Pattern</td>
+<td align="left">Mindestens ein Pattern ist erforderlich. Klicken Sie auf <b>Pattern hinzufügen</b> und geben Sie einen Pattern-Wert an.</td>
+</tr>
+</tbody>
+</table>
 
-	![Add template response](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+![Add template with filled out response](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Klicken Sie auf **Speichern**.
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
+
+Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest/#templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 

@@ -6,14 +6,74 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity IoT enthält eine Reihe von vordefinierten Smart Rules.
+{{< product-c8y-iot >}} enthält eine Reihe von vordefinierten Smart Rules. Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
-![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules.png)
+Folgende Typen sind verfügbar:
 
-Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
-Im folgenden Abschnitt werden alle verfügbaren Typen mit den jeweils konfigurierbaren Parametern beschrieben.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Smart Rule</th>
+<th align="left">Funktionalität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#alarm-sms">Bei Alarm SMS senden</a></td>
+<td align="left">Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-email">Bei Alarm E-Mail senden</a></td>
+<td align="left">Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-escalate">Bei Alarm eskalieren</a></td>
+<td align="left">Wenn ein Alarm erzeugt wird, wird eine E-Mail oder SMS gesendet.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-severity">Bei Alarmdauer Schweregrad erhöhen</a></td>
+<td align="left">Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad erhöht.</td>
+</tr>
+<tr>
+<td align="left"><a href="#geofence-alarm">Bei Geofence-Übertretung Alarm erzeugen</a></td>
+<td align="left">Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt.</td>
+</tr>
+<tr>
+<td align="left"><a href="#geofence-email">Bei Geofence-Übertretung E-Mail senden</a></td>
+<td align="left">Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.</td>
+</tr>
+<tr>
+<td align="left"><a href="#calculate-energy">Energieverbrauch berechnen</a></td>
+<td align="left">Erstellt Verbrauchs-Datenpunkte basierend auf Daten von einem Strom-, Gas oder Wasserzähler.</td>
+</tr>
+<tr>
+<td align="left"><a href="#missing-measurements">Bei fehlenden Messdaten Alarm erzeugen</a></td>
+<td align="left">Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarm-operation">Bei Alarm Operation ausführen</a></td>
+<td align="left">Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gesendet.</td>
+</tr>
+<tr>
+<td align="left"><a href="#threshold-explicit">Bei explizitem Schwellwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird der rote Schwellwert explizit bereitgestellt.</td>
+</tr>
+<tr>
+<td align="left"><a href="#threshold-alarm">Bei Schwellwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht. Diese Regel nimmt die Schwellwerte aus dem Gerät oder aus der Datenpunktbibliothek:</td>
+</tr>
+</tbody>
+</table>
 
+>**Info:** In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden, siehe [Smart Rule-Variablen](#smart-rule-variables) am Ende dieses Abschnitts.  
+
+
+<a name="alarm-sms"></a>
 ### Bei Alarm SMS senden
 
 **Funktionalität**
@@ -55,7 +115,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">SMS senden</td>
-<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" oder "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
+<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" oder "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -80,6 +140,7 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 >**Wichtig:** Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 
+<a name="alarm-email"></a>
 ### Bei Alarm E-Mail senden
 
 **Funktionalität**
@@ -121,7 +182,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -142,6 +203,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
+<a name="alarm-escalate"></a>
 ### Bei Alarm eskalieren
 
 **Funktionalität**
@@ -204,6 +266,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
+<a name="alarm-severity"></a>
 ### Bei Alarmdauer Schweregrad erhöhen
 
 **Funktionalität**
@@ -266,7 +329,8 @@ Wenn der Alarm den Schweregrad KRITISCH erreicht hat, wird die Überwachung been
 
 > **Info:** Die Regel prüft einmal pro Minute, ob die konfigurierte Dauer überschritten ist. Daher ist es möglich, dass der Schweregrad sich nicht exakt dann ändert, wenn die Dauer überschritten ist, sondern erst nach der nächsten Prüfung.
 
-### Bei Geofence Alarm erzeugen
+<a name="geofence-alarm"></a>
+### Bei Geofence-Übertretung Alarm erzeugen
 
 **Funktionalität**
 
@@ -330,7 +394,8 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
-### Bei Geofence E-Mail senden
+<a name="geofence-email"></a>
+### Bei Geofence-Übertretung E-Mail senden
 
 **Funktionalität**
 
@@ -342,7 +407,7 @@ Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence send e-mail](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -371,7 +436,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.<br> <strong>Nachricht</strong>: Text der E-Mail. Es kann eine Variable im Format #{name} verwendet werden, siehe <a href="#smart-rule-variables" class="no-ajaxy">Smart Rule-Variablen</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -393,11 +458,12 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
 
+<a name="calculate-energy"></a>
 ### Energieverbrauch berechnen
 
 **Funktionalität**
 
-Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas oder Wasserzähler.
+Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas- oder Wasserzähler.
 
 **Parameter**
 
@@ -456,6 +522,7 @@ Die Regel wurde so konfiguriert, dass alle 20 Minuten eine Berechnung stattfinde
 Um 12:20 Uhr wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird die Wert- und Zeit-Differenz berechnet. Der Verbrauchsmesswert von 12:20 Uhr beträgt also 400 kg/h.
 Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Messwert mit dem Wert 0 erstellt.
 
+<a name="missing-measurements"></a>
 ### Bei fehlenden Messdaten Alarm erzeugen
 
 **Funktionalität**
@@ -510,6 +577,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 > **Info:** Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.
 
+<a name="alarm-operation"></a>
 ### Bei Alarm Operation ausführen
 
 **Funktionalität**
@@ -550,7 +618,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td style="text-align:left">3</td>
 <td style="text-align:left">Operation ausführen</td>
-<td style="text-align:left">Die Operation, die gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Operation"-Feld können einige Standardoperationen ausgewählt werden. Um eine Standardoperation zu verwenden, wählen sie die entsprechende Operation und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
+<td style="text-align:left">Die Operation, die gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem <strong>Operation</strong>-Feld können einige Standardoperationen ausgewählt werden. Um eine Standardoperation zu verwenden, wählen sie die entsprechende Operation und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operationen wird eingefügt.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -563,6 +631,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </tbody>
 </table>
 
+<a name="threshold-alarm"></a>
 ### Bei Schwellwert Alarm erzeugen
 
 **Funktionalität**
@@ -713,6 +782,7 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 > **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
 
+<a name="threshold-explicit"></a>
 ### Bei explizitem Schwellwert Alarm erzeugen
 
 **Funktionalität**
@@ -785,70 +855,198 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 > **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
 
+<a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen
 
-In einigen Regelparametern können Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte ersetzt. Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte in mehreren Ausgaben einzufügen (E-Mail, SMS). Sie können jede Information des auslösenden Ereignisses (wie der Alarm) und des Quellgeräts einbinden.
+In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte dieser Auslösefelder ersetzt.
 
-Die folgende Tabelle enthält eine Liste von Beispielvariablen:
+Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte in mehreren Ausgaben einzufügen (E-Mail, SMS).
+
+
+**Gemeinsame, von allen Auslösern zu verwendende Felder (Alarme, Messwerte, Operationen, Ereignisse)**
 
 <table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>Variable</td>
-    <td>Inhalt</td>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
   </tr>
   <tr>
-    <td>#{creationTime}</td>
-    <td>Zeit, zu der der Alarm in der Datenbank erstellt wurde.</td>
+    <td>#{id}</td>
+    <td>Bezeichnung des Auslösers.</td>
   </tr>
   <tr>
     <td>#{type}</td>
-    <td>Typ des Alarms.</td>
+    <td>Art des Auslösers.</td>
+  </tr>
+  <tr>
+    <td>#{source}</td>
+    <td>Bezeichnung der Quelle des Auslösers.</td>
   </tr>
   <tr>
     <td>#{time}</td>
-    <td>Zeit des Alarms, wie vom Alarm angegeben.  </td>
+    <td>Zeitstempel des Auslösers.  </td>
   </tr>
   <tr>
     <td>#{text}</td>
-    <td>Textbeschreibung des Alarms.</td>
+    <td>Text oder Nachricht des Auslösers.</td>
   </tr>
+</table>
+
+> **Info:** Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung) können Variablen für Uhrzeiten eine Zeitzone enthalten, in der die Uhrzeit angezeigt werden soll.
+So zeigt zum Beispiel die Variable #{time:TZ=America/New_York} die Uhrzeit entsprechend der Zeitzone für New York an.
+
+**Alarmspezifische Felder**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>#{source.name}</td>
-    <td>Name des Geräts.</td>
-  </tr>
-  <tr>
-    <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
-    <td>Seriennummer des Geräts.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Notes}</td>
-    <td>Anmerkungsfeld des Geräts.</td>
-  </tr>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
+  </tr>  
   <tr>
     <td>#{status}</td>
     <td>Status des Alarms: AKTIV, BESTÄTIGT oder GELÖSCHT.</td>
   </tr>
   <tr>
     <td>#{severity}</td>
-    <td>Schweregrad des Alarms: KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG. </td>
+    <td>Schweregrad des Alarms: KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG.</td>
   </tr>
   <tr>
     <td>#{count}</td>
-    <td>Anzahl der Alarmnachrichten für dieses Gerät: Sich wiederholende Nachrichten zum selben Gerät und zum selben Alarmtyp werden zu einem Alarm zusammengefasst.</td>
+    <td>Wie oft der Alarm gesendet wurde. Sich wiederholende Alarme zum selben Gerät und zum selben Alarmtyp werden zu einem Alarm zusammengefasst.</td>
   </tr>
+</table>
+
+**Operationsspezifische Felder**
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
   <tr>
-    <td>#{source.c8y_Address.street}</td>
-    <td>Straße des Geräts.</td>
-  </tr>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
+  </tr>  
   <tr>
-    <td>#{source.c8y_Address.cityCode}</td>
-    <td>Postleitzahl des Geräts.</td>
-  </tr>
-  <tr>
-    <td>#{source.c8y_Address.city}</td>
-    <td>Stadt des Geräts.</td>
+    <td>#{status}</td>
+    <td>Status der Operation: ERFOLGREICH, FEHLGESCHLAGEN, WIRD AUSGEFÜHRT oder AUSSTEHEND.</td>
   </tr>
 </table>
 
 
-> **Info:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, wird der erzeugte Inhalt angezeigt.
+**Messwertspezifische Felder**
+
+> **Info:** Dieser Abschnitt gilt nur für Mandanten, die Apama (nicht Esper/CEP) verwenden.
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
+  </tr>  
+  <tr>
+    <td>#{valueFragment}</td>
+    <td>Name des Messwertfragments.</td>
+  </tr>  
+  <tr>
+    <td>#{valueSeries}</td>
+    <td>Name des Messserienfragments.</td>
+  </tr>
+  <tr>
+    <td>#{value}</td>
+    <td>Vom Sensor stammender Wert.</td>
+  </tr>
+  <tr>
+    <td>#{unit}</td>
+    <td>Verwendete Einheit, zum Beispiel "mm", "lux".</td>
+  </tr>
+</table>
+
+
+Darüber hinaus wird das folgende Pattern verwendet:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
+  </tr>  
+  <tr>
+    <td>#{X.Y} oder #{X.Y.Z} </td>
+    <td>Die in Extra-Parametern oder verschachtelten Strukturparametern verfügbaren Attributfeld-Informationen.</td>
+  </tr>  
+</table>
+
+#### Beispiel
+
+**{{< product-c8y-iot >}} trigger**
+
+```json
+{
+  "source":{
+    "id":"10200"
+  },
+  "type":"TestEvent",
+  "text":"sensor was triggered",
+  "time":"2014-03-03T12:03:27.845Z",
+  "c8y_Position":{
+    "lat":2,
+    "lng":2
+  },
+  "c8y_evtdata":{
+    "data1":111,
+    "date2":222,
+    "evtInnerData":{
+      "indate1":333,
+      "indate2":444
+    }
+  }
+}
+```
+
+Hier lassen sich beispielsweise die folgenden Variablen definieren:
+
+<table>
+<colgroup>
+       <col style="width: 30%;">
+       <col style="width: 70%;">
+    </colgroup>
+  <tr>
+  <td><b>Variable</b></td>
+  <td><b>Inhalt</b></td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_Position.lat} </td>
+    <td>Ruft den Breitengrad-Wert ab.</td>
+  </tr>  
+  <tr>
+    <td>#{ c8y_evtdata.data1} </td>
+    <td>Ruft den Wert data1 ab.</td>
+  </tr>  
+  <tr>
+    <td>{ c8y_evtdata. evtInnerData . indate1} </td>
+    <td>Ruft den verschachtelten Strukturwert ab.</td>
+  </tr>  
+  <tr>
+    <td>#{source.X.Y} </td>
+    <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Trigger. Zum Beispiel:
+    <br> #{source.c8y_Hardware.serialNumber} > Seriennummer des Geräts.
+    <br> #{source.c8y_Notes} > Anmerkungsfeld des Geräts.
+  </tr>  
+</table>
+
+>**Info:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.

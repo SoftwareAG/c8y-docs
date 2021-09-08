@@ -41,7 +41,7 @@ The following sections describe the following additional functionalities availab
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Managing user hierarchies</a></td>
-<td align="left">Reflect independent organizational entities in Cumulocity IoT that share the same database.</td>
+<td align="left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
 </tr>
 <tr>
 <td align="left"><a href="#customization">Customizing your platform</a></td>

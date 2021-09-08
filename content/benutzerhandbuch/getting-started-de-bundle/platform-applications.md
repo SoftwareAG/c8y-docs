@@ -1,13 +1,14 @@
 ---
 weight: 30
-title: Cumulocity IoT-Anwendungen
+title: Standard-Anwendungen der Platform
 layout: redirect
 aliases:
+  - /benutzerhandbuch/overview-de/#cumulocity-applications
   - /benutzerhandbuch/overview/#cumulocity-applications
   - /benutzerhandbuch/getting-started/#cumulocity-applications
 ---
 
-Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
+{{< product-c8y-iot >}} umfasst die drei folgenden Standardanwendungen:
 
 <table>
 <col width = 100>
@@ -39,15 +40,15 @@ Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
 </tbody>
 </table>
 
-Neben diesen in Cumulocity IoT enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die Sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen. Die Verfügbarkeit dieser Anwendungen hängt davon ab, welchen Mandanten Sie verwenden und welche Anwendungen Ihr Unternehmen abonniert hat.
+Neben diesen in {{< product-c8y-iot >}} enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die Sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen. Die Verfügbarkeit dieser Anwendungen hängt davon ab, welchen Mandanten Sie verwenden und welche Anwendungen Ihr Unternehmen abonniert hat.
 
-Eine ausführliche Liste aller mit Cumulocity IoT verfügbaren Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de/#managing-applications).
+Eine ausführliche Liste aller mit {{< product-c8y-iot >}} verfügbaren Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de/#managing-applications).
 
-Darüber hinaus bietet die Cumulocity IoT-Plattform vielfältige Funktionalitäten zur Nutzung Ihrer eigenen Anwendungen über Ihr Cumulocity IoT-Konto, siehe Details unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Darüber hinaus bietet die {{< product-c8y-iot >}}-Plattform vielfältige Funktionalitäten zur Nutzung Ihrer eigenen Anwendungen über Ihr {{< product-c8y-iot >}}-Konto, siehe Details unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
-Der Inhalt der Cumulocity IoT-Plattform ist also vollständig dynamisch und wird anhand der folgenden Kriterien generiert:
+Der Inhalt der {{< product-c8y-iot >}}-Plattform ist also vollständig dynamisch und wird anhand der folgenden Kriterien generiert:
 
 * Anwendungen, die Ihr Unternehmen abonniert hat.
-* Anwendungen, die Ihr Unternehmen selbst für Cumulocity IoT entwickelt oder konfiguriert hat.
+* Anwendungen, die Ihr Unternehmen selbst für {{< product-c8y-iot >}} entwickelt oder konfiguriert hat.
 * Funktionalitäten, die Ihr Benutzer sehen kann.
 * Konfiguration der Benutzeroberfläche, wie etwa Gruppen oder Berichte.

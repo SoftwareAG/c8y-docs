@@ -28,7 +28,7 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Ko
 
 <tr>
 <td align="left">Ändern</td>
-<td align="left">Typ die Operation, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
+<td align="left">Typ der Operationen, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
 </tr>
 
 <tr>

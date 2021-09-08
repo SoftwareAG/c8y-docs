@@ -22,9 +22,9 @@ Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufger
 ![Management menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-menu.png)
 
 <a name="firmware-repo"></a>
-###  Verwalten von Geräte-Firmware
+### Verwalten von Geräte-Firmware
 
-Mit dem Firmware-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Firmware für Geräte zu verwalten.
+Mit dem Firmware-Repository bietet {{< product-c8y-iot >}} die Möglichkeit, Referenz-Firmware für Geräte zu verwalten.
 
 Pro Gerät kann nur eine Firmware-Paketversion angewendet werden.
 
@@ -126,14 +126,14 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 
 ![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
-Das von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
+Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
 
 
 ##### So installieren/aktualisieren Sie Firmware auf mehreren Geräten
 
-Cumulocity IoT bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
+{{< product-c8y-iot >}} bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
 1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
@@ -146,9 +146,9 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
 <a name="software-repo"></a>
-###  Verwalten von Geräte-Software
+### Verwalten von Geräte-Software
 
-Mit dem Software-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden.
+Mit dem Software-Repository bietet {{< product-c8y-iot >}} die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden.
 
 #### Anzeigen von Software
 
@@ -256,10 +256,10 @@ Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möc
 
 ##### So installieren Sie Software auf mehreren Geräten
 
-Cumulocity IoT bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
+{{< product-c8y-iot >}} bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
 1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dieser Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
+2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
 3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
@@ -271,7 +271,7 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen
 
-In Cumulocity IoT können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
+{{< product-c8y-iot >}} können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
 
 Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben.
 
@@ -280,7 +280,7 @@ Klicken Sie auf **Konfigurations-Repository** im Menü **Verwaltung** des Naviga
 ![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
 
 <a name="add-snapshot"></a>
-####  So fügen Sie einen Konfigurationssnapshot hinzu
+#### So fügen Sie einen Konfigurationssnapshot hinzu
 
 1. Klicken Sie auf **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste.
 2. Geben Sie im darauffolgenden Dialog einen eindeutigen Namen ein.
@@ -422,7 +422,7 @@ Geben Sie im Fenster **Geräteprofil hinzufügen** einen Namen für das Profil a
 <a name="to-add-items"></a>
 #### So fügen Sie Elemente zu einem Geräteprofil hinzu
 
-In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakets und Konfigurationsdateien hinzufügen.
+In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakete und Konfigurationsdateien hinzufügen.
 
 Klicken Sie auf **Firmware hinzufügen**, um dem Profil eine Firmware-Version hinzuzufügen. Wählen Sie eine Firmware und eine Version aus der Liste und klicken Sie auf **Speichern**, um die Auswahl zu dem Profil hinzuzufügen. Wenn ein Gerätetyp für das Profil definiert wurde, können nur Firmware-Versionen mit dem entsprechenden Gerätetyp gewählt werden. Sie können nur eine Firmware-Version zu einem Profil hinzufügen.
 
@@ -499,7 +499,7 @@ Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet w
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
 2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen > So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
@@ -507,9 +507,9 @@ Die Geräte installieren die Firmware, Software und Konfigurationselemente des P
 
 
 <a name="trusted-certificates"></a>
-###  Verwalten von vertrauenswürdigen Zertifikaten
+### Verwalten von vertrauenswürdigen Zertifikaten
 
-In Cumulocity IoT können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von Cumulocity IoT als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
+In {{< product-c8y-iot >}} können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von {{< product-c8y-iot >}} als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
 
 >**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im *Device SDK Guide*.
 
@@ -537,7 +537,7 @@ Bevor Sie ein neues vertrauenswürdiges Zertifikat hinzufügen, stellen Sie folg
 * Es handelt sich um ein X.509-Zertifikat im PEM-Format.
 * Das Zertifikat liegt in Version 3 vor.
 * Das Zertifikat enthält `BasicConstraints:[CA:true]`.
-* Das Zertifikat wurde noch nicht in Cumulocity IoT hochgeladen.
+* Das Zertifikat wurde noch nicht in {{< product-c8y-iot >}} hochgeladen.
 * Das Zertifikat ist noch gültig (nicht abgelaufen).
 
 Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
@@ -550,7 +550,7 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 | Feld             | Beschreibung                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| Zertifikatsname  | Vom Benutzer angegebener Name für das Zertifikat. Dieser Name wird nicht von Cumulocity IoT verwendet und kann als Beschreibung des Zertifikats dienen.         |
+| Zertifikatsname  | Vom Benutzer angegebener Name für das Zertifikat. Dieser Name wird nicht von {{< product-c8y-iot >}} verwendet und kann als Beschreibung des Zertifikats dienen.         |
 | Zertifikat       | Datei, die das Zertifikat im PEM-Format enthält. Fügen Sie die Datei durch Ablegen in dieses Feld oder Durchsuchen ihres Computers hinzu.            |
 | Auto-Registrierung | Bei Auswahl dieser Option werden neue Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, automatisch registriert. |
 | Eingeschaltet/Ausgeschaltet | In ausgeschaltetem Zustand können sich Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, nicht verbinden.               |

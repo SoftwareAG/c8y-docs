@@ -282,7 +282,7 @@ The **Software** tab allows you to manage and update the firmware of a device an
 
 #### To install firmware/software
 
-Select a firmware from the dropdown list, which contains all firmware available in the [Firmware repository](#software-repo), and click **Install**.
+Select a firmware from the dropdown list, which contains all firmware available in the [Firmware repository](#firmware-repo), and click **Install**.
 
 Similarly, to install a software on the device, select a software package from the dropdown list, which contains all software available in the [Software repository](#software-repo), and click **Install**.
 

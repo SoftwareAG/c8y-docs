@@ -123,6 +123,23 @@ Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with
 
 Publish a message on topic <kbd>/event/events/delete/&lt;event_id&gt;</kbd> with empty payload.
 
+#### Create a measurement data point
+
+Publish a message on topic <kbd>measurement/measurements/create</kbd> with payload:
+
+```json
+{
+  "type": "c8y_TemperatureMeasurement",
+  "time": "2021-09-06T17:35:14.000+02:00",
+  "c8y_TemperatureMeasurement": {
+  	"T": {
+      	"value": 20,
+          "unit": "C"
+    }
+  }
+}
+```
+
 
 ### Error handling
 

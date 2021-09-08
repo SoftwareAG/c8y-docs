@@ -33,7 +33,7 @@ For details, refer to [Loriot LoRa](https://cumulocity.com/guides/10.9.0/protoco
 
 #### NEW reports page
 
-All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page, but no longer from the **Plus** button of the top bar. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item.
+All reports are now displayed under a separate <b>Reports</b> menu item in the navigator. You can create, update and delete reports from this page, but no longer from the **Plus** button in the top bar. The reports look & feel has been updated to align with the dashboards. Also, it is now possible to configure a report to become a top-level navigator menu item.
 
 The <b>Exports</b> menu item has been moved under the <b>Configuration</b> menu.
 

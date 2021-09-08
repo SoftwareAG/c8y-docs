@@ -56,7 +56,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
-<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/concepts/applications" class="no-ajaxy"><i>Concepts Guide</i></a>.</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatisch generiert</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>

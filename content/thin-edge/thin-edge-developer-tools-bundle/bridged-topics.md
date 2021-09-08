@@ -70,7 +70,7 @@ The Azure topics are prefixed by `az/`.
 
 ### Collectd topics
 
-When the [device monitoring feature is enabled](/thin-edge/thin-edge-tutorials/#device-monitoring), monitoring metrics are emitted by `collectd` on a hierarchy of MQTT topics.
+When the [device monitoring](/thin-edge/thin-edge-tutorials/#device-monitoring) feature is enabled, monitoring metrics are emitted by `collectd` on a hierarchy of MQTT topics.
 
 * `collectd/$HOSTNAME/#` - All the metrics collected on the device with hostname `$HOSTNAME`.
 * `collectd/$HOSTNAME/$PLUGIN/#` - All the metrics collected by a given collectd plugin, named `$PLUGIN`.

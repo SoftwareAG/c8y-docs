@@ -17,29 +17,31 @@ The topic structure in JSON MQTT is quite similar to the REST endpoints. The mai
 To publish messages:
 
 ```http
- <api>/<resource>/<action>/<id>
+ <api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in transient mode:
 
 ```http
-t/<api>/<resource>/<action>/<id>
+t/<api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in quiescent mode:
 
 ```http
-q/<api>/<resource>/<action>/<id>
+q/<api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in CEP mode:
 
 ```http
-c/<api>/<resource>/<action>/<id>
+c/<api>/<resource>/<action>/<resource_id>
 ```
+
+>**Info:** `<resource_id>` is not required for every `<action>`. See the examples below.
 
 Refer to [Processing mode](https://{{< domain-c8y >}}/api/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 

@@ -11,7 +11,7 @@ The startup phase connects the device to {{< product-c8y-iot >}} and updates the
 -   [Step 0](#step-0-request-device-credentials): Request device credentials, if not already requested.
 -   [Step 1](#step-1-check-if-the-device-is-already-registered): Check if the device is already registered.
 -   [Step 2](#step-2-create-the-device-in-the-inventory): If not, create the device in the inventory and
--   [Step 3](#step-3-register-the-device): Register the device.
+-   [Step 3](#step-3-register-the-device): Register the device (create the identity).
 -   [Step 4](#step-4-update-the-device-in-the-inventory): If yes, update the device in the inventory.
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
 -   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.

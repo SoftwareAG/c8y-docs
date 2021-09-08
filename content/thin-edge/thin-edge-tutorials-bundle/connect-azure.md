@@ -82,7 +82,7 @@ sudo tedge config set az.url your-iot-hub-name.azure-devices.net
 
 You can find the URL/Hostname in the Azure web portal by clicking on the overview section of your IoT Hub.
 
-Set the path to the root certificate if necessary. The default is `/etc/ssl/certs`.
+Set the path to the root certificate if necessary. The default is */etc/ssl/certs*.
 
 ```
 sudo tedge config set az.root.cert.path /etc/ssl/certs/Baltimore_CyberTrust_Root.pem
@@ -98,8 +98,7 @@ This command configures the MQTT broker:
 * to establish a permanent and secure connection to the Azure cloud,
 * to forward local messages to the cloud and vice versa.
 
-Also, if you have installed `tedge_mapper`, this command starts and enables the tedge-mapper-az systemd service.
-At last, it sends packets to Azure IoT Hub to check the connection.
+Also, if you have installed `tedge_mapper`, this command starts and enables the tedge-mapper-az systemd service. At last, it sends packets to Azure IoT Hub to check the connection.
 
 ```
 $ sudo tedge connect az
@@ -142,9 +141,9 @@ The example below uses `tedge mqtt pub az/messages/events/`, a message to be und
 ```
 $ tedge mqtt pub az/messages/events/ '{"temperature": 20}'
 ```
-To view the messages that were sent from the device to the cloud, follow this [document](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device).
+To view the messages that were sent from the device to the cloud, follow this guide at [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device).
 
-More info about sending telemetry to Azure can be found [here](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet)
+More info about sending telemetry to Azure can be found [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet)
 
 ### Next Steps
 

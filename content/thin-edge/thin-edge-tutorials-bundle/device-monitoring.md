@@ -11,7 +11,7 @@ Using these metrics, you can monitor the health of devices
 and can proactively initiate actions in case the device seems to malfunction.
 Additionally, the metrics can be used to help the customer troubleshoot when problems with the device are reported.
 
-Thin-edge.io uses the open source component [`collectd`](https://collectd.org/) to collect the metrics from the device.
+Thin-edge.io uses the open source component `collectd` to collect the metrics from the device, see [https://collectd.org/](https://collectd.org/) for more information.
 Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](../architecture/thin-edge-json.md) format
 and then into the [cloud-vendor specific format](../architecture/mapper.md).
 
@@ -21,8 +21,8 @@ Enabling monitoring on your device is a 3-steps process:
 3. [Enable thin-edge.io monitoring](#enable-thin-edge-monitoring).
 
 ### Install mosquitto client library
-Since thin-edge.io uses the MQTT plugin of `collectd`, one needs to install the mosquitto client library,
-either `libmosquitto1` or `mosquitto-clients`.
+Since thin-edge.io uses the MQTT plugin of `collectd`, you need to install the mosquitto client library,
+either `libmosquitto1` or `mosquitto-clients`
 
 ``` shell
 sudo apt-get install libmosquitto1
@@ -50,9 +50,9 @@ sudo apt-get install collectd-core
 #### Basic collectd configuration
 
 Thin-edge.io provides a basic `collectd` configuration at [https://github.com/thin-edge/thin-edge.io/blob/main/configuration/contrib/collectd/collectd.conf](https://github.com/thin-edge/thin-edge.io/blob/main/configuration/contrib/collectd/collectd.conf)
-that can be used to collect cpu, memory and disk metrics.
+that can be used to collect CPU, memory and disk metrics.
 
-Copy that file to the main collectd configuration file and restart the daemon. We recommend
+Copy that file to the main collectd configuration file and restart the daemon. We recommend you
 to keep a copy of the original configuration.
 
 ``` shell
@@ -65,9 +65,9 @@ sudo systemctl restart collectd
 
 Unless you opted for the [minimal test configuration provided with thin-edge](#basic-collectd-configuration)
 you will have to update the `collectd.conf` configuration file at [https://collectd.org/documentation/manpages/collectd.conf.5.shtml](https://collectd.org/documentation/manpages/collectd.conf.5.shtml).
-The `collectd.conf` configuration file is usually located at `/etc/collectd/collectd.conf`.
+The `collectd.conf` configuration file is usually located at */etc/collectd/collectd.conf*.
 
-**Important:** You can enable or disable the collectd plugins of your choice. This is subject to some notable exceptions, which are listed below.
+>**Important:** You can enable or disable the collectd plugins of your choice. This is subject to some notable exceptions, which are listed below.
 
 1. **MQTT must be enabled**.
    * Thin-edge.io expects the collectd metrics to be published on the local MQTT bus.
@@ -90,7 +90,7 @@ The `collectd.conf` configuration file is usually located at `/etc/collectd/coll
 2. **RRDTool and CSV might be disabled**
    * The risk with these plugins is to run out of disk space on a small device.
    * With thin-edge.io the metrics collected by `collectd` are forwarded to the cloud,
-     hence it makes sense to disable Local storage, see [https://github.com/collectd/collectd/issues/2668](https://github.com/collectd/collectd/issues/2668) for more information.
+     hence it makes sense to disable local storage, see [https://github.com/collectd/collectd/issues/2668](https://github.com/collectd/collectd/issues/2668) for more information.
    * For that, simply comment out the following two plugins:
     ```
        #LoadPlugin rrdtool
@@ -171,4 +171,4 @@ If your device is not connected yet see:
 
 ### Trouble shooting
 
-See here for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides#touble-shooting-monitoring)
+See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides#touble-shooting-monitoring)

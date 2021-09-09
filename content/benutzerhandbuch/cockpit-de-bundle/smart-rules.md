@@ -9,7 +9,7 @@ helpcontent: >-
   Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste, um eine neue globale Smart Rule hinzuzufügen. Verwenden Sie das Menüsymbol, um globale Smart Rules zu bearbeiten, zu duplizieren oder zu löschen.
 
 
-  {{< product-c8y-iot >}} enthält vordefinierte Smart Rule-Vorlagen, z. B. "Bei Schwellwert Alarm erzeugen". Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart Rule-Vorlagen und ihrer Konfiguration finden Sie in der Dokumentation der Smart Rule-Sammlung.
+  Cumulocity IoT enthält vordefinierte Smart Rule-Vorlagen, z. B. "Bei Schwellwert Alarm erzeugen". Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart Rule-Vorlagen und ihrer Konfiguration finden Sie in der Dokumentation der Smart Rule-Sammlung.
 ---
 
 

@@ -50,7 +50,7 @@ This will direct you to the login page of your default application. See [Tenants
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the {{< product-c8y-iot >}} platform.
 
 <a name="login"></a>
-### To log into the {{< product-c8y-iot >}} platform
+### To log into the platform
 
 On the Login screen, enter your username (case-sensitive) and password.
 

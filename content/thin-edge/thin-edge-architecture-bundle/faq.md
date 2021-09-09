@@ -33,7 +33,7 @@ Interoperability of software components can be addressed along very different ap
 
 In the past and even today, many clouds provide a library (SDK) to help you connect your code to the cloud.
 
-In thin-edge.io we decided not to follow this approach because:
+In thin-edge.io we decided not to follow this approach for the following reasons:
 * Libraries are programming language dependent.
   Therefore, developing a library for a number of programming languages excludes developers using other
   programming languages. Additionally the effort to support many libraries (C, C++, Rust, Python, etc) is extensive,
@@ -56,7 +56,7 @@ We recommend you to use MQTT for the following reasons:
   and thin-edge.io routes the messages to different clouds in a secure and reliable manner.  
 * MQTT is message-oriented and bi-directional, which matches well with the event-oriented programming model of industrial IoT.
 * MQTT is available on many platforms, including Linux and Windows.
-* MQTT client libraries are available for 25+ programming languages (see [MQTT.org](https://mqtt.org/software/)])
+* MQTT client libraries are available for 25+ programming languages (see [MQTT.org](https://mqtt.org/software/))
 * MQTT overhead is relatively small in terms of client library size and network overhead.
 * MQTT is message-payload-agnostic which enables sending not only JSON messages, but also text, CSV or binary data.  
 
@@ -80,7 +80,7 @@ Additionally, JSON is supported by most (if not all) cloud vendors, which makes 
 JSON is also used by other IIoT standards, including OPC/UA and LWM2M.
 
 ### Why use Rust?
-The command line interface, and the daemon processes of thin-edge.io are implemented in [Rust](https://www.rust-lang.org/), *a language empowering everyone to build reliable and efficient software*.
+The command line interface and the daemon processes of thin-edge.io are implemented in [Rust](https://www.rust-lang.org/), *a language empowering everyone to build reliable and efficient software*.
 
 The main reason to use Rust is the security aspect. Rust avoids many security vulnerabilities and threading issues at compile time. With the type system of Rust you write software that is free from typical security flaws: undefined behavior, data races or any memory safety issues.
 

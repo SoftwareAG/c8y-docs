@@ -17,4 +17,4 @@ Thin-edge.io can be extended in various programming languages due to its extensi
 * A [canonical data format](#thin-edge-json) lets the components exchange telemetry data independently of the connected cloud. This is an optional feature and the components are free to also use cloud-specific data formats.
 * The mapper processes are responsible for translating the canonical data format into cloud-specific messages and vice versa.
 
-![Overview](./thin-edge-overview.png)
+![Overview](/images/thin-edge/thin-edge-overview.png)

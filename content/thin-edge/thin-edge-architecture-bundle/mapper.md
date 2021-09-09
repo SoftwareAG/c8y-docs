@@ -58,7 +58,7 @@ After the mapper publishes a message on the topic `c8y/measurement/measurements/
 
 The Azure IoT Hub mapper takes messages formatted in the [Thin Edge JSON](thin-edge-json.md) as input. It validates if the incoming message is correctly formatted in Thin Edge JSON and outputs the message. The validated messages are published on the topic `az/messages/events/` from where they are forwarded to Azure IoT Hub. This mapper is launched by the `tedge connect az` command, and stopped by the `tedge disconnect az` command.
 
-The Azure IoT Hub mapper processes a message in the following ways.
+The Azure IoT Hub mapper processes a message in the following way:
 
 1. Validates if it is a correct Thin Edge JSON message or not.
 2. Validates if the incoming message size is below 255 KB.

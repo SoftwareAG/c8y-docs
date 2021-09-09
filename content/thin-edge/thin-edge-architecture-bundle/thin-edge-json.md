@@ -16,7 +16,7 @@ Simple single-valued measurements like temperature or pressure measurement with 
 }
 ```
 
-The key represents the measurement type while the value represents the measurement value. The keys can only have alphanumeric characters and the `_` (underscore) character. However, the key cannot start with an underscore. Values can only be numeric, therefore string, boolean or other JSON object values are not allowed.
+The key represents the measurement type while the value represents the measurement value. The keys can only have alphanumeric characters and the "_" (underscore) character. However, the key cannot start with an underscore. Values can only be numeric, therefore string, boolean or other JSON object values are not allowed.
 
 ### Multi-valued measurements
 

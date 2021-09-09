@@ -31,4 +31,4 @@ say Rust or Python.
 * Explore the [tutorials and use-cases](/thin-edge/thin-edge-tutorials).
 * Understand the [architecture](/thin-edge/thin-edge-architecture).
 * Use the [how-to guides](/thin-edge/thin-edge-howto-guides) on a daily basis.
-* Refer to the [reference guides](/thin-edge/thin-edge-developer-tools) for any in-depth details.
+* Refer to [developer tools](/thin-edge/thin-edge-developer-tools) for any in-depth details.

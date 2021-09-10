@@ -51,7 +51,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der {{< product-c8y-iot >}}-Plattform verbunden sind.
 
 <a name="login"></a>
-### So melden Sie sich an der {{< product-c8y-iot >}}-Plattform an
+### So melden Sie sich an der Plattform an
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein und klicken Sie auf **Anmelden**, um die Anwendung zu öffnen.
 

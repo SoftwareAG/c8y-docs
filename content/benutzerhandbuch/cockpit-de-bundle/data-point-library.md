@@ -3,7 +3,7 @@ weight: 75
 title: Datenpunktbibliothek
 layout: redirect
 helpcontent: >-
-  Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Diese dienen als Vorlagen, die sich leicht von verschiedenen Geräten auf Ihre Datenpunkte anwenden lassen. Um Standardwerte für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die {{< product-c8y-iot >}}-Plattform die Datenpunktbibliothek nach einem passenden Eintrag. Wenn ein Eintrag passt, werden die entsprechenden Datenpunktattribute für die Standardvisualisierung verwendet.
+  Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Diese dienen als Vorlagen, die sich leicht von verschiedenen Geräten auf Ihre Datenpunkte anwenden lassen. Um Standardwerte für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die Cumulocity IoT-Plattform die Datenpunktbibliothek nach einem passenden Eintrag. Wenn ein Eintrag passt, werden die entsprechenden Datenpunktattribute für die Standardvisualisierung verwendet.
 
 
   Wählen Sie entweder einen der vorhandenen Datenpunkte aus der Liste aus oder fügen Sie der Bibliothek einen neuen Datenpunkt hinzu, um Ihren eigenen Erfordernissen gerecht zu werden.

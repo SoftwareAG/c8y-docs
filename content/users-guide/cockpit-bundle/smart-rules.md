@@ -9,7 +9,11 @@ helpcontent: >-
   Click **Add smart rule** in the top menu bar to add a new global smart rule. Use the menu icon to edit, duplicate or delete global smart rules.
 
 
+<<<<<<< HEAD
   Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration. 
+=======
+  Cumulocity IoT includes preset smart rules templates, for example "On measurement threshold create alarm". Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the smart rules collection documentation for details on each smart rule template and its configuration.
+>>>>>>> af26d81db... reverted variables in front matter texts
 ---
 
 

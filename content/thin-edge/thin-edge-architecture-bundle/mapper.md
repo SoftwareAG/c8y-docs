@@ -69,7 +69,7 @@ In this case, the mapper uses the device's local timezone. If you want another t
 as both a fragment type and a fragment series .
 
 After the mapper publishes a message on the topic `c8y/measurement/measurements/create`,
-the message will be transferred to the topic `measurement/measurements/create` by the [MQTT bridge](/thin-edge/thin-edge-developer-tools/#bridged-topics).
+the message will be transferred to the topic `measurement/measurements/create` by the [MQTT bridge](/thin-edge/thin-edge-developer-tools/#mqtt-topics).
 
 ### Azure IoT Hub mapper
 

@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: The bridged topics
+title: MQTT topics
 layout: redirect
 ---
 

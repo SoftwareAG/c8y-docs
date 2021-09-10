@@ -4,8 +4,6 @@ title: Package Manager Plugin API
 layout: redirect
 ---
 
->**Info:** This API is not released yet. The Software Management feature will be released for version 0.3.
-
 Thin Edge uses plugins to delegate all the software management operations to the appropriate package managers and installers: installation of packages, uninstallations and queries.
 
 A package manager plugin acts as a facade for a specific package manager.

@@ -25,7 +25,7 @@ The device protocol list shows the following information:
 2. Select one of the available device protocol types from the list.
 3. In the resulting dialog box, enter a name and an optional description for the device protocol and click **Create**.
 4. Enter the configuration for the device protocol. The configuration of the device protocol depends on the protocol type. <br>
-For details on configuring device protocols, follow the documentation of the particular device type you want to create, see [*Protocol integration guide*](/protocol-integration/overview).
+For details on configuring device protocols, follow the documentation of the particular device type you want to create, see [Protocol integration guide](/protocol-integration/overview).
 5. Click **Save**.
 
 The device protocol will be added to the device database.
@@ -45,7 +45,7 @@ The device protocol will be added to the device database.
 
 To edit a device protocol, just click on the protocol or click the menu icon at the right of the row and then click **Edit**.
 
-Details on the fields can be found in the documentation of the particular device type, see [*Protocol integration guide*](/protocol-integration/overview).
+Details on the fields can be found in the documentation of the particular device type, see [Protocol integration guide](/protocol-integration/overview).
 
 ### To delete a device protocol
 

@@ -11,4 +11,4 @@ aliases:
 
 We offer a generic client library for [C++](/device-sdk/cpp). If your device uses a completely proprietary runtime environment, you can always  use [MQTT](/device-sdk/mqtt) and [SmartREST 2](/device-sdk/rest). These will work on practically any Internet-connected device today, down to the smallest systems.
 
-Detailed information on device integration using [MQTT](/device-sdk/mqtt), [REST](/device-sdk/rest) and [C++](/device-sdk/cpp) can be found in the [*Device SDK guide*](/device-sdk/device-sdk-introduction).
+Detailed information on device integration using [MQTT](/device-sdk/mqtt), [REST](/device-sdk/rest) and [C++](/device-sdk/cpp) can be found in the [Device SDK guide](/device-sdk/device-sdk-introduction).

@@ -8,11 +8,11 @@ On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engi
 
 Apama's Event Processing Language covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications with {{< sag-designer >}} - an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}, see [Basic functionality](/apama/analytics-introduction/) in the *Streaming Analytics guide* for more information.
 
-For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to [Using Apama Event Processing Language](/concepts/realtime#using-epl) below and to the [*Streaming Analytics guide*](/apama/overview-analytics/).
+For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to [Using Apama Event Processing Language](/concepts/realtime#using-epl) below and to the [Streaming Analytics guide](/apama/overview-analytics/).
 
 >**Important:** Support for streaming analytics using CEL (Esper) has ended. All new {{< product-c8y-iot >}} subscriptions use the Apama CEP engine. {{< company-sag >}} terminated support for using CEL (Esper) in {{< product-c8y-iot >}} on 31 Dec 2020 following its deprecation in 2018.
 >
->For documentation on using the unsupported CEL functionality based on Esper, refer to the [*CEL analytics guide*](/event-language/introduction).
+>For documentation on using the unsupported CEL functionality based on Esper, refer to the [CEL analytics guide](/event-language/introduction).
 >
 >For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.
 

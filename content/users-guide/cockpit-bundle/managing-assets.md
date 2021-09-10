@@ -30,11 +30,9 @@ To position a device in the asset hierarchy, you have to "assign" the device to 
 {{< product-c8y-iot >}} supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
 
-<<<<<<< HEAD
-The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts Guide*.
-=======
+
 The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide*.
->>>>>>> 1408db4012320074f6516f8279a52ed6c7863cd6
+
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 

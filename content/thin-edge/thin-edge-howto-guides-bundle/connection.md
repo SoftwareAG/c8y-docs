@@ -7,9 +7,9 @@ layout: redirect
 ### Connect to Cumulocity IoT
 
 To create a northbound connection, you must establish a local bridge.
-To achieve this, use the `tedge` cli and the commands described below.
+To achieve this, use the tedge CLI and the commands described below.
 
->**Note:** `tedge connect` requires `sudo` privilege.
+>**Info:** `tedge connect` requires `sudo` privilege.
 
 Configure the required parameters for thin-edge.io with [tedge config set](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command):
 
@@ -18,7 +18,7 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 ```
 
 >**Tip:** If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
-> For example, if we issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#cumulocity-iot) without any configuration, the following piece of advice will be given:
+> For example, if you issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#cumulocity-iot) without any configuration, the following piece of advice will be given:
 >
 > ```shell
 > $ tedge connect c8y`
@@ -34,7 +34,7 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 The next step is to have the device certificate trusted by {{< product-c8y-iot >}}. This is done by uploading the certificate of the signee.
 You can upload the root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [tedge cert upload](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) as described below.
 
->**Note:** This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
+>**Info:** This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
 >
 > After issuing this command you are going to be prompted for a password. Usernames and passwords are not stored in the configuration for security reasons.
 
@@ -113,7 +113,7 @@ Disabling tedge-mapper service.
 tedge-mapper service successfully stopped and disabled!
 ```
 
->**Note:** `tedge disconnect c8y` also stops and disable the **tedge-mapper** service if it is installed on the device.
+>**Info:** `tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
 
 Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-connect-command) to create a new bridge.
 
@@ -198,7 +198,7 @@ Caused by:
     2: Permission denied (os error 13)
 ```
 
-`tedge connect` cannot access the location to create the bridge configuration (`/etc/tedge/mosquitto-conf`).
+`tedge connect` cannot access the location to create the bridge configuration (*/etc/tedge/mosquitto-conf*).
 Check the permissions for the directory and adjust it to allow `tedge connect` to access it.
 
 Example of incorrect permissions:

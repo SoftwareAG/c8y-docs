@@ -12,7 +12,7 @@ To create a new certificate you can use the [tedge cert create](/thin-edge/thin-
 sudo tedge cert create --device-id alpha
 ```
 
->**Note:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
+>**Info:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
 
 The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) will create a certificate in a default location (`/etc/tedge/device-certs/`).
 To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command).

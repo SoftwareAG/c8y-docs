@@ -11,7 +11,7 @@ The easy way is to use the installation script with this command:
 ```
 curl -fsSL https://raw.githubusercontent.com/thin-edge/thin-edge.io/main/get-thin-edge_io.sh | sudo sh -s 0.2.0
 ```
-You can execute that command on your device and it will do all required steps for an initial setup.
+You can execute this command on your device and it will do all required steps for an initial setup.
 
 If you prefer to have a little more control over the installation or the script did not work for you, follow the [Manual installation](#manual-installation).
 
@@ -31,7 +31,7 @@ For apt the command may look like the following:
 apt install mosquitto
 ```
 
->**Note:** Some OSes may require you to use `sudo` to install packages.
+>**Info:** Some operating systems may require you to use `sudo` to install packages.
 
 ```shell
 sudo apt install mosquitto
@@ -43,9 +43,9 @@ When all dependencies are in place you can proceed with the installation of `thi
 
 ##### Package download
 
-The thin-edge.io package is in the thin-edge.io repository on GitHub: [thin-edge.io](https://github.com/thin-edge/thin-edge.io/releases).
+The thin-edge.io package is in the [thin-edge.io repository on GitHub](https://github.com/thin-edge/thin-edge.io/releases).
 
-To download the package from the GitHub repository use following command (use the desired version):
+To download the package from the GitHub repository use the following command (use the desired version):
 
 ```shell
 curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/<package>_<version>_<arch>.deb
@@ -53,13 +53,13 @@ curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/<package>_
 
 where `version` is the thin-edge.io version in `x.x.x` format and `arch` is the architecture type (amd64, armhf).
 
-Example:
+**Example:**
 
 ```shell
 curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/0.1.0/tedge_0.1.0_armhf.deb
 ```
 
-and for `mapper`:
+and for mapper:
 
 ```shell
 curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/0.1.0/tedge_mapper_0.1.0_armhf.deb
@@ -69,37 +69,37 @@ curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/0.1.0/tedg
 
 Now that you have downloaded the package you can proceed with the installation. First install the CLI tool `tedge`.
 
->**Note:** Some OSes may require you to use `sudo` to install packages and therefore all following commands may need `sudo`.
+>**Info:** Some operating systems may require you to use `sudo` to install packages and therefore all following commands may need `sudo`.
 
-To install `tedge` use following command:
+To install `tedge` use the following command:
 
 ```shell
 dpkg -i tedge_<version>_<arch>.deb
 ```
 
-Example:
+**Example:**
 
 ```shell
 dpkg -i tedge_0.1.0_armhf.deb
 ```
 
-To install mapper for thin-edge.io do:
+To install mapper for thin-edge.io use:
 
 ```shell
 dpkg -i tedge_mapper_<version>_<arch>.deb
 ```
 
-Example:
+**Example:**
 
 ```shell
 dpkg -i tedge_mapper_0.1.0_armhf.deb
 ```
 
-##### Add your user to the `tedge-users` group
+##### Add your user to the tedge-users group
 
-During the installation process a `tedge-users` group is automatically created to ease the administration of who can use the `sudo tedge` command on the device.
+During the installation process a tedge-users group is automatically created to ease the administration of who can use the `sudo tedge` command on the device.
 The `tedge` command needs to be run using `sudo`.
-Unless all the users are granted sudo privileges, you have to add a user to the `tedge-users` group for that user to be able to use `tedge`.
+Unless all the users are granted sudo privileges, you have to add a user to the tedge-users group for that user to be able to use `tedge`.
 
 Run this command to add a user to the group.
 

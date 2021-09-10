@@ -4,7 +4,7 @@ title: The Command Line Interface (CLI)
 layout: redirect
 ---
 
-### The tedge command
+### Tedge command
 
 ```
 tedge 0.2.0
@@ -14,19 +14,19 @@ USAGE:
     tedge <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
     cert          Create and manage device certificate
     config        Configure Thin Edge
     connect       Connect to connector provider
     disconnect    Remove bridge connection for a provider
-    help          Prints this message or the help of the given subcommand(s)
+    help          Print this message or the help of the given subcommand(s)
     mqtt          Publish a message on a topic and subscribe a topic
 ```
 
-### The tedge config command
+### Tedge config command
 
 ```
 tedge-config 0.2.0
@@ -36,12 +36,12 @@ USAGE:
     tedge config <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
     get      Get the value of the provided configuration key
-    help     Prints this message or the help of the given subcommand(s)
+    help     Print this message or the help of the given subcommand(s)
     list     Print the configuration keys and their values
     set      Set or update the provided configuration key with the given value
     unset    Unset the provided configuration key
@@ -57,8 +57,8 @@ USAGE:
     tedge config get <key>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 ARGS:
     <key>    Configuration key. Run `tedge config list --doc` for available keys
@@ -74,8 +74,8 @@ USAGE:
     tedge config set <key> <value>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 ARGS:
     <key>      Configuration key. Run `tedge config list --doc` for available keys
@@ -92,10 +92,10 @@ USAGE:
     tedge config list [FLAGS]
 
 FLAGS:
-    -h, --help       Prints help information
-        --all        Prints all the configuration keys, even those without a configured value
-        --doc        Prints all keys and descriptions with example values
-    -V, --version    Prints version information
+    -h, --help       Print help information
+        --all        Print all the configuration keys, even those without a configured value
+        --doc        Print all keys and descriptions with example values
+    -V, --version    Print version information
 ```
 
 #### Unset
@@ -108,15 +108,15 @@ USAGE:
     tedge config unset <key>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 ARGS:
     <key>    Configuration key. Run `tedge config list --doc` for available keys
 ```
 
 
-### The tedge cert command
+### Tedge cert command
 
 ```
 tedge-cert 0.2.0
@@ -126,12 +126,12 @@ USAGE:
     tedge cert <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
     create    Create a self-signed device certificate
-    help      Prints this message or the help of the given subcommand(s)
+    help      Print this message or the help of the given subcommand(s)
     remove    Remove the device certificate
     show      Show the device certificate, if any
     upload    Upload root certificate
@@ -147,8 +147,8 @@ USAGE:
     tedge cert create --device-id <id>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 OPTIONS:
         --device-id <id>    The device identifier to be used as the common name for the certificate
@@ -164,8 +164,8 @@ USAGE:
     tedge cert show
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
 #### Remove
@@ -178,8 +178,8 @@ USAGE:
     tedge cert remove
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
 #### Upload
@@ -192,19 +192,16 @@ USAGE:
     tedge cert upload <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       
-            Prints help information
-
-    -V, --version    
-            Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 
 SUBCOMMANDS:
     c8y     Upload root certificate to {{< product-c8y-iot >}}
-    help    Prints this message or the help of the given subcommand(s)
+    help    Print this message or the help of the given subcommand(s)
 ```
 
-### The tedge connect command
+### Tedge connect command
 
 ```
 tedge-connect 0.2.0
@@ -214,17 +211,14 @@ USAGE:
     tedge connect <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       
-            Prints help information
-
-    -V, --version    
-            Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 
 SUBCOMMANDS:
     az      Create connection to Azure
     c8y     Create connection to {{< product-c8y-iot >}}
-    help    Prints this message or the help of the given subcommand(s)
+    help    Print this message or the help of the given subcommand(s)
 ```
 
 #### Azure
@@ -239,14 +233,9 @@ USAGE:
     tedge connect az [FLAGS]
 
 FLAGS:
-    -h, --help       
-            Prints help information
-
-        --test       
-            Test connection to Azure
-
-    -V, --version    
-            Prints version information
+    -h, --help       Print help information
+        --test       Test connection to Azure
+    -V, --version    Print version information
 ```
 
 #### Cumulocity IoT
@@ -261,17 +250,12 @@ USAGE:
     tedge connect c8y [FLAGS]
 
 FLAGS:
-    -h, --help       
-            Prints help information
-
-        --test       
-            Test connection to {{< product-c8y-iot >}}
-
-    -V, --version    
-            Prints version information
+    -h, --help       Print help information
+        --test       Test connection to {{< product-c8y-iot >}}
+    -V, --version    Print version information
 ```
 
-### The tedge disconnect command
+### Tedge disconnect command
 
 ```
 tedge-disconnect 0.2.0
@@ -281,13 +265,13 @@ USAGE:
     tedge disconnect <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
     az      Remove bridge connection to Azure
     c8y     Remove bridge connection to {{< product-c8y-iot >}}
-    help    Prints this message or the help of the given subcommand(s)
+    help    Print this message or the help of the given subcommand(s)
 ```
 
 #### Azure
@@ -300,8 +284,8 @@ USAGE:
     tedge disconnect az
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
 #### Cumulocity IoT
@@ -314,11 +298,11 @@ USAGE:
     tedge disconnect c8y
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
-### The tedge mqtt command
+### Tedge mqtt command
 
 ```
 tedge-mqtt 0.2.0
@@ -328,11 +312,11 @@ USAGE:
     tedge mqtt <SUBCOMMAND>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
-    help    Prints this message or the help of the given subcommand(s)
+    help    Print this message or the help of the given subcommand(s)
     pub     Publish a MQTT message on a topic
     sub     Subscribe a MQTT topic
 ```
@@ -347,8 +331,8 @@ USAGE:
     tedge mqtt pub [OPTIONS] <topic> <message>
 
 FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 OPTIONS:
     -q, --qos <qos>    QoS level (0, 1, 2) [default: 0]
@@ -368,9 +352,9 @@ USAGE:
     tedge mqtt sub [FLAGS] [OPTIONS] <topic>
 
 FLAGS:
-    -h, --help        Prints help information
+    -h, --help        Print help information
         --no-topic    Avoid printing the message topics on the console
-    -V, --version     Prints version information
+    -V, --version     Print version information
 
 OPTIONS:
     -q, --qos <qos>    QoS level (0, 1, 2) [default: 0]

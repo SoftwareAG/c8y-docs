@@ -54,7 +54,7 @@ All {{< product-c8y-iot >}} topics have been prefixed by `c8y/`.
 * c8y/measurement/measurements/create
 * c8y/error
 
-You can find more information about {{< product-c8y-iot >}} topics in our [{{< sag-dev-community >}} ](https://tech.forums.softwareag.com/t/cumulocity-iot-tips-and-tricks-mqtt-cheat-sheet/237187).
+You can find more information about {{< product-c8y-iot >}} topics in our [{{< sag-dev-community >}}](https://tech.forums.softwareag.com/t/cumulocity-iot-tips-and-tricks-mqtt-cheat-sheet/237187).
 
 ### Azure MQTT topics
 

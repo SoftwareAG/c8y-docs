@@ -81,7 +81,7 @@ The parameter `version` is he version currently installed. This is a string that
 
 ### Prepare command
 
-The `prepare` command is invoked by the sm-agent before a sequence of install and remove commands
+The `prepare` command is invoked by the sm-agent before a sequence of install and remove commands.
 
 ```
 $ /etc/tedge/sm-plugins/debian prepare

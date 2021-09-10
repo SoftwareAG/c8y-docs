@@ -6,7 +6,7 @@ layout: redirect
 
 ### Tedge command
 
-```
+```console
 tedge 0.2.0
 tedge is the cli tool for thin-edge.io
 
@@ -28,7 +28,7 @@ SUBCOMMANDS:
 
 ### Tedge config command
 
-```
+```console
 tedge-config 0.2.0
 Configure Thin Edge
 
@@ -49,7 +49,7 @@ SUBCOMMANDS:
 
 #### Get
 
-```
+```console
 tedge-config-get 0.2.0
 Get the value of the provided configuration key
 
@@ -66,7 +66,7 @@ ARGS:
 
 #### Set
 
-```
+```console
 tedge-config-set 0.2.0
 Set or update the provided configuration key with the given value
 
@@ -84,7 +84,7 @@ ARGS:
 
 #### List
 
-```
+```console
 tedge-config-list 0.2.0
 Print the configuration keys and their values
 
@@ -100,7 +100,7 @@ FLAGS:
 
 #### Unset
 
-```
+```console
 tedge-config-unset 0.2.0
 Unset the provided configuration key
 
@@ -118,7 +118,7 @@ ARGS:
 
 ### Tedge cert command
 
-```
+```console
 tedge-cert 0.2.0
 Create and manage device certificate
 
@@ -139,7 +139,7 @@ SUBCOMMANDS:
 
 #### Create
 
-```
+```console
 tedge-cert-create 0.2.0
 Create a self-signed device certificate
 
@@ -156,7 +156,7 @@ OPTIONS:
 
 #### Show
 
-```
+```console
 tedge-cert-show 0.2.0
 Show the device certificate, if any
 
@@ -170,7 +170,7 @@ FLAGS:
 
 #### Remove
 
-```
+```console
 tedge-cert-remove 0.2.0
 Remove the device certificate
 
@@ -184,7 +184,7 @@ FLAGS:
 
 #### Upload
 
-```
+```console
 tedge-cert-upload 0.2.0
 Upload root certificate
 
@@ -203,7 +203,7 @@ SUBCOMMANDS:
 
 ### Tedge connect command
 
-```
+```console
 tedge-connect 0.2.0
 Connect to connector provider
 
@@ -223,7 +223,7 @@ SUBCOMMANDS:
 
 #### Azure
 
-```
+```console
 tedge-connect-az 0.2.0
 Create connection to Azure
 
@@ -240,7 +240,7 @@ FLAGS:
 
 #### Cumulocity IoT
 
-```
+```console
 tedge-connect-c8y 0.2.0
 Create connection to {{< product-c8y-iot >}}
 
@@ -257,7 +257,7 @@ FLAGS:
 
 ### Tedge disconnect command
 
-```
+```console
 tedge-disconnect 0.2.0
 Remove bridge connection for a provider
 
@@ -276,7 +276,7 @@ SUBCOMMANDS:
 
 #### Azure
 
-```
+```console
 tedge-disconnect-az 0.2.0
 Remove bridge connection to Azure
 
@@ -290,7 +290,7 @@ FLAGS:
 
 #### Cumulocity IoT
 
-```
+```console
 tedge-disconnect-c8y 0.2.0
 Remove bridge connection to {{< product-c8y-iot >}}
 
@@ -304,7 +304,7 @@ FLAGS:
 
 ### Tedge mqtt command
 
-```
+```console
 tedge-mqtt 0.2.0
 Publish a message on a topic and subscribe a topic
 
@@ -323,7 +323,7 @@ SUBCOMMANDS:
 
 #### Pub
 
-```
+```console
 tedge-mqtt-pub 0.2.0
 Publish a MQTT message on a topic
 
@@ -344,7 +344,7 @@ ARGS:
 
 #### Sub
 
-```
+```console
 tedge-mqtt-sub 0.2.0
 Subscribe a MQTT topic
 

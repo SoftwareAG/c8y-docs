@@ -7,6 +7,11 @@ aliases:
   - /about-doc/content-overview
   - /users-guide/enterprise-edition/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
+  - /oee/overview
+  - /oee/oee-theory
+  - /oee/oee-dashboards
+  - /oee/oee-administration
+  - /oee/oee-faq
 ---
 
 This documentation describes the **10.9.0 release (April 2021)** of the Cumulocity IoT platform.

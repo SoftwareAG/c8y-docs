@@ -7,7 +7,7 @@ layout: redirect
 The very first step to enable thin-edge.io is to connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud is then as simple as sending data locally.
 
 The focus is here on connecting the device to Azure IoT.
-See this [tutorial](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
+See this [Connect your device to {{< product-c8y-iot >}}](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
 Before you try to connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation.md).
 
@@ -48,13 +48,13 @@ Thumbprint: 860218AD0A996004449521E2713C28F67B5EA580
 The issuer of this certificate is the device itself as this is a self-signed certificate.
 The Thumbprint is the Sha1sum of the certificate. This is required for registering the
 device using the self-signed certificate on Azure IoT Hub.
-To use a certificate signed by your Certificate Authority,
+To use a certificate signed by your certificate authority,
 see the reference guide of [tedge certs](/thin-edge/thin-edge-references/#tedge-cert).
 
 ### Register the device on Azure IoT Hub
 
 In order for Azure to trust a device, you need to add the self-signed certificate thumbprint to the Azure IoT Hub Portal.
-In the Azure IoT Hub Portal, navigate to **Explores** > **IoT Devices** and click  **+ New**. This opens a new blade **Create a device**.
+In the Azure IoT Hub Portal, navigate to **Explores** > **IoT Devices** and click  **+ New**. This opens the window **Create a device**.
 
 Here provide the configuration parameters that are required to create the device as described below:
 

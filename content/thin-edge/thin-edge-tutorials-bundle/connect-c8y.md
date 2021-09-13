@@ -4,13 +4,12 @@ title: Connect your device to Cumulocity IoT
 layout: redirect
 ---
 
-The very first step to enable `thin-edge.io` is to connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates.
-* Sending data to the cloud will then be as simple as sending data locally.
+The very first step to enable thin-edge.io is to connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud endpoint. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud will then be as simple as sending data locally.
 
 The focus here is on connecting to [{{< product-c8y-iot >}}](/concepts/introduction/).
-See this [tutorial](connect-azure.md), if you want to connect Azure IoT instead.
+See [Connect your device to Azure IoT](#connect-azure), if you want to connect Azure IoT instead.
 
-Before you try to connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (e.g. `eu-latest.{{< domain-c8y >}}`). Your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (e.g. `t00000007`), a user name and password. None of these credentials will be stored on the device. These are only required once, to register the device.
+Before you to connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (e.g. eu-latest.{{< domain-c8y >}}). Your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (e.g. `t00000007`), a user name and password. None of these credentials will be stored on the device. These are only required once, to register the device.
 
 If not done yet, [install `thin-edge.io` on your device](/how-to-guides/002_installation.md).
 
@@ -75,7 +74,7 @@ For a certificate to be trusted by {{< product-c8y-iot >}},
 you need to add the certificate of the signing authority to the list of trusted certificates.
 In the {{< product-c8y-iot >}} UI, navigate to **Management** > **Trusted certificates** in the Device Management application in order to see this list for your {{< product-c8y-iot >}} tenant.
 
-Here, the device certificate is self-signed and has to be directly trusted by Certificate.
+Here, the device certificate is self-signed and has to be directly trusted by {{< company-c8y >}}.
 This can be done in two ways. In the UI: upload the certificate from your device (*/etc/tedge/device-certs/tedge-certificate.pem*) to your tenant at [Management > Trusted certificates](/device-management/#trusted-certificates). Alternatively, you can use the `tedge cert upload c8y` command.
 
 ```

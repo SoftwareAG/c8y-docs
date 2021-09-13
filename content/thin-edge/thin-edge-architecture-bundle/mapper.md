@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Thin-edge mapper
+title: Thin Edge mapper
 layout: redirect
 ---
 
@@ -44,7 +44,7 @@ The {{< product-c8y-iot >}} mapper added the three things which are undefined be
 1. `type`
 2. `time`
 3. Another hierarchy level. This is required by the {{< product-c8y-iot >}} data model.
-String `temperature` is used as fragment and series.
+The string `temperature` is used as fragment and series.
 
 (1) The `type` is a mandatory field in the {{< product-c8y-iot >}} JSON via MQTT manner. Therefore, the {{< product-c8y-iot >}} mapper always adds `ThinEdgeMeasurement` as a type. This value is not configurable by users.
 

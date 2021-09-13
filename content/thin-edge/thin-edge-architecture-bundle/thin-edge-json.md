@@ -120,4 +120,4 @@ Below you find the complete list of topics reserved by thin-edge.io for its inte
 
 The thin-edge.io framework allows you to forward all the measurements generated and published to the `tedge/measurements` MQTT topic in the Thin Edge device to any connected IoT cloud provider using a mapper component designed for that particular cloud.
 
-The mapper is used to subscribe to the `tedge/measurements` topic in order to receive all incoming measurements represented in Thin Edge JSON format and to format these measurements to a format understood by the connected cloud. Refer to [Cloud Message Mapper Architecture](#mapper) for more details on the mapper component.
+The mapper is used to subscribe to the `tedge/measurements` topic in order to receive all incoming measurements represented in Thin Edge JSON format and to format these measurements to a format understood by the connected cloud. Refer to [Thin Edge Mapper](#mapper) for more details on the mapper component.

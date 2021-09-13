@@ -54,6 +54,6 @@ This Device SDK guide provides detailed information on device integration using 
 
 For interfacing devices with {{< product-c8y-iot >}}, we recommend you to use MQTT and [SmartREST](/reference/smartrest/), which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
 
-An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [https://bitbucket.org/m2m/cumulocity-agents-linux](https://bitbucket.org/m2m/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
+An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [https://github.com/SoftwareAG/cumulocity-agents-linux](https://github.com/SoftwareAG/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
 
 For information on the general concept of agents being used for interfacing IoT data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/concepts/interfacing-devices) in the Concepts guide.

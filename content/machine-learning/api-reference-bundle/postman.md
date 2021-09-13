@@ -11,7 +11,7 @@ Graphical REST clients such as Postman are a convenient way to explore REST inte
 
 If you are already using the {{< product-c8y-iot >}} API collection in Postman and the environment to access the collection for your tenant is setup, then you can directly import the Zementis microservice collection (see below).
 
-If you are doing a fresh setup of Postman for using the Zementis microservice collection, first follow the steps described under "Using Postman" in [Using the Rest interface](/microservice-sdk/rest) in the Microservice SDK guide.
+If you are doing a fresh setup of Postman for using the Zementis microservice collection, first follow the steps described under "Using Postman" in [Using the Rest interface](/microservice-sdk/rest) in the *Microservice SDK guide*.
 
 ### Import the Zementis microservice collection in Postman
 

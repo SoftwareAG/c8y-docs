@@ -11,6 +11,6 @@ To interface these systems with {{< product-c8y-iot >}}, a driver software calle
 
 Related topics can be found in the following sections:
 
--   [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model) in the Concepts guide, for understanding the data structures exchanged between agents and the {{< product-c8y-iot >}} core.
+-   [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model) in the *Concepts guide*, for understanding the data structures exchanged between agents and the {{< product-c8y-iot >}} core.
 -   [Device SDK guide](/device-sdk) for understanding in detail how to develop agent software using the REST or MQTT protocols.
 -   [Rest implementation](https://{{< domain-c8y >}}/api/#section/REST-implementation) in the {{< openapi >}}, for a detailed specification of the interfaces between agents and the {{< product-c8y-iot >}} core.

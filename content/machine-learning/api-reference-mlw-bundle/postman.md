@@ -11,7 +11,7 @@ Graphical REST clients such as Postman are a convenient way to explore REST inte
 
 If you are already using the {{< product-c8y-iot >}} API collection in Postman and the environment to access the collection for your tenant is set up, then you can directly import the MLW microservice collection (see below).
 
-If you are doing a fresh set up of Postman for using the Machine Learning Workbench (MLW) microservice collection, first follow the steps described in [Using the REST interface > Overview > Using Postman](/microservice-sdk/rest#using-postman) in the Microservice SDK guide.
+If you are doing a fresh set up of Postman for using the Machine Learning Workbench (MLW) microservice collection, first follow the steps described in [Using the REST interface > Overview > Using Postman](/microservice-sdk/rest#using-postman) in the *Microservice SDK guide*.
 
 ### Importing the Machine Learning Workbench (MLW) microservice collection into Postman
 

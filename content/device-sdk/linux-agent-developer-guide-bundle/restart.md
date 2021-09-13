@@ -56,7 +56,7 @@ end
 11,804,,$.c8y_Restart,$.id,$.deviceId
 ```
 
-`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
+`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [SmartREST > Template](/reference/smartrest/#templates) in the *Reference guide*.
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 

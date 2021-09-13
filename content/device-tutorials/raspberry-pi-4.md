@@ -128,7 +128,7 @@ Alternatively, you can use the desktop method:
 
 1. Open the {{< product-c8y-iot >}} platform in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
-2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID.
+2. To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the *User guide*. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID.
 
 To view the device in your {{< product-c8y-iot >}} account, click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 

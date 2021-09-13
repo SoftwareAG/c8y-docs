@@ -12,7 +12,7 @@ The mobile network (**WAN**) parameters shown in the user interface corresponds 
 
 For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for details.
 
-For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the User guide.
+For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the *User guide*.
 
 > **Info:** If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -23,7 +23,7 @@ LAN and DHCP parameters can be directly configured from {{< product-c8y-iot >}} 
 <a name="software-and-firmware"></a>
 ### Managing software and firmware
 
-The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from {{< product-c8y-iot >}}. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
+The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from {{< product-c8y-iot >}}. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the *User guide*.
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
 
@@ -77,7 +77,7 @@ set service.cumulocity.gps.update_interval=<seconds>
 set service.cumulocity.gps.interval=<seconds>
 ```
 
-After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
+After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the *User guide* for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
 
 <a name="snapshots"></a>
 ### Managing configuration snapshots
@@ -93,7 +93,7 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 <a name="device-shell"></a>
 ### Using the device shell
 
-With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details > Device shell](/users-guide/device-management/#shell) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
+With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details > Device shell](/users-guide/device-management/#shell) in the *User guide*. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
 
 * "get &#60;parameter&#62;" to read a parameter from the device.
 * "set &#60;parameter&#62;=&#60;value&#62;" to write a parameter to the device.
@@ -109,7 +109,7 @@ Click the **Get Predefined** link to access frequently used parameters and comma
 
 You can download and view the logs from the device. Log files can be quite big, but you can set filtering criteria to get only what is interesting for you.
 
-For more information about logs, see [Device Management > Device details > Logs](/users-guide/device-management/#logs) in the User guide.
+For more information about logs, see [Device Management > Device details > Logs](/users-guide/device-management/#logs) in the *User guide*.
 
 ![Logs](/images/device-demos/casa-system-router/router-log.png)
 

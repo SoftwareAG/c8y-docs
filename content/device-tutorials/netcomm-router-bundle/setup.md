@@ -75,7 +75,7 @@ To register your NetComm router to {{< product-c8y-iot >}}, you need the router'
 
 ![Serial Number](/images/device-demos/casa-system-router/router-serial-number.png)
 
-You can find detailed information on the registration process in the User guide. Follow the description on how to connect a device manually in [Device Management > Connecting devices](/users-guide/device-management/#device-registration-manually).
+You can find detailed information on the registration process in the *User guide*. Follow the description on how to connect a device manually in [Device Management > Connecting devices](/users-guide/device-management/#device-registration-manually).
 
 After clicking the **Accept** button on the {{< product-c8y-iot >}} platform, navigate to **All devices**. The router should appear here after registration. The default name of a router is "&#60;model&#62; (S/N &#60;serial number&#62;)", where &#60;model&#62; is the device model name. For example, the above router would appear as "NTC-221 (S/N 191611192800580)".
 

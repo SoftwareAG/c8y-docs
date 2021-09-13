@@ -13,7 +13,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register a smartphone in the platform
 
-Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in the User guide and register a smartphone in {{< product-c8y-iot >}}.
+Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in the *User guide* and register a smartphone in {{< product-c8y-iot >}}.
 
 >**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 

@@ -63,7 +63,7 @@ Depending on the second header there may be further headers to follow but curren
 
 After the headers, there follows the notification body as UTF-8 text. Typically a JSON document is carried in this text.
 
-### Notification description
+### Notification description header
 
 The second header line is the notification description string in the form of a '/' separated path. For API notifications descriptions have three parts: tenantId / type / sourceId 
 

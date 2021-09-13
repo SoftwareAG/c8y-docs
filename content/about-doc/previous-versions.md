@@ -10,21 +10,21 @@ You can switch between the versions by using the dropdown list at the top right.
 
 ### Documentation sources
 
-The {{< product-c8y-iot >}} documentation sources are located in a Git repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it.
+The {{< product-c8y-iot >}} documentation sources are located in a Git repository called "c8y-docs" in GitHub. The c8y-docs repository is public which means that no credentials are required to view or copy it.
 
 You find the documentation sources for the GA release versions in the following branches:
 
-Release {{< c8y-current-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}})
+Release {{< c8y-current-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.7.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.7.0)
 
-Release {{< c8y-previous-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}})
+Release {{< c8y-previous-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.9.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.9.0)
 
-Release {{< c8y-pre-previous-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-pre-previous-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-pre-previous-version >}})
+Release {{< c8y-pre-previous-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.10.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.10.0)
 
 You may also find the sources of older versions here in corresponding branches.
 
 The actual content of the documentation is stored in source files in Markdown format. These Markdown files are located in the folder */content*. You will find a subfolder for every guide here, which again contains subfolders.
 
-For further details on the architecture of the {{< product-c8y-iot >}} documentation website refer to the [README](https://bitbucket.org/m2m/c8y-docs/src/develop/README.md) at the top level of the repository.
+For further details on the architecture of the {{< product-c8y-iot >}} documentation website refer to the [README](https://github.com/SoftwareAG/c8y-docs/blob/develop/README.md) at the top level of the repository.
 
 #### Viewing documentation in HTML format
 

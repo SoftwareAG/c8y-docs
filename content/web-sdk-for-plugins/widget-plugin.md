@@ -8,7 +8,7 @@ layout: bundle
 
 Before you start working on the widget plugins, we recommend you to take a look at the [introduction](/web-sdk-for-plugins/overview) which deals with the basic concepts of applications and plugins as well as  the "[Hello world!](/web-sdk-for-plugins/hello-world/)" style demo plugin.
 
-You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples).
 
 ### Iconmap plugin
 
@@ -24,7 +24,7 @@ In order to achieve this goal you need to do the following steps:
 * Get the images for the devices.
 * Create a view for the widget.
 
-We assume that you have already created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/iconmap".
+We assume that you have already created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/iconmap".
 
 #### Create a plugin
 
@@ -256,11 +256,11 @@ In order to achieve this goal you need to do the following steps:
 * Get the weather for the device.
 * Create a view for the widget.
 
-We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folders "plugins/weather", "plugins/weatherAdmin" and "plugins/weatherService".
+We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folders "plugins/weather", "plugins/weatherAdmin" and "plugins/weatherService".
 
 #### Create a plugin for using the Dark Sky API
 
-In this case, we recommend you to download the "weatherService" plugin from the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and to save it in your application. This plugin provides the possibility to save and load the API key as well as retrieving weather information.
+In this case, we recommend you to download the "weatherService" plugin from the [repository](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) and to save it in your application. This plugin provides the possibility to save and load the API key as well as retrieving weather information.
 
 Do not forget to include the plugin in your application manifest:
 

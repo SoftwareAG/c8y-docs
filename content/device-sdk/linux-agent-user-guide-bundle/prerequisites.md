@@ -56,16 +56,15 @@ sudo apt install libcurl4-gnutls-dev
 sudo apt install liblua5.3-dev
 ```
 
-### Building the Cumulocity IoT C++ SDK
-
-The agent software requires the [Cumulocity IoT C++ SDK](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/), so you need to build the Cumulocity IoT C++ SDK first, before starting to build the software.
+### Building the C++ SDK
+The agent software requires the [Cumulocity IoT C++ SDK](https://github.com/SoftwareAG/cumulocity-sdk-c), so you need to build the Cumulocity IoT C++ SDK first, before starting to build the software.
 
 
 1. Launch a Git client and clone the SDK repository to a directory of your choice. For example:
 
     ```shell
     cd ~/<my_working_directory>
-    git clone https://bitbucket.org/m2m/cumulocity-sdk-c.git
+    git clone https://github.com/SoftwareAG/cumulocity-sdk-c.git
     ```
 
 2. Enter the directory and pull in all submodule dependencies.

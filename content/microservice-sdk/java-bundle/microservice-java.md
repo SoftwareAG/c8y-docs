@@ -457,4 +457,4 @@ For instance, using <http://localhost:8082/location/locations> will return all t
 
 ### Source code
 
-The code of our [iptracker-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/iptracker-microservice/) can be found in our Bitbucket M2M repositories.
+The code of our [iptracker-microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/iptracker-microservice) can be found in our public GitHub repositories.

@@ -6,7 +6,7 @@ layout: redirect
 
 After setting up everything and getting an insight into the folder structure and manifests, you can finally start running your first "Hello world!" application and plugin.
 
-* Clone or download and unpack the "Hello World!" plugin from [https://bitbucket.org/m2m/cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+* Clone or download and unpack the "Hello World!" plugin from [https://github.com/SoftwareAG/cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples).
 * Change into the directory that you just created.
 * Run "c8y install latest" to install the Cumulocity IoT UI package.
 * Run "c8y deploy:app myapplication". "myapplication" is the name of the "Hello World!" application specified in the "cumulocity.json" file.

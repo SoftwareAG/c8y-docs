@@ -444,7 +444,7 @@ As you can see, the modification needed is to construct `SrReporter` with a diff
 
 ### Final remarks
 
-1. All examples can be found in the [cumulocity-sdk-c/examples](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/examples/) folder in the Bitbucket repository.
+1. All examples can be found in the [cumulocity-sdk-c/examples](https://github.com/SoftwareAG/cumulocity-sdk-c/tree/master/examples) folder in the GitHub repository.
 2. The API reference is located in relative path *doc/html/index.html* in the library repository.
 3. The agent loop is an infinite loop, so it will never really return.
 4. Consult the [SmartREST reference](/reference/smartrest/) about how to define SmartREST templates.

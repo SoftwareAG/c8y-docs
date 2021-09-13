@@ -18,7 +18,7 @@ This section explains how to build the Cumulocity IoT Linux agent without Modbus
 
     ```shell
     cd ~/<my_working_directory>
-    git clone  https://bitbucket.org/m2m/cumulocity-agents-linux.git
+    git clone  https://github.com/SoftwareAG/cumulocity-agents-linux.git
     ```
 
 2. Export the SDK binaries and libraries path (i.e. _/home/me/repos/cumulocity-sdk-c_). Preferably add the following code to your _~/.bashrc_ for permanence.

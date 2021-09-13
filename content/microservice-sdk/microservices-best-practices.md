@@ -10,7 +10,7 @@ The following list is a collection of best practices you should take into consid
 
 #### Cumulocity IoT Microservice SDK
 
-Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The Cumulocity IoT Microservice SDK can be found [here](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/microservice/). See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
+Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The Cumulocity IoT Microservice SDK can be found [here](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/microservice). See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
 
 
 #### Disk I/O and local disk

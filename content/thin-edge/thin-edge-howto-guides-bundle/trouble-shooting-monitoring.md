@@ -27,7 +27,7 @@ tedge mqtt sub 'collectd/#'
 
 If no metrics are collected, please check the [MQTT configuration](/thin-edge/thin-edge-tutorials/#collectdconf).
 
-### Is the thin-edge `collectd-mapper` running?
+### Is the Thin Edge collectd-mapper running?
 
 ```
 sudo systemctl status collectd-mapper
@@ -51,7 +51,7 @@ tedge mqtt sub 'tedge/measurements'
 tedge mqtt sub 'c8y/#'
 ```
 
-If not see [connect a device to Cumulocity IoT](/thin-edge/thin-edge-tutorials/#connect-c8y).
+If not see [connect your device to {{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y).
 
 ### Are the collectd metrics published to Azure IoT?
 
@@ -59,4 +59,4 @@ If not see [connect a device to Cumulocity IoT](/thin-edge/thin-edge-tutorials/#
 tedge mqtt sub 'az/#'
 ```
 
-If not see [connect a device to Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure).
+If not see [connect your device to Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure).

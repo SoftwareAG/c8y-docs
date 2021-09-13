@@ -6,7 +6,7 @@ layout: redirect
 
 ### Create a self-signed certificate
 
-To create a new certificate you can use the [tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) thin-edge.io command:
+To create a new certificate you can use the thin-edge.io command [tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command):
 
 ```shell
 sudo tedge cert create --device-id alpha
@@ -14,10 +14,10 @@ sudo tedge cert create --device-id alpha
 
 >**Info:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
 
-The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) will create a certificate in a default location (`/etc/tedge/device-certs/`).
+The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) will create a certificate in a default location (*/etc/tedge/device-certs/*).
 To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command).
 
-Now you should have a certificate in the `/etc/tedge/device-certs/` directory.
+Now you should have a certificate in the */etc/tedge/device-certs/* directory.
 Verify with the following command:
 
 ```shell
@@ -42,7 +42,7 @@ Caused by:
 
 ##### Certificate already exists in the given location
 
-If the certificate already exists you may see following error:
+If the certificate already exists you may see the following error:
 
 ```plain
 Error: failed to create a test certificate for the device alpha.
@@ -55,7 +55,7 @@ Caused by:
 
 >**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
 
-Follow the instruction to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command):
+Follow the instruction in the error message to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command):
 
 ```shell
 sudo tedge cert remove

@@ -25,7 +25,7 @@ tedge mqtt pub 'tedge/measurements' '{ "temperature": 21.3 }' --qos 2
 ### Subscribe
 
 The [tedge mqtt sub](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-mqtt-command) command can be used to ease the debugging of MQTT communication on the local bridge.
-You can subscribe to topic of your choosing:
+You can subscribe to the topic of your choice:
 
 ```shell
 tedge mqtt sub tedge/errors
@@ -37,9 +37,9 @@ Or you can subscribe to any topic on the server using the wildcard (`#`) topic:
 tedge mqtt sub '#'
 ```
 
-Now use `tedge mqtt pub 'tedge/measurements' '{ "temperature": 21.3 }'` to publish message on the `tedge/measurements` topic with payload `{ "temperature": 21.3 }`.
+Now use `tedge mqtt pub 'tedge/measurements' '{ "temperature": 21.3 }'` to publish a message on the `tedge/measurements` topic with payload `{ "temperature": 21.3 }`.
 
-All messages from the sub-command are printed to `stdout` and can be captured to a file if you need to:
+All messages from the sub-command are printed to `stdout` and can be captured to a file if needed:
 
 ```shell
 tedge mqtt sub '#' > filename.mqtt

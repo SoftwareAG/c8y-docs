@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-In order to [authenticate HTTP requests on Cumulocity IoT](https://{{< domain-c8y >}}/api/#section/Authentication),
+In order to [authenticate HTTP requests on {{< product-c8y-iot >}}](https://{{< domain-c8y >}}/api/#section/Authentication),
 a device can retrieve a JWT token using MQTT.
 
 ### Retrieving the token

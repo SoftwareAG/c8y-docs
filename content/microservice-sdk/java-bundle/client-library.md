@@ -252,6 +252,71 @@ If you wish to disconnect, the following code must be used:
 subscriber.disconnect();
 ```
 
+### Accessing the Notifications 2.0 service
+
+Notifications 2.0 APIs can be accessed in a very similar manner as described above for the inventory. The following snippet shows how users can create, query and delete notification subscriptions along with usage of TokenAPI:
+
+```java
+// Obtain a handle to the Subscription and Token API:
+private final NotificationSubscriptionApi notificationSubscriptionApi = platform.getNotificationSubscriptionApi();
+private final TokenApi tokenApi = platform.getTokenApi();
+
+// Create subscription for MO context
+final NotificationSubscriptionFilterRepresentation filterRepresentation = new NotificationSubscriptionFilterRepresentation();
+filterRepresentation.setApis(List.of("measurements"));
+filterRepresentation.setTypeFilter("c8y_Speed");
+
+final NotificationSubscriptionRepresentation subscriptionRepresentation1 = new NotificationSubscriptionRepresentation();
+subscriptionRepresentation1.setContext("mo");
+subscriptionRepresentation1.setSubscription("testSubscription1");
+subscriptionRepresentation1.setSource(mo);
+subscriptionRepresentation1.setSubscriptionFilter(filterRepresentation);
+subscriptionRepresentation1.setFragmentsToCopy(List.of("c8y_SpeedMeasurement", "c8y_MaxSpeedMeasurement"));
+
+subscriptionApi.subscribe(subscriptionRepresentation1);
+
+// Create subscription for tenant context
+final NotificationSubscriptionRepresentation subscriptionRepresentation2 = new NotificationSubscriptionRepresentation();
+subscriptionRepresentation2.setContext("tenant");
+subscriptionRepresentation2.setSubscription("testSubscription2");
+
+subscriptionApi.subscribe(subscriptionRepresentation2);
+
+// Obtain access token
+final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
+        properties.getSubscriber(),
+        "testSubscription1",
+        1440,
+        false);
+
+final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
+
+// Query all subscriptions
+final NotificationSubscriptionCollection notificationSubscriptionCollection = subscriptionApi.getSubscriptions();
+final List<NotificationSubscriptionRepresentation> subscriptions = notificationSubscriptionCollection.get().getSubscriptions();
+
+for (NotificationSubscriptionRepresentation subscriptionRepresentation : subscriptions) {
+    System.out.println(subscriptionRepresentation);
+}
+
+// Query subscriptions by filter
+final NotificationSubscriptionCollection filteredNotificationSubscriptionCollection = subscriptionApi
+        .getSubscriptionsByFilter(new NotificationSubscriptionFilter().byContext("mo"));
+final List<NotificationSubscriptionRepresentation> filteredSubscriptions = filteredNotificationSubscriptionCollection.get().getSubscriptions();
+
+for (NotificationSubscriptionRepresentation subscriptionRepresentation : filteredSubscriptions) {
+    System.out.println(subscriptionRepresentation);
+}
+
+// Delete all tenant subscriptions
+subscriptionApi.deleteTenantSubscriptions();
+
+// delete by source
+subscriptionApi.deleteBySource(mo.getId().getValue());
+```
+
+Users can also alternatively download the source code of `hello-world-notification-microservice` from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/hello-world-notification-microservice/) or [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) repositories to build and run it.
+
 ### Reliability features
 
 In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the Java client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be sent immediately. If not, the data will be buffered until the connection is back again. For this, asynchronous variants of the API calls are offered. For example, to send an alarm:

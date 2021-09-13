@@ -10,7 +10,7 @@ In this document you will get an overview on how to develop a plugin that adds a
 
 Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/web-sdk-for-plugins/overview/) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
-You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples).
 
 #### Device Contact plugin
 
@@ -26,7 +26,7 @@ In order to achieve this goal you need to do the following steps:
 * Display data in the tab.
 * Persist the data to Cumulocity IoT backend.
 
-We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/deviceContact".
+We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the [repository](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) mentioned above. You can also find the example described here in the folder "plugins/deviceContact".
 
 <a name="dependencies"></a>
 #### Adding dependencies
@@ -43,7 +43,7 @@ Add the printed list of plugins to the imports definition of your application ma
 
 > Note that you have to exclude the c8yBranding plugin if you have already defined your own branding plugin.
 
-However, if you prefer a more minimalistic approach you can also read the "cumulocity.json" file in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
+However, if you prefer a more minimalistic approach you can also read the "cumulocity.json" file in [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
 
 > **TIP**
 Run `c8y util:showimports cockpit` or `c8y util:showimports administration` to see other plugins available to you. The manifests for the built-in applications are stored in *_apps.json* inside "node_modules/cumulocity-ui-build".

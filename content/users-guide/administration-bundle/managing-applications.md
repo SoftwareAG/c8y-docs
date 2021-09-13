@@ -56,7 +56,7 @@ Each application will show the following properties, depending on the applicatio
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy"><i>Concepts guide</i></a>.</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>

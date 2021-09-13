@@ -6,7 +6,7 @@ layout: bundle
 
 {{< product-c8y-iot >}} provides a C++ reference agent which includes a plugin for Cloud Remote Access. 
 
-Find the source code at our public Bitbucket repositories:
+Find the source code at our public GitHub repositories:
 
-https://bitbucket.org/m2m/cumulocity-agents-linux/src <br>
+https://github.com/SoftwareAG/cumulocity-agents-linux <br>
 (note that for historical reasons the module is called vnc here)

@@ -69,7 +69,7 @@ or
 
 ### Configure the microservice utility tool
 
-The script can be found in the Bitbucket repository: [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice).
+The script can be found in the GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/blob/develop/microservices/scripts/microservice).
 
 Change the mode to allow the script to be executed:
 

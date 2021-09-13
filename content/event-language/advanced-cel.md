@@ -12,6 +12,6 @@ aliases:
 
   <p style="font-size:16px"><strong>For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to the <a href="/apama/introduction">Streaming Analytics guide</a>.</strong></p>
 
-<p style="font-size:16px">For details on migration, refer to <a href="/apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the <i>Streaming analytics guide</i>.</p>
+<p style="font-size:16px">For details on migration, refer to <a href="/apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the <i>Streaming Analytics guide</i>.</p>
 
 </div>

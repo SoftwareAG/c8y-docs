@@ -347,7 +347,7 @@ The connection settings should look like this:
 
 ### Cumulocity MQTT Example Client
 
-The code of our example MQTT client implemented in Java, which connects to the platform using x.509 certficiates, is available here: https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/.
+The code of our example MQTT client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
 
 Here is an example that shows how to add the needed dependency in Maven to use Eclipse Paho client:

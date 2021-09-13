@@ -542,7 +542,7 @@ In order to deploy the application, run the deploy script. You must provide the 
 
 #### Microservice package and deploy
 
-Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
+Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/blob/develop/microservices/scripts/microservice):
 
 Next, add execution permissions
 

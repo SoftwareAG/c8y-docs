@@ -10,21 +10,21 @@ You can switch between the versions by using the dropdown list at the top right.
 
 ### Documentation sources
 
-The Cumulocity IoT documentation sources are located in a Git repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it.
+The Cumulocity IoT documentation sources are located in a Git repository called "c8y-docs" in GitHub. The c8y-docs repository is public which means that no credentials are required to view or copy it.
 
 You find the documentation sources for the GA release versions in the following branches:
 
-Release 10.5.7: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.7](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.7)
+Release 10.5.7: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.5.7](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.5.7)
 
-Release 10.6.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0)
+Release 10.6.0: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.6.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.6.0)
 
-Release 10.6.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6)
+Release 10.6.6: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.6.6](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.6.6)
 
 You may also find the sources of older versions here in corresponding branches.
 
 The actual content of the documentation is stored in source files in Markdown format. These Markdown files are located in the folder */content*. You will find a subfolder for every guide here, which again contains subfolders.
 
-For further details on the architecture of the Cumulocity IoT documentation website refer to the [README](https://bitbucket.org/m2m/c8y-docs/src/develop/README.md) at the top level of the repository.
+For further details on the architecture of the Cumulocity IoT documentation website refer to the [README](https://github.com/SoftwareAG/c8y-docs/blob/develop/README.md) at the top level of the repository.
 
 #### Viewing documentation in HTML format
 

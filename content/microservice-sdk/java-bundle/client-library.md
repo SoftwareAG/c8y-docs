@@ -315,7 +315,7 @@ subscriptionApi.deleteTenantSubscriptions();
 subscriptionApi.deleteBySource(mo.getId().getValue());
 ```
 
-Users can also alternatively download the source code of `hello-world-notification-microservice` from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/hello-world-notification-microservice/) or [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) repositories to build and run it.
+Users can also alternatively download the source code of `hello-world-notification-microservice` from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) repository to build and run it.
 
 ### Reliability features
 

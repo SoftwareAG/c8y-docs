@@ -4,20 +4,21 @@ title: How to register
 layout: redirect
 ---
 
-### Create self-signed certificate
+### Create a self-signed certificate
 
-To create new certificate you can use [`tedge cert create`](/thin-edge/thin-edge-references/#create) thin-edge.io command:
+To create a new certificate you can use the thin-edge.io command [tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command):
 
 ```shell
 sudo tedge cert create --device-id alpha
 ```
 
-> Note: `tedge cert` requires `sudo` privilege. This command provides no output on success.
+>**Info:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
 
-[`sudo tedge cert create`](/thin-edge/thin-edge-references/#create) will create certificate in a default location (`/etc/tedge/device-certs/`).
-To use a custom location, refer to [`tedge config`](/thin-edge/thin-edge-references/#tedge-config).
+The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) will create a certificate in a default location (*/etc/tedge/device-certs/*).
+To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command).
 
-Now you should have a certificate in the `/etc/tedge/device-certs/` directory.
+Now you should have a certificate in the */etc/tedge/device-certs/* directory.
+Verify with the following command:
 
 ```shell
 $ ls /etc/tedge/device-certs/
@@ -26,9 +27,9 @@ $ ls /etc/tedge/device-certs/
 
 #### Errors
 
-##### Certificate creation fails due to invalid device id
+##### Certificate creation fails due to invalid device ID
 
-If non-supported characters are used for the device id then the cert create will fail with below error:
+If the device ID contains unsupported characters, `tedge cert create` will fail with the below error:
 
 ```plain
 Error: failed to create a test certificate for the device +.
@@ -41,7 +42,7 @@ Caused by:
 
 ##### Certificate already exists in the given location
 
-If the certificate already exists you may see following error:
+If the certificate already exists you may see the following error:
 
 ```plain
 Error: failed to create a test certificate for the device alpha.
@@ -52,17 +53,12 @@ Caused by:
             Run `tedge cert remove` first to generate a new certificate.
 ```
 
-> Warning! Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
+>**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
 
-Follow the instruction to remove the existing certificate and issue [`tedge cert remove`](/thin-edge/thin-edge-references/#remove):
+Follow the instruction in the error message to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command):
 
 ```shell
 sudo tedge cert remove
 ```
 
-and try [`tedge cert create`](/thin-edge/thin-edge-references/#create) once again.
-
-### Next steps
-
-1. [How to connect?](/thin-edge/thin-edge-howto-guides/#connect)
-2. [How to use the tedge mqtt module?](/thin-edge/thin-edge-howto-guides/#publish-and-subscribe)
+and try [`tedge cert create`](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) once again.

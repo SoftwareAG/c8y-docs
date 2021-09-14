@@ -4,21 +4,21 @@ title: How to connect
 layout: redirect
 ---
 
-### Connect to {{< product-c8y-iot >}}
+### Connect to Cumulocity IoT
 
-To create northbound connection a local bridge shall be established and this can be achieved with `tedge` cli and following commands:
-> Note: `tedge connect` requires `sudo` privilege.
+To create a northbound connection, you must establish a local bridge.
+To achieve this, use the tedge CLI and the commands described below.
 
-___
+>**Info:** `tedge connect` requires `sudo` privilege.
 
-Configure required parameters for thin-edge.io with [`tedge config set`](/thin-edge/thin-edge-references/#set):
+Configure the required parameters for thin-edge.io with [tedge config set](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-config-command):
 
 ```shell
 sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 ```
 
-> Tip: If you you are unsure which parameters are required for the command to work run the command and it will tell you which parameters are missing.
-> For example, if we issue [`tedge connect c8y`](/thin-edge/thin-edge-references/#tedge-connect) without any configuration following advice will be given:
+>**Tip:** If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
+> For example, if you issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#cumulocity-iot) without any configuration, the following piece of advice will be given:
 >
 > ```shell
 > $ tedge connect c8y`
@@ -29,28 +29,23 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 >     Required configuration item is not provided 'c8y.url', run 'tedge config set c8y.url <value>' to add it to config.
 > ```
 >
-> This message explains which configuration parameter is missing and how to add it to configuration, in this case we are told to run `tedge config set c8y.url <value>`.
-
-___
+> This message explains which configuration parameter is missing and how to add it to configuration. In this case we are told to run `tedge config set c8y.url <value>`.
 
 The next step is to have the device certificate trusted by {{< product-c8y-iot >}}. This is done by uploading the certificate of the signee.
-You can upload root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [`tedge cert upload`](/thin-edge/thin-edge-references/#upload) as described below.
+You can upload the root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [tedge cert upload](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-cert-command) as described below.
 
-> Note: This command takes parameter `user`, this is due to upload mechanism to {{< product-c8y-iot >}} cloud which uses username and password for authentication.
+>**Info:** This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
 >
-> After issuing this command you are going to be prompted for a password. Users usernames and passwords are not stored in configuration due to security.
+> After issuing this command you are going to be prompted for a password. Usernames and passwords are not stored in the configuration for security reasons.
 
 ```shell
 $ sudo tedge cert upload c8y –-user <username>
 Password:
 ```
 
-where:
-> `username` -> user in {{< product-c8y-iot >}} with permissions to upload new certificates
+where `username` is the user in {{< product-c8y-iot >}} with permissions to upload new certificates.
 
-___
-
-To create bridge use [`tedge connect`](/thin-edge/thin-edge-references/#tedge-connect):
+To create the bridge, use [`tedge connect`](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-connect-command):
 
 ```shell
 $ sudo tedge connect c8y
@@ -87,7 +82,7 @@ Try 1 / 2: Sending a message to {{< product-c8y-iot >}}. Received expected respo
 
 ##### Connection already established
 
-If connection has already been established following error may appear:
+If a connection has already been established, the following error may appear:
 
 ```shell
 $ sudo tedge connect c8y
@@ -101,7 +96,7 @@ Caused by:
     Connection is already established. To remove existing connection use 'tedge disconnect c8y' and try again.
 ```
 
-To remove existing connection and create new one follow the advice and issue [`tedge disconnect c8y`](/thin-edge/thin-edge-references/#tedge-disconnect):
+To remove the existing connection and create a new one, follow the advice and issue [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-disconnect-command):
 
 ```shell
 $ sudo tedge disconnect c8y
@@ -116,16 +111,15 @@ Stopping tedge-mapper service.
 Disabling tedge-mapper service.
 
 tedge-mapper service successfully stopped and disabled!
-
 ```
 
-> Note: `tedge disconnect c8y` also stops and disable **tedge-mapper** service if it is installed on the device.
+>**Info:** `tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
 
-And now you can issue [`tedge connect c8y`](/thin-edge/thin-edge-references/#tedge-connect) to create new bridge.
+Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-connect-command) to create a new bridge.
 
 ##### Connection check failure
 
-Sample output of tedge connect when this error occurs:
+Sample output of `tedge connect` when this error occurs:
 
 ```shell
 $ sudo tedge connect c8y
@@ -162,25 +156,25 @@ Warning: Bridge has been configured, but {{< company-c8y >}} connection check fa
 
 This error may be caused by some of the following reasons:
 
-- No access to Internet connection
+- No access to the internet connection
 
-Local bridge has been configured and is running but the connection check has failed due to no access to the northbound endpoint.
+  The local bridge has been configured and is running but the connection check has failed due to no access to the northbound endpoint.
 
 - {{< product-c8y-iot >}} tenant not available
 
-Tenant couldn't be reached and therefore connection check has failed.
+  The tenant couldn't be reached and therefore the connection check has failed.
 
-- Check bridge
+- Check the bridge
 
-Bridge configuration is correct but the connection couldn't be established to unknown reason.
+  The bridge configuration is correct but the connection couldn't be established for an unknown reason.
 
-To retry start with [`tedge disconnect c8y`](/thin-edge/thin-edge-references/#tedge-disconnect) removing this bridge:
+  To retry, start with [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-disconnect-command), removing this bridge:
 
-```shell
-sudo tedge disconnect c8y
-```
+  ```shell
+  sudo tedge disconnect c8y
+  ```
 
-When this is done, issue [`tedge connect c8y`](/thin-edge/thin-edge-references/#tedge-connect) again.
+  When this is done, issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#the-tedge-connect-command) again.
 
 ##### File permissions
 
@@ -204,7 +198,8 @@ Caused by:
     2: Permission denied (os error 13)
 ```
 
-tedge connect cannot access location to create the bridge configuration (`/etc/tedge/mosquitto-conf`), check permissions for the directory and adjust it to allow the tedge connect to access it.
+`tedge connect` cannot access the location to create the bridge configuration (*/etc/tedge/mosquitto-conf*).
+Check the permissions for the directory and adjust it to allow `tedge connect` to access it.
 
 Example of incorrect permissions:
 
@@ -213,7 +208,8 @@ $ ls -l /etc/tedge
 dr--r--r-- 2 tedge     tedge     4096 Mar 30 15:40 mosquitto-conf
 ```
 
-You should give it the permission 755.
+You should give it the permission 755:
+
 ```shell
 $ ls -l /etc/tedge
 drwxr-xr-x 2 tedge     tedge     4096 Mar 30 15:40 mosquitto-conf
@@ -241,8 +237,5 @@ Caused by:
     Service mosquitto not found. Install mosquitto to use this command.
 ```
 
-mosquitto server has not been installed on the system and it is required to run this command, refer to [How to install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation) to install mosquitto and try again.
-
-### Next steps
-
-1. [How to use the tedge mqtt module](/thin-edge/thin-edge-howto-guides/#publish-and-subscribe)
+The mosquitto server has not been installed on the system but it is required to run this command.
+Refer to [How to install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation) to install mosquitto and try again.

@@ -11,13 +11,12 @@ See [Connect your device to Azure IoT](#connect-azure), if you want to connect A
 
 Before you to connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (e.g. eu-latest.{{< domain-c8y >}}). Your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (e.g. `t00000007`), a user name and password. None of these credentials will be stored on the device. These are only required once, to register the device.
 
-If not done yet, [install `thin-edge.io` on your device](/how-to-guides/002_installation.md).
+If not done yet, [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation).
 
-You can now use the [`tedge` command](/references/tedge.md) to:
-* [create a certificate for you device](connect-c8y.md#create-the-certificate),
-* [make the device certificate trusted by {{< product-c8y-iot >}}](connect-c8y.md#make-the-device-trusted-by-cumulocity),
-* [connect the device](connect-c8y.md#connect-the-device), and
-* [send your first telemetry data](#sending-your-first-telemetry-data).
+You can now use the [tedge command](#tedge) to:
+* [create a certificate for you device](#create-the-certificate),
+* [make the device certificate trusted by {{< product-c8y-iot >}}](#make-the-device-trusted-by-cumulocity-iot),
+* [connect the device](#sending-your-first-telemetry-data).
 
 ### Configure the device
 
@@ -66,7 +65,7 @@ Thumbprint: CDBF4EC17AA02829CAC4E4C86ABB82B0FE423D3E
 The issuer of this certificate is the device itself.
 This is a self-signed certificate.
 To use a certificate signed by your certificate authority,
-see [References > `tedge cert`](../references/tedge-cert.md).
+see [References > tedge cert](/thin-edge/thin-edge-references/#tedge-cert).
 
 ### Make the device trusted by {{< product-c8y-iot >}}
 
@@ -144,6 +143,6 @@ You should observe a "temperature measurement" graph with the new data point.
 
 You can now:
 * learn how to [send various kinds of telemetry data](#send-thin-edge-data)
-  using the cloud-agnostic [Thin Edge JSON data format](/thin-edge/thin-edge-architecture#thin-edge-json),
-* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](../references/bridged-topics.md#cumulocity-mqtt-topics)
+  using the cloud-agnostic [Thin Edge JSON data format](/thin-edge/thin-edge-architecture/#thin-edge-json),
+* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](/thin-edge/thin-edge-references/#cumulocity-iot-mqtt-topics)
   if you prefer to use directly {{< product-c8y-iot >}} specific formats and protocols.

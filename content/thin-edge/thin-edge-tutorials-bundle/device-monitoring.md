@@ -12,8 +12,8 @@ and can proactively initiate actions in case the device seems to malfunction.
 Additionally, the metrics can be used to help the customer troubleshoot when problems with the device are reported.
 
 Thin-edge.io uses the open source component collectd to collect the metrics from the device, see [https://collectd.org/](https://collectd.org/) for more information.
-Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](../architecture/thin-edge-json.md) format
-and then into the [cloud-vendor specific format](../architecture/mapper.md).
+Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format
+and then into the [cloud-vendor specific format](/thin-edge/thin-edge-architecture/#mapper).
 
 Enabling monitoring on your device is a 3-steps process:
 1. [Install collectd](#install-collectd),
@@ -146,8 +146,8 @@ $ tedge mqtt sub 'collectd/#'
 
 ```
 
-The 'tedge-mapper-collectd' translates these collectd measurements into the [thin-edge.io JSON](../architecture/thin-edge-json.md) format,
-[grouping the measurements](/thin-edge/thin-edge-references#bridged-topics) emitted by each plugin:
+The 'tedge-mapper-collectd' translates these collectd measurements into the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format,
+[grouping the measurements](/thin-edge/thin-edge-references/#azure-mqtt-topics) emitted by each plugin:
 
 ```
 tedge mqtt sub 'tedge/measurements'
@@ -171,4 +171,4 @@ If your device is not connected yet see:
 
 ### Trouble shooting
 
-See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides#touble-shooting-monitoring)
+See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides/#touble-shooting-monitoring)

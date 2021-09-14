@@ -8,7 +8,7 @@ thin-edge.io cli provides a convenient way to debug and aid development process.
 
 ### Publish
 
-Command [`tedge mqtt pub`](../references/tedge-mqtt.md) can be used to publish MQTT messages on a topic to the local mosquitto server.
+Command [`tedge mqtt pub`](/thin-edge/thin-edge-references/#pub) can be used to publish MQTT messages on a topic to the local mosquitto server.
 
 Example:
 
@@ -24,7 +24,7 @@ tedge mqtt pub 'tedge/measurements' '{ "temperature": 21.3 }' --qos 2
 
 ### Subscribe
 
-Command [`tedge mqtt sub`](../references/tedge-mqtt.md) can be used to ease debugging of of MQTT communication on local bridge. You can subscribe to topic of your choosing:
+Command [`tedge mqtt sub`](/thin-edge/thin-edge-references/#sub) can be used to ease debugging of of MQTT communication on local bridge. You can subscribe to topic of your choosing:
 
 ```shell
 tedge mqtt sub tedge/errors

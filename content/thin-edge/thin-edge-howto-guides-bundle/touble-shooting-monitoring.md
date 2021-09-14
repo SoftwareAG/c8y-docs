@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 To install and configure monitoring on your device,
-see the tutorial [Monitor your device with collectd](../tutorials/device-monitoring.md).
+see the tutorial [Monitor your device with collectd](/thin-edge/thin-edge-tutorials/#device-monitoring).
 
 ### Is collectd running?
 
@@ -25,7 +25,7 @@ sudo systemctl start collectd
 tedge mqtt sub 'collectd/#'
 ```
 
-If no metrics are collected, please check the [MQTT configuration](../tutorials/device-monitoring.md#collectdconf)
+If no metrics are collected, please check the [MQTT configuration](/thin-edge/thin-edge-tutorials/#collectdconf)
 
 ### Is the thin-edge `collectd-mapper` running?
 
@@ -39,19 +39,19 @@ If not, launch collected
 sudo systemctl start collectd-mapper
 ```
 
-### Are the collectd metrics published in Thin Edge JSON format?
+### Are the collectd metrics published in Thin-Edge JSON format?
 
 ```
 tedge mqtt sub 'tedge/measurements'
 ```
 
-### Are the collectd metrics published to Cumulocity IoT?
+### Are the collectd metrics published to {{< product-c8y-iot >}}?
 
 ```
 tedge mqtt sub 'c8y/#'
 ```
 
-If not see how to [connect a device to Cumulocity IoT](../tutorials/connect-c8y.md)
+If not see how to [connect a device to {{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y)
 
 ### Are the collectd metrics published to Azure IoT?
 
@@ -59,4 +59,4 @@ If not see how to [connect a device to Cumulocity IoT](../tutorials/connect-c8y.
 tedge mqtt sub 'az/#'
 ```
 
-If not see how to [connect a device to Azure IoT](../tutorials/connect-azure.md)
+If not see how to [connect a device to Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure)

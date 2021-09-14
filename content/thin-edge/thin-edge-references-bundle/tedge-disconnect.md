@@ -17,7 +17,7 @@ FLAGS:
 
 SUBCOMMANDS:
     az      Remove bridge connection to Azure
-    c8y     Remove bridge connection to Cumulocity
+    c8y     Remove bridge connection to {{< company-c8y >}}
     help    Prints this message or the help of the given subcommand(s)
 ```
 
@@ -35,11 +35,11 @@ FLAGS:
     -V, --version    Prints version information
 ```
 
-### Cumulocity
+### Cumulocity IoT
 
 ```
 tedge-disconnect-c8y 0.2.0
-Remove bridge connection to Cumulocity
+Remove bridge connection to {{< company-c8y >}}
 
 USAGE:
     tedge disconnect c8y

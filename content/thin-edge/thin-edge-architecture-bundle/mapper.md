@@ -17,7 +17,7 @@ When the mapper receives a correctly formatted message, it translates the messag
 The {{< product-c8y-iot >}} mapper translates [Thin Edge JSON](#thin-edge-json) into {{< product-c8y-iot >}}'s [JSON via MQTT](https://cumulocity.com/guides/device-sdk/mqtt/#json).
 The translated messages are published on the topic `c8y/measurement/measurements/create` from where they are forwarded to {{< product-c8y-iot >}}. This mapper is launched by the `tedge connect c8y` command, and stopped by the `tedge disconnect c8y` command.
 
-Example in Thin Edge JSON:
+Example in Thin-Edge JSON:
 
 ```json
 {
@@ -62,7 +62,7 @@ The Azure IoT Hub mapper processes a message in the following way:
 
 1. Validates if it is a correct Thin Edge JSON message or not.
 2. Validates if the incoming message size is below 255 KB.
-The size of all device-to-cloud messages must be up to 256 KB, see [Azure IoT Hub Manager](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-d2c-guidance) for more information.
+The size of all device-to-cloud messages must be up to 256 KB, see the Azure IoT Hub Manager at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-d2c-guidance](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-d2c-guidance) for more information.
 The mapper keeps 1 KB as a buffer for the strings added by Azure.
 3. Adds a current timestamp if a timestamp is not included in an incoming message (default). To stop this behavior, refer to the following instruction:
 

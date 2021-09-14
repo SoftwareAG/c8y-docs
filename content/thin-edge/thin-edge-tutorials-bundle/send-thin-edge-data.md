@@ -1,29 +1,29 @@
 ---
 weight: 30
-title: Send Thin Edge JSON data
+title: Send Thin-Edge JSON data
 layout: redirect
 ---
 
 Once your Thin Edge device is configured and connected to an IoT cloud provider, you can start sending measurements.
-Refer to [Connecting to Cumulocity](../tutorials/connect-c8y.md) or tutorials for other cloud providers
+Refer to [Connect your device to {{< product-c8y-iot >}}](#connect-c8y) or tutorials for other cloud providers
 to learn how to connect your Thin Edge device to an IoT cloud provider.
 
-In this tutorial, we'll see how different kinds of measurements are represented in Thin Edge JSON format and
+This section gives an overview on how different kinds of measurements are represented in Thin Edge JSON format and
 how they can be sent to the connected cloud provider.
-For a more detailed specification of this data format, refer to [Thin Edge JSON Specification](../architecture/thin-edge-json.md)
+For a more detailed specification of this data format, refer to [Architecture > Thin Edge JSON format](/thin-edge/thin-edge-architecture/#thin-edge-json).
 
 ### Sending measurements
 
-A simple single-valued measurement like a temperature measurement, can be represented in Thin Edge JSON as follows:
+A simple single-valued measurement like a temperature measurement, is represented in Thin Edge JSON as follows:
 
 ```json
 { "temperature": 25 }
 ```
 
-with the key-value pair representing the measurement type and the numeric value of the measurement.
+The key-value pair represents the measurement type and the numeric value of the measurement.
 
-This measurement can be sent from the Thin Edge device to the cloud by publishing this message to the `tedge/measurements` MQTT topic.
-Processes running on the Thin Edge device can publish messages to the local MQTT broker using any MQTT client or library.
+This measurement can be sent from the Thin-Edge device to the cloud by publishing this message to the `tedge/measurements` MQTT topic.
+Processes running on the Thin-Edge device can publish messages to the local MQTT broker using any MQTT client or library.
 In this tutorial, we'll be using the `tedge mqtt pub` command line utility for demonstration purposes.
 
 The temperature measurement described above can be sent using the `tedge mqtt pub` command as follows:
@@ -32,25 +32,25 @@ The temperature measurement described above can be sent using the `tedge mqtt pu
 $ tedge mqtt pub tedge/measurements '{ "temperature": 25 }'
 ```
 
-The first argument to the `tedge mqtt pub` command is the topic to which the measurements must be published to.
+The first argument to the `tedge mqtt pub` command is the topic to which the measurements must be published.
 The second argument is the Thin Edge JSON representation of the measurement itself.
 
-When connected to a cloud provider, a message mapper component for that cloud provider would be running as a daemon,
+When connected to a cloud provider, a message mapper component for that cloud provider will be running as a daemon,
 listening to any measurements published to `tedge/measurements`.
-The mapper, on receipt of these Thin Edge JSON measurements, will map those measurements to their equivalent
+The mapper, on receipt of these Thin-Edge JSON measurements, will map those measurements to their equivalent
 cloud provider native representation and send it to that cloud.
 
-For example, when the device is connected to Cumulocity, the Cumulocity mapper component will be performing these actions.
-To check if these measurements have reached Cumulocity, login to your Cumulocity dashboard and navigate to
-_Device Management => Devices => All devices => <your device id> => Measurements_
-and see if your temperature measurement is appearing in the dashboard.
+For example, when the device is connected to {{< product-c8y-iot >}}, the {{< product-c8y-iot >}} mapper component will be performing these actions.
+To check if these measurements have reached {{< product-c8y-iot >}}, log in to your {{< product-c8y-iot >}} dashboard and navigate to
+**Device Management** > **Devices** > **All devices** > <your device id> > **Measurements**
+and check if your temperature measurement shows up in the dashboard.
 
 ### Complex measurements
 
-You can represent measurements that are far more complex than the single-valued ones described above using the Thin Edge JSON format.
+You can represent measurements that are far more complex than the single-valued ones described above using the Thin-Edge JSON format.
 
 A multi-valued measurement like `three_phase_current` that consists of `L1`, `L2` and `L3` values,
-representing the current on each phase can be represented as follows:
+representing the current on each phase, can be represented as follows:
 
 ```json
 {
@@ -79,12 +79,12 @@ along with a multi-valued `coordinate` measurement, all sharing a single timesta
 ```
 
 The `time` field is not a regular measurement like `temperature` or `pressure` but a special reserved field.
-Refer to [Thin Edge JSON Specification](../architecture/thin-edge-json.md) for more details on the kinds of telemetry
+Refer to the [Architecture > Thin Edge JSON format](/thin-edge/thin-edge-architecture/#thin-edge-json) for more details on the kinds of telemetry
 data that can be represented in Thin Edge JSON format and the reserved fields like `time` used in the above example.
 
 ### Error detection
 
-If the data published to the `tedge/measurements` topic are not valid Thin Edge JSON measurements, those won't be
+If the data published to the `tedge/measurements` topic are not valid Thin-Edge JSON measurements, those won't be
 sent to the cloud but instead you'll get a feedback on the `tedge/errors` topic, if you subscribe to it.
 The error messages published to this topic will be highly verbose and may change in the future.
 So, use it only for debugging purposes during the development phase and it should **not** be used for any automation.

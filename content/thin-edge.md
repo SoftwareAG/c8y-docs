@@ -1,5 +1,5 @@
 ---
-title: Thin-edge guide
+title: Thin Edge guide
 bundle: thin-edge
 icon: "fa fa-book"
 type: root

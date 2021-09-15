@@ -7,18 +7,18 @@ outputs:
 - json
 ---
 
-### Why `thin-edge.io`
+### Why thin-edge.io
 
-An open-source & cloud-agnostic IoT framework designed for resource-constrained Edge devices.
+Thin-edge.io is an open-source & cloud-agnostic IoT framework designed for resource-constrained Edge devices.It offers:
 
-* Simple and secure device connectivity.
-* Freedom of cloud platform.
-* Freedom of programming language.
+* Simple and secure device connectivity
+* Freedom of cloud platform
+* Freedom of programming language
 
 ### How to start
 
-1) The very first step is to [install `thin-edge.io`](/thin-edge/thin-edge-howto-guides/#installation)
-and to connect your device to your IoT cloud,
+1) First [install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation)
+and connect your device to your IoT cloud,
 either [{{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y)
 or [Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure) (10 minutes).
 2) You will then be able to [send telemetry data](/thin-edge/thin-edge-tutorials/#send-thin-edge-data) to the cloud

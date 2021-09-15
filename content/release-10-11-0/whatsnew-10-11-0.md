@@ -17,11 +17,13 @@ The Cumulocity IoT OEE application uses machine data, master data and planning d
 
 For details, refer to the [OEE guide](https://cumulocity.com/guides/oee/overview/).
 
-### New Messaging Service components to support the new notifications API
+### New messaging-based notifications API
 
-This release of the Cumulocity IoT platform adds initial support for the new Cumulocity IoT Messaging Service. The Messaging Service is a significant new platform capability that enables reliable, scalable and high-performance transfer of IoT data between platform components. At this time, the Messaging Service is an optional feature that is only required in environments that will be using the new microservice-based data broker implementation. In future releases more capabilities using the Messaging Service will be enabled, and the Messaging Service itself will become a core component of every Cumulocity IoT platform environment.
+A new API (Notifications 2.0) for subscribing to notifications from the platform has been added. The new API is conceptually similar to the existing *realtime* notifications API, but powered by the Cumulocity IoT Messaging Service that enables reliable, scalable and high-performance flow of IoT data within and beyond the Cumulocity IoT platform. Notifications 2.0 provides new REST API endpoints for managing subscriptions to notifications, and a new WebSocket protocol for streaming notifications into a client application. Potential users of Notifications 2.0 should note that this is a **new** API, not a re-implementation of the the current realtime notifications. Users will need to implement new application code to make use of the new API. The realtime notifications API remains available and unchanged in this release.
 
-Contact [product support](/releasenotes/about/contacting-support/) or your Software AG sales representative to inquire about using the Messaging Service with the microservice-based data broker in your Cumulocity IoT environment. The new *Messaging Service - Installation & operations guide* documents installation, operation, management, monitoring and troubleshooting of the Messaging Service and the microservice-based data broker implementation.
+At this time the Notifications 2.0 API is only available to tenants in the eu-latest.cumulocity.com public cloud environment. It can also be made available by request in private cloud environments. Contact (product support)[https://cumulocity.com/guides/releasenotes/releasenotes/about/contacting-support/] to inquire about using Notifications 2.0 in your Cumulocity IoT environment.
+
+For details of the capabilities and usage of Notifications 2.0, see the Cumulocity (API documentation)[https://cumulocity.com/api/]. The (Notifications 2.0 example microservice)[https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice] may also be a useful guide for users developing applications that will use the new API.
 
 ### Thin Edge
 

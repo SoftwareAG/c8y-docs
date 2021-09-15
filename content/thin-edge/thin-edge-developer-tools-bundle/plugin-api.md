@@ -18,14 +18,14 @@ Each plugin can implement a specific software management policy.
 
 ## Plugin repository
 
-To be used by thin-edge, a plugin has to be stored in the directory */etc/tedge/sm-plugins*.
+To be used by Thin Edge, a plugin has to be stored in the directory */etc/tedge/sm-plugins*.
 The same plugin can have different names, using virtual links.
 One of the plugins can have the name `default`. This plugin is then used as the default plugin.
 
 On start-up and sign-up, the sm-agent registers the plugins as follows:
 
 1. Iterate over the executable file of the directory */etc/tedge/sm-plugins*.
-2. Check if the executable is indeed a plugin, calling the [`list` command](/thin-edge/thin-edge-developer-tools/#list).
+2. Check if the executable is indeed a plugin, calling the [list command](/thin-edge/thin-edge-developer-tools/#list).
 
 <a name="pluginapi"></a>
 ## Plugin API

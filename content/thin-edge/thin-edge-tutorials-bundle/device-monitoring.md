@@ -147,7 +147,7 @@ $ tedge mqtt sub 'collectd/#'
 ```
 
 The 'tedge-mapper-collectd' translates these collectd measurements into the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format,
-[grouping the measurements](/thin-edge/thin-edge-developer-tools/mqtt-topics/#azure-mqtt-topics) emitted by each plugin:
+[grouping the measurements](/thin-edge/thin-edge-developer-tools/#collectd-topics) emitted by each plugin:
 
 ```
 tedge mqtt sub 'tedge/measurements'
@@ -171,4 +171,4 @@ If your device is not connected yet see:
 
 ### Trouble shooting
 
-See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides/#touble-shooting-monitoring)
+See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides/#trouble-shooting-monitoring)

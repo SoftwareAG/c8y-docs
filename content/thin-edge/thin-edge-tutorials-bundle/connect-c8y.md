@@ -13,10 +13,10 @@ Before you to connect your device to {{< product-c8y-iot >}}, you need the URL o
 
 If not done yet, [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation).
 
-You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/cli/#tedge-command) to:
+You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-command) to:
 * [create a certificate for you device](#create-the-certificate),
 * [make the device certificate trusted by {{< product-c8y-iot >}}](#make-the-device-trusted-by-cumulocity-iot),
-* [connect the device](#sending-your-first-telemetry-data).
+* [connect the device](#connect-the-device).
 
 ### Configure the device
 
@@ -65,16 +65,16 @@ Thumbprint: CDBF4EC17AA02829CAC4E4C86ABB82B0FE423D3E
 The issuer of this certificate is the device itself.
 This is a self-signed certificate.
 To use a certificate signed by your certificate authority,
-see [References > tedge cert](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command).
+see [References > tedge cert](/thin-edge/thin-edge-developer-tools/#tedge-cert-command).
 
-### Make the device trusted by {{< product-c8y-iot >}}
+### Make the device trusted by Cumulocity IoT
 
 For a certificate to be trusted by {{< product-c8y-iot >}},
 you need to add the certificate of the signing authority to the list of trusted certificates.
 In the {{< product-c8y-iot >}} UI, navigate to **Management** > **Trusted certificates** in the Device Management application in order to see this list for your {{< product-c8y-iot >}} tenant.
 
 Here, the device certificate is self-signed and has to be directly trusted by {{< company-c8y >}}.
-This can be done in two ways. In the UI: upload the certificate from your device (*/etc/tedge/device-certs/tedge-certificate.pem*) to your tenant at [Management > Trusted certificates](/device-management/#trusted-certificates). Alternatively, you can use the `tedge cert upload c8y` command.
+This can be done in two ways. In the UI: upload the certificate from your device (*/etc/tedge/device-certs/tedge-certificate.pem*) to your tenant at [Management > Trusted certificates](/users-guide/device-management/#managing-trusted-certificates). Alternatively, you can use the `tedge cert upload c8y` command.
 
 ```
 $ sudo tedge cert upload c8y --user <username>
@@ -144,5 +144,5 @@ You should observe a "temperature measurement" graph with the new data point.
 You can now:
 * learn how to [send various kinds of telemetry data](#send-thin-edge-data)
   using the cloud-agnostic [Thin Edge JSON data format](/thin-edge/thin-edge-architecture/#thin-edge-json),
-* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](/thin-edge/thin-edge-developer-tools/mqtt-topics/#cumulocity-iot-mqtt-topics)
+* or have a detailed view of the [topics mapped to and from {{< product-c8y-iot >}}](/thin-edge/thin-edge-developer-tools/#cumulocity-iot-mqtt-topics)
   if you prefer to use directly {{< product-c8y-iot >}} specific formats and protocols.

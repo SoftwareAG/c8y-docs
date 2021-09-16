@@ -9,14 +9,14 @@ To achieve this, use the tedge CLI and the commands described below.
 
 >**Info:** `tedge connect` requires `sudo` privilege.
 
-Configure the required parameters for thin-edge.io with [tedge config set](/thin-edge/thin-edge-developer-tools/cli/#tedge-config-command):
+Configure the required parameters for thin-edge.io with [tedge config set](/thin-edge/thin-edge-developer-tools/#set):
 
 ```shell
 sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 ```
 
 >**Tip:** If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
-> For example, if you issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#tedge-connect-command) without any configuration, the following piece of advice will be given:
+> For example, if you issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
 >
 > ```shell
 > $ tedge connect c8y`
@@ -30,7 +30,7 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 > This message explains which configuration parameter is missing and how to add it to configuration. In this case we are told to run `tedge config set c8y.url <value>`.
 
 The next step is to have the device certificate trusted by {{< product-c8y-iot >}}. This is done by uploading the certificate of the signee.
-You can upload the root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [tedge cert upload](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command) as described below.
+You can upload the root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [tedge cert upload](/thin-edge/thin-edge-developer-tools/#upload) as described below.
 
 >**Info:** This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
 >
@@ -43,7 +43,7 @@ Password:
 
 where `username` is the user in {{< product-c8y-iot >}} with permissions to upload new certificates.
 
-To create the bridge, use [tedge connect](/thin-edge/thin-edge-developer-tools/cli/#tedge-connect-command):
+To create the bridge, use [tedge connect](/thin-edge/thin-edge-developer-tools/#tedge-connect-command):
 
 ```shell
 $ sudo tedge connect c8y
@@ -94,7 +94,7 @@ Caused by:
     Connection is already established. To remove existing connection use 'tedge disconnect c8y' and try again.
 ```
 
-To remove the existing connection and create a new one, follow the advice and issue [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/cli/#tedge-disconnect-command):
+To remove the existing connection and create a new one, follow the advice and issue [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot-1):
 
 ```shell
 $ sudo tedge disconnect c8y
@@ -113,7 +113,7 @@ tedge-mapper service successfully stopped and disabled!
 
 >**Info:** `tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
 
-Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/tedge-connect-command) to create a new bridge.
+Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) to create a new bridge.
 
 #### Connection check failure
 
@@ -166,13 +166,13 @@ This error may be caused by some of the following reasons:
 
   The bridge configuration is correct but the connection couldn't be established for an unknown reason.
 
-  To retry, start with [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/cli/#tedge-disconnect-command), removing this bridge:
+  To retry, start with [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot-1), removing this bridge:
 
   ```shell
   sudo tedge disconnect c8y
   ```
 
-  When this is done, issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#tedge-connect-command) again.
+  When this is done, issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) again.
 
 #### File permissions
 

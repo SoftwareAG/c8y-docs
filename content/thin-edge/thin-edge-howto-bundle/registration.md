@@ -6,7 +6,7 @@ layout: redirect
 
 ### Create a self-signed certificate
 
-To create a new certificate you can use the thin-edge.io command [tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command):
+To create a new certificate you can use the thin-edge.io command [tedge cert create](/thin-edge/thin-edge-developer-tools/#create):
 
 ```shell
 sudo tedge cert create --device-id alpha
@@ -14,8 +14,8 @@ sudo tedge cert create --device-id alpha
 
 >**Info:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
 
-The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command) will create a certificate in a default location (*/etc/tedge/device-certs/*).
-To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/cli/#tedge-config-command).
+The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/#create) will create a certificate in a default location (*/etc/tedge/device-certs/*).
+To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/#tedge-config-command).
 
 Now you should have a certificate in the */etc/tedge/device-certs/* directory.
 Verify with the following command:
@@ -55,10 +55,10 @@ Caused by:
 
 >**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
 
-Follow the instruction in the error message to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command):
+Follow the instruction in the error message to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/#remove):
 
 ```shell
 sudo tedge cert remove
 ```
 
-and try [tedge cert create](/thin-edge/thin-edge-developer-tools/cli/#tedge-cert-command) once again.
+and try [tedge cert create](/thin-edge/thin-edge-developer-tools/#create) once again.

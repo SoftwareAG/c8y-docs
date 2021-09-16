@@ -1024,8 +1024,10 @@ Update the software installed on the device.
 **Example**
 
 ```text
-528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
+528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
+
+>**Note:** The action `install` is also used for a software update.
 
 <a name="530"></a>
 ##### Cloud Remote Access Connect (530)

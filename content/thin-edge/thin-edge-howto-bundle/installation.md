@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: How to install thin-edge.io
+title: Install thin-edge.io
 layout: redirect
 ---
 

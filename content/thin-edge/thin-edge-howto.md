@@ -1,5 +1,5 @@
 ---
 weight: 50
-title: How-to guides
+title: How-to recipes
 layout: bundle
 ---

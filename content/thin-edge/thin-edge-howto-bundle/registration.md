@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: How to register
+title: Register a device
 layout: redirect
 ---
 

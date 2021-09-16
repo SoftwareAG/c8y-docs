@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: How to use the tedge mqtt module
+title: Use the tedge mqtt module
 layout: redirect
 ---
 

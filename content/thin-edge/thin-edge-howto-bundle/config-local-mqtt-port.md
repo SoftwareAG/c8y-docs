@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: How to configure the local port
+title: Configure the local port
 layout: redirect
 ---
 

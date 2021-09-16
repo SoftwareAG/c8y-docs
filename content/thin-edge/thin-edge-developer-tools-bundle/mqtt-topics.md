@@ -8,7 +8,7 @@ This document lists the MQTT topics that are supported by thin-edge.io.
 
 ### Thin Edge JSON MQTT topics
 
-To send the Thin Edge JSON measurements to a supported IoT cloud, the device should publish the measurements on the **tedge/measurements** topic.
+To send the Thin Edge JSON measurements to a supported IoT cloud, the device should publish the measurements on the `tedge/measurements` topic.
 Internally the tedge-mapper will consume the measurements from this topic and translate and send them to the cloud that the device has been connected to by the `tedge connect` command.
 
 ### Cumulocity IoT MQTT topics

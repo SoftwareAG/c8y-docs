@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: How to trouble shoot device monitoring
+title: Device monitoring troubleshooting
 layout: redirect
 ---
 

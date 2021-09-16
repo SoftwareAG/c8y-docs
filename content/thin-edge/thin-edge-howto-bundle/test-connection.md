@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: How to test the connection to the cloud
+title: Test the connection to the cloud
 layout: redirect
 ---
 

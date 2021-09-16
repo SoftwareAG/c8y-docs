@@ -1,6 +1,6 @@
 ---
 weight: 90
-title: How to add a self-signed certificate to the trusted certificates list
+title: Add a self-signed certificate to the trusted certificates list
 layout: redirect
 ---
 

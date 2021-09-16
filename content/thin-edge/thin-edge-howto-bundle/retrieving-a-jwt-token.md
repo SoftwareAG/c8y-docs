@@ -1,6 +1,6 @@
 ---
 weight: 100
-title: How to retrieve a JWT Token to authenticate on Cumulocity IoT
+title: Retrieve a JWT token to authenticate on Cumulocity IoT
 layout: redirect
 ---
 

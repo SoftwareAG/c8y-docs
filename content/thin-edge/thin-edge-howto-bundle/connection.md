@@ -1,10 +1,8 @@
 ---
 weight: 30
-title: How to connect
+title: Connect to Cumulocity IoT
 layout: redirect
 ---
-
-### Connect to Cumulocity IoT
 
 To create a northbound connection, you must establish a local bridge.
 To achieve this, use the tedge CLI and the commands described below.
@@ -78,9 +76,9 @@ Sending packets to check connection. This may take up to 10 seconds.
 Try 1 / 2: Sending a message to {{< product-c8y-iot >}}. Received expected response message, connection check is successful.
 ```
 
-#### Errors
+### Errors
 
-##### Connection already established
+#### Connection already established
 
 If a connection has already been established, the following error may appear:
 
@@ -117,7 +115,7 @@ tedge-mapper service successfully stopped and disabled!
 
 Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/tedge-connect-command) to create a new bridge.
 
-##### Connection check failure
+#### Connection check failure
 
 Sample output of `tedge connect` when this error occurs:
 
@@ -176,7 +174,7 @@ This error may be caused by some of the following reasons:
 
   When this is done, issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/cli/#tedge-connect-command) again.
 
-##### File permissions
+#### File permissions
 
 Sample output:
 
@@ -215,7 +213,7 @@ $ ls -l /etc/tedge
 drwxr-xr-x 2 tedge     tedge     4096 Mar 30 15:40 mosquitto-conf
 ```
 
-##### mosquitto and systemd check fails
+#### mosquitto and systemd check fails
 
 Sample output:
 

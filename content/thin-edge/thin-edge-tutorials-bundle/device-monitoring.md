@@ -12,7 +12,7 @@ and can proactively initiate actions in case the device seems to malfunction.
 Additionally, the metrics can be used to help the customer troubleshoot when problems with the device are reported.
 
 Thin-edge.io uses the open source component collectd to collect the metrics from the device, see [https://collectd.org/](https://collectd.org/) for more information.
-Thin-edge.io translates the collected metrics from their native format to the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format
+Thin-edge.io translates the collected metrics from their native format to the [Thin Edge JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format
 and then into the [cloud-vendor specific format](/thin-edge/thin-edge-architecture/#mapper).
 
 Enabling monitoring on your device is a 3-steps process:
@@ -22,13 +22,13 @@ Enabling monitoring on your device is a 3-steps process:
 
 ### Install mosquitto client library
 Since thin-edge.io uses the MQTT plugin of collectd, you need to install the mosquitto client library,
-either `libmosquitto1` or `mosquitto-clients`
+either libmosquitto1
 
 ``` shell
 sudo apt-get install libmosquitto1
 ```
 
-or
+or mosquitto-clients
 
 ``` shell
 sudo apt-get install mosquitto-clients
@@ -72,8 +72,8 @@ The collectd.conf configuration file is usually located at */etc/collectd/collec
 1. **MQTT must be enabled**.
    * Thin-edge.io expects the collectd metrics to be published on the local MQTT bus.
      Hence, you must enable the MQTT write plugin of collectd at [https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_mqtt](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_mqtt).
-   * The MQTT plugin is available on most distribution of collectd, but this is not the case on MacOS using homebrew.
-     If you are missing the MQTT plugin, please recompile collectd to include the MQTT plugin.
+   * The MQTT plugin is available on most distributions of collectd, but this is not the case on MacOS using homebrew.
+     If you are missing the MQTT plugin, recompile collectd to include the MQTT plugin.
      See [https://github.com/collectd/collectd](https://github.com/collectd/collectd) for details.
    * Here is a config snippet to configure the MQTT write plugin:
      ```
@@ -87,7 +87,7 @@ The collectd.conf configuration file is usually located at */etc/collectd/collec
             </Publish>
         </Plugin>
      ```
-2. **RRDTool and CSV might be disabled**
+2. **RRDTool and CSV should be disabled.**
    * The risk with these plugins is to run out of disk space on a small device.
    * With thin-edge.io the metrics collected by collectd are forwarded to the cloud,
      hence it makes sense to disable local storage, see [https://github.com/collectd/collectd/issues/2668](https://github.com/collectd/collectd/issues/2668) for more information.
@@ -96,11 +96,11 @@ The collectd.conf configuration file is usually located at */etc/collectd/collec
        #LoadPlugin rrdtool
        #LoadPlugin csv
     ```
-3. **Cherry-pick the collected metrics**
+3. **Cherry-pick the collected metrics.**
    * Collectd can collect a lot of detailed metrics,
       and it is not always recommended to forward all of this data to the cloud.
    * Here is a config snippet that uses the `match_regex` plugin to select the metrics of interest,
-     filtering out every metric emitted by the memory plugin other than the used metric":
+     filtering out every metric emitted by the memory plugin other than the used metric:
     ```
         PreCacheChain "PreCache"
 
@@ -120,17 +120,17 @@ The collectd.conf configuration file is usually located at */etc/collectd/collec
         </Chain>
     ```
 
-### Enable thin-edge monitoring
+### Enable Thin Edge monitoring
 
-To enable monitoring on your device, you have to launch the 'tedge-mapper-collectd' daemon process.
+To enable monitoring on your device, you must launch the `tedge-mapper-collectd` daemon process.
 
 ``` shell
 sudo systemctl enable tedge-mapper-collectd
 sudo systemctl start tedge-mapper-collectd
 ```
 
-This process subscribes to the 'collectd/#' topics to read the monitoring metrics published by collectd
-and emits the translated measurements in thin-edge.io JSON format to the `tedge/measurements` topic.
+This process subscribes to the `collectd/#` topics to read the monitoring metrics published by collectd
+and emits the translated measurements in Thin Edge JSON format to the `tedge/measurements` topic.
 You can inspect the collected and translated metrics, by subscribing to these topics:
 
 The metrics collected by collectd are emitted to subtopics named after the collectd plugin and the metric name:
@@ -146,7 +146,7 @@ $ tedge mqtt sub 'collectd/#'
 
 ```
 
-The 'tedge-mapper-collectd' translates these collectd measurements into the [thin-edge.io JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format,
+The `tedge-mapper-collectd translates these collectd measurements into the [Thin Edge JSON](/thin-edge/thin-edge-architecture/#thin-edge-json) format,
 [grouping the measurements](/thin-edge/thin-edge-developer-tools/#collectd-topics) emitted by each plugin:
 
 ```
@@ -171,4 +171,4 @@ If your device is not connected yet see:
 
 ### Trouble shooting
 
-See also for [how to trouble shoot device monitoring?](/thin-edge/thin-edge-howto-guides/#trouble-shooting-monitoring)
+See [Trouble shoot device monitoring](/thin-edge/thin-edge-howto-guides/#trouble-shooting-monitoring).

@@ -4,12 +4,12 @@ title: Connect your device to Azure IoT
 layout: redirect
 ---
 
-The very first step to enable thin-edge.io is to connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud is then as simple as sending data locally.
+To enable thin-edge.io you first must connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud is then as simple as sending data locally.
 
 The focus is here on connecting the device to Azure IoT.
-See this [Connect your device to {{< product-c8y-iot >}}](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
+See [Connect your device to {{< product-c8y-iot >}}](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
-Before you try to connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation).
+Before you can connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation).
 
 You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-command) to:
 * [create a certificate for your device](#create-the-certificate),
@@ -49,7 +49,7 @@ The issuer of this certificate is the device itself as this is a self-signed cer
 The Thumbprint is the Sha1sum of the certificate. This is required for registering the
 device using the self-signed certificate on Azure IoT Hub.
 To use a certificate signed by your certificate authority,
-see the reference guide of [tedge cert](/thin-edge/thin-edge-developer-tools/#tedge-cert-command).
+see [Developer tools > Command Line Interface (CLI) > tedge cert command](/thin-edge/thin-edge-developer-tools/#tedge-cert-command).
 
 ### Register the device on Azure IoT Hub
 
@@ -58,29 +58,29 @@ In the Azure IoT Hub Portal, navigate to **Explores** > **IoT Devices** and clic
 
 Here provide the configuration parameters that are required to create the device as described below:
 
-   * Device ID: Should be the same as the Subject of the certificate.
-   * Authentication type: Select **X.509 Self-Signed** option.
-      * Provide the Primary Thumbprint that was displayed in [tedge cert show](/thin-edge/thin-edge-developer-tools/#show).
+   * **Device ID** - Should be the same as the subject of the certificate.
+   * **Authentication type** - Select "X.509 Self-Signed".
+      * Provide the primary Thumbprint that has been displayed in [tedge cert show](/thin-edge/thin-edge-developer-tools/#show).
       * Use the same thumbprint for the secondary thumbprint, since Azure IoT hub uses a single certificate.
-   * Set "Connect this device to an IoT Hub" to **Enable**.
+   * Enable **Connect this device to an IoT Hub**.
    * Save the configuration.
 
 After saving the configuration successfully, a new device has been created on the IoT Hub.
 You can see the new device on the IoT Hub portal by navigating to **Explores** > **IoT Devices**.
 
-You can find more info about registering a device on the Azure IoT Hub website: [https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06)
+You can find more information about registering a device on the Azure IoT Hub website: [https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-authenticate-downstream-device?view=iotedge-2018-06)
 
 ### Configure the device
 
-To connect the device to the Azure IoT Hub, you need to set the URL/Hostname of the IoT Hub and the root certificate of the IoT Hub as shown in the example below.
+To connect the device to the Azure IoT Hub, you need to set the URL/hostname of the IoT Hub and the root certificate of the IoT Hub as shown in the example below.
 
-Set the URL/Hostname of your Azure IoT Hub.   
+Set the URL/hostname of your Azure IoT Hub.   
 
 ```
 sudo tedge config set az.url your-iot-hub-name.azure-devices.net
 ```
 
-You can find the URL/Hostname in the Azure web portal by clicking on the overview section of your IoT Hub.
+You can find the URL/hostname in the Azure web portal by clicking on the overview section of your IoT Hub.
 
 Set the path to the root certificate if necessary. The default is */etc/ssl/certs*.
 
@@ -98,7 +98,7 @@ This command configures the MQTT broker:
 * to establish a permanent and secure connection to the Azure cloud,
 * to forward local messages to the cloud and vice versa.
 
-Also, if you have installed `tedge_mapper`, this command starts and enables the tedge-mapper-az systemd service. At last, it sends packets to Azure IoT Hub to check the connection.
+Also, if you have installed tedge_mapper, this command starts and enables the tedge-mapper-az systemd service. At last, it sends packets to Azure IoT Hub to check the connection.
 
 ```
 $ sudo tedge connect az
@@ -141,9 +141,9 @@ The example below uses `tedge mqtt pub az/messages/events/`, a message to be und
 ```
 $ tedge mqtt pub az/messages/events/ '{"temperature": 20}'
 ```
-To view the messages that were sent from the device to the cloud, follow this guide at [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device).
+To view the messages that were sent from the device to the cloud, refer to [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-cli#create-and-monitor-a-device).
 
-More info about sending telemetry to Azure can be found [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet)
+More information about sending telemetry to Azure can be found at [https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-dotnet).
 
 ### Next Steps
 

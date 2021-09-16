@@ -18,3 +18,9 @@ Additionally, you can use the following resources for more details on the change
 
 - https://angular.io/guide/ivy
 - https://angular.io/guide/updating-to-version-12
+
+
+### Machine Learning
+
+With this release, Cumulocity IoT Machine Learning introduces "Role Based Access Control" which is a breaking change for it's existing users.
+Please refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-11-0/machine-learning-10-11-0/#10_11_0) to learn more about this change.

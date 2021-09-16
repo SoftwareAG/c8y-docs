@@ -252,7 +252,7 @@ If you wish to disconnect, the following code must be used:
 subscriber.disconnect();
 ```
 
-### Accessing the Notifications 2.0 service
+### Subscribing to Notifications 2.0
 
 Notifications 2.0 APIs can be accessed in a very similar manner as described above for the inventory. The following snippet shows how users can create, query and delete notification subscriptions along with usage of TokenAPI:
 
@@ -261,11 +261,12 @@ Notifications 2.0 APIs can be accessed in a very similar manner as described abo
 private final NotificationSubscriptionApi notificationSubscriptionApi = platform.getNotificationSubscriptionApi();
 private final TokenApi tokenApi = platform.getTokenApi();
 
-// Create subscription for MO context
+// Create subscription filter
 final NotificationSubscriptionFilterRepresentation filterRepresentation = new NotificationSubscriptionFilterRepresentation();
 filterRepresentation.setApis(List.of("measurements"));
 filterRepresentation.setTypeFilter("c8y_Speed");
 
+// Construct subscription for managed object context
 final NotificationSubscriptionRepresentation subscriptionRepresentation1 = new NotificationSubscriptionRepresentation();
 subscriptionRepresentation1.setContext("mo");
 subscriptionRepresentation1.setSubscription("testSubscription1");
@@ -273,20 +274,22 @@ subscriptionRepresentation1.setSource(mo);
 subscriptionRepresentation1.setSubscriptionFilter(filterRepresentation);
 subscriptionRepresentation1.setFragmentsToCopy(List.of("c8y_SpeedMeasurement", "c8y_MaxSpeedMeasurement"));
 
+// Create subscription
 subscriptionApi.subscribe(subscriptionRepresentation1);
 
-// Create subscription for tenant context
+// Construct subscription for tenant context
 final NotificationSubscriptionRepresentation subscriptionRepresentation2 = new NotificationSubscriptionRepresentation();
 subscriptionRepresentation2.setContext("tenant");
 subscriptionRepresentation2.setSubscription("testSubscription2");
 
+// Create subscription
 subscriptionApi.subscribe(subscriptionRepresentation2);
 
 // Obtain access token
 final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
-        properties.getSubscriber(),
-        "testSubscription1",
-        1440,
+        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
+        "testSubscription1", //The subscription name. This value should be the same as with which the subscription was created.
+        1440, // The token expiration duration.
         false);
 
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();

@@ -11,7 +11,7 @@ See [Connect your device to Azure IoT](#connect-azure), if you want to connect A
 
 Before you connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (e.g. eu-latest.{{< domain-c8y >}}) and your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (e.g. `t00000007`), a user name and password. None of these credentials will be stored on the device. These are only required once, to register the device.
 
-If not done yet, [install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation) on your device.
+If not done yet, [install thin-edge.io](/thin-edge/thin-edge-howto/#install-thin-edge) on your device.
 
 You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-command) to:
 * [create a certificate for you device](#create-the-certificate),

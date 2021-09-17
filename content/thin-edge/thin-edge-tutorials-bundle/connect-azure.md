@@ -9,7 +9,7 @@ To enable thin-edge.io you first must connect your device to the cloud. This is 
 The focus is here on connecting the device to Azure IoT.
 See [Connect your device to {{< product-c8y-iot >}}](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
-Before you can connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto-guides/#installation).
+Before you can connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto/#install-thin-edge).
 
 You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-command) to:
 * [create a certificate for your device](#create-the-certificate),

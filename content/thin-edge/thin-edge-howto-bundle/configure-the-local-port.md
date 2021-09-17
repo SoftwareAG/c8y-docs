@@ -59,8 +59,8 @@ To use the default port (1883), the MQTT port has to be unset using the `tedge` 
 tedge config unset mqtt.port
 ```
 
-Once the port is reverted to default, [step 1](/thin-edge/thin-edge-howto-guides/#step-1-disconnect-the-thin-edge-device)
-and [step 3](/thin-edge/thin-edge-howto-guides/#step-3-connect-the-thin-edge-device-to-cloud) have to be followed to use the default port.
+Once the port is reverted to default, [step 1](/thin-edge/thin-edge-howto/#step-1-disconnect-the-thin-edge-device)
+and [step 3](/thin-edge/thin-edge-howto/#step-3-connect-the-thin-edge-device-to-cloud) have to be followed to use the default port.
 
 ### Error case
 

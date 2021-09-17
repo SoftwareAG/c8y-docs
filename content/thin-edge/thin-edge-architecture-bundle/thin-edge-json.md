@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 30
 title: Thin Edge JSON format
 layout: redirect
 ---

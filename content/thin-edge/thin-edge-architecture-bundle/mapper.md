@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Thin Edge mapper
 layout: redirect
 ---
@@ -8,7 +8,7 @@ The tedge-mapper is a key concept to support multiple cloud providers. The purpo
 
 The tedge-mapper is composed of multiple cloud-specific mappers, such as {{< product-c8y-iot >}} mapper and Azure mapper. Each mapper is responsible for its dedicated cloud. These specific mappers are launched by the respective `tedge connect` command. For instance, `tedge connect c8y` establishes a bridge to {{< product-c8y-iot >}} and launches a {{< product-c8y-iot >}} mapper that translates the messages in the background.
 
-A mapper subscribes to the reserved MQTT topic `tedge/measurements` with the QoS level 1 at least once. The messages that arrive in the mapper have to be formed in the [Thin Edge JSON format](#thin-edge-json). The mapper verifies if the arrived messages are correctly formatted. If the verification fails, the mapper publishes a corresponding error message on the topic `tedge/errors` with the QoS level 1 at least once.
+A mapper subscribes to the reserved MQTT topic `tedge/measurements` with the QoS level 1 at least once. The messages that arrive in the mapper must be formed in the [Thin Edge JSON format](#thin-edge-json). The mapper verifies if the arrived messages are correctly formatted. If the verification fails, the mapper publishes a corresponding error message on the topic `tedge/errors` with the QoS level 1 at least once.
 
 When the mapper receives a correctly formatted message, it translates the message into a cloud-specific format.
 

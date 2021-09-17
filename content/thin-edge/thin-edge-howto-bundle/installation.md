@@ -99,7 +99,7 @@ dpkg -i tedge_mapper_0.1.0_armhf.deb
 
 During the installation process a tedge-users group is automatically created to ease the administration of who can use the `sudo tedge` command on the device.
 The `tedge` command needs to be run using `sudo`.
-Unless all the users are granted sudo privileges, you have to add a user to the tedge-users group for that user to be able to use `tedge`.
+Unless all the users are granted sudo privileges, you must add a user to the tedge-users group for that user to be able to use `tedge`.
 
 Run this command to add a user to the group.
 

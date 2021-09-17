@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Monitor your device with collected
+title: Monitor your device with collectd
 layout: redirect
 ---
 
@@ -37,7 +37,7 @@ sudo apt-get install mosquitto-clients
 ### Install collectd
 
 Device monitoring is not enabled by default when you install thin edge.
-You have to install and configure collectd at [https://collectd.org/](https://collectd.org/) first.
+You must install and configure collectd at [https://collectd.org/](https://collectd.org/) first.
 
 To install collectd, follow the collectd installation process that is specific to your device as shown at [https://collectd.org/download.shtml](https://collectd.org/download.shtml). On a Debian or Ubuntu Linux:
 

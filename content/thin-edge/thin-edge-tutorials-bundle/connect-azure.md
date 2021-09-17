@@ -46,7 +46,7 @@ Thumbprint: 860218AD0A996004449521E2713C28F67B5EA580
 ```
 
 The issuer of this certificate is the device itself as this is a self-signed certificate.
-The Thumbprint is the Sha1sum of the certificate. This is required for registering the
+The thumbprint is the Sha1sum of the certificate. This is required for registering the
 device using the self-signed certificate on Azure IoT Hub.
 To use a certificate signed by your certificate authority,
 see [Developer tools > Command Line Interface (CLI) > tedge cert command](/thin-edge/thin-edge-developer-tools/#tedge-cert-command).
@@ -60,7 +60,7 @@ Here provide the configuration parameters that are required to create the device
 
    * **Device ID** - Should be the same as the subject of the certificate.
    * **Authentication type** - Select "X.509 Self-Signed".
-      * Provide the primary Thumbprint that has been displayed in [tedge cert show](/thin-edge/thin-edge-developer-tools/#show).
+      * Provide the primary thumbprint that has been displayed in [tedge cert show](/thin-edge/thin-edge-developer-tools/#show).
       * Use the same thumbprint for the secondary thumbprint, since Azure IoT hub uses a single certificate.
    * Enable **Connect this device to an IoT Hub**.
    * Save the configuration.

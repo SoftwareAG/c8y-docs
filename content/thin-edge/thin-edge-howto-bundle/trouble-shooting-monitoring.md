@@ -25,7 +25,7 @@ sudo systemctl start collectd
 tedge mqtt sub 'collectd/#'
 ```
 
-If no metrics are collected, please check the [MQTT configuration](/thin-edge/thin-edge-tutorials/#collectdconf).
+If no metrics are collected, check the [MQTT configuration](/thin-edge/thin-edge-tutorials/#collectdconf).
 
 ### Is the Thin Edge collectd-mapper running?
 

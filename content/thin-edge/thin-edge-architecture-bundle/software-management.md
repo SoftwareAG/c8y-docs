@@ -1,28 +1,10 @@
 ---
-weight: 40
+weight: 50
 title: Software management with thin-edge.io
 layout: redirect
 ---
 
 With thin-edge.io you can ease the burden of managing packages on your device. Software management operates end-to-end from a cloud to the OS of your device and reports the statuses accordingly.
-
-### Software management components
-
-Software management uses the following components to perform software operations:
-
-TBD
-
-#### Cloud mapper
-
-TBD
-
-#### Tedge agent
-
-TBD
-
-#### Software manager plugin
-
-TBD
 
 ### Installation
 

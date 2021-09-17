@@ -23,5 +23,6 @@ Additionally, you can use the following resources for more details on the change
 ### Machine Learning
 
 * With this release, Cumulocity IoT Machine Learning introduces "Role Based Access Control" which is a breaking change for it's existing users. Please refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-11-0/machine-learning-10-11-0/#10_11_0) to learn more about this change.
+* The two flavors of MLW microservice (MLW and MLW-CDH) are consolidated into a single offering.
 * The Cumulocity IoT Machine Learning Workbench feature of data pull from the Cumulocity IoT DataHub is not yet supported on Cumulocity IoT Edge.
 * The deprecations mentioned in the [anouncements section from last release](/release-10-10-0/machine-learning-10-10-0/#10_10_0) are now removed entirely.

@@ -1,6 +1,5 @@
 ---
 weight: 40
-title: Platform services & application enablement
+title: Platform services
 layout: bundle
 ---
-

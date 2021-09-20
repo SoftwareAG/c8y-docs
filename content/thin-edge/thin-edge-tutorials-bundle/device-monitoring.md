@@ -171,4 +171,4 @@ If your device is not connected yet see:
 
 ### Trouble shooting
 
-See [Trouble shoot device monitoring](/thin-edge/thin-edge-howto-guides/#trouble-shooting-monitoring).
+See [Trouble shoot device monitoring](/thin-edge/thin-edge-howto/#device-monitoring-troubleshooting).

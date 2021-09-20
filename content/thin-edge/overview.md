@@ -17,7 +17,7 @@ Thin-edge.io is an open-source & cloud-agnostic IoT framework designed for resou
 
 ### How to start
 
-1) First [install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation)
+1) First [install thin-edge.io](/thin-edge/thin-edge-howto/#install-thin-edge)
 and connect your device to your IoT cloud,
 either [{{< product-c8y-iot >}}](/thin-edge/thin-edge-tutorials/#connect-c8y)
 or [Azure IoT](/thin-edge/thin-edge-tutorials/#connect-azure) (10 minutes).
@@ -30,5 +30,5 @@ say Rust or Python.
 
 * Explore the [tutorials and use-cases](/thin-edge/thin-edge-tutorials).
 * Understand the [architecture](/thin-edge/thin-edge-architecture).
-* Use the [how-to guides](/thin-edge/thin-edge-howto-guides) on a daily basis.
+* Use the [how-to guides](/thin-edge/thin-edge-howto) on a daily basis.
 * Refer to [developer tools](/thin-edge/thin-edge-developer-tools) for any in-depth details.

@@ -1,8 +1,10 @@
 ---
 weight: 30
-title: Connect to Cumulocity IoT
+title: Connect to a cloud endpoint
 layout: redirect
 ---
+
+### Connect to Cumulocity IoT
 
 To create a northbound connection, you must establish a local bridge.
 To achieve this, use the tedge CLI and the commands described below.
@@ -236,4 +238,4 @@ Caused by:
 ```
 
 The mosquitto server has not been installed on the system but it is required to run this command.
-Refer to [How to install thin-edge.io](/thin-edge/thin-edge-howto-guides/#installation) to install mosquitto and try again.
+Refer to [How to install thin-edge.io](/thin-edge/thin-edge-howto/#install-thin-edge) to install mosquitto and try again.

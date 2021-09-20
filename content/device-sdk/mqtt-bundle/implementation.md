@@ -17,6 +17,8 @@ Available ports:
 | SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
 
+>**Info:** Port 80 is deactivated in cloud systems.
+
 Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
 The two-way SSL support is enabled by default since version 10.7.0. To disable it please contact [product support](/about-doc/contacting-support).
 

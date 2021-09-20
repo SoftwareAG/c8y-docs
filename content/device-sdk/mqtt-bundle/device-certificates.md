@@ -29,7 +29,10 @@ Devices connecting to the platform with certificates do not need to provide the 
 
 **Auto registration**
 
-The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true. To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
+Auto-registration needs to be activated for the uploaded certificate.
+If auto-registration is not activated it is required to use the bulk registration (see below).
+To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
 
 **Bulk registration**
 
@@ -231,7 +234,9 @@ The intermediate certificate is signed by the CA certificate, but will also be u
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
 However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
-Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and the device certificate there:
+Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 2 for security reasons, so you cannot use any intermediate certificate between your CA certificate and the device certificate there.
+However, this behaviour can be changed for dedicated installations by changing a platform wide configuration setting and increasing the allowed maximum length of the chain of certificates to more than 2.
+To create the intermediate certificate:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
 2. Go to this directory and create a configuration file for your intermediate certificate: `touch intermediateConfig.cnf`
@@ -278,7 +283,7 @@ Go into your caCertificate directory.
 ### How to test created certificates with MQTT.fx client
 
 1. Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
-2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways:
+2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways, both of which have a role requirement of either ROLE_TENANT_ADMIN or ROLE_TENANT_MANAGEMENT_ADMIN:
 
     * Via UI:
 
@@ -303,9 +308,7 @@ Go into your caCertificate directory.
         1. Display your CA (or intermediate) certificate, which you want to upload to the {{< product-c8y-iot >}} platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
         2. Send it to the platform via POST request:
 
-        ```text    
-            Required role: ROLE_TENANT_ADMIN
-
+        ```text
             POST /tenant/tenants/<TENANT_ID>/trusted-certificates
             Host: https://<TENANT_DOMAIN>/
             Authorization: Basic <YOUR_AUTHENTICATION>

@@ -244,7 +244,10 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-##### <a name="115">Set firmware (115)</a>
+**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, e.g. `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+
+<a name="115"></a>
+##### Set firmware (115)
 
 Set the firmware installed on the device.
 

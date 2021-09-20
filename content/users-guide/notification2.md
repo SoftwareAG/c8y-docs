@@ -43,13 +43,13 @@ The URL path is "/notifications2/consumer/". There is only one required and one 
 
 In summary, the urls used by consumers follow the following patterns:
 
-'''
+```
 wss://your.cumulocity.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService
-'''
+```
 or
-'''
+```
 wss://your.cumulocity.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=someUniqueNameForThisConsumer
-'''
+```
 
 The web socket established with such an URL is a textual bi-directional connection using UTF-8 encoding. The web socket service sends a sequence of notifications to the consumer and the consumer sends back a short acknowledgement over this connection for each notification received. This acknowledgement is for a particular notification and the server will periodically re-sent a notification until it is acknowledged. This will cease once the server has received and processed an acknowledgement for a particular notification.
 
@@ -110,7 +110,7 @@ The protocol can deliver notifications to a scaled out subscriber. It is importa
 
 ## Trace of some notifications
 
-'''
+```
 ------------------------
 header /tenant-a170/managedobjects/111
 header CREATE
@@ -143,5 +143,5 @@ notification {"severity":"MAJOR","creationTime":"2021-09-03T12:29:02.092Z","coun
 header /tenant-a170/alarmsWithChildren/111
 header CREATE
 notification {"severity":"MAJOR","creationTime":"2021-09-03T12:29:02.092Z","count":1,"history":{"auditRecords":[],"self":"http://cumulocity.default.svc.cluster.local/audit/auditRecords"},"source":{"name":"a switch","self":"http://cumulocity.default.svc.cluster.local/inventory/managedObjects/111","id":"111"},"type":"com_cumulocity_events_TamperEvent","self":"http://cumulocity.default.svc.cluster.local/alarm/alarms/119","time":"2021-09-03T12:29:01.664Z","id":"119","text":"Tamper sensor triggered","status":"ACTIVE","com_mycorp_MyProp":{"key1":"value1"}}
-'''
+```
 

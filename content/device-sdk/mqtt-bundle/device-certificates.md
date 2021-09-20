@@ -232,7 +232,7 @@ This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
 However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
 Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 2 for security reasons, so you cannot use any intermediate certificate between your CA certificate and the device certificate there.
-However, this behaviour can be changed for e.g. dedicated installations by changing a platform wide configuration setting and increasing the allowed maximum length of the chain of certificates to more than 2.
+However, this behaviour can be changed for dedicated installations by changing a platform wide configuration setting and increasing the allowed maximum length of the chain of certificates to more than 2.
 To create the intermediate certificate:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`

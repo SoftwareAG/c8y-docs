@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a1a4b020-ec8b-441b-97aa-2f4bdc3f1137",
+		"_postman_id": "93dd8f09-7bd4-4827-9ffc-cb3b29c65bb7",
 		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -81,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\":\"DummyName2\",\"description\":\"A dummy project\"}",
+							"raw": "{\"name\":\"Sample Project\",\"description\":\"A dummy project\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,7 +177,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1603241627_Project",
+							"raw": "{{url}}/service/mlw/projects/1631774924_Project",
 							"host": [
 								"{{url}}"
 							],
@@ -185,7 +185,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1603241627_Project"
+								"1631774924_Project"
 							]
 						}
 					},
@@ -222,7 +222,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources",
 							"host": [
 								"{{url}}"
 							],
@@ -230,7 +230,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources"
 							]
 						}
@@ -263,7 +263,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources?refresh=true",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources?refresh=true",
 							"host": [
 								"{{url}}"
 							],
@@ -271,7 +271,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources"
 							],
 							"query": [
@@ -310,7 +310,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources?versionNumber=v1",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0",
 							"host": [
 								"{{url}}"
 							],
@@ -318,13 +318,13 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources"
 							],
 							"query": [
 								{
 									"key": "versionNumber",
-									"value": "v1"
+									"value": "v0"
 								}
 							]
 						}
@@ -403,12 +403,12 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/themachine/Desktop/MLW_Postman/mlw-core/ResourceFIles/TestFiles/anomalySampleData.csv"
+									"src": "/C:/Users/SWSH/OneDrive - Software AG/Desktop/Project/api-tests/TestFiles/admissions.csv"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources",
 							"host": [
 								"{{url}}"
 							],
@@ -416,7 +416,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources"
 							]
 						}
@@ -450,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"type\":\"py\",\"name\":\"samplePY\"}",
+							"raw": "{\"type\":\"py\",\"name\":\"samplePY1\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -458,7 +458,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/createnew",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew",
 							"host": [
 								"{{url}}"
 							],
@@ -466,7 +466,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources",
 								"createnew"
 							]
@@ -704,7 +704,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/1600160427_0551_Resource",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource",
 							"host": [
 								"{{url}}"
 							],
@@ -712,9 +712,9 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"resources",
-								"1600160427_0551_Resource"
+								"1631781323_0128_Resource"
 							]
 						}
 					},
@@ -1145,7 +1145,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"listOfResources\":[\"1600766226_0198_Resource\"]}",
+							"raw": "{\"listOfResources\":[\"1631779109_0780_Resource\",\"1631780844_0268_Resource\"]}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1153,7 +1153,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/service/mlw/projects/1600159589_Project/commit",
+							"raw": "{{url}}/service/mlw/projects/1631779101_Project/commit",
 							"host": [
 								"{{url}}"
 							],
@@ -1161,7 +1161,7 @@
 								"service",
 								"mlw",
 								"projects",
-								"1600159589_Project",
+								"1631779101_Project",
 								"commit"
 							]
 						}

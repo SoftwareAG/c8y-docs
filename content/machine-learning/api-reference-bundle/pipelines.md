@@ -20,6 +20,8 @@ Operations on pipelines.
 
 Retrieves all the available ONNX pipelines.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -84,6 +86,8 @@ curl --request GET "{{url}}/service/zementis/onnx/pipelines"
 ```
 
 Get details of the ONNX pipeline.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -165,6 +169,8 @@ Create new ONNX pipeline.
 
 Note that if the pipeline name contains any unsafe characters, all such characters would be converted to underscore automatically.
 Hence, all subsequest calls should refer to the converted name as listed in the properties of the pipeline.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -311,6 +317,8 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authoriz
 
 Remove the specified ONNX pipeline and list the remaining pipelines.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -398,6 +406,8 @@ curl --request DELETE "{{url}}/service/zementis/onnx/pipelines/dummy" --header "
 ```
 
 Remove all available ONNX pipelines.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

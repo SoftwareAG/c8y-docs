@@ -17,6 +17,8 @@ Operations on applying model, model group, pipeline to input data.
 
 Apply a PMML model to a single JSON input record.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -124,6 +126,8 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header 
 ```
 
 Apply a PMML model to a single JSON input record and get the result with details of the performed computation in plain text.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -347,6 +351,8 @@ Apply a PMML model to multiple records. This provides two kinds of operations. G
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
 If a predictive model with a binary type input is applied, this will be a single 'apply' operation that processes a single binary source as input to Zementis Server.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -605,6 +611,8 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 
 Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'. Compressing input data with ZIP will result in the same compression method for the returned output stream.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -711,6 +719,8 @@ Apply a PMML model group to multiple records and show the details. Details inclu
 It also includes the information of the input record corresponding to the computed output.
 
 Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'. Compressing input data with ZIP will result in the same compression method for the returned output stream.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -820,6 +830,8 @@ Apply an ONNX model to multiple records. Note that the size of the uploaded file
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
 >**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -952,6 +964,8 @@ Apply an ONNX pipeline to input data. Note that the size of the uploaded file sh
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there is no pre-processing step in the pipeline then the input data has to be in JSON format.
 
 >**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

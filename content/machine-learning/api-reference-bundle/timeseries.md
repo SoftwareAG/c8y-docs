@@ -35,6 +35,8 @@ Operations for time series data/model.
 
 Upload the time series data to generate a model. This is an asynchronous call which returns a status URL that can be used to check the status of model creation.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -185,6 +187,8 @@ curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Conten
 Get the status of the generation of a specific time series model. The status can either be IN_PROGRESS, SUCCESS or FAILURE.<br>
 If the status is FAILURE, the `errorMessage` attribute in the response holds the reason for the failure.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -260,6 +264,8 @@ curl --request GET "{{url}}/service/zementis/train/timeseries/dummy/status" --he
 ```
 
 Get the PMML file of the generated time series model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

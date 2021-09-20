@@ -19,6 +19,8 @@ Operations on model groups.
 
 Retrieves all the available PMML model groups.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -96,6 +98,8 @@ curl --request GET "{{url}}/service/zementis/pmml/groups"
 ```
 
 Get details of the PMML model group.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -181,6 +185,8 @@ Create new PMML model group.
 
 Note that if the model group name contains any unsafe characters, all such characters would be converted to underscore automatically.
 Hence, all subsequest calls should refer to the converted name as listed in the properties of the model group.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -319,6 +325,8 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 
 Update an existing PMML model group by editing the list of models which are part of it or by editing the group's primary model or both.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -425,6 +433,8 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 
 Remove the specified PMML model group and list the remaining groups.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -525,6 +535,8 @@ curl --request DELETE "{{url}}/service/zementis/pmml/groups/dummy" --header "Aut
 ```
 
 Remove all available PMML model groups.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -48,6 +48,6 @@ However, they cannot change the state of those artifacts.
 
 These pre-defined and pre-configured Machine Learning specific roles would appear under **Global roles** in the **Roles** page of the Administration application once the 'zementis' microservice is subscribed to version 10.11.0 and higher. If the roles already exist, then those would not be created.
 
-To be able to leverage the Machine Learning Engine, users can opt to be part of one of the above mentioned global roles. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Engine or add new roles which should then include the necesary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) to know more about management of global roles.
+To be able to leverage the Machine Learning Engine, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Engine or add new roles which should then include the necesary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) to know more about management of global roles.
 
 In case if the users do not have the permissions mentioned above, they would get *Access is denied* error while trying to access the Machine Learning application. Consumers of the REST APIs would see a `403 - Forbidden` too.

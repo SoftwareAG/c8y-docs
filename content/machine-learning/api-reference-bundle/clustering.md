@@ -17,6 +17,8 @@ Operations for identifying clusters in given data using clustering models.
 
 Upload multiple time series data to generate a clustering model. This is an asynchronous call which returns a status URL that can be used to check the status of model creation.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -128,6 +130,8 @@ curl --request POST "{{url}}/service/zementis/train/clustering" --header "Conten
 Get the status of generation of a specific clustering model. The status can either be IN_PROGRESS, SUCCESS or FAILURE.<br>
 If the status is FAILURE, the `errorMessage` attribute in the response holds the reason for the failure.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -203,6 +207,8 @@ curl --request GET "{{url}}/service/zementis/train/clustering/dummy/status" --he
 ```
 
 Get the PMML file of the generated clustering model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -294,6 +300,8 @@ curl --request GET "{{url}}/service/zementis/train/clustering/dummy/pmml" --head
 ```
 
 Get the information of clusters identified by the clustering model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -53,7 +53,7 @@ Caused by:
 
 >**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
 
-Follow the instruction in the error message to remove the existing certificate and issue [tedge cert remove](/thin-edge/thin-edge-developer-tools/#remove):
+Follow the instruction in the error message to remove the existing certificate and execute [tedge cert remove](/thin-edge/thin-edge-developer-tools/#remove):
 
 ```shell
 sudo tedge cert remove

@@ -18,7 +18,7 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 ```
 
 >**Tip:** If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
-> For example, if you issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
+> For example, if you execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
 >
 > ```shell
 > $ tedge connect c8y`
@@ -96,7 +96,7 @@ Caused by:
     Connection is already established. To remove existing connection use 'tedge disconnect c8y' and try again.
 ```
 
-To remove the existing connection and create a new one, follow the advice and issue [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot-1):
+To remove the existing connection and create a new one, follow the advice from the shell prompt and execute [tedge disconnect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot-1):
 
 ```shell
 $ sudo tedge disconnect c8y
@@ -115,7 +115,7 @@ tedge-mapper service successfully stopped and disabled!
 
 >**Info:** `tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
 
-Now you can issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) to create a new bridge.
+Now you can execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) to create a new bridge.
 
 #### Connection check failure
 
@@ -174,7 +174,7 @@ This error may be caused by some of the following reasons:
   sudo tedge disconnect c8y
   ```
 
-  When this is done, issue [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) again.
+  When this is done, execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) again.
 
 #### File permissions
 

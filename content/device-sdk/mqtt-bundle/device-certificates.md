@@ -281,7 +281,7 @@ Go into your caCertificate directory.
 ### How to test created certificates with MQTT.fx client
 
 1. Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
-2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways:
+2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways, both of which have a role requirement of either ROLE_TENANT_ADMIN or ROLE_TENANT_MANAGEMENT_ADMIN:
 
     * Via UI:
 
@@ -306,9 +306,7 @@ Go into your caCertificate directory.
         1. Display your CA (or intermediate) certificate, which you want to upload to the {{< product-c8y-iot >}} platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
         2. Send it to the platform via POST request:
 
-        ```text    
-            Required role: ROLE_TENANT_ADMIN
-
+        ```text
             POST /tenant/tenants/<TENANT_ID>/trusted-certificates
             Host: https://<TENANT_DOMAIN>/
             Authorization: Basic <YOUR_AUTHENTICATION>

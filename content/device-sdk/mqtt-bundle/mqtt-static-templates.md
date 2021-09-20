@@ -955,6 +955,7 @@ Set the device profiles
 
 Update the software installed on the device.
 
+
 |Position|Parameter|
 |:-------|:-------|
 |1...|List of 4 values per software|
@@ -966,10 +967,18 @@ Update the software installed on the device.
 **Example**
 
 ```text
-528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
+528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
 
-##### <a name="530">Cloud Remote Access Connect (530)</a>
+>**Info:** The action can either be `install` or `delete`.
+>
+> When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
+> The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
+>
+> When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+
+<a name="530"></a>
+##### Cloud Remote Access Connect (530)
 
 Establish tunneling by Remote Access device agent.
 

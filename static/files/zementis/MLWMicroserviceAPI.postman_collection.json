@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "47036b67-1b4d-41d1-b6f7-94bd36082d89",
+		"_postman_id": "971d77f4-d16d-4bae-9a06-e40b91333dd7",
 		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1800,6 +1800,48 @@
 					"response": []
 				},
 				{
+					"name": "Early stop the neural network training task",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/mlw/tasks/1603250283_Tasks/task/1601289809_Task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"tasks",
+								"1603250283_Tasks",
+								"task",
+								"1601289809_Task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete an individual task within the parent task",
 					"request": {
 						"auth": {
@@ -2558,7 +2600,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{'modelName': 'someIrisModel',\r\n 'hyperparameters': {'problemType': 'classification',\r\n  'optimizer': 'adam',\r\n  'learningRate': 0.01,\r\n  'loss': 'categorical_crossentropy',\r\n  'metrics': ['accuracy', 'f1'\r\n        ],\r\n  'epoch': 10,\r\n  'testSize': 0.2,\r\n  'batchSize': 10\r\n    }\r\n}",
+							"raw": "{\"recurrence\":\"ONE_TIME\",\r\n\"modelName\":\"someIrisModel\",\r\n\"dataID\":\"1601289034_0614_Resource\",\r\n\"codeID\":\"1601282978_0253_Resource\",\r\n\"problemType\":\"classification\",\r\n\"batchSize\":15,\r\n\"epoch\":100,\r\n\"stepPerEpoch\":10,\r\n\"learningRate\":0.001,\r\n\"loss\":\"categorical_crossentropy\",\r\n\"metrics\":[\"accuracy\",\"f1\"],\r\n\"optimizer\":\"adam\",\r\n\"testSize\":0.3,\r\n\"shuffleData\":true,\r\n\"startDate\": \"2020-03-08T18:30:00.000Z\"}",
 							"options": {
 								"raw": {
 									"language": "text"

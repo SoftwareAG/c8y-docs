@@ -59,7 +59,7 @@ The second header line is the notification description string in the form of a '
 
 * sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
 
-Some examples are provided later below and backwards compatibility to realtime notifications is provided for, but see other documentation, examples and experiment to get values for events that you are interested in.
+Some examples are provided in the [Traces](#traces) section and backwards compatibility to realtime notifications is provided for, but see other documentation, examples and experiment to get values for events that you are interested in.
 
 ### Notification acknowledgement
 

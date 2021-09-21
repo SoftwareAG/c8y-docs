@@ -400,7 +400,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 2. Click **Remove** to delete the property.
 
 <a name="sms-provider"></a>
-### Providing SMS provider credentials
+### Providing SMS provider credentials //TODO to change
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
@@ -410,7 +410,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 1. Click **SMS provider** in the **Settings** menu.
 
-	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+   1. To see SMS provider config the user must have permission SMS read.
+   2. To modify SMS provider config the user must have permission SMS admin.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 

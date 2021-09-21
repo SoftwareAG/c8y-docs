@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "93dd8f09-7bd4-4827-9ffc-cb3b29c65bb7",
+		"_postman_id": "47036b67-1b4d-41d1-b6f7-94bd36082d89",
 		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2464,7 +2464,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"sampleRunWF2\",\"startDate\":\"2020-10-20T18:30:00.000Z\",\"startTimeH\":8,\"startTimeM\":1}",
+							"raw": "{\"recurrence\":\"ONE_TIME\",\"cronExpression\":\"0/1 * 1/1 * *\",\"taskName\":\"sampleRunWF2\",\"startDate\":\"2020-10-20T18:30:00.000Z\",\"startTimeH\":8,\"startTimeM\":1,\"testSize\":0.33}",
 							"options": {
 								"raw": {
 									"language": "json"

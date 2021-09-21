@@ -35,7 +35,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#alarms">Alarms</a></td>
-<td align="left">Provides information on the alarms for a device. See also <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
+<td align="left">Provides information on the alarms for a device. See <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#child-devices">Child Devices</a></td>
@@ -47,7 +47,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
-<td align="left">Allows manual configuration of device parameters and settings entered in a text format. See also <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
+<td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>
@@ -59,7 +59,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
-<td align="left">Manages firmware of a device. See also <a href="#firmware-repo">Managing device firmware</a>.</td>
+<td align="left">Manages firmware of a device. See <a href="#managing-firmware">Managing firmware on a device</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#identity">Identity</a></td>
@@ -99,7 +99,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#service-monitoring">Service monitoring</a></td>
-<td align="left">Allows the service monitoring of machines. See also <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
+<td align="left">Allows the service monitoring of machines. For details, see <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#shell">Shell</a></td>
@@ -115,7 +115,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#software">Software</a></td>
-<td align="left">Manages software installed on a device. See also <a href="#software-repo">Managing device software</a>.</td>
+<td align="left">Manages software installed on a device. For details, see <a href="#managing-software">Managing software on a device</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#tracking">Tracking</a></td>
@@ -184,7 +184,7 @@ The **Events** tab displays events related to a device. This enables low-level t
 <a name="firmware"></a>
 ### Firmware
 
-See [Managing device firmware](#firmware-repo) for more information on how to manage and update the firmware on a device.
+See [Managing firmware on a device](#managing-firmware) for more information on how to manage and update the firmware on a device.
 
 <a name="identity"></a>
 ### Identity
@@ -393,21 +393,7 @@ For your convenience, {{< product-c8y-iot >}} provides several frequently used c
 <a name="software"></a>
 ### Software
 
-See [Managing device software](#software-repo) for more information on how to manage and update the software installed on a device.
-
-#### To install firmware/software
-
-Select a firmware from the dropdown list, which contains all firmware available in the [Firmware repository](#firmware-repo), and click **Install**.
-
-Similarly, to install a software on the device, select a software package from the dropdown list, which contains all software available in the [Software repository](#software-repo), and click **Install**.
-
-![Device Software tab](/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
-
-Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
-
-#### To remove firmware/software
-
-To remove a firmware/software object from a device, hover over a particular firmware/software entry and click the delete icon.
+See [Managing software on a device](#managing-software) for more information on how to manage and update the software installed on a device.
 
 <a name="tracking"></a>
 ### Tracking

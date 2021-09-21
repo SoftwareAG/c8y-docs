@@ -102,7 +102,7 @@ The object will be deleted from the firmware repository.
 
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
-
+<a name="managing-firmware"></a>
 #### Managing firmware on a device
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
@@ -209,7 +209,7 @@ The software and all its versions will be deleted from the software repository.
 
 In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
 
-
+<a name="managing-software"></a>
 #### Managing software on a device
 
 In the **Software** tab of a device you can manage the software for the particular device.

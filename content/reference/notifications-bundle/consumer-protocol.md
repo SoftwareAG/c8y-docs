@@ -13,7 +13,7 @@ The new endpoint is accessible only using the external {{< product-c8y-iot >}} f
 
 The [URL scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
 
-The URL path is */notifications2/consumer/*. There is only one required and one optional query string argument:
+The fixed URL path is */notifications2/consumer/*. There is only one required and one optional query string argument:
 
 * **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [Token method]({{cumulocity_domain}}/api/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set a HTTP header which can be an issue for some WebSocket clients or proxies.
 
@@ -29,7 +29,7 @@ or
 wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=someUniqueNameForThisConsumer
 ```
 
-The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding. The WebSocket service sends a sequence of notifications to the consumer and the consumer sends back a short acknowledgement over this connection for each notification received. This acknowledgement is for a particular notification and the server will periodically resend a notification until it is acknowledged. This will cease once the server has received and processed an acknowledgement for a particular notification.
+The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding. The WebSocket service sends a sequence of notifications to the consumer and the consumer should send back a short acknowledgement over this connection for each notification received. This acknowledgement is for a particular notification and the server will periodically resend a notification until it is acknowledged. This will cease once the server has received and processed an acknowledgement for a particular notification.
 
 A notification (transmitted service to client) consists of a header and a body (similar to a HTTP request). The header is one or more (in practice at least 3) lines of text, separated by a '\n' (newline) character. The end of the header is demarcated by a double new line "\n\n".
 
@@ -86,4 +86,4 @@ As can be seen from the notification [traces](#traces), some notifications do ca
 
 ### Parallel consumers
 
-The protocol can deliver notifications to a scaled-out subscriber. It is important to give each instance of the scaled-out application a unique consumer identifier (passing on connect in the query string). Ideally this identifier should persist between re-starts of instances. With this, notifications from a particular device or source are delivered to the same instance of the scaled-out application as long as that instance is running. This makes processing successive notifications about the same device (or source) simpler.
+The protocol can deliver notifications to a scaled-out subscriber. It is important to give each instance of the scaled-out application a unique consumer identifier (passing on connect in the query string) as well as specifying "shared=true" when requesting a notification token. Ideally this identifier should persist between re-starts of instances. With this, notifications from a particular device or source are delivered to the same instance of the scaled-out application as long as that instance is running. This makes processing successive notifications about the same device (or source) simpler.

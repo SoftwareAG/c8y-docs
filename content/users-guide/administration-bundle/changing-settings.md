@@ -388,7 +388,7 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 2. Click **Remove** to delete the property.
 
 <a name="sms-provider"></a>
-### Providing SMS provider credentials //TODO to change
+### Providing SMS provider credentials
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 

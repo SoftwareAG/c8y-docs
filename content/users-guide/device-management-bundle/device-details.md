@@ -31,7 +31,7 @@ The following tabs are the most common ones, each described in detail in a separ
 <tbody>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
-<td style="text-align:left">Allows to interface with LoRa devices through Actility's ThingPark Wireless.</td>
+<td style="text-align:left">Only shows up for devices connected via Actility Lora. For more details, see <a href="../../protocol-integration/lora-actility">Actility LoRa</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarms">Alarms</a></td>
@@ -43,7 +43,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
-<td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
+<td style="text-align:left">Shows details for devices connected through Cloud Fieldbus. See <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a> for more information.</td>
 </tr>
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
@@ -71,7 +71,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>
-<td style="text-align:left">Allows to communicate with all devices supporting the LWM2M protocol.</td>
+<td style="text-align:left">Provides details for devices connected via LightweightM2M. For details, see <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#location">Location</a></td>
@@ -83,7 +83,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
-<td style="text-align:left">Allows to interface with LoRa devices through LORIOT Network Server Provider.</td>
+<td style="text-align:left">Only shows up for devices connected via LORIOT LoRa. See <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a> for more details.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Measurements</a></td>
@@ -95,7 +95,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
-<td style="text-align:left">Enables the communication between the {{< product-c8y-iot >}} platform and an OPC UA server via a OPC UA gateway.</td>
+<td style="text-align:left">Shows details for devices with the protocol OPC UA. For more information, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#service-monitoring">Service monitoring</a></td>
@@ -107,11 +107,11 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/sigfox">Sigfox</a></td>
-<td style="text-align:left">Allows to interface with Sigfox devices through the Sigfox Cloud.</td>
+<td style="text-align:left">Only shows up for devices connected through the Sigfox Cloud. See <a href="../../protocol-integration/sigfox">Sigfox</a> for more details.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/snmp">SNMP</a></td>
-<td style="text-align:left">Allows the communication with SNMP-enabled devices.</td>
+<td style="text-align:left">Shows details on SNMP-enabled devices. For more information, see <a href="../../protocol-integration/snmp">SNMP</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#software">Software</a></td>

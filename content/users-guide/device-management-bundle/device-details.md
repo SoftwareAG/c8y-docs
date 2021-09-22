@@ -288,6 +288,8 @@ Similarly, to install a software on the device, select a software package from t
 
 ![Device Software tab](/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
 
+![Device Software installation](/images/users-guide/DeviceManagement/devmgmt-devices-software-installation.png)
+
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
 
 #### To remove firmware/software

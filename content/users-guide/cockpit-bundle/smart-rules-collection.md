@@ -1049,7 +1049,7 @@ Here we can for example define the following variables:
     <td>#{source.X.Y} </td>
     <td>The property field information from the source device (ManagedObject) of the trigger. For example:
     <br> #{source.c8y_Hardware.serialNumber} > Serial number of the device.
-    <br> #{source.c8y_Notes} > Note field of the device.
+    <br> #{source.c8y_Notes} > Note field of the device.</td>
   </tr>  
 </table>
 

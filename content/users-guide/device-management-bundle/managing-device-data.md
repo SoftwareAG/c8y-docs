@@ -463,6 +463,7 @@ To delete a device profile, click the menu icon at the right of the respective d
 
 > **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
 
+<a name="applying-device-profiles"></a>
 ### Applying device profiles to devices
 
 Device profiles can be assigned to

@@ -31,7 +31,7 @@ The following tabs are the most common ones, each described in detail in a separ
 <tbody>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
-<td style="text-align:left">Only shows up for devices connected via Actility Lora. For more details, see <a href="../../protocol-integration/lora-actility">Actility LoRa</a>.</td>
+<td style="text-align:left">Provides details for devices connected via Actility LoRa. For details, see <a href="../../protocol-integration/lora-actility">Actility LoRa</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#alarms">Alarms</a></td>
@@ -42,8 +42,8 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Lists devices being connected to the current device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
-<td style="text-align:left">Shows details for devices connected through Cloud Fieldbus. See <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a> for more information.</td>
+<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
+<td style="text-align:left">Provides details for fieldbus devices. For details, see <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
@@ -52,6 +52,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#control">Control</a></td>
 <td align="left">Displays operations being sent to a device. Also refer to <a href="#operation-monitoring">Working with operations</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#dev-profile">Device profile</a></td>
+<td align="left">Shows the details of the currently installed profile on a device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#events">Events</a></td>
@@ -70,7 +74,7 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Provides general information on a device. Available for each device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>
+<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
 <td style="text-align:left">Provides details for devices connected via LightweightM2M. For details, see <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
 </tr>
 <tr>
@@ -83,7 +87,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
-<td style="text-align:left">Only shows up for devices connected via LORIOT LoRa. See <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a> for more details.</td>
+<td style="text-align:left">Provides details for devices connected via LORIOT LoRa. For details, see <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a> for more details.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Measurements</a></td>
@@ -94,8 +98,8 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Displays network information for a device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
-<td style="text-align:left">Shows details for devices with the protocol OPC UA. For more information, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
+<td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA server</a></td>
+<td style="text-align:left">Provides details for devices connected via an OPC UA server. For details, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#service-monitoring">Service monitoring</a></td>
@@ -107,11 +111,11 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/sigfox">Sigfox</a></td>
-<td style="text-align:left">Only shows up for devices connected through the Sigfox Cloud. See <a href="../../protocol-integration/sigfox">Sigfox</a> for more details.</td>
+<td style="text-align:left">Provides details for devices connected via Sigfox. For details, see <a href="../../protocol-integration/sigfox">Sigfox</a> for more details.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/snmp">SNMP</a></td>
-<td style="text-align:left">Shows details on SNMP-enabled devices. For more information, see <a href="../../protocol-integration/snmp">SNMP</a>.</td>
+<td style="text-align:left">Provides details for devices connected via SNMP. For details, see <a href="../../protocol-integration/snmp">SNMP</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#software">Software</a></td>
@@ -175,6 +179,11 @@ For more details on managing binary-based configuration snapshots, see [Managing
 The **Control** tab lists the operations being sent to a device. See [Working with operations](#operation-monitoring) for detailed information on operations.
 
 ![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
+
+<a name="dev-profile"></a>
+### Device profile
+
+See [Applying device profiles to devices](#applying-device-profiles) for more information on how to apply device profiles to a device.
 
 <a name="events"></a>
 ### Events

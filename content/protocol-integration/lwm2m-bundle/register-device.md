@@ -267,8 +267,8 @@ The table below lists the information of the additional fields:
 <tr>
 <td style="text-align: left">external-c8y_BootstrapPskId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">This field has the same value as the "bootstrap psk_id" field. The ID is used to create an additional external ID of type "c8y_BootstrapPskId" in the registered device which will be used to find the device during bootstrap. </td>
-<td style="text-align: left">Optional</td>
+<td style="text-align: left">This field has the same value as the "bootstrap psk_id" field. This mandatory ID is used to create an additional external ID of type "c8y_BootstrapPskId" in the registered device which will be used to find the device during bootstrap. </td>
+<td style="text-align: left">Mandatory</td>
 </tr>
 </tbody>
 </table>

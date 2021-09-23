@@ -24,13 +24,35 @@ To make reports available in its web frontend, DataHub embeds Microsoft Power BI
 
 The following configuration steps are required, as discussed in detail in the corresponding [Microsoft documentation](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers):
 
-As prerequisite you need an Azure Active Directory tenant. Next you have to register an Azure Active Directory application, which requires your Azure Active Directory tenant. You have to configure the application to access the REST APIs of Microsoft Power BI. Additionally you need to add a client secret for the application. You also have to allow the service principal to use Microsoft Power BI APIs. 
+As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory, follow the instructions in the [Microsoft guide](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
 
-Next you can define a workspace to organize your reports. By adding the service principal as a member or admin to the workspace, the Azure Active Directory application can access the reports. Only workspaces granting access to the service principal can be browsed from within DataHub. Once the workspace is available you can publish reports to it.
+Next you have to register an Azure Active Directory application, which serves as service principal. You have to configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Power BI website](https://app.powerbi.com/embedsetup):
+
+* Select **Embed for your customers**
+* Sign in to Power BI
+* Register an application with respective permissions
+* Skip creating a workspace and importing content
+* Grant permissions to the service principal
+
+>**Info:** An application created with the wizard can be used as a service principal even though the documentation states the opposite. 
+
+Alternatively, you can create a service principal application following the section **Creating an Azure AD app in the Microsoft Azure portal** on the [Microsoft website](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
+
+Additionally you need to add a client secret for the service principal application. You can do that via the [Azure portal](https://portal.azure.com/). You have to search for **App registrations**, select your application by its name under **All applications**, and click on the link next to the **Client credentials** entry on the **Overview** page of the application.
+
+Next you can define a workspace to organize your reports. By adding the service principal application as a member or admin to the workspace, it can access the reports of the workspace. Go to the [Power BI website](https://app.powerbi.com) and conduct the following steps to grant the permissions:
+
+* Sign in to Power BI
+* Click **Workspaces**
+* Select the context menu of the workspace to share with the service principal
+* Select **Workspace access**
+* Enter the name of your recently created service principal application and grant the *Member* or *Admin* permission
+
+Only workspaces granting access to the service principal application can be browsed from within DataHub. Once the workspace is available you can publish reports to it and access it in DataHub.
 
 ### Setting up the connection in DataHub
 
-In the navigator, select **Microsoft PowerBI** and then **Settings** to define the connection settings.
+In the navigator, select **Settings** and then **Microsoft Power BI** to define the connection settings.
 
 |Settings|Description|
 |:---|:---|
@@ -44,7 +66,7 @@ If you want to delete the settings, click **Delete** on the action bar. You cann
 
 ### Working with reports
 
-Once the settings are defined, you can access and work with the reports. In the navigator, select **Microsoft PowerBI** and then **Reports**.
+Once the settings are defined, you can access and work with the reports. In the navigator, select **Microsoft Power BI**. The menu entry is only shown if the connection settings are defined.
 
 On the reports page, click **Select report** in the action bar. A dialog opens with two drop-down boxes. In the first drop-down box, all workspaces which grant member or admin access to the service principal are listed. Select the workspace you are interested in. The second drop-down box provides all reports of the selected workspace. Select a report from the drop-down box. Click **Select** to open the report or **Cancel** to close the dialog without selecting a report.
 

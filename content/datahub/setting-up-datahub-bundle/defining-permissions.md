@@ -6,7 +6,9 @@ layout: redirect
 
 Dedicated permissions define what a user is allowed to do in DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
-If you do not have corresponding DataHub permissions, you will get a warning after login.  
+If you do not have corresponding DataHub permissions, you will get a warning after login.
+
+> **Info:** When offloading the inventory/events/alarms/measurements collection, DataHub does not incorporate access limitations for these collections as set in the Cumulocity IoT platform. In particular [inventory roles](https://cumulocity.com/guides/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
 
 ### DataHub roles and permissions
 

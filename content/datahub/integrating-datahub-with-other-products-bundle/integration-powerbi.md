@@ -20,7 +20,7 @@ A report is typically published so that it is available to other users as well. 
 
 #### Configuring access to Microsoft Power BI reports
 
-To make reports available in its web frontend, DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For authenticating the access an Azure Active Directory service principal object with an application secret is used. 
+To make reports available in its web frontend, DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For authenticating the access an Azure Active Directory service principal object with an application secret is used.
 
 The following configuration steps are required, as discussed in detail in the corresponding [Microsoft documentation](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers):
 
@@ -34,7 +34,7 @@ Next you have to register an Azure Active Directory application, which serves as
 * Skip creating a workspace and importing content
 * Grant permissions to the service principal
 
->**Info:** An application created with the wizard can be used as a service principal even though the documentation states the opposite. 
+>**Info:** An application created with the wizard can be used as a service principal even though the documentation states the opposite.
 
 Alternatively, you can create a service principal application following the section **Creating an Azure AD app in the Microsoft Azure portal** on the [Microsoft website](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
 

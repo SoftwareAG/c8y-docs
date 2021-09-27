@@ -126,7 +126,58 @@ The endpoint returns:
 
 	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
 
-Note that this task does not start the installation. You must run the subsequent calls to upload the license and the certificate files to start the installation.
+Note that this task does not start the installation. You must run subsequent calls to upload the license and the certificate files to start the installation.
+
+To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
+### POST /edge/configuration/domain
+
+Use this endpoint to update the domain name.
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/json
+
+**Request**
+
+```http
+POST https://myown.iot.com/edge/configuration/domain
+Content-Type: application/json
+
+	{
+    "domain_name": "new.domain.com",
+    "certificate": "upload" 
+	}
+```
+In the JSON format above, the value of `certificate` can be `generate` or `upload`:
+
+- If you have set `"certificate": "generate"`, {{< product-c8y-iot >}} Edge generates the certificate for you.
+
+- If you have set `"certificate": "upload"`, you must upload the certificate in the resulting uploads URL.
+
+If the current SSL certificate is compatible with the new domain name, you do not have to upload a new certificate.
+
+**Response**
+
+The endpoint returns:
+
+- HTTP status 201, if the request is successful.
+
+
+		{
+		  "id":"1",
+		  "uploads":[
+			{"name":"licence","url":"https://myown.iot.com/edge/upload/4/licence"},
+			{"name":"certificate","url":"https://myown.iot.com/edge/upload/4/certificate"},
+			{"name":"certificate_key","url":"https://myown.iot.com/edge/upload/4/certificate_key"}
+		 ]
+		}
+
+	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
+
+You must run subsequent calls to upload the license and the certificate files to update the domain name.
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 

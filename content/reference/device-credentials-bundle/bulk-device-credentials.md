@@ -35,9 +35,9 @@ The first section is the first line of the CSV file. This line contains the colu
 <tr>
 <td align="left">AUTH_TYPE</td>
 <td align="left">0..1</td>
-<td align="left">Required authentication type for the device's user. If the device uses credentials, this can be skipped or filled with "BASIC". Devices that use certificates must set "CERTIFICATES". The default value is "BASIC". </td>
+<td align="left">Required authentication type for the device's user. If the device uses credentials, this can be skipped or filled with BASIC. Devices that use certificates must set CERTIFICATES. </td>
 </tr>
-<tr>
+<tr
 <td align="left">TENANT</td>
 <td align="left">0..1</td>
 <td align="left">The name of the tenant for which registration is executed (allowed only by the management tenant).</td>

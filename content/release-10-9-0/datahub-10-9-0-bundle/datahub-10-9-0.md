@@ -18,8 +18,8 @@ DataHub introduces a new wizard for creating offloading configurations. Offloadi
 
 |<div style="width:250px">Description</div>
 |:---
-|Mixed usage of uppercase and lowercase for an attribute name in the documents is not supported as it may corrupt the schema of the offloaded data.|
-|If the collection to be offloaded has JSON attributes consisting of more than 32,000 characters, its data cannot be offloaded. One specific case where this limitation applies is the Application Builder for Cumulocity IoT, which stores its assets in the inventory collection when being used.|
+|Mixed usage of uppercase and lowercase characters for an attribute name in the documents is not supported as it may corrupt the schema of the offloaded data.|
+|If the collection to be offloaded has JSON attributes consisting of more than 32,000 characters, its data cannot be offloaded. One specific case where this limitation applies is Cumulocity IoT's application builder, which stores its assets in the inventory collection when being used.|
 |If the collection to be offloaded has more than 800 JSON attributes, its data cannot be offloaded. This limitation also includes nested JSON content, which will be expanded into columns during offloading. Therefore, measurements documents with more than 800 series/series value fragments are not supported.|
 |If an attribute of a collection has varying types associated, the result table will contain a mixed type which may render query writing difficult or lead to problems with subsequent consumer applications.|
 |DataHub does not work with Kubernetes version prior to 1.9.|

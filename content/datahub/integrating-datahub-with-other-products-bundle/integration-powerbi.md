@@ -38,7 +38,7 @@ Next you have to register an Azure Active Directory application, which serves as
 
 Alternatively, you can create a service principal application following the section **Creating an Azure AD app in the Microsoft Azure portal** on the [Microsoft website](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
 
-Additionally you need to add a client secret for the service principal application. You can do that via the [Azure portal](https://portal.azure.com/). You have to search for **App registrations**, select your application by its name under **All applications**, and click on the link next to the **Client credentials** entry on the **Overview** page of the application.
+Additionally, you need to add a client secret for the service principal application. You can do that via the [Azure portal](https://portal.azure.com/). You have to search for **App registrations**, select your application by its name under **All applications**, and click on the link next to the **Client credentials** entry on the **Overview** page of the application.
 
 Next you can define a workspace to organize your reports. By adding the service principal application as a member or admin to the workspace, it can access the reports of the workspace. Go to the [Power BI website](https://app.powerbi.com) and conduct the following steps to grant the permissions:
 
@@ -48,7 +48,7 @@ Next you can define a workspace to organize your reports. By adding the service 
 * Select **Workspace access**
 * Enter the name of your recently created service principal application and grant the *Member* or *Admin* permission
 
-Only workspaces granting access to the service principal application can be browsed from within DataHub. Once the workspace is available you can publish reports to it and access it in DataHub.
+Only workspaces granting access to the service principal application can be browsed from within DataHub. Once the workspace is available, you can publish reports to it and access it in DataHub.
 
 ### Setting up the connection in DataHub
 

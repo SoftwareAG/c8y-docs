@@ -1045,7 +1045,7 @@ Hier lassen sich beispielsweise die folgenden Variablen definieren:
     <td>#{source.X.Y} </td>
     <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Trigger. Zum Beispiel:
     <br> #{source.c8y_Hardware.serialNumber} > Seriennummer des Geräts.
-    <br> #{source.c8y_Notes} > Anmerkungsfeld des Geräts.
+    <br> #{source.c8y_Notes} > Anmerkungsfeld des Geräts.</td>
   </tr>  
 </table>
 

@@ -5,13 +5,13 @@ layout: redirect
 helpcontent:
   - label: grouping-devices
     title: Grouping devices
-    content: "Devices can be grouped according to your requirements. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+    content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 
   You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator, see also *Device Management > Grouping devices* in the *User guide*."
 ---
 
-Devices can be grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 {{< product-c8y-iot >}} distinguishes between top-level groups and subgroups:
 

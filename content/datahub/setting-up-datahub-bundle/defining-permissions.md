@@ -8,7 +8,7 @@ Dedicated permissions define what a user is allowed to do in DataHub. To ease as
 
 If you do not have corresponding DataHub permissions, you will get a warning after login.
 
-> **Info:** When offloading the inventory/events/alarms/measurements collection, DataHub does not incorporate access limitations for these collections as set in the Cumulocity IoT platform. In particular, [inventory roles](https://cumulocity.com/guides/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
+> **Info:** When offloading the inventory/events/alarms/measurements collection, DataHub does not incorporate access limitations for these collections as set in the Cumulocity IoT platform. In particular, [inventory roles](/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
 
 ### DataHub roles and permissions
 

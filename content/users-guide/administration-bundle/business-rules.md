@@ -1,7 +1,13 @@
 ---
 weight: 50
 title: Managing business rules
+helpcontent:
+- label: reprio-alarms
+  title: Alarm mapping
+  content: "Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL.
 
+
+  See also *Administration > Managing business rules* in the *User guide*."
 ---
 <a name="event-processing"></a>
 ### Event processing
@@ -45,7 +51,6 @@ For details on the fields, see [To add a rule](#add-rule).
 Click the menu icon at the right of the respective row and then click **Delete**.
 
 Instead of deleting the rule you can also disable it temporarily by setting its status to "Not deployed".
-
 
 <a name="reprio-alarms"></a>
 ### Alarm mapping

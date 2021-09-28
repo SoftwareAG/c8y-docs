@@ -2,20 +2,21 @@
 weight: 30
 title: Data explorer
 layout: redirect
-helpcontent: >-
-  In the data explorer, data points, i.e. measurements or sensor data, can be visualized. On the right, you see a list of available data points. On the left you see its visualization.
+helpcontent:
+  - label: data-explorer
+    title: Data explorer
+    content: "In the data explorer, data points, i.e. measurements or sensor data, can be visualized. On the right, you see a list of available data points. On the left you see its visualization.
 
 
-  Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
+    Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
 
 
-  You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see the data explorer documentation.
+    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods. For details, see *Cockpit > Data explorer* in the *User guide*.
 
 
-  Moreover, the data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file.
+    Moreover, the data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-<a name="data explorer"></a>
 
 In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
 
@@ -46,7 +47,6 @@ There can be more than one matching data point entry in the data point library. 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
-
 
 <a name="change-visualization"></a>
 ### Changing data explorer visualization
@@ -113,7 +113,6 @@ To save the data point to the data point library, click the menu icon of the dat
 For details on the data point library refer to [Using the Datapoint Library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
-
 
 <a name="customize-data-points"></a>
 ### Customizing data point properties
@@ -201,7 +200,6 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
-
 <a name="create-widget"></a>
 ### Creating widgets from the data explorer
 
@@ -226,7 +224,6 @@ To create a widget from the data explorer of in the navigator, click **More...**
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
 > **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
-
 
 <a name="export-data"></a>
 ### Exporting measurement data

@@ -151,13 +151,9 @@ Content-Type: application/json
     "certificate": "upload" 
 	}
 ```
-In the JSON format above, the value of `certificate` can be `generate` or `upload`:
+In the JSON format above, the value of `certificate` can be `generate` or `upload`.
 
-- If you have set `"certificate": "generate"`, {{< product-c8y-iot >}} Edge generates the certificate for you.
-
-- If you have set `"certificate": "upload"`, you must upload the certificate in the resulting uploads URL.
-
-If the current SSL certificate is compatible with the new domain name, you do not have to upload a new certificate.
+If the existing SSL certificate is compatible with the new domain name or a wildcard certificate, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set the value of `certificate`.
 
 **Response**
 
@@ -175,7 +171,11 @@ The endpoint returns:
 		 ]
 		}
 
-	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
+	If the new domain name is compatible with the existing licence, the `uploads` array may not contain the `licence` entry.
+	
+	If the new domain name is compatible with the existing certificate, the `uploads` array may not contain `certificate` and `certificate_key` entry.
+
+	The task starts immediately and can be polled if there are no uploads.
 
 You must run subsequent calls to upload the license and the certificate files to update the domain name.
 

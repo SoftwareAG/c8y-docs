@@ -1,14 +1,14 @@
 ---
 weight: 35
-title: Updating the domain name and SSL certificate
+title: Changing the domain name
 layout: redirect
 ---
 
-After the installation, you can update the domain name of your Edge appliance. You must always have a supporting license file and an SSL certificate for your domain name that is configured. If the validity of the certificate expires, you must upload a new certificate. You can update the domain name and upload the certificate using the GUI and REST APIs.
+After the installation, you can change the domain name of your Edge appliance. You must always have a supporting license file and an SSL certificate for your domain name that is configured. You can change the domain name using the GUI and REST APIs.
 
->**Important:** Before you update the domain name, see the [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+>**Important:** Before you change the domain name, see the [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
-### Updating the domain name and SSL certificate using the GUI
+### Changing the domain name using the GUI
 
 1. Log in to the {{< management-tenant >}}.
 
@@ -43,9 +43,9 @@ After the installation, you can update the domain name of your Edge appliance. Y
       
    - Click **Save**.
 
-### Updating the SSL certificate using the REST APIs
+### Changing the domain name using the REST APIs
 
-To update the domain name and upload the new SSL certificate and the key file, use the following endpoints:
+To change the domain name, use the following endpoints:
 
-- [GET /edge/configuration/certificate](/edge/rest-api/#get-edgeconfigurationcertificate)
-- [POST /edge/configuration/certificate](/edge/rest-api/#post-edgeconfigurationcertificate)
+- [GET /edge/configuration/domain](/edge/rest-api/#get-edgeconfigurationcertificate)
+- [POST /edge/configuration/domain](/edge/rest-api/#post-edgeconfigurationcertificate)

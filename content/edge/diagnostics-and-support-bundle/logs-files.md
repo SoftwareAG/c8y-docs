@@ -40,7 +40,7 @@ To access the apama-ctrl log files, run the command:
 
 See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
 
-### Log rotation 
+### Log rotation
 
 The components for which log rotation is configured are as follows:
 
@@ -50,11 +50,11 @@ The components for which log rotation is configured are as follows:
 |MQTT|${karaf.data}/log/mqtt.log|Daily|50 MB|14|
 |Access|${karaf.data}/log/access.log|Daily|50 MB|14|
 |DataBroker|${karaf.data}/log/databroker.log|Daily|50 MB|14|
- 
-**Under /etc/ configured via logrotate.conf and config files under /etc/logrotate.d**
- 
+
+**Under /etc/ configured via logrotate.conf and configuration files under /etc/logrotate.d**
+
 The components for which log rotation is configured are as follows:
- 
+
 |Component|Log file location|Log file rotation|Max file size|Max backup index|
 |:---|:---|:---|:---|:---|
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|

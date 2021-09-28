@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Verwalten von Gerätedaten (enthält Beta-Änderungen)
+title: Verwalten von Gerätedaten
 layout: redirect
 ---
 
@@ -8,22 +8,23 @@ layout: redirect
 
 Die Device Management-Anwendung bietet verschiedene Funktionen, die Sie bei der effizienten Verwaltung Ihrer Geräte unterstützen:
 
-|Funktion|Beschreibung|
-|:---|:---|
-|[Verwalten von Geräte-Firmware](#firmware-repo)|Wie Sie Firmware, Firmware-Versionen und -Patches im Firmware-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren.
-|[Verwalten von Geräte-Software](#software-repo)|Wie Sie Software, Software-Versionen und -Patches im Software-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren.
-|[Verwalten von Konfigurationen](#configuration-repository)|Wie Sie Konfigurationsdaten von einem Gerät abrufen und sie als Konfigurationssnapshot in einem Konfigurations-Repository speichern und verwalten.
-|[Gerätezugangsdaten](#credentials)|Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.
-|[Geräteprofile](#device-profiles)|Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.
-|[Vertrauenswürdige Zertifikate](#trusted-certificates)|Wie Sie vertrauenswürdige Zertifikate verwalten.
+| Funktion                                              | Beschreibung                                                                                                                                 |
+|:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| [Verwalten von Geräte-Firmware](#firmware-repo)           | Wie Sie Firmware, Firmware-Versionen und -Patches im Firmware-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren. |
+| [Verwalten von Geräte-Software](#software-repo)           | Wie Sie Software, Software-Versionen und -Patches im Software-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren.          |
+| [Verwalten von Konfigurationen](#configuration-repository) | Wie Sie Konfigurationsdaten von einem Gerät abrufen und sie als Konfigurationssnapshot in einem Konfigurations-Repository speichern und verwalten.                         |
+| [Gerätezugangsdaten](#credentials)                   | Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.                                                                         |
+| [Geräteprofile](#device-profiles)                  | Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.                                 |
+| [Vertrauenswürdige Zertifikate](#trusted-certificates)        | Wie Sie vertrauenswürdige Zertifikate verwalten.                                                                                                         |
 
 Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufgerufen werden:
 
 ![Management menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-menu.png)
 
-### <a name="firmware-repo"></a> Verwalten von Geräte-Firmware
+<a name="firmware-repo"></a>
+### Verwalten von Geräte-Firmware
 
-Mit dem Firmware-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Firmware für Geräte zu verwalten.
+Mit dem Firmware-Repository bietet {{< product-c8y-iot >}} die Möglichkeit, Referenz-Firmware für Geräte zu verwalten.
 
 Pro Gerät kann nur eine Firmware-Paketversion angewendet werden.
 
@@ -36,6 +37,7 @@ Die verfügbaren Firmware-Objekte werden in Form einer Liste angezeigt.
 ![Firmware list](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-list.png)
 
 Jeder Eintrag enthält den Namen der Firmware, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Firmware verfügbar sind.
+Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung und Gerätetyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Firmware sowie alle verfügbaren Versionen und Patches angezeigt.
 
@@ -51,10 +53,11 @@ Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der
 
 1. Klicken Sie auf der Seite **Firmware Repository** rechts in der oberen Menüleiste auf **Firmware hinzufügen**.
 2. Im darauffolgenden Dialog können Sie
-	* eine neue Firmware hinzufügen, indem Sie einen Namen für die Firmware eingeben (im nächsten Fenster durch Klicken auf **Hinzufügen** bestätigen) und eine Beschreibung sowie die Version hinzufügen (alle Angaben erforderlich).
+	* eine neue Firmware hinzufügen, indem Sie einen Namen für die Firmware eingeben (im darauffolgenden Fenster durch Klicken auf **Hinzufügen** bestätigen) und eine Beschreibung sowie die Version hinzufügen (alle Angaben erforderlich).
 	* eine neue Version hinzufügen, indem Sie die Firmware, für die Sie die Version hinzufügen möchten, in der Auswahlliste im Feld **Firmware** auswählen und eine Version eingeben.
+3. Optional können Sie den Gerätetypfilter definieren, wenn Sie eine neue Firmware hinzufügen.
 3. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Firmware heruntergeladen werden kann.
-4. Klicken Sie **Speichern**.
+4. Klicken Sie auf **Speichern**.
 
 ![Add firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add.png)
 
@@ -72,7 +75,7 @@ Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** k
 3. Wählen Sie im Feld **Version** die Version, für die Sie einen Patch hinzufügen möchten.  
 3. Geben Sie im Feld **Patch** einen Namen für den Patch ein.
 3. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Firmware heruntergeladen werden kann.
-4. Klicken Sie **Speichern**.
+4. Klicken Sie auf **Speichern**.
 
 Wie beim Hinzufügen von Versionen sieht der Dialog etwas anders aus, wenn Sie in den Details einer bestimmten Firmware auf **Firmware-Patch hinzufügen** klicken. Dies liegt daran, dass die Firmware bereits ausgewählt ist.
 
@@ -112,7 +115,7 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
-Darüber hinaus zeigt sie den Operationsstatus des letzten Operationen an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
+Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
 ![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
@@ -125,15 +128,16 @@ Darüber hinaus zeigt sie den Operationsstatus des letzten Operationen an (ERFOL
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
-Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
+Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
+
 
 ##### So installieren/aktualisieren Sie Firmware auf mehreren Geräten
 
-Cumulocity IoT bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
+{{< product-c8y-iot >}} bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
 1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
@@ -141,9 +145,10 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
-### <a name="software-repo"></a> Verwalten von Geräte-Software
+<a name="software-repo"></a>
+### Verwalten von Geräte-Software
 
-Mit dem Software-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden.
+Mit dem Software-Repository bietet {{< product-c8y-iot >}} die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden.
 
 #### Anzeigen von Software
 
@@ -153,7 +158,8 @@ Die verfügbaren Software-Objekte werden in Form einer Liste angezeigt.
 
 ![Software list](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-repository.png)
 
-Jeder Eintrag enthält den Namen der Software, den Gerätetypen auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
+Jeder Eintrag enthält den Namen der Software, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
+Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung, Gerätetyp oder Konfigurationstyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Software sowie alle verfügbaren Versionen angezeigt.
 
@@ -168,10 +174,11 @@ Die Versionen sind nach ihrem Erstellungszeitpunkt (absteigend) sortiert.
 
 1. Klicken Sie auf der Seite **Software Repository** rechts in der oberen Menüleiste auf **Software hinzufügen**.
 2. Im darauffolgenden Dialog können Sie
-	* eine neue Software hinzufügen, indem Sie einen Namen für die Software eingeben (im nächsten Fenster durch Klicken auf **Hinzufügen** bestätigen) und eine Beschreibung sowie die Version hinzufügen (alle Angaben erforderlich).
+	* eine neue Software hinzufügen, indem Sie einen Namen für die Software eingeben (im darauffolgenden Fenster durch Klicken auf **Hinzufügen** bestätigen) und eine Beschreibung sowie die Version hinzufügen (alle Angaben erforderlich).
 	* eine neue Version hinzufügen, indem Sie die Software, für die Sie die Version hinzufügen möchten, in der Auswahlliste im Feld **Software** auswählen und eine Version eingeben.
+3. Optional können Sie den Gerätetypfilter definieren, wenn Sie eine neue Software hinzufügen.
 3. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Software heruntergeladen werden kann.
-4. Klicken Sie **Speichern**.
+4. Klicken Sie auf **Speichern**.
 
 ![Add software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add.png)
 
@@ -215,8 +222,8 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 ![Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-tab.png)
 
-Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).
- 
+Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
+
 ![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
 
 ##### So installieren Sie Software auf einem Gerät
@@ -229,14 +236,14 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
-Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
+Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
 
 ![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### So aktualisieren Sie Software auf einem Gerät
 
-Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie aktualisieren möchten und klicken Sie auf **Aktualisieren**.
+Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
 
 ![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
@@ -245,15 +252,15 @@ Die Software wird mit der ausgewählten Version aktualisiert.
 
 ##### So löschen Sie Software von einem Gerät
 
-Bewegen Sie den Mauszeiger über den Eintrag der Software, die sie löschen möchten und klicken Sie auf das Löschen-Symbol.
+Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möchten und klicken Sie auf das Löschen-Symbol.
 
 ##### So installieren Sie Software auf mehreren Geräten
 
-Cumulocity IoT bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
+{{< product-c8y-iot >}} bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
 1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dieser Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
@@ -261,21 +268,23 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 
 >**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
-### <a name="configuration-repository"></a>Verwalten von Konfigurationen
+<a name="configuration-repository"></a>
+### Verwalten von Konfigurationen
 
-In Cumulocity IoT können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
+{{< product-c8y-iot >}} können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
 
 Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben.
 
-Klicken Sie **Konfigurations-Repository** im Menü **Verwaltung** des Navigators. Auf der Seite **Konfigurations-Repository** werden alle verfügbaren Konfigurationssnapshots aufgelistet. Jeder Eintrag zeigt den Namen und die Beschreibung der Konfiguration sowie den Geräte- und Konfigurationstyp.
+Klicken Sie auf **Konfigurations-Repository** im Menü **Verwaltung** des Navigators. Auf der Seite **Konfigurations-Repository** werden alle verfügbaren Konfigurationssnapshots aufgelistet. Jeder Eintrag zeigt den Namen und die Beschreibung der Konfiguration sowie den Geräte- und Konfigurationstyp.
 
 ![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### <a name="add-snapshot"></a> So fügen Sie einen Konfigurationssnapshot hinzu
+<a name="add-snapshot"></a>
+#### So fügen Sie einen Konfigurationssnapshot hinzu
 
-1. Klicken Sie **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste.
+1. Klicken Sie auf **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste.
 2. Geben Sie im darauffolgenden Dialog einen eindeutigen Namen ein.
-3. Geben Sie im Feld **Gerätetyp** einen Gerätetyp ein. Den Gerätetyp finden Sie in der Registerkarte **Info** des Zielgeräts.
+3. Geben Sie im Feld **Gerätetyp** einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte **Info** des Zielgeräts.
 4. Sie können optional eine Beschreibung für die Konfiguration eingeben.
 5. Geben Sie den Konfigurationstyp, zum Beispiel "ssh", ein.
 6. Geben Sie die Datei mit dem Konfigurationssnapshot an, indem Sie sie aus dem Dateisystem hochladen, indem Sie eine URL angeben, über die der Konfigurationssnapshot abgerufen werden kann, oder indem Sie eine Datei auswählen.
@@ -304,7 +313,7 @@ Der Konfigurationssnapshot wird aus dem Konfigurationssnapshot-Repository gelös
 >**Info:** Die folgenden Schritte gelten für Geräte, die nur einen Konfigurationstyp unterstützen. Informationen zu Geräten, die mehrere Konfigurationstypen unterstützen, finden Sie im nächsten Abschnitt.
 
 1. Navigieren Sie unter **Geräte** > **Alle Geräte** zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
+2. Klicken Sie auf **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
 
 Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltung** des Navigators angezeigt.
 
@@ -314,7 +323,7 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
+3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
 ![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
 
@@ -330,7 +339,7 @@ Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau**
 
 > **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
 
-#### So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
+So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
 
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Wählen Sie den gewünschten Konfigurationstyp unter **Geräteunterstützte Konfigurationen**.
@@ -339,9 +348,10 @@ Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau**
 
 ![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetyp gefiltert.
+> **Info:** Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
 
-### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
+<a name="credentials"></a>
+### Verwalten von Gerätezugangsdaten
 
 Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#dev-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
@@ -351,7 +361,7 @@ Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für
 
 1. Klicken Sie auf den Pfeil in der Spalte **Globale Rollen**, um eine Liste mit globalen Rollen anzuzeigen.
 2. Zum Zuweisen oder Entfernen von Berechtigungen für ein einzelnes Gerät aktivieren bzw. deaktivieren Sie die jeweiligen Rollen.
-3. Klicken Sie **Anwenden**.
+3. Klicken Sie auf **Anwenden**.
 
 Die Rollen für die Geräte werden entsprechend aktualisiert.
 
@@ -363,7 +373,7 @@ Die Rollen für die Geräte werden entsprechend aktualisiert.
 
 	![Device credentials details](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials-details.png)
 
-3. Klicken Sie **Speichern**.
+3. Klicken Sie auf **Speichern**.
 
 Die Gerätezugangsdaten werden entsprechend aktualisiert.
 
@@ -382,9 +392,10 @@ Die Gerätezugangsdaten werden dauerhaft gelöscht.
 
 Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#dev-registration) fort, um das Gerät erneut zu registrieren.
 
-### <a name="device-profiles"></a>Verwalten von Geräteprofilen
+<a name="device-profiles"></a>
+### Verwalten von Geräteprofilen
 
-Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Benutzer mit Hilfe von Bulk-Operation eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
+Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Benutzer mit Hilfe von Bulk-Operationen eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
 
 #### So zeigen Sie Geräteprofile an
 
@@ -408,9 +419,10 @@ Um ein neues Geräteprofil hinzuzufügen, klicken Sie rechts in der oberen Menü
 
 Geben Sie im Fenster **Geräteprofil hinzufügen** einen Namen für das Profil an und tragen Sie optional einen oder mehrere Gerätetypen ein. Wenn ein Gerätetyp angegeben wird, kann das Geräteprofil nur Geräten dieses bestimmten Typs zugewiesen werden. Wird kein Gerätetyp angegeben, ist das Profil für alle Gerätetypen verfügbar.
 
-#### <a name="to-add-items"></a>So fügen Sie Elemente zu einem Geräteprofil hinzu
+<a name="to-add-items"></a>
+#### So fügen Sie Elemente zu einem Geräteprofil hinzu
 
-In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakets und Konfigurationsdateien hinzufügen.
+In den Details eines Geräteprofils können sie Firmware-Versionen, Software-Pakete und Konfigurationsdateien hinzufügen.
 
 Klicken Sie auf **Firmware hinzufügen**, um dem Profil eine Firmware-Version hinzuzufügen. Wählen Sie eine Firmware und eine Version aus der Liste und klicken Sie auf **Speichern**, um die Auswahl zu dem Profil hinzuzufügen. Wenn ein Gerätetyp für das Profil definiert wurde, können nur Firmware-Versionen mit dem entsprechenden Gerätetyp gewählt werden. Sie können nur eine Firmware-Version zu einem Profil hinzufügen.
 
@@ -469,34 +481,37 @@ Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils 
 ![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
 
 
-#### <a name="to-apply-profiles-to-single-devices"></a>So wenden Sie Geräteprofile auf ein einzelnes Gerät an
+<a name="to-apply-profiles-to-single-devices"></a>
+#### So wenden Sie Geräteprofile auf ein einzelnes Gerät an
 
 Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
-1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetyp passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
+1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetypen passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
 
 	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
 
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
-#### <a name="to-apply-profiles-to-multiple-devices"></a>So wenden Sie Geräteprofile auf mehrere Geräte an
+<a name="to-apply-profiles-to-multiple-devices"></a>
+#### So wenden Sie Geräteprofile auf mehrere Geräte an
 
 Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet werden.
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
 2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen > So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
 >**Info:** Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
 
 
-### <a name="trusted-certificates"></a> Verwalten von vertrauenswürdigen Zertifikaten
+<a name="trusted-certificates"></a>
+### Verwalten von vertrauenswürdigen Zertifikaten
 
-In Cumulocity IoT können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von Cumulocity IoT als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
+In {{< product-c8y-iot >}} können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von {{< product-c8y-iot >}} als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
 
->**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im Device SDK Guide.
+>**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im *Device SDK Guide*.
 
 Klicken Sie im Menü **Verwaltung** des Navigators auf **Vertrauenswürdige Zertifikate**.
 
@@ -522,7 +537,7 @@ Bevor Sie ein neues vertrauenswürdiges Zertifikat hinzufügen, stellen Sie folg
 * Es handelt sich um ein X.509-Zertifikat im PEM-Format.
 * Das Zertifikat liegt in Version 3 vor.
 * Das Zertifikat enthält `BasicConstraints:[CA:true]`.
-* Das Zertifikat wurde noch nicht in Cumulocity IoT hochgeladen.
+* Das Zertifikat wurde noch nicht in {{< product-c8y-iot >}} hochgeladen.
 * Das Zertifikat ist noch gültig (nicht abgelaufen).
 
 Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
@@ -533,12 +548,12 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 2. Geben Sie Sie im nächsten Dialog die folgenden Informationen ein:
 
-|Feld|Beschreibung|
-|:---|:---|
-|Zertifikatsname|Vom Benutzer angegebener Name für das Zertifikat. Dieser Name wird nicht von Cumulocity IoT verwendet und kann als Beschreibung des Zertifikats dienen.|
-|Zertifikat|Datei, die das Zertifikat im PEM-Format enthält. Fügen Sie die Datei durch Ablegen in dieses Feld oder Durchsuchen ihres Computers hinzu.|
-|Auto-Registrierung| Bei Auswahl dieser Option werden neue Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, automatisch registriert.|
-|Eingeschaltet/Ausgeschaltet| In ausgeschaltetem Zustand können sich Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, nicht verbinden.|
+| Feld             | Beschreibung                                                                                                                                |
+|:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| Zertifikatsname  | Vom Benutzer angegebener Name für das Zertifikat. Dieser Name wird nicht von {{< product-c8y-iot >}} verwendet und kann als Beschreibung des Zertifikats dienen.         |
+| Zertifikat       | Datei, die das Zertifikat im PEM-Format enthält. Fügen Sie die Datei durch Ablegen in dieses Feld oder Durchsuchen ihres Computers hinzu.            |
+| Auto-Registrierung | Bei Auswahl dieser Option werden neue Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, automatisch registriert. |
+| Eingeschaltet/Ausgeschaltet | In ausgeschaltetem Zustand können sich Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, nicht verbinden.               |
 
 3. Klicken Sie auf **Zertifikat hinzufügen**, um das Zertifikat zu validieren und zu speichern.
 

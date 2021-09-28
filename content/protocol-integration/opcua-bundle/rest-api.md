@@ -4,7 +4,7 @@ title: REST APIs
 layout: redirect
 ---
 
-While the Cumulocity IoT user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.
+While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
 
@@ -67,7 +67,7 @@ Payload data structure explained:
 <td>requiredInterval</td>
 <td>integer</td>
 <td>no</td>
-<td>How frequently the server is expected to send data to the Cumulocity IoT platform.</td>
+<td>How frequently the server is expected to send data to the {{< product-c8y-iot >}} platform.</td>
 </tr>
 <tr>
 <td>config</td>
@@ -83,9 +83,9 @@ Data structure for ServerConnectionConfig:
 <table>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 13%;">
-<col style="width: 7%;">
-<col style="width: 55%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -196,28 +196,28 @@ Data structure for ServerConnectionConfig:
 <td>alarmSeverityMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
+<td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
 </tr>
 <tr>
-<td>alarmStatusMappings</td>
+<td rowspan="1">alarmStatusMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>The status of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
-then the status of the alarm in Cumulocity IoT is expected as ACKNOWLEDGED. They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
+<td>The status of an alarm in {{< product-c8y-iot >}} is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
+then the status of the alarm in {{< product-c8y-iot >}} is expected as ACKNOWLEDGED. They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
 (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
+If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
 
-<br><strong><em>Example:</em></strong></br>
-"alarmStatusMappings": {
-            "default": "CLEARED",
-            "EnabledState != null and EnabledState.text == 'Enabled': "ACTIVE",
-            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' : "ACKNOWLEDGED"
-        }
->**Info:** There are three alarm statuses in Cumulocity IoT, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
-> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority.
+See the **alarmStatusMappings example** below the table.
+
+>**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
+> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
+> the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+
 </td>
 </tr>
 <tr>
@@ -225,12 +225,25 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 <td>boolean</td>
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
-which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of Cumulocity IoT.
+which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
 This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
 
 </tbody>
 </table>
+
+**alarmStatusMappings example**
+
+```json
+{
+    "alarmStatusMappings": {
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text != 'Acknowledged'": "ACTIVE",
+        "['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acknowledged'": "ACKNOWLEDGED",
+        "['0:ActiveState'].text == 'Inactive'": "CLEARED",
+        "default": "ACTIVE"
+    }
+}
+```
 
 **Alarms status changed by OPC UA server**
 
@@ -331,7 +344,7 @@ It's used to calculate the local file size bound to the entry size.
 
 **Description**
 
-Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the Cumulocity IoT platform will be deleted.
+Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the {{< product-c8y-iot >}} platform will be deleted.
 The service will retain all the child devices of the server, and their corresponding data, which were created by the device protocols.
 
 **Parameters**
@@ -555,7 +568,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 **Endpoint**
 
-`GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+`GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
 
 **Description**
 
@@ -812,13 +825,13 @@ Full payload data structure explained:
 <td>mappings</td>
 <td>array&lt;<em>Mapping</em>&gt;</td>
 <td>no</td>
-<td>Define the mappings from OPC UA data into Cumulocity IoT measurements, events and alarms.</td>
+<td>Define the mappings from OPC UA data into {{< product-c8y-iot >}} measurements, events and alarms.</td>
 </tr>
 <tr>
 <td>uaMappings</td>
 <td>array&lt;<em>UAMapping</em>&gt;</td>
 <td>no</td>
-<td>Define the mappings from OPC UA alarms and events into Cumulocity IoT alarms and events.</td>
+<td>Define the mappings from OPC UA alarms and events into {{< product-c8y-iot >}} alarms and events.</td>
 </tr>
 <tr>
 <td>referencedNamespaceTable</td>
@@ -836,7 +849,7 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the Cumulocity IoT processing mode for incoming data. Refer to <a href="https://cumulocity.com/api/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the Cumulocity IoT OpenAPI Specification for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the {{< product-c8y-iot >}} processing mode for incoming data. Refer to <a href="https://{{< domain-c8y >}}/api/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the {{< openapi >}} for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
 <td>overiddenSubscriptions</td>
@@ -1232,7 +1245,7 @@ the OPC UA device gateway.</td>
 <td>Static fragments that should be populated to the alarm.</td>
 </tr>
 <tr>
-<td>overriddenP-rocessingMode</td>
+<td>overriddenProcessingMode</td>
 <td>string</td>
 <td>no</td>
 <td>Custom processing mode applied to the alarm to be created. Possible values: PERSISTENT.</td>
@@ -1425,7 +1438,7 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>ranges</td>
 <td>string</td>
 <td>no</td>
-<td>When the subcribed node is array type, you can provide the data range you want to get. For example: <em>“0:3”</em> to get elements from index 0 to 3 from the array.</td>
+<td>When the subcribed node is array type, you can provide the data range you want to get. For example: <em>"0:3"</em> to get elements from index 0 to 3 from the array.</td>
 </tr>
 </tbody>
 </table>

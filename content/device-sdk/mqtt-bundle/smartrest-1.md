@@ -12,7 +12,7 @@ The support for SmartREST 1.0 was added to ease transition if you have an existi
 
 >**Info**: If you start a new device integration, we highly recommend to use SmartREST 2.0.
 
-For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide.
+For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
 
 ### MQTT ClientId
 
@@ -42,19 +42,19 @@ We also recommend you to add the protocol version as a postfix in the X-ID.
 
 #### Processing mode
 
-Since the [Cumulocity IoT SmartREST protocol](/reference/smartrest) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
+Since the [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 
 ```http
 t/ul/<X-ID>
 ```
 
-The [Cumulocity IoT SmartREST protocol](/reference/smartrest) also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
+The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
 
 ```http
 q/ul/<X-ID>
 ```
 
-The [Cumulocity IoT SmartREST protocol](/reference/smartrest) also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.
+The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.
 
 ```http
 c/ul/<X-ID>

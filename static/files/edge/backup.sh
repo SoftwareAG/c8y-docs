@@ -5,61 +5,79 @@
 # Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.
 #
 
-# This script is to backup c8y data. Outpus are inside /tmp directory: /tmp/migration_data_TENANT.tgz
+##################################
+# INFO!!!
+##################################
+# This script uses /tmp as default path for operating on archive.
+# Please make sure you have enough space in /tmp before executing.
+##################################
 
-# FUNCTIONS
+##################################
+# Example usage
+##################################
+
+# backup.sh # Without any arguments
+# OUTPUT: /tmp/migration_data.tgz
+
+# backup.sh /output
+# OUTPUT: /output/migration_data.tgz
+
+# backup.sh /output /tmp/migration_data.tgz
+# OUTPUT: /tmp/migration_data.tgz
+# DATA: /output
+
+##################################
+# Arg parse
+##################################
 
 function usage() {
     echo "Usage:"
-    echo "    backup_db.sh TENANT OUTPUT_DIRECTORY"
+    echo "    backup.sh [OUTPUT_DIRECTORY] [ARCHIVE_PATH]"
+    echo "    OUTPUT_DIRECTORY by default is /tmp/migration_data"
+    echo "    ARCHIVE_PATH by default is OUTPUT_DIRECTORY/migration_data.tgz"
 }
 
-# ARGUMENTS
-
-TENANT=$1
-OUTPUT=$2
+OUTPUT=$1
+ARCHIVE_PATH=$2
 
 if [ -z "$OUTPUT" ]; then
-    OUTPUT="/tmp"
-else
-    mkdir -p $OUTPUT
+    OUTPUT="/tmp/migration_data"
 fi
 
-if [ -z "$TENANT" ]; then
-   echo "No tenant name given!!!"
-   usage
-   exit 1;
+if [ -z "$ARCHIVE_PATH" ]; then
+    ARCHIVE_PATH="$OUTPUT/migration_data.tgz"
 fi
+echo "####################################"
+echo $OUTPUT
+echo "####################################"
+echo $ARCHIVE_PATH
+echo "####################################"
 
-if [ $TENANT = "management" ]; then
-    echo "Tenant name cannot be management"
-    exit 1;
-fi
-
-if [ $TENANT = "docker" ]; then
-    echo "Tenant name cannot be docker"
-    exit 1;
-fi
-
-TENANT_EXISTS=$(mongo --eval "db.adminCommand( { listDatabases: 1 } )" | grep -i $TENANT)
-
-if [ -z $TENANT_EXISTS ]; then
-    echo "Tenant does not exist"
-    exit 1;
-fi
-
+##################################
 # MAIN
+##################################
+
+mkdir -p $OUTPUT
+
 OUTPUT_DATA=$OUTPUT/data
 OUTPUT_COLLECTIONS=$OUTPUT_DATA/collections
 OUTPUT_CONFIGS=$OUTPUT_DATA/configs
+OUTPUT_OPCUA=$OUTPUT_DATA/opcua_data
+OUTPUT_CUMULO_AGENT=$OUTPUT_DATA/cumulocity-agent
 mkdir -p $OUTPUT_COLLECTIONS
 mkdir -p $OUTPUT_CONFIGS
+mkdir -p $OUTPUT_OPCUA
+mkdir -p $OUTPUT_CUMULO_AGENT
 
 mongodump --db=management --out "$OUTPUT_COLLECTIONS"
-mongodump --db=$TENANT --out "$OUTPUT_COLLECTIONS"
+mongodump --db=edge --out "$OUTPUT_COLLECTIONS"
 mongodump --db=docker --out "$OUTPUT_COLLECTIONS"
 
 cp -rp /usr/edge/properties/edge-agent/device-id $OUTPUT_CONFIGS/edge-agent_device-id
 
-tar -C $OUTPUT_DATA -cvzf $OUTPUT/migration_data.tgz ./
-rm -rf $OUTPUT_DATA
+cp -rp /etc/opcua $OUTPUT_OPCUA
+
+cp -rp /var/lib/cumulocity-agent/credentials $OUTPUT_CUMULO_AGENT/credentials
+
+tar -C $OUTPUT_DATA -cvzf $ARCHIVE_PATH ./
+# rm -rf $OUTPUT_DATA

@@ -9,83 +9,125 @@ aliases:
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artifacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
-#### Register a demo device in Cumulocity IoT
+#### Register a demo device in the platform
 
-Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
+A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity IoT. Run the script using the following command:
+1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
 
-	sh DemoDeviceCreator.sh 
+2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py*, a script that registers a demo device in {{< product-c8y-iot >}}) and *CONFIG.json* to Machine Learning Workbench (MLW).
 
-Use this script to add a device named "DemoDevice" to Cumulocity IoT.
+3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
-	DemoDeviceCreator.sh
-	c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
-	c_user=$(awk -F "=" '/c_user/ {print $2}' ./CONFIG.INI)
-	c_pass=$(awk -F "=" '/c_pass/ {print $2}' ./CONFIG.INI)
-	echo
-	echo "#####################################"
-	echo "#    Registering new demo device    #"
-	echo "#####################################"
-	curl --user $c_user:$c_pass -X POST $c_url"/inventory/managedObjects" -H "accept: application/json" -H "Content-Type: application/json" \
-	--data '{"name": "DemoDevice", "c8y_IsDevice": {}, "myDemoDevice":{}, "c8y_SupportedMeasurements": ["c8y_SignalStrengthWifi","c8y_Acceleration", "c8y_Barometer", "c8y_Gyroscope", "c8y_Luxometer", "c8y_Compass"]}'
-	echo
-	echo
-	echo "#########################################################"
-	echo "#  Registered a demo device with the name 'DemoDevice'  #"
-	echo "#########################################################"
+4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of this demo device.
-
-#### Upload the model and Apama monitor to Cumulocity IoT
-
-1. Upload the attached model *iforest_demo.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
-2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
-3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming Analytics guide for details on uploading Apama monitor files.
+5. Select *DemoDeviceCreator.py* in the **Code** folder and click the execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 
-#### Trigger an Anomaly Alert
+Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the center.
 
-A script *AnomalySimulatorForDemoDevice.sh* has been attached which simulates sending of alternate anomalous and non-anomalous readings to Cumulocity IoT from our demo device. This script can be used to depict the generation of anomalies.
+Script to add a device named "DemoDevice" to {{< product-c8y-iot >}}.
 
-All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
+	DemoDeviceCreator.py
 
-	AnomalySimulatorForDemoDevice.sh
-    c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
-    c_user=$(awk -F "=" '/c_user/ {print $2}' ./CONFIG.INI)
-    c_pass=$(awk -F "=" '/c_pass/ {print $2}' ./CONFIG.INI)
-    c_device_source=$(awk -F "=" '/c_device_source/ {print $2}' ./CONFIG.INI)
-    end=$((SECONDS+30))
-    COUNTER=0
-    DIV=2
-    while [ $SECONDS -lt $end ]; do
-        CURRENT_TIME=$(date --iso-8601=seconds)
-        result=`expr $COUNTER % $DIV`
-    	if [ $result == 0 ]
-    	then
-    		echo
-    		echo "##########################################"
-    		echo "#  Simulating Non-Anamolous Measurement  #"
-    		echo "##########################################"
-    		echo
-    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" \
-    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value": -0.2631993591785431},"accelerationX":{"unit":"G","value":5.769125938415527},"accelerationZ":{"unit":"G","value":8.193016052246094}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},"gyroY":{"unit":"°/s","value": 0.055571284145116806},"gyroZ":{"unit":"°/s","value":-0.0010122909443452952}}}]}'
-    		sleep 2
-    	fi
-    	if [ $result -eq 1 ]
-    	then
-    		echo
-    		echo "##########################################"
-    		echo "#    Simulating Anamolous Measurement    #"
-    		echo "##########################################"
-    		echo
-    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" \
-    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value":-27.943368911743164},"accelerationX":{"unit":"G","value":-26.63686370849609},"accelerationZ":{"unit":"G","value":7.422532558441162}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-13.211706161499025},"gyroY":{"unit":"°/s","value":7.483762264251709},"gyroZ":{"unit":"°/s","value":-11.959641456604006}}}]}'
-    		sleep 2
-    	fi
-    	COUNTER=`expr $COUNTER + 1`
-    done
+	# Register a demo device with {{< product-c8y-iot >}}
+	import requests
+	import json
+	from requests.auth import HTTPBasicAuth
+	import datetime
 
-This should now start sending alternate anomalous and non-anomalous measurements to Cumulocity IoT on behalf of your demo device for a total duration of 30 seconds.
+	data = json.load(open('../Data/CONFIG.json',))
+
+	payload={'name': 'DemoDevice',
+	'c8y_IsDevice': [],
+	'c8y_SupportedMeasurements': ['RoboSensors'],
+	'c8y_SupportedOperations': ['c8y_Restart',
+	'c8y_Configuration',
+	'c8y_Software',
+	'c8y_Firmware',
+	'c8y_Command']}
+
+	url = data['c_url']+"/inventory/managedObjects"
+	headers = {
+		'Content-Type': "application/json",
+		'Accept': "application/json",
+		'cache-control': "no-cache",
+		'Postman-Token': "2dc79351-5a48-4b8b-b4f2-30b880732d01"
+		}
+
+	response = requests.request("POST", url, data=json.dumps(payload), headers=headers,auth=HTTPBasicAuth(data['c_user'], data['c_pass']))
+
+	print("The device id is:" , json.loads(response.text)['id'])
+
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
+
+#### Upload the model and Apama monitor file
+
+1. Upload the attached model *iforest_model.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
+2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of `c_device_source` with the ID of your registered device.
+3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+
+
+#### Trigger an anomaly alert
+
+A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{< product-c8y-iot >}} from our demo device. This script can be used to depict the generation of anomalies.
+
+All you need to do is to upload this script to the MLW and run it as explained before.
+
+	AnomalySimulatorForDemoDevice.py
+
+	# Simulate anamolous and non-anamolous data
+	import requests
+	import json
+	from requests.auth import HTTPBasicAuth
+	import datetime
+	import random
+	data = json.load(open('../Data/CONFIG.json',))
+
+	url = data['c_url']+"/measurement/measurements"
+
+	# Simulated anamolous data
+	tt=datetime.datetime.now()
+
+	headers = {
+	'Content-Type': "application/json",
+	'Accept': "application/vnd.com.nsn.cumulocity.measurement+json",
+	'cache-control': "no-cache",
+	'Postman-Token': "2d5fa27d-c8c8-428c-b2f9-0efe9490b716"
+	}
+
+	payload1={'type': 'anamoly',
+		'time': str(tt.date())+'T'+str(tt.hour)+':'+str(tt.minute)+':'+str(tt.second)+'+05:30',
+		'source': {'id': data['c_device_source']},
+		"c8y_Acceleration":{"accelerationY":{"unit":"G","value":-0.2631993591785431},
+							"accelerationX":{"unit":"G","value":5.769125938415527},
+						"accelerationZ":{"unit":"G","value":8.193016052246094}},
+		"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},
+						"gyroY":{"unit":"°/s","value": 0.055571284145116806},
+						"gyroZ":{"unit":"°/s","value":-0.0010122909443452952}}
+	}
+
+	response = requests.request("POST", url, data=json.dumps(payload1),
+							headers=headers,auth=HTTPBasicAuth(data['c_user'], data['c_pass']))
+
+	# Simulated non-anamolous data
+	tt=datetime.datetime.now()
+	payload2={'type': 'non-anamoly',
+		'time': str(tt.date())+'T'+str(tt.hour)+':'+str(tt.minute)+':'+str(tt.second)+'+05:30',
+		'source': {'id': data['c_device_source']},
+		"c8y_Acceleration":{"accelerationY":{"unit":"G","value":0.0971527099609375},
+							"accelerationX":{"unit":"G","value":0.6249847412109375},
+						"accelerationZ":{"unit":"G","value":-0.2371368408203125}},
+		"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-1.2540942430496216},
+						"gyroY":{"unit":"°/s","value": -1.861748218536377},
+						"gyroZ":{"unit":"°/s","value":-0.029031118378043175}}
+	}
+
+	response = requests.request("POST", url, data=json.dumps(payload2),
+							headers=headers,auth=HTTPBasicAuth(data['c_user'], data['c_pass']))
+
+
+
+This should send alternate anomalous and non-anomalous measurements to {{< product-c8y-iot >}} on behalf of your demo device.
 
 You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device Management application.

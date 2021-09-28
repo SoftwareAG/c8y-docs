@@ -4,9 +4,9 @@ title: Access control
 layout: redirect
 ---
 
-Cumulocity IoT uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity IoT.
+{{< product-c8y-iot >}} uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside {{< product-c8y-iot >}}.
 
-Cumulocity IoT creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all Cumulocity IoT applications that a tenant subscribes to.
+{{< product-c8y-iot >}} creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all {{< product-c8y-iot >}} applications that a tenant subscribes to.
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (i.e. global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
@@ -19,7 +19,7 @@ The ability to execute certain functionality on the system depends on two concep
 
 Permissions define explicitly what functionality can be executed by a user.
 
-Cumulocity IoT distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity IoT. For example, there are read permissions for inventory data, measurements, operations and so forth.
+{{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in {{< product-c8y-iot >}}. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
 To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
@@ -43,7 +43,7 @@ This concept helps to assign minimal permissions to devices.
 
 ### Limiting access to managed objects
 
-Cumulocity IoT allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits
+{{< product-c8y-iot >}} allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits
 
 * to specific managed objects or a set of managed objects,
 * to a single user or a group of users,
@@ -57,7 +57,7 @@ Global roles and inventory roles are created and managed in the **Roles** page o
 
 A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
 
-For details on permission management using the API refer to [the User API](https://cumulocity.com/api/#tag/User-API) in the Cumulocity IoT OpenAPI Specification.
+For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/#tag/User-API) in the {{< openapi >}}.
 
 ### Globally accessible objects
 

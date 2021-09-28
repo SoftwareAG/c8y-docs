@@ -4,17 +4,18 @@ layout: redirect
 weight: 30
 ---
 
-Before getting started, make sure that you have compiled the Cumulocity IoT C++ SDK.
+Before getting started, make sure that you have compiled the {{< product-c8y-iot >}} C++ SDK.
 
-* For using the **Cloud Remote Access** feature, refer to [Building the Cumulocity IoT Cloud Remote Access service](#building-the-cumulocity-cloud-remote-access-service).  
+* For using the **Cloud Remote Access** feature, refer to [Building the {{< product-c8y-iot >}} Cloud Remote Access service](#building-the-cumulocity-cloud-remote-access-service).  
 * For using the **Modbus** support, make sure that you have the libmodbus and LuaSocket packages installed. Details on how to enable Modbus support are described in [Building the agent with a Modbus support](#building-the-agent-with-modbus-support).  
-* For **CANopen** support, check if you have the CANopen library and SocketCAN connector commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) and the LuaSocket package installed. For details, refer to  [Building the Cumulocity IoT CANopen service](#building-the-cumulocity-canopen-service).
+* For **CANopen** support, check if you have the CANopen library and SocketCAN connector commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) and the LuaSocket package installed. For details, refer to  [Building the {{< product-c8y-iot >}} CANopen service](#building-the-cumulocity-canopen-service).
 
-### <a name = basic-agent>Building the basic agent</a>
+<a name="basic-agent"></a>
+### Building the basic agent
 
-This section explains how to build the Cumulocity IoT Linux agent without Modbus support.
+This section explains how to build the {{< product-c8y-iot >}} Linux agent without Modbus support.
 
-1. Copy the Cumulocity IoT Linux agent repository to a directory of your choice.
+1. Copy the {{< product-c8y-iot >}} Linux agent repository to a directory of your choice.
 
     ```shell
     cd ~/<my_working_directory>
@@ -64,11 +65,12 @@ This section explains how to build the Cumulocity IoT Linux agent without Modbus
     make release
     ```
 
-### <a name = building-the-cumulocity-cloud-remote-access-service>Building the Cumulocity IoT Cloud Remote Access service </a>
+<a name="building-the-cumulocity-cloud-remote-access-service"></a>
+### Building the Cloud Remote Access service
 
-The Cumulocity IoT Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+The {{< product-c8y-iot >}} Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via {{< product-c8y-iot >}}. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
 
-To support the feature, you need to build the **Cumulocity IoT Cloud Remote Access service** aside from building the agent. To build it, run:
+To support the feature, you need to build the **{{< product-c8y-iot >}} Cloud Remote Access service** aside from building the agent. To build it, run:
 
 ```shell
 make vnc
@@ -76,9 +78,10 @@ make vnc
 
 Now you have an execution file *vncproxy* in *cumulocity-agents-linux/bin*.
 
-The Cumulocity IoT Cloud Remote Access service needs no further configuration. It communicates with the Cumulocity IoT Linux agent via a local socket.
+The {{< product-c8y-iot >}} Cloud Remote Access service needs no further configuration. It communicates with the {{< product-c8y-iot >}} Linux agent via a local socket.
 
-### <a name = building-the-agent-with-modbus-support> Building the agent with Modbus support </a>
+<a name="building-the-agent-with-modbus-support"></a>
+### Building the agent with Modbus support
 
 Modbus support is disabled by default. In between step 4 and step 5 of [Building the basic agent](#basic-agent), you need to do one additional step to enable it. The Modbus feature requires the libmodbus library, so make sure you have libdmobus installed before building the agent with Modbus support.
 
@@ -90,13 +93,14 @@ PLUGIN_MODBUS:=1
 
 After you finished this step, continue with step 5 of [Building the basic agent](#basic-agent) to build the agent.
 
-### <a name= building-the-cumulocity-canopen-service> Building the Cumulocity IoT CANopen service </a>
+<a name="building-the-cumulocity-canopen-service"></a>
+###  Building the CANopen service
 
 CANopen support is disabled by default. After you have finished all steps described in [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
 
-CANopen support is composed of two parts. One is a Lua plugin, which is included in the agent repository by default. However, to get actual CANopen support, you also need to build the Cumulocity IoT CANopen service, which is a C program based on the CANopen library and SocketCAN connector from port industrial automation GmbH.
+CANopen support is composed of two parts. One is a Lua plugin, which is included in the agent repository by default. However, to get actual CANopen support, you also need to build the {{< product-c8y-iot >}} CANopen service, which is a C program based on the CANopen library and SocketCAN connector from port industrial automation GmbH.
 
-The CANopen library and SocketCAN connector are commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html), and are not included in this repository. You need to get the CANopen library and the SocketCAN connector from [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) if you want to build the Cumulocity IoT CANopen service.
+The CANopen library and SocketCAN connector are commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html), and are not included in this repository. You need to get the CANopen library and the SocketCAN connector from [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) if you want to build the {{< product-c8y-iot >}} CANopen service.
 
 Assume you have the CANopen library and SocketCAN connector available, you need to create a directory _ext/port_ in the repository and extract the ZIP files there. After the extraction, your _ext/port_ directory should have the following structure:
 
@@ -116,7 +120,7 @@ drwxr-xr-x 1 tiens tiens  206 Nov 27 16:45 shar_inc
 drwxr-xr-x 1 tiens tiens  106 Nov 27 16:45 shar_src
 ```
 
-To build the Cumulocity IoT CANopen service, move to the repository root directory and run:
+To build the {{< product-c8y-iot >}} CANopen service, move to the repository root directory and run:
 
 ```shell
 cd canopen
@@ -125,9 +129,10 @@ make
 
 Then the *c8y_canopend* execution file is created in _cumulocity-agents-linux/bin_.
 
-The Cumulocity IoT CANopen service communicates with the Cumulocity IoT Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the Cumulocity IoT Linux agent, so you just need to adjust all the CANopen settings in the Cumulocity IoT Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
+The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8y-iot >}} Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the {{< product-c8y-iot >}} Linux agent, so you just need to adjust all the CANopen settings in the {{< product-c8y-iot >}} Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
 
-### <a name=installing-the-agent> Installing the agent</a>
+<a name=installing-the-agent></a>
+### Installing the agent
 
 > **Info:** Before installing the agent, you need to configure the agent parameters in the _cumulocity-agent.conf_ file. For details, refer to [Configuring the agent](#configuring-agent).
 

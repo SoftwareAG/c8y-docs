@@ -1,187 +1,69 @@
 ---
-weight: 60
-title: Verwalten von Berichten und Exporten
+weight: 45
+title: Verwenden von Berichten
 layout: redirect
+helpcontent: >-
+  Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten über eine Reihe von Widgets in einem Dashboard-Layout. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Im Gegensatz zu Dashboards zeigen Berichte globale Daten, unabhängig von der Asset-Hierarchie.
+
+
+  Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um einen neuen Bericht zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten oder zu löschen.
+
+
+  In einem Bericht-Dashboard können Sie Widgets durch Ziehen und Ablegen neu anordnen oder mit Hilfe des Pfeilsymbols deren Größe ändern.
+
+
+  Klicken Sie in der oberen Menüleiste auf **Widget hinzufügen**, um dem Bericht ein neues Widget hinzuzufügen, oder verwenden Sie das Zahnrad-Symbol, um Widgets zu bearbeiten oder zu entfernen.
+
+
+  Cumulocity IoT enthält vordefinierte Widget-Typen, z. B. Alarm- oder Datenpunktlisten, lineare Zeiger oder Tachos. Da jeder Widget-Typ andere Daten anzeigt, sind zu seiner Konfiguration unterschiedliche Parameter notwendig. Nähere Informationen zu den einzelnen Widget-Typen und ihrer Konfiguration finden Sie in der Dokumentation der Widgets-Sammlung.
 ---
 
-### <a name="reports"></a>Verwalten von Berichten
+Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
-Dashboard-Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets.
+Klicken Sie im Navigator auf **Berichte**, um alle Berichte anzuzeigen.
 
-Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
+Die Seite **Berichte** listet alle Berichte mit Namen, optionaler Beschreibung und einem Navigator-Umschalter auf.
 
-Erweitern Sie das Menü **Berichte** im Navigator, um alle verfügbaren Berichte anzuzeigen.
+![Reports](/images/benutzerhandbuch/cockpit/cockpit-reports-list.png)
 
-![Reports menu](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
+Um einen Bericht zu öffnen, klicken Sie in der Berichtsliste auf seinen Namen. Die Berichtsdetails werden angezeigt.
 
-Klicken Sie im Navigator auf einen Bericht, um ihn zu öffnen.
+Verwenden Sie den Umschalter in der Spalte **Im Navigator anzeigen**, wenn Sie den Bericht auffälliger auf der ersten Ebene im Navigator anzeigen möchten. Wenn der Umschalter eingeschaltet ist, erscheint der Bericht sofort im Navigator.
 
-#### So erstellen Sie einen Bericht
+![Report in navigator](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
 
-1. Klicken Sie auf die **Plus**-Schaltfläche in der oberen Leiste und anschließend auf **Neuer Bericht**.
-2. Geben Sie einen Namen für den Bericht ein und wählen Sie optional ein Symbol aus der Auswahlliste.
-3. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden Sie unter [So erstellen Sie einen Bericht](#create-report).
+
+
+<a name="create-report"></a>
+### So erstellen Sie einen Bericht
+
+1. Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um den Dialog **Bericht hinzufügen** zu öffnen.
+  <br>![Add report](/images/benutzerhandbuch/cockpit/cockpit-report-add.png)<br>
+2. Geben Sie im Feld **Menübeschriftung** einen Namen für den Bericht ein und fügen Sie darunter optional eine Beschreibung hinzu.
+3. Wählen Sie **Im Navigator anzeigen**, wenn der Bericht im Navigator angezeigt werden soll. Wählen Sie die Position des Berichts im Navigator. Er wird je nach gewähltem Wert relativ zu bestehenden Elementen positioniert. Hat beispielsweise "Startseite" den Wert "10000", so wird der Bericht über "Startseite" positioniert, wenn der Wert "10001" oder mehr beträgt.
+4. Im Abschnitt **Layout** können Sie ein Design für den Bericht wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
+Wenn Sie die Option **Widget-Titel wenn möglich übersetzen** aktivieren, wird der Widget-Titel bei jeder Änderung der Sprache übersetzt. Beachten Sie, dass die Widget-Titel nur übersetzt werden, wenn eine gültige Übersetzung verfügbar ist.
+Klicken Sie auf **Speichern**, um den Bericht zu erstellen und der Berichtsliste hinzuzufügen.
+
+**Info:** Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
 
 Als nächstes können Sie Widgets zu Ihrem Bericht hinzufügen.
 
-#### So fügen Sie Widgets zu Berichten hinzu
+Nähere Informationen zum Hinzufügen, Ändern oder Entfernen von Widgets finden Sie unter [Verwenden von Widgets in Dashboards und Berichten](#using-widgets).
 
-Sie können Widgets auf die gleiche Weise zu einem Bericht hinzufügen wie zu einem Dashboard.
+### So bearbeiten Sie einen Bericht
 
-1. Öffnen Sie den zu bearbeitenden Bericht im Navigator.
-2. Klicken Sie **Widget hinzufügen** in der oberen Menüleiste und wählen Sie einen Widget-Typen aus der Liste.
+Klicken Sie in der Berichtsliste auf den Namen eines Berichts, um seine Details zu öffnen.
 
-Nähere Informationen über alle verfügbaren Typen finden Sie unter [Widgets-Sammlung](#widgets).
+Um den Bericht zu bearbeiten, klicken Sie in der oberen Menüleiste auf **Bearbeiten**.
 
-#### So löschen Sie einen Bericht
+<img src="/images/benutzerhandbuch/cockpit/cockpit-report-edit.png" name="Edit report"/>
 
-1. Öffnen Sie den zu löschenden Bericht.
-2. Klicken Sie **Mehr...** rechts in der oberen Leiste und dann **Bericht löschen**.
+Der Bericht-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie einen Bericht](#create-report).
 
 
-### <a name="export"></a>Exportieren von Daten
+### So löschen Sie einen Bericht
 
-Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
-
-Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Exportdaten enthalten so lediglich Informationen über die gefilterten Daten und aktivierten Felder.
-
->**Info:** Es können maximal 1 Millionen Dokumente in eine einzelne Datei exportiert werden. Wenn die Anzahl der Dokumente für die gesetzten Filter diesen Wert überschreitet, werden nur die ersten 1 Millionen Dokumente verwendet.
-
-Um alle Exporte anzuzeigen, klicken Sie **Exportieren** im Menü **Berichte**.
-
-Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
-
-![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
-
-
-#### <a name="add-export"></a>So fügen Sie einen Export hinzu
-
-1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
-
-2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
-
-
-**Filter**
-
-Im Bereich **Filter** können Sie Filter setzen, um Daten für bestimmte Objekte oder Zeiträume anzufragen.
-
-Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Alle passenden Geräte oder Gruppen werden unter dem **Wert**-Feld angezeigt. Wählen Sie ein Objekt durch Klicken aus (grün hervorgehoben).
-
->**Info:** Wenn Sie eine Gruppe wählen, werden die Daten der direkten Kindgeräte einbezogen. Der Export enthält jedoch nicht die Daten der Geräte, die sich in Untergruppen befinden (indirekte Kinder).
-
-Der Filter **Zeitintervall** filtert Daten nach einem bestimmten Zeitintervall. Wählen Sie ein Zeitintervall aus der Auswahlliste. Mögliche Intervalle sind "Letztes Jahr", "Letzter Monat", "Letzte Woche" oder wählen Sie "Benutzerdefiniert" und geben Sie Von/Bis-Werte in die entsprechenden Felder ein, um ein individuelles Intervall zu definieren.
-
-Aktivieren Sie die Checkboxen **Zu exportierendes Objekt** und **Zeitintervall**, um die entsprechenden Filter zu aktivieren.
-
-**Felder**
-
-Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach bestimmten Feldern gefiltert werden:
-
-- Alarme
-- Ereignisse
-- Objekte
-- Messwerte
-
-Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
-
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
-
->**Info:** Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
-
-Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
-
-##### So fügen Sie ein Attribut hinzu
-
-Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spalte** oder **Pfad**, um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das Feld **Alarme** aktivieren, können Sie etwa "Schweregrad" als Spalte und "severity" als Pfad eingeben, um Daten zu Alarm-Schweregraden zu erhalten.
-
-Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
-
-![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
-
-Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
-
-Beispiel:
-Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;SpeedMeasurement.speed.value. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut "c8y_SpeedMeasurement.speed.value" hat, wird er nicht im Bericht erscheinen.
-
-Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
-
-Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
-
-#### <a name="schedule-export"></a>So planen Sie einen Export
-
-Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
-
-![Export details](/images/benutzerhandbuch/cockpit/cockpit-export-add-schedule.png)
-
-Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
-
-![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-new-schedule.png)
-
-**1 - Häufigkeit**
-
-Wählen Sie die Frequenz für das Senden des Exports aus der Auswahliste, z. B. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
-
->**Info:** Intervalle müssen in koordinierter Weltzeit (UTC) angegeben werden.
-
-**2 - E-Mail senden:**
-
-Vervollständigen Sie die E-Mail-Informationen.
-
-Geben Sie im Feld **Senden an** die E-Mail-Adresse des Empfängers ein. Diese Eingabe ist obligatorisch. Optional können Sie E-Mail-Adressen für Kopieempfänger (CC) oder Blindkopieempfänger (BCC) angeben. Zur Eingabe mehrerer Empfänger verwenden Sie ein Komma als Trennzeichen.
-
-Optional können Sie die E-Mail-Adresse des Absenders für Antworten hinzufügen.
-
-Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber bearbeitet werden.
-
-Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet "Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden".
-
->**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-
-Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
-
-Der Exportplan wird zu den Exportdetails hinzugefügt.
-
-![Scheduled exports list](/images/benutzerhandbuch/cockpit/cockpit-export-schedule-list.png)
-
-##### Migration geplanter Exports
-
-In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in der [Streaming Analytics-Anwendung](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
-
-Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
-
-![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
-
->**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
-
-> **Info:** Damit die neue Exportplan-Funktion genutzt und die Migration durchgeführt werden kann, muss der Microservice "report-agent" abonniert sein. Neue Mandanten haben diesen automatisch abonniert. Bei vorhandenen Mandanten muss sichergestellt sein, dass sie den Microservice abonniert haben.
-
-#### So exportieren Sie Daten
-
-Um Daten in eine CSV- oder XLSX-Datei zu exportieren, aktivieren Sie die Checkbox vor dem entsprechenden Eintrag in der Liste und klicken Sie links in der oberen Menüleiste **Exportieren**.
-
-Sie erhalten eine E-Mail mit einem Link zu jeder Export-Datei.
-
-Standard-Zeitattribute von Dokumenten (wie "time" oder "creationTime" in Alarmen) werden in folgende Formate exportiert:
-
-* Excel-Datei: 03/13/2016 00:00:24
-* CSV-Datei: 2016-03-13T00:01:24.000Z
-
-Nur im CSV-Format sind Millisekunden und Zeitzonen enthalten.
-
-#### So bearbeiten Sie einen Export
-
-Klicken Sie einfach auf die jeweilige Zeile oder auf das Menüsymbol am Ende der Zeile und anschließend auf **Bearbeiten**.
-
-Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Export hinzu](#add-export).
-
-
-#### So duplizieren Sie einen Export
-
-1. Klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Duplizieren**.
-2. Ändern Sie zumindest den Namen.
-3. Klicken Sie **Speichern & schließen**, um den Export zu speichern und zur Exportliste zurückzukehren.
-
-#### So löschen Sie einen Export
-
-Klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Löschen**.
+1. Bewegen Sie die Maus auf der Seite **Berichte** über das zu löschende Bericht-Element und klicken Sie auf das rechts erscheinende Löschen-Symbol.
+2. Bestätigen Sie, dass Sie den Bericht löschen wollen.

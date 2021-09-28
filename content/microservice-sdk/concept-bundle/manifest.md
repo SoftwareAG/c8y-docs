@@ -4,8 +4,8 @@ title: Microservice manifest
 layout: redirect
 ---
 
-The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity IoT platform.
-The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity IoT platform.
+The application manifest provides the required settings to manage microservice instances and the application deployment in the {{< product-c8y-iot >}} platform.
+The definition is provided within the _cumulocity.json_ file in the binary uploaded to the {{< product-c8y-iot >}} platform.
 
 Here is an example manifest:
 
@@ -21,6 +21,7 @@ Here is an example manifest:
     },
     "isolation": "MULTI_TENANT",
     "scale": "AUTO",
+    "replicas": 2,
     "resources": {
         "cpu": "1",
         "memory": "1G"
@@ -125,6 +126,12 @@ See below for detailed information about available settings.
 <td style="text-align:left">scale</td>
 <td style="text-align:left">Enum</td>
 <td style="text-align:left">Values: AUTO, NONE<br>Default: NONE <br><br>Enables scaling policy. See <a href="#isolation-levels">Isolation and scaling</a> for more details.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">replicas</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">Value range: 1 - 5<br><br>Defines the number of microservice instances. For auto-scaled microservices, the value represents the minimum number of microservices instances.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

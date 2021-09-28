@@ -10,7 +10,7 @@ Before you connect a Modbus device, ensure that the agent is running.
 
 #### How to check/change the agent state
 
-Use the following command to check if the agent is running in Cumulocity IoT Edge (running on port  6670):  
+Use the following command to check if the agent is running in {{< product-c8y-iot >}} Edge (running on port  6670):  
 
 ```shell
 [admin@iot-edge-server ~]$ systemctl status cumulocity-agent
@@ -29,4 +29,4 @@ In the Device Management application, click **All devices** in the navigator and
 
 #### How to connect Modbus devices
 
-For more information about connecting and managing Modbus devices, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) in the Protocol integration guide.
+For more information about connecting and managing Modbus devices, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) in the *Protocol integration guide*.

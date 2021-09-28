@@ -20,7 +20,7 @@ For each offloading query, the following information is provided:
 | ---         |  ---
 | Offloading task | The task name of the offloading pipeline, complemented by a status icon showing success or failure of the pipeline execution
 | Runtime (s) | The runtime of the execution in seconds
-| Data scanned (MB) | The amount of data the offloading query has read from the Operational Store of Cumulocity IoT
+| Data scanned (MB) | The amount of data the offloading query has read from the Operational Store of {{< product-c8y-iot >}}
 | Data billed (MB) | The amount of data being billed; amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
 | Details | The internal task UUID in an expandable box
 
@@ -36,7 +36,7 @@ For each ad-hoc query, the following information is provided:
 
 ### System log
 
-In the navigator, select **Auditing** and then **System log** to view the system log. 
+In the navigator, select **Auditing** and then **System log** to view the system log.
 
 In the action bar you can choose between log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
 

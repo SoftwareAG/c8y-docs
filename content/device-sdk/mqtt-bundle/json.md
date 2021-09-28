@@ -4,7 +4,7 @@ title: JSON via MQTT
 layout: redirect
 ---
 
-This section describes the JSON payload format that can be used with the Cumulocity IoT MQTT implementation.
+This section describes the JSON payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
 Compared to SmartREST 2.0 – which only works with fixed templates – JSON's support for MQTT was designed to combine the payload flexibility of our REST API with the low protocol overhead of MQTT.
 
@@ -17,31 +17,33 @@ The topic structure in JSON MQTT is quite similar to the REST endpoints. The mai
 To publish messages:
 
 ```http
- <api>/<resource>/<action>/<id>
+ <api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in transient mode:
 
 ```http
-t/<api>/<resource>/<action>/<id>
+t/<api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in quiescent mode:
 
 ```http
-q/<api>/<resource>/<action>/<id>
+q/<api>/<resource>/<action>/<resource_id>
 ```
 
 
 To publish messages in CEP mode:
 
 ```http
-c/<api>/<resource>/<action>/<id>
+c/<api>/<resource>/<action>/<resource_id>
 ```
 
-Refer to [Processing mode](https://cumulocity.com/api/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
+>**Info:** `<resource_id>` is not required for every `<action>`. See the examples below.
+
+Refer to [Processing mode](https://{{< domain-c8y >}}/api/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 
 #### Topic actions
 
@@ -63,11 +65,11 @@ The following endpoints and actions are supported:
 
 |Endpoint|create|createBulk|update|delete|
 |:-------|:-----|:---------|:-----|:-----|
-|[event/events](https://cumulocity.com/api/#tag/Events)|x|x|x|x|
-|[alarm/alarms](https://cumulocity.com/api/#tag/Alarms)|x|x|x|&nbsp;|
-|[measurement/measurements](https://cumulocity.com/api/#tag/Measurements)|x|x|&nbsp;|x|
-|[inventory/managedObjects](https://cumulocity.com/api/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
-|[inventory/child operations](https://cumulocity.com/api/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
+|[event/events](https://{{< domain-c8y >}}/api/#tag/Events)|x|x|x|x|
+|[alarm/alarms](https://{{< domain-c8y >}}/api/#tag/Alarms)|x|x|x|&nbsp;|
+|[measurement/measurements](https://{{< domain-c8y >}}/api/#tag/Measurements)|x|x|&nbsp;|x|
+|[inventory/managedObjects](https://{{< domain-c8y >}}/api/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
+|[inventory/child operations](https://{{< domain-c8y >}}/api/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 
@@ -123,6 +125,23 @@ Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with
 
 Publish a message on topic <kbd>/event/events/delete/&lt;event_id&gt;</kbd> with empty payload.
 
+#### Create a measurement data point
+
+Publish a message on topic <kbd>measurement/measurements/create</kbd> with payload:
+
+```json
+{
+  "type": "c8y_TemperatureMeasurement",
+  "time": "2021-09-06T17:35:14.000+02:00",
+  "c8y_TemperatureMeasurement": {
+  	"T": {
+      	"value": 20,
+          "unit": "C"
+    }
+  }
+}
+```
+
 
 ### Error handling
 
@@ -142,7 +161,7 @@ Example payload:
 
 A notification client can subscribe to the <kbd>notification/operations</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 
-Additionally, it contains an [External ID](https://cumulocity.com/api/#tag/External-IDs), so the client can identify for which child the operation is executed.
+Additionally, it contains an [External ID](https://{{< domain-c8y >}}/api/#tag/External-IDs), so the client can identify for which child the operation is executed.
 
 Example notification:
 

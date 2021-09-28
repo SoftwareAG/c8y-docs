@@ -11,9 +11,9 @@ The DataHub microservice and web application must be available as applications o
 * Subscribed application: the applications were subscribed to the tenant by the management or super tenant
 * Own application: the applications were added to the tenant
 
-If you have an enterprise tenant, you can also subscribe your subtenants to both applications so that the subtenants can use DataHub as well.
+If you have an {{< enterprise-tenant >}}, you can also subscribe your subtenants to both applications so that the subtenants can use DataHub as well.
 
-See section [Managing applications](/users-guide/administration#managing-applications) for details on managing Cumulocity IoT applications in general, including instructions for:
+See section [Managing applications](/users-guide/administration#managing-applications) for details on managing {{< product-c8y-iot >}} applications in general, including instructions for:
 
 * Adding applications to a tenant
 * Subscribing applications to a tenant and its subtenants

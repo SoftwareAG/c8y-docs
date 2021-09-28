@@ -4,7 +4,7 @@ title: Summary
 layout: redirect
 ---
 
-Cumulocity IoT provides a reference model for managing and controlling IoT systems, covering
+{{< product-c8y-iot >}} provides a reference model for managing and controlling IoT systems, covering
 
 -   Central representation of IoT devices, networks and assets in the inventory.
 -   Configuration of devices.

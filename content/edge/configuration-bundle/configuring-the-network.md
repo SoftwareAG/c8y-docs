@@ -6,11 +6,11 @@ layout: redirect
 
 After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
->**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for Cumulocity IoT Edge internal purpose.
+>**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
 
 ### Configuring the network using the GUI
 
-1. Log in to the Management tenant.
+1. Log in to the {{< management-tenant >}}.
 
 	- Username: management/<*username*>
 	- Password: password provided during the installation
@@ -37,6 +37,8 @@ After a successful installation, you can reconfigure the network and also config
 
    The CIDR suffix must be between 0 and 27 inclusive. The default value is 172.16.0.0/15.
 
+   The **Address range CIDR** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
+
    >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 
 ### Configuring the network using the REST APIs
@@ -51,7 +53,7 @@ To configure the network for the Edge appliance, use the following endpoints:
 The network CIDR fails in the following scenarios:
 
 1. The network CIDR unavailable on boot time.
-	
+
 	Description: The default network CIDR range is not available in the network. If the network range is already utilized, the network CIDR does not start properly and the Kubernetes cluster startup fails.
 
 2. Invalid network CIDR provided during IP change.

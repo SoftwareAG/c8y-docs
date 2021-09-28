@@ -55,7 +55,7 @@ The following types of data lakes are currently supported:
 
 |Settings|Description|
 |:---|:---|
-|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of Cumulocity IoT Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, e.g. to /datalake inside the containers.|
+|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, e.g. to /datalake inside the containers.|
 
 **HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings need to be defined for this data lake:
 
@@ -69,15 +69,17 @@ The following types of data lakes are currently supported:
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
 |Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
 
+**Info:** Impersonation is supported and used. However, Dremio uses the tenant ID as user name for querying HDFS, not the actual user name. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis.
+
 For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
-* A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data. 
-* A source in Dremio is created which connects to the Operational Store of Cumulocity IoT.
-* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant ID concatenated with 'Space', e.g. t12345Space. 
+* A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data.
+* A source in Dremio is created which connects to the Operational Store of {{< product-c8y-iot >}}.
+* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant ID concatenated with 'Space', e.g. t12345Space.
 
 ### Editing settings
 Editing the settings is not supported. You have to delete the existing settings and define new settings.

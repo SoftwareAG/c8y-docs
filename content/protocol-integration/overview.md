@@ -2,9 +2,11 @@
 weight: 10
 title: Overview
 layout: bundle
+aliases:
+  - /protocol-integration/impact
 ---
 
-IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols.
+IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, {{< product-c8y-iot >}} supports various standard device protocols.
 
 <table>
 <colgroup>
@@ -23,12 +25,8 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/impact">IMPACT</a></td>
-<td style="text-align:left">Enables the integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices.</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
-<td style="text-align:left">Allows to interface with LoRa devices through Actility’s ThingPark Wireless.</td>
+<td style="text-align:left">Allows to interface with LoRa devices through Actility's ThingPark Wireless.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>
@@ -36,7 +34,7 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
-<td style="text-align:left">Enables the communication between the Cumulocity IoT platform and an OPC UA server via a OPC UA gateway.</td>
+<td style="text-align:left">Enables the communication between the {{< product-c8y-iot >}} platform and an OPC UA server via a OPC UA gateway.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/sigfox">Sigfox</a></td>

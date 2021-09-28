@@ -10,13 +10,13 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 
 | Item | Details |
 | -----   | -----   |
-| Cumulocity IoT Edge | The local version of Cumulocity IoT is set up on a Virtual Machine (VM). See also section [Setting up Cumulocity IoT Edge](/edge/installation). |
-| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-name-2 >}} {{< company-portal >}}]({{< portal-link >}}). |
+| {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also section [Setting up {{< product-c8y-iot >}} Edge](/edge/installation). |
+| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements
 
-The hardware requirements for running a bare Cumulocity IoT Edge instance are described in section [Requirements](/edge/installation#prerequisites). When DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
+The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Requirements](/edge/installation#prerequisites). When DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
 
 * 100 GB of free disk space plus sufficient free disk space for the data lake contents
 * Intel x86 CPU
@@ -28,13 +28,13 @@ Hardware requirements for the host OS are excluded.
 
 ### Setting up DataHub Edge
 
-Copy the DataHub Edge archive to the Cumulocity IoT Edge.
+Copy the DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
 ```shell
 scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
 ```
 
-Log in as admin into Cumulocity IoT Edge.
+Log in as admin into {{< product-c8y-iot >}} Edge.
 
 ```shell
 ssh admin@<edge_ip_address>
@@ -46,15 +46,15 @@ Run the install script.
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 
-It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
+During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge</em>. During installation, you are also prompted to set the new password of the Dremio <em>admin</em> account. It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
 
-* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core
+* Deploy the DataHub Edge UI as a web application to {{< product-c8y-iot >}} Core
 * Start a Docker container with the DataHub Edge backend and the database system for managing the backend state
 * Start a Docker container with the Dremio master and a ZooKeeper instance
 * Start a Docker container with the Dremio executor
-* Configure corresponding roles and permissions in Cumulocity IoT Core
+* Configure corresponding roles and permissions in {{< product-c8y-iot >}} Core
 
 The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 
@@ -66,6 +66,10 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-server/datalake**: the data lake folder
 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
+
+### Adapting to network changes of Cumulocity IoT Edge
+
+There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally or changing the domain name. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
 
 ### Accessing DataHub Edge
 
@@ -85,7 +89,7 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 <tbody>
 <tr>
 <td>DataHub Edge UI</td>
-<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well.</td>
+<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well.</td>
 </tr>
 <tr>
 <td>Dremio UI</td>
@@ -106,7 +110,7 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 </tbody>
 </table>
 
-> **Info:** For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
+> **Info:** For JDBC/ODBC you have to configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
 ### Defining DataHub permissions and roles
 

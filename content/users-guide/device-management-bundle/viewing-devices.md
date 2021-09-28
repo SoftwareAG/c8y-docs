@@ -72,8 +72,10 @@ For each device, the device list shows the following information provided in col
 </tr>
 </tbody>
 </table>
+
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
+<a name="configuring-columns"></a>
 ### Configuring columns
 
 The columns shown in the device list may be configured to your needs.
@@ -94,7 +96,7 @@ Moreover, you can add custom columns to show additional device properties.
 1. In the **Configure columns** dialog box, click **Add custom column**.<br>
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. In the **Header** field, enter a header for the new custom column.  
-3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity IoT standard fragments like `c8y_Mobile.mcc`.
+3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
 4. Select the **Filtering mode** for the new column. <br>
 If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
@@ -112,12 +114,12 @@ The new column will be added and displayed in the device list.
 
 The device will be permanently deleted from the platform.
 
-> **Important:** Deleting a device means to remove the device from the Cumulocity IoT database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+> **Important:** Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 <a name="searching-devices"></a>
 ### To search for devices
 
-Cumulocity IoT includes a full-text search for devices.
+{{< product-c8y-iot >}} includes a full-text search for devices.
 
 Click the **Search** button at the top right and enter a search term into the textbox.
 

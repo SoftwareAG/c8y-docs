@@ -32,17 +32,26 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 <td align="left"><a href="#dashboards">Verwenden von Dashboards</a></td>
 <td align="left"><a href="#creating-dashboards">Erstellen Sie Ihre eigenen Dashboards</a> durch Hinzufügen und Arrangieren von <a href="#adding-widgets">Widgets</a>. <a href="#sharing-dashboards">Teilen Sie Dashboards</a> unter allen Geräten des gleichen Typs.</td>
 </tr>
+</tr>
 <tr>
-<td align="left"><a href="#widgets">Widgets-Sammlung</a></td>
-<td align="left">Verwenden Sie verschiedene <a href="#widgets">Widget-Typen</a> aus der in Cumulocity IoT enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
+<td align="left"><a href="#reports">Verwenden von Berichten</a></td>
+<td align="left">Bearbeiten Sie <a href="#reports">Berichte</a> auf Basis von Dashboard-Layouts.</td>
+</tr>
+</tr>
+<tr>
+<td align="left"><a href="#using-widgets">Verwenden von Widgets in Dashboards und Berichten</a></td>
+<td align="left">Erstellen oder arrangieren Sie <a href="#using-widgets">Widgets</a>, um verschiedene Informationen zu verfolgen und in Dashboards und Berichten bereitzustellen.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widgets-collection">Widgets-Sammlung</a></td>
+<td align="left">Verwenden Sie verschiedene <a href="#widgets-collection">Widget-Typen</a> aus der in {{< product-c8y-iot >}} enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
 </tr>
 <tr>
 <td align="left"><a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a></td>
 <td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
-</tr>
 <tr>
-<td align="left"><a href="#reports">Verwalten von Berichten</a></td>
-<td align="left">Bearbeiten Sie <a href="#reports">Berichte</a> auf Basis von Dashboard-Layouts, erstellen Sie <a href="#export">Berichte zum Exportieren von Daten</a> in das CSV- oder Excel-Format und <a href="#schedule-export">terminieren Sie den Export</a>.</td>
+<td align="left"><a href="#exports">Verwalten von Exporten</a></td>
+<td align="left">Konfigurieren Sie <a href="#exports">Exporte zum Exportieren von Daten</a> im CSV- oder Excel-Format und <a href="#schedule-export">planen Sie den Export</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-point-library">Datenpunktbibliothek</a></td>
@@ -59,9 +68,10 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/overview).
+Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de/).
 
-### <a name="home"></a>Startseite
+<a name="home"></a>
+### Startseite
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
@@ -69,8 +79,10 @@ Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das D
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 
+> **Info:** Aus Leistungsgründen zeigt die Karte auf der Startseite Symbole für maximal 100 Geräte an. Wenn mehr Geräte vorhanden sind, erscheinen diese nicht auf der Karte. Um sie zu sehen, müssen Sie auf Gruppenebene zu dem Dashboard gehen und das Widget "Karte" dort hinzufügen, so dass nur Geräte aus dieser speziellen Gruppe angezeigt werden, siehe [Widgets-Sammlung](#widgets).
+
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
 Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 
-Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie **Mehr...** rechts oben in der Menüleiste und klicken Sie dann **Dashboard wiederherstellen**.
+Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie auf **Mehr...** rechts oben in der Menüleiste und klicken Sie dann auf **Dashboard wiederherstellen**.

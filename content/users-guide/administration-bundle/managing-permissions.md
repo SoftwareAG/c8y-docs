@@ -17,7 +17,7 @@ helpcontent:
   For details on working with global roles and inventory roles, see *Administration > Managing permissions* in the *User guide*."
 ---
 
-Permissions define what a user is allowed to do in Cumulocity IoT applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
 The following types of roles can be associated with users:
 
@@ -136,7 +136,7 @@ For each type, you can select the following permission levels:
 - UPDATE: Change and delete the specified data (not including READ).
 - ADMIN: Create, update or delete the specified data.
 
-> **Info:** CREATE permissions are related to the concept of ownership in Cumulocity IoT. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
+> **Info:** CREATE permissions are related to the concept of ownership in {{< product-c8y-iot >}}. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
 
 Select the checkbox at the top of a column to set the respective level to all permission types.
 
@@ -157,7 +157,7 @@ The following permission categories are available by default:
 <tbody>
 <tr>
 <td align="left">Alarms</td>
-<td align="left">View or edit alarms for devices.</td>
+<td align="left">View or edit alarms.</td>
 </tr>
 
 <tr>
@@ -167,7 +167,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Audits</td>
-<td align="left">View or create audit logs for devices.</td>
+<td align="left">View or create audit logs.</td>
 </tr>
 
 <tr>
@@ -192,7 +192,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Events</td>
-<td align="left">View or create events for devices.</td>
+<td align="left">View or create events.</td>
 </tr>
 
 <tr>
@@ -212,7 +212,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Measurements</td>
-<td align="left">View or create measurements for devices.</td>
+<td align="left">View or create measurements.</td>
 </tr>
 
 <tr>
@@ -264,7 +264,7 @@ The following permission categories are available by default:
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
 
-> **Important:** When new features with new permissions are added to Cumulocity IoT, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
+> **Important:** When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 
 <a name="attach-global"></a>
 #### Assigning global roles
@@ -292,7 +292,7 @@ Click **Save** to save your settings.
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
-To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
+To view the currently configured inventory roles, click **Roles** in the **Account** menu and switch to the **Inventory roles** tab.
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
@@ -328,7 +328,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their Management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/users-guide/enterprise-edition#users-in-other-tenants).
+> **Info:** Service providers will see an additional permission "Support" in their {{< management-tenant >}}. This permission lets users of the service provider give support to their customer's users, see [Support user access](/users-guide/enterprise-tenant/#support-user-access).
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -338,7 +338,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the Cumulocity IoT [sensor library](https://cumulocity.com/api/#section/Sensor-library) or the [device management library](https://cumulocity.com/api/#section/Device-management-library). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library) or the [device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list:
 
@@ -348,7 +348,7 @@ In the **Permission** field, select a permission level from the dropdown list:
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](https://cumulocity.com/api/#section/Sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 

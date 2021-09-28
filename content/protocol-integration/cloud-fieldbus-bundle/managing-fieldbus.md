@@ -7,7 +7,7 @@ layout: redirect
 
 Once connected, you can now manage your device. Switch to the **Child devices** tab of a device to list the connected fieldbus devices and navigate to a fieldbus device.
 
-Depending on the capabilities of the device and its configuration in Cumulocity IoT, you can:
+Depending on the capabilities of the device and its configuration in {{< product-c8y-iot >}}, you can:
 
 * [Collect measurements](#collect)
 * [Send alarms on coil or register changes](#monitoring-alarms)
@@ -40,7 +40,7 @@ Similar to alarms, changes in fieldbus devices can be monitored and logged as ev
 <a name="monitoring-status"></a>
 ### Monitoring the device status
 
-The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide.
+The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the *User guide*.
 
 <a name="fieldbus-device-widget"></a>
 ### Monitoring the device status using the Fieldbus device widget

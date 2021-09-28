@@ -4,7 +4,7 @@ layout: redirect
 weight: 60
 ---
 
-**Version:** 10.6.0.24 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 > **Info:** This technique exposes the username and password. Ensure that this user doesn't have access to sensible data.
 
@@ -21,15 +21,21 @@ The login functionality is part of the `CoreModule` in `@c8y/ngx-components` pac
 As a starting point, you need an application. For this purpose, create a new application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit
+c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
 This will create a new application that is an exact copy of the Cockpit application.
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
+>
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `1009.0.18`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
+
 ### 2. Add logic for default authentication
 
-First you need to make sure to add the default authentication before Angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. For that, use Angular’s injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
+First you need to make sure to add the default authentication before Angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. For that, use Angular's injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
 
 ```js
 providers: [
@@ -65,35 +71,38 @@ To login with your default credentials, you need to call the [login function](ht
 With that done the recipe is completed and authentication will be done behind the scenes.
 
 ```js
+// --- 8< changed part ----
 import { APP_INITIALIZER, NgModule } from "@angular/core";
+// --- >8 ----
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule as NgRouterModule } from "@angular/router";
 import { UpgradeModule as NgUpgradeModule } from "@angular/upgrade/static";
+// --- 8< changed part ----
 import { CoreModule, LoginService, RouterModule } from "@c8y/ngx-components";
-import {
-  UpgradeModule,
-  HybridAppModule,
-  UPGRADE_ROUTES,
-} from "@c8y/ngx-components/upgrade";
-import { AssetsNavigatorModule } from "@c8y/ngx-components/assets-navigator";
-import { ReportsModule } from "@c8y/ngx-components/reports";
-import { ContextDashboardModule } from "@c8y/ngx-components/context-dashboard";
+// --- >8 ----
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
 
 @NgModule({
   imports: [
+    // Upgrade module must be the first
+    UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([...UPGRADE_ROUTES], {
-      enableTracing: false,
-      useHash: true,
-    }),
+    NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
-    ContextDashboardModule,
-    // Upgrade module must be the last
-    UpgradeModule,
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule
   ],
   providers: [
     {

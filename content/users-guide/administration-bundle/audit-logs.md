@@ -33,7 +33,7 @@ To view the audit log list, click **Audit logs** in the **Account** menu. For ea
 
 <tr>
 <td align="left">Change</td>
-<td align="left">Type of operation, e.g. “Alarm created”, Smart rule deleted”. Below it, the user who processed it is displayed.</td>
+<td align="left">Type of operation, e.g. "Alarm created", "Smart rule deleted". Below it, the user who processed it is displayed.</td>
 </tr>
 
 <tr>

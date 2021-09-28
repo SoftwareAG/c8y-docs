@@ -23,7 +23,7 @@ weight: 40
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
-Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
+{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK guide](/web/) for details.
 
 <a name="creating-dashboards"></a>
 ### To create a dashboard

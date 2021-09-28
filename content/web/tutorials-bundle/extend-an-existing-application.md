@@ -4,7 +4,7 @@ layout: redirect
 weight: 10
 ---
 
- **Version:** 10.4.11.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 It is a common use case to extend one of our existing apps like Cockpit or Device management.
 
@@ -27,7 +27,7 @@ Most likely  you just want to extend a hybrid app, which we will cover in this r
 
 As we need to make sure that Angular and angularjs run side by side when running a hybrid app, there are some limitations. The following list tries to explain them:
 
- - It is not possible to access the `index.html`: The whole bootstrapping process needs to be handled by Cumulocity IoT to make sure, that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template, you can only add routes.
+ - It is not possible to access the `index.html`: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure, that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template, you can only add routes.
  - As the services need to be loaded first, you can also not inject any service in the root app module. You need to provide them on a route or as `providedIn: root` at the deceleration of the service.
  - Routes in the router must be defined before the `UPGRADED_ROUTES`. The reason for this is that the Angular router has a `**` path match for all angularjs routes which is defined in the `UPGRADED_ROUTES`. If you define a route after it, the `**` will match before your defined route.
  - Every extension needs to be done via a hook. This is because Angular and angularjs is needed in hybrid apps and the hooks can be used by both.
@@ -40,14 +40,14 @@ Now that you know the limitations we can start to extend the first application a
 As a starting point, you need an application. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
+c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `10.9.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
@@ -56,13 +56,13 @@ Next, you need to install all dependencies. Switch to the new folder and run `np
 Routes can be added the same way as in Angular. The only difference is that it needs to be defined before the `UPGRADE_ROUTES` (remember the hybrid limitations). Therefore we can create a simple `hello.component.ts` file in our project with the following content:
 
 ```js
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-hello',
+  selector: "app-hello",
   template: `
-  <c8y-title>Hello</c8y-title>
-  World
+    <c8y-title>Hello</c8y-title>
+    World
   `,
 })
 export class HelloComponent {
@@ -75,13 +75,17 @@ This is a very basic component. Only the template uses a special feature called 
 We can now bind this custom component to a route by changing the `app.module.ts` the following way:
 
 ```js
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule as NgRouterModule } from '@angular/router';
-import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { CoreModule, RouterModule } from '@c8y/ngx-components';
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import {NgModule} from "@angular/core";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterModule as NgRouterModule} from "@angular/router";
+import {UpgradeModule as NgUpgradeModule} from "@angular/upgrade/static";
+import {CoreModule, RouterModule} from "@c8y/ngx-components";
+import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from "@c8y/ngx-components/upgrade";
+import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
+import {CockpitDashboardModule, ReportDashboardModule} from "@c8y/ngx-components/context-dashboard";
+import {ReportsModule} from "@c8y/ngx-components/reports";
+import {SensorPhoneModule} from "@c8y/ngx-components/sensor-phone";
+import {BinaryFileDownloadModule} from "@c8y/ngx-components/binary-file-download";
 
 // --- 8< changed part ----
 import { HelloComponent } from './hello.component';    // 1
@@ -94,9 +98,11 @@ import { HelloComponent } from './hello.component';    // 1
   // --- >8 ----
 
   imports: [
+    // Upgrade module must be the first
+    UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([
+    NgRouterModule.forRoot(
       // --- 8< changed part ----
       { path: 'hello', component: HelloComponent},     // 3
       // --- >8 ----
@@ -105,9 +111,13 @@ import { HelloComponent } from './hello.component';    // 1
     ], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    // Upgrade module must be the last
-    UpgradeModule
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule,
   ]
 })
 export class AppModule extends HybridAppModule {
@@ -128,32 +138,47 @@ The hooks are just providers that are bound to a certain injection token. To all
 The injection tokens can be received from the `@c8y/ngx-components` package by simply importing it. They all start with `HOOK_` following what they are used for. To add a navigator node we will therefore use the `HOOK_NAVIGATOR_NODE`:
 
 ```js
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule as NgRouterModule } from '@angular/router';
-import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
+import {NgModule} from "@angular/core";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterModule as NgRouterModule} from "@angular/router";
+import {UpgradeModule as NgUpgradeModule} from "@angular/upgrade/static";
 // --- 8< changed part ----
-import { CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode } from '@c8y/ngx-components';
+import {CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode} from "@c8y/ngx-components";
 // --- >8 ----
-import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
-import { HelloComponent } from './hello.component';
+import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from "@c8y/ngx-components/upgrade";
+import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
+import {CockpitDashboardModule, ReportDashboardModule} from "@c8y/ngx-components/context-dashboard";
+import {ReportsModule} from "@c8y/ngx-components/reports";
+import {SensorPhoneModule} from "@c8y/ngx-components/sensor-phone";
+import {BinaryFileDownloadModule} from "@c8y/ngx-components/binary-file-download";
 
 @NgModule({
-  declarations: [HelloComponent],                      
+  declarations: [HelloComponent],
 
   imports: [
+    // Upgrade module must be the first
+    UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot([
-      { path: 'hello', component: HelloComponent},     
-      ...UPGRADE_ROUTES
-    ], { enableTracing: false, useHash: true }),
+    NgRouterModule.forRoot(
+      [
+        {path: "hello", component: HelloComponent}, // 3
+        ...UPGRADE_ROUTES,
+      ],
+      {
+        enableTracing: false,
+        useHash: true,
+      }
+    ),
     CoreModule.forRoot(),
     AssetsNavigatorModule,
+    ReportsModule,
     NgUpgradeModule,
-    // Upgrade module must be the last
-    UpgradeModule
+    DashboardUpgradeModule,
+    CockpitDashboardModule,
+    SensorPhoneModule,
+    ReportDashboardModule,
+    BinaryFileDownloadModule,
   ],
 
   // --- 8< changed part ----

@@ -4,16 +4,19 @@ title: Branding
 layout: redirect
 ---
 
-In Cumulocity IoT Edge, you can customize the appearance of your tenant to your own preferences. 
+In {{< product-c8y-iot >}} Edge, you can customize the appearance of your tenant to your own preferences.
 
->**Info:** Use the domain name to access the Cumulocity IoT Edge platform to properly apply the branding and see the effects after branding.
+>**Info:** Use the domain name to access the {{< product-c8y-iot >}} Edge platform to properly apply the branding and see the effects after branding.
 
 To access the branding feature:
 
-1. Log in to the Management tenant.
-	
+1. Log in to the {{< management-tenant >}}.
+
+	- Username: management/<*username*>
+	- Password: password provided during the installation
+
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Go to **Settings** > **Enterprise Tenant**.
+3. Go to **Settings** > **{{< enterprise-tenant >}}**.
 
-For information about branding configuration, see [Branding](/users-guide/enterprise-edition/#branding) in the User guide.
+For information about branding configuration, see [Branding](/users-guide/enterprise-tenant/#branding) in the *User guide*.

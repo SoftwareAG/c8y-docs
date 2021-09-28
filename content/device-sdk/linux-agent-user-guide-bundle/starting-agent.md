@@ -4,11 +4,12 @@ layout: redirect
 weight: 50
 ---
 
-* To start the Cumulocity IoT Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
-* To start the Cumulocity IoT Cloud Remote Access service, refer to [Starting the Cumulocity IoT Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
-* To start the Cumulocity IoT CANopen service and CANopen slave simulator, refer to [Starting the Cumulocity IoT CANopen service](#starting-the-cumulocity-canopen-service).
+* To start the {{< product-c8y-iot >}} Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
+* To start the {{< product-c8y-iot >}} Cloud Remote Access service, refer to [Starting the {{< product-c8y-iot >}} Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
+* To start the {{< product-c8y-iot >}} CANopen service and CANopen device simulator, refer to [Starting the {{< product-c8y-iot >}} CANopen service](#starting-the-cumulocity-canopen-service).
 
-### <a name= starting-the-agent-process> Starting the agent process </a>
+<a name="starting-the-agent-process"></a>
+### Starting the agent process
 
 In your _cumulocity-agents-linux_ directory, run:
 
@@ -26,7 +27,8 @@ sudo systemctl start cumulocity-agent
 
 This way, the agent automatically restarts by a watchdog process in case it crashes.
 
-### <a name = starting-the-cumulocity-cloud-remote-access-service>Starting the Cumulocity IoT Cloud Remote Access service</a>
+<a name="starting-the-cumulocity-cloud-remote-access-service"></a>
+### Starting the Cloud Remote Access service
 
 Make sure that you have the *vncproxy* file in the _cumulocity-agents-linux/bin_ directory. If this is not the case, refer to the section [Building the agent with Cloud Remote Access service](./#building-the-cumulocity-cloud-remote-access-service).
 
@@ -46,7 +48,8 @@ sudo systemctl enable cumulocity-remoteaccess
 sudo systemctl start cumulocity-remoteaccess
 ```
 
-### <a name=starting-the-cumulocity-canopen-service>Starting the Cumulocity IoT CANopen service</a>
+<a name="starting-the-cumulocity-canopen-service"></a>
+### Starting the CANopen service
 
 Make sure that you have the *c8y_canopend* file in the _cumulocity-agents-linux/bin_ directory. If this is not the case, refer to the section [Building the agent with CANopen service](./#building-the-cumulocity-canopen-service) first.
 
@@ -56,7 +59,7 @@ In your _cumulocity-agents-linux_ directory, run:
 ./bin/c8y_canopend
 ```
 
-#### Cumulocity IoT CANopen simulator
+#### CANopen simulator
 
 There is also a CANopen simulator included in the repository for testing purposes. To build and run it, execute:
 
@@ -66,4 +69,4 @@ make
 ./c8y_canopen_simulator 5 0
 ```
 
-> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number, i.e. `can0`. In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the Cumulocity IoT Linux agent to have the agent create a vcan `can0` interface for you.
+> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number, i.e. `can0`. In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the {{< product-c8y-iot >}} Linux agent to have the agent create a vcan `can0` interface for you.

@@ -6,15 +6,15 @@ layout: redirect
 
 <a name="config-platform"></a>
 
-From the Management tenant, you can configure properties which apply globally to the whole Cumulocity IoT deployment.
+From the {{< management-tenant >}}, you can configure properties which apply globally to the whole {{< product-c8y-iot >}} deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
-Most of the settings you can configure here are also available in the Enterprise tenant. For details, refer to [Enterprise tenant > Customizing your platform](/users-guide/enterprise-edition/#customization).
+Most of the settings you can configure here are also available in the {{< enterprise-tenant >}}. For details, refer to [{{< enterprise-tenant >}} > Customizing your platform](/users-guide/enterprise-tenant/#customization).
 
-In addition, the following settings can be configured in the Management tenant only.
+In addition, the following settings can be configured in the {{< management-tenant >}} only.
 
 ### Passwords
 
@@ -22,13 +22,19 @@ In the **Passwords** section, you can specify password settings like default str
 
 ![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
+Select the checkbox **Enforce "green" passwords for all users** to enforce the users in your tenant to use passwords that meet the conditions for "green" passwords, see also [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
+
+* **Password validity limit (days)** - The number of days a password may be valid before it must be reset; minimum value is  "0", maximum value is "999999". Leave empty to use the value from the tenant options configured in the {{< management-tenant >}}, see *{{< product-c8y-iot >}} Core - Operations guide*.
+* **Password history size** - The number of times before the current password can be reused.  Minimum value is "0", preset value is "10".  
+* **Minimum length of "green" password** - The minimum number of characters which are required for a safe password. Minimum (and preset) value is "8", maximum value is "32".  Leave empty to skip this constraint.
+
 
 <a name="config-support-users"></a>
 ### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables Cumulocity IoT platform providers ({{< company-name-2 >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the Management tenant that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-tenant/#support-user-access) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -42,26 +48,26 @@ In the **Validity limit** field, you can optionally specify the support duration
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [{{< enterprise-tenant >}} > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants).
 
 <a name="configuring-support-users"></a>
 #### Configuring a support user
 
-A support user is a user in the Management tenant with specific permissions. This user can log in to the target tenant and impersonate the target user.
+A support user is a user in the {{< management-tenant >}} with specific permissions. This user can log in to the target tenant and impersonate the target user.
 
-To configure a user in the Management tenant as support user, you need to assign the relevant roles to the user. This can either be done by using a global role or by inventory roles.  
+To configure a user in the {{< management-tenant >}} as support user, you need to assign the relevant roles to the user. This can either be done by using a global role or by inventory roles.  
 
 **Using a global role**
 
-1. Create a role “Support” with “Support READ” and “Support ADMIN” permission.
-2. Assign the role “Support” to the respective user and remove all other roles for the user.
+1. Create a role "Support" with "Support READ" and "Support ADMIN" permission.
+2. Assign the role "Support" to the respective user and remove all other roles for the user.
 
 **Using inventory roles**
 
 Using inventory roles, you can selectively assign a support user for specific subtenants.
 
-1. Create an inventory role called “Support” with type = "*" and permission = "All".
+1. Create an inventory role called "Support" with type = "*" and permission = "All".
 2. Create a group of all subtenants which you want to be supported by the user.
-3. Assign the “Support” inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+3. Assign the "Support" inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.

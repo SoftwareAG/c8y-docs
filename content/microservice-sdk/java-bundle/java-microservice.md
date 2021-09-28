@@ -4,13 +4,15 @@ layout: redirect
 title: Hello world tutorial
 ---
 
-Here you will learn how to create your first microservice that can be deployed on the [Cumulocity IoT platform](https://cumulocity.com) using the Microservice SDK for Java.
+Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
+
+Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/concept/#authentication-and-authorization) for more details.
 
 ### Prerequisites
 
-You need to have Cumulocity IoT credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity IoT platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Verify that you have Java 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
+Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -23,7 +25,7 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-Cumulocity IoT hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -41,7 +43,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice
 
-You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
+You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/hello-world-microservice/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
 > **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
@@ -68,9 +70,9 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 </properties>
 ```
 
-#### Add the Cumulocity IoT's microservice library
+#### Add the microservice library
 
-You need to specify the version of the Cumulocity IoT's microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You need to specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
@@ -86,7 +88,7 @@ The response looks like this:
 }
 ```
 
-See also [Tenants](https://cumulocity.com/api/#tag/Tenants) in the Cumulocity IoT OpenAPI Specification.
+See also [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}}.
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
@@ -99,7 +101,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 
 #### Add repositories and dependencies
 
-Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the Cumulocity IoT Maven repository which stores the client libraries.
+Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the {{< product-c8y-iot >}} Maven repository which stores the client libraries.
 
 ```xml
 <repositories>
@@ -148,7 +150,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achive that, include in your _pom.xml_ file build plugins as follows:
+Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>
@@ -191,6 +193,8 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
+The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
+
 <a name="java-example"></a>
 #### Create a Java application
 
@@ -219,9 +223,9 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity IoT Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
-Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for Cumulocity IoT microservices including:
+Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for {{< product-c8y-iot >}} microservices including:
 
 * Security
 * Subscription
@@ -240,14 +244,14 @@ application.name=my-first-microservice
 server.port=80
 ```
 
-Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity IoT platform.
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the {{< product-c8y-iot >}} platform.
 
 ```json
 {
   "apiVersion": "1",
   "version": "@project.version@",
   "provider": {
-    "name": "Cumulocity GmbH"
+    "name": "{{< company-c8y >}}"
   },
     "isolation": "MULTI_TENANT",
     "requiredRoles": [
@@ -272,9 +276,9 @@ hello-microservice-java-1.0.0-SNAPSHOT.zip
 
 ### Deploying the "Hello world" microservice
 
-To deploy your microservice on the Cumulocity IoT platform you need:
+To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 
-* A valid tenant, a user and a password in order to access Cumulocity IoT.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The ZIP file built with Maven on the previous steps.
 
 > **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
@@ -301,7 +305,7 @@ https://<yourTenantDomain>/service/hello-microservice-java/health
 
 You can also use third-party applications or commands to make a GET request to your microservice endpoint. To do so, you need:
 
-* A valid tenant, a user and a password in order to access Cumulocity IoT.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
 For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
@@ -320,16 +324,16 @@ $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/he
 <a name="run-locally"></a>
 ### Running the microservice locally
 
-You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity IoT.
+You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-c8y-iot >}}.
 
-To run a microservice which uses the Cumulocity IoT API locally, you need:
+To run a microservice which uses the {{< product-c8y-iot >}} API locally, you need:
 
-* A valid tenant, a user and a password in order to access Cumulocity IoT.
+* A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
 #### Create the application
 
-If the application does not exist, create a new application on the Cumulocity IoT platform employing a POST request.
+If the application does not exist, create a new application on the {{< product-c8y-iot >}} platform employing a POST request.
 
 ```http
 POST <URL>/application/applications
@@ -347,7 +351,7 @@ BODY:
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your Cumulocity IoT tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You have to replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 

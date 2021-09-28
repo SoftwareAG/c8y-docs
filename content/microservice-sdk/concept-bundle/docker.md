@@ -9,7 +9,7 @@ layout: redirect
 
 Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (i.e. the code, a runtime, libraries, environment variables and configuration files). A container is a runtime instance of an image (i.e. what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
 
-Cumulocity IoT microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity IoT platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity IoT.
+{{< product-c8y-iot >}} microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the {{< product-c8y-iot >}} platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in {{< product-c8y-iot >}}.
 
 Containers have an upper thread limit of 10240 for microservices.
 

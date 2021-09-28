@@ -52,4 +52,3 @@ action distance(float lat1, float lon1, float lat2, float lon2) returns float {
 ```
 
 The above action will return the distance in meters.
-

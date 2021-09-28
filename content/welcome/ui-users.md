@@ -4,11 +4,11 @@ title: Get started using the UI
 layout: bundle
 ---
 
-Welcome to the Cumulocity IoT user documentation!
+Welcome to the {{< product-c8y-iot >}} user documentation!
 
-Read about the concepts behind Cumulocity IoT and get detailed advice on using our standard applications (Cockpit, Device Management and Administration) as well as various optional services.
+Read about the concepts behind {{< product-c8y-iot >}} and get detailed advice on using our standard applications (Cockpit, Device Management and Administration) as well as various optional services.
 
-If you are new to Cumulocity IoT, you might want to learn about the architecture, technical concepts and domain models behind Cumulocity IoT. The <a href="/concepts/introduction/">*Concepts guide*</a> serves as a starting point for anyone technically interested in our  IoT platform.
+If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}. The <a href="/concepts/introduction/">*Concepts guide*</a> serves as a starting point for anyone technically interested in our  IoT platform.
 
 
 ### User guides
@@ -30,17 +30,17 @@ Check out the following user guides which might serve as a starting point:
 
 <tr>
 <td align="left"><a href="/users-guide/getting-started/">User guide</a></td>
-<td align="left">The <i>User guide</i> is the main reference for working with our platform via the UI and provides in-depth explanation on all aspects of the Cumulocity IoT default applications (Administration, Cockpit and Device Management).</td>
+<td align="left">The <i>User guide</i> is the main reference for working with our platform via the UI and provides in-depth explanation on all aspects of the {{< product-c8y-iot >}} default applications (Administration, Cockpit and Device Management).</td>
 </tr>
 
 <tr>
 <td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
-<td align="left">Check out our device integration tutorials if you are looking for step-by-step instructions on integrating various demo devices, for example for proof-of-concept purposes in your Cumulocity IoT environment.</td>
+<td align="left">Check out our *Device integration tutorials* if you are looking for step-by-step instructions on integrating various demo devices, for example for proof-of-concept purposes in your {{< product-c8y-iot >}} environment.</td>
 </tr>
 
 <tr>
-<td align="left"><a href="/edge/overview/">Cumulocity IoT Edge</a></td>
-<td align="left">Learn how to install, run and operate Cumulocity IoT Edge, the local version of Cumulocity IoT.</td>
+<td align="left"><a href="/edge/overview/">{{< product-c8y-iot >}} Edge</a></td>
+<td align="left">Learn how to install, run and operate {{< product-c8y-iot >}} Edge, the local version of {{< product-c8y-iot >}}.</td>
 </tr>
 
 </tbody>
@@ -51,9 +51,9 @@ If you are looking for more detailed information on device integration using sup
 
 ### eLearning
 
-Visit the [{{< learning-portal >}}]({{< learning-portal-link >}}) where you can find helpful eLearning material to get started:
+Visit the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training >}}) where you can find helpful eLearning material to get started:
 
-[*Cumulocity IoT Basic*](https://knowledge.softwareag.com/enrol/index.php?id=1480) is a self-paced training which provides a jump-start into the Cumulocity IoT platform offering in the {{< company-cloud >}}s. Short videos followed by hands-on labs on your free trial Cumulocity IoT tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the Cumulocity IoT platform.
+[*{{< product-c8y-iot >}} Basic*]({{< link-sag-training-basic >}}) is a self-paced training which provides a jump-start into the {{< product-c8y-iot >}} platform offering in the {{< company-sag >}} clouds. Short videos followed by hands-on labs on your free trial {{< product-c8y-iot >}} tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the {{< product-c8y-iot >}} platform.
 
 ### Additional resources
 

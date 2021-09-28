@@ -9,7 +9,7 @@ layout: redirect
 
 The Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
 
-Apama EPL is documented in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/).
+Apama EPL is documented in the [Apama documentation]({{< link-apama-webhelp >}}).
 
 As an example, the following statement listens for new temperature sensor readings greater than a particular temperature:
 
@@ -26,9 +26,9 @@ As an example, the following statement listens for new temperature sensor readin
 		}
 	}
 
-Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Sensor library](https://cumulocity.com/api/#section/Sensor-library)).
+Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library)).
 
-Listeners such as the above should be placed in a monitor in the `onload` statement, and the file must contain `using` statements for the types used by the listener - for most of the Cumulocity IoT events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
+Listeners such as the above should be placed in a monitor in the `onload` statement, and the file must contain `using` statements for the types used by the listener - for most of the {{< product-c8y-iot >}} events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
 
 	using com.apama.cumulocity.ManagedObject;
 	using com.apama.cumulocity.Operation;
@@ -82,7 +82,7 @@ To create a new alarm or operation, create an instance of the relevant event typ
 		}
 	}
 
-Technically, this statement produces a new alarm event each time a temperature sensor reads more than 100 degrees Celsius and sends it to Cumulocity IoT.
+Technically, this statement produces a new alarm event each time a temperature sensor reads more than 100 degrees Celsius and sends it to {{< product-c8y-iot >}}.
 
 ### How can I control devices from EPL?
 
@@ -101,7 +101,7 @@ Remote control with EPL is done by sending an operation event. Remote operations
 
 ### How can I query data from EPL?
 
-It may be required to query information from the Cumulocity IoT database as part of the ongoing event processing. This is supported by sending events and using listeners to wait for responses. Here is an example that shows how to summarize total sales for vending machines every hour. The sales report data created after a purchase is retrieved from the Cumulocity IoT database.
+It may be required to query information from the {{< product-c8y-iot >}} database as part of the ongoing event processing. This is supported by sending events and using listeners to wait for responses. Here is an example that shows how to summarize total sales for vending machines every hour. The sales report data created after a purchase is retrieved from the {{< product-c8y-iot >}} database.
 
 	using com.apama.aggregates.count;
 

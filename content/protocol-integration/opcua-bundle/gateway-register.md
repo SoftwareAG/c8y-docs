@@ -16,7 +16,7 @@ For example, to connect to a tenant, first a profile named *application-myTenant
 
 ```yaml
 C8Y:
-    baseUrl: https://<<yourTenant>>.cumulocity.com
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
@@ -45,15 +45,15 @@ Mac OS
     /opt/opcua/data
 ```
 
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let's use the previously created profile. Start a terminal and use the following command:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
-**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
+**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
@@ -63,7 +63,11 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 ### Additional customizations
 
-> **Info**: If no additional customizations are required, you can skip this section.
+> **Info:** If no additional customizations are required, you can skip this section.
+
+> **Info:** Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
+Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
 
 The following properties can be manually configured in the YAML file:
 
@@ -72,12 +76,12 @@ The following properties can be manually configured in the YAML file:
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-  # This is the base URL pointing to the Cumulocity IoT platform. This must always be customized in an application profile.
+  # This is the base URL pointing to the {{< product-c8y-iot >}} platform. This must always be customized in an application profile.
   baseUrl: http://localhost
-  # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
-  # want to configure the Cumulocity IoT SDK to always use the baseURL provided during initialization.
+  # This is an internal setting of the {{< product-c8y-iot >}} SDK. It is set to true, because we typically
+  # want to configure the {{< product-c8y-iot >}} SDK to always use the baseURL provided during initialization.
   # Otherwise, the gateway would use the links in the `self` fragment of the core API responses as the host name.
-  # This is helpful in deployment scenarios where the Cumulocity IoT instance is
+  # This is helpful in deployment scenarios where the {{< product-c8y-iot >}} instance is
   # reachable only with an IP address.
   forceInitialHost: true
 
@@ -94,10 +98,17 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
+    addressSpace:
+      # Starting from version 10.11, the opcua-device-gateway process creates the address space local db files are with a new filename
+      # (cumulocity-opcua-server-<serverId>-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+      # The legacy address space local db files can be cleaned up at the start of the opcua-device-gateway process
+      # automatically when the legacyCleanup is set to true, which is the default setting.
+      # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
+      legacyCleanup: true
 
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
-  # Contact product support (https://cumulocity.com/guides/<latest-release>/welcome/contacting-support/)
+  # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/)
   # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
@@ -183,9 +194,8 @@ gateway:
   # Mapping-specific settings
   mappings:
     # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-    # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels.
+    # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels.
     alarmSeverityMap:
-      1001: CRITICAL
       801: CRITICAL
       601: MAJOR
       401: MINOR
@@ -203,7 +213,7 @@ gateway:
   # OPC UA subscription settings: These settings allow global OPC UA configuration parameters
   # for subscription-based data reporting
   subscription:
-    # The reporting rate corresponds to the publishing rate for monitored items.
+    # The reporting rate (in milliseconds) corresponds to the publishing rate for monitored items.
     reportingRate: 100
     # The maxKeepAliveCount specifies the maximum number of OPC UA reporting intervals with no data that
     # can be skipped before the OPC UA server sends an empty response to the gateway, informing about
@@ -240,15 +250,15 @@ gateway:
   platform:
     inventory:
       update:
-        # Default processing mode for inventory managed objects update to the Cumulocity IoT platform.
+        # Default processing mode for inventory managed objects update to the {{< product-c8y-iot >}} platform.
         defaultProcessingMode: QUIESCENT
-        # Processing mode for inventory update of the gateway device managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of the gateway device managed objects to the {{< product-c8y-iot >}} platform.
         gateway:
           processingMode: QUIESCENT
-        # Processing mode for inventory update of the OPC UA server device managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of the OPC UA server device managed objects to the {{< product-c8y-iot >}} platform.
         server:
           processingMode: QUIESCENT
-        # Processing mode for inventory update of value-map managed objects to the Cumulocity IoT platform.
+        # Processing mode for inventory update of value-map managed objects to the {{< product-c8y-iot >}} platform.
         valuemap:
           processingMode: QUIESCENT
     # Connection pool configuration
@@ -298,8 +308,8 @@ gateway:
 
 ### Logging
 
-Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
-A sample logging config file may look like this:
+Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the ["Logback" documentation](http://logback.qos.ch/manual/configuration.html).
+A sample logging configuration file may look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -360,5 +370,5 @@ The process of deletion is asynchronous for both cases, so it may take a while t
 completely remove all the associated managed objects. Thereafter, the gateway can be deleted from the list of devices along with the device user by selecting the checkbox
 **Also delete associated device owner "device&#95;&#60;gateway&#95;name&#62;"**.
 
-If the gateway is directly deleted from the list of devices before deleting gateway’s servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
+If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.

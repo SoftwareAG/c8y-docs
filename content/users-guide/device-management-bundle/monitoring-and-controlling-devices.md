@@ -51,7 +51,7 @@ helpcontent:
 <a name="map"></a>
 ### Locating devices
 
-Cumulocity IoT provides the option to view all devices in your account on a map.
+{{< product-c8y-iot >}} provides the option to view all devices in your account on a map.
 
 Click **Map** in the **Devices** menu in the navigator to display a map showing all devices in real time.
 
@@ -76,7 +76,7 @@ The connection status is represented by arrows in the **Status** column in the d
 
 **Send connections**
 
-The top arrow represents the send connection (traffic from the device to Cumulocity IoT). The status for the send connections may be one of:
+The top arrow represents the send connection (traffic from the device to {{< product-c8y-iot >}}). The status for the send connections may be one of:
 
 * Online (data was sent within the required interval)- indicated by a green arrow
 * Offline (data was not sent within the required interval) - indicated by a red arrow
@@ -88,13 +88,13 @@ When a device is detected to be offline (stops sending data within required inte
 
 **Push connections**
 
-The bottom arrow represents the push connection (from Cumulocity IoT to the device). The status for the push connections may be one of:
+The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to the device). The status for the push connections may be one of:
 
 * Online (connection established)- indicated by a green arrow
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-Push connection means the connection from Cumulocity IoT to /notification/operations API, **not** to real-time API.
+Push connection means the connection from {{< product-c8y-iot >}} to /notification/operations API, **not** to real-time API.
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
@@ -115,7 +115,7 @@ Below the send connection and push connection status, the time of the last commu
 
 > **Info:** "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
-In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity IoT. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
+In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with {{< product-c8y-iot >}}. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
 If an interval is set, you will find the **Maintenance** toggle below it.
 
@@ -126,20 +126,20 @@ With the **Maintenance** toggle you can turn the maintenance mode for the device
 <a name="monitoring-services"></a>
 ### Service monitoring
 
-Cumulocity IoT distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with Cumulocity IoT, it does not automatically indicate if it is functional or not.
+{{< product-c8y-iot >}} distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
 
-Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to Cumulocity IoT. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
+Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
 
-Cumulocity IoT considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
+{{< product-c8y-iot >}} considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
 
-While a machine is offline, Cumulocity IoT assumes by default
+While a machine is offline, {{< product-c8y-iot >}} assumes by default
 
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
 There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
-Cumulocity IoT displays service availability at the level of individual devices and across all devices.
+{{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 
 #### To view the service monitoring of a particular device
 
@@ -160,7 +160,7 @@ Devices can raise alarms to indicate that there is a problem requiring an interv
 
 #### To view alarms
 
-Cumulocity IoT displays alarms at the level of individual devices and across all devices:
+{{< product-c8y-iot >}} displays alarms at the level of individual devices and across all devices:
 
 * To check the alarms for all devices, click **Alarms** in the **Overview** menu in the navigator.
 * To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
@@ -172,7 +172,7 @@ By default,
 * only unresolved alarms are shown. If you turn on **Show cleared alarms** at the right of the top menu bar, you will see the entire alarm history.
 * alarms are shown as coming in from the devices in real time. Click **Realtime** in the top menu bar to disable real-time updates.
 
-Alarms are classified according to their severity. Cumulocity IoT includes four different alarm types:
+Alarms are classified according to their severity. {{< product-c8y-iot >}} includes four different alarm types:
 
 |Severity|Description|
 |:---|:--|
@@ -215,7 +215,7 @@ In each row, the following information for an alarm is provided:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to “Acknowledged” to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to “clear” or when the device detected by itself that the problem has gone.</td>
+<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to "Acknowledged" to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to "clear" or when the device detected by itself that the problem has gone.</td>
 </tr>
 <tr>
 <td align="left">Last occurrence</td>
@@ -302,13 +302,13 @@ Click **Reload** to update the list once manually.
 
 #### To add and execute a single operation
 
-Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#managing-firmware-on-a-device), [software](/users-guide/device-management/#managing-software-on-a-device), [configurations](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#firmware-repo), [software](/users-guide/device-management/#software-repo), [configurations](/users-guide/device-management/#configuration-repository) etc.
 
 When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 
 Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
->**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+>**Important:** When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
 #### To cancel pending single operations
 
@@ -483,7 +483,7 @@ Troubleshooting devices at a more detailed level can be done with the help of ev
 
 #### To view events
 
-Cumulocity IoT displays events at the level of individual devices and across all devices:
+{{< product-c8y-iot >}} displays events at the level of individual devices and across all devices:
 
 * To view the events for all devices, click **Events** in the **Overview** menu in the navigator.
 * To view the events of a particular device, switch to the **Events** tab in the details of this device.

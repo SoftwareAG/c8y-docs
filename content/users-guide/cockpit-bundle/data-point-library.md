@@ -16,7 +16,7 @@ The data point library provides a collection of data points with default values 
 
 Data point properties are similar to paragraph formats in word processing applications. You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. The data point library provides the same functionality for data points. It provides a number of default data point templates that can be easily applied to your data points from different devices.
 
-How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, the Cumulocity IoT platform searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If there is a match, the corresponding data point properties are used for a default visualization.
+How does the Cockpit application use the data point library? To find the default visualization for a data point like color or label, the {{< product-c8y-iot >}} platform searches the data point library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the data point library match those of the measurement. If there is a match, the corresponding data point properties are used for a default visualization.
 
 Additionally, the properties of the data point library are used by threshold business rules: The red and yellow values configured in the data point library are used by the threshold rules to raise alarms.
 

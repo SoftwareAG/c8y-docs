@@ -12,7 +12,7 @@ To connect an OPC UA device in the Edge appliance, follow the steps below.
 
 **OPC UA Management service**
 
-Check if the OPC UA management service is running in Cumulocity IoT Edge (running on port 8083):  
+Check if the OPC UA management service is running in {{< product-c8y-iot >}} Edge (running on port 8083):  
 
 ```shell
 [admin@iot-edge-server ~]$ sudo service opcua-mgmt-service status
@@ -26,7 +26,7 @@ If the agent is not running, start it with the following command:
 
 **OPC UA Device Gateway**
 
-Check if the OPC UA device gateway is running in Cumulocity IoT Edge (running on port 1099):  
+Check if the OPC UA device gateway is running in {{< product-c8y-iot >}} Edge (running on port 1099):  
 
 ```shell
 [admin@iot-edge-server ~]$ sudo service opcua-device-gateway status
@@ -44,8 +44,8 @@ Next, you must register a device in the Device Management application with the n
 
 <img src="/images/edge/edge-device-registration-example.png" name="Register device"/>
 
-Follow the description in [Device Management > Connecting devices](/users-guide/device-management#connecting-devices) in the User guide to register a device.
+Follow the description in [Device Management > Connecting devices](/users-guide/device-management#connecting-devices) in the *User guide* to register a device.
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
 
-For further information about managing and configuring OPCUA devices, see [OPC UA](/protocol-integration/opcua/) in the Protocol integration guide.
+For further information about managing and configuring OPCUA devices, see [OPC UA](/protocol-integration/opcua/) in the *Protocol integration guide*.

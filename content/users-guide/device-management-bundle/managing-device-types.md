@@ -11,8 +11,7 @@ helpcontent:
   To add a new device protocol, click **Add device protocol** at the top right, select a device protocol type and configure it following the instructions for the particular type in the *Protocol integration guide*."
 ---
 
-
-To process data from various device types, Cumulocity IoT uses device protocols.
+To process data from various device types, {{< product-c8y-iot >}} uses device protocols which are stored in a database.
 
 Click **Device protocols** in the **Device types** menu in the navigator.
 
@@ -22,7 +21,7 @@ In the **Device protocols** page you will find a list with all device protocols 
 
 The device protocol list shows the following information:
 
-* the device protocol type (e.g. Modbus, CANOpen, LoRa, LWM2M)
+* the device protocol type (e.g. Modbus, CANOpen, LoRa)
 * the device type name
 * the number of resources for the device (at the right)
 

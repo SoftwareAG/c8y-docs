@@ -1,23 +1,39 @@
 #!/bin/bash
-
 #
 # Copyright (c) 2021 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
 # Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.
 #
 
-# This will install zip package which is needed to install ui
-rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
 
-# This script is to backup c8y data. Outpus are inside /tmp directory: /tmp/migration_data_TENANT.tgz
+##################################
+# Example usage
+##################################
 
-# FUNCTIONS
+# restore.sh # Without any arguments
+# "No archive path given!!!"
+
+# restore.sh /migration_data.tgz
+# Archive path set to /migration_data.tgz
+# Data extracted at /tmp/migration_data
+
+# restore.sh /tmp/migration_data.tgz /output
+# Archive path is set to /tmp/migration_data.tgz
+# Data extracted at /output
+
+##################################
+# Arg parse
+##################################
 
 function usage() {
     echo "Usage:"
-    echo "    restore_db.sh ARCHIVE_PATH EXTRACT_PATH"
-    echo " EXTRACT_PATH is /tmp/migration_data by default"
+    echo "    restore.sh ARCHIVE_PATH [EXTRACTED_PATH]"
+    echo "    ARCHIVE_PATH is the path to archive created by backup.sh script"
+    echo "    EXTRACTED_PATH is the path to where archive will be extracted before applying"
 }
-# ARGUMENTS
 
 ARCHIVE=$1
 EXTRACTED_PATH=$2
@@ -30,10 +46,16 @@ if [ -z "$ARCHIVE" ]; then
 fi
 
 if [ -z "$EXTRACTED_PATH" ]; then
-   echo "No extraction path given!!!"
-   usage
-   exit 1;
+   EXTRACTED_PATH="/tmp/migration_data/"
 fi
+
+##################################
+# Main
+##################################
+
+echo "Installing zip package needed for restore procedure"
+# This will install zip package which is needed to install ui
+rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 
 echo "Getting application zips from 10.9"
 # Create temp dir to get 10.9 apps from mongo
@@ -53,12 +75,12 @@ echo "Done downloading application zips from 10.9"
 echo "Packaging apps to be visible by karaf"
 CPWD=$PWD
 cd /tmp/apps
+mv /tmp/apps/*streaming-analytics-app* /tmp
 zip package-cumulocity-$UI_VERSION.zip $zip_names
 chown karaf:karaf package-cumulocity-$UI_VERSION.zip
 zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
 cd $CPWD
-
 
 echo "Started archive restore procedure"
 echo "Restoring device-id from 10.7"
@@ -83,6 +105,16 @@ cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 echo "Waiting for webapps to install. If this takes too long please look at /webapps/2Install"
 while [ ! -f /webapps/2Install/$UI_VERSION.zip.installed ]; do sleep 1; done
 
+echo "Restoring opcua"
+rm -rf /etc/opcua
+cp -rp $EXTRACTED_PATH/opcua_data/opcua /etc/
+
+echo "Restoring cumulocity-agent credentials"
+cp -rp $EXTRACTED_PATH/cumulocity-agent/credentials /var/lib/cumulocity-agent/credentials
+
+echo "Restarting services"
+systemctl restart cumulocity-agent
 systemctl restart nginx
 systemctl restart cumulocity-core-karaf
-
+monit restart opcua_device_gateway_proc
+monit restart opcua_mgmt_service_proc

@@ -19,8 +19,8 @@ In this case, only the card with information about the smart rules is shown.
 - For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
-available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an Enterprise or Management tenant
-(see also [Enterprise tenant > Managing tenants](/users-guide/enterprise-edition/#managing-tenants) in the *User guide*)
+available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an {{< enterprise-tenant >}} or {{< management-tenant >}}
+(see also [{{< enterprise-tenant >}} > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants) in the *User guide*)
 and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
 to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
 (as an administrator with the permission to create applications). For example, to disable Analytics Builder:
@@ -68,7 +68,7 @@ By default, all users can see the same set of pages (according to the limitation
 You can also restrict the visibility of the pages to only users who have the permission ROLE_ANALYTICSBUILDER_READ or ROLE_EPLAPPS_READ,
 which can be assigned directly to users or via groups (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role"
-(also see the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification) or use a curl command as given in the example below:
+(also see the [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in the {{< openapi >}}) or use a curl command as given in the example below:
 
 ```
 curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options

@@ -8,14 +8,14 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 #### To configure a new remote device
 
-1. Click **Add endpoint** at the right of the top menu bar. 
+1. Click **Add endpoint** at the right of the top menu bar.
 
 	![Endpoints](/images/cra/cra-endpoint-add.png)
- 
-2. Enter a name for the new endpoint and select the protocol to be used. 
+
+2. Enter a name for the new endpoint and select the protocol to be used.
 3. Follow the descriptions below for the protocol-specific settings.
 
->**Info:** To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
+>**Info:** To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 <a name="adding-remote-access-endpoints-via-vnc"></a>
 #### To add a remote access endpoint via VNC
@@ -26,7 +26,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 ![Remote access endpoint](/images/cra/cra-endpoint-vnc.png)
 
-Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting.
+Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show "starting VNC handshake" when the process is starting.
 
 #### To add a remote access endpoint via Telnet
 
@@ -41,7 +41,7 @@ Once the connection is established, a new browser tab will open displaying the f
 
 1. Enter the host (IP address or hostname) and the port of the server.
 2. Select a sign-in method.<br>
-	
+
 	Username and password: If this method is selected, it is mandatory to enter a username and password.
 
 	![SSH username and password sign in](/images/cra/cra-endpoint-ssh-username.png)
@@ -53,7 +53,7 @@ Once the connection is established, a new browser tab will open displaying the f
 	> **Info:** The public key needs to be installed on the remote device as authorized key.
 
 	Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
-	
+
 3. Click **Save** to add the endpoint.
 
 
@@ -104,5 +104,3 @@ By enabling the auto-saving host key functionality you will no longer need to en
 In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
 
 ![Save host key](/images/cra/cra-administration-settings.png)
-
-

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Assuming we have a sensor which measures the current fill level of something and sends the values in a regular basis to Cumulocity we can easily create additional consumption values.
+Assuming we have a sensor which measures the current fill level of something and sends the values in a regular basis to {{< product-c8y-iot >}} we can easily create additional consumption values.
 Calculating the absolute difference between two measurements can be useful but it will only give you a clear view if the measurements are send always in the same interval.
 Therefore we will put the absolute difference in relation to the time difference and calculate as a per hour consumption.
 

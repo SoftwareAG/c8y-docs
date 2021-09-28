@@ -4,19 +4,19 @@ title: Working with REST APIs
 layout: redirect
 ---
 
-Cumulocity IoT Edge supports REST APIs to perform the tasks like installation, configuring the network for the Edge appliance, updating the Edge appliance, changing the hostname, and so on. The REST APIs in Cumulocity IoT Edge use the HTTPS protocol for all the endpoints. Before the installation, the self-signed certificate uses the currently configured IP address of the Edge appliance. You must use the IP address of the Edge appliance in the URL. For example, https://192.168.66.10/edge/tasks/latest-installation.
+{{< product-c8y-iot >}} Edge supports REST APIs to perform the tasks like installation, configuring the network for the Edge appliance, updating the Edge appliance, changing the hostname, and so on. The REST APIs in {{< product-c8y-iot >}} Edge use the HTTPS protocol for all the endpoints. Before the installation, the self-signed certificate uses the currently configured IP address of the Edge appliance. You must use the IP address of the Edge appliance in the URL. For example, https://192.168.66.10/edge/tasks/latest-installation.
 
-During the installation, the certificate changes from using the IP address to the domain name that you have configured. You must use the domain name in your browser to match the certificate. For example, https://myown.iot.com/edge/configuration/domain. 
+During the installation, the certificate changes from using the IP address to the domain name that you have configured. You must use the domain name in your browser to match the certificate. For example, https://myown.iot.com/edge/configuration/domain.
 
-You can either upload a certificate (self-signed) issued by a certificate authority or have Cumulocity IoT Edge generate a self-signed certificate for the domain name. Some of the endpoints could be temporarily unavailable during the installation. For example, the `edge/configuration/network` endpoint can be used only after the installation.
+You can either upload a certificate (self-signed) issued by a certificate authority or have {{< product-c8y-iot >}} Edge generate a self-signed certificate for the domain name. Some of the endpoints could be temporarily unavailable during the installation. For example, the `edge/configuration/network` endpoint can be used only after the installation.
 
-When you use a POST endpoint, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
+When you use a POST request, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
 >**Important:** You cannot run two tasks at the same time. If you attempt to run a task when another task is in progress, then you will get a HTTP status 409.
 
 ### Authentication
 
-If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. Cumulocity IoT Edge supports basic authentication and the authentication is performed by the Management tenant. For a successful authentication, you must prefix **management** to the user name. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
+If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. {{< product-c8y-iot >}} Edge supports basic authentication and the authentication is performed by the {{< management-tenant >}}. For a successful authentication, you must prefix **management** to the user name. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
 
 	$ echo -n management/admin:password | base64
 
@@ -43,7 +43,7 @@ The following table lists the endpoints that need authentication and the endpoin
 
 ### GET /edge/tasks/latest-installation
 
-Use this endpoint to get the information about the latest installation of Cumulocity IoT Edge.
+Use this endpoint to get the information about the latest installation of {{< product-c8y-iot >}} Edge.
 
 **Response**
 
@@ -58,12 +58,12 @@ The endpoint returns:
 		}
 
 	The `status` represents the current status of the installation: `executing`, `succeeded`, or `failed`.
-	
+
 - HTTP status 404, before an installation has been attempted.
 
 ### GET /edge/configuration/domain
 
-Use this endpoint to get the domain name configured in Cumulocity IoT Edge. This endpoint is available only after a successful installation.
+Use this endpoint to get the domain name configured in {{< product-c8y-iot >}} Edge. This endpoint is available only after a successful installation.
 
 **Response**:
 
@@ -74,14 +74,14 @@ The endpoint returns:
 		{
 			"domain_name":"myown.iot.com"
 		}
-		
+
 ### POST /edge/install
 
-Use this endpoint to perform the initial installation. 
+Use this endpoint to perform the initial installation.
 
 If the installation is successful, this endpoint will not be available.
 
-If the installation fails, this endpoint will be available. You can use the endpoint to attempt the installation again. 
+If the installation fails, this endpoint will be available. You can use the endpoint to attempt the installation again.
 
 |HEADERS||
 |:---|:---|
@@ -101,10 +101,10 @@ Content-Type: application/json
 		"certificate": "upload"                            
 	}
 ```
-	
+
 In the JSON format above, the value of `certificate` can be `generate` or `upload`:
 
-- If you have set `"certificate": "generate"`, Cumulocity IoT Edge generates the certificate for you.
+- If you have set `"certificate": "generate"`, {{< product-c8y-iot >}} Edge generates the certificate for you.
 
 - If you have set `"certificate": "upload"`, you must upload the certificate, before the installation will start.
 
@@ -114,7 +114,7 @@ The endpoint returns:
 
 - HTTP status 201, if the request is successful.
 
-		
+
 		{
 		  "id":"1",
 		  "uploads":[
@@ -123,9 +123,9 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://192.168.66.10/edge/upload/1/certificate_key"}
 		 ]
 		}
-		
+
 	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
-	
+
 Note that this task does not start the installation. You must run the subsequent calls to upload the license and the certificate files to start the installation.
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
@@ -134,7 +134,7 @@ The `id` returned in the JSON response is the task ID. Use the task ID for polli
 
 ### POST /edge/update
 
-Use this endpoint to update Cumulocity IoT Edge to a newer version.
+Use this endpoint to update {{< product-c8y-iot >}} Edge to a newer version.
 
 |HEADERS||
 |:---|:---|
@@ -148,7 +148,7 @@ Content-Type: application/json
 
 {
     "type": "upload"
-} 
+}
 ```
 **Response**
 
@@ -166,19 +166,19 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-Upload the archive of the new Cumulocity IoT Edge version using the URL returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+Upload the archive of the new {{< product-c8y-iot >}} Edge version using the URL returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
 ### POST /edge/configuration/network
 
-Use this endpoint to configure the Cumulocity IoT Edge network.
+Use this endpoint to configure the {{< product-c8y-iot >}} Edge network.
 
 |HEADERS||
 |:---|:---|
 |Content-Type|application/json
 
->**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for Cumulocity IoT Edge internal purpose.
+>**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
 
 **Request**
 
@@ -193,7 +193,7 @@ Content-Type: application/json
 	"dns": "8.8.8.8"
 }
 ```
-Use the above JSON format before the installation to configure the network. 
+Use the above JSON format before the installation to configure the network.
 
 >**Important:** For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
@@ -215,6 +215,8 @@ Content-Type: application/json
 ```
 Here, the `ip_range` is an IPv4 CIDR. The CIDR suffix must be between 0 and 27 inclusive. The default value for `ip_range` is 172.16.0.0/15.
 
+The **ip_range** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
+
 Before the installation, the `dns` and the network CIDR keys are optional.
 
 >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
@@ -231,7 +233,7 @@ The endpoint returns HTTP status 201, if the request is successful.
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
->**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
+>**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
 
 ### GET /edge/configuration/network
 
@@ -252,7 +254,7 @@ The endpoint returns HTTP status 200.
 ```
 ### GET /edge/version
 
-Use this endpoint to get the current version of the Cumulocity IoT Edge installation. This endpoint is available only after a successful installation.
+Use this endpoint to get the current version of the {{< product-c8y-iot >}} Edge installation. This endpoint is available only after a successful installation.
 
 **Response**
 
@@ -266,13 +268,13 @@ The endpoint returns HTTP status 200.
 
 ### POST /edge/reboot
 
-Use this endpoint to reboot the Edge appliance. 
+Use this endpoint to reboot the Edge appliance.
 
 This endpoint returns HTTP status 202. There is no guarantee that the reboot will not start before the response is returned. There could be errors or dropped connections as the connection is lost with the Edge appliance before the response is returned.
 
 ### GET /edge/configuration/hostname
 
-Use this endpoint to get the current hostname of the Cumulocity IoT Edge appliance.
+Use this endpoint to get the current hostname of the {{< product-c8y-iot >}} Edge appliance.
 
 **Response**
 
@@ -286,7 +288,7 @@ The endpoint returns HTTP status 200.
 
 ### POST /edge/configuration/hostname
 
-Use this endpoint to change the hostname of the Cumulocity IoT Edge appliance.
+Use this endpoint to change the hostname of the {{< product-c8y-iot >}} Edge appliance.
 
 |HEADERS||
 |:---|:---|
@@ -362,7 +364,7 @@ The endpoint returns HTTP status 200.
 }
 ```
 
-You must use this `device_id` to register the Edge appliance with the Cumulocity IoT tenant.
+You must use this `device_id` to register the Edge appliance with the {{< product-c8y-iot >}} tenant.
 
 ### POST /edge/configuration/time-sync
 
@@ -390,7 +392,7 @@ The servers must be NTP servers. If you specify multiple servers, any server spe
 
 **Response**
 
-The endpoint returns HTTP status 200.
+The endpoint returns HTTP status 201.
 
 ```json
 {
@@ -412,7 +414,7 @@ The endpoint returns HTTP status 200.
 {
     "enabled": true,
     "interval": 10,
-    "servers": ["timenet.eur.ad.sag"]
+    "servers": ["pool.ntp.org"]
 }
 ```
 
@@ -430,11 +432,13 @@ The endpoint returns HTTP status 200.
 }
 ```
 
-The endpoint returns `"enabled": true` if the microservices hosting feature is enabled. 
+The endpoint returns `"enabled": true` if the microservices hosting feature is enabled.
 
 ### POST /edge/configuration/microservices
 
-Use this endpoint to configure the microservices.
+Use this endpoint to configure the microservice hosting feature.
+
+>**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 
 |HEADERS||
 |:---|:---|
@@ -463,9 +467,9 @@ The endpoint returns HTTP status 201, if the request is successful.
 }
 ```
 
-The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid). 
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
->**Info:** Cumulocity IoT Edge appliance will be temporarily non-operational during the operation.
+>**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
 
 ### GET /edge/configuration/certificate
 
@@ -494,9 +498,9 @@ If the certificate is not self-signed:
     "signed_by": "A-Certificate-Authority",
     "expiry": "2019-04-26T05:28:52Z"
 }
-``` 
+```
 
-The format of the `expiry` field is in the ISO format and is always in the UTC timezone. 
+The format of the `expiry` field is in the ISO format and is always in the UTC timezone.
 
 ### POST /edge/configuration/certificate
 
@@ -518,7 +522,7 @@ Content-Type: application/json
 ```
 In the JSON format above, the value of `renewal_type` can be `generate` or `upload`:
 
-- If you have set `"renewal_type": "generate"`, Cumulocity IoT Edge generates the certificate for you.
+- If you have set `"renewal_type": "generate"`, {{< product-c8y-iot >}} Edge generates the certificate for you.
 
 - If you have set `"renewal_type": "upload"`, you must upload the certificate.
 
@@ -545,7 +549,7 @@ In the JSON format above, the value of `renewal_type` can be `generate` or `uplo
 		{
     		"id": "15"
 		}
-	
+
 To upload the certificate, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
@@ -555,6 +559,8 @@ The `id` returned in the JSON response is the task ID. Use the task ID for polli
 Use this endpoint to expand the disk size of the installation disk and the data disk. You can either expand the disk size for both the disks or any one of the disk at a time. There is no limit on the number of the disk expansion process.
 
 Before using this endpoint, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
+
+>**Info:** If there is no disk space to expand, the task will be marked as success.
 
 **Request**
 
@@ -587,9 +593,9 @@ The endpoint returns:
 			"type":"network",
 			"status":"executing"
 		}
-		
+
 	The `type` refers to the type of task: `network`, `installation`, `hostname`, `remote-connectivity`, `certificate-renewal`, `microservices-state`, `update`, `time-sync`, `reboot`.
-	
+
 	The `status` refers to the status of the task: `executing`, `succeeded`, `failed`.
 
 ### GET /edge/tasks/{id}/log
@@ -601,7 +607,7 @@ Use this endpoint to get the log for the task with the given ID.
 The endpoint returns:
 
 - A JSON array containing the lines from the Ansible log, if a task is found with the given ID. The log may be empty when this request is made, returning an empty JSON array. Each log line is contained in an object as shown in this example:
-		
+
 		[
 		  {"text":"This is a log line"},
 		  {"text":"This is another log line"}

@@ -6,9 +6,9 @@ weight: 110
 
 ### Overview
 
-To ease device integration Cumulocity IoT already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
+To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for further information.
+To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
@@ -70,7 +70,7 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#operation-templates">Operation templates</a></strong>
 + <a href="#500">500 (get pending)</a>
 + <a href="#501">501,typeToSetToExecuting</a>
-+ <a href="#502">502,typeToSetToFailed,fialureReason</a>
++ <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 
@@ -81,12 +81,12 @@ If a parameter is in square brackets, it is optional.
 
 ### Automatic device creation
 
-The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity IoT will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case Cumulocity IoT will create the device from the template.
+The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, {{< product-c8y-iot >}} will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case {{< product-c8y-iot >}} will create the device from the template.
 
 The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
 
-### Handling none mandatory parameters
+### Handling non-mandatory parameters
 
 If a parameter is not declared as mandatory, the client can send an empty string in that place.
 
@@ -104,11 +104,13 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about the <kbd>t/</kbd> topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
 
-#### <a name="inventory-templates">Inventory templates (1xx)</a>
+<a name="inventory-templates"></a>
+#### Inventory templates (1xx)
 
-##### <a name="100">Device creation (100)</a>
+<a name="100"></a>
+##### Device creation (100)
 
 Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
 
@@ -123,7 +125,8 @@ Create a new device for the serial number in the inventory if not yet existing. 
 100,myDevice,myType
 ```
 
-##### <a name="101">Child device creation (101)</a>
+<a name="101"></a>
+##### Child device creation (101)
 
 Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type **c8y_Serial** and the value a combination of the serial of the root device and the unique child ID.
 
@@ -139,7 +142,8 @@ Create a new child device for the current device. The newly created object will 
 101,uniqueChildId,myChildDevice,myChildType
 ```
 
-##### <a name="105">Get child devices (105)</a>
+<a name="105"></a>
+##### Get child devices (105)
 
 Trigger the sending of child devices of the device.
 
@@ -149,7 +153,8 @@ Trigger the sending of child devices of the device.
 105
 ```
 
-##### <a name="107">Clear device's fragment (107)</a>
+<a name="107"></a>
+##### Clear device's fragment (107)
 
 Remove one or more fragments from a device.
 
@@ -163,7 +168,8 @@ Remove one or more fragments from a device.
 107,c8y_Position,c8y_Configuration
 ```
 
-##### <a name="110">Configure Hardware (110)</a>
+<a name="110"></a>
+##### Configure Hardware (110)
 
 Update the hardware properties of the device.
 
@@ -179,7 +185,8 @@ Update the hardware properties of the device.
 110,1234567890,myModel,1.2.3
 ```
 
-##### <a name="111">Configure Mobile (111)</a>
+<a name="111"></a>
+##### Configure Mobile (111)
 
 Update the mobile properties of the device.
 
@@ -199,7 +206,8 @@ Update the mobile properties of the device.
 111,1234567890,,54353
 ```
 
-##### <a name="112">Configure Position (112)</a>
+<a name="112"></a>
+##### Configure Position (112)
 
 Update the position properties of the device.
 
@@ -216,7 +224,8 @@ Update the position properties of the device.
 112,50.323423,6.423423
 ```
 
-##### <a name="113">Set Configuration (113)</a>
+<a name="113"></a>
+##### Set Configuration (113)
 
 Update the configuration properties of the device.
 
@@ -230,7 +239,8 @@ Example
 113,"val1=1\nval2=2"
 ```
 
-##### <a name="114">Set supported operations (114)</a>
+<a name="114"></a>
+##### Set supported operations (114)
 
 Set the supported operations of the device.
 
@@ -244,7 +254,10 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-##### <a name="115">Set firmware (115)</a>
+**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, e.g. `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+
+<a name="115"></a>
+##### Set firmware (115)
 
 Set the firmware installed on the device.
 
@@ -260,7 +273,8 @@ Set the firmware installed on the device.
 115,firmwareName,firmwareVersion,firmwareUrl
 ```
 
-##### <a name="116">Set software list (116)</a>
+<a name="116"></a>
+##### Set software list (116)
 
 Set the list of software installed on the device.
 
@@ -277,10 +291,11 @@ Set the list of software installed on the device.
 116,software1,version1,url1,software2,,url2,software3,version3
 ```
 
-##### <a name="117">Set required availability (117)</a>
+<a name="117"></a>
+##### Set required availability (117)
 
 Set the required interval for availability monitoring as an integer value representing minutes.
-For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.cumulocity.com/api/#section/Device-management-library/Device-availability) in the Cumulocity IoT OpenAPI Specification.
+For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](https://www.{{< domain-c8y >}}/api/#section/Device-management-library/Device-availability) in the {{< openapi >}}.
 This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|
@@ -293,7 +308,8 @@ This will only set the value if it does not exist. Values entered, e.g. through 
 117,60
 ```
 
-##### <a name="118">Set supported logs (118)</a>
+<a name="118"></a>
+##### Set supported logs (118)
 
 Set the supported logs of the device.
 
@@ -307,7 +323,8 @@ Set the supported logs of the device.
 118,ntcagent,dmesg,logread
 ```
 
-##### <a name="119">Set supported configurations (119)</a>
+<a name="119"></a>
+##### Set supported configurations (119)
 
 Set the supported configurations of the device.
 
@@ -321,7 +338,8 @@ Set the supported configurations of the device.
 119,modbus,system
 ```
 
-##### <a name="120">Set currently installed configuration (120)</a>
+<a name="120"></a>
+##### Set currently installed configuration (120)
 
 Set currently installed configuration of the device.
 
@@ -353,9 +371,11 @@ Set device profile that is being applied to the device.
 121,true,8473
 ```
 
-#### <a name="measurement-templates">Measurement templates (2xx)</a>
+<a name="measurement-templates"></a>
+#### Measurement templates (2xx)
 
-##### <a name="200">Create custom measurement (200)</a>
+<a name="200"></a>
+##### Create custom measurement (200)
 
 Create a measurement with a given fragment and series.
 
@@ -373,7 +393,8 @@ Create a measurement with a given fragment and series.
 200,c8y_Temperature,T,25
 ```
 
-##### <a name="210">Create signal strength measurement (210)</a>
+<a name="210"></a>
+##### Create signal strength measurement (210)
 
 Create a measurement of type **c8y_SignalStrength**.
 
@@ -389,7 +410,8 @@ Create a measurement of type **c8y_SignalStrength**.
 210,-90,23,2016-06-22T17:03:14.000+02:00
 ```
 
-##### <a name="211">Create temperature measurement (211)</a>
+<a name="211"></a>
+##### Create temperature measurement (211)
 
 Create a measurement of type **c8y_TemperatureMeasurement**.
 
@@ -404,7 +426,8 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 211,25,2016-06-22T17:03:14.000+02:00
 ```
 
-##### <a name="212">Create battery measurement (212)</a>
+<a name="212"></a>
+##### Create battery measurement (212)
 
 Create a measurement of type **c8y_Battery**.
 
@@ -419,9 +442,11 @@ Create a measurement of type **c8y_Battery**.
 212,95,2016-06-22T17:03:14.000+02:00
 ```
 
-#### <a name="alarm-templates">Alarm templates (3xx)</a>
+<a name="alarm-templates"></a>
+#### Alarm templates (3xx)
 
-##### <a name="301">Create CRITICAL alarm (301)</a>
+<a name="301"></a>
+##### Create CRITICAL alarm (301)
 
 Create a CRITICAL alarm.
 
@@ -437,7 +462,8 @@ Create a CRITICAL alarm.
 301,c8y_TemperatureAlarm
 ```
 
-##### <a name="302">Create MAJOR alarm (302)</a>
+<a name="302"></a>
+##### Create MAJOR alarm (302)
 
 Create a MAJOR alarm.
 
@@ -453,7 +479,8 @@ Create a MAJOR alarm.
 302,c8y_TemperatureAlarm,"This is an alarm"
 ```
 
-##### <a name="303">Create MINOR alarm (303)</a>
+<a name="303"></a>
+##### Create MINOR alarm (303)
 
 Create a MINOR alarm.
 
@@ -469,7 +496,8 @@ Create a MINOR alarm.
 303,c8y_TemperatureAlarm
 ```
 
-##### <a name="304">Create WARNING alarm (304)</a>
+<a name="304"></a>
+##### Create WARNING alarm (304)
 
 Create a WARNING alarm.
 
@@ -485,7 +513,8 @@ Create a WARNING alarm.
 304,c8y_TemperatureAlarm,,2013-06-22T17:03:14.000+02:00
 ```
 
-##### <a name="305">Update severity of existing alarm (305)</a>
+<a name="305"></a>
+##### Update severity of existing alarm (305)
 
 Change the severity of an existing alarm.
 
@@ -500,7 +529,8 @@ Change the severity of an existing alarm.
 305,c8y_TemperatureAlarm,CRITICAL
 ```
 
-##### <a name="306">Clear existing alarm (306)</a>
+<a name="306"></a>
+##### Clear existing alarm (306)
 
 Clear an existing alarm.
 
@@ -514,7 +544,8 @@ Clear an existing alarm.
 306,c8y_TemperatureAlarm
 ```
 
-##### <a name="307">Clear alarm's fragment (307)</a>
+<a name="307"></a>
+##### Clear alarm's fragment (307)
 
 Remove one or more fragments from an alarm of a specific type.
 
@@ -529,9 +560,11 @@ Remove one or more fragments from an alarm of a specific type.
 307,c8y_TemperatureAlarm,c8y_Position,c8y_Configuration
 ```
 
-#### <a name="event-templates">Event templates (4xx)</a>
+<a name="event-templates"></a>
+#### Event templates (4xx)
 
-##### <a name="400">Create basic event (400)</a>
+<a name="400"></a>
+##### Create basic event (400)
 
 Create an event of given type and text.
 
@@ -547,7 +580,8 @@ Create an event of given type and text.
 400,c8y_MyEvent,"Something was triggered"
 ```
 
-##### <a name="401">Create location update event (401)</a>
+<a name="401"></a>
+##### Create location update event (401)
 
 Create typical location update event containing **c8y_Position**.
 
@@ -565,7 +599,8 @@ Create typical location update event containing **c8y_Position**.
 401,51.151977,6.95173,67
 ```
 
-##### <a name="402">Create location update event with device update (402)</a>
+<a name="402"></a>
+##### Create location update event with device update (402)
 
 Create typical location update event containing **c8y_Position**. Additionally the device will be updated with the same **c8y_Position** fragment.
 
@@ -583,7 +618,8 @@ Create typical location update event containing **c8y_Position**. Additionally t
 402,51.151977,6.95173,67
 ```
 
-##### <a name="407">Clear event's fragment (407)</a>
+<a name="407"></a>
+##### Clear event's fragment (407)
 
 Remove one or more fragments from an event of a specific type.
 
@@ -598,9 +634,11 @@ Remove one or more fragments from an event of a specific type.
 407,c8y_MyEvent,c8y_Position,c8y_Configuration
 ```
 
-#### <a name="operation-templates">Operation templates (5xx)</a>
+<a name="operation-templates"></a>
+#### Operation templates (5xx)
 
-##### <a name="500">Get PENDING operations (500)</a>
+<a name="500"></a>
+##### Get PENDING operations (500)
 
 Trigger the sending of all PENDING operations for the agent.
 
@@ -610,7 +648,8 @@ Trigger the sending of all PENDING operations for the agent.
 500
 ```
 
-##### <a name="501">Set operation to EXECUTING (501)</a>
+<a name="501"></a>
+##### Set operation to EXECUTING (501)
 
 Set the oldest PENDING operation with given fragment to EXECUTING.
 
@@ -624,7 +663,8 @@ Set the oldest PENDING operation with given fragment to EXECUTING.
 501,c8y_Restart
 ```
 
-##### <a name="502">Set operation to FAILED (502)</a>
+<a name="502"></a>
+##### Set operation to FAILED (502)
 
 Set the oldest EXECUTING operation with given fragment to FAILED.
 
@@ -639,7 +679,8 @@ Set the oldest EXECUTING operation with given fragment to FAILED.
 502,c8y_Restart,"Could not restart"
 ```
 
-##### <a name="503">Set operation to SUCCESSFUL (503)</a>
+<a name="503"></a>
+##### Set operation to SUCCESSFUL (503)
 
 Set the oldest EXECUTING operation with given fragment to SUCCESSFUL.
 
@@ -688,7 +729,8 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 
 #### Inventory templates (1xx)
 
-##### <a name="106">Get children of device (106)</a>
+<a name="106"></a>
+##### Get children of device (106)
 
 List all children of the device.
 
@@ -702,11 +744,13 @@ List all children of the device.
 106,child1,child2,child3
 ```
 
-#### <a name="subscribe-operations">Operation templates (5xx)</a>
+<a name="subscribe-operations"></a>
+#### Operation templates (5xx)
 
 All operation responses have the same base structure, leading with the message ID and followed by the ID of either the root device or a child which should handle the operation.
 
-##### <a name="510">Restart (510)</a>
+<a name="510"></a>
+##### Restart (510)
 
 Restart a device.
 
@@ -716,7 +760,8 @@ Restart a device.
 510,DeviceSerial
 ```
 
-##### <a name="511">Command (511)</a>
+<a name="511"></a>
+##### Command (511)
 
 Run the command being sent in the operation.
 
@@ -730,7 +775,8 @@ Run the command being sent in the operation.
 511,DeviceSerial,execute this
 ```
 
-##### <a name="513">Configuration (513)</a>
+<a name="513"></a>
+##### Configuration (513)
 
 Set the configuration being sent in the operation.
 
@@ -744,7 +790,8 @@ Set the configuration being sent in the operation.
 513,DeviceSerial,"val1=1\nval2=2"
 ```
 
-##### <a name="515">Firmware (515)</a>
+<a name="515"></a>
+##### Firmware (515)
 
 Install the firmware from the url.
 
@@ -760,7 +807,8 @@ Install the firmware from the url.
 515,DeviceSerial,myFimrware,1.0,http://www.my.url
 ```
 
-##### <a name="516">Software list (516)</a>
+<a name="516"></a>
+##### Software list (516)
 
 Install the software sent in the operation.
 
@@ -777,7 +825,8 @@ Install the software sent in the operation.
 516,DeviceSerial,softwareA,1.0,url1,softwareB,2.0,url2
 ```
 
-##### <a name="517">Measurement request operation (517)</a>
+<a name="517"></a>
+##### Measurement request operation (517)
 
 Send the measurements specified by the request name.
 
@@ -791,7 +840,8 @@ Send the measurements specified by the request name.
 517,DeviceSerial,LOGA
 ```
 
-##### <a name="518">Relay (518)</a>
+<a name="518"></a>
+##### Relay (518)
 
 Open or close the relay.
 
@@ -805,7 +855,8 @@ Open or close the relay.
 518,DeviceSerial,OPEN
 ```
 
-##### <a name="519">RelayArray (519)</a>
+<a name="519"></a>
+##### RelayArray (519)
 
 Open or close the relays in the array.
 
@@ -819,9 +870,10 @@ Open or close the relays in the array.
 519,DeviceSerial,OPEN,CLOSE,CLOSE,OPEN
 ```
 
-##### <a name="520">Upload configuration file (520)</a>
+<a name="520"></a>
+##### Upload configuration file (520)
 
-The current configuration is uploaded from Cumulocity IoT to the device.
+The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
 
 **Example**
 
@@ -829,7 +881,8 @@ The current configuration is uploaded from Cumulocity IoT to the device.
 520,DeviceSerial
 ```
 
-##### <a name="521">Download configuration file (521)</a>
+<a name="521"></a>
+##### Download configuration file (521)
 
 Download a configuration file from the URL.
 
@@ -843,7 +896,8 @@ Download a configuration file from the URL.
 521,DeviceSerial,http://www.my.url
 ```
 
-##### <a name="522">Logfile request (522)</a>
+<a name="522"></a>
+##### Logfile request (522)
 
 Upload a log file for the given parameters.
 
@@ -861,7 +915,8 @@ Upload a log file for the given parameters.
 522,DeviceSerial,logfileA,2013-06-22T17:03:14.000+02:00,2013-06-22T18:03:14.000+02:00,ERROR,1000
 ```
 
-##### <a name="523">Communication mode (523)</a>
+<a name="523"></a>
+##### Communication mode (523)
 
 Change the communication mode.
 
@@ -875,7 +930,8 @@ Change the communication mode.
 523,DeviceSerial,SMS
 ```
 
-##### <a name="524">Download configuration file with type (524)</a>
+<a name="524"></a>
+##### Download configuration file with type (524)
 
 Download a configuration file from the URL with type.
 
@@ -890,7 +946,8 @@ Download a configuration file from the URL with type.
 524,DeviceSerial,http://www.my.url,type
 ```
 
-##### <a name="525">Firmware from patch (525)</a>
+<a name="525"></a>
+##### Firmware from patch (525)
 
 Install the firmware from the patch.
 
@@ -907,9 +964,10 @@ Install the firmware from the patch.
 525,DeviceSerial,firmwareName,1.0,http://www.my.url,dependency
 ```
 
-##### <a name="526">Upload configuration file with type (526)</a>
+<a name="526"></a>
+##### Upload configuration file with type (526)
 
-Configuration is uploaded from Cumulocity IoT to the device with type.
+Configuration is uploaded from {{< product-c8y-iot >}} to the device with type.
 
 Position|Parameter|
 |:-------|:-------|
@@ -921,7 +979,8 @@ Position|Parameter|
 526,DeviceSerial,type
 ```
 
-##### <a name="527">Set device profiles (527)</a>
+<a name="527"></a>
+##### Set device profiles (527)
 
 Set the device profiles
 
@@ -951,9 +1010,11 @@ Set the device profiles
 527,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,action1,softwareB,2.0,http://www.my.url2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
 ```
 
-##### <a name="528">Update Software (528)</a>
+<a name="528"></a>
+##### Update Software (528)
 
 Update the software installed on the device.
+
 
 |Position|Parameter|
 |:-------|:-------|
@@ -966,10 +1027,18 @@ Update the software installed on the device.
 **Example**
 
 ```text
-528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
+528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
 
-##### <a name="530">Cloud Remote Access Connect (530)</a>
+>**Info:** The action can either be `install` or `delete`.
+>
+> When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
+> The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
+>
+> When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+
+<a name="530"></a>
+##### Cloud Remote Access Connect (530)
 
 Establish tunneling by Remote Access device agent.
 

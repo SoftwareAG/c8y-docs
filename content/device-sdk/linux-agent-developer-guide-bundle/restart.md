@@ -4,8 +4,8 @@ layout: redirect
 weight: 40
 ---
 
-Besides sending requests, e.g., measurements to the Cumulocity IoT platform, another important function is handling incoming messages from Cumulocity IoT; either responses from GET queries or real-time operations.  
-Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
+Besides sending requests, e.g., measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
+Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the {{< product-c8y-iot >}} C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
 <a name="restart"></a>
@@ -56,7 +56,7 @@ end
 11,804,,$.c8y_Restart,$.id,$.deviceId
 ```
 
-`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
+`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [SmartREST > Template](/reference/smartrest/#templates) in the *Reference guide*.
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
@@ -88,7 +88,7 @@ lua.plugins=hello,cpumeasurments,restart-simple
 
 Deploy _restart-simple.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
 
-Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
+Now go to your {{< product-c8y-iot >}} tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
 ![restarted-device](/images/device-sdk/restarted-device.png)
 
 

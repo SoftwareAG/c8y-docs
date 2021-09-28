@@ -40,7 +40,7 @@ After these steps you should have the following folder structure:
 
 ### Configure the application manifest
 
-Second, we have to fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our Cumulocity IoT application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:
+Second, we have to fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our {{< product-c8y-iot >}} application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:
 
 ```json
 	{
@@ -56,21 +56,21 @@ Second, we have to fill out the application manifest (the "cumulocity.json" file
 	}
 ```
 
-With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the Cumulocity IoT UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity IoT's branding to our application. Before we can test an application locally, we have to create it on our tenant first.
+With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the {{< product-c8y-iot >}} UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the {{< product-c8y-iot >}}'s branding to our application. Before we can test an application locally, we have to create it on our tenant first.
 
 For more details on other properties of the manifest, see [Concepts > Manifests](/web-sdk-for-plugins/concepts/#manifests).
 
 <a name="create-application"></a>
 ### Create the application in your tenant
 
-After successfully logging in into a Cumulocity IoT UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
+After successfully logging in into a {{< product-c8y-iot >}} UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
 ```bash
 $ c8y deploy:app myapplication
 ? Tenant piedpiper
 ? User admin
 ? Password ***********
-? Base URL https://piedpier.cumulocity.com
+? Base URL https://piedpiper.{{< product-c8y-iot >}}
 GET application/applicationsByOwner/piedpier?pageSize=10000 200
 POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200
@@ -87,7 +87,7 @@ After deploying your application, it appears in the *"Own applications"* menu of
 To run your application locally, just run ```c8y server```.
 Additionally, you can pass options:
 
-- ```-u https://tenant.cumulocity.com``` with the instance as parameter where you want your api calls to be proxied to,
+- ```-u https://tenant.{{< product-c8y-iot >}}``` with the instance as parameter where you want your api calls to be proxied to,
 - ```-t examples``` or ```-t targets/examples/json``` to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
 
 ```json
@@ -125,9 +125,9 @@ Additionally, you can pass options:
 Example console output:
 
 ```console
-$ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
-{{< company-name-1>}} UI development server running in port 9000.
-Proxying api requests to https://tenant.cumulocity.com
+$ c8y server -u https://tenant.{{< domain-c8y >}} -t targets/examples.json
+{{< company-c8y >}} UI development server running in port 9000.
+Proxying api requests to https://tenant.{{< domain-c8y >}}
 140 modules loaded.
 5 application manifest loaded.
 http://localhost:9000/apps/myapplication/ cumulocity.json
@@ -210,7 +210,7 @@ Inside the "hello.module.js" file, we initialize the module for our plugin:
 }());
 ```
 
-In our "hello.config.js" file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [Cumulocity JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules/). Simply inject the services into your config and call the following functions:
+In our "hello.config.js" file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules/). Simply inject the services into your config and call the following functions:
 
 ```js
 (function () {
@@ -297,12 +297,12 @@ To test your application, use the command ```c8y server``` with the complete URL
 ### Build and deploy your application and plugins
 
 If you run ```c8y --help``` you will list all available commands.
-You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity IoT "Administration" application or you can deploy the app directly to your tenant.
+You can choose to build applications or plugins which results in a ZIP file that you can add by hand in any {{< product-c8y-iot >}} Administration application or you can deploy the app directly to your tenant.
 
 #### build:app
 Builds the application to the specified folder (./build by default).
-Inside the outputFolder you will find a directory named [appContextPath] and a zip file [appContextPath].zip. This zip file can then be uploaded in the "Administration" application.
-If you omit appContextPath the contextPath will be read from the "cumulocity.json" file at the path where the command was executed.
+Inside the outputFolder you will find a directory named [appContextPath] and a ZIP file [appContextPath].zip. This ZIP file can then be uploaded in the Administration application.
+If you omit appContextPath the contextPath will be read from the *cumulocity.json* file at the path where the command was executed.
 
 ```bash
 $ c8y build:app [appContextPath] [outputFolder]
@@ -362,7 +362,7 @@ You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in t
 
 The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-If you are not deploying to a Management tenant, you need to include the following fragment to your target .json file:
+If you are not deploying to a {{< management-tenant >}}, you need to include the following fragment to your target .json file:
 
 ```json
 	"allApplications": {

@@ -4,11 +4,11 @@ layout: redirect
 weight: 30
 ---
 
-Let's try sending CPU measurements to Cumulocity IoT. In this section, you will learn how to use the pre-defined timer function, to read parameters defined in _cumulocity-agent.conf_ file and to send measurements using an existing SmartREST1.0 template.
+Let's try sending CPU measurements to {{< product-c8y-iot >}}. In this section, you will learn how to use the pre-defined timer function, to read parameters defined in _cumulocity-agent.conf_ file and to send measurements using an existing SmartREST1.0 template.
 
 ### Sending measurements example
 
-This example sends a test CPU usage measurement (20%) to Cumulocity IoT platform using a random interval (10 seconds) which is configured in _cumulocity-agent.conf_ as `example.cpu.interval`.
+This example sends a test CPU usage measurement (20%) to {{< product-c8y-iot >}} platform using a random interval (10 seconds) which is configured in _cumulocity-agent.conf_ as `example.cpu.interval`.
 
 First, add a line to your _cumulocity-agent.conf_ file.
 
@@ -38,7 +38,7 @@ end
 
 function sendCPU()
    local value = 20  -- Test CPU usage (20%)
-   c8y:send("326," .. c8y.ID .. ',' .. value) -- Send the test CPU usage percentage to the Cumulocity IoT as measurments
+   c8y:send("326," .. c8y.ID .. ',' .. value) -- Send the test CPU usage percentage to the {{< product-c8y-iot >}} as measurments
 end
 ```
 
@@ -48,7 +48,7 @@ end
 
 `timer:start()` starts the timer object. In this example, `cpuTimer:start()`. To learn more about the functions of the timer object, check your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
 
-The function `sendCPU()` is called every 10 seconds. It creates a CPU usage measurement value (set to 20%) and sends it to the Cumulocity IoT platform.
+The function `sendCPU()` is called every 10 seconds. It creates a CPU usage measurement value (set to 20%) and sends it to the {{< product-c8y-iot >}} platform.
 
 `c8y:send(request, prio)` can have two arguments. The second argument is optional. The first argument is a comma-separed request. In this example, `326` means that this request will be translated to template No.326 in _srtemplate.txt_. No.326 is
 
@@ -56,7 +56,7 @@ The function `sendCPU()` is called every 10 seconds. It creates a CPU usage meas
 10,326,POST,/measurement/measurements,application/json,,%%,DATE UNSIGNED NUMBER,"{""time"":""%%"",""source"":{""id"":""%%""},""type"":""c8y_CPUMeasurement"",""c8y_CPUMeasurement"":{""Workload"":{""value"":%%,""unit"":""%""}}}"
 ```
 
-`c8y.ID` returns your device ID. Thus, the content of the sending request is actually `326,<device ID>,20`. To learn more about SmartREST1.0, refer to the [Reference guide > SmartREST](/reference/smartrest/) section. The second argument of `c8y:send()` is optional so it is omitted in this example. The detail of `c8y:send()` is documented in your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
+`c8y.ID` returns your device ID. Thus, the content of the sending request is actually `326,<device ID>,20`. To learn more about SmartREST1.0, refer to the [SmartREST](/reference/smartrest/) section in the *Reference guide*. The second argument of `c8y:send()` is optional so it is omitted in this example. The detail of `c8y:send()` is documented in your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
 
 Before you run the agent again, change `lua.plugins` in your _cumulocity-agent.conf_ file:
 

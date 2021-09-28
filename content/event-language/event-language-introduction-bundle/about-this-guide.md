@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-The CEL analytics guide consists of the following sections:
+The *CEL analytics guide* consists of the following sections:
 
 * Introduction
 * [Data model](/event-language/data-model)

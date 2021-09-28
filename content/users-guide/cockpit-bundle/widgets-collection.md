@@ -72,16 +72,16 @@ The following types are available:
 <td align="left">Displays links to help and service resources.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-html">HTML</a></td>
+<td align="left">Shows user-defined content formatted in HTML.</td>
+</tr>
+<tr>
 <td align="left"><a href="#widget-image">Image</a></td>
 <td align="left">Shows a single image to be selected from your file system by browsing.</td>
 </tr>
 <tr>
 <td align="left"><a href="#info-gauge">Info Gauge</a></td>
 <td align="left">Visualizes one data point in form of a radial gauge and multiple data points as labels.</td>
-</tr>
-<tr>
-<td align="left"><a href="#widget-html">HTML</a></td>
-<td align="left">Shows user-defined content formatted in HTML.</td>
 </tr>
 <tr>
 <td align="left"><a href="#linear-gauge">Linear Gauge</a></td>
@@ -218,7 +218,7 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 
 **Example**
 
-In the following screenshot, five columns are configured. Three property columns "Meter", “Vendor”, and “Owner”, which refer to the properties “name”, type” and “owner” respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+In the following screenshot, five columns are configured. Three property columns "Meter", "Vendor", and "Owner", which refer to the properties "name", "type" and "owner" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
 ![Asset table widget](/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 
@@ -385,9 +385,15 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
-"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
+"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
+
+If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
+
+```html
+  <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
+```
 
 <a name="linear-gauge"></a>
 ### Linear Gauge
@@ -432,7 +438,7 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 <a name="widget-message-sending"></a>
 ### Message sending
 
-The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support this type of operation.
+The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
 ### Pie chart
 

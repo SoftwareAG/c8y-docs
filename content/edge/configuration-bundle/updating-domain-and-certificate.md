@@ -17,7 +17,7 @@ After the installation, you can change the domain name of your Edge appliance. Y
 
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge Configuration** > **Domain/Certificate** in the navigator.
+3. Click **Edge** > **Domain/Certificate** in the navigator.
 
    Review the domain name and the SSL certificate.
 

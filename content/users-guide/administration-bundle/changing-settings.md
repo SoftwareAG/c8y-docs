@@ -97,6 +97,12 @@ The default value is two weeks. It can also be set to any negative value so that
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
+> **Info:** In case of 'block from the outside' enabled the communication to the management tenant is possible only in a secure way (eg. via ssh).
+This means that there is no reason not to use basic form of authentication. Additionally it is simply not possible
+to manage OAuth authentication due to the fact that the communication from external authorization server is blocked.
+Therefore the method for switching authentication method to basic in case of management tenant
+with enabled blocking from the outside was added.
+
 <a name="single-sign-on"></a>
 ### Configuring single sign-on
 

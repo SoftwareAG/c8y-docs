@@ -8,11 +8,11 @@ Microsoft Power BI is a business intelligence tool which allows you to create an
 
 ### Prerequisites
 
-Before setting up the connection to Microsoft Power BI in DataHub, conduct the following steps:
+Before setting up the connection to Microsoft Power BI in DataHub, conduct the following steps.
 
 #### Accessing data lakes in Microsoft Power BI reports
 
-DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database at the Dremio website [(https://docs.dremio.com/client-applications/microsoft-power-bi/)](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
+DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database at the Dremio website at [(https://docs.dremio.com/client-applications/microsoft-power-bi/)](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
 
 >**Info:** The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
 
@@ -22,11 +22,11 @@ A report is typically published so that it is available to other users as well. 
 
 To make reports available in its web frontend, DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For authenticating the access an Azure Active Directory service principal object with an application secret is used.
 
-The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers):
+The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation at [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers):
 
-As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory, follow the instructions in the Microsoft guide [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
+As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory, follow the instructions in the Microsoft documentation at [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
 
-Next you have to register an Azure Active Directory application, which serves as service principal. You have to configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the Power BI website [(https://app.powerbi.com/embedsetup)](https://app.powerbi.com/embedsetup):
+Next you have to register an Azure Active Directory application, which serves as service principal. You have to configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Power BI website](https://app.powerbi.com/embedsetup):
 
 * Select **Embed for your customers**
 * Sign in to Power BI
@@ -36,11 +36,11 @@ Next you have to register an Azure Active Directory application, which serves as
 
 >**Info:** An application created with the wizard can be used as a service principal even though the documentation states the opposite.
 
-Alternatively, you can create a service principal application following the section **Creating an Azure AD app in the Microsoft Azure portal** on the Microsoft website [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
+Alternatively, you can create a service principal application following the section *Creating an Azure AD app in the Microsoft Azure portal* on the Microsoft website at [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
 
-Additionally, you need to add a client secret for the service principal application. You can do that via the Azure portal [(https://portal.azure.com/)](https://portal.azure.com/). You have to search for **App registrations**, select your application by its name under **All applications**, and click on the link next to the **Client credentials** entry on the **Overview** page of the application.
+Additionally, you need to add a client secret for the service principal application. You can do that via the [Azure portal](https://portal.azure.com/). Search for **App registrations**, select your application by its name under **All applications**, and click the link next to the **Client credentials** entry on the **Overview** page of the application.
 
-Next you can define a workspace to organize your reports. By adding the service principal application as a member or admin to the workspace, it can access the reports of the workspace. Go to the Power BI website [(https://app.powerbi.com)](https://app.powerbi.com) and conduct the following steps to grant the permissions:
+Next you can define a workspace to organize your reports. By adding the service principal application as a member or admin to the workspace, it can access the reports of the workspace. Go to the [Power BI website](https://app.powerbi.com) and conduct the following steps to grant the permissions:
 
 * Sign in to Power BI
 * Click **Workspaces**
@@ -68,7 +68,7 @@ If you want to delete the settings, click **Delete** on the action bar. You cann
 
 Once the settings are defined, you can access and work with the reports. In the navigator, select **Microsoft Power BI**. The menu entry is only shown if the connection settings are defined.
 
-On the reports page, click **Select report** in the action bar. A dialog opens with two drop-down boxes. The first drop-down box lists all workspaces which grant member or admin access to the service principal. Select the workspace you are interested in. The second drop-down box provides all reports of the selected workspace. Select a report from the drop-down box. Click **Select** to open the report or **Cancel** to close the dialog without selecting a report.
+On the reports page, click **Select report** in the action bar. A dialog opens with two dropdown boxes. The first dropdown box lists all workspaces which grant member or admin access to the service principal. Select the workspace you are interested in. The second dropdown box provides all reports of the selected workspace. Select a report from the dropdown box. Click **Select** to open the report or **Cancel** to close the dialog without selecting a report.
 
 The selected report is shown and can be interacted with. You can open multiple reports. For each opened report, a tab entry shows up in the action bar. To close a report, select the close icon to the right of the tab entry.
 

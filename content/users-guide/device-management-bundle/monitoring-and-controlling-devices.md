@@ -8,10 +8,10 @@ helpcontent:
   content: "In the map, you can view all devices in your account in real time. Devices are represented as 'pins'. Click a pin to see the name of the respective device. Click the device name to switch to its device details."
 - label: service-monitoring
   title: Monitoring services
-  content: "Service monitoring shows the availability percentage across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms."
+  content: "Service monitoring shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 - label: alarm-monitoring
   title: Alarms
-  content: "Devices can raise alarms to indicate that there is a problem. You can find on overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
+  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
 
 
   By default, only unresolved alarms are shown. If you turn on **Show cleared alarms** at the top right, you will see the entire alarm history.
@@ -20,13 +20,13 @@ helpcontent:
   Alarms are classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.
 
 
-  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it again to show the section again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
+  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
 
 
   For details, see *Device Management > Monitoring and controlling devices > Working with alarms* in the *User guide*."
 - label: operation-monitoring
   title: Device control
-  content: "Operations are used to remotely control devices. You can find on overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of this device.
+  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
 
   There are two types of operations, each represented by a tab:
@@ -38,7 +38,7 @@ helpcontent:
   See also, *Device Management > Monitoring and controlling devices > Working with operations* in the *User guide*."
 - label: events-all
   title: Events
-  content: "Operations are used to remotely control devices. You can find on overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of this device.
+  content: "Operations are used to remotely control devices. You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of this device.
 
 
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left.
@@ -151,7 +151,7 @@ Click **Service monitoring** in the **Device** menu in the navigator to display 
 
 ![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
-The **Service monitoring** page shows the availability percentage of devices for the last 24 hours, last 7 days and last 30 days.
+The **Service monitoring** page shows the availability of devices for the last 24 hours, last 7 days and last 30 days in percentage.
 
 <a name="alarm-monitoring"></a>
 ### Working with alarms
@@ -183,7 +183,7 @@ Alarms are classified according to their severity. Cumulocity IoT includes four 
 
 The **Alarm** tab is split into four sections corresponding to these alarm types.
 
-By clicking one of the buttons at the top, the corresponding section will be hidden. Click it again to show the section again.
+By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make it visible again.
 
 Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
 
@@ -377,7 +377,7 @@ Clicking the arrow button at the right in a row expands the row and displays fur
 ![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
 
 To filter the list of bulk operations by operation type, click the dropdown list in the top menu bar and select a set of operation types, then click **Apply**.
-To clear the filter, select **All** in the dropdown list and click **Apply** again.
+To clear the filter, select **All** in the dropdown list and click **Apply** once more.
 
 To filter the list of bulk operations by status, click one of the status buttons in the top menu bar.
 Click **All** to clear the filter.

@@ -5,13 +5,13 @@ layout: redirect
 helpcontent:
 - label: firmware-repo
   title: Firmware repository
-  content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware objects by name, description or device type.
+  content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware objects by name, description, or device type.
 
 
 	For details on managing firmware, firmware versions and patches, and on how to install or update them on devices, see *Device Management > Managing device data > Managing device firmware* in the *User guide*."
 - label: software-repo
   title: Software repository
-  content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the the repository entries by name, description or device type.
+  content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the the repository entries by name, description, or device type.
 
 
 	For details on managing software and software versions and on how to install or update them on devices, see *Device Management > Managing device data > Managing device software* in the *User guide*."
@@ -23,10 +23,10 @@ helpcontent:
   For details on how to retrieve configuration data, and how to store and manage it in the configuration repository as snapshot, see *Device Management > Managing device data > Managing configurations* in the *User guide*."
 - label: credentials
   title: Device credentials
-  content: "Manage the device credentials that have been generated for your connected devices. Edit, disable or delete device credentials as required or modify its permissions in the **Global roles** field, see also *Device Management > Managing device data > Device credentials* in the *User guide*."
+  content: "Manage the device credentials that have been generated for your connected devices. Edit, disable, or delete device credentials as required or modify its permissions in the **Global roles** field, see also *Device Management > Managing device data > Device credentials* in the *User guide*."
 - label: device-profiles
   title: Device profiles
-  content: "Device profiles represent a set of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. Based on device profiles, you can easily deploy a specific target configuration on devices by using bulk operations.
+  content: "Device profiles represent a set of a firmware version, one or multiple software packages, and one or multiple configuration files which can be deployed on a device. Based on device profiles, you can easily deploy a specific target configuration on devices by using bulk operations.
 
 
   For details on managing device profiles and on applying device profiles to devices, see *Device Management > Managing device data > Device profiles* in the *User guide*."
@@ -41,7 +41,7 @@ The Device Management application provides various features that support you in 
 
 | Feature                                              | Description                                                                                                                                 |
 |:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions and patches in the firmware repository and how to install or update them on devices. |
+| [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions, and patches in the firmware repository and how to install or update them on devices. |
 | [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
 | [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
 | [Device credentials](#credentials)                   | How to manage all credentials generated for your connected devices.                                                                         |
@@ -74,7 +74,7 @@ When clicking on an entry, the details for this firmware are displayed along wit
 
 ![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
 
-At the top, the firmware name, a description and optional device type filter(s) are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
+At the top, the firmware name, a description, and optional device type filter(s) are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
 
 The list of versions and patches shows the version name and the name of the firmware binary. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. The versions and patches are ordered by their creation time (descending).
 
@@ -196,7 +196,7 @@ When clicking on an entry, the details for this software are displayed along wit
 
 ![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-At the top, the software name, a description and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
+At the top, the software name, a description, and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -205,7 +205,7 @@ The versions are ordered by their creation time (descending).
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar.
 2. In the resulting dialog box,
-	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description and its version (all required).
+	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description, and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
 3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
@@ -306,7 +306,7 @@ Cumulocity IoT offers to retrieve configuration data and store and manage it in 
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
-Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type.
+Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type, and the configuration type.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
@@ -426,7 +426,7 @@ Deleting device credentials might be required if you have carried out a factory 
 <a name="device-profiles"></a>
 ### Managing device profiles
 
-Device profiles represent a combination of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
+Device profiles represent a combination of a firmware version, one or multiple software packages, and one or multiple configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
 
 #### To view device profiles
 
@@ -440,7 +440,7 @@ Click a device profile name to view its details.
 
 The **Name and device type** section shows the name of the profile and optionally selected device types.
 
-The sections below list the firmware version, software packages and configuration files for this particular device profile.
+The sections below list the firmware version, software packages, and configuration files for this particular device profile.
 
 ![Device profile details](/images/users-guide/DeviceManagement/devmgmt-device-profile-details.png)
 
@@ -453,7 +453,7 @@ In the **Add device profile** window, provide a name for the profile and optiona
 <a name="to-add-items"></a>
 #### To add items to a device profile
 
-In the device profile details, you can add firmware versions, software packages and configuration files.
+In the device profile details, you can add firmware versions, software packages, and configuration files.
 
 Click **Add firmware** to add a firmware version to the profile. Select a firmware and a version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type. Only one firmware version can be added to a profile.
 
@@ -532,7 +532,7 @@ Device profiles can be applied to multiple devices by using bulk operations.
 2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
 3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
 
-The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
+The devices will install the firmware, software, and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 
 >**Info:** When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
 

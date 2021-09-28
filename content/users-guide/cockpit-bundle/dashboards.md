@@ -4,7 +4,7 @@ title: Working with dashboards
 helpcontent:
   - label: dashboards
     title: Working with Dashboards
-    content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
+    content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 
     Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type, see the documentation for details.
@@ -21,7 +21,7 @@ weight: 40
 ---
 
 
-Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables and other graphic representations of data.
+Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 Cumulocity IoT comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your Cumulocity IoT account. Refer to the [Web SDK guide](/web/) for details.
 

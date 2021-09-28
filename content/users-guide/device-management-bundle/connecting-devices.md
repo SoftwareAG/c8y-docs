@@ -12,7 +12,7 @@ helpcontent:
 
 
     * **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
-    * **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device
+    * **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
     * **Accepted** - the user has allowed the credentials to be send to the device"
 ---
 
@@ -34,7 +34,7 @@ The following information is shown for each device:
 The devices may have one of the following status:
 
 * **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect.
-* **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device.
+* **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device.
 * **Accepted** - The user has allowed the credentials to be send to the device.
 
 Devices can be connected to your Cumulocity IoT account in different ways.

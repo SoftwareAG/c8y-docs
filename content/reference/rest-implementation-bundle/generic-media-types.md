@@ -42,57 +42,6 @@ The error type provides further information on the reason of a failed request.
 <td align="left">1</td>
 <td align="left">URL to an error description on the Internet.</td>
 </tr>
-<tr>
-<td align="left">details</td>
-<td align="left">Error details</td>
-<td align="left">1</td>
-<td align="left">Error details. Only available in DEBUG mode.</td>
-</tr>
-</tbody>
-</table>
-
-Error details are provided in the following structure:
-
-<table>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Type</th>
-<th align="left">Occurs</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">expectionClass</td>
-<td align="left">string</td>
-<td align="left">1</td>
-<td align="left">Class name of an exception that caused this error.</td>
-</tr>
-<tr>
-<td align="left">exceptionMessage</td>
-<td align="left">string</td>
-<td align="left">1</td>
-<td align="left">Exception message content.</td>
-</tr>
-<tr>
-<td align="left">expectionStackTrace</td>
-<td align="left">string</td>
-<td align="left">1</td>
-<td align="left">Strack trace of the exception.</td>
-</tr>
-<tr>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">Further diagnostic information depending on error type.</td>
-</tr>
 </tbody>
 </table>
 

@@ -1,7 +1,7 @@
 ---
 title: MQTT Static templates
 layout: redirect
-weight: 110
+weight: 50
 ---
 
 ### Overview

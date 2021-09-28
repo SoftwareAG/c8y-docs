@@ -1,8 +1,12 @@
 ---
-weight: 130
+weight: 60
 title: JSON via MQTT
 layout: redirect
 ---
+
+<!--
+TODO: Add note that this is meant as an addition to an otherwise SmartREST connected device and not a stanalone interface
+-->
 
 This section describes the JSON payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 

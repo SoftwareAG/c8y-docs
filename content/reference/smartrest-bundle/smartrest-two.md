@@ -1,8 +1,12 @@
 ---
-weight: 100
+weight: 20
 title: SmartREST 2.0
 layout: redirect
 ---
+
+<!--
+TODO: Make this no longer based on SR1
+-->
 
 ### Overview
 

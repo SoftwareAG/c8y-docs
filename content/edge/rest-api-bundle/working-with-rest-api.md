@@ -153,7 +153,7 @@ Content-Type: application/json
 ```
 In the JSON format above, the value of `certificate` can be `generate` or `upload`.
 
-If the existing SSL certificate is compatible with the new domain name or a wildcard certificate, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set the value of `certificate`.
+If the existing SSL certificate is compatible with the new domain name, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set the value of `certificate`.
 
 **Response**
 
@@ -173,13 +173,13 @@ The endpoint returns:
 
 	If the new domain name is compatible with the existing license, the `uploads` array will not contain the `licence` entry.
 	
-	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain `certificate` and `certificate_key` entry.
+	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
 
 	The task starts immediately and can be polled if there are no uploads.
 
-You must run subsequent calls to upload the license and the certificate files to update the domain name.
+You must run subsequent calls to upload the license and the certificate files to update the domain name if the `uploads` array requires you to upload.
 
-To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+To upload the license and the certificate files, use the URLs returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 

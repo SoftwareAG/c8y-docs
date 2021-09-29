@@ -149,61 +149,63 @@ Microservices are deployed as Container images to Cumulocity IoT, and follow spe
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-See also [Tenant hierarchy > Multi-tenancy](/guides/concepts/tenant-hierarchy/#multi-tenancy)
+See also [Tenant hierarchy > Multi-tenancy](/guides/concepts/tenant-hierarchy-bundle/#multi-tenancy).
 
-<a name=""></a>
+<a name="navigator"></a>
 ### Navigator
 The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. It is located at the left of the UI. The navigator provides a list of menu items which lead you to the various pages of the application you are currently using.
 
-<a name=""></a>
+<a name="operations"></a>
 ### Operations
 Operations are cloud-to-device messages so that devices can be remotely controlled and managed by Cumulocity IoT. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
 
 <a name=""></a>
 ### Real-time processing
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, i.e. Apama’s Event Processing Language (EPL).
-See also {{< product-c8y-iot >}} Streaming Analytics
+See also [{{< product-c8y-iot >}} Streaming Analytics]()
 
-<a name=""></a>
+<a name="rest"></a>
 ### REST
 In {{< product-c8y-iot >}}, REST (Representational state transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
-<a name=""></a>
+<a name="roles"></a>
 ### Roles
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user.
 To manage permissions more easily, they are grouped into so-called “roles” (add link). Every user can be associated with a number of roles, adding up permissions of the user.
 
-<a name=""></a>
+<a name="sensor-libray"></a>
 ### Sensor library
 {{< product-c8y-iot >}} includes a sensor library to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library covers basic sensors and controls, and is supported by the {{< product-c8y-iot >}} client libraries. It also enables writing powerful generic IoT software plugins.
 Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention (see Inventory).
 
-<a name=""></a>
+<a name="smart-rules"></a>
 ### Smart rules
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. To easily create rules, the Cockpit application includes a “smart rules” builder which allows you to create rules from templates (so-called smart rule templates).
 
-<a name=""></a>
+See also [Cockpit > Smart rules]() in the *User guide*.
+
+<a name="standard-tenant"></a>
 ### Standard Tenant
 At the bottom of the tenant hierarchy in {{< product-c8y-iot >}} you can find single tenants which are represented by the concept of Standard tenants.
 A Standard tenant offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
-See also Enterprise tenant, Management tenant
+See also [Enterprise tenant](/guides/users-guide/enterprise-tenant-bundle/#overview) in the *User guide*. For more information on the Management tenant see also [Tenant hierarchy > Hierarchy levels > Management tenant](/guides/concepts/tenant-hierarchy-bundle/#hierarchy-levels)
 
-<a name=""></a>
+<a name="subscription"></a>
 ### Subscription
 The application concept of {{< product-c8y-iot >}} includes a basic application marketplace.
 Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
-<a name=""></a>
+<a name="subtenant"></a>
 ### Subtenant
 Using an Enterprise tenant, you can make use of the multi-tenancy concept of {{< product-c8y-iot >}}.
 Enterprise tenants can create subtenants that will then again function like Standard tenants in the platform and have their own tenant management.
 
-<a name=""></a>
+<a name="tenant"></a>
 ### Tenant
 Tenants are physically separated data spaces with a separate URL, with a specific set of users, a separate application management and no data sharing by default. Users in a single tenant share the same URL and the same data space.
 
-<a name=""></a>
+<a name="tenant-domain"></a>
 ### Tenant domain
 A key feature of the Enterprise tenant is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
 
@@ -215,24 +217,29 @@ Enterprise tenant > add link
 Management tenant > add link
 These three levels differ in their scope, particularly with regards to administration.
 
-<a name=""></a>
+See also [Tenant hierarchy]().
+
+
+<a name="tenant-id"></a>
 ### Tenant ID
 The unique ID of a tenant or subtenant. When a tenant is created, it gets an auto-generated ID, which cannot be changed. The tenant ID is shown in the user dropdown menu in the UI.
 
-<a name=""></a>
+<a name="web-applications"></a>
 ### Web applications
 A {{< product-c8y-iot >}} web application can be a
 a user interface application built on any web framework of your choice
 a user interface application built using the {{< product-c8y-iot >}} user interface framework as a set of user interface plugins.
 All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
 
-<a name=""></a>
+<a name="web-sdk"></a>
 ### Web SDK
 The {{< product-c8y-iot >}} Web SDK enables you to
 develop web applications that can be deployed to the platform,
 communicate authenticated with our API,
 apply default or branded UI components to your custom application.
 
-<a name=""></a>
+For more information refer to the [Web SDK guide]().
+
+<a name="widgets"></a>
 ### Widgets
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes, for details see the Widgets collection.

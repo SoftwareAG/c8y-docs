@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-The following is a trace of messages but not showing the first header line which consists for the acknowledgement (encoded string that must be returned to acknowledge the notification).
+The following is a trace of messages but not showing the first header line which consists of the acknowledgement (encoded string that must be returned to acknowledge the notification).
 
 ```
 ------------------------

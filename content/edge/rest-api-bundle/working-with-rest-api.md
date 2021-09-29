@@ -134,7 +134,9 @@ The `id` returned in the JSON response is the task ID. Use the task ID for polli
 
 ### POST /edge/configuration/domain
 
-Use this endpoint to update the domain name.
+Use this endpoint to changing the domain name.
+
+During the process of changing the domain name, the certificate presented by the REST endpoints is changed from the certificate for the old domain to the certificate for the new domain. Polling using HTTPS to the old domain will make a secure connection until the certificate is updated to the new domain. After the certificate is updated, polling using HTTPS to the old domain will fail to make a secure connection and you should switch to polling using HTTPS to the new domain.
 
 |HEADERS||
 |:---|:---|
@@ -177,13 +179,11 @@ The endpoint returns:
 
 	The task starts immediately and can be polled if there are no uploads.
 
-You must run subsequent calls to upload the license and the certificate files to update the domain name if the `uploads` array requires you to upload.
+You must run subsequent calls to upload the license and the certificate files to change the domain name if the `uploads` array requires you to upload.
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
-
-During the process of changing the domain name, the certificate presented by the REST endpoints is changed from the certificate for the old domain to the certificate for the new domain. Polling using HTTPS to the old domain will make a secure connection until the certificate is updated to the new domain. After the certificate is updated, polling using HTTPS to the old domain will fail to make a secure connection and you should switch to polling using HTTPS to the new domain.
 
 ### POST /edge/update
 

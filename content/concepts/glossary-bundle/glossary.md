@@ -1,125 +1,163 @@
 ---
-weight: 100
+weight: 10
 title: Glossary
 layout: redirect
 ---
 
 This section gives you an overview of the most commonly used terms in {{< product-c8y-iot >}} application.
 
-<a name=""></a>
+<a name="administration-app"></a>
 ### Administration application
 Default application of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications, and allows them to configure various settings for their accounts.
 
-<a name=""></a>
+<a name="">agent</a>
+### Agent
+IoT devices come with a wide variety of protocols, parameters and network connectivity options. To interface IoT data sources such as devices Cumulocity IoT uses agents.
+Agents are software components which translate the device-specific interface protocol into a single reference protocol and enable secure remote communication in various network architectures.
+
+<a name="">analytics-builder</a>
+### Analytics Builder
+Allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
+Analytics Builder is part of the Streaming Analytics application. See also Cumulocity IoT Streaming Analytics; EPL Apps
+
+<a name="application"></a>
 ### Application
 The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three default applications: Administration, Cockpit and Device Management.
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
 web-based user interface applications (web applications)
 server-side business logic through microservices (microservices)
 
-<a name=""></a>
+<a name="application-switcher"></a>
 ### Application switcher
 The application switcher is a UI component which shows all {{< product-c8y-iot >}} applications the user has access to and allows switching between these applications.
 
-<a name=""></a>
+<a name="">asset</a>
+### Asset
+Assets represent business objects in general like buildings, machines, production units or cars.
+In Cumulocity IoT, assets are organized in hierarchies which are composed of two types of objects:
+Groups: Objects which group single devices or other groups.
+Devices: Devices which can be linked into the asset hierarchy, after being connected to Cumulocity IoT.
+
+<a name="cockpit-application"></a>
 ### Cockpit application
 Default application of {{< product-c8y-iot >}}.
 The Cockpit application provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
 
-<a name=""></a>
+<a name="">c8y-datahub</a>
 ### Cumulocity IoT DataHub
 {{< product-c8y-iot >}} Datahub is an {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 See also DataHub
 
-<a name=""></a>
+<a name="">c8y-edge</a>
 ### Cumulocity IoT Edge
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-<a name=""></a>
+<a name="">c8y-ml</a>
 ### Cumulocity IoT Machine learning
 {{< product-c8y-iot >}} Machine Learning simplifies the complexity of the data science process across the entire machine learning lifecycle from model training to deployment. {{< product-c8y-iot >}} Machine Learning is composed of two applications: Machine Learning Workbench, which focuses on model training, and Machine Learning Engine, which focuses on model deployment.
 
-<a name=""></a>
+<a name="">c8y-operational-store</a>
 ### Cumulocity IoT operational store
 Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, etc.) is stored in so-called base collections.
 
-<a name=""></a>
+<a name="">c8y-sensor-app</a>
 ### Cumulocity IoT Sensor App
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-<a name=""></a>
+<a name="">c8y-streaming-analytics</a>
 ### Cumulocity IoT Streaming Analytics
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 The operation logic is based on Apama’s Event Processing Language (EPL).
 
-<a name=""></a>
+<a name="data-broker"></a>
 ### Data broker
 The data broker functionality is an optional feature in Enterprise tenants which lets you share data selectively with other tenants.
 
-<a name=""></a>
+<a name="data-explorer"></a>
 ### Data explorer
 The data explorer visualizes all data points, i.e. measurements or sensor data, of either a particular asset or of all assets.
 
-<a name=""></a>
+<a name="data-lake"></a>
 ### Data lake
 Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
 
-<a name=""></a>
+<a name="data-point-library"></a>
 ### Data point library
 The Data Point Library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
 
-<a name=""></a>
+<a name="dev-management-application"></a>
 ### Device Management application
 Default application of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-<a name=""></a>
+<a name="ent-tenant"></a>
 ### Enterprise tenant
 Tenant type in the {{< product-c8y-iot >}} tenant hierarchy (add link).
 Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, like for example Branding for the creation of an individual look & feel.
 See also Standard tenant, Management tenant
 
-<a name=""></a>
+<a name="epl"></a>
 ### Event Processing Language (EPL)
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-<a name=""></a>
+<a name="ga-release"></a>
 ### GA release
 A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the Software AG Empower Portal. GA releases include new features, improvements and fixes.
 
-<a name=""></a>
+<a name="global-roles"></a>
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
 See also Roles
 
-<a name=""></a>
+<a name="inventory-roles"></a>
 ### Inventory roles
 Inventory roles contain permissions that apply to groups or devices.
 
 See also Roles
 
-<a name=""></a>
+<a name="ml-engine"></a>
 ### Machine Learning Engine
 Machine Learning Engine enables machine learning/IT operators to manage and operationalize production-ready models for generating predictions on data gathered from connected devices. These capabilities can be leveraged either from a web browser via an easy to use UI or programmatically via REST API. Machine Learning Engine provides a high-performance inference platform with deployed models exposed as endpoints that can be leveraged from Streaming Analytics and other applications for real-time inference.
 
-<a name=""></a>
+<a name="ml-workbench"></a>
 ### Machine Learning Workbench
 Machine Learning Workbench enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code UI and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-c8y-iot >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
 
-<a name=""></a>
+<a name="maintenance-release"></a>
 ### Maintenance release
 {{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} GA releases. A Maintenance release contains fixes and improvements for a GA release but no new features.
+
+<a name="mgm-tenant"></a>
+### Management tenant
+The Management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
+Every Cumulocity IoT deployment is delivered with a Management tenant. The Management tenant is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
+See also Standard tenant; Enterprise tenant
+
+<a name="microservices"></a>
+### Microservices
+Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity IoT:
+Integrations
+Batch analytics
+Decoder
+Backend applications
+Microservices are deployed as Container images to Cumulocity IoT, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access Cumulocity IoT using this REST API.
 
 <a name=""></a>
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
+See also [Tenant hierarchy > Multi-tenancy](/guides/concepts/tenant-hierarchy/#multi-tenancy)
+
 <a name=""></a>
 ### Navigator
 The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. It is located at the left of the UI. The navigator provides a list of menu items which lead you to the various pages of the application you are currently using.
+
+<a name=""></a>
+### Operations
+Operations are cloud-to-device messages so that devices can be remotely controlled and managed by Cumulocity IoT. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
 
 <a name=""></a>
 ### Real-time processing

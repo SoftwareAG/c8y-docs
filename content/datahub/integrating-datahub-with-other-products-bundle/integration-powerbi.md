@@ -70,10 +70,10 @@ Once the settings are defined, you can access and work with the reports.
 
 1. In the navigator, select **Microsoft Power BI**. The menu entry is only shown if the connection settings are defined.
 
-2. On the **Reports** page, click **Select report** in the action bar. A dialog opens with two dropdown boxes. The first dropdown box lists all workspaces which grant member or admin access to the service principal. Select the workspace you are interested in. The second dropdown box provides all reports of the selected workspace. Select a report from the dropdown box.
+2. On the **Reports** page, click **Add report** in the action bar. A dialog opens with two dropdown boxes. The first dropdown box lists all workspaces which grant member or admin access to the service principal. Select the workspace you are interested in. The second dropdown box provides all reports of the selected workspace. Select a report from the dropdown box.
 
 3. Click **Select** to open the report or **Cancel** to close the dialog without selecting a report.
 
-The selected report is shown and can be interacted with. You can open multiple reports. For each opened report, a tab entry shows up in the action bar. To close a report, select the close icon to the right of the tab entry.
+The selected report is shown and can be interacted with. You can open multiple reports. For each opened report, a tab entry shows up in the action bar. To close the currently selected report, click **Remove report** in the action bar.
 
 >**Info:** The list of currently opened reports is not stored permanently. When closing the browser, the list will be flushed. It will also be flushed if the settings are deleted.

@@ -171,9 +171,9 @@ The endpoint returns:
 		 ]
 		}
 
-	If the new domain name is compatible with the existing licence, the `uploads` array may not contain the `licence` entry.
+	If the new domain name is compatible with the existing license, the `uploads` array will not contain the `licence` entry.
 	
-	If the new domain name is compatible with the existing certificate, the `uploads` array may not contain `certificate` and `certificate_key` entry.
+	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain `certificate` and `certificate_key` entry.
 
 	The task starts immediately and can be polled if there are no uploads.
 
@@ -182,6 +182,8 @@ You must run subsequent calls to upload the license and the certificate files to
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
+During the process of changing the domain name, the certificate presented by the REST endpoints is changed from the certificate for the old domain to the certificate for the new domain. Polling using HTTPS to the old domain will make a secure connection until the certificate is updated to the new domain. After the certificate is updated, polling using HTTPS to the old domain will fail to make a secure connection and you should switch to polling using HTTPS to the new domain.
 
 ### POST /edge/update
 

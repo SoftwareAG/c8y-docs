@@ -19,7 +19,7 @@ You must always have an SSL certificate for your domain name that is configured.
 
    Review the domain name and the SSL certificate.
 
-4. Click **Edit** to upload the new SSL certificate file and the key file.
+4. Click **Edit** below **SSL Certificate** to upload the new SSL certificate file and the key file.
 
 5. Provide the new SSL certificate file and the SSL certificate key file.
 

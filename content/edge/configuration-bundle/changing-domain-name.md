@@ -4,7 +4,7 @@ title: Changing the domain name
 layout: redirect
 ---
 
-After the installation, you can change the domain name of your Edge appliance. You must always have a supporting license file and an SSL certificate for your domain name that is configured. You can change the domain name using the GUI and REST APIs.
+After the installation, you can change the domain name of your Edge appliance using the GUI and REST APIs.
 
 >**Important:** Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
@@ -27,21 +27,9 @@ After the installation, you can change the domain name of your Edge appliance. Y
 
 6. Provide the licence file for the new domain name.
 
-   If the current SSL certificate is compatible with the new domain name, you do not have to upload a new certificate. 
-
-   If the current SSL certificate is not compatible, upload the SSL certificate.
+   If the existing license is compatible with the new domain name, you do not have to upload a license file. 
 
    Click **Save**.
-
-7. If you are just uploading a new SSL certificate for your existing domain name:
-
-   - Click **Edit** below **SSL Certificate** to upload the new SSL certificate file and the key file.
-   
-   - Provide the new SSL certificate file and the SSL certificate key file.
-   
-     If you do not have an SSL certificate, select **Generate self-signed certificate** to generate one.
-      
-   - Click **Save**.
 
 ### Changing the domain name using the REST APIs
 

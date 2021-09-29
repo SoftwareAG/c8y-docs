@@ -227,7 +227,7 @@ gateway:
     # subscription notification data from the OPC UA server. The subscription reporting rate (publish interval)  
     # and the volume of sampling data should be taken into account to choose a suitable buffer size.
     notificationBufferSize: 500
-    # The recreateFailedItems flag can be used to enable the feature of a Subscription so that it automatically retries to create the monitored items
+    # The recreateFailedItems flag can be used to enable the feature of a subscription so that it automatically retries to create the monitored items
     # if they fail due to error code Bad_NodeIdUnknown. It assumes that the NodeIds are correct, but it hasn't been added to the
     # server's address space yet. The default value is false.
     recreateFailedItems: false

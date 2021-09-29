@@ -254,7 +254,7 @@ subscriber.disconnect();
 
 ### Subscribing to Notifications 2.0
 
-Notifications 2.0 APIs can be accessed in a very similar manner as described above for the inventory. The following snippet shows how users can create, query and delete notification subscriptions along with usage of TokenAPI:
+Notifications 2.0 APIs can be accessed in a very similar manner as described above for the inventory. Please refer to [Notifications 2.0](/reference/notifications) for more details. The following snippet shows how users can create, query and delete notification subscriptions along with usage of TokenAPI:
 
 ```java
 // Obtain a handle to the Subscription and Token API:
@@ -288,10 +288,11 @@ subscriptionApi.subscribe(subscriptionRepresentation2);
 // Obtain access token
 final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
         properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
-        "testSubscription1", //The subscription name. This value should be the same as with which the subscription was created.
-        1440, // The token expiration duration.
+        "testSubscription1", // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
+        1440, // The token expiration duration in minutes.
         false);
 
+// The obtained token is required for establishing WebSocket connection. Please refer to Notification 2.0 reference guide for more details. 
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

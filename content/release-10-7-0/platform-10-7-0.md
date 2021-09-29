@@ -1,6 +1,5 @@
 ---
 weight: 40
-title: Platform services
+title: Core platform services
 layout: bundle
 ---
-

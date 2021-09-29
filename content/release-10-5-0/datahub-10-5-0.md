@@ -10,7 +10,7 @@ Cumulocity IoT DataHub Release 10.5, November 2019, includes the following impro
 
 Cumulocity IoT DataHub is now available in the Cumulocity IoT Cloud platform. With easy-to-use data pipelines you can extract data from Cumulocity IoT’s Operational Store to a data lake for long-term archival and efficient analytical querying. With a SQL-based Query Interface you can query the data lake and connect arbitrary applications that support either ODBC, JDBC, or REST protocols.
 
-See section [Cumulocity IoT DataHub at a glance](https://cumulocity.com/guides/10-5-0/datahub/datahub-overview/#datahub-at-a-glance) to learn more about DataHub.
+See section [Cumulocity IoT DataHub at a glance](https://cumulocity.com/guides/10.5.0/datahub/datahub-overview/#datahub-at-a-glance) to learn more about DataHub.
 
 ### Limitations
 

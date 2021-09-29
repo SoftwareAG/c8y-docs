@@ -1,6 +1,6 @@
 var main = (function ($) {
   function initializer() {
-    
+
     //Load releases menu
     var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
       .done(function (json) {
@@ -11,23 +11,80 @@ var main = (function ($) {
         var active = false;
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
+
+        vs = []
+        for (var i = 0; i < urls.length; i++) {
+          vs.push(urls[i].label);
+        }
+
+        rest = loc.href.split("/guides/")[1];
+        v = rest.split("/")[0];
+
+        prefix = loc.href.split("/guides/")[0] + "/guides/";
+        r = rest.split("/");
+
+        if (v == "releasenotes") {
+          v = "Release notes";
+        } else if (r[0].split(".").length > 1) {
+          r.shift();
+        } else {
+          v = urls[0].label;
+        }
+        suffix = r.join("/");
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
+
+          var href_url = el.url;
+          if (el.url.endsWith('releasenotes')) {
+            href_url = el.url + '/about/';
+          } else if (el.url.endsWith('/')) {
+            href_url = el.url + suffix;
+          } else {
+            href_url = el.url + '/' + suffix;
+          }
+
+          if (v == "Release notes") {
+            if (el.url.endsWith("releasenotes")) {
+              href = el.url + '/about/';
+            } else {
+              href_url = el.url.endsWith('/') ? el.url + 'about-doc/intro-documentation' : el.url + "/about-doc/intro-documentation/";
+            }
+          }
+
           if (loc.href.includes(el.label)) {
+            active = true;
+            $('#current-dropdown-version-toggle').text('Release ' + el.label);
+            vmenu.find('.dropdown-menu').append(
+              '<a href="' + href_url + '" class="dropdown-menu-item active">' + el.label + '</a>'
+            );
+          } else if (el.label == "Release notes" && loc.href.includes("releasenotes")) {
             active = true;
             $('#current-dropdown-version-toggle').text(el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
+              '<a href="' + href_url + '" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }
+
+        if (vs.indexOf(v) < 0) {
+          active = true;
+          $('#current-dropdown-version-toggle').text('Release ' + v);
+
+          $('.dropdown.version').hide();
+        }
+
         if (!active) {
           vmenu.find('a:first-child').addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:first-child').text());
+          if (v == "Release notes") {
+            $('#current-dropdown-version-toggle').text(v);
+          } else {
+            $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:first-child').text());
+          }
         }
       })
       .fail(function (resp) {
@@ -43,7 +100,7 @@ var main = (function ($) {
     $('.sidebar-toggle').click(function(){
       $('body').toggleClass('open');
     });
-    
+
     $('.cover').click(function(){
       $('body').removeClass('open');
     });
@@ -97,7 +154,7 @@ var main = (function ($) {
         $this.data('text', $this.text().toLowerCase());
         $this.data('$l', $this.parent());
       });
-      
+
       $('#filter-devices').on('keyup input', function(k){
         var $str = $(this).val().toLowerCase();
         //$str.length ? $titles.hide() : $titles.show();
@@ -111,7 +168,7 @@ var main = (function ($) {
         })
       });
     }
-      
+
   }
   return {
     init: initializer

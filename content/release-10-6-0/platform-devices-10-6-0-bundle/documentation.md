@@ -33,4 +33,4 @@ The former Predictive Analytics offering has been rebranded to *[Cumulocity IoT 
 
 ### Microservice SDK guide
 
-A new [Best Practices collection](https://cumulocity.com/guides/10.6.0/microservice-sdk/microservices-best-practices/) has been added to the *Microservice SDK guide*, providing recommendations to be considered before developing and deploying microservices on top of Cumulocity IoT.
+A new [Best Practices](https://cumulocity.com/guides/10.6.0/microservice-sdk/microservices-best-practices/) collection has been added to the *Microservice SDK guide*, providing recommendations to be considered before developing and deploying microservices on top of Cumulocity IoT.

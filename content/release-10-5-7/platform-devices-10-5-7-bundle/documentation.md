@@ -15,7 +15,7 @@ The Cumulocity IoT Sensor App documentation has been updated and improved, see [
 
 The webMethods.io Integration documentation has been enhanced, see [Optional services > webMethods.io Integration](https://cumulocity.com/guides/10.5.7/users-guide/optional-services/#webMethods).
 
-A new chapter [OPC UA 2.0](https://cumulocity.com/guides/10.5.7/users-guide/optional-services/#opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
+A new chapter [OPC UA](https://cumulocity.com/guides/10.5.7/users-guide/optional-services/#opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
 
 A new chapter [SNMP](https://cumulocity.com/guides/10.5.7/users-guide/optional-services#snmp) has been added, which describes in detail the functionalities of the recently added SNMP agent.
 

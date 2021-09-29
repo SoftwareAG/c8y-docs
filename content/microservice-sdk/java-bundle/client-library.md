@@ -292,7 +292,7 @@ final NotificationTokenRequestRepresentation tokenRequestRepresentation = new No
         1440, // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing WebSocket connection. Please refer to Notification 2.0 reference guide for more details. 
+// The obtained token is required for establishing WebSocket connection. Please refer to Notifications 2.0 reference guide for more details. 
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

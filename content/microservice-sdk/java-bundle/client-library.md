@@ -254,10 +254,13 @@ subscriber.disconnect();
 
 ### Subscribing to Notifications 2.0
 
-Notifications 2.0 APIs can be accessed in a very similar manner as described above for the inventory. Please refer to [Notifications 2.0](/reference/notifications) for more details. The following snippet shows how users can create, query and delete notification subscriptions along with usage of TokenAPI:
+The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory). 
+See [Notifications 2.0](/reference/notifications) in the Reference guide for more details about the API. 
+
+The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 
 ```java
-// Obtain a handle to the Subscription and Token API:
+// Obtain a handle to the Subscription and Token APIs:
 private final NotificationSubscriptionApi notificationSubscriptionApi = platform.getNotificationSubscriptionApi();
 private final TokenApi tokenApi = platform.getTokenApi();
 
@@ -274,7 +277,7 @@ subscriptionRepresentation1.setSource(mo);
 subscriptionRepresentation1.setSubscriptionFilter(filterRepresentation);
 subscriptionRepresentation1.setFragmentsToCopy(List.of("c8y_SpeedMeasurement", "c8y_MaxSpeedMeasurement"));
 
-// Create subscription
+// Create subscription for managed object context
 subscriptionApi.subscribe(subscriptionRepresentation1);
 
 // Construct subscription for tenant context
@@ -282,17 +285,17 @@ final NotificationSubscriptionRepresentation subscriptionRepresentation2 = new N
 subscriptionRepresentation2.setContext("tenant");
 subscriptionRepresentation2.setSubscription("testSubscription2");
 
-// Create subscription
+// Create subscription for tenant context
 subscriptionApi.subscribe(subscriptionRepresentation2);
 
 // Obtain access token
 final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
         properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
-        "testSubscription1", // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
-        1440, // The token expiration duration in minutes.
+        "testSubscription1",        // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
+        1440,                       // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing WebSocket connection. Please refer to Notifications 2.0 reference guide for more details. 
+// The obtained token is required for establishing a WebSocket connection. Refer to Notifications 2.0 in the Reference guide for more details. 
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions
@@ -315,11 +318,11 @@ for (NotificationSubscriptionRepresentation subscriptionRepresentation : filtere
 // Delete all tenant subscriptions
 subscriptionApi.deleteTenantSubscriptions();
 
-// delete by source
+// Delete by source
 subscriptionApi.deleteBySource(mo.getId().getValue());
 ```
 
-Users can also alternatively download the source code of `hello-world-notification-microservice` from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) repository to build and run it.
+There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) with more details on the API usage.
 
 ### Reliability features
 

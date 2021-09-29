@@ -110,7 +110,7 @@ A GA release is a release with general availability (GA). GA releases are typica
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
-See also Roles
+See also Roles / See also [Administration > Managing permissions > Global roles]() in the *User guide*.
 
 <a name="inventory-roles"></a>
 ### Inventory roles
@@ -196,6 +196,8 @@ The application concept of {{< product-c8y-iot >}} includes a basic application 
 Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
+See also [Administration]() in the *User guide*.
+
 <a name="subtenant"></a>
 ### Subtenant
 Using an Enterprise tenant, you can make use of the multi-tenancy concept of {{< product-c8y-iot >}}.
@@ -243,3 +245,5 @@ For more information refer to the [Web SDK guide]().
 <a name="widgets"></a>
 ### Widgets
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes, for details see the Widgets collection.
+
+See also [Cockpit > Using widgets in dashboards and reports]() in the *User guide*.

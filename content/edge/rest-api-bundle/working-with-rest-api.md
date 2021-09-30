@@ -73,6 +73,7 @@ The endpoint returns:
 
 		{
 			"domain_name":"myown.iot.com"
+			"licensed_domain_name": "myown.iot.com"
 		}
 
 ### POST /edge/install
@@ -157,6 +158,12 @@ In the JSON format above, the value of `certificate` can be `generate` or `uploa
 
 If the existing SSL certificate is compatible with the new domain name, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set the value of `certificate`.
 
+The example below describes when an existing license or certificate is compatible with the new domain name:
+
+- If you have a license for the domain `myown.iot.com`, you can change the domain to `myown.iot.com` and any single level subdomain, for example `sub.myown.iot.com`
+
+- If you have a certificate for the domain `myown.iot.com`, then you can only set the domain to `myown.iot.com`. If you have a wildcard certificate like `*.myown.iot.com`, then you must set the domain name to any single level subdomain of myown.iot.com, that is `sub.myown.iot.com`, but not `myown.iot.com` itself.
+
 **Response**
 
 The endpoint returns:
@@ -177,7 +184,11 @@ The endpoint returns:
 	
 	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
 
-	The task starts immediately and can be polled if there are no uploads.
+	The task starts immediately and can be polled if there are no uploads. For example, the response will not have any `uploads`:
+
+		{
+			"id":"1"
+		} 
 
 You must run subsequent calls to upload the license and the certificate files to change the domain name if the `uploads` array requires you to upload.
 
@@ -536,7 +547,8 @@ If the certificate is self-signed:
 
 ```json
 {
-    "signing_type": "self-signed",
+    "subject": "myown.iot.com",
+	"signing_type": "self-signed",
     "expiry": "2019-04-26T05:28:52Z"
 }
 ```
@@ -547,7 +559,8 @@ If the certificate is not self-signed:
 
 ```json
 {
-    "signing_type": "not-self-signed",
+    "subject": "myown.iot.com",
+	"signing_type": "not-self-signed",
     "signed_by": "A-Certificate-Authority",
     "expiry": "2019-04-26T05:28:52Z"
 }

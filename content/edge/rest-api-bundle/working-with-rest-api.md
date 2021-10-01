@@ -76,6 +76,8 @@ The endpoint returns:
 			"licensed_domain_name": "myown.iot.com"
 		}
 
+  Here, the `domain_name` specifies the domain name that is configured. The `licensed_domain_name` specifies the domain name that is attached to the license. 
+
 ### POST /edge/install
 
 Use this endpoint to perform the initial installation.
@@ -135,7 +137,7 @@ The `id` returned in the JSON response is the task ID. Use the task ID for polli
 
 ### POST /edge/configuration/domain
 
-Use this endpoint to changing the domain name.
+Use this endpoint to change the domain name.
 
 During the process of changing the domain name, the certificate presented by the REST endpoints is changed from the certificate for the old domain to the certificate for the new domain. Polling using HTTPS to the old domain will make a secure connection until the certificate is updated to the new domain. After the certificate is updated, polling using HTTPS to the old domain will fail to make a secure connection and you should switch to polling using HTTPS to the new domain.
 
@@ -156,13 +158,7 @@ Content-Type: application/json
 ```
 In the JSON format above, the value of `certificate` can be `generate` or `upload`.
 
-If the existing SSL certificate is compatible with the new domain name, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set the value of `certificate`.
-
-The example below describes when an existing license or certificate is compatible with the new domain name:
-
-- If you have a license for the domain `myown.iot.com`, you can change the domain to `myown.iot.com` and any single level subdomain, for example `sub.myown.iot.com`
-
-- If you have a certificate for the domain `myown.iot.com`, then you can only set the domain to `myown.iot.com`. If you have a wildcard certificate like `*.myown.iot.com`, then you must set the domain name to any single level subdomain of myown.iot.com, that is `sub.myown.iot.com`, but not `myown.iot.com` itself.
+If the existing SSL certificate is compatible with the new domain name, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set as the value of `certificate`.
 
 **Response**
 
@@ -184,7 +180,7 @@ The endpoint returns:
 	
 	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
 
-	The task starts immediately and can be polled if there are no uploads. For example, the response will not have any `uploads`:
+	The task starts immediately and can be polled if there are no uploads. For example, the response would not have an `uploads` key:
 
 		{
 			"id":"1"
@@ -548,7 +544,7 @@ If the certificate is self-signed:
 ```json
 {
     "subject": "myown.iot.com",
-	"signing_type": "self-signed",
+    "signing_type": "self-signed",
     "expiry": "2019-04-26T05:28:52Z"
 }
 ```

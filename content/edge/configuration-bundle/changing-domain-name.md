@@ -8,12 +8,6 @@ After the installation, you can change the domain name of your Edge appliance us
 
 >**Important:** Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
-The example below describes when an existing license or certificate is compatible with the new domain name:
-
-- If you have a license for the domain myown.iot.com, you can change the domain to myown.iot.com and any single level subdomain, for example sub.myown.iot.com
-
-- If you have a certificate for the domain myown.iot.com, then you can only set the domain to myown.iot.com. If you have a wildcard certificate like *.myown.iot.com, then you must set the domain name to any single level subdomain of myown.iot.com, that is sub.myown.iot.com, but not myown.iot.com itself.
-
 ### Changing the domain name using the GUI
 
 1. Log in to the {{< management-tenant >}}.
@@ -51,3 +45,12 @@ To change the domain name, use the following endpoints:
 
 - [GET /edge/configuration/domain](/edge/rest-api/#get-edgeconfigurationdomain)
 - [POST /edge/configuration/domain](/edge/rest-api/#post-edgeconfigurationdomain)
+
+### License and certificate compatibility
+
+The example below describes a scenario where an existing license or certificate is compatible with the new domain name:
+
+- If you have a license for the domain myown.iot.com, you can change the domain to myown.iot.com and any single level subdomain, for example sub.myown.iot.com
+
+- If you have a certificate for the domain myown.iot.com, then you can only set the domain to myown.iot.com. If you have a wildcard certificate like *.myown.iot.com, then you must set the domain name to any single level subdomain of myown.iot.com, that is sub.myown.iot.com, but not myown.iot.com itself.
+

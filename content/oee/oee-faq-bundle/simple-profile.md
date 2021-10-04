@@ -9,7 +9,7 @@ To create a very basic profile, the following settings can be used:
 - Profile => Profile Name: any
 - Machine => Machine location: any
 - Workpiece => 1 pcs per minute
-- Resolution => 5 minutes
+- Resolution => 10 minutes
 - Computation => PPQ
 - Matching
 	- Actual production amount => depending on your machine/simulator and the data it is sending, this could be something like counting events (e.g. "Piece_Produced")

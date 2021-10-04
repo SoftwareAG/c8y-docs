@@ -2,6 +2,7 @@
 weight: 10
 title: Overview
 layout: redirect
+opensource: true
 ---
 
 Thin-edge.io is an open-source framework to develop lightweight, smart, and secure connected devices.

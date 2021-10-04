@@ -2,6 +2,7 @@
 weight: 30
 title: Connect to a cloud endpoint
 layout: redirect
+opensource: true
 ---
 
 ### Connect to Cumulocity IoT

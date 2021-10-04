@@ -2,6 +2,7 @@
 weight: 30
 title: Thin Edge JSON format
 layout: redirect
+opensource: true
 ---
 
 Thin Edge JSON is a lightweight format used in thin-edge.io to represent measurements data. This format can be used to represent single-valued measurements, multi-valued measurements or a combination of both along with some auxiliary data like the timestamp at which the single measurement or multiple measurements were generated.

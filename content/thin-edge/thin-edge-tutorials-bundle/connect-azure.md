@@ -2,6 +2,7 @@
 weight: 20
 title: Connect your device to Azure IoT
 layout: redirect
+opensource: true
 ---
 
 To enable thin-edge.io you first must connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud end-point. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud is then as simple as sending data locally.

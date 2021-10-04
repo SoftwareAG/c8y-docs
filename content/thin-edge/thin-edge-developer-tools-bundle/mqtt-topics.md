@@ -2,6 +2,7 @@
 weight: 70
 title: MQTT topics
 layout: redirect
+opensource: true
 ---
 
 This document lists the MQTT topics that are supported by thin-edge.io.

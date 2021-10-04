@@ -2,6 +2,7 @@
 weight: 40
 title: Thin Edge mapper
 layout: redirect
+opensource: true
 ---
 
 The tedge-mapper is a key concept to support multiple cloud providers. The purpose is to translate messages written using the cloud-agnostic [Thin Edge JSON format](#thin-edge-json), into cloud-specific messages.

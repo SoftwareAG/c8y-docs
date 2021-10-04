@@ -5,6 +5,7 @@ layout: bundle
 outputs:
 - html
 - json
+opensource: true
 ---
 
 ### Why thin-edge.io

@@ -2,6 +2,7 @@
 weight: 30
 title: Send Thin Edge JSON data
 layout: redirect
+opensource: true
 ---
 
 Once your Thin Edge device is configured and connected to an IoT cloud provider, you can start sending measurements.

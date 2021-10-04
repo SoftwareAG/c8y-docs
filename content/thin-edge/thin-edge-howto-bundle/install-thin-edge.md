@@ -2,6 +2,7 @@
 weight: 10
 title: Install thin-edge.io
 layout: redirect
+opensource: true
 ---
 
 ### Installation with get-thin-edge_io.sh script

@@ -2,6 +2,7 @@
 weight: 10
 title: Connect your device to Cumulocity IoT
 layout: redirect
+opensource: true
 ---
 
 To enable thin-edge.io you first must connect your device to the cloud. This is a 10 minutes operation to be done only once. It establishes a permanent connection from your device to the cloud endpoint. This connection is secure (encrypted over TLS), and the two peers are identified by x509 certificates. Sending data to the cloud will then be as simple as sending data locally.

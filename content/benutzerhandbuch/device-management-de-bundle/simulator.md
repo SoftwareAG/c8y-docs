@@ -81,7 +81,7 @@ Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten An
 
 ![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter [Sensor Library](https://{{< domain-c8y >}}/api/#section/Sensor-library) in der {{< openapi >}}.
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) in der {{< openapi >}}.
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 

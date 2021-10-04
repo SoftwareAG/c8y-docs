@@ -132,6 +132,6 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie auf **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
-[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
+[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
 >**Info:** Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.

@@ -33,4 +33,4 @@ aliases:
 
 Our API reference has moved:
 
-We are now using OpenAPI to maintain our API documentation. Visit [our new API documentation](https://cumulocity.com/api) and have a look.
+We are now using OpenAPI to maintain our API documentation. Visit [our new API documentation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}) and have a look.

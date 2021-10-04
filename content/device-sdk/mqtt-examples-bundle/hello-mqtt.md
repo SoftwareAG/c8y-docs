@@ -33,7 +33,7 @@ To configure the MQTT connection, you need to pass the following connection para
 
 ![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
 
-> **Info**: You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
+> **Info**: You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
 
 Other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.
 

@@ -110,7 +110,7 @@ Cookies used to store a token in a browser have their own validity time that can
 
 The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
 
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 <a name="single-sign-on"></a>
 ### Configuring single sign-on

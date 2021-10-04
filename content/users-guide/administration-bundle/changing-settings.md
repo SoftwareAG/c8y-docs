@@ -2,7 +2,23 @@
 weight: 70
 title: Changing settings
 layout: redirect
+helpcontent:
+- label: authentication
+  title: Authentication
+  content: "Under **Login settings** you can specify your preferred login mode:
+
+
+	* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+	* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
+
+	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+
+	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Changing settings > Configuring single-sign on* in the *User guide*."
 ---
+
 
 From the **Settings** menu, administrators can manage various settings for the account:
 
@@ -11,7 +27,6 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [properties library](#properties).
 - Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
-
 
 <a name="authentication"></a>
 ### Changing authentication settings
@@ -418,7 +433,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 1. Click **SMS provider** in the **Settings** menu.
 
-	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+   
+	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 

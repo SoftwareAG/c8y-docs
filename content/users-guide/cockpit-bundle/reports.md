@@ -2,20 +2,19 @@
 weight: 45
 title: Working with reports
 layout: redirect
-helpcontent: >-
-  Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
+helpcontent:
+  - label: reports
+    title: Working with reports
+    content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 
 
-  Click **Add report** in the top menu bar to configure a new report, or use the menu icon to editor delete exports.
+    On a report dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon.
 
 
-  On a report dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon.
+    Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
 
 
-  Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
-
-
-  Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See the Widgets collection documentation for details on each widget type and its configuration.
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 ---
 
 <!-- -->
@@ -35,7 +34,6 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 ![Report in navigator](/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
 See [To create a report](#create-report) below for details on how to configure the position in the navigator.
-
 
 <a name="create-report"></a>
 ### To create a report

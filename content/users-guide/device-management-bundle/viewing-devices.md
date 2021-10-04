@@ -2,6 +2,13 @@
 weight: 20
 title: Viewing devices
 layout: redirect
+helpcontent:
+  - label: viewing-devices
+    title: Viewing devices
+    content: "The device list shows the most relevant information for all devices connected to your account in a list view. The columns shown in the device list may be customized to your needs, see *Device Management > Viewing devices* in the *User guide*.
+
+
+    You may filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
 ---
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
@@ -108,7 +115,6 @@ The new column will be added and displayed in the device list.
 The device will be permanently deleted from the platform.
 
 > **Important:** Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
-
 
 <a name="searching-devices"></a>
 ### To search for devices

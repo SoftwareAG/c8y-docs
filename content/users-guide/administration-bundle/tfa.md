@@ -45,7 +45,7 @@ After this process the mobile application will generate a new code every 30 seco
 
 #### Revoking the secret
 
-><b>Info:</b> Although the setup must be done by each individual user, revoking the secret can only be done by a user with "user management ADMIN" permission via the Administration application. As so, if the user loses the phone or uninstalls the application they must contact a user with this particular permission.
+>**Info:** Although the setup must be done by each individual user, revoking the secret can only be done by a user with "user management ADMIN" permission via the Administration application. As so, if the user loses the phone or uninstalls the application they must contact a user with this particular permission.
 
 To revoke the key follow these steps:
 

@@ -16,16 +16,18 @@ In {{< product-c8y-iot >}}, these use cases are implemented by sending *operatio
 
 The following snippet shows an operation for setting the state of the relay with the ID "42" to "OPEN":
 
-<pre><code class="json">{
-	"deviceId": "42",
-	"c8y_Relay": {
-		"relayState": "OPEN"
-	}
-}</code></pre>
+```json
+{
+    "deviceId": "42",
+    "c8y_Relay": {
+        "state": "OPEN"
+    }
+}
+```
 
 Just like other types of data, operations are also standardized through the sensor library to simplify application development (see below). For example, setting a switch should be the same for all switches regardless of their make.
 
-Operations are modelled just like fragments in the inventory model (see above). The same extensibility concept applies. Random vendor-proprietary extensions to the standard operations are possible. These are not denied or modified by {{< product-c8y-iot >}}.
+Operations are modeled just like fragments in the inventory model (see above). The same extensibility concept applies. Random vendor-proprietary extensions to the standard operations are possible. These are not denied or modified by {{< product-c8y-iot >}}.
 
 ### Sending operations to devices
 

@@ -410,7 +410,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 1. Click **SMS provider** in the **Settings** menu.
 
-	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+   
+	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 

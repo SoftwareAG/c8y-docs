@@ -40,10 +40,6 @@ The data points properties are pre-filled as follows:
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
-There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**.
-
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
-
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.

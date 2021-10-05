@@ -49,7 +49,7 @@ Smart rules can be seen in two places:
 
   In the **Global smart rules** page, only the global smart rules are shown.
 
-* In the **Info** tab of a device or group.
+* In the **Smart rules** tab of a device or group.
 
   ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 

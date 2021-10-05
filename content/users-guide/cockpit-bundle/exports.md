@@ -23,7 +23,7 @@ With this feature, you can request data for the whole tenant. Additionally, you 
 
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
-In the **Export** page you will find a list displaying all exports with their names and time range.
+In the **Export** page you will find a list displaying all exports with their names, file type and time range.
 
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 

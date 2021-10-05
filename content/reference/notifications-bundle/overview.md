@@ -48,4 +48,4 @@ For the protocol consumer, both managed object creations and alarms subscribed u
 There is no distinction between the two contexts for consumers and notification ordering is maintained between the two contexts.
 
 For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application.
-There is a sample Java microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) so developers do not need to code to the following protocol specification directly.
+There is a sample Java microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) so Java developers do not need to code to the following protocol specification directly.

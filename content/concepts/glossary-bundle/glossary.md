@@ -4,11 +4,11 @@ title: Glossary
 layout: redirect
 ---
 
-This section gives you an overview of the most commonly used terms in {{< product-c8y-iot >}} application.
+This glossary lists commonly used terminology in the {{< product-c8y-iot >}} platform and documentation and provides descriptions for its usage in the context of {{< product-c8y-iot >}}.
 
 <a name="administration-app"></a>
 ### Administration application
-The Administration application is one of the default application of {{< product-c8y-iot >}}.
+The Administration application is one of the default applications of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications. It also allows them to configure various settings for their accounts.
 
 <a name="agent"></a>
@@ -19,7 +19,8 @@ Agents are software components which translate the device-specific interface pro
 <a name="analytics-builder"></a>
 ### Analytics Builder
 The Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
-Analytics Builder is part of the Streaming Analytics application. See also {{< product-c8y-iot >}} Streaming Analytics; EPL Apps
+Analytics Builder is part of the Streaming Analytics application.<br>
+See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics); [EPL Applications](#epl).
 
 <a name="application"></a>
 ### Application
@@ -39,21 +40,31 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
   * Groups: Objects which group single devices or other groups.
   * Devices: Devices which can be linked into the asset hierarchy, after being connected to {{< product-c8y-iot >}}.
 
+<a name=""></a>
+### Blocks
+Related to Apama Analytics Builder
+Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
+
+
 <a name="cockpit-application"></a>
 ### Cockpit application
-The Cockpit application is one of the default application of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
+The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
+
+<a name=""></a>
+### Cumulocity IoT Core
+TBD
 
 <a name="c8y-datahub"></a>
 ### Cumulocity IoT DataHub
-{{< product-c8y-iot >}} Datahub is an {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
+{{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 
-For more information on {{< product-c8y-iot >}} Datahub, see the [{{< product-c8y-iot >}} Datahub guide](https://cumulocity.com/guides/datahub/datahub-overview/).
+For details see the [{{< product-c8y-iot >}} Datahub guide](https://cumulocity.com/guides/datahub/datahub-overview/).
 
-<a name="c8y-edge">c8y-edge</a>
+<a name="c8y-edge"></a>
 ### Cumulocity IoT Edge
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For more information on {{< product-c8y-iot >}} Edge, see the [{{< product-c8y-iot >}} Edge guide](https://cumulocity.com/guides/edge/introduction/).
+For details see the [{{< product-c8y-iot >}} Edge guide](https://cumulocity.com/guides/edge/introduction/).
 
 <a name="c8y-ml"></a>
 ### Cumulocity IoT Machine learning
@@ -61,17 +72,17 @@ For more information on {{< product-c8y-iot >}} Edge, see the [{{< product-c8y-i
   * Machine Learning Workbench, which focuses on model training, and
   * Machine Learning Engine, which focuses on model deployment.
 
-For more information on {{< product-c8y-iot >}} Machine Learning, see the [{{< product-c8y-iot >}} Machine learning guide](https://cumulocity.com/guides/machine-learning/introduction/).
+For details see the [{{< product-c8y-iot >}} Machine learning guide](https://cumulocity.com/guides/machine-learning/introduction/).
 
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
-Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, etc.) is stored in so-called base collections.
+Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, etc.) are stored in so-called base collections.
 
 <a name="c8y-sensor-app"></a>
 ### Cumulocity IoT Sensor App
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-For more information on {{< sensor-app >}}, see [{{< sensor-app >}}](/guides/users-guide/sensor-app-bundle/#overview) in the *User guide*.
+For details see [{{< sensor-app >}}](/users-guide/sensor-app-bundle/#overview) in the *User guide*.
 
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
@@ -90,11 +101,15 @@ The data explorer visualizes all data points, i.e. measurements or sensor data, 
 
 <a name="data-lake"></a>
 ### Data lake
-Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
+Used in the context of DataHub. A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
 
 <a name="data-point-library"></a>
 ### Data point library
 The Data Point Library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
+
+<a name=""></a>
+### Device
+IoT devices are hardware components with a sensor that transmits data, like wireless sensors, actuators, and computer devices. They can be embedded into mobile devices, industrial equipment, environmental sensors, medical devices, and more.
 
 <a name="dev-management-application"></a>
 ### Device Management application
@@ -105,25 +120,51 @@ For more information on the Device Management application see [Device Management
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
-Tenant type in the {{< product-c8y-iot >}} tenant hierarchy (add link).
-Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, like for example Branding for the creation of an individual look & feel.
+Tenant type in the {{< product-c8y-iot >}} tenant hierarchy.
+Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
 
 See also [Standard tenant](#standard-tenant), [Management tenant](#mgm-tenant).
+
+<!--- TBD add external link --->
 
 <a name="epl"></a>
 ### Event Processing Language (EPL)
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
+See also [EPL](#epl).
+
+For details see [Overview > Streaming analytics with Apama EPL]() in the *Streaming Analytics guide*.
+
+<a name=""></a>
+### Events
+Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
+
+#### Cumulocity IoT events
+
+#### Apama events
+Conceptually, an event is an occurrence of a particular item of interest at a specific time.
+Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events.
+
 <a name="ga-release"></a>
 ### GA release
-A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the Software AG Empower Portal. GA releases include new features, improvements and fixes.
+A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the {{< company-sag >}} {{< portal-sag >}}. GA releases include new features, improvements and fixes.
 
 <a name="global-roles"></a>
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
 For more information on global roles see [Administration > Managing permissions > Global roles](/guides/users-guide/administration/#managing-permissions) in the *User guide*.
+
+<a name=""></a>
+### Instances
+TBD
+
+#### Cumulocity IoT Instances
+
+#### Apama Instances
+Relates to Apama Analytics Builder
+
 
 <a name="inventory-roles"></a>
 ### Inventory roles
@@ -147,11 +188,26 @@ For more information on the Machine Learning Workbench see [Introduction > Machi
 ### Maintenance release
 {{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} GA releases. A Maintenance release contains fixes and improvements for a GA release but no new features.
 
+<a name=""></a>
+### Managed objects
+The inventory stores devices and other assets relevant to your IoT solution. We refer to them as managed objects.
+Managed objects can be “smart objects” such as smart electricity meters, home automation gateways and GPS devices. They can be assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices.
+
+<!--- TBD Digital twin --->
+
 <a name="mgm-tenant"></a>
 ### Management tenant
 The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} tenant hierarchy.
 Every {{< product-c8y-iot >}} deployment is delivered with a Management tenant. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 See also [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant)
+
+<a name=""></a>
+### Measurements
+Measurements contain numerical data produced by sensors (like temperature readings) or calculated data based on information from devices (service availability of a device).
+
+Measurements consist of a time when the measurement was taken, the unique identifiers of the source of the measurement, and a list of fragments.
+
+<!--- TBD time series --->
 
 <a name="microservices"></a>
 ### Microservices
@@ -263,3 +319,8 @@ For more information refer to the [Web SDK guide](https://cumulocity.com/guides/
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes, for details see the Widgets collection.
 
 See also [Cockpit > Using widgets in dashboards and reports](/guides/users-guide/cockpit/#using-widgets) in the *User guide*.
+
+<a name=""></a>
+### Wires
+Relates to Apama Analytics Builder.
+Wires are used to connect two or more blocks with each other.  They are used for all data transfer between the output port of one block and the input port of another block.

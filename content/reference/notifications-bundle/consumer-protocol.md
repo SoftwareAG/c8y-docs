@@ -59,13 +59,13 @@ The second header line is the notification description string in the form of a '
 
 * sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
 
-Some examples are provided later below and backwards compatibility to realtime notifications is provided for, but see other documentation, examples and experiment to get values for events that you are interested in.
+Some examples are provided later below and backwards compatibility to realtime notifications is provided for, but see the rest of the documentation, examples and experiment to get values for events that you are interested in.
 
 ### Notification acknowledgement
 
 The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the notification2 service in a message acknowledgement.
 
-See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this but it simply consists of sending the identifier back to the service in a self contained WebSocket client to server message text message, i.e. simply send back the first header without the training '\n'.
+See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this but it simply consists of sending the identifier back to the service in a self contained web socket text message, i.e. simply send back the first header without the training '\n'.
 
 
 ### Dealing with notification duplication

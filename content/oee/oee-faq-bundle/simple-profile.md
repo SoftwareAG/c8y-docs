@@ -4,8 +4,7 @@ title: What is the simplest profile to define?
 layout: redirect
 ---
 
-To get started with the OEE app, a very basic profile with the following settings c
-To create a very basic profile, the following settings can be used:
+To get started with the OEE app, a profile is required to start the calculation. To create a very basic profile, the following settings can be used:
 - Profile => Profile Name: any
 - Machine => Machine location: any
 - Workpiece => 1 pcs per minute

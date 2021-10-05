@@ -126,7 +126,7 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://192.168.66.10/edge/upload/1/certificate_key"}
 		 ]
 		}
-
+	
 	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
 
 Note that this task does not start the installation. You must run subsequent calls to upload the license and the certificate files to start the installation.
@@ -175,13 +175,13 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://myown.iot.com/edge/upload/4/certificate_key"}
 		 ]
 		}
-
+	
 	If the new domain name is compatible with the existing license, the `uploads` array will not contain the `licence` entry.
 	
 	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
-
+	
 	The task starts immediately and can be polled if there are no uploads. For example, the response would not have an `uploads` key:
-
+	
 		{
 			"id":"1"
 		} 
@@ -562,7 +562,7 @@ If the certificate is not self-signed:
 }
 ```
 
-The format of the `expiry` field is in the ISO format and is always in the UTC timezone.
+The format of the `expiry` field is in the ISO format and is always in the UTC time zone.
 
 ### POST /edge/configuration/certificate
 
@@ -651,10 +651,10 @@ The endpoint returns:
 - HTTP status 200.
 
 	    {
-			"id":"1",
-			"type":"network",
-			"status":"executing"
-		}
+	    	"id":"1",
+	    	"type":"network",
+	    	"status":"executing"
+	    }
 
 	The `type` refers to the type of task: `network`, `installation`, `hostname`, `remote-connectivity`, `certificate-renewal`, `microservices-state`, `update`, `time-sync`, `reboot`.
 

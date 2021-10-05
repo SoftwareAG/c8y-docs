@@ -29,11 +29,11 @@ After the installation, you can change the domain name of your Edge appliance us
 
    Click **Update**.
 
-6. If the existing license is not compatible with the new domain name, provide the licence file for the new domain name.
+6. If the existing license is not compatible with the new domain name, provide the license file for the new domain name.
 
-   If the existing license is compatiable with the new domain name, you do not have to upload the license file.
+   If the existing license is compatible with the new domain name, you do not have to upload the license file.
 
-7. If the existing certificate is not comaptible with the new domain name, provide the SSL certifcate and key files. If you do not have an SSL certificate, select **Generate self signed SSL certificate**.
+7. If the existing certificate is not compatible with the new domain name, provide the SSL certificate and key files. If you do not have an SSL certificate, select **Generate self signed SSL certificate**.
 
    If the existing certificate is compatible with the new domain name, you do not have to upload the SSL certificate and key files.
 

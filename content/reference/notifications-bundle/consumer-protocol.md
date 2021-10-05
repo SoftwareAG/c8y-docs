@@ -11,47 +11,58 @@ The {{< product-c8y-iot >}} Notifications 2.0 API uses a secure [WebSocket](http
 
 The new endpoint is accessible only using the external {{< product-c8y-iot >}} fully qualified domain name of your {{< product-c8y-iot >}} environment and the standard SSL port 443 using a secure WebSocket connection.
 
-The [URL scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
+The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
 
-The fixed URL path is */notifications2/consumer/*. There is only one required and one optional query string argument:
+The fixed URL path is <kbd>/notifications2/consumer/</kbd> and there are only two query string arguments:
 
-* **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [Token method]({{cumulocity_domain}}/api/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set a HTTP header which can be an issue for some WebSocket clients or proxies.
+* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/#tag/#Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
-* **Optional query string argument: consumer.** The name of this optional query string parameter is "consumer" and the value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
+* `consumer` (optional). Its value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
 
 In summary, the URLs used by consumers follow the following patterns:
 
 ```
 wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService
 ```
+
 or
+
 ```
-wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=someUniqueNameForThisConsumer
+wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=aUniqueNameForThisConsumer
 ```
 
-The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding. The WebSocket service sends a sequence of notifications to the consumer and the consumer should send back a short acknowledgement over this connection for each notification received. This acknowledgement is for a particular notification and the server will periodically resend a notification until it is acknowledged. This will cease once the server has received and processed an acknowledgement for a particular notification.
+The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding.
+The WebSocket service sends a sequence of notifications to the consumer and the consumer should send back a short acknowledgement over this connection for each notification received.
+This acknowledgement is for a particular notification and the server will periodically resend a notification until it is acknowledged.
+This will cease once the server has received and processed an acknowledgement for a particular notification.
 
-A notification (transmitted service to client) consists of a header and a body (similar to a HTTP request). The header is one or more (in practice at least 3) lines of text, separated by a '\n' (newline) character. The end of the header is demarcated by a double new line "\n\n".
+A notification (transmitted service to client) consists of a header and a body (similar to an HTTP request).
+The header is one or more (in practice at least 3) lines of text, separated by a `\n` (newline) character.
+The end of the header is demarcated by a double new line `\n\n`.
 
-The notification body follows the header. This also consists of UTF text - for example a JSON document. If the notification is binary data or includes binary data then it will be [base 64 encoded](https://en.wikipedia.org/wiki/Base64).
+The notification body follows the header.
+This also consists of UTF text - for example a JSON document.
+If the notification is binary data or includes binary data then it will be [Base64 encoded](https://en.wikipedia.org/wiki/Base64).
 
-The header lines for a notification are as follows (separated by \n' newlines):
+The header lines for a notification are as follows (separated by `\n` newlines):
 
 * Required message identifier for message acknowledgement. This opaque value is an encoded binary 64 bit value. It must be returned as part of the acknowledgement for the notification as described below.
 
-* The notification description on the second header line. This is a string describing what type of notification this is and its source.  Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
+* The notification description on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a 3 part format, separated by "/". More details on notification descriptions is given below.
 
-* An action string is the third header. Examples are CREATE, UPDATE and DELETE. More actions may be added in future. Together with the notification type they describe the logical event that generated the notification, such as a CREATE of an alarm or measurement.
+* An action string is the third header. Examples are CREATE, UPDATE and DELETE. More actions may be added in the future. Together with the notification type they describe the logical event that generated the notification, such as a CREATE of an alarm or measurement.
 
-Depending on the second header there may be further headers to follow but currently notifications only use the above three. In order to be future proof / forward compatible, we encourage consumer code to cope with more headers by parsing them out but ignoring them.
+Depending on the second header there may be further headers to follow but currently notifications only use the above three.
+In order to be future proof and forward compatible, we encourage consumer code to cope with more headers by parsing them out but ignoring them.
 
-See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this relatively easily.
+See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
 
-After the headers, there follows the notification body as UTF-8 text. Typically a JSON document is carried in this text.
+After the headers, the notification body follows as UTF-8 text.
+Typically a JSON document is carried in this text.
 
 ### Notification description header
 
-The second header line is the notification description string in the form of a '/' separated path. For API notifications descriptions have three parts: tenantId / type / sourceId
+The second header line is the notification description string in the form of a `/`-separated path. For API notifications descriptions have three parts: tenantId, type and sourceId.
 
 * tenantId - this the identifier for the tenant under which the notification was generated.
 
@@ -59,31 +70,44 @@ The second header line is the notification description string in the form of a '
 
 * sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
 
-Some examples are provided later below and backwards compatibility to realtime notifications is provided for, but see the rest of the documentation, examples and experiment to get values for events that you are interested in.
+Some examples are provided in [Traces](#traces) and backwards compatibility to real-time notifications is provided for.
+Also see the rest of the documentation, examples and experiment to get values for events that you are interested in.
 
 ### Notification acknowledgement
 
-The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the notification2 service in a message acknowledgement.
+The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the notification 2.0 service in a message acknowledgement.
 
-See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this but it simply consists of sending the identifier back to the service in a self contained web socket text message, i.e. simply send back the first header without the training '\n'.
-
+See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
+It consists of sending the identifier back to the service in a self-contained WebSocket message text message, i.e. send back the first header without the training `\n` to the server.
 
 ### Dealing with notification duplication
 
-Until a notification is acknowledged, the WebSocket service will attempt to re-deliver it. It is therefore desirable that a notification is acknowledged as soon as possible (so as to help avoid duplicates). However, this should not be done until the notification has been successfully processed to make use of the "at-least-once" semantics that the Notification 2.0 service provides.
+Until a notification is acknowledged, the WebSocket service will attempt to re-deliver it.
+It is therefore desirable that a notification is acknowledged as soon as possible (to help avoid duplicates).
+However, this should not be done until the notification has been successfully processed to make use of the at-least-once semantics that the Notification 2.0 service provides.
 
-Simply process the message and only return the acknowledgement identifier when that processing completes successfully. If processing is longer than a minute or so, the service will resend the notification so the WebSocket client application must be prepared to deal with duplicates. Duplicates can also occur due to underlying network failures or perceived failures (slow transmissions) and subsequent failure masking re-transmission attempts.
+Simply process the message and only return the acknowledgement identifier when that processing completes successfully.
+If processing is longer than a minute or so, the service will resend the notification so the WebSocket client application must be prepared to deal with duplicates.
+Duplicates can also occur due to underlying network failures or perceived failures (slow transmissions) and subsequent failure masking re-transmission attempts.
 
-A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be relatively simple to deal with.
+A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
 
-For example, in the logical sequence 1,2,3,4 notification 2 can be duplicated behind 3 or even 4 as in 1,2,3,2,4 or even several times, such as 1,2,3,4,2,3 ..2.
+For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3..2.
 
-The notifications don't contain any unique identifier or timestamps to aid in de-duplication. Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and DELETED. But inventory UPDATES or logically sequenced events such as alarms and measurements require application-specific sequencing.
+The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
+Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.
+But inventory UPDATES or logically sequenced events such as alarms and measurements require application-specific sequencing.
 
-This can be achieved by including unique identifiers, sequence numbers or timestamps in the notification JSON (body) as required. Another alternative is to look up the {{< product-c8y-iot >}} database and see the current value, treating the notification as a signal only and ignoring the value carried.
+This can be achieved by including unique identifiers, sequence numbers or timestamps in the notification JSON (body) as required.
+An alternative is to look up the current value in the {{< product-c8y-iot >}} database, treating the notification as a signal only and ignoring the value carried.
 
-As can be seen from the notification [traces](#traces), some notifications do carry timestamps. If the timestamps are not generated by the device client then they may only be loosely synchronized between notifications and therefore should be used carefully or not at all for de-duplication.
+As can be seen from the notification [Traces](#traces), some notifications do carry timestamps.
+If the timestamps are not generated by the device client, then they may only be loosely synchronized between notifications and therefore should be used carefully or not at all for de-duplication.
 
 ### Parallel consumers
 
-The protocol can deliver notifications to a scaled-out subscriber. It is important to give each instance of the scaled-out application a unique consumer identifier (passing on connect in the query string) as well as specifying "shared=true" when requesting a notification token. Ideally this identifier should persist between re-starts of instances. With this, notifications from a particular device or source are delivered to the same instance of the scaled-out application as long as that instance is running. This makes processing successive notifications about the same device (or source) simpler.
+The protocol can deliver notifications to a scaled-out subscriber.
+It is important to give each instance of the scaled-out application a unique consumer identifier (passing on connect in the query string) as well as specifying "shared=true" when requesting a notification token.
+Ideally this identifier should persist between re-starts of instances.
+With this, notifications from a particular device or source are delivered to the same instance of the scaled-out application as long as that instance is running.
+This makes processing successive notifications about the same device (or source) easier.

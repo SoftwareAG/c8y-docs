@@ -30,13 +30,11 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
 >**Info:** {{< product-c8y-iot >}} on mobile devices shows some limitations.
-
 The limitations could be the following:
-
-* The usage may be constrained by the memory and the processing power available on the devices.<br>
+>* The usage may be constrained by the memory and the processing power available on the devices.<br>
   For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
-* Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
+>* Using the private mode on browsers may not work.
+>* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 
 ### URL
 

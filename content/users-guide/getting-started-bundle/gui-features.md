@@ -129,15 +129,20 @@ my demo device
 
 Other than with filtering, using wildcards in a search is not supported.
 
-Instead, you can switch the search option by clicking one of the following buttons: **Starts with**, **Contains**, **Ends with**. This will search for assets starting with, containing or ending with the search term, respectively.
+Instead, you can switch the search option by clicking one of the following buttons:
 
+* **Starts with**,
+* **Contains** or
+* **Ends with**.
 
+This will search for assets starting with, containing or ending with the search term, respectively.
 
 <a name="filtering"></a>
 #### Filtering
 
 Some pages offer a filtering functionality to filter objects in a list.
 
+<!--- Screenshot necessary? --->
 ![Filter field](/images/users-guide/getting-started/getting-started-filtering.png)
 
 As opposed to the search functionality, on entering filter criteria you must not necessarily enter complete words.
@@ -173,6 +178,8 @@ For details on the filtering mechanism in the devices list refer to [Device Mana
 
 In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately.
 
-You will only see such changes in the navigator of the application, in which you have made the changes. For example, if you unassign a device from a group in the Device Management application you will immediately see it removed from the group in the navigator of your current application, but if you have another window open with e.g. the Cockpit application you won't see the changes.
+You will only see such changes in the navigator of the application, in which you have made the changes.
 
-You will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+**Example**
+
+If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).

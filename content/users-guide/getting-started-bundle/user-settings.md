@@ -26,7 +26,7 @@ The **User** menu contains the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, see below. </td>
+<td style="text-align:left">Provides access to the user settings, see <a href="#user-settings" class="no-ajaxy">To change user settings</a>. </td> for details.
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>
@@ -38,7 +38,9 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Activate support</td>
-<td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a> for details. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+<td style="text-align:left">Allows support users to access your account.<br>
+<br>
+<b>Note:</b> This option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
@@ -101,7 +103,7 @@ Make sure to select a strong password. To support you in doing so, a password st
 
 By default, the password must meet the following conditions:
 
-* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).)
 * Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

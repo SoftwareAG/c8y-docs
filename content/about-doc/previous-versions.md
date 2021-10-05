@@ -14,11 +14,11 @@ The {{< product-c8y-iot >}} documentation sources are located in a Git repositor
 
 You find the documentation sources for the GA release versions in the following branches:
 
-Release 10.7.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0)
+Release {{< c8y-current-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}})
 
 Release {{< c8y-previous-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}})
 
-Release {{< c8y-current-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}})
+Release {{< c8y-pre-previous-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-pre-previous-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-pre-previous-version >}})
 
 You may also find the sources of older versions here in corresponding branches.
 

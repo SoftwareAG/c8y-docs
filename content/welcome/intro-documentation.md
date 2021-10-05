@@ -10,7 +10,7 @@ aliases:
   - /benutzerhandbuch/enterprise-tenant-de/#tenant-sla-monitoring
 ---
 
-This documentation describes the **{{< c8y-current-version >}} release (July 2021)** of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release {{< c8y-current-version >}} (see the [Release notes](https://{{< domain-c8y >}}/guides/releasenotes/release-10-10-0/overview-10-10-0/) for details).
+This documentation describes the **{{< c8y-current-version >}} release** of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release {{< c8y-current-version >}} (see the [Release notes](https://{{< domain-c8y >}}/guides/releasenotes/release-10-10-0/overview-10-10-0/) for details).
 
 >**Important:** Depending on the {{< product-c8y-iot >}} plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you.
 >

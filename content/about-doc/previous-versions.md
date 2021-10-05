@@ -16,9 +16,9 @@ You find the documentation sources for the GA release versions in the following 
 
 Release 10.7.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.7.0)
 
-Release 10.9.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.9.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.9.0)
+Release {{< c8y-previous-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-previous-version >}})
 
-Release 10.10.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.10.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.10.0)
+Release {{< c8y-current-version >}}: [https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}}](https://bitbucket.org/m2m/c8y-docs/branch/release/r{{< c8y-current-version >}})
 
 You may also find the sources of older versions here in corresponding branches.
 

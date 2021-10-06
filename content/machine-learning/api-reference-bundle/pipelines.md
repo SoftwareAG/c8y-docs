@@ -167,8 +167,8 @@ curl --request GET "{{url}}/service/zementis/onnx/pipelines/dummy" --header "Aut
 
 Create new ONNX pipeline.
 
-Note that if the pipeline name contains any unsafe characters, all such characters would be converted to underscore automatically.
-Hence, all subsequest calls should refer to the converted name as listed in the properties of the pipeline.
+Note that if the pipeline name contains any unsafe characters, all such characters will be converted to underscore automatically.
+Hence, all subsequent calls should refer to the converted name as listed in the properties of the pipeline.
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 

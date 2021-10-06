@@ -676,8 +676,8 @@ curl --request GET "{{url}}/service/zementis/model/dummy/metrics" --header "Auth
 Upload new PMML model. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
 Note that the size of the uploaded PMML file/zip must not exceed 500 MB.
 
-If the model name contains any unsafe characters, all such characters would be converted to underscore automatically.
-Hence, all subsequest calls should refer to the converted name as listed in the properties of the model.
+If the model name contains any unsafe characters, all such characters will be converted to underscore automatically.
+Hence, all subsequent calls should refer to the converted name as listed in the properties of the model.
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 

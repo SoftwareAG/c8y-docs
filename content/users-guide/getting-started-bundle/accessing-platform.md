@@ -7,7 +7,7 @@ aliases:
   - /users-guide/getting-started/#accessing-cumulocity-platform
 ---
 
-You access the {{< product-c8y-iot >}} platform via a web browser. <!-- Maybe adding URL? -->
+You access the {{< product-c8y-iot >}} platform via a web browser. For details see [URL](#url)
 
 ### Supported browsers
 
@@ -36,6 +36,7 @@ The limitations could be the following:
 >* Using the private mode on browsers may not work.
 >* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 
+<a name="">url</a>
 ### URL
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
@@ -76,7 +77,7 @@ Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initiall
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
->**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. <!--Link--> The default value is 100.
+>**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 
 <a name="reset-password"></a>
 ### To reset your password
@@ -104,6 +105,6 @@ https://<tenant-domain>.{{< domain-c8y >}}/apps/devicemanagement/index.html#/dev
 Using such an URL, you can:
 
 *   Save bookmarks for specific devices or pages.
-*   Send emails including a link to devices or sensor data manually or automatically, using the real-time event engine.
+*   Send emails with a link to devices or sensor data manually or automatically, using the real-time event engine.
 *   Use the backward and forward navigation of your browser.
-*   Write your own web applications which link directly to information contained in a {{< product-c8y-iot >}} application (chromium-based).
+*   Write your own web applications which link directly to information contained in a {{< product-c8y-iot >}} application.

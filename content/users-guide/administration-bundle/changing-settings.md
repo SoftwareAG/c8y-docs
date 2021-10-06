@@ -83,7 +83,7 @@ The default token validity time is two weeks and this can be changed with tenant
 
 Cookies used to store a token in a browser have their own validity time that can be changed with tenant options: `oauth.internal.basic-user.cookie.lifespan.seconds`. The default value is two weeks. It can also be set to a negative value so that the cookie will be deleted when the user closes the browser.
 
-Refer to the [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the Cumulocity IoT OpenAPI Specification for more details.
 
 <a name="single-sign-on"></a>
 ### Configuring single sign-on

@@ -87,4 +87,4 @@ This is an example of an alarm that has been cleared:
 	...
 }</code></pre>
 
-More detailed information can be found in [Events](https://cumulocity.com/api/#tag/Events), [Alarms](https://cumulocity.com/api/#tag/Alarms) and [Audits](https://cumulocity.com/api/#tag/Audits) in the Cumulocity IoT OpenAPI Specification.
+More detailed information can be found in [Events](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Events), [Alarms](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Alarms) and [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in the Cumulocity IoT OpenAPI Specification.

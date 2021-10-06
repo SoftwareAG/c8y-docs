@@ -42,7 +42,7 @@ Um auf die Anwendungen Ihres Cumulocity IoT-Mandanten zuzugreifen, verwenden Sie
 https://<tenant-domain>.cumulocity.com/
 ```
 
-Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants > Tenant ID and tenant domain](https://cumulocity.com/api/#tag/Tenants) im **Cumulocity IoT OpenAPI Specification**.
+Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) im **Cumulocity IoT OpenAPI Specification**.
 
 >**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen Cumulocity IoT Standard Tenant nutzen. Die URL für die Enterprise Tenants von Cumulocity IoT ist individuell für Ihr Unternehmen.
 

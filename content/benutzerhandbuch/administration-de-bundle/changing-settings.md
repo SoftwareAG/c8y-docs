@@ -78,7 +78,7 @@ Die Standard-Gültigkeitsdauer des Tokens beträgt zwei Wochen und dies kann mit
 
 Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkeitsdauer, die mit Mandantenoptionen geändert werden kann: `oauth.internal.basic-user.cookie.lifespan.seconds`. Der Standardwert ist zwei Wochen. Es kann auch ein negativer Wert eingestellt werden, so dass das Cookie gelöscht wird, wenn der Benutzer den Browser schließt.
 
-Weitere Informationen finden Sie unter [Tenant API](https://cumulocity.com/api/#tag/Tenant-API) in der Cumulocity IoT OpenAPI Specification.
+Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in der Cumulocity IoT OpenAPI Specification.
 
 <a name="single-sign-on"></a>
 ### Konfigurieren von Single Sign-On

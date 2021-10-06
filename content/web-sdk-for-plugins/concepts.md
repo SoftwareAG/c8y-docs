@@ -102,4 +102,4 @@ The plugin manifest describes how your plugin is shown in the Cumulocity IoT Adm
 * **less**: [optional] A list of LESS files to be loaded, paths relative to the plugin’s root folder.
 * **copy**: [optional] A list of files that should be copied into the built.
 
-Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](https://cumulocity.com/api/#tag/Application-API). Examples of manifest files can be found in [the bitbucket repository](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API). Examples of manifest files can be found in [the bitbucket repository](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).

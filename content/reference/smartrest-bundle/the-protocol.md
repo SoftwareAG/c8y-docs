@@ -52,7 +52,7 @@ The following examples illustrate the rules stated above:
 
 ### Processing mode
 
-Similar to [Cumulocity IoT REST implementation](https://www.cumulocity.com/api/#section/REST-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, *PERSISTENT*, *TRANSIENT*, *QUIESCENT* or *CEP*. If the data sent to the *SmartREST* endpoint must be both stored in Cumulocity IoT database and be transferred to real-time processing, then *PERSISTENT* mode should be set. It is also enabled by default and does not require additional configuration.
+Similar to [Cumulocity IoT REST implementation](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) every communication in *SmartREST* which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, *PERSISTENT*, *TRANSIENT*, *QUIESCENT* or *CEP*. If the data sent to the *SmartREST* endpoint must be both stored in Cumulocity IoT database and be transferred to real-time processing, then *PERSISTENT* mode should be set. It is also enabled by default and does not require additional configuration.
 
 In case when it is only needed to communicate data to real-time processing, the *TRANSIENT* processing mode should be specified by adding it to the header of *HTTP* request:
 

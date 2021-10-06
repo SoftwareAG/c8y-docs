@@ -12,7 +12,7 @@ As an example, the following statement continuously retrieves new temperature se
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset of these events is done using *where*, similar to SQL. *getNumber()* is a function to read out a numeric value from an event. In this example, "e" is the "MeasurementCreated" event and the property is "c8y\_TemperatureMeasurement". "T.value", is a  value in degrees Celsius of a temperature sensor (see the [sensor library](https://cumulocity.com/api/#section/Sensor-library)).
+Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset of these events is done using *where*, similar to SQL. *getNumber()* is a function to read out a numeric value from an event. In this example, "e" is the "MeasurementCreated" event and the property is "c8y\_TemperatureMeasurement". "T.value", is a  value in degrees Celsius of a temperature sensor (see the [sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library)).
 
 ### How can I create derived data from CEL?
 

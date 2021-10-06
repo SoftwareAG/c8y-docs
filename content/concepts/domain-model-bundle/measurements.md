@@ -34,4 +34,4 @@ Similar to the inventory model, fragments are used to identify characteristics o
 
 Readings can hold various additional information that applications may require.
 
-More detailed information can be found in [Measurements](https://cumulocity.com/api/#tag/Measurements) in the Cumulocity IoT OpenAPI Specification.
+More detailed information can be found in [Measurements](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Measurements) in the Cumulocity IoT OpenAPI Specification.

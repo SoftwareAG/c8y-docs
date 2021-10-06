@@ -302,7 +302,7 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden neuen Mandanten bei dessen Erstellung,
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
-> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](https://cumulocity.com/api/#operation/postTenantApplicationReferenceCollectionResource) unten oder [Mandanten](https://cumulocity.com/api/#tag/Tenants) in der Cumulocity IoT OpenAPI Specification.
+> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postTenantApplicationReferenceCollectionResource) unten oder [Mandanten](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in der Cumulocity IoT OpenAPI Specification.
 
 In der Mitte der Seite wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
 

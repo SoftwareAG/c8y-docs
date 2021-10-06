@@ -185,7 +185,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://cumulocity.com/api/#tag/Tenant-applications) verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der Management-Mandant eines Enterprise Tenants oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als `subscribedApplications` im [Mandanten-Nutzungsstatistik-Datensatz](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -228,7 +228,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://cumulocity.com/api/#tag/Tenant-applications) in der Cumulocity IoT OpenAPI Specification. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) in der Cumulocity IoT OpenAPI Specification. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -243,7 +243,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/api/#tag/Audits) in der Cumulocity IoT OpenAPI Specification.
+Weitere Informationen finden Sie unter [Auditing](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in der Cumulocity IoT OpenAPI Specification.
 
 
 ### Handhabung von Zeitzonen
@@ -566,7 +566,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://cumulocity.com/api/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

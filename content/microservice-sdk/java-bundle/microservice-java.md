@@ -108,7 +108,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you need to [create a managed object](https://cumulocity.com/api/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you need to [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).

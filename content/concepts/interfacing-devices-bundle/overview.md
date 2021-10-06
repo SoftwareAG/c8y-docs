@@ -13,4 +13,4 @@ Related topics can be found in the following sections:
 
 -   [Cumulocity IoT´s domain model](/concepts/domain-model) in the Concepts guide, for understanding the data structures exchanged between agents and the Cumulocity IOT core.
 -   [Device SDK guide](/device-sdk) for understanding in detail how to develop agent software using the REST or MQTT protocols.
--   [Rest implementation](https://cumulocity.com/api/#section/REST-implementation) in the Cumulocity IoT OpenAPI Specification, for a detailed specification of the interfaces between agents and the Cumulocity IoT core.
+-   [Rest implementation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) in the Cumulocity IoT OpenAPI Specification, for a detailed specification of the interfaces between agents and the Cumulocity IoT core.

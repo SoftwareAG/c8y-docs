@@ -26,4 +26,4 @@ The audit logs functionality has been extended. Audit logs now also include:
 <li>Information on user logins through the UI for both OAuth Internal and single sign-on logins
 <li>Password changes to local platform users, including the user whose password has changed and the user who initiated the password change
 
-See also the [Audits](https://www.cumulocity.com/api/#tag/Audits) section in the <i>Cumulocity IoT OpenAPI Specification</i>.
+See also the [Audits](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) section in the <i>Cumulocity IoT OpenAPI Specification</i>.

@@ -15,7 +15,7 @@ The [URL scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is
 
 The fixed URL path is */notifications2/consumer/*. There is only one required and one optional query string argument:
 
-* **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [token method]({{cumulocity_domain}}/api/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
+* **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
 * **Optional query string argument: consumer.** The name of this optional query string parameter is "consumer" and the value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
 

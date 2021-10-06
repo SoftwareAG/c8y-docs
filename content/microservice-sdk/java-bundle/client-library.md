@@ -252,6 +252,78 @@ If you wish to disconnect, the following code must be used:
 subscriber.disconnect();
 ```
 
+### Subscribing to Notifications 2.0
+
+The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory). 
+See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API. 
+
+The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
+
+```java
+// Obtain a handle to the Subscription and Token APIs:
+private final NotificationSubscriptionApi notificationSubscriptionApi = platform.getNotificationSubscriptionApi();
+private final TokenApi tokenApi = platform.getTokenApi();
+
+// Create subscription filter
+final NotificationSubscriptionFilterRepresentation filterRepresentation = new NotificationSubscriptionFilterRepresentation();
+filterRepresentation.setApis(List.of("measurements"));
+filterRepresentation.setTypeFilter("c8y_Speed");
+
+// Construct subscription for managed object context
+final NotificationSubscriptionRepresentation subscriptionRepresentation1 = new NotificationSubscriptionRepresentation();
+subscriptionRepresentation1.setContext("mo");
+subscriptionRepresentation1.setSubscription("testSubscription1");
+subscriptionRepresentation1.setSource(mo);
+subscriptionRepresentation1.setSubscriptionFilter(filterRepresentation);
+subscriptionRepresentation1.setFragmentsToCopy(List.of("c8y_SpeedMeasurement", "c8y_MaxSpeedMeasurement"));
+
+// Create subscription for managed object context
+subscriptionApi.subscribe(subscriptionRepresentation1);
+
+// Construct subscription for tenant context
+final NotificationSubscriptionRepresentation subscriptionRepresentation2 = new NotificationSubscriptionRepresentation();
+subscriptionRepresentation2.setContext("tenant");
+subscriptionRepresentation2.setSubscription("testSubscription2");
+
+// Create subscription for tenant context
+subscriptionApi.subscribe(subscriptionRepresentation2);
+
+// Obtain access token
+final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
+        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
+        "testSubscription1",        // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
+        1440,                       // The token expiration duration in minutes.
+        false);
+
+// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details. 
+final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
+
+// Query all subscriptions
+final NotificationSubscriptionCollection notificationSubscriptionCollection = subscriptionApi.getSubscriptions();
+final List<NotificationSubscriptionRepresentation> subscriptions = notificationSubscriptionCollection.get().getSubscriptions();
+
+for (NotificationSubscriptionRepresentation subscriptionRepresentation : subscriptions) {
+    System.out.println(subscriptionRepresentation);
+}
+
+// Query subscriptions by filter
+final NotificationSubscriptionCollection filteredNotificationSubscriptionCollection = subscriptionApi
+        .getSubscriptionsByFilter(new NotificationSubscriptionFilter().byContext("mo"));
+final List<NotificationSubscriptionRepresentation> filteredSubscriptions = filteredNotificationSubscriptionCollection.get().getSubscriptions();
+
+for (NotificationSubscriptionRepresentation subscriptionRepresentation : filteredSubscriptions) {
+    System.out.println(subscriptionRepresentation);
+}
+
+// Delete all tenant subscriptions
+subscriptionApi.deleteTenantSubscriptions();
+
+// Delete by source
+subscriptionApi.deleteBySource(mo.getId().getValue());
+```
+
+There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) with more details on the API usage.
+
 ### Reliability features
 
 In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the Java client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be sent immediately. If not, the data will be buffered until the connection is back again. For this, asynchronous variants of the API calls are offered. For example, to send an alarm:

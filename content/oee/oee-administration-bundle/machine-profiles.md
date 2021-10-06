@@ -25,34 +25,41 @@ In the first step, you specify the profile name and type.
     At the right, you can select an existing machine profile to use its configuration as a template. After clicking **Save and proceed**, all settings will automatically be pre-populated with the configuration of the selected profile.
 
     **External profile**<br>
-    To integrate external OEE data. It is not possible to define calculation rules or any other settings except the goals for OEE, Availability, Performance and Quality. The tethered external OEE data will be displayed without any calculation. Also no spliting takes place, so the intervals used in the incoming measurements should be configured to match the expectation. 
-	
+    To integrate external OEE data. It is not possible to define calculation rules or any other settings except the goals for OEE, Availability, Performance and Quality. The tethered external OEE data will be displayed without any calculation. Also no splitting takes place, so the intervals used in the incoming measurements should be configured to match the expectation.
+
 	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements need to meet the following criteria:
-	- type/fragmenttype: 
-		- "OEE"
-		- "Performance"
-		- "Availability"
-		- "Quality"
-		- "PotentialProductionTime"
-		- "IdealAmount"
-		- "ActualProductionTime"
-		- "AvailabilityLossTime"
-		- "AvailabilityLossAmount" 
-		- "IdealProductionAmount"
-		- "IdealMachineRuntime"
-		- "ActualProductionAmount"
-		- "PerformanceLossTime"
-		- "PerformanceLossAmount"
-		- "IdealQualityTime"
-		- "ActualQualityAmount"
-		- "QualityLossAmount"
-		- "QualityLossTime"
-		- "IdealCycleTime"
-		- "IdealCycleAmount"
-		
-	- series: relates to the interval of the profile; e.g. for a 10min interval, use "600s"
-	
+
+    **Type/Fragmenttype**
+
+    * "OEE"
+    * "Performance"
+    * "Availability"
+    * "Quality"
+    * "PotentialProductionTime"
+    * "IdealAmount
+    * "ActualProductionTime"
+    * "AvailabilityLossTime"
+    * "AvailabilityLossAmount"
+    * "IdealProductionAmount"
+    * "IdealMachineRuntime"
+    * "ActualProductionAmount"
+    * "PerformanceLossTime"
+    * "PerformanceLossAmount"
+    * "IdealQualityTime"
+    * "ActualQualityAmount"
+    * "QualityLossAmount"
+    * "QualityLossTime"
+    * "IdealCycleTime"
+    * "IdealCycleAmount"
+
+
+    **Series**  
+
+    * relates to the interval of the profile, so for example for a 10min interval, use "600s".
+
+
 	Here is a basic example in JSON notation:
+
 	```
 	{
       "time": "2021-01-01T01:01:01.001Z",

@@ -73,7 +73,10 @@ The endpoint returns:
 
 		{
 			"domain_name":"myown.iot.com"
+			"licensed_domain_name": "myown.iot.com"
 		}
+
+  Here, the `domain_name` specifies the domain name that is configured. The `licensed_domain_name` specifies the domain name that is attached to the license. 
 
 ### POST /edge/install
 
@@ -123,12 +126,69 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://192.168.66.10/edge/upload/1/certificate_key"}
 		 ]
 		}
-
+	
 	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
 
-Note that this task does not start the installation. You must run the subsequent calls to upload the license and the certificate files to start the installation.
+Note that this task does not start the installation. You must run subsequent calls to upload the license and the certificate files to start the installation.
 
 To upload the license and the certificate files, use the URLs returned in the JSON response. The `upload_key` represents the values of the keys: `license`, `certificate`, and `certificate_key`. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
+
+The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
+
+### POST /edge/configuration/domain
+
+Use this endpoint to change the domain name.
+
+During the process of changing the domain name, the certificate presented by the REST endpoints is changed from the certificate for the old domain to the certificate for the new domain. Polling using HTTPS to the old domain will make a secure connection until the certificate is updated to the new domain. After the certificate is updated, polling using HTTPS to the old domain will fail to make a secure connection and you should switch to polling using HTTPS to the new domain.
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/json
+
+**Request**
+
+```http
+POST https://myown.iot.com/edge/configuration/domain
+Content-Type: application/json
+
+	{
+    "domain_name": "new.domain.com",
+    "certificate": "upload" 
+	}
+```
+In the JSON format above, the value of `certificate` can be `generate` or `upload`.
+
+If the existing SSL certificate is compatible with the new domain name, you do not have to upload a new certificate nor will {{< product-c8y-iot >}} Edge generate one regardless of what you set as the value of `certificate`.
+
+**Response**
+
+The endpoint returns:
+
+- HTTP status 201, if the request is successful.
+
+
+		{
+		  "id":"1",
+		  "uploads":[
+			{"name":"licence","url":"https://myown.iot.com/edge/upload/4/licence"},
+			{"name":"certificate","url":"https://myown.iot.com/edge/upload/4/certificate"},
+			{"name":"certificate_key","url":"https://myown.iot.com/edge/upload/4/certificate_key"}
+		 ]
+		}
+	
+	If the new domain name is compatible with the existing license, the `uploads` array will not contain the `licence` entry.
+	
+	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
+	
+	The task starts immediately and can be polled if there are no uploads. For example, the response would not have an `uploads` key:
+	
+		{
+			"id":"1"
+		} 
+
+You must run subsequent calls to upload the license and the certificate files to change the domain name if the `uploads` array requires you to upload.
+
+To upload the license and the certificate files, use the URLs returned in the JSON response. For more information, see [Uploading files using REST APIs](/edge/rest-api/#uploading-files-using-rest-api).
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
@@ -483,6 +543,7 @@ If the certificate is self-signed:
 
 ```json
 {
+    "subject": "myown.iot.com",
     "signing_type": "self-signed",
     "expiry": "2019-04-26T05:28:52Z"
 }
@@ -494,13 +555,14 @@ If the certificate is not self-signed:
 
 ```json
 {
-    "signing_type": "not-self-signed",
+    "subject": "myown.iot.com",
+	"signing_type": "not-self-signed",
     "signed_by": "A-Certificate-Authority",
     "expiry": "2019-04-26T05:28:52Z"
 }
 ```
 
-The format of the `expiry` field is in the ISO format and is always in the UTC timezone.
+The format of the `expiry` field is in the ISO format and is always in the UTC time zone.
 
 ### POST /edge/configuration/certificate
 
@@ -589,10 +651,10 @@ The endpoint returns:
 - HTTP status 200.
 
 	    {
-			"id":"1",
-			"type":"network",
-			"status":"executing"
-		}
+	    	"id":"1",
+	    	"type":"network",
+	    	"status":"executing"
+	    }
 
 	The `type` refers to the type of task: `network`, `installation`, `hostname`, `remote-connectivity`, `certificate-renewal`, `microservices-state`, `update`, `time-sync`, `reboot`.
 

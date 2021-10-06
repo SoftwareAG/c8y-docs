@@ -4,9 +4,9 @@ title: Versions
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge "June 2021 release" uses the following versions:
+{{< product-c8y-iot >}} Edge "November 2021 release" uses the following versions:
 
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|
-|[{{< product-c8y-iot >}} platform](/concepts)|10.9.0|
-|[Streaming Analytics](/apama)|10.9.0|
+|[{{< product-c8y-iot >}} platform](/concepts)|{{< c8y-current-version >}}|
+|[Streaming Analytics](/apama)|{{< c8y-current-version >}}|

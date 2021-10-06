@@ -183,7 +183,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -226,7 +226,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -241,7 +241,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/#tag/Audits) in der {{< openapi >}}.
+Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
 
 
 ### Handhabung von Zeitzonen
@@ -564,7 +564,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

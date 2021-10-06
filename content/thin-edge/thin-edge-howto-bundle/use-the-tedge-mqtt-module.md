@@ -2,6 +2,7 @@
 weight: 40
 title: Use the tedge mqtt module
 layout: redirect
+opensource: true
 ---
 
 The thin-edge.io CLI provides a convenient way to debug and aid the development process.

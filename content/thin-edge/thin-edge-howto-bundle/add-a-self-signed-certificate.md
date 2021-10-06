@@ -2,6 +2,7 @@
 weight: 90
 title: Add a self-signed certificate to the trusted certificates list
 layout: redirect
+opensource: true
 ---
 
 ### Overview

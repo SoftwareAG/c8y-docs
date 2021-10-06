@@ -2,6 +2,7 @@
 weight: 80
 title: Device monitoring troubleshooting
 layout: redirect
+opensource: true
 ---
 
 To install and configure monitoring on your device,

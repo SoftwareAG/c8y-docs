@@ -2,6 +2,7 @@
 weight: 20
 title: Create a self-signed certificate
 layout: redirect
+opensource: true
 ---
 
 To create a new certificate you can use the thin-edge.io command [tedge cert create](/thin-edge/thin-edge-developer-tools/#create):

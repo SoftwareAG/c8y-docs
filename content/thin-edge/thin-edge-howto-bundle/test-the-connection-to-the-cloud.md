@@ -2,6 +2,7 @@
 weight: 60
 title: Test the connection to the cloud
 layout: redirect
+opensource: true
 ---
 
 We provide a way of testing the connection from your device to a cloud provider.

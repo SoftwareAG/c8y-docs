@@ -2,6 +2,7 @@
 weight: 80
 title: Package Manager Plugin API
 layout: redirect
+opensource: true
 ---
 
 Thin Edge uses plugins to delegate all the software management operations to the appropriate package managers and installers: installation of packages, uninstallations and queries.

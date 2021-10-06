@@ -2,6 +2,7 @@
 weight: 20
 title: Supported platforms
 layout: redirect
+opensource: true
 ---
 
 ### General

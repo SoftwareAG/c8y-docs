@@ -2,6 +2,7 @@
 weight: 60
 title: Architecture FAQ
 layout: redirect
+opensource: true
 ---
 
 ### Why is thin-edge.io an executable binary and not a library?

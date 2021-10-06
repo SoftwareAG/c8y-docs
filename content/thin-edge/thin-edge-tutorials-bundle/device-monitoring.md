@@ -2,6 +2,7 @@
 weight: 40
 title: Monitor your device with collectd
 layout: redirect
+opensource: true
 ---
 
 With thin-edge.io device monitoring, you can collect metrics from your device

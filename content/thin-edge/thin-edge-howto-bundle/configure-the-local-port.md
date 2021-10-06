@@ -2,6 +2,7 @@
 weight: 70
 title: Configure the local port
 layout: redirect
+opensource: true
 ---
 
 Configuring a mosquitto port in Thin Edge is a three step process.

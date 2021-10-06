@@ -20,7 +20,7 @@ To receive notifications over the 2.0 protocol, an application or microservice m
 For managed objects, an object's global identifier must be used to subscribe in the managed object ("mo") context in order to receive notifications.
 There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties.
 This subscribed object is known as the source object for the `notification/event` and it is referenced in the notifications delivered to subscribers.
-Subscriptions are set up using the [subscription method]({{cumulocity_domain}}/api/#section/#subscriptions) of the Notifications 2.0 API.
+Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
 When subscribing to notifications, a filter for notifications can be specified which determines which APIs (alarms, events, measurements, managed objects or any combination of these) to filter by.
@@ -28,10 +28,10 @@ It is also possible to filter by presence of a specific JSON fragment or "fragme
 When matched, either the whole notification content is forwarded or one or more fragments can be specified to be copied to the consumer.
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method]({{cumulocity_domain}}/api/#section/#tokens) of the Notifications 2.0 API.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-See the [{{< openapi >}}]({{cumulocity_domain}}/api/#section/#tokens) for both the Notification 2.0 Subscription and Token API.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) for both the Notification 2.0 Subscription and Token API.
 
 Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
 This protocol implements a reliable delivery with at-least-once semantics.
@@ -43,7 +43,7 @@ An additional context for subscribing to and receiving notifications, in additio
 Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
 This allows an application to discover a new managed object which it can then choose to subscribe to in the managed object context.
 It is also possible to subscribe to all alarms that are generated in the tenant context.
-See the [{{< openapi >}}]({{cumulocity_domain}}/api/#section/#subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers and notification ordering is maintained between the two contexts.
 

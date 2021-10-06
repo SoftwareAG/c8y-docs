@@ -24,4 +24,4 @@ For details refer to [Managing tenants](/users-guide/administration#tenants) in 
 
 A tenant can have multiple available applications but to use an application's functionality a subscription to the application must be established for the tenant. As an example, when a custom decoder microservice is available in the tenant's marketplace, it is not enabled to be used until the tenant subscribes for the microservice application.
 
-To see the list of subscribed applications for the tenant, {{< product-c8y-iot >}} Rest API can be used to get [specific tenant information](https://{{< domain-c8y >}}/api/#tag/Tenant-API). Those applications will be listed under the "applications" fragment.
+To see the list of subscribed applications for the tenant, {{< product-c8y-iot >}} Rest API can be used to get [specific tenant information](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API). Those applications will be listed under the "applications" fragment.

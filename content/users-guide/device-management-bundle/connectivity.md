@@ -25,7 +25,7 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
-Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](https://{{< domain-c8y >}}/api/#section/Device-management-library/Device-information) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library/Device-information) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
 |Requires|Jasper|Ericsson|Comarch|Kite|
 |:------|:-----|:-------|:------|:------|

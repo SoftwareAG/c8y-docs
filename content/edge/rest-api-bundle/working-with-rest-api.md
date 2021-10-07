@@ -448,7 +448,7 @@ Content-Type: application/json
 ```
 >**Important:** If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
 
-The servers must be NTP servers. If you specify multiple servers, any server specified in the configuration can be used for time synchronization.
+The servers must be NTP servers. If you specify multiple servers, any server specified in the configuration can be used for time synchronization. For more information about publicly available NTP servers, see https://www.ntppool.org/en.
 
 **Response**
 

@@ -415,7 +415,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 {{url}}/service/mlw/projects/{{projectID}}
 ```
 
-Delete the existing project. The response will be the list of remaining projects, and the delete operations happen in the bacground as a long running task. The delete operation removes all the other tasks related to the project and also removes the notebook assets as well.
+Delete the existing project. The response will be the list of remaining projects, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
 
 |HEADERS||
 |:---|:---|

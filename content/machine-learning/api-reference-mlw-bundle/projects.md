@@ -415,7 +415,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 {{url}}/service/mlw/projects/{{projectID}}
 ```
 
-Delete the existing project. The response will be the list of remaining projects, and the delete operations happens in the bacground as a long running task. The delete operation removes all the other tasks related to the project and also removes the notebook assets as well.
+Delete the existing project. The response will be the list of remaining projects, and the delete operations happen in the bacground as a long running task. The delete operation removes all the other tasks related to the project and also removes the notebook assets as well.
 
 |HEADERS||
 |:---|:---|
@@ -699,7 +699,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources
 ```
 
-Pulls all the resources from the C8Y inventory of the selected version of the project.
+Pulls all the resources from the {{ < product-c8y-iot > }} inventory of the selected version of the project.
 
 |HEADERS||
 |:---|:---|

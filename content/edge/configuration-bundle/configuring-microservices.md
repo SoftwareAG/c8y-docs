@@ -13,7 +13,7 @@ For more information about Device simulator, see [Working with simulators](/user
 If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
 - 10.96.0.0/12
 
-### Enabling or disabling the microservices hosting feature using the GUI
+### Enabling or disabling the microservice hosting feature using the UI
 
 1. Log in to the {{< management-tenant >}}.
 

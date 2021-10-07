@@ -6,7 +6,7 @@ layout: redirect
 
 You can expand the disk size of the installation disk and the data disk using the GUI and REST APIs. You can either expand the disk size for both the disks or any one of the disk at a time. There is no limit on the number of the disk expansion process. Before expanding the disk size, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
 
-### Expanding the disk size using the GUI
+### Expanding the disk size using the UI
 
 1. Shut down your Edge appliance.
 

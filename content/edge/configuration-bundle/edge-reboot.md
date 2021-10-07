@@ -6,7 +6,7 @@ layout: redirect
 
 Before restarting your Edge appliance, ensure that your appliance is in a safe state.
 
-### Restarting the Edge appliance using the GUI
+### Restarting the Edge appliance using the UI
 
 To restart your Edge appliance:
 

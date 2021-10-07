@@ -8,7 +8,7 @@ After a successful installation, you can reconfigure the network and also config
 
 >**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
 
-### Configuring the network using the GUI
+### Configuring the network using the UI
 
 1. Log in to the {{< management-tenant >}}.
 

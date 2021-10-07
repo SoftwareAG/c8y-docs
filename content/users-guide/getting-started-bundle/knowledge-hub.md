@@ -35,12 +35,12 @@ The first items of the list guide you in a step-by-step manner through the major
 |7 - View advanced analytics|Introduces you to analyzing your data using streaming and predictive analytics|
 |8 - Data integration and storage|Shows how to integrate IoT data with other apps across your organization|
 
->**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.  
+>**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.
 
 
 ### Feedback
 
-Below the introductory sessions in the Knowledge Hub list, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide written feedback too.
+Below the introductory sessions in the Knowledge Hub list, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide further written feedback.
 
 ![Knowledge Hub feedback](/images/users-guide/getting-started/getting-started-knowledge-hub-feedback.png)
 
@@ -50,7 +50,7 @@ Click **Resources** to switch to the **Resources** list.
 
 ![Knowledge Hub resources](/images/users-guide/getting-started/getting-started-knowledge-hub-resources.png)
 
-Here you can find links to various additional resources like documentation, training, developer resources, and release notes.
+Here you can find links to various additional resources like documentation, trainings, developer resources, and release notes.
 
 ### Communication
 

@@ -1,8 +1,10 @@
 ---
 weight: 70
-title: Production plan
+title: Production & Shift plan
 layout: redirect
 ---
+
+The optional Production & Shift plans control the way the OEE calculation is performed. They provide the baseline for the Availability & Performance calculation. More information about Production & Shift plans can be found in [Administration > Using a shift plan](/oee/oee-administration/#using-a-shift-plan) & [Administration > Enable a production plan](/oee/oee-administration/#enable-a-production-plan).
 
 ### What happens if a profile uses the production plan, but no production is deposited for a timespan?
 

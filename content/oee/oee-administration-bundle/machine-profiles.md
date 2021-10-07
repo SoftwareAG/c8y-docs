@@ -25,9 +25,54 @@ In the first step, you specify the profile name and type.
     At the right, you can select an existing machine profile to use its configuration as a template. After clicking **Save and proceed**, all settings will automatically be pre-populated with the configuration of the selected profile.
 
     **External profile**<br>
-    To integrate external OEE data. After setting goals for OEE, Availability, Performance and Quality the tethered external OEE data will be displayed without any calculation. It is not possible to set rules or a timeframe because there is no splitting. The incoming data from the external source will just be split and displayed.
+    To integrate external OEE data. It is not possible to define calculation rules or any other settings except the goals for OEE, Availability, Performance and Quality. The tethered external OEE data will be displayed without any calculation. Also no splitting takes place, so the intervals used in the incoming measurements should be configured to match the expectation.
 
-    >**Info:** For the tethered external OEE data, make sure that the format of the values is in accordance with the demands of the OEE application.
+	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements need to meet the following criteria:
+
+    **Type/Fragmenttype**
+
+    * "OEE"
+    * "Performance"
+    * "Availability"
+    * "Quality"
+    * "PotentialProductionTime"
+    * "IdealAmount
+    * "ActualProductionTime"
+    * "AvailabilityLossTime"
+    * "AvailabilityLossAmount"
+    * "IdealProductionAmount"
+    * "IdealMachineRuntime"
+    * "ActualProductionAmount"
+    * "PerformanceLossTime"
+    * "PerformanceLossAmount"
+    * "IdealQualityTime"
+    * "ActualQualityAmount"
+    * "QualityLossAmount"
+    * "QualityLossTime"
+    * "IdealCycleTime"
+    * "IdealCycleAmount"
+
+
+    **Series**  
+
+    * relates to the interval of the profile, so for example for a 10min interval, use "600s".
+
+
+	Here is a basic example in JSON notation:
+
+	```
+	{
+      "time": "2021-01-01T01:01:01.001Z",
+      "id": "123456789",
+      "type": "OEE",
+      "OEE": {
+        "600s": {
+          "unit": "",
+          "value": 99.306
+        }
+      }
+    }
+	```
 
 3. Click **Save and continue** to proceed.
 
@@ -58,7 +103,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan
 
 * PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
 
-For details, see the [Rest API documentation](/files/oee/index.html).
+For details, see the [REST API documentation](/files/oee/index.html).
 
 
 ### Workpiece

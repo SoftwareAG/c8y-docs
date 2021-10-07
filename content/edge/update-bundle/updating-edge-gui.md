@@ -20,6 +20,6 @@ To update Cumulocity IoT Edge:
 
 5. Upload the new Cumulocity IoT Edge archive file and click **Next**.
 
-7. Click **Update now**.
+7. Click **Update**.
 
 8. Restart your Edge appliance.

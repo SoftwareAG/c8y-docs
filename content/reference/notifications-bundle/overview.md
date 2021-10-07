@@ -49,11 +49,9 @@ The tenant context ("tenant") is used for subscribing to and receiving notificat
 Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
 This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
 It is also possible to subscribe to all alarms that are generated in the tenant context.
-<<<<<<< HEAD
-See the [{{< openapi >}}](https://{{< domain-c8y >}}/api/#tag/#Subscriptions) on how to subscribe to these notifications, and additionally filtering the notification of interest.
-=======
+
 See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
->>>>>>> develop
+
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
 

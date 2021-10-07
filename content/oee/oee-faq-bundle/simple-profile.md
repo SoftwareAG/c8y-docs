@@ -14,8 +14,9 @@ To get started with the OEE application, you have to create a profile to start t
 * **Matching**: Choose the desired calculation formula.
 	For this example the values could be the following:
 	* Actual Production Amount - Depending on your machine/simulator and the data it is sending, this could be something like counting events (e.g. "Piece_Produced")
+![Example for Actual Production Amount](/images/oee/faq/faq-actual-production-amount.png)
 	* Actual Production Time / Actual Quality Amount - To keep the profile simple, you can define the values to be 100% by comparing two fixed numbers, e.g. "1 = 1".
-![Example](/images/oee/faq/faq-actual-quality-amount.png)
+![Example for Actual Quality Amount](/images/oee/faq/faq-actual-quality-amount.png)
 * **Short stoppages**: We recommend to disable the tracking of short stoppages. For this example the tracking is disabled.
 * **Goals**:  Define the goal value in percent.
 

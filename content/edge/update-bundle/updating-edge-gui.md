@@ -20,6 +20,6 @@ To update {{< product-c8y-iot >}} Edge:
 
 5. Upload the new {{< product-c8y-iot >}} Edge archive file and click **Next**.
 
-7. Click **Update now**.
+7. Click **Update**.
 
 8. Restart your Edge appliance.

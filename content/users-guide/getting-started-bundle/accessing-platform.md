@@ -7,7 +7,7 @@ aliases:
   - /users-guide/getting-started/#accessing-cumulocity-platform
 ---
 
-You access the {{< product-c8y-iot >}} platform via a web browser. For details see [URL](#url)
+You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
 ### Supported browsers
 

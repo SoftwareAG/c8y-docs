@@ -721,7 +721,7 @@ Now download is possible with the self link provided inside the managedObjects s
 
 For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
 
-For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/#tag/Binaries) in the {{< openapi >}}.
+For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value

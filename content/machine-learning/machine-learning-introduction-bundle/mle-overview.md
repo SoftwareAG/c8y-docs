@@ -22,8 +22,8 @@ Starting with 10.11.0 release, Machine Learning Engine mandates users to have ce
 
 #### Machine Learning Admin
 
-Users with this global role assignment would have unlimited access to the Machine Learning Engine and can carry out all the operations that it provides.
-The table below shows the permissions such users would have.
+Users with the global role “Machine Learning Admin” would have unlimited access to the Machine Learning Engine and can carry out all the operations that it provides.
+The table below shows the permissions for users with this role.
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
@@ -32,22 +32,22 @@ The table below shows the permissions such users would have.
 
 #### Machine Learning User
 
-Users with this global role assignment would have limited access to Machine Learning Engine.
-Following are the operations which such users can perform - 
+Users with the global role “Machine Learning User” would have limited access to Machine Learning Engine.
+Users with this role can perform the following operations:
 * View models, resources, model groups, pipelines
 * View the properties of all the above mentioned artifacts
 * Use these artifacts to carry out predictions on their data
 * View the schdeduled jobs, their execution history and inferences
 
-This means that the users who have the **Machine Learning User** global role assigned can use the artifacts uploaded/created by the admin user(s).
+This means that users who have the **Machine Learning User** global role assigned can use the artifacts uploaded/created by the admin user(s).
 However, they cannot change the state of those artifacts.
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
 |Machine learning |yes|no|
 
-These pre-defined and pre-configured Machine Learning specific roles would appear under **Global roles** in the **Roles** page of the Administration application once the 'zementis' microservice is subscribed to version 10.11.0 and higher. If the roles already exist, then those would not be created.
+These pre-defined and pre-configured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the 'zementis' microservice is subscribed to version 10.11.0 and higher. If the roles already exist, they will not be created.
 
-To be able to leverage the Machine Learning Engine, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Engine or add new roles which should then include the necesary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) to know more about management of global roles.
+To be able to leverage the Machine Learning Engine, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Engine or add new roles which should then include the necesary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
 
-In case if the users do not have the permissions mentioned above, they would get *Access is denied* error while trying to access the Machine Learning application. Consumers of the REST APIs would see a `403 - Forbidden` too.
+If users do not have the permissions mentioned above, they will get an *Access is denied* error while trying to access the Machine Learning application. Consumers of the REST APIs will see a `403 - Forbidden` too.

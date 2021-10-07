@@ -514,7 +514,7 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/source" --header "Autho
 
 Get binary file containing serialized representation of the model.
 
-Note that this binary file downloaded from a particular version of zementis microservice can only be uploaded back to a zementis microservice of the same version.
+Note that this binary file downloaded from a particular version of Zementis microservice can only be uploaded back to a Zementis microservice of the same version.
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 

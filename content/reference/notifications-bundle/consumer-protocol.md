@@ -11,13 +11,13 @@ The {{< product-c8y-iot >}} Notifications 2.0 API uses a secure [WebSocket](http
 
 The new endpoint is accessible only using the external {{< product-c8y-iot >}} fully qualified domain name of your {{< product-c8y-iot >}} environment and the standard SSL port 443 using a secure WebSocket connection.
 
-The [URL scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
+The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
 
-The fixed URL path is */notifications2/consumer/*. There is only one required and one optional query string argument:
+The fixed URL path is <kbd>/notifications2/consumer/</kbd> and there are only two query string arguments:
 
-* **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
+* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
-* **Optional query string argument: consumer.** The name of this optional query string parameter is "consumer" and the value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
+* `consumer` (optional). Its value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
 
 In summary, the URLs used by consumers follow the following patterns:
 
@@ -28,7 +28,7 @@ wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2
 or
 
 ```
-wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=someUniqueNameForThisConsumer
+wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=aUniqueNameForThisConsumer
 ```
 
 The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding.
@@ -42,7 +42,7 @@ The end of the header is demarcated by a double new line `\n\n`.
 
 The notification body follows the header.
 This also consists of UTF text - for example a JSON document.
-If the notification is binary data or includes binary data then it will be [base 64 encoded](https://en.wikipedia.org/wiki/Base64).
+If the notification is binary data or includes binary data then it will be [Base64 encoded](https://en.wikipedia.org/wiki/Base64).
 
 The header lines for a notification are as follows (separated by `\n` newlines):
 
@@ -55,7 +55,7 @@ The header lines for a notification are as follows (separated by `\n` newlines):
 Depending on the second header there may be further headers to follow but currently notifications only use the above three.
 In order to be future proof and forward compatible, we encourage consumer code to cope with more headers by parsing them out but ignoring them.
 
-See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
+See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
 
 After the headers, the notification body follows as UTF-8 text.
 Typically a JSON document is carried in this text.
@@ -70,16 +70,16 @@ The second header line is the notification description string in the form of a `
 
 * sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
 
-Some examples are provided in [Traces](#traces) and backwards compatibility to realtime notifications is provided for.
-Also see other documentation, examples and experiment to get values for events that you are interested in.
+Some examples are provided in [Traces](#traces) and backwards compatibility to real-time notifications is provided for.
+
+Also see the rest of the documentation, examples and experiment to get values for events that you are interested in.
 
 ### Notification acknowledgement
 
-The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the notification2 service in a message acknowledgement.
+The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the Notification 2.0 service in a message acknowledgement.
 
-See the `hello-world-notification-microservice` example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
-It consists of sending the identifier back to the service in a self-contained WebSocket client to server message text message, i.e. send back the first header without the training `\n`.
-
+See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
+It consists of sending the identifier back to the service in a self-contained WebSocket text message, i.e. send back the first header without the training `\n` to the server.
 
 ### Dealing with notification duplication
 
@@ -93,7 +93,7 @@ Duplicates can also occur due to underlying network failures or perceived failur
 
 A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
 
-For example, in the logical sequence 1,2,3,4 notification 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3..2.
+For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3..2.
 
 The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.
@@ -102,8 +102,8 @@ But inventory UPDATES or logically sequenced events such as alarms and measureme
 This can be achieved by including unique identifiers, sequence numbers or timestamps in the notification JSON (body) as required.
 An alternative is to look up the current value in the {{< product-c8y-iot >}} database, treating the notification as a signal only and ignoring the value carried.
 
-As can be seen from the notification [traces](#traces), some notifications do carry timestamps.
-If the timestamps are not generated by the device client then they may only be loosely synchronized between notifications and therefore should be used carefully or not at all for de-duplication.
+As can be seen from the notification [Traces](#traces), some notifications do carry timestamps.
+If the timestamps are not generated by the device client, then they may only be loosely synchronized between notifications and therefore should be used carefully or not at all for de-duplication.
 
 ### Parallel consumers
 

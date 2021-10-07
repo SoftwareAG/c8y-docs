@@ -8,7 +8,7 @@ The new Notifications 2.0 API allows applications or microservices to receive an
 Currently, device management notifications equivalent to what is covered by real-time notifications are available, but delivered with at-least-once semantics over a new protocol.
 In the future, further platform events will be included as 2.0 notifications.
 
-This new Notifications 2.0 API supersedes the [Real-time notification API](https://{{< domain-c8y >}}/api/#tag/Real-time-notification-API), as it provides for stronger delivery semantics and ordering.
+This new Notifications 2.0 API supersedes the [Real-time notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API), as it provides for stronger delivery semantics and ordering.
 It is also intended to be simpler to use than the Bayeaux protocol used in the Real-time notification API.
 
 In the {{< product-c8y-iot >}} 10.11 release, Notifications 2.0 needs to be enabled in the platform as it depends on the new Messaging Service that currently is optional.
@@ -23,7 +23,7 @@ For managed objects, an object's global identifier must be used to subscribe in 
 There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties.
 
 This subscribed object is known as the source object for the <kdb>notification/event</kdb> and it is referenced in the notifications delivered to subscribers.
-Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#subscriptions) of the Notifications 2.0 API.
+Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
 When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, events, measurements, managed objects or any combination of these) to filter by.
@@ -32,10 +32,10 @@ When matched, either the whole notification content is forwarded, or one or more
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
 
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) of the Notifications 2.0 API.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) for both the Notification 2.0 Subscription and Token API.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
 
 Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
 This protocol implements a reliable delivery with at-least-once semantics.
@@ -50,7 +50,7 @@ Creations of managed objects, which generate a new object identifier that can ac
 This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
 It is also possible to subscribe to all alarms that are generated in the tenant context.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
 
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.

@@ -15,7 +15,7 @@ The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is
 
 The fixed URL path is <kbd>/notifications2/consumer/</kbd> and there are only two query string arguments:
 
-* **Required query string argument: token.** The name of this query string parameter is "token" and the value must be a valid token in the form of a JWT token string as returned by a create token request to the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#section/#tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
+* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
 * `consumer` (optional). Its value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
 
@@ -76,11 +76,10 @@ Also see the rest of the documentation, examples and experiment to get values fo
 
 ### Notification acknowledgement
 
-
-The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the notification 2.0 service in a message acknowledgement.
+The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the Notification 2.0 service in a message acknowledgement.
 
 See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
-It consists of sending the identifier back to the service in a self-contained WebSocket message text message, i.e. send back the first header without the training `\n` to the server.
+It consists of sending the identifier back to the service in a self-contained WebSocket text message, i.e. send back the first header without the training `\n` to the server.
 
 ### Dealing with notification duplication
 

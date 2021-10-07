@@ -29,7 +29,7 @@ To install {{< product-c8y-iot >}} Edge using the GUI:
 
 	>**Important:** Do not use the root credentials to perform any task.
 
-8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}},and click **Next**.
+8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 
 9. Provide a fully qualified domain name below **Register domain**.
 

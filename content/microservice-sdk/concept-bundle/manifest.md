@@ -219,8 +219,8 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Minimal requirements for number of CPUs or CPU time, should be less or equal than 250m. <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 250m|No
-|memory|String |Minimal requirements for microservice memory usage, should be less or equal than 256M <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Minimal requirements for number of CPUs or CPU time  <br>Default: 250m|No
+|memory|String |Minimal requirements for microservice memory usage <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option
 

@@ -436,11 +436,11 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) and in the [Sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) and in the [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library).
 
 Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-sdk/rest) in the Device SDK guide).
 
-Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
+Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
 #### Querying readings from sensors
 
@@ -481,7 +481,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 
 #### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/device-sdk/rest#device-integration) of the Device SDK guide.
+To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/device-sdk/rest#device-integration) of the *Device SDK guide*.
 
 ```http
 POST /devicecontrol/operations
@@ -534,7 +534,7 @@ from EventCreated e
 where e.event.type = "c8y_LocationUpdate";
 ```
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](https://{{< domain-c8y >}}/api/#tag/Real-time-notification-API) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](https://{{< domain-c8y >}}/api/#tag/Real-time-notification-API) in the {{< openapi >}}. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}}. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
 POST /cep/notifications

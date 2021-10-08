@@ -11,7 +11,7 @@ All input streams share the same base structure.
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
 |_type|String|The type of the event. See the table below which value types can be used for different streams.|
-|_mode|String|The processing mode in which the data was sent to {{< product-c8y-iot >}}. See <b>Processing mode</b> in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/#section/REST-implementation/HTTP-usage).|
+|_mode|String|The processing mode in which the data was sent to {{< product-c8y-iot >}}. See <b>Processing mode</b> in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage).|
 |_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 

@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in the [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) and in the [Sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library) in the {{< openapi >}}.
+Reference models for the data can be found in the [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) and in the [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) in the {{< openapi >}}.
 
 
 ### Startup Phase
@@ -84,7 +84,7 @@ If the valid tenant URL is known (e.g. *xyz.{{< domain-c8y >}}* in the example a
 
 #### Step 1: Check if the device is already registered
 
-The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](https://{{< domain-c8y >}}/api/#tag/Identity-API). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
+The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Identity-API). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
 
 To check if a device is already registered, use a GET request on the identity API using the device identifier and its type. The following example shows a check for a Raspberry Pi with hardware serial "0000000017b769d5".
 
@@ -197,7 +197,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to the [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) in the {{< openapi >}}.
+For more information, refer to the [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) in the {{< openapi >}}.
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
@@ -327,7 +327,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time data in {{< product-c8y-iot >}} is described in [Real-time notification API](https://{{< domain-c8y >}}/api/#tag/Real-time-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time data in {{< product-c8y-iot >}} is described in [Real-time notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json

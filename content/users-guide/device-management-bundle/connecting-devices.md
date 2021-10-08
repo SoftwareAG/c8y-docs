@@ -132,6 +132,6 @@ For your convenience, we provide CSV template files for both bulk registration t
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to
-[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
+[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
 
 >**Info:** In an {{< enterprise-tenant >}} you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the {{< management-tenant >}}.

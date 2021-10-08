@@ -211,7 +211,7 @@ Managed objects can be “smart objects” such as smart electricity meters, hom
 <a name="mgm-tenant"></a>
 ### Management tenant
 The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} tenant hierarchy.
-Every {{< product-c8y-iot >}} deployment is delivered with a Management tenant. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
+Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 See also [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant)
 
 <a name=""></a>

@@ -40,22 +40,32 @@ curl --location --request GET '{{url}}/service/mlw/projects'
 200 - OK
 
 {
-   {'data': [{'id': '1600926359_Project',
-   'name': 'Casting defect',
-   'description': 'Casting defect use-case',
-   'createdAt': 'Thu Sep 24 05:45:59 2020',
-   'properties': [],
-   'isModified': True,
-   'isFreeze': False,
-   'selectedVersion': '',
-   'versions': [],
-   'resourcesCount': {'data': 3,
-    'model': 0,
-    'code': 2,
-    'workflow': 0,
-    'pipeline': 0,
-    'nn-designer': 1,
-    'totalCount': 6}},]}
+    "data": [
+        {
+            "id": "1631773118_Project",
+            "name": "MLW Testing Trial",
+            "description": "Regression tests",
+            "createdAt": "2021-09-16T06:18:38.193833Z",
+            "properties": [],
+            "isModified": true,
+            "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v0",
+            "versions": [
+                "v0"
+            ],
+            "resourcesCount": {
+                "data": 15,
+                "model": 15,
+                "code": 25,
+                "workflow": 0,
+                "pipeline": 0,
+                "nn-designer": 5,
+                "totalCount": 60
+            }
+        }
+    ]
+}
 ```
 
 **Example Request**
@@ -103,7 +113,7 @@ Creates a new project with given project name and description.
 curl --location --request POST '{{url}}/service/mlw/projects' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"name":"ExampleProject","description":"A dummy project"}'
+--data-raw '{"name":"Sample Project","description":"A dummy project"}'
 ```
 
 **Example Response**
@@ -112,13 +122,14 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 200 - OK
 
 {
-    "id": "1601283001_Project",
-    "name": "ExampleProject",
+    "id": "1631774924_Project",
+    "name": "Sample Project",
     "description": "A dummy project",
-    "createdAt": "Mon Sep 28 08:50:01 2020",
+    "createdAt": "2021-09-16T06:48:44.995815Z",
     "properties": [],
     "isModified": true,
     "isFreeze": false,
+    "isFreezeProjectPull": false,
     "selectedVersion": "",
     "versions": [],
     "resourcesCount": {
@@ -140,7 +151,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 
 curl --location --request POST '{{url}}/service/mlw/projects' \
 --header 'Content-Type: text/plain' \
---data-raw '{"name":"ExampleProject","description":"A dummy project"}'
+--data-raw '{"name":"Sample Project","description":"A dummy project"}'
 ```
 
 **Example Response**
@@ -163,7 +174,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 curl --location --request POST '{{url}}/service/mlw/projects' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"name":"ExampleProject","description":"A dummy project"}'
+--data-raw '{"name":"Sample Project","description":"A dummy project"}'
 ```
 **Example Response**
 
@@ -183,7 +194,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 {{url}}/service/mlw/projects/{{projectID}}/commit
 ```
 
-Commit the resources of project for version control.
+Commit the resources of project for version control. The response will be a long running task which runs in the background.
 
 |HEADERS||
 |:---|:---|
@@ -203,7 +214,7 @@ Commit the resources of project for version control.
 curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
---data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
+--data-raw '{"listOfResources":["1631777710_0928_Resource","1631777752_0720_Resource"]}'
 ```
 
 **Example Response**
@@ -212,52 +223,52 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 200 - OK
 
 {
-    "id": "1601506976_Tasks",
-    "name": "commitProject",
-    "createdAt": "Wed Sep 30 23:02:56 2020",
-    "type": "COMMIT",
+    "id": "1631777908_Tasks",
+    "name": "Sample Project",
+    "createdAt": "2021-09-16T07:38:28.712732Z",
+    "type": "COMMIT/PULL",
     "cronExpression": "",
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1601506976_0914_Commit",
-            "pID": "68",
-            "status": "COMPLETED",
-            "message": "Version saved in Inventory",
-            "tasksID": "1601506976_Tasks",
-            "taskName": "commitProject",
-            "type": "COMMIT",
-            "executedAt": "Wed Sep 30 23:02:56 2020",
-            "projectID": "1600753202_Project",
-            "versionNumber": "v2"
-        },
-        {
-            "id": "1601507162_0344_Commit",
-            "pID": "69",
+            "id": "1631777908_0957_Commit",
+            "pID": "140104349759232",
             "status": "RUNNING",
-            "message": "In Progress",
-            "tasksID": "1601506976_Tasks",
-            "taskName": "commitProject",
-            "type": "COMMIT",
-            "executedAt": "Wed Sep 30 23:06:02 2020",
-            "projectID": "1600753202_Project",
-            "versionNumber": "v3"
+            "message": "In progress",
+            "tasksID": "1631777908_Tasks",
+            "taskName": "Sample Project",
+            "type": "COMMIT/PULL",
+            "executedAt": "2021-09-16T07:38:28.712732Z",
+            "projectID": "1631774924_Project",
+            "versionNumber": "v0",
+            "properties": [
+                {
+                    "key": "verison",
+                    "label": "Version",
+                    "value": "v0"
+                },
+                {
+                    "key": "output",
+                    "label": "Resources Commited to the Inventory",
+                    "value": "admissions.csv\nirisDataset.csv"
+                }
+            ]
         }
     ],
-    "projectID": "1600753202_Project",
-    "projectName": "commitProject",
+    "projectID": "1631774924_Project",
+    "projectName": "Sample Project",
     "properties": [
         {
             "key": "verison",
             "label": "Version",
-            "value": "v3"
+            "value": "v0"
         }
     ],
     "recurrence": "ONE_TIME",
     "startDate": "",
     "startTimeH": "",
     "startTimeM": "",
-    "sortTime": 1601507162
+    "sortTime": 1631777908
 }
 ```
 
@@ -323,7 +334,7 @@ Updates the exiting project name and description with given new project name and
 ```
 201 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
@@ -335,13 +346,14 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 201 - OK
 
 {
-    "id": "1601507741_Project",
+    "id": "1631774924_Project",
     "name": "ProjectNameChanged",
-    "description": "A dummy project New",
-    "createdAt": "Wed Sep 30 23:15:41 2020",
+    "description": "A dummy project",
+    "createdAt": "2021-09-16T06:48:44.995815Z",
     "properties": [],
     "isModified": true,
     "isFreeze": false,
+    "isFreezeProjectPull": false,
     "selectedVersion": "",
     "versions": [],
     "resourcesCount": {
@@ -403,7 +415,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 {{url}}/service/mlw/projects/{{projectID}}
 ```
 
-Delete the existing project.
+Delete the existing project. The response will be the list of remaining projects, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
 
 |HEADERS||
 |:---|:---|
@@ -431,35 +443,29 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {
     "data": [
         {
-            "type": "MLWData",
-            "lastUpdated": "2020-09-22T11:18:29.399Z",
-            "name": "Vinay",
-            "createdAt": "Tue Sep 15 08:46:29 2020",
-            "selectedVersion": "v2",
-            "description": "Vinay project",
-            "resourcesCount": {
-                "data": 0,
-                "model": 9,
-                "code": 2,
-                "workflow": 4,
-                "pipeline": 1,
-                "nn-designer": 1,
-                "totalCount": 17
-            },
-            "projectID": "1600159589_Project",
+            "id": "1631773118_Project",
+            "name": "MLW Testing Trial",
+            "description": "Regression tests",
+            "createdAt": "2021-09-16T06:18:38.193833Z",
             "properties": [],
-            "versionNumber": "v2",
-            "1600159589_Project": {},
-            "id": "1600159589_Project",
             "isModified": false,
             "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v1",
             "versions": [
                 "v0",
-                "v1",
-                "v2"
-            ]
-        },
-
+                "v1"
+            ],
+            "resourcesCount": {
+                "data": 38,
+                "model": 27,
+                "code": 26,
+                "workflow": 12,
+                "pipeline": 3,
+                "nn-designer": 5,
+                "totalCount": 111
+            }
+        }
     ]
 }
 ```
@@ -508,7 +514,7 @@ Retrieves the list of files available in the project. It contains info related t
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -517,244 +523,73 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 ```
 200 - OK
 
-{'type': 'MLWData',
- 'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'sampleDemo',
- 'createdAt': 'Tue Sep 22 04:56:05 2020',
- 'selectedVersion': 'v2',
- 'description': 'sample Bottles NN IC Demo',
- 'resources': {'data': [{'id': '1600829327_0380_Resource',
-    'name': 'P.Zero.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/P.Zero.jpg',
-    'size': 38797,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600829336_0326_Resource',
-    'name': 'predicted_P_1600829336.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_P_1600829336.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600751893_0717_Resource',
-    'name': 'MD.Diet.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Diet.jpg',
-    'size': 42146,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600750617_0744_Resource',
-    'name': 'sample.zip',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/sample.zip',
-    'size': 22655457,
-    'mimeType': 'application/zip',
-    'extension': '.zip',
-    'category': 'Data'},
-   {'id': '1600828823_0064_Resource',
-    'name': 'predicted_MD_1600828823.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600828823.json',
-    'size': 220,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600829185_0391_Resource',
-    'name': 'predicted_M_1600829185.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_M_1600829185.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600829163_1000_Resource',
-    'name': 'M.Beer.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/M.Beer.jpg',
-    'size': 43025,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1601012074_0042_Resource',
-    'name': 'predicted_M_1601012074.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 05:34:34 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_M_1601012074.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1601012139_0815_Resource',
-    'name': 'predicted_P_1601012139.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 05:35:39 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_P_1601012139.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'}],
-  'model': [{'id': '1600751811_0233_Resource',
-    'name': 'sampleNewDemo_1600751365.onnx',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
-    'size': 8296336,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True},
-   {'id': '1600754440_0307_Resource',
-    'name': 'sampleBottleModel_1600753902.onnx',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleBottleModel_1600753902.onnx',
-    'size': 8296340,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
-    'name': 'samplePost.py',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
-    'size': 260,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'},
-   {'id': '1600751640_0643_Resource',
-    'name': 'samplePre.py',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePre.py',
-    'size': 278,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'}],
-  'pipeline': [{'id': '1600828801_0334_Resource',
-    'name': 'samplePipeline.pipeline',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [{'label': 'ONNX Model',
-      'value': 'sampleBottleModel_1600753902.onnx',
-      'key': 'modelID'},
-     {'label': 'Pre-Processing Script',
-      'value': 'samplePre.py',
-      'key': 'preProcessingID'},
-     {'label': 'Post-Processing Script',
-      'value': 'samplePost.py',
-      'key': 'postProcessingID'}],
-    'editedAt': '',
-    'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/samplePipeline.pipeline',
-    'size': 134,
-    'mimeType': 'application/PIPELINE',
-    'extension': '.pipeline',
-    'category': 'Pipeline',
-    'deployed': False}],
-  'workflow': [],
-  'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'sample.architecture',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
-    'size': 17176,
-    'mimeType': 'application/ARCHITECTURE',
-    'extension': '.architecture',
-    'category': 'NN-Designer'}]},
- 'resourcesCount': {'data': 9,
-  'model': 2,
-  'code': 2,
-  'workflow': 0,
-  'pipeline': 1,
-  'nn-designer': 1,
-  'totalCount': 15},
- 'projectID': '1600750565_Project',
- 'properties': [],
- 'versionNumber': 'v1',
- '1600750565_Project': {},
- 'id': '1600750565_Project',
- 'isModified': True,
- 'isFreeze': False,
- 'versions': ['v0', 'v1', 'v2']}
+{
+    "id": "1631779101_Project",
+    "name": "Sample Project",
+    "description": "A dummy project",
+    "createdAt": "2021-09-16T07:58:21.293930Z",
+    "properties": [],
+    "isModified": true,
+    "isFreeze": false,
+    "isFreezeProjectPull": false,
+    "selectedVersion": "",
+    "versions": [],
+    "resources": {
+        "data": [
+            {
+                "id": "1631779109_0780_Resource",
+                "name": "irisDataset.csv",
+                "description": "",
+                "createdAt": "2021-09-16T07:58:29.494787Z",
+                "properties": [
+                    {
+                        "key": "numberOfRows",
+                        "label": "Number of Rows",
+                        "value": 150
+                    },
+                    {
+                        "key": "numberOfColumns",
+                        "label": "Number of Columns",
+                        "value": 5
+                    },
+                    {
+                        "key": "columnNames",
+                        "label": "Column Names",
+                        "value": [
+                            "col1",
+                            "col2",
+                            "col3",
+                            "col4",
+                            "target"
+                        ]
+                    }
+                ],
+                "editedAt": "",
+                "type": "CSV",
+                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
+                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "size": 2878,
+                "mimeType": "text/csv",
+                "extension": ".csv",
+                "category": "Data"
+            }
+        ],
+        "model": [],
+        "code": [],
+        "pipeline": [],
+        "workflow": [],
+        "nn-designer": []
+    },
+    "resourcesCount": {
+        "data": 1,
+        "model": 0,
+        "code": 0,
+        "workflow": 0,
+        "pipeline": 0,
+        "nn-designer": 0,
+        "totalCount": 1
+    }
+}
 ```
 ### GET - Refresh the list of resources in a project
 
@@ -779,7 +614,7 @@ Scans the project structure to list any un-reported file in the system, which wo
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?refresh=true' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?refresh=true' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -788,244 +623,73 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 ```
 200 - OK
 
-{'type': 'MLWData',
- 'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'sampleDemo',
- 'createdAt': 'Tue Sep 22 04:56:05 2020',
- 'selectedVersion': 'v2',
- 'description': 'sample Bottles NN IC Demo',
- 'resources': {'data': [{'id': '1600829327_0380_Resource',
-    'name': 'P.Zero.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/P.Zero.jpg',
-    'size': 38797,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600829336_0326_Resource',
-    'name': 'predicted_P_1600829336.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_P_1600829336.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600751893_0717_Resource',
-    'name': 'MD.Diet.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Diet.jpg',
-    'size': 42146,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600750617_0744_Resource',
-    'name': 'sample.zip',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/sample.zip',
-    'size': 22655457,
-    'mimeType': 'application/zip',
-    'extension': '.zip',
-    'category': 'Data'},
-   {'id': '1600828823_0064_Resource',
-    'name': 'predicted_MD_1600828823.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600828823.json',
-    'size': 220,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600829185_0391_Resource',
-    'name': 'predicted_M_1600829185.json',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_M_1600829185.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600829163_1000_Resource',
-    'name': 'M.Beer.jpg',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/M.Beer.jpg',
-    'size': 43025,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1601012074_0042_Resource',
-    'name': 'predicted_M_1601012074.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 05:34:34 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_M_1601012074.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1601012139_0815_Resource',
-    'name': 'predicted_P_1601012139.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 05:35:39 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_P_1601012139.json',
-    'size': 229,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'}],
-  'model': [{'id': '1600751811_0233_Resource',
-    'name': 'sampleNewDemo_1600751365.onnx',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
-    'size': 8296336,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True},
-   {'id': '1600754440_0307_Resource',
-    'name': 'sampleBottleModel_1600753902.onnx',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:25 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleBottleModel_1600753902.onnx',
-    'size': 8296340,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
-    'name': 'samplePost.py',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
-    'size': 260,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'},
-   {'id': '1600751640_0643_Resource',
-    'name': 'samplePre.py',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePre.py',
-    'size': 278,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'}],
-  'pipeline': [{'id': '1600828801_0334_Resource',
-    'name': 'samplePipeline.pipeline',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [{'label': 'ONNX Model',
-      'value': 'sampleBottleModel_1600753902.onnx',
-      'key': 'modelID'},
-     {'label': 'Pre-Processing Script',
-      'value': 'samplePre.py',
-      'key': 'preProcessingID'},
-     {'label': 'Post-Processing Script',
-      'value': 'samplePost.py',
-      'key': 'postProcessingID'}],
-    'editedAt': '',
-    'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/samplePipeline.pipeline',
-    'size': 134,
-    'mimeType': 'application/PIPELINE',
-    'extension': '.pipeline',
-    'category': 'Pipeline',
-    'deployed': False}],
-  'workflow': [],
-  'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'sample.architecture',
-    'description': '',
-    'createdAt': 'Thu Sep 24 09:05:24 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
-    'size': 17176,
-    'mimeType': 'application/ARCHITECTURE',
-    'extension': '.architecture',
-    'category': 'NN-Designer'}]},
- 'resourcesCount': {'data': 9,
-  'model': 2,
-  'code': 2,
-  'workflow': 0,
-  'pipeline': 1,
-  'nn-designer': 1,
-  'totalCount': 15},
- 'projectID': '1600750565_Project',
- 'properties': [],
- 'versionNumber': 'v1',
- '1600750565_Project': {},
- 'id': '1600750565_Project',
- 'isModified': True,
- 'isFreeze': False,
- 'versions': ['v0', 'v1', 'v2']}
+{
+    "id": "1631779101_Project",
+    "name": "Sample Project",
+    "description": "A dummy project",
+    "createdAt": "2021-09-16T07:58:21.293930Z",
+    "properties": [],
+    "isModified": true,
+    "isFreeze": false,
+    "isFreezeProjectPull": false,
+    "selectedVersion": "",
+    "versions": [],
+    "resources": {
+        "data": [
+            {
+                "id": "1631779109_0780_Resource",
+                "name": "irisDataset.csv",
+                "description": "",
+                "createdAt": "2021-09-16T07:58:29.494787Z",
+                "properties": [
+                    {
+                        "key": "numberOfRows",
+                        "label": "Number of Rows",
+                        "value": 150
+                    },
+                    {
+                        "key": "numberOfColumns",
+                        "label": "Number of Columns",
+                        "value": 5
+                    },
+                    {
+                        "key": "columnNames",
+                        "label": "Column Names",
+                        "value": [
+                            "col1",
+                            "col2",
+                            "col3",
+                            "col4",
+                            "target"
+                        ]
+                    }
+                ],
+                "editedAt": "",
+                "type": "CSV",
+                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
+                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "size": 2878,
+                "mimeType": "text/csv",
+                "extension": ".csv",
+                "category": "Data"
+            }
+        ],
+        "model": [],
+        "code": [],
+        "pipeline": [],
+        "workflow": [],
+        "nn-designer": []
+    },
+    "resourcesCount": {
+        "data": 1,
+        "model": 0,
+        "code": 0,
+        "workflow": 0,
+        "pipeline": 0,
+        "nn-designer": 0,
+        "totalCount": 1
+    }
+}
 ```
 
 
@@ -1035,7 +699,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources
 ```
 
-Pulls all the resources from the C8Y inventory of the selected version of the project.
+Pulls all the resources from the {{ < product-c8y-iot > }} inventory of the selected version of the project.
 
 |HEADERS||
 |:---|:---|
@@ -1052,7 +716,7 @@ Pulls all the resources from the C8Y inventory of the selected version of the pr
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1061,168 +725,102 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 ```
 200 - OK
 
-{'type': 'MLWData',
- 'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'sampleDemo',
- 'createdAt': 'Tue Sep 22 04:56:05 2020',
- 'selectedVersion': 'v0',
- 'description': 'sample Bottles NN IC Demo',
- 'resources': {'data': [{'id': '1600753567_0365_Resource',
-    'name': 'MD.Orig.jpg',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Orig.jpg',
-    'size': 39675,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600751893_0717_Resource',
-    'name': 'MD.Diet.jpg',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Diet.jpg',
-    'size': 42146,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   {'id': '1600753267_0571_Resource',
-    'name': 'predicted_MD_1600753267.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753267.json',
-    'size': 222,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'},
-   {'id': '1600750617_0744_Resource',
-    'name': 'sample.zip',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/sample.zip',
-    'size': 22655457,
-    'mimeType': 'application/zip',
-    'extension': '.zip',
-    'category': 'Data'},
-   {'id': '1600753576_0003_Resource',
-    'name': 'predicted_MD_1600753576.json',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [{'key': 'numberOfobjects',
-      'label': 'Number of Objects',
-      'value': 2},
-     {'key': 'keysInJson',
-      'label': 'keys in Dictionary',
-      'value': ['Dense3', 'PredictedClass']}],
-    'editedAt': '',
-    'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753576.json',
-    'size': 235,
-    'mimeType': 'application/json',
-    'extension': '.json',
-    'category': 'Data'}],
-  'model': [{'id': '1600751811_0233_Resource',
-    'name': 'sampleNewDemo_1600751365.onnx',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
-    'size': 8296336,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
-    'name': 'samplePost.py',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
-    'size': 260,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'},
-   {'id': '1600751640_0643_Resource',
-    'name': 'samplePre.py',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePre.py',
-    'size': 278,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'}],
-  'pipeline': [{'id': '1600753248_0497_Resource',
-    'name': 'samplePipe.pipeline',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [{'label': 'ONNX Model',
-      'value': 'sampleNewDemo_1600751365.onnx',
-      'key': 'modelID'},
-     {'label': 'Pre-Processing Script',
-      'value': 'samplePre.py',
-      'key': 'preProcessingID'},
-     {'label': 'Post-Processing Script',
-      'value': 'samplePost.py',
-      'key': 'postProcessingID'}],
-    'editedAt': '',
-    'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
-    'size': 134,
-    'mimeType': 'application/PIPELINE',
-    'extension': '.pipeline',
-    'category': 'Pipeline',
-    'deployed': True}],
-  'workflow': [],
-  'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'sample.architecture',
-    'description': '',
-    'createdAt': 'Fri Sep 25 09:49:29 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
-    'size': 17176,
-    'mimeType': 'application/ARCHITECTURE',
-    'extension': '.architecture',
-    'category': 'NN-Designer'}]},
- 'resourcesCount': {'data': 5,
-  'model': 1,
-  'code': 2,
-  'workflow': 0,
-  'pipeline': 1,
-  'nn-designer': 1,
-  'totalCount': 10},
- 'projectID': '1600750565_Project',
- 'properties': [],
- 'versionNumber': 'v1',
- '1600750565_Project': {},
- 'id': '1600750565_Project',
- 'isModified': True,
- 'isFreeze': False,
- 'versions': ['v0', 'v1', 'v2']}
+{
+    "id": "1631780828_Tasks",
+    "name": "Sample Project",
+    "createdAt": "2021-09-16T08:27:08.878904Z",
+    "type": "COMMIT/PULL",
+    "cronExpression": "",
+    "status": "Not Scheduled",
+    "individualTasks": [
+        {
+            "id": "1631780828_0963_Commit",
+            "pID": "140106208573184",
+            "status": "RUNNING",
+            "message": "In progress",
+            "tasksID": "1631780828_Tasks",
+            "taskName": "Sample Project",
+            "type": "COMMIT/PULL",
+            "executedAt": "2021-09-16T08:27:08.878904Z",
+            "projectID": "1631779101_Project",
+            "versionNumber": "v0",
+            "properties": [
+                {
+                    "key": "verison",
+                    "label": "Version",
+                    "value": "v0"
+                },
+                {
+                    "key": "output",
+                    "label": "Resources Commited to the Inventory",
+                    "value": "irisDataset.csv"
+                }
+            ]
+        },
+        {
+            "id": "1631780859_0744_Commit",
+            "pID": "140106208573184",
+            "status": "RUNNING",
+            "message": "In progress",
+            "tasksID": "1631780828_Tasks",
+            "taskName": "Sample Project",
+            "type": "COMMIT/PULL",
+            "executedAt": "2021-09-16T08:27:39.810531Z",
+            "projectID": "1631779101_Project",
+            "versionNumber": "v1",
+            "properties": [
+                {
+                    "key": "verison",
+                    "label": "Version",
+                    "value": "v1"
+                },
+                {
+                    "key": "output",
+                    "label": "Resources Commited to the Inventory",
+                    "value": "irisDataset.csv\nadmissions.csv"
+                }
+            ]
+        },
+        {
+            "id": "1631780908_0710_Pull",
+            "status": "RUNNING",
+            "message": "In progress",
+            "tasksID": "1631780828_Tasks",
+            "taskName": "Sample Project",
+            "type": "COMMIT/PULL",
+            "executedAt": "2021-09-16T08:28:28.709415Z",
+            "projectID": "1631779101_Project",
+            "versionNumber": "v0",
+            "properties": [
+                {
+                    "key": "verison",
+                    "label": "Version",
+                    "value": "v0"
+                },
+                {
+                    "key": "output",
+                    "label": "Resources Pulled from Inventory",
+                    "value": "nameOfFiles"
+                }
+            ],
+            "pID": "140106208573184"
+        }
+    ],
+    "projectID": "1631779101_Project",
+    "projectName": "Sample Project",
+    "properties": [
+        {
+            "key": "verison",
+            "label": "Version",
+            "value": "v0"
+        }
+    ],
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "sortTime": 1631780908
+}
 ```
 
 **Example Request**
@@ -1230,7 +828,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0'
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0'
 ```
 
 **Example Response**
@@ -1269,7 +867,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/resources' \
 --header 'Authorization: {{auth}}' \
 --form 'file=@/../../iris Dataset.csv'
 ```
@@ -1280,22 +878,23 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 200 - OK
 
 {
-    "id": "1601283001_Project",
-    "name": "ExampleProject",
+    "id": "1631774924_Project",
+    "name": "Sample Project",
     "description": "A dummy project",
-    "createdAt": "Mon Sep 28 08:50:01 2020",
+    "createdAt": "2021-09-16T06:48:44.995815Z",
     "properties": [],
     "isModified": true,
     "isFreeze": false,
+    "isFreezeProjectPull": false,
     "selectedVersion": "",
     "versions": [],
     "resources": {
         "data": [
             {
-                "id": "1601283851_0844_Resource",
-                "name": "iris Dataset.csv",
+                "id": "1631777752_0720_Resource",
+                "name": "irisDataset.csv",
                 "description": "",
-                "createdAt": "Mon Sep 28 09:04:11 2020",
+                "createdAt": "2021-09-16T07:35:52.294740Z",
                 "properties": [
                     {
                         "key": "numberOfRows",
@@ -1321,7 +920,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1601283001_Project/Data/iris Dataset.csv",
+                "url": "./MLW/1631774924_Project/Data/irisDataset.csv",
+                "downloadUrl": "/download/1631774924_Project/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1457,7 +1057,7 @@ To create a new pipeline file.
 ```
 200 - OK
 
-curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
@@ -1468,12 +1068,21 @@ curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/
 ```
 200 - OK
 
-{'type': 'MLWData',
- 'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'sampleDemo',
- 'createdAt': 'Tue Sep 22 04:56:05 2020',
- 'selectedVersion': 'v0',
- 'description': 'sample Bottles NN IC Demo',
+
+
+{ "id": "1631779101_Project",
+    "name": "Sample Project",
+    "description": "A dummy project",
+    "createdAt": "2021-09-16T07:58:21.293930Z",
+    "properties": [],
+    "isModified": true,
+    "isFreeze": false,
+    "isFreezeProjectPull": false,
+    "selectedVersion": "v0",
+    "versions": [
+        "v0",
+        "v1"
+    ],
  'resources': {'data': [{'id': '1600753567_0365_Resource',
     'name': 'MD.Orig.jpg',
     'description': '',
@@ -1639,15 +1248,8 @@ curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/
   'workflow': 0,
   'pipeline': 1,
   'nn-designer': 1,
-  'totalCount': 11},
- 'projectID': '1600750565_Project',
- 'properties': [],
- 'versionNumber': 'v1',
- '1600750565_Project': {},
- 'id': '1600750565_Project',
- 'isModified': True,
- 'isFreeze': False,
- 'versions': ['v0', 'v1', 'v2']}
+  'totalCount': 11}
+}
 
 ```
 
@@ -1656,7 +1258,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
 ```
@@ -1697,7 +1299,7 @@ Gets the details of a resource file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1707,40 +1309,20 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 200 - OK
 
 {
-    "id": "1601283851_0844_Resource",
-    "name": "iris Dataset.csv",
+    "id": "1631781323_0128_Resource",
+    "name": "samplePY.py",
     "description": "",
-    "createdAt": "Mon Sep 28 09:04:11 2020",
-    "properties": [
-        {
-            "key": "numberOfRows",
-            "label": "Number of Rows",
-            "value": 150
-        },
-        {
-            "key": "numberOfColumns",
-            "label": "Number of Columns",
-            "value": 5
-        },
-        {
-            "key": "columnNames",
-            "label": "Column Names",
-            "value": [
-                "col1",
-                "col2",
-                "col3",
-                "col4",
-                "target"
-            ]
-        }
-    ],
-    "editedAt": "",
-    "type": "CSV",
-    "url": "./MLW/1601283001_Project/Data/iris Dataset.csv",
-    "size": 2878,
-    "mimeType": "text/csv",
-    "extension": ".csv",
-    "category": "Data"
+    "createdAt": "2021-09-16T08:35:23.743283Z",
+    "properties": [],
+    "editedAt": "2021-09-16T08:35:23.743283Z",
+    "type": "PY",
+    "url": "./MLW/1631779101_Project/Code/samplePY.py",
+    "downloadUrl": "/download/1631779101_Project/Code/samplePY.py",
+    "size": 0,
+    "mimeType": "application/CODE",
+    "extension": ".py",
+    "category": "Code",
+    "deployed": false
 }
 
 ```
@@ -2012,7 +1594,7 @@ Deletes a resource file.
 ```
 200 - OK
 
-curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources/1600786266_0437_Resource" --header "Authorization: {{auth}}"
+curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -2020,69 +1602,55 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
 ```
 200 - OK
 
-{'type': 'MLWData',
- 'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'sampleDemo',
- 'createdAt': 'Tue Sep 22 04:56:05 2020',
- 'selectedVersion': 'v0',
- 'description': 'sample Bottles NN IC Demo',
- 'resources': {'data': [{'id': '1600753567_0365_Resource',
-    'name': 'MD.Orig.jpg',
-    'description': '',
-    'createdAt': 'Mon Sep 28 03:03:54 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Orig.jpg',
-    'size': 39675,
-    'mimeType': 'image/jpeg',
-    'extension': '.jpg',
-    'category': 'Data'},
-   ],
-  'model': [{'id': '1600751811_0233_Resource',
-    'name': 'sampleNewDemo_1600751365.onnx',
-    'description': '',
-    'createdAt': 'Mon Sep 28 03:03:55 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
-    'size': 8296336,
-    'mimeType': 'application/ONNX',
-    'extension': '.onnx',
-    'category': 'Model',
-    'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
-    'name': 'samplePost.py',
-    'description': '',
-    'createdAt': 'Mon Sep 28 03:03:54 2020',
-    'properties': [],
-    'editedAt': '',
-    'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
-    'size': 260,
-    'mimeType': 'text/x-python',
-    'extension': '.py',
-    'category': 'Code'},
-   ],
-  'pipeline': [],
-  'workflow': [],
-  'nn-designer': []},
- 'resourcesCount': {'data': 1,
-  'model': 1,
-  'code': 1,
-  'workflow': 0,
-  'pipeline': 0,
-  'nn-designer': 0,
-  'totalCount': 3},
- 'projectID': '1600750565_Project',
- 'properties': [],
- 'versionNumber': 'v1',
- '1600750565_Project': {},
- 'id': '1600750565_Project',
- 'isModified': True,
- 'isFreeze': False,
- 'versions': ['v0', 'v1', 'v2']}
+{
+    "id": "1631779101_Project",
+    "name": "Sample Project",
+    "description": "A dummy project",
+    "createdAt": "2021-09-16T07:58:21.293930Z",
+    "properties": [],
+    "isModified": true,
+    "isFreeze": false,
+    "isFreezeProjectPull": false,
+    "selectedVersion": "v0",
+    "versions": [
+        "v0",
+        "v1"
+    ],
+    "resources": {
+        "data": [],
+        "model": [],
+        "code": [
+            {
+                "id": "1631781425_0955_Resource",
+                "name": "samplePY1.py",
+                "description": "",
+                "createdAt": "2021-09-16T08:37:05.724194Z",
+                "properties": [],
+                "editedAt": "2021-09-16T08:37:05.724194Z",
+                "type": "PY",
+                "url": "./MLW/1631779101_Project/Code/samplePY1.py",
+                "downloadUrl": "/download/1631779101_Project/Code/samplePY1.py",
+                "size": 0,
+                "mimeType": "application/CODE",
+                "extension": ".py",
+                "category": "Code",
+                "deployed": false
+            }
+        ],
+        "pipeline": [],
+        "workflow": [],
+        "nn-designer": []
+    },
+    "resourcesCount": {
+        "data": 0,
+        "model": 0,
+        "code": 1,
+        "workflow": 0,
+        "pipeline": 0,
+        "nn-designer": 0,
+        "totalCount": 1
+    }
+}
 
 ```
 **Example Request**

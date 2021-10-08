@@ -188,7 +188,7 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/file
 ```
 404 - Not Found
 
-curl --location --request GET '{{url}}/service/mlw-cdh/downloadFromS3/nomlwbucket/files' \
+curl --location --request GET '{{url}}/service/mlw/downloadFromS3/nomlwbucket/files' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json'
 ```
@@ -300,7 +300,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/
 ```
 409 - Conflict
 
-curl --location --request POST '{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/downloadFromS3/mlwbucket/download' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'

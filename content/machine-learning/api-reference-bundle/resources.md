@@ -21,6 +21,8 @@ Operation on resources.
 
 This operation retrieves information on all available resource files associated with PMML models. Use file names as identifiers for all operations requiring a file_name path variable.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -88,6 +90,8 @@ curl --request GET "{{url}}/service/zementis/resources"
 ```
 
 Get information on the specified PMML resource file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -168,6 +172,8 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 
 Download a PMML resource file.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -240,6 +246,11 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 ```
 
 Upload a new resource file associated with a PMML model. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+
+If the resource file name contains any unsafe characters, all such characters will be converted to underscore automatically.
+Hence, all subsequent calls should refer to the converted name as listed in the properties of the resource.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -342,6 +353,8 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 
 Remove the specified resource file and list all remaining PMML resources.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -426,6 +439,8 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 
 Remove all available PMML resources and list the remaining ones, if any.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -476,6 +491,8 @@ curl --request DELETE "{{url}}/service/zementis/resources"
 ```
 
 This operation retrieves information on all available resource files associated with ONNX pipelines. Use file names as identifiers for all operations requiring a file_name path variable.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -531,6 +548,8 @@ curl --request GET "{{url}}/service/zementis/onnx/resources"
 ```
 
 Get contents of the specified ONNX resource file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -616,6 +635,8 @@ curl --request GET "{{url}}/service/zementis/onnx/resources/dummy" --header "Aut
 ```
 
 Upload a new resource file containing a pre-processing or post-processing script. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -718,6 +739,8 @@ curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authoriz
 
 Remove the specified resource file and list all remaining ONNX resources.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -816,6 +839,8 @@ curl --request DELETE "{{url}}/service/zementis/onnx/resources/PreprocessFabricI
 ```
 
 Remove all available ONNX resources and list the remaining ones, if any.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

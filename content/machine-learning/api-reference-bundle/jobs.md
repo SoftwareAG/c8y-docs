@@ -50,6 +50,10 @@ Create a new job for scheduled data processing.
 
 On creation, a `jobId` is automatically assigned to the job and `jobCreationDate` will also be added to the response.
 
+Note that if the job name or description contain any unsafe characters, all such characters will be converted to underscore automatically.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -243,6 +247,8 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 
 Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers for all operations requiring the {{jobId}} path variable.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -364,6 +370,8 @@ curl --request GET "{{url}}/service/zementis/jobs"
 
 Get information about a specific job.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -470,6 +478,8 @@ Get status and execution duration of a specific job. If there are no ongoing exe
 
 Note that the unit of `jobExecutionDuration` is milliseconds.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -545,6 +555,8 @@ curl --request GET "{{url}}/service/zementis/job/000000/status" --header "Author
 ```
 
 Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {{executionId}} path variable.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -644,6 +656,8 @@ Get details of a specific job execution.
 
 Note that the unit of `jobExecutionDuration` is milliseconds.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -726,6 +740,8 @@ curl --request GET "{{url}}/service/zementis/job/15896925/history/0" --header "A
 ```
 
 Get the results/inferences generated in a single job execution. These inferences are the predictions of the machine learning model against the data from the associated device/device group.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -906,6 +922,8 @@ curl --request GET "{{url}}/service/zementis/job/15896925/history/0/inferences" 
 
 Remove the specified job and list the remaining jobs, if any.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1020,6 +1038,8 @@ curl --request DELETE "{{url}}/service/zementis/job/00000" --header "Authorizati
 ```
 
 Remove all available jobs and list the remaining jobs, if any.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

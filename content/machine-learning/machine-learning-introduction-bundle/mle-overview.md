@@ -22,7 +22,7 @@ Starting with 10.11.0 release, Machine Learning Engine mandates users to have ce
 
 #### Machine Learning Admin
 
-Users with the global role “Machine Learning Admin” would have unlimited access to the Machine Learning Engine and can carry out all the operations that it provides.
+Users with the global role “Machine Learning Admin” have unlimited access to the Machine Learning Engine and can carry out all the operations that it provides.
 The table below shows the permissions for users with this role.
 
 |Type|READ|ADMIN|
@@ -32,7 +32,7 @@ The table below shows the permissions for users with this role.
 
 #### Machine Learning User
 
-Users with the global role “Machine Learning User” would have limited access to Machine Learning Engine.
+Users with the global role “Machine Learning User” have limited access to Machine Learning Engine.
 Users with this role can perform the following operations:
 * View models, resources, model groups, pipelines
 * View the properties of all the above mentioned artifacts
@@ -46,7 +46,7 @@ However, they cannot change the state of those artifacts.
 |:---|:---|:---|
 |Machine learning |yes|no|
 
-These pre-defined and pre-configured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the 'zementis' microservice is subscribed to version 10.11.0 and higher. If the roles already exist, they will not be created.
+These pre-defined and pre-configured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the Zementis microservice is subscribed to version 10.11.0 or higher. If the roles already exist, they will not be created.
 
 To be able to leverage the Machine Learning Engine, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Engine or add new roles which should then include the necesary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
 

@@ -11,6 +11,8 @@ This glossary lists commonly used terminology in the {{< product-c8y-iot >}} pla
 The Administration application is one of the default applications of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications. It also allows them to configure various settings for their accounts.
 
+For details see [Administration](/users-guide/administration/#overview) in the *User guide*.
+
 <a name="agent"></a>
 ### Agent
 IoT devices come with a wide variety of protocols, parameters and network connectivity options. To interface IoT data sources such as devices {{< product-c8y-iot >}} uses agents.
@@ -19,7 +21,8 @@ Agents are software components which translate the device-specific interface pro
 <a name="analytics-builder"></a>
 ### Analytics Builder
 The Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
-Analytics Builder is part of the Streaming Analytics application.<br>
+Analytics Builder is part of the Streaming Analytics application.
+
 See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics); [EPL Applications](#epl).
 
 <a name="application"></a>
@@ -28,6 +31,8 @@ The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By def
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
   * web-based user interface applications (web applications)
   * server-side business logic through microservices (microservices)
+
+For details see [Developing applications](/guides/concepts/#applications/).
 
 <a name="application-switcher"></a>
 ### Application switcher
@@ -95,9 +100,13 @@ For more information on {{< product-c8y-iot >}} Streaming Analytics, see the [{{
 ### Data broker
 The data broker functionality is an optional feature in Enterprise tenants which lets you share data selectively with other tenants.
 
+For details see [Enterprise tenant > Using the data broker](/users-guide/enterprise-tenant/#data-broker) in the *User guide*.
+
 <a name="data-explorer"></a>
 ### Data explorer
 The data explorer visualizes all data points, i.e. measurements or sensor data, of either a particular asset or of all assets.
+
+For details see [Cockpit > Data explorer](/users-guide/cockpit/#data-explorer) in the *User guide*.
 
 <a name="data-lake"></a>
 ### Data lake
@@ -107,23 +116,27 @@ Used in the context of DataHub. A data lake serves as a storage container for of
 ### Data point library
 The Data Point Library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
 
+For details see [Cockpit > Data point library](/users-guide/cockpit/#data-point-library) in the *User guide*.
+
 <a name=""></a>
 ### Device
 IoT devices are hardware components with a sensor that transmits data, like wireless sensors, actuators, and computer devices. They can be embedded into mobile devices, industrial equipment, environmental sensors, medical devices, and more.
 
 <a name="dev-management-application"></a>
 ### Device Management application
-Default application of {{< product-c8y-iot >}}.
+The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For more information on the Device Management application see [Device Management](/guides/users-guide/device-management-bundle/#overview) in the *User guide*.
+For details see [Device Management](/guides/users-guide/device-management-bundle/#overview) in the *User guide*.
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
-Tenant type in the {{< product-c8y-iot >}} tenant hierarchy.
+A tenant type in the {{< product-c8y-iot >}} tenant hierarchy.
 Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
 
 See also [Standard tenant](#standard-tenant), [Management tenant](#mgm-tenant).
+
+For details see [Tenant hierarchy](/concepts/tenant-hierarchy/).
 
 <!--- TBD add external link --->
 
@@ -134,7 +147,7 @@ EPL covers statements, which are organized into actions and monitors. Monitor fi
 
 See also [EPL](#epl).
 
-For details see [Overview > Streaming analytics with Apama EPL]() in the *Streaming Analytics guide*.
+For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-analytics/#streaming-analytics) in the *Streaming Analytics guide*.
 
 <a name=""></a>
 ### Events
@@ -144,17 +157,17 @@ Events contain real-time information from the sensor network, such as the trigge
 
 #### Apama events
 Conceptually, an event is an occurrence of a particular item of interest at a specific time.
-Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events.
+Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events.
 
 <a name="ga-release"></a>
 ### GA release
-A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the {{< company-sag >}} {{< portal-sag >}}. GA releases include new features, improvements and fixes.
+A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the {{< company-sag >}} {{< sag-portal >}}. GA releases include new features, improvements and fixes.
 
 <a name="global-roles"></a>
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
-For more information on global roles see [Administration > Managing permissions > Global roles](/guides/users-guide/administration/#managing-permissions) in the *User guide*.
+For details see [Security aspects > Access control](/concepts/security/#access-control).
 
 <a name=""></a>
 ### Instances

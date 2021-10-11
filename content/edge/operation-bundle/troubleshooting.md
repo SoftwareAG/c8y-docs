@@ -31,27 +31,27 @@ This will list all interfaces and their current configuration.
 Example:
 
 	[admin@server ~]$ ip a
-
+	
 	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
-
+	link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+	inet 127.0.0.1/8 scope host lo
+	   valid_lft forever preferred_lft forever
+	inet6 ::1/128 scope host
+	   valid_lft forever preferred_lft forever
+	
 	2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    link/ether 08:00:27:88:e7:de brd ff:ff:ff:ff:ff:ff
-    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
-       valid_lft 85338sec preferred_lft 85338sec
-    inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute
-       valid_lft forever preferred_lft forever
-
+	link/ether 08:00:27:88:e7:de brd ff:ff:ff:ff:ff:ff
+	inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
+	   valid_lft 85338sec preferred_lft 85338sec
+	inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute
+	   valid_lft forever preferred_lft forever
+	
 	3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    link/ether 08:00:27:81:fe:9d brd ff:ff:ff:ff:ff:ff
-    inet 192.168.56.120/24 brd 192.168.56.255 scope global noprefixroute enp0s8
-       valid_lft forever preferred_lft forever
-    inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
-       valid_lft forever preferred_lft forever
+	link/ether 08:00:27:81:fe:9d brd ff:ff:ff:ff:ff:ff
+	inet 192.168.56.120/24 brd 192.168.56.255 scope global noprefixroute enp0s8
+	   valid_lft forever preferred_lft forever
+	inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
+	   valid_lft forever preferred_lft forever
 
 You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
 
@@ -93,7 +93,7 @@ This section lists the required services and processes on the Edge server.
 You can check the status of the platform by running the following command:
 
 	curl -v http://localhost:8181/tenant/health
-
+	
 	* About to connect() to localhost port 8181 (#0)
 	*   Trying ::1...
 	* Connected to localhost (::1) port 8181 (#0)
@@ -135,13 +135,13 @@ If something went wrong, the endpoint should respond a different error code then
 	   "status":"DOWN",
 	   "services":{
 	      "details":{
-
+	
 	      },
 	      "status":"UP"
 	   },
 	   "mongodb":{
 	      "details":{
-
+	
 	      },
 	      "status":"UP"
 	   },
@@ -173,7 +173,7 @@ The response contains checks for the most important components:
 The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in.
 
 |Status|Description|
-|:---|:---
+|:---|:---|
 |UNINITIALIZED|Tenant has not been initialized|
 |DB_INITIALIZED|Database initialisation is performed|
 |LOCAL&#95;APPLICATION_INITIALIZED|Local applications are deployed|
@@ -191,7 +191,7 @@ The list describes the tenants which on the core node have not been fully initia
 Run the following command to check the REST API availability:
 
 	[admin@server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
-
+	
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
 	* Connected to <base_url> (52.29.189.245) port 80 (#0)
@@ -298,7 +298,7 @@ The file has the following structure:
 	# Root logger
 	log4j.rootLogger=INFO,out,osgi:*
 	log4j.throwableRenderer=org.apache.log4j.OsgiThrowableRenderer
-
+	
 	# Error appender
 	log4j.appender.out=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.out.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -310,14 +310,14 @@ The file has the following structure:
 	log4j.appender.out.layout=org.apache.log4j.PatternLayout
 	log4j.appender.out.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.out.append=true
-
+	
 	# CXF request and response info:
 	# * ERROR - none
 	# * INFO - just headers (default)
 	# * DEBUG - whole, with payloads
 	log4j.additivity.com.cumulocity.rest.interceptors=false
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-
+	
 	# Access appender
 	log4j.appender.access=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.access.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -329,7 +329,7 @@ The file has the following structure:
 	log4j.appender.access.layout=org.apache.log4j.PatternLayout
 	log4j.appender.access.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.access.append=true
-
+	
 	# Error response info:
 	# * INFO - just error message (default)
 	# * DEGUB - full stack trace
@@ -339,9 +339,9 @@ The file has the following structure:
 Change the following entries to adjust the log levels:
 
 	log4j.rootLogger=INFO,out,osgi:*
-
+	
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-
+	
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
@@ -436,9 +436,10 @@ The data collector can be started by running the "run_data_collector.py" script 
 
 Following are the supported command line arguments which can be used while invoking the script. More than one of the supported arguments can be used simultaneously.
 
-* -h or --hardware: Allows the script to collect only the hardware information
-* -s or --software: Allows the script to collect only the software information
-* -c or --cumulocity: Allows the script to collect only the cumulocity information
+* -hw or --hardware: Allows the script to collect only the hardware information
+* -sw or --software: Allows the script to collect only the software information
+* -c8y or --cumulocity: Allows the script to collect only the cumulocity information
+* -h: Displays the help message
 
 ##### Monitor
 

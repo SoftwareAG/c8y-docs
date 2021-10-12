@@ -4,11 +4,11 @@ title: Updating Edge using tenant account (remotely)
 layout: redirect
 ---
 
-You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account.
+You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account. For more information about firmware feature, see [Managing device firmware](/users-guide/device-management/#managing-device-firmware).
 
 Before you update your Edge appliance remotely, you must:
 
-- [Enable remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance
+- [Enable the remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance
 - [Register your Edge appliance](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
 
 To remotely update your Edge appliance:

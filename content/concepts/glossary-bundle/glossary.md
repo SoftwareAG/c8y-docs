@@ -20,7 +20,7 @@ Agents are software components which translate the device-specific interface pro
 
 <a name="analytics-builder"></a>
 ### Analytics Builder
-The Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
+Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 Analytics Builder is part of the Streaming Analytics application.
 
 See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics); [EPL Applications](#epl).
@@ -47,7 +47,7 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
 
 <a name=""></a>
 ### Blocks
-Related to Apama Analytics Builder
+Related to Analytics Builder. 
 Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
 
 

@@ -47,7 +47,7 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
 
 <a name=""></a>
 ### Blocks
-Related to Analytics Builder. 
+Related to Analytics Builder.
 Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
 
 
@@ -145,8 +145,6 @@ For details see [Tenant hierarchy](/concepts/tenant-hierarchy/).
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-See also [EPL](#epl).
-
 For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-analytics/#streaming-analytics) in the *Streaming Analytics guide*.
 
 <a name=""></a>
@@ -228,11 +226,15 @@ Measurements consist of a time when the measurement was taken, the unique identi
 <a name="microservices"></a>
 ### Microservices
 Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity IoT:
+
   * Integrations
   * Batch analytics
   * Decoder
   * Backend applications
+
 Microservices are deployed as Container images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access {{< product-c8y-iot >}} using this REST API.
+
+For details see [Developing applications > Microservices](/concepts/applications/#microservices).
 
 <a name=""></a>
 ### Multi-tenancy
@@ -248,24 +250,31 @@ The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. I
 ### Operations
 Operations are cloud-to-device messages so that devices can be remotely controlled and managed by Cumulocity IoT. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
 
+For details see [{{< product-c8y-iot >}}'s domain model > Operations](/concepts/domain-model/#operations).
+
 <a name=""></a>
 ### Real-time processing
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, i.e. Apama’s Event Processing Language (EPL).
-See also [{{< product-c8y-iot >}} Streaming Analytics](https://cumulocity.com/guides/apama/overview-analytics/).
+
+For details see [Real-time processing](/concepts/realtime/).
 
 <a name="rest"></a>
 ### REST
-In {{< product-c8y-iot >}}, REST (Representational state transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
+In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
 <a name="roles"></a>
 ### Roles
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user.
-To manage permissions more easily, they are grouped into so-called “roles” (add link). Every user can be associated with a number of roles, adding up permissions of the user.
+To manage permissions more easily, they are grouped into so-called “roles”. Every user can be associated with a number of roles, adding up permissions of the user.
+
+For details see [Security aspects > Access control](/concepts/security/#access-control).
 
 <a name="sensor-library"></a>
 ### Sensor library
 {{< product-c8y-iot >}} includes a sensor library to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library covers basic sensors and controls, and is supported by the {{< product-c8y-iot >}} client libraries. It also enables writing powerful generic IoT software plugins.
-Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention (see Inventory).
+Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention.
+
+For details see [{{< product-c8y-iot >}}'s domain model > The sensor library](/concepts/domain-model/#sensor-library) and [{{< product-c8y-iot >}}'s domain model > Inventory](/concepts/domain-model/#inventory).
 
 <a name="smart-rules"></a>
 ### Smart rules
@@ -277,7 +286,11 @@ See also [Cockpit > Smart rules](/guides/users-guide/cockpit/#smart-rules) in th
 ### Standard Tenant
 At the bottom of the tenant hierarchy in {{< product-c8y-iot >}} you can find single tenants which are represented by the concept of {{< standard-tenant >}}.
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
-See also [{{< enterprise-tenant >}}](/guides/users-guide/enterprise-tenant-bundle/#overview) in the *User guide*. For more information on the Management tenant see also [Tenant hierarchy > Hierarchy levels > {{< management-tenant >}}](/guides/concepts/tenant-hierarchy-bundle/#hierarchy-levels).
+
+
+See also [{{< enterprise-tenant >}}](#ent-tenant); [{{< management-tenant >}}](#mgm-tenant).
+
+For details see [Tenant hierarchy > Hierarchy levels > {{< management-tenant >}}](/concepts/tenant-hierarchy/#hierarchy-levels).
 
 <a name="subscription"></a>
 ### Subscription

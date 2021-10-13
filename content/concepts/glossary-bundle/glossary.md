@@ -23,7 +23,7 @@ Agents are software components which translate the device-specific interface pro
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 Analytics Builder is part of the Streaming Analytics application.
 
-See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics); [EPL Applications](#epl).
+See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Applications](#epl).
 
 <a name="application"></a>
 ### Application
@@ -63,13 +63,13 @@ TBD
 ### Cumulocity IoT DataHub
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 
-For details see the [{{< product-c8y-iot >}} Datahub guide](https://cumulocity.com/guides/datahub/datahub-overview/).
+For details see the [{{< product-c8y-iot >}} Datahub guide](/datahub/datahub-overview/).
 
 <a name="c8y-edge"></a>
 ### Cumulocity IoT Edge
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see the [{{< product-c8y-iot >}} Edge guide](https://cumulocity.com/guides/edge/introduction/).
+For details see the [{{< product-c8y-iot >}} Edge guide](/edge/introduction/).
 
 <a name="c8y-ml"></a>
 ### Cumulocity IoT Machine learning
@@ -77,7 +77,7 @@ For details see the [{{< product-c8y-iot >}} Edge guide](https://cumulocity.com/
   * Machine Learning Workbench, which focuses on model training, and
   * Machine Learning Engine, which focuses on model deployment.
 
-For details see the [{{< product-c8y-iot >}} Machine learning guide](https://cumulocity.com/guides/machine-learning/introduction/).
+For details see the [{{< product-c8y-iot >}} Machine learning guide](/machine-learning/introduction/).
 
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
@@ -94,7 +94,7 @@ For details see [{{< sensor-app >}}](/users-guide/sensor-app-bundle/#overview) i
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 The operation logic is based on Apama’s Event Processing Language (EPL).
 
-For more information on {{< product-c8y-iot >}} Streaming Analytics, see the [{{< product-c8y-iot >}} ](https://cumulocity.com/guides/apama/overview-analytics/).
+For details see the [Streaming Analytics guide](/apama/overview-analytics/).
 
 <a name="data-broker"></a>
 ### Data broker
@@ -134,7 +134,7 @@ For details see [Device Management](/guides/users-guide/device-management-bundle
 A tenant type in the {{< product-c8y-iot >}} tenant hierarchy.
 Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
 
-See also [Standard tenant](#standard-tenant), [Management tenant](#mgm-tenant).
+See also [Standard tenant](#standard-tenant) and [Management tenant](#mgm-tenant).
 
 For details see [Tenant hierarchy](/concepts/tenant-hierarchy/).
 
@@ -179,19 +179,19 @@ Relates to Apama Analytics Builder
 ### Inventory roles
 Inventory roles contain permissions that apply to groups or devices.
 
-For more information on inventory roles see [Administration > Managing permissions > Inventory roles](/guides/users-guide/administration/#managing-permissions) in the *User guide*.
+For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 <a name="ml-engine"></a>
 ### Machine Learning Engine
 Machine Learning Engine enables machine learning/IT operators to manage and operationalize production-ready models for generating predictions on data gathered from connected devices. These capabilities can be leveraged either from a web browser via an easy to use UI or programmatically via REST API. Machine Learning Engine provides a high-performance inference platform with deployed models exposed as endpoints that can be leveraged from Streaming Analytics and other applications for real-time inference.
 
-For more information on the Machine Learning Engine see [Introduction > Machine Learning Engine](https://cumulocity.com/guides/machine-learning/introduction/#mle-overview) in the *Machine Learning guide*.
+For details see [Introduction > Machine Learning Engine](/machine-learning/introduction/#mle-overview) in the *Machine Learning guide*.
 
 <a name="ml-workbench"></a>
 ### Machine Learning Workbench
 Machine Learning Workbench enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code UI and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-c8y-iot >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
 
-For more information on the Machine Learning Workbench see [Introduction > Machine Learning Workbench](https://cumulocity.com/guides/machine-learning/introduction/#mlw-overview) in the *Machine Learning guide*.
+For details see [Introduction > Machine Learning Workbench](/machine-learning/introduction/#mlw-overview) in the *Machine Learning guide*.
 
 <a name="maintenance-release"></a>
 ### Maintenance release
@@ -223,7 +223,7 @@ Measurements consist of a time when the measurement was taken, the unique identi
 
 <a name="microservices"></a>
 ### Microservices
-Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity IoT:
+Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of {{< product-c8y-iot >}}:
 
   * Integrations
   * Batch analytics
@@ -238,7 +238,7 @@ For details see [Developing applications > Microservices](/concepts/applications
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-See also [Tenant hierarchy > Multi-tenancy](/guides/concepts/tenant-hierarchy-bundle/#multi-tenancy).
+For details see [Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy-bundle/#multi-tenancy).
 
 <a name="navigator"></a>
 ### Navigator
@@ -246,7 +246,7 @@ The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. I
 
 <a name="operations"></a>
 ### Operations
-Operations are cloud-to-device messages so that devices can be remotely controlled and managed by Cumulocity IoT. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
+Operations are cloud-to-device messages so that devices can be remotely controlled and managed by {{< product-c8y-iot >}}. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
 
 For details see [{{< product-c8y-iot >}}'s domain model > Operations](/concepts/domain-model/#operations).
 
@@ -278,7 +278,7 @@ For details see [{{< product-c8y-iot >}}'s domain model > The sensor library](/c
 ### Smart rules
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. To easily create rules, the Cockpit application includes a “smart rules” builder which allows you to create rules from templates (so-called smart rule templates).
 
-See also [Cockpit > Smart rules](/guides/users-guide/cockpit/#smart-rules) in the *User guide*.
+For details see [Cockpit > Smart rules](/users-guide/cockpit/#smart-rules) in the *User guide*.
 
 <a name="standard-tenant"></a>
 ### Standard Tenant
@@ -286,7 +286,7 @@ At the bottom of the tenant hierarchy in {{< product-c8y-iot >}} you can find si
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
 
 
-See also [{{< enterprise-tenant >}}](#ent-tenant); [{{< management-tenant >}}](#mgm-tenant).
+See also [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
 
 For details see [Tenant hierarchy > Hierarchy levels > {{< management-tenant >}}](/concepts/tenant-hierarchy/#hierarchy-levels).
 
@@ -318,7 +318,7 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 
 These three levels differ in their scope, particularly with regards to administration.
 
-See also [Tenant hierarchy](/guides/concepts/tenant-hierarchy/#tenant-overview); [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
+See also [Tenant hierarchy](/concepts/tenant-hierarchy/#tenant-overview); [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
 
 <a name="tenant-id"></a>
 ### Tenant ID
@@ -344,13 +344,13 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
   * apply default or
   * branded UI components to your custom application.
 
-For details see [Web SDK guide](https://cumulocity.com/guides/web/overview/).
+For details see [Web SDK guide](/web/overview/).
 
 <a name="widgets"></a>
 ### Widgets
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
 
-For details see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) and [Cockpit > Using widgets in dashboards and reports](/guides/users-guide/cockpit/#using-widgets) in the *User guide*.
+For details see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) and [Cockpit > Using widgets in dashboards and reports](/users-guide/cockpit/#using-widgets) in the *User guide*.
 
 <a name=""></a>
 ### Wires

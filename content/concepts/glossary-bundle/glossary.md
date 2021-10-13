@@ -138,8 +138,6 @@ See also [Standard tenant](#standard-tenant), [Management tenant](#mgm-tenant).
 
 For details see [Tenant hierarchy](/concepts/tenant-hierarchy/).
 
-<!--- TBD add external link --->
-
 <a name="epl"></a>
 ### Event Processing Language (EPL)
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).

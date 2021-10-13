@@ -298,30 +298,29 @@ The application concept of {{< product-c8y-iot >}} includes a basic application 
 Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
-See also [Administration](/guides/users-guide/administration/) in the *User guide*.
-
-<a name="subtenant"></a>
-### Subtenant
-Using an {{< enterprise-tenant >}}, you can make use of the multi-tenancy concept of {{< product-c8y-iot >}}.
-{{< enterprise-tenant >}} can create subtenants that will then again function like {{< standard-tenant >}} in the platform and have their own tenant management.
+For details see [Developing applications > Subscribing applications](/concepts/applications/#subscription) as well as [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*
 
 <a name="tenant"></a>
 ### Tenant
-Tenants are physically separated data spaces with a separate URL, with a specific set of users, a separate application management and no data sharing by default. Users in a single tenant share the same URL and the same data space.
+Tenants are physically separated data spaces with a separate URL, which has a specific set of users, a separate application management and no data sharing by default. Users in a single tenant share the same URL and the same data space.
 
 <a name="tenant-domain"></a>
 ### Tenant domain
 A key feature of the Enterprise tenant is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
 
+For details see [{{< enterprise-tenant >}} > Customizing your platform](/users-guide/enterprise-tenant/#customization) in the *User guide*.
+
 <a name=""></a>
 ### Tenant hierarchy
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
-  * {{< standard-tenant >}} > add link
-  * {{< enterprise-tenant >}} > add link
-  * {{< management-tenant >}} > add link
+
+  * {{< standard-tenant >}}
+  * {{< enterprise-tenant >}}
+  * {{< management-tenant >}}
+
 These three levels differ in their scope, particularly with regards to administration.
 
-See also [Tenant hierarchy](/guides/concepts/tenant-hierarchy/#tenant-overview).
+See also [Tenant hierarchy](/guides/concepts/tenant-hierarchy/#tenant-overview); [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
 
 <a name="tenant-id"></a>
 ### Tenant ID
@@ -329,25 +328,31 @@ The unique ID of a tenant or subtenant. When a tenant is created, it gets an aut
 
 <a name="web-applications"></a>
 ### Web applications
-A {{< product-c8y-iot >}} web application can be a
-a user interface application built on any web framework of your choice
-a user interface application built using the {{< product-c8y-iot >}} user interface framework as a set of user interface plugins.
-All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL <tenant>.cumulocity.com/apps/<application>.
+A {{< product-c8y-iot >}} web application can be:
+
+  * a user interface application built on any web framework of your choice or
+  * a user interface application built using the {{< product-c8y-iot >}} user interface framework as a set of user interface plugins.
+
+All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
+
+For details see [Developing applications > Web applications](/concepts/applications/#web-applications).
 
 <a name="web-sdk"></a>
 ### Web SDK
-The {{< product-c8y-iot >}} Web SDK enables you to
-develop web applications that can be deployed to the platform,
-communicate authenticated with our API,
-apply default or branded UI components to your custom application.
+The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that can be:
 
-For more information refer to the [Web SDK guide](https://cumulocity.com/guides/web/overview/).
+  * deployed to the platform,
+  * communicate authenticated with our API,
+  * apply default or
+  * branded UI components to your custom application.
+
+For details see [Web SDK guide](https://cumulocity.com/guides/web/overview/).
 
 <a name="widgets"></a>
 ### Widgets
-Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes, for details see the Widgets collection.
+Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
 
-See also [Cockpit > Using widgets in dashboards and reports](/guides/users-guide/cockpit/#using-widgets) in the *User guide*.
+For details see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) and [Cockpit > Using widgets in dashboards and reports](/guides/users-guide/cockpit/#using-widgets) in the *User guide*.
 
 <a name=""></a>
 ### Wires

@@ -36,7 +36,7 @@ The limitations could be the following:
 >* Using the private mode on browsers may not work.
 >* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 
-<a name="">url</a>
+<a name="url"></a>
 ### URL
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
@@ -45,11 +45,8 @@ To access the applications for your {{< product-c8y-iot >}} tenant, use the foll
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
-<<<<<<< HEAD
-This will direct you to the login page of your default application. For further details on tenant ID and tenant domain see [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the *{{< openapi >}}*.
-=======
 This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
->>>>>>> develop
+
 
 >**Info:** The above URL is only valid for {{< product-c8y-iot >}} {{< standard-tenant >}} subscribers. For {{< enterprise-tenant >}} deployments of {{< product-c8y-iot >}}, the URL is specific to your organization.
 
@@ -65,7 +62,7 @@ If you use one of the public cloud instances of the {{< product-c8y-iot >}} plat
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/administration/#branding).
+> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.

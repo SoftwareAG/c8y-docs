@@ -26,7 +26,7 @@ The **User** menu contains the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, see <a href="#user-settings" class="no-ajaxy">To change user settings</a>. </td> for details.
+<td style="text-align:left">Provides access to the user settings, see <a href="#change-user-settings" class="no-ajaxy">To change user settings</a>. </td> for details.
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>
@@ -49,7 +49,7 @@ Note that this option is only available if support user access is not set global
 </tbody>
 </table>
 
-<a name="user-settings"></a>
+<a name="change-user-settings"></a>
 ### To change user settings
 
 Several account settings can be changed by the user.

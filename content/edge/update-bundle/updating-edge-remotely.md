@@ -90,5 +90,5 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 9. Enter a new title or use the preset title. Optionally enter a  description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
    ![Edge version](/images/edge/edge-schedule-bulk-operation.png)
 
-For more information about bulk operations, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations).
+For more information about bulk operations, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations) in the *User guide*.
 

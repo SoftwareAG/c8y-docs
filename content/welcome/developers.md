@@ -53,7 +53,7 @@ Moreover, the <a href="/apama/overview-analytics/"><i>Streaming Analytics guide<
 
 ### OpenAPI Specification
 
-A complete OpenAPI Specification for the Cumulocity IoT REST API is available at https://{{< domain-c8y >}}/api. The OpenAPI Specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A complete OpenAPI Specification for the Cumulocity IoT REST API is available at [https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}). The OpenAPI Specification describes the entire Cumulocity IoT REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
 ### {{< company-sag >}} {{< sag-dev-community >}}

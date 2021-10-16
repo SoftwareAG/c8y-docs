@@ -28,7 +28,8 @@ Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to
 
 Script to add a device named "DemoDevice" to {{< product-c8y-iot >}}.
 
-DemoDeviceCreator.py
+*DemoDeviceCreator.py*
+
 ```
 # Register a demo device with {{< product-c8y-iot >}}
 import requests
@@ -75,7 +76,8 @@ A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates se
 
 All you need to do is to upload this script to the MLW and run it as explained before.
 
-AnomalySimulatorForDemoDevice.py
+*AnomalySimulatorForDemoDevice.py*
+
 ```
 # Simulate anamolous and non-anamolous data
 import requests

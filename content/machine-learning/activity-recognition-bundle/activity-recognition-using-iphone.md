@@ -38,34 +38,36 @@ The format of the JSON data might have changed in the meantime, or some sensors 
 
 The following code block contains the data format of the JSON schema that was assumed for this demo.
 
-	measurement.json
-	{
-	    "_id" : ObjectId("5c928ba9b524aca326d727fe"),
-	    "self" : "https://zdev.cumulocity.com/measurement/measurements/7668082",
-	    "time" : "2019-03-18T14:46:15.000-07:00",
-	    "id" : "7668082",
-	    "source" : {
-	        "self" : "https://zdev.cumulocity.com/inventory/managedObjects/7668076",
-	        "id" : "7668076"
-	    },
-	    "type" : "c8y_Acceleration",
-	    "c8y_Acceleration" : {
-	        "accelerationY" : {
-	            "unit" : "G",
-	            "value" : -0.2860107421875
-	        },
-	        "accelerationX" : {
-	            "unit" : "G",
-	            "value" : -0.1037750244140625
-	        },
-	        "accelerationZ" : {
-	            "unit" : "G",
-	            "value" : -0.9522247314453125
-	        }
-	    },
-	    "activity" : "none"
-	}
+*measurement.json*
 
+```
+{
+	"_id" : ObjectId("5c928ba9b524aca326d727fe"),
+	"self" : "https://zdev.cumulocity.com/measurement/measurements/7668082",
+	"time" : "2019-03-18T14:46:15.000-07:00",
+	"id" : "7668082",
+	"source" : {
+		"self" : "https://zdev.cumulocity.com/inventory/managedObjects/7668076",
+		"id" : "7668076"
+	},
+	"type" : "c8y_Acceleration",
+	"c8y_Acceleration" : {
+		"accelerationY" : {
+			"unit" : "G",
+			"value" : -0.2860107421875
+		},
+		"accelerationX" : {
+			"unit" : "G",
+			"value" : -0.1037750244140625
+		},
+		"accelerationZ" : {
+			"unit" : "G",
+			"value" : -0.9522247314453125
+		}
+	},
+	"activity" : "none"
+}
+```
 
 #### To collect the walking data:
 
@@ -110,7 +112,7 @@ To train the model we will use the AutoML feature of {{< product-c8y-iot >}} Mac
 
 <img src="/images/zementis/ActivityRecognition/activity_recognition_automl.PNG" alt="Download" style="display:inline-block; margin:0"><br>
 
-1. In the **Training Parameter** section at the right, select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**) and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+4. In the **Training Parameter** section at the right, select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**) and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 <img src="/images/zementis/ActivityRecognition/activity_recognition_automl_training_params.PNG" alt="Download" style="display:inline-block; margin:0"><br>
 

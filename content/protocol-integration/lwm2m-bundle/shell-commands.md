@@ -34,6 +34,10 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">The value to be written to the resource. Must be given using the type of the resource.</td>
 </tr>
 <tr>
+<td align="left">parameters</td>
+<td align="left">The optional parameters of the "execute" operation. Must be expressed in plain text and follow the ABNF grammar rule.</td>
+</tr>
+<tr>
 <td align="left">Firmware version</td>
 <td align="left">The current version of the firmware.</td>
 </tr>
@@ -66,8 +70,8 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Enables the observe functionality.</td>
 </tr>
 <tr>
-<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
-<td align="left">Executes a resource on the device.</td>
+<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
+<td align="left">Executes a resource on the device with optional parameters.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>

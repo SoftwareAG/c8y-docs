@@ -306,7 +306,6 @@ This is controlled by the mandatory value externalIdType.
 ```bash
 # Creation:
 10,100,POST,INVENTORY,,c8y_MySerial
-10,101,POST,INVENTORY,,
 # Usage:
 # Create object with externalId c8y_MySerial/myImei
 100,myImei

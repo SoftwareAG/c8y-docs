@@ -23,14 +23,19 @@ Agents are software components which translate the device-specific interface pro
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 Analytics Builder is part of the Streaming Analytics application.
 
-See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Applications](#epl).
+See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Apps](#epl).
+
+For details see [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
 <a name="application"></a>
 ### Application
 The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three default applications: Administration, Cockpit and Device Management.
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
+
   * web-based user interface applications (web applications)
   * server-side business logic through microservices (microservices)
+
+See also [Administration application](#administration-app), [Cockpit application](#cockpit-application) and [Device Management application](#dev-management-application).
 
 For details see [Developing applications](/guides/concepts/#applications/).
 
@@ -47,13 +52,16 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
 
 <a name=""></a>
 ### Blocks
-Related to Analytics Builder.
+Related to [Analytics Builder](#analytics-builder).
+
 Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
 
 
 <a name="cockpit-application"></a>
 ### Cockpit application
 The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
+
+For details see [Cockpit](/users-guide/cockpit/) in the *User guide*.
 
 <a name=""></a>
 ### Cumulocity IoT Core
@@ -63,7 +71,7 @@ TBD
 ### Cumulocity IoT DataHub
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 
-For details see the [{{< product-c8y-iot >}} Datahub guide](/datahub/datahub-overview/).
+For details see the [DataHub guide](/datahub/datahub-overview/).
 
 <a name="c8y-edge"></a>
 ### Cumulocity IoT Edge
@@ -77,7 +85,7 @@ For details see the [{{< product-c8y-iot >}} Edge guide](/edge/introduction/).
   * Machine Learning Workbench, which focuses on model training, and
   * Machine Learning Engine, which focuses on model deployment.
 
-For details see the [{{< product-c8y-iot >}} Machine learning guide](/machine-learning/introduction/).
+For details see the [Machine Learning guide](/machine-learning/introduction/).
 
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
@@ -92,7 +100,7 @@ For details see [{{< sensor-app >}}](/users-guide/sensor-app-bundle/#overview) i
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
-The operation logic is based on Apama’s Event Processing Language (EPL).
+The operation logic is based on [Apama’s Event Processing Language (EPL)](#epl).
 
 For details see the [Streaming Analytics guide](/apama/overview-analytics/).
 
@@ -110,11 +118,13 @@ For details see [Cockpit > Data explorer](/users-guide/cockpit/#data-explorer) i
 
 <a name="data-lake"></a>
 ### Data lake
-Used in the context of DataHub. A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
+Used in the context of [DataHub](#c8y-datahub).
+
+A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
 
 <a name="data-point-library"></a>
 ### Data point library
-The Data Point Library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
+The Data point library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
 
 For details see [Cockpit > Data point library](/users-guide/cockpit/#data-point-library) in the *User guide*.
 
@@ -131,12 +141,11 @@ For details see [Device Management](/guides/users-guide/device-management-bundle
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
-A tenant type in the {{< product-c8y-iot >}} tenant hierarchy.
+A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/concepts/tenant-hierarchy/).
+
 Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
 
 See also [Standard tenant](#standard-tenant) and [Management tenant](#mgm-tenant).
-
-For details see [Tenant hierarchy](/concepts/tenant-hierarchy/).
 
 <a name="epl"></a>
 ### Event Processing Language (EPL)
@@ -147,12 +156,10 @@ For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-
 
 <a name=""></a>
 ### Events
-Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
 
-#### Cumulocity IoT events
+Cumulocity IoT: Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
 
-#### Apama events
-Conceptually, an event is an occurrence of a particular item of interest at a specific time.
+Apama: Conceptually, an event is an occurrence of a particular item of interest at a specific time.
 Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events.
 
 <a name="ga-release"></a>

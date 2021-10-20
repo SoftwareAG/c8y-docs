@@ -27,7 +27,7 @@ To install {{< product-c8y-iot >}} Edge using the GUI:
 
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
-	>**Important:** Do not use the root credentials to perform any task.
+	>**Important:** Do not use the root credentials to perform any task. The root credentials must be used only when asked by Software AG support personnel. Using it otherwise might void the appliance support.
 
 8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 

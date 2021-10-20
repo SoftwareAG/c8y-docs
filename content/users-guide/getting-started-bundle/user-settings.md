@@ -37,6 +37,10 @@ The **User** menu contains the following items:
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
 <tr>
+<td style="text-align:left">Request support</td>
+<td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
+</tr>
+<tr>
 <td style="text-align:left">Activate support</td>
 <td style="text-align:left">Allows support users to access your account.<br>
 <br>

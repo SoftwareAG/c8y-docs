@@ -23,7 +23,7 @@ Agents are software components which translate the device-specific interface pro
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 Analytics Builder is part of the Streaming Analytics application.
 
-See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Apps](#epl).
+See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Apps](#epl-apps).
 
 For details see [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
@@ -55,7 +55,6 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
 Related to [Analytics Builder](#analytics-builder).
 
 Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
-
 
 <a name="cockpit-application"></a>
 ### Cockpit application
@@ -154,6 +153,14 @@ EPL covers statements, which are organized into actions and monitors. Monitor fi
 
 For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-analytics/#streaming-analytics) in the *Streaming Analytics guide*.
 
+<a name="epl-apps"></a>
+### EPL Apps
+EPL Apps is part of the Streaming Analytics application and allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing *.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
+
+See also [EPL](#epl) and [Analytics Builder](#analytics-builder).
+
+For more details see [Overview > EPL apps](/apama/overview/#apama-epl-apps) in the *Streaming Analytics guide*.
+
 <a name=""></a>
 ### Events
 
@@ -170,16 +177,16 @@ A GA release is a release with general availability (GA). GA releases are typica
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
-For details see [Security aspects > Access control](/concepts/security/#access-control).
+For details see [Security aspects > Access control](/concepts/security/#access-control) in the *Concepts guide* as well as [Administration > Managing permissions > Global rules](/users-guide/administration/managing-permissions/#global) in the *User guide*.
 
 <a name=""></a>
 ### Instances
 TBD
 
-#### Cumulocity IoT Instances
+Cumulocity IoT Instances
 
-#### Apama Instances
-Relates to Apama Analytics Builder
+Apama Instances:
+Relates to Analytics Builder
 
 
 <a name="inventory-roles"></a>
@@ -213,12 +220,10 @@ Managed objects can be “smart objects” such as smart electricity meters, hom
 
 <a name="mgm-tenant"></a>
 ### Management tenant
-The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} tenant hierarchy.
+The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} [tenant hierarchy](/concepts/tenant-hierarchy/#tenant-levels).
 Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
-See also [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant).
-
-For details see [Tenant hierarchy > hierarchy levels](/concepts/tenant-hierarchy/#tenant-levels).
+See also [{{< standard-tenant >}}](#standard-tenant) and [{{< enterprise-tenant >}}](#ent-tenant).
 
 <a name=""></a>
 ### Measurements
@@ -239,29 +244,33 @@ Microservices are server-side applications. Microservices can be used to develop
 
 Microservices are deployed as Container images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access {{< product-c8y-iot >}} using this REST API.
 
-For details see [Developing applications > Microservices](/concepts/applications/#microservices).
+For details see [Developing applications > Microservices](/concepts/applications/#microservices) in the *Concepts guide*.
 
 <a name=""></a>
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-For details see [Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy-bundle/#multi-tenancy).
+For details see [Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy-bundle/#multi-tenancy) in the *Concepts guide*.
 
 <a name="navigator"></a>
 ### Navigator
 The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. It is located at the left of the UI. The navigator provides a list of menu items which lead you to the various pages of the application you are currently using.
 
+<a name=""></a>
+### OEE
+
+
 <a name="operations"></a>
 ### Operations
 Operations are cloud-to-device messages so that devices can be remotely controlled and managed by {{< product-c8y-iot >}}. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
 
-For details see [{{< product-c8y-iot >}}'s domain model > Operations](/concepts/domain-model/#operations).
+For details see [{{< product-c8y-iot >}}'s domain model > Operations](/concepts/domain-model/#operations) in the *Concepts guide*.
 
 <a name=""></a>
 ### Real-time processing
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, i.e. Apama’s Event Processing Language (EPL).
 
-For details see [Real-time processing](/concepts/realtime/).
+For details see [Real-time processing](/concepts/realtime/) in the *Concepts guide*.
 
 <a name="rest"></a>
 ### REST
@@ -272,7 +281,7 @@ In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for a
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership. Permissions define explicitly what functionality can be executed by a user.
 To manage permissions more easily, they are grouped into so-called “roles”. Every user can be associated with a number of roles, adding up permissions of the user.
 
-For details see [Security aspects > Access control](/concepts/security/#access-control).
+For details see [Security aspects > Access control](/concepts/security/#access-control) in the *Concepts guide*.
 
 <a name="sensor-library"></a>
 ### Sensor library
@@ -288,22 +297,19 @@ For details see [{{< product-c8y-iot >}}'s domain model > The sensor library](/c
 For details see [Cockpit > Smart rules](/users-guide/cockpit/#smart-rules) in the *User guide*.
 
 <a name="standard-tenant"></a>
-### Standard Tenant
-At the bottom of the tenant hierarchy in {{< product-c8y-iot >}} you can find single tenants which are represented by the concept of {{< standard-tenant >}}.
+### Standard tenant
+At the bottom of the [tenant hierarchy](/concepts/tenant-hierarchy/#hierarchy-levels) in {{< product-c8y-iot >}} you can find single tenants which are represented by the concept of {{< standard-tenant >}}.
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
 
-
 See also [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
-
-For details see [Tenant hierarchy > Hierarchy levels > {{< management-tenant >}}](/concepts/tenant-hierarchy/#hierarchy-levels).
 
 <a name="subscription"></a>
 ### Subscription
 The application concept of {{< product-c8y-iot >}} includes a basic application marketplace.
-Tenants can be subscribed to applications which have been deployed by their super tenant (Management tenant or Enterprise tenant).
+Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
-For details see [Developing applications > Subscribing applications](/concepts/applications/#subscription) as well as [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*
+For details see [Developing applications > Subscribing applications](/concepts/applications/#subscription) in the *Concepts guide* as well as [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
 
 <a name="tenant"></a>
 ### Tenant
@@ -312,6 +318,8 @@ Tenants are physically separated data spaces with a separate URL, which has a sp
 <a name="tenant-domain"></a>
 ### Tenant domain
 A key feature of the Enterprise tenant is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
+
+See also [Tenant hierarchy](#)
 
 For details see [{{< enterprise-tenant >}} > Customizing your platform](/users-guide/enterprise-tenant/#customization) in the *User guide*.
 
@@ -325,7 +333,7 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 
 These three levels differ in their scope, particularly with regards to administration.
 
-See also [Tenant hierarchy](/concepts/tenant-hierarchy/#tenant-overview); [{{< standard-tenant >}}](#standard-tenant); [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
+See also [Tenant hierarchy](/concepts/tenant-hierarchy/#tenant-overview), [{{< standard-tenant >}}](#standard-tenant), [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
 
 <a name="tenant-id"></a>
 ### Tenant ID
@@ -361,5 +369,6 @@ For details see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-col
 
 <a name=""></a>
 ### Wires
-Relates to Apama Analytics Builder.
+Relates to
+Analytics Builder.
 Wires are used to connect two or more blocks with each other.  They are used for all data transfer between the output port of one block and the input port of another block.

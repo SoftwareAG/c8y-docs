@@ -4,9 +4,11 @@ title: Configuring the time synchronization
 layout: redirect
 ---
 
-For many use cases, and especially when using APAMA, time synchronization must be available, i.e. the time inside the Edge appliance must be synchronized with the time of the host OS and with the devices sending the data.
+For many use cases, and especially when using Apama, the time inside the Edge appliance must be synchronized with the network.
 
-By default, the `chrony` service is responsible for time synchronization with the host operating system. For HyperV, the `chronyd` service is disabled by default for accurate time synchronization.
+By default, the `chrony` service is responsible for time synchronization with the host operating system. For Hyper-V, the `chronyd` service is disabled by default for accurate time synchronization.
+
+Once the time synchronization is enabled, you can specify the NTP servers and the interval to trigger the time synchronization.
 
 ### Configuring the time synchronization using the REST APIs
 

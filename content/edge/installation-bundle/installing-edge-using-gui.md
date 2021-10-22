@@ -37,8 +37,6 @@ To install Cumulocity IoT Edge using the GUI:
 
    The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
-	>**Important:** Once configured, the domain name cannot be changed. Ensure that you use the name finally desired.
-
 10. Provide the Cumulocity IoT Edge license file associated with your domain name below **Product licence**.
 
 11. Provide the SSL certificate file and the SSL certificate key file.

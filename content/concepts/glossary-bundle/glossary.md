@@ -157,7 +157,7 @@ For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-
 ### EPL Apps
 EPL Apps is part of the Streaming Analytics application and allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing *.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
 
-See also [EPL](#epl) and [Analytics Builder](#analytics-builder).
+See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analytics-builder).
 
 For more details see [Overview > EPL apps](/apama/overview/#apama-epl-apps) in the *Streaming Analytics guide*.
 
@@ -258,7 +258,9 @@ The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. I
 
 <a name=""></a>
 ### OEE
+OEE (Overall Equipment Effectiveness) is a metric for measuring the efficiency, effectiveness and performance of production processes, by breaking them down into the three components Availability, Performance, and Quality. The {{< product-c8y-iot >}} OEE application uses machine data, master data and planning data from machines and machine lines to calculate the factors of the OEE calculation.
 
+For details see the [{{< product-c8y-iot >}} OEE guide](/oee/overview).
 
 <a name="operations"></a>
 ### Operations
@@ -315,21 +317,21 @@ For details see [Developing applications > Subscribing applications](/concepts/a
 ### Tenant
 Tenants are physically separated data spaces with a separate URL, which has a specific set of users, a separate application management and no data sharing by default. Users in a single tenant share the same URL and the same data space.
 
+See also [Tenant hierarchy](#tnt-hierarchy).
+
 <a name="tenant-domain"></a>
 ### Tenant domain
 A key feature of the Enterprise tenant is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
 
-See also [Tenant hierarchy](#)
-
 For details see [{{< enterprise-tenant >}} > Customizing your platform](/users-guide/enterprise-tenant/#customization) in the *User guide*.
 
-<a name=""></a>
+<a name="tnt-hierarchy"></a>
 ### Tenant hierarchy
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
 
-  * {{< standard-tenant >}}
-  * {{< enterprise-tenant >}}
-  * {{< management-tenant >}}
+  * [{{< standard-tenant >}}](#standard-tenant)
+  * [{{< enterprise-tenant >}}](#ent-tenant)
+  * [{{< management-tenant >}}](#mgm-tenant)
 
 These three levels differ in their scope, particularly with regards to administration.
 
@@ -348,7 +350,7 @@ A {{< product-c8y-iot >}} web application can be:
 
 All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
 
-For details see [Developing applications > Web applications](/concepts/applications/#web-applications).
+For details see [Developing applications > Web applications](/concepts/applications/#web-applications) in the *Concepts guide*.
 
 <a name="web-sdk"></a>
 ### Web SDK
@@ -359,7 +361,7 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
   * apply default or
   * branded UI components to your custom application.
 
-For details see [Web SDK guide](/web/overview/).
+For details see the [Web SDK guide](/web/overview/).
 
 <a name="widgets"></a>
 ### Widgets

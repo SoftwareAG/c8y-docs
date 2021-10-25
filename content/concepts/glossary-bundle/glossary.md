@@ -25,7 +25,7 @@ Analytics Builder is part of the Streaming Analytics application.
 
 See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Apps](#epl-apps).
 
-For details see [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
+For details see [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
 <a name="application"></a>
 ### Application
@@ -37,7 +37,7 @@ The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By def
 
 See also [Administration application](#administration-app), [Cockpit application](#cockpit-application) and [Device Management application](#dev-management-application).
 
-For details see [Developing applications](/guides/concepts/#applications/).
+For details see [Developing applications](/concepts/applications/) in the *Concepts guide*.
 
 <a name="application-switcher"></a>
 ### Application switcher
@@ -136,7 +136,7 @@ IoT devices are hardware components with a sensor that transmits data, like wire
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For details see [Device Management](/guides/users-guide/device-management-bundle/#overview) in the *User guide*.
+For details see [Device Management](/users-guide/device-management/#overview) in the *User guide*.
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
@@ -159,12 +159,12 @@ EPL Apps is part of the Streaming Analytics application and allows you to develo
 
 See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analytics-builder).
 
-For more details see [Overview > EPL apps](/apama/overview/#apama-epl-apps) in the *Streaming Analytics guide*.
+For more details see [Overview > EPL apps](/apama/overview-analytics/#apama-epl-apps) in the *Streaming Analytics guide*.
 
 <a name=""></a>
 ### Events
 
-Cumulocity IoT: Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
+{{< product-c8y-iot >}}: Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
 
 Apama: Conceptually, an event is an occurrence of a particular item of interest at a specific time.
 Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events.
@@ -177,15 +177,15 @@ A GA release is a release with general availability (GA). GA releases are typica
 ### Global roles
 Global roles contain permissions that apply to all data within a tenant.
 
-For details see [Security aspects > Access control](/concepts/security/#access-control) in the *Concepts guide* as well as [Administration > Managing permissions > Global rules](/users-guide/administration/managing-permissions/#global) in the *User guide*.
+For details see [Security aspects > Access control](/concepts/security/#access-control) in the *Concepts guide* as well as [Administration > Managing permissions > Global rules](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 <a name=""></a>
 ### Instances
 TBD
 
-Cumulocity IoT Instances
+{{< product-c8y-iot >}}:
 
-Apama Instances:
+Apama:
 Relates to Analytics Builder
 
 
@@ -193,7 +193,7 @@ Relates to Analytics Builder
 ### Inventory roles
 Inventory roles contain permissions that apply to groups or devices.
 
-For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#managing-permissions) in the *User guide*.
+For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#managing-permissions/#inventory) in the *User guide*.
 
 <a name="ml-engine"></a>
 ### Machine Learning Engine
@@ -220,7 +220,7 @@ Managed objects can be “smart objects” such as smart electricity meters, hom
 
 <a name="mgm-tenant"></a>
 ### Management tenant
-The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} [tenant hierarchy](/concepts/tenant-hierarchy/#tenant-levels).
+The {{< management-tenant >}} builds the highest level of the [{{< product-c8y-iot >}} tenant hierarchy](/concepts/tenant-hierarchy/#tenant-levels).
 Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
 See also [{{< standard-tenant >}}](#standard-tenant) and [{{< enterprise-tenant >}}](#ent-tenant).
@@ -250,7 +250,7 @@ For details see [Developing applications > Microservices](/concepts/applications
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-For details see [Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy-bundle/#multi-tenancy) in the *Concepts guide*.
+For details see [Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy) in the *Concepts guide*.
 
 <a name="navigator"></a>
 ### Navigator
@@ -290,7 +290,7 @@ For details see [Security aspects > Access control](/concepts/security/#access-c
 {{< product-c8y-iot >}} includes a sensor library to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library covers basic sensors and controls, and is supported by the {{< product-c8y-iot >}} client libraries. It also enables writing powerful generic IoT software plugins.
 Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention.
 
-For details see [{{< product-c8y-iot >}}'s domain model > The sensor library](/concepts/domain-model/#sensor-library) and [{{< product-c8y-iot >}}'s domain model > Inventory](/concepts/domain-model/#inventory).
+For details see [{{< product-c8y-iot >}}'s domain model > The sensor library](/concepts/domain-model/#sensor-library) and [{{< product-c8y-iot >}}'s domain model > Inventory](/concepts/domain-model/#inventory) in the *Concepts guide*.
 
 <a name="smart-rules"></a>
 ### Smart rules

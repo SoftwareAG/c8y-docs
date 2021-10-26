@@ -28,13 +28,12 @@ For details see [Overview > Analytics Builder](apama/overview-analytics/#analyti
 
 <a name="application"></a>
 ### Application
-The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three default applications: Administration, Cockpit and Device Management.
+The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three main default applications: [Administration](#administration-app), [Cockpit](#cockpit-application) and [Device Management](#dev-management-application).
+
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
 
   * web-based user interface applications (web applications)
   * server-side business logic through microservices (microservices)
-
-See also [Administration application](#administration-app), [Cockpit application](#cockpit-application) and [Device Management application](#dev-management-application).
 
 For details see [Developing applications](/concepts/applications/).
 

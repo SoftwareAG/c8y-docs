@@ -19,6 +19,18 @@ Additionally, you can use the following resources for more details on the change
 - https://angular.io/guide/ivy
 - https://angular.io/guide/updating-to-version-12
 
+#### Improved password security for tenant administrators
+
+Enforcing a strong (green) password for all users in the management tenant does no longer exclude the tenant administrators. Tenant admin users now also have strong password, i.e. green password, enforced. This increases security and protects the tenant admin account.
+
+#### Removing PlatformImpl Spring bean from Microservice SDK
+
+PlatformImpl is not exposed anymore as a Spring bean in order to remove a design gap which allowed to wrongly use Cumulocity IoT APIs (by mixing Spring injection with raw Java).
+
+#### Leaflet library has been updated to the latest version
+
+To improve navigation in the "Map" widget on mobile devices, it was necessary to update the "leaflet" library to the latest version. If you have implemented your own custom map on top of our Web SDK, please check that your implementation still works properly.
+
 
 ### Machine Learning
 

@@ -20,10 +20,9 @@ Agents are software components which translate the device-specific interface pro
 
 <a name="analytics-builder"></a>
 ### Analytics Builder
-Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
-Analytics Builder is part of the Streaming Analytics application.
+Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. It allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 
-See also [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) and [EPL Apps](#epl-apps).
+See also [EPL Apps](#epl-apps).
 
 For details see [Overview > Analytics Builder](apama/overview-analytics/#analytics-builder) in the *Streaming Analytics guide*.
 
@@ -100,8 +99,9 @@ For details see [{{< sensor-app >}}](/users-guide/sensor-app-bundle/#overview) i
 
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
-Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
-The operation logic is based on [Apama’s Event Processing Language (EPL)](#epl).
+Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is based on [Apama’s Event Processing Language (EPL)](#epl).
+
+See also [Analytics Builder](#analytics-builder) and [EPL Apps](#epl-apps).
 
 For details see the [Streaming Analytics guide](/apama/overview-analytics/).
 
@@ -155,13 +155,13 @@ See also [Standard tenant](#standard-tenant) and [Management tenant](#mgm-tenant
 <a name="epl"></a>
 ### Event Processing Language (EPL)
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
-EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
+EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-For details see [Overview > Streaming analytics with Apama EPL](/apama/overview-analytics/#streaming-analytics) in the *Streaming Analytics guide*.
+For details see [Real-time processing > Using the Apama Event Processing Language (EPL)](concepts/realtime/#using-epl).
 
 <a name="epl-apps"></a>
 ### EPL Apps
-EPL Apps is part of the Streaming Analytics application and allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing *.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
+EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. It allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing *.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
 
 See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analytics-builder).
 

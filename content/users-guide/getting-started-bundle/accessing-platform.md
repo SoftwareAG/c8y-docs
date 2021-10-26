@@ -7,7 +7,7 @@ aliases:
   - /users-guide/getting-started/#accessing-cumulocity-platform
 ---
 
-You access the {{< product-c8y-iot >}} platform via a web browser.
+You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
 ### Supported browsers
 
@@ -29,12 +29,14 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Chrome on Android (latest version) on Galaxy smartphones and tablets
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
->**Info:** {{< product-c8y-iot >}} on mobile devices shows some limitations:
->
-* The usage may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
-* Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile/touch devices.
+>**Info:** {{< product-c8y-iot >}} on mobile devices shows some limitations.
+The limitations could be the following:
+>* The usage may be constrained by the memory and the processing power available on the devices.<br>
+  For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+>* Using the private mode on browsers may not work.
+>* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 
+<a name="url"></a>
 ### URL
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
@@ -43,7 +45,8 @@ To access the applications for your {{< product-c8y-iot >}} tenant, use the foll
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
-This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
+
 
 >**Info:** The above URL is only valid for {{< product-c8y-iot >}} {{< standard-tenant >}} subscribers. For {{< enterprise-tenant >}} deployments of {{< product-c8y-iot >}}, the URL is specific to your organization.
 
@@ -59,7 +62,7 @@ If you use one of the public cloud instances of the {{< product-c8y-iot >}} plat
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/administration/#branding).
+> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
@@ -73,7 +76,7 @@ Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initiall
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
-To explicitly logout, click the **User** button at the right of the the top bar and from the context menu select **Logout**.
+To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 >**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 
@@ -103,7 +106,6 @@ https://<tenant-domain>.{{< domain-c8y >}}/apps/devicemanagement/index.html#/dev
 Using such an URL, you can:
 
 *   Save bookmarks for specific devices or pages.
-*   Send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data.
+*   Send emails with a link to devices or sensor data manually or automatically, using the real-time event engine.
 *   Use the backward and forward navigation of your browser.
-*   Write own web applications which link directly to information contained in a {{< product-c8y-iot >}} application.
-chromium-based
+*   Write your own web applications which link directly to information contained in a {{< product-c8y-iot >}} application.

@@ -8,15 +8,15 @@ This section describes specific aspects of developing microservices using the RE
 
 {{< product-c8y-iot >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
 
-REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
+REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST isï¿½[RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
 With this API description you will learn how to use {{< product-c8y-iot >}}'s REST interfaces to develop microservice applications on top of the {{< product-c8y-iot >}} platform.
 
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
 
-- [REST implementation](https://{{< domain-c8y >}}/api/#section/REST-implementation) is the reference for all general concepts.
-- [Device management library](https://{{< domain-c8y >}}/api/#section/Device-management-library) specifies the data model for device management.
-- [Sensor library](https://{{< domain-c8y >}}/api/#section/Sensor-library) specifies the data model for sensors and controls.
+- [REST implementation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
+- [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) specifies the data model for device management.
+- [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the *Device SDK guide*.
@@ -63,7 +63,7 @@ From this point, you can navigate further to the different returned objects. For
 $ curl -u <username>:<password> https://<yourTenant>.{{< domain-c8y >}}/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
 
 ### Using Postman
 

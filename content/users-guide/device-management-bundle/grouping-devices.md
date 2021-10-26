@@ -2,9 +2,16 @@
 weight: 30
 title: Grouping devices
 layout: redirect
+helpcontent:
+  - label: grouping-devices
+    title: Grouping devices
+    content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
+
+
+  You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator, see also *Device Management > Grouping devices* in the *User guide*."
 ---
 
-Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
+Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 {{< product-c8y-iot >}} distinguishes between top-level groups and subgroups:
 
@@ -32,7 +39,8 @@ Click a group to view its details. Per default, the **Subassets** tab is display
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
-**Subassets** tab
+<a name="subassets-tab"></a>
+**Subassets tab**
 
 At the top of the **Subassets** tab, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
 
@@ -77,7 +85,6 @@ In the **Info** tab, the following information is provided:
 In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
 
 > **Info:** Bulk operations are ordered by date, showing the latest operation at the top.
-
 
 <a name="add-group"></a>
 ### To add a group
@@ -181,7 +188,6 @@ You can easily restructure groups, subgroups and devices by a drag & drop functi
 1. In the navigator, select the group or device which you want to move or add to another group.
 2. Drag and drop it to the desired group.
 3. In the resulting dialog box, select if you want to move or add the device.
-
 
 <a name="smart-groups"></a>
 ### Using smart groups

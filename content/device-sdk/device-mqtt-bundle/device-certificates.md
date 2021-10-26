@@ -38,7 +38,7 @@ To manage the auto registration field of uploaded certificates in the UI refer t
 
 The user for the device can also be created via the standard bulk registration in Device Management.
 
-The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
+The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
 
 **Single registration**
 
@@ -59,7 +59,7 @@ A device which is authenticated by certificates and connected to the {{< product
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in the {{< openapi >}} for more details.
+A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
@@ -347,7 +347,7 @@ The connection settings should look like this:
 
 ### MQTT example client
 
-The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certficiates, is available here: https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/.
+The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
 
 Here is an example that shows how to add the needed dependency in Maven to use Eclipse Paho client:

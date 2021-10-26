@@ -43,7 +43,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice
 
-You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/hello-world-microservice/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
+You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
 > **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
@@ -88,7 +88,7 @@ The response looks like this:
 }
 ```
 
-See also [Tenants](https://{{< domain-c8y >}}/api/#tag/Tenants) in the {{< openapi >}}.
+See also [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 

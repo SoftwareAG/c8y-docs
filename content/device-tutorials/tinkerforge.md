@@ -334,4 +334,4 @@ The GPS bricklet will report its current location and send location updates as t
 
 ### Extending the TinkerForge driver
 
-The source code for the TinkerForge driver is publicly available at https://bitbucket.org/m2m/cumulocity-examples in the folder _java-agent/tinkerforge-driver_.
+The source code for the TinkerForge driver is publicly available at https://github.com/SoftwareAG/cumulocity-examples/ in the folder _java-agent/tinkerforge-driver_.

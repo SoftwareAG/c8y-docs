@@ -95,7 +95,7 @@ Cookies zum Speichern eines Tokens in einem Browser haben eine eigene Gültigkei
 
 Der Standardwert ist zwei Wochen. Es kann auch ein beliebiger negativer Wert eingestellt werden, so dass das Cookie gelöscht wird, wenn der Benutzer den Browser schließt.
 
-Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in {{< openapi >}}.
+Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
 <a name="single-sign-on"></a>
 ### Konfigurieren von Single Sign-On

@@ -6,6 +6,8 @@ layout: redirect
 
 You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
 
+When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities.
+
 >**Info:** {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
 
 To update {{< product-c8y-iot >}} Edge:
@@ -14,12 +16,12 @@ To update {{< product-c8y-iot >}} Edge:
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge Configuration** > **Update** in the navigator.
+3. Click **Edge** > **Update** in the navigator.
 
 4. Click **Update** > **Next**.
 
 5. Upload the new {{< product-c8y-iot >}} Edge archive file and click **Next**.
 
-7. Click **Update now**.
+7. Click **Update**.
 
 8. Restart your Edge appliance.

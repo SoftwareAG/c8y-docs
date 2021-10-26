@@ -8,7 +8,7 @@ The {{< product-c8y-iot >}} tenant allows you to remotely manage your Edge appli
 
 >**Important:** If you want to configure remote-connectivity, you must configure the DNS when configuring the network, for example, using the `/edge/configuration/network` endpoint.
 
-### Configuring remote-connectivity using the GUI
+### Configuring remote-connectivity using the UI
 
 1. Log in to the {{< management-tenant >}}.
 
@@ -17,7 +17,7 @@ The {{< product-c8y-iot >}} tenant allows you to remotely manage your Edge appli
 
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge Configuration** > **Remote Connectivity** in the navigator.
+3. Click **Edge** > **Remote Connectivity** in the navigator.
 
 4. Click **Enable remote connectivity** toggle to enable remote-connectivity.
 

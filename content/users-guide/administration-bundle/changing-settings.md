@@ -2,7 +2,23 @@
 weight: 70
 title: Changing settings
 layout: redirect
+helpcontent:
+- label: authentication
+  title: Authentication
+  content: "Under **Login settings** you can specify your preferred login mode:
+
+
+	* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+	* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
+
+	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+
+	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Changing settings > Configuring single-sign on* in the *User guide*."
 ---
+
 
 From the **Settings** menu, administrators can manage various settings for the account:
 
@@ -11,7 +27,6 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [properties library](#properties).
 - Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
-
 
 <a name="authentication"></a>
 ### Changing authentication settings
@@ -95,7 +110,13 @@ Cookies used to store a token in a browser have their own validity time that can
 
 The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
 
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+
+> **Info:** If external communication to the {{< management-tenant >}} has been blocked than it is only possible to access the tenant in a secure way (for example via SSH tunnel).
+This means that you can just as well use basic authentication. Additionally, it is not possible
+to use OAuth authentication since the communication from the external authorization server is also blocked.
+Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
+
 
 <a name="single-sign-on"></a>
 ### Configuring single sign-on

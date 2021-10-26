@@ -34,7 +34,7 @@ Start the AutoML process by passing the data to the engine and get the initial i
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources/1631782506_0702_Resource/automl' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -107,7 +107,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
                 "None",
                 "Mean",
                 "Median",
-                "Mode"
+                "Replace with NA",
+                "Most Frequent"
             ],
             "data_transformation_steps": [
                 "None",
@@ -143,9 +144,59 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
                     "IsolationForest",
                     "OneClassSVM"
                 ]
+            },
+            "metics_for_models": {
+                "Regression": [
+                    "neg_log_loss",
+                    "neg_mean_absolute_error",
+                    "neg_mean_squared_error",
+                    "neg_median_absolute_error",
+                    "r2",
+                    "roc_auc"
+                ],
+                "Classification": [
+                    "accuracy",
+                    "adjusted_rand_score",
+                    "average_precision",
+                    "balanced_accuracy",
+                    "f1",
+                    "f1_macro",
+                    "f1_micro",
+                    "f1_samples",
+                    "f1_weighted",
+                    "precision",
+                    "precision_macro",
+                    "precision_micro",
+                    "precision_samples",
+                    "precision_weighted",
+                    "recall",
+                    "recall_macro",
+                    "recall_micro",
+                    "recall_samples",
+                    "recall_weighted"
+                ]
+            },
+            "anomaly_model_parameters": {
+                "IsolationForest": [
+                    "n_estimators",
+                    "max_samples",
+                    "contamination",
+                    "max_features",
+                    "bootstrap"
+                ],
+                "OneClassSVM": [
+                    "kernel",
+                    "degree",
+                    "gamma",
+                    "tol",
+                    "nu",
+                    "shrinking",
+                    "cache_size",
+                    "max_iter"
+                ]
             }
         },
-        "idforData": "1601284185_autoML"
+        "idforData": "1631782616_autoML"
     }
 }
 ```
@@ -207,39 +258,7 @@ Train an AutoML model by using pre-processing options for variables and using th
 curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
---data-raw '{"data_details": {"data": [{"position": 1,
-    "variable": "col1","dtype": "float64","missing_val": 0,"changedataType": "Continuous",
-    "imputation_method": "None","data_transformation_step": "None","use_for_model": true},
-   {"position": 2,"variable": "col2","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 3,"variable": "col3","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 4,"variable": "col4","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 5,"variable": "target","dtype": "int64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": false}],
-  "options": {"changedataTypes": ["None", "Continuous", "Categorical"],
-   "imputation_methods": ["None", "Mean", "Median", "Mode"],
-   "data_transformation_steps": ["None","One Hot Encoding",    "Label Encoding",
-    "Normalize",    "Scaling Standard","Scaling Min Max",    "Scaling Max Absolute"],
-   "algorithmTypes": {"Regression": ["ExtraTreeRegressor","GradientBoostingRegressor","DecisionTreeRegressor",
-                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor",
-                                     "LinearRegression","LGBMRegressor"],
-    "Classification": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
-    "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"],
-    "Anomaly": ["IsolationForest", "OneClassSVM"]}},
-    "idforData": "1601284185_autoML",
-    "target_variable":"target",
-    "problem_type":"Classification",
-                  "newPMMLFileName": "SampleModel",
-    "parameters": {"generation": 10, "population_size": 2,
-                   "model_name": "SampleModel", "scoring": "accuracy",
-                   "algorithm": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
-    "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"]}}}'
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"col1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"col2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"col3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"col4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"target","dtype":"int64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","target_variable":"col1","idforData":"1631782700_autoML","newPMMLFileName":"sampleClassifiactionModel","parameters":{"generation":5,"population_size":25,"model_name":"sampleClassifiactionModel","scoring":"accuracy","algorithm":["DecisionTreeClassifier","RandomForestClassifier","GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"]}}}'
 ```
 
 **Example Response**
@@ -248,39 +267,43 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 200 - OK
 
 {
-    "id": "1601284841_Tasks",
-    "name": "SampleModel",
-    "createdAt": "Mon Sep 28 09:20:41 2020",
+    "id": "1631782896_Tasks",
+    "name": "sampleClassifiactionModel2",
+    "createdAt": "2021-09-16T09:01:36.773619Z",
     "type": "AUTOML",
     "cronExpression": "",
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "pID": "859",
-            "status": "RUNNING",
-            "message": "In Progress",
-            "targetVar": "target",
+            "targetVar": "col1",
             "problem_type": "Classification",
-            "id": "1601284185_autoML",
-            "tasksID": "1601284841_Tasks",
+            "id": "1631782868_autoML",
+            "tasksID": "1631782896_Tasks",
             "shape": [
                 150,
                 5
             ],
-            "taskName": "SampleModel",
+            "executedAt": "2021-09-16T09:01:36.773619Z",
+            "taskName": "sampleClassifiactionModel2",
             "type": "AUTOML",
-            "executedAt": "Mon Sep 28 09:20:41 2020",
             "listOfModelAccuracy": [],
-            "projectID": "1601283001_Project"
+            "projectID": "1631779101_Project",
+            "status": "RUNNING",
+            "message": "In progress"
         }
     ],
-    "projectID": "1601283001_Project",
-    "projectName": "ExampleProject",
+    "projectID": "1631779101_Project",
+    "projectName": "Sample Project",
     "properties": [
+        {
+            "key": "data",
+            "label": "Data Used",
+            "value": "irisDataset.csv"
+        },
         {
             "key": "targetVar",
             "label": "Target variable",
-            "value": "target"
+            "value": "col1"
         },
         {
             "key": "problem_type",
@@ -298,14 +321,13 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
         {
             "key": "model_name",
             "label": "Model Name",
-            "value": "SampleModel"
+            "value": "sampleClassifiactionModel2"
         },
         {
             "key": "alogrithm",
             "label": "Algorithms Size",
             "value": [
                 "DecisionTreeClassifier",
-                "ExtraTreesClassifier",
                 "RandomForestClassifier",
                 "GradientBoostingClassifier",
                 "KNeighborsClassifier",
@@ -318,19 +340,24 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
         {
             "key": "population_size",
             "label": "Population Size",
-            "value": 2
+            "value": 25
         },
         {
             "key": "generation",
             "label": "Generation",
-            "value": 10
+            "value": 5
+        },
+        {
+            "key": "scoring_type",
+            "label": "Scoring type",
+            "value": "accuracy"
         }
     ],
     "recurrence": "ONE_TIME",
     "startDate": "",
     "startTimeH": "",
     "startTimeM": "",
-    "sortTime": 1601284841
+    "sortTime": 1631782896
 }
 ```
 
@@ -340,39 +367,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 401 - Unauthorized
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
---data-raw '{"data_details": {"data": [{"position": 1,
-    "variable": "col1","dtype": "float64","missing_val": 0,"changedataType": "Continuous",
-    "imputation_method": "None","data_transformation_step": "None","use_for_model": true},
-   {"position": 2,"variable": "col2","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 3,"variable": "col3","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 4,"variable": "col4","dtype": "float64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": true},
-   {"position": 5,"variable": "target","dtype": "int64","missing_val": 0,
-    "changedataType": "Continuous","imputation_method": "None","data_transformation_step": "None",
-    "use_for_model": false}],
-  "options": {"changedataTypes": ["None", "Continuous", "Categorical"],
-   "imputation_methods": ["None", "Mean", "Median", "Mode"],
-   "data_transformation_steps": ["None","One Hot Encoding",    "Label Encoding",
-    "Normalize",    "Scaling Standard","Scaling Min Max",    "Scaling Max Absolute"],
-   "algorithmTypes": {"Regression": ["ExtraTreeRegressor","GradientBoostingRegressor","DecisionTreeRegressor",
-                                     "LinearSVR","RandomForestRegressor","XGBRegressor","KNeighborsRegressor",
-                                     "LinearRegression","LGBMRegressor"],
-    "Classification": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
-    "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"],
-    "Anomaly": ["IsolationForest", "OneClassSVM"]}},
-    "idforData": "1601284185_autoML",
-    "target_variable":"target",
-    "problem_type":"Classification",
-                  "newPMMLFileName": "SampleModel",
-    "parameters": {"generation": 10, "population_size": 2,
-                   "model_name": "SampleModel", "scoring": "accuracy",
-                   "algorithm": ["DecisionTreeClassifier","ExtraTreesClassifier","RandomForestClassifier",
-    "GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"]}}}'
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"col1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"col2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"col3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"col4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"target","dtype":"int64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","target_variable":"col1","idforData":"1631782700_autoML","newPMMLFileName":"sampleClassifiactionModel","parameters":{"generation":5,"population_size":25,"model_name":"sampleClassifiactionModel","scoring":"accuracy","algorithm":["DecisionTreeClassifier","RandomForestClassifier","GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"]}}}'
 ```
 
 **Example Response**
@@ -411,7 +406,7 @@ Start the Anomaly detection model training process by passing the data to the en
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/automl' \
+curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources/1631782512_0168_Resource/automl' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -435,7 +430,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
             },
             {
                 "position": 2,
-                "variable": "Sensor1_sensor4",
+                "variable": "Sensor1_temperature2",
                 "dtype": "float64",
                 "missing_val": 0,
                 "changedataType": "Continuous",
@@ -445,7 +440,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
             },
             {
                 "position": 3,
-                "variable": "Sensor1_sensor2",
+                "variable": "Sensor1_temperature1",
                 "dtype": "float64",
                 "missing_val": 0,
                 "changedataType": "Continuous",
@@ -455,17 +450,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
             },
             {
                 "position": 4,
-                "variable": "Sensor1_sensor3",
-                "dtype": "float64",
-                "missing_val": 0,
-                "changedataType": "Continuous",
-                "imputation_method": "None",
-                "data_transformation_step": "None",
-                "use_for_model": true
-            },
-            {
-                "position": 5,
-                "variable": "Sensor1_sensor1",
+                "variable": "Sensor1_pressure2",
                 "dtype": "float64",
                 "missing_val": 0,
                 "changedataType": "Continuous",
@@ -484,7 +469,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
                 "None",
                 "Mean",
                 "Median",
-                "Mode"
+                "Replace with NA",
+                "Most Frequent"
             ],
             "data_transformation_steps": [
                 "None",
@@ -520,9 +506,59 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
                     "IsolationForest",
                     "OneClassSVM"
                 ]
+            },
+            "metics_for_models": {
+                "Regression": [
+                    "neg_log_loss",
+                    "neg_mean_absolute_error",
+                    "neg_mean_squared_error",
+                    "neg_median_absolute_error",
+                    "r2",
+                    "roc_auc"
+                ],
+                "Classification": [
+                    "accuracy",
+                    "adjusted_rand_score",
+                    "average_precision",
+                    "balanced_accuracy",
+                    "f1",
+                    "f1_macro",
+                    "f1_micro",
+                    "f1_samples",
+                    "f1_weighted",
+                    "precision",
+                    "precision_macro",
+                    "precision_micro",
+                    "precision_samples",
+                    "precision_weighted",
+                    "recall",
+                    "recall_macro",
+                    "recall_micro",
+                    "recall_samples",
+                    "recall_weighted"
+                ]
+            },
+            "anomaly_model_parameters": {
+                "IsolationForest": [
+                    "n_estimators",
+                    "max_samples",
+                    "contamination",
+                    "max_features",
+                    "bootstrap"
+                ],
+                "OneClassSVM": [
+                    "kernel",
+                    "degree",
+                    "gamma",
+                    "tol",
+                    "nu",
+                    "shrinking",
+                    "cache_size",
+                    "max_iter"
+                ]
             }
         },
-        "idforData": "1601423242_autoML"
+        "idforData": "1631783009_autoML"
     }
 }
 ```
@@ -578,10 +614,10 @@ Train an Anomaly detection model by using pre-processing options for variables a
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/anomaly' \
+curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/resources/1631782512_0168_Resource/anomaly' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
---data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_sensor4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_sensor2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_sensor3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"Sensor1_sensor1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","idforData":"1601423566_autoML","newPMMLFileName":"anomalyModel","parameters":{"generation":10,"population_size":25,"model_name":"anomalyModel","algorithm":"IsolationForest"}}}'
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_temperature2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_temperature1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_pressure2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"idforData":"1631783117_autoML","newPMMLFileName":"sampleAnomaly","parameters":{"n_estimators":100,"max_samples":"auto","contamination":0.5,"max_features":1,"bootstrap":false,"algorithm":"IsolationForest","model_name":"sampleAnomaly"}}}'
 ```
 
 **Example Response**
@@ -590,52 +626,39 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 200 - OK
 
 {
-    "id": "1601423370_Tasks",
-    "name": "anomalyModel",
-    "createdAt": "Tue Sep 29 23:49:30 2020",
+    "id": "1631783243_Tasks",
+    "name": "sampleAnomaly2",
+    "createdAt": "2021-09-16T09:07:23.487543Z",
     "type": "ANOMALY",
     "cronExpression": "",
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "pID": "1901",
             "status": "RUNNING",
-            "message": "Final pipeline trained",
+            "message": "In progress",
             "problem_type": "Anomaly",
-            "id": "1601423341_autoML",
-            "tasksID": "1601423370_Tasks",
+            "id": "1631783211_autoML",
+            "tasksID": "1631783243_Tasks",
             "shape": [
-                658,
-                5
+                106,
+                4
             ],
-            "taskName": "anomalyModel",
+            "taskName": "sampleAnomaly2",
             "type": "ANOMALY",
-            "executedAt": "Tue Sep 29 23:49:30 2020",
+            "executedAt": "2021-09-16T09:07:23.487543Z",
             "listOfModelAccuracy": [],
-            "projectID": "1601283001_Project",
-            "dataFrameFileName": "./MLW/1601283001_Project/Model/anomalyModel_df.pkl"
-        },
-        {
-            "pID": "1902",
-            "status": "RUNNING",
-            "message": "In Progress",
-            "problem_type": "Anomaly",
-            "id": "1601423566_autoML",
-            "tasksID": "1601423370_Tasks",
-            "shape": [
-                658,
-                5
-            ],
-            "taskName": "anomalyModel",
-            "type": "ANOMALY",
-            "executedAt": "Tue Sep 29 23:54:29 2020",
-            "listOfModelAccuracy": [],
-            "projectID": "1601283001_Project"
+            "projectID": "1631779101_Project",
+            "pID": "140106208573184"
         }
     ],
-    "projectID": "1601283001_Project",
-    "projectName": "ExampleProject",
+    "projectID": "1631779101_Project",
+    "projectName": "Sample Project",
     "properties": [
+        {
+            "key": "data",
+            "label": "Data Used",
+            "value": "anomalySampleData.csv"
+        },
         {
             "key": "problem_type",
             "label": "Problem Type",
@@ -645,36 +668,26 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
             "key": "dataSize",
             "label": "Data Size",
             "value": [
-                658,
-                5
+                106,
+                4
             ]
         },
         {
             "key": "model_name",
             "label": "Model Name",
-            "value": "anomalyModel"
+            "value": "sampleAnomaly2"
         },
         {
             "key": "alogrithm",
             "label": "Algorithms Size",
             "value": "IsolationForest"
-        },
-        {
-            "key": "population_size",
-            "label": "Population Size",
-            "value": 25
-        },
-        {
-            "key": "generation",
-            "label": "Generation",
-            "value": 10
         }
     ],
     "recurrence": "ONE_TIME",
     "startDate": "",
     "startTimeH": "",
     "startTimeM": "",
-    "sortTime": 1601423669
+    "sortTime": 1631783243
 }
 ```
 
@@ -685,7 +698,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/anomaly' \
 --header 'Content-Type: application/json' \
---data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_sensor4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_sensor2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_sensor3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"Sensor1_sensor1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","idforData":"1601423566_autoML","newPMMLFileName":"anomalyModel","parameters":{"generation":10,"population_size":25,"model_name":"anomalyModel","algorithm":"IsolationForest"}}}'
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_temperature2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_temperature1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_pressure2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"idforData":"1631783117_autoML","newPMMLFileName":"sampleAnomaly","parameters":{"n_estimators":100,"max_samples":"auto","contamination":0.5,"max_features":1,"bootstrap":false,"algorithm":"IsolationForest","model_name":"sampleAnomaly"}}}'
 ```
 
 **Example Response**

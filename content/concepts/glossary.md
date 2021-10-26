@@ -254,10 +254,11 @@ For details see [Developing applications > Microservices](/concepts/applications
 
 <a name="Model"></a>
 ### Model
-
 Used in the context of [Analytics Builder](#analytics-builder).
+A model is a container which can have a network of blocks connected to each other with wires.
+The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
-tba
+See also [Blocks](#blocks).
 
 <a name=""></a>
 ### Multi-tenancy

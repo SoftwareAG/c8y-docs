@@ -117,10 +117,10 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 
 Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|2|device type|NO|c8y_MQTTDevice|
+|Position|Parameter  |Mandatory|Type  |Default value|
+|:-------|:----------|:--------|:-----|:------------|
+|1|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
+|2|device type|NO|String|c8y_MQTTDevice|
 
 **Example**
 
@@ -133,11 +133,11 @@ Create a new device for the serial number in the inventory if not yet existing. 
 
 Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type **c8y_Serial** and the value a combination of the serial of the root device and the unique child ID.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|unique child ID|YES| &nbsp; |
-|2|device name|NO|MQTT Device &lt;serialNumber&gt;|
-|3|device type|NO|c8y_MQTTChildDevice|
+|Position|Parameter|Mandatory|Type    |Default value|
+|:-------|:--------|:--------|:-------|:------------|
+|1|unique child ID|YES|String| &nbsp; |
+|2|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
+|3|device type|NO|String|c8y_MQTTChildDevice|
 
 **Example**
 
@@ -161,9 +161,9 @@ Trigger the sending of child devices of the device.
 
 Remove one or more fragments from a device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|fragmentName|YES|
+|Position|Parameter|Mandatory|Type |
+|:-------|:--------|:--------|:----|
+|1...|fragmentName|YES|String|
 
 **Example**
 
@@ -176,11 +176,11 @@ Remove one or more fragments from a device.
 
 Update the hardware properties of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|serialNumber|NO|
-|2|model|NO|
-|3|revision|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|serialNumber|NO|String|
+|2|model|NO|String|
+|3|revision|NO|String|
 
 **Example**
 
@@ -193,15 +193,15 @@ Update the hardware properties of the device.
 
 Update the mobile properties of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|imei|NO|
-|2|iccid|NO|
-|3|imsi|NO|
-|4|mcc|NO|
-|5|mnc|NO|
-|6|lac|NO|
-|7|cellId|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:----|
+|1|imei|NO|String|
+|2|iccid|NO|String|
+|3|imsi|NO|String|
+|4|mcc|NO|String|
+|5|mnc|NO|String|
+|6|lac|NO|String|
+|7|cellId|NO|String|
 
 **Example**
 
@@ -214,12 +214,12 @@ Update the mobile properties of the device.
 
 Update the position properties of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|latitude|NO|
-|2|longitude|NO
-|3|altitude|NO|
-|4|accuracy|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|latitude|NO|Number|
+|2|longitude|NO|Number|
+|3|altitude|NO|Number|
+|4|accuracy|NO|Integer|
 
 **Example**
 
@@ -232,9 +232,9 @@ Update the position properties of the device.
 
 Update the configuration properties of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|configuration|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|configuration|NO|String|
 
 Example
 
@@ -247,9 +247,9 @@ Example
 
 Set the supported operations of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported operations| NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported operations|NO|String|
 
 **Example**
 
@@ -264,11 +264,11 @@ Set the supported operations of the device.
 
 Set the firmware installed on the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|name|NO|
-|2|version|NO|
-|3|url|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|name|NO|String|
+|2|version|NO|String|
+|3|url|NO|String|
 
 **Example**
 
@@ -281,12 +281,12 @@ Set the firmware installed on the device.
 
 Set the list of software installed on the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of 3 values per software|NO|
-|1.1|name|NO|
-|1.2|version|NO|
-|1.3|url|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of 3 values per software|NO|(n/a)|
+|1.1|name|NO|String|
+|1.2|version|NO|String|
+|1.3|url|NO|String|
 
 **Example**
 
@@ -301,9 +301,9 @@ Set the required interval for availability monitoring as an integer value repres
 For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](/reference/device-management-library/device-availability) in the *Reference guide*.
 This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|Required interval|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|Required interval|NO|Integer|
 
 **Example**
 
@@ -316,9 +316,9 @@ This will only set the value if it does not exist. Values entered, e.g. through 
 
 Set the supported logs of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported logs| NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported logs|NO|String|
 
 **Example**
 
@@ -331,9 +331,9 @@ Set the supported logs of the device.
 
 Set the supported configurations of the device.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported configurations| NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported configurations|NO|String|
 
 **Example**
 
@@ -346,12 +346,12 @@ Set the supported configurations of the device.
 
 Set currently installed configuration of the device.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|Configuration type| YES| &nbsp;|
-|2|Configuration file download URL| YES| &nbsp;|
-|3|File name| NO|Configuration type|
-|4|Date and time when the configuration was applied| NO|Current date and time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|Configuration type|YES|String| &nbsp;|
+|2|Configuration file download URL|YES|String| &nbsp;|
+|3|File name|NO|String|Configuration type|
+|4|Date and time when the configuration was applied|NO|Date|Current date and time|
 
 **Example**
 
@@ -363,10 +363,10 @@ Set currently installed configuration of the device.
 
 Set device profile that is being applied to the device.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|Profile executed| YES| &nbsp;|
-|2|Profile ID| NO|Profile ID from the oldest EXECUTING device profile operation|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|Profile executed|YES|String| &nbsp;|
+|2|Profile ID|NO|String|Profile ID from the oldest EXECUTING device profile operation|
 
 **Example**
 
@@ -382,13 +382,13 @@ Set device profile that is being applied to the device.
 
 Create a measurement with a given fragment and series.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|fragment|YES| &nbsp;|
-|2|series|YES| &nbsp;|
-|3|value|YES| &nbsp;|
-|4|unit|NO| &nbsp;|
-|5|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|fragment|YES|String| &nbsp;|
+|2|series|YES|String| &nbsp;|
+|3|value|YES|String| &nbsp;|
+|4|unit|NO|String| &nbsp;|
+|5|time|NO|Date|Current server time|
 
 **Example**
 
@@ -401,11 +401,11 @@ Create a measurement with a given fragment and series.
 
 Create a measurement of type **c8y_SignalStrength**.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|rssi value|YES, if 2 not set| &nbsp;|
-|2|ber value|YES, if 1 not set| &nbsp;|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|rssi value|YES, if 2 not set|Number| &nbsp;|
+|2|ber value|YES, if 1 not set|Number| &nbsp;|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -418,10 +418,10 @@ Create a measurement of type **c8y_SignalStrength**.
 
 Create a measurement of type **c8y_TemperatureMeasurement**.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|temperature value|YES| &nbsp;|
-|2|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|temperature value|YES|Number| &nbsp;|
+|2|time|NO|Date|Current server time|
 
 **Example**
 
@@ -434,10 +434,10 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 
 Create a measurement of type **c8y_Battery**.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|battery value|YES| &nbsp;|
-|2|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|battery value|YES|Number| &nbsp;|
+|2|time|NO|Date|Current server time|
 
 **Example**
 
@@ -453,11 +453,11 @@ Create a measurement of type **c8y_Battery**.
 
 Create a CRITICAL alarm.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|type|YES| &nbsp;|
-|2|text|NO|Alarm of type **alarmType** raised|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|text|NO|String|Alarm of type **alarmType** raised|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -470,11 +470,11 @@ Create a CRITICAL alarm.
 
 Create a MAJOR alarm.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|type|YES| &nbsp;|
-|2|text|NO|Alarm of type **alarmType** raised|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|text|NO|String|Alarm of type **alarmType** raised|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -487,11 +487,11 @@ Create a MAJOR alarm.
 
 Create a MINOR alarm.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|type|YES| &nbsp;|
-|2|text|NO|Alarm of type **alarmType** raised|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|text|NO|String|Alarm of type **alarmType** raised|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -504,11 +504,11 @@ Create a MINOR alarm.
 
 Create a WARNING alarm.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|type|YES| &nbsp;|
-|2|text|NO|Alarm of type **alarmType** raised|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|text|NO|String|Alarm of type **alarmType** raised|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -521,10 +521,10 @@ Create a WARNING alarm.
 
 Change the severity of an existing alarm.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
-|2|severity|YES|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|type|YES|String|
+|2|severity|YES|String|
 
 **Example**
 
@@ -537,9 +537,9 @@ Change the severity of an existing alarm.
 
 Clear an existing alarm.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|type|YES|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|type|YES|String|
 
 **Example**
 
@@ -552,10 +552,10 @@ Clear an existing alarm.
 
 Remove one or more fragments from an alarm of a specific type.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|alarmType|YES|
-|2...|fragmentName|YES|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|alarmType|YES|String|
+|2...|fragmentName|YES|String|
 
 **Example**
 
@@ -571,11 +571,11 @@ Remove one or more fragments from an alarm of a specific type.
 
 Create an event of given type and text.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|type|YES|&nbsp;|
-|2|text|YES|&nbsp;|
-|3|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String|&nbsp;|
+|2|text|YES|String|&nbsp;|
+|3|time|NO|Date|Current server time|
 
 **Example**
 
@@ -588,13 +588,13 @@ Create an event of given type and text.
 
 Create typical location update event containing **c8y_Position**.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO|&nbsp;|
-|2|longitude|NO|&nbsp;|
-|3|altitude|NO|&nbsp;|
-|4|accuracy|NO|&nbsp;|
-|5|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|latitude|NO|Number|&nbsp;|
+|2|longitude|NO|Number|&nbsp;|
+|3|altitude|NO|Number|&nbsp;|
+|4|accuracy|NO|Number|&nbsp;|
+|5|time|NO|Date|Current server time|
 
 **Example**
 
@@ -607,13 +607,13 @@ Create typical location update event containing **c8y_Position**.
 
 Create typical location update event containing **c8y_Position**. Additionally the device will be updated with the same **c8y_Position** fragment.
 
-|Position|Parameter|Mandatory|Default value|
-|:-------|:-------|:-------|:-------|
-|1|latitude|NO|&nbsp;|
-|2|longitude|NO|&nbsp;|
-|3|altitude|NO|&nbsp;|
-|4|accuracy|NO|&nbsp;|
-|5|time|NO|Current server time|
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|latitude|NO|Number|&nbsp;|
+|2|longitude|NO|Number|&nbsp;|
+|3|altitude|NO|Number|&nbsp;|
+|4|accuracy|NO|Number|&nbsp;|
+|5|time|NO|Date|Current server time|
 
 **Example**
 
@@ -626,10 +626,10 @@ Create typical location update event containing **c8y_Position**. Additionally t
 
 Remove one or more fragments from an event of a specific type.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|eventType|YES|
-|2...|fragmentName|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|eventType|YES|String|
+|2...|fragmentName|NO|String|
 
 **Example**
 
@@ -656,9 +656,9 @@ Trigger the sending of all PENDING operations for the agent.
 
 Set the oldest PENDING operation with given fragment to EXECUTING.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|fragment|YES|String|
 
 **Example**
 
@@ -671,10 +671,10 @@ Set the oldest PENDING operation with given fragment to EXECUTING.
 
 Set the oldest EXECUTING operation with given fragment to FAILED.
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2|failureReason|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|fragment|YES|String|
+|2|failureReason|NO|String|
 
 **Example**
 
@@ -689,10 +689,10 @@ Set the oldest EXECUTING operation with given fragment to SUCCESSFUL.
 
 It enables the device to send additional parameters that trigger additional steps based on the type of operation sent as fragment (see Section [Updating operations](#updating-operations)).
 
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1|fragment|YES|
-|2...|parameters|NO|
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|fragment|YES|String|
+|2...|parameters|NO|String|
 
 **Example**
 
@@ -737,9 +737,9 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 
 List all children of the device.
 
-|Position|Parameter|
-|:-------|:-------|
-|1...|child|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1...|child|String|
 
 **Example**
 
@@ -768,9 +768,9 @@ Restart a device.
 
 Run the command being sent in the operation.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|Command text|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|Command text|String|
 
 **Example**
 
@@ -783,9 +783,9 @@ Run the command being sent in the operation.
 
 Set the configuration being sent in the operation.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|configuration|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|configuration|String|
 
 **Example**
 
@@ -798,11 +798,11 @@ Set the configuration being sent in the operation.
 
 Install the firmware from the url.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|firmware name|
-|2|firmware version|
-|3|url|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|firmware name|String|
+|2|firmware version|String|
+|3|url|String|
 
 **Example**
 
@@ -815,12 +815,12 @@ Install the firmware from the url.
 
 Install the software sent in the operation.
 
-|Position|Parameter|
-|:-------|:-------|
-|1...|List of 3 values per software|
-|1.1|name|
-|1.2|version|
-|1.3|url|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1...|List of 3 values per software|(n/a)|
+|1.1|name|String|
+|1.2|version|String|
+|1.3|url|String|
 
 **Example**
 
@@ -833,9 +833,9 @@ Install the software sent in the operation.
 
 Send the measurements specified by the request name.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|request name|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|request name|String|
 
 **Example**
 
@@ -848,9 +848,9 @@ Send the measurements specified by the request name.
 
 Open or close the relay.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|Relay state|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|Relay state|String|
 
 **Example**
 
@@ -863,9 +863,9 @@ Open or close the relay.
 
 Open or close the relays in the array.
 
-|Position|Parameter|
-|:-------|:-------|
-|1...|List of relay state|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1...|List of relay state|String|
 
 **Example**
 
@@ -889,9 +889,9 @@ The current configuration is uploaded from {{< product-c8y-iot >}} to the device
 
 Download a configuration file from the URL.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|url|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|url|String|
 
 **Example**
 
@@ -904,13 +904,13 @@ Download a configuration file from the URL.
 
 Upload a log file for the given parameters.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|Log file name|
-|2|Start date|
-|3|End date|
-|4|Search text|
-|5|Maximum lines|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|Log file name|String|
+|2|Start date|Date|
+|3|End date|Date|
+|4|Search text|String|
+|5|Maximum lines|Integer|
 
 **Example**
 
@@ -923,9 +923,9 @@ Upload a log file for the given parameters.
 
 Change the communication mode.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|mode|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|mode|String|
 
 **Example**
 
@@ -938,10 +938,10 @@ Change the communication mode.
 
 Download a configuration file from the URL with type.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|URL|
-|2|configuration type|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|URL|String|
+|2|configuration type|String|
 
 **Example**
 
@@ -954,12 +954,12 @@ Download a configuration file from the URL with type.
 
 Install the firmware from the patch.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|firmware name|
-|2|firmware version|
-|3|URL|
-|4|dependency|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|firmware name|String|
+|2|firmware version|String|
+|3|URL|String|
+|4|dependency|String|
 
 **Example**
 
@@ -972,9 +972,9 @@ Install the firmware from the patch.
 
 Configuration is uploaded from {{< product-c8y-iot >}} to the device with type.
 
-Position|Parameter|
-|:-------|:-------|
-|1|configuration type|
+Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|configuration type|String|
 
 **Example**
 
@@ -987,25 +987,25 @@ Position|Parameter|
 
 Set the device profiles
 
-|Position|Parameter|
-|:-------|:-------|
-|1|firmware marker|
-|1...| 5 values of firmware|
-|1.1|firmware name|
-|1.2|firmware version|
-|1.3|firmware URL|
-|1.4|firmware isPatch|
-|1.5|firmware dependency|
-|2|software marker|
-|2...|List of 4 values per software|
-|2.1|software name|
-|2.2|software version|
-|2.3|software URL|
-|2.4|software action|
-|3|configuration marker|
-|3...|List of 2 values per configuration|
-|3.1|configuration URL|
-|3.2|configuration type|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|firmware marker|(n/a)|
+|1...| 5 values of firmware|(n/a)|
+|1.1|firmware name|String|
+|1.2|firmware version|String|
+|1.3|firmware URL|String|
+|1.4|firmware isPatch|String|
+|1.5|firmware dependency|String|
+|2|software marker|(n/a)|
+|2...|List of 4 values per software|(n/a)|
+|2.1|software name|String|
+|2.2|software version|String|
+|2.3|software URL|String|
+|2.4|software action|String|
+|3|configuration marker|(n/a)|
+|3...|List of 2 values per configuration|(n/a)|
+|3.1|configuration URL|String|
+|3.2|configuration type|String|
 
 **Example**
 
@@ -1019,13 +1019,13 @@ Set the device profiles
 Update the software installed on the device.
 
 
-|Position|Parameter|
-|:-------|:-------|
-|1...|List of 4 values per software|
-|1.1|name|
-|1.2|version|
-|1.3|URL|
-|1.4|action|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1...|List of 4 values per software|(n/a)|
+|1.1|name|String|
+|1.2|version|String|
+|1.3|URL|String|
+|1.4|action|String|
 
 **Example**
 
@@ -1045,11 +1045,11 @@ Update the software installed on the device.
 
 Establish tunneling by Remote Access device agent.
 
-|Position|Parameter|
-|:-------|:-------|
-|1|hostname|
-|2|port|
-|3|connection key|
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|hostname|String|
+|2|port|Integer|
+|3|connection key|String|
 
 **Example**
 

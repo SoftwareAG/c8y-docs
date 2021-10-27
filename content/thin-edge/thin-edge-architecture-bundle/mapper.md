@@ -15,7 +15,7 @@ When the mapper receives a correctly formatted message, it translates the messag
 
 ### Platform mapper
 
-The {{< product-c8y-iot >}} mapper translates [Thin Edge JSON](#thin-edge-json) into {{< product-c8y-iot >}}'s [JSON via MQTT](https://cumulocity.com/guides/device-sdk/mqtt/#json).
+The {{< product-c8y-iot >}} mapper translates [Thin Edge JSON](#thin-edge-json) into {{< product-c8y-iot >}}'s [JSON via MQTT](/reference/smartrest-two/#json-via-mqtt).
 The translated messages are published on the topic `c8y/measurement/measurements/create` from where they are forwarded to {{< product-c8y-iot >}}. This mapper is launched by the `tedge connect c8y` command, and stopped by the `tedge disconnect c8y` command.
 
 Example in Thin-Edge JSON:

@@ -15,15 +15,15 @@ The Cumulocity IoT OEE application uses machine data, master data and planning d
 
 ![Dashboard overview](/images/release-notes/dashboard-machine-park-overview.png)
 
-For details, refer to the [OEE guide](https://cumulocity.com/guides/oee/overview/).
+For details, refer to the [OEE guide](https://cumulocity.com/guides{{< 10-11-0 >}}/oee/overview/).
 
 ### New messaging-based notifications API
 
 A new API (Notifications 2.0) for subscribing to notifications from the platform has been added. The new API is conceptually similar to the existing *realtime* notifications API, but powered by the Cumulocity IoT Messaging Service that enables reliable, scalable and high-performance flow of IoT data within and beyond the Cumulocity IoT platform. Notifications 2.0 provides new REST API endpoints for managing subscriptions to notifications, and a new WebSocket protocol for streaming notifications into a client application. Potential users of Notifications 2.0 should note that this is a **new** API, not a re-implementation of the the current realtime notifications. Users will need to implement new application code to make use of the new API. The realtime notifications API remains available and unchanged in this release.
 
-At this time the Notifications 2.0 API is only available to tenants in the eu-latest.cumulocity.com public cloud environment. It can also be made available by request in private cloud environments. Contact [product support](https://cumulocity.com/guides/releasenotes/releasenotes/about/contacting-support/) to inquire about using Notifications 2.0 in your Cumulocity IoT environment.
+At this time the Notifications 2.0 API is only available to tenants in the eu-latest.cumulocity.com public cloud environment. It can also be made available by request in private cloud environments. Contact [product support](/releasenotes/about/contacting-support/) to inquire about using Notifications 2.0 in your Cumulocity IoT environment.
 
-For details on the capabilities and usage of Notifications 2.0, see the Cumulocity [API documentation](https://cumulocity.com/api/). The [Notifications 2.0 example microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) may also be a useful guide for users developing applications that will use the new API.
+For details on the capabilities and usage of Notifications 2.0, see the Cumulocity [API documentation](https://cumulocity.com/api). The [Notifications 2.0 example microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) may also be a useful guide for users developing applications that will use the new API.
 
 ### Thin Edge
 
@@ -40,4 +40,4 @@ Thin-edge.io can be extended in various programming languages due to its extensi
 * A canonical data format lets the components exchange telemetry data independently of the connected cloud. This is an optional feature and the components are free to also use cloud-specific data formats.
 * The mapper processes are responsible for translating the canonical data format into cloud-specific messages and vice versa.
 
-For details, see the [Thin Edge guide](https://cumulocity.com/guides/thin-edge/overview/).
+For details, see the [Thin Edge guide](https://cumulocity.com/guides{{< 10-11-0 >}}/thin-edge/overview/).

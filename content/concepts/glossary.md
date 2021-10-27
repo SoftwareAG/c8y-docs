@@ -291,7 +291,6 @@ To manage permissions more easily, they are grouped into roles. Every user can b
 
 See also [Global roles](#global-roles) and [Inventory roles](#inventory-roles).
 
-
 <a name=""></a>
 ### Real-time processing
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, i.e. Apama’s Event Processing Language (EPL).
@@ -301,6 +300,12 @@ For details see [Real-time processing](/concepts/realtime/).
 <a name="rest"></a>
 ### REST
 In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
+
+<a name=""></a>
+### REST API
+The {{< product-c8y-iot >}} REST API is an interface that allows for communication between the {{< product-c8y-iot >}} platform and other systems via HTTP and REST. It allows the user to perform operations and process data by issuing a simple request using any HTTP client such as a web browser.
+
+For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/)
 
 <a name="sensor-library"></a>
 ### Sensor library

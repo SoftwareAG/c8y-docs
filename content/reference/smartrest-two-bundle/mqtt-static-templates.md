@@ -8,7 +8,7 @@ weight: 50
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
+To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
@@ -104,7 +104,7 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
 
 <a name="inventory-templates"></a>
 #### Inventory templates (1xx)

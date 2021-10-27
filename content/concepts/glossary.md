@@ -4,7 +4,7 @@ title: Glossary
 layout: bundle
 ---
 
-This glossary lists common terms from the {{< product-c8y-iot >}} platform and documentation and provides explanations for its usage in the context of {{< product-c8y-iot >}}.
+This glossary lists a variety of technical terms and concepts used in the {{< product-c8y-iot >}} products and documentation and provides explanations for its usage in the context of {{< product-c8y-iot >}}.
 
 <a name="administration-app"></a>
 ### Administration application
@@ -255,10 +255,9 @@ For details see [Developing applications > Microservices](/concepts/applications
 <a name="Model"></a>
 ### Model
 Used in the context of [Analytics Builder](#analytics-builder).
-A model is a container which can have a network of blocks connected to each other with wires.
-The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
-See also [Blocks](#blocks).
+A model is a container which can have a network of [Blocks](#blocks) connected to each other with wires.
+The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
 <a name=""></a>
 ### Multi-tenancy

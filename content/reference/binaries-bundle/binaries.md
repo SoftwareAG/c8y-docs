@@ -12,8 +12,9 @@ Required role: ROLE\_INVENTORY\_READ
 
 Example request:
 ```http
-	GET /inventory/binaries/<<binaryId>>
- 	...
+GET /inventory/binaries/<<binaryId>>
+Host: ...
+Authorization: Basic ...
 ```
 Example response:
 
@@ -37,12 +38,12 @@ to update the managed object directly as described at this section [Update Manag
 
 Example request:
 ```http
-    PUT /inventory/binaries/<<binaryId>>
-    Host: ...
-    Authorization: Basic ...
-    Content-Type: <<depending on binary mime type>>
+PUT /inventory/binaries/<<binaryId>>
+Host: ...
+Authorization: Basic ...
+Content-Type: <<depending on binary mime type>>
 
-    ...
+...
 ```
 ### DELETE a binary
 

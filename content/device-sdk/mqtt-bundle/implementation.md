@@ -20,7 +20,7 @@ Available ports:
 >**Info:** Port 80 is deactivated in cloud systems.
 
 Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
-The two-way SSL support is enabled by default since version 10.7.0. To disable it please contact [product support](/welcome/contacting-support/).
+The two-way SSL support is enabled by default. To disable it please contact [product support](/welcome/contacting-support/).
 
 > **Info:** To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -87,7 +87,10 @@ The communication with {{< product-c8y-iot >}} employing MQTT supports authentic
 
 ##### A device sends correct username and password, but incorrect certificate at the same time
 
-If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device's software. If that is not possible, make sure of the following to make the connection work:
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates, and you want to use basic authorization, we recommend you to turn off sending certificates during connection.
+Certificates may be invalid because they expired or the root certificate is not uploaded to the platform.
+Turn off certificate sending in the device's software.
+If that is not possible, to make the connection work, check the following:
 
 * The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
 * The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
@@ -105,7 +108,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type <br>default: d (device)|
 |deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
-|defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
+|defaultTemplateIdentifier|NO|Check [SmartREST 2.0 > MQTT static templates](/reference/smartrest-two#mqtt-static-templates) for more information about template identifiers|
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 
@@ -121,22 +124,22 @@ d:mySerialNumber:myDefaultTemplate
 
 The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
-During a SSL connection with certificates, the `deviceIdentifier` has to match the Common Name of the used certificate (first certificate in the chain, which is provided by the device).
+During a SSL connection with certificates, the `deviceIdentifier` has to match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
 
-#### MQTT Quality of Service
+#### MQTT Quality of Service (QoS)
 
 The {{< product-c8y-iot >}} implementation supports all 3 levels of MQTT QoS:
 
 * QoS 0: At most once
-    - The client just sends the message once (fire and forget)
-    - No reaction from the server
+    - The client just sends the message once (fire and forget).
+    - No reaction from the server.
 * QoS 1: At least once
-    - The client repeats the message until it receives a server acknowledgement
+    - The client repeats the message until it receives a server acknowledgement.
 * QoS 2: Exactly once
-    - The client sends a message
-    - The server acknowledges (holds the message)
-    - The client sends a release command
-    - The server processes the messages and acknowledges again
+    - The client sends a message.
+    - The server acknowledges (holds the message).
+    - The client sends a release command.
+    - The server processes the messages and acknowledges again.
 
 For subscriptions to the operation or error topics, we will deliver all messages in the QoS which the client defined when subscribing to the topic.
 

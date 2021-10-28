@@ -1,6 +1,7 @@
 ---
-weight: 100
+weight: 59
 title: Event processing
+layout: bundle
 ---
 
 >**Important:** The **Event processing** functionality described here is only available if your tenant has Esper subscribed, not Apama. Apama is the standard CEP engine for new tenants. For tenants using Apama, similar functionality is available via the **Streaming Analytics EPL Apps** page, see [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). If migrating, any CEL ({{< c8y-event-language >}}) code will need to be translated to EPL apps. For details on migration, see [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the *Streaming Analytics guide*.

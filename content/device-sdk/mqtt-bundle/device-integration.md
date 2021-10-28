@@ -51,7 +51,7 @@ The process works as follows:
 * The device subscribes to the topic <kbd>s/dcr</kbd>.
 * The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you must accept the connection from the device in the **Device Registration** page.
-* When the device sends the next empty message it should receive credentials in the format `70,<tenantID>,<username>,<password>`
+* When the device sends the next empty message it should receive credentials in the format `70,<tenantID>,<username>,<password>`.
 
 After receiving the credentials, the device can close the MQTT connection and create a new one with the received credentials.
 
@@ -70,7 +70,7 @@ The device will be linked automatically to the ID the client uses with its MQTT 
 
 #### Step 2: Verify children
 
-Like the root device, also children of it are covered by the automatic device creation.
+Like the root device, also its children are covered by the automatic device creation.
 
 To handle this step manually you can send the [static template 101](/reference/smartrest-two/#101) for creating a child device. The template will only create the child if it does not already exist.
 

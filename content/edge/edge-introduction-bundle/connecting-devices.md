@@ -4,7 +4,7 @@ title: Connecting devices
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with {{< product-c8y-iot >}} Edge. For more information, see [Device integration using REST](/device-sdk/rest) and [SmartREST 2.0](/reference/smartrest-two) in the *Reference guide*.
+{{< product-c8y-iot >}} Edge uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with {{< product-c8y-iot >}} Edge. For more information, see [Device integration using REST](/device-sdk/rest) in the *Device SDK guide* and [SmartREST 2.0](/reference/smartrest-two) in the *Reference guide*.
 
 Additionally, {{< product-c8y-iot >}} Edge offers:
 

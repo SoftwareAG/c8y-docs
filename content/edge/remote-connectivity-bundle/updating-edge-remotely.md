@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 45
 title: Updating Edge remotely
 layout: redirect
 ---

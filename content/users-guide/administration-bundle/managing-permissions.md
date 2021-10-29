@@ -271,6 +271,8 @@ There may be additional permissions visible depending on the features in your su
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
+> **Important:** By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template) in the *User guide*.
+
 ##### To assign global roles from the user list
 
 1. Click the **Global roles** column of a particular user to open a list of global roles.

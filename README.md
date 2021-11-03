@@ -1,157 +1,139 @@
 # Cumulocity Guides website
 
-<https://cumulocity.com/guides>
+**Built with [DocPad](http://docpad.org)**
 
-**Built with [Hugo](https://gohugo.io/)**
-
-## Development environment
-
-- Clone the repository
-- Install hugo by using snap `snap install hugo --channel=extended`
-- Open a terminal window on project directory and type `hugo server`
+<http://cumulocity.com/guides>
 
 ## Structure
 
 The Cumulocity Guides website architecture has the following structure:
 
-- Section (e.g. *<http://cumulocity.com/guides/user-guide>*)
-  - Subsection - renders as a single page (e.g. *<http://cumulocity.com/guides/user-guide/overview>*)
-    - Anchor section - anchor tag in the subsection page (e.g. *<http://cumulocity.com/guides/user-guide/overview#user-settings>*)
+* Section (e.g. *<http://cumulocity.com/guides/user-guide>*)
+  * Subsection - renders as a single page (e.g. *<http://cumulocity.com/guides/user-guide/overview>*)
+    * Anchor section - anchor tag in the subsection page (e.g. *<http://cumulocity.com/guides/user-guide/overview#user-settings>*)
 
-The architecture is built with a mix of front matter and directory structure
+Now let's take a look at how to build up this structure.
 
 ## Adding content
 
 ### 1. Add a new section
 
-Before adding a new section, check if the content fit in any of the available sections:
+Before adding a new section, check if the content you plan to add doesn't fit in any of the available sections:
 
-- Release notes
-- Concepts guide
-- User guide
-- User guide (german version)
-- Device guides
-- Cumulocity-IoT Edge
-- Microservice SDK guide
-- Device SDK guide
-- Web SDK guide
-- Analytics guide
-- Reference guide
+* Concepts guide
+* User guide
+* Handbuch *(user guide - German version)*
+* CEL analytics guide
+* Apama analytics guide
+* Device guides
+* Reference guide
+* REST developer's guide
+* MQTT developer's guide
+* Java developer's guide
+* Web developer's guide
+* C++ developer's guide
 
-A new section is defined by a markdown file with the following front matter:
+Check <http://cumulocity.com/guides> for a description of each section
 
-```yaml
----
-title: My new section # add the section title
-bundle: new-section # add the directory holding the section pages
-icon: "c8y-icon c8y-icon-tools" # use either fontawesome or c8y-icons
-type: root # don't change
-layout: root # don't change
-weight: 90 # order the section in the section dropdown in ascending order
----
+To insert a new section, add it in the `docpad.coffee` configuration file under ```docpadConfig.templateData.site.sections``` with the following format:
+
+```json
+{
+  title: 'Section title',
+  folder: 'folder-path', // don't forget to start with 'guides/'
+  slug: 'section-slug', // will be used for url
+  icon: 'c8y-icon c8y-icon-c8y-engine', // icon to diplay in the homepage and section selector — check http://styleguide.cumulocity.com/icons
+  description: 'Section description' // used in the homepage
+}
 ```
-
-Grab the icon classes in the [styleguide](http://styleguide.cumulocity.com/icons/)
 
 ### 2. Add the section root directory
 
-All guides are stored in the ```content``` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
+All guides are stored in ```src/render/guides/```. To add a new section, create a directory here and name it with the section slug
 
 ### 3. Add a subsection
 
-Inside the newly created directory create a markdown file with the name you wish to use as a url — e.g. `introduction.md` with the following front matter:
+Inside the newly created directory create a file with the subsection slug and extensions — e.g. *overview.html.md* (make sure to always add HTML as an extension, if you're writing in markdown, add `.md` in the end)
 
-```yaml
+This file should contain metadata in the following format:
+
+```markdown
 ---
-title: Introduction to Cumulocity # the page title
-layout: bundle # don't change
-weight: 10 # set the position of the page within the section in ascending order
-aliases: # if needed, add the redirects here, otherwise remove this
-  - /concepts-guide/introduction-to-cumulocity/
-  - /concepts-guide/introduction-to-cumulocity.html
----
-# add optional content as markdown
-Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage.
-```
-
-If you're looking to have a short page without anchors, you're good to go, but if you want to add multiple subsections with anchors then proceed to the next step.
-
-When adding multiple subsections, the content provided in this file will be rendered as a lead (text slightly larger) in the top of the page.
-
-### 4. Add blocks of content with anchors to a page
-
-To display multiple blocks of content and provide anchor links to display in the navigator, you'll have to follow these steps:
-
-1. add a directory with the exact same name as the markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
-
-&nbsp;
-
-2. Add a `index.html` file into the new directory with the following front matter:
-
-```yaml
----
-title: Introduction # not important as we won't use it, but we need the title
-headless: true # states that all content inside this directory is just a resource to be used in another page
+title: Section title
+order: 10
+layout: layout-type
 ---
 ```
 
-&nbsp;
-3. Add a markdown file for each block of content with the following front matter:
+The title is obvious, the order is for ordering the subsections, as for layout there are two possible use cases:
 
-```yaml
+1. Short content
+2. Long content with several anchors
+
+For option 1, simply set `layout: standalone` and add content in markdown or HTML - this will add a navigator link
+
+For option 2, you'll have to set `layout: subsections` and add a `collection` property to the metadata, for example:
+
+```markdown
 ---
-title: Overview # will be used as anchor, i.e. guides/users-guide/introduction/#overview
-weight: 10 # to set the position in the page
+title: Section title
+order: 10
+layout: subsections
+collection: 'guides/mysection/my_subsection'
 ---
-
-## Add content as markdown or HTML
-
-* Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
-* Device management, data visualization and remote control functionality through the web.
-* Rapid customization of the above through [real-time processing](/concepts/realtime) and [Cumulocity applications](/concepts/applications).
-* APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
-[…]
 ```
+
+Basically, you're using this page to display all documents stored in the path defined in `collection` - this will add a navigator link with a collapsible page navigation.
+
+You may add an introductory text in this page, it will be displayed slightly larger than regular text.
+
+### 4. Add blocks of content to a page
+
+Now that we set our subsection's layout as subsections and collection as a path, we will have to create the directory and start adding as many blocks of content as needed. Simply add in the directory files in HTML / markdown with the following metadata:
+
+```markdown
+---
+title: content block title
+order: 10
+layout: redirect
+---
+```
+
+The property `layout`must be set to `redirect` to ensure that any link to this file will be redirected to the parent page. The file name will be used as an anchor to allow page navigation and will be added as an anchor link in the section in the navigator.
+
+`order` will be used to sort the content blocks both in navigator and page.
 
 ### 5. Add media
 
-Media should be added to `/static/images/`. Add a new directory if none of the available suits your needs.
+Media should be added to `src/static/guides/images/`. Add a new directory if none of the available suits your needs.
+To display the images in your pages, you'll have to add the relative path e.g `![image title](/guides/images/<directory name>/<file name>)`.
 
-Keep all file names url friendly (lowercase, no special characters, and no empty spaces).
 
-To use the images in your pages, just add the relative path e.g `![image title](/images/<directory name>/<file name>)`.
+### 6. Add devices into device guides
+
+Device guides include and overview page with thumbnails of the devices and a filtering field. 
+
+When adding a new device, make sure to include an image sized 350 x 350px and provide the path to it on the device page metadata, for example:
+```
+---
+title: Adeunis LoRaWAN Demonstrator 
+layout: subsections
+collection: 'guides/devices/adeunis'
+image: '/guides/images/devices/device-list/adeunis_rf-lorawan.jpg'
+---
+```
 
 
 ## Redirects
 
-Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/guides` out of the url. Check the folowing example:
+There's a `redirects.coffee`file in the root of the project that manages all the redirects of the site when adding a new section, don't forget to add a redirect for the section's root path, e.g. `'guides/my_new_section':'guides/my_new_section/overview'`
 
-```yaml
----
-title: Introduction to Cumulocity
-layout: bundle
-weight: 10
-aliases:
-  - /concepts-guide/introduction-to-cumulocity/
-  - /concepts-guide/introduction-to-cumulocity.html
-# this will redirect cumulocity.com/guides/concepts-guide/introduction-to-cumulocity/
-# to cumulocity.com/guides/concepts/introduction
----
-```
+### Broken links
 
-## Deploying to cumulocity.com/guides
+Add redirects to broken links in `redirects.coffee`.
 
-Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating these branches follow the next steps:
-- Create the branch following the same pattern: `release/r[version number]-GA`
-
-- Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
-- Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/welcome/intro-documentation/"`
-- Add the file `properties.json` adding the name and the long name for the release version, e.g.: ```{
-  "name":"10.5.0", 
-  "longname": "Release 10.5.0 (GA)"
-}```
-- Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
-- Deploy the `default` branch using the jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
+&nbsp;
 
 ---
-© Cumulocity GmbH  2019 + All rights reserved.
+&copy; Cumulocity GmbH  2018 + All rights reserved.
+

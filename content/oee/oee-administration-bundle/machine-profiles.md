@@ -103,7 +103,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan
 
 * PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
 
-For details, see the [REST API documentation](https://cumulocity.com/oee/api/{{< c8y-current-version >}}/#tag/Shiftplan).
+For details, see the [REST API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Shiftplan).
 
 
 ### Workpiece

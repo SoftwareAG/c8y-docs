@@ -19,4 +19,4 @@ Based on the calculation configurations and inputs, {{< product-c8y-iot >}} OEE 
 
 The {{< product-c8y-iot >}} OEE application provides a flexible and convenient way to use OEE in the IIoT context - providing a platform to create a semantic for machine and operating data, and the capability to connect different systems and services.
 
-The {{< product-c8y-iot >}} OEE application also offers a [REST API](/files/oee/index.html) that allows to get and store OEE related data.
+The {{< product-c8y-iot >}} OEE application also offers a [REST API](https://cumulocity.com/oee/api/{{< c8y-current-version >}}/) that allows to get and store OEE related data.

@@ -18,3 +18,5 @@ The {{< product-c8y-iot >}} OEE application allows you to create OEE calculation
 Based on the calculation configurations and inputs, {{< product-c8y-iot >}} OEE then calculates the OEE, Availability, Performance, Quality and various other metrics. The results are then displayed in the application dashboards.
 
 The {{< product-c8y-iot >}} OEE application provides a flexible and convenient way to use OEE in the IIoT context - providing a platform to create a semantic for machine and operating data, and the capability to connect different systems and services.
+
+The {{< product-c8y-iot >}} OEE application also offers a [REST API](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/) that allows to get and store OEE related data.

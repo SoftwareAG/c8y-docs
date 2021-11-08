@@ -376,3 +376,24 @@ completely remove all the associated managed objects. Thereafter, the gateway ca
 
 If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.
+
+### Downgrade to an earlier version
+
+Downgrades from 10.12.0  to previous versions are not directly supported due the security improvements are made. 
+But if it is needed urgently to do there this way. 
+
+Please follow these instructions:
+
+1. shutdown current version of the gateway and remember the device id from the all devices list
+2. send a http put command to your tenant to reset the identity
+PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}
+```json
+   {
+   "c8y_ua_IdentityConfig":null
+   }
+```
+3. start the old version of the gateway
+
+After this a new 'old' identity will be created. 
+
+It is possible to upgrade this later easily be running a version 10.12.0 or above, conversion will be done automatically.

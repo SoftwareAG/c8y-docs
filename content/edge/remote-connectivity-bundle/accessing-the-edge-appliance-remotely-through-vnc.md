@@ -42,7 +42,7 @@ To access and connect to the Edge appliance:
 
 2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
 
-The connection to the Edge appliance is established and the GUI appears for the Edge appliance. Right-click in the screen to open the desktop components **xterm** and **firefox**.
+The connection to the Edge appliance is established and the UI appears for the Edge appliance. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 

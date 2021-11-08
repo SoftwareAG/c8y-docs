@@ -1,7 +1,13 @@
 ---
 weight: 12
 title: Verwalten von Benutzern
+helpcontent:
+  - label: managing-users
+    title: Verwalten von Benutzern
+    content: "Die Benutzerverwaltung von Cumulocity IoT ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie können neue Benutzer anlegen, Benutzernamen und Passwörter zuweisen, Benutzerdetails speichern oder die Anmelde- und Sicherheitsoptionen konfigurieren.  
 
+
+    Darüber hinaus können Sie die globalen Rollen für einen Benutzer auswählen, siehe auch *Administration > Verwalten von Berechtigungen* im *User guide*."
 ---
 
 Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie bietet folgende Möglichkeiten:
@@ -31,27 +37,27 @@ Außerdem ist das Zurücksetzen des Passworts in {{< product-c8y-iot >}} für Be
 
 Klicken Sie auf **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-![Expanded view](/images/benutzerhandbuch/Administration/admin-users-list.png)
+![Expanded view](/images/users-guide/Administration/admin-users-list.png)
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird
 * Name und E-Mail-Adresse des Benutzers, falls angegeben
 * Die globalen Rollen, die für den Benutzer vergeben wurden
-* Die [Stärke](/benutzerhandbuch/getting-started-de/#login) des Passworts, das für den Benutzer gesetzt ist
+* Die [Stärke](/users-guide/getting-started/#login) des Passworts, das für den Benutzer gesetzt ist
 
-Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de/#searching) im Abschnitt *Erste Schritte*.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/users-guide/getting-started/#searching) im Abschnitt *Erste Schritte*.
 
 Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie auf **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant/#user-hierarchies).
 
 <a name="creating-users"></a>
 ### So fügen Sie einen Benutzer hinzu
 
 1. Klicken Sie auf **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
 
-	>**Info:** Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+  >**Info:** Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
 
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
@@ -97,23 +103,21 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 	</tr>
 	<tr>
 	<td align="left">Eigentümer</td>
-	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	<tr>
 	<td align="left">Delegiert von</td>
-	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	</tbody>
 	</table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
-	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa).
-	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der {{< product-c8y-iot >}}-Plattform an](/benutzerhandbuch/getting-started-de/#login).  
+	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/users-guide/administration/#tfa).
+	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der {{< product-c8y-iot >}}-Plattform an](/users-guide/getting-started/#login).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
-<br><br>
 
-4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
-
+4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions).
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.
@@ -145,7 +149,7 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie auf **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
-Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de#user-hierarchies).
+Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant#user-hierarchies).
 
 > **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 

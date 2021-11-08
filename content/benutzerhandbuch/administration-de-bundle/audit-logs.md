@@ -1,7 +1,12 @@
 ---
 weight: 20
 title: Anzeigen von Audit-Logs
-
+helpcontent: 
+  - label: audit-logs
+    title: Anzeigen von Audit-Logs
+    content: "Audit-Logs zeigen die von Benutzern ausgeführten Operationen.
+      
+      Zum einfachen Durchsuchen von Logdaten können Sie in der oberen Leiste Filterkriterien für Typ, Datumsbereich oder Benutzer festlegen und anwenden."
 ---
 
 Audit-Logs zeigen die von Benutzern ausgeführten Operationen.
@@ -45,7 +50,7 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Ko
 
 Es werden nur die letzten 100 Logeinträge angezeigt. Klicken Sie auf **Mehr laden** am Listenende, um weitere Logeinträge anzuzeigen.
 
-![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
+![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
 >**Info:** Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
 

@@ -3,7 +3,7 @@ weight: 100
 title: Speicherbegrenzung
 layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition-de/#storage-quota
+  - /users-guide/enterprise-edition/#storage-quota
 ---
 
 
@@ -17,9 +17,9 @@ Ist das Kontingent überschritten, wird eine E-Mail an alle Mandantenadministrat
 
 Nehmen wir an, ein Mandant hat ein Speicherkontingent von 10 GB. Datenhaltungsregeln gelten 80 Tage für Messwerte und 90 Tage für alle anderen Daten.
 
- - Tag 1: Die nächtliche Überprüfung ergibt eine Gesamtspeichernutzung von 13 MB. Eine E-Mail wird an alle Mandantenadministratoren gesendet.
+ - Tag 1: Die nächtliche Überprüfung ergibt eine Gesamtspeichernutzung von 13 GB. Eine E-Mail wird an alle Mandantenadministratoren gesendet.
 
- - Tag 2: Die Gesamtspeichernutzung beträgt weiterhin 13 MB. Das System ermittelt, dass eine Reduzierung der Datenhaltung um 15% ausreichend ist, um unterhalb des Speicherkontingents zu bleiben. Daher werden alle Messwerte, die älter sind als 68 Tage (80 Tage - 15%) sowie alle anderen Daten, die älter sind als 77 Tage (90 Tage - 15%) gelöscht.
+ - Tag 2: Die Gesamtspeichernutzung beträgt weiterhin 13 GB. Das System ermittelt, dass eine Reduzierung der Datenhaltung um 15% ausreichend ist, um unterhalb des Speicherkontingents zu bleiben. Daher werden alle Messwerte, die älter sind als 68 Tage (80 Tage - 15%) sowie alle anderen Daten, die älter sind als 77 Tage (90 Tage - 15%) gelöscht.
 
 Die Gesamtspeichernutzung beträgt nun 9,8 GB.
 

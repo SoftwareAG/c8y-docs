@@ -2,6 +2,49 @@
 weight: 40
 title: Überwachen und Steuern von Geräten
 layout: redirect
+helpcontent:
+- label: map
+  title: Lokalisieren von Geräten
+  content: "Auf der Karte können Sie alle in Ihrem Konto vorhandenen Geräte in Echtzeit anzeigen. Die Geräte sind als 'Pins' dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln."
+- label: service-monitoring
+  title: Serviceüberwachung
+  content: "Serviceüberwachung zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an. Die als Prozentwert angezeigte Verfügbarkeit basiert auf der Anzahl ausgelöster und behobener Alarme."
+- label: alarm-monitoring
+  title: Alarme
+  content: "Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht. Eine Übersicht über die Alarme aller Geräte finden Sie hier. Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
+
+
+  Standardmäßig werden nur ungelöste Alarme gezeigt. Wenn Sie rechts oben **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
+
+
+  Alarme werden nach Schweregraden klassifiziert: KRITISCH, WICHTIG, WENIGER WICHTIG, WARNUNG.
+
+
+  Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um den Abschnitt wieder sichtbar zu machen. In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
+
+
+  Nähere Informationen finden Sie unter *Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen* im *User guide*."
+- label: operation-monitoring
+  title: Device control
+  content: "Durch Operationen können Geräte aus der Ferne gesteuert werden. Eine Übersicht über die Operationen aller Geräte finden Sie hier. Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
+
+
+  Es gibt zwei Arten von Operationen, die jeweils auf einer eigenen Registerkarte angezeigt werden:
+
+  * **Einzel-Operationen** werden an einem einzelnen Gerät ausgeführt.
+  * **Bulk-Operationen** sind an einer Reihe von Geräten ausgeführte Einzel-Operationen.
+
+
+  Siehe auch *Device Management > Überwachen und Steuern von Geräten > Verwenden von Operationen* im *User guide*."
+- label: events-all
+  title: Events
+  content: "Operationen werden verwendet, um Geräte aus der Ferne zu steuern. Eine Übersicht über die Ereignisse aller Geräte finden Sie hier. Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
+
+
+  Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten über die Felder oben links nach Datum oder Typ filtern.
+
+
+  Siehe auch *Device Management > Überwachen und Steuern von Geräten > Fehlerbehebung von Geräten* im *User guide*."
 ---
 
 
@@ -14,7 +57,7 @@ Klicken Sie auf **Karte** im Menü **Geräte** im Navigator, um eine Karte zu ö
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.
 
-![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
 
 <a name="connection-monitoring"></a>
 ### Verbindungsüberwachung
@@ -29,7 +72,7 @@ Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehre
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Sendeverbindungen**
 
@@ -55,7 +98,7 @@ Push-Verbindung bedeutet Verbindung von {{< product-c8y-iot >}} zu /notification
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
-<a name="maintenance-mode"></a> **Maintenance mode**
+<a name="maintenance-mode"></a> **Wartungsmodus**
 
 Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte **Status** gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst.
 
@@ -66,7 +109,7 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Verbindungen zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
@@ -78,7 +121,7 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartun
 
 Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 <a name="monitoring-services"></a>
 ### Serviceüberwachung
@@ -94,7 +137,7 @@ Ist ein Gerät offline, nimmt {{< product-c8y-iot >}} standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/users-guide/administration#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 {{< product-c8y-iot >}} zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
@@ -106,10 +149,9 @@ Klicken Sie auf die Registerkarte **Serviceüberwachung** in den Details eines b
 
 Klicken Sie auf **Serviceüberwachung** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
 
-![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
-Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an.
-
+Die Seite **Serviceüberwachung** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
 
 <a name="alarm-monitoring"></a>
 ### Verwenden von Alarmen
@@ -118,12 +160,12 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 #### So zeigen Sie Alarme an
 
-{{< product-c8y-iot >}} zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
+{{< product-c8y-iot >}} zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
 
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
 
-![Alarms page](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
 
 Standardmäßig
 
@@ -141,7 +183,7 @@ Alarme werden nach Schweregraden klassifiziert. {{< product-c8y-iot >}} enthält
 
 Die Registerkarte **Alarm** ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
-Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Nochmaliges Klicken zeigt den Bereich wieder an.
+Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
 
 In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
 
@@ -173,7 +215,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br><strong>Bestätigt</strong>: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
+<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br> <strong>Bestätigt</strong>: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
 </tr>
 <tr>
 <td align="left">Letztes Auftreten</td>
@@ -188,14 +230,14 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/users-guide/administration#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger über die Zeile und klicken Sie auf die entsprechende Schaltfläche oder klicken Sie auf das Menüsymbol und wählen Sie den gewünschten Status.
 
-![Alarm change status](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
+![Alarm change status](/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
 
 Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie auf **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade zu löschen.
 
@@ -223,7 +265,7 @@ In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf 
 
 Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
-![Single operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
+![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
 Einzel-Operationen können sich in einem der folgenden vier Status befinden:
 
@@ -247,7 +289,7 @@ Durch Klicken auf eine Zeile wird diese aufgeklappt und es werden weitere Detail
 * **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
 * **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
 
-![Single operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
+![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
 Um die Liste der Einzel-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
@@ -260,11 +302,11 @@ Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/users-guide/device-management/#firmware-repo), [Software](/users-guide/device-management/#software-repo), [Konfigurationen](/users-guide/device-management/#configuration-repository) etc.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/users-guide/device-management#shell).
 
 >**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
@@ -281,14 +323,14 @@ Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHE
 
 Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
-Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
+Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/users-guide/cockpit/#create-rules) beschrieben.
 
 <a name="to-view-bulk-operations"></a>
 #### So zeigen Sie Bulk-Operationen an
 
 Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
-![Bulk operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
 Bulk-Operationen besitzen einen Operationstyp und einen Status.
 
@@ -330,9 +372,9 @@ Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die 
 * **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen** klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
 * **Änderungshistorie**: In einer zweiten Registerkarte werden Informationen zu den letzten Änderungen der Operation angezeigt.
 
-![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
 
-![Bulk operation details, second tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
+![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
 
 Um die Liste der Bulk-Operationen nach Operationstyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Operationstypen und klicken Sie auf **Anwenden**.
 Um den Filter wieder zurückzusetzen, wählen Sie **Alle** in der Auswahlliste und klicken Sie erneut auf **Anwenden**.
@@ -347,7 +389,7 @@ Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende 
 
 >**Info:** Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
 
->![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
+>![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>
 <a name="to-add-a-bulk-operation"></a>
@@ -365,7 +407,7 @@ Führen Sie folgende Schritte aus:
 
 1. Klicken Sie in der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation**.
 2. Wählen Sie im nächsten Dialog einen Operationstyp.
-    ![Select a bulk operation type](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
+    ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. Im darauf folgenden Assistenten gibt es vier Schritte. Je nach Operationstyp unterscheiden sich die ersten beiden Schritte:
   * **Konfigurationsaktualisierung**
       * Wählen Sie eine Konfiguration aus der Liste aus. Die Liste kann nach Konfigurationstyp oder Konfigurationsnamen gefiltert werden. Klicken Sie auf **Weiter**.
@@ -380,9 +422,9 @@ Führen Sie folgende Schritte aus:
       * Wählen Sie ein Geräteprofil aus der Liste aus. Die Liste kann nach Gerätetyp oder Profilnamen gefiltert werden. Klicken Sie auf **Weiter**.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
 4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Name, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Der Gruppenfilter ermöglicht auch das Filtern nach Untergruppen. Zum Auswählen einer ggf. vorhandenen Untergruppe klicken Sie auf die Pfeilschaltfläche rechts neben einer Gruppe und wählen Sie die gewünschten Untergruppen aus der Auswahlliste. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
-    ![Bulk operation wizard, step 3](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
+    ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
 5. Geben Sie einen neuen Titel ein oder verwenden Sie den vorgegebenen Titel. Geben Sie bei Bedarf eine Beschreibung ein. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den Einzel-Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
-    ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
+    ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 <a name="to-schedule-a-single-operation-as-bulk-operation"></a>
 ##### So planen Sie eine Einzel-Operation als Bulk-Operation
@@ -404,7 +446,7 @@ Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbei
 
 Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
 
-![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
+![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
 <a name="bulk-operations"></a>
 #### So brechen Sie Bulk-Operationen ab
@@ -441,12 +483,12 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 
 #### So zeigen Sie Ereignisse an
 
-{{< product-c8y-iot >}} zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
+{{< product-c8y-iot >}} zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an.
 
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
 
-![Events](/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
+![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
 
 Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste.
 

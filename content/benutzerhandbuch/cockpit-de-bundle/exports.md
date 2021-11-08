@@ -2,14 +2,18 @@
 weight: 65
 title: Verwalten von Exporten
 layout: redirect
-helpcontent: >-
-  Mit der Export-Funktionalität können Sie spezifische Daten in Dateien exportieren. Bei jedem Export können Sie den Ausgangsdateityp (Excel oder CSV) festlegen, den Export planen, die Ziel-E-Mail-Adresse(n) angeben und optional Filter für bestimmte Geräte, Zeitintervalle oder Felder auswählen.
+helpcontent:
+  - label: export
+    title: Verwalten von Exporten
+    content: "Mit der Export-Funktionalität können Sie spezifische Daten in Dateien exportieren. Bei jedem Export können Sie den Ausgangsdateityp (Excel oder CSV) festlegen, den Export planen, die Ziel-E-Mail-Adresse(n) angeben und optional Filter für bestimmte Geräte, Zeitintervalle oder Felder auswählen.
 
 
-  Klicken Sie in der oberen Menüleiste auf **Export hinzufügen**, um einen neuen Export zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten, zu duplizieren oder zu löschen.
+    Klicken Sie in der oberen Menüleiste auf **Export hinzufügen**, um einen neuen Export zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten, zu duplizieren oder zu löschen."
 aliases:
-  - /benutzerhandbuch/cockpit-de/#export
+  - /users-guide/cockpit/#export
 ---
+
+
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
@@ -19,16 +23,15 @@ Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Auß
 
 Um alle Exporte anzuzeigen, klicken Sie auf **Exportieren** im Menü **Konfiguration** des Navigators.
 
-Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
+Die Seite **Exportieren** listet alle Exporte mit Namen, Dateityp und Zeitintervall auf.
 
-![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
-
+![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
 <a name="add-export"></a>
 #### So fügen Sie einen Export hinzu
 
 1. Klicken Sie auf **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
+	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
 
@@ -56,7 +59,7 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 >**Info:** Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
 
@@ -68,7 +71,7 @@ Klicken Sie auf **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie a
 
 Klicken Sie auf **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie auf **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
+![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
@@ -84,11 +87,11 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
 
-![Export details](/images/benutzerhandbuch/cockpit/cockpit-export-add-schedule.png)
+![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
 Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
-![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-new-schedule.png)
+![Schedule export](/images/users-guide/cockpit/cockpit-export-new-schedule.png)
 
 **1 - Häufigkeit**
 
@@ -116,7 +119,7 @@ Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
 Der Exportplan wird zu den Exportdetails hinzugefügt.
 
-![Scheduled exports list](/images/benutzerhandbuch/cockpit/cockpit-export-schedule-list.png)
+![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
 
 ##### Migration geplanter Exports
 
@@ -124,7 +127,7 @@ In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Be
 
 Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
 
-![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
+![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
 >**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 

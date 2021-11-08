@@ -1,7 +1,13 @@
 ---
 weight: 50
 title: Anwenden von Geschäftsregeln
+helpcontent:
+- label: reprio-alarms
+  title: Alarmregeln
+  content: "Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um diese den Prioritäten Ihres Unternehmens anzupassen. Der Abbruch einer Verbindung wird beispielsweise standardmäßig als WICHTIG eingestuft, kann aber in Ihrem Fall KRITISCH sein. Daher können Sie eine Alarmregel definieren, die Alarme im Zusammenhang mit Verbindungsabbrüchen als KRITISCH einstuft.
 
+
+  Siehe auch *Administration > Verwalten von Geschäftsregeln* im *User guide*."
 ---
 <a name="event-processing"></a>
 ### Echtzeitverarbeitung
@@ -10,11 +16,11 @@ title: Anwenden von Geschäftsregeln
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von {{< product-c8y-iot >}} automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 
->**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
+>**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/users-guide/cockpit#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
 
 Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Regeln anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-event-processing.png" alt="Event processing">
+<img src="/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
 
 <br>Für jede Regel wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
@@ -31,7 +37,7 @@ Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die An
 
 Die folgende Beispielregel erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.
 
-<img src="/images/benutzerhandbuch/Administration/admin-event-processing-sample-module.png" alt="Example rule" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example rule" style="max-width: 100%">
 
 #### So bearbeiten Sie eine Regel
 
@@ -46,7 +52,6 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Anstatt eine Regel zu löschen, können Sie sie auch zeitweise deaktivieren, indem Sie den Status auf "Nicht gestartet" setzen.
 
-
 <a name="reprio-alarms"></a>
 ### Alarmregeln
 
@@ -54,9 +59,9 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
-Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Beschreibung (optional) angezeigt.
+Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreibung (optional) angezeigt.
 
 <a name="add-alarm-mapping"></a>
 #### So fügen Sie eine Alarmregel hinzu
@@ -67,11 +72,13 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Besc
 4. Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
+> **Info:** Der in einer Alarmregel festgelegte Alarmtyp wird als  &quot;&#60;type&#62;*&quot; interpretiert. Wenn Sie beispielsweise eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren sollen, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+
 #### So bearbeiten Sie eine Alarmregel
 
 Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht editierbar.
 
-<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### So löschen Sie eine Alarmregel
 

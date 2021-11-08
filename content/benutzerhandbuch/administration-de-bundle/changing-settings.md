@@ -2,7 +2,23 @@
 weight: 70
 title: Ändern von Einstellungen
 layout: redirect
+helpcontent:
+- label: authentication
+  title: Authentifizierung
+  content: "Unter **Login-Einstellungen** können Sie Ihren bevorzugten Login-Modus festlegen:
+
+
+	* OAuth Internal - Empfohlene Option, da sie durch Autorisierungs-Tokens als Nachweis Ihrer Identität (gegenüber dem Server) ein hohes Maß an Sicherheit bietet.
+	* Basic Auth - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da sie nur minimale Sicherheit bietet.
+	* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAuth Internal" entfernt.
+
+
+	Aktivieren Sie unter **TFA-Einstellungen** die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
+
+
+	Wechseln Sie zur Registerkarte **Single-Sign-On**, um Single-Sign-On zu konfigurieren. Nähere Informationen finden Sie unter *Administration > Änderung von Einstellungen > Konfigurieren von Single-Sign-On* im *User guide*."
 ---
+
 
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos verwalten:
 
@@ -12,13 +28,12 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Zugangsdaten für den SMS-Anbieter](#sms-provider) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
-
 <a name="authentication"></a>
 ### Ändern von Authentifizierungseinstellungen
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
+![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
 >**Info:** Wenn das Menü nicht sichtbar ist, stellen Sie sicher, dass der Benutzer eine der folgenden Rollen hat: `ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`.
 
@@ -42,7 +57,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 >
 >**Info:** Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform](/benutzerhandbuch/getting-started-de/#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform](/users-guide/getting-started/#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -97,6 +112,12 @@ Der Standardwert ist zwei Wochen. Es kann auch ein beliebiger negativer Wert ein
 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
+> **Info:** Falls die externe Kommunikation zum {{< management-tenant >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel).
+Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich,
+die OAuth-Authentifizierung zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist.
+Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+
+
 <a name="single-sign-on"></a>
 ### Konfigurieren von Single Sign-On
 
@@ -115,7 +136,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * alle Microservices mit dem Microservice Java SDK 10.4.6 oder vorzugsweise höher erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im *Microservice SDK Guide*.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
->**Info:** Um die Single-Sign-On-Funktion für {{< enterprise-tenant-de >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+>**Info:** Um die Single-Sign-On-Funktion für {{< enterprise-tenant >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 
 
 #### Konfigurationseinstellungen
@@ -128,7 +149,7 @@ Links oben können Sie eine Vorlage auswählen. Diese wirkt sich auf das Layout 
 
 ##### Benutzerdefinierte Vorlage
 
-![Request configuration](/images/benutzerhandbuch/Administration/admin-sso-1.png)
+![Request configuration](/images/users-guide/Administration/admin-sso-1.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
 
@@ -138,11 +159,11 @@ Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration
 
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus {{< product-c8y-iot >}} zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-2.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-2.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -158,7 +179,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
 
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -172,6 +193,8 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 
 Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cockpit" zugewiesen.
 
+Falls keine Rechtezuordnung dem Benutzerzugriff-Token entspricht, erhält der Benutzer beim Versuch sich anzumelden eine "Zugriff verweigert"-Meldung. Dies geschieht auch, wenn keine Rechtezuordnung definiert ist, was dazu führt, dass sich sämtliche Benutzer nicht über SSO anmelden können.
+
 Klicken Sie auf **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie auf **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie auf das Minus-Symbol, um eine Regel zu entfernen.
 
 Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen "business" und "admin".
@@ -181,7 +204,7 @@ Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unt
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
 
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-8.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -202,25 +225,33 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-3.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+
+Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
+
+![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
+
+Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
+
+Mapping für Alias ist nicht verfügbar, da es im Kontext von Single-Sign-On nicht verwendet wird.
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.
 
 1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-4.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-5.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
 4. Durch Spezifizieren der JWKS (JSON Web Key Set)-Adresse.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 
  >**Info:** {{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (zum Beispiel Elliptic-Curves) werden nicht unterstützt.
@@ -237,10 +268,10 @@ In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit 
 Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anfragen und Abmeldeanfragen in folgenden Feldern verwendet werden: URL, Text, Kopfzeilen und Anfrageparameter
 
 Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
 
 Platzhalter können auch als Textteile verwendet werden:
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
 Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
 
@@ -248,16 +279,16 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". In Azure AD sind keine weiteren Schritte erforderlich.
+Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adresse als Redirect-URI. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". Die Redirect-URI muss für eine Webanwendung und nicht für eine Einzelseitenanwendung festgelegt sein. In Azure AD sind keine weiteren Schritte erforderlich.
 
-##### {{< product-c8y-iot >}} Konfiguration
+##### Cumulocity IoT-Konfiguration
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic.png)
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-1.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-1.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -271,16 +302,16 @@ Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etw
 
 Optional kann Single Logout konfiguriert werden:
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-azure.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-azure.png)
 
 |Feld|Beschreibung|
 |:---|:---|
 |Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
 |Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
-Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung.
+Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, des Benutzerdaten-Mappings, der Benutzer-ID und der Signaturverifizierung.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-2.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
 
 ##### Troubleshooting
@@ -291,7 +322,7 @@ In der "Administration-Anwendung" können Sie nach Klicken auf **Konten** > **Au
 
 Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
-![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
+![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
 
 
 <a name="default-app"></a>
@@ -299,7 +330,7 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
+![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
 
@@ -319,7 +350,7 @@ Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-co
 
 Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
-![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
+![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< product-c8y-iot >}} integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -334,7 +365,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< produc
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
-	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
+	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
 
 1. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
@@ -400,7 +431,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< produc
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
@@ -408,7 +439,9 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+   
+	>**Info:** Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
 
 2. Wählen Sie auf der Seite **SMS-Anbieter** einen der verfügbaren SMS-Anbieter aus der Auswahlliste **SMS-Anbieter**. Sie können mit der Eingabe beginnen, um Elemente zu filtern und Ihren bevorzugten Anbieter leichter zu finden.
 
@@ -426,12 +459,11 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
-- [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
+- [SIM](/users-guide/device-management/#connectivity)
 
-![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
+![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

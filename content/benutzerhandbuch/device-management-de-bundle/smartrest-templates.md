@@ -2,17 +2,33 @@
 weight: 80
 title: Verwenden von SmartREST-Templates
 layout: redirect
+helpcontent: 
+  - label: smartrest-templates 
+    title: SmartREST-Templates
+    content: "Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity IoT Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben. Um ein neues Template hinzuzufügen, können Sie entweder ein vorhandenes Template importieren oder ein neues erstellen.
+      
+
+    Um ein Template zu importieren, klicken Sie rechts oben auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
+    
+    
+    Um ein neues Template zu erstellen, klicken Sie rechts oben auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter *Device Management > SmartREST-Templates* im *User guide* beschrieben."
 ---
+
+Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity IoT Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben.
+
+Um ein neues Template hinzuzufügen, importieren Sie entweder ein vorhandenes Template oder erstellen Sie ein neues.
+Um ein Template zu importieren, klicken Sie rechts in der oberen Menüleiste auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
+Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter *Device Management > SmartREST-Templates* im *User guide* beschrieben.
 
 ### Einführung
 
-Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und {{< product-c8y-iot >}} Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben.
+Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und {{< product-c8y-iot >}} Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben.
 
 Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Device SDK Guide](/device-sdk/mqtt#static-templates).
 
 Öffnen Sie die Seite **SmartREST-Template** im Menü **Gerätetypen** des Navigators.
 
-![template view](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest.png)
+![template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
 Für jedes Template werden folgende Informationen bereitgestellt:
 
@@ -28,14 +44,14 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 
 ### So importieren Sie ein vorhandenes SmartREST-Template
 
-1. Klicken Sie auf **Import** rechts in der oberen Menüleiste.
+1. Klicken Sie rechts in der oberen Menüleiste auf **Template importieren**.
 2. Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen von Ihrem Computer.
 3. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).
 4. Klicken Sie auf **Importieren**, um das Template zu importieren.
 
 ### So erstellen Sie ein neues SmartREST-Template
 
-1. Klicken Sie auf **Neues Template** rechts in der oberen Menüleiste.
+1. Klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**.
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).
 3. Klicken Sie auf **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
 
@@ -58,7 +74,7 @@ Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine Sma
 |Integrierte REST API-Felder|Diese Felder sind optional und variieren je nach ausgewählter Ziel-REST API. Wenn kein Wert bereitgestellt wird, kann das Gerät diesen setzen, sobald die eigentliche Nachricht gesendet wird.
 |Benutzerdefinierte REST API-Felder|Durch Klicken von **Feld hinzufügen**, können zusätzliche eigene Felder hinzugefügt werden. Geben Sie den API-Schlüssel ein und wählen Sie den gewünschten Datentypen.
 
-	![Add message](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
+	![Add message](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
 
 	Unter **Vorschau** können Sie eine Vorschau Ihrer Anfragenachricht sehen.
 
@@ -109,13 +125,13 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 </tbody>
 </table>
 
-![Add template with filled out response](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+![Add template with filled out response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Klicken Sie auf **Speichern**.
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest/#templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 
@@ -144,6 +160,6 @@ Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Sc
 2. Wählen Sie im darauf folgenden Dialog die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz.
 3. Klicken Sie in der Registerkarte auf **CSV-Vorschau**, die zusätzliche Informationen zu Nachrichten und Antworten enthält, **In die Zwischenablage kopieren**.
 
-![CSV preview tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
+![CSV preview tab](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
 
 Das SmartREST-Template wird in die CSV-Datei exportiert.

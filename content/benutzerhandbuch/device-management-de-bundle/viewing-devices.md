@@ -2,13 +2,20 @@
 weight: 20
 title: Anzeigen von Geräten
 layout: redirect
+helpcontent:
+  - label: viewing-devices
+    title: Anzeigen von Geräten
+    content: "Die Geräteliste zeigt die relevantesten Informationen für alle mit Ihrem Konto verbundenen Geräte in einer Listenansicht an. Die Spalten der Geräteliste können nach Bedarf angepasst werden, siehe *Device Management > Anzeigen von Geräten* im *User guide*.
+
+
+    Sie können die Liste filtern, indem Sie neben einer Spalte auf das Filtersymbol klicken und Filteroptionen angeben. Für eine Volltextsuche klicken Sie rechts oben auf die Schaltfläche **Suche** und geben Sie einen Suchbegriff ein."
 ---
 
 Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
+![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
 ### Geräteinformationen
@@ -76,7 +83,7 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 #### So blenden Sie Spalten ein/aus
 
 1. Klicken Sie auf **Spalten konfigurieren** in der oberen Menüleiste.
-2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
+2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
 <br>
 3. Klicken Sie auf **Speichern**.
 
@@ -87,12 +94,12 @@ Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalte
 Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zusätzliche Geräteattribute angezeigt werden.
 
 1. Klicken Sie im Dialog **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
-![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.  
 3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur {{< product-c8y-iot >}}-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, erfolgt die Filterung durch Anwenden der Kriterien, die ein Benutzer in dem Dialogfeld festlegen kann, das beim Klicken auf das Spaltenfilter-Symbol angezeigt wird.<br>
-![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
+![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
 <br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
 5. Klicken Sie auf **Hinzufügen**.
 
@@ -109,7 +116,6 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
 > **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
-
 <a name="searching-devices"></a>
 ### So suchen Sie nach Geräten
 
@@ -117,11 +123,11 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
 Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein.
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/getting-started#gui-features).
 
 Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
-![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
+![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 
 <a name="filtering-devices"></a>
 ### So filtern Sie Geräte
@@ -130,7 +136,7 @@ Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestim
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
 
-![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
+![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie im Dialog **Filteroptionen** Ihre Filteroptionen fest.
 

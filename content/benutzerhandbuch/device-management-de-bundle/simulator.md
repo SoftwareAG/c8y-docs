@@ -2,6 +2,19 @@
 weight: 90
 title: Verwenden von Simulatoren
 layout: redirect
+helpcontent:
+  - label: simulator
+    title: Verwenden von Simulatoren
+    content: "Mit dem Simulator können Sie Geräte erstellen, die den gleichen Grad an Funktionalität simulieren wie verbundene Hardwaregeräte.
+
+
+  Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity IoT-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.
+
+
+  Für jeden Simulator können Sie Anweisungen erstellen, die festlegen, was der Simulator tun soll.
+
+
+  Um einen neuen Simulator zu erstellen, klicken Sie rechts oben auf **Simulator hinzufügen** und folgen Sie den Anweisungen im Abschnitt *Device Management > Simulator* im *User guide*."
 ---
 
 Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Geräten simuliert werden, wie:
@@ -15,7 +28,7 @@ Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Gerät
 
 ### Allgemeines zu Simulatoren
 
-Mit dem Simulator können Sie "künstliche" Geräte erstellen, die den gleichen Grad an Funktionalität aufweisen, wie verbundene Hardwaregeräte.
+Mit dem Simulator können Sie Geräte erstellen, die den gleichen Grad an Funktionalität simulieren wie verbundene Hardwaregeräte.
 
 Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die {{< product-c8y-iot >}}-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
 
@@ -27,7 +40,7 @@ Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden ein
 
 Klicken Sie auf **Simulatoren** im Menü **Geräte** des Navigators, um die Seite **Simulatoren** zu öffnen.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
 Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 
@@ -39,7 +52,7 @@ Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 5. Klicken Sie auf **Erstellen**.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 Der Simulator wird erstellt und der Liste hinzugefügt.
 
@@ -71,7 +84,7 @@ Für jeden Simulator können Sie Anweisungen erstellen, die angeben, was der Sim
 
 Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angezeigt und bearbeitet werden.
 
-![Add Instructions](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-instructions.png)
+![Add Instructions](/images/users-guide/DeviceManagement/devmgmt-simulator-instructions.png)
 
 **Beispiele**
 
@@ -79,13 +92,13 @@ Die Simulator-Voreinstellungen enthalten bereits Beispielanweisungen. Beispielsw
 
 Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
-![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
+![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
 Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) in der {{< openapi >}}.
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 
-![Sleep](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-sleep.png)
+![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### So fügen Sie eine Anweisung hinzu
 
@@ -114,7 +127,7 @@ Die Anweisung wird aus dem Simulator entfernt.
 
 In der Registerkarte **Unterstützte Operationen** eines Simulators finden Sie spezielle Operationen, etwa für Konfigurationen oder für Software-/Firmware-Updates.
 
-![Supported operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-supported-operations.png)
+![Supported operations](/images/users-guide/DeviceManagement/devmgmt-simulator-supported-operations.png)
 
 Klicken Sie auf den Umschalter, um die jeweilige Operation ein- oder auszuschalten.
 
@@ -128,6 +141,6 @@ Die benutzerdefinierte Operation wird der Operationsliste hinzugefügt.
 
 ### Alarme für den Simulator
 
-Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
 
-![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)
+![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

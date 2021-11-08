@@ -379,22 +379,21 @@ then the server managed object will be deleted, but the corresponding address sp
 
 ### Downgrade to an earlier version
 
-Downgrades from 10.12.0  to previous versions are not directly supported due the security improvements are made. 
-But if it is needed urgently to do there this way. 
+Downgrades from 10.12.0 to previous versions are not directly supported due the security improvements that were made.
+However, in urgent cases a downgrade is possible when following the instructions below:
 
-Please follow these instructions:
+1. Shut down the current version of the gateway and remember the device ID from the all devices list.
+2. Send an HTTP PUT command to your tenant to reset the identity:
 
-1. shutdown current version of the gateway and remember the device id from the all devices list
-2. send a http put command to your tenant to reset the identity
 PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}
 ```json
    {
    "c8y_ua_IdentityConfig":null
    }
 ```
-3. response code should be 200 OK
-4. start the old version of the gateway
+3. The response code should be 200 OK.
+4. Start the old version of the gateway.
 
-After this a new 'old' identity will be created. 
+After completing these steps a new 'old' identity will be created.
 
-It is possible to upgrade this later easily be running a version 10.12.0 or above, conversion will be done automatically.
+It is possible to upgrade to version 10.12.0 or above at a later stage. The necessary conversion will be done automatically. 

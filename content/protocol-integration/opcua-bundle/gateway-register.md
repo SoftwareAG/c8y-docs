@@ -392,7 +392,8 @@ PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}
    "c8y_ua_IdentityConfig":null
    }
 ```
-3. start the old version of the gateway
+3. response code should be 200 OK
+4. start the old version of the gateway
 
 After this a new 'old' identity will be created. 
 

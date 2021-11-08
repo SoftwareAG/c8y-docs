@@ -521,7 +521,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 <td>processMappings</td>
 <td>boolean</td>
 <td>no</td>
-<td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true. *Please note:*Any data created from historic data using a device protocol will carry the same processing mode as specified in the mapping.</td>
+<td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true. Note that any data created from historic data using a device protocol will carry the same processing mode as specified in the mapping.</td>
 </tr>
 <tr>
 <td>tagType</td>

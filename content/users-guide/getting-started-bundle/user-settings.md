@@ -26,7 +26,7 @@ The **User** menu contains the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, see <a href="#change-user-settings" class="no-ajaxy">To change user settings</a> for more details </td> .
+<td style="text-align:left">Provides access to the user settings, see <a href="#change-user-settings" class="no-ajaxy">To change user settings</a> for more details </td>.
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>

@@ -71,16 +71,15 @@ Enforcing a strong (green) password for all users in the Management tenant does 
 
 To improve the navigation in the "Map" widget on mobile devices, it is necessary to update the Leaflet library. With release 10.12, the Leaflet library will be updated to the latest version 1.7.1.
 
-This change only affects you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you have implemented your own custom map on top of the Cumulocity IoT Web SDK, make sure that your implementation still works properly. In case of any issues, see the [Leaflet](https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md) and check if you use any deprecated functionality.
+This change only affects you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you have implemented your own custom map on top of the Cumulocity IoT Web SDK, make sure that your implementation still works properly. In case of any issues, see the [Leaflet changelog](https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md) and check if you use any deprecated functionality.
 
 
 ##### Removing PlatformImpl Spring bean from Microservice SDK
 
-Cumulocity IoT currently has a design gap which allows to wrongly use Cumulocity IoT APIs (by mixing Spring injection with raw Java). With the upcoming releases 10.15+ we intend to no longer expose the PlatformImpl as a Spring Bean. With this change we will close the current design gap.
+Cumulocity IoT currently has a design gap which allows users to use Cumulocity IoT APIs incorrectly (by mixing Spring injection with raw Java). With the upcoming releases 10.15+ we intend to no longer expose the PlatformImpl as a Spring Bean. With this change we will close the current design gap.
 
 How does this impact users? PlatformImpl will no longer be exposed as a Spring Bean and it will not be feasible to inject it.
 
-Contact us if you have any questions on this change.
 
 ##### Deprecation of the variable HOOK_ROUTE_ONCE
 

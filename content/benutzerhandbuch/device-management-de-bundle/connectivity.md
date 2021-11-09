@@ -34,7 +34,7 @@ Für jeden Anbieter muss entweder ICCID oder MSISDN im Fragment [c8y_Mobile](htt
 
 Die folgende Beschreibung basiert vornehmlich auf Jasper, doch dieselbe Konfiguration und Nutzung gilt auch für die anderen Anbieter. Etwaige Unterschiede werden explizit angegeben.
 
-<img src="/images/users-guide/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">
+<img src="/images/benutzerhandbuch/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">
 
 In den nachstehenden Abschnitten wird Folgendes beschrieben:
 
@@ -62,7 +62,7 @@ Zum Erstellen eines Benutzers im Jasper Control Center führen Sie die folgenden
 1. Wenn Sie SIM-Karten über {{< product-c8y-iot >}} aktivieren und deaktivieren oder SMS von {{< product-c8y-iot >}} aus senden möchten, verwenden Sie die Rolle ACCOUNTUSER. Andernfalls verwenden Sie die Rolle ACCOUNTREADONLY.
 1. Klicken Sie auf **OK**, um den Benutzer zu erstellen, geben Sie dann Ihr Admin-Passwort ein und klicken Sie erneut auf **OK**.
 
-![Jasper user management](/images/users-guide/connectivity/connectivity-jasperadmin.png)
+![Jasper user management](/images/benutzerhandbuch/connectivity/connectivity-jasperadmin.png)
 
 Der Benutzer ist nun erstellt, aber hat noch kein Passwort. Folgen Sie den Anweisungen, die Ihnen das Control Center per E-Mail gesendet hat, um das Passwort festzulegen.
 
@@ -81,7 +81,7 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in {{< product-c8y-
 
 Die Konfiguration des Anbieters Kite unterscheidet sich von anderen Anbietern dadurch, dass sie das Hochladen eines gültigen Zertifikats (trustStoreFileName) sowie von trustStorePassword, trustStoreType und kiteBaseUrl erfordert.
 
-![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
+![Jasper settings](/images/benutzerhandbuch/connectivity/connectivity-item.png)
 
 Der Connectivity-Agent ist nun eingerichtet.
 
@@ -96,7 +96,7 @@ Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das �
 
 Um Berechtigungen zuzuweisen, navigieren Sie zur Anwendung Administration und vergewissern Sie sich, dass Ihrem Benutzer eine Rolle mit LESEN- oder ADMIN-Berechtigung für Connectivity zugewiesen ist.
 
-<img src="/images/users-guide/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
+<img src="/images/benutzerhandbuch/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
 Jasper und Comarch identifizieren SIM-Karten über ihre ICCID (Integrated Circuit Card Identifier). Ericsson verwendet stattdessen eine MSISDN (Mobile Station International Subscriber Directory Number). In den meisten Fällen melden die Geräte die ICCID und die MSISDN Ihrer SIM-Karte automatisch an {{< product-c8y-iot >}}.
 
@@ -121,13 +121,13 @@ In der Registerkarte **Connectivity** finden Sie folgende Abschnitte:
 * Sitzungen
 * Audit-Logs
 
-![Connectivity tab](/images/users-guide/connectivity/connectivity-tab.png)
+![Connectivity tab](/images/benutzerhandbuch/connectivity/connectivity-tab.png)
 
 >**Info:** Einige Abschnitte werden eventuell nicht angezeigt oder sind leer. Wenn beispielsweise keine SMS gesendet wurden und Sie keine Berechtigung zum Senden von SMS haben, wird der SMS-Abschnitt nicht angezeigt.
 
 Im Abschnitt **Status** werden zusammenfassende Informationen zur SIM-Karte aufgeführt.
 
-![Status section](/images/users-guide/connectivity/connectivity-status.png)
+![Status section](/images/benutzerhandbuch/connectivity/connectivity-status.png)
 
 Die erste Zeile gibt Auskunft darüber, ob das Gerät momentan eine Datensitzung durchführt. Ist dies der Fall, werden der Beginn der Sitzung und die aktuelle WAN-IP-Adresse des Geräts angezeigt.
 
@@ -146,15 +146,15 @@ Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet u
 
 Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie auch Textnachrichten an das Gerät senden, indem Sie den Text eingeben und auf **SMS senden** klicken.
 
-![SMS section](/images/users-guide/connectivity/connectivity-jaspersms.png)
+![SMS section](/images/benutzerhandbuch/connectivity/connectivity-jaspersms.png)
 
 Im Abschnitt **Sitzungen** werden die Logdaten der vom Gerät durchgeführten Datensitzungen angezeigt. Hier wird aufgeführt, wann die Sitzung begann, wie lange sie dauerte und wie viel Datenverkehr verbraucht wurde.
 
-![Sessions section](/images/users-guide/connectivity/connectivity-sessions.png)
+![Sessions section](/images/benutzerhandbuch/connectivity/connectivity-sessions.png)
 
 Im Abschnitt **Audit-Logs** werden alle Änderungen an der SIM-Karte und ihrem Tarif aufgeführt. Angezeigt werden die Art der Änderung, alter und neuer Wert, wann die Änderung durch wen erfolgte und ob die Änderung erfolgreich war.
 
-![Audit logs section](/images/users-guide/connectivity/connectivity-jasperaudits.png)
+![Audit logs section](/images/benutzerhandbuch/connectivity/connectivity-jasperaudits.png)
 
 Die Registerkarte **Connectivity** wird nicht in Echtzeit aktualisiert. Um aktuelle Daten anzuzeigen, klicken Sie in der oberen Menüleiste auf **Neu laden**.
 
@@ -166,7 +166,7 @@ Wenn Sie den Verdacht haben, dass ein Gerät nicht die korrekten Daten an {{< pr
 
 Prüfen Sie in der Registerkarte **Connectivity**, ob
 
-* die SIM aktiviert ist. Ist die SIM-Karte nicht aktiviert, können Sie sie aktivieren, indem Sie "Aktiviert" aus dem Status-Auswahlmenü wählen. <br> ![Activate SIM card](/images/users-guide/connectivity/connectivity-status-activate.png) <br> Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiviert ist. Unter Umständen ist ein Reset des Geräts notwendig, damit es sich wieder in das Netzwerk einwählt.
+* die SIM aktiviert ist. Ist die SIM-Karte nicht aktiviert, können Sie sie aktivieren, indem Sie "Aktiviert" aus dem Status-Auswahlmenü wählen. <br> ![Activate SIM card](/images/benutzerhandbuch/connectivity/connectivity-status-activate.png) <br> Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiviert ist. Unter Umständen ist ein Reset des Geräts notwendig, damit es sich wieder in das Netzwerk einwählt.
 * das Gerät mit dem Netzwerk verbunden ist. Falls sich das Gerät nicht mit dem Netzwerk verbindet, kann dies mehrere Ursachen haben:
 
   * Das Gerät befindet sich an einem Ort ohne Mobilfunkabdeckung. Falls das Gerät Netzwerk-Qualitätsparameter meldet, können Sie zur [Registerkarte **Messwerte**](/users-guide/device-management#measurements) des Geräts navigieren und die zuletzt gemeldeten Signalstärke- und Fehlerraten-Parameter überprüfen.

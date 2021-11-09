@@ -16,7 +16,7 @@ Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messagin
 1. Navigieren Sie im {{< management-tenant >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
 2. Abonnieren Sie in der Registerkarte **Anwendungen** den Data Broker-Agenten (databroker-agent-server) für den Mandanten.
 
-![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
+![Databroker-Agent-Server](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-agent.png)
 
 > **Info:** Mandanten, die einen Datenkonnektor abonnieren, benötigen kein Data Broker-Agent-Abonnement.
 
@@ -60,6 +60,6 @@ Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung 
 
 Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
 
-![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)
+![New Data-Broker Alarms](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-alarms.png)
 
 > **Info:** Näheres darüber, wie sich diese Parameter konfigurieren lassen, finden Sie im *Messaging Service Installation & Operations Guide*.

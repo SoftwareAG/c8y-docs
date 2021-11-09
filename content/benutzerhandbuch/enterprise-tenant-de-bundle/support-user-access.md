@@ -55,7 +55,7 @@ Um sich vom {{< management-tenant >}} aus als Supportbenutzer anzumelden, müsse
 
 Nehmen wir an, Sie erhalten eine Supportanfrage von einem Benutzer "John" im Mandanten *testtenant.{{< domain-c8y >}}* (mit der Mandanten-ID *t07007007*). Ihr Benutzername im {{< management-tenant >}} ist "Jill" und Sie haben die Berechtigung, Support für *testtenant.{{< domain-c8y >}}* zu leisten. In diesem Fall können Sie sich mit den folgenden Zugangsdaten anmelden, um zu reproduzieren, was John sieht:
 
-![Support user access login](/images/users-guide/enterprise-tenant/et-support-user-access.png)
+![Support user access login](/images/benutzerhandbuch/enterprise-tenant/et-support-user-access.png)
 
 Alternativ können Sie "&#60;support user>&#36;" im Feld **Benutzername** eingeben, um mit einem der Administrationsbenutzer auf den Mandanten zuzugreifen.
 

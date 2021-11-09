@@ -37,7 +37,7 @@ Außerdem ist das Zurücksetzen des Passworts in {{< product-c8y-iot >}} für Be
 
 Klicken Sie auf **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-![Expanded view](/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/benutzerhandbuch/Administration/admin-users-list.png)
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 

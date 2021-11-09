@@ -12,7 +12,7 @@ Neben verschiedenen [Konfigurationseinstellungen](#configuration) können Sie au
 
 Klicken Sie auf **{{< enterprise-tenant >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
 
-![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
+![Custom settings](/images/benutzerhandbuch/enterprise-tenant/et-custom-settings.png)
 
 <a name="configuration"></a>
 ### Konfiguration
@@ -31,13 +31,13 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 
 Unter **Zwei-Faktor-Authentifizierung** können Sie das SMS-Template, das an die Benutzer geschickt wird, ändern.
 
-![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
+![TFA configuration](/images/benutzerhandbuch/enterprise-tenant/et-configuration-tfa.png)
 
 #### Support-Link
 
 Im Bereich **Support-Link** können Sie eine URL eingeben, die als Link zu einer Support-Seite verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur {{< sag-dev-community >}}-Seite verwendet.
 
-![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
+![Support link configuration](/images/benutzerhandbuch/enterprise-tenant/et-configuration-support-link.png)
 
 Geben Sie "false" ein, um den Link zu verbergen.
 
@@ -45,7 +45,7 @@ Geben Sie "false" ein, um den Link zu verbergen.
 
 Im Bereich **Passwort zurücksetzen** können Sie alle Einstellungen im Zusammenhang mit E-Mail-Templates zum Zurücksetzen des Passworts ändern.
 
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
+![Configuration menu1](/images/benutzerhandbuch/Administration/admin-settings-configuration-password-reset.png)
 
 Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
@@ -59,7 +59,7 @@ Geben Sie in den folgenden beiden Feldern jeweils ein Template für die E-Mails 
 
 Im Bereich **E-Mail-Server** können Sie benutzerdefinierte E-Mail-Server-Einstellungen konfigurieren.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
 
 Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschlüsselungstyp aus der Auswahlliste. Hierbei kann es sich um einen der folgenden Typen handeln:
 
@@ -73,19 +73,19 @@ Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-S
 
 Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+![Data export settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-data-export.png)
 
 #### Speicherbegrenzung
 
 Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden (Warnung) und *nachdem* Daten gelöscht wurden (Begrenzung überschritten).
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+![Storage limit settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-storage-limit.png)
 
 #### Mandanten werden gesperrt
 
 Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 
@@ -102,11 +102,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 
@@ -278,7 +278,7 @@ Aus folgenden Gründen raten wir dringend von der Verwendung alternativer DNS-Ko
 Sobald die DNS-Konfiguration vorliegt und ein Zertifikat gemäß den entsprechenden Anforderungen verfügbar ist, kann dieses problemlos
 an die Plattform hochgeladen werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 
 Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie

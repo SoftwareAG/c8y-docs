@@ -40,7 +40,7 @@ Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden ein
 
 Klicken Sie auf **Simulatoren** im Menü **Geräte** des Navigators, um die Seite **Simulatoren** zu öffnen.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
 Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 
@@ -52,7 +52,7 @@ Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 5. Klicken Sie auf **Erstellen**.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 Der Simulator wird erstellt und der Liste hinzugefügt.
 
@@ -84,7 +84,7 @@ Für jeden Simulator können Sie Anweisungen erstellen, die angeben, was der Sim
 
 Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angezeigt und bearbeitet werden.
 
-![Add Instructions](/images/users-guide/DeviceManagement/devmgmt-simulator-instructions.png)
+![Add Instructions](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-instructions.png)
 
 **Beispiele**
 
@@ -92,13 +92,13 @@ Die Simulator-Voreinstellungen enthalten bereits Beispielanweisungen. Beispielsw
 
 Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
-![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
+![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
 
 Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) in der {{< openapi >}}.
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 
-![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
+![Sleep](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### So fügen Sie eine Anweisung hinzu
 
@@ -127,7 +127,7 @@ Die Anweisung wird aus dem Simulator entfernt.
 
 In der Registerkarte **Unterstützte Operationen** eines Simulators finden Sie spezielle Operationen, etwa für Konfigurationen oder für Software-/Firmware-Updates.
 
-![Supported operations](/images/users-guide/DeviceManagement/devmgmt-simulator-supported-operations.png)
+![Supported operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-supported-operations.png)
 
 Klicken Sie auf den Umschalter, um die jeweilige Operation ein- oder auszuschalten.
 
@@ -143,4 +143,4 @@ Die benutzerdefinierte Operation wird der Operationsliste hinzugefügt.
 
 Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
 
-![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)
+![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)

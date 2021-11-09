@@ -16,7 +16,7 @@ Auf der Seite **Benutzer** werden Benutzerhierarchien durch einen Pfeil links vo
 
 Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkt untergeordnete Benutzer ein Benutzer hat. Untergeordnete Benutzer sind Benutzer, die von ihrem übergeordneten Benutzer verwaltet werden können und die maximal die Berechtigungen des übergeordneten Benutzers haben können. Im Beispiel unten hat der Benutzer "Demo user" zwei direkt untergeordnete Benutzer.
 
-![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
+![User hierarchies](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy.png)
 
 <a name="sub-users"></a>
 ### So erstellen Sie einen untergeordneten Benutzer
@@ -27,7 +27,7 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 2. Wählen Sie im Feld **Besitzer** den Benutzer aus der Auswahlliste, den Sie als Besitzer zuweisen möchten.
 3. Klicken Sie zum Bestätigen auf **Fertig**.
 
-![Select owner](/images/users-guide/enterprise-tenant/et-user-hierarchy-assign-owner.png)
+![Select owner](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
 >**Info:** Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist, sofern der angemeldete Benutzer nur die "Benutzerverwaltung"-Berechtigung ERSTELLEN hat. Der Besitzer kann später geändert werden, jedoch nur durch einen Benutzer mit der "Benutzerverwaltung"-Berechtigung ADMIN.
 <br><br>
@@ -37,7 +37,7 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 
 Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neuen Benutzers B. Dem Benutzer B kann dann nur eine business-Rolle zugewiesen werden (und nicht etwa eine admin-Rolle), da der Benutzer keine höhere Berechtigung haben kann als der Besitzer.
 
-![Owner Sample](/images/users-guide/enterprise-tenant/et-user-hierarchy-roles.png)
+![Owner Sample](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-roles.png)
 
 <a name="delegate"></a>
 ### Delegieren von Benutzerhierarchien
@@ -50,7 +50,7 @@ Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig 
 
 Öffnen Sie entweder den Benutzer und klicken Sie auf das Delegieren-Symbol im Feld **Delegiert von** oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie **Delegieren**.
 
-![User delegation](/images/users-guide/enterprise-tenant/et-user-hierarchy-delegate.png)
+![User delegation](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-delegate.png)
 
 #### So heben Sie die Delegierung von Berechtigungen auf
 
@@ -64,4 +64,4 @@ Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte 
 
 Im folgenden Beispiel kann der Benutzer nicht den Zugriff auf die "Administration"-Anwendung ändern, da der Besitzer des Benutzers keine Berechtigung "Benutzerverwaltung" hat. Daher kann der Besitzer keinen Zugriff auf integrierte Anwendungen erteilen.
 
-![Warning message](/images/users-guide/enterprise-tenant/et-warning.png)
+![Warning message](/images/benutzerhandbuch/enterprise-tenant/et-warning.png)

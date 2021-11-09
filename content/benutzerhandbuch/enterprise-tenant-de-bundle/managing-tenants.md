@@ -38,7 +38,7 @@ Im {{< management-tenant >}} finden Sie zudem Informationen über den übergeord
 
 1. Klicken Sie auf **Mandanten anlegen** rechts in der oberen Menüleiste.
 
-	![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)
+	![Create subtenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-create.png)
 
 2. Geben Sie die folgenden Attribute an:
 
@@ -106,7 +106,7 @@ Um das Mandantenpasswort zu ändern, klicken Sie auf **Passwort ändern**, geben
 
 Auf der rechten Seite der Registerkarte **Attribute** finden Sie Informationen zu Supportbenutzeranfragen/-zugriff für die Untermandanten.
 
-<img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
 Hier werden die folgenden Informationen angezeigt:
 
@@ -152,7 +152,7 @@ Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und k
 
 1. Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und anschließend auf **Sperren**.
 
-	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
+	![Suspend tenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-suspend.png)
 
 2. Bestätigen Sie im darauf folgenden Dialog das Sperren, indem Sie **OK** klicken und Ihr Passwort eingeben.
 
@@ -177,7 +177,7 @@ Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und 
 
 In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von {{< product-c8y-iot >}} abonniert.
 
-<img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 #### So abonnieren Sie eine Anwendung
 
@@ -191,7 +191,7 @@ Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der li
 
 Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
 
-<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
 
 Der Microservice kann sich in einem der folgenden Status befinden:
 
@@ -201,7 +201,7 @@ Der Microservice kann sich in einem der folgenden Status befinden:
 
 Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-application-details.png" alt="Application details">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-application-details.png" alt="Application details">
 
 Folgende Informationen werden angezeigt:
 
@@ -219,7 +219,7 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/users-guide/administration#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/users-guide/enterprise-tenant/#usage-and-billing) angezeigt.
 
-![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
+![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Begrenzen der Anfragerate für Untermandanten
 
@@ -256,7 +256,7 @@ Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv da
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
@@ -266,14 +266,14 @@ Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit
 
 Klicken Sie auf **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Mandantenregeln anzuzeigen.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
 #### So erstellen Sie eine Mandantenregel
 
 1. Klicken Sie auf **Mandantenregel hinzufügen** in der oberen Menüleiste.
-<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
+<br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
 3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/users-guide/administration#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
@@ -324,7 +324,7 @@ Links sehen Sie die **Anwendungen, die zum Zeitpunkt der Erstellung für einen M
 
 Anfänglich zeigen die Listen die aus der Mandantenhierarchie geerbten Standardabonnements.
 
-<img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
+<img src="/images/benutzerhandbuch/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
 
 <br>
 Sie können beide Listen außer Kraft setzen, indem Sie den entsprechenden Umschalter betätigen. Dadurch werden alle verfügbaren Anwendungen sichtbar (anfänglich sind nicht ausgewählte Anwendungen ausgeblendet), doch die Auswahl bleibt unverändert.
@@ -333,7 +333,7 @@ Als Nächstes passen Sie die Listen nach Ihren Bedürfnissen an, indem Sie zusä
 
 Sie können auch alle abwählen, wenn Sie nicht möchten, dass bei einer Mandantenerstellung bzw. einem Plattform-Upgrade Abonnements getätigt werden.
 
-<img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
+<img src="/images/benutzerhandbuch/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
 <br>
 Wenn Sie zu den von der Mandantenhierarchie geerbten Einstellungen zurückkehren möchten, betätigen Sie einfach erneut den Umschalter.
 

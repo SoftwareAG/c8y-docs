@@ -75,7 +75,7 @@ Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer An
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
-![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Home dashboard](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 

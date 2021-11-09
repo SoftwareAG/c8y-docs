@@ -10,7 +10,7 @@ Vom {{< management-tenant >}} aus können Sie Attribute konfigurieren, die globa
 
 Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Konfiguration** aufzurufen.
 
-![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
+![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
 Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/users-guide/enterprise-tenant/#customization).
 
@@ -20,7 +20,7 @@ Darüber hinaus können die folgenden Einstellungen nur im {{< management-tenant
 
 Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
 
-![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
+![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
 Aktivieren Sie die Checkbox **Nur starke (grüne) Passwörter für alle Benutzer zulassen**, um die Benutzer in Ihrem Mandanten zur Verwendung von Passwörtern zu zwingen, die die Bedingungen für "grüne" Passwörter erfüllen, siehe auch [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings).
 
@@ -36,7 +36,7 @@ Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportb
 
 Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-tenant/#support-user-access).
 
-<img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 

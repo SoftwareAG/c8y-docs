@@ -37,14 +37,14 @@ Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü 
 
 Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/users-guide/enterprise-tenant/#default-subscriptions).
 
-<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
+<img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
 <a name="application-properties"></a>
 ### Anwendungsattribute
 
 Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
@@ -323,13 +323,13 @@ Eigene Anwendungen können sein:
 
 Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
 
-<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
+<img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
 
 Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet.
 
 Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
 
-<img src="/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
+<img src="/images/benutzerhandbuch/Administration/admin-applications-own.png" alt="Own applications">
 
 Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf deren Karte. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties).
 
@@ -341,7 +341,7 @@ Klicken Sie auf **Öffnen** auf der Karte einer Anwendung, um die Anwendung dire
 
 Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 
-<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
+<img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
 
 Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
@@ -379,7 +379,7 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 1. Klicken Sie auf **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Externe Anwendung**.
 <br><br>
-<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
 <br><br>
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
@@ -397,11 +397,11 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
 <br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
 4. Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
 <br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
 5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
 6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
@@ -443,7 +443,7 @@ Es können mehrere Anwendungsversionen in {{< product-c8y-iot >}} gespeichert we
 3. Klicken Sie auf **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
 4. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr {{< product-c8y-iot >}}-Konto hochzuladen.
 
-<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
+<img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
@@ -458,7 +458,7 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 3. Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie auf **Aktivieren**, um diese Version zur aktiven Version zu machen.
 4. Klicken Sie auf **Entfernen** um eine Version aus dem Archiv zu löschen.
 
-<img src="/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+<img src="/images/benutzerhandbuch/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
 ##### So aktivieren Sie eine einzelne Anwendung erneut
 
@@ -468,7 +468,7 @@ Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie er
 2. Wechseln Sie zur Registerkarte **Archiv**.
 3. Klicken Sie auf **Erneut aktivieren** in der oberen rechten Ecke der Registerkarte **Archivdateien**.
 
-<img src="/images/users-guide/Administration/admin-reactivate.png" alt="Refresh application">  
+<img src="/images/benutzerhandbuch/Administration/admin-reactivate.png" alt="Refresh application">  
 
 Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspaket erneut entpackt wird.
 
@@ -480,7 +480,7 @@ Es gibt zwei Möglichkeiten, Microservices in der {{< product-c8y-iot >}}-Plattf
 
 Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden.
 
-<img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 Folgende Information werden in der Registerkarte **Status** angezeigt:
 
@@ -516,7 +516,7 @@ Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Dow
 
 Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice.
 
-<img src="/images/users-guide/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
@@ -545,7 +545,7 @@ Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
 Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine entsprechende Meldung angezeigt:
 
-<img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 > **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 

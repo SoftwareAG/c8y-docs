@@ -123,7 +123,7 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
 Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein.
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/getting-started#gui-features).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
 
 Unser Beispiel zeigt eine Suche nach "Ublox C027".
 

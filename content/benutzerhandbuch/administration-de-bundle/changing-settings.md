@@ -57,7 +57,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 >
 >**Info:** Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform](/users-guide/getting-started/#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform](/benutzerhandbuch/getting-started-de/#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -431,7 +431,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< produc
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
@@ -461,7 +461,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/users-guide/device-management/#connectivity)
+- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 

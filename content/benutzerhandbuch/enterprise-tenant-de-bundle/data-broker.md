@@ -158,7 +158,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](#data-broker-troubleshooting) weiter unten.
 
-Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
+Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 
 <a name="data-broker-subscriptions"></a>

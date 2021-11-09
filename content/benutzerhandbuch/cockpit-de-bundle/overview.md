@@ -47,8 +47,8 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 <td align="left">Verwenden Sie verschiedene <a href="#widgets-collection">Widget-Typen</a> aus der in {{< product-c8y-iot >}} enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
 </tr>
 <tr>
-<td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Verwenden von Alarmen</a></td>
-<td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../users-guide/device-management/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
+<td align="left"><a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a></td>
+<td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
 <tr>
 <td align="left"><a href="#exports">Verwalten von Exporten</a></td>
 <td align="left">Konfigurieren Sie <a href="#exports">Exporte zum Exportieren von Daten</a> im CSV- oder Excel-Format und <a href="#schedule-export">planen Sie den Export</a>.</td>
@@ -68,7 +68,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/getting-started).
+Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
 
 <a name="home"></a>
 ### Startseite

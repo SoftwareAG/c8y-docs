@@ -8,7 +8,7 @@ aliases:
 
 Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und im Falle von individuellen lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen.
 
-Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und die erforderlichen Supportbenutzer müssen im {{< management-tenant >}} erstellt sein, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/users-guide/administration/#config-support-users).
+Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und die erforderlichen Supportbenutzer müssen im {{< management-tenant >}} erstellt sein, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/benutzerhandbuch/administration-de/#config-support-users).
 
 > **Info:** In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutzer-Funktionalität nur vom [{{< sag-support >}}](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für {{< enterprise-tenant >}}-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
 
@@ -20,12 +20,12 @@ Supportbenutzerzugriff kann entweder
 * standardmäßig für alle Untermandanten aktiviert sein oder
 * für alle Untermandanten deaktiviert, aber von einem Benutzer für seinen Mandanten explizit eingeschaltet sein.
 
-Dies wird global im *{{< management-tenant >}}* konfiguriert, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/users-guide/administration/#config-support-users).
+Dies wird global im *{{< management-tenant >}}* konfiguriert, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/benutzerhandbuch/administration-de/#config-support-users).
 
 
 Bei globaler Aktivierung kann sich der Supportbenutzer bei allen zulässigen Untermandanten als beliebiger Benutzer uneingeschränkt anmelden.
 
-Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch durch einen Untermandanten-Benutzer eingeschaltet werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings). Der Supportzugriff ist nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Mandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
+Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch durch einen Untermandanten-Benutzer eingeschaltet werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings). Der Supportzugriff ist nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Mandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
 Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
 
@@ -33,11 +33,11 @@ Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpun
 
 > **Info:** Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 
-Die Dauer der aktiven Supportanfrage kann im {{< management-tenant >}} global konfiguriert werden (der Standardwert ist 24 Stunden), siehe [Administration > Ändern von Einstellungen > Konfigurationseinstellungen](/users-guide/administration/#config-platform).
+Die Dauer der aktiven Supportanfrage kann im {{< management-tenant >}} global konfiguriert werden (der Standardwert ist 24 Stunden), siehe [Administration > Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform).
 
 Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist).
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/users-guide/enterprise-tenant#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant-de#managing-tenants).
 
 ### So melden Sie sich als Supportbenutzer an
 

@@ -67,7 +67,7 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <!-- Screenshot necessary? -->
 
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte [abonnierte Anwendungen](/users-guide/administration/#subscribed-applications) sowie [eigene Anwendungen](/users-guide/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
@@ -86,7 +86,7 @@ Bei Eingabe eines Suchbegriffs in das Textfeld oben im Fenster **Suche** gibt {{
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Kind-Assets](/users-guide/device-management#subassets-tab).
+Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Kind-Assets](/benutzerhandbuch/device-management-de#subassets-tab).
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
@@ -172,7 +172,7 @@ Die Liste wird sofort auf die ausgewählten Objekte beschränkt.
 >* Mandanten
 >* Dateiablage
 
-Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/users-guide/device-management#filtering-devices).
+Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de#filtering-devices).
 
 ### Echtzeitverhalten des Navigators
 

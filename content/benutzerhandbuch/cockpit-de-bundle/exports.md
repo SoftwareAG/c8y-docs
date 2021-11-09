@@ -10,7 +10,7 @@ helpcontent:
 
     Klicken Sie in der oberen Menüleiste auf **Export hinzufügen**, um einen neuen Export zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten, zu duplizieren oder zu löschen."
 aliases:
-  - /users-guide/cockpit/#export
+  - /benutzerhandbuch/cockpit-de/#export
 ---
 
 

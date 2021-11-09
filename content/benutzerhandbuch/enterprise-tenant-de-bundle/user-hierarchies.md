@@ -56,7 +56,7 @@ Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig 
 
 Entfernen Sie die Delegierung im Feld **Delegiert von** oder klicken Sie auf das Menüsymbol rechts neben dem Benutzereintrag in der Benutzerliste und wählen Sie **Delegierung aufheben** aus dem Kontextmenü.
 
-Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte Geräte verwalten können soll, muss der Admin-Benutzer diesem Benutzer die Berechtigung für die entsprechenden Geräte (Stammdatenrollen) direkt zuweisen. Dies kann über den Befehl **Stammdatenrollen eines anderen Benutzers kopieren** erfolgen. Weitere Informationen finden Sie unter [Zuweisen von Stammdatenrollen](/users-guide/administration#attach-inventory).
+Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte Geräte verwalten können soll, muss der Admin-Benutzer diesem Benutzer die Berechtigung für die entsprechenden Geräte (Stammdatenrollen) direkt zuweisen. Dies kann über den Befehl **Stammdatenrollen eines anderen Benutzers kopieren** erfolgen. Weitere Informationen finden Sie unter [Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration-de#attach-inventory).
 
 > **Info:** Die Delegierung funktioniert nur im Bereich Benutzerverwaltung und hat keine Auswirkungen auf andere Bereiche.
 

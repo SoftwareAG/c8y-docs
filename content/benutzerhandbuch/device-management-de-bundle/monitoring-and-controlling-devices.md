@@ -137,7 +137,7 @@ Ist ein Gerät offline, nimmt {{< product-c8y-iot >}} standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/users-guide/administration#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 {{< product-c8y-iot >}} zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
@@ -230,7 +230,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/users-guide/administration#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -302,11 +302,11 @@ Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/users-guide/device-management/#firmware-repo), [Software](/users-guide/device-management/#software-repo), [Konfigurationen](/users-guide/device-management/#configuration-repository) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/users-guide/device-management#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
 >**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
@@ -323,7 +323,7 @@ Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHE
 
 Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
-Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/users-guide/cockpit/#create-rules) beschrieben.
+Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
 
 <a name="to-view-bulk-operations"></a>
 #### So zeigen Sie Bulk-Operationen an

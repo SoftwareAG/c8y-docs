@@ -134,9 +134,9 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 >**Wichtig:** Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 
@@ -197,9 +197,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
@@ -261,9 +261,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 <a name="alarm-severity"></a>
@@ -390,9 +390,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 <a name="geofence-email"></a>
 ### Bei Geofence-Übertretung E-Mail senden
@@ -773,9 +773,9 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
@@ -849,9 +849,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 

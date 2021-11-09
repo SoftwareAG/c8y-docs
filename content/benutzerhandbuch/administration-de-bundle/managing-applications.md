@@ -35,7 +35,7 @@ In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
-Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/users-guide/enterprise-tenant/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Weitere Informationen finden Sie unter [Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
@@ -102,7 +102,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tbody>
 </table>
 
-Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [{{< enterprise-tenant >}} > Verwalten von Mandanten > Microservice-Nutzung](/users-guide/enterprise-tenant/#microservice-usage).  
+Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [{{< enterprise-tenant >}} > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).  
 
 
 <a name="subscribed-applications"></a>
@@ -137,7 +137,7 @@ Im {{< standard-tenant >}} finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web-Anwendung</td>
@@ -161,32 +161,32 @@ Im {{< standard-tenant >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#reports" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Ermöglicht das Planen von Datenexporten aus der Cockpit-Anwendung heraus.</td>
 <td style="text-align:left">report-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
-<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama"</td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama"</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -212,25 +212,25 @@ Im {{< enterprise-tenant >}} finden Sie die folgenden zusätzlichen Anwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
 <td style="text-align:left">feature-branding</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Bietet die Möglichkeit, Daten gezielt mit anderen Mandanten zu teilen.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">SSL management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de#customization" class="no-ajaxy">SSL management</a></td>
 <td style="text-align:left">Aktivieren Sie einen eigenen benutzerdefinierten Domain-Namen durch Verwendung eines SSL-Zertifikats.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>
@@ -284,7 +284,7 @@ Im {{< enterprise-tenant >}} finden Sie die folgenden zusätzlichen Anwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
@@ -504,7 +504,7 @@ Es gibt zwei benutzerfreundliche Alarmtypen:
 
 Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h., wenn alle Microservice-Instanzen korrekt funktionieren.
 
-Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/users-guide/cockpit/#smart-rules).
+Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit-de/#smart-rules).
 
 Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden".
 

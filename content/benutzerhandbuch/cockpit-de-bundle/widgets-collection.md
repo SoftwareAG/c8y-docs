@@ -2,8 +2,8 @@
 weight: 55
 title: Widgets-Sammlung
 aliases:
-  - /users-guide/cockpit/#widgets
-  - /users-guide/cockpit/#widget
+  - /benutzerhandbuch/cockpit-de/#widgets
+  - /benutzerhandbuch/cockpit-de/#widget
 layout: redirect
 ---
 
@@ -141,7 +141,7 @@ Folgende Typen sind verfügbar:
 <a name="alarm-list"></a>
 ### Alarmliste
 
-Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
+Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 ![Alarm list widget](/images/benutzerhandbuch/cockpit/cockpit-widget-alarm-list.png)
 
@@ -163,7 +163,7 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 <a name="applications"></a>
 ### Anwendungen
@@ -172,7 +172,7 @@ Das Widget "Anwendungen" zeigt eine Liste mit Links zu allen verfügbaren Anwend
 
 ![Applications widget](/images/benutzerhandbuch/cockpit/cockpit-widget-applications.png)
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/users-guide/administration#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
 <a name="asset-notes"></a>
@@ -239,7 +239,7 @@ Klicken Sie auf **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attri
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Shell-Kommandos](/users-guide/device-management/#shell).<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Shell-Kommandos](/benutzerhandbuch/device-management-de/#shell).<br>
 Sie können auch das JSON-Format für die Operation eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Operationen, um weitere Details zu erfahren.
 
 #### So ändern Sie die Tabelle
@@ -253,13 +253,13 @@ Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger übe
 <a name="data-graph"></a>
 ### Datenpunktgraph
 
-Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](/users-guide/cockpit/#data-explorer).
+Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
 ![Data Point Graph widget](/images/benutzerhandbuch/cockpit/cockpit-datapointsgraph-widget.png)
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen.
 
-Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/users-guide/cockpit/#data-explorer).
+Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
 Durch den Umschalter **Auto-Scroll** rechts oben am Datenpunktgraph wird das Anzeigeverhalten bestimmt:
 
@@ -297,7 +297,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 </tr>
 <tr>
 <td align="left">Sichtbare Tabellenspalten</td>
-<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../users-guide/cockpit/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>.<br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../users-guide/cockpit/#data-explorer">Daten-Explorer</a> oder in der <a href="../../users-guide/cockpit/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuell: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
+<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>.<br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Daten-Explorer</a> oder in der <a href="../../benutzerhandbuch/cockpit-de/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuell: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
 </tr>
 </tbody>
 </table>
@@ -497,7 +497,7 @@ Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach
 
 ![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung

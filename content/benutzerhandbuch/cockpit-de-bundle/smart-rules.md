@@ -12,7 +12,7 @@ helpcontent:
 ---
 
 
-{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/users-guide/administration) verwaltet.
+{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
@@ -130,7 +130,7 @@ Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
 4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen".
-6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/users-guide/cockpit#smart-rules-collection).
+6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter **Ziel-Assets oder -geräte** können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
 9. Klicken Sie auf **Erstellen**, um die Smart Rule zu erstellen.

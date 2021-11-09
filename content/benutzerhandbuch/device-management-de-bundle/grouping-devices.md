@@ -25,13 +25,13 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 ![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
 
-Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/users-guide/device-management/#configuring-columns).
+Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
 Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol:
 
  ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
 
-Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/users-guide/device-management/#filtering-devices).
+Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 
@@ -105,7 +105,7 @@ Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigiere
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. In der Registerkarte **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten. Wechseln Sie zur Registerkarte **Info**, wenn Sie die Anmerkungen bearbeiten möchten.
 
-Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions) im Abschnitt "Administration".
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
 
 ### So löschen Sie eine Gruppe
 

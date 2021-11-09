@@ -2,7 +2,7 @@
 weight: 61
 title: Zwei-Faktor-Authentifizierung
 ---
-Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/users-guide/administration/#authentication).
+Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/benutzerhandbuch/administration-de/#authentication).
 
 Es gibt zwei mögliche TFA-Strategien: SMS und TOTP. Es kann immer nur eine von beiden aktiv sein.
 

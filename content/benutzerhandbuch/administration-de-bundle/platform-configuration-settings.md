@@ -12,7 +12,7 @@ Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Kon
 
 ![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
-Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/users-guide/enterprise-tenant/#customization).
+Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/benutzerhandbuch/enterprise-tenant-de/#customization).
 
 Darüber hinaus können die folgenden Einstellungen nur im {{< management-tenant >}} konfiguriert werden.
 
@@ -22,7 +22,7 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 ![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
-Aktivieren Sie die Checkbox **Nur starke (grüne) Passwörter für alle Benutzer zulassen**, um die Benutzer in Ihrem Mandanten zur Verwendung von Passwörtern zu zwingen, die die Bedingungen für "grüne" Passwörter erfüllen, siehe auch [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings).
+Aktivieren Sie die Checkbox **Nur starke (grüne) Passwörter für alle Benutzer zulassen**, um die Benutzer in Ihrem Mandanten zur Verwendung von Passwörtern zu zwingen, die die Bedingungen für "grüne" Passwörter erfüllen, siehe auch [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
 
 * **Gültigkeitsdauer von Passwörtern in Tagen** - Die Anzahl der Tage, die ein Passwort gültig sein kann, bevor es zurückgesetzt werden muss; der Mindestwert ist "0", der Höchstwert "999999". Leer lassen, um den Wert aus den Mandantenoptionen zu übernehmen, die im {{< management-tenant >}}en konfiguriert sind, siehe *{{< product-c8y-iot >}} Core - Operations guide*.
 * **Größe der Passworthistorie** - Anzahl der Male, bis das aktuelle Passwort wiederverwendet werden kann.  Der Mindestwert beträgt "0", der voreingestellte Wert ist "10".  
@@ -34,7 +34,7 @@ Aktivieren Sie die Checkbox **Nur starke (grüne) Passwörter für alle Benutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
-Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-tenant/#support-user-access).
+Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -48,7 +48,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [{{< enterprise-tenant >}}> Verwalten von Mandanten](/users-guide/enterprise-tenant/#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [{{< enterprise-tenant >}}> Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant-de/#managing-tenants).
 
 <a name="configuring-support-users"></a>
 #### Konfigurieren eines Supportbenutzers
@@ -68,6 +68,6 @@ Mit Stammdatenrollen können Sie einen Supportbenutzer selektiv spezifischen Unt
 
 1. Erstellen Sie eine Stammdatenrolle namens "Support" mit Typ = "*" und Berechtigung = "Alle".
 2. Erstellen Sie eine Gruppe aller Untermandanten, die vom Benutzer unterstützt werden sollen.
-3. Weisen Sie die Stammdatenrolle "Support" der oben genannten Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen zu Benutzern](/users-guide/administration#attach-inventory) beschrieben.
+3. Weisen Sie die Stammdatenrolle "Support" der oben genannten Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen zu Benutzern](/benutzerhandbuch/administration-de#attach-inventory) beschrieben.
 
 > **Info:** Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.

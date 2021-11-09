@@ -68,7 +68,7 @@ Die verfügbaren Firmware-Objekte werden in Form einer Liste angezeigt.
 ![Firmware list](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-list.png)
 
 Jeder Eintrag enthält den Namen der Firmware, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Firmware verfügbar sind.
-Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung und Gerätetyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung und Gerätetyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Firmware sowie alle verfügbaren Versionen und Patches angezeigt.
 
@@ -168,7 +168,7 @@ Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzte
 
 1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/users-guide/device-management/#monitoring-and-controlling-devices).
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
@@ -190,7 +190,7 @@ Die verfügbaren Software-Objekte werden in Form einer Liste angezeigt.
 ![Software list](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-repository.png)
 
 Jeder Eintrag enthält den Namen der Software, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
-Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung, Gerätetyp oder Konfigurationstyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung, Gerätetyp oder Konfigurationstyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Software sowie alle verfügbaren Versionen angezeigt.
 
@@ -291,7 +291,7 @@ Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möc
 
 1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/users-guide/device-management/#monitoring-and-controlling-devices).
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
@@ -327,7 +327,7 @@ Der Konfigurationssnapshot wird dem Konfigurations-Repository hinzugefügt.
 
 Zum Bearbeiten eines Konfigurationssnapshots klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**.
 
-Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Konfigurationssnapshot hinzu](/users-guide/device-management#add-snapshot).
+Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Konfigurationssnapshot hinzu](/benutzerhandbuch/device-management-de#add-snapshot).
 
 ![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepoedit.png)
 
@@ -531,7 +531,7 @@ Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet w
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
 2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/users-guide/device-management/#bulk-operations).
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 

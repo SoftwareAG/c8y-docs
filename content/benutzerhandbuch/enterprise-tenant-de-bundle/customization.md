@@ -91,7 +91,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-> **Info:** Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).
+> **Info:** Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 
 <a name="branding"></a>
 ### Branding

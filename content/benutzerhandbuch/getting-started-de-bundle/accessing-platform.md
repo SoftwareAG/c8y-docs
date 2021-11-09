@@ -4,7 +4,7 @@ title: Aufrufen und Anmelden an der Plattform
 layout: redirect
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
-  - /users-guide/getting-started/#accessing-cumulocity-platform
+  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über einen Webbrowser zugreifen.
@@ -56,7 +56,7 @@ Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Gro�
 
 Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform verwenden und sich zum ersten Mal anmelden, sehen Sie unten ein Cookie-Banner:
 
-<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
 > **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/users-guide/administration/#branding).
@@ -71,7 +71,7 @@ Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zug
 
 Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur Anwendung [Cockpit](/users-guide/cockpit) (sofern nicht anders konfiguriert).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 

@@ -9,7 +9,7 @@ The operation logic is based on Apama's Event Processing Language (Apama EPL).
 
 >**Important**: Support for streaming analytics using CEL (Esper) has ended. All new {{< product-c8y-iot >}} subscriptions use the Apama CEP engine. {{< company-sag >}} terminated support for using CEL (Esper) in {{< product-c8y-iot >}} on 31 Dec 2020 following its deprecation in 2018.
 >
->For documentation on using the unsupported CEL functionality based on Esper, refer to the [{{< product-c8y-iot >}} Event Language PDF guide](/files/apama/Cumulocity%20IoT%20Event%20Language%20PDF%20guide.pdf).
+>For documentation on using the unsupported CEL functionality based on Esper, refer to the [{{< product-c8y-iot >}} Event Language guide](/files/apama/Cumulocity%20IoT%20Event%20Language%20PDF%20guide.pdf).
 >
 >For details on migration, see [Migrating from CEL (Esper) to Apama](#migrate-from-esper).
 

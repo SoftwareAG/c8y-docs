@@ -41,7 +41,7 @@ A new API (Notifications 2.0) for subscribing to notifications from the platform
 
 At this time the Notifications 2.0 API is only available to tenants in the eu-latest.cumulocity.com public cloud environment. It can also be made available by request in private cloud environments. Contact [product support](/releasenotes/about/contacting-support/) to inquire about using Notifications 2.0 in your Cumulocity IoT environment.
 
-For details on the capabilities and usage of Notifications 2.0, see [Notifications 2.0](https://cumulocity.com/guides/reference/notifications/) in the *Reference guide* and the Cumulocity IoT [API documentation](https://cumulocity.com/api). The [Notifications 2.0 example microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) may also be a useful guide for users developing applications that will use the new API.
+For details on the capabilities and usage of Notifications 2.0, see [Notifications 2.0](https://cumulocity.com/guides/reference/notifications/) in the *Reference guide* and the Cumulocity IoT [API documentation](https://cumulocity.com/api/10.11.0/#tag/Notification-2.0-API). The [Notifications 2.0 example microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) may also be a useful guide for users developing applications that will use the new API.
 
 #### New API for timestamp
 

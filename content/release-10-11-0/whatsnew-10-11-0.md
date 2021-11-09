@@ -45,9 +45,9 @@ For details on the capabilities and usage of Notifications 2.0, see [Notificatio
 
 #### New API for timestamp
 
-In order to facilitate gathering alarm and event data across a period of date and time, two new query parameters are now available in the REST API. Measurement data is not in scope.  
+In order to facilitate gathering alarm and event data across a period of date and time, two new query parameters are now available in the REST API. Measurement data is not in scope.
 
-Existing queries do not need to be changed, they will behave in exactly the same manner as prior to release 10.10.  For date and time bounded queries the new parameters available are:
+Existing queries do not need to be changed, they will behave in exactly the same manner as prior to release 10.10. For date and time bounded queries the new parameters available are:
 
 * lastUpdatedFrom [DateTime type]
 * lastUpdatedTo [DateTime type]

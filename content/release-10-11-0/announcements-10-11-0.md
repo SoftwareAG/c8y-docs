@@ -26,7 +26,7 @@ As announced with [release 10.9.0](/releasenotes/release-10-9-0/announcements-10
 - After creating a new tenant option with special characters in key or category, the generated self link points to a non-existing option.
 - When special characters are used the self link is broken and the user is unable to get or delete such an option via REST.
 
-For reference, we disable all HTTP-encoded and control characters (like \u0000). The full list of HTTP-encoded characters equals the one here: https://secure.n-able.com/webhelp/NC_9-1-0_SO_en/Content/SA_docs/API_Level_Integration/API_Integration_URLEncoding.html).
+For reference, we disable all HTTP-encoded and control characters (like \u0000). The full list of HTTP-encoded characters equals the one here: https://secure.n-able.com/webhelp/NC_9-1-0_SO_en/Content/SA_docs/API_Level_Integration/API_Integration_URLEncoding.html.
 
 ### Security changes
 
@@ -36,7 +36,7 @@ For reference, we disable all HTTP-encoded and control characters (like \u0000).
 
 With the 10.5 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
-With the 10.12 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.13 release the Basic Authentication option will be removed for browser-based applications and all applications  will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.12 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.13 release the Basic Authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
 If not done already, we recommend you not to wait for the 10.13 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/10.9.0/users-guide/administration/#changing-settings) in the *User guide*.
 
@@ -50,7 +50,7 @@ Cumulocity IoT is re-introducing the support for AES-CBC ciphers for MQTT(over T
 
 What does this mean and how does it impact you?
 
-The Cumulocity IoT platform continually improves its security posture by regularly updating support for the latest standards and protocols.  With the 10.10 release, we removed support for weak ciphers for MQTT (over TLS) connections. Unfortunately some customers' devices could not upgrade to the stronger ciphers and were therefore unable to connect to the platform.  We have therefore reinstated the weaker ciphers in the 10.10 and subsequent releases.
+The Cumulocity IoT platform continually improves its security posture by regularly updating support for the latest standards and protocols. With the 10.10 release, we removed support for weak ciphers for MQTT (over TLS) connections. Unfortunately some customers' devices could not upgrade to the stronger ciphers and were therefore unable to connect to the platform. We have therefore reinstated the weaker ciphers in the 10.10 and subsequent releases.
 
 To enable customers with self-hosted or dedicated environments to determine which strength of cipher to support for MQTT over TLS new configurable values have been introduced. This configuration is only available to the Management tenant; further information on how to set this configuration can be found in the *Cumulocity IoT platform - Operations guide*.
 

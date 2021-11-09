@@ -8,7 +8,7 @@ aliases:
 ---
 
 
-These release notes document all relevant changes (improvements, fixes, migration notes, documentation changes) that have been implemented in a Cumulocity IoT release since the previous release.
+These release notes document all relevant changes (new features, improvements, fixes) that have been implemented in a Cumulocity IoT release since the previous release.
 
 ### Release versions
 

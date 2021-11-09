@@ -88,7 +88,7 @@ In the context of the new Web SDK plugin concept, the variable HOOK_ROUTE_ONCE h
 This change will only affect you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you update an application including HOOK_ROUTE_ONCE, make sure to use HOOK_ROUTE instead.
 
 
-#### Implemented changes
+#### Implemented
 
 ##### Upgrade to Angular 12
 

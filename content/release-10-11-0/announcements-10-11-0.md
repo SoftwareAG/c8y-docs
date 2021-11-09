@@ -85,7 +85,7 @@ How does this impact users? PlatformImpl will no longer be exposed as a Spring B
 
 In the context of the new Web SDK plugin concept, the variable HOOK_ROUTE_ONCE has been replaced by HOOK_ROUTE. HOOK_ROUTE_ONCE is deprecated and will be removed with release 10.14.
 
-This change will only affect you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you update an application including HOOK_ROUTE_ONCE, make sure to use HOOK_ROUTE instead.
+This change will only affect you if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you update an application including HOOK_ROUTE_ONCE, make sure to use HOOK_ROUTE instead.
 
 
 #### Implemented

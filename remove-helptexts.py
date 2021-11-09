@@ -76,7 +76,7 @@ class HelptextRemover():
         file = open(path_string, 'r')
         file_name = os.path.basename(file.name).split(".")[0]
         fm = frontmatter.load(path_string)
-        if("helpcontent" in fm.keys() and False):
+        if("helpcontent" in fm.keys()):
             helpcontent = fm.metadata.pop("helpcontent")
             print("")
             print("removed this helpcontent:")

@@ -1,24 +1,8 @@
 ---
-weight: 70
-title: Ändern von Einstellungen
 layout: redirect
-helpcontent:
-- label: authentication
-  title: Authentifizierung
-  content: "Unter **Login-Einstellungen** können Sie Ihren bevorzugten Login-Modus festlegen:
-
-
-	* OAuth Internal - Empfohlene Option, da sie durch Autorisierungs-Tokens als Nachweis Ihrer Identität (gegenüber dem Server) ein hohes Maß an Sicherheit bietet.
-	* Basic Auth - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da sie nur minimale Sicherheit bietet.
-	* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen 'Basic Auth' und 'OAuth Internal' entfernt.
-
-
-  Aktivieren Sie unter **TFA-Einstellungen** die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
-
-
-  Wechseln Sie zur Registerkarte **Single-Sign-On**, um Single-Sign-On zu konfigurieren. Nähere Informationen finden Sie unter *Administration > Änderung von Einstellungen > Konfigurieren von Single-Sign-On* im *User guide*."
+title: Ändern von Einstellungen
+weight: 70
 ---
-
 
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos verwalten:
 

@@ -1,13 +1,6 @@
 ---
-weight: 12
 title: Verwalten von Benutzern
-helpcontent:
-  - label: managing-users
-    title: Verwalten von Benutzern
-    content: "Die Benutzerverwaltung von Cumulocity IoT ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie können neue Benutzer anlegen, Benutzernamen und Passwörter zuweisen, Benutzerdetails speichern oder die Anmelde- und Sicherheitsoptionen konfigurieren.  
-
-
-    Darüber hinaus können Sie die globalen Rollen für einen Benutzer auswählen, siehe auch *Administration > Verwalten von Berechtigungen* im *User guide*."
+weight: 12
 ---
 
 Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie bietet folgende Möglichkeiten:

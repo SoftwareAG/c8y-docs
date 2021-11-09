@@ -1,14 +1,7 @@
 ---
-weight: 20
-title: Anzeigen von Geräten
 layout: redirect
-helpcontent:
-  - label: viewing-devices
-    title: Anzeigen von Geräten
-    content: "Die Geräteliste zeigt die relevantesten Informationen für alle mit Ihrem Konto verbundenen Geräte in einer Listenansicht an. Die Spalten der Geräteliste können nach Bedarf angepasst werden, siehe *Device Management > Anzeigen von Geräten* im *User guide*.
-
-
-    Sie können die Liste filtern, indem Sie neben einer Spalte auf das Filtersymbol klicken und Filteroptionen angeben. Für eine Volltextsuche klicken Sie rechts oben auf die Schaltfläche **Suche** und geben Sie einen Suchbegriff ein."
+title: Anzeigen von Geräten
+weight: 20
 ---
 
 Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.

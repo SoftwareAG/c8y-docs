@@ -1,19 +1,7 @@
 ---
-weight: 11
-title: Verbinden von Geräten
 layout: redirect
-helpcontent:
-  - label: connecting-devices
-    title: Verbinden von Geräten
-    content: "Um Geräte mit Cumulocity IoT verbinden zu können, müssen diese registriert werden. Um ein oder mehrere Geräte zu registrieren, klicken Sie auf **Gerät registrieren** und folgen Sie den Anweisungen im Assistenten oder unter *Device Management > Verbinden von Geräten* im *User guide*.
-
-
-    Alle Geräte, die sich derzeit im Registrierungsprozess befinden, werden mit einem der folgenden Status angezeigt:
-
-
-    * **Wartet auf Verbindung** - Das Gerät wurde registriert, aber kein Gerät mit der angegebenen ID hat versucht, eine Verbindung herzustellen.
-    * **Bitte akzeptieren** - Es liegt eine Kommunikation von einem Gerät mit der angegebenen ID vor, doch der Benutzer, der die Registrierung vornimmt, muss noch explizit zustimmen, damit die Zugangsdaten an das Gerät gesendet werden.
-    * **Akzeptiert** - Der Benutzer hat erlaubt, dass die Zugangsdaten an das Gerät gesendet werden."
+title: Verbinden von Geräten
+weight: 11
 ---
 
 <a name="dev-registration"></a>

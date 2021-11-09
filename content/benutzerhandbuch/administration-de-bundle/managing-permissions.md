@@ -1,20 +1,7 @@
 ---
-weight: 13
-title: Verwalten von Berechtigungen
 layout: redirect
-helpcontent:
-- label: managing-permissions
-  title: Verwalten von Berechtigungen
-  content: "Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity IoT-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
-
-
-  In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene vordefinierte globale Rollen (die als Template dienen können), aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
-
-
-  In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gerätegruppen und/oder deren Kinder verwalten. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein bestimmtes Gerät neu zu starten.
-
-
-  Nähere Informationen zum Arbeiten mit globalen Rollen und Stammdatenrollen finden Sie unter *Administration > Verwalten von Berechtigungen* im *User guide*."
+title: Verwalten von Berechtigungen
+weight: 13
 ---
 
 Berechtigungen legen fest, welche Funktionen ein Benutzer in {{< product-c8y-iot >}}-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.

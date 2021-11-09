@@ -1,16 +1,6 @@
 ---
-weight: 60
 title: Verwalten von Daten
-helpcontent:
-- label: retention-rules
-  title: Datenhaltungsregeln
-  content: "Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Standardmäßig werden alle historischen Daten nach 60 Tagen gelöscht (konfigurierbar in den Systemeinstellungen). Sie können aber beispielsweise Messwerte 90 Tage speichern, Alarme aber bereits nach 10 Tagen löschen.
-
-
-  Siehe auch *Administration > Verwalten von Daten* im *User guide*."
-- label: files
-  title: Files repository
-  content: "Die Dateiablage bietet einen Überblick über die Dateien, die in Ihrem Konto gespeichert sind. Die Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite **Eigene Anwendungen** hochgeladen wurden, handeln."
+weight: 60
 ---
 
 <a name="retention-rules"></a>

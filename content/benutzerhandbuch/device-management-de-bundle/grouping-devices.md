@@ -1,14 +1,7 @@
 ---
-weight: 30
-title: Gruppieren von Geräten
 layout: redirect
-helpcontent:
-  - label: grouping-devices
-    title: Gruppieren von Geräten
-    content: "Geräte können je nach Bedarf zu Gruppen zusammengefasst werden. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
-
-
-  Durch Ziehen und Ablegen von Gruppen oder Geräten im Navigator können Sie Gruppen auf einfache Weise neu strukturieren oder ihnen Geräte zuordnen, siehe auch *Device Management > Gruppieren von Geräten* im *User guide*."
+title: Gruppieren von Geräten
+weight: 30
 ---
 
 Sie können Geräte nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.

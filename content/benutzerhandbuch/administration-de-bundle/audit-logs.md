@@ -1,12 +1,6 @@
 ---
-weight: 20
 title: Anzeigen von Audit-Logs
-helpcontent: 
-  - label: audit-logs
-    title: Anzeigen von Audit-Logs
-    content: "Audit-Logs zeigen die von Benutzern ausgeführten Operationen.
-      
-      Zum einfachen Durchsuchen von Logdaten können Sie in der oberen Leiste Filterkriterien für Typ, Datumsbereich oder Benutzer festlegen und anwenden."
+weight: 20
 ---
 
 Audit-Logs zeigen die von Benutzern ausgeführten Operationen.

@@ -1,38 +1,7 @@
 ---
-weight: 60
-title: Verwalten von Gerätedaten
 layout: redirect
-helpcontent:
-- label: firmware-repo
-  title: Firmware-Repository
-  content: "Mit dem Firmware-Repository haben Sie die Möglichkeit, Referenz-Firmware für Geräte zu verwalten. Links oben können Sie die Firmware-Objekte nach Name, Beschreibung oder Gerätetyp filtern.
-
-
-	Nähere Informationen zur Verwaltung von Firmware, Firmware-Versionen und -Patches sowie zu ihrer Installation und Aktualisierung finden Sie unter *Device Management > Verwalten von Gerätedaten > Verwalten von Geräte-Firmware* im *User guide*."
-- label: software-repo
-  title: Software repository
-  content: "Mit dem Software-Repository haben Sie die Möglichkeit, Referenz-Software für Geräte zu verwalten. Auf einem Gerät können mehrere Software-Pakete installiert werden. Links oben können Sie die Repository-Einträge nach Name, Beschreibung oder Gerätetyp filtern.
-
-
-	Nähere Informationen zur Verwaltung von Software und Software-Versionen sowie zu ihrer Installation und Aktualisierung finden Sie unter *Device Management > Verwalten von Gerätedaten > Verwalten von Geräte-Software* im *User guide*."
-- label: configuration-repository
-  title: Configuration repository
-  content: "Im Konfigurations-Repository können Sie aus Ihren Geräten abgerufene Konfigurationsdaten als 'Konfigurationssnapshots' speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts. Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden.
-
-
-  Wie Sie Konfigurationsdaten abrufen und als Snapshot im Konfigurations-Repository speichern und verwalten können, erfahren Sie unter *Device Management > Verwalten von Gerätedaten > Verwalten von Konfigurationen* im *User guide*."
-- label: credentials
-  title: Device credentials
-  content: "Verwalten Sie die Gerätezugangsdaten, die für Ihre verbundenen Geräte erstellt wurden. Bearbeiten, deaktivieren oder löschen Sie Gerätezugangsdaten nach Bedarf oder ändern Sie deren Berechtigungen im Feld **Globale Rollen**, siehe auch *Device Management > Verwalten von Gerätedaten > Gerätezugangsdaten* im *User guide*."
-- label: device-profiles
-  title: Device profiles
-  content: "Geräteprofile stellen eine Menge aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Sie mit Hilfe von Bulk-Operationen auf einfache Weise eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
-
-
-  Nähere Informationen zum Verwalten von Geräteprofilen und zum Anwenden von Geräteprofilen auf Geräte finden Sie unter *Device Management > Verwalten von Gerätedaten > Geräteprofile* im *User guide*."
-- label: trusted-certificates
-  title: Trusted certificates
-  content: "In Cumulocity IoT können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von Cumulocity IoT als vertrauenswürdig eingestuft, d. h. zu den vertrauenswürdigen Zertifikaten hinzugefügt werden. Nähere Informationen finden Sie unter *Device Management > Verwalten von Gerätedaten > Verwalten von vertrauenswürdigen Zertifikaten* im *User guide*."
+title: Verwalten von Gerätedaten
+weight: 60
 ---
 
 ### Übersicht

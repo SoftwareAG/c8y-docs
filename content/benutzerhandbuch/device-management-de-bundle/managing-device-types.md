@@ -1,14 +1,7 @@
 ---
-weight: 50
-title: Verwalten von Gerätetypen
 layout: redirect
-helpcontent:
-  - label: managing-device-types
-    title: Verwalten von Gerätetypen
-    content: "Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten. Jedes Geräteprotokoll wird für einen bestimmten Geräteprotokolltyp (z. B. Modbus, LoRa, LWM2M) konfiguriert.
-
-
-  Zum Hinzufügen eines neuen Geräteprotokolls klicken Sie rechts oben auf **Geräteprotokoll hinzufügen**, wählen Sie einen Geräteprotokolltyp und konfigurieren Sie ihn, indem Sie den Anweisungen für einen bestimmten Typ im *Protocol Integration Guide* folgen."
+title: Verwalten von Gerätetypen
+weight: 50
 ---
 
 Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet {{< product-c8y-iot >}} Geräteprotokolle, die in einer Datenbank gespeichert sind.

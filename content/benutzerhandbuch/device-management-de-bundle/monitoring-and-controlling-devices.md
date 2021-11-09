@@ -1,52 +1,8 @@
 ---
-weight: 40
-title: Überwachen und Steuern von Geräten
 layout: redirect
-helpcontent:
-- label: map
-  title: Lokalisieren von Geräten
-  content: "Auf der Karte können Sie alle in Ihrem Konto vorhandenen Geräte in Echtzeit anzeigen. Die Geräte sind als 'Pins' dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln."
-- label: service-monitoring
-  title: Serviceüberwachung
-  content: "Serviceüberwachung zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an. Die als Prozentwert angezeigte Verfügbarkeit basiert auf der Anzahl ausgelöster und behobener Alarme."
-- label: alarm-monitoring
-  title: Alarme
-  content: "Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht. Eine Übersicht über die Alarme aller Geräte finden Sie hier. Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
-
-
-  Standardmäßig werden nur ungelöste Alarme gezeigt. Wenn Sie rechts oben **Aufgehobene Alarme anzeigen** aktivieren, sehen Sie die gesamte Alarmhistorie.
-
-
-  Alarme werden nach Schweregraden klassifiziert: KRITISCH, WICHTIG, WENIGER WICHTIG, WARNUNG.
-
-
-  Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um den Abschnitt wieder sichtbar zu machen. In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
-
-
-  Nähere Informationen finden Sie unter *Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen* im *User guide*."
-- label: operation-monitoring
-  title: Device control
-  content: "Durch Operationen können Geräte aus der Ferne gesteuert werden. Eine Übersicht über die Operationen aller Geräte finden Sie hier. Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
-
-
-  Es gibt zwei Arten von Operationen, die jeweils auf einer eigenen Registerkarte angezeigt werden:
-
-  * **Einzel-Operationen** werden an einem einzelnen Gerät ausgeführt.
-  * **Bulk-Operationen** sind an einer Reihe von Geräten ausgeführte Einzel-Operationen.
-
-
-  Siehe auch *Device Management > Überwachen und Steuern von Geräten > Verwenden von Operationen* im *User guide*."
-- label: events-all
-  title: Events
-  content: "Operationen werden verwendet, um Geräte aus der Ferne zu steuern. Eine Übersicht über die Ereignisse aller Geräte finden Sie hier. Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
-
-
-  Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten über die Felder oben links nach Datum oder Typ filtern.
-
-
-  Siehe auch *Device Management > Überwachen und Steuern von Geräten > Fehlerbehebung von Geräten* im *User guide*."
+title: Überwachen und Steuern von Geräten
+weight: 40
 ---
-
 
 <a name="map"></a>
 ### Lokalisieren von Geräten

@@ -1,31 +1,7 @@
 ---
-weight: 30
-title: Verwalten von Anwendungen
 layout: redirect
-helpcontent:
-  - label: own-applications
-    title: Eigene Anwendungen
-    content: "Eigene Anwendungen sind Anwendungen, die Ihr Mandant besitzt. Benutzerdefinierte Einstellungen können Sie auf verschiedene Weise hinzufügen. Es kann sich um Folgendes handeln:  
-    
-
-    * Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen)
-    * webbasierte Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
-    * serverseitige Geschäftslogik, die als Microservice implementiert ist
-
-
-    Um eine Anwendung hinzuzufügen, klicken Sie auf **Anwendung hinzufügen** und folgen Sie den Anweisungen im Assistenten, siehe auch *Administration > Verwalten von Anwendungen > Eigene Anwendungen* im *User guide*.
-
-
-    Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen."
-  - label: subscribed-applications
-    title: Subscribed applications
-    content: "Abonnierte Anwendungen bedeutet Anwendungen, die für Ihren Mandanten abonniert sind, im Gegensatz zu eigenen Anwendungen.
-
-
-    Cumulocity IoT stellt vielerlei Anwendungen für verschiedene Zwecke bereit. Eine Liste aller Anwendungen finden Sie unter *Administration > Verwalten von Anwendungen* im *User guide*.
-
-
-    Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen."
+title: Verwalten von Anwendungen
+weight: 30
 ---
 
 In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:

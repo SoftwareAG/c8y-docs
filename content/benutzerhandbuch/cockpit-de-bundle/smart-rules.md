@@ -1,16 +1,8 @@
 ---
-weight: 80
-title: Smart Rules
 layout: redirect
-helpcontent:
-- label: smart-rules
-  title: Smart Rules
-  content: "Smart Rules sind ein nützliches Mittel, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Die hier angezeigten globalen Smart Rules gelten für einen globalen Kontext (im Gegensatz zu lokalen Smart Rules für spezifische Gruppen oder Geräte). Beachten Sie, dass Sie bestimmte Berechtigungen benötigen, um Smart Rules anzeigen und verwalten zu können.
-
-
-  Cumulocity IoT enthält vordefinierte Smart Rule-Vorlagen, z. B. 'Bei Schwellwert Alarm erzeugen'. Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart-Rule-Templates und ihrer Konfiguration finden Sie unter *Cockpit > Smart Rules-Sammlung* im *User guide*."
+title: Smart Rules
+weight: 80
 ---
-
 
 {{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
 

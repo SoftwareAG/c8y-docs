@@ -1,17 +1,7 @@
 ---
-weight: 80
-title: Verwenden von SmartREST-Templates
 layout: redirect
-helpcontent: 
-  - label: smartrest-templates 
-    title: SmartREST-Templates
-    content: "Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity IoT Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben. Um ein neues Template hinzuzufügen, können Sie entweder ein vorhandenes Template importieren oder ein neues erstellen.
-      
-
-    Um ein Template zu importieren, klicken Sie rechts oben auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
-    
-    
-    Um ein neues Template zu erstellen, klicken Sie rechts oben auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter *Device Management > SmartREST-Templates* im *User guide* beschrieben."
+title: Verwenden von SmartREST-Templates
+weight: 80
 ---
 
 Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity IoT Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben.

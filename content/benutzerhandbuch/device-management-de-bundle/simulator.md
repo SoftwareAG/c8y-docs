@@ -1,20 +1,7 @@
 ---
-weight: 90
-title: Verwenden von Simulatoren
 layout: redirect
-helpcontent:
-  - label: simulator
-    title: Verwenden von Simulatoren
-    content: "Mit dem Simulator können Sie Geräte erstellen, die den gleichen Grad an Funktionalität simulieren wie verbundene Hardwaregeräte.
-
-
-  Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity IoT-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.
-
-
-  Für jeden Simulator können Sie Anweisungen erstellen, die festlegen, was der Simulator tun soll.
-
-
-  Um einen neuen Simulator zu erstellen, klicken Sie rechts oben auf **Simulator hinzufügen** und folgen Sie den Anweisungen im Abschnitt *Device Management > Simulator* im *User guide*."
+title: Verwenden von Simulatoren
+weight: 90
 ---
 
 Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Geräten simuliert werden, wie:

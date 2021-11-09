@@ -1,14 +1,8 @@
 ---
-weight: 50
 title: Anwenden von Geschäftsregeln
-helpcontent:
-- label: reprio-alarms
-  title: Alarmregeln
-  content: "Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um diese den Prioritäten Ihres Unternehmens anzupassen. Der Abbruch einer Verbindung wird beispielsweise standardmäßig als WICHTIG eingestuft, kann aber in Ihrem Fall KRITISCH sein. Daher können Sie eine Alarmregel definieren, die Alarme im Zusammenhang mit Verbindungsabbrüchen als KRITISCH einstuft.
-
-
-  Siehe auch *Administration > Verwalten von Geschäftsregeln* im *User guide*."
+weight: 50
 ---
+
 <a name="event-processing"></a>
 ### Echtzeitverarbeitung
 

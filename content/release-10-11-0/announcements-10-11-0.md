@@ -71,7 +71,7 @@ Enforcing a strong (green) password for all users in the Management tenant does 
 
 To improve the navigation in the "Map" widget on mobile devices, it is necessary to update the Leaflet library. With release 10.12, the Leaflet library will be updated to the latest version 1.7.1.
 
-This change only affects you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you have implemented your own custom map on top of the Cumulocity IoT Web SDK, make sure that your implementation still works properly. In case of any issues, see the [Leaflet changelog](https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md) and check if you use any deprecated functionality.
+This change only affects you if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you have implemented your own custom map on top of the Cumulocity IoT Web SDK, make sure that your implementation still works properly. In case of any issues, see the [Leaflet changelog](https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md) and check if you use any deprecated functionality.
 
 
 ##### Removing PlatformImpl Spring bean from Microservice SDK

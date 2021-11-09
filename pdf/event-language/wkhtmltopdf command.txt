@@ -21,4 +21,4 @@ wkhtmltopdf \
  http://localhost:1313/guides/event-language/event-language-examples/ \
  http://localhost:1313/guides/event-language/geofence/ \
  http://localhost:1313/guides/event-language/real-time-statements/ \
- "Cumulocity IoT Event Language PDF guide.pdf"
+ "Cumulocity IoT Event Language guide.pdf"

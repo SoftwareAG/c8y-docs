@@ -10,13 +10,13 @@ helpcontent:
 
 	* OAuth Internal - Empfohlene Option, da sie durch Autorisierungs-Tokens als Nachweis Ihrer Identität (gegenüber dem Server) ein hohes Maß an Sicherheit bietet.
 	* Basic Auth - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da sie nur minimale Sicherheit bietet.
-	* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAuth Internal" entfernt.
+	* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen 'Basic Auth' und 'OAuth Internal' entfernt.
 
 
-	Aktivieren Sie unter **TFA-Einstellungen** die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
+  Aktivieren Sie unter **TFA-Einstellungen** die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
 
 
-	Wechseln Sie zur Registerkarte **Single-Sign-On**, um Single-Sign-On zu konfigurieren. Nähere Informationen finden Sie unter *Administration > Änderung von Einstellungen > Konfigurieren von Single-Sign-On* im *User guide*."
+  Wechseln Sie zur Registerkarte **Single-Sign-On**, um Single-Sign-On zu konfigurieren. Nähere Informationen finden Sie unter *Administration > Änderung von Einstellungen > Konfigurieren von Single-Sign-On* im *User guide*."
 ---
 
 
@@ -440,7 +440,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
     ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
-   
+
 	>**Info:** Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
 
 2. Wählen Sie auf der Seite **SMS-Anbieter** einen der verfügbaren SMS-Anbieter aus der Auswahlliste **SMS-Anbieter**. Sie können mit der Eingabe beginnen, um Elemente zu filtern und Ihren bevorzugten Anbieter leichter zu finden.

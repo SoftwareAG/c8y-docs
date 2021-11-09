@@ -26,7 +26,7 @@ helpcontent:
   content: "Verwalten Sie die Gerätezugangsdaten, die für Ihre verbundenen Geräte erstellt wurden. Bearbeiten, deaktivieren oder löschen Sie Gerätezugangsdaten nach Bedarf oder ändern Sie deren Berechtigungen im Feld **Globale Rollen**, siehe auch *Device Management > Verwalten von Gerätedaten > Gerätezugangsdaten* im *User guide*."
 - label: device-profiles
   title: Device profiles
-  content: Geräteprofile stellen eine Menge aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Sie mit Hilfe von Bulk-Operationen auf einfache Weise eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
+  content: "Geräteprofile stellen eine Menge aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Sie mit Hilfe von Bulk-Operationen auf einfache Weise eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
 
 
   Nähere Informationen zum Verwalten von Geräteprofilen und zum Anwenden von Geräteprofilen auf Geräte finden Sie unter *Device Management > Verwalten von Gerätedaten > Geräteprofile* im *User guide*."

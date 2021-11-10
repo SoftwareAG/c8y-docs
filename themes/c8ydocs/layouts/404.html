@@ -3,21 +3,6 @@
   {{- partial "head.html" . -}}
   <body data-spy="scroll" data-target="#main-nav" >
     {{- partial "header.html" . -}}
-    <nav class="main-nav navbar">
-      <header class="nav-header">
-        <a href="{{ .Site.Params.guidesRedirect}}">
-          <img src="{{ with .Site.Params.logo }}{{ . | absURL }}{{ end }}"
-            class="img-responsive no-zoom"
-            alt="Cumulocity IoT">
-        </a>
-      </header>
-    </nav>
-    <script>
-      window.onload = function() {
-        var theElem = document.getElementsByClassName("dropdown version")[0];
-        theElem.style.display = 'none';
-      };
-    </script>
     <div class="main-content">
       <div class="page-section">
         <header class="section-header">

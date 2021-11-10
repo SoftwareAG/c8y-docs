@@ -2,6 +2,30 @@
 weight: 30
 title: Managing applications
 layout: redirect
+helpcontent:
+  - label: own-applications
+    title: Own applications
+    content: "Owned applications are custom applications owned by your tenant. You can add custom applications in various ways. They can be  
+
+
+    * duplicates of subscribed applications (in order to be able to customize them)
+    * web-based applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+    * server-side business logic deployed through microservices
+
+
+    To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Own applications* in the *User guide*.
+
+
+    Click on an application card to view the application properties."
+  - label: subscribed-applications
+    title: Subscribed applications
+    content: "Subscribed applications refer to the applications which are subscribed to your tenant, as opposed to owned applications.
+
+
+    Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in *Administration > Managing applications* in the *User guide*.
+
+
+    Click on an application card to view the application properties."
 ---
 
 In the {{< product-c8y-iot >}} platform we distinguish between two kinds of applications:
@@ -56,7 +80,7 @@ Each application will show the following properties, depending on the applicatio
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
@@ -95,7 +119,7 @@ The columns show the following information:
 * **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
-### {{< standard-tenant >}} default applications
+### Default applications
 
 In the {{< standard-tenant >}} you will find the following default applications:
 
@@ -131,12 +155,6 @@ In the {{< standard-tenant >}} you will find the following default applications:
 <td style="text-align:left">Web app</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the {{< standard-tenant >}}. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
-<td style="text-align:left">cep</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <td style="text-align:left">cockpit</td>
@@ -170,7 +188,9 @@ In the {{< standard-tenant >}} you will find the following default applications:
 </table>
 
 
-### {{< enterprise-tenant >}} applications
+### Enterprise applications
+
+In the {{< enterprise-tenant >}} you will find the following additional applications:
 
 <table>
 <col width="200">
@@ -231,18 +251,6 @@ In the {{< standard-tenant >}} you will find the following default applications:
 <td style="text-align:left"><a href="/protocol-integration/lora-actility" class="no-ajaxy">Actility</a></td>
 <td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
-<td style="text-align:left"><b>This application is deprecated.</b><br>Upload your own CEP rules created with Esper in a per-tenant deployment. You need to be subscribed to the application "Cep-small" to be able to use this feature.</td>
-<td style="text-align:left">feature-cep-custom-rules</td>
-<td style="text-align:left">Feature</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
-<td style="text-align:left"><b>This application is deprecated.</b><br>CEP variant. Lets you work with CEP rules based on Esper in a per-tenant deployment (as opposed to "Cep" which uses a shared instance). You need to be subscribed to "CEP custom rules" to upload your own Esper CEP rules.</td>
-<td style="text-align:left">cep-small</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
@@ -344,7 +352,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the *Microservice SDK guide* under **General aspects** in order to prepare and deploy the microservice package.
 
 
 <a name="external-application"></a>

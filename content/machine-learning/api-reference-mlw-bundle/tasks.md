@@ -233,178 +233,6 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 }
 ```
 
-### GET - Get the details of the individual task within a parent task
-
-```
-{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
-```
-
-Provides the complete details of the individual task running under a parent task.
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|taskID|{{taskID}}
-|parenttaskID|{{parenttaskID}}
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-
-{
-    "id": "1601287609_0411_Cumulocity",
-    "tasksID": "1601287609_Tasks",
-    "taskName": "sensorData2",
-    "type": "C8YDATA",
-    "executedAt": "Mon Sep 28 10:06:49 2020",
-    "deviceID": "446",
-    "projectID": "1601283001_Project",
-    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
-    "pID": "987",
-    "status": "COMPLETED",
-    "dateFrom": "2020-07-03T06:00:00.000Z",
-    "dateTo": "2020-09-28T07:00:10.509Z",
-    "message": "Data Saved to Data Section",
-    "fileSaved": true
-}
-```
-
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "No auth information found",
-    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
-}
-```
-
-### DELETE - Delete an individual task within the parent task
-
-```
-{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
-```
-
-Deletes and stops the individual task running under a parent task.
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|taskID|{{taskID}}
-|parenttaskID|{{parenttaskID}}
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-{
-    "data": [
-        {
-            "id": "1601287609_Tasks",
-            "name": "sensorData2",
-            "createdAt": "Mon Sep 28 10:06:49 2020",
-            "type": "C8YDATA",
-            "cronExpression": "",
-            "status": "Not Scheduled",
-            "individualTasks": [],
-            "projectID": "1601283001_Project",
-            "projectName": "ExampleProject",
-            "properties": [
-                {
-                    "key": "deviceID",
-                    "label": "Device ID",
-                    "value": "446"
-                },
-                {
-                    "key": "dateFrom",
-                    "label": "Date From",
-                    "value": "2020-07-03T06:00:00.000Z"
-                },
-                {
-                    "key": "dateTo",
-                    "label": "Date To",
-                    "value": "2020-09-28T07:00:10.509Z"
-                },
-                {
-                    "key": "columnNames",
-                    "label": "Measurements",
-                    "value": [
-                        "sensor4",
-                        "sensor2",
-                        "sensor3",
-                        "sensor1"
-                    ]
-                },
-                {
-                    "key": "aggregationType",
-                    "label": "Aggregation Type",
-                    "value": "None"
-                }
-            ],
-            "recurrence": "ONE_TIME",
-            "startDate": "",
-            "startTimeH": "",
-            "startTimeM": "",
-            "sortTime": 1601287609
-        }
-    ]
-}
-```
-
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "No auth information found",
-    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
-}
-```
 ### DELETE - Delete a parent task
 
 ```
@@ -622,3 +450,234 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks'
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
+
+
+### GET - Get the details of the individual task within a parent task
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+Provides the complete details of the individual task running under a parent task.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "1601287609_0411_Cumulocity",
+    "tasksID": "1601287609_Tasks",
+    "taskName": "sensorData2",
+    "type": "C8YDATA",
+    "executedAt": "Mon Sep 28 10:06:49 2020",
+    "deviceID": "446",
+    "projectID": "1601283001_Project",
+    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+    "pID": "987",
+    "status": "COMPLETED",
+    "dateFrom": "2020-07-03T06:00:00.000Z",
+    "dateTo": "2020-09-28T07:00:10.509Z",
+    "message": "Data Saved to Data Section",
+    "fileSaved": true
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+### PUT - Early stop the neural network training task
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+Triggers an early stop callback for the neural network training task
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601289809_Task' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "message": "Triggered early stopping"
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601289809_Task'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+### DELETE - Delete an individual task within the parent task
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+Deletes and stops the individual task running under a parent task.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+{
+    "data": [
+        {
+            "id": "1601287609_Tasks",
+            "name": "sensorData2",
+            "createdAt": "Mon Sep 28 10:06:49 2020",
+            "type": "C8YDATA",
+            "cronExpression": "",
+            "status": "Not Scheduled",
+            "individualTasks": [],
+            "projectID": "1601283001_Project",
+            "projectName": "ExampleProject",
+            "properties": [
+                {
+                    "key": "deviceID",
+                    "label": "Device ID",
+                    "value": "446"
+                },
+                {
+                    "key": "dateFrom",
+                    "label": "Date From",
+                    "value": "2020-07-03T06:00:00.000Z"
+                },
+                {
+                    "key": "dateTo",
+                    "label": "Date To",
+                    "value": "2020-09-28T07:00:10.509Z"
+                },
+                {
+                    "key": "columnNames",
+                    "label": "Measurements",
+                    "value": [
+                        "sensor4",
+                        "sensor2",
+                        "sensor3",
+                        "sensor1"
+                    ]
+                },
+                {
+                    "key": "aggregationType",
+                    "label": "Aggregation Type",
+                    "value": "None"
+                }
+            ],
+            "recurrence": "ONE_TIME",
+            "startDate": "",
+            "startTimeH": "",
+            "startTimeM": "",
+            "sortTime": 1601287609
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+

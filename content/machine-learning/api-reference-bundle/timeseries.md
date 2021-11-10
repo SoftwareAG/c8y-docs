@@ -30,11 +30,12 @@ Operations for time series data/model.
 ### POST – Generate time series model using time series data
 
 ```
-{{url}}/service/zementis/timeseries (deprecated)
 {{url}}/service/zementis/train/timeseries
 ```
 
 Upload the time series data to generate a model. This is an asynchronous call which returns a status URL that can be used to check the status of model creation.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -64,7 +65,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 **Example Request**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true --header "Authorization: {{auth}}" \
 	--header "Content-Type: application/json"
@@ -99,7 +100,7 @@ curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true -
 **Example Response**
 
 ```
-200 - OK
+202 - ACCEPTED
 
 {
 	"modelName": "Timeseries_19-10-2020_14-23-00_jJgQK",
@@ -179,13 +180,14 @@ curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Conten
 ### GET – Get status of generation of the time series model
 
 ```
-{{url}}/service/zementis/timeseries/{{model_name}}/status (deprecated)
 {{url}}/service/zementis/train/timeseries/{{model_name}}/status
 
 ```
 
 Get the status of the generation of a specific time series model. The status can either be IN_PROGRESS, SUCCESS or FAILURE.<br>
 If the status is FAILURE, the `errorMessage` attribute in the response holds the reason for the failure.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -262,6 +264,8 @@ curl --request GET "{{url}}/service/zementis/train/timeseries/dummy/status" --he
 ```
 
 Get the PMML file of the generated time series model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

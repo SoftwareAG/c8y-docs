@@ -69,7 +69,7 @@ The containers are configured to store their application state on the data disk 
 
 ### Adapting to network changes of Cumulocity IoT Edge
 
-There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
+There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally or changing the domain name. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
 
 ### Accessing DataHub Edge
 

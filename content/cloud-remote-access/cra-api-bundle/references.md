@@ -8,5 +8,5 @@ layout: bundle
 
 Find the source code at our public GitHub repositories:
 
-https://github.com/SoftwareAG/cumulocity-agents-linux/src <br>
+https://github.com/SoftwareAG/cumulocity-agents-linux <br>
 (note that for historical reasons the module is called vnc here)

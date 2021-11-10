@@ -14,11 +14,11 @@ The {{< product-c8y-iot >}} documentation sources are located in a Git repositor
 
 You find the documentation sources for the GA release versions in the following branches:
 
-Release 10.7.0: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.7.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.7.0)
+Release {{< c8y-current-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-current-version >}}](https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-current-version >}})
 
-Release 10.9.0: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.9.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.9.0)
+Release {{< c8y-previous-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-previous-version >}}](https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-previous-version >}})
 
-Release 10.10.0: [https://github.com/SoftwareAG/c8y-docs/tree/release/r10.10.0](https://github.com/SoftwareAG/c8y-docs/tree/release/r10.10.0)
+Release {{< c8y-pre-previous-version >}}: [https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-pre-previous-version >}}](https://github.com/SoftwareAG/c8y-docs/tree/release/r{{< c8y-pre-previous-version >}})
 
 You may also find the sources of older versions here in corresponding branches.
 

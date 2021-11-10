@@ -18,7 +18,7 @@ Tenants can also have their own application marketplace, which can be viewed in 
 
 Owned applications and granted applications can also be subscribed to the subtenants by the tenant.
 
-For details refer to [Managing tenants](/users-guide/administration#tenants) in the User guide.
+For details refer to [Managing tenants](/users-guide/administration#tenants) in the *User guide*.
 
 ### Service Discovery
 

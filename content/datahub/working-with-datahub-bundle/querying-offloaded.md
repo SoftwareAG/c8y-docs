@@ -49,7 +49,7 @@ Note that the API might change any time and {{< company-sag >}} does not provide
 
 ### Connecting via DataHub REST API
 
-The DataHub server also can handle REST requests for Dremio query processing. DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [DataHub REST API documentation](https://{{< domain-c8y >}}/datahub/api/{{< c8y-current-version >}}/) for details on the endpoints.
+The DataHub server also can handle REST requests for Dremio query processing. DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [DataHub REST API documentation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Overview) for details on the endpoints.
 
 ### Connecting other clients
 

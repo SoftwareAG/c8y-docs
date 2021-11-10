@@ -21,7 +21,7 @@ The {{< product-c8y-iot >}} UI itself is built around a framework based on Angul
 
 For an application to be available it has to be deployed on the {{< product-c8y-iot >}} platform.
 
-For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide.
+For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
 
 > **Info:** In case of a web application, the application is active for you as owner without subscribing to it.
 
@@ -31,4 +31,4 @@ You can host your own HTML5 and JavaScript web applications through {{< product-
 
 ![List of own applications](/images/users-guide/Administration/admin-applications-own.png)
 
-For details refer to  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide.
+For details refer to  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.

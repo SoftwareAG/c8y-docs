@@ -127,7 +127,7 @@ In addition to the polling interval, you can also configure the wire mode of the
 To operate the display from {{< product-c8y-iot >}}, proceed as follows:
 
 1. In the Cockpit application, open the group that contains the RaspPi device, and select the RaspPi.
-2. Add a dashboard for the RaspPi, if you haven't defined one yet. For details on adding a dashboard, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
+2. Add a dashboard for the RaspPi, if you haven't defined one yet. For details on adding a dashboard, see [Dashboards](/users-guide/cockpit/#dashboards) in the *User guide*.
 3. Click **Add widget**.
 4. In the list of available widgets, select **Message sending**.
 5. Click the **Display** asset of the RaspPi. This adds the "Message sending" widget to the dashboard.

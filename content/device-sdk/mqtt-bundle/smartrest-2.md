@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
+Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -306,6 +306,7 @@ This is controlled by the mandatory value externalIdType.
 ```bash
 # Creation:
 10,100,POST,INVENTORY,,c8y_MySerial
+10,101,POST,INVENTORY,,
 # Usage:
 # Create object with externalId c8y_MySerial/myImei
 100,myImei

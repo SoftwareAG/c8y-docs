@@ -21,6 +21,7 @@ Here is an example manifest:
     },
     "isolation": "MULTI_TENANT",
     "scale": "AUTO",
+    "replicas": 2,
     "resources": {
         "cpu": "1",
         "memory": "1G"
@@ -128,6 +129,12 @@ See below for detailed information about available settings.
 <td style="text-align:left">No</td>
 </tr>
 <tr>
+<td style="text-align:left">replicas</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">Value range: 1 - 5<br><br>Defines the number of microservice instances. For auto-scaled microservices, the value represents the minimum number of microservices instances.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
 <td style="text-align:left">Configuration for resources limits.<br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
@@ -212,8 +219,8 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Minimal requirements for number of CPUs or CPU time, should be less or equal than 250m. <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 250m|No
-|memory|String |Minimal requirements for microservice memory usage, should be less or equal than 256M <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Minimal requirements for number of CPUs or CPU time  <br>Default: 250m|No
+|memory|String |Minimal requirements for microservice memory usage <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option
 

@@ -19,6 +19,8 @@ Operations on AI/Machine Learning models.
 
 Retrieves the model names of all the available PMML models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -74,6 +76,8 @@ curl --request GET "{{url}}/service/zementis/models"
 ```
 
 Get model name, description, and information about input, output, or derived fields.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -196,6 +200,8 @@ curl --request GET "{{url}}/service/zementis/model/dummy" --header "Authorizatio
 ```
 
 Get annotated or original PMML file. Annotated source may contain warning or error messages embedded in XML comments that are useful for verifying that the PMML code is correct.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -508,6 +514,10 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/source" --header "Autho
 
 Get binary file containing serialized representation of the model.
 
+Note that this binary file downloaded from a particular version of Zementis microservice can only be uploaded back to a Zementis microservice of the same version.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -579,6 +589,8 @@ curl --request GET "{{url}}/service/zementis/model/dummy/serialized" --header "A
 ```
 
 Get the memory metrics and prediction metrics of an uploaded PMML model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -662,8 +674,12 @@ curl --request GET "{{url}}/service/zementis/model/dummy/metrics" --header "Auth
 ```
 
 Upload new PMML model. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
-
 Note that the size of the uploaded PMML file/zip must not exceed 500 MB.
+
+If the model name contains any unsafe characters, all such characters will be converted to underscore automatically.
+Hence, all subsequent calls should refer to the converted name as listed in the properties of the model.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -899,6 +915,8 @@ curl --request POST "{{url}}/service/zementis/model" --header "Authorization: {{
 
 Activates the PMML model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1030,6 +1048,8 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/activate" --header "Aut
 ```
 
 Deactivates the PMML model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1163,6 +1183,8 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/deactivate" --header "A
 
 Remove the specified PMML model and list the remaining models.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1242,6 +1264,8 @@ curl --request DELETE "{{url}}/service/zementis/model/dummy" --header "Authoriza
 
 Remove all available PMML models and list the remaining models.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1291,6 +1315,8 @@ curl --request DELETE "{{url}}/service/zementis/models"
 ```
 
 Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1347,6 +1373,8 @@ curl --request GET "{{url}}/service/zementis/onnx/models"
 
 Get model name, model version, onnx version, producer name, producer version and information about inputs and outputs of the ONNX model.
 Here, the onnx version property actually corresponds to the onnx format version (ir version) and not the release version.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1439,6 +1467,8 @@ curl --request GET "{{url}}/service/zementis/onnx/models/dummy" --header "Author
 
 Get original ONNX file.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1510,6 +1540,8 @@ curl --request GET "{{url}}/service/zementis/onnx/models/dummy/source" --header 
 ```
 
 Upload new ONNX model. Note that the size of the uploaded ONNX file must not exceed 500 MB.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1626,6 +1658,8 @@ curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorizati
 
 Activates the ONNX model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially heap.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1716,6 +1750,8 @@ curl --request PUT "{{url}}/service/zementis/onnx/models/dummy/activate" --heade
 ```
 
 Deactivates the ONNX model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially heap. Deactivating an inactive model has no effect.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1808,6 +1844,8 @@ curl --request PUT "{{url}}/service/zementis/onnx/models/dummy/deactivate" --hea
 
 Remove the specified ONNX model and list the remaining models.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1884,6 +1922,8 @@ curl --request DELETE "{{url}}/service/zementis/onnx/models/dummy" --header "Aut
 ```
 
 Remove all available ONNX models and list the remaining models.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

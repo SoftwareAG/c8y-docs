@@ -43,6 +43,10 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Debugging from {{< sag-designer >}}. Instead, debug your app running in a local correlator.
 	* Correlator REST interface.
 
+* To reduce both the memory usage of an application during startup and the application's startup time,
+  ensure the application is completely initialized before injecting monitors that automatically unload, 
+  and before running time-consuming queries.
+
 ### Specific Apama limitations when using EPL apps
 
 * For ease of use, the correlator startup is controlled by {{< product-c8y-iot >}}. Thus, features that require you to change configuration files or command line options are not accessible.

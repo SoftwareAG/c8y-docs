@@ -28,7 +28,7 @@ When you go to the  EPL Apps page, the EPL app manager is shown first, listing a
 
 ![EPL Apps](/images/apama/apama-epl-apps-cards.png)
 
-Each card that is shown for an app has an actions menu at the top which allows you to edit or remove the app.
+Each card that is shown for an app has an actions menu at the top which allows you to edit, export or remove the app.
 
 From this page, you can:
 
@@ -37,6 +37,8 @@ From this page, you can:
 * Create new EPL apps. See below.
 
 * Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+
+* Export EPL apps. Use the **Export** command from the actions menu to download the app as a \*.mon file.
 
 * Deploy existing EPL apps. On the card that is shown for an app, change the mode from **Inactive** to **Active**. For more information, see [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 
@@ -85,7 +87,7 @@ If you have licensed Apama, install it using {{< sag-installer >}}.
 
 You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it.
 
-Both versions, the licensed version and the freemuim version, include {{< sag-designer >}}.
+Both versions, the licensed version and the freemium version, include {{< sag-designer >}}.
 
 **Step 2 - Create a project**
 

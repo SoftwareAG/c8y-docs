@@ -24,6 +24,8 @@ The keystore can be created via the following Java keytool command:
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
 ```
 
+With the above command, the key pass is set to the same value as the keystore password.
+
 ![terminal](/images/device-protocols/opcua/opcua-terminal.png)
 
 The keystore can then be verified by using a tool like KeystoreExplorer.
@@ -35,6 +37,9 @@ The keystore can then be verified by using a tool like KeystoreExplorer.
 The keystore can then be uploaded as binary in {{< product-c8y-iot >}} and it can be used in the server configuration.
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
+
+> **Info:** If you don't have the certificate trusted by your OPC UA server, the server will reject the connection. If you have problems trusting a certificate in your OPC UA server, contact your OPC UA server provider.
+> **Info:** Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well.
 
 ### Child devices
 

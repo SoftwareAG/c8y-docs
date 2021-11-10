@@ -2,7 +2,23 @@
 weight: 70
 title: Changing settings
 layout: redirect
+helpcontent:
+- label: authentication
+  title: Authentication
+  content: "Under **Login settings** you can specify your preferred login mode:
+
+
+	* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+	* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
+
+	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+
+	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Changing settings > Configuring single-sign on* in the *User guide*."
 ---
+
 
 From the **Settings** menu, administrators can manage various settings for the account:
 
@@ -11,7 +27,6 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [properties library](#properties).
 - Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
-
 
 <a name="authentication"></a>
 ### Changing authentication settings
@@ -97,6 +112,12 @@ The default value is two weeks. It can also be set to any negative value so that
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
+> **Info:** If external communication to the {{< management-tenant >}} has been blocked than it is only possible to access the tenant in a secure way (for example via SSH tunnel).
+This means that you can just as well use basic authentication. Additionally, it is not possible
+to use OAuth authentication since the communication from the external authorization server is also blocked.
+Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
+
+
 <a name="single-sign-on"></a>
 ### Configuring single sign-on
 
@@ -112,7 +133,7 @@ Before switching to the single sign-on option it is mandatory that:
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
 * The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
-* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
+* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
 >**Info:** In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
@@ -122,7 +143,7 @@ Before switching to the single sign-on option it is mandatory that:
 
 To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
 
-Click **Single sign-on** in the **Settings** menu in the navigator.
+Click the **Single sign-on** tab in the **Authentication** page.
 
 At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
@@ -202,9 +223,23 @@ In this case the following claim will match the condition:
 
 As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
+By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox. 
+
+![OAuth configuration](/images/users-guide/Administration/sso_dynamic_access_only_when_on_user_creation.png)
+
+When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#assigning-global-roles).
+
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+
+Next, the **User data mappings** can be configured:
+
+![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
+
+On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
+
+Mapping for alias is not available because it is not used in the context of single sign-on login.
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
@@ -280,7 +315,7 @@ Optionally single logout can be configured:
 |Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
 |Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
-The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
+The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
@@ -411,7 +446,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 1. Click **SMS provider** in the **Settings** menu.
 
     ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-   
+
 	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.

@@ -27,17 +27,15 @@ To install {{< product-c8y-iot >}} Edge using the GUI:
 
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
-	>**Important:** Do not use the root credentials to perform any task.
+	>**Important:** Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
 
-8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}},and click **Next**.
+8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 
 9. Provide a fully qualified domain name below **Register domain**.
 
    For example, "myown.iot.com". Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name **iot.com** or **myown.iot.com**.
 
    The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
-
-	>**Important:** Once configured, the domain name cannot be changed. Ensure that you use the name finally desired.
 
 10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Product licence**.
 

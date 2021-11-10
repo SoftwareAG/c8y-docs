@@ -2,6 +2,19 @@
 weight: 13
 title: Managing permissions
 layout: redirect
+helpcontent:
+- label: managing-permissions
+  title: Managing permissions
+  content: "Permissions define what a user is allowed to do in Cumulocity IoT applications. To manage permissions more easily, they are grouped into so-called 'roles'. Every user can be associated with a number of roles, adding up permissions of the user.
+
+
+  In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined (which may serve as a template), but you can define your own according to your needs.
+
+
+  In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device.
+
+
+  For details on working with global roles and inventory roles, see *Administration > Managing permissions* in the *User guide*."
 ---
 
 Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
@@ -12,7 +25,6 @@ The following types of roles can be associated with users:
 - Inventory roles: Contain permissions that apply to groups of devices.
 
 Moreover, application access can be granted to enable a user to use an application.
-
 
 <a name="global"></a>
 ### Global roles
@@ -103,7 +115,6 @@ You may also see the following legacy roles:
 |:---|:---|
 |business|Can access all devices and their data but has no management permission in the tenant.
 |readers|Can read all data (including users, in contrast to "Global Readers").
-
 
 <a name="create-edit-roles"></a>
 #### To add a global role
@@ -259,6 +270,8 @@ There may be additional permissions visible depending on the features in your su
 #### Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
+
+> **Important:** By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However, this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template).
 
 ##### To assign global roles from the user list
 

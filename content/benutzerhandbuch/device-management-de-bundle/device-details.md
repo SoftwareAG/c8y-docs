@@ -288,6 +288,8 @@ Wählen Sie eine Firmware aus der Auswahlliste, die sämtliche im [Firmware Repo
 
 ![Device Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software.png)
 
+![Device Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software-installation.png)
+
 Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte **Steuerung**.
 
 #### So entfernen Sie Firmware/Software

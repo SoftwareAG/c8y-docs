@@ -31,11 +31,11 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Page</b></td>
-<td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data may for example be displayed in a list with a row for each object or you may find it being presented in a grid in which objects are represented by cards. </td>
+<td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data can for example be displayed in a list with a row for each object or you can find it being presented in a grid in which objects are represented by cards. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Tabs</b></td>
-<td style="text-align:left">Some pages, e.g. the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.</td>
+<td style="text-align:left">Some pages, for example the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
@@ -65,12 +65,14 @@ The application switcher allows you to quickly switch between applications. Clic
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+<!-- Screenshot necessary? -->
+
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/users-guide/administration/#subscribed-applications), either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications:
 
 <img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
-
+<!-- Screenshot necessary? -->
 
 <a name="searching-and-filtering"></a>
 ### Search and filter functionality
@@ -127,15 +129,20 @@ my demo device
 
 Other than with filtering, using wildcards in a search is not supported.
 
-Instead, you can switch the search option by clicking one of the following buttons: **Starts with**, **Contains**, **Ends with**. This will search for assets starting with, containing or ending with the search term, respectively.
+Instead, you can switch the search option by clicking one of the following buttons:
 
+* **Starts with**,
+* **Contains** or
+* **Ends with**.
 
+This will search for assets starting with, containing or ending with the search term, respectively.
 
 <a name="filtering"></a>
 #### Filtering
 
 Some pages offer a filtering functionality to filter objects in a list.
 
+<!--- Screenshot necessary? --->
 ![Filter field](/images/users-guide/getting-started/getting-started-filtering.png)
 
 As opposed to the search functionality, on entering filter criteria you must not necessarily enter complete words.
@@ -171,6 +178,8 @@ For details on the filtering mechanism in the devices list refer to [Device Mana
 
 In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately.
 
-You will only see such changes in the navigator of the application, in which you have made the changes. For example, if you unassign a device from a group in the Device Management application you will immediately see it removed from the group in the navigator of your current application, but if you have another window open with e.g. the Cockpit application you won't see the changes.
+You will only see such changes in the navigator of the application, in which you have made the changes.
 
-You will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+**Example**
+
+If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).

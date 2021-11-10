@@ -272,7 +272,7 @@ For each tenant policy, the name, an optional description and the number of opti
 
 #### To create a tenant policy
 
-1. Click **Add tenant policy** in the top menu bar.
+1. Click **Add policy** in the top menu bar.
 <br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
 3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/users-guide/administration#retention-rules).

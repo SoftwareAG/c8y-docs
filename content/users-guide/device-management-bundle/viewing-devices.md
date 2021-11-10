@@ -125,7 +125,7 @@ Click the **Search** button at the top right and enter a search term into the te
 
 For details on the search functionality, refer to [Getting Started > UI functionalities and features](/users-guide/getting-started#gui-features).
 
-Our example shows a search for "Ublox C027".
+Our example shows a search for "NTC".
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 

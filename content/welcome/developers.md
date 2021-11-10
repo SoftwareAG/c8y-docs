@@ -63,7 +63,7 @@ Collaborate with {{< product-c8y-iot >}} community experts on our [{{< company-s
 Here you can:
 
 * Browse through our vast knowledge base of tutorials, articles, code samples, tips and tricks.
-* As questions, brainstorm solutions or discuss best practices in our discussion forum
-* Get the latest {{< company-sag >}} news and announcements
+* Ask questions, brainstorm solutions or discuss best practices in our discussion forum.
+* Get the latest {{< company-sag >}} news and announcements.
 
 Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).

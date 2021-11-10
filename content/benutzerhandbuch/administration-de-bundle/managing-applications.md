@@ -131,12 +131,6 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im {{< standard-tenant-de >}} mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Operationen anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
-<td style="text-align:left">cep</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <td style="text-align:left">cockpit</td>
@@ -231,18 +225,6 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left"><a href="/protocol-integration/lora-actility" class="no-ajaxy">Actility</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu LoRa-Geräten über Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>Laden Sie Ihre eigenen mit Esper erstellten CEP-Regeln in einer mandantenspezifischen Bereitstellung hoch. Sie müssen die Anwendung "Cep-small" abonnieren, um diese Funktion nutzen zu können.</td>
-<td style="text-align:left">feature-cep-custom-rules</td>
-<td style="text-align:left">Funktion</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>CEP-Variante. Ermöglicht das Arbeiten mit CEP-Regeln auf Basis von Esper in einer mandantenspezifischen Bereitstellung (im Unterschied zu "Cep", das eine gemeinsame Instanz verwendet). Sie müssen "CEP custom rules" abonnieren, um eigene Esper CEP-Regeln hochladen zu können.</td>
-<td style="text-align:left">cep-small</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>

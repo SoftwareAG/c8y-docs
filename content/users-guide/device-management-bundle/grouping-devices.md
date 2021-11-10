@@ -39,7 +39,8 @@ Click a group to view its details. Per default, the **Subassets** tab is display
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
-**Subassets** tab
+<a name="subassets-tab"></a>
+**Subassets tab**
 
 At the top of the **Subassets** tab, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
 

@@ -23,7 +23,8 @@ Instead of registering an actual device for the activity recognition use case, a
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}} . Upon successful execution, a device named "DemoDevice" is registered in {{< product-c8y-iot >}} .
 3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
-<img src="/images/zementis/ActivityRecognition/screenshot1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
+
+<img src="/images/zementis/ActivityRecognition/activity_recognition_register_device.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
 Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
@@ -46,7 +47,7 @@ Use *SimulateDataforRealtimescoring.ipynb* for simulating the measurements for t
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Acceleration measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the current date in gaps of 1 second.
 
-<img src="/images/zementis/ActivityRecognition/screenshot2.PNG" alt="Download" style="display:inline-block; margin:0">
+<img src="/images/zementis/ActivityRecognition/activity_recognition_simulate_data.PNG" alt="Download" style="display:inline-block; margin:0"><br>
 
 
 This should now start sending measurements to {{< product-c8y-iot >}} on behalf of your demo device. It would try to simulate transition of activities in the order  sit → jump → run → jump → sit.

@@ -30,7 +30,7 @@ The following operations may be available in each instance:
 
 > **Info:**  Some instances do not have all of the listed operations.
 
-Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation, click **Execute**.
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation without parameters, click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
 ![Execute operation](/images/device-protocols/lwm2m/lwm2m-devices-execute.png)
 

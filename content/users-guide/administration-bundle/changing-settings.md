@@ -223,6 +223,12 @@ In this case the following claim will match the condition:
 
 As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
+By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox. 
+
+![OAuth configuration](/images/users-guide/Administration/sso_dynamic_access_only_when_on_user_creation.png)
+
+When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#assigning-global-roles) in the *User guide*.
+
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)

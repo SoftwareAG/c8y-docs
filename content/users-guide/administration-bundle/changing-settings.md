@@ -143,7 +143,7 @@ Before switching to the single sign-on option it is mandatory that:
 
 To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
 
-Click **Single sign-on** in the **Settings** menu in the navigator.
+Click the **Single sign-on** tab in the **Authentication** page.
 
 At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
@@ -446,7 +446,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 1. Click **SMS provider** in the **Settings** menu.
 
     ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-   
+
 	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.

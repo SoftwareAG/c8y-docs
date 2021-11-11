@@ -39,7 +39,7 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
-<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die **Suche**-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus-Schaltfläche</b><br> Die meisten Seiten zeigen eine **Plus**-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, das heißt, die angezeigten Kommandos sind abhängig von der aktiven Seite. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die **Benutzer**-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus-Schaltfläche</b><br> Die meisten Seiten zeigen eine <b>Plus</b>-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, das heißt, die angezeigten Kommandos sind abhängig von der aktiven Seite. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die <b>Benutzer</b>-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
@@ -65,7 +65,7 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/users-guide/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
@@ -84,7 +84,7 @@ Bei Eingabe eines Suchbegriffs in das Textfeld oben im Fenster **Suche** gibt {{
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Kind-Assets](/users-guide/device-management#subassets-tab).
+Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Registerkarte Kind-Assets](/benutzerhandbuch/device-management-de#subassets-tab).
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
@@ -165,7 +165,7 @@ Die Liste wird sofort auf die ausgewählten Objekte beschränkt.
 >* Mandanten
 >* Dateiablage
 
-Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/users-guide/device-management#filtering-devices).
+Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de#filtering-devices).
 
 ### Echtzeitverhalten des Navigators
 

@@ -38,7 +38,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tr>
 <tr>
 <td style="text-align:left">Support aktivieren</td>
-<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant >}}en nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant >}}en nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-tenant-de/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
@@ -101,7 +101,7 @@ Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei z
 
 Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 
-* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).
+* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 * Es muss alle der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 
 > **Info:** Die Passwortregeln können vom Administrator konfiguriert werden, d.h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.

@@ -13,17 +13,19 @@ You can create a NAT adapter using two ways:
 * [Using default settings](/edge/installation/#creating-a-nat-adapter-using-default-settings)  
 * [Using user-defined settings](/edge/installation/#creating-a-nat-adapter-using-user-defined-settings) 
 
-Run all the commands in Windows PowerShell as an administrator.
+>**Info:** Run all the commands in Windows PowerShell with administrative privileges.
 
 #### Creating a NAT adapter using default settings
 
 >**Info:** You must use the default adapter name `NATSwitchForEdge` and the default IP address `192.168.66.1`.
 
-1. Create a new NAT adapter.
+1. Open Windows PowerShell with administrative privileges.
+2. Create a new NAT adapter.
 ```
-PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEDGE" -SwitchType Internal
+PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEdge" -SwitchType Internal
 ```
-2. Verify that the new NAT adapter is created.
+3. Verify that the new NAT adapter is created.
+
 ```
 PS C:\WINDOWS\system32> Get-NetAdapter
 ```
@@ -31,11 +33,13 @@ PS C:\WINDOWS\system32> Get-NetAdapter
 <img src="/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
 Note down the `ifIndex` of the adapter. The `ifIndex` in the above screenshot is 31. The `ifIndex` may vary in your system and the same `ifIndex` should be used in the next step. 
 
-3. Assign an IP address for the adapter.
+4. Assign an IP address for the adapter.
+
 ```
 PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 192.168.66.1 -PrefixLength 24 -InterfaceIndex 31
 ```
-4. Create a NAT rule.
+5. Create a NAT rule.
+
 ```
 PS C:\WINDOWS\system32> New-NetNat -Name NATSwitchForEDGE -InternalIPInterfaceAddressPrefix 192.168.66.0/24
 ```
@@ -46,21 +50,25 @@ You can define the adapter name and configure the IP address for your Edge VM. I
 
 >**Info:** The following steps show a reference example. The final configuration also depends on the end user setup.
 
-1. Create a new NAT adapter.
+1. Open Windows PowerShell with administrative privileges.
+2. Create a new NAT adapter.
 ```
 PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "EdgeAdapter1" -SwitchType Internal
 ```
-2. Verify that the new NAT adapter is created.
+3. Verify that the new NAT adapter is created.
+
 ```
 PS C:\WINDOWS\system32> Get-NetAdapter
 ```
 Note down the `ifIndex` of the adapter. The `ifIndex` may vary in your system and the same `ifIndex` should be used in the next step. 
 
-3. Assign an IP address for the adapter.
+4. Assign an IP address for the adapter.
+
 ```
 PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 10.20.30.40 -PrefixLength 24 -InterfaceIndex 71
 ```
-4. Create a NAT rule.
+5. Create a NAT rule.
+
 ```
 PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddressPrefix 10.20.30.0/24
 ```

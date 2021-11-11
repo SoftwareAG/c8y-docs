@@ -21,7 +21,7 @@ Run all the commands in Windows PowerShell as an administrator.
 
 1. Create a new NAT adapter.
 ```
-PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEDGE" -SwitchType Internal
+PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEdge" -SwitchType Internal
 ```
 
 2. Verify that the new NAT adapter is created.

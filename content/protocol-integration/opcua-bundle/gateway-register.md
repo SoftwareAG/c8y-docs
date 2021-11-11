@@ -379,10 +379,10 @@ then the server managed object will be deleted, but the corresponding address sp
 
 ### Downgrade to an earlier version
 
-Downgrades from 10.12.0 to previous versions are not directly supported due the security improvements that were made.
-However, in urgent cases a downgrade is possible when following the instructions below:
+Due to security improvements, downgrades from 10.12.0 to previous versions are not directly supported.
+However, if required, a downgrade is possible by following the instructions below:
 
-1. Shut down the current version of the gateway and remember the gateway managed object ID from the all devices list.
+1. Shut down the current version of the gateway and remember the gateway managed object ID from the devices list.
 2. Send an HTTP PUT command to your tenant to reset the identity:
 
 PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}

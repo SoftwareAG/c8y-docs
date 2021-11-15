@@ -59,7 +59,7 @@ If you use one of the public cloud instances of the {{< product-c8y-iot >}} plat
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/administration/#branding).
+> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
 * Click **Privacy policy** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.

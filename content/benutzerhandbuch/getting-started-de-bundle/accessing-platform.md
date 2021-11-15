@@ -60,7 +60,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 <img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/administration-de/#branding).
+> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
 * Klicken Sie auf **Datenschutzerklärung**, um die [{{< company-sag >}} Datenschutzerklärung]({{< link-sag-privacy-statement >}}) mit Details zur Datenschutzerklärung der {{< company-sag >}} zu öffnen.

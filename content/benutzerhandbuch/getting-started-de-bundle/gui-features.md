@@ -3,7 +3,8 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+  - /benutzerhandbuch/overview-de/#gui-features
+  - /benutzerhandbuch/overview/#gui-features
 ---
 
 

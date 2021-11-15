@@ -59,7 +59,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 <img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/users-guide/administration/#branding).
+> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/administration-de/#branding).
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
 * Klicken Sie auf **Datenschutzerklärung**, um die [{{< company-sag >}} Datenschutzerklärung]({{< link-sag-privacy-statement >}}) mit Details zur Datenschutzerklärung der {{< company-sag >}} zu öffnen.
@@ -69,7 +69,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen {{< product-c8y-iot >}}-Anwendungen wechseln, da die {{< product-c8y-iot >}}-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur Anwendung [Cockpit](/users-guide/cockpit) (sofern nicht anders konfiguriert).
+Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur Anwendung [Cockpit](/benutzerhandbuch/cockpit-de) (sofern nicht anders konfiguriert).
 
 ![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 

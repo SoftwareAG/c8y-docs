@@ -3,7 +3,8 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+  - /benutzerhandbuch/overview-de/#gui-features
+  - /benutzerhandbuch/overview/#gui-features
 ---
 
 
@@ -84,7 +85,7 @@ Bei Eingabe eines Suchbegriffs in das Textfeld oben im Fenster **Suche** gibt {{
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Registerkarte Kind-Assets](/benutzerhandbuch/device-management-de#subassets-tab).
+Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Kind-Assets](/benutzerhandbuch/device-management-de#subassets-tab).
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 

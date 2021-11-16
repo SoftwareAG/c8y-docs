@@ -58,7 +58,7 @@ To create a user in Jasper Control Center perform the following steps:
 
 1. As an admin user, navigate to **Admin** and **Users**.
 1. Click **Create New**.
-1. Enter the user name and further details of the user.
+1. Enter the username and further details of the user.
 1. If you want to be able to activate and deactivate SIM cards from {{< product-c8y-iot >}}, or to send SMS from {{< product-c8y-iot >}}, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
 1. Click **OK** to create the user, then enter your admin password and click **OK** again.
 

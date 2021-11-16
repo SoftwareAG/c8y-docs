@@ -22,10 +22,10 @@ C8Y_BASEURL_MQTT  |  Platform address of the MQTT server (contains port number)
 C8Y_MICROSERVICE_ISOLATION  |  Isolation level (MULTI_TENANT or PER_TENANT)
 C8Y_BOOTSTRAP_REGISTER  |  Indicator whether the microservice should perform self registration or not. <br>Default value: false
 C8Y_BOOTSTRAP_TENANT  |  Bootstrap user tenant, for MULTI_TENANT - microservice owner
-C8Y_BOOTSTRAP_USER  |  Bootstrap user name
+C8Y_BOOTSTRAP_USER  |  Bootstrap username
 C8Y_BOOTSTRAP_PASSWORD  |  Bootstrap user password
 C8Y_TENANT  |  Application user tenant (available only for PER_TENANT isolation)
-C8Y_USER  |  Application user name (available only for PER_TENANT isolation)
+C8Y_USER  |  Application username (available only for PER_TENANT isolation)
 C8Y_PASSWORD  |  Application user password (available only for PER_TENANT isolation)
 MEMORY_LIMIT  |  Max memory that can be used. Default value: 256M
 TZ | Timezone from the host machine or configurable tenant options

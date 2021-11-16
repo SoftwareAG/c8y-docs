@@ -382,7 +382,7 @@ In case of conflicts, the command line configuration has the highest priority an
 To upload a microservice to the server you need to configure the following properties:
 
 * url - Mandatory URL that will be used for deployment. Empty by default.
-* username - Mandatory tenant ID and user name used for authorization. Empty by default.
+* username - Mandatory tenant ID and username used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
 * skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)

@@ -72,7 +72,7 @@ C8Y_BASEURL_MQTT | URL which points to the core platform with MQTT protocol
 SERVER_PORT | Port on which the microservice runs
 C8Y_MICROSERVICE_ISOLATION | Isolation level
 C8Y_TENANT | Application user tenant (available only for PER_TENANT isolation)
-C8Y_USER | Application user name (available only for PER_TENANT isolation)
+C8Y_USER | Application username (available only for PER_TENANT isolation)
 C8Y_PASSWORD | Application user password (available only for PER_TENANT isolation)
 C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions

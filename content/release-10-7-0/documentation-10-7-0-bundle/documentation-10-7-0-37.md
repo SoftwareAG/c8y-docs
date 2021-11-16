@@ -24,7 +24,7 @@ Issue</th>
 Device SDK guide</td>
 <td>
 Various sections</td>
-<td > The Device SDK guide now explains that for device communication the user name but not the user alias should be used for authentication, see <a href="https://cumulocity.com/guides/10.7.0/device-sdk/mqtt/" class="no-ajaxy">Device integration using MQTT</a> and <a href="https://cumulocity.com/guides/10.7.0/device-sdk/rest/" class="no-ajaxy">Device integration using REST</a>.</td>
+<td > The Device SDK guide now explains that for device communication the username but not the user alias should be used for authentication, see <a href="https://cumulocity.com/guides/10.7.0/device-sdk/mqtt/" class="no-ajaxy">Device integration using MQTT</a> and <a href="https://cumulocity.com/guides/10.7.0/device-sdk/rest/" class="no-ajaxy">Device integration using REST</a>.</td>
 <td>
 MTM-37807</td>
 </tr>

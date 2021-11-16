@@ -944,8 +944,6 @@ So zeigt zum Beispiel die Variable #{time:TZ=America/New_York} die Uhrzeit entsp
 
 **Messwertspezifische Felder**
 
-> **Info:** Dieser Abschnitt gilt nur für Mandanten, die Apama (nicht Esper/CEP) verwenden.
-
 <table>
 <colgroup>
        <col style="width: 30%;">

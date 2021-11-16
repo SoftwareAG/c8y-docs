@@ -948,8 +948,6 @@ The variable #{time:TZ=America/New_York} for example displays the time using the
 
 **Fields specific for measurements**
 
-> **Info:** This section only applies to tenants that are using Apama (not Esper/CEP).
-
 <table>
 <colgroup>
        <col style="width: 30%;">

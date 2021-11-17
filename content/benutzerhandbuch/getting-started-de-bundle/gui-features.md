@@ -3,7 +3,8 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+  - /benutzerhandbuch/overview/#gui-features
+  - /benutzerhandbuch/overview-de/#gui-features
 ---
 
 
@@ -65,9 +66,7 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-<!-- Screenshot necessary? -->
-
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) sowie [eigene Anwendungen](/benutzerhandbuch/administration-de/#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
@@ -90,7 +89,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
->**Wichtig:** Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h., die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+>**Wichtig:** Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 
 ##### Exakte Übereinstimmung
 
@@ -142,7 +141,6 @@ Damit wird nach Assets gesucht, die mit dem Suchbegriff beginnen, ihn enthalten 
 
 Einige Seiten bieten eine Filterfunktionalität, um Objekte auf einer Seite zu filtern.
 
-<!--- Screenshot necessary? --->
 ![Filter field](/images/benutzerhandbuch/getting-started/getting-started-filtering.png)
 
 Anders als bei der Suchfunktionalität müssen beim Filtern nicht notwendigerweise ganze Wörter eingegeben werden.

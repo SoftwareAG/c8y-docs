@@ -3,7 +3,8 @@ weight: 70
 title: Nutzungsstatistiken und Abrechnung
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#usage-and-billing
+  - /benutzerhandbuch/enterprise-edition/#usage-and-billing
+  - /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
 ---
 
 <a name="usage-stats"></a>
@@ -246,7 +247,7 @@ Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y
 
 ### Handhabung von Zeitzonen
 
->**Wichtig:** Die Server der {{< product-c8y-iot >}}Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
+>**Wichtig:** Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
 
 Die Mandanten-Nutzungsstatistiken werden täglich entsprechend dem durch die Zeitzone des Servers bestimmten Beginn des Tages (`BOD`) und Ende des Tages (`EOD`) erfasst. Wenn die lokale Zeitzone eines Benutzers nicht mit der Zeitzone des Servers übereinstimmt, kann folglich eine vom Benutzer gestartete Operation je nach Serverzeit einem anderen Tag zugewiesen werden.
 

@@ -116,7 +116,7 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 #### So zeigen Sie Alarme an
 
-{{< product-c8y-iot >}} zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
+{{< product-c8y-iot >}} zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
 
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
@@ -439,7 +439,7 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 
 #### So zeigen Sie Ereignisse an
 
-{{< product-c8y-iot >}} zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an.
+{{< product-c8y-iot >}} zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
 
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.

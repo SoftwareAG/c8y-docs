@@ -315,7 +315,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 |Gerätesteuerung|Berechtigungen für die Fernsteuerung von Geräten.
 |Voller Zugriff|Vollständiger Zugriff auf die verbundenen Geräte, hauptsächlich zur Vereinfachung der Konfiguration.
 
-> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
+> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant-de >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 

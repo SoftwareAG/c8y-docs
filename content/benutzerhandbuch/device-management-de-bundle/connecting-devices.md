@@ -54,7 +54,7 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 5. Klicken Sie auf **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
-> **Info:** In einem {{< enterprise-tenant >}} kann der {{< management-tenant >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
+> **Info:** In einem {{< enterprise-tenant-de >}} kann der {{< management-tenant-de >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant-de >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
@@ -134,4 +134,4 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
 [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
->**Info:** Wenn Sie mit dem {{< enterprise-tenant >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant >}} aus importieren.
+>**Info:** Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.

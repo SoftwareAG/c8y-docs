@@ -66,7 +66,7 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreib
 4. Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-> **Info:** Der in einer Alarmregel festgelegte Alarmtyp wird als  &quot;&#60;type&#62;*&quot; interpretiert. Wenn Sie beispielsweise eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren sollen, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+> **Info:** Der in einer Alarmregel festgelegte Alarmtyp wird als &quot;&#60;type&#62;*&quot; interpretiert. Wenn Sie beispielsweise eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren sollen, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
 
 #### So bearbeiten Sie eine Alarmregel
 

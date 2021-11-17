@@ -4,15 +4,15 @@ title: Übersicht
 layout: redirect
 ---
 
-Ein {{< enterprise-tenant >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
+Ein {{< enterprise-tenant-de >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant-de >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
 
-Mit einem {{< enterprise-tenant >}} können Sie
+Mit einem {{< enterprise-tenant-de >}} können Sie
 
 * Untermandanten erstellen und verwalten
 * die abonnierten Anwendungen/Funktionen der Untermandanten verwalten
 * Untermandanten anhand der Verbrauchsstatistiken Rechnungen stellen
 
-Darüber hinaus bietet ein {{< enterprise-tenant >}} folgende Zusatzfunktionen:
+Darüber hinaus bietet ein {{< enterprise-tenant-de >}} folgende Zusatzfunktionen:
 
 * **Branding** - zum Konfigurieren eines individuellen Look & Feel
 * **Domain-Name** - zum Bereitstellen eines individuellen Domain-Namens
@@ -21,7 +21,7 @@ Darüber hinaus bietet ein {{< enterprise-tenant >}} folgende Zusatzfunktionen:
 
 Näheres zum {{< product-c8y-iot >}}-Mandantenkonzept finden Sie unter [Mandantenhierarchie](/concepts/tenant-hierarchy) im *Concepts Guide*.
 
-Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterprise-tenant >}} verfügbar sind:
+Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterprise-tenant-de >}} verfügbar sind:
 
 <table>
 <thead>
@@ -54,7 +54,7 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 </tr>
 <tr>
 <td align="left"><a href="#license-management">Lizenzverwaltung</a></td>
-<td align="left">Verwalten Sie Lizenzen für die Domains der {{< enterprise-tenant >}}s über die Benutzeroberfläche.</td>
+<td align="left">Verwalten Sie Lizenzen für die Domains der {{< enterprise-tenant-de >}}s über die Benutzeroberfläche.</td>
 </tr>
 <tr>
 <td align="left"><a href="#usage-and-billing">Nutzungsstatistiken und Abrechnung</a></td>

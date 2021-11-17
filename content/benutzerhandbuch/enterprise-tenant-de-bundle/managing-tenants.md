@@ -3,10 +3,11 @@ weight: 10
 title: Verwalten von Mandanten
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#managing-tenants
+  - /benutzerhandbuch/enterprise-edition/#managing-tenants
+  - /benutzerhandbuch/enterprise-edition-de/#managing-tenants
 ---
 
-Über den {{< enterprise-tenant >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
+Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
 > **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
 
@@ -31,7 +32,7 @@ Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandan
 * Das Erstellungsdatum für den Mandanten.
 * Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-Im {{< management-tenant >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
+Im {{< management-tenant-de >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
 
 <a name="creating-tenants"></a>
 ### So erstellen Sie einen Untermandanten
@@ -91,7 +92,7 @@ Im {{< management-tenant >}} finden Sie zudem Informationen über den übergeord
 
 Wenn der Untermandant erstellt wird, erhält er eine automatisch generierte ID, die nicht geändert werden kann. Zudem wird er automatisch mit einem ersten Administrator-Benutzer ("Benutzername des Administrators") eingerichtet. Dieser Administrator kann andere Benutzer erstellen und Berechtigungen vergeben. Der erste Benutzer kann nicht gelöscht werden, um ein Aussperren zu verhindern.
 
-Vom {{< management-tenant >}} aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Aktivieren Sie hierzu die Option **Erstellen von Untermandanten zulassen** im Mandanten-Editor.
+Vom {{< management-tenant-de >}} aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Aktivieren Sie hierzu die Option **Erstellen von Untermandanten zulassen** im Mandanten-Editor.
 
 ### So können Sie Untermandanten-Attribute anzeigen oder bearbeiten
 
@@ -124,11 +125,11 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
-<td style="text-align:left">Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im {{< management-tenant >}}eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.</td>
+<td style="text-align:left">Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global im {{< management-tenant-de >}}eingeschaltet ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.</td>
 </tr>
 <tr>
 <td style="text-align:left">Ablaufdatum</td>
@@ -163,9 +164,9 @@ Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten g
 
 ### Löschen von Untermandanten
 
->**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant >}} aus gelöscht werden.
+>**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
 >
->Administratoren in {{< enterprise-tenant >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+>Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 
 #### So löschen Sie einen Untermandanten
 
@@ -231,7 +232,7 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 * Stream-Anfragen begrenzen - Begrenzung der MQTT-Anfragen für den Mandanten pro Sekunde
 
 >**Info:** Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
-Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant >}} aus durchgeführt werden:
+Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant-de >}} aus durchgeführt werden:
 
  - cep.queue.limit
  - data-broker.queue.limit
@@ -281,7 +282,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
 
->**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant >}} aus eine Aktualisierung starten.
+>**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
 
 #### So bearbeiten Sie eine Mandantenregel
 

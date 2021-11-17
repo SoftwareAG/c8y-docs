@@ -25,7 +25,7 @@ In dieser Version werden folgende Browser unterstützt:
 
 >**Wichtig:** [3] {{< product-c8y-iot >}} ist in Internet Explorer 11 funktionsfähig, die angebotene Benutzeroberfläche entspricht jedoch nicht dem neuesten Stand der Technik. Daher wird {{< product-c8y-iot >}} 10.7 die letzte Version sein, die diesen Browser unterstützt. In nachfolgenden Releases wird weiterhin die neueste Version des Microsoft Edge Browsers (als Nachfolger des Internet Explorer) unterstützt.
 
-Sie können Cumulocity IoT auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
+Sie können {{< product-c8y-iot >}} auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
 
 * Chrome auf Android (neueste Version) auf Galaxy Smartphones und Tablets
 * Safari auf iOS (neueste Version) auf Apple iPhone und iPad
@@ -46,7 +46,7 @@ https://<tenant-domain>.{{< domain-c8y >}}/
 
 Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}.
 
->**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant >}}nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+>**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}}nutzen. Die URL für die {{< enterprise-tenant-de >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der {{< product-c8y-iot >}}-Plattform verbunden sind.
 
@@ -60,7 +60,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 <img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
+> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant-de >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
 * Klicken Sie auf **Datenschutzerklärung**, um die [{{< company-sag >}} Datenschutzerklärung]({{< link-sag-privacy-statement >}}) mit Details zur Datenschutzerklärung der {{< company-sag >}} zu öffnen.
@@ -76,7 +76,7 @@ Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelang
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
->**Info:** Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
+>**Info:** Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 
 <a name="reset-password"></a>
 ### So setzen Sie Ihr Passwort zurück

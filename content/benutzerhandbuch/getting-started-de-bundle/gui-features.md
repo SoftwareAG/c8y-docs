@@ -89,7 +89,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
->**Wichtig:** Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h., die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+>**Wichtig:** Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 
 ##### Exakte Übereinstimmung
 

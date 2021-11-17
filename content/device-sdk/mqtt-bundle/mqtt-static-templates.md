@@ -14,24 +14,24 @@ To ease device integration {{< product-c8y-iot >}} already supports a number of 
 
 Publish
 
-* <kbd>PUBLISH s/us</kbd> - Send built-in message
-* <kbd>PUBLISH s/us/5678</kbd> - Send built-in message to child "5678"
-* <kbd>PUBLISH s/ud</kbd> - Send message using default template (myDevice_10)
+* <kbd>PUBLISH s/us</kbd> - Send a built-in message
+* <kbd>PUBLISH s/us/5678</kbd> - Send a built-in message to child "5678"
+* <kbd>PUBLISH s/ud</kbd> - Send a message using the default template (myDevice_10)
 * <kbd>PUBLISH s/ud/5678</kbd> - Same as above, but to child "5678"
-* <kbd>PUBLISH s/uc/myCommon_10</kbd> - Send message using myCommon_10 template
+* <kbd>PUBLISH s/uc/myCommon_10</kbd> - Send a message using myCommon_10 template
 * <kbd>PUBLISH s/uc/myCommon_10/5678</kbd> - Same as above, but to child "5678"
 
 Subscribe
 
 * <kbd>SUBSCRIBE s/ds</kbd> - Receive built-in commands
-* <kbd>SUBSCRIBE s/dd</kbd> - Receive commands using default template (myDevice_10)
-* <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using myCommon_10 template
+* <kbd>SUBSCRIBE s/dd</kbd> - Receive commands using the default template (myDevice_10)
+* <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using the myCommon_10 template
 * <kbd>SUBSCRIBE s/e</kbd> - Receive error messages
 
 ##### Connection
 
 * <kbd>CONNECT 1234:myDevice_10 acme/device_1234</kbd> \
-  Connect device with serial "1234" and default template "myDevice_10" to tenant "acme" and user "device_1234"
+  Connect the device with serial "1234" and default template "myDevice_10" to tenant "acme" and user "device_1234"
 
 ##### Topic format
 

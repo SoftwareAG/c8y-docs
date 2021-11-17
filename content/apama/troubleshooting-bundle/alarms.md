@@ -306,7 +306,7 @@ The Apama microservice log contains more details on the reason for the smart rul
 This alarm is raised if a smart rule contains an unrecognized or invalid configuration for a substitution variable.
 
 - Alarm type: `smartrule_configuration_warn`
-- Alarm text: &lt;Smart rule identifier&gt;: Smart rule: &lt;warning message&gt; &lt;original exception message&gt;
+- Alarm text: &lt;Smart rule identifier&gt;: Smart rule &lt;warning message&gt; - &lt;original exception message&gt;
 - Alarm severity: WARNING
 
 The Apama microservice log also contains a warning message with the exception message.

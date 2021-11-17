@@ -62,12 +62,12 @@ The components for which log rotation is configured are as follows:
 |MQTT|${karaf.data}/log/mqtt.log|Daily|50 MB|14|
 |Access|${karaf.data}/log/access.log|Daily|50 MB|14|
 |DataBroker|${karaf.data}/log/databroker.log|Daily|50 MB|14|
- 
+
 <br>
 **Under /etc/ configured via logrotate.conf and config files under /etc/logrotate.d**
- 
+
 The components for which log rotation is configured are as follows:
- 
+
 |Component|Log file location|Log file rotation|Max file size|Max backup index|
 |:---|:---|:---|:---|:---|
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
@@ -78,10 +78,10 @@ For microservices, there currently is no specific log rotation configured.
 
 ### Time synchronization
 
-For many use cases, and especially when using APAMA, time synchronization must be available, i.e. the time inside the VM must be synchronized with the time of the host OS and with devices sending data.
+For many use cases, and especially when using Apama, the time inside the Edge appliance must be synchronized with the network.
 
 `chrony` or `ntp` services can be configured by end users based on their time synchronization needs. These services are by default stopped and disabled in Edge and can be enabled by standard commands. Use the following commands to interact with the `chrony` or `ntp` services:
- 
+
 	sudo systemctl start|stop|status|restart ntpd
 	sudo systemctl start|stop|status|restart chronyd
 

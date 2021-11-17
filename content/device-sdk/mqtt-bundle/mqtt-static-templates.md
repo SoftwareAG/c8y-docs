@@ -8,11 +8,61 @@ weight: 110
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
+#### Quick reference
+
+##### Topics
+
+Publish
+
+* <kbd>PUBLISH s/us</kbd> - Send built-in message
+* <kbd>PUBLISH s/us/5678</kbd> - Send built-in message to child "5678"
+* <kbd>PUBLISH s/ud</kbd> - Send message using default template (myDevice_10)
+* <kbd>PUBLISH s/ud/5678</kbd> - Same as above, but to child "5678"
+* <kbd>PUBLISH s/uc/myCommon_10</kbd> - Send message using myCommon_10 template
+* <kbd>PUBLISH s/uc/myCommon_10/5678</kbd> - Same as above, but to child "5678"
+
+Subscribe
+
+* <kbd>SUBSCRIBE s/ds</kbd> - Receive built-in commands
+* <kbd>SUBSCRIBE s/dd</kbd> - Receive commands using default template (myDevice_10)
+* <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using myCommon_10 template
+* <kbd>SUBSCRIBE s/e</kbd> - Receive error messages
+
+##### Connection
+
+* <kbd>CONNECT 1234:myDevice_10 acme/device_1234</kbd> \
+  Connect device with serial "1234" and default template "myDevice_10" to tenant "acme" and user "device_1234"
+
+##### Topic format
+
+`<protocol>/<direction><type>[/<template>][/<child_id>]`
+
+where:
+
+* `<protocol>` can be <kbd>s</kbd> (standard) or <kbd>t</kbd> (transient)
+* `<direction>` can be <kbd>u</kbd> (upstream from the device), <kbd>d</kbd> (downstream to the device) or <kbd>e</kbd> (error)
+* `<type>` can be <kbd>s</kbd> (static), <kbd>c</kbd> (custom, device-defined), <kbd>d</kbd> (default), <kbd>t</kbd> (template) or <kbd>cr</kbd> (credentials)
+
+##### Device registration
+
+* <kbd>CONNECT 1234 management/devicebootstrap</kbd>
+* <kbd>SUBSCRIBE s/dcr</kbd>
+* <kbd>PUBLISH s/ucr</kbd>
+* <kbd>PUBLISH s/ucr</kbd>
+* <kbd>...</kbd>
+* <kbd>70,tenant,username,password<kbd>
+
+##### Template registration
+
+* <kbd>PUBLISH s/ut/myCommon_10</kbd>
+* <kbd>10,999,POST,MEASUREMENT,,c8y_MyMeasurement;;c8y_MyMeasurement.M.value,NUMBER,...</kbd>
+  10,msgId,api,method,response,type,time,custom1.path,custom1,type,custom1.value
+
+##### Templates
+
+To use the templates listed in below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
-
-#### Quick reference
 
 Click the commands below to see more information on the respective template.
 If a parameter is in square brackets, it is optional.
@@ -73,6 +123,9 @@ If a parameter is in square brackets, it is optional.
 + <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
+
+<strong><a href="#subscribe-templates">Subscribe templates</a></strong>
++ <a href="#subscribe-templates">(click)</a>
 
 </td>
 </tr>

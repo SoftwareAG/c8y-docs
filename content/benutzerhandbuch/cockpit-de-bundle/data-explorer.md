@@ -225,4 +225,4 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 
-Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.
+Die Download-Datei wird erstellt, wie im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.

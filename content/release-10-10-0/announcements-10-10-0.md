@@ -14,7 +14,7 @@ Cumulocity IoT has already recommended (and documented) the use of numeric value
 
 #### Device Management - Removal of groups note
 
-Currently, in the Device Management application, there are two places for adding notes to a group, i.e. either using the notes area or the group data notes field on the **Info** tab of a group. With release 10.10, the first option will be removed from the UI. The old group notes will still be accessible using the REST APIs but won't be displayed anymore within the Device Management UI.
+Currently, there are two places in the Device Management application for adding notes to a group, i.e. either using the notes area or the group data notes field on the **Info** tab of a group. With release 10.11, the first option will be removed from the UI. The old group notes will still be accessible using the REST APIs but won't be displayed anymore within the Device Management UI.
 
 Furthermore, with the introduction of a new group view, the information from the current **Info** and **Subasset** tabs will be combined in order to enhance usability.
 

@@ -139,9 +139,11 @@ The following information is displayed here:
 
 ### Suspending subtenants
 
-Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. Moreover, when a tenant is suspended, all its microservices are undeployed and when activating it again all microservices are re-deployed again.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available later by clicking **Activate**.
+The tenant's data remains in the database and can be made available later by clicking **Activate**.
+
+Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on the billing perspective of suspended tenants.
 
 >**Important:** Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
 >

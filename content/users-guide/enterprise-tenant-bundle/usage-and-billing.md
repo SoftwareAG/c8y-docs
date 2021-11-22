@@ -335,7 +335,7 @@ Usage statistics consist of values that are progressive like the request count a
 A {{< product-c8y-iot >}} platform tenant can have several states:
 
   * Active - The common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
-  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
+  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
   * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
 

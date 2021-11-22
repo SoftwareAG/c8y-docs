@@ -382,9 +382,10 @@ In case of conflicts, the command line configuration has the highest priority an
 To upload a microservice to the server you need to configure the following properties:
 
 * url - Mandatory URL that will be used for deployment. Empty by default.
-* username - Mandatory tenant ID and user name used for authorization. Empty by default.
+* username - Mandatory tenant ID and username used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
+* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)
 
 #### settings.xml
 
@@ -420,6 +421,8 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
             <username>demos/username</username>
             <password>******</password>
         </credentials>
+
+        <skipMicroserviceUpload>false</skipMicroserviceUpload>
     </configuration>
 </plugin>
 ```
@@ -429,7 +432,7 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
 To pass the configuration only to the particular build, execute the following command:
 
 ```shell
-$ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=******
+$ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=****** -Dskip.microservice.upload=false
 ```
 
 

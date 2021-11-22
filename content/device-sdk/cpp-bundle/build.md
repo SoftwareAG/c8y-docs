@@ -47,10 +47,10 @@ Before starting developing your C++ agents for {{< product-c8y-iot >}}, you need
 
 ### Compiling the library
 
-Download a copy of the library from the Bitbucket repository and change to the directory.
+Download a copy of the library from the GitHub repository and change to the directory.
 
 ```shell
-$ git clone https://bitbucket.org/m2m/cumulocity-sdk-c
+$ git clone https://github.com/SoftwareAG/cumulocity-sdk-c
 $ cd cumulocity-sdk-c
 ```
 

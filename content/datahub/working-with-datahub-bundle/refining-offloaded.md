@@ -27,7 +27,7 @@ On the **Login** screen, enter your Dremio account credentials. Click **Login** 
 
 When you log in successfully, you will be taken to the home page of Dremio.
 
-When you want to log out, click on your user name at the right of the top bar  and then select **Log out**.
+When you want to log out, click on your username at the right of the top bar  and then select **Log out**.
 
 ### Sources and spaces
 

@@ -125,7 +125,7 @@ In addition to these columns the file can also contain other columns like ICCID,
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
 
-* User name - the user name for accessing {{< product-c8y-iot >}} must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
+* Username - the username for accessing {{< product-c8y-iot >}} must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
 * Password - the password to access {{< product-c8y-iot >}}, equals the value "Credentials" in the CSV file.
 * Device in managed object representation - fields TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in the CSV file.
 

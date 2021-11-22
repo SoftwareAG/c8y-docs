@@ -40,6 +40,7 @@ The following is a list of the alarms. The information further down below explai
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smartrule_configuration_error)
+- [Smart rule configuration for substitution variable failed](#smartrule_configuration_warn)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
@@ -296,6 +297,20 @@ This alarm is raised if a smart rule contains an invalid configuration.
 To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules need to be corrected.
 
 The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
+
+
+
+<a name="smartrule_configuration_warn"></a>
+#### Smart rule configuration for substitution variable failed
+
+This alarm is raised if a smart rule contains an unrecognized or invalid configuration for a substitution variable.
+
+- Alarm type: `smartrule_configuration_warn`
+- Alarm text: &lt;Smart rule identifier&gt;: Smart rule &lt;warning message&gt; - &lt;original exception message&gt;
+- Alarm severity: WARNING
+
+The Apama microservice log also contains a warning message with the exception message.
+
 
 <a name="smartrule_restore_failed"></a>
 #### Smart rule restore failed

@@ -1,0 +1,24 @@
+wkhtmltopdf \
+ --page-size A4 --margin-top 20mm --margin-bottom 20mm --margin-left 20mm --margin-right 20mm \
+ --title "Cumulocity IoT Event Language" \
+ --header-html event-language-pdf-page-header.html --header-line --header-spacing 3 --header-font-size 10 \
+ --footer-line --footer-spacing 3 --footer-left "[section]" --footer-right "Page [page] of [toPage]" --footer-font-size 8 \
+ --no-background \
+ --print-media-type \
+ --user-style-sheet ../style.css \
+ --javascript-delay 2000 \
+ --enable-local-file-access \
+ --dpi 300 \
+ cover event-language-pdf-front-page.html \
+ ../pdf-copyright-page.html \
+ toc \
+ --xsl-style-sheet ../cumulocity-toc-style.xsl \
+ http://localhost:1313/guides/event-language/event-language-introduction/ \
+ http://localhost:1313/guides/event-language/data-model/ \
+ http://localhost:1313/guides/event-language/functions/ \
+ http://localhost:1313/guides/event-language/advanced-cel/ \
+ http://localhost:1313/guides/event-language/best-practices-cel/ \
+ http://localhost:1313/guides/event-language/event-language-examples/ \
+ http://localhost:1313/guides/event-language/geofence/ \
+ http://localhost:1313/guides/event-language/real-time-statements/ \
+ "Cumulocity IoT Event Language guide.pdf"

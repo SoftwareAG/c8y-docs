@@ -6,7 +6,7 @@ layout: redirect
 
 **Error message**
 
-	Real-time event processing is currently overloaded and may stop processing your events. Please contact [product support](/welcome/contacting-support/).
+	Real-time event processing is currently overloaded and may stop processing your events. Please contact [product support](https://cumulocity.com/guides/welcome/contacting-support/).
 
 **Description**
 

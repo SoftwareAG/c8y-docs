@@ -313,13 +313,40 @@ Bulk-Operationen können sich in einem der folgenden Status befinden:
 
 In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angezeigt:
 
-| Info   | Beschreibung |
-| :----- | :---------- |
-| Status  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
-| Name   | Name der Operation. |
-| Fortschrittsanzeige | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an. |
-| Start- und Enddatum | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen. |
-| Schaltfläche Aktualisieren | Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige |
+<table>
+<colgroup>
+<col width="30%">
+<col width="70%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Info</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Status</td>
+<td style="text-align:left">GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben).</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Name der Operation.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fortschrittsanzeige</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an.</td>
+</tr>
+<tr>
+<td style="text-align:left">Start- und Enddatum</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen.</td>
+</tr>
+<tr>
+<td style="text-align:left">Schaltfläche Aktualisieren</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige</td>
+</tr>
+</tbody>
+</table>
 
 Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zur Bulk-Operation anzeigen.
 

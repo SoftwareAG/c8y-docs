@@ -137,13 +137,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
-<td style="text-align:left">Configuration for resources limits.<br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
+<td style="text-align:left">Configuration for resources limits.<br>Default limits are CPU=0.5, Memory=512MB. There may be other defaults set by an administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">requestedResources</td>
 <td style="text-align:left">RequestedResources</td>
-<td style="text-align:left">Configuration for minimal required resources.<br>Default values are CPU=0.25, Memory=256MB</td>
+<td style="text-align:left">Intended configuration for minimal required resources.<br>The value may be over-written based on system settings.<br>Default values are CPU=0.25, Memory=256MB. There may be other defaults set by an administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -190,6 +190,7 @@ See below for detailed information about available settings.
 </tr>
 </tbody>
 </table>
+
 
 #### Version
 

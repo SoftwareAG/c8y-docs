@@ -137,13 +137,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
-<td style="text-align:left">Configuration for resources limits.<br>Default limits are CPU=0.5, Memory=512MB. There may be other defaults set by an administrator.</td>
+<td style="text-align:left">Configuration for resources limits.<br>Default limits are CPU=0.5, Memory=512MB. Different default values may be configured by the system administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">requestedResources</td>
 <td style="text-align:left">RequestedResources</td>
-<td style="text-align:left">Intended configuration for minimal required resources.<br>The value may be over-written based on system settings.<br>Default values are CPU=0.25, Memory=256MB. There may be other defaults set by an administrator.</td>
+<td style="text-align:left">Intended configuration for minimal required resources.<br>The values may be over-written based on system settings.<br>Default values are CPU=0.25, Memory=256MB. Different default values may be configured by the system administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -212,20 +212,16 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 #### Resources
 
 | Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-|      |      |             |          |
 | :--- | :--- | :---------- | :---------- |
-| ---- | ---- | ----------- | ----------- |
-|      |      |             |             |
-|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>There may be a different system setting for the Default CPU by administrator.| No
-|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>There  may be a different system setting for the Default by administrator.|No
+|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>A different default value may be configured by the system administrator.| No
+|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>A different default value may be configured by the system administrator.|No
 
 #### RequestedResources
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>There  may be a different system setting for the Default by administrator.|No
-|memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>There  may be a different system setting for the Default by administrator. |No
+|cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>A different default value may be configured by the system administrator.|No
+|memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>A different default value may be configured by the system administrator.|No
 
 #### Option
 

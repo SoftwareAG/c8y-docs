@@ -211,17 +211,21 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 #### Resources
 
-|Name|Type|Description|Required|
-|:---|:---|:----------|:----------|
-|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1<br>Default CPU time: 500m, min: 100m | No
-|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+|      |      |             |          |
+| :--- | :--- | :---------- | :---------- |
+| ---- | ---- | ----------- | ----------- |
+|      |      |             |             |
+|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>There may be a different system setting for the Default CPU by administrator.| No
+|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>There  may be a different system setting for the Default by administrator.|No
 
 #### RequestedResources
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Minimal requirements for number of CPUs or CPU time  <br>Default: 250m|No
-|memory|String |Minimal requirements for microservice memory usage <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>There  may be a different system setting for the Default by administrator.|No
+|memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>There  may be a different system setting for the Default by administrator. |No
 
 #### Option
 

@@ -202,9 +202,9 @@ In this case the following claim will match the condition:
 
 As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
-By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox. 
+By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox at the bottom of the **Access mapping** section.
 
-![OAuth configuration](/images/users-guide/Administration/sso_dynamic_access_only_when_on_user_creation.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-dynamic-access-mapping.png)
 
 When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#assigning-global-roles).
 
@@ -417,7 +417,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 1. Click **SMS provider** in the **Settings** menu.
 
     ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-   
+
 	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.

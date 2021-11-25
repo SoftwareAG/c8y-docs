@@ -8,7 +8,7 @@ Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und An
 
 Um ein neues Template hinzuzufügen, importieren Sie entweder ein vorhandenes Template oder erstellen Sie ein neues.
 Um ein Template zu importieren, klicken Sie rechts in der oberen Menüleiste auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
-Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter *Device Management > SmartREST-Templates* im *User guide* beschrieben.
+Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter [Device Management > SmartREST-Templates](/users-guide/device-management#smartrest-templates) im *User Guide* beschrieben.
 
 ### Einführung
 

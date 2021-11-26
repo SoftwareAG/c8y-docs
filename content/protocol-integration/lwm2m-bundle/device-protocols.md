@@ -120,3 +120,15 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 > **Info:** At least one functionality must be set to enable "Auto observe".
 
 ![Resource](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
+
+
+### Alarms on device protocol mapping failures
+
+There are 2 types of alarms raised related to device protocol mapping failures.
+
+![Alarms on mapping failures](/images/device-protocols/lwm2m/lwm2m-mapping-failure-alarms.png)
+
+- Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
+This can be resolved by importing device protocol for this resource.
+
+- Alarm due to non-numeric/non-boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-boolean value.

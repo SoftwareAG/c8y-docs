@@ -45,7 +45,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#widget-asset-table">Asset table</a></td>
-<td align="left">Shows details of all child devices in a table.</td>
+<td align="left">Shows details of a selected asset and all its child devices in a table.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-graph">Data point graph</a></td>
@@ -206,7 +206,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 <a name="widget-asset-table"></a>
 ### Asset table
 
-The "Asset table" widget shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
+The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
 
 **Parameters to configure**
 

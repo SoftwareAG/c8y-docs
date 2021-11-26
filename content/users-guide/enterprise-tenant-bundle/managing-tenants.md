@@ -232,6 +232,8 @@ Platform administrators can limit the request rate of each subtenant via the fol
 * Limit stream queue - Limit of MQTT request queue for tenant
 * Limit stream requests - Limit of MQTT requests for tenant per second
 
+>**Important:** Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
+
 It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}} by using the following subtenant custom fragments:
 
 * cep.queue.limit

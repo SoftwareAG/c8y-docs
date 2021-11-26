@@ -139,9 +139,11 @@ The following information is displayed here:
 
 ### Suspending subtenants
 
-Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available later by clicking **Activate**.
+The tenant's data remains in the database and can be made available later by clicking **Activate**.
+
+Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on the billing perspective of suspended tenants.
 
 >**Important:** Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
 >
@@ -232,8 +234,8 @@ Platform administrators can limit the request rate of each subtenant via the fol
 
 It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}} by using the following subtenant custom fragments:
 
- - cep.queue.limit
- - data-broker.queue.limit
+* cep.queue.limit
+* data-broker.queue.limit
 
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
 

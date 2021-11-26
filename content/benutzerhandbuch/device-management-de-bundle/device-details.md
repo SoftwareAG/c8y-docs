@@ -38,32 +38,20 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe <a href="#alarm-monitoring">Verwenden von Alarmen</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
-<td align="left"><a href="#child-devices">Kindgeräte</a></td>
-<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
+<td align="left"><a href="#events">Ereignisse</a></td>
+<td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu Fieldbus-Geräten. Weitere Informationen finden Sie unter <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#config">Konfiguration</a></td>
-<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#control">Steuerung</a></td>
-<td align="left">Zeigt Operationen an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Operationen</a>. Für jedes Gerät vorhanden.</td>
+<td align="left"><a href="#firmware">Firmware</a></td>
+<td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#dev-profile">Geräteprofil</a></td>
 <td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
-</tr>
-<tr>
-<td align="left"><a href="#events">Ereignisse</a></td>
-<td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
-</tr>
-<tr>
-<td align="left"><a href="#firmware">Firmware</a></td>
-<td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#identity">Identifikator</a></td>
@@ -74,12 +62,12 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
+<td align="left"><a href="#child-devices">Kindgeräte</a></td>
+<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
 </tr>
 <tr>
-<td align="left"><a href="#location">Standort</a></td>
-<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+<td align="left"><a href="#config">Konfiguration</a></td>
+<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#logs">Logdateien</a></td>
@@ -88,6 +76,10 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu über LORIOT LoRa verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
+<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Messwerte</a></td>
@@ -122,6 +114,14 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Verwaltet die auf einem Gerät installierte Software. Näheres dazu finden Sie unter <a href="#managing-software">Verwalten von Software auf einem Gerät</a>.</td>
 </tr>
 <tr>
+<td align="left"><a href="#location">Standort</a></td>
+<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#control">Steuerung</a></td>
+<td align="left">Zeigt Operationen an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Operationen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
 <td align="left"><a href="#tracking">Tracking</a></td>
 <td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
 </tr>
@@ -143,48 +143,6 @@ Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant s
 
 Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
-<a name="child-devices"></a>
-### Kindgeräte
-
-Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.
-
-Weitere Informationen zur Kindgeräte-Liste finden Sie unter [Anzeigen von Geräten](#viewing-devices).
-
-<a name="config"></a>
-### Konfiguration
-
-Die Registerkarte **Konfiguration** ermöglicht das Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts. Abhängig vom Gerät sind folgende Konfigurationen möglich:
- - Textbasierte Konfigurationen
- - Binärbasierte Konfigurationssnapshots
-
-Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots finden Sie unter [Verwalten von Gerätedaten > Verwalten von Konfigurationen](#configuration-repository).
-
-#### So fordern Sie den aktuellen textbasierten Konfigurationssnapshot an.
-
-1. Navigieren Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie auf **Snapshot vom Gerät abrufen**.
-
-#### So können Sie einen textbasierten Konfigurationssnapshot hinzufügen oder bearbeiten
-
-1. In der Registerkarte **Konfiguration** können Sie manuell die Gerätekonfiguration im Textfeld hinzufügen oder bearbeiten.
-2. Klicken Sie auf **Konfiguration an Gerät senden**, um Ihre Eingaben zu speichern.
-
-![Text-based configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-textconfig.png)
-
-> **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
-
-<a name="control"></a>
-### Steuerung
-
-Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
-
-![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
-
-<a name="dev-profile"></a>
-### Geräteprofil
-
-Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
-
 <a name="events"></a>
 ### Ereignisse
 
@@ -194,6 +152,11 @@ Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse
 ### Firmware
 
 Weitere Informationen zum Verwalten und Aktualisieren von Firmware auf einem Gerät finden Sie unter [Verwalten von Firmware auf einem Gerät](#managing-firmware).
+
+<a name="dev-profile"></a>
+### Geräteprofil
+
+Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
 
 <a name="identity"></a>
 ### Identifikator
@@ -226,6 +189,14 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 <td style="text-align:left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie auf <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken. </td>
 </tr>
 <tr>
+<td style="text-align:left">Aktive kritische Alarme</td>
+<td style="text-align:left">Zeigt die aktiven kritischen Alarme für das Gerät an.</td>
+</tr>
+<tr>
+<td style="text-align:left">Gerätedaten</td>
+<td style="text-align:left">Enthält Informationen zum Gerät (ID, Name, Typ, Besitzer, zuletzt aktualisiert). Die Felder <strong>Name</strong> und <strong>Typ</strong> können bearbeitet werden. Unterhalb der allgemeinen Geräteinformationen werden auf der Karte Statusinformationen (nicht editierbar) zu aktiven Alarmen, Verfügbarkeit und Verbindung angezeigt. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
+</tr>
+<tr>
 <td style="text-align:left">Gerätestatus</td>
 <td style="text-align:left">Enthält verbindungsrelevante Informationen, die im Detail unter <a href="#connection-monitoring" class="no-ajaxy">Verbindungsüberwachung</a> beschrieben sind. </td>
 </tr>
@@ -235,14 +206,6 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 <strong>Datenpunkte</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarme</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Ereignisse</strong>: c8y_LocationUpdate</td>
-</tr>
-<tr>
-<td style="text-align:left">Gerätedaten</td>
-<td style="text-align:left">Enthält Informationen zum Gerät (ID, Name, Typ, Besitzer, zuletzt aktualisiert). Die Felder <strong>Name</strong> und <strong>Typ</strong> können bearbeitet werden. Unterhalb der allgemeinen Geräteinformationen werden auf der Karte Statusinformationen (nicht editierbar) zu aktiven Alarmen, Verfügbarkeit und Verbindung angezeigt. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
-</tr>
-<tr>
-<td style="text-align:left">Aktive kritische Alarme</td>
-<td style="text-align:left">Zeigt die aktiven kritischen Alarme für das Gerät an.</td>
 </tr>
 <tr>
 <td style="text-align:left">Gruppenzuordnung</td>
@@ -255,15 +218,35 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tbody>
 </table>
 
-<a name="location"></a>
-### Standort
+<a name="child-devices"></a>
+### Kindgeräte
 
-Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
+Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.
 
-![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
+Weitere Informationen zur Kindgeräte-Liste finden Sie unter [Anzeigen von Geräten](#viewing-devices).
 
-Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y-Position-Ereignis senden, können Sie das gleiche c8y-Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
+<a name="config"></a>
+### Konfiguration
 
+Die Registerkarte **Konfiguration** ermöglicht das Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts. Abhängig vom Gerät sind folgende Konfigurationen möglich:
+ - Textbasierte Konfigurationen
+ - Binärbasierte Konfigurationssnapshots
+
+Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots finden Sie unter [Verwalten von Gerätedaten > Verwalten von Konfigurationen](#configuration-repository).
+
+#### So fordern Sie den aktuellen textbasierten Konfigurationssnapshot an.
+
+1. Navigieren Sie zur Registerkarte **Konfiguration**.
+2. Klicken Sie auf **Snapshot vom Gerät abrufen**.
+
+#### So können Sie einen textbasierten Konfigurationssnapshot hinzufügen oder bearbeiten
+
+1. In der Registerkarte **Konfiguration** können Sie manuell die Gerätekonfiguration im Textfeld hinzufügen oder bearbeiten.
+2. Klicken Sie auf **Konfiguration an Gerät senden**, um Ihre Eingaben zu speichern.
+
+![Text-based configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-textconfig.png)
+
+> **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
 
 <a name="logs"></a>
 ### Logdateien
@@ -375,6 +358,15 @@ Zum Konfigurieren von LAN-Parametern geben Sie einfach **IP-Adresse** und **Subn
 
 > **Info:** Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
 
+<a name="location"></a>
+### Standort
+
+Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
+
+![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
+
+Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y-Position-Ereignis senden, können Sie das gleiche c8y-Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
+
 <a name="service-monitoring"></a>
 ### Serviceüberwachung
 
@@ -403,6 +395,13 @@ Klicken Sie auf **Historie ansehen** rechts in der oberen Menüleiste, um zur Re
 ### Software
 
 Weitere Informationen zum Verwalten und Aktualisieren der auf einem Gerät installierten Software finden Sie unter [Verwalten von Software auf einem Gerät](#managing-software).
+
+<a name="control"></a>
+### Steuerung
+
+Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
+
+![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 <a name="tracking"></a>
 ### Tracking

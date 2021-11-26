@@ -5,6 +5,7 @@ weight: 30
 ---
 
 In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
+xx
 
 * [Abonnierte Anwendungen](#subscribed-applications) - alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt. Diese können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden.
 * [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications).

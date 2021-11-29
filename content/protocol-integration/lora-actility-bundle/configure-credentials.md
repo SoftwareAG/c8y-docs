@@ -9,11 +9,11 @@ Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure yo
 
 ### <a name="create-new-credentials">Creating new account credentials</a>
 
-If you go to **Connectivity** for the first time, you will be asked to provide credentials, actility ThingPark URL and application EUI which is used for LoRa device provisioning.
+If you go to **Connectivity** for the first time, you will be asked to provide Actility ThingPark URL, credentials and application EUI which is used for LoRa device provisioning.
 
 Enter the following information:
 
-- **actility ThingPark URL**: The Actility API URL may change based on the type of the ThingPark Actility account we use (e.g. Community or Enterprise edition). This is an optional field, and the default value is considered if nothing is entered.
+- **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (e.g. Community or Enterprise edition). This is an optional field, and the default value is considered if nothing is entered.
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
 - **username**: Your ThingPark username.
 - **password**: Your ThingPark password.
@@ -24,14 +24,14 @@ The profile ID, username and password are used to retrieve an access token to se
 
 ![Setting provider credentials](/images/device-protocols/lora-actility/lora-admin-settings.png)
 
-Click **Save connectivity settings**. If everything is okay, there will be a message "Credentials successfully saved".
+Click **Save connectivity settings**. If everything is okay, there will be a message "Connectivity settings saved".
 
 <a name="replace-credentials"></a>
 ### Updating connectivity settings
 
 In order to update your connectivity settings, click **Update connectivity settings**.
 
-Enter your actility ThingPark URL, profile ID, username, password and application EUI (for details on actility thingPark URL, profile ID and application EUI see [Creating new account credentials](#create-new-credentials).)
+Enter your Actility ThingPark URL, profile ID, username, password and application EUI (for details on Actility ThingPark URL, profile ID and application EUI see [Creating new account credentials](#create-new-credentials).)
 
 ![Update connectivity settings](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 

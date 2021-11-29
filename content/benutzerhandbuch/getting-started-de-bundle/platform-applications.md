@@ -1,11 +1,12 @@
 ---
 weight: 30
-title: Standard-Anwendungen der Platform
+title: Standardanwendungen der Plattform
 layout: redirect
 aliases:
   - /benutzerhandbuch/overview-de/#cumulocity-applications
   - /benutzerhandbuch/overview/#cumulocity-applications
   - /benutzerhandbuch/getting-started/#cumulocity-applications
+  - /benutzerhandbuch/getting-started-de/#cumulocity-applications
 ---
 
 {{< product-c8y-iot >}} umfasst die drei folgenden Standardanwendungen:

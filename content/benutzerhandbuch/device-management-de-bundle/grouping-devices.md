@@ -32,6 +32,7 @@ Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. Standardmäßi
 
 ![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
 
+<a name="subassets-tab"></a>
 Registerkarte **Kind-Assets**
 
 Oben in der Registerkarte **Kind-Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.

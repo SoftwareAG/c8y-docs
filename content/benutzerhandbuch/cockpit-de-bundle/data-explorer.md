@@ -1,18 +1,7 @@
 ---
-weight: 30
-title: Daten-Explorer
 layout: redirect
-helpcontent: >-
-  Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden. Rechts finden Sie eine Liste aller verfügbaren Datenpunkte. Links sehen Sie die entsprechende Visualisierung.
-
-
-  Klicken Sie auf **Datenpunkt hinzufügen**, um weitere Datenpunkte zur Liste hinzuzufügen. Zusätzlich können Sie auch Alarme oder Ereignisse hinzufügen.
-
-
-  Sie können Änderungen an der Visualisierung des Daten-Explorers vornehmen, z. B. das angezeigte Zeitintervall ändern oder die dargestellten Daten aggregieren, um einen effizienten Überblick über längere Zeiträume zu erhalten. Näheres hierzu finden Sie in der Daten-Explorer-Dokumentation.
-
-
-  Außerdem kann der Daten-Explorer als Widget einem Dashboard hinzugefügt oder als CSV- oder Excel-Datei heruntergeladen werden.
+title: Daten-Explorer
+weight: 30
 ---
 
 <a name="data explorer"></a>

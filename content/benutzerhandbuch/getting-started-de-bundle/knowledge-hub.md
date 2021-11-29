@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Knowledge Hub (nur Trial Tenants)
+title: Knowledge Hub
 layout: redirect
 ---
 
@@ -22,14 +22,14 @@ Der Dialog **Knowlegde Hub** wird geöffnet und zeigt eine Reihe von Optionen.
 
 ### Sitzungen
 
-Die ersten Elemente in der Liste führen Sie schrittweise durch die wichtigsten Themem von {{< product-c8y-iot >}}:
+Die ersten Elemente in der Liste führen Sie schrittweise durch die wichtigsten Themen von {{< product-c8y-iot >}}:
 
 |Thema|Beschreibung|
 |:---|:---|
 |1- Welcome!|Heißt Sie bei {{< product-c8y-iot >}} willkommen|
 |2 - Tour your cockpit|Führt Sie durch die wichtigsten Bereiche der Benutzeroberfläche|
 |3 - See what you can do with IoT|Führt Sie zu einem Demoprojekt, durch das Sie einen ersten Eindruck von den Fähigkeiten von {{< product-c8y-iot >}} gewinnen können|
-|4 - Connect & manage devices|Bietet einen Quick Link zum Verbinden Ihres Smartphones über die {{< product-c8y-iot >}} Sensor-App|
+|4 - Connect & manage devices|Bietet einen Quick Link zum Verbinden Ihres Smartphones über die {{< sensor-app >}}|
 |5 - Create dashboard|Erläutert die ersten Schritte mit Dashboards|
 |6 - Create smart rules & alarms|Zeigt Ihnen, wie Sie Ihre Daten nutzen können, indem Sie Smart Rules und Alarme erstellen|
 |7 - View advanced analytics|Bietet eine Einführung in das Analysieren Ihrer Daten mittels Streaming Analytics und Predictive Analytics|

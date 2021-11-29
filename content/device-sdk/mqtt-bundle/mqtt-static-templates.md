@@ -10,16 +10,21 @@ To ease device integration {{< product-c8y-iot >}} already supports a number of 
 
 #### Quick reference
 
+##### Connection
+
+* <kbd>d:CONNECT 1234:myDevice_10 acme/device_1234</kbd> \
+  Connect the device with serial "1234" and default template myDevice_10 to tenant "acme" and user "device_1234"
+
 ##### Topics
 
 Publish
 
-* <kbd>PUBLISH s/us</kbd> - Send a built-in message
-* <kbd>PUBLISH s/us/5678</kbd> - Send a built-in message to child "5678"
+* <kbd>PUBLISH s/us</kbd> - Send a static template
+* <kbd>PUBLISH s/us/5678</kbd> - Send a static template as child "5678"
 * <kbd>PUBLISH s/ud</kbd> - Send a message using the default template (myDevice_10)
-* <kbd>PUBLISH s/ud/5678</kbd> - Same as above, but to child "5678"
+* <kbd>PUBLISH s/ud/5678</kbd> - Same as above, but as child "5678"
 * <kbd>PUBLISH s/uc/myCommon_10</kbd> - Send a message using myCommon_10 template
-* <kbd>PUBLISH s/uc/myCommon_10/5678</kbd> - Same as above, but to child "5678"
+* <kbd>PUBLISH s/uc/myCommon_10/5678</kbd> - Same as above, but as child "5678"
 
 Subscribe
 
@@ -28,18 +33,13 @@ Subscribe
 * <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using the myCommon_10 template
 * <kbd>SUBSCRIBE s/e</kbd> - Receive error messages
 
-##### Connection
-
-* <kbd>CONNECT 1234:myDevice_10 acme/device_1234</kbd> \
-  Connect the device with serial "1234" and default template "myDevice_10" to tenant "acme" and user "device_1234"
-
 ##### Topic format
 
 `<protocol>/<direction><type>[/<template>][/<child_id>]`
 
 where:
 
-* `<protocol>` can be <kbd>s</kbd> (standard) or <kbd>t</kbd> (transient)
+* `<protocol>` can be <kbd>s</kbd> (persistent), <kbd>t</kbd> (transient), <kbd>q</kbd> (quiescent) and <kbd>c</kbd> (CEP), see [processing modes](#processing-mode) for more information
 * `<direction>` can be <kbd>u</kbd> (upstream from the device), <kbd>d</kbd> (downstream to the device) or <kbd>e</kbd> (error)
 * `<type>` can be <kbd>s</kbd> (static), <kbd>c</kbd> (custom, device-defined), <kbd>d</kbd> (default), <kbd>t</kbd> (template) or <kbd>cr</kbd> (credentials)
 
@@ -60,7 +60,7 @@ where:
 
 ##### Templates
 
-To use the templates listed in below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
+To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 

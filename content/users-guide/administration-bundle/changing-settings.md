@@ -49,8 +49,6 @@ In the **Preferred login mode** field, you can select one of the following optio
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
->**Info:** If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
-
 In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 >**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.

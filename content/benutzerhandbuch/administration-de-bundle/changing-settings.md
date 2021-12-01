@@ -34,8 +34,6 @@ Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wäh
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
->**Info:** Wenn "OAuth Internal" erzwungen wird, kann "Basic Auth" nicht mehr zum Anmelden bei Anwendungen verwendet werden. Ältere Anwendungen zeigen die Anmeldung möglicherweise nicht korrekt an und müssen aktualisiert werden.
-
 Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, indem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
 
 >**Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.

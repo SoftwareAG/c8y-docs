@@ -1,0 +1,232 @@
+---
+weight: 170
+title: Logs
+layout: redirect
+---
+
+The logs tab is used to extract logs from the device. The tab will be available if the fragment 'c8y_LogfileRequest' is present in the c8y_SupportedOperations of the device.
+The device should contain a fragment called c8y_SupportedLogs, which holds an array of the types of logs that it supports. They will later be referenced when logs are requested.
+
+### Setting supported logs
+
+Supported log types shall be announced by devices using the c8y_SupportedLogs fragment in the device’s own managed object.
+
+<table>
+<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
+</tr>
+<tr>
+<td style="text-align:center" ><b>PUT </b>
+</td>
+<td style="text-align:center" ><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+```
+{
+   "c8y_SupportedLogs": [
+      "syslog",
+      "dmesg"
+   ]
+}
+```
+
+|Field|DataType|Mandatory|Details|
+|----|----|----|----|
+|c8y_SupportedLogs|array|Yes|String array or supported log types|
+
+**SmartREST2 example**
+
+The 118 static template is available to announce the supported logs of a device
+
+`118,syslog,dmesg`
+
+### Uploading log files
+
+When users request log files from devices via the logs tab a c8y_LogfileRequest operation is created.
+
+<table>
+<tbody>
+<tr>
+<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
+</td>
+</tr>
+</tbody>
+</table>
+
+```
+{
+   "c8y_LogfileRequest": {
+       "searchText": "kernel",
+       "logFile": "syslog",
+       "dateTo": "2021-09-22T11:40:27+0200",
+       "dateFrom": "2021-09-21T11:40:27+0200",
+       "maximumLines": 1000
+   }
+}
+```
+
+|Field|DataType|Mandatory|Details|
+|----|----|----|----|
+|dateFrom|String|Yes|Start date for log lines|
+|dateTo|String|Yes|End date for log lines|
+|logFile|String|Yes|Type of log for the specific device. (c8y_SupportedLogs)|
+|searchText|String|Yes|A text filter to apply to individual log lines|
+|maximumLines|String|Yes|Maximum amount of lines to transfer|
+
+When the device has gathered the logs it must upload it as a file to Cumulocity. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
+
+<table>
+<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; create event &#10145;&#65039; &#9729;&#65039; </td>
+</tr>
+<tr>
+<td style="text-align:center">
+<b>POST</b>
+</td>
+<td style="text-align:center">
+<em>/event/events</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+```
+{
+   "source": {
+       "id": "4801"
+   },
+   "type": "c8y_Logfile",
+   "time": "2021-09-15T15:57:41.311Z",
+   "text": "syslog log file"
+}
+```
+
+|Field|DataType|Mandatory|Details|
+|----|----|----|----|
+|source|String|Yes|ID of the device|
+|type|String|Yes|Type of the log file|
+|time|String|Yes|Time when the event occurred|
+|text|String|Yes|Event text|
+
+If desired the device may also include the *c8y_LogfileRequest* fragment from the operation or the operation ID into the event. The file is the attached to the event using it’s event ID and event binaries API
+
+<table>
+<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; upload binary &#10145;&#65039; &#9729;&#65039;
+</td>
+</tr>
+<tr>
+<td style="text-align:center"><b>POST</b>
+</td>
+<td style="text-align:center"><em>/event/events/&lt;eventId&gt;/binaries</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+```http
+Host: https://<TENANT_DOMAIN>
+Authorization: <AUTHORIZATION>
+Accept: application/json
+Content-Type: multipart/form-data;boundary="boundary"
+
+--boundary
+Content-Disposition: form-data; name="object"
+
+{ "name": "syslog.txt", "type": "text/plain" }
+--boundary
+Content-Disposition: form-data; name="file"; filename="syslog.txt"
+Content-Type: text/plain
+
+Oct 25 13:28:53 wtp kernel: [  719.554855] sd 6:0:0:0: [sdb] Write Protect is off
+Oct 25 13:28:53 wtp kernel: [  719.554864] sd 6:0:0:0: [sdb] Mode Sense: 03 00 00 00
+Oct 25 13:28:53 wtp kernel: [  719.555033] sd 6:0:0:0: [sdb] No Caching mode page found
+--boundary--
+```
+
+After successful completion of the upload, the device must include a URL to the uploaded file into the *c8y_LogfileRequest* fragment of the operation. The link must be presented as property "file". This action can be combined with setting the operation status to SUCCESSFUL
+
+<table>
+<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align:center" colspan="2" rowspan="1">
+&#x1f4f1;&#10145; &#65039; update operation &#10145;&#65039; &#9729;&#65039;
+</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<b>PUT</b>
+</td>
+<td style="text-align:center">
+<em>/devicecontrol/operations/&lt;operation ID&gt;</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+```
+{
+   "status": "SUCCESSFUL",
+   "c8y_LogfileRequest": {
+       "searchText": "kernel",
+       "logFile": "syslog",
+       "dateTo": "2021-09-22T11:40:27+0200",
+       "dateFrom": "2021-09-21T11:40:27+0200",
+       "maximumLines": 1000,
+       "file": "https://demos.cumulocity.com/event/events/157700/binaries"
+   }
+}
+```
+
+|Field|DataType|Mandatory|Details|
+|----|----|----|----|
+|status|String|Yes|Operation status|
+|dateFrom|String|Yes|Start date for log lines|
+|dateTo|String|Yes|End date for log lines|
+|logFile|String|Yes|Type of log for the specific device. (c8y_SupportedLogs)|
+|searchText|String|Yes|A text filter to apply to individual log lines|
+|maximumLines|String|Yes|Maximum amount of lines to transfer|
+|file|String|Yes|URL where the log file was uploaded to|
+
+
+The device is expected to perform the following actions
+1. Set operation status to EXECUTING
+2. Load, filter, and crop the log file as specified in the operation
+3. Create a log file event
+4. Upload the log file as binary attachment to said event
+5. Set the operation status to SUCCESSFUL and include a URL to the uploaded log file
+
+**SmartREST2 example**
+
+Cumulocity offers the 522 static response template for receiving *c8y_LogfileRequest* operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time.
+1. Receive c8y_LogfileRequest operation<br>
+  `522,DeviceSerial,syslog,2021-09-21T11:40:27+0200,2021-09-22T11:40:27+0200,ERROR,1000`
+2. Set operation status to EXECUTING <br>
+  `501,c8y_LogfileRequest`
+3. Create log file event using REST API
+4. Upload log file as event binary to newly created event using REST API
+5. Set operation status to SUCCESSFUL and supply uploaded file URL <br>
+  `503,c8y_LogfileRequest,"https://demos.cumulocity.com/event/events/157700/binaries"`

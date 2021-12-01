@@ -35,7 +35,7 @@ Any event can be extended in the same way as described for managed objects above
 
 An audit log extends an event through:
 
--   A user name of the user that carried out the activity.
+-   A username of the user that carried out the activity.
 -   An application that was used to carry out the activity.
 -   The actual activity.
 -   A severity.

@@ -26,7 +26,7 @@ The **User** menu contains the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, see <a href="#user-settings" class="no-ajaxy">To change user settings</a>. </td> for details.
+<td style="text-align:left">Provides access to the user settings, see <a href="#change-user-settings" class="no-ajaxy">To change user settings</a> for more details. </td>
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>
@@ -35,6 +35,10 @@ The **User** menu contains the following items:
 <tr>
 <td style="text-align:left">Logout</td>
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
+</tr>
+<tr>
+<td style="text-align:left">Request support</td>
+<td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
 </tr>
 <tr>
 <td style="text-align:left">Activate support</td>
@@ -49,7 +53,7 @@ Note that this option is only available if support user access is not set global
 </tbody>
 </table>
 
-<a name="user-settings"></a>
+<a name="change-user-settings"></a>
 ### To change user settings
 
 Several account settings can be changed by the user.

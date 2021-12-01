@@ -901,7 +901,7 @@ You can use this mechanism for example to insert device names or alarm text into
 </table>
 
 > **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
-The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York.
+The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York. See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
 
 **Fields specific for alarms**
 
@@ -947,8 +947,6 @@ The variable #{time:TZ=America/New_York} for example displays the time using the
 
 
 **Fields specific for measurements**
-
-> **Info:** This section only applies to tenants that are using Apama (not Esper/CEP).
 
 <table>
 <colgroup>

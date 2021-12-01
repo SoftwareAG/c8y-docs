@@ -16,7 +16,7 @@ When you use a POST request, the server starts a task running in the background 
 
 ### Authentication
 
-If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. {{< product-c8y-iot >}} Edge supports basic authentication and the authentication is performed by the {{< management-tenant >}}. For a successful authentication, you must prefix **management** to the user name. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
+If you are using the REST APIs for configuring the Edge appliance, most endpoints require authentication except `/edge/tasks/latest-installation` and `/edge/configuration/domain`. {{< product-c8y-iot >}} Edge supports basic authentication and the authentication is performed by the {{< management-tenant >}}. For a successful authentication, you must prefix **management** to the username. The authorization header is formed as `Basic <Base64(<tenantID>/<c8yuser>:<password>)>`. For instance, if your tenantID, username and password are **management**, **admin** and **password** respectively, you can generate the Base64 string with the following command:
 
 	$ echo -n management/admin:password | base64
 
@@ -76,7 +76,7 @@ The endpoint returns:
 			"licensed_domain_name": "myown.iot.com"
 		}
 
-  Here, the `domain_name` specifies the domain name that is configured. The `licensed_domain_name` specifies the domain name that is attached to the license. 
+  Here, the `domain_name` specifies the domain name that is configured. The `licensed_domain_name` specifies the domain name that is attached to the license.
 
 ### POST /edge/install
 
@@ -126,7 +126,7 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://192.168.66.10/edge/upload/1/certificate_key"}
 		 ]
 		}
-	
+
 	If you have set `"certificate": "generate"`, the `uploads` array contains only the `licence` entry.
 
 Note that this task does not start the installation. You must run subsequent calls to upload the license and the certificate files to start the installation.
@@ -153,7 +153,7 @@ Content-Type: application/json
 
 	{
     "domain_name": "new.domain.com",
-    "certificate": "upload" 
+    "certificate": "upload"
 	}
 ```
 In the JSON format above, the value of `certificate` can be `generate` or `upload`.
@@ -175,16 +175,16 @@ The endpoint returns:
 			{"name":"certificate_key","url":"https://myown.iot.com/edge/upload/4/certificate_key"}
 		 ]
 		}
-	
+
 	If the new domain name is compatible with the existing license, the `uploads` array will not contain the `licence` entry.
-	
+
 	If the new domain name is compatible with the existing certificate, the `uploads` array will not contain the `certificate` and `certificate_key` entries.
-	
+
 	The task starts immediately and can be polled if there are no uploads. For example, the response would not have an `uploads` key:
-	
+
 		{
 			"id":"1"
-		} 
+		}
 
 You must run subsequent calls to upload the license and the certificate files to change the domain name if the `uploads` array requires you to upload.
 

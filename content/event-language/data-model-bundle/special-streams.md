@@ -45,7 +45,7 @@ Although it is technically not required by {{< product-c8y-iot >}} to have the c
 
 _Note:_
 
-This feature will only work if your tenant is linked to a sms provider. For more information please contact [product support](/welcome/contacting-support/).
+This feature will only work if your tenant is linked to a sms provider. For more information please contact [product support](https://cumulocity.com/guides/welcome/contacting-support/).
 
 Example:
 
@@ -68,7 +68,7 @@ This stream enables the possibility to send push notifications from {{< product-
 
 _Note:_
 
-This feature will only work if your tenant is linked to a push provider. For more information please contact [product support](/welcome/contacting-support/).
+This feature will only work if your tenant is linked to a push provider. For more information please contact [product support](https://cumulocity.com/guides/welcome/contacting-support/).
 
 Example:
 

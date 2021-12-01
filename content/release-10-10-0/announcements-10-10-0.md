@@ -37,6 +37,10 @@ The Cumulocity IoT platform continually improves its security posture by regular
 
 To enable customers with self-hosted or dedicated environments to determine which strength of cipher to support for MQTT over TLS new configurable values have been introduced. This configuration is only available to the Management tenant; further information on how to set this configuration can be found in the *Cumulocity IoT platform - Operations guide*.
 
+### Enforcement of user passwords to meet password complexity
+
+When the use of green passwords is enforced and the minimal strong password length (`system.password.green.min-length` property) is higher than the device password length (`device-user.password.length` property), the system will use the `green.min-length` value, i.e. generate a longer password. Prior to this change, the system rejected auto-generated passwords that were too short blocking device bootstrap.
+
 ### Streaming Analytics
 
 #### Change in tenant options

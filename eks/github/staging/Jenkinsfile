@@ -11,7 +11,7 @@ pipeline {
     }
   }
   environment {
-    YUM_SRV = 'yum.staging.cumulocity.com'
+    YUM_SRV = 'yum.resources.cumulocity.com'
     YUM_USR = 'hudson'
     YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
     HUGO_PARAMS = ""

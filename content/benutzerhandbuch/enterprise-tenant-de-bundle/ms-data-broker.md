@@ -3,6 +3,7 @@ weight: 90
 title: Microservice-basierter Data Broker
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#ms-data-broker
   - /benutzerhandbuch/enterprise-edition-de/#ms-data-broker
 ---
 
@@ -56,7 +57,7 @@ Der Data Broker-Agent ist so vorkonfiguriert, dass er die Rate überwacht, mit d
 
 Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung einen festgelegten Schwellwert überschreitet. Dies erfolgt in der Regel dann, wenn es aufgrund verschiedener Faktoren zu einem Rückstand an unzugestellten Ereignissen an den Zielmandanten gekommen ist.
 
-##### Durchschnittlich gesendete Bytes pro Sekunde bei  Anfragen
+##### Durchschnittlich gesendete Bytes pro Sekunde bei Anfragen
 
 Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
 

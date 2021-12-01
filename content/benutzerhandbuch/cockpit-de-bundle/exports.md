@@ -1,14 +1,9 @@
 ---
-weight: 65
-title: Verwalten von Exporten
-layout: redirect
-helpcontent: >-
-  Mit der Export-Funktionalität können Sie spezifische Daten in Dateien exportieren. Bei jedem Export können Sie den Ausgangsdateityp (Excel oder CSV) festlegen, den Export planen, die Ziel-E-Mail-Adresse(n) angeben und optional Filter für bestimmte Geräte, Zeitintervalle oder Felder auswählen.
-
-
-  Klicken Sie in der oberen Menüleiste auf **Export hinzufügen**, um einen neuen Export zu konfigurieren, oder verwenden Sie das Menüsymbol, um Exporte zu bearbeiten, zu duplizieren oder zu löschen.
 aliases:
-  - /benutzerhandbuch/cockpit-de/#export
+- /benutzerhandbuch/cockpit-de/#export
+layout: redirect
+title: Verwalten von Exporten
+weight: 65
 ---
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
@@ -19,10 +14,9 @@ Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Auß
 
 Um alle Exporte anzuzeigen, klicken Sie auf **Exportieren** im Menü **Konfiguration** des Navigators.
 
-Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
+Die Seite **Exportieren** listet alle Exporte mit Namen, Dateityp und Zeitintervall auf.
 
 ![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
-
 
 <a name="add-export"></a>
 #### So fügen Sie einen Export hinzu

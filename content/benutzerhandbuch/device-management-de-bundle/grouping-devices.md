@@ -1,10 +1,10 @@
 ---
-weight: 30
-title: Gruppieren von Geräten
 layout: redirect
+title: Gruppieren von Geräten
+weight: 30
 ---
 
-Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
+Sie können Geräte nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
 
 {{< product-c8y-iot >}} unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen:
 
@@ -32,7 +32,8 @@ Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. Standardmäßi
 
 ![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
 
-Registerkarte **Kind-Assets**
+<a name="subassets-tab"></a>
+**Registerkarte "Kind-Assets"**
 
 Oben in der Registerkarte **Kind-Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.
 
@@ -77,7 +78,6 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie eine Operation in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
 > **Info:** Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
-
 
 <a name="add-group"></a>
 ### So fügen Sie eine Gruppe hinzu
@@ -181,7 +181,6 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 1. Wählen Sie im Navigator die Gruppe oder das Gerät aus, die/das Sie zu einer anderen Gruppe verschieben oder dieser hinzufügen möchten.
 2. Ziehen Sie sie zur gewünschten Gruppe und legen Sie sie dort ab.
 3. Wählen Sie im darauf folgenden Dialog, ob das Gerät verschoben oder hinzugefügt werden soll.
-
 
 <a name="smart-groups"></a>
 ### Verwenden von dynamischen Gruppen

@@ -1,7 +1,7 @@
 ---
-weight: 90
-title: Verwenden von Simulatoren
 layout: redirect
+title: Verwenden von Simulatoren
+weight: 90
 ---
 
 Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Geräten simuliert werden, wie:
@@ -15,7 +15,7 @@ Mit dem Simulator in {{< product-c8y-iot >}} können alle Aspekte von IoT-Gerät
 
 ### Allgemeines zu Simulatoren
 
-Mit dem Simulator können Sie "künstliche" Geräte erstellen, die den gleichen Grad an Funktionalität aufweisen, wie verbundene Hardwaregeräte.
+Mit dem Simulator können Sie Geräte erstellen, die den gleichen Grad an Funktionalität simulieren wie verbundene Hardwaregeräte.
 
 Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die {{< product-c8y-iot >}}-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
 
@@ -90,7 +90,7 @@ Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens
 #### So fügen Sie eine Anweisung hinzu
 
 1. Klicken Sie auf **Anweisung hinzufügen**, um dem Simulator eine neue Anweisung hinzuzufügen.
-2.  Wählen Sie im darauf folgenden Dialog eine Nachricht aus der Auswahlliste.
+2. Wählen Sie im darauf folgenden Dialog eine Nachricht aus der Auswahlliste.
 3. Legen Sie je nach Typ der Nachricht die erforderlichen Parameter fest.
 3. Klicken Sie auf **Speichern**.
 

@@ -1,7 +1,7 @@
 ---
-weight: 60
-title: Verwalten von Gerätedaten
 layout: redirect
+title: Verwalten von Gerätedaten
+weight: 60
 ---
 
 ### Übersicht
@@ -102,7 +102,7 @@ Das Objekt wird aus dem Firmware-Repository gelöscht.
 
 Bewegen Sie den Mauszeiger in den Details einer bestimmten Firmware über den Eintrag der zu löschenden Version oder des zu löschenden Patches und klicken Sie auf das Löschen-Symbol. Die Firmware-Version oder der Firmware-Patch wird aus den Firmware-Details gelöscht.
 
-
+<a name="managing-firmware"></a>
 #### Verwalten von Firmware auf einem Gerät
 
 Sie können die für ein Gerät installierte Firmware auf der Registerkarte **Firmware** dieses Geräts verwalten.
@@ -209,7 +209,7 @@ Die Software wird mit sämtlichen Versionen aus dem Software-Repository gelösch
 
 Bewegen Sie den Mauszeiger in den Details einer bestimmten Software über den Eintrag der zu löschenden Version und klicken Sie auf das Löschen-Symbol. Die Software-Version wird aus den Software-Details gelöscht.
 
-
+<a name="managing-software"></a>
 #### Verwalten von Software auf einem Gerät
 
 Sie können die Software eines Geräts auf der Registerkarte **Software** dieses Geräts verwalten.
@@ -271,7 +271,7 @@ Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der a
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen
 
-{{< product-c8y-iot >}} können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
+In {{< product-c8y-iot >}} können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
 
 Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben.
 
@@ -463,6 +463,7 @@ Zum Löschen eines Geräteprofils klicken Sie auf das Menüsymbol rechts neben d
 
 > **Info:** Wenn Sie ein Profil löschen, wird der Eintrag aus dem Geräteprofil-Repository gelöscht. Dies hat keine Auswirkungen auf die Geräte, die das Profil aktuell nutzen.
 
+<a name="applying-device-profiles"></a>
 ### Geräteprofile auf Geräte anwenden
 
 Geräteprofile können angewendet werden auf:

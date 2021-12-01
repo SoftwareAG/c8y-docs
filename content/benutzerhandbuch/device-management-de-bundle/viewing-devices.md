@@ -1,7 +1,7 @@
 ---
-weight: 20
-title: Anzeigen von Geräten
 layout: redirect
+title: Anzeigen von Geräten
+weight: 20
 ---
 
 Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
@@ -108,7 +108,6 @@ Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
 > **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
-
 
 <a name="searching-devices"></a>
 ### So suchen Sie nach Geräten

@@ -1,7 +1,7 @@
 ---
-weight: 70
-title: Ändern von Einstellungen
 layout: redirect
+title: Ändern von Einstellungen
+weight: 70
 ---
 
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos verwalten:
@@ -11,7 +11,6 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - Die [Attributsbibliothek](#properties) verwalten.
 - [Zugangsdaten für den SMS-Anbieter](#sms-provider) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
-
 
 <a name="authentication"></a>
 ### Ändern von Authentifizierungseinstellungen
@@ -95,6 +94,12 @@ Der Standardwert ist zwei Wochen. Es kann auch ein beliebiger negativer Wert ein
 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
+> **Info:** Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel).
+Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich,
+die OAuth-Authentifizierung zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist.
+Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+
+
 <a name="single-sign-on"></a>
 ### Konfigurieren von Single Sign-On
 
@@ -170,6 +175,8 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 
 Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cockpit" zugewiesen.
 
+Falls keine Rechtezuordnung dem Benutzerzugriff-Token entspricht, erhält der Benutzer beim Versuch sich anzumelden eine "Zugriff verweigert"-Meldung. Dies geschieht auch, wenn keine Rechtezuordnung definiert ist, was dazu führt, dass sich sämtliche Benutzer nicht über SSO anmelden können.
+
 Klicken Sie auf **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie auf **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie auf das Minus-Symbol, um eine Regel zu entfernen.
 
 Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen "business" und "admin".
@@ -201,6 +208,14 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-3.png)
+
+Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
+
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-user-data-mappings.png)
+
+Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
+
+Mapping für Alias ist nicht verfügbar, da es im Kontext von Single-Sign-On nicht verwendet wird.
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.
 
@@ -248,9 +263,9 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". In Azure AD sind keine weiteren Schritte erforderlich.
+Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adresse als Redirect-URI. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". Die Redirect-URI muss für eine Webanwendung und nicht für eine Einzelseitenanwendung festgelegt sein. In Azure AD sind keine weiteren Schritte erforderlich.
 
-##### {{< product-c8y-iot >}} Konfiguration
+##### Cumulocity IoT-Konfiguration
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
@@ -276,7 +291,7 @@ Optional kann Single Logout konfiguriert werden:
 |Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
 |Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
-Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung.
+Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, des Benutzerdaten-Mappings, der Benutzer-ID und der Signaturverifizierung.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-2.png)
 
@@ -406,7 +421,9 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
+
+	>**Info:** Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
 
 2. Wählen Sie auf der Seite **SMS-Anbieter** einen der verfügbaren SMS-Anbieter aus der Auswahlliste **SMS-Anbieter**. Sie können mit der Eingabe beginnen, um Elemente zu filtern und Ihren bevorzugten Anbieter leichter zu finden.
 
@@ -424,7 +441,6 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
-- [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/benutzerhandbuch/device-management-de/#connectivity)

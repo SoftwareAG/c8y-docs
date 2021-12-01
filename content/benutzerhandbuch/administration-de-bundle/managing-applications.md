@@ -1,7 +1,7 @@
 ---
-weight: 30
-title: Verwalten von Anwendungen
 layout: redirect
+title: Verwalten von Anwendungen
+weight: 30
 ---
 
 In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
@@ -166,6 +166,8 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 
 ### Enterprise-Anwendungen
 
+Im {{< enterprise-tenant-de >}} finden Sie die folgenden zusätzlichen Anwendungen:
+
 <table>
 <col width="200">
 <col width="350">
@@ -251,13 +253,7 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
-<td style="text-align:left">impact</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPCUA</a></td>
+<td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPC UA</a></td>
 <td style="text-align:left">Kommunizieren Sie mit OPC UA-Servern über ein OPC UA-Geräte-Gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
 <td style="text-align:left">Microservice</td>
@@ -321,7 +317,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+>**Wichtig:** Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 
 <a name="uploading-microservices"></a>
 ##### So laden Sie einen Microservice hoch

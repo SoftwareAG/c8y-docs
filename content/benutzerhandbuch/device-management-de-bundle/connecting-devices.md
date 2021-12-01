@@ -1,10 +1,12 @@
 ---
-weight: 11
-title: Verbinden von Geräten
 layout: redirect
+title: Verbinden von Geräten
+weight: 11
 ---
 
-### <a name="dev-registration">
+<a name="dev-registration"></a>
+
+### Geräteregistrierung
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
@@ -37,7 +39,6 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
-
 <a name="device-registration-manually"></a>
 #### So verbinden Sie ein Gerät manuell
 
@@ -46,7 +47,7 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
 
-	<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
@@ -63,8 +64,7 @@ Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung 
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
 Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
-> **Info:** Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< product-c8y-iot >}} Device Partner Portal](https://devicepartnerportal.softwareag.com/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
-
+> **Info:** Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 
 <a name="creds-upload"></a>
 #### So führen Sie eine Bulk-Registrierung von Geräten durch
@@ -74,7 +74,7 @@ Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-io
 1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
 
-	<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
 3. Klicken Sie auf **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie auf Ihrem Computer zu der Datei navigieren.
 
@@ -91,9 +91,9 @@ Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierun
 Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
 
 ```asciidoc
-		ID;PATH
-		Device1;Group A
-		Device2;Group A/Group B			
+    ID;PATH
+    Device1;Group A
+    Device2;Group A/Group B			
 ```
 
 
@@ -106,9 +106,9 @@ Die CSV-Dateien müssen mindestens die IDs als Gerätebezeichnung und die Zugang
 Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie in diesem Beispiel gezeigt.
 
 ```asciidoc
-		ID;Credentials;PATH;ICCID;NAME;TYPE
-		006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
-		006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+    ID;Credentials;PATH;ICCID;NAME;TYPE
+    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
 ```
 
 Um die Geräte zu verbinden, werden diese mit den relevanten Informationen vorregistriert. Genauer gesagt wird jedes Gerät folgendermaßen konfiguriert:
@@ -119,7 +119,7 @@ Um die Geräte zu verbinden, werden diese mit den relevanten Informationen vorre
 
 Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung zur Anzahl der Geräte, die vorregistriert wurden, sowie zu gegebenenfalls aufgetretenen Fehlern.
 
-Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktische CSV-Vorlagendateien bereit, die Sie aus dem Registrierungsassistenten herunterladen können, um die Struktur anzuzeigen oder zu kopieren. 
+Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktische CSV-Vorlagendateien bereit, die Sie aus dem Registrierungsassistenten herunterladen können, um die Struktur anzuzeigen oder zu kopieren.
 
 >**Info:** Wenn das Gerät mit der jeweiligen Bezeichnung bereits existiert, wird es mit den Daten aus der CSV-Datei aktualisiert.
 

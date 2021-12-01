@@ -3,6 +3,7 @@ weight: 10
 title: Verwalten von Mandanten
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#managing-tenants
   - /benutzerhandbuch/enterprise-edition-de/#managing-tenants
 ---
 
@@ -230,6 +231,7 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 * Stream-Puffer begrenzen - Begrenzung des MQTT-Anfragenpuffers für den Mandanten
 * Stream-Anfragen begrenzen - Begrenzung der MQTT-Anfragen für den Mandanten pro Sekunde
 
+>**Info:** Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
 Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant-de >}} aus durchgeführt werden:
 
  - cep.queue.limit

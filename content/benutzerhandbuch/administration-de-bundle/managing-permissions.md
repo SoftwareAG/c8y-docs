@@ -1,7 +1,7 @@
 ---
-weight: 13
-title: Verwalten von Berechtigungen
 layout: redirect
+title: Verwalten von Berechtigungen
+weight: 13
 ---
 
 Berechtigungen legen fest, welche Funktionen ein Benutzer in {{< product-c8y-iot >}}-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
@@ -12,7 +12,6 @@ Die folgenden Rollen können zugewiesen werden:
 - Stammdatenrollen: Enthalten Berechtigungen, die auf Gerätegruppen zutreffen.
 
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
-
 
 <a name="global"></a>
 ### Globale Rollen
@@ -104,7 +103,6 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 |business|Hat Zugriff auf alle Geräte und deren Daten, aber hat keine Verwaltungsberechtigung für den Mandanten.
 |readers|Kann alle Daten lesen (einschl. Benutzer, im Unterschied zu "Globaler Leser").
 
-
 <a name="create-edit-roles"></a>
 #### So fügen Sie eine globale Rolle hinzu
 
@@ -146,7 +144,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 <tbody>
 <tr>
 <td align="left">Alarme</td>
-<td align="left">Anzeigen oder Bearbeiten von Alarmen für Geräte.</td>
+<td align="left">Anzeigen oder Bearbeiten von Alarmen.</td>
 </tr>
 
 <tr>
@@ -156,7 +154,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Audits</td>
-<td align="left">Anzeigen oder Erstellen von Audit-Logs für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Audit-Logs.</td>
 </tr>
 
 <tr>
@@ -181,7 +179,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Ereignisse</td>
-<td align="left">Anzeigen oder Erstellen von Ereignissen für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Ereignissen.</td>
 </tr>
 
 <tr>
@@ -201,7 +199,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Messwerte</td>
-<td align="left">Anzeigen oder Erstellen von Messwerten für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Messwerten.</td>
 </tr>
 
 <tr>
@@ -281,7 +279,7 @@ Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
-Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menu **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
+Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
 

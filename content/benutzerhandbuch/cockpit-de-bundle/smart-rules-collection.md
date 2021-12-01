@@ -243,7 +243,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Wie folgt eskalieren</td>
-<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie auf <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren: <br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> - SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> - Immer: Aktion wird immer ausgeführt. <br> - Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
+<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie auf <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren:<br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> - SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> - Immer: Aktion wird immer ausgeführt. <br> - Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -562,7 +562,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad: </b>Schweregrad des auszulösenden Alarms. <br><b>Text: </b>Alarm-Text.</td>
+<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad: </b>Schweregrad des auszulösenden Alarms.<br><b>Text: </b>Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -698,7 +698,6 @@ und der Messwert 55 beträgt, wird ein WENIGER WICHTIGER Alarm (gelb) erzeugt.
 
 Durch diese Mechanismen können globale Schwellwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.
 
-
 **Parameter**
 
 Die Regel verwendet die folgenden Parameter:
@@ -766,9 +765,9 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Eingehende Werte innerhalb des roten Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
 
-* Eingehende Werte innerhalb des gelben Bereichs: <br>Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des gelben Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
 
-* Messwert außerhalb des gelben und roten Bereichs: <br>Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
+* Messwert außerhalb des gelben und roten Bereichs: <br> Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
 
 **Fehlerbehebung**
 
@@ -781,6 +780,9 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 > **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+
 
 <a name="threshold-explicit"></a>
 ### Bei explizitem Schwellwert Alarm erzeugen
@@ -854,6 +856,8 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 > **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 
 <a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen
@@ -1041,10 +1045,10 @@ Hier lassen sich beispielsweise die folgenden Variablen definieren:
   </tr>  
   <tr>
     <td>#{source.X.Y} </td>
-    <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Trigger. Zum Beispiel:
+    <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Triggers. Beispiel:
     <br> #{source.c8y_Hardware.serialNumber} > Seriennummer des Geräts.
     <br> #{source.c8y_Notes} > Anmerkungsfeld des Geräts.</td>
   </tr>  
 </table>
 
->**Info:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.
+> **Wichtig:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.

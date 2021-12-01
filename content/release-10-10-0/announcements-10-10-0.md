@@ -27,6 +27,16 @@ All CSS classes with the prefix `fa-**` are now updated to use the `dlt-icon-**`
 
 To use these icons, developers are asked to follow the c8y-icon directive.
 
+#### Re-introducing weak ciphers for MQTT (over TLS) connections
+
+Cumulocity IoT is re-introducing the support for AES-CBC ciphers for MQTT(over TLS) connections.
+
+What does this mean and how does it impact you?
+
+The Cumulocity IoT platform continually improves its security posture by regularly updating support for the latest standards and protocols. With the 10.10 release, we removed support for weak ciphers for MQTT (over TLS) connections. Unfortunately some customers' devices could not upgrade to the stronger ciphers and were therefore unable to connect to the platform. We have therefore reinstated the weaker ciphers in the 10.10 and subsequent releases.
+
+To enable customers with self-hosted or dedicated environments to determine which strength of cipher to support for MQTT over TLS new configurable values have been introduced. This configuration is only available to the Management tenant; further information on how to set this configuration can be found in the *Cumulocity IoT platform - Operations guide*.
+
 ### Streaming Analytics
 
 #### Change in tenant options

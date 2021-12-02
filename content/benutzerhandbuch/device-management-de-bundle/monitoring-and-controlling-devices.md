@@ -1,9 +1,8 @@
 ---
-weight: 40
-title: Überwachen und Steuern von Geräten
 layout: redirect
+title: Überwachen und Steuern von Geräten
+weight: 40
 ---
-
 
 <a name="map"></a>
 ### Lokalisieren von Geräten
@@ -55,7 +54,7 @@ Push-Verbindung bedeutet Verbindung von {{< product-c8y-iot >}} zu /notification
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
-<a name="maintenance-mode"></a> **Maintenance mode**
+<a name="maintenance-mode"></a> **Wartungsmodus**
 
 Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte **Status** gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst.
 
@@ -108,8 +107,7 @@ Klicken Sie auf **Serviceüberwachung** im Menü **Geräte** des Navigators, um 
 
 ![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
-Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an.
-
+Die Seite **Serviceüberwachung** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
 
 <a name="alarm-monitoring"></a>
 ### Verwenden von Alarmen
@@ -141,7 +139,7 @@ Alarme werden nach Schweregraden klassifiziert. {{< product-c8y-iot >}} enthält
 
 Die Registerkarte **Alarm** ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
-Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Nochmaliges Klicken zeigt den Bereich wieder an.
+Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
 
 In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
 
@@ -173,7 +171,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br><strong>Bestätigt</strong>: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
+<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br> <strong>Bestätigt</strong>: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
 </tr>
 <tr>
 <td align="left">Letztes Auftreten</td>
@@ -315,13 +313,40 @@ Bulk-Operationen können sich in einem der folgenden Status befinden:
 
 In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angezeigt:
 
-| Info   | Beschreibung |
-| :----- | :---------- |
-| Status  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
-| Name   | Name der Operation. |
-| Fortschrittsanzeige | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an. |
-| Start- und Enddatum | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen. |
-| Schaltfläche Aktualisieren | Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige |
+<table>
+<colgroup>
+<col width="30%">
+<col width="70%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Info</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Status</td>
+<td style="text-align:left">GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben).</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Name der Operation.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fortschrittsanzeige</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an.</td>
+</tr>
+<tr>
+<td style="text-align:left">Start- und Enddatum</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen.</td>
+</tr>
+<tr>
+<td style="text-align:left">Schaltfläche Aktualisieren</td>
+<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige</td>
+</tr>
+</tbody>
+</table>
 
 Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zur Bulk-Operation anzeigen.
 

@@ -1,7 +1,6 @@
 ---
-weight: 20
 title: Anzeigen von Audit-Logs
-
+weight: 20
 ---
 
 Audit-Logs zeigen die von Benutzern ausgeführten Operationen.

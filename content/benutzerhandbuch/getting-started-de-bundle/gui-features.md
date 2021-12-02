@@ -3,8 +3,8 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /benutzerhandbuch/overview-de/#gui-features
   - /benutzerhandbuch/overview/#gui-features
+  - /benutzerhandbuch/overview-de/#gui-features
 ---
 
 
@@ -36,11 +36,11 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Registerkarten</b></td>
-<td style="text-align:left">Einige Seiten, wie etwa die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt, entweder horizontal oder vertikal dargestellt.</td>
+<td style="text-align:left">Einige Seiten, wie etwa die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
-<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Suche-Schaltfläche</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus-Schaltfläche</b><br> Die meisten Seiten zeigen eine <b>Plus</b>-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, dass heißt, die angezeigten Inhalte sind abhängig von der aktiven Seite. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>Benutzer-Schaltfläche</b><br> Rechts neben dem Application Switcher befindet sich die <b>Benutzer</b>-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Befehlen zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus-Schaltfläche</b><br> Die meisten Seiten zeigen eine <b>Plus</b>-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, das heißt, die angezeigten Kommandos sind abhängig von der aktiven Seite. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die <b>Benutzer</b>-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
@@ -66,12 +66,12 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) sowie [eigene Anwendungen](/benutzerhandbuch/administration-de/#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
-Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
+Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
-
+<!-- Screenshot necessary? -->
 
 <a name="searching-and-filtering"></a>
 ### Such- und Filterfunktionalität
@@ -79,13 +79,23 @@ Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle w
 <a name="searching"></a>
 #### Volltextsuche
 
-{{< product-c8y-iot >}} bietet eine Volltextsuche, die über das Suchfeld rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
+{{< product-c8y-iot >}} bietet eine Volltextsuche, die über die Schaltfläche **Suche** <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
 
-![Search field](/images/benutzerhandbuch/getting-started/getting-started-search-button.png)
+Bei Eingabe eines Suchbegriffs in das Textfeld oben im Fenster **Suche** gibt {{< product-c8y-iot >}} alle Assets (Gruppen, Geräte, Kindgeräte) zurück, die den Suchkriterien entsprechen.
 
-Das Suchergebnis umfasst Gruppen, Geräte und Kindgeräte. Bei Eingabe eines Suchbegriffs in das Textfeld gibt {{< product-c8y-iot >}} alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente).
+<img src="/images/benutzerhandbuch/getting-started/getting-started-search-button.png" alt="Search result" style="max-width: 100%">
 
-Die Suchfunktion basiert auf der [MongoDB-Volltextsuche](https://docs.mongodb.com/manual/text-search/).
+Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen entsprechen. Um weitere Details anzuzeigen, klicken Sie rechts unten auf **Zur Asset-Datentabelle**. Daraufhin werden sämtliche Suchergebnisse in Tabellenform angezeigt, siehe auch [Device Management > Gruppieren von Geräten > Kind-Assets](/benutzerhandbuch/device-management-de#subassets-tab).
+
+Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
+
+>**Wichtig:** Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+
+##### Exakte Übereinstimmung
+
+Standardmäßig wird die Suchoption **Exakte Übereinstimmung** angewendet.
+
+Die zugrundeliegende Suchfunktion basiert auf der MongoDB-Volltextsuche. Näheres dazu finden Sie unter [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
 Wenn Sie mehrere Wörter, durch Leerzeichen getrennt, eingeben, werden alle Objekte ausgegeben, die eines dieser Wörter enthalten. Wenn Sie beispielsweise
 
@@ -114,9 +124,17 @@ Mein Demo Gerät
 mein demo gerät
 ```
 
-**Info:** Anders als bei der Filterfunktionalität wird das Verwenden von Platzhaltern bei der Suche nicht unterstützt.
+##### Alternative Suchoptionen
 
-Weitere Informationen zur MongoDB-Volltextsuche finden Sie unter [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
+Anders als bei der Filterfunktionalität wird das Verwenden von Platzhaltern bei der Suche nicht unterstützt.
+
+Stattdessen können Sie die Suchoption durch Klicken auf eine der folgenden Schaltflächen wechseln:
+
+* **Beginnt mit**,
+* **Enthält** oder
+* **Endet mit**.
+
+Damit wird nach Assets gesucht, die mit dem Suchbegriff beginnen, ihn enthalten bzw. damit enden.
 
 <a name="filtering"></a>
 #### Filtern
@@ -158,6 +176,8 @@ Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [D
 
 Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h., neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
 
-Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben. Beispiel: Wenn Sie in der Anwendung Device Management die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Ansicht entfernt, doch wenn Sie ein weiteres Fenster geöffnet haben, z. B. mit der Anwendung Cockpit, sind die Änderungen darin nicht zu sehen.
+Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben.
 
-Die Änderungen werden erst nach einer Aktualisierungs- oder sonstigen Anfrage (z. B. Ausklappen einer Gruppe im Navigator) angezeigt.
+**Beispiel**
+
+Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.

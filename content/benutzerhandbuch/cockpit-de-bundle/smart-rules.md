@@ -1,19 +1,10 @@
 ---
-weight: 80
-title: Smart Rules
 layout: redirect
-helpcontent: >-
-  Smart Rules sind ein nützliches Mittel, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Die hier angezeigten globalen Smart Rules gelten für einen globalen Kontext (im Gegensatz zu lokalen Smart Rules für spezifische Gruppen oder Geräte). Beachten Sie, dass Sie bestimmte Berechtigungen benötigen, um Smart Rules anzeigen und verwalten zu können.
-
-
-  Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste, um eine neue globale Smart Rule hinzuzufügen. Verwenden Sie das Menüsymbol, um globale Smart Rules zu bearbeiten, zu duplizieren oder zu löschen.
-
-
-  Cumulocity IoT enthält vordefinierte Smart Rule-Vorlagen, z. B. "Bei Schwellwert Alarm erzeugen". Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart Rule-Vorlagen und ihrer Konfiguration finden Sie in der Dokumentation der Smart Rule-Sammlung.
+title: Smart Rules
+weight: 80
 ---
 
-
-{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de/#overview) verwaltet.
+{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
@@ -50,12 +41,11 @@ Smart Rules sind an zwei Orten zu sehen:
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
-* In der Registerkarte **Info** eines Geräts oder einer Gruppe.
+* In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
   ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
   In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
-
 
 
 <a name="create-rules"></a>
@@ -63,7 +53,7 @@ Smart Rules sind an zwei Orten zu sehen:
 
 Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Konfiguration** des Navigators (globale Smart Rules) oder in der Registerkarte **Info** einer Gruppe oder eines Geräts (lokale Smart Rules) erstellt werden.
 
-1. Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste. <br>
+1. Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste.<br>
 2. Wählen Sie ein Smart Rule-Template aus. Die Liste der Smart Rules kann je nach Installation variieren.
 3. Verwenden Sie im darauf folgenden Dialog den Umschalter, um einzustellen, ob die Regel ein- oder ausgeschaltet ist, siehe Details unter [So schalten Sie Smart Rule ein/aus](#toggle-rules).
 4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](#smart-rules-collection).

@@ -4,9 +4,9 @@ title: Measurements
 layout: redirect
 ---
 
-The **Measurements** tab's visibility is controlled by the device's supported measurements. Cumulocity IoT automatically and dynamically populates device's supported measurements based on previously sent measurements. This means the measurements tab effectively appears after the device has sent its first measurement.
+The **Measurements** tab's visibility is controlled by the device's supported measurements. Cumulocity IoT automatically and dynamically populates the device's supported measurements based on previously sent measurements. This means the measurements tab effectively appears after the device has sent its first measurement.
 
-The **Measurements** tab creates a single graph per measurement fragment sent by the device. This means all included series will be shown together in one graph. Device integrations should be made considering this grouping.
+The **Measurements** tab creates a single graph per measurement fragment sent by the device. This means all included series will be shown together in one graph. Therefore, any device integrations have to be made considering this grouping.
 
 **SmartREST2 example**
 

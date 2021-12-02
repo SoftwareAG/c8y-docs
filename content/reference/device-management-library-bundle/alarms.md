@@ -50,7 +50,7 @@ A device may raise an alarm at any time. Typically alarms are used to communicat
 |severity|String|Yes|Alarm severity|
 |time|String|Yes|Time of alarm occurrence|
 
-In addition to the required parameters above the device may also include custom fragments with more details about the alarm status into the alarm.
+In addition to the required parameters above, the device may also include custom fragments with more details about the alarm status into the alarm.
 
 **SmartREST2 example**
 

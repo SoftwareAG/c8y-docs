@@ -4,14 +4,14 @@ title: Remote access
 layout: redirect
 ---
 
-Remote access tab is used to configure and access devices for remote control through remote control protocols
+The **Remote access** tab is used to configure and access devices for remote control through remote control protocols.
 
 The tab will be visible if the following criteria are met:
 * Cloud Remote Access microservice is subscribed to the needed tenant
 * The user has the correct permissions granted (Remote access admin rights)
 * 'c8y_RemoteAccessConnect' is added to the device's c8y_SupportedOperations
 
-For more information, see [Cloud Remote Access > Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access)
+For more information, see [Cloud Remote Access > Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
 
 ### Remote access connect
 

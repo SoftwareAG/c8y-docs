@@ -4,7 +4,7 @@ title: Alarms
 layout: redirect
 ---
 
-The alarm tab is always shown for all devices. Its content is filled by alarm statuses reported by the device and other sources like analytics or smart rules. Devices raise alarms in Cumulocity IoT as they occur. Once the alarm status was resolved the device must also update the status of its created alarm to "CLEARED".
+The **Alarm** tab is always shown for all devices. Its content is filled by alarm statuses reported by the device and other sources like analytics or smart rules. Devices raise alarms in Cumulocity IoT as they occur. Once the alarm status was resolved the device must also update the status of its created alarm to "CLEARED".
 
 ### Raising alarms
 

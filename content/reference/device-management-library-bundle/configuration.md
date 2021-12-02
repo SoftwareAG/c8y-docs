@@ -4,7 +4,7 @@ title: Configuration
 layout: redirect
 ---
 
-The configuration allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. The configuration tab appears for devices when they announce support for any of the available formats.
+The configuration allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. The **Configuration** tab appears for devices when they announce support for any of the available formats.
 
 ### Text based configuration
 
@@ -45,7 +45,7 @@ We recommend uploading the current configuration only on demand to save transfer
 
 #### Upload current text configuration
 
-For devices that include *c8y_SendConfiguration* in their *c8y_SupportedOperations* the configuration tab offers a button to trigger a configuration upload from the device to Cumulocity. When the button is pressed a *c8y_SendConfiguration* is created
+For devices that include *c8y_SendConfiguration* in their *c8y_SupportedOperations* the **Configuration** tab offers a button to trigger a configuration upload from the device to Cumulocity. When the button is pressed a *c8y_SendConfiguration* is created
 
 <table>
 <tbody>
@@ -109,7 +109,7 @@ Receiving the operation
 
 #### Install text configuration
 
-Devices that support installing configuration can communicate this by adding *c8y_Configuration* to their *c8y_SupportedOperations*. Then the configuration tab will offer a button to send a user configured configuration to the device. This action consequently creates a *c8y_Configuration* operation with the same fragment signature as found in the device’s managed object.
+Devices that support installing configuration can communicate this by adding *c8y_Configuration* to their *c8y_SupportedOperations*. Then the **Configuration** tab will offer a button to send a user configured configuration to the device. This action consequently creates a *c8y_Configuration* operation with the same fragment signature as found in the device’s managed object.
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
@@ -138,7 +138,7 @@ As the name suggests, this approach stores and transfers configuration as binary
 
 #### Upload current legacy configuration
 
-Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding *c8y_UploadConfigFile* to their *c8y_SupportedOperations*. This enables a "Get snapshot from device" button in the configuration tab. Pressing it generates a *c8y_UploadConfigFile* operation for the device.
+Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding *c8y_UploadConfigFile* to their *c8y_SupportedOperations*. This enables a "Get snapshot from device" button in the **Configuration** tab. Pressing it generates a *c8y_UploadConfigFile* operation for the device.
 
 <table>
 <tbody>
@@ -236,7 +236,7 @@ The 520 static response template is available for this functionality
 
 #### Install legacy configuration
 
-Devices that are capable of installing configuration remotely can announce this by adding *c8y_DownloadConfigFile* to their *c8y_SupportedOperations*. Then the configuration tab offers a button to "Send configuration to device". When pressed, a *c8y_DownloadConfigFile* operation is created for the device.
+Devices that are capable of installing configuration remotely can announce this by adding *c8y_DownloadConfigFile* to their *c8y_SupportedOperations*. Then the **Configuration** tab offers a button to "Send configuration to device". When pressed, a *c8y_DownloadConfigFile* operation is created for the device.
 
 <table>
 <tbody>

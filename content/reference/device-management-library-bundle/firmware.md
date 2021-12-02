@@ -4,7 +4,7 @@ title: Firmware
 layout: redirect
 ---
 
-The firmware tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware, or BIOS.
+The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware, or BIOS.
 
 Firmware can be installed with a full installation, or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
 

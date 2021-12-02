@@ -4,7 +4,7 @@ title: Shell
 layout: redirect
 ---
 
-The shell tab gives the possibility to send arbitrary device specific commands to the device. It appears if the *c8y_Command* operation is present in the device's *c8y_SupportedOperations*.
+The **Shell** tab gives the possibility to send arbitrary device specific commands to the device. It appears if the *c8y_Command* operation is present in the device's *c8y_SupportedOperations*.
 
 ### Send a command to a device
 

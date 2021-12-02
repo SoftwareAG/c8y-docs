@@ -4,9 +4,9 @@ title: Software
 layout: redirect
 ---
 
-The Software tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
+The **Software** tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The device details page offers a software tab for devices that announce *c8y_SoftwareList* and/or *c8y_SoftwareUpdate* in their *c8y_SupportedOperations* fragment in their device managed objects.
+The device details page offers a **Software** tab for devices that announce *c8y_SoftwareList* and/or *c8y_SoftwareUpdate* in their *c8y_SupportedOperations* fragment in their device managed objects.
 
 ### Installed software
 
@@ -67,7 +67,7 @@ The static SmartREST template 116 is provided for devices to upload their instal
 
 ### Changing installed software
 
-Within the software tab users are able to select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's *c8y_SupportedOperations* fragment.
+Within the **Software** tab users are able to select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's *c8y_SupportedOperations* fragment.
 
 #### Software list
 
@@ -129,7 +129,7 @@ The 516 static response template is available for dealing with software list ope
 
 #### Software update
 
-If a device supports the *c8y_SoftwareUpdate* operation in it's *c8y_SupportedOperations* fragment the software tab will create *c8y_SoftwareUpdate* operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the *c8y_SoftwareUpdate* should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
+If a device supports the *c8y_SoftwareUpdate* operation in it's *c8y_SupportedOperations* fragment the **Software** tab will create *c8y_SoftwareUpdate* operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the *c8y_SoftwareUpdate* should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
 
 <table>
 <tbody>

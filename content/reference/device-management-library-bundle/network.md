@@ -4,7 +4,7 @@ title: Network
 layout: redirect
 ---
 
-The Network tab displays network information. The tab will only be visible if the c8y_Network fragment is present in the device managed object. There are three subsections - WAN, LAN and DHCP which can be activated by the nested fragments *c8y_ WAN*, *c8y_LAN*, and *c8y_DHCP* respectively.
+The **Network** tab displays network information. The **Network** tab will only be visible if the c8y_Network fragment is present in the device managed object. There are three subsections - WAN, LAN and DHCP which can be activated by the nested fragments *c8y_ WAN*, *c8y_LAN*, and *c8y_DHCP* respectively.
 
 #### Network status
 
@@ -197,7 +197,7 @@ Devices may announce their current local network status and configuration to the
 
 ### Setting network configuration
 
-If the device contains the *c8y_Network* operation in its *c8y_SupportedOperations* users may also update a device's network configuration in this tab. Changed configuration is sent as *c8y_Network* operation with a very similar fragment as also present in the device managed object. The *c8y_Network* fragment within this operation may contain one or more of its nested fragments.
+If the device contains the *c8y_Network* operation in its *c8y_SupportedOperations* users may also update a device's network configuration in the **Network** tab. Changed configuration is sent as *c8y_Network* operation with a very similar fragment as also present in the device managed object. The *c8y_Network* fragment within this operation may contain one or more of its nested fragments.
 
 <table>
 <tbody>

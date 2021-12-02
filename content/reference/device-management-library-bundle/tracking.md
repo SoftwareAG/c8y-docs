@@ -4,7 +4,7 @@ title: Tracking
 layout: redirect
 ---
 
-Tracking tab allows the device's path to be visualized. To achieve that the device must periodically send tracking events and update its position.
+The **Tracking** tab allows the device's path to be visualized. To achieve that the device must periodically send tracking events and update its position.
 
 ### Tracking position history
 

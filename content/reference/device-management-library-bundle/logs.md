@@ -4,7 +4,7 @@ title: Logs
 layout: redirect
 ---
 
-The logs tab is used to extract logs from the device. The tab will be available if the fragment 'c8y_LogfileRequest' is present in the c8y_SupportedOperations of the device.
+The **Logs** tab is used to extract logs from the device. The **Logs** tab will be available if the fragment 'c8y_LogfileRequest' is present in the c8y_SupportedOperations of the device.
 The device should contain a fragment called c8y_SupportedLogs, which holds an array of the types of logs that it supports. They will later be referenced when logs are requested.
 
 ### Setting supported logs
@@ -50,7 +50,7 @@ The 118 static template is available to announce the supported logs of a device
 
 ### Uploading log files
 
-When users request log files from devices via the logs tab a c8y_LogfileRequest operation is created.
+When users request log files from devices via the **Logs** tab a c8y_LogfileRequest operation is created.
 
 <table>
 <tbody>

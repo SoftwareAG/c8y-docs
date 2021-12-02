@@ -4,7 +4,7 @@ title: Child devices
 layout: redirect
 ---
 
-The child devices tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
+The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
 ### Assign child device to parent device
 

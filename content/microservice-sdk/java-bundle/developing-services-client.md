@@ -33,36 +33,6 @@ Using this handle, you can send and retrieve the SMS messages from Java by calli
 To use the SMS messaging API, the user must have the required roles SMS_ADMIN and SMS_READ for sending and receiving messages respectively.
 Refer to [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
 
-### Choosing a SMS provider
-
-#### OpenIT
-
-OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
-
-![OpenIT Credentials](/images/java/java-client-services/openit_credentials.png)
-
-Note that receiving messages and receiving specific messages are not supported for this provider.
-
-#### Jasper Control Center
-
-Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for information about how to set these credentials.
-
-#### Provider configuration
-
-To configure a SMS provider first it is required to get the available providers schemas:
-```http
-GET /service/messaging/providers/definitions
-Host: ...
-Authorization: Basic ...
-```
-
-The response contains the provider properties, and to save them you need to make a POST request as follows:
-```http
-POST /service/messaging/providers/configuration
-Host: ...
-Authorization: Basic ...
-```
-
 ### Sending a message
 
 To send a SMS message using the API, prepare the message with the SendMessageRequest builder and call the sendMessage function of the API with the prepared message.

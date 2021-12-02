@@ -23,7 +23,7 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 3. Click **Edge** > **Microservices** in the navigator.
 4. Use the toggle button to enable the microservice hosting feature.
 
->**Important:** If you have enabled the remote-connectivity as well as the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
+>**Important:** If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs
 

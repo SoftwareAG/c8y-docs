@@ -94,6 +94,6 @@ When a device detects that the local alarm status was resolved it must clear the
 
 **SmartREST2 example**
 
-The 306 static template is prepared to clear an active alarm of a specified type
+The 306 static template is prepared to clear an active alarm of a specified type.
 
 `306,c8y_TemperatureAlarm`

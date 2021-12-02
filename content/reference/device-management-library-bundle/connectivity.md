@@ -4,7 +4,7 @@ title: Connectivity
 layout: redirect
 ---
 
-The connectivity tab integrates with a 3rd party SIM management platform to provide SIM management functionality within Cumulocity device management. The tab appears for a device when all of the following criteria are met:
+The connectivity tab integrates with a 3rd party SIM management platform to provide SIM management functionality within Cumulocity IoT device management. The tab appears for a device when all of the following criteria are met:
 1. Connectivity microservice is subscribed and configured.
 2. The device managed object contains the c8y_Mobile fragment with the MSISDN or ICCID property set.
 3. The SIM referenced by the device is managed by the SIM management provider configured for the tenant.

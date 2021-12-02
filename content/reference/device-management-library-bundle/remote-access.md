@@ -45,7 +45,7 @@ When a user selects a remote access endpoint and presses the connect button a c8
 
 With this operation the device must open a websocket connection to the microservice endpoint using the connection key for authentication `(wss://<c8y host>/service/remoteaccess/device/<connectionKey>)` and a local socket to the specified hostname and port. Then it must establish bidirectional forwarding of data between the websocket and the local socket.
 
-Cumulocity currently supports VNC, SSH, and telnet. The device agent should be implemented independently of the remote access protocol used. The operation intentionally does not transfer the protocol. The agent must be capable of forward arbitrary data between both its established sockets
+Cumulocity IoT currently supports VNC, SSH, and telnet. The device agent should be implemented independently of the remote access protocol used. The operation intentionally does not transfer the protocol. The agent must be capable of forward arbitrary data between both its established sockets
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING

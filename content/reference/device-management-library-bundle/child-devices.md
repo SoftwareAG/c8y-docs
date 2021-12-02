@@ -51,7 +51,7 @@ To add child device to existing device you need to connect as existing device an
 `101,uniqueChildId,myChildDevice,myChildType`
 
 ### Operating a gateway for child devices
-Using the agent marker fragment *com_cumulocity_model_Agent* on the parent device, but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to Cumulocity but send and receive data through the device and its integration.
+Using the agent marker fragment *com_cumulocity_model_Agent* on the parent device, but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to Cumulocity IoT but send and receive data through the device and its integration.
 
 In this case operations for the child devices are delivered to the connected parent device. The parent device then must determine the addressed child device based on the included device ID or other information. Then the command must be forwarded to the correct child.
 

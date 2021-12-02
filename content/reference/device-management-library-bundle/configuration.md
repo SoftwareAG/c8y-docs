@@ -10,7 +10,7 @@ The configuration allows three different formats for device configuration. They 
 
 The most basic form of configuration is a simple text based configuration. Here the configuration is stored and transferred directly as string. We recommend using this form for small human readable configuration files only, e.g. for Microcontroller based devices.
 
-The current configuration state of the device is communicated with the *c8y_Configuration* fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. Cumulocity supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
+The current configuration state of the device is communicated with the *c8y_Configuration* fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. Cumulocity IoT supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
 
 We recommend uploading the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
@@ -138,7 +138,7 @@ As the name suggests, this approach stores and transfers configuration as binary
 
 #### Upload current legacy configuration
 
-Devices may signal their support for uploading their current configuration to Cumulocity by adding *c8y_UploadConfigFile* to their *c8y_SupportedOperations*. This enables a "Get snapshot from device" button in the configuration tab. Pressing it generates a *c8y_UploadConfigFile* operation for the device.
+Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding *c8y_UploadConfigFile* to their *c8y_SupportedOperations*. This enables a "Get snapshot from device" button in the configuration tab. Pressing it generates a *c8y_UploadConfigFile* operation for the device.
 
 <table>
 <tbody>
@@ -180,7 +180,7 @@ Devices may signal their support for uploading their current configuration to Cu
 </tbody>
 </table>
 
-When uploading its configuration, the device must first upload the configuration file into Cumulocity inventory binaries, and then create a configuration repository entry as a managed object of type *c8y_ConfigurationDump* in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
+When uploading its configuration, the device must first upload the configuration file into Cumulocity IoT inventory binaries, and then create a configuration repository entry as a managed object of type *c8y_ConfigurationDump* in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
 
 <table>
 <colgroup>
@@ -218,7 +218,7 @@ When uploading its configuration, the device must first upload the configuration
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
-2. Upload the configuration file into Cumulocity inventory binaries
+2. Upload the configuration file into Cumulocity IoT inventory binaries
 3. Create a configuration repository entry
 4. Set the operation status to SUCCESSFUL
 
@@ -376,7 +376,7 @@ The most versatile way of managing device configuration is typed file based conf
 |*c8y_SupportedConfigurations*|array|Yes|String array of supported configuration for this device.|
 
 
-Cumulocity does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
+Cumulocity IoT does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
 
 **SmartREST2 example**
 

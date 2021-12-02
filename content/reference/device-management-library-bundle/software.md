@@ -4,7 +4,7 @@ title: Software
 layout: redirect
 ---
 
-The Software tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
+The Software tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
 The device details page offers a software tab for devices that announce *c8y_SoftwareList* and/or *c8y_SoftwareUpdate* in their *c8y_SupportedOperations* fragment in their device managed objects.
 

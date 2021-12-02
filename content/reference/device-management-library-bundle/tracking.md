@@ -161,6 +161,6 @@ Devices may update their current position using the 112 static template
 `112,51.151977,6.95173,67,`
 
 
-In Cumulocity tracking over time is done using events and the current position is represented as fragment in the device's own managed object (see above for details). In practice devices usually determine their current position in an interval and upload the coordinates as they are measured. In this case the current position and the position at that time are the same and can be uploaded at the same time using 402 static template.
+In Cumulocity IoT tracking over time is done using events and the current position is represented as fragment in the device's own managed object (see above for details). In practice devices usually determine their current position in an interval and upload the coordinates as they are measured. In this case the current position and the position at that time are the same and can be uploaded at the same time using 402 static template.
 
 `402,51.151977,6.95173,67,,`

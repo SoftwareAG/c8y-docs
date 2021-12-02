@@ -4,13 +4,13 @@ title: Firmware
 layout: redirect
 ---
 
-The firmware tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware, or BIOS.
+The firmware tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware, or BIOS.
 
 Firmware can be installed with a full installation, or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
 
 #### Installed firmware
 
-First a device should announce its current state to the platform. The installed firmware should be entered into the *c8y_Firmware* fragment into the device's own managed object. A device should upload its current state to Cumulocity during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
+First a device should announce its current state to the platform. The installed firmware should be entered into the *c8y_Firmware* fragment into the device's own managed object. A device should upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
 <table>
 <colgroup>
@@ -88,7 +88,7 @@ The device is expected to perform the following actions:
 3. Update the installed firmware state in the device’s own managed object
 4. Set operation status to SUCCESSFUL
 
-Updating a devices often changes fundamental system components. This operation should always be considered as a critical operation. The device must ensure that all of its connection parameters to Cumulocity are preserved through the upgrade and that connectivity can be resumed afterwards. We recommend that the device uses and A/B firmware switching mechanism with a possibility to roll back if necessary.
+Updating a devices often changes fundamental system components. This operation should always be considered as a critical operation. The device must ensure that all of its connection parameters to Cumulocity IoT are preserved through the upgrade and that connectivity can be resumed afterwards. We recommend that the device uses and A/B firmware switching mechanism with a possibility to roll back if necessary.
 
 **SmartREST2 example**
 

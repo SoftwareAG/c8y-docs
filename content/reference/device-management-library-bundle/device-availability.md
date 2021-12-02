@@ -72,4 +72,4 @@ The response interval set in the *c8y_RequiredAvailability* fragment is used as 
 
 ### Connection monitoring
 
-Cumulocity also provides connection monitoring for devices. When the device establishes a connection where it is able to receive operations the platform considers this device as connected. This applies to HTTP longpolling connection or a MQTT session equally.
+Cumulocity IoT also provides connection monitoring for devices. When the device establishes a connection where it is able to receive operations the platform considers this device as connected. This applies to HTTP longpolling connection or a MQTT session equally.

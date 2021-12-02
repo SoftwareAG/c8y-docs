@@ -263,7 +263,7 @@ The device is expected to perform the following actions:
 3. Set new network configuration status the device managed object
 4. Set operation status to SUCCESSFUL
 
-Changes to network configuration potentially impacts the device’s ability to connect to the Cumulocity platform. We recommend implementing a connection test with the new settings. If the test fails the device should rollback the settings to their previous state and set the operation status to FAILED
+Changes to network configuration potentially impacts the device’s ability to connect to the Cumulocity IoT platform. We recommend implementing a connection test with the new settings. If the test fails the device should rollback the settings to their previous state and set the operation status to FAILED
 
 **SmartREST2 example**
 

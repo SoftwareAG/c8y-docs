@@ -81,7 +81,7 @@ When users request log files from devices via the logs tab a c8y_LogfileRequest 
 |searchText|String|Yes|A text filter to apply to individual log lines|
 |maximumLines|String|Yes|Maximum amount of lines to transfer|
 
-When the device has gathered the logs it must upload it as a file to Cumulocity. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
+When the device has gathered the logs it must upload it as a file to Cumulocity IoT. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
 
 <table>
 <colgroup>

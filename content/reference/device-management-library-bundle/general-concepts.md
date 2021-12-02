@@ -56,7 +56,7 @@ In practice this usually means that a device should publish its local state conc
 
 ### Operation handling
 
-Operations are always created with status "PENDING". Devices are responsible for moving operations along into different statuses in their lifecycle. Before beginning processing an operation the device agent must update its status to "EXECUTING". After processing is completed the device must set the operation status to "SUCCESSFUL" or "FAILED" depending on the outcome
+Operations are always created with status PENDING. Devices are responsible for moving operations along into different statuses in their lifecycle. Before beginning processing an operation the device agent must update its status to EXECUTING. After processing is completed the device must set the operation status to SUCCESSFUL or FAILED depending on the outcome
 
 **SmartREST2**
 
@@ -64,7 +64,7 @@ We provide the static templates 501, 502, and 503 to manipulate the operation st
 
 ### Error handling during operation processing
 
-If any error occurs during the processing of an operation the device must set the operation status to "FAILED" and provide a failure reason as descriptive as possible. This includes any unexpected or expected error conditions that prevent the operation to be completed fully and as expected. Even if only one step in an operation that contains multiple distinct steps fails, the entire operation must be considered as FAILED.
+If any error occurs during the processing of an operation the device must set the operation status to FAILED and provide a failure reason as descriptive as possible. This includes any unexpected or expected error conditions that prevent the operation to be completed fully and as expected. Even if only one step in an operation that contains multiple distinct steps fails, the entire operation must be considered as FAILED.
 
 It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with Cumulocity IoT.
 

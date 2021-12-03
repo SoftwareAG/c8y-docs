@@ -8,7 +8,7 @@ weight: 11
 
 #### Connection
 
-* <kbd>d:CONNECT 1234:myDevice_10 acme/device_1234</kbd> \
+* <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \
   Connect the device with serial "1234" and default template myDevice_10 to tenant "acme" and user "device_1234"
 
 #### Topics
@@ -24,7 +24,7 @@ Publish
 
 Subscribe
 
-* <kbd>SUBSCRIBE s/ds</kbd> - Receive built-in commands
+* <kbd>SUBSCRIBE s/ds</kbd> - Receive static commands
 * <kbd>SUBSCRIBE s/dd</kbd> - Receive commands using the default template (myDevice_10)
 * <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using the myCommon_10 template
 * <kbd>SUBSCRIBE s/e</kbd> - Receive error messages
@@ -56,7 +56,7 @@ where:
 
 #### Templates
 
-To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
+To use the templates listed in [MQTT static templates](#mqtt-static-templates), you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the *Reference guide* for further information.
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 

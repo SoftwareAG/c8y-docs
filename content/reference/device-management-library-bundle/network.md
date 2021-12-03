@@ -265,7 +265,7 @@ The device is expected to perform the following actions:
 
 Changes to network configuration potentially impacts the device’s ability to connect to the Cumulocity IoT platform. We recommend implementing a connection test with the new settings. If the test fails the device should rollback the settings to their previous state and set the operation status to FAILED
 
-**SmartREST2 example**
+**SmartREST example**
 
 There are no static templates available for populating the network fragment or receiving network operations. A custom template can be used instead
 

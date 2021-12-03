@@ -254,7 +254,7 @@ The device is expected to perform the following actions
 7. Set the operation status to SUCCESSFUL
 
 
-**SmartREST2 example**
+**SmartREST example**
 
 In addition to the prepared static templates for firmware, software, and configuration there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile.
 

@@ -111,7 +111,7 @@ A device may upload its current or past positions as location updated events wit
 </tbody>
 </table>
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 401 static template is prepared to send location update events using SmartREST <br>
 `401,51.151977,6.95173,67,2013-06-22T17:03:14.000+02:00`
@@ -154,7 +154,7 @@ The current device position is represented using the c8y_Position fragment in th
 |lng|number|Yes|Longitude of the device position in degrees|
 |lat|number|Yes|Latitude of the device position in degrees|
 
-**SmartREST2 example**
+**SmartREST example**
 
 Devices may update their current position using the 112 static template
 

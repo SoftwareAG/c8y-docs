@@ -42,7 +42,7 @@ Supported log types shall be announced by devices using the c8y_SupportedLogs fr
 |----|----|----|----|
 |c8y_SupportedLogs|array|Yes|String array or supported log types|
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 118 static template is available to announce the supported logs of a device
 
@@ -219,7 +219,7 @@ The device is expected to perform the following actions
 4. Upload the log file as binary attachment to said event
 5. Set the operation status to SUCCESSFUL and include a URL to the uploaded log file
 
-**SmartREST2 example**
+**SmartREST example**
 
 Cumulocity offers the 522 static response template for receiving *c8y_LogfileRequest* operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time.
 1. Receive c8y_LogfileRequest operation<br>

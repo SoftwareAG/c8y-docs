@@ -60,7 +60,7 @@ The platform can monitor device availability and connection status. To achieve t
 
 Usually devices should set their required interval only once during its first connection to the platform with a default value. Later changes can be left to platform users.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The static template 117 is provided to set the required availability for SmartREST connected devices. This template can be sent in a fire-and-forget approach during device startup because it doesn't override already existing required availability configuration.
 

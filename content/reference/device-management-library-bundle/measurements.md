@@ -8,7 +8,7 @@ The **Measurements** tab's visibility is controlled by the device's supported me
 
 The **Measurements** tab creates a single graph per measurement fragment sent by the device. This means all included series will be shown together in one graph. Therefore, any device integrations have to be made considering this grouping.
 
-**SmartREST2 example**
+**SmartREST example**
 
 There are several static templates prepared to create measurements in the 2xx range of message IDs. We provide the 200 static template to create a measurement with a dynamic fragment and series.
 

@@ -101,7 +101,7 @@ The device is expected to perform the following actions:
 2. Perform the requested restart
 3. Set the operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 1. Device receives command via 510 static response template <br>
   `510,DeviceSerial`
@@ -149,7 +149,7 @@ Devices may announce their underlying hardware information to Cumulocity IoT usi
 |model|String|No|A text identifier of the hardware model.|
 |revision|String|No|A text identifier of the hardware revision.|
 
-**SmartREST2 example**
+**SmartREST example**
 
 Upload hardware information using the 110 static template. Usually this can be done once during agent application startup.
 

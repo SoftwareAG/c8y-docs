@@ -52,7 +52,7 @@ A device may raise an alarm at any time. Typically alarms are used to communicat
 
 In addition to the required parameters above, the device may also include custom fragments with more details about the alarm status into the alarm.
 
-**SmartREST2 example**
+**SmartREST example**
 
 There are several static SmartREST templates provided for basic alarm management for device. They can be found with message IDs between 301 and 304 for different severities.
 
@@ -92,7 +92,7 @@ When a device detects that the local alarm status was resolved it must clear the
 |Status|String|Yes|The new alarm status|
 
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 306 static template is prepared to clear an active alarm of a specified type.
 

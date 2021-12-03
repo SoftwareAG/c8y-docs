@@ -41,7 +41,7 @@ Devices may announce their supported capabilities using the *c8y_SupportedOperat
 
 Some capabilities also introduce their own *c8y_Supported<...>* fragments with a similar concept. These fragment allow devices announce the ability to handle certain types of log files or configuration.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 114 static template is available for devices to announce their supported operations.
 

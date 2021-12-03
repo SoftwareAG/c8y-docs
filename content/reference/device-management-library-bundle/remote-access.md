@@ -56,7 +56,7 @@ The device is expected to perform the following actions:
 
 The operation is set to SUCCESSFUL after the connection is established. Disconnecting happens silently. Even if the connection was not terminated gracefully by any of the involved components, the operation status must stay in SUCCESSFUL. Whenever one of the connections is terminated (websocket or TCP) the device agent should consider the session as ended and should also terminate both connections
 
-#### SmartREST2 example
+#### SmartREST example
 
 The 530 static response template is available for receiving c8y_RemoteAccessConnect operations
 1. Receive c8y_RemoteAccessConnect operation <br>

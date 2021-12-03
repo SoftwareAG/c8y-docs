@@ -73,7 +73,7 @@ The device is expected to perform the following actions
 2. Execute the command and obtain the return value
 3. Set the operation status to SUCCESSFUL and include the return value in it
 
-**SmartREST2 example**
+**SmartREST example**
 
 For SmartREST connected devices the 511 static response template is available for receiving c8y_Command operations. Additionally the implicit parameter functionality of the 503 static template can be used to supply the return value
 

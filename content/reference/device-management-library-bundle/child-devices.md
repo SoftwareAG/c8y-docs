@@ -45,7 +45,7 @@ In order to link a device the parent device should post to its inventory API the
 |ManagedObject.id|String|Yes|ID of the child device to link|
 
 
-**SmartREST2 example**
+**SmartREST example**
 
 To add child device to existing device you need to connect as existing device and call child create template:
 `101,uniqueChildId,myChildDevice,myChildType`

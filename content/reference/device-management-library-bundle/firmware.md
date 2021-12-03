@@ -47,7 +47,7 @@ First a device should announce its current state to the platform. The installed 
 
 Similar to software the url field is optional and may be omitted by devices.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 115 static template is available for devices to communicate their currently installed firmware state.
 
@@ -90,7 +90,7 @@ The device is expected to perform the following actions:
 
 Updating a devices often changes fundamental system components. This operation should always be considered as a critical operation. The device must ensure that all of its connection parameters to Cumulocity IoT are preserved through the upgrade and that connectivity can be resumed afterwards. We recommend that the device uses and A/B firmware switching mechanism with a possibility to roll back if necessary.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 515 static response template is designed to deal with installing firmware images
 
@@ -144,7 +144,7 @@ The device is expected to perform the following actions:
 4. Update the installed firmware state in the device’s own managed object
 5. Set operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 525 static response template is designed to deal with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
 1. Receive *c8y_Firmware* (patch) operation <br>

@@ -59,7 +59,7 @@ First a device may announce its current status of installed software to the plat
 
 Devices should upload the complete list of installed software during startup. Additionally the list should be updated any time a local change is triggered or detected. This includes cases where a change was requested through Cumulocity UI.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and url property of an individual package.
 
@@ -113,7 +113,7 @@ The device is expected to perform the following actions
 
 If the desired state cannot be achieved for any reason the operation should be concluded with status FAILED.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 516 static response template is available for dealing with software list operations. It works very similarly to the 116 template used for updating the device’s own managed object
 
@@ -171,7 +171,7 @@ The device is expected to perform the following actions
 3. Update the software list in the device’s own managed object
 4. Set operation status to SUCCESSFUL
 
-#### SmartREST2 example
+#### SmartREST example
 
 The 528 static response template is available for dealing with software update operations.
 1. Receive c8y_SoftwareUpdate operation <br>

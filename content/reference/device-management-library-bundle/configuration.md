@@ -90,7 +90,7 @@ The device is expected to perform the following actions:
 2. Upload the current configuration to its own managed object using the c8y_Configuration fragment
 3. Set operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 There is no built in static response template available for the *c8y_SendConfiguration* operation. Devices must create a custom template to implement this capability. Here is an example how such a template and its use could work.
 
@@ -117,7 +117,7 @@ The device is expected to perform the following actions:
 3. Update the *c8y_Configuration* fragment in the device’s managed object
 4. Set operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 513 static response template is available to recewith *c8y_Configuration* operations
 1. Receive *c8y_Configuration* operation <br>
@@ -222,7 +222,7 @@ The device is expected to perform the following actions:
 3. Create a configuration repository entry
 4. Set the operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 520 static response template is available for this functionality
 1. Receive *c8y_UploadConfigFile* operation <br>
@@ -328,7 +328,7 @@ The device is expected to perform the following actions:
 4. Update the currently installed configuration dump in the device’s managed object
 5. Set the operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 521 static response template is available for this functionality
 1. Receive c8y_UploadConfigFile operation <br>
@@ -378,7 +378,7 @@ The most versatile way of managing device configuration is typed file based conf
 
 Cumulocity IoT does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
 
-**SmartREST2 example**
+**SmartREST example**
 
 The c8y_SupportedConfiguration fragment can be uploaded using the static template 119 <br>
 `119,agent_conf,ssh_conf`
@@ -493,7 +493,7 @@ The device is expected to perform the following actions:
 3. Attach the configuration file to the event
 4. Set the operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 526 static SmartREST template is prepared for typed c8y_UploadConfigFile operations
 1. Receive typed c8y_UploadConfigFile operation <br>
@@ -624,7 +624,7 @@ The device is expected to perform the following actions:
 4. Update the device's currently installed configuration with the typed configuration fragment in the device's own managed object
 5. Set the operation status to SUCCESSFUL
 
-**SmartREST2 example**
+**SmartREST example**
 
 The 524 static SmartREST response template is available for typed *c8y_DownloadConfigFile* operations, and the 120 static template is prepared for uploading the current configuration.
 1. Receive typed c8y_UploadConfigFile operation<br>

@@ -12,7 +12,7 @@ To use the templates listed below, you need to publish the messages to the topic
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
-#### Quick reference
+#### Templates quick reference
 
 Click the commands below to see more information on the respective template.
 If a parameter is in square brackets, it is optional.
@@ -73,6 +73,9 @@ If a parameter is in square brackets, it is optional.
 + <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
+
+<strong><a href="#subscribe-templates">Subscribe templates</a></strong>
++ <a href="#subscribe-templates">(click)</a>
 
 </td>
 </tr>

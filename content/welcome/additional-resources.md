@@ -32,7 +32,7 @@ You can find product information on the product support website in the [{{< comp
 
 Once you have an account, you can:
 
-* Open Support Incidents online via the eService section in the {{< sag-portal >}}.
+* Open support incidents online via the Incident Management Portal in the {{< sag-portal >}}.
 * Find further product information and product downloads.
 
 To submit feature/enhancement requests, get information about product availability, and download products, go to [Products](https://empower.softwareag.com/Products/default.aspx?).

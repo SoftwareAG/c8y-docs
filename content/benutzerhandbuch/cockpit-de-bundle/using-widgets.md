@@ -23,6 +23,8 @@ Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellu
 
 	<img src="/images/benutzerhandbuch/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
+	>**Info:** Die Kopfzeilenstile "Standard" und "Rand" können für alle Widgets verwendet werden, während "Overlay" und "Hidden" die Kopfzeile entfernen und nur für Widgets verwendet werden sollten, die von einer Vollbildanzeige profitieren, z. B. "Image" oder "Map". Für andere Widgets, wie "Alarmliste" oder "Datenpunkttabelle", sollten diese Kopfzeilenstile nicht verwendet werden. 
+
 5. Klicken Sie auf **Speichern**, um das Widget zum Dashboard oder Bericht hinzuzufügen.
 
 <a name="modifying-widgets"></a>

@@ -3,6 +3,7 @@ weight: 80
 title: Data Broker
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#data-broker
   - /benutzerhandbuch/enterprise-edition-de/#data-broker
 ---
 
@@ -33,7 +34,7 @@ Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
 Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
 
-<a name="data-broker-connectors-list"></a> **Viewing data connectors**
+<a name="data-broker-connectors-list"></a> **Anzeigen von Datenkonnektoren**
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 

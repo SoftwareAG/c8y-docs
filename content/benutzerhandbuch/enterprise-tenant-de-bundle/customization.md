@@ -3,6 +3,7 @@ weight: 40
 title: Anpassen der Plattform
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#customization
   - /benutzerhandbuch/enterprise-edition-de/#customization
 ---
 
@@ -281,8 +282,10 @@ an die Plattform hochgeladen werden.
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 
-Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" ist, lautet die Domain des Management-Mandanten "management.iot.mycompany.com".
+Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
+über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant-de >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
+.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".
 
 > **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 

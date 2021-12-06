@@ -1,21 +1,8 @@
 ---
-weight: 30
-title: Daten-Explorer
 layout: redirect
-helpcontent: >-
-  Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden. Rechts finden Sie eine Liste aller verfügbaren Datenpunkte. Links sehen Sie die entsprechende Visualisierung.
-
-
-  Klicken Sie auf **Datenpunkt hinzufügen**, um weitere Datenpunkte zur Liste hinzuzufügen. Zusätzlich können Sie auch Alarme oder Ereignisse hinzufügen.
-
-
-  Sie können Änderungen an der Visualisierung des Daten-Explorers vornehmen, z. B. das angezeigte Zeitintervall ändern oder die dargestellten Daten aggregieren, um einen effizienten Überblick über längere Zeiträume zu erhalten. Näheres hierzu finden Sie in der Daten-Explorer-Dokumentation.
-
-
-  Außerdem kann der Daten-Explorer als Widget einem Dashboard hinzugefügt oder als CSV- oder Excel-Datei heruntergeladen werden.
+title: Daten-Explorer
+weight: 30
 ---
-
-<a name="data explorer"></a>
 
 Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.
 
@@ -46,7 +33,6 @@ In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkt
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter [Anpassen von Datenpunktattributen](#customize-data-points).
 
 >**Info:** Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
-
 
 <a name="change-visualization"></a>
 ### Ändern der Daten-Explorer-Visualisierung
@@ -113,7 +99,6 @@ Um einen Datenpunkt in der Datenpunktbibliothek zu speichern, öffnen Sie das Ko
 Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
 Klicken Sie im Kontextmenü auf **Von der Liste löschen**, um einen Datenpunkt aus der Datenpunktliste zu löschen.
-
 
 <a name="customize-data-points"></a>
 ### Anpassen von Datenpunktattributen
@@ -201,7 +186,6 @@ Klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü die Option **Lö
 
 Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Explorer durch einen Umschalter ein- oder abgeschaltet werden.
 
-
 <a name="create-widget"></a>
 ### Erstellen von Widgets im Daten-Explorer
 
@@ -227,7 +211,6 @@ Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie 
 
 > **Info:** Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
 
-
 <a name="export-data"></a>
 ### Exportieren von Messwerten
 
@@ -242,4 +225,4 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 
-Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.
+Die Download-Datei wird erstellt, wie im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.

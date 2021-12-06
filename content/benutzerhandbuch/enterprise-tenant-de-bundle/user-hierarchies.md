@@ -3,6 +3,7 @@ weight: 20
 title: Verwalten von Benutzerhierarchien
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#user-hierarchies
   - /benutzerhandbuch/enterprise-edition-de/#user-hierarchies
 ---
 
@@ -29,9 +30,9 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 
 ![Select owner](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
->**Info:** Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist. Der Besitzer kann später geändert werden. Nur Benutzer mit der ADMIN-Berechtigung "Benutzer" können Besitzer zuweisen.
-
-> Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit Administrationsrechten für alle Benutzer hat.
+>**Info:** Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist, sofern der angemeldete Benutzer nur die "Benutzerverwaltung"-Berechtigung ERSTELLEN hat. Der Besitzer kann später geändert werden, jedoch nur durch einen Benutzer mit der "Benutzerverwaltung"-Berechtigung ADMIN.
+<br><br>
+>Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit der "Benutzerverwaltung"-Berechtigung für alle Benutzer hat.
 
 **Beispiel**
 

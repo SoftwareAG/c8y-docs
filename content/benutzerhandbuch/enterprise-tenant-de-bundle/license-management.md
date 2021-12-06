@@ -3,6 +3,7 @@ weight: 60
 title: Lizenzverwaltung
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#license-management
   - /benutzerhandbuch/enterprise-edition-de/#license-management
 ---
 

@@ -1,15 +1,15 @@
 ---
 weight: 15
-title: Installing Edge using the GUI
+title: Installing Edge using the UI
 layout: redirect
 ---
 
 To install {{< product-c8y-iot >}} Edge using the user interface:
 
 1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
-  <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
+    <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
 
-  > **Note:** The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
+  > **Info:** The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
 <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>

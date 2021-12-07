@@ -58,3 +58,8 @@ There is no distinction between the two contexts for consumers, and notification
 For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application.
 
 There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the following protocol specification directly.
+
+### Token expiry
+
+When creating a token a expiry time must be given in minutes of validity from when the token was created. This security feature limiting potential damamge due to leaking of a token does require tokens to be re-created or "refresched" periodically. As the token string is a JWT (JSON Web Token) it can be easily de-coded to extract the original information used to create the token originally, by splitting into 3 parts (on ".") and doing a base64 decode on the first substring, extracting the subscription name etc and calling the create token rest-point again, which can all be done client side. The Cumulocity Microservice Java SDK, [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely client side.
+

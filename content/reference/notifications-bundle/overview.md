@@ -63,3 +63,30 @@ There is a sample microservice available in the [cumulocity-examples repository]
 
 When creating a token a expiry time must be given in minutes of validity from when the token was created. This security feature limiting potential damamge due to leaking of a token does require tokens to be re-created or "refresched" periodically. As the token string is a JWT (JSON Web Token) it can be easily de-coded to extract the original information used to create the token originally, by splitting into 3 parts (on ".") and doing a base64 decode on the first substring, extracting the subscription name etc and calling the create token rest-point again, which can all be done client side. The Cumulocity Microservice Java SDK, [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely client side.
 
+### Shared subscription
+
+There can be mulitiple subscription on an managed object, each receiving filtered notifications specified by their individual subscriptions. In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber. This can be acheived by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "shared" request parameter set to true in the subscription request. 
+
+Notifications (i.e. messages) will be distributed among all connections to the Notification 2.0 web socket endpoint that use a token for the subscription and subscriber. Both the subscription name and subscriber must be specified when creating a token. The subscription name defines the "topic" messages are published on while the subscriber identifies the back end (North side) application in usual usage where the application can consist of more than one instance running in paralledl in the shared use case.
+
+Notifications will be delivered in order (with reference to the notification generating device) and notifications for a device will be delivered to the same application instance, except when new instance or failures change the application topology, necessitating a re-distribution of devices to running instances. In order to aid this asignment, subscriber instance can specify a "consumer name" when connecting on the web socket endpoint. The same token (or one similarly generated from subscription name and subscriber) is used as the token query string argument but a different consumer name is passed as a "consumer" query string argument. For example, instance 1 of the subscriber microservice could pass in "?token=xyz&consumer=instance1" while instance 2 could use "?token=XYZ&consumer=instance2".
+  
+[Currently, determing the instance id of a microservice replica is not supported by the Cumulocity microservice API.]
+
+
+### Volatile subscriptions
+
+When subscribing, it is possible to pass in an optional boolean "volatile" query parameter set to true when creating the subscription (note there is no need to mark a subscription as shared only the token but here it's both). This changes the subscription to not persist notifications for the named subscription. They are effectively only buffered in "memory" and can be discarded if not consumed quickly enough or on node failure. 
+
+Note, there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name. These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding isVolatile=true or false.   
+
+
+### Unsubscribing a subscriber
+
+Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription. For non-volatile subscriptions, this can result in notifications building up in storage. These will be deleted if a tenant is deleted but otherwise can take up considerable space in permant storage for high frequency notification sources. It is therefore advisable to unsubscribe. A separate REST endpoint is avaiable for this "/notification2/unsubscibe" with a non-optional query parameter "token". The token is the same as you would use to connect to the web socket endpoint to consume notifications. Note, there is no explicit subscribe subcriber using a token, instead this happens when you first connect with a token for the subscription name and subscriber. To unsupscribe an application, however, is an explicit act using a similar token. But unsubscribing should be infrequent, for example when deleting an application or during development when testing completes as typically one wnats messages to persist even when no consumer is running. Only if no consumer will ever run again should an unsubscribe subscriber be necessary.
+
+It is also possible to unsubscribe a subscriber on an open consumer web socket connection. Just send "unsubscribe-subscriber" instead of a message acknowledgement identifier from your web socket client to the service. The service will then unusbscribe the subscriber and close the connection. It's not possible to check if the unsubscribe succeeded as the connection always closes so this way of unsubscribing is probably mostly for testing.
+
+
+
+`

@@ -22,12 +22,12 @@ The MQTT ClientId needs to match the externalId with type **c8y_Serial** of your
 
 ### Sending and receiving SmartREST 1.0
 
-In general, the following hold for SmartREST requests and responses via MQTT:
+In general, the following holds for SmartREST requests and responses via MQTT:
 
-* All request rows will be sent as single MQTT messages. A single request message always yields a single response message instead of being split up to several response messages
-* All SmartREST response templates will be applied to the JSON response of a single request
-* Every matching response template will yield one row in the response
-* Response lines are separated by `\n`
+* All request rows will be sent as single MQTT messages. A single request message always yields a single response message instead of being split up to several response messages.
+* All SmartREST response templates will be applied to the JSON response of a single request.
+* Every matching response template will yield one row in the response.
+* Response lines are separated by `\n`.
 
 #### Sending SmartREST 1.0
 

@@ -93,11 +93,12 @@ Currently, determining the instance ID of a microservice replica is not supporte
 ### Volatile subscriptions
 
 When subscribing, it is possible to pass in an optional boolean "isVolatile" query parameter set to true.
-Note that there is no need to mark a subscription as shared - only the token is marked shared, but here it's both (token has isVolatile and isShared).
+Note that there is no need to mark a subscription as shared - only the token is marked shared. 
+Both token and subscriptions have isVolatile but only token has both isVolatile and isShared.
 This changes the subscription to not persist notifications for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
 Note that there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `isVolatile` equals true or false.   
+These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `isVolatile` equal to true or false.   
 
 ### Unsubscribing a subscriber
 
@@ -105,7 +106,7 @@ Once a subscription is made, notifications will be kept until consumed by all su
 For non-volatile subscriptions, this can result in notifications building up in storage if never consumed by the application.
 These will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.
-A separate REST endpoint is avaiable for this: <kbd>/notification2/unsubscibe</kbd>.
+A separate REST endpoint is available for this: <kbd>/notification2/unsubscibe</kbd>.
 It has a non-optional query parameter "token".
 The token is the same as you would use to connect to the web socket endpoint to consume notifications.
 Note that there is no explicit subscribe subcriber using a token.

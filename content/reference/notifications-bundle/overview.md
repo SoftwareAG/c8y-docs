@@ -92,7 +92,7 @@ Currently, determining the instance ID of a microservice replica is not supporte
 
 ### Volatile subscriptions
 
-When subscribing, it is possible to pass in an optional boolean "volatile" query parameter set to true.
+When subscribing, it is possible to pass in an optional boolean "isVolatile" query parameter set to true.
 Note that there is no need to mark a subscription as shared - only the token is marked shared, but here it's both (token has isVolatile and isShared).
 This changes the subscription to not persist notifications for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.

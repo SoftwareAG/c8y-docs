@@ -70,7 +70,7 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 ### Shared subscription
 
-There can be mulitiple subscription on an managed object, each receiving filtered notifications specified by their individual subscriptions.
+There can be multiple subscription on an managed object, each receiving filtered notifications specified by their individual subscriptions.
 In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber.
 This can be achieved by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "shared" request parameter set to true in the subscription request.
 

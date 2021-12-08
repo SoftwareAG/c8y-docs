@@ -72,28 +72,28 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 ### Shared subscription
 
-There can be multiple subscription on an managed object, each receiving filtered notifications specified by their individual subscriptions.
-In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "shared" request parameter set to true in the subscription request.
+There can be multiple subscription on a managed object, each receiving filtered notifications as specified by their individual subscriptions.
+In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelised application.
+This can be achieved by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "shared" request parameter set to true in the token create request.
 
 Notifications (messages) will be distributed among all connections to the Notification 2.0 web socket endpoint.
-These all use a token for the same subscription and the subscriber as both the subscription name and the subscriber must be specified when creating a token.
-The subscription name defines the "topic" messages that are published while the subscriber identifies the backend (north side) application that's usually used.
+These all use a token for the same subscription and the subscriber and both the same subscription name, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens.
+The subscription name defines the "topic" messages are published on, while the subscriber identifies the backend (north side) application that's usually used.
 The application can consist of more than one instance running in parallel in the shared use case.
 
 Notifications will be delivered in order with respect to the notification generating device.
 The notifications will be delivered to the same application instance, except when a new instance or a failure changes the application topology.
-Then it is necessary to re-distribute the devices to running instances.
+Then it is necessary to re-distribute the devices to currently running instances.
 In order to aid this assignment, the subscriber instance can specify a "consumer name" when connecting to the web socket endpoint.
 The same token, or one that was generated in a similar way from subscription name and subscriber, is used as the token query string argument.
 However, a different consumer name is passed as the "consumer" query string argument.
-For example, instance 1 of the subscriber microservice could pass in `?token=xyz&consumer=instance1` while instance 2 could use `?token=XYZ&consumer=instance2`.
+For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
 Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
 
 ### Volatile subscriptions
 
-When subscribing, it is possible to pass in an optional boolean "volatile" query parameter set to true when creating the subscription.
-Note that there is no need to mark a subscription as shared only the token but here it's both.
+When subscribing, it is possible to pass in an optional boolean "volatile" query parameter set to true.
+Note that there is no need to mark a subscription as shared - only the token is marked shared, but here it's both.
 This changes the subscription to not persist notifications for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
 Note that there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name.
@@ -103,15 +103,16 @@ These count as separate subscriptions and can be consumed by a subscriber using 
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
 For non-volatile subscriptions, this can result in notifications building up in storage if never consumed by the application.
-These will be deleted if a tenant is deleted but otherwise can take up considerable space in permant storage for high frequency notification sources.
+These will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.
 A separate REST endpoint is avaiable for this: <kbd>/notification2/unsubscibe</kbd>.
 It has a non-optional query parameter "token".
 The token is the same as you would use to connect to the web socket endpoint to consume notifications.
 Note that there is no explicit subscribe subcriber using a token.
-Instead this happens when you first connect with a token for the subscription name and subscriber.
+Instead this happens when you first connect a Web Socket with a token for the subscription name and subscriber.
 To unsubscribe an application, however, is an explicit act using a similar or the original token token.
-Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes as typically one wants messages to persist even when no consumer is running.
+Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes, 
+as typically one wants messages to persist even when no consumer is running.
 Only if no consumer will ever run again should an unsubscribe subscriber be necessary.
 
 It is also possible to unsubscribe a subscriber on an open consumer web socket connection.

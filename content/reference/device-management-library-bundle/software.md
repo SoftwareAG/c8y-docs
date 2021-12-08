@@ -6,11 +6,11 @@ layout: redirect
 
 The **Software** tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** page offers a **Software** tab for devices that announce *c8y_SoftwareList* and/or *c8y_SoftwareUpdate* in their *c8y_SupportedOperations* fragment in their device managed objects.
+The **Device details** page offers a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
 
 ### Installed software
 
-First a device may announce its current status of installed software to the platform by adding the *c8y_SoftwareList* fragment to its device managed object. This fragment is an array that should contain all installed software packages as individual objects with a name, version, and url property. The url field is optional since it is often difficult for devices to retain information about where a software package originated from. The other two properties are required to correctly identify packages and their versions.
+First a device may announce its current status of installed software to the platform by adding the ```c8y_SoftwareList``` fragment to its device managed object. This fragment is an array that should contain all installed software packages as individual objects with a name, version, and URL property. The URL field is optional since it is often difficult for devices to retain information about where a software package originated from. The other two properties are required to correctly identify packages and their versions.
 
 <table>
 <colgroup>
@@ -61,17 +61,17 @@ Devices should upload the complete list of installed software during startup. Ad
 
 **SmartREST example**
 
-The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and url property of an individual package.
+The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package.
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
 ### Changing installed software
 
-Within the **Software** tab users are able to select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's *c8y_SupportedOperations* fragment.
+Within the **Software** tab users are able to select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's ```c8y_SupportedOperations``` fragment.
 
 #### Software list
 
-If the device only supports the *c8y_SoftwareList* operation and the *c8y_SupportedOperations* fragment does not contain *c8y_SoftwareUpdate*, a *c8y_SoftwareList* operation is sent to the device. This operation contains a very similar *c8y_SoftwareList* fragment to the one that is already present in the device’s own managed object. The *c8y_SoftwareList operation* always contains the entire list of software that should be installed on the device. Exactly the packages in the list should be installed. Any installed packages not contained in the list should be removed.
+If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_SupportedOperations``` fragment does not contain ```c8y_SoftwareUpdate```, a ```c8y_SoftwareList``` operation is sent to the device. This operation contains a very similar ```c8y_SoftwareList``` fragment to the one that is already present in the device’s own managed object. The ```c8y_SoftwareList operation``` always contains the entire list of software that should be installed on the device. Exactly the packages in the list should be installed. Any installed packages not contained in the list should be removed.
 
 <table>
 <tbody>
@@ -129,7 +129,7 @@ The 516 static response template is available for dealing with software list ope
 
 #### Software update
 
-If a device supports the *c8y_SoftwareUpdate* operation in it's *c8y_SupportedOperations* fragment the **Software** tab will create *c8y_SoftwareUpdate* operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the *c8y_SoftwareUpdate* should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
+If a device supports the ```c8y_SoftwareUpdate``` operation in it's ```c8y_SupportedOperations``` fragment the **Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the ```c8y_SoftwareUpdate``` should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
 
 <table>
 <tbody>

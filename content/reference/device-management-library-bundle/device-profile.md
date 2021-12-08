@@ -6,7 +6,7 @@ layout: redirect
 
 From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file based device configuration. Large parts of the agent code to support these capabilities can be reused.
 
-Device profile functionality is enabled when the device announces the c8y_DeviceProfile operation in its c8y_SupportedOperations. The **Device profile** tab allows users to apply a profile to a device. This creates a *c8y_DeviceProfile* operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (*c8y_Firmware*, *c8y_SoftwareUpdate*, and typed *c8y_DownloadConfigFile*). We recommend to execute a *c8y_Profile* operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
+Device profile functionality is enabled when the device announces the c8y_DeviceProfile operation in its c8y_SupportedOperations. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
 
 <table>
 <tbody>
@@ -206,7 +206,7 @@ When a device receives a c8y_Profile operation it should announce the target pro
 |profileId|string|Yes|The ID reference of the device profile object.|
 |profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context.|
 
-After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments *c8y_Firmware*, *c8y_SoftwareList*, and *c8y_Configuration_<type>* respectively. Then the device shall update its installed profile state in its managed object by updating the *profileExecuted* property to true.
+After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device shall update its installed profile state in its managed object by updating the *profileExecuted* property to true.
 
 <table>
 <colgroup>
@@ -246,11 +246,11 @@ After completing each of the three subsections the device must announce its curr
 
 The device is expected to perform the following actions
 1. Set operation status to EXECUTING
-2. Set the *c8y_Profile* fragment in the device’s own managed object with profileExecuted = false
-3. Install firmware if included and complete installation by updating the *c8y_Firmware* fragment in its own managed object
-4. Install software if included and complete installation by updating the *c8y_SoftwareList* fragment in its own managed object
-5. Install configuration if included and complete installation by updating the <em>c8y_Configuration_<type></em> fragment for each configuration in its own managed object
-6. Set the *c8y_Profile* fragment in the device's own managed object with profileExecuted = true
+2. Set the ```c8y_Profile``` fragment in the device’s own managed object with profileExecuted = false
+3. Install firmware if included and complete installation by updating the ```c8y_Firmware``` fragment in its own managed object
+4. Install software if included and complete installation by updating the ```c8y_SoftwareList``` fragment in its own managed object
+5. Install configuration if included and complete installation by updating the ```c8y_Configuration_<type>``` fragment for each configuration in its own managed object
+6. Set the ```c8y_Profile``` fragment in the device's own managed object with profileExecuted = true
 7. Set the operation status to SUCCESSFUL
 
 

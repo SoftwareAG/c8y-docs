@@ -42,7 +42,7 @@ The **Connectivity** tab integrates with a 3rd party SIM management platform to 
 |iccid|string|No|ICCID of the installed SIM|
 
 
-Depending on the configured connectivity provider either MSISDN or ICCID may be used to identify the SIM present in the device. We recommend to always include both into the *c8y_Mobile fragment*. There are many more mobile connection related properties that may also be attached to the *c8y_Mobile fragment*, but only MSISDN or ICCID are relevant for connectivity management.
+Depending on the configured connectivity provider either MSISDN or ICCID may be used to identify the SIM present in the device. We recommend to always include both into the ```c8y_Mobile fragment```. There are many more mobile connection related properties that may also be attached to the ```c8y_Mobile fragment```, but only MSISDN or ICCID are relevant for connectivity management.
 
 **SmartREST example**
 

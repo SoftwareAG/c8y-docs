@@ -55,7 +55,7 @@ Using the agent marker fragment *com_cumulocity_model_Agent* on the parent devic
 
 In this case operations for the child devices are delivered to the connected parent device. The parent device then must determine the addressed child device based on the included device ID or other information. Then the command must be forwarded to the correct child.
 
-Our built-in static SmartREST response templates always include a device identifier as first parameter to determine the targeted child device. Here is an example of the 510 static response template for the *c8y_Restart* operation with the device identifier highlighted.
+Our built-in static SmartREST response templates always include a device identifier as first parameter to determine the targeted child device. Here is an example of the 510 static response template for the ```c8y_Restart``` operation with the device identifier highlighted.
 
 `510,DeviceSerial`
 

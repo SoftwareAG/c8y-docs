@@ -4,7 +4,7 @@ title: Device availability
 layout: redirect
 ---
 
-The platform can monitor device availability and connection status. To achieve this the device must communicate its required interval using the *c8y_RequiredAvailability* fragment in the device's own managed . This action activates availability and connection monitoring for the device.
+The platform can monitor device availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability* fragment in the device's own managed . This action activates availability and connection monitoring for the device.
 
 <table>
 <colgroup>
@@ -68,7 +68,7 @@ The static template 117 is provided to set the required availability for SmartRE
 
 ### Availability monitoring
 
-The response interval set in the *c8y_RequiredAvailability* fragment is used as interval in which the platform expects to receive data from the device. If no data is received in this interval the device will be marked as offline and an alarm of type *c8y_UnavailabilityAlarm* will be raised automatically. This alarm will also be cleared automatically when the device sends data again. No further action from the device is necessary.
+The response interval set in the ```c8y_RequiredAvailability``` fragment is used as interval in which the platform expects to receive data from the device. If no data is received in this interval the device will be marked as offline and an alarm of type ```c8y_UnavailabilityAlarm``` will be raised automatically. This alarm will also be cleared automatically when the device sends data again. No further action from the device is necessary.
 
 ### Connection monitoring
 

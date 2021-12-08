@@ -10,7 +10,7 @@ Firmware can be installed with a full installation, or with a patch. Which varia
 
 #### Installed firmware
 
-First a device should announce its current state to the platform. The installed firmware should be entered into the *c8y_Firmware* fragment into the device's own managed object. A device should upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
+First a device should announce its current state to the platform. The installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device should upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
 <table>
 <colgroup>
@@ -147,7 +147,7 @@ The device is expected to perform the following actions:
 **SmartREST example**
 
 The 525 static response template is designed to deal with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
-1. Receive *c8y_Firmware* (patch) operation <br>
+1. Receive ```c8y_Firmware``` (patch) operation <br>
   `525,deviceSerial,ubuntu core,20.04.3,http://test.com,20.04.3`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Firmware`

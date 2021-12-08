@@ -6,7 +6,7 @@ layout: redirect
 
 ### Announcing capabilities
 
-Devices may announce their supported capabilities using the *c8y_SupportedOperations* fragment in their own managed object. The fragment itself is an array of strings. It may contain built in operations with their meaning detailed below or custom operations for specific use cases.
+Devices may announce their supported capabilities using the ```c8y_SupportedOperations``` fragment in their own managed object. The fragment itself is an array of strings. It may contain built in operations with their meaning detailed below or custom operations for specific use cases.
 
 <table>
 <colgroup>
@@ -37,9 +37,9 @@ Devices may announce their supported capabilities using the *c8y_SupportedOperat
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|*c8y_SupportedOperations*|Object|Yes|String list of supported operations|
+|c8y_SupportedOperations|Object|Yes|String list of supported operations|
 
-Some capabilities also introduce their own *c8y_Supported<...>* fragments with a similar concept. These fragment allow devices announce the ability to handle certain types of log files or configuration.
+Some capabilities also introduce their own ```c8y_Supported<...>``` fragments with a similar concept. These fragment allow devices announce the ability to handle certain types of log files or configuration.
 
 **SmartREST example**
 

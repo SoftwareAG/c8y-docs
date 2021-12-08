@@ -10,7 +10,7 @@ The configuration allows three different formats for device configuration. They 
 
 The most basic form of configuration is a simple text based configuration. Here the configuration is stored and transferred directly as string. We recommend using this form for small human readable configuration files only, e.g. for Microcontroller based devices.
 
-The current configuration state of the device is communicated with the *c8y_Configuration* fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. Cumulocity IoT supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
+The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. Cumulocity IoT supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
 
 We recommend uploading the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
@@ -45,7 +45,7 @@ We recommend uploading the current configuration only on demand to save transfer
 
 #### Upload current text configuration
 
-For devices that include *c8y_SendConfiguration* in their *c8y_SupportedOperations* the **Configuration** tab offers a button to trigger a configuration upload from the device to Cumulocity. When the button is pressed a *c8y_SendConfiguration* is created
+For devices that include ```c8y_SendConfiguration``` in their ```c8y_SupportedOperations``` the **Configuration** tab offers a button to trigger a configuration upload from the device to Cumulocity. When the button is pressed a ```c8y_SendConfiguration``` is created
 
 <table>
 <tbody>
@@ -77,7 +77,7 @@ For devices that include *c8y_SendConfiguration* in their *c8y_SupportedOperatio
 </thead>
 <tbody>
 <tr>
-<td><em>c8y_SendConfiguration</em></td>
+<td>c8y_SendConfiguration</td>
 <td>object</td>
 <td>Yes</td>
 <td>Send configuration marker object designating the operation as a command to trigger the device to upload its configuration</td>
@@ -87,18 +87,18 @@ For devices that include *c8y_SendConfiguration* in their *c8y_SupportedOperatio
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
-2. Upload the current configuration to its own managed object using the c8y_Configuration fragment
+2. Upload the current configuration to its own managed object using the ```c8y_Configuration``` fragment
 3. Set operation status to SUCCESSFUL
 
 **SmartREST example**
 
-There is no built in static response template available for the *c8y_SendConfiguration* operation. Devices must create a custom template to implement this capability. Here is an example how such a template and its use could work.
+There is no built in static response template available for the ```c8y_SendConfiguration``` operation. Devices must create a custom template to implement this capability. Here is an example how such a template and its use could work.
 
 Template creation:<br>
 `11,100,,c8y_SendConfiguration,deviceId`
 
 Receiving the operation
-1. Receive the c8y_SendConfiguration operation using the custom template created above <br>
+1. Receive the ```c8y_SendConfiguration``` operation using the custom template created above <br>
   `100,L2P_MQTT_FX_Client,4801`
 2. Set operation status to EXECUTING
   `501,c8y_ SendConfiguration`
@@ -109,23 +109,23 @@ Receiving the operation
 
 #### Install text configuration
 
-Devices that support installing configuration can communicate this by adding *c8y_Configuration* to their *c8y_SupportedOperations*. Then the **Configuration** tab will offer a button to send a user configured configuration to the device. This action consequently creates a *c8y_Configuration* operation with the same fragment signature as found in the device’s managed object.
+Devices that support installing configuration can communicate this by adding ```c8y_Configuration``` to their ```c8y_SupportedOperations```. Then the **Configuration** tab will offer a button to send a user configured configuration to the device. This action consequently creates a ```c8y_Configuration``` operation with the same fragment signature as found in the device’s managed object.
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
 2. Install and apply configuration as included in the nested config property with the c8y_Configuration fragment
-3. Update the *c8y_Configuration* fragment in the device’s managed object
+3. Update the ```c8y_Configuration``` fragment in the device’s managed object
 4. Set operation status to SUCCESSFUL
 
 **SmartREST example**
 
-The 513 static response template is available to recewith *c8y_Configuration* operations
-1. Receive *c8y_Configuration* operation <br>
+The 513 static response template is available to recewith ```c8y_Configuration``` operations
+1. Receive ```c8y_Configuration``` operation <br>
   `511,deviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Configuration`
 3. Install and apply configuration as included
-4. Update the *c8y_Configuration* fragment<br>
+4. Update the ```c8y_Configuration``` fragment<br>
   `113,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 5. Set operation status to SUCCESSFUL<br>
   `503,c8y_Configuration`
@@ -138,7 +138,7 @@ As the name suggests, this approach stores and transfers configuration as binary
 
 #### Upload current legacy configuration
 
-Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding *c8y_UploadConfigFile* to their *c8y_SupportedOperations*. This enables a "Get snapshot from device" button in the **Configuration** tab. Pressing it generates a *c8y_UploadConfigFile* operation for the device.
+Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a "Get snapshot from device" button in the **Configuration** tab. Pressing it generates a ```c8y_UploadConfigFile``` operation for the device.
 
 <table>
 <tbody>
@@ -172,7 +172,7 @@ Devices may signal their support for uploading their current configuration to Cu
 </thead>
 <tbody>
 <tr>
-<td><em>c8y_ UploadConfigFile</em></td>
+<td>c8y_ UploadConfigFile</td>
 <td>object</td>
 <td>Yes</td>
 <td>Upload configuration file marker object designating the operation as a command to trigger the device to upload its configuration file</td>
@@ -180,7 +180,7 @@ Devices may signal their support for uploading their current configuration to Cu
 </tbody>
 </table>
 
-When uploading its configuration, the device must first upload the configuration file into Cumulocity IoT inventory binaries, and then create a configuration repository entry as a managed object of type *c8y_ConfigurationDump* in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
+When uploading its configuration, the device must first upload the configuration file into Cumulocity IoT inventory binaries, and then create a configuration repository entry as a managed object of type ```c8y_ConfigurationDump``` in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
 
 <table>
 <colgroup>
@@ -214,7 +214,7 @@ When uploading its configuration, the device must first upload the configuration
 |name|string|Yes|Name of the configuration|
 |description|string|No|Description of the configuration|
 |url|string|Yes|URL where the configuration file was uploaded to|
-|type|string|Yes|Type of the configuration repository entry object. Must always be "*c8y_ConfigurationDump*"|
+|type|string|Yes|Type of the configuration repository entry object. Must always be "c8y_ConfigurationDump"|
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
@@ -225,7 +225,7 @@ The device is expected to perform the following actions:
 **SmartREST example**
 
 The 520 static response template is available for this functionality
-1. Receive *c8y_UploadConfigFile* operation <br>
+1. Receive ```c8y_UploadConfigFile``` operation <br>
   `520,DeviceSerial`
 2. Set operation status to EXECUTING <br>
   `501,c8y_UploadConfigFile`
@@ -236,7 +236,7 @@ The 520 static response template is available for this functionality
 
 #### Install legacy configuration
 
-Devices that are capable of installing configuration remotely can announce this by adding *c8y_DownloadConfigFile* to their *c8y_SupportedOperations*. Then the **Configuration** tab offers a button to "Send configuration to device". When pressed, a *c8y_DownloadConfigFile* operation is created for the device.
+Devices that are capable of installing configuration remotely can announce this by adding ```c8y_DownloadConfigFile``` to their ```c8y_SupportedOperations```. Then the **Configuration** tab offers a button to "Send configuration to device". When pressed, a ```c8y_DownloadConfigFile``` operation is created for the device.
 
 <table>
 <tbody>
@@ -279,7 +279,7 @@ Devices that are capable of installing configuration remotely can announce this 
 <td>URL where the configuration file shall be obtained from</td>
 </tr>
 <tr>
-<td><em>c8y_ConfigurationDump</em></td>
+<td>c8y_ConfigurationDump</td>
 <td>object</td>
 <td>Yes</td>
 <td>Configuration dump reference object containing the ID of the Configuration repository entry object</td>
@@ -287,7 +287,7 @@ Devices that are capable of installing configuration remotely can announce this 
 </tbody>
 </table>
 
-After downloading the configuration from the specified URL and installing it, the device must reference its currently installed configuration in its own managed object. This is done by transferring the nested *c8y_ConfigurationDump* fragment entirely into the device’s own managed object.
+After downloading the configuration from the specified URL and installing it, the device must reference its currently installed configuration in its own managed object. This is done by transferring the nested ```c8y_ConfigurationDump``` fragment entirely into the device’s own managed object.
 
 <table>
 <colgroup>
@@ -337,12 +337,12 @@ The 521 static response template is available for this functionality
   `501,c8y_DownloadConfigFile`
 3. Download configuration from the URL specified
 4. Install the configuration file
-5. Set operation status to SUCCESSFUL and set the currently installed *c8y_ConfigurationDump* fragment implicitly <br>
+5. Set operation status to SUCCESSFUL and set the currently installed ```c8y_ConfigurationDump``` fragment implicitly <br>
   `503,c8y_DownloadConfigFile`
 
 ### Typed file based configuration
 
-The most versatile way of managing device configuration is typed file based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the *c8y_SupportedConfiguration* fragment to the device's own managed object.
+The most versatile way of managing device configuration is typed file based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the ```c8y_SupportedConfiguration``` fragment to the device's own managed object.
 
 <table>
 <colgroup>
@@ -373,7 +373,7 @@ The most versatile way of managing device configuration is typed file based conf
 
 |Name|Type|Mandatory|Description|
 |----|----|----|----|
-|*c8y_SupportedConfigurations*|array|Yes|String array of supported configuration for this device.|
+|c8y_SupportedConfigurations|array|Yes|String array of supported configuration for this device.|
 
 
 Cumulocity IoT does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
@@ -507,7 +507,7 @@ The 526 static SmartREST template is prepared for typed c8y_UploadConfigFile ope
 
 #### Install configuration file
 
-Installing typed configuration also works very similarly to the legacy configuration. Adding the *c8y_DownloadConfigFile* to the device's *c8y_SupportedOperations* controls the availability of the **Send configuration to device** button. When it is pressed a *c8y_DownloadConfigFile* operation with the configuration type included is created.
+Installing typed configuration also works very similarly to the legacy configuration. Adding the ```c8y_DownloadConfigFile``` to the device's ```c8y_SupportedOperations``` controls the availability of the **Send configuration to device** button. When it is pressed a ```c8y_DownloadConfigFile``` operation with the configuration type included is created.
 
 
 <table>
@@ -587,7 +587,7 @@ When the device has downloaded and installed the configuration it must update th
 <td>c8y_Configuration_agent_conf</td>
 <td>object</td>
 <td>Yes</td>
-<td>Fragment name with prefix "<em>c8y_Configuration_</em>" followed by the configuration type containing details of the currently installed configuration of that particular type</td>
+<td>Fragment name with prefix "c8y_Configuration_" followed by the configuration type containing details of the currently installed configuration of that particular type</td>
 </tr>
 <tr>
 <td>name</td>
@@ -626,7 +626,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 524 static SmartREST response template is available for typed *c8y_DownloadConfigFile* operations, and the 120 static template is prepared for uploading the current configuration.
+The 524 static SmartREST response template is available for typed ```c8y_DownloadConfigFile``` operations, and the 120 static template is prepared for uploading the current configuration.
 1. Receive typed c8y_UploadConfigFile operation<br>
   `524,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/156719,agent_conf`
 2. Set operation status to EXECUTING<br>

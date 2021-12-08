@@ -4,11 +4,11 @@ title: Shell
 layout: redirect
 ---
 
-The **Shell** tab gives the possibility to send arbitrary device specific commands to the device. It appears if the *c8y_Command* operation is present in the device's *c8y_SupportedOperations*.
+The **Shell** tab gives the possibility to send arbitrary device specific commands to the device. It appears if the ```c8y_Command``` operation is present in the device's ```c8y_SupportedOperations```.
 
 ### Send a command to a device
 
-Users may enter an arbitrary string into the command text. The format and its interpretation is up to the device integration. When the “Execute” button is pressed a *c8y_Command* operation is created
+Users may enter an arbitrary string into the command text. The format and its interpretation is up to the device integration. When the “Execute” button is pressed a ```c8y_Command``` operation is created
 
 
 <table>
@@ -75,7 +75,7 @@ The device is expected to perform the following actions
 
 **SmartREST example**
 
-For SmartREST connected devices the 511 static response template is available for receiving c8y_Command operations. Additionally the implicit parameter functionality of the 503 static template can be used to supply the return value
+For SmartREST connected devices the 511 static response template is available for receiving ```c8y_Command``` operations. Additionally the implicit parameter functionality of the 503 static template can be used to supply the return value
 
 1. Receive c8y_Command operation <br>
   `511,DeviceSerial,"get sw.version; get hw.version"`

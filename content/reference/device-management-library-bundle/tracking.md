@@ -8,7 +8,7 @@ The **Tracking** tab allows the device's path to be visualized. To achieve that 
 
 ### Tracking position history
 
-A device may upload its current or past positions as location updated events with the *c8y_Position* fragment. This is useful for tracking devices on a route or generally tracing the location history of devices.
+A device may upload its current or past positions as location updated events with the ```c8y_Position``` fragment. This is useful for tracking devices on a route or generally tracing the location history of devices.
 
 <table>
 <colgroup>
@@ -100,7 +100,7 @@ A device may upload its current or past positions as location updated events wit
 <td>type</td>
 <td>String</td>
 <td>Yes</td>
-<td>Must always be <em>c8y_LocationUpdate</em> to designate this event as location update event</td>
+<td>Must always be c8y_LocationUpdate to designate this event as location update event</td>
 </tr>
 <tr>
 <td>text</td>

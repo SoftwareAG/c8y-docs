@@ -4,13 +4,13 @@ title: Device information
 layout: redirect
 ---
 
-The **Info** tab of a device is a predefined dashboard with several widgets that combine default device information. For example the status widget will get its information from the *c8y_Availability* fragment, which holds information about the device's status and when it was last available. More information can be found in [Service monitoring](/users-guide/device-management/#service-monitoring)
+The **Info** tab of a device is a predefined dashboard with several widgets that combine default device information. For example the status widget will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. More information can be found in [Service monitoring](/users-guide/device-management/#service-monitoring)
 
 ![Device status](/images/reference-guide/device-status.png)
 
 ### Device marker
 
- A device is marked in the inventory with a *c8y_IsDevice* fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
+ A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ In order to receive any operation a device must declare the agent marker fragmen
 
 ### Device restart
 
-Devices capable of restarting remotely can announce this capability by adding the *c8y_Restart* operation to the device's own *c8y_SupportedOperations* fragment. Then the device details page will enable a restart button within its context menu.
+Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the device details page will enable a restart button within its context menu.
 
 #### Restart operation
 
@@ -94,7 +94,7 @@ Upon clicking the restart button in Device management UI an operation as follows
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|*c8y_Restart*|Object|Yes|Restart marker fragment, that designates this operation as a restart operation|
+|c8y_Restart|Object|Yes|Restart marker fragment, that designates this operation as a restart operation|
 
 The device is expected to perform the following actions:
 1. Set the operation status to EXECUTING
@@ -113,7 +113,7 @@ The device is expected to perform the following actions:
 
 ### Hardware information
 
-Devices may announce their underlying hardware information to Cumulocity IoT using the *c8y_Hardware* fragment in the device’s own managed object.
+Devices may announce their underlying hardware information to Cumulocity IoT using the ```c8y_Hardware``` fragment in the device’s own managed object.
 
 <table>
 <colgroup>

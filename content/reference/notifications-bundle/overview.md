@@ -74,7 +74,7 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 There can be multiple subscription on a managed object, each receiving filtered notifications as specified by their individual subscriptions.
 In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelised application.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "shared" request parameter set to true in the token create request.
+This can be achieved by creating a token with a subscription and subscriber name for the scalable application but with an optional boolean "isShared" request parameter set to true in the token create request.
 
 Notifications (messages) will be distributed among all connections to the Notification 2.0 web socket endpoint.
 These all use a token for the same subscription and the subscriber and both the same subscription name, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens.
@@ -93,7 +93,7 @@ Currently, determining the instance ID of a microservice replica is not supporte
 ### Volatile subscriptions
 
 When subscribing, it is possible to pass in an optional boolean "volatile" query parameter set to true.
-Note that there is no need to mark a subscription as shared - only the token is marked shared, but here it's both.
+Note that there is no need to mark a subscription as shared - only the token is marked shared, but here it's both (token has isVolatile and isShared).
 This changes the subscription to not persist notifications for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
 Note that there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name.

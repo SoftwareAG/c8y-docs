@@ -20,7 +20,16 @@ Although you need to send the IDs in the body of each message with SmartREST 1.0
 
 The MQTT ClientId needs to match the externalId with type **c8y_Serial** of your device. It is used to assign the correct operations and responses.
 
-### Sending SmartREST 1.0
+### Sending and receiving SmartREST 1.0
+
+In general, the following holds for SmartREST requests and responses via MQTT:
+
+* All request rows will be sent as single MQTT messages. A single request message always yields a single response message instead of being split up to several response messages.
+* All SmartREST response templates will be applied to the JSON response of a single request.
+* Every matching response template will yield one row in the response.
+* Response lines are separated by `\n`.
+
+#### Sending SmartREST 1.0
 
 To send data to the server you can publish the same content as you would POST to the SmartREST endpoint <kbd>/s</kbd>.
 
@@ -40,7 +49,7 @@ To make sure, we recommend you to use reverse domain names, e.g.:
 
 We also recommend you to add the protocol version as a postfix in the X-ID.
 
-#### Processing mode
+##### Processing mode
 
 Since the [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 
@@ -60,7 +69,7 @@ The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) also supp
 c/ul/<X-ID>
 ```
 
-### Receiving SmartREST 1.0
+#### Receiving SmartREST 1.0
 
 If a template triggers a response template, the returning message will be published by the server on the following topic.
 

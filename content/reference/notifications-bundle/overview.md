@@ -103,7 +103,7 @@ These count as separate subscriptions and can be consumed by a subscriber using 
 ### Unsubscribing a subscriber
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
-For non-volatile subscriptions, this can result in notifications building up in storage if never consumed by the application.
+For non-volatile subscriptions, this can result in notifications remaining in storage if never consumed by the application.
 These will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.
 A separate REST endpoint is available for this: <kbd>/notification2/unsubscibe</kbd>.
@@ -120,3 +120,5 @@ It is also possible to unsubscribe a subscriber on an open consumer web socket c
 To do so, send "unsubscribe-subscriber" instead of a message acknowledgement identifier from your web socket client to the service.
 The service will then unusbscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
+
+It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

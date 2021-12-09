@@ -6,7 +6,7 @@ layout: redirect
 
 From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file based device configuration. Large parts of the agent code to support these capabilities can be reused.
 
-Device profile functionality is enabled when the device announces the c8y_DeviceProfile operation in its c8y_SupportedOperations. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
+Device profile functionality is enabled when the device announces the ```c8y_DeviceProfile``` operation in its ```c8y_SupportedOperations```. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
 
 <table>
 <tbody>
@@ -169,7 +169,7 @@ Device profile functionality is enabled when the device announces the c8y_Device
 </tbody>
 </table>
 
-When a device receives a c8y_Profile operation it should announce the target profile in its own managed object first.
+When a device receives a ```c8y_Profile``` operation it should announce the target profile in its own managed object first.
 
 <table>
 <colgroup>
@@ -258,7 +258,7 @@ The device is expected to perform the following actions
 
 In addition to the prepared static templates for firmware, software, and configuration there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile.
 
-1. Receive c8y_DeviceProfile operation <br>
+1. Receive ```c8y_DeviceProfile``` operation <br>
   ```
   527,DeviceSerial,$FW,device_fw,1.0.1,https://cumulocity.com/fw,false,,$SW,curl,2.3.4,http://my.url.com,install,cumulocity_agent,1.2.3,https://cumulocity.com/agent,install,$CONF,http://cumulocity.com/conf,ssh_conf,https://demos.cumulocity.com/inventory/binaries/156719,agent_conf
   ```

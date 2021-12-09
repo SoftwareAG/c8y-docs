@@ -113,7 +113,7 @@ Devices that support installing configuration can communicate this by adding ```
 
 The device is expected to perform the following actions:
 1. Set operation status to EXECUTING
-2. Install and apply configuration as included in the nested config property with the c8y_Configuration fragment
+2. Install and apply configuration as included in the nested config property with the ```c8y_Configuration``` fragment
 3. Update the ```c8y_Configuration``` fragment in the device’s managed object
 4. Set operation status to SUCCESSFUL
 
@@ -331,7 +331,7 @@ The device is expected to perform the following actions:
 **SmartREST example**
 
 The 521 static response template is available for this functionality
-1. Receive c8y_UploadConfigFile operation <br>
+1. Receive ```c8y_UploadConfigFile``` operation <br>
   `521,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/9100`
 2. Set operation status to EXECUTING <br>
   `501,c8y_DownloadConfigFile`
@@ -380,12 +380,12 @@ Cumulocity IoT does not validate or further process configuration types. From a 
 
 **SmartREST example**
 
-The c8y_SupportedConfiguration fragment can be uploaded using the static template 119 <br>
+The ```c8y_SupportedConfiguration``` fragment can be uploaded using the static template 119 <br>
 `119,agent_conf,ssh_conf`
 
 #### Upload current configuration file
 
-Similarly to legacy configuration, uploading typed configuration is announced by adding the c8y_UploadConfigFile to the c8y_SupportedOperations. In this case pressing the button creates a very similar c8y_UploadConfigFile operation with the targeted configuration type as additional parameter.
+Similarly to legacy configuration, uploading typed configuration is announced by adding the ```c8y_UploadConfigFile``` to the ```c8y_SupportedOperations```. In this case pressing the button creates a very similar ```c8y_UploadConfigFile``` operation with the targeted configuration type as additional parameter.
 
 <table>
 <tbody>
@@ -495,8 +495,8 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 526 static SmartREST template is prepared for typed c8y_UploadConfigFile operations
-1. Receive typed c8y_UploadConfigFile operation <br>
+The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile``` operations
+1. Receive typed ```c8y_UploadConfigFile``` operation <br>
   `526,DeviceSerial,agent_conf`
 2. Set operation status to EXECUTING <br>
   `501,c8y_UploadConfigFile`
@@ -534,7 +534,7 @@ Installing typed configuration also works very similarly to the legacy configura
 |url|string|Yes|URL where the configuration file shall be obtained from|
 
 
-When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This shall be done by adding the c8y_Configuration_<config type> fragment to the device’s own managed object.
+When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This shall be done by adding the ```c8y_Configuration_<config type>``` fragment to the device’s own managed object.
 
 <table>
 <colgroup>
@@ -627,7 +627,7 @@ The device is expected to perform the following actions:
 **SmartREST example**
 
 The 524 static SmartREST response template is available for typed ```c8y_DownloadConfigFile``` operations, and the 120 static template is prepared for uploading the current configuration.
-1. Receive typed c8y_UploadConfigFile operation<br>
+1. Receive typed ```c8y_UploadConfigFile operation```<br>
   `524,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/156719,agent_conf`
 2. Set operation status to EXECUTING<br>
   `501,c8y_DownloadConfigFile`

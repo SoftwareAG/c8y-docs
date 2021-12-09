@@ -55,7 +55,7 @@ The 115 static template is available for devices to communicate their currently 
 
 ### Installing a firmware image
 
-When a user selects a complete firmware image for installation, an operation with a similar `c8y_Firmware` fragment as found in the device managed object is created. This operation should be considered as the desired state, that should be achieved by the device.
+When a user selects a complete firmware image for installation, an operation with a similar ```c8y_Firmware``` fragment as found in the device managed object is created. This operation should be considered as the desired state, that should be achieved by the device.
 
 <table>
 <tbody>
@@ -94,7 +94,7 @@ Updating a devices often changes fundamental system components. This operation s
 
 The 515 static response template is designed to deal with installing firmware images
 
-1. Receive c8y_Firmware (image) operation <br>
+1. Receive ```c8y_Firmware``` (image) operation <br>
   `515,deviceSerial,ubuntu core,20.04.3,http://test.com`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Firmware`
@@ -106,7 +106,7 @@ The 515 static response template is designed to deal with installing firmware im
 
 ### Installing a firmware patch
 
-In case a user selects a firmware patch to install on a device, a `c8y_Firmware` operation is created. In this case two additional parameters are included to help with installation of a firmware patch. The device agent is responsible to execute a firmware patch process instead of a regular installation.
+In case a user selects a firmware patch to install on a device, a ```c8y_Firmware``` operation is created. In this case two additional parameters are included to help with installation of a firmware patch. The device agent is responsible to execute a firmware patch process instead of a regular installation.
 
 <table>
 <tbody>

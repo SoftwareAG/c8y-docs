@@ -119,7 +119,7 @@ as typically one wants messages to persist even when no consumer is running.
 Only if no consumer will ever run again should unsubscribing a subscriber be necessary.
 
 It is also possible to unsubscribe a subscriber on an open consumer web socket connection.
-To do so, send "unsubscribe-subscriber" instead of a message acknowledgement identifier from your web socket client to the service.
+To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your web socket client to the service.
 The service will then unusbscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
 

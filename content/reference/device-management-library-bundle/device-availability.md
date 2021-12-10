@@ -4,27 +4,12 @@ title: Device availability
 layout: redirect
 ---
 
-The platform can monitor device availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability* fragment in the device's own managed . This action activates availability and connection monitoring for the device.
+The **Device availability tab" shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability* fragment in the device's own managed . This action activates availability and connection monitoring for the device.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>PUT</b> </td>
-<td style="text-align:center"> <em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_RequiredAvailability": {
        "responseInterval": 15

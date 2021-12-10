@@ -10,27 +10,10 @@ The **Network** tab displays network information. The **Network** tab will only 
 
 Devices may announce their current local network status and configuration to the platform using the ```c8y_Network``` fragment in the device's own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>PUT</b>
-</td>
-<td style="text-align:center"> <em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Network": {
        "c8y_LAN": {
@@ -199,17 +182,7 @@ Devices may announce their current local network status and configuration to the
 
 If the device contains the ```c8y_Network``` operation in its ```c8y_SupportedOperations``` users may also update a device's network configuration in the **Network** tab. Changed configuration is sent as ```c8y_Network``` operation with a very similar fragment as also present in the device managed object. The ```c8y_Network``` fragment within this operation may contain one or more of its nested fragments.
 
-<table>
-<tbody>
-<tr>
-<td> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-
-```
+```json
 {
    "c8y_Network": {
        "c8y_LAN": {

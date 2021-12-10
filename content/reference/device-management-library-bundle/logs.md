@@ -11,25 +11,10 @@ The device should contain a fragment called ```c8y_SupportedLogs```, which holds
 
 Supported log types shall be announced by devices using the ```c8y_SupportedLogs``` fragment in the device’s own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center" ><b>PUT </b>
-</td>
-<td style="text-align:center" ><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+````json
 {
    "c8y_SupportedLogs": [
       "syslog",
@@ -52,16 +37,7 @@ The 118 static template is available to announce the supported logs of a device
 
 When users request log files from devices via the **Logs** tab a ```c8y_LogfileRequest``` operation is created.
 
-<table>
-<tbody>
-<tr>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_LogfileRequest": {
        "searchText": "kernel",
@@ -83,27 +59,10 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 
 When the device has gathered the logs it must upload it as a file to Cumulocity IoT. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; create event &#10145;&#65039; &#9729;&#65039; </td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>POST</b>
-</td>
-<td style="text-align:center">
-<em>/event/events</em>
-</td>
-</tr>
-</tbody>
-</table>
+POST /event/events
 
-```
+
+```json
 {
    "source": {
        "id": "4801"
@@ -123,26 +82,9 @@ When the device has gathered the logs it must upload it as a file to Cumulocity 
 
 If desired the device may also include the ```c8y_LogfileRequest``` fragment from the operation or the operation ID into the event. The file is the attached to the event using it’s event ID and event binaries API
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; upload binary &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>POST</b>
-</td>
-<td style="text-align:center"><em>/event/events/&lt;eventId&gt;/binaries</em>
-</td>
-</tr>
-</tbody>
-</table>
-
-
+```http
+POST /event/events/<eventId>/binaries
+```
 ```http
 Host: https://<TENANT_DOMAIN>
 Authorization: <AUTHORIZATION>
@@ -165,29 +107,14 @@ Oct 25 13:28:53 wtp kernel: [  719.555033] sd 6:0:0:0: [sdb] No Caching mode pag
 
 After successful completion of the upload, the device must include a URL to the uploaded file into the ```c8y_LogfileRequest``` fragment of the operation. The link must be presented as property "file". This action can be combined with setting the operation status to SUCCESSFUL
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; update operation &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>PUT</b>
-</td>
-<td style="text-align:center">
-<em>/devicecontrol/operations/&lt;operation ID&gt;</em>
+```http
+PUT /devicecontrol/operations/&lt;operation ID>
 </td>
 </tr>
 </tbody>
 </table>
-
 ```
+```json
 {
    "status": "SUCCESSFUL",
    "c8y_LogfileRequest": {

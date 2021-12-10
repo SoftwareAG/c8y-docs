@@ -7,9 +7,7 @@ layout: redirect
 
 This section describes the device managed object and more importantly its fragments. Here you will find the most important functionalities a device has and all of the corresponding fragments to them. We will show the connection between the UI view, the device object managed in our databases and what is being communicated to and from the device itself.
 
-To begin with device management, opp
-
-Let's start from the **Device details** page. What we see there is a list of tabs and information within every one of them.
+To begin with device management, open the All devices tab in the Devices menu and choose a device. Click on the device to open the device details of this particular device. You see a list of tabs and information within every one of them.
 
 ![Device details](/images/reference-guide/device-details.png)
 

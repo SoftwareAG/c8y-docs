@@ -4,17 +4,11 @@ title: Device profile
 layout: redirect
 ---
 
-From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file based device configuration. Large parts of the agent code to support these capabilities can be reused.
+The **Device profile** tab shows the different parameters of the added device profiles. From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file based device configuration. Large parts of the agent code to support these capabilities can be reused.
 
 Device profile functionality is enabled when the device announces the ```c8y_DeviceProfile``` operation in its ```c8y_SupportedOperations```. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
 
-<table>
-<tbody>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;</td>
-</tbody>
-</table>
-
-```
+```json
 {
    "profileName": "my profile",
    "profileId": "158751",
@@ -171,26 +165,10 @@ Device profile functionality is enabled when the device announces the ```c8y_Dev
 
 When a device receives a ```c8y_Profile``` operation it should announce the target profile in its own managed object first.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">&#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039; </td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>PUT
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Profile": {
        "profileName": "my profile",
@@ -208,27 +186,10 @@ When a device receives a ```c8y_Profile``` operation it should announce the targ
 
 After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device shall update its installed profile state in its managed object by updating the *profileExecuted* property to true.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>PUT </b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Profile": {
        "profileName": "my profile",

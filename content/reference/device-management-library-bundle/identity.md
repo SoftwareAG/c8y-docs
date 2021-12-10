@@ -4,7 +4,7 @@ title: Identity
 layout: redirect
 ---
 
-This tab shows all identities associated with the device. If no identities are available the tab is not shown. Identities map from a unique device identifier (IMEI, SN, etc.) to the device’s managed object in Cumulocity IoT. This allows the device to find its managed object.
+The **Identity** tab shows all identities associated with the device. If no identities are available the tab is not shown. Identities map from a unique device identifier (IMEI, SN, etc.) to the device’s managed object in Cumulocity IoT. This allows the device to find its managed object.
 
 #### REST
 

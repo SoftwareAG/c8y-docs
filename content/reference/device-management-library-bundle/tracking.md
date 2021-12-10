@@ -10,25 +10,10 @@ The **Tracking** tab allows the device's path to be visualized. To achieve that 
 
 A device may upload its current or past positions as location updated events with the ```c8y_Position``` fragment. This is useful for tracking devices on a route or generally tracing the location history of devices.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; create event &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>POST</b>
-</td>
-<td style="text-align:center"> <em>/event/events</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+POST /event/events
 ```
+```json
 {
     "c8y_Position": {
     	"alt": 67,
@@ -120,25 +105,10 @@ The 401 static template is prepared to send location update events using SmartRE
 
 The current device position is represented using the c8y_Position fragment in the device’s own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039; </td>
-</tr>
-<tr>
-<td style="text-align:center"><b>PUT </b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/deviceId>
 ```
+```json
 {
     "c8y_Position": {
     	"alt": 67,

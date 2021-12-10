@@ -12,25 +12,10 @@ The **Info** tab of a device is a predefined dashboard with several widgets that
 
  A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>PUT</b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_IsDevice": {}
 }
@@ -42,25 +27,10 @@ The **Info** tab of a device is a predefined dashboard with several widgets that
 
 In order to receive any operation a device must declare the agent marker fragment in its own managed object. This will enable the platform to send operations to this device and for all child devices in its child hierarchy that don’t carry this fragment themselves.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<t>
-<td style="text-align:center"><b>PUT</b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "com_cumulocity_model_Agent": {}
 }
@@ -76,17 +46,7 @@ Devices capable of restarting remotely can announce this capability by adding th
 
 Upon clicking the restart button in Device management UI an operation as follows is sent:
 
-<table>
-<tbody>
-<tr>
-<td style="text-align:center">
-&#x1f4f1;&#11013;&#65039;receive operation&#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
   "c8y_Restart": {}
 }
@@ -115,25 +75,10 @@ The device is expected to perform the following actions:
 
 Devices may announce their underlying hardware information to Cumulocity IoT using the ```c8y_Hardware``` fragment in the device’s own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>PUT</b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Hardware": {
        "serialNumber": "1234567890",

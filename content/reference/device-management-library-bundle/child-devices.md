@@ -10,29 +10,10 @@ The **Child Devices** tab shows a list of all child devices. It will be availabl
 
 In order to link a device the parent device should post to its inventory API the following request containing the id of the child device.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; add child device &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>POST</b>
-</td>
-<td style="text-align:center">
-<em>/inventory/managedObjects/{{deviceId}}/childDevices</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+POST /inventory/managedObjects/{{deviceId}}/childDevices
 ```
+```json
 {
    "managedObject": {
       "id": "28067400"
@@ -51,7 +32,7 @@ To add child device to existing device you need to connect as existing device an
 `101,uniqueChildId,myChildDevice,myChildType`
 
 ### Operating a gateway for child devices
-Using the agent marker fragment *com_cumulocity_model_Agent* on the parent device, but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to Cumulocity IoT but send and receive data through the device and its integration.
+Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device, but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to Cumulocity IoT but send and receive data through the device and its integration.
 
 In this case operations for the child devices are delivered to the connected parent device. The parent device then must determine the addressed child device based on the included device ID or other information. Then the command must be forwarded to the correct child.
 

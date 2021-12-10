@@ -10,27 +10,10 @@ The **Alarm** tab is always shown for all devices. Its content is filled by alar
 
 A device may raise an alarm at any time. Typically alarms are used to communicate problem statuses un the devices environment.
 
-
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; raise alarm &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>POST</b>
-</td>
-<td style="text-align:center"> <em>/alarm/alarms</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+POST /alarm/alarms
 ```
+```json
 {
    "source": {
        "id": "4801"
@@ -63,24 +46,10 @@ There are several static SmartREST templates provided for basic alarm management
 ### Clearing alarms
 When a device detects that the local alarm status was resolved it must clear the alarm. This is done by updating the alarm status to CLEARED.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update alarm &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>PUT</b> </td>
-<td style="text-align:center"> <em>/alarm/alarms/&lt;alarm ID&gt;</em> </td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /alarm/alarms/<alarm ID>
 ```
+```json
 {
    "status": "CLEARED"
 }

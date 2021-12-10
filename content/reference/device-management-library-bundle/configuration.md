@@ -4,7 +4,7 @@ title: Configuration
 layout: redirect
 ---
 
-The configuration allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. The **Configuration** tab appears for devices when they announce support for any of the available formats.
+The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. The **Configuration** tab appears for devices when they announce support for any of the available formats.
 
 ### Text based configuration
 
@@ -14,24 +14,10 @@ The current configuration state of the device is communicated with the ```c8y_Co
 
 We recommend uploading the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
-<table>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>PUT</b>
-</td>
-<td style="text-align:center"> <em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Configuration": {
        "config": "c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"
@@ -47,14 +33,7 @@ We recommend uploading the current configuration only on demand to save transfer
 
 For devices that include ```c8y_SendConfiguration``` in their ```c8y_SupportedOperations``` the **Configuration** tab offers a button to trigger a configuration upload from the device to Cumulocity. When the button is pressed a ```c8y_SendConfiguration``` is created
 
-<table>
-<tbody>
-<td style="text-align:center">&#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_SendConfiguration": {}
 }
@@ -140,16 +119,7 @@ As the name suggests, this approach stores and transfers configuration as binary
 
 Devices may signal their support for uploading their current configuration to Cumulocity IoT by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a "Get snapshot from device" button in the **Configuration** tab. Pressing it generates a ```c8y_UploadConfigFile``` operation for the device.
 
-<table>
-<tbody>
-<tr>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_UploadConfigFile": {}
 }
@@ -182,25 +152,10 @@ Devices may signal their support for uploading their current configuration to Cu
 
 When uploading its configuration, the device must first upload the configuration file into Cumulocity IoT inventory binaries, and then create a configuration repository entry as a managed object of type ```c8y_ConfigurationDump``` in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; create inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>POST</b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+POST /inventory/managedObjects
 ```
+```json
 {
    "name": "myDevice configuration",
    "description": "Uploaded by myDevice on 2021-09-15T12:00:00+0200",
@@ -238,14 +193,7 @@ The 520 static response template is available for this functionality
 
 Devices that are capable of installing configuration remotely can announce this by adding ```c8y_DownloadConfigFile``` to their ```c8y_SupportedOperations```. Then the **Configuration** tab offers a button to "Send configuration to device". When pressed, a ```c8y_DownloadConfigFile``` operation is created for the device.
 
-<table>
-<tbody>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_DownloadConfigFile": {
        "url": "https://demos.cumulocity.com/inventory/binaries/9100",
@@ -289,27 +237,10 @@ Devices that are capable of installing configuration remotely can announce this 
 
 After downloading the configuration from the specified URL and installing it, the device must reference its currently installed configuration in its own managed object. This is done by transferring the nested ```c8y_ConfigurationDump``` fragment entirely into the device’s own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1">
-&#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;
-</td>
-</tr>
-<tr>
-<td style="text-align:center"><b>PUT </b></td>
-<td style="text-align:center">
-<em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_ConfigurationDump": {
        "id": "9200"
@@ -344,25 +275,10 @@ The 521 static response template is available for this functionality
 
 The most versatile way of managing device configuration is typed file based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the ```c8y_SupportedConfiguration``` fragment to the device's own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory >&#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"><b> PUT </b>
-</td>
-<td style="text-align:center"><em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
- ```
+```http
+PUT /inventory/managedObjects/<deviceId>
+```
+```json
 {
    "c8y_SupportedConfigurations": [
        "agent_conf",
@@ -387,13 +303,7 @@ The ```c8y_SupportedConfiguration``` fragment can be uploaded using the static t
 
 Similarly to legacy configuration, uploading typed configuration is announced by adding the ```c8y_UploadConfigFile``` to the ```c8y_SupportedOperations```. In this case pressing the button creates a very similar ```c8y_UploadConfigFile``` operation with the targeted configuration type as additional parameter.
 
-<table>
-<tbody>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039; </td>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_UploadConfigFile": {
        "type": "agent_conf"
@@ -407,26 +317,10 @@ Similarly to legacy configuration, uploading typed configuration is announced by
 
 Then the device must create an event with the type equal to the configuration type. We use events here instead of the inventory like in legacy file based config because events are automatically associated to the device and old events (and their binary attachments) including can be automatically cleaned up using retention rules.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; create event &#10145;&#65039; &#9729;&#65039; </td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>POST</b>
-</td>
-<td style="text-align:center"><em>/event/events</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+POST /event/events
 ```
+```json
 {
    "source": {
        "id": "4801"
@@ -447,27 +341,9 @@ Then the device must create an event with the type equal to the configuration ty
 
 In order to attach the configuration file to the just uploaded event, Event [binaries API](https://{{< domain-c8y >}}/api/#operation/postEventBinaryResource) should be used. The file is attached using a *multipart/form-data* request.
 
-
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; upload binary &#10145;&#65039; &#9729;&#65039; </td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>POST</b>
-</td>
-<td style="text-align:center"><em>/event/events/&lt;eventId&gt;/binaries</em>
-</td>
-</tr>
-</tbody>
-</table>
-
-
+```http
+POST /event/events/<eventId>/binaries
+```
 ```http
 Host: https://<TENANT_DOMAIN>
 Authorization: <AUTHORIZATION>
@@ -509,17 +385,7 @@ The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile`
 
 Installing typed configuration also works very similarly to the legacy configuration. Adding the ```c8y_DownloadConfigFile``` to the device's ```c8y_SupportedOperations``` controls the availability of the **Send configuration to device** button. When it is pressed a ```c8y_DownloadConfigFile``` operation with the configuration type included is created.
 
-
-<table>
-<tbody>
-<tr>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_DownloadConfigFile": {
        "type": "agent_conf",
@@ -536,27 +402,10 @@ Installing typed configuration also works very similarly to the legacy configura
 
 When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This shall be done by adding the ```c8y_Configuration_<config type>``` fragment to the device’s own managed object.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<b>PUT</b>
-</td>
-<td style="text-align:center">
-<em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+```json
 {
    "c8y_Configuration_agent_conf": {
        "name": "agent_conf",

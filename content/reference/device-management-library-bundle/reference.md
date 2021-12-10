@@ -11,14 +11,7 @@ The **Shell** tab gives the possibility to send arbitrary device specific comman
 Users may enter an arbitrary string into the command text. The format and its interpretation is up to the device integration. When the “Execute” button is pressed a ```c8y_Command``` operation is created
 
 
-<table>
-<tbody>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_Command": {
        "text": "get sw.version; get hw.version"
@@ -32,25 +25,10 @@ Users may enter an arbitrary string into the command text. The format and its in
 
 After completing the execution the device must provide a return string for the command in addition to setting the operation status to SUCCESSFUL. The result shall be provided as string property nested within the c8y_Command fragment in the operation.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update operation &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>PUT </b>
-</td>
-<td style="text-align:center"><em>/devicecontrol/operations/&lt;operation ID&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /devicecontrol/operations/<operation ID>
 ```
+```json
 {
    "status": "SUCCESSFUL",
    "c8y_Command": {

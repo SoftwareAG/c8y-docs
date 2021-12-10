@@ -17,16 +17,7 @@ For more information, see [Cloud Remote Access > Using Cloud Remote Access](/clo
 
 When a user selects a remote access endpoint and presses the connect button a c8y_RemoteAccessConnect operation is created.
 
-<table>
-<tbody>
-<tr>
-<td style="text-align:center"> &#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_RemoteAccessConnect": {
      "hostname": "10.0.0.67",

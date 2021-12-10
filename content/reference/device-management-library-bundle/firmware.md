@@ -12,24 +12,10 @@ Firmware can be installed with a full installation, or with a patch. Which varia
 
 First a device should announce its current state to the platform. The installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device should upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
-<table>
-<colgroup>
-<col width="25%">
-<col width="75%">
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align:center" colspan="2" rowspan="1"> &#x1f4f1;&#10145; &#65039; update inventory &#10145;&#65039; &#9729;&#65039;</td>
-</tr>
-<tr>
-<td style="text-align:center"> <b>PUT</b> </td>
-<td style="text-align:center"> </em>/inventory/managedObjects/&lt;deviceId&gt;</em>
-</td>
-</tr>
-</tbody>
-</table>
-
+```http
+PUT /inventory/managedObjects/<deviceId>
 ```
+````json
 {
    "c8y_Firmware": {
        "name": "ubuntu core",
@@ -57,16 +43,7 @@ The 115 static template is available for devices to communicate their currently 
 
 When a user selects a complete firmware image for installation, an operation with a similar ```c8y_Firmware``` fragment as found in the device managed object is created. This operation should be considered as the desired state, that should be achieved by the device.
 
-<table>
-<tbody>
-<td style="text-align:center" colspan="1" rowspan="1">
-&#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tr>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_Firmware": {
        "name": "ubuntu core",
@@ -108,15 +85,7 @@ The 515 static response template is designed to deal with installing firmware im
 
 In case a user selects a firmware patch to install on a device, a ```c8y_Firmware``` operation is created. In this case two additional parameters are included to help with installation of a firmware patch. The device agent is responsible to execute a firmware patch process instead of a regular installation.
 
-<table>
-<tbody>
-<td style="text-align:center">
-&#x1f4f1;&#11013;&#65039; receive operation &#11013;&#65039;&#9729;&#65039;
-</td>
-</tbody>
-</table>
-
-```
+```json
 {
    "c8y_Firmware": {
        "name": "ubuntu core",

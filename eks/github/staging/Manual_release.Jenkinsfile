@@ -13,9 +13,9 @@ pipeline {
     string(defaultValue: 'release/r10.4.6-BB', description: 'branch/revison', name: 'BRANCH')
   }
   environment {
-    YUM_SRV = 'yum.resources.cumulocity.com'
+    YUM_SRV = 'resources.cumulocity.com'
     YUM_USR = 'hudson'
-    YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
+    YUM_DEST_DIR = '/var/www/staging-resources/staticpage-guides/guides/'
     HUGO_PARAMS = ""
   }
 

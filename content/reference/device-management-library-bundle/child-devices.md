@@ -29,6 +29,7 @@ POST /inventory/managedObjects/{{deviceId}}/childDevices
 **SmartREST example**
 
 To add child device to existing device you need to connect as existing device and call child create template:
+
 `101,uniqueChildId,myChildDevice,myChildType`
 
 ### Operating a gateway for child devices

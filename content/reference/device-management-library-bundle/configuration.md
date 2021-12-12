@@ -4,7 +4,7 @@ title: Configuration
 layout: redirect
 ---
 
-The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. The **Configuration** tab appears for devices when they announce support for any of the available formats.
+The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. This tab appears for devices when they announce support for any of the available formats.
 
 ### Text based configuration
 
@@ -261,7 +261,8 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 521 static response template is available for this functionality
+The 521 static response template is available for this functionality:
+
 1. Receive ```c8y_UploadConfigFile``` operation <br>
   `521,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/9100`
 2. Set operation status to EXECUTING <br>
@@ -296,7 +297,8 @@ Cumulocity IoT does not validate or further process configuration types. From a 
 
 **SmartREST example**
 
-The ```c8y_SupportedConfiguration``` fragment can be uploaded using the static template 119 <br>
+The ```c8y_SupportedConfiguration``` fragment can be uploaded using the static template 119:
+<br>
 `119,agent_conf,ssh_conf`
 
 #### Upload current configuration file
@@ -371,7 +373,8 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile``` operations
+The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile``` operations:
+
 1. Receive typed ```c8y_UploadConfigFile``` operation <br>
   `526,DeviceSerial,agent_conf`
 2. Set operation status to EXECUTING <br>
@@ -475,7 +478,8 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 524 static SmartREST response template is available for typed ```c8y_DownloadConfigFile``` operations, and the 120 static template is prepared for uploading the current configuration.
+The 524 static SmartREST response template is available for typed ```c8y_DownloadConfigFile``` operations, and the 120 static template is prepared for uploading the current configuration:
+
 1. Receive typed ```c8y_UploadConfigFile operation```<br>
   `524,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/156719,agent_conf`
 2. Set operation status to EXECUTING<br>

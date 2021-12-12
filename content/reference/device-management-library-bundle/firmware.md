@@ -4,18 +4,18 @@ title: Firmware
 layout: redirect
 ---
 
-The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware, or BIOS.
+The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware or BIOS.
 
-Firmware can be installed with a full installation, or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
+Firmware can be installed with a full installation or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
 
 #### Installed firmware
 
-First a device should announce its current state to the platform. The installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device should upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
+A device must announce its current state to the platform first. Then the installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device has to upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
 ```
-````json
+```json
 {
    "c8y_Firmware": {
        "name": "ubuntu core",
@@ -31,11 +31,11 @@ PUT /inventory/managedObjects/<deviceId>
 |version|String|Yes|A version identifier of the firmware.|
 |url|String|No|A URL pointing to the location where the firmware file was obtained from.|
 
-Similar to software the url field is optional and may be omitted by devices.
+Similar to software the URL field is optional and may be omitted by devices.
 
 **SmartREST example**
 
-The 115 static template is available for devices to communicate their currently installed firmware state.
+The 115 static template is available for devices to communicate their currently installed firmware state:
 
 `115,ubuntu core,20.04.3,http://test.com`
 
@@ -69,7 +69,7 @@ Updating a devices often changes fundamental system components. This operation s
 
 **SmartREST example**
 
-The 515 static response template is designed to deal with installing firmware images
+The 515 static response template is designed to deal with installing firmware images:
 
 1. Receive ```c8y_Firmware``` (image) operation <br>
   `515,deviceSerial,ubuntu core,20.04.3,http://test.com`
@@ -116,6 +116,7 @@ The device is expected to perform the following actions:
 **SmartREST example**
 
 The 525 static response template is designed to deal with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
+
 1. Receive ```c8y_Firmware``` (patch) operation <br>
   `525,deviceSerial,ubuntu core,20.04.3,http://test.com,20.04.3`
 2. Set operation status to EXECUTING <br>

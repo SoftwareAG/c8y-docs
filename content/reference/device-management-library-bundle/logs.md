@@ -14,7 +14,7 @@ Supported log types shall be announced by devices using the ```c8y_SupportedLogs
 ```http
 PUT /inventory/managedObjects/<deviceId>
 ```
-````json
+```json
 {
    "c8y_SupportedLogs": [
       "syslog",
@@ -29,7 +29,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 **SmartREST example**
 
-The 118 static template is available to announce the supported logs of a device
+The 118 static template is available to announce the supported logs of a device:
 
 `118,syslog,dmesg`
 
@@ -148,7 +148,8 @@ The device is expected to perform the following actions
 
 **SmartREST example**
 
-Cumulocity offers the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time.
+Cumulocity offers the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time:
+
 1. Receive ```c8y_LogfileRequest``` operation<br>
   `522,DeviceSerial,syslog,2021-09-21T11:40:27+0200,2021-09-22T11:40:27+0200,ERROR,1000`
 2. Set operation status to EXECUTING <br>

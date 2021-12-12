@@ -4,9 +4,9 @@ title: Software
 layout: redirect
 ---
 
-The **Software** tab allows to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
+The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the Cumulocity IoT Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** page offers a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
+The **Device details** offer a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
 
 ### Installed software
 
@@ -43,7 +43,7 @@ Devices should upload the complete list of installed software during startup. Ad
 
 **SmartREST example**
 
-The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package.
+The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package:
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
@@ -89,7 +89,7 @@ If the desired state cannot be achieved for any reason the operation should be c
 
 **SmartREST example**
 
-The 516 static response template is available for dealing with software list operations. It works very similarly to the 116 template used for updating the device’s own managed object
+The 516 static response template is available for dealing with software list operations. It works very similarly to the 116 template used for updating the device’s own managed object:
 
 1. Receive c8y_SoftwareList operation <br>
   `516,deviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
@@ -137,9 +137,10 @@ The device is expected to perform the following actions
 3. Update the software list in the device’s own managed object
 4. Set operation status to SUCCESSFUL
 
-#### SmartREST example
+**SmartREST example**
 
-The 528 static response template is available for dealing with software update operations.
+The 528 static response template is available for dealing with software update operations:
+
 1. Receive c8y_SoftwareUpdate operation <br>
   `528,deviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>

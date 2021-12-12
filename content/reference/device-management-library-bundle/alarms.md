@@ -37,7 +37,7 @@ In addition to the required parameters above, the device may also include custom
 
 **SmartREST example**
 
-There are several static SmartREST templates provided for basic alarm management for device. They can be found with message IDs between 301 and 304 for different severities.
+There are several static SmartREST templates provided for basic alarm management for device. They can be found with message IDs between 301 and 304 for different severities:
 
 `302,c8y_TemperatureAlarm,"CPU temperature too high"`
   * Clearing an alarm of a specified type <br>
@@ -63,6 +63,6 @@ PUT /alarm/alarms/<alarm ID>
 
 **SmartREST example**
 
-The 306 static template is prepared to clear an active alarm of a specified type.
+The 306 static template is prepared to clear an active alarm of a specified type:
 
 `306,c8y_TemperatureAlarm`

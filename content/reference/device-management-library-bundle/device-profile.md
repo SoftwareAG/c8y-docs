@@ -217,7 +217,7 @@ The device is expected to perform the following actions
 
 **SmartREST example**
 
-In addition to the prepared static templates for firmware, software, and configuration there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile.
+In addition to the prepared static templates for firmware, software, and configuration there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile:
 
 1. Receive ```c8y_DeviceProfile``` operation <br>
   ```

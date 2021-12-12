@@ -28,7 +28,7 @@ Some capabilities also introduce their own ```c8y_Supported<...>``` fragments wi
 
 **SmartREST example**
 
-The 114 static template is available for devices to announce their supported operations.
+The 114 static template is available for devices to announce their supported operations:
 
 `114,c8y_Restart,c8y_Configuration,c8y_SoftwareList`
 

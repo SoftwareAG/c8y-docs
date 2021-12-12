@@ -31,6 +31,6 @@ Depending on the configured connectivity provider either MSISDN or ICCID may be 
 
 **SmartREST example**
 
-The 111 static template is provided for devices to communicate their mobile information.
+The 111 static template is provided for devices to communicate their mobile information:
 
 `111,1234567890,8930000000000000459,54353`

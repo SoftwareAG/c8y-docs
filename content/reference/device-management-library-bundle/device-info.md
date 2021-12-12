@@ -4,7 +4,7 @@ title: Device information
 layout: redirect
 ---
 
-The **Info** tab of a device is a predefined dashboard with several widgets that combine default device information. For example the status widget will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. More information can be found in [Service monitoring](/users-guide/device-management/#service-monitoring)
+The **Device information** tab is a predefined dashboard with several widgets that combine default device information. For example the status widget will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. More information can be found in [Service monitoring](/users-guide/device-management/#service-monitoring)
 
 ![Device status](/images/reference-guide/device-status.png)
 
@@ -96,6 +96,6 @@ PUT /inventory/managedObjects/<deviceId>
 
 **SmartREST example**
 
-Upload hardware information using the 110 static template. Usually this can be done once during agent application startup.
+Upload hardware information using the 110 static template. Usually this can be done once during agent application startup:
 
 `110,1234567890,myModel,1.2.3`

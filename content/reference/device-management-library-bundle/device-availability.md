@@ -4,7 +4,7 @@ title: Device availability
 layout: redirect
 ---
 
-The **Device availability tab" shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability* fragment in the device's own managed . This action activates availability and connection monitoring for the device.
+The **Device availability** tab shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability``` fragment in the device's own managed . This action activates availability and connection monitoring for the device.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -37,7 +37,7 @@ PUT /inventory/managedObjects/<deviceId>
 <td>responseInterval</td>
 <td>integer</td>
 <td>No</td>
-<td>Expected response interval of the device in minutes. If it is &lt;= 0 the device is considered in maintenance mode</td>
+<td>Expected response interval of the device in minutes. If it is &lt;= 0 the device is considered in maintenance mode.</td>
 </tr>
 </tbody>
 </table>
@@ -47,7 +47,7 @@ Usually devices should set their required interval only once during its first co
 
 **SmartREST example**
 
-The static template 117 is provided to set the required availability for SmartREST connected devices. This template can be sent in a fire-and-forget approach during device startup because it doesn't override already existing required availability configuration.
+The static template 117 is provided to set the required availability for SmartREST connected devices. This template can be sent in a fire-and-forget approach during device startup because it doesn't override already existing required availability configuration:
 
 `117,15`
 

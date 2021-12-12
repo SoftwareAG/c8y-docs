@@ -98,7 +98,8 @@ POST /event/events
 
 **SmartREST example**
 
-The 401 static template is prepared to send location update events using SmartREST <br>
+The 401 static template is prepared to send location update events using SmartREST:
+
 `401,51.151977,6.95173,67,2013-06-22T17:03:14.000+02:00`
 
 ### Setting the current position
@@ -126,7 +127,7 @@ PUT /inventory/managedObjects/deviceId>
 
 **SmartREST example**
 
-Devices may update their current position using the 112 static template
+Devices may update their current position using the 112 static template:
 
 `112,51.151977,6.95173,67,`
 

@@ -4,7 +4,7 @@ title: Network
 layout: redirect
 ---
 
-The **Network** tab displays network information. The **Network** tab will only be visible if the ```c8y_Network``` fragment is present in the device managed object. There are three subsections - WAN, LAN and DHCP which can be activated by the nested fragments ```c8y_ WAN```, ```c8y_LAN```, and ```c8y_DHCP``` respectively.
+The **Network** tab displays network information. It will only be visible if the ```c8y_Network``` fragment is present in the device managed object. There are three subsections: WAN, LAN and DHCP. Each of these can be activated by the nested fragments ```c8y_ WAN```, ```c8y_LAN```, and ```c8y_DHCP``` respectively.
 
 #### Network status
 
@@ -240,7 +240,7 @@ Changes to network configuration potentially impacts the device’s ability to c
 
 **SmartREST example**
 
-There are no static templates available for populating the network fragment or receiving network operations. A custom template can be used instead
+There are no static templates available for populating the network fragment or receiving network operations. A custom template can be used instead:
 
 ```
 10,100,PUT,INVENTORY,false,c8y_Network.c8y_LAN.name,STRING,,c8y_Network.c8y_LAN.ip,STRING,,c8y_Network.c8y_LAN.netmask,STRING,,c8y_Network.c8y_LAN.mac,STRING,,c8y_Network.c8y_LAN.enabled,STRING,,c8y_Network.c8y_WAN.simStatus,STRING,,c8y_Network.c8y_WAN.apn,STRING,,c8y_Network.c8y_WAN.username,STRING,,c8y_Network.c8y_WAN.password,STRING,,c8y_Network.c8y_WAN.authType,STRING,,c8y_Network.c8y_DHCP.addressRange.start,STRING,,c8y_Network.c8y_DHCP.addressRange.end,STRING,,c8y_Network.c8y_DHCP.domainName,STRING,,c8y_Network.c8y_DHCP.dns1,STRING,,c8y_Network.c8y_DHCP.dns2,STRING,,c8y_Network.c8y_DHCP.enabled,STRING,

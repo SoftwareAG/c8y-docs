@@ -1,5 +1,5 @@
 ---
-weight: 100
+weight: 140
 title: Network
 layout: redirect
 ---
@@ -231,12 +231,13 @@ If the device contains the ```c8y_Network``` operation in its ```c8y_SupportedOp
 |c8y_DHCP.enabled|integer|No|Indicator showing if the DHCP server is enabled or not|
 
 The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Apply WAN, LAN, and DHCP configuration
 3. Set new network configuration status the device managed object
 4. Set operation status to SUCCESSFUL
 
-Changes to network configuration potentially impacts the device’s ability to connect to the Cumulocity IoT platform. We recommend implementing a connection test with the new settings. If the test fails the device should rollback the settings to their previous state and set the operation status to FAILED
+Changes to network configuration potentially impacts the device’s ability to connect to the {{< product-c8y-iot >}} platform. We recommend implementing a connection test with the new settings. If the test fails the device should rollback the settings to their previous state and set the operation status to FAILED
 
 **SmartREST example**
 

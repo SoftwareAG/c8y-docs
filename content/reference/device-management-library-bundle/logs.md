@@ -1,5 +1,5 @@
 ---
-weight: 170
+weight: 120
 title: Logs
 layout: redirect
 ---
@@ -57,7 +57,7 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 |searchText|String|Yes|A text filter to apply to individual log lines|
 |maximumLines|String|Yes|Maximum amount of lines to transfer|
 
-When the device has gathered the logs it must upload it as a file to Cumulocity IoT. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
+When the device has gathered the logs it must upload it as a file to {{< product-c8y-iot >}}. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
 
 POST /event/events
 
@@ -139,7 +139,8 @@ PUT /devicecontrol/operations/&lt;operation ID>
 |file|String|Yes|URL where the log file was uploaded to|
 
 
-The device is expected to perform the following actions
+The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Load, filter, and crop the log file as specified in the operation
 3. Create a log file event
@@ -148,7 +149,7 @@ The device is expected to perform the following actions
 
 **SmartREST example**
 
-Cumulocity offers the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time:
+{{< product-c8y-iot >}} offers the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time:
 
 1. Receive ```c8y_LogfileRequest``` operation<br>
   `522,DeviceSerial,syslog,2021-09-21T11:40:27+0200,2021-09-22T11:40:27+0200,ERROR,1000`

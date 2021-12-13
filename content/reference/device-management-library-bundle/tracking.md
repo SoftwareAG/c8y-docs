@@ -1,5 +1,5 @@
 ---
-weight: 160
+weight: 180
 title: Tracking
 layout: redirect
 ---
@@ -91,7 +91,7 @@ POST /event/events
 <td>text</td>
 <td>String</td>
 <td>Yes</td>
-<td>Description of the event. This parameter is required because it is a required for events in general. There are no further semantics applied to the text in the context of tracking devices</td>
+<td>Description of the event. This parameter is required because it is a required for events in general. There are no further semantics applied to the text in the context of tracking devices.</td>
 </tr>
 </tbody>
 </table>
@@ -104,7 +104,7 @@ The 401 static template is prepared to send location update events using SmartRE
 
 ### Setting the current position
 
-The current device position is represented using the c8y_Position fragment in the device’s own managed object.
+The current device position is represented using the ```c8y_Position``` fragment in the device’s own managed object.
 
 ```http
 PUT /inventory/managedObjects/deviceId>
@@ -132,6 +132,6 @@ Devices may update their current position using the 112 static template:
 `112,51.151977,6.95173,67,`
 
 
-In Cumulocity IoT tracking over time is done using events and the current position is represented as fragment in the device's own managed object (see above for details). In practice devices usually determine their current position in an interval and upload the coordinates as they are measured. In this case the current position and the position at that time are the same and can be uploaded at the same time using 402 static template.
+In {{< product-c8y-iot >}} tracking over time is done using events and the current position is represented as fragment in the device's own managed object (see above for details). In practice devices usually determine their current position in an interval and upload the coordinates as they are measured. In this case the current position and the position at that time are the same and can be uploaded at the same time using 402 static template.
 
 `402,51.151977,6.95173,67,,`

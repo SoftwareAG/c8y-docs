@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 70
 title: Device availability
 layout: redirect
 ---
@@ -57,4 +57,4 @@ The response interval set in the ```c8y_RequiredAvailability``` fragment is used
 
 ### Connection monitoring
 
-Cumulocity IoT also provides connection monitoring for devices. When the device establishes a connection where it is able to receive operations the platform considers this device as connected. This applies to HTTP longpolling connection or a MQTT session equally.
+{{< product-c8y-iot >}} also provides connection monitoring for devices. When the device establishes a connection where it is able to receive operations the platform considers this device as connected. This applies to HTTP longpolling connection or a MQTT session equally.

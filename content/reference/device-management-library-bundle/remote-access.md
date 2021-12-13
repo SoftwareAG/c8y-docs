@@ -1,5 +1,5 @@
 ---
-weight: 190
+weight: 150
 title: Remote access
 layout: redirect
 ---
@@ -7,15 +7,16 @@ layout: redirect
 The **Remote access** tab is used to configure and access devices for remote control through remote control protocols.
 
 The tab will be visible if the following criteria are met:
+
 * Cloud Remote Access microservice is subscribed to the needed tenant
 * The user has the correct permissions granted (Remote access admin rights)
-* 'c8y_RemoteAccessConnect' is added to the device's c8y_SupportedOperations
+* 'c8y_RemoteAccessConnect' is added to the device's ```c8y_SupportedOperations```
 
 For more information, see [Cloud Remote Access > Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
 
 ### Remote access connect
 
-When a user selects a remote access endpoint and presses the connect button a c8y_RemoteAccessConnect operation is created.
+When a user selects a remote access endpoint and presses the connect button a ```c8y_RemoteAccessConnect``` operation is created.
 
 ```json
 {
@@ -29,16 +30,17 @@ When a user selects a remote access endpoint and presses the connect button a c8
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|connectionKey|String|Yes|Shared secret to authenticate the connection request from device side.|
-|hostname|String|Yes|Endpoint on local network to connect to.|
-|port|Number|Yes|Port to be used on the local network endpoint.|
+|connectionKey|String|Yes|Shared secret to authenticate the connection request from device side|
+|hostname|String|Yes|Endpoint on local network to connect to|
+|port|Number|Yes|Port to be used on the local network endpoint|
 
 
 With this operation the device must open a websocket connection to the microservice endpoint using the connection key for authentication `(wss://<c8y host>/service/remoteaccess/device/<connectionKey>)` and a local socket to the specified hostname and port. Then it must establish bidirectional forwarding of data between the websocket and the local socket.
 
-Cumulocity IoT currently supports VNC, SSH, and telnet. The device agent should be implemented independently of the remote access protocol used. The operation intentionally does not transfer the protocol. The agent must be capable of forward arbitrary data between both its established sockets
+{{< product-c8y-iot >}} currently supports VNC, SSH, and telnet. The device agent should be implemented independently of the remote access protocol used. The operation intentionally does not transfer the protocol. The agent must be capable of forward arbitrary data between both its established sockets
 
 The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Establish websocket connection to remote access microservice
 3. Establish local socket connection to the specified host and port
@@ -49,9 +51,9 @@ The operation is set to SUCCESSFUL after the connection is established. Disconne
 
 **SmartREST example**
 
-The 530 static response template is available for receiving c8y_RemoteAccessConnect operations:
+The 530 static response template is available for receiving ```c8y_RemoteAccessConnect``` operations:
 
-1. Receive c8y_RemoteAccessConnect operation <br>
+1. Receive ```c8y_RemoteAccessConnect``` operation <br>
   `530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8`
 2. Device sets operation status to EXECUTING<br>
   `501,c8y_RemoteAccessConnect`

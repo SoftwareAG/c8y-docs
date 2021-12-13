@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 60
 title: Critical alarms
 layout: redirect
 ---

@@ -1,5 +1,5 @@
 ---
-weight: 180
+weight: 40
 title: Child devices
 layout: redirect
 ---

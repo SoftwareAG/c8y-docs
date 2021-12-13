@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 80
 title: Device information
 layout: redirect
 ---
@@ -90,9 +90,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|serialNumber|String|No|The hardware serial number of the device.|
-|model|String|No|A text identifier of the hardware model.|
-|revision|String|No|A text identifier of the hardware revision.|
+|serialNumber|String|No|The hardware serial number of the device|
+|model|String|No|A text identifier of the hardware model|
+|revision|String|No|A text identifier of the hardware revision|
 
 **SmartREST example**
 

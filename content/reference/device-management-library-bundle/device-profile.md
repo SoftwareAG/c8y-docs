@@ -1,5 +1,5 @@
 ---
-weight: 140
+weight: 90
 title: Device profile
 layout: redirect
 ---
@@ -180,9 +180,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Name|Type|Mandatory|Description|
 |----|----|----|----|
-|profileName|string|Yes|Name of the device profile.|
-|profileId|string|Yes|The ID reference of the device profile object.|
-|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context.|
+|profileName|string|Yes|Name of the device profile|
+|profileId|string|Yes|The ID reference of the device profile object|
+|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context|
 
 After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device shall update its installed profile state in its managed object by updating the *profileExecuted* property to true.
 
@@ -201,11 +201,12 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Name|Type|Mandatory|Description|
 |----|----|----|----|
-|profileName|string|Yes|Name of the device profile.|
-|profileId|string|Yes|The ID reference of the device profile object.|
-|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be true in this context.|
+|profileName|string|Yes|Name of the device profile|
+|profileId|string|Yes|The ID reference of the device profile object|
+|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be true in this context|
 
-The device is expected to perform the following actions
+The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Set the ```c8y_Profile``` fragment in the device’s own managed object with profileExecuted = false
 3. Install firmware if included and complete installation by updating the ```c8y_Firmware``` fragment in its own managed object

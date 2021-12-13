@@ -35,7 +35,7 @@ The 114 static template is available for devices to announce their supported ope
 
 ### Communicating current status
 
-Devices are responsible for communicating their current status to Cumulocity IoT. Status is usually communicated in the device's own managed object. We provide specific fragments for each capability. The device must update this data whenever it detects a change to its local state.
+Devices are responsible for communicating their current status to {{< product-c8y-iot >}}. Status is usually communicated in the device's own managed object. We provide specific fragments for each capability. The device must update this data whenever it detects a change to its local state.
 
 In practice this usually means that a device should publish its local state concerning all of its supported capabilities during startup, when it was requested to change its local state, and whenever any external change was detected.
 
@@ -51,7 +51,7 @@ We provide the static templates 501, 502, and 503 to manipulate the operation st
 
 If any error occurs during the processing of an operation the device must set the operation status to FAILED and provide a failure reason as descriptive as possible. This includes any unexpected or expected error conditions that prevent the operation to be completed fully and as expected. Even if only one step in an operation that contains multiple distinct steps fails, the entire operation must be considered as FAILED.
 
-It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with Cumulocity IoT.
+It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with {{< product-c8y-iot >}}.
 
 ### Idempotent cases
 
@@ -60,4 +60,4 @@ In cases where a device receives an operation that requests a state that is alre
 2. Execute the operation as normal including re-installing the package
 3. Fail the operation because the requested state may indicate that the command was created under false preconditions
 
-The ideal option depends on the use case and the concrete operation. Regardless of which option is chosen the device must ensure that its local state and the on communicated to Cumulocity IoT remains consistent.
+The ideal option depends on the use case and the concrete operation. Regardless of which option is chosen the device must ensure that its local state and the on communicated to {{< product-c8y-iot >}} remains consistent.

@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 50
 title: Connectivity
 layout: redirect
 ---

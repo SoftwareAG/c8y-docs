@@ -1,16 +1,16 @@
 ---
-weight: 120
+weight: 100
 title: Firmware
 layout: redirect
 ---
 
-The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. Cumulocity IoT does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware or BIOS.
+The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. {{< product-c8y-iot >}} does not provide a concrete definition of what a firmware is. This depends on the device and its use case. Typical use cases are: Operating system, micro controller firmware or BIOS.
 
 Firmware can be installed with a full installation or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
 
 #### Installed firmware
 
-A device must announce its current state to the platform first. Then the installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device has to upload its current state to Cumulocity IoT during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
+A device must announce its current state to the platform first. Then the installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device has to upload its current state to {{< product-c8y-iot >}} during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -27,9 +27,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 | Field | DataType | Mandatory | Details |
 |----|----|----|----|
-|name|String|Yes|Name of the firmware package.|
-|version|String|Yes|A version identifier of the firmware.|
-|url|String|No|A URL pointing to the location where the firmware file was obtained from.|
+|name|String|Yes|Name of the firmware package|
+|version|String|Yes|A version identifier of the firmware|
+|url|String|No|A URL pointing to the location where the firmware file was obtained from|
 
 Similar to software the URL field is optional and may be omitted by devices.
 
@@ -55,17 +55,18 @@ When a user selects a complete firmware image for installation, an operation wit
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|name|String|Yes|Name of the firmware package.|
-|version|String|Yes|A version identifier of the firmware.|
-|url|String|Yes|A URL pointing to the location where the firmware file should be downloaded from.|
+|name|String|Yes|Name of the firmware package|
+|version|String|Yes|A version identifier of the firmware|
+|url|String|Yes|A URL pointing to the location where the firmware file should be downloaded from|
 
 The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Install firmware image
 3. Update the installed firmware state in the device’s own managed object
 4. Set operation status to SUCCESSFUL
 
-Updating a devices often changes fundamental system components. This operation should always be considered as a critical operation. The device must ensure that all of its connection parameters to Cumulocity IoT are preserved through the upgrade and that connectivity can be resumed afterwards. We recommend that the device uses and A/B firmware switching mechanism with a possibility to roll back if necessary.
+Updating a devices often changes fundamental system components. This operation should always be considered as a critical operation. The device must ensure that all of its connection parameters to {{< product-c8y-iot >}} are preserved through the upgrade and that connectivity can be resumed afterwards. We recommend that the device uses and A/B firmware switching mechanism with a possibility to roll back if necessary.
 
 **SmartREST example**
 
@@ -99,14 +100,15 @@ In case a user selects a firmware patch to install on a device, a ```c8y_Firmwar
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|name|String|Yes|Name of the firmware.|
-|version|String|Yes|A version identifier of the firmware.|
-|url|String|Yes|A url pointing to the location of the firmware file.|
-|dependency|String|Yes|Version of the firmware the patch depends on.|
-|isPatch|Boolean|Yes|Indicator showing that this firmware package is a patch.|
+|name|String|Yes|Name of the firmware|
+|version|String|Yes|A version identifier of the firmware|
+|url|String|Yes|A url pointing to the location of the firmware file|
+|dependency|String|Yes|Version of the firmware the patch depends on|
+|isPatch|Boolean|Yes|Indicator showing that this firmware package is a patch|
 
 
 The device is expected to perform the following actions:
+
 1. Set operation status to EXECUTING
 2. Verify if the currently installed firmware version is equal to the dependency version
 3. Install firmware patch

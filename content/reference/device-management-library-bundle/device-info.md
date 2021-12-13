@@ -4,7 +4,7 @@ title: Device information
 layout: redirect
 ---
 
-The **Device information** tab is a predefined dashboard with several widgets that combine default device information. For example the status widget will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. More information can be found in [Service monitoring](/users-guide/device-management/#service-monitoring)
+The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Device Management > Monitoring and controlling devices > Service monitoring](/users-guide/device-management/#monitoring-services) in the *User guide*.
 
 ![Device status](/images/reference-guide/device-status.png)
 
@@ -40,11 +40,11 @@ PUT /inventory/managedObjects/<deviceId>
 
 ### Device restart
 
-Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the device details page will enable a restart button within its context menu.
+Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the **Device details** page will enable a restart button within its context menu.
 
 #### Restart operation
 
-Upon clicking the restart button in Device management UI an operation as follows is sent:
+Upon clicking the restart button in the Device Management application an operation as follows is sent:
 
 ```json
 {

@@ -8,7 +8,7 @@ The **Alarm** tab is always shown for all devices. Its content is filled by alar
 
 ### Raising alarms
 
-A device may raise an alarm at any time. Typically alarms are used to communicate problem statuses un the devices environment.
+A device may raise an alarm at any time. Typically alarms are used to communicate problem statuses in the devices environment.
 
 ```http
 POST /alarm/alarms

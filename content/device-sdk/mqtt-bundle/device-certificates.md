@@ -36,7 +36,7 @@ To manage the auto registration field of uploaded certificates in the UI refer t
 
 **Bulk registration**
 
-The user for the device can also be created via the standard bulk registration in Device Management.
+The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
@@ -47,7 +47,7 @@ Single registration is not supported for devices which are going to use certific
 >**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
 
 
-### JWT Token retrieval
+### JWT token retrieval
 
 A device which is authenticated by certificates and connected to the {{< product-c8y-iot >}} platform can receive a token which can later be used to authenticate HTTP requests.
 
@@ -136,7 +136,7 @@ The most popular formats for these files are:
 
 ### Generating and signing certificates
 
-To generate certificates we will use the OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
+To generate certificates we use the OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
 
 #### Creating a self-signed CA certificate
 

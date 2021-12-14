@@ -299,7 +299,7 @@ PUT /inventory/managedObjects/<deviceId>
 |c8y_SupportedConfigurations|array|Yes|String array of supported configuration for this device|
 
 
-Cumulocity IoT does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
+{{< product-c8y-iot >}} does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
 
 **SmartREST example**
 

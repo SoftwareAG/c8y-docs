@@ -73,7 +73,7 @@ The device is expected to perform the following actions:
 
 ### Hardware information
 
-Devices may announce their underlying hardware information to Cumulocity IoT using the ```c8y_Hardware``` fragment in the device’s own managed object.
+Devices may announce their underlying hardware information to {{< product-c8y-iot >}} using the ```c8y_Hardware``` fragment in the device’s own managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

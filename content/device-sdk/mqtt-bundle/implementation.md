@@ -124,7 +124,7 @@ d:mySerialNumber:myDefaultTemplate
 
 The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
-During a SSL connection with certificates, the `deviceIdentifier` has to match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
+During an SSL connection with certificates, the `deviceIdentifier` has to match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
 
 #### MQTT Quality of Service (QoS)
 

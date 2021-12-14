@@ -83,12 +83,16 @@ If they are the same then it means that it is a self-signed certificate, otherwi
 To verify if the issuer really signed the certificate, you have to check the "Signature" field of the certificate.
 After decryption with the issuer's public key, the signature should match the data of the signed certificate.
 Signing a certificate by another, means that if the issuer's certificate is trusted then the signed certificate also can be trusted.
+
 For example if a platform trusts the customer certificate and that customer has 20 devices with individual certificates, then he does not have to upload each one of them.
+
 If these device certificates are signed by the customer certificate, then the platform should trust them too.
 In this case, every device should send not only its own certificate, but the whole chain of certificates (so-called chain of trust) during the SSL handshake.
+
 The chain of certificates starts with the one belonging to the device, through all used intermediate certificates until it reaches the CA certificate trusted by the platform.
 Usually the chain of certificates does not have to contain the trusted CA certificate, so it can end with the certificate signed directly by the CA.
 However, in the {{< product-c8y-iot >}} platform it is also required to provide the trusted CA certificate in the chain of certificates.
+
 Providing the chain of certificates lets the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
 The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted.
 However, there are a few things to keep in mind:
@@ -285,9 +289,18 @@ To create the intermediate certificate:
 
 Go into your caCertificate directory.
 
-* If you created the CA certificate, which was used to sign the intermediate certificate and then the intermediate certificate was used to sign the device certificate, then you create your chain with the command: `cat intermediateCertificate/deviceCertificates/deviceCert.pem intermediateCertificate/intermediateCert.pem caCert.pem > intermediateCertificate/deviceCertificates/deviceCertChain.pem`
-* If you are not using the intermediate certificate then the command is: `cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCertChain.pem`
-* If you are using multiple intermediate certificates between the CA certificate and the device certificate, then remember that you have to keep the correct order during the chain creation (Every certificate has to be followed by the certificate, which it is signed by).
+If you created the CA certificate, which was used to sign the intermediate certificate and then the intermediate certificate was used to sign the device certificate, then you create your chain with the command:
+
+```shell
+cat intermediateCertificate/deviceCertificates/deviceCert.pem intermediateCertificate/intermediateCert.pem caCert.pem > intermediateCertificate/deviceCertificates/deviceCertChain.pem
+```
+If you are not using the intermediate certificate then the command is:
+
+```shell
+cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCertChain.pem
+```
+
+If you are using multiple intermediate certificates between the CA certificate and the device certificate, then remember that you have to keep the correct order during the chain creation (Every certificate has to be followed by the certificate, which it is signed by).
 
 #### Creating keystore and truststore
 
@@ -305,65 +318,72 @@ Go into your caCertificate directory.
 
 ### How to test created certificates with MQTT.fx client
 
-1. Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
-2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways, both of which have a role requirement of either ROLE_TENANT_ADMIN or ROLE_TENANT_MANAGEMENT_ADMIN:
+### Keystore and truststore
 
-    * Via UI:
+Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
 
-        1. You have to open the device management application, then navigate to the **Management** tab and select **Trusted certificates**.
-        2. Drop your caCert.pem (or intermediateCert.pem).
-        3. Check the auto-registration field.
-        4. Click on the certificate status to set it to **Enabled**.
-        5. Insert some custom name.
-        6. Click **Add certificate**.
+### Upload your CA certificate
 
-      <br/>
-      After completing all the steps except adding the certificate, the form should look like this:
+Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways, both of which have a role requirement of either ROLE_TENANT_ADMIN or ROLE_TENANT_MANAGEMENT_ADMIN:
 
-      ![Trusted certificate addition](/images/mqtt/mqttTrustedCertificateAddition.png)
+**Via UI:**
 
-      Then the added certificate should be visible:
+1. You have to open the device management application, then navigate to the **Management** tab and select **Trusted certificates**.
+2. Drop your caCert.pem (or intermediateCert.pem).
+3. Check the auto-registration field.
+4. Click on the certificate status to set it to **Enabled**.
+5. Insert some custom name.
+6. Click **Add certificate**.
 
-      ![Trusted certificate added](/images/mqtt/mqttTrustedCertificateAdded.png)
+After completing all the steps except adding the certificate, the form should look like this:
 
-    * Via REST:
+![Trusted certificate addition](/images/mqtt/mqttTrustedCertificateAddition.png)
 
-        1. Display your CA (or intermediate) certificate, which you want to upload to the {{< product-c8y-iot >}} platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
-        2. Send it to the platform via POST request:
+Then the added certificate should be visible:
 
-        ```text
-            POST /tenant/tenants/<TENANT_ID>/trusted-certificates
-            Host: https://<TENANT_DOMAIN>/
-            Authorization: Basic <YOUR_AUTHENTICATION>
-            Content-Type: application/json
-            {
-            	"status" :  "ENABLED",
-            	"name" : "certificateName",
-            	"autoRegistrationEnabled" : "true",
-            	"certInPemFormat" : "<CERT_PEM_VALUE>"
-            }
-        ```
-3. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
-4. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
-5. Edit the connection profiles like so:
-  - Insert the {{< company-c8y >}} URL in the **Broker address** line.
-  - Insert the SSL port in the **Broker port** line.
-  - In the **Client ID** field, insert the common name of your device certificate.
-  - Select SSL/TLS as the authentication type.
-  - Click **Enable SSL/TLS**.
-  - Select **SSLv3 protocol**.
-  - Select **Self signed certificates in keystores**
-  - In **Keystore File** insert the path to your deviceTruststore file with either JKS or PKCS12 format.
-  - In **Trusted Keystore Alias** insert **servercertificate** or a different value if you provided a different alias in step 3 above.
-  - In **Trusted Keystore Password** insert the password, which you created during the deviceTruststore file creation.
-  - In **Client Keystore** insert the path to your deviceKeystore file with either JKS or PKCS12 format.
-  - In **Client Keystore Password** insert the password you created during the deviceKeystore creation.
-  - In **Client KeyPair Alias** insert **devicekeyentry** or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
-  - In **Client KeyPair Password** insert the password, which you created during the deviceKey.pem creation.
-  - The **PEM formatted** field should be checked.
-6. Save and close the settings.
-7. Select the edited profile and click connect.
-8. You should be succesfully connected and the buttons **Disconnect**, **Publish** and **Subscribe** should be active now. This means that your connection with the certificates work correctly.
+![Trusted certificate added](/images/mqtt/mqttTrustedCertificateAdded.png)
+
+**Via REST:**
+
+1. Display your CA (or intermediate) certificate, which you want to upload to the {{< product-c8y-iot >}} platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
+2. Send it to the platform via POST request:
+
+```text
+    POST /tenant/tenants/<TENANT_ID>/trusted-certificates
+    Host: https://<TENANT_DOMAIN>/
+    Authorization: Basic <YOUR_AUTHENTICATION>
+    Content-Type: application/json
+    {
+    	"status" :  "ENABLED",
+    	"name" : "certificateName",
+    	"autoRegistrationEnabled" : "true",
+    	"certInPemFormat" : "<CERT_PEM_VALUE>"
+    }
+```
+
+### Install and configure the MQTT client
+
+1. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
+2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
+3. Edit the connection profiles like so:
+    - Insert the {{< company-c8y >}} URL in the **Broker address** line.
+    - Insert the SSL port in the **Broker port** line.
+    - In the **Client ID** field, insert the common name of your device certificate.
+    - Select SSL/TLS as the authentication type.
+    - Click **Enable SSL/TLS**.
+    - Select **SSLv3 protocol**.
+    - Select **Self signed certificates in keystores**
+    - In **Keystore File** insert the path to your deviceTruststore file with either JKS or PKCS12 format.
+    - In **Trusted Keystore Alias** insert **servercertificate** or a different value if you provided a different alias in step 3 above.
+    - In **Trusted Keystore Password** insert the password, which you created during the deviceTruststore file creation.
+    - In **Client Keystore** insert the path to your deviceKeystore file with either JKS or PKCS12 format.
+    - In **Client Keystore Password** insert the password you created during the deviceKeystore creation.
+    - In **Client KeyPair Alias** insert **devicekeyentry** or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
+    - In **Client KeyPair Password** insert the password, which you created during the deviceKey.pem creation.
+    - The **PEM formatted** field should be checked.
+4. Save and close the settings.
+5. Select the edited profile and click connect.
+6. You should be succesfully connected and the buttons **Disconnect**, **Publish** and **Subscribe** should be active now. This means that your connection with the certificates work correctly.
 
 The connection settings should look like this:
 

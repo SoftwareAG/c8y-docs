@@ -8,8 +8,8 @@ The **Measurements** tab creates a single graph per measurement fragment sent by
 
 **SmartREST example**
 
-There are several static templates prepared to create measurements in the 2xx range of message IDs. We provide the 200 static template to create a measurement with a dynamic fragment and series:
+There are several static templates available to create measurements in the 2xx range of message IDs. We provide the 200 static template to create a measurement with a dynamic fragment and series:
 
 `200,c8y_Temperature,T,25`
 
-While using this template is possible for many use cases, we recommend creating a custom template for all use cases where dynamically defining fragment and series are not required.
+While using this template is possible for many use cases, we recommend you to create a custom template for all use cases where dynamically defining fragment and series are not required.

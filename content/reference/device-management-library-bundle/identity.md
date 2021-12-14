@@ -12,9 +12,9 @@ The **Identity** tab shows all identities associated with the device. If no iden
 
 #### MQTT (SmartREST 2.0)
 
-In the context of MQTT the Client ID is used as the device’s external ID. Upon connecting the MQTT client ID is used to automatically associate the connection to a device in the inventory. Furthermore, no identity bindings need to be created by the device. They are created internally when the 100 and 101 templates are used. All messages to create data are automatically associated with the device context.
+In the context of MQTT the client ID is used as the device’s external ID. Upon connecting the MQTT client ID is used to automatically associate the connection to a device in the inventory. No additional identity bindings need to be created by the device. They are created internally when the 100 and 101 templates are used. All messages to create data are automatically associated with the device context.
 
-Creating device by a device connected to {{< product-c8y-iot >}}:
+Creating a device by a device connected to {{< product-c8y-iot >}}:
 
 `100,createdDeviceName,deviceType`
 

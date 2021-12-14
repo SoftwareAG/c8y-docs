@@ -4,7 +4,7 @@ title: Logs
 layout: redirect
 ---
 
-The **Logs** tab is used to extract logs from the device. The **Logs** tab will be available if the fragment ```c8y_LogfileRequest``` is present in the ```c8y_SupportedOperations``` of the device.
+The **Logs** tab is used to extract logs from the device. The **Logs** tab is available if the fragment ```c8y_LogfileRequest``` is present in the ```c8y_SupportedOperations``` of the device.
 The device should contain a fragment called ```c8y_SupportedLogs```, which holds an array of the types of logs that it supports. They will later be referenced when logs are requested.
 
 ### Setting supported logs
@@ -53,11 +53,11 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 |----|----|----|----|
 |dateFrom|String|Yes|Start date for log lines|
 |dateTo|String|Yes|End date for log lines|
-|logFile|String|Yes|Type of log for the specific device. (c8y_SupportedLogs)|
+|logFile|String|Yes|Type of log for the specific device (c8y_SupportedLogs)|
 |searchText|String|Yes|A text filter to apply to individual log lines|
 |maximumLines|String|Yes|Maximum amount of lines to transfer|
 
-When the device has gathered the logs it must upload it as a file to {{< product-c8y-iot >}}. We recommend creating an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
+When the device has gathered the logs it must upload it as a file to {{< product-c8y-iot >}}. We recommend you to create an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
 
 POST /event/events
 
@@ -80,7 +80,7 @@ POST /event/events
 |time|String|Yes|Time when the event occurred|
 |text|String|Yes|Event text|
 
-If desired the device may also include the ```c8y_LogfileRequest``` fragment from the operation or the operation ID into the event. The file is the attached to the event using it’s event ID and event binaries API
+If desired the device may also include the ```c8y_LogfileRequest``` fragment from the operation or the operation ID into the event. The file is then attached to the event using it’s event ID and event binaries API.
 
 ```http
 POST /event/events/<eventId>/binaries
@@ -105,7 +105,7 @@ Oct 25 13:28:53 wtp kernel: [  719.555033] sd 6:0:0:0: [sdb] No Caching mode pag
 --boundary--
 ```
 
-After successful completion of the upload, the device must include a URL to the uploaded file into the ```c8y_LogfileRequest``` fragment of the operation. The link must be presented as property "file". This action can be combined with setting the operation status to SUCCESSFUL
+After successful completion of the upload, the device must include a URL to the uploaded file into the ```c8y_LogfileRequest``` fragment of the operation. The link must be presented as property "file". This action can be combined with setting the operation status to SUCCESSFUL.
 
 ```http
 PUT /devicecontrol/operations/&lt;operation ID>
@@ -133,7 +133,7 @@ PUT /devicecontrol/operations/&lt;operation ID>
 |status|String|Yes|Operation status|
 |dateFrom|String|Yes|Start date for log lines|
 |dateTo|String|Yes|End date for log lines|
-|logFile|String|Yes|Type of log for the specific device. (c8y_SupportedLogs)|
+|logFile|String|Yes|Type of log for the specific device (c8y_SupportedLogs)|
 |searchText|String|Yes|A text filter to apply to individual log lines|
 |maximumLines|String|Yes|Maximum amount of lines to transfer|
 |file|String|Yes|URL where the log file was uploaded to|
@@ -149,7 +149,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-{{< product-c8y-iot >}} offers the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time:
+{{< product-c8y-iot >}} provides the 522 static response template for receiving ```c8y_LogfileRequest``` operations. When the log file is uploaded the device may use the implicit parameter functionality of the 503 static template to set the operation status and provide the file link at the same time:
 
 1. Receive ```c8y_LogfileRequest``` operation<br>
   `522,DeviceSerial,syslog,2021-09-21T11:40:27+0200,2021-09-22T11:40:27+0200,ERROR,1000`

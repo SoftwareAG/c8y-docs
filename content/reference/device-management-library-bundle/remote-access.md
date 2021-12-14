@@ -16,7 +16,7 @@ For more information, see [Cloud Remote Access > Using Cloud Remote Access](/clo
 
 ### Remote access connect
 
-When a user selects a remote access endpoint and presses the connect button a ```c8y_RemoteAccessConnect``` operation is created.
+When a user selects a remote access endpoint and clicks the **Connect** button a ```c8y_RemoteAccessConnect``` operation is created.
 
 ```json
 {

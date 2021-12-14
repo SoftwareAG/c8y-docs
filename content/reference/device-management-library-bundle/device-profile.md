@@ -4,9 +4,9 @@ title: Device profile
 layout: redirect
 ---
 
-The **Device profile** tab shows the different parameters of the added device profiles. From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file based device configuration. Large parts of the agent code to support these capabilities can be reused.
+The **Device profile** tab shows the different parameters of the added device profiles. From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file-based device configuration. Large parts of the agent code to support these capabilities can be reused.
 
-Device profile functionality is enabled when the device announces the ```c8y_DeviceProfile``` operation in its ```c8y_SupportedOperations```. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize potential of later actions overriding earlier ones.
+Device profile functionality is enabled when the device announces the ```c8y_DeviceProfile``` operation in its ```c8y_SupportedOperations```. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend you to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize the potential of later actions overriding earlier ones.
 
 ```json
 {
@@ -184,7 +184,7 @@ PUT /inventory/managedObjects/<deviceId>
 |profileId|string|Yes|The ID reference of the device profile object|
 |profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context|
 
-After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device shall update its installed profile state in its managed object by updating the *profileExecuted* property to true.
+After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device should update its installed profile state in its managed object by updating the *profileExecuted* property to true.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -203,7 +203,7 @@ PUT /inventory/managedObjects/<deviceId>
 |----|----|----|----|
 |profileName|string|Yes|Name of the device profile|
 |profileId|string|Yes|The ID reference of the device profile object|
-|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be true in this context|
+|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully; must be true in this context|
 
 The device is expected to perform the following actions:
 

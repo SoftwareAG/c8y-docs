@@ -28,7 +28,7 @@ POST /inventory/managedObjects/{{deviceId}}/childDevices
 
 **SmartREST example**
 
-To add child device to an existing device you must connect an existing device and call child create template:
+To add a child device to an existing device you must connect the connected device and call the child create template:
 
 `101,uniqueChildId,myChildDevice,myChildType`
 
@@ -41,4 +41,4 @@ The built-in static SmartREST response templates of {{< product-c8y-iot >}} alwa
 
 `510,DeviceSerial`
 
-Custom response templates also contain the targeted device's external ID as first parameter. We recommend to implement a similar mechanism there as well.
+Custom response templates also contain the targeted device's external ID as first parameter. We recommend you to implement a similar mechanism there as well.

@@ -40,11 +40,11 @@ PUT /inventory/managedObjects/<deviceId>
 
 ### Device restart
 
-Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the **Device details** page will enable a restart button within its context menu.
+Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the **Device details** page will enable a **Restart** button within its context menu.
 
 #### Restart operation
 
-Upon clicking the restart button in the Device Management application an operation as follows is sent:
+Upon clicking the **Restart** button in the Device Management application an operation as follows is sent:
 
 ```json
 {

@@ -6,13 +6,13 @@ layout: redirect
 
 The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. This tab appears for devices when they announce support for any of the available formats.
 
-### Text based configuration
+### Text-based configuration
 
-The most basic form of configuration is a simple text based configuration. Here the configuration is stored and transferred directly as string. We recommend using this form for small human readable configuration files only, e.g. for Microcontroller based devices.
+The most basic form of configuration is a simple text-based configuration. Here the configuration is stored and transferred directly as string. We recommend you to use this form for small human readable configuration files only, e.g. for microcontroller-based devices.
 
 The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. {{< product-c8y-iot >}} supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
 
-We recommend uploading the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
+We recommend you to upload the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -31,7 +31,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 #### Upload current text configuration
 
-For devices that include ```c8y_SendConfiguration``` in their ```c8y_SupportedOperations``` the **Configuration** tab offers a button to trigger a configuration upload from the device to {{< product-c8y-iot >}}. When the button is pressed a ```c8y_SendConfiguration``` is created
+For devices that include ```c8y_SendConfiguration``` in their ```c8y_SupportedOperations``` the **Configuration** tab offers a button to trigger a configuration upload from the device to {{< product-c8y-iot >}}. When the button is clicked a ```c8y_SendConfiguration``` is created.
 
 ```json
 {
@@ -71,7 +71,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-There is no built in static response template available for the ```c8y_SendConfiguration``` operation. Devices must create a custom template to implement this capability. Here is an example how such a template and its use could work.
+There is no built-in static response template available for the ```c8y_SendConfiguration``` operation. Devices must create a custom template to implement this capability. Here is an example how such a template and its use could work.
 
 Template creation:<br>
 `11,100,,c8y_SendConfiguration,deviceId`
@@ -100,7 +100,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 513 static response template is available to recewith ```c8y_Configuration``` operations:
+The 513 static response template is available to receive ```c8y_Configuration``` operations:
 
 1. Receive ```c8y_Configuration``` operation <br>
   `511,deviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
@@ -112,15 +112,15 @@ The 513 static response template is available to recewith ```c8y_Configuration``
 5. Set operation status to SUCCESSFUL<br>
   `503,c8y_Configuration`
 
-### Legacy file based configuration
+### Legacy file-based configuration
 
-Devices that want to manage configuration as files can achieve a basic form using legacy file based configuration. For new device integrations we recommend implementing typed file based configuration instead because it is more versatile.
+Devices that want to manage configuration as files can achieve a basic form using legacy file-based configuration. For new device integrations we recommend you to implement typed file-based configuration instead because it is more versatile.
 
-As the name suggests, this approach stores and transfers configuration as binary files.
+This approach stores and transfers configuration as binary files.
 
 #### Upload current legacy configuration
 
-Devices may signal their support for uploading their current configuration to {{< product-c8y-iot >}} by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a "Get snapshot from device" button in the **Configuration** tab. Pressing it generates a ```c8y_UploadConfigFile``` operation for the device.
+Devices may signal their support for uploading their current configuration to {{< product-c8y-iot >}} by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a **Get snapshot from device** button in the **Configuration** tab. Clicking it generates a ```c8y_UploadConfigFile``` operation for the device.
 
 ```json
 {
@@ -153,7 +153,7 @@ Devices may signal their support for uploading their current configuration to {{
 </tbody>
 </table>
 
-When uploading its configuration, the device must first upload the configuration file into {{< product-c8y-iot >}} inventory binaries, and then create a configuration repository entry as a managed object of type ```c8y_ConfigurationDump``` in the inventory. This object must then contain a link to the just uploaded file. We recommend creating this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
+When uploading its configuration, the device must first upload the configuration file into {{< product-c8y-iot >}} inventory binaries, and then create a configuration repository entry as a managed object of type ```c8y_ConfigurationDump``` in the inventory. This object must then contain a link to the just uploaded file. We recommend you to create this entry with an easily recognizable name and description that allows users to find the desired configuration in the repository.
 
 ```http
 POST /inventory/managedObjects
@@ -172,7 +172,7 @@ POST /inventory/managedObjects
 |name|string|Yes|Name of the configuration|
 |description|string|No|Description of the configuration|
 |url|string|Yes|URL where the configuration file was uploaded to|
-|type|string|Yes|Type of the configuration repository entry object. Must always be "c8y_ConfigurationDump"|
+|type|string|Yes|Type of the configuration repository entry object; must always be "c8y_ConfigurationDump"|
 
 The device is expected to perform the following actions:
 
@@ -196,7 +196,7 @@ The 520 static response template is available for this functionality:
 
 #### Install legacy configuration
 
-Devices that are capable of installing configuration remotely can announce this by adding ```c8y_DownloadConfigFile``` to their ```c8y_SupportedOperations```. Then the **Configuration** tab offers a button to "Send configuration to device". When pressed, a ```c8y_DownloadConfigFile``` operation is created for the device.
+Devices that are capable of installing configuration remotely can announce this by adding ```c8y_DownloadConfigFile``` to their ```c8y_SupportedOperations```. Then the **Configuration** tab offers a **Send configuration to device** button. When clicked, a ```c8y_DownloadConfigFile``` operation is created for the device.
 
 ```json
 {
@@ -235,7 +235,7 @@ Devices that are capable of installing configuration remotely can announce this 
 <td>c8y_ConfigurationDump</td>
 <td>object</td>
 <td>Yes</td>
-<td>Configuration dump reference object containing the ID of the Configuration repository entry object</td>
+<td>configuration dump reference object containing the ID of the Configuration repository entry object</td>
 </tr>
 </tbody>
 </table>
@@ -278,9 +278,9 @@ The 521 static response template is available for this functionality:
 5. Set operation status to SUCCESSFUL and set the currently installed ```c8y_ConfigurationDump``` fragment implicitly <br>
   `503,c8y_DownloadConfigFile`
 
-### Typed file based configuration
+### Typed file-based configuration
 
-The most versatile way of managing device configuration is typed file based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the ```c8y_SupportedConfiguration``` fragment to the device's own managed object.
+The most versatile way of managing device configuration is typed file-based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the ```c8y_SupportedConfiguration``` fragment to the device's own managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -309,7 +309,7 @@ The ```c8y_SupportedConfiguration``` fragment can be uploaded using the static t
 
 #### Upload current configuration file
 
-Similarly to legacy configuration, uploading typed configuration is announced by adding the ```c8y_UploadConfigFile``` to the ```c8y_SupportedOperations```. In this case pressing the button creates a very similar ```c8y_UploadConfigFile``` operation with the targeted configuration type as additional parameter.
+Similarly to legacy configuration, uploading typed configuration is announced by adding the ```c8y_UploadConfigFile``` to the ```c8y_SupportedOperations```. In this case clickinging the button creates a very similar ```c8y_UploadConfigFile``` operation with the targeted configuration type as additional parameter.
 
 ```json
 {
@@ -323,7 +323,7 @@ Similarly to legacy configuration, uploading typed configuration is announced by
 |----|----|----|----|
 |type|string|Yes|Type of the configuration to upload|
 
-Then the device must create an event with the type equal to the configuration type. We use events here instead of the inventory like in legacy file based config because events are automatically associated to the device and old events (and their binary attachments) including can be automatically cleaned up using retention rules.
+Then the device must create an event with the type equal to the configuration type. {{< product-c8y-iot >}} uses events here instead of the inventory like in legacy file-based config because events are automatically associated to the device and old events (and their binary attachments) included can be automatically cleaned up using retention rules.
 
 ```http
 POST /event/events
@@ -347,7 +347,7 @@ POST /event/events
 |time|string|Yes|ISO datetime when the configuration was uploaded|
 |text|string|Yes|Label text for the configuration|
 
-In order to attach the configuration file to the just uploaded event, Event [binaries API](https://{{< domain-c8y >}}/api/#operation/postEventBinaryResource) should be used. The file is attached using a *multipart/form-data* request.
+In order to attach the configuration file to the just uploaded event, the [Event binaries API](https://{{< domain-c8y >}}/api/#operation/postEventBinaryResource) should be used. The file is attached using a *multipart/form-data* request.
 
 ```http
 POST /event/events/<eventId>/binaries
@@ -393,7 +393,7 @@ The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile`
 
 #### Install configuration file
 
-Installing typed configuration also works very similarly to the legacy configuration. Adding the ```c8y_DownloadConfigFile``` to the device's ```c8y_SupportedOperations``` controls the availability of the **Send configuration to device** button. When it is pressed a ```c8y_DownloadConfigFile``` operation with the configuration type included is created.
+Installing typed configuration also works very similarly to the legacy configuration. Adding the ```c8y_DownloadConfigFile``` to the device's ```c8y_SupportedOperations``` controls the availability of the **Send configuration to device** button. When it is clicked a ```c8y_DownloadConfigFile``` operation with the configuration type included is created.
 
 ```json
 {
@@ -410,7 +410,7 @@ Installing typed configuration also works very similarly to the legacy configura
 |url|string|Yes|URL where the configuration file shall be obtained from|
 
 
-When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This shall be done by adding the ```c8y_Configuration_<config type>``` fragment to the device’s own managed object.
+When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This is done by adding the ```c8y_Configuration_<config type>``` fragment to the device’s own managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

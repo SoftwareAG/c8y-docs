@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/diagnostics-and-support/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 

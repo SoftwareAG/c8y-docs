@@ -4,7 +4,7 @@ title: Managing tenants
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
+Using the Enterprise tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 

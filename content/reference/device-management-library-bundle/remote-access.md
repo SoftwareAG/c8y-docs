@@ -6,9 +6,9 @@ layout: redirect
 
 The **Remote access** tab is used to configure and access devices for remote control through remote control protocols.
 
-The tab will be visible if the following criteria are met:
+The **Remote access** tab is available if the following criteria are met:
 
-* Cloud Remote Access microservice is subscribed to the needed tenant
+* The Cloud Remote Access microservice is subscribed to the needed tenant
 * The user has the correct permissions granted (Remote access admin rights)
 * 'c8y_RemoteAccessConnect' is added to the device's ```c8y_SupportedOperations```
 
@@ -47,7 +47,7 @@ The device is expected to perform the following actions:
 4. Establish bidirectional forwarding between websocket and local socket
 5. Set operation status to SUCCESSFUL
 
-The operation is set to SUCCESSFUL after the connection is established. Disconnecting happens silently. Even if the connection was not terminated gracefully by any of the involved components, the operation status must stay in SUCCESSFUL. Whenever one of the connections is terminated (websocket or TCP) the device agent should consider the session as ended and should also terminate both connections
+The operation is set to SUCCESSFUL after the connection is established. Disconnecting happens silently. Even if the connection was not terminated gracefully by any of the involved components, the operation status must stay in SUCCESSFUL. Whenever one of the connections is terminated (websocket or TCP) the device agent should consider the session as ended and should also terminate both connections.
 
 **SmartREST example**
 

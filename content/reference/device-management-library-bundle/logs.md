@@ -9,7 +9,7 @@ The device should contain a fragment called ```c8y_SupportedLogs```, which holds
 
 ### Setting supported logs
 
-Supported log types shall be announced by devices using the ```c8y_SupportedLogs``` fragment in the device’s own managed object.
+Supported log types are announced by devices using the ```c8y_SupportedLogs``` fragment in the device’s own managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

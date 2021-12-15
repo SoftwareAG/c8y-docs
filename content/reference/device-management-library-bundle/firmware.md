@@ -70,7 +70,7 @@ Updating a devices often changes fundamental system components. This operation s
 
 **SmartREST example**
 
-The 515 static response template is designed for dealing with installing firmware images:
+{{< product-c8y-iot >}} provides the 515 static response template to deal with installing firmware images:
 
 1. Receive ```c8y_Firmware``` (image) operation <br>
   `515,deviceSerial,ubuntu core,20.04.3,http://test.com`
@@ -117,7 +117,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 525 static response template is designed for dealing with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
+{{< product-c8y-iot >}} provides the 525 static response template to deal with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
 
 1. Receive ```c8y_Firmware``` (patch) operation <br>
   `525,deviceSerial,ubuntu core,20.04.3,http://test.com,20.04.3`

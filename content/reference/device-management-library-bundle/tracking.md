@@ -4,7 +4,7 @@ title: Tracking
 layout: redirect
 ---
 
-The **Tracking** tab allows the device's path to be visualized. To achieve that the device must periodically send tracking events and update its position.
+The **Tracking** tab allows the device's path to be visualized. To achieve this the device must periodically send tracking events and update its position.
 
 ### Tracking position history
 
@@ -79,7 +79,7 @@ POST /event/events
 <td>source</td>
 <td>Object</td>
 <td>Yes</td>
-<td>ID of the source device.</td>
+<td>ID of the source device</td>
 </tr>
 <tr>
 <td>type</td>
@@ -98,7 +98,7 @@ POST /event/events
 
 **SmartREST example**
 
-The 401 static template is prepared to send location update events using SmartREST:
+{{< product-c8y-iot >}} provides the 401 static template to send location update events using SmartREST:
 
 `401,51.151977,6.95173,67,2013-06-22T17:03:14.000+02:00`
 

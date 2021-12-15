@@ -6,7 +6,7 @@ layout: redirect
 
 ### Announcing capabilities
 
-Devices may announce their supported capabilities using the ```c8y_SupportedOperations``` fragment in their own managed object. The fragment itself is an array of strings. It may contain built-in operations with their meaning or custom operations for specific use cases, see below for details.
+Devices may announce their supported capabilities using the ```c8y_SupportedOperations``` fragment in their own managed object. The fragment itself is an array of strings. It may contain built-in operations with their meaning or custom operations for specific use cases, which are described in the following sections.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -57,8 +57,8 @@ It is up to the device and its use case whether it should roll back any local st
 
 In cases where a device receives an operation that requests a state that is already present, it is up to the device how the operation should be handled. This may for example be the case when a device is requested to install a software package that is already present in the requested version. Typically there are three different ways of handling such cases in device agents: skip, execute, or fail. In case of the mentioned software package that is already installed the following options could be chosen:
 
-1. Consider the package as already installed and skip its installation because the requested state is already present
-2. Execute the operation as normal including re-installing the package
-3. Fail the operation because the requested state may indicate that the command was created under false preconditions
+1. Consider the package as already installed and skip its installation because the requested state is already present.
+2. Execute the operation as normal including re-installing the package.
+3. Fail the operation because the requested state may indicate that the command was created under false preconditions.
 
 The ideal option depends on the use case and the concrete operation. Regardless of which option is chosen the device must ensure that its local state and the on communicated to {{< product-c8y-iot >}} remains consistent.

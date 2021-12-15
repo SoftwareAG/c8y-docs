@@ -98,7 +98,7 @@ Device profile functionality is enabled when the device announces the ```c8y_Dev
 <td>c8y_DeviceProfile.software.action</td>
 <td>string</td>
 <td>Yes</td>
-<td>Action to perform on the packaged describing if the software shall be installed or removed</td>
+<td>Action to perform on the package describing if the software should be installed or removed</td>
 </tr>
 <tr>
 <td>c8y_DeviceProfile.software.version</td>
@@ -110,7 +110,7 @@ Device profile functionality is enabled when the device announces the ```c8y_Dev
 <td>c8y_DeviceProfile.software.url</td>
 <td>string</td>
 <td>Yes</td>
-<td>URL where the software binary shall be obtained from</td>
+<td>URL where the software binary should be obtained from</td>
 </tr>
 <tr>
 <td>c8y_DeviceProfile.configuration</td>
@@ -134,7 +134,7 @@ Device profile functionality is enabled when the device announces the ```c8y_Dev
 <td>c8y_DeviceProfile.configuration.url</td>
 <td>string</td>
 <td>Yes</td>
-<td>URL where the configuration file shall be obtained from</td>
+<td>URL where the configuration file should be obtained from</td>
 </tr>
 <tr>
 <td>c8y_DeviceProfile.firmware</td>
@@ -158,7 +158,7 @@ Device profile functionality is enabled when the device announces the ```c8y_Dev
 <td>c8y_DeviceProfile.firmware.url</td>
 <td>string</td>
 <td>Yes</td>
-<td>URL where the firmware binary shall be obtained from</td>
+<td>URL where the firmware binary should be obtained from</td>
 </tr>
 </tbody>
 </table>
@@ -218,7 +218,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-In addition to the prepared static templates for firmware, software, and configuration there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile:
+In addition to the static templates for firmware, software, and configuration provided by {{< product-c8y-iot >}} there are specific templates available for handling device profiles. The 527 static response template is designed to receive the operation. The 121 static template can be used to set the current state of device profile:
 
 1. Receive ```c8y_DeviceProfile``` operation <br>
   ```

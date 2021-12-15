@@ -25,7 +25,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 ### Agent marker
 
-In order to receive any operation a device must declare the agent marker fragment in its own managed object. This will enable the platform to send operations to this device and for all child devices in its child hierarchy that don’t carry this fragment themselves.
+In order to receive any operation a device must declare the agent marker fragment in its own managed object. This will enable the platform to send operations to this device to for all child devices in its child hierarchy that don’t carry this fragment themselves.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -62,6 +62,8 @@ The device is expected to perform the following actions:
 3. Set the operation status to SUCCESSFUL
 
 **SmartREST example**
+
+{{< product-c8y-iot >}} provides the 510 static response template:
 
 1. Device receives command via 510 static response template <br>
   `510,DeviceSerial`

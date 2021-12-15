@@ -229,7 +229,7 @@ Devices that are capable of installing configuration remotely can announce this 
 <td>url</td>
 <td>string</td>
 <td>Yes</td>
-<td>URL where the configuration file shall be obtained from</td>
+<td>URL where the configuration file should be obtained from</td>
 </tr>
 <tr>
 <td>c8y_ConfigurationDump</td>
@@ -380,7 +380,7 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 526 static SmartREST template is prepared for typed ```c8y_UploadConfigFile``` operations:
+{{< product-c8y-iot >}} provides the 526 static SmartREST template for typed ```c8y_UploadConfigFile``` operations:
 
 1. Receive typed ```c8y_UploadConfigFile``` operation <br>
   `526,DeviceSerial,agent_conf`
@@ -407,7 +407,7 @@ Installing typed configuration also works very similarly to the legacy configura
 |Name|Type|Mandatory|Description|
 |----|----|----|----|
 |type|string|Yes|Type of the configuration to apply|
-|url|string|Yes|URL where the configuration file shall be obtained from|
+|url|string|Yes|URL where the configuration file should be obtained from|
 
 
 When the device has downloaded and installed the configuration it must update the currently installed configuration of this specific type in its own managed object. This is done by adding the ```c8y_Configuration_<config type>``` fragment to the device’s own managed object.

@@ -6,7 +6,7 @@ layout: redirect
 
 The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** offer a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
+The **Device details** page shows a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
 
 ### Installed software
 
@@ -43,13 +43,13 @@ Devices should upload the complete list of installed software during startup. Ad
 
 **SmartREST example**
 
-The static SmartREST template 116 is provided for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package:
+{{< product-c8y-iot >}} provides the static SmartREST template 116 for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package:
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
 ### Changing installed software
 
-Within the **Software** tab users are able to select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's ```c8y_SupportedOperations``` fragment.
+Within the **Software** tab users can select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's ```c8y_SupportedOperations``` fragment.
 
 #### Software list
 
@@ -104,7 +104,7 @@ The 516 static response template is available for dealing with software list ope
 
 #### Software update
 
-If a device supports the ```c8y_SoftwareUpdate``` operation in it's ```c8y_SupportedOperations``` fragment the **Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the ```c8y_SoftwareUpdate``` should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
+If a device supports the ```c8y_SoftwareUpdate``` operation in its ```c8y_SupportedOperations``` fragment the **Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the ```c8y_SoftwareUpdate``` should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
 
 ```json
 {

@@ -4,7 +4,7 @@ title: Shell
 layout: redirect
 ---
 
-The **Shell** tab gives the possibility to send arbitrary device specific commands to the device. It appears if the ```c8y_Command``` operation is present in the device's ```c8y_SupportedOperations```.
+The **Shell** tab allows to send arbitrary device-specific commands to the device. It is shown if the ```c8y_Command``` operation is present in the device's ```c8y_SupportedOperations```.
 
 ### Send a command to a device
 
@@ -23,7 +23,7 @@ You may enter an arbitrary string into the command text. The format and its inte
 |----|----|----|----|
 |c8y_Command.text|String|Yes|The command text to be executed by the device|
 
-After completing the execution, the device must provide a return string for the command in addition to setting the operation status to SUCCESSFUL. The result shall be provided as string property nested within the ```c8y_Command``` fragment in the operation.
+After completing the execution, the device must provide a return string for the command in addition to setting the operation status to SUCCESSFUL. The result is provided as string property nested within the ```c8y_Command``` fragment in the operation.
 
 ```http
 PUT /devicecontrol/operations/<operation ID>

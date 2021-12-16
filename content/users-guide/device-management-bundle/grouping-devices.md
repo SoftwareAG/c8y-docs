@@ -20,7 +20,7 @@ Click **Groups** in the navigator to see all groups in a list format.
 
 For each group, various information is provided, for example the type and name. Click **Configure columns** at the right, to add or remove columns and customize the view to your preference. See also [Viewing devices > Configuring columns](/users-guide/device-management/#configuring-columns).
 
-To filter the groups for certain criteria, hover over the column headers and click the respective filter icon, see the screenshot below. However, filtering is not available for the main group column. The filtering option remains available in the subgroup column.
+To filter the groups for certain criteria, hover over the column headers and click the respective filter icon, see the screenshot below. However, filtering is not available for the main group column. The filtering option is only available in the subgroup column.
 
  ![Filter](/images/users-guide/DeviceManagement/devmgmt-group-filter.png)
 

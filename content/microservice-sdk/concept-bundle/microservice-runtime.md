@@ -29,6 +29,7 @@ C8Y_USER  |  Application username (available only for PER_TENANT isolation)
 C8Y_PASSWORD  |  Application user password (available only for PER_TENANT isolation)
 MEMORY_LIMIT  |  Max memory that can be used. Default value: 256M
 TZ | Timezone from the host machine or configurable tenant options
+LOG4J_FORMAT_MSG_NO_LOOKUPS | Disables the vulnerable Log4j lookup feature (see [CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228)) <br>Default value: true
 
 ##### Example
 

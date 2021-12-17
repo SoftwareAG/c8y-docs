@@ -166,10 +166,10 @@ The response contains checks for the most important components:
 
 * services - status of OSGI services running within karaf container
 * mongo - status of connection to mongo database (for clustered mongo shows status of connection to mongos)
-* mongodb-cluster - status of mongo cluster, status DOWN doesn't have bad impact for overall health status (because is marked as "noSuppressibleDown": false). Mongo-cluster shows status as follow:
-    * "details": {"mongodb-cluster-enabled": true}, "status": "UP" - mongo cluster is enabled and work correctly
-    * "details": {"mongodb-cluster-enabled": false}, "status": "DOWN" - mongo cluster is disabled and mongo works in single mode (for health status please check section "mongo") 
-    * "details": {"mongodb-cluster-enabled": true}, "status": "DOWN" - mongo cluster is enabled and work incorrectly, additionally mongo exception is presented
+* mongodb-cluster - status of mongo cluster, status DOWN doesn't have bad impact for overall health status (because it is marked as "noSuppressibleDown": false) Mongo-cluster shows status as follow:
+    * "details": {"mongodb-cluster-enabled": true}, "status": "UP" - mongo cluster is enabled and works correctly
+    * "details": {"mongodb-cluster-enabled": false}, "status": "DOWN" - mongo cluster is disabled and mongo works in single mode (for health status check section "mongo") 
+    * "details": {"mongodb-cluster-enabled": true}, "status": "DOWN" - mongo cluster is enabled and works incorrectly, additionally mongo exception is presented
 * tenant - tenant initialization status
 
 The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in.

@@ -58,7 +58,7 @@ The `c8ycli new` command can also be provided on its own without the `[name]` an
 ? Enter the name of the project: (my-application)
 ```
 
-The first step will ask for the project name. If no project name is entered, the default value `my-application` will be used instead.
+The first step will ask for the project name. If no project name is entered, the default value `my-application` will be used.
 
 > **Info:** This step can also be skipped if the name is provided in the initial command: `c8ycli new my-application`.
 
@@ -74,7 +74,7 @@ The first step will ask for the project name. If no project name is entered, the
 > other
 ```
 
-In the second step, the base scaffolding version must be selected. The interface will provide the last 5 major GA releases, the `latest` and `next` versions as options. Additionally a version can be manually entered by selecting the `other` option.
+In the second step, the base scaffolding version must be selected. The interface will provide the last GA release (latest), the latest available release (next) and four older GA releases. Additionally a version can be manually entered by selecting the `other` option.
 
 **Step 2 (other):**
 ```
@@ -94,7 +94,6 @@ In this step, the desired version must be entered manually e.g. `1010.0.0`.
   cockpit
   devicemanagement
   hybrid
-  plugin
   tutorial
 ```
 

@@ -6,13 +6,18 @@ weight: 6
 
 Angular 12 is supported from version `10.11.45.0`. The following configuration changes are required before you can run the application:
 
-- Enable IVY, see [How to enable IVY](#how-to-enable-ivy).
+- Update all `@angular/*` dependencies to `12.2.x`.
+- Update `TypeScript` to version `4.2.x` as [TypeScript 4.2](https://devblogs.microsoft.com/typescript/announcing-typescript-4-2/) is now required by Angular.
 - Follow `Angular 12` upgrade guide: [Updating to version 12](https://v12.angular.io/guide/updating-to-version-12).
 - Use Node version `14`.
 
 > **Info:** **`AOT`** is not yet supported.
 
 #### How to enable IVY
+
+Ivy is a new rendering engine for Angular applications that improves application speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you do so.
+
+During the Update:
 
 - Edit _tsconfig.json_ and set `enableIvy` to `true` or delete it as this setting is the default setting:
 
@@ -30,6 +35,7 @@ Angular 12 is supported from version `10.11.45.0`. The following configuration c
     "postinstall": "ngcc"
   }
 ```
+
 - Delete `node_modules` and reinstall them. If `ngcc` works you should see a **compiling** step after installing all dependencies.
 
 - If you use Jest (JavaScript Testing Framework) check: [Jest - Angular IVY](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-ivy) for the configuration.

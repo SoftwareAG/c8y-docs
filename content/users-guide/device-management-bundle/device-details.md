@@ -9,7 +9,7 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -44,10 +44,6 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="">Connectivity</a></td>
-<td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>

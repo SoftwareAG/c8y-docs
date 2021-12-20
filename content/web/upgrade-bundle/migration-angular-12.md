@@ -8,16 +8,16 @@ Angular 12 is supported from version `10.11.45.0`. The following configuration c
 
 - Update all `@angular/*` dependencies to `12.2.x`.
 - Update `TypeScript` to version `4.2.x` as [TypeScript 4.2](https://devblogs.microsoft.com/typescript/announcing-typescript-4-2/) is now required by Angular.
-- Follow `Angular 12` upgrade guide: [Updating to version 12](https://v12.angular.io/guide/updating-to-version-12).
+- Follow the `Angular 12` upgrade guide: [Updating to version 12](https://v12.angular.io/guide/updating-to-version-12).
 - Use Node version `14`.
 
-> **Info:** **`AOT`** is not yet supported.
+> **Info:** `AOT` is not yet supported.
 
 #### How to enable IVY
 
-Ivy is a new rendering engine for Angular applications that improves application speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you do so.
+Ivy is a new rendering engine for Angular applications that improves application speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you to do so.
 
-During the Update:
+During the update:
 
 - Edit _tsconfig.json_ and set `enableIvy` to `true` or delete it as this setting is the default setting:
 
@@ -38,8 +38,8 @@ During the Update:
 
 - Delete `node_modules` and reinstall them. If `ngcc` works you should see a **compiling** step after installing all dependencies.
 
-- If you use Jest (JavaScript Testing Framework) check: [Jest - Angular IVY](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-ivy) for the configuration.
+- If you use Jest (JavaScript Testing Framework) check [Jest - Angular IVY](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-ivy) for the configuration.
 
 > **Info:** Deep imports are not supported. For example, you need to import from `@c8y/ngx-components/asset-navigator` but not from `@c8y/ngx-components/asset-navigator/services/asset-service`.
 
-> **Info:** If you are using Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is unchecked.
+> **Info:** If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is not selected.

@@ -51,14 +51,14 @@ $ c8ycli new cockpit cockpit
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
-The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps will have to be completed via the interface before the app is scaffolded:
+The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps must be completed via the interface before the app is scaffolded.
 
 **Step 1:**
 ```
 ? Enter the name of the project: (my-application)
 ```
 
-The first step will ask for the project name. If no project name is entered, the default value `my-application` will be used.
+The first step asks for the project name. If no project name is entered, the default value `my-application` is used.
 
 > **Info:** This step can also be skipped if the name is provided in the initial command: `c8ycli new my-application`.
 

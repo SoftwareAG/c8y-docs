@@ -399,7 +399,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-If a geofence border is crossed by leaving geofence area, an email is sent.
+If a geofence border is crossed by leaving the geofence area, an email is sent.
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
@@ -449,7 +449,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An emails is triggered on leaving geofence area.
+> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
 
 **Troubleshooting**
 

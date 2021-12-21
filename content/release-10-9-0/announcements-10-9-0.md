@@ -10,12 +10,12 @@ aliases:
 
 #### Deprecation of /devicecontrol/notifications endpoint
 
-The `/devicecontrol/notifications` endpoint is deprecated. We recommend you to use the  `/notification/operations` endpoint instead. With the 10.11 release, the `/devicecontrol/notifications` endpoint is supposed to be removed.
+The `/devicecontrol/notifications` endpoint is deprecated. We recommend you to use the  `/notification/operations` endpoint instead.
 
 
 #### Deprecation of /cep/realtime endpoint
 
-The `/cep/realtime` endpoint is deprecated. We recommend you to use the `/notification/realtime` endpoint instead. With the  10.11 release, the `/cep/realtime` endpoint is supposed to be removed.
+The `/cep/realtime` endpoint is deprecated. We recommend you to use the `/notification/realtime` endpoint instead.
 
 
 #### Enforcement of usage of bootstrap credentials
@@ -93,6 +93,9 @@ The following ciphers are the supported ciphers from release 10.10.
 * rsa&#95;pss&#95;pss&#95;sha384
 * rsa&#95;pss&#95;pss&#95;sha512
 
+### Enforcement of user passwords to meet password complexity
+
+When the use of green passwords is enforced and the minimal strong password length (`system.password.green.min-length` property) is higher than the device password length (`device-user.password.length` property), the system will use the `green.min-length` value, i.e. generate a longer password. Prior to this change, the system rejected auto-generated passwords that were too short blocking device bootstrap.
 
 #### Internet Explorer 11 support has ended
 

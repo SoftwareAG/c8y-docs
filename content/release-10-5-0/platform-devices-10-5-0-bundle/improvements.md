@@ -8,7 +8,7 @@ title: What´s New
 
 #### Installation
 
-Cumulocity now provides an **offline installation** process for the Cumulocity IoT platform. An on-premise Cumulocity IoT cluster can now be installed and operated without requiring internet connectivity. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
+Cumulocity now provides an **offline installation** process for the Cumulocity IoT platform. An on-prem Cumulocity IoT cluster can now be installed and operated without requiring internet connectivity. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
 
 #### Administration
 
@@ -29,10 +29,10 @@ Improved error messages when uploading microservices. [MTM-25850]
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
-![Configurable Columns](/images/release-notes/configurable-columns.png) 
+![Configurable Columns](/images/release-notes/configurable-columns.png)
 
 Devices shell now supports commands for Machinelink devices. [MTM-26944]
- 
+
 
 #### Web SDK
 
@@ -61,12 +61,12 @@ For details, see the [How-to recipes](https://cumulocity.com/guides/10.5.0/web/h
 
 The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
-The sample applications that were previously accessible from [Miscellaneous sample applications](https://cumulocity.com/guides/10.5.0/apama/examples/#misc-applications) in the *Streaming Analytics guide* are now available directly from the Apama EPL Apps application. 
+The sample applications that were previously accessible from [Miscellaneous sample applications](https://cumulocity.com/guides/10.5.0/apama/examples/#misc-applications) in the *Streaming Analytics guide* are now available directly from the Apama EPL Apps application.
 
 
 ### Apama Analytics Builder
 
-Apama Analytics Builder is now available in the Cumulocity IoT Cloud platform. It is integrated as a web application which is available from the application switcher. 
+Apama Analytics Builder is now available in the Cumulocity IoT Cloud platform. It is integrated as a web application which is available from the application switcher.
 
 Apama Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 
@@ -76,11 +76,11 @@ See the documentation for [Apama Analytics Builder for Cumulocity IoT](https://d
 
 ### Cumulocity IoT DataHub
 
-Cumulocity IoT DataHub is now available in the Cumulocity IoT Cloud platform as an integrated web application, available from the application switcher. 
+Cumulocity IoT DataHub is now available in the Cumulocity IoT Cloud platform as an integrated web application, available from the application switcher.
 
 In addition to running simple ad-hoc queries using REST API, Cumulocity IoT DataHub now enables you to perform more sophisticated analytical querying over the device data, potentially covering long periods of time.
 
-With Cumulocity IoT DataHub, you can connect existing tools and applications to Cumulocity, such as 
+With Cumulocity IoT DataHub, you can connect existing tools and applications to Cumulocity, such as
 
 * Business Intelligence/reporting tools (using ODBC, JDBC).
 * machine learning applications (mainly written in Python using ODBC).
@@ -92,4 +92,3 @@ Main features of the Cumulocity IoT DataHub application include:
 * Offers a SQL-based Query Interface for querying the data lake and enabling customers to connect arbitrary applications that either support ODBC, JDBC, or REST protocols.
 
 See the [Datahub guide](https://cumulocity.com/guides/10.5.0/datahub/datahub-overview) for detailed information.
-

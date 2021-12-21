@@ -14,7 +14,7 @@ Cumulocity IoT has already recommended (and documented) the use of numeric value
 
 #### Device Management - Removal of groups note
 
-Currently, in the Device Management application, there are two places for adding notes to a group, i.e. either using the notes area or the group data notes field on the **Info** tab of a group. With release 10.10, the first option will be removed from the UI. The old group notes will still be accessible using the REST APIs but won't be displayed anymore within the Device Management UI.
+Currently, there are two places in the Device Management application for adding notes to a group, i.e. either using the notes area or the group data notes field on the **Info** tab of a group. With release 10.11, the first option will be removed from the UI. The old group notes will still be accessible using the REST APIs but won't be displayed anymore within the Device Management UI.
 
 Furthermore, with the introduction of a new group view, the information from the current **Info** and **Subasset** tabs will be combined in order to enhance usability.
 
@@ -26,6 +26,20 @@ With release 10.10, "font awesome" icons are replaced by a larger set of icons a
 All CSS classes with the prefix `fa-**` are now updated to use the `dlt-icon-**` prefix, keeping the icon name unchanged. The c8y-icon directive was also updated to reflect this behavior. `fa-** ` utility classes were also changed and now use a more generic prefix: `icon-**`.
 
 To use these icons, developers are asked to follow the c8y-icon directive.
+
+#### Re-introducing weak ciphers for MQTT (over TLS) connections
+
+Cumulocity IoT is re-introducing the support for AES-CBC ciphers for MQTT(over TLS) connections.
+
+What does this mean and how does it impact you?
+
+The Cumulocity IoT platform continually improves its security posture by regularly updating support for the latest standards and protocols. With the 10.10 release, we removed support for weak ciphers for MQTT (over TLS) connections. Unfortunately some customers' devices could not upgrade to the stronger ciphers and were therefore unable to connect to the platform. We have therefore reinstated the weaker ciphers in the 10.10 and subsequent releases.
+
+To enable customers with self-hosted or dedicated environments to determine which strength of cipher to support for MQTT over TLS new configurable values have been introduced. This configuration is only available to the Management tenant; further information on how to set this configuration can be found in the *Cumulocity IoT platform - Operations guide*.
+
+### Enforcement of user passwords to meet password complexity
+
+When the use of green passwords is enforced and the minimal strong password length (`system.password.green.min-length` property) is higher than the device password length (`device-user.password.length` property), the system will use the `green.min-length` value, i.e. generate a longer password. Prior to this change, the system rejected auto-generated passwords that were too short blocking device bootstrap.
 
 ### Streaming Analytics
 
@@ -46,6 +60,6 @@ for more information on the `GenericResponse` event.
 ### Machine learning
 
 * Role-based access control will be introduced in the next release which will mandate assigning users to the Machine Learning Global Roles or User groups to enable them to use Cumulocity IoT Machine Learning.
-* The old versions of [Generate time series model](https://cumulocity.com/guides/machine-learning/api-reference/#post--generate-time-series-model-using-time-series-data) `{{url}}/service/zementis/timeseries` API and [Get time series model generation status](https://cumulocity.com/guides/machine-learning/api-reference/#get--get-status-of-generation-of-the-time-series-model) `{{url}}/service/zementis/timeseries/{{model_name}}/status` API which were deprecated in 10.7 release will be removed in the next release. However, the new versions `{{url}}/service/zementis/train/timeseries` and `{{url}}/service/zementis/train/timeseries/{{model_name}}/status` will still be in production.
-* The `applyToAllModels` query parameter used in [Apply model group](https://cumulocity.com/guides/machine-learning/api-reference/#post---apply-pmml-model-group-to-multiple-records) and  [Apply model group and show details](https://cumulocity.com/guides/machine-learning/api-reference/#post---apply-pmml-model-group-to-multiple-records-and-show-details) API was deprecated as part of 10.9 release and will be removed in the next release. This parameter is replaced by `applyAllModels`.
-* The `applyToAllModels` field of the [Job Configuration](https://cumulocity.com/guides/machine-learning/api-reference/#domain-model) type was deprecated as part of 10.9 release and will be removed in the next release. This parameter is replaced by `applyAllModels`.
+* The old versions of [Generate time series model](https://cumulocity.com/guides{{< 10-10-0 >}}/machine-learning/api-reference/#post--generate-time-series-model-using-time-series-data) `{{url}}/service/zementis/timeseries` API and [Get time series model generation status](https://cumulocity.com/guides{{< 10-10-0 >}}/machine-learning/api-reference/#get--get-status-of-generation-of-the-time-series-model) `{{url}}/service/zementis/timeseries/{{model_name}}/status` API which were deprecated in 10.7 release will be removed in the next release. However, the new versions `{{url}}/service/zementis/train/timeseries` and `{{url}}/service/zementis/train/timeseries/{{model_name}}/status` will still be in production.
+* The `applyToAllModels` query parameter used in [Apply model group](https://cumulocity.com/guides{{< 10-10-0 >}}/machine-learning/api-reference/#post---apply-pmml-model-group-to-multiple-records) and  [Apply model group and show details](https://cumulocity.com/guides{{< 10-10-0 >}}/machine-learning/api-reference/#post---apply-pmml-model-group-to-multiple-records-and-show-details) API was deprecated as part of 10.9 release and will be removed in the next release. This parameter is replaced by `applyAllModels`.
+* The `applyToAllModels` field of the [Job Configuration](https://cumulocity.com/guides{{< 10-10-0 >}}/machine-learning/api-reference/#domain-model) type was deprecated as part of 10.9 release and will be removed in the next release. This parameter is replaced by `applyAllModels`.

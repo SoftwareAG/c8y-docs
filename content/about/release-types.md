@@ -22,7 +22,7 @@ Cumulocity distinguishes between the following release types:
 <tbody>
 <tr>
 <td style="text-align:left">GA release</td>
-<td style="text-align:left">A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all Cumulocity IoT public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the Software AG Empower Portal. GA releases include new features, improvements and fixes.</td>
+<td style="text-align:left">A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all Cumulocity IoT public cloud instances and they are provided to customers with an on-prem instance through the Software Download Center on the Software AG Empower Portal. GA releases include new features, improvements and fixes.</td>
 <td style="text-align:left">10.7, 10.8, 10.9, 10.10</td>
 </tr>
 <tr>
@@ -40,9 +40,9 @@ Cumulocity distinguishes between the following release types:
 
 Each release receives a version label.
 
- `<major>.<minor>.<increment>.<fix>`, for example 10.7.0.4, 10.7.3.0 
- 
-*  `<major>` is incremented for marketing purposes. 
-*  `<minor>` is incremented with each GA release. 
-*  `<increment>` is incremented with each Incremental release. 
+ `<major>.<minor>.<increment>.<fix>`, for example 10.7.0.4, 10.7.3.0
+
+*  `<major>` is incremented for marketing purposes.
+*  `<minor>` is incremented with each GA release.
+*  `<increment>` is incremented with each Incremental release.
 *  `<fix>` is "0" for the base release and incremented with each Maintenance release of this release.

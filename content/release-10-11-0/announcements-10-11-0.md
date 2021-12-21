@@ -38,7 +38,7 @@ With the 10.5 release a new token-based mechanism for browser-based authenticati
 
 With the 10.12 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.13 release the Basic Authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
-If not done already, we recommend you not to wait for the 10.13 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/10.9.0/users-guide/administration/#changing-settings) in the *User guide*.
+If not done already, we recommend you not to wait for the 10.13 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*.
 
 In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5 or higher as well as the Microservice SDK 10.5 or higher.
 
@@ -61,6 +61,10 @@ As announced with [release 10.7.0](/releasenotes/release-10-7-0/announcements-10
 ##### Strong password enforced for tenant admins
 
 Enforcing a strong (green) password for all users in the Management tenant does no longer exclude tenant administrators. Tenant admin users now also have strong password, i.e. green password, enforced. This increases security and protects the tenant admin account.
+
+##### Enforcement of user passwords to meet password complexity
+
+When the use of green passwords is enforced and the minimal strong password length (`system.password.green.min-length` property) is higher than the device password length (`device-user.password.length` property), the system will use the `green.min-length` value, i.e. generate a longer password. Prior to this change, the system rejected auto-generated passwords that were too short blocking device bootstrap.
 
 
 ### SDK changes
@@ -88,8 +92,6 @@ In the context of the new Web SDK plugin concept, the variable HOOK_ROUTE_ONCE h
 This change will only affect you if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you update an application including HOOK_ROUTE_ONCE, make sure to use HOOK_ROUTE instead.
 
 
-#### Implemented
-
 ##### Upgrade to Angular 12
 
 With GA release 10.12.0 we plan to upgrade Angular from version 11 to version 12. As the view engine is deprecated we will also change the default renderer to Ivy.
@@ -103,6 +105,7 @@ Additionally, you can use the following resources for more details on the change
 - https://angular.io/guide/ivy
 - https://angular.io/guide/updating-to-version-12
 
+#### Implemented
 
 ##### Removal of the variable HOOK_COMPONENT
 
@@ -126,7 +129,7 @@ With this change, all new Cumulocity IoT subscriptions use the Apama CEP engine.
 
 ### Machine Learning
 
-* With GA release 10.11.0, Cumulocity IoT Machine Learning introduces "Role Based Access Control" which is a breaking change for it's existing users. Refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-11-0/machine-learning-10-11-0/#10_11_0) to learn more about this change.
+* With GA release 10.11.0, Cumulocity IoT Machine Learning introduces "Role Based Access Control" which is a breaking change for its existing users. Refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-11-0/machine-learning-10-11-0/#10_11_0) to learn more about this change.
 * The two flavors of MLW microservice (MLW and MLW-CDH) are consolidated into a single offering.
 * The [data pull from Cumulocity IoT DataHub](https://cumulocity.com/guides{{< 10-11-0 >}}/machine-learning/web-app-mlw/#datahub) feature in Cumulocity IoT Machine Learning Workbench is supported on Cumulocity IoT Edge from 10.11.0 release onwards.
 * The deprecations mentioned in the [announcements section for release 10.10.0](/release-10-10-0/announcements-10-10-0/#machine-learning) are now removed entirely.

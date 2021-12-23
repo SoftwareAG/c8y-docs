@@ -8,9 +8,9 @@ This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi)
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation)
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7

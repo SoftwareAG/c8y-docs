@@ -6,6 +6,10 @@ layout: redirect
 
 Data broker lets you upload the data to a {{< product-c8y-iot >}} tenant account selectively. Note that you must first create a {{< product-c8y-iot >}} tenant account.
 
+> **Important:** Data broker and Edge connectivity is compatible only with the current version and previous two releases of {{< product-c8y-iot >}}.
+>
+> {{< product-c8y-iot >}} has a release every three months.
+
 You can share the following data with the tenant account:
 
 * devices (and more generically, managed objects)

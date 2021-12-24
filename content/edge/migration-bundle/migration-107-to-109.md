@@ -42,7 +42,7 @@ mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies th
 mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
-3. Note down the device ID of your Edge 10.7 appliance available at`/usr/edge/properties/edge-agent/device-id`
+3. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`
 4. Create a backup of the `/etc/opcua` directory.
 5. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 

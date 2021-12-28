@@ -34,7 +34,7 @@ Select the checkbox **Enforce "green" passwords for all users** to enforce the u
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers with on-premise installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-tenant/#support-user-access) for more information.
+This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers with on-prem installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, i.e. to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-tenant/#support-user-access) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 

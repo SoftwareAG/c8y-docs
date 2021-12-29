@@ -1,5 +1,5 @@
 ---
-title: Release 10.12.0
+title: Release 10.12.0 PREVIEW
 bundle: release-10-12-0
 icon: "c8y-icon c8y-icon-notification"
 type: root

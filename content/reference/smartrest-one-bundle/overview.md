@@ -101,6 +101,7 @@ SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint t
 ```http
 s/ol/<X-ID>
 ```
+>**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
 
 ### Limitations
 

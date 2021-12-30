@@ -78,6 +78,8 @@ SmartREST 1.0 via HTTP offers the <kbd>/devicecontrol/notifications</kbd> endpoi
 s/ol/<X-ID>
 ```
 
+>**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
+
 ### Limitations
 
 MQTT currently does not support request/response. Therefore, if you send a request on the publish topic and receive a response on the subscribe topic, the client cannot securely match that they belong together.

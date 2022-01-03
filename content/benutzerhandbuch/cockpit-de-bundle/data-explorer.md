@@ -139,11 +139,11 @@ Die folgenden Felder können bearbeitet werden:
 </tr>
 <tr>
 <td style="text-align:left">Gelber Bereich min/max</td>
-<td style="text-align:left">Legt den Bereich fest, in welchem WENIGER WICHTIGE Alarme über eine Schwellwertregel ausgelöst werden.  </td>
+<td style="text-align:left">Legt den Bereich fest, in welchem WENIGER WICHTIGE Alarme über eine Schwellenwertregel ausgelöst werden.  </td>
 </tr>
 <tr>
 <td style="text-align:left">Roter Bereich min/max</td>
-<td style="text-align:left">Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellwertregel ausgelöst werden.</td>
+<td style="text-align:left">Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellenwertenregel ausgelöst werden.</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzeige</td>

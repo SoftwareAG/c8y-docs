@@ -44,7 +44,7 @@ Der {{< management-tenant-de >}} kann nicht als Data-Broker-Ursprungsmandant ver
 
 #### Data Broker-Verbindungsfehler
 
-Der Data Broker-Agent ist vorkonfiguriert für die Überwachung aller Konnektoren bezüglich der Anzahl der gesendeten Weiterleitungsanfragen. Wenn diese Anzahl einen vorkonfigurierten Schwellwert erreicht, wird beim Mandanten ein KRITISCHER Alarm ausgelöst.
+Der Data Broker-Agent ist vorkonfiguriert für die Überwachung aller Konnektoren bezüglich der Anzahl der gesendeten Weiterleitungsanfragen. Wenn diese Anzahl einen vorkonfigurierten Schwellenwert erreicht, wird beim Mandanten ein KRITISCHER Alarm ausgelöst.
 Geschieht dies, werden die Daten gespeichert, bis die Verbindung wiederhergestellt ist und die Daten wieder weitergeleitet werden können.
 Zu fehlgeschlagenen Anfragen kann es kommen, wenn der den Data Broker abonnierende Mandant nicht mehr erreichbar ist.
 
@@ -54,11 +54,11 @@ Der Data Broker-Agent ist so vorkonfiguriert, dass er die Rate überwacht, mit d
 
 ##### Queue-Backlog
 
-Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung einen festgelegten Schwellwert überschreitet. Dies erfolgt in der Regel dann, wenn es aufgrund verschiedener Faktoren zu einem Rückstand an unzugestellten Ereignissen an den Zielmandanten gekommen ist.
+Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung einen festgelegten Schwellenwert überschreitet. Dies erfolgt in der Regel dann, wenn es aufgrund verschiedener Faktoren zu einem Rückstand an unzugestellten Ereignissen an den Zielmandanten gekommen ist.
 
 ##### Durchschnittlich gesendete Bytes pro Sekunde bei  Anfragen
 
-Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
+Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellenwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
 
 ![New Data-Broker Alarms](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-alarms.png)
 

@@ -253,6 +253,8 @@ They can view the peak number of concurrently registered devices, root devices a
 
 Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 
+On tenant level, the porduct experience tracking by Gainsight can be disabling by disabling the cookie banner on the **Branding** page, see [Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+
 Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the platform](/users-guide/getting-started/#accessing-platform).
 
 

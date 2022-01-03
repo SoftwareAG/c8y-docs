@@ -60,12 +60,12 @@ Folgende Typen sind verfügbar:
 <td align="left">Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gesendet.</td>
 </tr>
 <tr>
-<td align="left"><a href="#threshold-explicit">Bei explizitem Schwellwert Alarm erzeugen</a></td>
-<td align="left">Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird der rote Schwellwert explizit bereitgestellt.</td>
+<td align="left"><a href="#threshold-explicit">Bei explizitem Schwellenwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird der rote Schwellenwert explizit bereitgestellt.</td>
 </tr>
 <tr>
-<td align="left"><a href="#threshold-alarm">Bei Schwellwert Alarm erzeugen</a></td>
-<td align="left">Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht. Diese Regel nimmt die Schwellwerte aus dem Gerät oder aus der Datenpunktbibliothek:</td>
+<td align="left"><a href="#threshold-alarm">Bei Schwellenwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht. Diese Regel nimmt die Schwellenwerte aus dem Gerät oder aus der Datenpunktbibliothek:</td>
 </tr>
 </tbody>
 </table>
@@ -632,7 +632,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </table>
 
 <a name="threshold-alarm"></a>
-### Bei Schwellwert Alarm erzeugen
+### Bei Schwellenwert Alarm erzeugen
 
 **Funktionalität**
 
@@ -696,7 +696,7 @@ Wenn wir den gelben Bereich auf "[30;60)" und den roten Bereich auf "[50;90]" ei
 
 und der Messwert 55 beträgt, wird ein WENIGER WICHTIGER Alarm (gelb) erzeugt.
 
-Durch diese Mechanismen können globale Schwellwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.
+Durch diese Mechanismen können globale Schwellenwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.
 
 
 **Parameter**
@@ -726,7 +726,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwert</td>
+<td align="left">Bei Schwellenwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Eintrag in der Datenpunktbibliothek</strong>: Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden. Beachten Sie, dass die im Datenpunkt festgelegte Einheit hier nicht berücksichtigt wird.</td>
 </tr>
 <tr>
@@ -780,10 +780,10 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
 <a name="threshold-explicit"></a>
-### Bei explizitem Schwellwert Alarm erzeugen
+### Bei explizitem Schwellenwert Alarm erzeugen
 
 **Funktionalität**
 
@@ -795,7 +795,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 * Wenn der Messwert sich in den grünen Bereich bewegt, wird kein Alarm erzeugt.
 
-> **Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel "Bei Schwellwert Alarm erzeugen" der Schwellwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
+> **Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellenwert explizit bereitgestellt, während in der Regel "Bei Schwellenwert Alarm erzeugen" der Schwellenwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
 
 **Parameter**
 
@@ -824,7 +824,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwert</td>
+<td align="left">Bei Schwellenwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Minimum, Maximum</strong>: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.</td>
 </tr>
 <tr>
@@ -853,7 +853,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
 <a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen

@@ -18,6 +18,6 @@ layout: redirect
 }
 ```
 
-The properties "trackingProtocol" and "reportReason" are used by a tracker agent and describe the tracking context of a positioning report: why the report was sent and in which protocol.
+The properties `trackingProtocol` and `reportReason` are used by a tracker agent and describe the tracking context of a positioning report: why the report was sent and in which protocol.
 
->**Info:** Sending the `c8y_LocationUpdate` event does not update the location fragment on the managed object as opposed to SmartREST template 402 which does both.
+>**Info:** Sending the `c8y_LocationUpdate` event does not update the location fragment on the managed object as opposed to [SmartREST template 402](/device-sdk/mqtt/#402) which does both.

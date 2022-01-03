@@ -6,7 +6,7 @@ layout: redirect
 
 ### c8y\_Relay
 
-A relay is a kind of binary state switch which can be in the states "OPEN" or "CLOSED". Relays can be used for many purposes, for example to connect or disconnect the consumer power supply through a smart energy meter.
+A relay is a kind of binary state switch which can be in the states OPEN or CLOSED. Relays can be used for many purposes, for example to connect or disconnect the consumer power supply through a smart energy meter.
 In a managed object, a relay control model includes the state of the control. When the control state changes, the inventory model should be updated to include the new state:
 
 ```json
@@ -19,7 +19,7 @@ In a managed object, a relay control model includes the state of the control. Wh
 
 |Operation|States|Description|
 |:--------|:-----|:----------|
-|state|OPEN, CLOSED|OPEN commands the relay into the open position, CLOSED commands it to the closed position.|
+|state|OPEN, CLOSED|OPEN commands the relay into the open position, CLOSED commands it to the closed position|
 
 The operation representation is the same as the inventory representation:
 

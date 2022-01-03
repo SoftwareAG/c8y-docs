@@ -4,9 +4,9 @@ title: Energy
 layout: redirect
 ---
 
-### Electricity Sensor
+### Electricity sensor
 
-At the most basic level electricity sensors (aka electricity meters, watt-hour meters) measure energy consumption (usually measured in kWh), however they can measure much more depending on their complexity, such as "demand", or instantaneous power (usually measured in W), reactive power, harmonic distortion, etc. Meters can measure for a single phase (typical just for home usage) or for three phases.
+At the most basic level electricity sensors (electricity meters, watt-hour meters) measure energy consumption (usually measured in kWh), however they can measure much more depending on their complexity, such as "demand", or instantaneous power (usually measured in W), reactive power, harmonic distortion, etc. Meters can measure for a single phase (typical just for home usage) or for three phases.
 
 ### c8y\_SinglePhaseElectricitySensor
 

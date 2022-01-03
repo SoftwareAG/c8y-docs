@@ -86,7 +86,7 @@ The approach also enables developing generic application components. For example
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) and in the [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) in the {{< openapi >}}.
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the {{< openapi >}}.
 
 > **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
 

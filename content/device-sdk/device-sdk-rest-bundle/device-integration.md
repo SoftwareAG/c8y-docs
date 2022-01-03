@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in the [Device management library](/reference/device-management-library/) and in the [Sensor library](/reference/sensor-library/) in the {{< openapi >}}.
+Reference models for the data can be found in the [Device management library](/reference/device-management-library/) and in the [Sensor library](/reference/sensor-library/) in the **Reference guide**.
 
 
 ### Startup Phase
@@ -197,7 +197,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to the [Device management library](/reference/device-management-library/) in the {{< openapi >}}.
+For more information, refer to the [Device management library](/reference/device-management-library/) in the **Reference guide**.
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 

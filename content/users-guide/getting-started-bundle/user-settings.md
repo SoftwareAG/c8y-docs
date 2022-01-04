@@ -55,8 +55,9 @@ Several account settings can be changed by the user.
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes.
 3. To change the language, select a [language](#languages) from the dropdown list in the  **Language** field.
-4. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
-5. Click **Save** to apply your settings.
+4. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies. 
+5. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
+6. Click **Save** to apply your settings.
 
 <img src="/images/users-guide/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 

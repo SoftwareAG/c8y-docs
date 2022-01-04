@@ -4,7 +4,7 @@ title: Environmental capabilities
 layout: redirect
 ---
 
-Environmental capabilities include sensors that measure properties of the environment such as temperature, humidity, wind speed, etc.
+Environmental capabilities include sensors that measure properties of the environment such as temperature, humidity and wind speed.
 
 ### c8y\_TemperatureSensor
 

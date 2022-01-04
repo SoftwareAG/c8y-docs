@@ -70,38 +70,6 @@ As the token string is a JWT (JSON Web Token), it can be decoded to extract the 
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
 
-### Shared subscription
-
-There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscriptions.
-In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelized application.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application with the optional boolean `isShared` request parameter set to true in the token create request.
-
-Notifications (messages) will be distributed among all connections to the Notification 2.0 web socket endpoint.
-They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (say if the token can not be shared over the network).
-The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that's usually used.
-The application can consist of more than one instance running in parallel in the shared use case.
-
-Notifications will be delivered in order with respect to the notification generating device.
-The notifications will be delivered to the same application instance, except when a new instance or a failure changes the application topology.
-Then it is necessary to re-distribute the devices to currently running instances.
-In order to aid this assignment, the subscriber instance can specify a "consumer name" when connecting to the web socket endpoint.
-The same token, or one that was generated in a similar way from subscription name and subscriber, is used as the token query string argument.
-However, a different consumer name is passed as the `consumer` query string argument.
-For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
-Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
-
-### Volatile subscriptions
-
-When subscribing, it is possible to pass in an optional boolean `isVolatile` query parameter with a value of true.
-Note that there is no need to mark a subscription as shared - only the token is marked as shared. 
-Both the token and the subscriptions have `isVolatile` but only the token has both `isVolatile` and `isShared`.
-This changes the subscription to not persist notifications for the named subscription.
-They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
-Note that there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `isVolatile` equal to true or false.   
-
-The messaging service will keep volatile notifications in memory but will drop notifications if more than a configurable limit is reached per subriber/consumer (default is 1000).
-
 ### Unsubscribing a subscriber
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.

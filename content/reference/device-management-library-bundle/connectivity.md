@@ -16,8 +16,8 @@ PUT /inventory/managedObjects/<deviceId>
 ```json
 {
    "c8y_Mobile": {
-       "msisdn": "...",
-       "iccid": "..."
+       "msisdn": "380561234567",
+       "iccid": "89100423481F445593U"
    }
 }
 ```
@@ -28,7 +28,7 @@ PUT /inventory/managedObjects/<deviceId>
 |iccid|string|No|ICCID of the installed SIM|
 
 
-Depending on the configured connectivity provider either MSISDN or ICCID may be used to identify the SIM present in the device. We recommend you to always include both into the ```c8y_Mobile fragment```. There are many more mobile connection related properties that may also be attached to the ```c8y_Mobile fragment```, but only MSISDN or ICCID are relevant for connectivity management.
+Depending on the configured connectivity provider either MSISDN or ICCID may be used to identify the SIM present in the device. We recommend you to always include both into the `c8y_Mobile` fragment. There are many more mobile connection related properties that may also be attached to the `c8y_Mobile` fragment, but only MSISDN or ICCID are relevant for connectivity management.
 
 **SmartREST example**
 

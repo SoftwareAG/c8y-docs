@@ -21,12 +21,12 @@ You may enter an arbitrary string into the command text. The format and its inte
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|c8y_Command.text|String|Yes|The command text to be executed by the device|
+|c8y_Command.text|string|Yes|The command text to be executed by the device|
 
 After completing the execution, the device must provide a return string for the command in addition to setting the operation status to SUCCESSFUL. The result is provided as string property nested within the ```c8y_Command``` fragment in the operation.
 
 ```http
-PUT /devicecontrol/operations/<operation ID>
+PUT /devicecontrol/operations/<operationId>
 ```
 ```json
 {
@@ -40,7 +40,7 @@ PUT /devicecontrol/operations/<operation ID>
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|status|String|Yes|Operation status indicating if the operation was completed as intended|
+|status|string|Yes|Operation status indicating if the operation was completed as intended|
 |c8y_Command|object|Yes|c8y_Command object received via the pending operation at the beginning|
 |c8y_Command.text|string|Yes|The command that was executed by the device|
 |c8y_Command.result|string|Yes|Execution result after running the command|

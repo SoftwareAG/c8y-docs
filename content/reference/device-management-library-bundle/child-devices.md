@@ -11,7 +11,7 @@ The **Child Devices** tab shows a list of all child devices. It will be availabl
 In order to link a device the parent device must post to its inventory API the following request containing the ID of the child device.
 
 ```http
-POST /inventory/managedObjects/{{deviceId}}/childDevices
+POST /inventory/managedObjects/<deviceId>/childDevices
 ```
 ```json
 {
@@ -23,7 +23,7 @@ POST /inventory/managedObjects/{{deviceId}}/childDevices
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|ManagedObject.id|String|Yes|ID of the child device to link|
+|managedObject.id|string|Yes|ID of the child device to link|
 
 
 **SmartREST example**

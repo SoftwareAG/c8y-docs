@@ -22,7 +22,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|c8y_SupportedOperations|Object|Yes|String list of supported operations|
+|c8y_SupportedOperations|array|Yes|Array of strings of the supported operations|
 
 Some capabilities also introduce their own ```c8y_Supported<...>``` fragments with a similar concept. These fragments allow devices to announce the ability to handle certain types of log files or configuration.
 

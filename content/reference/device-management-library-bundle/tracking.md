@@ -17,12 +17,12 @@ POST /event/events
 {
     "c8y_Position": {
     	"alt": 67,
-      	"lng": 6.95173,
-      	"lat": 51.151977
+      "lng": 6.95173,
+      "lat": 51.151977
     },
     "time":"2013-06-22T17:03:14.000+02:00",
     "source": {
-    	"id":"10300"
+    	"id": "10300"
      },
     "type": "c8y_LocationUpdate",
     "text": "LocUpdate"
@@ -47,7 +47,7 @@ POST /event/events
 <tbody>
 <tr>
 <td>c8y_Position</td>
-<td>Object</td>
+<td>object</td>
 <td>Yes</td>
 <td>Holds geographical location properties</td>
 </tr>
@@ -71,25 +71,25 @@ POST /event/events
 </tr>
 <tr>
 <td>time</td>
-<td>String</td>
+<td>string</td>
 <td>Yes</td>
 <td>The time the position was measured</td>
 </tr>
 <tr>
 <td>source</td>
-<td>Object</td>
+<td>object</td>
 <td>Yes</td>
 <td>ID of the source device</td>
 </tr>
 <tr>
 <td>type</td>
-<td>String</td>
+<td>string</td>
 <td>Yes</td>
 <td>Must always be c8y_LocationUpdate to designate this event as location update event</td>
 </tr>
 <tr>
 <td>text</td>
-<td>String</td>
+<td>string</td>
 <td>Yes</td>
 <td>Description of the event. This parameter is required because it is a required for events in general. There are no further semantics applied to the text in the context of tracking devices.</td>
 </tr>
@@ -107,14 +107,14 @@ POST /event/events
 The current device position is represented using the ```c8y_Position``` fragment in the device’s own managed object.
 
 ```http
-PUT /inventory/managedObjects/deviceId>
+PUT /inventory/managedObjects/<deviceId>
 ```
 ```json
 {
     "c8y_Position": {
     	"alt": 67,
-      	"lng": 6.95173,
-      	"lat": 51.151977
+      "lng": 6.95173,
+      "lat": 51.151977
     }
 }
 ```

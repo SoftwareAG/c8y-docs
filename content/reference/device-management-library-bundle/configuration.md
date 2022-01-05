@@ -235,7 +235,7 @@ Devices that are capable of installing configuration remotely can announce this 
 <td>c8y_ConfigurationDump</td>
 <td>object</td>
 <td>Yes</td>
-<td>configuration dump reference object containing the ID of the Configuration repository entry object</td>
+<td>Configuration dump reference object containing the ID of the configuration repository entry object</td>
 </tr>
 </tbody>
 </table>
@@ -296,7 +296,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Name|Type|Mandatory|Description|
 |----|----|----|----|
-|c8y_SupportedConfigurations|array|Yes|String array of supported configuration for this device|
+|c8y_SupportedConfigurations|array|Yes|Array of strings of the supported configuration for this device|
 
 
 {{< product-c8y-iot >}} does not validate or further process configuration types. From a platform perspective they are simple strings. Associating these type strings to configuration files is responsibility of the device agent.
@@ -351,8 +351,7 @@ In order to attach the configuration file to the just uploaded event, the [Event
 
 ```http
 POST /event/events/<eventId>/binaries
-```
-```http
+
 Host: https://<TENANT_DOMAIN>
 Authorization: <AUTHORIZATION>
 Accept: application/json

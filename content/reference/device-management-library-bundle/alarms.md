@@ -27,11 +27,11 @@ POST /alarm/alarms
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|source|Object|Yes|The ID of the device|
-|type|String|Yes|Type of the alarm|
-|text|String|Yes|Alarm text, describing the alarm status|
-|severity|String|Yes|Alarm severity|
-|time|String|Yes|Time of alarm occurrence|
+|source|object|Yes|The ID of the device|
+|type|string|Yes|Type of the alarm|
+|text|string|Yes|Alarm text, describing the alarm status|
+|severity|string|Yes|Alarm severity|
+|time|string|Yes|Time of alarm occurrence|
 
 In addition to the required parameters above, the device may also include custom fragments with more details about the alarm status into the alarm.
 
@@ -47,7 +47,7 @@ In addition to the required parameters above, the device may also include custom
 When a device detects that the local alarm status was resolved it must clear the alarm. This is done by updating the alarm status to CLEARED.
 
 ```http
-PUT /alarm/alarms/<alarm ID>
+PUT /alarm/alarms/<alarmId>
 ```
 ```json
 {
@@ -58,7 +58,7 @@ PUT /alarm/alarms/<alarm ID>
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|Status|String|Yes|The new alarm status|
+|status|string|Yes|The new alarm status|
 
 
 **SmartREST example**

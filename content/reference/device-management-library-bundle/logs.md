@@ -25,7 +25,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|c8y_SupportedLogs|array|Yes|String array or supported log types|
+|c8y_SupportedLogs|array|Yes|Array of strings of the supported log types|
 
 **SmartREST example**
 
@@ -51,11 +51,11 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|dateFrom|String|Yes|Start date for log lines|
-|dateTo|String|Yes|End date for log lines|
-|logFile|String|Yes|Type of log for the specific device (c8y_SupportedLogs)|
-|searchText|String|Yes|A text filter to apply to individual log lines|
-|maximumLines|String|Yes|Maximum amount of lines to transfer|
+|dateFrom|string|Yes|Start date for log lines|
+|dateTo|string|Yes|End date for log lines|
+|logFile|string|Yes|Type of log for the specific device (c8y_SupportedLogs)|
+|searchText|string|Yes|A text filter to apply to individual log lines|
+|maximumLines|string|Yes|Maximum amount of lines to transfer|
 
 When the device has gathered the logs it must upload it as a file to {{< product-c8y-iot >}}. We recommend you to create an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
 
@@ -75,17 +75,16 @@ POST /event/events
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|source|String|Yes|ID of the device|
-|type|String|Yes|Type of the log file|
-|time|String|Yes|Time when the event occurred|
-|text|String|Yes|Event text|
+|source|string|Yes|ID of the device|
+|type|string|Yes|Type of the log file|
+|time|string|Yes|Time when the event occurred|
+|text|string|Yes|Event text|
 
 If desired the device may also include the ```c8y_LogfileRequest``` fragment from the operation or the operation ID into the event. The file is then attached to the event using it’s event ID and event binaries API.
 
 ```http
 POST /event/events/<eventId>/binaries
-```
-```http
+
 Host: https://<TENANT_DOMAIN>
 Authorization: <AUTHORIZATION>
 Accept: application/json
@@ -108,11 +107,7 @@ Oct 25 13:28:53 wtp kernel: [  719.555033] sd 6:0:0:0: [sdb] No Caching mode pag
 After successful completion of the upload, the device must include a URL to the uploaded file into the ```c8y_LogfileRequest``` fragment of the operation. The link must be presented as property "file". This action can be combined with setting the operation status to SUCCESSFUL.
 
 ```http
-PUT /devicecontrol/operations/&lt;operation ID>
-</td>
-</tr>
-</tbody>
-</table>
+PUT /devicecontrol/operations/<operationId>
 ```
 ```json
 {
@@ -130,13 +125,13 @@ PUT /devicecontrol/operations/&lt;operation ID>
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|status|String|Yes|Operation status|
-|dateFrom|String|Yes|Start date for log lines|
-|dateTo|String|Yes|End date for log lines|
-|logFile|String|Yes|Type of log for the specific device (c8y_SupportedLogs)|
-|searchText|String|Yes|A text filter to apply to individual log lines|
-|maximumLines|String|Yes|Maximum amount of lines to transfer|
-|file|String|Yes|URL where the log file was uploaded to|
+|status|string|Yes|Operation status|
+|dateFrom|string|Yes|Start date for log lines|
+|dateTo|string|Yes|End date for log lines|
+|logFile|string|Yes|Type of log for the specific device (c8y_SupportedLogs)|
+|searchText|string|Yes|A text filter to apply to individual log lines|
+|maximumLines|integer|Yes|Maximum amount of lines to transfer|
+|file|string|Yes|URL where the log file was uploaded to|
 
 
 The device is expected to perform the following actions:

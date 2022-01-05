@@ -58,7 +58,7 @@ PUT /alarm/alarms/<alarmId>
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|Status|String|Yes|The new alarm status|
+|status|string|Yes|The new alarm status|
 
 
 **SmartREST example**

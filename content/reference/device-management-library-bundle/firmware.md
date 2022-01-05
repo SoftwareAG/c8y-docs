@@ -27,9 +27,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 | Field | DataType | Mandatory | Details |
 |----|----|----|----|
-|name|String|Yes|Name of the firmware package|
-|version|String|Yes|A version identifier of the firmware|
-|url|String|No|A URL pointing to the location where the firmware file was obtained from|
+|name|string|Yes|Name of the firmware package|
+|version|string|Yes|A version identifier of the firmware|
+|url|string|No|A URL pointing to the location where the firmware file was obtained from|
 
 Similar to software the URL field is optional and may be omitted by devices.
 
@@ -55,9 +55,9 @@ When a user selects a complete firmware image for installation, an operation wit
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|name|String|Yes|Name of the firmware package|
-|version|String|Yes|A version identifier of the firmware|
-|url|String|Yes|A URL pointing to the location where the firmware file should be downloaded from|
+|name|string|Yes|Name of the firmware package|
+|version|string|Yes|A version identifier of the firmware|
+|url|string|Yes|A URL pointing to the location where the firmware file should be downloaded from|
 
 The device is expected to perform the following actions:
 
@@ -100,11 +100,11 @@ In case a user selects a firmware patch to be installed on a device, a ```c8y_Fi
 
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
-|name|String|Yes|Name of the firmware|
-|version|String|Yes|A version identifier of the firmware|
-|url|String|Yes|A URL pointing to the location of the firmware file|
-|dependency|String|Yes|Version of the firmware the patch depends on|
-|isPatch|Boolean|Yes|Indicator showing that this firmware package is a patch|
+|name|string|Yes|Name of the firmware|
+|version|string|Yes|A version identifier of the firmware|
+|url|string|Yes|A URL pointing to the location of the firmware file|
+|dependency|string|Yes|Version of the firmware the patch depends on|
+|isPatch|boolean|Yes|Indicator showing that this firmware package is a patch|
 
 
 The device is expected to perform the following actions:

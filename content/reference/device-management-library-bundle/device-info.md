@@ -54,7 +54,7 @@ Upon clicking the **Restart** button in the Device Management application an ope
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|c8y_Restart|Object|Yes|Restart marker fragment, that designates this operation as a restart operation|
+|c8y_Restart|object|Yes|Restart marker fragment, that designates this operation as a restart operation|
 
 The device is expected to perform the following actions:
 1. Set the operation status to EXECUTING
@@ -92,9 +92,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 |Field|Data type|Mandatory|Details|
 |----|----|----|----|
-|serialNumber|String|No|The hardware serial number of the device|
-|model|String|No|A text identifier of the hardware model|
-|revision|String|No|A text identifier of the hardware revision|
+|serialNumber|string|No|The hardware serial number of the device|
+|model|string|No|A text identifier of the hardware model|
+|revision|string|No|A text identifier of the hardware revision|
 
 **SmartREST example**
 

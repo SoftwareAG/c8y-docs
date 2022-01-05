@@ -34,9 +34,9 @@ PUT /inventory/managedObjects/<deviceId>
 
 | Field | DataType | Mandatory | Details |
 |----|----|----|----|
-| name | String | Yes | Name of the software|
-| version | String | Yes | A version identifier of the software|
-| url | String | No | A URL pointing to the location where the software file was obtained from|
+| name | string | Yes | Name of the software|
+| version | string | Yes | A version identifier of the software|
+| url | string | No | A URL pointing to the location where the software file was obtained from|
 
 
 Devices should upload the complete list of installed software during startup. Additionally the list should be updated any time a local change is triggered or detected. This includes cases where a change was requested through {{< product-c8y-iot >}} UI.
@@ -74,9 +74,9 @@ If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_
 
 | Field | DataType | Mandatory | Details |
 | ---- | ---- | ---- | ---- |
-| name | String | Yes | Name of the software|
-| version | String | Yes | A version identifier of the software|
-| url | String | Yes | A URL pointing to the location where the software file should be downloaded from|
+| name | string | Yes | Name of the software|
+| version | string | Yes | A version identifier of the software|
+| url | string | Yes | A URL pointing to the location where the software file should be downloaded from|
 
 The device is expected to perform the following actions:
 
@@ -127,10 +127,10 @@ If a device supports the ```c8y_SoftwareUpdate``` operation in its ```c8y_Suppor
 
 | Field | DataType | Mandatory | Details |
 | ---- | ---- | ---- | ---- |
-|name |String |Yes |Name of the software|
-|version |String | Yes | A version identifier of the software|
-|url |String |Yes |A URL pointing to the location where the software file should be downloaded from|
-|action |String |Yes |Action to be executed from the device on the software (possible values: "install" or "delete")|
+|name |string |Yes |Name of the software|
+|version |string | Yes | A version identifier of the software|
+|url |string |Yes |A URL pointing to the location where the software file should be downloaded from|
+|action |string |Yes |Action to be executed from the device on the software (possible values: "install" or "delete")|
 
 The device is expected to perform the following actions:
 

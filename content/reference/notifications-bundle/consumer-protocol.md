@@ -31,7 +31,7 @@ or
 wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2/consumer/?token=yourJwtTokenRequestedFromNotification2TokenService&consumer=aUniqueNameForThisConsumer
 ```
 
-There is a timeout of 5 minutes set on idle Web Socket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case.
+There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case.
 
 The WebSocket established with such an URL is a textual bi-directional connection using UTF-8 encoding.
 The WebSocket service sends a sequence of notifications to the consumer and the consumer should send back a short acknowledgement over this connection for each notification received.

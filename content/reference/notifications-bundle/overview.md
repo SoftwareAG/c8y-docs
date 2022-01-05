@@ -76,19 +76,19 @@ Once a subscription is made, notifications will be kept until consumed by all su
 For non-volatile subscriptions, this can result in notifications remaining in storage if never consumed by the application.
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.
-A separate REST endpoint is available for this: <kbd>/notification2/unsubscibe</kbd>.
-It has a non-optional query parameter `token`.
-The token is the same as you would use to connect to the web socket endpoint to consume notifications.
-Note that there is no explicit `subscribe a subcriber` operation using a token.
-Instead this happens when you first connect a web socket with a token for the subscription name and subscriber.
+A separate REST endpoint is available for this: <kbd>/notification2/unsubscribe</kbd>.
+It has a mandatory query parameter `token`.
+The token is the same as you would use to connect to the WebSocket endpoint to consume notifications.
+Note that there is no explicit "subscribe a subscriber" operation using a token.
+Instead this happens when you first connect a WebSocket with a token for the subscription name and subscriber.
 However, unsubscribing an application is an explicit act using the original or a similar token.
 Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes, 
 as typically one wants messages to persist even when no consumer is running.
 Only if no consumer will ever run again should unsubscribing a subscriber be necessary.
 
-It is also possible to unsubscribe a subscriber on an open consumer web socket connection.
-To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your web socket client to the service.
-The service will then unusbscribe the subscriber and close the connection.
+It is also possible to unsubscribe a subscriber on an open consumer WebSocket connection.
+To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your WebSocket client to the service.
+The service will then unsubscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
 
 It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

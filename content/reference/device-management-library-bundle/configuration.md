@@ -347,7 +347,7 @@ POST /event/events
 |time|string|Yes|ISO datetime when the configuration was uploaded|
 |text|string|Yes|Label text for the configuration|
 
-In order to attach the configuration file to the just uploaded event, the [Event binaries API](https://{{< domain-c8y >}}/api/#operation/postEventBinaryResource) should be used. The file is attached using a *multipart/form-data* request.
+In order to attach the configuration file to the just uploaded event, the [Event binaries API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postEventBinaryResource) should be used. The file is attached using a *multipart/form-data* request.
 
 ```http
 POST /event/events/<eventId>/binaries

@@ -223,7 +223,7 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/&lt;microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for {{< product-c8y-iot >}} microservices including:
 

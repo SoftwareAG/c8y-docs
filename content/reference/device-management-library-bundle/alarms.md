@@ -47,7 +47,7 @@ In addition to the required parameters above, the device may also include custom
 When a device detects that the local alarm status was resolved it must clear the alarm. This is done by updating the alarm status to CLEARED.
 
 ```http
-PUT /alarm/alarms/<alarm ID>
+PUT /alarm/alarms/<alarmId>
 ```
 ```json
 {

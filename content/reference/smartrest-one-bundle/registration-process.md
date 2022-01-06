@@ -41,7 +41,7 @@ Templates can be registered with one single request containing SmartREST templat
 	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 	11,201,,"$.c8y_IsDevice","$.id"
 
-Should the template registration be successful, a similar response like above will be returned.
+If the template registration is successful, a response like below will be returned.
 
 	HTTP/1.1 200 OK
 	Transfer-Encoding: chunked

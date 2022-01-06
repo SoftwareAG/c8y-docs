@@ -36,7 +36,7 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 <tbody>
 <tr>
 <td><a href="../../reference/device-management-library/#device-info"><code>c8y_Availability</code></a></td>
-<td>Holds information about the device’s status and its availability</td>
+<td>Holds information about the device's status and its availability</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#reference"><code>c8y_Command</code></a></td>
@@ -56,7 +56,7 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#firmware"><code>c8y_Firmware</code></a></td>
-<td>Contains information on a device’s firmware</td>
+<td>Contains information on a device's firmware</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#hardware-information"><code>c8y_Hardware</code></a></td>
@@ -68,7 +68,7 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#logs"><code>c8y_LogfileRequest</code></a></td>
-<td>Request a device to send a log file and view the log file in the log viewer</td>
+<td>Requests a device to send a log file and view the log file in the log viewer</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#connectivity"><code>c8y_Mobile</code></a></td>
@@ -88,11 +88,11 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#device-availability"><code>c8y_RequiredAvailability</code></a></td>
-<td>Monitor devices for availability</td>
+<td>Monitors devices for availability</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#device-restart"><code>c8y_Restart</code></a></td>
-<td>Restart a device</td>
+<td>Restarts a device</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-text-configuration"><code>c8y_SendConfiguration</code></a></td>
@@ -112,7 +112,7 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#setting-supported-logs"><code>c8y_SupportedLogs</code></a></td>
-<td>Holds an array for types a log that a device supports</td>
+<td>Holds an array of the types of logs that a device supports</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-legacy-configuration"><code>c8y_UploadConfigFile</code></a></td>

@@ -4,11 +4,11 @@ title: Registration process
 layout: redirect
 ---
 
-This reference guide solely focusses on the registration of *SmartREST* templates using the *SmartREST* `/s` endpoint. Alternatively, templates can also be registered using the platform inventory API.
+This reference guide solely focusses on the registration of SmartREST templates using the SmartREST `/s` endpoint. Alternatively, templates can also be registered using the platform inventory API.
 
-Before a *SmartREST* template can be registered, its existence must be checked. If the template already exists, a registration is not necessary and yields an error message.
+Before a SmartREST template can be registered, its existence must be checked. If the template already exists, a registration is not necessary and yields an error message.
 
-The existence of a *SmartREST* template can be checked by making an empty request:
+The existence of a SmartREST template can be checked by making an empty request:
 
 	POST /s HTTP/1.0
 	Authorization: Basic ...
@@ -31,7 +31,7 @@ If the template does not exist, a response containing an error message is yielde
 
 If the template does not exist, a template registration request can be issued using the previously checked `X-Id`.
 
-Templates can be registered with one single request containing *SmartREST* template in the form of *CSV* data. The difference between a template registration request and a normal *SmartREST* request is that rows are not processed individually during template registration.
+Templates can be registered with one single request containing SmartREST template in the form of CSV data. The difference between a template registration request and a normal SmartREST request is that rows are not processed individually during template registration.
 
 	POST /s HTTP/1.0
 	Authorization: Basic ...
@@ -50,7 +50,7 @@ Should the template registration be successful, a similar response like above wi
 
 ### Syntax
 
-Each request and response template is contained within one row of the template data. Request templates are indicated by the message identifier `10` and response templates by the identifier `11`. Should one of those message identifiers occour in a *SmartREST* request, the entire request is treated as a template. Thus any other message identifier besides `10` and `11` will yield an error.
+Each request and response template is contained within one row of the template data. Request templates are indicated by the message identifier `10` and response templates by the identifier `11`. Should one of those message identifiers occour in a SmartREST request, the entire request is treated as a template. Thus any other message identifier besides `10` and `11` will yield an error.
 
 #### Request templates
 
@@ -61,7 +61,7 @@ Request templates have the following syntax:
 Where:
 
 * `<ID>` is the message identifier of the request template.
-* `<METHOD>` is the *HTTP* method used for the request. `GET`, `POST`, `PUT` and `DELETE` are supported.
+* `<METHOD>` is the HTTP method used for the request. `GET`, `POST`, `PUT` and `DELETE` are supported.
 * `<URI>` is the resource identifier.
 * `<CONTENT>` is the `Content-Type` header field value.
 * `<ACCEPT>` is the `Accept` header field value. This is mostly equal to `<CONTENT>`.
@@ -102,7 +102,7 @@ Explanation:
 
 * `10` describes a request template.
 * `100` is the message identifier of the request template.
-* `POST` is the *HTTP* method used.
+* `POST` is the HTTP method used.
 * `/inventory/managedObjects` is the resource identifier.
 * `application/vnd.com.nsn.cumulocity.managedObject+json` is the content type.
 * `application/vnd.com.nsn.cumulocity.managedObject+json` is the accept content type.

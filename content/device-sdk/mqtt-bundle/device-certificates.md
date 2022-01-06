@@ -371,7 +371,7 @@ Then the added certificate should be visible:
     - In the **Client ID** field, insert the common name of your device certificate.
     - Select SSL/TLS as the authentication type.
     - Click **Enable SSL/TLS**.
-    - Select **SSLv3 protocol**.
+    - Select **TSL v1.2** or **TSL v1.3**.
     - Select **Self signed certificates in keystores**
     - In **Keystore File** insert the path to your deviceTruststore file with either JKS or PKCS12 format.
     - In **Trusted Keystore Alias** insert **servercertificate** or a different value if you provided a different alias in step 3 above.

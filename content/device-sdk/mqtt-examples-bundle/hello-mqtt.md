@@ -13,7 +13,9 @@ In order to follow this tutorial, check the following prerequisites:
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * You have installed [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) or a similar MQTT tool.
 
-> **Info**: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.
+>**Info:** The screenshots in the tutorial use MQTTBox. Other tools may look different.
+
+>**Info:** If you are using a trial tenant, the default user will not work with this tutorial. Create an additional user instead. The tenant ID and URL data will also differ from trial tenant information.
 
 
 ### Talking MQTT

@@ -48,11 +48,11 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#legacy-file-based-configuration">c8y_ConfigurationDump</a></td>
-<td>An operation that Permits managing binary configuration files of the device</td>
+<td>Permits managing binary configuration files of the device</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#install-legacy-configuration">c8y_DownloadConfigFile</a></td>
-<td>An operation that Permits the download of configuration files as binaries</td>
+<td>Permits the download of configuration files as binaries</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#firmware">c8y_Firmware</a></td>
@@ -64,7 +64,7 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#device-marker">c8y_IsDevice</a></td>
-<td>A fragment which Identifies an object or an event</td>
+<td>Identifies a managed object as a device</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#logs">c8y_LogfileRequest</a></td>
@@ -112,11 +112,11 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#setting-supported-logs">c8y_SupportedLogs</a></td>
-<td>Holds an array of the types of logs that a device supports</td>
+<td>Holds a list of log file types that a device supports</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-legacy-configuration">c8y_UploadConfigFile</a></td>
-<td>An operation that Permits the upload of configuration files as binaries</td>
+<td>Permits the upload of configuration files as binaries</td>
 </tr>
 </tbody>
 </table>

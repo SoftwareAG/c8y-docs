@@ -19,6 +19,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
+* The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices need to trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
@@ -364,7 +365,7 @@ Then the instance of the MQTT client can be created with a single line:
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
 The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
-The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
+The CLIENT_ID value has to match the value of the common name of the device certificate that will be used.
 The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
 

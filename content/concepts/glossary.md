@@ -27,7 +27,7 @@ Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](#
 
 See also [EPL Apps](#epl-apps).
 
-For details see [Overview > Analytics Builder](apama/overview-analytics/#analytics-builder) in the *Streaming Analytics guide*.
+For details see [Overview > Analytics Builder](/apama/overview-analytics/#analytics-builder) in the *Streaming Analytics guide*.
 
 <a name="application"></a>
 ### Application
@@ -67,7 +67,7 @@ For details see [Cockpit](/users-guide/cockpit/) in the *User guide*.
 
 <a name=""></a>
 ### Cumulocity IoT Core
-{{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](#c8y-operational-store), [microservices](#microservices), [REST API](#rest-api), [MQTT API](#mqtt), and [smart rules](smart-rules).
+{{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](#c8y-operational-store), [microservices](#microservices), [REST API](#rest-api), [MQTT API](#mqtt), and [smart rules](#smart-rules).
 
 <a name="c8y-datahub"></a>
 ### Cumulocity IoT DataHub
@@ -97,7 +97,7 @@ Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](#
 ### Cumulocity IoT Sensor App
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-For details see [{{< sensor-app >}}](/users-guide/sensor-app-bundle/#overview) in the *User guide*.
+For details see [{{< sensor-app >}}](/users-guide/sensor-app/#overview) in the *User guide*.
 
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
@@ -133,7 +133,7 @@ For details see [Cockpit > Data point library](/users-guide/cockpit/#data-point-
 
 <a name=""></a>
 ### Device
-Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](inventory) their [digital twins](#digital-twin) are represented as [managed objects](managed-object).
+Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](#inventory) their [digital twins](#digital-twin) are represented as [managed objects](#managed-object).
 
 <a name="dev-management-application"></a>
 ### Device Management application
@@ -160,7 +160,7 @@ See also [Standard tenant](#standard-tenant) and [Management tenant](#mgm-tenant
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-For details see [Real-time processing > Using the Apama Event Processing Language (EPL)](concepts/realtime/#using-epl).
+For details see [Real-time processing > Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
 <a name="epl-apps"></a>
 ### EPL Apps

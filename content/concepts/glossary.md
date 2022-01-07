@@ -15,11 +15,11 @@ For details see [Administration](/users-guide/administration/#overview) in the *
 
 <a name="agent"></a>
 ### Agent
-IoT devices come with a wide variety of protocols, parameters and network connectivity options. To interface IoT data sources such as devices {{< product-c8y-iot >}} uses agents.
-Agents are software components which translate the device-specific interface protocol into a single reference protocol and enable secure remote communication in various network architectures.
+Agents are software components which translate the device-specific interface protocol into a single reference protocol and enable secure bi-directional communication in various network architectures.
 
+<a name="alarm"></a>
 ### Alarm
-An alarm represents an event that requires manual action.
+An alarm represents an [event](#event) that requires an intervention. The user or operator of the system has to take action to resolve the alarm (like a power outage).
 
 <a name="analytics-builder"></a>
 ### Analytics Builder
@@ -67,7 +67,7 @@ For details see [Cockpit](/users-guide/cockpit/) in the *User guide*.
 
 <a name=""></a>
 ### Cumulocity IoT Core
-TBD
+{{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](#c8y-operational-store), [microservices](#microservices), [REST API](#rest-api), [MQTT API](#mqtt), and [smart rules](smart-rules).
 
 <a name="c8y-datahub"></a>
 ### Cumulocity IoT DataHub
@@ -91,7 +91,7 @@ For details see the [Machine Learning guide](/machine-learning/introduction/).
 
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
-Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, etc.) are stored in so-called base collections.
+Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](#alarm), [events](#event), [inventory](#inventory), and [measurements](#measurement)) are stored in so-called base collections.
 
 <a name="c8y-sensor-app"></a>
 ### Cumulocity IoT Sensor App
@@ -133,9 +133,7 @@ For details see [Cockpit > Data point library](/users-guide/cockpit/#data-point-
 
 <a name=""></a>
 ### Device
-IoT devices are hardware components with a sensor that transmits data, like wireless sensors, actuators, and computer devices. They can be embedded into mobile devices, industrial equipment, environmental sensors, medical devices, and more.
-
->MGM: Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} inventory their [digital twins](#digital-twin) are represented as [managed objects](managed-object).
+Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](inventory) their [digital twins](#digital-twin) are represented as [managed objects](managed-object).
 
 <a name="dev-management-application"></a>
 ### Device Management application
@@ -146,7 +144,8 @@ For details see [Device Management](/users-guide/device-management/#overview) in
 
 <a name="digital-twin"></a>
 ### Digital twin
->MGM: A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are implemented as [managed objects](managed-object).
+
+A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](#managed-object).
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
@@ -171,11 +170,11 @@ See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analyt
 
 For more details see [Overview > EPL apps](/apama/overview-analytics/#apama-epl-apps) in the *Streaming Analytics guide*.
 
-<a name=""></a>
+<a name="event"></a>
 ### Events
 In the context of {{< product-c8y-iot >}}:
 
-Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be alarms. The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as audit logs.
+Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be [alarms](#alarm). In addition, security-related events are shown as audit logs.
 
 In the context of Apama:
 
@@ -197,25 +196,31 @@ For details see [Security aspects > Access control](/concepts/security/#access-c
 <a name="inventory"></a>
 ### Inventory
 
->MGM: The inventory is a collection of all digital twins, stored as [managed objects](managed-object), for IoT applications.
+The inventory is a collection of all stored [managed objects](#managed-object) in a tenant.
 
 <a name="inventory-roles"></a>
 ### Inventory roles
-Role type in {{< product-c8y-iot >}}'s' permission concept.  Inventory roles contain permissions that apply to groups or devices.
+Role type in {{< product-c8y-iot >}}'s' permission concept.  Inventory roles contain permissions that apply to [managed objects](#managed-object).
 
 See also [Global roles](#global-roles) and [Permissions](#permissions).
 
 For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#managing-permissions/#inventory) in the *User guide*.
 
+### LWM2M
+
+Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. {{< product-c8y-iot >}} provides support for easily connecting any LWM2M device to the platform.
+
+For details see [LWM2M](/protocol-integration/lwm2m) in the *Protocol integration guide*.
+
 <a name="ml-engine"></a>
 ### Machine Learning Engine
-Machine Learning Engine enables machine learning/IT operators to manage and operationalize production-ready models for generating predictions on data gathered from connected devices. These capabilities can be leveraged either from a web browser via an easy to use UI or programmatically via REST API. Machine Learning Engine provides a high-performance inference platform with deployed models exposed as endpoints that can be leveraged from Streaming Analytics and other applications for real-time inference.
+Machine Learning Engine is an application that enables machine learning/IT operators to manage and operationalize production-ready models for generating predictions on data gathered from connected devices. These capabilities can be leveraged either from a web browser via an easy to use UI or programmatically via REST API. Machine Learning Engine provides a high-performance inference platform with deployed models exposed as endpoints that can be leveraged from Streaming Analytics and other applications for real-time inference.
 
 For details see [Introduction > Machine Learning Engine](/machine-learning/introduction/#mle-overview) in the *Machine Learning guide*.
 
 <a name="ml-workbench"></a>
 ### Machine Learning Workbench
-Machine Learning Workbench enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code UI and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-c8y-iot >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
+Machine Learning Workbench is an application that enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code UI and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-c8y-iot >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
 
 For details see [Introduction > Machine Learning Workbench](/machine-learning/introduction/#mlw-overview) in the *Machine Learning guide*.
 
@@ -225,10 +230,9 @@ For details see [Introduction > Machine Learning Workbench](/machine-learning/in
 
 <a name="managed-object"></a>
 ### Managed objects
-In {{< product-c8y-iot >}}, devices and other assets are referred to  as managed objects. Managed objects can be “smart objects” such as smart electricity meters or home automation gateways. They can be assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices.
+In {{< product-c8y-iot >}}, all [assets](#asset) are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example [devices](#device), groups, and [agents](#agent).
 
->MGM: In {{< product-c8y-iot >}}, [digital twins](#digital-twin) are implemented as [managed objects](#managed-object). They are stored in the [inventory](#inventory). All assets are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example devices, groups, and agents.<br>
-Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report events, alarms, and measurements.
+Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report [events](#event), [alarms](#alarm), and [measurements](#measurement).
 
 <a name="mgm-tenant"></a>
 ### Management tenant
@@ -238,12 +242,8 @@ Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tena
 See also [{{< standard-tenant >}}](#standard-tenant) and [{{< enterprise-tenant >}}](#ent-tenant).
 
 <a name=""></a>
-### Measurements
-Measurements contain numerical data produced by sensors (like temperature readings) or calculated data based on information from devices (service availability of a device).
-
-Measurements consist of a time when the measurement was taken, the unique identifiers of the source of the measurement, and a list of fragments.
-
-<!--- TBD time series --->
+### Measurement
+A measurement contains one or multiple numerical values taken at a single point in time for a single asset. A sequence of measurements forms a time series.
 
 <a name="microservices"></a>
 ### Microservices
@@ -265,6 +265,11 @@ Used in the context of [Analytics Builder](#analytics-builder).
 A model is a container which can have a network of [Blocks](#blocks) connected to each other with wires.
 The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
+### MQTT
+{{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
+
+For details see [Device integration using MQTT](/device-sdk/mqtt) in the *Device SDK guide*.
+
 <a name=""></a>
 ### Multi-tenancy
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
@@ -280,6 +285,14 @@ The navigator is an element in the UI of the {{< product-c8y-iot >}} platform. I
 OEE (Overall Equipment Effectiveness) is a metric for measuring the efficiency, effectiveness and performance of production processes, by breaking them down into the three components Availability, Performance, and Quality. The {{< product-c8y-iot >}} OEE application uses machine data, master data and planning data from machines and machine lines to calculate the factors of the OEE calculation.
 
 For details see the [{{< product-c8y-iot >}} OEE guide](/oee/overview).
+
+### OPCUA
+
+OPC Unified Architecture (OPC UA) is a standard to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (cross-platform).
+
+One component of the OPCUA integration in {{< product-c8y-iot >}} is the OPC UA device gateway. The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the {{< product-c8y-iot >}} platform. It stores data into the {{< product-c8y-iot >}} database via REST. The gateway has to be registered as {{< product-c8y-iot >}} device.
+
+For details see [OPCUA](/protocol-integration/opcua) in the *Protocol integration guide*.
 
 <a name="operations"></a>
 ### Operations
@@ -306,11 +319,11 @@ For details see [Real-time processing](/concepts/realtime/).
 ### REST
 In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
-<a name=""></a>
+<a name="rest-api"></a>
 ### REST API
 The {{< product-c8y-iot >}} REST API is an interface that allows for communication between the {{< product-c8y-iot >}} platform and other systems via HTTP and REST. It allows the user to perform operations and process data by issuing a simple request using any HTTP client such as a web browser.
 
-For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/)
+For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/).
 
 <a name="sensor-library"></a>
 ### Sensor library
@@ -367,6 +380,9 @@ See also [Tenant hierarchy](/concepts/tenant-hierarchy/#tenant-overview), [{{< s
 <a name="tenant-id"></a>
 ### Tenant ID
 The unique ID of a tenant or subtenant. When a tenant is created, it gets an auto-generated ID, which cannot be changed. The tenant ID is shown in the user dropdown menu in the UI.
+
+### Thin Edge
+[Thin-edge.io](https://thin-edge.io/) is an open-source and cloud-agnostic IoT framework designed for lightweight IoT devices. It offers simple and secure device connectivity, freedom of the cloud platform, for example {{< product-c8y-iot >}}, and freedom of the programming language.
 
 <a name="web-applications"></a>
 ### Web applications

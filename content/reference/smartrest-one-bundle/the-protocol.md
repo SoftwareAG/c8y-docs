@@ -28,6 +28,8 @@ Each row yielded by the SmartREST endpoint represents a set of extracted values 
 
 >**Info:** If the response from {{< product-c8y-iot >}} REST API was empty (e.g. like after deleting a Managed Object) then the response from SmartREST would be empty as well, regardless of registered response templates.
 
+>**Info:** Inventory access via SmartREST is limited to inventory objects which are global or for which the client is the owner. Role assignments are not evaluated.
+
 ### Data format
 
 The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.

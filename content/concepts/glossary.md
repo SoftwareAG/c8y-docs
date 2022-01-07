@@ -18,6 +18,9 @@ For details see [Administration](/users-guide/administration/#overview) in the *
 IoT devices come with a wide variety of protocols, parameters and network connectivity options. To interface IoT data sources such as devices {{< product-c8y-iot >}} uses agents.
 Agents are software components which translate the device-specific interface protocol into a single reference protocol and enable secure remote communication in various network architectures.
 
+### Alarm
+An alarm represents an event that requires manual action.
+
 <a name="analytics-builder"></a>
 ### Analytics Builder
 Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. It allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
@@ -132,6 +135,8 @@ For details see [Cockpit > Data point library](/users-guide/cockpit/#data-point-
 ### Device
 IoT devices are hardware components with a sensor that transmits data, like wireless sensors, actuators, and computer devices. They can be embedded into mobile devices, industrial equipment, environmental sensors, medical devices, and more.
 
+>MGM: Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} inventory their [digital twins](#digital-twin) are represented as [managed objects](managed-object).
+
 <a name="dev-management-application"></a>
 ### Device Management application
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
@@ -139,9 +144,9 @@ The Device Management application provides functionalities for connecting, manag
 
 For details see [Device Management](/users-guide/device-management/#overview) in the *User guide*.
 
-<a name="Digital twin"></a>
+<a name="digital-twin"></a>
 ### Digital twin
-tba
+>MGM: A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are implemented as [managed objects](managed-object).
 
 <a name="ent-tenant"></a>
 ### Enterprise tenant
@@ -192,7 +197,7 @@ For details see [Security aspects > Access control](/concepts/security/#access-c
 <a name="inventory"></a>
 ### Inventory
 
-tba
+>MGM: The inventory is a collection of all digital twins, stored as [managed objects](managed-object), for IoT applications.
 
 <a name="inventory-roles"></a>
 ### Inventory roles
@@ -218,11 +223,12 @@ For details see [Introduction > Machine Learning Workbench](/machine-learning/in
 ### Maintenance release
 {{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} GA releases. A Maintenance release contains fixes and improvements for a GA release but no new features.
 
-<a name=""></a>
+<a name="managed-object"></a>
 ### Managed objects
 In {{< product-c8y-iot >}}, devices and other assets are referred to  as managed objects. Managed objects can be “smart objects” such as smart electricity meters or home automation gateways. They can be assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices.
 
-<!--- TBD Digital twin --->
+>MGM: In {{< product-c8y-iot >}}, [digital twins](#digital-twin) are implemented as [managed objects](#managed-object). They are stored in the [inventory](#inventory). All assets are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example devices, groups, and agents.<br>
+Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report events, alarms, and measurements.
 
 <a name="mgm-tenant"></a>
 ### Management tenant

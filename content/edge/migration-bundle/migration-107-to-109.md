@@ -8,9 +8,9 @@ This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
-- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi)
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation)
+- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7
@@ -30,16 +30,21 @@ In your Edge 10.7 setup, you must back up the data for each tenant and docker co
 
 >**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
 
-1. Create a backup of the MongoDB database using the commands:
+1. Stop the Karaf process using the command:
+
+```shell
+sudo service cumulocity-core-karaf stop
+```
+2. Create a backup of the MongoDB database using the commands:
 
 ```shell
 mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies the location of the backup.
 mongodump --db=edge --out OUTPUT_DIRECTORY
 mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
 ```
-2. Note down the device ID of your Edge 10.7 appliance available at: `/usr/edge/properties/edge-agent/device-id`
-3. Create a backup of the `/etc/opcua` directory.
-4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
+3. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`.
+4. Create a backup of the `/etc/opcua` directory.
+5. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
 ### Restoring the data on Edge 10.9
 

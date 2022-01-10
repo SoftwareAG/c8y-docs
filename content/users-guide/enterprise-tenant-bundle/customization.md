@@ -185,7 +185,9 @@ In the **Misc** section you specify the "Button Border-Radius" by providing a va
 
 **Cookie banner**
 
-In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
+
+Disabling the cookie banner, also disables the product experience tracking by Gainsight for the current tenant and all subtenants.
 
 The following parameters can be specified:
 

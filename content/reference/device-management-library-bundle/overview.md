@@ -22,6 +22,8 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 
 #### c8y_SupportedOperations fragments
 
+The following fragments can be added to the ```c8y_SupportedOperations``` fragment:
+
 <table>
 <colgroup>
 <col width="25%">
@@ -51,6 +53,10 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 <td>Permits managing binary configuration files of the device</td>
 </tr>
 <tr>
+<td><a href="../../reference/device-management-library/#device-profile">c8y_DeviceProfile</a></td>
+<td>Enables device profile functionality for a device</td>
+</tr>
+<tr>
 <td><a href="../../reference/device-management-library/#install-legacy-configuration">c8y_DownloadConfigFile</a></td>
 <td>Permits the download of configuration files as binaries</td>
 </tr>
@@ -61,10 +67,6 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 <tr>
 <td><a href="../../reference/device-management-library/#hardware-information">c8y_Hardware</a></td>
 <td>Contains basic hardware information for a device, such as make and serial number</td>
-</tr>
-<tr>
-<td><a href="../../reference/device-management-library/#device-marker">c8y_IsDevice</a></td>
-<td>Identifies a managed object as a device</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#logs">c8y_LogfileRequest</a></td>
@@ -87,10 +89,6 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 <td>Announces the target profile</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#device-availability">c8y_RequiredAvailability</a></td>
-<td>Monitors devices for availability</td>
-</tr>
-<tr>
 <td><a href="../../reference/device-management-library/#device-restart">c8y_Restart</a></td>
 <td>Restarts a device</td>
 </tr>
@@ -105,14 +103,6 @@ This list can be manipulated through the device fragments, i.e. which tabs are s
 <tr>
 <td><a href="../../reference/device-management-library/#software-update">c8y_SoftwareUpdate</a></td>
 <td>Contains a list of software to be installed or uninstalled</td>
-</tr>
-<tr>
-<td><a href="../../reference/device-management-library/#typed-file-based-configuration">c8y_SupportedConfiguration</a></td>
-<td>Activates typed file configuration</td>
-</tr>
-<tr>
-<td><a href="../../reference/device-management-library/#setting-supported-logs">c8y_SupportedLogs</a></td>
-<td>Holds a list of log file types that a device supports</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-legacy-configuration">c8y_UploadConfigFile</a></td>

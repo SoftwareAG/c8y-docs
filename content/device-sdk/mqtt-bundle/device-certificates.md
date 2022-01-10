@@ -60,7 +60,10 @@ A device which is authenticated by certificates and connected to the {{< product
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
+The default value is 1 hour.
+The minimum allowed value is 5 minutes.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 

@@ -19,7 +19,7 @@ Click **Andon Board** at the right of the top menu bar to switch to the **Andon 
 
 Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). This link is only visible if the user has a role assigned with the Oeeconfigurator Amin permission enabled.
 
->**Info:** To access the OEE Dashboards, the Oeeconfigurator type Read or Admin permissions need to be enabled for the user/role. Without the required permission you might see error messages or not see any data in the Machine dashboard.
+>**Info:** To access the OEE Dashboards, the required permission “Oeeconfigurator” with type “READ” or “ADMIN” need to be enabled for the user/role. Without the required permission you might see error messages or not see any data in the Machine dashboard.
 
 #### Time period and resolution
 

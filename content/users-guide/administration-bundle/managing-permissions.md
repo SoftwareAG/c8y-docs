@@ -340,7 +340,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) or the [device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list:
 
@@ -350,7 +350,7 @@ In the **Permission** field, select a permission level from the dropdown list:
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library/)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 

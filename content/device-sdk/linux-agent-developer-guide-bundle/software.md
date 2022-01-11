@@ -48,7 +48,7 @@ function init()
 end
 ```
 
-Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library/Device-information).
+Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](/reference/device-management-library/#device-info).
 
 `pkg_list()` returns a table. If your package control system is not `apt`, you also need to change how to extract software names and versions from the command you defined.
 

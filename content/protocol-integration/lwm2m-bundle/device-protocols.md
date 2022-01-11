@@ -54,8 +54,8 @@ The functionalities that you may enable are the following:
 
 Turn on **Send measurement** to specify a measurement.
 
-- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
-- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
+- Enter the type of the measurement. For example, `c8y_AccelerationMeasurement`.
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: `c8y_AccelerationMeasurement.acceleration`.
 - The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
 #### Create alarm
@@ -91,21 +91,21 @@ Actions that are relevant for Device (/3):
 - device:updateManufacturer
   - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
 - device:updateModelNumber
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;model&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;model&rdquo; property.
 - device:updateSerialNumber
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;serialNumber&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;serialNumber&rdquo; property.
 - device:updateFirmwareVersion
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;revision&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;revision&rdquo; property.
 
 Actions that are relevant for connectivity monitoring (/4):
 - connectivity:updateCellId
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;cellId&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;cellId&rdquo; property.
 - connectiviy:updateSmnc
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mnc&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mnc&rdquo; property.
 - connectivity:updateSmcc
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mcc&rdquo; property.
 - connectivity:updateRssi
-  - Stores the value as device measurement with the &ldquo;c8y_SignalStrength&rdquo; type and fragment and &ldquo;rssi&rdquo; property.
+  - Stores the value as device measurement with the `c8y_SignalStrength` type and fragment and &ldquo;rssi&rdquo; property.
   - In the same measurement, stores resource path information in &ldquo;resourcePath&rdquo; fragment and also in &ldquo;objectResourcePath_&lt;resource path&gt;&rdquo; fragment name.
   - In the same measurement, stores device name information in &ldquo;device!Name&rdquo; fragment.
   - In the same measurement, stores device mobile information in &ldquo;device!c8y_Mobile&rdquo; fragment.

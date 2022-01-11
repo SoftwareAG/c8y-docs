@@ -127,7 +127,7 @@ The following images show an example for a message which sends a measurement whe
 
 The following images show an example of a nested structure for a device protocol, reporting the current position of a GPS device. The device protocol is named "Position" and contains values for longitude and latitude.
 
-The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
+The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter `c8y_Position` in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
 **New value window, Longitude**
 

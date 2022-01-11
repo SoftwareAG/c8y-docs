@@ -266,7 +266,7 @@ The **Location** tab by default shows the location of a device on a map and as c
 
 ![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
 
-The **Location** tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
+The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
 
 
 <a name="logs"></a>
@@ -413,7 +413,7 @@ See [Managing software on a device](#managing-software) for more information on 
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 
-**Note** that the **Tracking** tab only shows up when a device contains c8y_Position property.
+**Note** that the **Tracking** tab only shows up when a device contains `c8y_Position` property.
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 

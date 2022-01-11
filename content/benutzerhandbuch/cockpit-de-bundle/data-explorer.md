@@ -219,7 +219,7 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
  - Zeitpunkt, an welchem der Wert gemessen wurde
  - Quelle des Messwerts
  - Name des verwendeten Geräts
- - Fragmenttyp (z. B. c8y_SpeedMeasurement)
+ - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
  - Messwert
  - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
 

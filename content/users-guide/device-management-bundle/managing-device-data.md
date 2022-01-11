@@ -138,7 +138,7 @@ In the details of a specific firmware, hover over the version or patch entry you
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
->**Info:** The **Firmware** tab shows up for a device if the device supports c8y_Firmware operations.
+>**Info:** The **Firmware** tab shows up for a device if the device supports `c8y_Firmware` operations.
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Firmware** tab.
 
@@ -506,7 +506,7 @@ The **Device profile** tab of a particular device shows the details of the curre
 
 ![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** The **Device profile** tab shows up for a device if the device supports c8y_DeviceProfile operations.
+>**Info:** The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
 
 Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
 

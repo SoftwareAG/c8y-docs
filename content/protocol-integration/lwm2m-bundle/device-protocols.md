@@ -54,8 +54,8 @@ The functionalities that you may enable are the following:
 
 Turn on **Send measurement** to specify a measurement.
 
-- Enter the type of the measurement. For example, `c8y_AccelerationMeasurement`.
-- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: `c8y_AccelerationMeasurement.acceleration`.
+- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
 - The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
 #### Create alarm

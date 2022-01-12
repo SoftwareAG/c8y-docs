@@ -36,7 +36,7 @@ The asterisk ("*") indicates that data with any value will be cleaned up.
 
 1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
-3. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter `c8y_UnavailabilityAlarm` as property into the **Type** field.
+3. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the **Type** field.
 4. If you want to remove data only from a specific device, enter the device ID into the **Source** field.
 5. Enter the **Maximum age** in days (max. allowed value is 10 years in days).
 6. Click **Save** to save your settings.

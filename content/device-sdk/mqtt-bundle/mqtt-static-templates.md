@@ -298,7 +298,7 @@ Set the list of software installed on the device.
 ##### Set required availability (117)
 
 Set the required interval for availability monitoring as an integer value representing minutes.
-For more information, see `c8y_RequiredAvailability` in [Device management library > Device availability](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library/Device-availability) in the {{< openapi >}}.
+For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](/reference/device-management-library/device-availability) in the *Reference guide*.
 This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|Type|

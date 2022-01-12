@@ -42,7 +42,7 @@ Check out the following developer guides if you are looking for step-by-step ins
 
 <tr>
 <td align="left"><a href="/device-sdk/introduction/">Device SDK guide</a></td>
-<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. The *Device SDK guide* provides detailed information on device integration using MQTT, REST and C++.</td>
+<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. The <i>Device SDK guide</i> provides detailed information on device integration using MQTT, REST and C++.</td>
 </tr>
 
 </tbody>

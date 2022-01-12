@@ -17,9 +17,9 @@ By default, the **Auto-refresh** option at the top left is activated and [**OEE 
 
 Click **Andon Board** at the right of the top menu bar to switch to the **Andon Board** of this particular machine, see [Andon Board](#andon-board).
 
-Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). This link is only visible if the user has a role assigned with the Oeeconfigurator Amin permission enabled.
+Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). This link is only visible if the user has a role assigned with the Oeeconfigurator Admin permission enabled.
 
->**Info:** To access the OEE Dashboards, the Oeeconfigurator type Read or Admin permissions need to be enabled for the user/role. Without the required permission you might see error messages or not see any data in the Machine dashboard.
+>**Info:** To access the OEE dashboards, the permission "Oeeconfigurator" with type READ or ADMIN must be enabled for the user/role. Without the required permission you might see error messages or not see any data in the machine dashboard.
 
 #### Time period and resolution
 

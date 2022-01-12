@@ -35,7 +35,7 @@ Check out the following user guides which might serve as a starting point:
 
 <tr>
 <td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
-<td align="left">Check out our device integration tutorials if you are looking for step-by-step instructions on integrating various demo devices, for example for proof-of-concept purposes in your Cumulocity IoT environment.</td>
+<td align="left">Check out our <i>Device integration tutorials</i> if you are looking for step-by-step instructions on integrating various demo devices, for example for proof-of-concept purposes in your Cumulocity IoT environment.</td>
 </tr>
 
 <tr>

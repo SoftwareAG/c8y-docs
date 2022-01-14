@@ -25,7 +25,7 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
-Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library/Device-information) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-management-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
 |Requires|Jasper|Ericsson|Comarch|Kite|
 |:------|:-----|:-------|:------|:------|
@@ -58,7 +58,7 @@ To create a user in Jasper Control Center perform the following steps:
 
 1. As an admin user, navigate to **Admin** and **Users**.
 1. Click **Create New**.
-1. Enter the user name and further details of the user.
+1. Enter the username and further details of the user.
 1. If you want to be able to activate and deactivate SIM cards from {{< product-c8y-iot >}}, or to send SMS from {{< product-c8y-iot >}}, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
 1. Click **OK** to create the user, then enter your admin password and click **OK** again.
 
@@ -73,7 +73,7 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 
 1. Use a {{< product-c8y-iot >}} administrator user to log into the {{< product-c8y-iot >}} platform.
 1. Switch to the Administration application.
-1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.

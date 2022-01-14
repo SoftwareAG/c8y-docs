@@ -185,7 +185,9 @@ In the **Misc** section you specify the "Button Border-Radius" by providing a va
 
 **Cookie banner**
 
-In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
+
+Disabling the cookie banner, also disables the product experience tracking by Gainsight for the current tenant and all subtenants.
 
 The following parameters can be specified:
 
@@ -200,7 +202,7 @@ A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{<
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}}. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
-> **Info:** The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or On-Premise installations which don't use a custom load balancer.
+> **Info:** The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or on-prem installations which don't use a custom load balancer.
 
 There are three prerequisites for using a custom domain:
 

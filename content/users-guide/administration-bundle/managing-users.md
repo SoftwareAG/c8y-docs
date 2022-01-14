@@ -4,7 +4,7 @@ title: Managing users
 helpcontent:
   - label: managing-users
     title: Managing users
-    content: "The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign user names and passwords, store user details, or configure the login and security options.  
+    content: "The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign usernames and passwords, store user details, or configure the login and security options.  
 
 
     Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
@@ -13,7 +13,7 @@ helpcontent:
 The user management feature allows you to manage the users within your tenant. With this functionality you may:
 
 - Create users.
-- Assign user names and set passwords.
+- Assign usernames and set passwords.
 - Store user details.
 - Choose basic login options.
 - Enable additional login security by using Two-Factor Authentication (TFA).
@@ -41,7 +41,7 @@ To view all users in your tenant, click **Users** in the **Account** menu in the
 
 A user list will be displayed, providing the following information for each user:
 
-* The user name that is used to access the tenant.
+* The username that is used to access the tenant.
 * The name and email of the user, if set.
 * The global roles assigned to the user.
 * The [strength](/users-guide/getting-started/#login) of the password set for the user.
@@ -79,7 +79,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 	</tr>
 	<tr>
 	<td align="left">Login alias</td>
-	<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
+	<td align="left">In addition to the username, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
 	</tr>
 	<tr>
 	<td align="left">Active</td>

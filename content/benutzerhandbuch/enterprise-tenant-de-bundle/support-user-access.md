@@ -3,6 +3,7 @@ weight: 50
 title: Supportbenutzerzugriff
 layout: redirect
 aliases:
+  - /benutzerhandbuch/enterprise-edition/#users-in-other-tenants
   - /benutzerhandbuch/enterprise-edition-de/#users-in-other-tenants
 ---
 
@@ -43,7 +44,7 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 Um sich vom {{< management-tenant-de >}} aus als Supportbenutzer anzumelden, müssen Sie im Login-Bildschirm folgende Informationen eingeben:
 
-* Mandanten-ID:  die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
+* Mandanten-ID: die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
 * Supportbenutzer: der Benutzername des {{< management-tenant-de >}}-Benutzers, der den Support leistet.
 * Benutzer: der Benutzername des zu unterstützenden Benutzers.
 
@@ -53,7 +54,7 @@ Um sich vom {{< management-tenant-de >}} aus als Supportbenutzer anzumelden, mü
 
 **Beispiel**
 
-Nehmen wir an, Sie erhalten eine Supportanfrage von einem Benutzer "John" im Mandanten *testtenant.{{< domain-c8y >}}* (mit der Mandanten-ID *t07007007*). Ihr Benutzername im {{< management-tenant >}} ist "Jill" und Sie haben die Berechtigung, Support für *testtenant.{{< domain-c8y >}}* zu leisten. In diesem Fall können Sie sich mit den folgenden Zugangsdaten anmelden, um zu reproduzieren, was John sieht:
+Nehmen wir an, Sie erhalten eine Supportanfrage von einem Benutzer "John" im Mandanten *testtenant.{{< domain-c8y >}}* (mit der Mandanten-ID *t07007007*). Ihr Benutzername im {{< management-tenant-de >}} ist "Jill" und Sie haben die Berechtigung, Support für *testtenant.{{< domain-c8y >}}* zu leisten. In diesem Fall können Sie sich mit den folgenden Zugangsdaten anmelden, um zu reproduzieren, was John sieht:
 
 ![Support user access login](/images/benutzerhandbuch/enterprise-tenant/et-support-user-access.png)
 

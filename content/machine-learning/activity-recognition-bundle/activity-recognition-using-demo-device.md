@@ -23,10 +23,11 @@ Instead of registering an actual device for the activity recognition use case, a
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}} . Upon successful execution, a device named "DemoDevice" is registered in {{< product-c8y-iot >}} .
 3. Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
-<img src="/images/zementis/ActivityRecognition/screenshot1.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
+
+<img src="/images/zementis/ActivityRecognition/activity_recognition_register_device.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 
-Upon successful execution, a device named *DemandForecastDemoDevice* is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
+Upon successful execution, a device named *DemoDevice* is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass.
 
@@ -35,7 +36,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
-2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
+2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
 
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
@@ -46,7 +47,7 @@ Use *SimulateDataforRealtimescoring.ipynb* for simulating the measurements for t
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Acceleration measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the current date in gaps of 1 second.
 
-<img src="/images/zementis/ActivityRecognition/screenshot2.PNG" alt="Download" style="display:inline-block; margin:0">
+<img src="/images/zementis/ActivityRecognition/activity_recognition_simulate_data.PNG" alt="Download" style="display:inline-block; margin:0"><br>
 
 
 This should now start sending measurements to {{< product-c8y-iot >}} on behalf of your demo device. It would try to simulate transition of activities in the order  sit → jump → run → jump → sit.

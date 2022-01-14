@@ -1,7 +1,7 @@
 ---
-weight: 30
-title: Verwalten von Anwendungen
 layout: redirect
+title: Verwalten von Anwendungen
+weight: 30
 ---
 
 In der {{< product-c8y-iot >}}-Plattform gibt es zwei Arten von Anwendungen:
@@ -131,12 +131,6 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im {{< standard-tenant-de >}} mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Operationen anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
-<td style="text-align:left">cep</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <td style="text-align:left">cockpit</td>
@@ -171,6 +165,8 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 
 
 ### Enterprise-Anwendungen
+
+Im {{< enterprise-tenant-de >}} finden Sie die folgenden zusätzlichen Anwendungen:
 
 <table>
 <col width="200">
@@ -234,18 +230,6 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>Laden Sie Ihre eigenen mit Esper erstellten CEP-Regeln in einer mandantenspezifischen Bereitstellung hoch. Sie müssen die Anwendung "Cep-small" abonnieren, um diese Funktion nutzen zu können.</td>
-<td style="text-align:left">feature-cep-custom-rules</td>
-<td style="text-align:left">Funktion</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>CEP-Variante. Ermöglicht das Arbeiten mit CEP-Regeln auf Basis von Esper in einer mandantenspezifischen Bereitstellung (im Unterschied zu "Cep", das eine gemeinsame Instanz verwendet). Sie müssen "CEP custom rules" abonnieren, um eigene Esper CEP-Regeln hochladen zu können.</td>
-<td style="text-align:left">cep-small</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/protocol-integration/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
 <td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in {{< product-c8y-iot >}}.</td>
 <td style="text-align:left">feature-fieldbus4</td>
@@ -269,13 +253,7 @@ Im {{< standard-tenant-de >}} finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
-<td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
-<td style="text-align:left">impact</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPCUA</a></td>
+<td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPC UA</a></td>
 <td style="text-align:left">Kommunizieren Sie mit OPC UA-Servern über ein OPC UA-Geräte-Gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
 <td style="text-align:left">Microservice</td>
@@ -339,7 +317,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+>**Wichtig:** Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 
 <a name="uploading-microservices"></a>
 ##### So laden Sie einen Microservice hoch

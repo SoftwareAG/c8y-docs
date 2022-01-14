@@ -49,8 +49,6 @@ In the **Preferred login mode** field, you can select one of the following optio
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
->**Info:** If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
-
 In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 >**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
@@ -143,7 +141,7 @@ Before switching to the single sign-on option it is mandatory that:
 
 To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
 
-Click **Single sign-on** in the **Settings** menu in the navigator.
+Click the **Single sign-on** tab in the **Authentication** page.
 
 At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
@@ -223,9 +221,17 @@ In this case the following claim will match the condition:
 
 As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
+By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox at the bottom of the **Access mapping** section.
+
+![OAuth configuration](/images/users-guide/Administration/admin-sso-dynamic-access-mapping.png)
+
+When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#assigning-global-roles) in the *User guide*.
+
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+
+ If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
 Next, the **User data mappings** can be configured:
 
@@ -440,7 +446,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 1. Click **SMS provider** in the **Settings** menu.
 
     ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-   
+
 	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.

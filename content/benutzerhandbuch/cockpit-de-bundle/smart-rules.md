@@ -1,19 +1,10 @@
 ---
-weight: 80
-title: Smart Rules
 layout: redirect
-helpcontent: >-
-  Smart Rules sind ein nützliches Mittel, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Die hier angezeigten globalen Smart Rules gelten für einen globalen Kontext (im Gegensatz zu lokalen Smart Rules für spezifische Gruppen oder Geräte). Beachten Sie, dass Sie bestimmte Berechtigungen benötigen, um Smart Rules anzeigen und verwalten zu können.
-
-
-  Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste, um eine neue globale Smart Rule hinzuzufügen. Verwenden Sie das Menüsymbol, um globale Smart Rules zu bearbeiten, zu duplizieren oder zu löschen.
-
-
-  Cumulocity IoT enthält vordefinierte Smart Rule-Vorlagen, z. B. "Bei Schwellwert Alarm erzeugen". Da sich die Funktionalitäten der verschiedenen Smart Rule-Typen unterscheiden, werden verschiedene Parameter benötigt, um sie zu konfigurieren. Nähere Informationen zu den einzelnen Smart Rule-Vorlagen und ihrer Konfiguration finden Sie in der Dokumentation der Smart Rule-Sammlung.
+title: Smart Rules
+weight: 80
 ---
 
-
-{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de/#overview) verwaltet.
+{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
@@ -22,7 +13,7 @@ Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart R
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
 * **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
-* **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellwerte.
+* **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
 
 Es gibt zwei Typen von Smart Rules:
 
@@ -50,12 +41,11 @@ Smart Rules sind an zwei Orten zu sehen:
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
-* In der Registerkarte **Info** eines Geräts oder einer Gruppe.
+* In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
   ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
   In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
-
 
 
 <a name="create-rules"></a>
@@ -63,7 +53,7 @@ Smart Rules sind an zwei Orten zu sehen:
 
 Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Konfiguration** des Navigators (globale Smart Rules) oder in der Registerkarte **Info** einer Gruppe oder eines Geräts (lokale Smart Rules) erstellt werden.
 
-1. Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste. <br>
+1. Klicken Sie auf **Smart Rule hinzufügen** in der oberen Menüleiste.<br>
 2. Wählen Sie ein Smart Rule-Template aus. Die Liste der Smart Rules kann je nach Installation variieren.
 3. Verwenden Sie im darauf folgenden Dialog den Umschalter, um einzustellen, ob die Regel ein- oder ausgeschaltet ist, siehe Details unter [So schalten Sie Smart Rule ein/aus](#toggle-rules).
 4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](#smart-rules-collection).
@@ -114,7 +104,7 @@ Um eine Regel explizit zu aktivieren bzw. zu deaktivieren, navigieren Sie zur Re
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
-Ein Anwendungsbeispiel für das Deaktivieren einer Smart Rule für ein einzelnes Objekt könnte sein, dass ein bestimmtes Gerät zu viele Schwellwert-Alarme generiert. Die Regel kann lediglich für dieses Gerät deaktiviert werden, aber immer noch für alle anderen Objekte aktiv sein.
+Ein Anwendungsbeispiel für das Deaktivieren einer Smart Rule für ein einzelnes Objekt könnte sein, dass ein bestimmtes Gerät zu viele Schwellenwert-Alarme generiert. Die Regel kann lediglich für dieses Gerät deaktiviert werden, aber immer noch für alle anderen Objekte aktiv sein.
 
 Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschalter allein für die Gruppe. Sie können die Regel dann über das Auswahlfeld unterhalb des Umschalters separat für die Kinder der Gruppe aktivieren/deaktivieren.
 
@@ -122,16 +112,16 @@ Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschal
 
 >**Wichtig:** Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 
-### Beispiel: Definieren von exakten Schwellwerten
+### Beispiel: Definieren von exakten Schwellenwerten
 
-Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
+Führen Sie folgende Schritte aus, um eine Schwellenwertregel zu definieren:
 
-1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellwert anwenden möchten.
+1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte **Daten-Explorer**.
-3. Wenn der Datenpunkt, der den Schwellwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
+3. Wenn der Datenpunkt, der den Schwellenwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
 4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
-5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen".
+5. Wählen Sie die Smart Rule "Bei Schwellenwertüberschreitung Alarm erzeugen".
 6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter **Ziel-Assets oder -geräte** können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.

@@ -60,12 +60,12 @@ Folgende Typen sind verfügbar:
 <td align="left">Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gesendet.</td>
 </tr>
 <tr>
-<td align="left"><a href="#threshold-explicit">Bei explizitem Schwellwert Alarm erzeugen</a></td>
-<td align="left">Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird der rote Schwellwert explizit bereitgestellt.</td>
+<td align="left"><a href="#threshold-explicit">Bei explizitem Schwellenwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird der rote Schwellenwert explizit bereitgestellt.</td>
 </tr>
 <tr>
-<td align="left"><a href="#threshold-alarm">Bei Schwellwert Alarm erzeugen</a></td>
-<td align="left">Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht. Diese Regel nimmt die Schwellwerte aus dem Gerät oder aus der Datenpunktbibliothek:</td>
+<td align="left"><a href="#threshold-alarm">Bei Schwellenwert Alarm erzeugen</a></td>
+<td align="left">Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht. Diese Regel nimmt die Schwellenwerte aus dem Gerät oder aus der Datenpunktbibliothek:</td>
 </tr>
 </tbody>
 </table>
@@ -243,7 +243,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Wie folgt eskalieren</td>
-<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie auf <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren: <br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> - SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> - Immer: Aktion wird immer ausgeführt. <br> - Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
+<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie auf <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren:<br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> - SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> - Immer: Aktion wird immer ausgeführt. <br> - Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -562,7 +562,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad: </b>Schweregrad des auszulösenden Alarms. <br><b>Text: </b>Alarm-Text.</td>
+<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad: </b>Schweregrad des auszulösenden Alarms.<br><b>Text: </b>Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -632,7 +632,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </table>
 
 <a name="threshold-alarm"></a>
-### Bei Schwellwert Alarm erzeugen
+### Bei Schwellenwert Alarm erzeugen
 
 **Funktionalität**
 
@@ -696,8 +696,7 @@ Wenn wir den gelben Bereich auf "[30;60)" und den roten Bereich auf "[50;90]" ei
 
 und der Messwert 55 beträgt, wird ein WENIGER WICHTIGER Alarm (gelb) erzeugt.
 
-Durch diese Mechanismen können globale Schwellwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.
-
+Durch diese Mechanismen können globale Schwellenwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.
 
 **Parameter**
 
@@ -726,7 +725,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwert</td>
+<td align="left">Bei Schwellenwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Eintrag in der Datenpunktbibliothek</strong>: Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden. Beachten Sie, dass die im Datenpunkt festgelegte Einheit hier nicht berücksichtigt wird.</td>
 </tr>
 <tr>
@@ -766,9 +765,9 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Eingehende Werte innerhalb des roten Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
 
-* Eingehende Werte innerhalb des gelben Bereichs: <br>Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des gelben Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
 
-* Messwert außerhalb des gelben und roten Bereichs: <br>Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
+* Messwert außerhalb des gelben und roten Bereichs: <br> Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
 
 **Fehlerbehebung**
 
@@ -780,10 +779,13 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
+
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+
 
 <a name="threshold-explicit"></a>
-### Bei explizitem Schwellwert Alarm erzeugen
+### Bei explizitem Schwellenwert Alarm erzeugen
 
 **Funktionalität**
 
@@ -795,7 +797,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 * Wenn der Messwert sich in den grünen Bereich bewegt, wird kein Alarm erzeugt.
 
-> **Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel "Bei Schwellwert Alarm erzeugen" der Schwellwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
+> **Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellenwert explizit bereitgestellt, während in der Regel "Bei Schwellenwert Alarm erzeugen" der Schwellenwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
 
 **Parameter**
 
@@ -824,7 +826,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwert</td>
+<td align="left">Bei Schwellenwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Minimum, Maximum</strong>: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.</td>
 </tr>
 <tr>
@@ -853,7 +855,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
+
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 
 <a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen
@@ -896,8 +900,11 @@ Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte i
   </tr>
 </table>
 
-> **Info:** Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung) können Variablen für Uhrzeiten eine Zeitzone enthalten, in der die Uhrzeit angezeigt werden soll.
-So zeigt zum Beispiel die Variable #{time:TZ=America/New_York} die Uhrzeit entsprechend der Zeitzone für New York an.
+> **Info:** Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung) können Variablen für Uhrzeiten eine Zeitzone und ein Zeitformat für die Anzeige der Uhrzeit enthalten.
+So zeigt zum Beispiel die Variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} die Uhrzeit entsprechend der Zeitzone für New York mit dem Format HH:mm:ssZ an.
+Siehe auch [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
+und [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+in der Apama-Dokumentation.
 
 **Alarmspezifische Felder**
 
@@ -943,8 +950,6 @@ So zeigt zum Beispiel die Variable #{time:TZ=America/New_York} die Uhrzeit entsp
 
 
 **Messwertspezifische Felder**
-
-> **Info:** Dieser Abschnitt gilt nur für Mandanten, die Apama (nicht Esper/CEP) verwenden.
 
 <table>
 <colgroup>
@@ -1043,10 +1048,10 @@ Hier lassen sich beispielsweise die folgenden Variablen definieren:
   </tr>  
   <tr>
     <td>#{source.X.Y} </td>
-    <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Trigger. Zum Beispiel:
+    <td>Die Eigenschaftsfeldinformationen des Quellgeräts (ManagedObject) des Triggers. Beispiel:
     <br> #{source.c8y_Hardware.serialNumber} > Seriennummer des Geräts.
     <br> #{source.c8y_Notes} > Anmerkungsfeld des Geräts.</td>
   </tr>  
 </table>
 
->**Info:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.
+> **Wichtig:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.

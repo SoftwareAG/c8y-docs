@@ -1,8 +1,8 @@
 ---
-weight: 50
 title: Anwenden von Geschäftsregeln
-
+weight: 50
 ---
+
 <a name="event-processing"></a>
 ### Echtzeitverarbeitung
 
@@ -46,7 +46,6 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Anstatt eine Regel zu löschen, können Sie sie auch zeitweise deaktivieren, indem Sie den Status auf "Nicht gestartet" setzen.
 
-
 <a name="reprio-alarms"></a>
 ### Alarmregeln
 
@@ -56,7 +55,7 @@ Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste all
 
 <img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
-Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Beschreibung (optional) angezeigt.
+Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreibung (optional) angezeigt.
 
 <a name="add-alarm-mapping"></a>
 #### So fügen Sie eine Alarmregel hinzu
@@ -66,6 +65,8 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine neue Besc
 3. Geben Sie im Feld **Neue Beschreibung** optional eine neue Beschreibung für den Alarm ein. Wenn Sie dieses Feld frei lassen, wird der ursprüngliche Text des Alarms beibehalten.
 4. Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
+
+> **Info:** Der in einer Alarmregel festgelegte Alarmtyp wird als &quot;&#60;type&#62;*&quot; interpretiert. Wenn Sie beispielsweise eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren sollen, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
 
 #### So bearbeiten Sie eine Alarmregel
 

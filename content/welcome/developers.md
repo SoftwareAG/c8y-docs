@@ -42,7 +42,7 @@ Check out the following developer guides if you are looking for step-by-step ins
 
 <tr>
 <td align="left"><a href="/device-sdk/introduction/">Device SDK guide</a></td>
-<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. The *Device SDK guide* provides detailed information on device integration using MQTT, REST and C++.</td>
+<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. The <i>Device SDK guide</i> provides detailed information on device integration using MQTT, REST and C++.</td>
 </tr>
 
 </tbody>
@@ -63,7 +63,7 @@ Collaborate with {{< product-c8y-iot >}} community experts on our [{{< company-s
 Here you can:
 
 * Browse through our vast knowledge base of tutorials, articles, code samples, tips and tricks.
-* As questions, brainstorm solutions or discuss best practices in our discussion forum
-* Get the latest {{< company-sag >}} news and announcements
+* Ask questions, brainstorm solutions or discuss best practices in our discussion forum.
+* Get the latest {{< company-sag >}} news and announcements.
 
 Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).

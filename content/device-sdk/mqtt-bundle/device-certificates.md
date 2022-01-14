@@ -19,6 +19,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
+* The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices need to trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
@@ -59,7 +60,10 @@ A device which is authenticated by certificates and connected to the {{< product
 71,<<Base64 encoded JWT token>>
 ```
 
-A device token lifetime can be configured using tenant options: `oauth.internal.device-token.lifespan.seconds`. The default value is 1 hour. The minimum allowed value is 5 minutes. Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
+The default value is 1 hour.
+The minimum allowed value is 5 minutes.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
@@ -407,8 +411,8 @@ Then the instance of the MQTT client can be created with a single line:
 
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
-The BROKER_URL should contain protocol, URL and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
-The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
+The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
+The CLIENT_ID value has to match the value of the common name of the device certificate that will be used.
 The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
 

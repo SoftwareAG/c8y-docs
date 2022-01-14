@@ -68,7 +68,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de/).
+Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
 
 <a name="home"></a>
 ### Startseite
@@ -79,7 +79,7 @@ Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das D
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 
-> **Info:** Aus Leistungsgründen zeigt die Karte auf der Startseite Symbole für maximal 100 Geräte an. Wenn mehr Geräte vorhanden sind, erscheinen diese nicht auf der Karte. Um sie zu sehen, müssen Sie auf Gruppenebene zu dem Dashboard gehen und das Widget "Karte" dort hinzufügen, so dass nur Geräte aus dieser speziellen Gruppe angezeigt werden, siehe [Widgets-Sammlung](#widgets).
+> **Info:** Aus Leistungsgründen zeigt die Karte auf der Startseite Symbole für maximal 100 Geräte an. Wenn mehr Geräte vorhanden sind, erscheinen diese nicht auf der Karte. Um sie zu sehen, müssen Sie auf Gruppenebene zu dem Dashboard gehen und das Widget "Karte" dort hinzufügen, so dass nur Geräte aus dieser speziellen Gruppe angezeigt werden, siehe [Widgets-Sammlung](#widgets-collection).
 
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 

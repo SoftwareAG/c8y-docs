@@ -9,7 +9,7 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -42,12 +42,12 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Lists devices being connected to the current device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
-<td style="text-align:left">Provides details for fieldbus devices. For details, see <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
-</tr>
-<tr>
 <td align="left"><a href="#config">Configuration</a></td>
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="">Connectivity</a></td>
+<td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>
@@ -60,6 +60,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#events">Events</a></td>
 <td align="left">Displays events related to a device, helpful for low-level troubleshooting. Also refer to <a href="#events-all">Troubleshooting devices</a>. Available for each device.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
+<td style="text-align:left">Provides details for fieldbus devices. For details, see <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
@@ -231,7 +235,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br>
+<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation.<br> The following measurements may be shown here: <br>
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>

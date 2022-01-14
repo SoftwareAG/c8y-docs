@@ -1,7 +1,7 @@
 ---
-weight: 13
-title: Verwalten von Berechtigungen
 layout: redirect
+title: Verwalten von Berechtigungen
+weight: 13
 ---
 
 Berechtigungen legen fest, welche Funktionen ein Benutzer in {{< product-c8y-iot >}}-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
@@ -12,7 +12,6 @@ Die folgenden Rollen können zugewiesen werden:
 - Stammdatenrollen: Enthalten Berechtigungen, die auf Gerätegruppen zutreffen.
 
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
-
 
 <a name="global"></a>
 ### Globale Rollen
@@ -104,7 +103,6 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 |business|Hat Zugriff auf alle Geräte und deren Daten, aber hat keine Verwaltungsberechtigung für den Mandanten.
 |readers|Kann alle Daten lesen (einschl. Benutzer, im Unterschied zu "Globaler Leser").
 
-
 <a name="create-edit-roles"></a>
 #### So fügen Sie eine globale Rolle hinzu
 
@@ -146,7 +144,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 <tbody>
 <tr>
 <td align="left">Alarme</td>
-<td align="left">Anzeigen oder Bearbeiten von Alarmen für Geräte.</td>
+<td align="left">Anzeigen oder Bearbeiten von Alarmen.</td>
 </tr>
 
 <tr>
@@ -156,7 +154,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Audits</td>
-<td align="left">Anzeigen oder Erstellen von Audit-Logs für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Audit-Logs.</td>
 </tr>
 
 <tr>
@@ -181,7 +179,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Ereignisse</td>
-<td align="left">Anzeigen oder Erstellen von Ereignissen für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Ereignissen.</td>
 </tr>
 
 <tr>
@@ -201,7 +199,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Messwerte</td>
-<td align="left">Anzeigen oder Erstellen von Messwerten für Geräte.</td>
+<td align="left">Anzeigen oder Erstellen von Messwerten.</td>
 </tr>
 
 <tr>
@@ -281,7 +279,7 @@ Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
-Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menu **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
+Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
 
@@ -327,7 +325,7 @@ Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&
 
 Standardmäßig enthält das Feld **Typ** ein Sternsymbol *, so dass alle Typen eingeschlossen sind.
 
-> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) von {{< product-c8y-iot >}} oder der [Device Management Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
+> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/reference/sensor-library/) von {{< product-c8y-iot >}} oder der [Device Management Library](/reference/device-management-library/). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
 
 Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahlliste:
 
@@ -337,7 +335,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 
 >**Wichtig:** Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 
-Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library)). Erteilen Sie dem Benutzer eine LESEN-Berechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y&#95;Position", wie in der Abbildung unten dargestellt.
+Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/reference/sensor-library/)). Erteilen Sie dem Benutzer eine LESEN-Berechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y&#95;Position", wie in der Abbildung unten dargestellt.
 
 <img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
 

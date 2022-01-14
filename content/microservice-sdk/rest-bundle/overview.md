@@ -15,8 +15,8 @@ With this API description you will learn how to use {{< product-c8y-iot >}}'s RE
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
 
 - [REST implementation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
-- [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) specifies the data model for device management.
-- [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) specifies the data model for sensors and controls.
+- [Device management library](/reference/device-management-library/) specifies the data model for device management.
+- [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the *Device SDK guide*.
@@ -71,9 +71,9 @@ Graphical REST clients such as [Postman](https://www.getpostman.com/) are a conv
 
 ![Example REST client](/images/rest/postman.png)
 
-{{< product-c8y-iot >}} provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
+{{< product-c8y-iot >}} provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**.
 
-Import the APIs as a [JSON file](/files/rest/Cumulocity_API.postman_collection.json).
+Download the [API examples](/files/rest/Cumulocity_API.postman_collection.json) and import them as a collection into Postman.
 
 Now, click the **Collections** tab on the top left of Postman. You should see a folder _{{< product-c8y-iot >}} API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from {{< product-c8y-iot >}}.
 

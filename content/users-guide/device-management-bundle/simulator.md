@@ -94,7 +94,7 @@ The panel at the right changes according to the type of instruction selected at 
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library) in the {{< openapi >}}.
+The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](/reference/sensor-library/) in the **Reference guide**.
 
 The "Sleep" instruction requires one value for its duration in seconds.
 

@@ -95,7 +95,7 @@ Click **Save TFA settings** to apply your settings.
 The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
 
 
-The oAuth Internal can work in two modes:
+oAuth Internal can work in two modes:
 * without a configuration related to the session
 * with the configuration of the session - to achieve a behavior which is similar to the authentication based on HTTP sessions
 

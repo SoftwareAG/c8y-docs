@@ -103,19 +103,19 @@ There are significant differences between these two modes.
 
 When no configuration related to the session is present, oAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently. oAuth Internal still can be configured to work in this way, but you can configure oAuth Internal in a more convenient and secure way. 
 
-In such case, the behavior of oAuth Internal resembles the authentication which is build based on HTTP sessions. The oAuth Internal token acts as a session identifier on the client site (web browser). Such token identifier which is stored in the cookie can have a preconfigured short lifetime. Then the {{< product-c8y-iot >}} platform is responsible to renew the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs. The following configuration options can be adjusted by a tenant administrator:
+In this second mode, the behavior of oAuth Internal resembles the authentication which is build based on HTTP sessions. The oAuth Internal token acts as a session identifier on the client site (web browser). Such token identifier which is stored in the cookie can have a preconfigured short lifetime. Then the {{< product-c8y-iot >}} platform is responsible to renew the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs. The following configuration options can be adjusted by a tenant administrator:
 
 * Token lifetime (detailed configuration description below) - defines the time for which a token is active. The user is able to  access the {{< product-c8y-iot >}} only with a valid token. This configuration option is always available, it does not depend on session configuration.  
 * Session configuration (optional) - has four additional parameters
   * Absolute timeout - defines a maximum period of time when the user can use {{< product-c8y-iot >}} without necessity of re-authentication.
-  * Renewal timeout - expected to be much shorter than the "absolute timeout". Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the "renewal timeout".
-  * Renewal token delay - During the session token renewal the previously provided token is revoked and a new one is provided. The delay defined by this parameter is used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}.
+  * Renewal timeout - expected to be much shorter than the `absolute timeout`. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the `renewal timeout`.
+  * Renewal token delay - during the session token renewal the previously provided token is revoked and a new one is provided. The delay defined by this parameter is used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}.
   * Maximum number of parallel sessions per user - defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device. 
   * User agent validation - defines if {{< product-c8y-iot >}} should use additional protection for communication in the form of comparing the user-agent sent in headers of consecutive requests in the scope of one session. If the protection is turned on then a request with changed user-agent will not be authorized.
 
->**Info:** The relation between the time parameters should be the following: RENEWAL TIMEOUT < TOKEN LIFETIME < ABSOLUTE TIMEOUT.
+>**Info:** The relation between the time parameters should be the following: `renewal timeout` < `token lifetime < `absolute timeout`.
 ><br>
->The recommended setting for RENEWAL TIMEOUT is approximately half of the ABSOLUTE TIMEOUT.
+>The recommended setting for `renewal timeout` is approximately half of the `absolute timeout`.
 
 #### Token settings
 The default token validity time is two weeks. This can be changed with tenant options:
@@ -139,23 +139,23 @@ to use OAuth authentication since the communication from the external authorizat
 Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 
 #### Session settings
-The following session settings are part of OAuthInternal configuration and can be changed by request. Predefined defaults are the following:
+The following session settings are part of the oAuth Internal configuration and can be changed by request. The predefined defaults are the following:
 * Absolute timeout - 14 days
 * Renewal timeout - 1 day
 * Maximum number of parallel sessions per user - 5
 * User agent validation - false
 * Token lifetime - 2 days
 
-> **Info:** The value of the parameter `Renewal token delay` is set by default to 1 minute. It is configurable only on platform level, so it cannot be modified by tenant administrator.
+> **Info:** The value of the parameter `renewal token delay` is set by default to 1 minute. It is configurable only on platform level, so it cannot be modified by the tenant administrator.
 
 #### Restricted basic authentication
 
-Even if OAuthInternal is configured for the human users, basic authentication remains available for devices and microservices using the platform. To provide higher security level basic authentication can be restricted. Restrictions can be configured by the following parameters:
+Even if oAuth Internal is configured for the human users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted. Restrictions can be configured by the following parameters:
 * forbidden clients - is a list of clients which are not allowed to use basic authentication (`WEB-BROWSERS` by default).
-* trusted user agents - this list is empty by default. If some user-agent is added all the http requests containing this entry in `User-Agent` header and having valid basic authentication date will be accepted. 
-* forbidden user agents - this list is empty by default. If some user-agent is added all the http requests containing this entry in `User-Agent` header and using basic authentication will be rejected.
+* trusted user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted. 
+* forbidden user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
 
-> **Info:** If user-agent is not found on list of trusted or forbidden user agent then {{< product-c8y-iot >}} will try to verify if it is an web-browser using external library.
+> **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 
 ### Configuring single sign-on
 

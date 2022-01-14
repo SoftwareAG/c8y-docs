@@ -28,14 +28,6 @@ The MQTT section is structured as follows:
 
 Also see our [SmartREST documentation](/reference/smartrest-two).
 
-<!--
-* [SmartREST 1.0](/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
-* [SmartREST 2.0](/device-sdk/mqtt#smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
-* [MQTT static templates](/device-sdk/mqtt/#mqtt-static-templates) provides a reference of pre-defined payload formats that you can use straight away.
-* [Handling IDs](/device-sdk/mqtt#handling-ids) describes how IDs are handled in the {{< product-c8y-iot >}} MQTT protocol.
-* [JSON via MQTT](/device-sdk/mqtt/#json) describes the payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
--->
-
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions in the Internet. Some references can be found on the [MQTT website](https://mqtt.org/mqtt-specification/).
 
 > **Info**: For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.

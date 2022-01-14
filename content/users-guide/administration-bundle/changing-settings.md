@@ -111,7 +111,7 @@ In this second mode, the behavior of oAuth Internal resembles the authentication
   * Renewal timeout - expected to be much shorter than the `absolute timeout`. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the `renewal timeout`.
   * Renewal token delay - during the session token renewal the previously provided token is revoked and a new one is provided. The delay defined by this parameter is used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}.
   * Maximum number of parallel sessions per user - defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device. 
-  * User agent validation - defines if {{< product-c8y-iot >}} should use additional protection for communication in the form of comparing the user-agent sent in headers of consecutive requests in the scope of one session. If the protection is turned on then a request with changed user-agent will not be authorized.
+  * User agent validation - defines if {{< product-c8y-iot >}} should use additional protection for communication in the form of comparing the user agent sent in headers of consecutive requests in the scope of one session. If the protection is turned on then a request with changed user agent will not be authorized.
 
 >**Info:** The relation between the time parameters should be the following: `renewal timeout` < `token lifetime < `absolute timeout`.
 ><br>
@@ -150,7 +150,7 @@ The following session settings are part of the oAuth Internal configuration and 
 
 #### Restricted basic authentication
 
-Even if oAuth Internal is configured for the human users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted. Restrictions can be configured by the following parameters:
+Even if oAuth Internal is configured for human users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted. Restrictions can be configured by the following parameters:
 * forbidden clients - is a list of clients which are not allowed to use basic authentication (`WEB-BROWSERS` by default).
 * trusted user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted. 
 * forbidden user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.

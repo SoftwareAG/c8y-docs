@@ -4,12 +4,6 @@ title: SmartREST 2.0
 layout: redirect
 ---
 
-<!--
-
-TODO: Make this no longer based on SR1
-
--->
-
 ### Overview
 
 This section describes the SmartREST 2.0 payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.

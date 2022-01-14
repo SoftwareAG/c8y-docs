@@ -4,12 +4,6 @@ title: Overview
 layout: redirect
 ---
 
-<!--
-TODO:
-May incorporate SR1 specific segments from existing "Using SmartREST" section (from the Microservice SDK guide)
-There's some duplicate information here and in "protocol.md"
--->
-
 <div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
 
   <h3 style="color: #1776BF"><strong>IMPORTANT</strong></h3>

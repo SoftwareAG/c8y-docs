@@ -46,11 +46,7 @@ var main = (function ($) {
           }
         }
 
-        console.log("check 1");
-
         if (true) {
-
-          console.log("check 2");
           offset = 45;
           $('<div/>', {
             id: 'preview-banner',

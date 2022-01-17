@@ -4,7 +4,7 @@ title: Built-in messages
 layout: redirect
 ---
 
-*SmartREST* has a variety of built-in messages.
+SmartREST has a variety of built-in messages.
 
 ### Request messages
 

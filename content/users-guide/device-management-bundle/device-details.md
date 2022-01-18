@@ -266,7 +266,7 @@ The **Location** tab by default shows the location of a device on a map and as c
 
 ![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
 
-The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
+The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new c8y-position event, you can set the same c8y-position fragment on the device and it will automatically mark its position on the map.
 
 
 <a name="logs"></a>

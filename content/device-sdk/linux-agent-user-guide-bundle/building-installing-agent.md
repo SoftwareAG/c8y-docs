@@ -66,7 +66,7 @@ This section explains how to build the Cumulocity IoT Linux agent without Modbus
 
 ### <a name = building-the-cumulocity-cloud-remote-access-service>Building the Cumulocity IoT Cloud Remote Access service </a>
 
-The Cumulocity IoT Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+The Cumulocity IoT Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/cloud-remote-access/cra-general-aspects/).
 
 To support the feature, you need to build the **Cumulocity IoT Cloud Remote Access service** aside from building the agent. To build it, run:
 

@@ -71,6 +71,8 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 To connect larger amounts of devices, Cumulocity IoT offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 
+> **Info:** There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
+
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box select **Bulk device registration**.
 

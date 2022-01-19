@@ -135,7 +135,6 @@ Select the model from the **Model** folder and click the cloud icon <img src="/i
 
 Once the model is successfully deployed, the cloud icon will change to <img src="/images/zementis/mlw-deployed-icon.png" alt="Deployed" style="display:inline-block; margin:0"> "Deployed".
 
-A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
 #### Create and upload Apama monitor file
 

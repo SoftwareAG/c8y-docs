@@ -596,3 +596,41 @@ The following locations are searched for log-back file:
 * {CONF_DIR}/.{application_name}/logging.xml
 * {CONF_DIR}/{application_name}/logging.xml
 * /etc/{application_name}/logging.xml
+
+### Upgrade to Microservice SDK 10.13+
+Since 10.13.0 a Spring-Boot library was upgraded to 2.5.5, hence upgrading Microservice SDK to 10.13+ may require some additional development.
+* `content(matcher)` method of RestAssured has been replaced with `body(matcher)`: see [RequestSpecification#content()](https://javadoc.io/doc/io.rest-assured/rest-assured/3.0.0/io/restassured/specification/RequestSpecification.html#content-byte:A-)
+* Spring-Boot bom does not define a version for joda-time, you may need to explicitly define version.
+  * Maven example:
+    ```
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.10.10</version>
+    </dependency>
+    ```
+* Jackson 2.12.x does not provide Joda Module by default, it could be require to add `jackson-datatype-joda` dependency and define Joda Module:
+`new ObjectMapper().addModule(new JodaModule());` in a custom Microservice code.
+* Spring-Boot 2.5.5 does not provide _Bean Validation 2.0_ provider, as a transitive dependency, anymore. Developers may have to define validation provider, for example `hibernate-validator` explicitly or define `spring-boot-starter-validation` dependency:
+  * Maven example:
+     ```
+     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+     </dependency>
+    ```
+* `junit-vintage-engine` was removed from `spring-boot-starter-test` dependency, if you still use JUnit 4.x you have to add Vintage engine explicitly:
+     ```
+     <dependency>
+       <groupId>org.junit.vintage</groupId>
+       <artifactId>junit-vintage-engine</artifactId>
+       <scope>test</scope>
+     </dependency>
+     ```
+
+* `message` field and binding errors are disabled by default for spring-boot native error responses. This can be enabled by overriding `microservice_error_attributes.properties` file. 
+Sample content:
+   ```
+   server.error.include-message=ALWAYS
+   server.error.include-binding-errors=ALWAYS
+   ```

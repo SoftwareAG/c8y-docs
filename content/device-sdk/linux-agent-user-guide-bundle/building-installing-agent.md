@@ -68,7 +68,7 @@ This section explains how to build the {{< product-c8y-iot >}} Linux agent witho
 <a name="building-the-cumulocity-cloud-remote-access-service"></a>
 ### Building the Cloud Remote Access service
 
-The {{< product-c8y-iot >}} Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via {{< product-c8y-iot >}}. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+The {{< product-c8y-iot >}} Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via {{< product-c8y-iot >}}. For details on the remote access functionality, refer to [Cloud Remote Access](/cloud-remote-access/cra-general-aspects/).
 
 To support the feature, you need to build the **{{< product-c8y-iot >}} Cloud Remote Access service** aside from building the agent. To build it, run:
 

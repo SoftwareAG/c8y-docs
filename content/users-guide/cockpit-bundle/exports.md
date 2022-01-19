@@ -141,6 +141,16 @@ You will receive an email containing links to each export file.
 
 Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601]( https://www.w3.org/TR/NOTE-datetime).
 
+When the export documents limit is reached and the result is truncated due to its limitations, an additional line with an indicator is added at the end of document.
+
+Sample CSV export with indicator:
+
+Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
+2021-11-25T10:37:06.485Z,Position #1,2021-11-25T10:37:06.485Z,Position #1,1266,1195,Location updated,2021-11-25T10:37:06.485Z,c8y_LocationUpdate
+2021-11-25T10:37:01.484Z,Position #1,2021-11-25T10:37:01.484Z,Position #1,1265,1195,Location updated,2021-11-25T10:37:01.484Z,c8y_LocationUpdate
+[...]
+limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
+
 #### To edit an export
 
 Just click the respective row or click the menu icon at the end of the row and then click **Edit**.

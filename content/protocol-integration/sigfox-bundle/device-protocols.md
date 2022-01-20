@@ -140,3 +140,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/sigfox/sigfox-protocols-gpsexample.png)
+
+### Using LPWAN Custom Codec created device protocols
+
+Sigfox microservice also supports the use of device protocols (used for custom decoding/encoding) created on subscribing to an LPWAN Custom Codec microservice. Refer <a href="../../protocol-integration/lpwan-custom-codec">Creating LPWAN Custom Codec Microservice</a> for details on how to create a custom codec microservice.

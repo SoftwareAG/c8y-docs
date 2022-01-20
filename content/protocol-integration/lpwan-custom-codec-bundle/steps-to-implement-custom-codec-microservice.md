@@ -1,14 +1,14 @@
 ---
 weight: 30
-title: Steps to implement LPWAN codec microservice
+title: Steps to implement the LPWAN codec microservice
 layout: redirect
 ---
 
-The codec microservice can be easily built on top of [Cumulocity IoT Microservices](http://www.cumulocity.com/guides/microservice-sdk/java).
+The codec microservice can be built on top of [{{< product-c8y-iot >}} Microservices](http://www.cumulocity.com/guides/microservice-sdk/java).
 In order to serve as a LPWAN codec microservice, two requirements have to be met:
 
-1. The codec microservice Main class needs to be annotated as `@CodecMicroserviceApplication`.
-2. The microservice needs to provide implementation for the following interfaces.
+1. The codec microservices main class needs to be annotated as `@CodecMicroserviceApplication`.
+2. The microservice must provide an implementation for the following interfaces.
 
  ```java
  /**

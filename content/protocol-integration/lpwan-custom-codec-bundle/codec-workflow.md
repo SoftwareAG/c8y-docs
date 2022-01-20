@@ -6,13 +6,13 @@ layout: redirect
 
 First you need to deploy the codec microservice into {{< product-c8y-iot >}} where the codec microservice creates a set of unique device protocols based on the device manufacturer and model information.
 
-#### The REST endpoint: /decode
+### The REST endpoint /decode
 
-LPWAN codec microservice automatically exposes one REST endpoint using the path */decode*.
+The LPWAN codec microservice exposes a REST endpoint using the path <kbd>/decode</kbd>.
 
 #### Request JSON body format
 
-Below you see the request JSON input accepted by the /decode endpoint:
+Below you see the request JSON input accepted by the <kbd>/decode</kbd> endpoint:
 
 ```
 {
@@ -29,9 +29,9 @@ Below you see the request JSON input accepted by the /decode endpoint:
 
 The LPWAN agent passes in the following fragments to the codec microservice:
 
-* *args* - Meta information that is required by codec microservice to know the model and manufacturer of the device, along with the EUI of the device.
-* *sourceDeviceId* - The ID of the source device in the {{< product-c8y-iot >}} inventory.
-* *value* - The actual value to be decoded. The value is a series of bytes encoded as a hexadecimal string.
+* `args` - Meta information that is required by the codec microservice to know the model and manufacturer of the device, along with the EUI of the device.
+* `sourceDeviceId` - The ID of the source device in the {{< product-c8y-iot >}} inventory.
+* `value` - The actual value to be decoded. The value is a series of bytes encoded as a hexadecimal string.
 
 **Example:**
 
@@ -49,7 +49,7 @@ The LPWAN agent passes in the following fragments to the codec microservice:
 
 #### Response JSON body format
 
-Following is the response JSON format emitted by the /decode endpoint:
+The following is the response JSON format of the <kbd>/decode</kbd> endpoint:
 
 ```
 {
@@ -64,12 +64,12 @@ Following is the response JSON format emitted by the /decode endpoint:
 
 The fragments above are used as follows:
 
-* *alarms* - A list of alarms to be created by the LPWAN agent. The alarms have to be given in the ordinary [{{< product-c8y-iot >}} alarm JSON format](https://cumulocity.com/guides/reference/alarms/).
-* *events* - A list of events to be created by the LPWAN agent. The events have to be given in the ordinary [{{< product-c8y-iot >}} event JSON format](https://cumulocity.com/guides/reference/events/).
-* *alarmTypesToUpdate* - A list of alaram types to be updated by LPWAN agent.
-* *dataFragments* - The data fragments can be used by a decoder to hand over a set of fragment updates.
-* *success* - An informative boolean flag (true or false) that indicates if decoding by the microservice was successful.
-* *measurements* - A list of measurements to be created by the LPWAN agent. The syntax here follows an own DTO format. See the example below:
+* `alarms` - A list of alarms to be created by the LPWAN agent. The alarms must be in [{{< product-c8y-iot >}} alarm JSON](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Alarms) format.
+* `events` - A list of events to be created by the LPWAN agent. The events must be given in [{{< product-c8y-iot >}} event JSON](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Events) format.
+* `alarmTypesToUpdate` - A list of alaram types to be updated by the LPWAN agent.
+* `dataFragments` - The data fragments can be used by a decoder to hand over a set of fragment updates.
+* `success` - A boolean that indicates if decoding by the microservice was successful.
+* `measurements` - A list of measurements to be created by the LPWAN agent. The syntax here follows a custom DTO format. See the example below:
 
 
 ```json
@@ -215,13 +215,13 @@ The fragments above are used as follows:
 
 ```
 
-#### The REST endpoint: /encode
+#### The REST endpoint /encode
 
-LPWAN codec microservice automatically exposes one REST endpoint using the path */encode*.
+The LPWAN codec microservice exposes a REST endpoint using the path <kbd>/encode</kbd>.
 
 #### Request JSON body format
 
-Following is the request JSON input accepted by the /encode endpoint:
+The following is the request JSON input accepted by the <kbd>/encode</kbd> endpoint:
 
 ```
 {
@@ -238,10 +238,10 @@ Following is the request JSON input accepted by the /encode endpoint:
 
 The LPWAN agent populates the following fragments while invoking the codec microservice:
 
-* *args* - Meta information that is required by codec microservice to know the model and manufacturer of the device, along with the EUI of the device.
-* *sourceDeviceId* - The ID of the source device in the {{< product-c8y-iot >}} inventory.
-* *commandName* - The name of the command to be encoded.
-* *commandData* - The text of the command to be encoded.
+* `args` - Meta information that is required by codec microservice to know the model and manufacturer of the device, along with the EUI of the device.
+* `sourceDeviceId` - The ID of the source device in the {{< product-c8y-iot >}} inventory.
+* `commandName` - The name of the command to be encoded.
+* `commandData` - The text of the command to be encoded.
 
 **Example:**
 
@@ -260,7 +260,7 @@ The LPWAN agent populates the following fragments while invoking the codec micro
 
 #### Response JSON body format
 
-Following is the response JSON format emitted by the /encode endpoint:
+The following is the response JSON format of the <kbd>/encode</kbd> endpoint:
 
 ```
 {
@@ -271,8 +271,8 @@ Following is the response JSON format emitted by the /encode endpoint:
 
 The fragments above are used as follows:
 
-* *encodedCommand* - The hexadecimal command obtained post encode, which will be executed as an operation.
-* *fport* - The target fport.
+* `encodedCommand` - The hexadecimal command obtained after encoding, which will be executed as an operation.
+* `fport` - The target fport.
 
 ```json
 {

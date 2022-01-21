@@ -168,7 +168,7 @@ This means, value by value:
 * 11: This is a response template.
 * 2: It is the template number 2.
 * $.operations: The response is a list and the list's property is "operations".
-* $.c8y_Message: This template applies to responses with the property "c8y_Message".
+* $.c8y_Message: This template applies to responses with the property `c8y_Message`.
 * $.c8y_Message.text: The text will be extracted from the message and will be returned.
 
 The SmartREST client will thus get the following response:

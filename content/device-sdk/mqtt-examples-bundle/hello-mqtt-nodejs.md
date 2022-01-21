@@ -109,7 +109,7 @@ What does the code do?
 -   Subscribe to listen for operations.
 -   Send a random temperature measurement every 3 seconds.
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
--   Listen to all incoming messages. In case of a c8y_Restart operation, simulate a device restart.
+-   Listen to all incoming messages. In case of a `c8y_Restart` operation, simulate a device restart.
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given `clientId`, the server will not accept it.
 
@@ -129,7 +129,7 @@ $ npm start
 
 You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), related information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (e.g. `c8y_Restart`), related information about it will be printed to the console.
 
 ### Improving the agent
 

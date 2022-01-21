@@ -170,7 +170,7 @@ At this point, you can [test your application](/web-sdk-for-plugins/hello-world/
 
 ### Display data in the "Contact" tab
 
-Previously, we only set up a dummy view for the "Contact" tab. In this step, we will display the actual contact information stored with a device in the view. We will define that the contact data is stored in a fragment "c8y_Contact" of a device in the inventory like this:
+Previously, we only set up a dummy view for the "Contact" tab. In this step, we will display the actual contact information stored with a device in the view. We will define that the contact data is stored in a fragment `c8y_Contact` of a device in the inventory like this:
 
 ```json
 	{
@@ -183,7 +183,7 @@ Previously, we only set up a dummy view for the "Contact" tab. In this step, we 
 	}
 ```
 
-Add a load function to "deviceContact.controller.js" and the necessary injection dependencies as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and "c8y_Contact" fragment to the local scope.
+Add a load function to "deviceContact.controller.js" and the necessary injection dependencies as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device's id and `c8y_Contact` fragment to the local scope.
 
 ```js
 (function() {

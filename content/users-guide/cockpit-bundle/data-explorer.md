@@ -233,7 +233,7 @@ You may download measurement data as CSV or Excel files. The exported data shows
  - Time when the specific measurement was taken
  - Source of the measurement
  - Name of the device being used
- - Fragment series (e.g. c8y_SpeedMeasurement)
+ - Fragment series (e.g. `c8y_SpeedMeasurement`)
  - Value of the measurement
  - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
 

@@ -408,7 +408,7 @@ Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten
 
 In {{< product-c8y-iot >}} können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
-**Info:** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
+>**Info:** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 

@@ -4,8 +4,8 @@ title: Steps to implement LPWAN codec microservice
 layout: redirect
 ---
 
-For the developer convenience Cumulocity provides `lpwan-custom-codec` java library for developing Codec microservice. It can be easily built on top of [Cumulocity IoT Microservices](http://www.cumulocity.com/guides/microservice-sdk/java).
-To create LPWAN codec microservice, two requirements have to be met:
+The codec microservice can be easily built on top of [Cumulocity IoT Microservices](http://www.cumulocity.com/guides/microservice-sdk/java).
+In order to serve as a LPWAN codec microservice, two requirements have to be met:
 
 1. The codec microservice Main class needs to be annotated as `@CodecMicroserviceApplication`.
 2. The microservice needs to provide implementation for the following interfaces.

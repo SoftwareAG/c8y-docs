@@ -149,4 +149,4 @@ This will be the result:
 
 ### Using LPWAN Custom Codec created device protocols
 
-Actility agent also supports the use of device protocols (used for custom decoding/encoding) created on subscribing to an LPWAN Custom Codec microservice. Refer <a href="../../protocol-integration/lpwan-custom-codec">Creating LPWAN Custom Codec Microservice</a> for details on how to create a custom codec microservice.
+The Actility agent also supports the use of device protocols (used for custom decoding/encoding) created on subscribing to an LPWAN Custom Codec microservice. Refer to [LPWAN Custom Codec](../lpwan-custom-codec) for details on how to create a custom codec microservice.

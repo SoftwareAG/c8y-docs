@@ -413,7 +413,7 @@ See [Managing software on a device](#managing-software) for more information on 
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 
-**Note** that the **Tracking** tab only shows up when a device contains `c8y_Position` property.
+>**Info: ** The **Tracking** tab only shows up when a device contains `c8y_Position` property.
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 

@@ -4,13 +4,13 @@ title: Templates
 layout: redirect
 ---
 
-*SmartREST* templates are a collection of request and response templates used for the conversion of *CSV* data and {{< product-c8y-iot >}} REST API calls. Additionally, *SmartREST* templates contain a template identifier which is compared to the custom `X-Id` header field to identify the *SmartREST* template used for processing.
+SmartREST templates are a collection of request and response templates used for the conversion of CSV data and {{< product-c8y-iot >}} REST API calls. Additionally, SmartREST templates contain a template identifier which is compared to the custom `X-Id` header field to identify the SmartREST template used for processing.
 
-Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each *SmartREST* request or response row. To avoid collision with one of the default message identifiers, developers are advised to choose message identifiers starting at `100`.
+Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each SmartREST request or response row. To avoid collision with one of the default message identifiers, developers are advised to choose message identifiers starting at `100`.
 
 ### Request templates
 
-A request template contains all necessary information to convert a *SmartREST* request into a corresponding REST API call which is then sent to the platform.
+A request template contains all necessary information to convert a SmartREST request into a corresponding REST API call which is then sent to the platform.
 
 A request template contains the following information:
 
@@ -24,7 +24,7 @@ A request template contains the following information:
 
 ### Response templates
 
-A response template contains the necessary information to extract data values from a platform REST API call response which are then sent back to the client in the *CSV* data format.
+A response template contains the necessary information to extract data values from a platform REST API call response which are then sent back to the client in the CSV data format.
 
 The following information is contained within a response template:
 

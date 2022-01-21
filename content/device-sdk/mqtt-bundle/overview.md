@@ -25,12 +25,8 @@ The MQTT section is structured as follows:
 * [MQTT implementation](/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the {{< product-c8y-iot >}} implementation of MQTT.
 * [Device integration](/device-sdk/mqtt#device-integration) walks you through the process of interfacing devices with {{< product-c8y-iot >}} through MQTT.
 * [Device certificates](/device-sdk/mqtt#device-certificates) describes how devices can connect via MQTT with certificates.
-* [SmartREST 1.0](/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
-* [SmartREST 2.0](/device-sdk/mqtt#smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
-* [MQTT static templates](/device-sdk/mqtt/#mqtt-static-templates) provides a reference of pre-defined payload formats that you can use straight away.
-* [Handling IDs](/device-sdk/mqtt#handling-ids) describes how IDs are handled in the {{< product-c8y-iot >}} MQTT protocol.
-* [JSON via MQTT](/device-sdk/mqtt/#json) describes the payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
+Also see our [SmartREST documentation](/reference/smartrest-two).
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions in the Internet. Some references can be found on the [MQTT website](https://mqtt.org/mqtt-specification/).
 

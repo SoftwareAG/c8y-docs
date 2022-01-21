@@ -14,7 +14,7 @@ Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste
 
 Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und {{< product-c8y-iot >}} Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben.
 
-Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Device SDK Guide](/device-sdk/mqtt#static-templates).
+Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Reference Guide](/reference/smartrest-two/#mqtt-static-templates).
 
 Öffnen Sie die Seite **SmartREST-Template** im Menü **Gerätetypen** des Navigators.
 
@@ -121,7 +121,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest/#response-templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 

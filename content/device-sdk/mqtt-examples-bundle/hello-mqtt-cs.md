@@ -249,7 +249,7 @@ await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
 await client.PublishAsync(messageJson);
 ```
 
-For specific procedural details review [JSON via MQTT](/device-sdk/mqtt/#json).
+For specific procedural details review [JSON via MQTT](/reference/smartrest-two/#json-via-mqtt).
 
 #### Building and running the application
 

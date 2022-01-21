@@ -269,7 +269,7 @@ The device is expected to perform the following actions:
 
 The 521 static response template is available for this functionality:
 
-1. Receive ```c8y_UploadConfigFile``` operation <br>
+1. Receive ```c8y_DownloadConfigFile``` operation <br>
   `521,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/9100`
 2. Set operation status to EXECUTING <br>
   `501,c8y_DownloadConfigFile`

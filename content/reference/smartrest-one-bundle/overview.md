@@ -1,16 +1,24 @@
 ---
-weight: 95
-title: SmartREST 1.0
+weight: 5
+title: Overview
 layout: redirect
 ---
+
+<div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
+
+  <h3 style="color: #1776BF"><strong>IMPORTANT</strong></h3>
+
+  <p class="lead" style="font-size:22px">SmartREST 1.0 has been superseded by SmartREST 2.0.
+
+  <p style="font-size:16px">SmartREST 1.0 will be maintained by Cumulocity but no longer actively developed. We highly recommend you to use <a href="../smartrest">SmartREST 2.0</a> for new device integrations.</p>
+
+</div>
 
 This section describes how you can use your existing SmartREST 1.0 templates with MQTT.
 
 Note that SmartREST 1.0 was designed for HTTP request/response and does not support the ID-less communication with MQTT. It only uses the MQTT connection to send exactly the same request as you would send using HTTP. Therefore, it comes with some limitations as MQTT is not request/response.
 
 The support for SmartREST 1.0 was added to ease transition if you have an existing implementation using it.
-
->**Info**: If you start a new device integration, we highly recommend to use SmartREST 2.0.
 
 For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
 
@@ -38,6 +46,7 @@ The X-ID header is part of the topic the client needs to publish on.
 ```http
 s/ul/<X-ID>
 ```
+
 An X-ID acts as a protocol identifier and identifies the template collection.
 An X-ID should be immutable: it always identifies exactly the same template collection.
 If the template collection changes, the X-ID must also change.
@@ -51,19 +60,19 @@ We also recommend you to add the protocol version as a postfix in the X-ID.
 
 ##### Processing mode
 
-Since the [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
+Since the [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest-one) supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 
 ```http
 t/ul/<X-ID>
 ```
 
-The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
+The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest-one) also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.
 
 ```http
 q/ul/<X-ID>
 ```
 
-The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest) also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.
+The [{{< product-c8y-iot >}} SmartREST protocol](/reference/smartrest-one) also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.
 
 ```http
 c/ul/<X-ID>
@@ -86,6 +95,7 @@ SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint t
 ```http
 s/ol/<X-ID>
 ```
+>**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
 
 >**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
 

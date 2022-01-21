@@ -1,9 +1,10 @@
 ---
-weight: 40
-title: Using SmartREST
+weight: 10
+title: Overview
 layout: redirect
 ---
 
+This section walks you through the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates. Built-in messages as well as errors are also discussed. For a step-by-step description, see [SmartREST](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
 
 The {{< product-c8y-iot >}} REST APIs provide you with a generic IoT protocol that is simple to use from most environments. It can be ad-hoc adapted to any IoT use case and it uses standard Internet communication and security mechanisms. While this is a great leap forward over tailored IoT protocols with proprietary technologies, it poses some challenges to very constrained environments such as low-end microcontrollers or low-bandwidth communication channels.
 
@@ -18,7 +19,7 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 
 In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
 
-> **Info:** The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest).
+>**Info:** The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest-two).
 
 ### How does SmartREST work?
 

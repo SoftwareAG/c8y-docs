@@ -106,7 +106,7 @@ Explanation of the above numbers:
  5. Defines which component should be shown if the path is hit by a user.
  6. The properties `label` and `icon` define how the tab should look like. The `priority` defines on which position it should be shown.
 
-> **Info**: The HOOK_ONCE_ROUTE inherits the Angular Route type, so all properties of it can be reused here.
+> **Info:** The HOOK_ONCE_ROUTE inherits the Angular Route type, so all properties of it can be reused here.
 
 After this alignments the route is registered but the application will fail to compile, as the `HelloComponent` does not exist yet. We will create it in the next section.
 

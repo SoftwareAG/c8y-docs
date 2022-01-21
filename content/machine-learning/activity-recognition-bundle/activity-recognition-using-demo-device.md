@@ -29,7 +29,7 @@ Instead of registering an actual device for the activity recognition use case, a
 
 Upon successful execution, a device named *DemoDevice* is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
-This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named c8y_SignalStrengthWifi, c8y_Acceleration, c8y_Barometer, c8y_Gyroscope, c8y_Luxometer, c8y_Compass.
+This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named `c8y_SignalStrengthWifi`, `c8y_Acceleration`, `c8y_Barometer`, `c8y_Gyroscope`, `c8y_Luxometer`, `c8y_Compass`.
 
 
 #### Upload the model and Apama monitor file
@@ -45,7 +45,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 Use *SimulateDataforRealtimescoring.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Acceleration measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the current date in gaps of 1 second.
+2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, `c8y_Acceleration` measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the current date in gaps of 1 second.
 
 <img src="/images/zementis/ActivityRecognition/activity_recognition_simulate_data.PNG" alt="Download" style="display:inline-block; margin:0"><br>
 

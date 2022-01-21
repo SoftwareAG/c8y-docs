@@ -4,7 +4,7 @@ title: Device availability
 layout: redirect
 ---
 
-The **Device availability** tab shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability``` fragment in the device's own managed. This action activates availability and connection monitoring for the device.
+The **Device availability** tab shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability``` fragment in the device's own managed object. This action activates availability and connection monitoring for the device.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

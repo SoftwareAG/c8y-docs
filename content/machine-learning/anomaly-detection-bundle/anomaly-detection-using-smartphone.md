@@ -36,7 +36,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 For this use case, the "Isolation Forest", an anomaly detection machine learning algorithm is applied. Isolation Forest is an approach that detects anomalies by isolating instances, without relying on any distance or density measure.
 
-The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. See also [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
+The logic argument goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations requires more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. See also [Anomaly Detection Using Isolation Forests](https://towardsdatascience.com/anomaly-detection-with-isolation-forest-visualization-23cd75c281e2)
 
 The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model.
 

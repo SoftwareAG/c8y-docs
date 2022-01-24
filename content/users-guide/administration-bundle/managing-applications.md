@@ -15,7 +15,7 @@ helpcontent:
     To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Custom applications* in the *User guide*.
 
 
-    Click on an application card to view the application properties."
+    Click on an application to view the application properties."
 ---
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices.
@@ -47,7 +47,7 @@ Your applications are available through the application switcher in the top bar 
 
 
 <a name="subscribed-applications"></a>
-#### Subscribed applications
+### Subscribed applications
 
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
@@ -55,11 +55,12 @@ Below you find all applications which are by default available in a {{< standard
 
 >**Info:** In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 
-##### Default applications
+#### Applications susbcribed by default
 
 <table>
 <col width="200">
-<col width="350">
+<col width="400">
+<col width="200">
 <col width="200">
 <thead>
 <tr>
@@ -89,15 +90,6 @@ Below you find all applications which are by default available in a {{< standard
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web app</td>
-
-<tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
-<td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled).</td>
-<td style="text-align:left">Streaming Analytics</td>
-<td style="text-align:left">Web app</td>
-</tr>
-
-</tr>
 
 </tbody>
 </table>
@@ -177,7 +169,7 @@ For details on the fields, see also [Application properties](#application-proper
 > **Info:** If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 <a name="application-properties"></a>
-#### Application properties
+### Application properties
 
 To display further details on an application, click it to open its **Properties** tab.
 
@@ -186,11 +178,10 @@ To display further details on an application, click it to open its **Properties*
 In the **Properties** tab, each application will show the following information, depending on the appliction type (hosted or external):
 
 <table>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
+<col width="150">
+<col width="350">
+<col width="200">
+<col width="300">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -227,15 +218,15 @@ In the **Properties** tab, each application will show the following information,
 <tr>
 <td style="text-align:left">Path</td>
 <td style="text-align:left">Part of the URL invoking the application</td>
-<td style="text-align:left">Automatically created></td>
-<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".></td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
 </tr>
 </tbody>
 </table>
 
 
 <a name="editing-and-removing"></a>
-#### To edit an application
+### To edit an application
 
 Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
 
@@ -243,7 +234,7 @@ In the **Properties** tab, several fields can be modified, depending on the appl
 
 >**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 
-#### To delete an application
+### To delete an application
 
 Click the menu icon at the right of an entry and then click **Delete**.
 
@@ -251,13 +242,13 @@ If you delete an application that overwrites a subscribed application, the curre
 
 It is not possible to delete subscribed applications. This can only be done by the owner of the subscribed application.
 
-#### Uploading archives
+### Uploading archives
 
 For custom applications, multiple file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
-##### To upload an archive
+#### To upload an archive
 
-1. Open the application properties by clicking on a particular application.
+1. Open the application properties for the respective application by clicking on it.
 2. Click the plus button at the bottom of the **Activity log** section and browse for the archive on your computer or simply drop the archive file.
 3. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
 
@@ -267,32 +258,27 @@ Once uploaded, the recently uploaded version is automatically the active version
 
 > **Info:** The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
 
-##### To restore an older application version
+#### To restore an older application version
 
 Users can restore previous versions of an application from an archive.
 
-1. Open the application properties by clicking on a particular application.
+1. Open the application properties for the respective application by clicking on it.
 2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
-3. Click **Delete** to delete the version from the archive.
 
-<img src="/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
-
-##### To reactivate a single application
+#### To reactivate a single application
 
 If a hosted application is not deployed correctly, users may reactivate it.
 
-1. Open the application properties by clicking on a particular application.
-3. In the **Activity log** section, click **Reload** at the top right.
-
-<img src="/images/users-guide/Administration/admin-reactivate.png" alt="Refresh application">  
+1. Open the application properties for the respective application by clicking on it.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
 
 ### Features
 
-Features are built-in applications which are not represented by an explicit artefact (microservice or web application).
+Applications of the type <b>feature</b> are built-in applications which are not represented by an explicit artefact (microservice or web application).
 
-In the **Features** tab, you will find a list of all features subscribed in your tenant. The following features are available by default:
+In the **Features** tab, you will find a list of all features subscribed in your tenant. In an {{< enterprise-tenant >}}, the following features are available by default:
 
 <table>
 <col width="200">
@@ -303,6 +289,7 @@ In the **Features** tab, you will find a list of all features subscribed in your
 <th style="text-align:left">Feature (name visible in the UI)</th>
 <th style="text-align:left">Functionality</th>
 <th style="text-align:left">Name (identification used in the API)</th>
+<th style="text-align:left">Availability</th>
 </tr>
 </thead>
 <tbody>
@@ -311,18 +298,21 @@ In the **Features** tab, you will find a list of all features subscribed in your
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Feature-branding</a></td>
 <td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
 <td style="text-align:left">feature-branding</td>
+<th style="text-align:left">{{< enterprise-tenant >}}</th>
 
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Feature-broker</a></td>
 <td style="text-align:left">Lets you share data selectively with other tenants.</td>
 <td style="text-align:left">feature-broker</td>
+<th style="text-align:left">{{< enterprise-tenant >}}</th>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Feature-user-hierarchy</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
+<th style="text-align:left">{{< enterprise-tenant >}}</th>
 </tr>
 </tbody>
 </table>

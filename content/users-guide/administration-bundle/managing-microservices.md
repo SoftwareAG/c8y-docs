@@ -1,48 +1,39 @@
 ---
 weight: 35
-title: Managing microservices
+title: Managing and monitoring microservices
 layout: redirect
 helpcontent:
-  - label: own-applications
-    title: Own applications
-    content: "Owned applications are custom applications owned by your tenant. You can add custom applications in various ways. They can be  
+  - label: microservices
+    title: Microservices
+    content: "A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of Cumulocity IoT.
 
 
-    * duplicates of subscribed applications (in order to be able to customize them)
-    * web-based applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
-    * server-side business logic deployed through microservices
+    As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application.
 
 
-    To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Own applications* in the *User guide*.
+    To add a microservice, click **Add microservice** and follow the instructions in the wizard, see also *Administration > Managing Microservices > Adding microservices as custom application* in the *User guide*.
 
-
-    Click on an application card to view the application properties."
-  - label: subscribed-applications
-    title: Subscribed applications
-    content: "Subscribed applications refer to the applications which are subscribed to your tenant, as opposed to owned applications.
-
-
-    Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in *Administration > Managing applications* in the *User guide*.
-
-
-    Click on an application card to view the application properties."
+    Click on a microservice to view the application properties."
 ---
 
 Click **Microservices** in the **Ecosystem** menu in the navigator to display a list or grid of all  microservices subscribed to your account.
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
-A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application, see [Adding microservices as custom application](#adding-microservices).
+A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application, see [Custom microservices](#custom-microservices).
+
+### Subscribed microservices
 
 {{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
 Below you find a list of all microservices which are by default subscribed in a {{< standard-tenant >}} and/or {{< enterprise-tenant >}}. In addition, numerous optional microservices might be subscribed to your tenant.
 
-##### Default microservices
+#### Microservices subscribed by default
 
 <table>
 <col width="200">
-<col width="350">
+<col width="400">
+<col width="200">
 <col width="200">
 <thead>
 <tr>
@@ -77,7 +68,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">smartrule</a></td>
-<td style="text-align:left">Use the Smart Rule engine and create <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a> to perform actions based on realtime data. Requires the following application: "apama-ctrl-smartrules"</td>
+<td style="text-align:left">Use the Smart Rule engine and create <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a> to perform actions based on realtime data. Requires the following application: "apama-ctrl-*"</td>
 <th style="text-align:left">Microservice</th>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
@@ -92,16 +83,11 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tbody>
 </table>
 
-
-
-
-
-
+<a name="custom-microservices"></a>
+### Custom microservices
 
 <a name="adding-microservices"></a>
-### Adding microservices as custom application
-
-#### To upload a microservice
+#### To add a microservice as custom application
 
 1. Click **Add microservice** at the top right.
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
@@ -110,7 +96,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 Important: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concepts) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 
 <a name="microservice-properties"></a>
-#### Microservice properties
+### Microservice properties
 
 To display further details on a microservice, click it to open its **Properties** tab.
 
@@ -119,11 +105,9 @@ To display further details on a microservice, click it to open its **Properties*
 In the **Properties** tab, each microservice will show the following information:
 
 <table>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
-<col width= 20%>
+<col width="250">
+<col width="450">
+<col width="300">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -169,7 +153,7 @@ You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 #### Status information
 
-The status of the microservice can be checked on the **Status** tab of the respective mircoservice application.
+The status of the microservice can be checked on the **Status** tab of the respective microservice application.
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
@@ -201,6 +185,12 @@ User-friendly alarms can be used to create smart rules. For details on creating 
 For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule.
 
 In the **On alarm matching** section, use `c8y_Application_Down` as an alarm type. As a target asset select the microservice which you would like to monitor, for example "echo-agent-server".
+
+### Microservice permissions
+
+In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
+
+<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 #### Log files
 

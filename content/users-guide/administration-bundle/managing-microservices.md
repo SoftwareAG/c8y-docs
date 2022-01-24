@@ -30,14 +30,91 @@ helpcontent:
 
 Click **Microservices** in the **Ecosystem** menu in the navigator to display a list or grid of all  microservices subscribed to your account.
 
+<img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
+A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application, see [Adding microservices as custom application](#adding-microservices).
+
+{{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
+
+Below you find a list of all microservices which are by default subscribed in a {{< standard-tenant >}} and/or {{< enterprise-tenant >}}. In addition, numerous optional microservices might be subscribed to your tenant.
+
+##### Default microservices
+
+<table>
+<col width="200">
+<col width="350">
+<col width="200">
+<thead>
+<tr>
+<th style="text-align:left">Application name (in the UI and API)</th>
+<th style="text-align:left">Functionality</th>
+<th style="text-align:left">Technical type</th>
+<th style="text-align:left">Availability</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules.</td>
+<th style="text-align:left">Microservice</th>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
+
+<tr>
+<td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">device-simulator</a></td>
+<td style="text-align:left">Simulate all aspects of IoT devices.</td>
+<th style="text-align:left">Microservice</th>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
+
+<tr>
+<td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">report agent</a></td>
+<td style="text-align:left">Allows to schedule data exports from within the Cockpit application.</td>
+<th style="text-align:left">Microservice</th>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
+
+<tr>
+<td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">smartrule</a></td>
+<td style="text-align:left">Use the Smart Rule engine and create <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a> to perform actions based on realtime data. Requires the following application: "apama-ctrl-smartrules"</td>
+<th style="text-align:left">Microservice</th>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
+
+<tr>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">sslmanagement</a></td>
+<td style="text-align:left">Activate your own custom domain name by using a SSL certificate.</td>
+<th style="text-align:left">Microservice</th>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+<a name="adding-microservices"></a>
+### Adding microservices as custom application
+
+#### To upload a microservice
+
+1. Click **Add microservice** at the top right.
+2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
+3. The microservice application is created once the ZIP file has been successfully uploaded.
+
+Important: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concepts) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 
 <a name="microservice-properties"></a>
-#### Application properties
+#### Microservice properties
 
-To display further details on the microservice, click it to open its **Properties** tab.
+To display further details on a microservice, click it to open its **Properties** tab.
 
-<img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
 
 In the **Properties** tab, each microservice will show the following information:
 
@@ -51,43 +128,40 @@ In the **Properties** tab, each microservice will show the following information
 <tr>
 <th style="text-align:left">Field</th>
 <th style="text-align:left">Description</th>
-<th style="text-align:left">Hosted (Web app)</th>
-<th style="text-align:left">External</th>
+<th style="text-align:left">Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID to identify the application</td>
-<td style="text-align:left">Automatically provided</td>
+<td style="text-align:left">Unique ID to identify the microservice</td>
 <td style="text-align:left">Automatically provided</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
-<td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Application name. Will be shown as title of the microservice application in the top bar.</td>
+<td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
-<td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Specified by the user</td>
+<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
+<td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
 <td style="text-align:left">Type</td>
 <td style="text-align:left">Application type</td>
-<td style="text-align:left">Hosted application</td>
-<td style="text-align:left">External</td>
+<td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
 <td style="text-align:left">Part of the URL invoking the application</td>
-<td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
+<td style="text-align:left">Automatically created as .../service/<microservice name></td>
 </tr>
 </tbody>
 </table>
+
+Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/guides/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
+
 
 ### Monitoring microservices
 
@@ -95,20 +169,21 @@ You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 #### Status information
 
-The status of the microservice can be checked on the **Status** tab of the respective application.
+The status of the microservice can be checked on the **Status** tab of the respective mircoservice application.
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+
+To view the status you need the following permissions: role Application management READ and role Inventory READ.
 
 The following information is provided on the **Status** tab:
 
 * Instances: Number of active, unhealthy and desired microservice instances for the current tenant
-* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
+* Subscriptions: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
 * Alarms: Alarms for given application, provided in realtime
 * Events: Events for given application, provided in realtime
+* Smart rules: Alarms for given application
 
 The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
-
-To view the status you need the following permissions: ROLE&#95;APPLICATION&#95;MANAGEMENT&#95;READ and ROLE&#95;INVENTORY&#95;READ
 
 ##### Alarms and events
 

@@ -45,6 +45,10 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">Firmware url</td>
 <td align="left">The URL from which the new version of the firmware will be downloaded.</td>
 </tr>
+<tr>
+<td align="left">SER</td>
+<td align="left">The supported data formats are TLV, TEXT, JSON and OPAQUE.</td>
+</tr>
 </tbody>
 </table>
 
@@ -99,9 +103,14 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Writes additional attributes to the object. Typically used for conditional observes.</td>
 </tr>
 <tr>
-<td align="left">fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_url&gt;/</td>
+<td align="left">fwupdate &lt;Firmware name&gt;;&lt;firmware version&gt;;&lt;firmware_url&gt;</td>
 <td align="left">Updates the firmware of the agent.</td>
 </tr>
+<tr>
+<td align="left">serialization &lt;SER&gt;</td>
+<td align="left">Sets the data format.</td>
+</tr>
+
 </tbody>
 </table>
 

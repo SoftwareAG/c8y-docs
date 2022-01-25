@@ -25,7 +25,7 @@ The {{< product-c8y-iot >}} platform distinguishes between applications and micr
 
 Both can be accessed via the **Ecosystem** menu in the navigator.
 
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant> Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 

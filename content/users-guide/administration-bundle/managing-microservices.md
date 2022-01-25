@@ -53,7 +53,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">apama-ctrl*</a></td>
 <td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules. Different sizes depending on your subscription.</td>
 <th style="text-align:left">Microservice</th>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
@@ -100,7 +100,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
-Important: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concepts) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concepts) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 
 <a name="microservice-properties"></a>
 ### Microservice properties
@@ -146,7 +146,7 @@ In the **Properties** tab, each microservice will show the following information
 <tr>
 <td style="text-align:left">Path</td>
 <td style="text-align:left">Part of the URL invoking the application</td>
-<td style="text-align:left">Automatically created as .../service/<microservice name></td>
+<td style="text-align:left">Automatically created as .../service/<microservice-name></td>
 </tr>
 </tbody>
 </table>

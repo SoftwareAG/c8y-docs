@@ -5,13 +5,13 @@ layout: redirect
 helpcontent:
   - label: microservices
     title: Microservices
-    content: "A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of Cumulocity IoT.
+    content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity IoT.
 
 
-    As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application.
+    As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications.
 
 
-    To add a microservice, click **Add microservice** and follow the instructions in the wizard, see also *Administration > Managing Microservices > Adding microservices as custom application* in the *User guide*.
+    To add a microservice, click **Add microservice** and follow the instructions in the wizard, see also *Administration > Managing Microservices > To add a microservice as custom application* in the *User guide*.
 
     Click on a microservice to view the application properties."
 ---
@@ -20,7 +20,7 @@ Click **Microservices** in the **Ecosystem** menu in the navigator to display a 
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
-A microservice is a specific type of application, i.e. a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom application, see [Custom microservices](#custom-microservices).
+A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
 ### Subscribed microservices
 
@@ -46,14 +46,14 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">apama-ctrl-starter </a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">apama-ctrl-starter </a></td>
 <td style="text-align:left">Restricted version of the full Apama microservice to run unlimited smart rules and a limited number of Analytics Builder models.</td>
 <th style="text-align:left">Microservice</th>
 <td style="text-align:left">{{< standard-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl*</a></td>
 <td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules. Different sizes depending on your subscription.</td>
 <th style="text-align:left">Microservice</th>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
@@ -185,11 +185,11 @@ There are two user-friendly alarm types:
 * `c8y_Application_Down` - critical alarm which is created when no microservice instance is available
 * `c8y_Application_Unhealthy` - minor alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating
 
-User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, i.e. all the microservice instances are working properly.
+User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, that is all the microservice instances are working properly.
 
 User-friendly alarms can be used to create smart rules. For details on creating smart rules of various types, see [Smart rules](/users-guide/cockpit/#smart-rules).
 
-For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule.
+For example, to send an email, if a microservice is down, create an "On alarm send email" smart rule.
 
 In the **On alarm matching** section, use `c8y_Application_Down` as an alarm type. As a target asset select the microservice which you would like to monitor, for example "echo-agent-server".
 

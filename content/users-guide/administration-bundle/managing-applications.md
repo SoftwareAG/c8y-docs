@@ -39,9 +39,9 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 - [subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default application) or a service provider.
-- [custom applications](own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+- [custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
 
-Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
+Your applications are available through the application switcher in the top bar.
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
@@ -55,7 +55,7 @@ Below all applications are listed which are by default available in the {{< stan
 
 >**Info:** In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 
-#### Applications susbcribed by default
+#### Applications subscribed by default
 
 <table>
 <col width="150">
@@ -77,7 +77,7 @@ Below all applications are listed which are by default available in the {{< stan
 <td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
 <td style="text-align:left">administration</td>
-<td style="text-align:left">Web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
@@ -85,7 +85,7 @@ Below all applications are listed which are by default available in the {{< stan
 <td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <td style="text-align:left">cockpit</td>
-<td style="text-align:left">Web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
@@ -93,14 +93,14 @@ Below all applications are listed which are by default available in the {{< stan
 <td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
 <td style="text-align:left">devicemanagement</td>
-<td style="text-align:left">Web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled).</td>
 <td style="text-align:left">Streaming Analytics</td>
-<td style="text-align:left">Web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
 </tr>
 
@@ -201,7 +201,7 @@ In the **Properties** tab, each application will show the following information,
 <tr>
 <th style="text-align:left">Field</th>
 <th style="text-align:left">Description</th>
-<th style="text-align:left">Hosted (Web app)</th>
+<th style="text-align:left">Hosted (web application)</th>
 <th style="text-align:left">External</th>
 </tr>
 </thead>
@@ -291,7 +291,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Features
 
-Applications of the type <b>feature</b> are built-in applications which are not represented by an explicit artefact (microservice or web application).
+Applications of the type **feature** are built-in applications which are not represented by an explicit artifact (microservice or web application).
 
 In the **Features** tab, you will find a list of all features subscribed in your tenant. In an {{< enterprise-tenant >}}, the following features are available by default:
 

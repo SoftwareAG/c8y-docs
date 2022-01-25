@@ -4,16 +4,16 @@ title: Codec API defintion
 layout: redirect
 ---
 
-Any Codec microservice that supports `/decode` and `/encode` APIs can be used as a Codec microservice with LPWAN agents. 
+Any codec microservice that supports <kbd>/decode</kbd> and <kbd>/encode</kbd> APIs can be used as a codec microservice with LPWAN agents.
 
-To make LPWAN Codec microservice work with LPWAN agents the Codec microservice should adhere to the following two points.
-1. Codec microservice must expose `/decode` and `/encode` API endpoints.
-2. Codec microservice must create device types and supported command operations for the supported device models because Cumulocity identifies the 
-Codec microservice using device types to continue the support of existing binary protocol functionality.
+To make an LPWAN codec microservice work with LPWAN agents the codec microservice should adhere to the following:
 
-#### Codec microservice should expose */decode* and */encode* APIs
+1. The codec microservice must expose the <kbd>/decode</kbd> and the <kbd>/encode</kbd> API endpoints.
+2. The codec microservice must create device types and supported command operations for the supported device models. {{< product-c8y-iot >}} identifies the codec microservice by device types to continue the support of existing binary protocol functionality.
 
-`/decode` API definition 
+### Exposing the /decode and /encode APIs
+
+`/decode` API definition:
 
 ```
 "/decode": {
@@ -132,7 +132,7 @@ Codec microservice using device types to continue the support of existing binary
         }
 
 ```
-`/encode` API defintion
+`/encode` API defintion:
 
 ```
 "/encode": {
@@ -217,14 +217,15 @@ Codec microservice using device types to continue the support of existing binary
 
 ```
 
-#### Codec microservice should be able to create device types and supported command operations for the supported device models.
+### Device types and supported command operations
 
-Each supported device model by Codec microservice identified as a device type in Cumulocity with the fragments type as `c8y_LpwanDeviceType` 
-and fieldbusType as `lpwan`. The Codec microservice must create these device types along with device commands.
+Each device model supported by the codec microservice is identified as a device type in {{< product-c8y-iot >}} via the fragment type `c8y_LpwanDeviceType`
+and the fieldbusType `lpwan`.
+The codec microservice must create these device types along with the device commands.
 
-Following is the sample json for creating device type in Cumulocity for the supported device model.
-`c8y_LpwanCodecDetails` contains the details of `codecServiceContextPath`- Codec microservice context path and 
-`supportedDevice`- supported device information like `deviceModel`, `deviceManufacturer` and list of `supportedDeviceCommands`.
+See a sample JSON for creating device types in {{< product-c8y-iot >}} for the supported device model below.
+`c8y_LpwanCodecDetails` contains the details of `codecServiceContextPath`,
+The codec microservice context path, and `supportedDevice`, supported device information like `deviceModel`, `deviceManufacturer` and list of `supportedDeviceCommands`.
 
 
 ```json
@@ -278,11 +279,11 @@ Following is the sample json for creating device type in Cumulocity for the supp
 }
 
 ```
-The Codec microservice must also create supported device command templates for each supported command mentioned above in the `supportedDeviceCommands` 
-by mapping the `deviceType` fragment with the device type name.
-These device commands will be shown in predefined templates option from the device shell tab.
+The codec microservice must also create supported device command templates for each supported command mentioned above in the `supportedDeviceCommands`
+by mapping the `deviceType` fragment to the device type name.
+These device commands will be shown in the predefined templates option in the device shell tab.
 
-Following the support json input for creating predefined command templates using inventory API. 
+See the support JSON input below for creating predefined command templates using the inventory API.
 
 ```json
  {
@@ -298,4 +299,3 @@ Following the support json input for creating predefined command templates using
 	]
 }
 ```
-

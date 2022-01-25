@@ -32,7 +32,7 @@ Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Defau
 <a name="applications"></a>
 ### Applications
 
-Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all  applications in your account.
+Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 

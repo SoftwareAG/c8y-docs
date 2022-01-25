@@ -30,7 +30,7 @@ See also the related entry in the [Tech Community](https://tech.forums.softwarea
 
 #### Implemented
 
-##### Leaflet library will be updated to the latest version
+##### Leaflet library has been updated to the latest version
 
 To improve the navigation in the "Map" widget on mobile devices, it is necessary to update the Leaflet library. As announced with release 10.11, the Leaflet library has been updated to the latest version 1.7.1.
 
@@ -42,7 +42,7 @@ As announced with release 10.11, Angular has been updated from version 11 to ver
 
 This change will only affect you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications.
 
-For instructions on the upgrade process refer to [Upgrade > Updating the Web SDK](https://cumulocity.com/guides{{< 10-11-0 >}}/web/upgrade/#update-to-an-newer-version) in the *Web SDK guide*.
+For instructions on the upgrade process refer to [Upgrade > Updating the Web SDK](https://cumulocity.com/guides{{< 10-13-0 >}}/web/upgrade/#update-to-an-newer-version) in the *Web SDK guide*.
 
 Additionally, you can use the following resources for more details on the changes in Ivy and Angular 12:
 

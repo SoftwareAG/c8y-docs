@@ -20,7 +20,7 @@ helpcontent:
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices.
 
-* [Applications](#applications) -  all applications either subscribed to the tenant or owned by the tenant.
+* [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
 * [Microservices](#managing-microservices) - server-side applications used to develop further functionality on top of {{< product-c8y-iot >}}, for details see [Managing microservices](#managing-microservices)
 
 Both can be accessed via the **Ecosystem** menu in the navigator.
@@ -51,23 +51,25 @@ Your applications are available through the application switcher in the top bar 
 
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
-Below you find all applications which are by default available in a {{< standard-tenant >}} and in an {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
+Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
 
 >**Info:** In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 
 #### Applications susbcribed by default
 
 <table>
+<col width="150">
+<col width="250">
 <col width="200">
-<col width="400">
-<col width="200">
-<col width="200">
+<col width="150">
+<col width="220">
 <thead>
 <tr>
 <th style="text-align:left">Application (name visible in the UI)</th>
 <th style="text-align:left">Functionality</th>
 <th style="text-align:left">Name (identification in the API)</th>
 <th style="text-align:left">Technical type</th>
+<th style="text-align:left">Availability</th>
 </tr>
 </thead>
 <tbody>
@@ -76,6 +78,7 @@ Below you find all applications which are by default available in a {{< standard
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web app</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -83,6 +86,7 @@ Below you find all applications which are by default available in a {{< standard
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web app</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -90,6 +94,17 @@ Below you find all applications which are by default available in a {{< standard
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web app</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+
+<tr>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled).</td>
+<td style="text-align:left">Streaming Analytics</td>
+<td style="text-align:left">Web app</td>
+<td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
+</tr>
+
+</tr>
 
 </tbody>
 </table>

@@ -84,7 +84,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires the following microservice: "apama-ctrl-*"</td>
+<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires the following microservice: "apama-ctrl-*".</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>

@@ -232,7 +232,7 @@ contains one or more intermediate certificates.
 
 #### Packaging the SSL certificate in PKCS #12
 
-In order to use a SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
+In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
 the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two

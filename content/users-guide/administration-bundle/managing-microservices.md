@@ -37,9 +37,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 <col width="200">
 <thead>
 <tr>
-<th style="text-align:left">Application (name used in the UI)</th>
+<th style="text-align:left">Name in the UI</th>
 <th style="text-align:left">Functionality</th>
-<th style="text-align:left">Name (used in the API)</th>
+<th style="text-align:left">Identification in the API</th>
 <th style="text-align:left">Availability</th>
 </tr>
 </thead>
@@ -48,7 +48,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
 <td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules. Different sizes depending on your subscription.</td>
-<th style="text-align:left">apama-ctrl-*</th>
+<td style="text-align:left">apama-ctrl-*</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
@@ -56,43 +56,43 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
 <td style="text-align:left">Restricted version of the full Apama microservice to run unlimited smart rules and a limited number of Analytics Builder models.</td>
-<th style="text-align:left">apama-ctrl-starter</th>
+<td style="text-align:left">apama-ctrl-starter</td>
 <td style="text-align:left">{{< standard-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrules</a></td>
 <td style="text-align:left">Runtime for smart rules only, no Analytics Builder or EPL Apps available.</td>
-<th style="text-align:left">apama-ctrl-smartrules</th>
-<td style="text-align:left">only available for self-hosted installations</td>
+<td style="text-align:left">apama-ctrl-smartrules</td>
+<td style="text-align:left">Only available for self-hosted installations</td>
 </tr>
 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device-simulator</a></td>
 <td style="text-align:left">Simulates all aspects of IoT devices.</td>
-<th style="text-align:left">device-simulator</th>
+<td style="text-align:left">device-simulator</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Allows to schedule data exports from within the Cockpit application.</td>
-<th style="text-align:left">report agent</th>
+<td style="text-align:left">report agent</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Allows to use the smart rules engine and create <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">smart rules</a> to perform actions based on realtime data. Requires the following microservice: "apama-ctrl-*"</td>
-<th style="text-align:left">smartrule</th>
+<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires the following microservice: "apama-ctrl-*"</td>
+<td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
 <td style="text-align:left">Allows to activate your own custom domain name by using a SSL certificate.</td>
-<th style="text-align:left">sslmanagement</th>
+<td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 

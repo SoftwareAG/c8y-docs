@@ -65,9 +65,9 @@ Below all applications are listed which are by default available in the {{< stan
 <col width="220">
 <thead>
 <tr>
-<th style="text-align:left">Application (name visible in the UI)</th>
+<th style="text-align:left">Name in the UI</th>
 <th style="text-align:left">Functionality</th>
-<th style="text-align:left">Name (identification in the API)</th>
+<th style="text-align:left">Identification in the API</th>
 <th style="text-align:left">Technical type</th>
 <th style="text-align:left">Availability</th>
 </tr>
@@ -301,9 +301,9 @@ In the **Features** tab, you will find a list of all features subscribed in your
 <col width="200">
 <thead>
 <tr>
-<th style="text-align:left">Feature (name visible in the UI)</th>
+<th style="text-align:left">Name in the UI</th>
 <th style="text-align:left">Functionality</th>
-<th style="text-align:left">Name (identification used in the API)</th>
+<th style="text-align:left">Identification in the API</th>
 <th style="text-align:left">Availability</th>
 </tr>
 </thead>
@@ -313,21 +313,21 @@ In the **Features** tab, you will find a list of all features subscribed in your
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Feature-branding</a></td>
 <td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
 <td style="text-align:left">feature-branding</td>
-<th style="text-align:left">{{< enterprise-tenant >}}</th>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Feature-broker</a></td>
 <td style="text-align:left">Lets you share data selectively with other tenants.</td>
 <td style="text-align:left">feature-broker</td>
-<th style="text-align:left">{{< enterprise-tenant >}}</th>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Feature-user-hierarchy</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
-<th style="text-align:left">{{< enterprise-tenant >}}</th>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 </tbody>
 </table>

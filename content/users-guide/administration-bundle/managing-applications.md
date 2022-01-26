@@ -291,7 +291,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Features
 
-Applications of the type **feature** are built-in applications which are not represented by an explicit artifact (microservice or web application).
+Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications).
 
 In the **Features** tab, you will find a list of all features subscribed in your tenant. In an {{< enterprise-tenant >}}, the following features are available by default:
 

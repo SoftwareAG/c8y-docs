@@ -136,7 +136,7 @@ In the **Properties** tab, each microservice will show the following information
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID to identify the microservice</td>
+<td style="text-align:left">Unique ID to identify the microservice.</td>
 <td style="text-align:left">Automatically provided</td>
 </tr>
 <tr>
@@ -151,12 +151,12 @@ In the **Properties** tab, each microservice will show the following information
 </tr>
 <tr>
 <td style="text-align:left">Type</td>
-<td style="text-align:left">Application type</td>
+<td style="text-align:left">Application type.</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
-<td style="text-align:left">Part of the URL invoking the application</td>
+<td style="text-align:left">Part of the URL invoking the application.</td>
 <td style="text-align:left">Automatically created as .../service/<microservice-name></td>
 </tr>
 </tbody>
@@ -179,11 +179,11 @@ To view the status you need the following permissions: role Application manageme
 
 The following information is provided on the **Status** tab:
 
-* Instances: Number of active, unhealthy and desired microservice instances for the current tenant
-* Subscriptions: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
-* Alarms: Alarms for given application, provided in realtime
-* Events: Events for given application, provided in realtime
-* Smart rules: Alarms for given application
+* Instances: Number of active, unhealthy and desired microservice instances for the current tenant.
+* Subscriptions: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
+* Alarms: Alarms for given application, provided in realtime.
+* Events: Events for given application, provided in realtime.
+* Smart rules: Alarms for given application.
 
 The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
 
@@ -193,8 +193,8 @@ Most of the alarms and events visible in the **Status** tab are strictly technic
 
 There are two user-friendly alarm types:
 
-* `c8y_Application_Down` - critical alarm which is created when no microservice instance is available
-* `c8y_Application_Unhealthy` - minor alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating
+* `c8y_Application_Down` - critical alarm which is created when no microservice instance is available.
+* `c8y_Application_Unhealthy` - minor alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating.
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, that is all the microservice instances are working properly.
 

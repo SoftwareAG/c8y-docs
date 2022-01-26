@@ -46,12 +46,11 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-1c4g</a></td>
 <td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules. The asterisk notation in the name stands for different sizes depending on your subscription.</td>
-<td style="text-align:left">apama-ctrl-*</td>
+<td style="text-align:left">apama-ctrl-1c4g</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
-
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
@@ -84,7 +83,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires the following microservice: "apama-ctrl-*".</td>
+<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires on of the following microservices: apama-ctrl-1c4g, apama-ctrl-starter, or apama-ctrl-smartrules.</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>

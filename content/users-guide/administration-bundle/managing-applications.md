@@ -332,4 +332,6 @@ In the **Features** tab, you will find a list of all features subscribed in your
 </tbody>
 </table>
 
+>**Info:** All applications listed here are of the type "Feature".
+
 Other features may show up, depending on the individual subscriptions of your tenant.

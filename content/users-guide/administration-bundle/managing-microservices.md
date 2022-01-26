@@ -91,7 +91,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
-<td style="text-align:left">Allows to activate your own custom domain name by using a SSL certificate.</td>
+<td style="text-align:left">Allows to activate your own custom domain name by using an SSL certificate.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>

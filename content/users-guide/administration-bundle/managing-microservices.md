@@ -47,21 +47,21 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-1c-4g</a></td>
-<td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules. </td>
+<td style="text-align:left">Runtime for Analytics Builder, EPL Apps, and smart rules </td>
 <td style="text-align:left">apama-ctrl-1c4g</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
-<td style="text-align:left">Restricted version of the full Apama microservice to run unlimited smart rules and a limited number of Analytics Builder models.</td>
+<td style="text-align:left">Restricted version of the full Apama microservice to run unlimited smart rules and a limited number of Analytics Builder models</td>
 <td style="text-align:left">apama-ctrl-starter</td>
 <td style="text-align:left">{{< standard-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrules</a></td>
-<td style="text-align:left">Runtime for smart rules only, no Analytics Builder or EPL Apps available.</td>
+<td style="text-align:left">Runtime for smart rules only, no Analytics Builder or EPL Apps available</td>
 <td style="text-align:left">apama-ctrl-smartrules</td>
 <td style="text-align:left">Only available for self-hosted installations</td>
 </tr>
@@ -69,28 +69,28 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device-simulator</a></td>
-<td style="text-align:left">Simulates all aspects of IoT devices.</td>
+<td style="text-align:left">Simulates all aspects of IoT devices</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
-<td style="text-align:left">Allows to schedule data exports from within the Cockpit application.</td>
+<td style="text-align:left">Allows to schedule data exports from within the Cockpit application</td>
 <td style="text-align:left">report agent</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires on of the following microservices: apama-ctrl-1c4g, apama-ctrl-starter, or apama-ctrl-smartrules.</td>
+<td style="text-align:left">Allows to use the smart rules engine and create smart rules to perform actions based on realtime data. Requires on of the following microservices: apama-ctrl-1c4g, apama-ctrl-starter, or apama-ctrl-smartrules</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
-<td style="text-align:left">Allows to activate your own custom domain name by using an SSL certificate.</td>
+<td style="text-align:left">Allows to activate your own custom domain name by using an SSL certificate</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
@@ -135,27 +135,27 @@ In the **Properties** tab, each microservice will show the following information
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID to identify the microservice.</td>
+<td style="text-align:left">Unique ID to identify the microservice</td>
 <td style="text-align:left">Automatically provided</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Application name. Will be shown as title of the microservice application in the top bar.</td>
+<td style="text-align:left">Application name; will be shown as title of the microservice application in the top bar</td>
 <td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
+<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
 <td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
 <td style="text-align:left">Type</td>
-<td style="text-align:left">Application type.</td>
+<td style="text-align:left">Application type</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
-<td style="text-align:left">Part of the URL invoking the application.</td>
+<td style="text-align:left">Part of the URL invoking the application</td>
 <td style="text-align:left">Automatically created as .../service/<microservice-name></td>
 </tr>
 </tbody>
@@ -178,11 +178,11 @@ To view the status you need the following permissions: role Application manageme
 
 The following information is provided on the **Status** tab:
 
-* Instances: Number of active, unhealthy and desired microservice instances for the current tenant.
-* Subscriptions: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
-* Alarms: Alarms for given application, provided in realtime.
-* Events: Events for given application, provided in realtime.
-* Smart rules: Alarms for given application.
+* Instances - number of active, unhealthy and desired microservice instances for the current tenant.
+* Subscriptions - number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
+* Alarms - alarms for given application, provided in realtime.
+* Events - events for given application, provided in realtime.
+* Smart rules - alarms for given application.
 
 The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
 

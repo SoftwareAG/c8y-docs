@@ -38,8 +38,8 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 
 In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
-- [subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default application) or a service provider.
-- [custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+- [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default application) or a service provider.
+- [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
 
 Your applications are available through the application switcher in the top bar.
 
@@ -75,7 +75,7 @@ Below all applications are listed which are by default available in the {{< stan
 <tbody>
 <tr>
 <td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
-<td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
+<td style="text-align:left">Lets account administrators manage users, roles, tenants and applications</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
@@ -83,7 +83,7 @@ Below all applications are listed which are by default available in the {{< stan
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
-<td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
+<td style="text-align:left">Manage and monitor IoT assets and data from a business perspective</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
@@ -91,14 +91,14 @@ Below all applications are listed which are by default available in the {{< stan
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
-<td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
+<td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
-<td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled).</td>
+<td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
@@ -214,13 +214,13 @@ In the **Properties** tab, each application will show the following information,
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
+<td style="text-align:left">Application name; will be shown as title of the application in the top bar and in the application switcher</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a>.</td>
+<td style="text-align:left">Used to identify the application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
@@ -234,7 +234,7 @@ In the **Properties** tab, each application will show the following information,
 <td style="text-align:left">Path</td>
 <td style="text-align:left">Part of the URL invoking the application</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
+<td style="text-align:left">Specified by the user; for example, if you use "hello" as application path, the URL of the application will be "/apps/hello"</td>
 </tr>
 </tbody>
 </table>
@@ -311,21 +311,21 @@ In the **Features** tab, you will find a list of all features subscribed in your
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Feature-branding</a></td>
-<td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
+<td style="text-align:left">Customize the look of your tenants to your own preferences</td>
 <td style="text-align:left">feature-branding</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Feature-broker</a></td>
-<td style="text-align:left">Lets you share data selectively with other tenants.</td>
+<td style="text-align:left">Lets you share data selectively with other tenants</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Feature-user-hierarchy</a></td>
-<td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database.</td>
+<td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>

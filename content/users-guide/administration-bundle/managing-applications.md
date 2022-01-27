@@ -25,7 +25,7 @@ The {{< product-c8y-iot >}} platform distinguishes between applications and micr
 
 Both can be accessed via the **Ecosystem** menu in the navigator.
 
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, i.e. you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
@@ -269,7 +269,7 @@ For custom applications, multiple file versions can be stored in {{< product-c8y
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
-Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 > **Info:** The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
 

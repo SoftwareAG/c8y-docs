@@ -163,6 +163,19 @@ In the **Properties** tab, each microservice will show the following information
 
 Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/guides/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
 
+#### Microservice subscription
+
+At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
+
+<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
+
+Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
+
+### Microservice permissions
+
+In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
+
+<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Monitoring microservices
 
@@ -170,7 +183,7 @@ You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 #### Status information
 
-The status of the microservice can be checked on the **Status** tab of the respective microservice application.
+The status of the microservice can be checked in the **Status** tab of the respective microservice application.
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
@@ -203,19 +216,13 @@ For example, to send an email, if a microservice is down, create an "On alarm se
 
 In the **On alarm matching** section, use `c8y_Application_Down` as an alarm type. As a target asset select the microservice which you would like to monitor, for example "echo-agent-server".
 
-### Microservice permissions
-
-In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
-
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
-
 #### Log files
 
 {{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
 
-<img src="/images/users-guide/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
@@ -230,8 +237,6 @@ At the top right, additional functionality is provided:
 * **Download** - To download the log data for a specified time range.
 * **Dark theme** - To turn dark theme on or off.
 * **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
-* **Unsubscribe** - To unsubscribe the microservice.
-* **Delete** - To delete the microservice.
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance.
 

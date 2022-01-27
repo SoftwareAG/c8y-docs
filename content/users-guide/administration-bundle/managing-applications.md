@@ -21,7 +21,7 @@ helpcontent:
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices.
 
 * [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
-* [Microservices](#managing-microservices) - server-side applications used to develop further functionality on top of {{< product-c8y-iot >}}, for details see [Managing microservices](#managing-microservices)
+* [Microservices](#managing-microservices) - server-side applications used to develop further functionality on top of {{< product-c8y-iot >}}, for details see [Managing microservices](#managing-microservices).
 
 Both can be accessed via the **Ecosystem** menu in the navigator.
 

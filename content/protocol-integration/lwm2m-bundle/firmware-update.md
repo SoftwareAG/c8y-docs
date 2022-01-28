@@ -9,7 +9,7 @@ To upload a firmware, go to **Device Management** &gt; **Management** &gt; **Fir
 
 ![Add new firmware](/images/device-protocols/lwm2m/lwm2m-add-new-firmware.png)
 
-Select the firmware binary to upload, either from your local computer or from a URL. The device type filter must be left empty or filled with a value of "c8y_lwm2m".
+Select the firmware binary to upload, either from your local computer or from a URL. The device type filter must be left empty or filled with a value of `c8y_lwm2m`.
 
 Assuming that you have already registered and connected your device, go to the device page to trigger a firmware update like this:
 

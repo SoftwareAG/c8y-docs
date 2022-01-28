@@ -98,7 +98,7 @@ Next, we have to create a configuration file which adds a menu item to the widge
 
 #### Get the images for the devices
 
-To start with, we need to define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the "c8yBinary" service. Then we have to filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their "c8y_Position" fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
+To start with, we need to define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the "c8yBinary" service. Then we have to filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their `c8y_Position` fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
 
 ```js
 (function () {

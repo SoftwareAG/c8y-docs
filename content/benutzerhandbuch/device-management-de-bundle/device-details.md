@@ -365,7 +365,7 @@ Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts 
 
 ![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
 
-Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut "c8y_Position" enthält. Wenn Sie ein neues c8y-Position-Ereignis senden, können Sie das gleiche c8y-Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
+Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
 
 <a name="service-monitoring"></a>
 ### Serviceüberwachung
@@ -408,7 +408,7 @@ Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten
 
 In {{< product-c8y-iot >}} können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
-**Info**: Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut "c8y_Position" enthält.
+>**Info:** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 

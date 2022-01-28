@@ -27,8 +27,6 @@ For details on how to deploy an application to {{< product-c8y-iot >}}, refer to
 
 ### Web application hosting
 
-You can host your own HTML5 and JavaScript web applications through {{< product-c8y-iot >}} by using the application manager under **Own applications** in the {{< product-c8y-iot >}} Administration application.
-
-![List of own applications](/images/users-guide/Administration/admin-applications-own.png)
+You can host your own HTML5 and JavaScript web applications through {{< product-c8y-iot >}} by using the application manager under **Ecosystem** > **Applications** > **All applications** in the {{< product-c8y-iot >}} Administration application.
 
 For details refer to  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.

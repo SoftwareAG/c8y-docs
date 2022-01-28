@@ -39,7 +39,7 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 
 In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
-- [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default application) or a service provider.
+- [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
 - [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
 
 Your applications are available through the application switcher in the top bar.
@@ -116,7 +116,7 @@ Below all applications are listed which are by default available in the {{< stan
 
 Custom applications may be
 
-* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard)
 * links to an application running elsewhere
 * duplicates of subscribed applications (in order to be able to customize them)
 
@@ -191,7 +191,7 @@ To display further details on an application, click it to open its **Properties*
 
 <img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
-In the **Properties** tab, each application will show the following information, depending on the appliction type (hosted or external):
+In the **Properties** tab, each application will show the following information, depending on the application type (hosted or external):
 
 <table>
 <col width="150">
@@ -248,7 +248,7 @@ Simply click the application or click the menu icon at the right of an entry and
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
->**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+>**Important:** Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 
 ### To delete an application
 
@@ -319,7 +319,7 @@ In the **Features** tab, you will find a list of all features subscribed in your
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Feature-broker</a></td>
-<td style="text-align:left">Lets you share data selectively with other tenants</td>
+<td style="text-align:left">Share data selectively with other tenants</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>

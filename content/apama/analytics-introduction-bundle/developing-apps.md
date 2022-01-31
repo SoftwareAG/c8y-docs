@@ -16,7 +16,7 @@ See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#u
 
 The EPL Apps page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
-Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 > **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
 
@@ -72,7 +72,7 @@ Click **X** in the top menu bar to leave the EPL editor and thus to return to th
 
 **Step 3 - Test the EPL app**
 
-Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
+Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Administration > Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide*.
 
 See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 

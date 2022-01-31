@@ -23,21 +23,12 @@ Contact us if you have any questions on the removal of this deprecated query par
 
 With the 10.5.0 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
-With the 10.12 release, the O-Auth Internal authentication will be enabled by default for all tenants. With the 10.13 release the Basic Authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic Authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.13 release, the O-Auth Internal authentication will be enabled by default for all tenants. The Basic authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
 If not done already, we recommend you not to wait for the 10.13 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*.
 
-In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal Authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5.0 or higher as well as the Microservice SDK 10.5.0 or higher.
+In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5.0 or higher as well as the Microservice SDK 10.5.0 or higher.
 
-##### Re-introducing weak ciphers for MQTT (over TLS) connections
-
-Cumulocity IoT is re-introducing the support for AES-CBC ciphers for MQTT(over TLS) connections.
-
-What does this mean and how does it impact you?
-
-The Cumulocity IoT platform continually improves its security posture by regularly updating support for the latest standards and protocols. With the 10.10 release, we removed support for weak ciphers for MQTT (over TLS) connections. Unfortunately some customers' devices could not upgrade to the stronger ciphers and were therefore unable to connect to the platform. We have therefore reinstated the weaker ciphers in the 10.10 and subsequent releases.
-
-To enable customers with self-hosted or dedicated environments to determine which strength of cipher to support for MQTT over TLS new configurable values have been introduced. This configuration is only available to the Management tenant; further information on how to set this configuration can be found in the *Cumulocity IoT platform - Operations guide*.
 
 ### SDK changes
 

@@ -16,10 +16,10 @@ The default applications consist of three application which are shipped with our
 
 The hybrid mode, however, comes with some limitations we will cover later in this recipe. Due to these limitations, we decided to provide a **pure** Angular empty starter application which comes without the possibility to integrate angularjs plugins. That pure version of the app comes in two flavors:
 
- - [Angular CLI](/web/development-tools/#angular-cli): When using the Angular CLI you benefit from the whole Angular ecosystem so that you can re-use many of the tools of the Angular CLI (e.g. testing).
+ - [Angular CLI](/web/development-tools/#angular-cli): When using the Angular CLI you benefit from the whole Angular ecosystem so that you can re-use many of the tools of the Angular CLI (for example, testing).
  - [@c8y/cli](/web/development-tools/#c8y-cli): Is our pre-caved way that integrates well with our tooling but most likely will not allow special cases.
 
- So in total, there are three possibilities to start with the Web SDK: Extending an existing hybrid app, building a pure Angular app with Angular CLI or building it with @c8y/cli. Which one to choose heavily depends on the application you want to build. E.g. if you want an application that just follows the look&feel of the platform but want to use special dependencies for certain scenarios (e.g. Material-Framework), you are best with the pure Angular CLI solution.
+ So in total, there are three possibilities to start with the Web SDK: Extending an existing hybrid app, building a pure Angular app with Angular CLI or building it with @c8y/cli. Which one to choose heavily depends on the application you want to build. For example, if you want an application that just follows the look&feel of the platform but want to use special dependencies for certain scenarios (for example, Material-Framework), you are best with the pure Angular CLI solution.
 
 Most likely  you just want to extend a hybrid app, which we will cover in this recipe. But first, we must show the limitations of that approach to understanding better, why concepts are designed the way they are.
 
@@ -45,7 +45,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
 >
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `10.9.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag

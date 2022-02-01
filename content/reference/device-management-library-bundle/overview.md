@@ -74,7 +74,7 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#connectivity">c8y_Mobile</a></td>
-<td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (e.g. ICCID)</td>
+<td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (for example, ICCID)</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#network">c8y_Network</a></td>

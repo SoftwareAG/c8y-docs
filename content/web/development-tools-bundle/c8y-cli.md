@@ -45,7 +45,7 @@ The `c8ycli new [name] [template]` helps to start an empty application or to ext
 $ c8ycli new cockpit cockpit
 ```
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example,:
 >
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
@@ -81,9 +81,9 @@ In the second step, the base scaffolding version must be selected. The interface
 ? Enter the desired version:
 ```
 
-In this step, the desired version must be entered manually e.g. `1010.0.0`.
+In this step, the desired version must be entered manually, for example, `1010.0.0`.
 
-> **Info:** This question will appear only if `other` was selected in the previous step. 
+> **Info:** This question will appear only if `other` was selected in the previous step.
 
 **Step 3:**
 

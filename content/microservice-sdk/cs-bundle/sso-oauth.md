@@ -62,7 +62,7 @@ Refer to [Authorize with a specific scheme in ASP.NET Core](https://docs.microso
 
 ### Testing the microservice with OAuth tokens
 
-Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (e.g. by watching network requests in the browser). Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expires. The cURL equivalent to test the [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) is as follows:
+Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (for example, by watching network requests in the browser). Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expires. The cURL equivalent to test the [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) is as follows:
 
 ```
 curl 'http://<URL>/api/values' \

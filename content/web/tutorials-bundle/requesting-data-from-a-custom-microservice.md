@@ -6,7 +6,7 @@ weight: 50
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (e.g. the `HttpModule` from Angular) you might want to have authentication out of the box.
+In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (for example, the `HttpModule` from Angular) you might want to have authentication out of the box.
 
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically. But first, it will take a deeper look at the basics to explain how the client works in Angular applications.
 
@@ -84,7 +84,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
 >
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `1009.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag

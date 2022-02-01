@@ -45,7 +45,7 @@ We recommend you to use MQTT for the following reasons:
 
 [MQTT](https://mqtt.org/) is a lightweight and flexible messaging protocol widely used by IoT applications. Nearly all IoT cloud platforms provide an MQTT endpoint to consume and publish messages from a fleet of devices. Therefore, MQTT was an obvious choice for edge to cloud communication.
 
-Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT. Since thin-edge.io has an internal bus, you can implement a bridge to another protocol (e.g. LWM2M or plain HTTPS). In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
+Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT. Since thin-edge.io has an internal bus, you can implement a bridge to another protocol (for example, LWM2M or plain HTTPS). In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
 
 ### Why is the thin-edge.io canonical format based on JSON?
 

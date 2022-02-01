@@ -143,7 +143,7 @@ If you like to, you can repeat sending measurements. Before sending the request 
 
 Now you are done. Enter the Device Management application in the {{< product-c8y-iot >}} UI, select your device on the "All devices" page and switch to the "Measurements" tab. Here you can see your measurement data.
 
-If you do not see data, you might need to change the filter setting to e.g. "last week" to include the timestamp you used in your submitted measurement.
+If you do not see data, you might need to change the filter setting to, for example, "last week" to include the timestamp you used in your submitted measurement.
 
 
 #### Go further

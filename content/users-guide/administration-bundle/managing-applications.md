@@ -9,7 +9,7 @@ helpcontent:
 
 
     * duplicates of subscribed applications (in order to be able to customize them)
-    * web-based applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+    * web-based applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard)
     * server-side business logic deployed through microservices
 
 
@@ -300,7 +300,7 @@ In the {{< enterprise-tenant >}} you will find the following additional applicat
 Own applications may be
 
 * duplicates of subscribed applications (in order to be able to customize them)
-* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
+* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard)
 * server-side business logic deployed through microservices
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
@@ -401,7 +401,7 @@ Simply click the application or click the menu icon at the right of an entry and
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
->**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+>**Important:** Never change the system application names (for example, "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 
 
 #### To remove an own application

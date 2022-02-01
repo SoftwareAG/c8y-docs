@@ -305,7 +305,7 @@ The following default inventory roles are initially available in new tenants:
 |Role|Description|
 |:---|:---|
 |Manager| Can read all data of the asset and manage all inventory data but cannot perform operations. In addition, can manage inventory data (including dashboards) and alarms.
-|Operations: All|Can remotely manage the assets by sending operations to a device (e.g. software updates, remote configurations).
+|Operations: All|Can remotely manage the assets by sending operations to a device (for example, software updates, remote configurations).
 |Operations: Restart Device|Can restart devices.
 |Reader|Can read all data of the asset.
 

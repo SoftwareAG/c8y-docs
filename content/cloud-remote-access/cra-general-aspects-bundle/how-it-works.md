@@ -4,7 +4,7 @@ weight: 20
 layout: bundle
 ---
 
-Cloud Remote Access is a technique to tunnel protocol traffic (e.g. VNC, Telnet, SSH) to the cloud without opening any ports at the gateway. Thus Cloud Remote Access is a secure way to directly access low level protocols on devices through the {{< product-c8y-iot >}} platform UI in a web browser.
+Cloud Remote Access is a technique to tunnel protocol traffic (for example, VNC, Telnet, SSH) to the cloud without opening any ports at the gateway. Thus Cloud Remote Access is a secure way to directly access low level protocols on devices through the {{< product-c8y-iot >}} platform UI in a web browser.
 
 
 ![VNC](/images/cra/cra-VNC1a.png)

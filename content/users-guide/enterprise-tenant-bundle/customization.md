@@ -225,7 +225,7 @@ The following criteria have to be met by any SSL certificate to be used with the
   certificate is mandatory, as it will also be used for subdomains created from your {{< enterprise-tenant >}}.
 * Every single certificate in the chain is provided using the X509 format.
 * The common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your
-  wildcard domain name, e.g. "CN=\*.iot.mycompany.com".
+  wildcard domain name, for example, "CN=\*.iot.mycompany.com".
 
 {{< product-c8y-iot >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.

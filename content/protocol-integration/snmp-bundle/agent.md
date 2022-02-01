@@ -57,7 +57,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
    				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
 
-   * Change the properties according to the {{< product-c8y-iot >}} environment (e.g. gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
+   * Change the properties according to the {{< product-c8y-iot >}} environment (for example, gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
 
 6. Start the service:
 

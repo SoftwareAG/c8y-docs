@@ -34,7 +34,7 @@ A simulator uses a playlist to simulate messages that the device sends to the {{
 
 An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (e.g. 23.0 degrees). Many predefined message templates are provided, e.g. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates).
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (for example, 23.0 degrees). Many predefined message templates are provided, for example, for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates).
 
 ### To view simulators
 

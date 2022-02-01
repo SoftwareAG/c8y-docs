@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
 
 Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant_ID>>`, `<<username>>` and `<<password>>` with your data.
 
-The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.{{< domain-c8y >}}:1883`` or ``ssl://mqtt.{{< domain-c8y >}}:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections (for example, ``tcp://mqtt.{{< domain-c8y >}}:1883`` or ``ssl://mqtt.{{< domain-c8y >}}:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
 
 What does the code in `main` do?

@@ -366,7 +366,7 @@ $ curl -X POST -s \
   "<URL>/application/applications"
 ```
 
-In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
+In case of errors, for example, invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {
@@ -444,7 +444,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
   -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
 ```
 
-`-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
+`-p 8082:80` will expose your port 80 to a port on your host system, for example, 8082.
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
@@ -471,7 +471,7 @@ In the Administration application, navigate to **Applications** > **Own applicat
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 
-You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>.
+You may also use the name parameter, for example, <http://localhost:8082/hello?name=Neo>.
 
 ### Improving the microservice
 

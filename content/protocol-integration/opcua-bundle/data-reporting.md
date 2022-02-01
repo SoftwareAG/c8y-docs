@@ -9,7 +9,7 @@ There are three data reporting mechanisms which can be applied to read all mappe
 - **None** - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
 - **Cyclic Read** - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
 - **Subscription** - The gateway retrieves values by using OPC UA's own subscription mechanism.
-  
+
 ![OPC UA device protocol](/images/device-protocols/opcua/opcua-data-reporting-subscription.png)
 
 Possible parameters:
@@ -26,7 +26,7 @@ Possible parameters:
 	* **Absolute** - Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
 	* **Percent** - The value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
 
-> **Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
+> **Important:** Very low interval rates (for example, 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
 
 ### Applying constraints
 

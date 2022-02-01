@@ -13,7 +13,7 @@ If you select **Connectivity** for the first time, you are asked to provide the 
 
 Enter the following information:
 
-- **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (e.g. Community or Enterprise edition). This is an optional field, and defaults to the value configured in the agent properties if nothing is entered.
+- **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (for example, Community or Enterprise edition). This is an optional field, and defaults to the value configured in the agent properties if nothing is entered.
 - **Profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
 - **Username**: Your ThingPark username.
 - **Password**: Your ThingPark password.

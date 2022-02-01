@@ -39,7 +39,7 @@ Your *pom.xml* file should contain a snippet similar to:
 </properties>
 ```
 
-> **Info**: This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, e.g. JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+> **Info**: This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
 
 Finally, add the following dependency:
 
@@ -111,7 +111,7 @@ An alarm must be associated with a source and it requires an ID.
 Hence, you need to [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
-First, get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).
+First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
 
 Create a managed object as a device named "Microservice tracker" via POST request as follows:
 

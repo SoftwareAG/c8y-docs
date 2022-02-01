@@ -141,7 +141,7 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr>
 <td style="text-align: left">securityInstanceOffset</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set for example, to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

@@ -14,5 +14,4 @@ A good approach can be:
 * Module 2: Calculation
 * Module 3: Creating data in database
 
-Keep in mind that this will create dependencies within the modules (e.g. module 2 needs a schema defined in module 1). You must avoid circular dependencies.
-
+Keep in mind that this will create dependencies within the modules (for example, module 2 needs a schema defined in module 1). You must avoid circular dependencies.

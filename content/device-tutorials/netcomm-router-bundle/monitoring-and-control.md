@@ -86,7 +86,7 @@ set serial.iomode.default=<mode>
 
 where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router after changing the mode.
 
-* Make sure to turn off all serial port related functionalities on the router, e.g. PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
+* Make sure to turn off all serial port related functionalities on the router, for example, PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
 > **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
 >

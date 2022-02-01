@@ -1,11 +1,11 @@
 ---
 weight: 20
 title: Viewing audit logs
-helpcontent: 
+helpcontent:
   - label: audit-logs
     title: Viewing audit logs
     content: "Audit logs show the operations that users have carried out.
-      
+
       In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
 ---
 
@@ -33,12 +33,12 @@ To view the audit log list, click **Audit logs** in the **Account** menu. For ea
 
 <tr>
 <td align="left">Change</td>
-<td align="left">Type of operation, e.g. "Alarm created", "Smart rule deleted". Below it, the user who processed it is displayed.</td>
+<td align="left">Type of operation, for example, "Alarm created", "Smart rule deleted". Below it, the user who processed it is displayed.</td>
 </tr>
 
 <tr>
 <td align="left">Description</td>
-<td align="left">Provides further information depending on the operation, e.g. the device name, alarm text, operation status.</td>
+<td align="left">Provides further information depending on the operation, for example, the device name, alarm text, operation status.</td>
 </tr>
 
 <tr>

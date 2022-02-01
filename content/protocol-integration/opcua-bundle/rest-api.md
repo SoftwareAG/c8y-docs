@@ -207,7 +207,7 @@ then the status of the alarm in {{< product-c8y-iot >}} is expected as ACKNOWLED
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
-(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+(for example: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example: <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
@@ -1005,13 +1005,13 @@ the OPC UA device gateway.</td>
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, for example, sampling rate, queue size, etc.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, for example, rate, etc.</td>
 </tr>
 </tbody>
 </table>

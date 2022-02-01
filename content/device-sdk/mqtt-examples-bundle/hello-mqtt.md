@@ -24,14 +24,14 @@ In order to follow this tutorial, check the following prerequisites:
 
 To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
 
-*   MQTT Client Name – Give your client a name to identify it, e.g. {{< product-c8y-iot >}} MQTT.
+*   MQTT Client Name – Give your client a name to identify it, for example, {{< product-c8y-iot >}} MQTT.
 *   MQTT Client Id – You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device in {{< product-c8y-iot >}}. To reconnect to the same device, use the same ID.
-*   Protocol – Select the protocol to be used, e.g. mqtt/tcp.
-*   Host – Provide in the URL your tenant domain, e.g. _mytenant.{{< domain-c8y >}}/mqtt_.
+*   Protocol – Select the protocol to be used, for example, mqtt/tcp.
+*   Host – Provide in the URL your tenant domain, for example, _mytenant.{{< domain-c8y >}}/mqtt_.
 *   Username – In this case, the username is formed as &lt;tenantID>/&lt;service-user>. You can use the same credentials you use to log into the {{< product-c8y-iot >}} platform (user alias is not supported). As seen in the example below, for the tenant ID "t76543210" and service user "manga" the username is "t76543210/manga".
 *   Password: The password of the service user.
 
-{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.{{< domain-c8y >}}/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< domain-c8y >}}_).
+{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (for example, _mytenant.{{< domain-c8y >}}/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (for example, _mqtt.{{< domain-c8y >}}_).
 
 ![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
 

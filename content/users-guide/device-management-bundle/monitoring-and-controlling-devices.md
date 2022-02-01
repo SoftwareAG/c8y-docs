@@ -6,9 +6,9 @@ helpcontent:
 - label: map
   title: Locating devices
   content: "In the map, you can view all devices in your account in real time. Devices are represented as 'pins'. Click a pin to see the name of the respective device. Click the device name to switch to its device details."
-- label: service-monitoring
-  title: Monitoring services
-  content: "Service monitoring shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
+- label: availability
+  title: Availability monitoring
+  content: "Availability shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 - label: alarm-monitoring
   title: Alarms
   content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
@@ -123,12 +123,12 @@ With the **Maintenance** toggle you can turn the maintenance mode for the device
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
-<a name="monitoring-services"></a>
-### Service monitoring
+<a name="monitoring-availability"></a>
+### Availability
 
-{{< product-c8y-iot >}} distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
+{{< product-c8y-iot >}} distinguishes between connection monitoring and availability. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
 
-Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
+Availability indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
 
 {{< product-c8y-iot >}} considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
 
@@ -141,17 +141,17 @@ There may be exceptions from this rule. If your vending machines rely exclusivel
 
 {{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 
-#### To view the service monitoring of a particular device
+#### To view the availability of a particular device
 
-Click the **Service monitoring** tab in the details of a particular device to check the service monitoring of this device.
+Click the **Availability** tab in the details of a particular device to check the availability of this device.
 
-#### To view the service monitoring across all devices
+#### To view the availability across all devices
 
-Click **Service monitoring** in the **Device** menu in the navigator to display the overall service across all devices.
+Click **Availability** in the **Device** menu in the navigator to display the overall service across all devices.
 
-![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Availability](/images/users-guide/DeviceManagement/devmgmt-devices-availability.png)
 
-The **Service monitoring** page shows the availability of devices for the last 24 hours, last 7 days and last 30 days in percentage.
+The **Availability** page shows the availability of devices for the last 24 hours, last 7 days and last 30 days in percentage.
 
 <a name="alarm-monitoring"></a>
 ### Working with alarms

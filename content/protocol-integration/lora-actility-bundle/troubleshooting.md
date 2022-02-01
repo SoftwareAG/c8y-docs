@@ -7,7 +7,7 @@ layout: redirect
 <a name="lora-connectivity-troubleshooting"></a>
 ### Connectivity
 
-#### Authorization to the LoRa platform failed
+#### Authorization to the provider´s platform failed
 
 This warning message shows up if a provided profile ID, username or password is invalid.
 

@@ -107,7 +107,7 @@ Bewegen Sie den Mauszeiger in den Details einer bestimmten Firmware über den Ei
 
 Sie können die für ein Gerät installierte Firmware auf der Registerkarte **Firmware** dieses Geräts verwalten.
 
->**Info:** Die Registerkarte **Firmware** wird für Geräte angezeigt, die Operationen vom Typ c8y_Firmware unterstützen.
+>**Info:** Die Registerkarte **Firmware** wird für Geräte angezeigt, die Operationen vom Typ `c8y_Firmware` unterstützen.
 
 Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Sie das gewünschte Gerät aus der Geräteliste und öffnen Sie die dazugehörige Registerkarte **Firmware**.
 
@@ -475,7 +475,7 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 
 ![Currently installed profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ c8y_DeviceProfile unterstützen.
+>**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
 
 Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
 

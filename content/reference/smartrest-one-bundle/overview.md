@@ -26,7 +26,7 @@ For general information on SmartREST 1.0, refer to Using the REST interface > [U
 
 Although you need to send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.
 
-The MQTT ClientId needs to match the externalId with type **c8y_Serial** of your device. It is used to assign the correct operations and responses.
+The MQTT ClientId needs to match the externalId with type `c8y_Serial` of your device. It is used to assign the correct operations and responses.
 
 ### Sending and receiving SmartREST 1.0
 
@@ -95,8 +95,6 @@ SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint t
 ```http
 s/ol/<X-ID>
 ```
->**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
-
 >**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
 
 ### Limitations

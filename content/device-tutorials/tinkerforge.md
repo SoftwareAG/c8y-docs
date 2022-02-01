@@ -212,7 +212,7 @@ For more information on Remote Switch addressing please refer to the TinkerForge
 
 ##### Control
 
-The devices can be switched on and off, in alphabetical order, using the c8y_RelayArray operation. "OPEN" would mean off and "CLOSED" - on.
+The devices can be switched on and off, in alphabetical order, using the `c8y_RelayArray` operation. "OPEN" would mean off and "CLOSED" - on.
 
 Example: An operation
 
@@ -248,7 +248,7 @@ The dual relay bricklet consists of two relays. Each relay has three terminals s
 
 ##### Control
 
-The Dual Relay bricklet can be switched with the c8y_RelayArray operation.
+The Dual Relay bricklet can be switched with the `c8y_RelayArray` operation.
 
 ```json
 "c8y_RelayArray" : [
@@ -291,7 +291,7 @@ For example, configuring port B direction to 192(11000000) and value to 88(01011
 
 ##### Control
 
-The IO16 outputs can be switched with a c8y_RelayArray operation.
+The IO16 outputs can be switched with a `c8y_RelayArray` operation.
 
 ```json
 "c8y_RelayArray" : [

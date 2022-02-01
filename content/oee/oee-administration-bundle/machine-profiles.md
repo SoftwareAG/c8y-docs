@@ -103,7 +103,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan
 
 * PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
 
-For details, see the [REST API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Shiftplan).
+For details, see the [REST API documentation](/files/oee/index.html).
 
 
 ### Workpiece
@@ -135,7 +135,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/productio
 
 * PUT: Add or update the list of production plans for the device defined in the body. If a production plan exists for the given tenant and device, the new production plans will be merged internally and obsolete instances will be removed. The resulting production plans will then be sent to the Apama service.
 
-For details, see the [Rest API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Productionplan).
+For details, see the [Rest API documentation](/files/oee/index.html).
 
 
 ### Resolution

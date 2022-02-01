@@ -399,7 +399,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-If a geofence border is crossed by leaving the geofence area, an email is sent.
+If a geofence border is crossed, an email is sent.
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
@@ -449,7 +449,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
+> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
@@ -900,12 +900,8 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), 
-variables for times can include a time zone and time format to display the time in.
-The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ. 
-See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
-and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
-in the Apama documentation.
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
+The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York. See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
 
 **Fields specific for alarms**
 

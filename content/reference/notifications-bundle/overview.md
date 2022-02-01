@@ -58,37 +58,3 @@ There is no distinction between the two contexts for consumers, and notification
 For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application.
 
 There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the following protocol specification directly.
-
-### Token expiration
-
-When creating a token, an expiration time must be given in minutes of validity from when the token was created.
-This security feature limits the potential damage due to leaking of a token.
-It requires tokens to be re-created or refreshed periodically.
-This can be done by calling the token create request with the same parameters as originally. 
-If the parameters used are not available they can be extracted from the token.
-As the token string is a JWT (JSON Web Token), it can be decoded to extract the original information used to create the token by splitting it into 3 parts (on ".") and doing a base64 decode on the first substring.
-This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
-The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
-
-### Unsubscribing a subscriber
-
-Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
-For non-volatile subscriptions, this can result in notifications remaining in storage if never consumed by the application.
-They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
-It is therefore advisable to unsubscribe a subscriber that will never run again.
-A separate REST endpoint is available for this: <kbd>/notification2/unsubscribe</kbd>.
-It has a mandatory query parameter `token`.
-The token is the same as you would use to connect to the WebSocket endpoint to consume notifications.
-Note that there is no explicit "subscribe a subscriber" operation using a token.
-Instead this happens when you first connect a WebSocket with a token for the subscription name and subscriber.
-However, unsubscribing an application is an explicit act using the original or a similar token.
-Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes, 
-as typically one wants messages to persist even when no consumer is running.
-Only if no consumer will ever run again should unsubscribing a subscriber be necessary.
-
-It is also possible to unsubscribe a subscriber on an open consumer WebSocket connection.
-To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your WebSocket client to the service.
-The service will then unsubscribe the subscriber and close the connection.
-It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
-
-It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

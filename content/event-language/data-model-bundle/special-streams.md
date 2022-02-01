@@ -40,8 +40,8 @@ Example:
 |text|String|The body of the sms. Max. 160 characters|yes|
 |deviceId|String|The ID of the device generating the sms. A log event will be created for the device|no|
 
-It is possible to have more than one phone number in the parameter receiver. Therefore create a string that contains all phone numbers separated by commas for example, "+49123456789,+49987654321".
-Although it is technically not required by {{< product-c8y-iot >}} to have the country code we recommend you to use it because the sms gateway might require it. You can use the notation like for example, "0049" or "+49" (for Germany).
+It is possible to have more than one phone number in the parameter receiver. Therefore create a string that contains all phone numbers separated by commas, for example, "+49123456789,+49987654321".
+Although it is technically not required by {{< product-c8y-iot >}} to have the country code we recommend you to use it because the sms gateway might require it. You can use the notation like, for example, "0049" or "+49" (for Germany).
 
 _Note:_
 

@@ -53,7 +53,7 @@ In its base, SmartREST 2.0 is like the previous version: a CSV-like payload form
 
 Several changes in the functionality have been made:
 
-* Templates no longer contain IDs of objects (instead, IDs will be resolved by for example, MQTT ClientId)
+* Templates no longer contain IDs of objects (instead, IDs will be resolved by, for example, MQTT ClientId)
 * Managed objects can be created and retrieved directly with external IDs
 * Creating request templates now uses JSON path (like response templates)
 * Support for lists in responses

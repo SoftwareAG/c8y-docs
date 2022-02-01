@@ -91,7 +91,7 @@ If you have a measurement that is taken every 10 seconds and you want to do calc
     where e.measurement.type = "c8y_TemperatureMeasurement"
     output every 20 events;
 
-If you need to take all measurements into account because for example, you want to calculate the sum of your measurements and you do not want to update it for every new measurement.
+If you need to take all measurements into account because, for example, you want to calculate the sum of your measurements and you do not want to update it for every new measurement.
 
     select
         sum(getNumber(e, "myCustomMeasurement.mySeries.value")),

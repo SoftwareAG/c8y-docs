@@ -42,28 +42,118 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants.
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
 * Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
 
-
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
-In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
+>**Important:** Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
 
->**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
->
+In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
+
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents devices passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-c8y-iot >}} platform](/users-guide/getting-started/#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)** under **Password strength**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-c8y-iot >}} platform](/users-guide/getting-started/#login).
 
-Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+>**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
->**Info:** "M" and "N" can be configured by the platform administrator.
+#### Basic Auth restrictions
 
-Click **Save** to apply the settings.
+Even if OAuth Internal is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
->**Important:** Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
+Use the **Forbidden for web browsers** toggle to disallow the usage of basic authentication for web browsers. Moreover you can specify the following parameters:
+
+* **Trusted user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted.
+* **Forbidden user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
+
+> **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
+
+#### Oauth Internal session configuration
+
+OAuth Internal can work in two modes with significant differences:
+
+##### Without a configuration related to the session (session configuration turned off)
+
+When there is no configuration related to the session, OAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
+
+##### With the configuration of the session (session configuration turned on)
+
+Using OAuth Internal with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
+
+The OAuth Internal token acts as a session identifier on the client site (web browser). Such token identifier which is stored in the cookie can have a preconfigured short lifetime. Then the {{< product-c8y-iot >}} platform is responsible to renew the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs.
+
+If the **Use session configuration** option is enabled, the following settings can be configured on tenant level by a tenant administrator:
+
+<table>
+<col width="200">
+<col width="600">
+<col width="200">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">User agent validation required</td>
+<td style="text-align:left">If turned on, the user agent sent in headers of consecutive requests in the scope of one session will be compared and a request with changed user agent will not be authorized.</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">Session absolute timeout</td>
+<td style="text-align:left">Defines the maximum period of time that the user can use {{< product-c8y-iot >}} without having to re-authenticate.</td>
+<td style="text-align:left">14 days</td>
+</tr>
+<tr>
+<td style="text-align:left">Session renewal timeout</td>
+<td style="text-align:left">Expected to be much shorter than the absolute timeout. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the renewal timeout.</td>
+<td style="text-align:left">1 day</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum parallel sessions per user</td>
+<td style="text-align:left">Defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device.</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Token lifespan</td>
+<td style="text-align:left">Defines the time for which a token is active. The user is able to  access the {{< product-c8y-iot >}} only with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token and cookie settings</a> below. </td>
+<td style="text-align:left">2 days</td>
+</tr>
+
+</tbody>
+</table>
+
+>**Info:** The relation between the time parameters should be the following: renewal timeout < token timespan < absolute timeout. The recommended setting for renewal timeout is approximately half of the absolute timeout.
+
+During the session token renewal the previously provided token is revoked and a new one is provided. The parameter `Renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
+
+<a name="token-settings"></a>
+#### Token and cookie settings
+
+{{< product-c8y-iot >}} OAuth Internal is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
+
+##### Token settings
+
+The default token validity time is two weeks. This can be changed with tenant options:
+ - category: `oauth.internal`;
+ - key: `basic-token.lifespan.seconds`;
+
+The minimum allowed value is 5 minutes.
+
+##### Cookies settings
+
+Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
+- category: `oauth.internal`;
+- key: `basic-user.cookie.lifespan.seconds`;
+
+The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
+
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+
+> **Info:** If external communication to the {{< management-tenant >}} has been blocked than it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use OAuth authentication since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 
 #### TFA settings
 
@@ -88,74 +178,7 @@ Click **Save TFA settings** to apply your settings.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 
-<a name="oauth-internal"></a>
-### Oauth Internal
 
-{{< product-c8y-iot >}} OAuth Internal is based on JWT stored in a browser cookie.
-The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
-
-
-oAuth Internal can work in two modes:
-* without a configuration related to the session
-* with the configuration of the session - to achieve a behavior which is similar to the authentication based on HTTP sessions
-
-There are significant differences between these two modes. 
-
-When no configuration related to the session is present, oAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently. oAuth Internal still can be configured to work in this way, but you can configure oAuth Internal in a more convenient and secure way. 
-
-In this second mode, the behavior of oAuth Internal resembles the authentication which is build based on HTTP sessions. The oAuth Internal token acts as a session identifier on the client site (web browser). Such token identifier which is stored in the cookie can have a preconfigured short lifetime. Then the {{< product-c8y-iot >}} platform is responsible to renew the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs. The following configuration options can be adjusted by a tenant administrator:
-
-* Token lifetime (detailed configuration description below) - defines the time for which a token is active. The user is able to  access the {{< product-c8y-iot >}} only with a valid token. This configuration option is always available, it does not depend on session configuration.  
-* Session configuration (optional) - has four additional parameters
-  * Absolute timeout - defines a maximum period of time when the user can use {{< product-c8y-iot >}} without necessity of re-authentication.
-  * Renewal timeout - expected to be much shorter than the `absolute timeout`. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the `renewal timeout`.
-  * Renewal token delay - during the session token renewal the previously provided token is revoked and a new one is provided. The delay defined by this parameter is used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}.
-  * Maximum number of parallel sessions per user - defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device. 
-  * User agent validation - defines if {{< product-c8y-iot >}} should use additional protection for communication in the form of comparing the user agent sent in headers of consecutive requests in the scope of one session. If the protection is turned on then a request with changed user agent will not be authorized.
-
->**Info:** The relation between the time parameters should be the following: `renewal timeout` < `token lifetime < `absolute timeout`.
-><br>
->The recommended setting for `renewal timeout` is approximately half of the `absolute timeout`.
-
-#### Token settings
-The default token validity time is two weeks. This can be changed with tenant options:
- - category: `oauth.internal`;
- - key: `basic-token.lifespan.seconds`;
-
-The minimum allowed value is 5 minutes.
-
-#### Cookies settings
-Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
-- category: `oauth.internal`;
-- key: `basic-user.cookie.lifespan.seconds`;
-
-The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
-
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
-
-> **Info:** If external communication to the {{< management-tenant >}} has been blocked than it is only possible to access the tenant in a secure way (for example via SSH tunnel).
-This means that you can just as well use basic authentication. Additionally, it is not possible
-to use OAuth authentication since the communication from the external authorization server is also blocked.
-Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
-
-#### Session settings
-The following session settings are part of the oAuth Internal configuration and can be changed by request. The predefined defaults are the following:
-* Absolute timeout - 14 days
-* Renewal timeout - 1 day
-* Maximum number of parallel sessions per user - 5
-* User agent validation - false
-* Token lifetime - 2 days
-
-> **Info:** The value of the parameter `renewal token delay` is set by default to 1 minute. It is configurable only on platform level, so it cannot be modified by the tenant administrator.
-
-#### Restricted basic authentication
-
-Even if oAuth Internal is configured for human users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted. Restrictions can be configured by the following parameters:
-* forbidden clients - is a list of clients which are not allowed to use basic authentication (`WEB-BROWSERS` by default).
-* trusted user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted. 
-* forbidden user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
-
-> **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 
 ### Configuring single sign-on
 

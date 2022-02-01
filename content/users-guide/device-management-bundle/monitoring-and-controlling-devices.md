@@ -99,7 +99,7 @@ The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to
 * Not monitored - indicated by a grey arrow
 
 A push connection is an active HTTPS long poll or an MQTT connection from {{< product-c8y-iot >}} to the <kbd>/notification/operations</kbd> API endpoint (not the real time API endpoint).
-It should always be green if the device is connected, even without data.
+It is always green if the device is connected, even without data.
 
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.

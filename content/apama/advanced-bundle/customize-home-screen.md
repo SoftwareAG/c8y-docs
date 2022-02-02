@@ -31,7 +31,7 @@ where the *cumulocity.json* file contains the following:
 }
 ```
 
-Then upload the ZIP file using the Administration application: go to **Own applications**, click **Add application**, and choose the method **Upload web application**. 
+Then upload the ZIP file using the Administration application: go to **Ecosystem** > **Applications**, click **Add application**, and choose the method **Upload web application**. 
 See [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
 
 You may need to clear your browser cache for the changes to take effect. 

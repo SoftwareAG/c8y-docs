@@ -12,7 +12,7 @@ To increase the security level of the Cumulocity IoT platform, authentication wi
 
 ![Authentication](/images/release-notes/admin-auth-config.png)
 
- Additionally, the OAuth Internal configuration has been extended with various options which can be customized using an extended web page for the authentication configuration. New configuration options determine how often users of a tenant should be re-authenticated and how many devices they may use. All settings related to the default login mode or oAuth Internal configuration can be changed on tenant level or on platform level.
+ Additionally, various options have been added to the **Authentication** page to configure the OAuth Internal session. The new configuration options determine, for example, how often users of a tenant should be re-authenticated and how many sessions in parallel they may use. All settings related to the default login mode or OAuth Internal configuration can be changed on tenant level or on platform level.
 
  For details, see [Administration > Changing settings > Changing authentication settings](https://cumulocity.com/guides{{< 10-13-0 >}}/users-guide/administration/#authentication) in the *User guide* or the *Cumulocity IoT platform - Operations guide*.
 

@@ -46,9 +46,9 @@ A user list will be displayed, providing the following information for each user
 * The global roles assigned to the user.
 * The [strength](/users-guide/getting-started/#to-change-your-password) of the password set for the user.
 
-To filter the list by username, you can use the text filter field at the left of the top menu bar. With dropdown list you can filter by global roles. 
+To filter the list by username, you can use the text filter field at the left of the top menu bar. With the dropdown list you can filter by global roles. 
 
-In order to apply selected filters click **Apply**.
+In order to apply the selected filters click **Apply**.
 
 Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
 
@@ -114,7 +114,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [to reset your password](/users-guide/getting-started/#to-reset-your-password) and [strength](/users-guide/getting-started/#to-change-your-password) for further information on password reset.  
+	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
 	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).

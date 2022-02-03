@@ -51,9 +51,6 @@ During the installation, the certificates are updated in the Edge appliance. If 
 
 >**Info:** If you still see the installation in progress, refresh the browser.
 
-
-The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears. If you still see the installation in progress, refresh the browser.
-
 Next, click **Open {{< product-c8y-iot >}} Edge**.
 
 >**Important:** In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.

@@ -6,7 +6,7 @@ layout: bundle
 
 Release 10.13 includes the following new features or major feature enhancements.
 
-### OAuth Internal improvements
+### Improvements for the OAuth Internal login mode
 
 To increase the security level of the Cumulocity IoT platform, authentication with OAuth Internal is now used as the default login mode for newly created tenants. Moreover, the usage of Basic authentication for such tenants will be restricted, that is web browsers are no longer allowed to use Basic authentication. Basic authentication is still allowed for IoT devices though.
 
@@ -18,8 +18,11 @@ To increase the security level of the Cumulocity IoT platform, authentication wi
 
  Moreover, all custom applications deployed on the Cumulocity IoT platform or integrated with the Cumulocity IoT platform must support authentication whit OAuth Internal. In case of lacking backwards compatibility, the previous behaviour of the Cumulocity IoT platform can be restored for a particular tenant.
 
+### Inventory roles
 
-### New Ecocsystem menu
+tba
+
+### New Ecocsystem view
 
 The previous **Applications** page in the Administration application has been restructured to provide a clearer organization and navigation. A new **Ecosystem** menu entry is available now, grouped into **Applications** and **Microservices**. The **Applications** page shows an **All applications** tab listing the web and external applications, and a **Feature** tab, listing the applications of the type "feature". The **Microservices** page list all applications of the type "microservice". The separation between subscribed and own applications is now reflected by labels in the application lists (subscribed or custom).
 

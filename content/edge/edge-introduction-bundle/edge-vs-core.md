@@ -18,7 +18,7 @@ The following differences apply:
 |Vertical scalability|Yes, limited to appr. 100 tps per CPU core|Yes, but not used
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes
-|Root access|No|Yes, if customer is hosting
+|Root access|Yes|Yes, if customer is hosting
 |Installation|Offline, with VM image|Online, with chef & RPM
 |Cloud Field Bus|Included|Optional
 |Streaming Analytics|Included|Optional

@@ -12,7 +12,7 @@ To install Cumulocity IoT Edge using the GUI:
 2. Configure the network for your Edge appliance, see the sample screenshot.
 <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
 
-3. Press **Enter** to save the network configuration. 
+3. Press **Enter** to save the network configuration.
 <img src="/images/edge/edge-network-configurator-2.png" name="Network Configurator" style="width:75%;"/>
 
    Note down the URL to perform the installation. In the screenshot above, the URL is `https://192.168.66.10/apps/installation/`.
@@ -49,9 +49,6 @@ During the installation, the certificates are updated in the Edge appliance. If 
 
 >**Info:** If you still see the installation in progress, refresh the browser.
 
-
-The installation takes some time to complete. After the installation is complete, the "Cumulocity IoT Edge installation is now complete" message appears. If you still see the installation in progress, refresh the browser. 
-
-Next, click **Open Cumulocity IoT Edge**.
+Next, click **Open {{< product-c8y-iot >}} Edge**.
 
 >**Important:** In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-edition/#password-reset) and [Configuring email server](/users-guide/enterprise-edition/#email-server) in the User guide.

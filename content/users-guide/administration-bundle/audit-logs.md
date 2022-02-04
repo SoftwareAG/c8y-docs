@@ -58,8 +58,8 @@ Only the last 100 logs are visible. Scroll down the page to **Load more** to vie
 
 In order to easily search through logs, you may filter logs for
 
- - the type, i.e. alarm, operation, Smart Rule,
+ - the type, i.e. alarm, operation, smart rule,
  - a date range providing a "From" and/or a "To" date,
  - the user.
 
-To apply filters, click the **Apply** button next to the filter fields. To discard filters, click the button with **X** icon (only visible if filters are set next to **Apply** button).
+To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the delete icon (only visible if filters are set).

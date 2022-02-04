@@ -62,4 +62,4 @@ In order to easily search through logs, you may filter logs for
  - a date range providing a "From" and/or a "To" date,
  - the user.
 
-To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the delete icon (only visible if filters are set).
+To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).

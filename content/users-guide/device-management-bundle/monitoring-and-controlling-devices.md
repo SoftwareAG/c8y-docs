@@ -86,6 +86,10 @@ Hovering over the arrow displays the timestamp of the last request from the devi
 
 When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device: "No data received from device within required interval".
 
+Send connections are updated when something is sent to the device, such as alarms, events, measurements or inventory updates.
+
+>**Info:** PUT requests to the managed object of the device will also update a connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
+
 **Push connections**
 
 The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to the device). The status for the push connections may be one of:
@@ -94,7 +98,9 @@ The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-Push connection means the connection from {{< product-c8y-iot >}} to /notification/operations API, **not** to real-time API.
+A push connection is an active HTTPS long poll or an MQTT connection from {{< product-c8y-iot >}} to the <kbd>/notification/operations</kbd> API endpoint (not the real time API endpoint).
+It is always green if the device is connected, even without data.
+
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 

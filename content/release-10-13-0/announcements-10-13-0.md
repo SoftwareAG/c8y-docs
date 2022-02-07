@@ -23,11 +23,11 @@ Contact us if you have any questions on the removal of this deprecated query par
 
 As announced in [release 10.11](/releasenotes/release-10-11-0/announcements-10-11-0/), With the 10.5.0 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
-With the 10.13 release, the O-Auth Internal authentication will be enabled by default for all tenants. The Basic authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that Basic authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.13 release, the token-based authentication will be enabled by default for all tenants. The basic authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that basic authentication will still be available for devices connecting to the Cumulocity IoT platform.
 
-If not done already, we recommend you not to wait for the 10.13 release but enable O-Auth Internal as soon as possible. Documentation how to enforce O-Auth Internal can be found in [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*.
+If not done already, we recommend you not to wait for the 10.13 release but to enable token-based authentication as soon as possible. Documentation how to enforce token-based authentication can be found in [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*.
 
-In case you have developed your own web applications or microservices, please make sure that they do support the O-Auth Internal authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5.0 or higher as well as the Microservice SDK 10.5.0 or higher.
+In case you have developed your own web applications or microservices, please make sure that they do support the token-based authentication authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5.0 or higher as well as the Microservice SDK 10.5.0 or higher.
 
 
 ### SDK changes

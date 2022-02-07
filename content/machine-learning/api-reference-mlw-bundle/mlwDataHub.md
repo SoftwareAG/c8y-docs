@@ -110,3 +110,34 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
     "exception": "Duplicate name"
 }
 ```
+**Example Request**
+
+```
+409 - Conflict
+
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":""}'
+```
+
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "fileName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```

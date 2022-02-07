@@ -152,3 +152,34 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
     "exception": "Duplicate name"
 }
 ```
+
+**Example Request**
+
+```
+409 - Conflict
+
+curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
+     --header "Authorization: {{auth}}" \
+     --header "Content-Type: application/json" \
+     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":""}'
+```
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "taskName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```

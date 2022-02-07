@@ -338,3 +338,33 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
+--data-raw '{"fileName":"","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
+```
+
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "fileName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```

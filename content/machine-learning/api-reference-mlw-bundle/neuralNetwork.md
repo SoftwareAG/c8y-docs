@@ -177,17 +177,25 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","shuffleData":true,"dataID":"1600786268_0337_Resource"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"","shuffleData":true,"dataID":"1600786268_0337_Resource"}'
 ```
 
 **Example Response**
 
 ```
-400 Bad Request
+400 - Conflict
 
 {
-   "message":"one of mandatory hyperparameter not found",
-   "errorCode":400,
-   "exception":"one of mandatory hyperparameter not found"
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "modelName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
 }
 ```

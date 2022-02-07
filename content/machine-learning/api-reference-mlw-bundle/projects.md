@@ -187,6 +187,35 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
     "exception": "Project Exist"
 }
 ```
+**Example Request**
+
+```
+409 - Conflict
+
+curl --location --request POST '{{url}}/service/mlw/projects' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"name":"","description":"A dummy project"}'
+```
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```
 
 ### POST - Commit the resources of the project
 
@@ -406,6 +435,25 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
     "error": "general/internalError",
     "message": "No auth information found",
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
 }
 ```
 
@@ -1275,6 +1323,35 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 }
 ```
 
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "type"
+            ],
+            "msg": "unexpected value; permitted: 'wf', 'py', 'ipynb', 'architecture', 'pipeline'",
+            "type": "value_error.const",
+            "ctx": {
+                "given": "",
+                "permitted": [
+                    "wf",
+                    "py",
+                    "ipynb",
+                    "architecture",
+                    "pipeline"
+                ]
+            }
+        }
+    ]
+}
+```
 
 ### GET - Get the details of the resource file
 

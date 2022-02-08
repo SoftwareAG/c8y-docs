@@ -75,7 +75,7 @@ OAuth Internal can work in two modes with significant differences:
 
 ##### Without a configuration related to the session (session configuration turned off)
 
-When there is no configuration related to the session, OAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
+When there is no configuration related to the session, OAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
 ##### With the configuration of the session (session configuration turned on)
 

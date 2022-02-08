@@ -128,7 +128,7 @@ If the **Use session configuration** option is enabled, the following settings c
 
 >**Info:** The relation between the time parameters should be the following: renewal timeout < token timespan < absolute timeout. The recommended setting for renewal timeout is approximately half of the absolute timeout.
 
-During the session token renewal the previously provided token is revoked and a new one is provided. The parameter `Renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
+During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
 <a name="token-settings"></a>
 #### Token and cookie settings

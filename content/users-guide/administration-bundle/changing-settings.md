@@ -115,7 +115,7 @@ If the **Use session configuration** option is enabled, the following settings c
 <tr>
 <td style="text-align:left">Maximum parallel sessions per user</td>
 <td style="text-align:left">Defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device.</td>
-<td style="text-align:left">5</td>
+<td style="text-align:left">5 sessions</td>
 </tr>
 <tr>
 <td style="text-align:left">Token lifespan</td>

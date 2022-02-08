@@ -1,0 +1,617 @@
+openapi: 3.0.1
+info:
+  title: LPWAN Custom codec OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /decode:
+    post:
+      operationId: decode
+      tags:
+        - LPWAN Custom Codec Decode API
+      summary: "Decodes the payload based on the inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport."
+      description: "This API endpoint decodes the input payload based on inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport and returns the result populated with Measurements, Events, Alarms and Alarm types to update. Also flag whether the decoding payload is successful or not."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              sourceDeviceId: '1025'
+              value: '202355251812984589'
+              args:
+                deviceManufacturer: LANSITEC
+                deviceModel: Asset Tracker
+                sourceDeviceEui: AA02030405060708
+                updateTime: '1643121312'
+                fport: '123'
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/DecoderInputData'
+                - required:
+                    - sourceDeviceId
+                    - value
+                    - args
+      responses:
+        '200':
+          description: "When the decoder input is successfully decoded and return the DecoderResult"
+          content:
+            application/json:
+              example:
+                alarms:
+                  type: c8yDemoDecoderalarm
+                  text: I am an decoder alarm
+                  severity: MINOR
+                  status: ACTIVE
+                  time: '2020-03-03T12:03:23.845Z'
+                alarmTypesToUpdate: 
+                  ACKNOWLEDGED:
+                  - c8y_Test
+                  - c8y_Temp
+                  CLEARED:
+                  - c8y_Ack
+                  - c8y_Unavailable
+                events:
+                  - type: c8y_LocationUpdate
+                    text: Location updated
+                    time: '2020-03-03T12:03:23.845Z'
+                measurements:
+                 - type: c8y_Battery
+                   series: c8y_Battery
+                   time: '2020-03-03T12:03:23.845Z'
+                   values:           
+                    - type: c8y_Battery
+                      seriesName: level
+                      unit: c 
+                      value: 35
+                dataFragments:
+                 - key: c8y_Position/lat,
+                   value: null
+                   valueAsObject: 9.609690346957522E-28
+                success: true or false
+                message: "Description of decoding success or failure."
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
+  /encode:
+    post:
+      tags:
+        - LPWAN Custom Codec Encode API
+      summary: "Encodes the input command and returns the encoded command."
+      operationId: encode
+      requestBody:
+        content:
+          application/json:
+            example:
+              sourceDeviceId : 26413,
+              commandName: position request,
+              commandData : '{position request -latitude 10.25 -longitude -5.67}' 
+              args:
+                deviceManufacturer: LANSITEC,
+                deviceModel: Asset Tracker,
+                sourceDeviceEui: AABB03AABB030000
+            schema:
+              $ref: '#/components/schemas/EncoderInputData'
+      responses:
+        '200':
+          description: default response
+          content:
+            application/json:
+              example:
+                encodedCommand: 9F5000
+                fport: 20
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+components:
+  schemas:
+    DecoderInputData:
+      type: object
+      description: "Contains all the relevant information which is required to decode the payload for the selected device."
+      properties:
+        sourceDeviceId:
+          type: string
+          description: "Device managed object Id."
+        value:
+          type: string
+          description: "Device payload to decode."
+        args:
+          type: object
+          description: "Its a map object that contain required information used by the payload like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
+          additionalProperties:
+            $ref: '#/components/schemas/DecoderInputArgs'
+            
+          
+    DecoderResult:
+      type: object
+      description: "Contains list of Alarms, AlarmTypes to udpate, Events, Measurement,  DataFragments to be updated and "
+      properties:
+        alarms:
+          type: array
+          description: "List of Alarms to be created."
+          items:
+            $ref: '#/components/schemas/AlarmRepresentation'
+        alarmTypesToUpdate:
+          type: object
+          description: "List of AlarmTypes to be updated with a specified status"
+        events:
+          type: array
+          description: "List of Events to be created."
+          items:
+            $ref: '#/components/schemas/EventRepresentation'
+        measurements:
+          type: array
+          description: "List of Measurements to be created."
+          items:
+            $ref: '#/components/schemas/MeasurementDto'
+        dataFragments:
+          type: array
+          description: "List of DataFragments to be updated in the Cumulocity with a specified status"
+          items:
+            $ref: '#/components/schemas/DataFragmentUpdate'
+        message:
+          type: string
+          description: "Message description regarding decode."
+        success:
+          type: boolean
+          description: "Boolen value regarding decode is successful or failure."
+
+    EncoderInputData: 
+      description: "Contains all the information device operation for the selected device to encode the command for the selected device."
+      type: object
+      properties:
+        sourceDeviceId:
+          type: string
+          description: "Managed object Id of the device."
+        commandName: 
+          type: string
+          description: "Command Name"
+        commandData:
+          type: string
+          description: "Command Data to be encoded"
+        args:
+          type: object
+          description: "Its map object that contain required information used by Codec to decode the payload like  deviceModel, deviceManufacturer and sourceDeviceEui"
+          additionalProperties:
+            $ref: '#/components/schemas/EncoderInputArgs'
+        status:
+          type: string
+          description: "This is optional attribute provided for LPWAN Custom codec which is not used at present."
+          
+    EncoderResult:
+      description: "Contains encoded command and fport information for the selected device."
+      type: object
+      properties:
+        encodedCommand: 
+          type: string
+          description: "Encoded command Value"
+        properties: 
+          type: object
+          description: "Its map object to send additional required information like fport."
+          additionalProperties:
+            $ref: '#/components/schemas/EncoderInputArgs'
+        message:
+          type: string
+          description:  "Message description regarding the encode operation."
+        success:
+          description: "Boolen value regarding encode is successful or failure."
+          type: boolean
+          
+    DecoderInputArgs:
+      description: "Required Inputs for the decode API like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
+      type: object
+      required:
+        - deviceManufacturer
+        - deviceModel
+        - sourceDeviceEui
+      properties:
+        deviceManufacturer: 
+          description: "Device Manufacturer of the LPWAN device."
+          type: string
+        deviceModel: 
+          description: "Device Model of the LPWAN device."
+          type: string
+        sourceDeviceEui:
+          description: "LPWAN device External Identifier."
+          type: string
+        updateTime:
+          description: "Time stamp."
+          type: string
+        fport:
+          description: "fport value."
+          type: string
+    
+    EncoderInputArgs:
+      description: "Required Inputs for the encode API like deviceManufacturer, deviceModel, sourceDeviceEui."
+      type: object
+      properties:
+        deviceManufacturer: 
+          description: "Device Manufacturer of the LPWAN device."
+          type: string
+        deviceModel:
+          description: "Device Model of the LPWAN device."
+          type: string
+        sourceDeviceEui:
+          description: "LPWAN device External Identifier."
+          type: string
+    AlarmRepresentation:
+      type: object
+      description: "Alarm Representation for creating the Alarm in Cumulocity"
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        id:
+          $ref: '#/components/schemas/GId'
+        type:
+          type: string
+        time:
+          type: string
+          format: date-time
+        creationTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        externalSource:
+          $ref: '#/components/schemas/ExternalIDRepresentation'
+        status:
+          type: string
+        severity:
+          type: string
+        history:
+          $ref: '#/components/schemas/AuditRecordCollectionRepresentation'
+        count:
+          type: integer
+          format: int64
+        firstOccurrenceTime:
+          type: string
+          format: date-time
+        firstOccurrenceDateTime:
+          type: string
+          format: date-time
+        severityOrdinal:
+          type: integer
+          format: int64
+        statusOrdinal:
+          type: integer
+          format: int64
+        source:
+          $ref: '#/components/schemas/ManagedObjectRepresentation'
+        dateTime:
+          type: string
+          format: date-time
+        lastUpdatedDateTime:
+          type: string
+          format: date-time
+        creationDateTime:
+          type: string
+          format: date-time
+        selfDecoded:
+          type: string
+    AuditRecordCollectionRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        queryPlanner:
+          type: object
+          additionalProperties:
+            type: object
+        pageStatistics:
+          $ref: '#/components/schemas/PageStatisticsRepresentation'
+        prev:
+          type: string
+        next:
+          type: string
+        auditRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuditRecordRepresentation'
+        selfDecoded:
+          type: string
+    AuditRecordRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        id:
+          $ref: '#/components/schemas/GId'
+        type:
+          type: string
+        time:
+          type: string
+          format: date-time
+        creationTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        externalSource:
+          $ref: '#/components/schemas/ExternalIDRepresentation'
+        user:
+          type: string
+        application:
+          type: string
+        activity:
+          type: string
+        severity:
+          type: string
+        changes:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ChangeRepresentation'
+        source:
+          $ref: '#/components/schemas/ManagedObjectRepresentation'
+        dateTime:
+          type: string
+          format: date-time
+        lastUpdatedDateTime:
+          type: string
+          format: date-time
+        creationDateTime:
+          type: string
+          format: date-time
+        selfDecoded:
+          type: string
+    ChangeRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        attribute:
+          type: string
+        type:
+          type: string
+        previousValue:
+          type: object
+        newValue:
+          type: object
+        changeType:
+          type: string
+          enum:
+            - REPLACED
+            - ADDED
+            - REMOVED
+        selfDecoded:
+          type: string
+    DataFragmentUpdate:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+        valueAsObject:
+          type: object
+
+    EventRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        id:
+          $ref: '#/components/schemas/GId'
+        type:
+          type: string
+        time:
+          type: string
+          format: date-time
+        creationTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        externalSource:
+          $ref: '#/components/schemas/ExternalIDRepresentation'
+        source:
+          $ref: '#/components/schemas/ManagedObjectRepresentation'
+        dateTime:
+          type: string
+          format: date-time
+        lastUpdatedDateTime:
+          type: string
+          format: date-time
+        creationDateTime:
+          type: string
+          format: date-time
+        selfDecoded:
+          type: string
+    ExternalIDRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        externalId:
+          maxLength: 2147483647
+          minLength: 1
+          type: string
+        type:
+          maxLength: 2147483647
+          minLength: 1
+          type: string
+        managedObject:
+          $ref: '#/components/schemas/ManagedObjectRepresentation'
+        selfDecoded:
+          type: string
+    GId:
+      type: object
+      properties:
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        type:
+          type: string
+        value:
+          type: string
+        name:
+          type: string
+        long:
+          type: integer
+          format: int64
+    ManagedObjectReferenceCollectionRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        queryPlanner:
+          type: object
+          additionalProperties:
+            type: object
+        pageStatistics:
+          $ref: '#/components/schemas/PageStatisticsRepresentation'
+        prev:
+          type: string
+        next:
+          type: string
+        references:
+          type: array
+          items:
+            $ref: '#/components/schemas/ManagedObjectReferenceRepresentation'
+        count:
+          type: integer
+          format: int32
+        selfDecoded:
+          type: string
+    ManagedObjectReferenceRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        managedObject:
+          $ref: '#/components/schemas/ManagedObjectRepresentation'
+        selfDecoded:
+          type: string
+    ManagedObjectRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        id:
+          $ref: '#/components/schemas/GId'
+        type:
+          type: string
+        name:
+          type: string
+        lastUpdated:
+          type: string
+          format: date-time
+        creationTime:
+          type: string
+          format: date-time
+        owner:
+          type: string
+        childDevices:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        childAssets:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        childAdditions:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        deviceParents:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        assetParents:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        additionParents:
+          $ref: '#/components/schemas/ManagedObjectReferenceCollectionRepresentation'
+        lastUpdatedDateTime:
+          type: string
+          format: date-time
+        creationDateTime:
+          type: string
+          format: date-time
+        selfDecoded:
+          type: string
+    MeasurementDto:
+      type: object
+      properties:
+        type:
+          type: string
+        series:
+          type: string
+        time:
+          type: string
+          format: date-time
+        fragmentsToCopyFromSourceDevice:
+          type: array
+          items:
+            type: string
+        deviceFragmentPrefix:
+          type: string
+        deviceNameFragment:
+          type: string
+        includeDeviceName:
+          type: boolean
+        additionalProperties:
+          type: object
+          additionalProperties:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/MeasurementValueDto'
+    MeasurementValueDto:
+      type: object
+      properties:
+        seriesName:
+          type: string
+        unit:
+          type: string
+        value:
+          type: number
+    PageStatisticsRepresentation:
+      type: object
+      properties:
+        self:
+          type: string
+        attrs:
+          type: object
+          additionalProperties:
+            type: object
+        totalPages:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        currentPage:
+          type: integer
+          format: int32
+        selfDecoded:
+          type: string
+   

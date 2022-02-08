@@ -52,7 +52,7 @@ This login mode will be used by the platform's applications as the default metho
 
 In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
->**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents devices passwords from expiring.
+>**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 
 By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)** under **Password strength**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-c8y-iot >}} platform](/users-guide/getting-started/#login).
 

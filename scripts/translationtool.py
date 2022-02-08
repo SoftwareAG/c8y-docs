@@ -110,22 +110,21 @@ class TranslationTool():
        de_suffix = "-de"
        if("aliases" in fm.keys()):
            aliases = fm.metadata["aliases"]
-           print("here are some aliases")
+           print("here are the aliases:")
            print(aliases)
            for i in range(len(aliases)):
-               print("aliases i", aliases[i])
+               print("alias #" + str(i + 1), aliases[i])
                if string_users_guide in aliases[i]:
-                   print("yes")
                    alias_parts = aliases[i].split("/")
+                   print("alias parts of ", aliases[i])
                    print(alias_parts)
                    if alias_parts[1] == string_users_guide:
-                       print("yes yes")
                        alias_parts[1] = string_benutzerhandbuch
                        alias_parts[2] += de_suffix
                        aliases[i] = "/".join(alias_parts)
                    print("changed aliases:")
                    print(aliases)
-                   print("making aliases unique")
+                   print("making aliases unique:")
                    unique_aliases = self.unique_list(aliases)
                    print(unique_aliases)
                    fm["aliases"] = unique_aliases

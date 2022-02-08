@@ -174,7 +174,7 @@ You may choose one of the following options:
 
 Click **Save TFA settings** to apply your settings.
 
->**Important:** Each time you change the TFA method you will be forced to log out. Users TFA settings are cleared and need to be configured again.
+>**Important:** Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and need to be configured again.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 

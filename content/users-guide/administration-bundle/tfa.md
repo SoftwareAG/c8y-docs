@@ -45,14 +45,24 @@ After this process the mobile application will generate a new code every 30 seco
 
 #### Revoking the secret
 
->**Info:** Although the setup must be done by each individual user, revoking the secret can only be done by a user with "user management ADMIN" permission via the Administration application. As so, if the user loses the phone or uninstalls the application they must contact a user with this particular permission.
+Although TOTP must be set up by each user, revoking the secret can only be done by a user with "user management ADMIN" permission. As so, if the user loses the phone or uninstalls the application they must contact a user with this particular permission.
 
 To revoke the key follow these steps:
 
-1. Navigate to the Administration application.
-2. Click on the desired user in the **Users** page.
-3. Scroll down to **Login Options**.
-4. Click **Revoke TOTP secret**.
-5. Confirm by clicking **Revoke**.
+1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
+2. Scroll down to **Login options**.
+3. Click **Revoke TOTP secret**.
+4. Confirm by clicking **Revoke**.
 
 ![TOTP secret revoke](/images/users-guide/Administration/admin-user-totp-revoke.png)
+
+#### Disabling TOTP for a user
+
+To disable TOTP for a user follow these steps:
+
+1. In the Administration application, navigate to **Accounts** > **Users** and select the user in the **Users** page.
+2. Scroll down to **Login options**.
+3. Clear the **Enforce TOTP for the user** checkbox.
+4. Click **Revoke TOTP secret**.
+5. Confirm by clicking **Revoke**.
+6. Click **Save** to save your changes.

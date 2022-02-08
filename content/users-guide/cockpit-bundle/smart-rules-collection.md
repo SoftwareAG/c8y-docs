@@ -761,7 +761,7 @@ For each incoming measurement value, the rule performs the following steps:
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
-> **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (for example, yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
+> **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
 * Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 

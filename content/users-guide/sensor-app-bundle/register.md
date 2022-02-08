@@ -38,7 +38,7 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 3. Back in your web browser, click **Register device** and then **General device registration**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 
-4. On your smartphone, fill in your tenant (for example, "companytenant01"), select your instance (for example, "{{< domain-c8y >}}"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
+4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
     ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 

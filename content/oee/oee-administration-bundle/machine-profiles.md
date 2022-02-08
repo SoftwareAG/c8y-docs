@@ -93,7 +93,7 @@ Next, select a machine to be connected with the profile.
 
 #### Using a shift plan
 
-Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (for example, weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
+Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (for example weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
 
 The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
 

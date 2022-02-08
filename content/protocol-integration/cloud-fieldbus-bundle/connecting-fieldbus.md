@@ -12,7 +12,7 @@ For the following instructions, it is assumed that you have a Cloud Fieldbus ter
 To connect a Modbus/RTU device, follow these steps:
 
 1. Physically connect the Modbus/RTU device through a RS-485 or RS-232 cable to the terminal.
-2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (for example, by setting a jumper on the device).
+2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (for example by setting a jumper on the device).
 3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the **Serial communication** section to match the settings on the bus, if needed.

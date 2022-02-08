@@ -28,7 +28,7 @@ By default, a listener will fire once; to make it repeat for all events, use the
 
 ### Filters
 
-Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on subproperties of events (for example, in dictionaries).
+Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on subproperties of events (e.g. in dictionaries).
 
 ### Standard event types and channels
 

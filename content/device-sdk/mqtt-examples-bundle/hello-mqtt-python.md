@@ -37,7 +37,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 #### Create a Python script
 
-Create a script file, for example *hello_mqtt.py* with the following content:
+Create a script file (for example *hello_mqtt.py*) with the following content:
 
 ```python
 #!/usr/bin/env python3
@@ -167,7 +167,7 @@ $ python3 hello_mqtt.py
 
 After starting the application you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (for example, `c8y_Restart`), information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 
 ### Improving the agent

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (for example, "objectID", "instanceID") and commands with their respective descriptions below:
+In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (for example "objectID", "instanceID") and commands with their respective descriptions below:
 
 <table>
 <col style="width:30%">

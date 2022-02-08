@@ -144,7 +144,7 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (for example, **Registration date**), you specify a date range to filter for.
+* In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 * For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided.

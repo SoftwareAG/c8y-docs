@@ -88,7 +88,7 @@ Under **Value normalization**, specify how the raw value should be transformed b
 
 - **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative or positive. By default it is set to 1.
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative or positive. By default it is set to 0.
-- **Unit** (optional): A unit can be defined which is saved together with the value (for example, temperature unit "C" for degree Celsius).
+- **Unit** (optional): A unit can be defined which is saved together with the value (for example temperature unit "C" for degree Celsius).
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 

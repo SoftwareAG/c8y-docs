@@ -6,7 +6,7 @@ weight: 50
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (for example, the `HttpModule` from Angular) you might want to have authentication out of the box.
+In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (for example the `HttpModule` from Angular) you might want to have authentication out of the box.
 
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically. But first, it will take a deeper look at the basics to explain how the client works in Angular applications.
 

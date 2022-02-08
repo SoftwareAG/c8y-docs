@@ -12,6 +12,6 @@ The following list presents the existing agent software implemented on the C++ S
     <https://github.com/SoftwareAG/cumulocity-agents-netcomm>
 
 -   Linux agent<br>
-    Linux agent is a reference agent implementation, which can be used on any devices that are powered by a generic Linux distribution, for example, Ubuntu, Fedora, etc.
+    Linux agent is a reference agent implementation, which can be used on any devices that are powered by a generic Linux distribution, such as Ubuntu or Fedora.
 
     <https://github.com/SoftwareAG/cumulocity-agents-linux>

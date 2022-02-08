@@ -113,7 +113,7 @@ You must define the amount and the unit of time (for example "5" and "minutes").
 You must define an identifier which can either be a transformation or a machine event. If a machine event is defined, it might overwrite an existing event (for example quality event is defined in the matching step and in the correlation step) as the current configuration model is supposed to only hold one quality and one machine event. The respective subscriptions will also be created for all defined correlation identifiers (and potentially their machine events). The new created subscriptions are appended to those coming from the matching rules (duplicates are filtered beforehand).
 
 - The definition of correlations will be allowed for machine and line profiles.
-- Depending on the mode while saving the step, unused attributes are removed (for example, when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
+- Depending on the mode while saving the step, unused attributes are removed (for example when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
 - Correlation step gets also validated as part of the summary step, for example, to show that the step is not yet completed.
 - All values are properly written to the BE.
 

@@ -22,7 +22,7 @@ Although there a few files there, the strategy is straight forward: defining les
 
 You can inspect the less files to see what variables are available for configuration.
 
-Because branding plugins are simply distinguished by their name, the name has to be unique. Besides that, it has to end in *Branding* (for example, *piedpiperBranding* ). To use it in an application, add it to the imports statement of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest), as is done in the [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) repository.
+Because branding plugins are simply distinguished by their name, the name has to be unique. Besides that, it has to end in *Branding* (for example *piedpiperBranding* ). To use it in an application, add it to the imports statement of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest), as is done in the [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) repository.
 
 Make sure there is only a single branding plugin declared, otherwise both of them will be loaded. To replace the `c8yBranding` plugin in the core applications, you have to create a target .json file with at least the following content:
 

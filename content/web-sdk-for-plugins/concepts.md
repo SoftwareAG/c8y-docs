@@ -15,7 +15,7 @@ In turn, applications consist of plugins. A plugin represents any functionality 
 * Add new widgets to dashboards.
 * Add new menu items to the drop-down menus.
 * Add new views or tabs to groups and devices.
-* Add any other kind of functionality (for example, for the search) you would like to integrate.
+* Add any other kind of functionality (for example for the search) you would like to integrate.
 
 This is illustrated below:
 

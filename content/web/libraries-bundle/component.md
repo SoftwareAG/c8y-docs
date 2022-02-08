@@ -19,7 +19,7 @@ If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a
 $ npm install @c8y/ngx-components
 ```
 
-Next, you can add the ngx-components modules to your app module (for example, app.module.ts):
+Next, you can add the ngx-components modules to your app module (for example app.module.ts):
 
 ```js
 import { NgModule } from '@angular/core';

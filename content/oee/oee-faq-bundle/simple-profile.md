@@ -13,7 +13,7 @@ To get started with the OEE application, you have to create a profile to start t
 * **Computation**:  Choose a calculation method. For this example it is PPQ.
 * **Matching**: Choose the desired calculation formula.
 	For this example the values could be the following:
-	* Actual Production Amount - Depending on your machine/simulator and the data it is sending, this could be something like counting events (for example, "Piece_Produced")
+	* Actual Production Amount - Depending on your machine/simulator and the data it is sending, this could be something like counting events (for example "Piece_Produced")
 ![Example for Actual Production Amount](/images/oee/faq/faq-actual-production-amount.png)
 	* Actual Production Time / Actual Quality Amount - To keep the profile simple, you can define the values to be 100% by comparing two fixed numbers, for example, "1 = 1".
 ![Example for Actual Quality Amount](/images/oee/faq/faq-actual-quality-amount.png)

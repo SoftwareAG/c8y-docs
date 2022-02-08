@@ -36,7 +36,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (e.g. using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
 * Export EPL apps. Use the **Export** command from the actions menu to download the app as a \*.mon file.
 
@@ -138,7 +138,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 
 > **Info:** You need to [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 
-Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
+Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (e.g. if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
 
 ```
 CUMULOCITY_TENANT=my_custom_tenant

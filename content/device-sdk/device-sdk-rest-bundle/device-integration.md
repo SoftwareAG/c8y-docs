@@ -79,7 +79,7 @@ For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}
 
 {{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (for example, *xyz.{{< domain-c8y >}}* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
+If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -282,7 +282,7 @@ This request will also delete all data associated with the device including its 
 
 #### Working with operations
 
-Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example, it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -503,7 +503,7 @@ However, you most likely should not create an alarm for a device, if there is a 
 
     GET /alarm/alarms?source=2480300&status=ACTIVE HTTP/1.1
 
-In contrast to events, alarms can be updated. If an issue is resolved (for example, the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
+In contrast to events, alarms can be updated. If an issue is resolved (for example the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
 
     PUT /alarm/alarms/214600 HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json

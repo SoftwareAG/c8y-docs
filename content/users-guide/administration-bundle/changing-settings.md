@@ -378,7 +378,7 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 ![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
-Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed for example by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
+Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
 >**Info:** All users must have access to this application. 
 

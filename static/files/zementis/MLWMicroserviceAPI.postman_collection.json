@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "971d77f4-d16d-4bae-9a06-e40b91333dd7",
+		"_postman_id": "922592f8-3d3e-4020-9290-c2a2115913e2",
 		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -186,6 +186,104 @@
 								"mlw",
 								"projects",
 								"1631774924_Project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a version of an existing project",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/mlw/projects/1631774924_Project",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"projects",
+								"1631774924_Project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download a project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/service/mlw/projects/1638827367_Project/dump",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"projects",
+								"1638827367_Project",
+								"dump"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload the project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/vran/Downloads/GitHub repos/zementis-mlw/mlw-core/downloadedProjects/MLW Testing Trial_1638451080.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/projects/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"projects",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1213,6 +1311,53 @@
 								"resources",
 								"1595491219_0018_Resource",
 								"execute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename a resource file",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "mlw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Testing@1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"admissionsnewName\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/service/mlw/projects/1640845737_Project/resources/1640845748_0816_Resource/rename",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"mlw",
+								"projects",
+								"1640845737_Project",
+								"resources",
+								"1640845748_0816_Resource",
+								"rename"
 							]
 						}
 					},

@@ -457,6 +457,207 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 }
 ```
 
+
+### GET - Download a project
+
+```
+{{url}}/service/mlw/projects/{{projectID}}/dump
+```
+
+To facilitate collaboration and sharing, MLW allows the user to export the contents of a project as a compressed file. Download a project by encapsulating all the resources of project as a zip. The response will be a long running task which runs in the background.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+--header 'Authorization: {{auth}}
+--header 'Content-Type: application/json' \
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "ecebc016f83843859e06d10cddce59ec",
+    "name": "WF_download",
+    "createdAt": "2022-02-09T07:54:28.111972Z",
+    "type": "PROJECT_DOWNLOAD",
+    "cronExpression": "",
+    "status": "RUNNING",
+    "individualTasks": {
+        "97f42d387a534ca9902dfaff9e945a6d": {
+            "pID": "140571638638336",
+            "status": "RUNNING",
+            "type": "PROJECT_DOWNLOAD",
+            "id": "97f42d387a534ca9902dfaff9e945a6d",
+            "message": "Zipping your project",
+            "executedAt": "2022-02-09T08:14:51.399136Z",
+            "projectID": "1644309675_Project",
+            "tasksID": "ecebc016f83843859e06d10cddce59ec"
+        }
+    },
+    "projectID": "1644309675_Project",
+    "sortTime": 1644394491,
+    "projectName": "WF",
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "properties": [
+        {
+            "key": "zip_name",
+            "label": "ZIP Name",
+            "value": "WF_download.zip"
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+--header 'Content-Type: application/json'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --header "Authorization: {{auth}}"
+```
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "message": "Project with id '1644309674_Project' not found.",
+    "errorCode": 404,
+    "exception": "Project not found"
+}
+```
+
+
+### POST - Upload a project
+
+```
+{{url}}/service/mlw/projects/upload
+```
+
+To facilitate collaboration and sharing, MLW allows the user to import the contents of a project from a compressed file. Upload a project zip which encapsulates all the resources. The response will be a long running task which runs in the background.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|file|{{file Object}}|Project ZIP file
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request POST '{{url}}/service/mlw/projects/upload' \
+--header 'Authorization: {{auth}}
+--header 'Content-Type: application/json' \
+--form 'file=@"/../../WorkFlow_project.zip"'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "395dc2be201b418b97f56f213b820de5",
+    "name": "WorkFlow_project_e02232",
+    "createdAt": "2022-02-09T08:24:53.045752Z",
+    "type": "PROJECT_UPLOAD",
+    "cronExpression": "",
+    "status": "RUNNING",
+    "individualTasks": {
+        "ca16d85213014c6a980afacf1ebd7798": {
+            "pID": "140571638638336",
+            "status": "RUNNING",
+            "type": "PROJECT_UPLOAD",
+            "id": "ca16d85213014c6a980afacf1ebd7798",
+            "message": "Uploading your project",
+            "executedAt": "2022-02-09T08:24:53.046085Z",
+            "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+            "tasksID": "395dc2be201b418b97f56f213b820de5"
+        }
+    },
+    "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+    "sortTime": 1644395093,
+    "projectName": "WorkFlow_project_e02232",
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "properties": [
+        {
+            "key": "project_name",
+            "label": "Project Name",
+            "value": "WorkFlow_project_e02232"
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/upload' \
+--header 'Content-Type: application/json'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+
 ### DELETE - Delete an existing project
 
 ```

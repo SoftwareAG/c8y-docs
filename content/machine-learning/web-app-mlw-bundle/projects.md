@@ -11,8 +11,10 @@ Projects functionality includes:
 * [Creating a new project](#creating-a-new-project)
 * [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
 * [Committing a project - version management](#commiting-a-project-version)
-* [Download a project as a compressed file](#Download-a-project)
-* [Upload a project](#Upload-a-project)
+* [Switch between project versions][#switch-project-version]
+* [Download a project as a compressed file](#download-a-project)
+* [Upload a project](#upload-a-project)
+* [Delete a project](#delete-a-project)
 
 ### Creating a new project
 
@@ -90,8 +92,8 @@ Once the task has reached **COMPLETED** status, the new project card would be su
 
 To delete a project, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click on **Delete**.
 
-![Project download](/images/zementis/mlw-app-project-download.png)
+![Project download](/images/zementis/mlw-app-project-delete.png)
 
-Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore download (ex. demoproject_download), to display the status of the delete process in the **Task History** section at the center.
+Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore delete (ex. demoproject_delete), to display the status of the delete process in the **Task History** section at the center.
 
 Once the task has reached **COMPLETED** status, the project would be successfully deleted. 

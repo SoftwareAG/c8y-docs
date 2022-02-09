@@ -23,7 +23,7 @@ Our LWM2M solution supports the following measurement types:
 - Integer - represented by any Integer numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as it is
 - String - represened by:
     - Any numeric values (Integer and Float) in String format
-    - Numeric values in scientiffic format in positive or negative exponential notation (Ex.: 1.23E10 or 3.57e+5 or 9.8e-4)
+    - Numeric values in scientific format in positive or negative exponential notation (Ex.: 1.23E10 or 3.57e+5 or 9.8e-4)
     - Any positive or negative numeric values starting with leading zero will be interpreted as a positive or negative *octal* value (Ex.: -029 or 010) and will be stored in {{< product-c8y-iot >}} as its decimal representation
     - Any positive or negative value starting with 0x or 0X following with any numbers and letterf from A to F (no matter capital letter or not) will be interpeted as a positive or negative hexadecimal values (Ex.: 0x23F3D5C1 or -0x42a3b3d1) and will be stored in {{< product-c8y-iot >}} as its decimal representation
     

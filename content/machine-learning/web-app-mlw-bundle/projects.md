@@ -79,4 +79,4 @@ Click **Tasks** in the navigator and click the respective task name, which in th
 
 Once the task has reached **COMPLETED** status, the new project card would be successfully created. You can view the contents of the project by clicking on the respective project card.
 
-![ZIP download](/images/zementis/mlw-app-new-project-upload.png)
+![ZIP upload](/images/zementis/mlw-app-new-project-upload.png)

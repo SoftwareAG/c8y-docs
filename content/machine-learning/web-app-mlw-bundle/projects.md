@@ -50,3 +50,33 @@ Click **Tasks** in the navigator and click the respective task name, which in th
 The project card will show the different versions available for that project.
 
 ![Upload Resources](/images/zementis/mlw-app-project-version.png)
+
+
+### Download a project
+
+To facilitate collaboration and sharing, MLW allows the user to export the contents of a project as a compressed file.
+
+To download a project of a particular version, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click on **Download**.
+
+![Project download](/images/zementis/mlw-app-project-download.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore download (ex. demoproject_download), to display the status of the download process in the **Task History** section at the center.
+
+Once the task has reached **COMPLETED** status, the project zip would be successfully created. You can download the project zip by clicking on the **Project** button on the project card.
+
+![ZIP download](/images/zementis/mlw-app-project-download-zip.png)
+
+
+### Upload a project
+
+To facilitate collaboration and sharing, MLW allows the user to upload the contents from an exported project archive.
+
+To upload a project on a particular tenant, Click **+Add Project** at the right of the top menu bar, select the **Upload** radio button and upload the zip file by clicking on **Drop file here** button.
+
+![Project upload](/images/zementis/mlw-app-project-upload.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore unique uuid (ex. demoproject_a3n67e), to display the status of the upload process in the **Task History** section at the center.
+
+Once the task has reached **COMPLETED** status, the new project card would be successfully created. You can view the contents of the project by clicking on the respective project card.
+
+![ZIP download](/images/zementis/mlw-app-new-project-upload.png)

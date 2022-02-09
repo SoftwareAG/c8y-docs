@@ -1,6 +1,6 @@
 ---
-weight: 40
-title: Common capabilities
+weight: 30
+title: Location capabilities
 layout: redirect
 ---
 

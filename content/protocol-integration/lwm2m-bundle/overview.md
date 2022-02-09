@@ -28,7 +28,7 @@ Our LWM2M solution supports the following measurement types:
     - Any positive or negative numeric values starting with leading zero will be interpreted as a positive or negative octal value (for example -029 or 010) and will be stored in {{< product-c8y-iot >}} as its decimal representation
     - Any positive or negative value starting with 0x or 0X followed by any number or letter from A to F (case insensitive) will be interpreted as a positive or negative hexadecimal value (for example 0x23F3D5C1 or -0x42a3b3d1) and will be stored in {{< product-c8y-iot >}} as its decimal representation
 
-> **Important:** If a string is mapped into a measurement and a string value does not follow any of the notations above, it cannot be parsed. As a result, an alarm will be created.
+> **Important:** If a string is mapped into a measurement and the string value does not follow any of the notations above, it cannot be parsed. As a result, an alarm will be created.
 
 To use these integrations, upload the corresponding DDF XML to your tenant.
 For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Cloud Fieldbus > Configuring fieldbus device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) for more information.

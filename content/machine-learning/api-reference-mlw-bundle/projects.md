@@ -625,14 +625,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/upload' \
     "recurrence": "ONE_TIME",
     "startDate": "",
     "startTimeH": "",
-    "startTimeM": "",
-    "properties": [
-        {
-            "key": "project_name",
-            "label": "Project Name",
-            "value": "WorkFlow_project_e02232"
-        }
-    ]
+    "startTimeM": ""
 }
 ```
 

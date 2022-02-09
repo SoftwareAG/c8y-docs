@@ -659,6 +659,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/upload' \
 
 Delete the existing project. The response will be the list of remaining projects, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
 
+**NOTE:** If there is any running task associated with the project, the delete operation won't be allowed untill the task has completed.
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -733,6 +735,160 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "error": "general/internalError",
+    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project delete not allowed."
+}
+```
+
+
+### DELETE - Delete an existing version of a project
+
+```
+{{url}}/service/mlw/projects/{{projectID}}?versionNumber={versionNumber}
+```
+
+Delete the existing version of a project. The response will be the list of remaining projects without the deleted version of the given project id, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
+
+**NOTE:** If there is any running task associated with the project, the delete operation won't be allowed untill the task has completed.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|projectID (string)| project ID of the project
+|versionNumber| version number to be deleted
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "data": [
+        {
+            "id": "1601507741_Project",
+            "name": "MLW Testing Trial",
+            "description": "Regression tests",
+            "createdAt": "2021-09-16T06:18:38.193833Z",
+            "properties": [],
+            "isModified": false,
+            "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v1",
+            "versions": [
+                "v1"
+            ],
+            "resourcesCount": {
+                "data": 38,
+                "model": 27,
+                "code": 26,
+                "workflow": 12,
+                "pipeline": 3,
+                "nn-designer": 5,
+                "totalCount": 111
+            }
+        },
+        {
+            "id": "1601507600_Project",
+            "name": "MLW Testing Trial 2",
+            "description": "Regression tests 2",
+            "createdAt": "2021-09-16T06:18:30.193833Z",
+            "properties": [],
+            "isModified": false,
+            "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v0",
+            "versions": [
+                "v0"
+            ],
+            "resourcesCount": {
+                "data": 8,
+                "model": 2,
+                "code": 2,
+                "workflow": 0,
+                "pipeline": 0,
+                "nn-designer": 0,
+                "totalCount": 12
+            }
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "error": "general/internalError",
+    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project version delete not allowed.",
+}
+```
+
 
 
 ### GET - List of available resources in a project

@@ -5,6 +5,7 @@ layout: redirect
 ---
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
+
 > **Important:** {{< product-c8y-iot >}} currently supports LWM2M 1.0.
 
 > **Info:** You can connect any device supporting LWM2M 1.0 to {{< product-c8y-iot >}} without programming. We expect the device and its capabilities (e.g. firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard.
@@ -19,17 +20,17 @@ Our LWM2M solution allows any LWM2M object to be easily interfaced with the plat
 
 Our LWM2M solution supports the following measurement types:
 - Boolean - represented as "true" or "false" and mapped in {{< product-c8y-iot >}} LWM2M solution respectively as "0" or "1"
-- Float - represented by any Float numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as it is
-- Integer - represented by any Integer numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as it is
+- Float - represented by any Float numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as is
+- Integer - represented by any Integer numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as is
 - String - represented by:
-    - Any numeric values (Integer and Float) in String format
-    - Numeric values in scientific format in positive or negative exponential notation (Ex.: 1.23E10 or 3.57e+5 or 9.8e-4)
-    - Any positive or negative numeric values starting with leading zero will be interpreted as a positive or negative *octal* value (Ex.: -029 or 010) and will be stored in {{< product-c8y-iot >}} as its decimal representation
-    - Any positive or negative value starting with 0x or 0X following with any numbers and letters from A to F (case insensitive) will be interpreted as a positive or negative hexadecimal values (Ex.: 0x23F3D5C1 or -0x42a3b3d1) and will be stored in {{< product-c8y-iot >}} as its decimal representation
-    
-**Important:** If a String is mapped into a measurement and a String value doesn't follow any of the notations above, it can't be parsed. As a result, an alarm will be created.
+    - Any numeric values in a string format (for example integer and float)
+    - Numeric values in scientific format in a positive or negative exponential notation (for example 1.23E10 or 3.57e+5 or 9.8e-4)
+    - Any positive or negative numeric values starting with leading zero will be interpreted as a positive or negative octal value (for example -029 or 010) and will be stored in {{< product-c8y-iot >}} as its decimal representation
+    - Any positive or negative value starting with 0x or 0X followed by any number or letter from A to F (case insensitive) will be interpreted as a positive or negative hexadecimal value (for example 0x23F3D5C1 or -0x42a3b3d1) and will be stored in {{< product-c8y-iot >}} as its decimal representation
 
-To make use of these integrations, upload the corresponding DDF XML to your tenant.
-For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using [device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus).
+> **Important:** If a string is mapped into a measurement and a string value does not follow any of the notations above, it cannot be parsed. As a result, an alarm will be created.
+
+To use these integrations, upload the corresponding DDF XML to your tenant.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Cloud Fieldbus > Configuring fieldbus device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) for more information.
 
 ![Device protocols](/images/device-protocols/lwm2m/lwm2m-deviceprotocol.png)

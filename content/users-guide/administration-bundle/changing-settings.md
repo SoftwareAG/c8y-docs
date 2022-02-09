@@ -380,7 +380,7 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant.
 
->**Info:** All users must have access to this application.
+>**Info:** All users must have access to this application. Whenever platform is accessed as example by domain name only without mention of specific application, application selected on this screen is used as default landing page.
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 

@@ -11,6 +11,8 @@ Projects functionality includes:
 * [Creating a new project](#creating-a-new-project)
 * [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
 * [Committing a project - version management](#commiting-a-project-version)
+* [Download a project](#Download-a-project)
+* [Upload a project](#Upload-a-project)
 
 ### Creating a new project
 

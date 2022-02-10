@@ -36,7 +36,7 @@ For each alarm mapping, the alarm severity, the alarm type and a description (op
 
 Expand an alarm mapping to edit it. You may modify the description and the alarm severity. The alarm type is not editable.
 
-> **Info:** To discard modified alarms without save in order to start over, refresh the list. 
+> **Info:** Refresh the list to discard any changes without saving.
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

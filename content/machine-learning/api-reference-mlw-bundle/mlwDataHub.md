@@ -17,6 +17,8 @@ Operations on MLW data connectors - Data pull from {{< product-c8y-iot >}} DataH
 
 Pulls the data with the given query from {{< product-c8y-iot >}} DataHub.
 
+**ROLES & PERMISSIONS**: (ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN) and ROLE_DATAHUB_QUERY_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}

@@ -19,6 +19,8 @@ Operations on Jupyter Notebook.
 ```
 Gets the content of the Jupyter Notebook file and also creates a Jupyter session.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -109,6 +111,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 
 Updates the contents of the Jupyter Notebook file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -213,6 +217,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 
 Gets the list of created Jupyter sessions.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

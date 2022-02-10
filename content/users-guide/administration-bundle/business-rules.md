@@ -30,7 +30,7 @@ For each alarm mapping, the alarm severity, the alarm type and a description (op
 4. Select the desired new severity, or select "Drop" to not show the alarm at all.
 5. Click **Save** to save your settings.
 
-> **Info:** The alarm type provided as an alarm mapping is interpreted as alarm type prefix: &quot;&#60;type-prefix&#62;*&quot;. If you create for example an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value e.g. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
+> **Info:** The alarm type provided as an alarm mapping is interpreted as alarm type prefix: &quot;&#60;type-prefix&#62;*&quot;. If you create, for example, an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value e.g. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
 
 #### To edit an alarm mapping
 

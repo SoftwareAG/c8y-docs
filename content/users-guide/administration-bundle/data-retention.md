@@ -49,7 +49,7 @@ The retention rule will be added to the list.
 
 #### To edit a retention rule
 
-Simply click the row of the rule you want to edit or click the menu icon at the right of the respective row and then click **Edit**.
+Simply click the row of the rule you want to edit.
 
 For details on the fields, see [To add a retention rule](#add-retention-rule).
 

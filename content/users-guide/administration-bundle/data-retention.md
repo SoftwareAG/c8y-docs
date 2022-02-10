@@ -95,9 +95,8 @@ Click **Upload file** in the top menu bar.
 
 <img src="/images/users-guide/Administration/admin-files-repository-upload.png" alt="Files Repository download modal" style="max-width: 100%">
 
-Within the upload modal you can either upload single file or have multiple files selected. Each additional file for upload should be independently selected for upload within respective file input control on the form. Additional controls for file upload can be added by clicking on **Add file** button.
+In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon at the right of the file field.
 
-In case if some of selected files are later decided that are not needed, remove respective input with delete button located next to file select input control.
 
 #### To download a file from your account
 

@@ -43,7 +43,7 @@ For each data connector, the following information is provided:
 
 * the data connector's name
 * its destination tenant
-* description if provided, `None` message displayed otherwise
+* description if provided, "None" displayed otherwise
 * the status of the connector
 * the number of filters set for the data connector
 
@@ -139,7 +139,7 @@ After saving the configuration, you will see a security code displayed below you
 
 #### To edit a data connector
 
-Click connector title or the menu icon at the right of a data connector entry and then click **Edit**.
+Click the connector title,  or click the menu icon at the right of a data connector entry and then click **Edit**.
 
 In the **Settings** tab, edit the data connector configuration.
 

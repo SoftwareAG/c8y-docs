@@ -59,7 +59,11 @@ With the upcoming releases 10.15+ we intend to close a design gap, which current
 
 In the future, PlatformImpl will no longer be exposed as a Spring Bean and it will not be feasible to inject it.
 
-Instead of creating new instances using PlatformImpl, you should always inject Cumulocity IoT API beans, such as InventoryApi, AlarmApi, IndentityApi.
+Instead of creating new instances using PlatformImpl, you should always inject Cumulocity IoT API beans, such as InventoryApi, AlarmApi, IndentityApi, for example:
+
+```
+InventoryApi inventoryApi;
+```
 
 Contact us if you have any questions on this change.
 

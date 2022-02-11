@@ -19,16 +19,29 @@ Contact us if you have any questions on the removal of this deprecated query par
 
 #### Implemented
 
-##### Removal of Basic Auth browser-based authentication
+##### Change of basic browser-based authentication
 
-As announced in [release 10.11](/releasenotes/release-10-11-0/announcements-10-11-0/), With the 10.5.0 release a new token-based mechanism for browser-based authentication was introduced (O-Auth Internal) in order to tighten the security of the Cumulocity IoT platform.
+**What was the previous state?**
 
-With the 10.13 release, the token-based authentication will be enabled by default for all tenants. The basic authentication option will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal. Note, that basic authentication will still be available for devices connecting to the Cumulocity IoT platform.
+With the 10.5.0 release a new token-based mechanism for browser-based authentication was introduced (OAuth Internal) in order to tighten the security of the Cumulocity IoT platform.
 
-If not done already, we recommend you not to wait for the 10.13 release but to enable token-based authentication as soon as possible. Documentation how to enforce token-based authentication can be found in [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*.
+**What is new with release 10.13?**
 
-In case you have developed your own web applications or microservices, please make sure that they do support the token-based authentication authentication mechanism. This will be the case if your web applications are based on the Web SDK 10.5.0 or higher as well as the Microservice SDK 10.5.0 or higher.
+As announced in [release 10.11](/releasenotes/release-10-11-0/announcements-10-11-0/), with the 10.13 release, the OAuth Internal authentication will be enabled by default for all new created tenants as the authentication method for all browser-based applications.
 
+Basic authentication will still be available as a fallback but has to be manually switched on. For details, see [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*. Note, that basic authentication for devices is not affected by this change.
+
+**What comes next?**
+
+With a future release, the fallback for basic authentication will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal.
+
+**What does this mean for my organization?**
+
+ All custom web applications and microservices which do not support OAuth internal will not work with newly created tenants.
+
+**What do I need to do?**
+
+In case you have developed your own web applications or microservices, please make sure that they support the OAuth Internal authentication mechanism. This is achieved by changing the authentication mechanism using the appropriate SDK later than 10.5 to rebuild your web applications or microservices.
 
 ### SDK changes
 
@@ -42,9 +55,13 @@ See also the related entry in the [Tech Community](https://tech.forums.softwarea
 
 ##### Removing PlatformImpl Spring bean from Microservice SDK
 
-Cumulocity IoT currently has a design gap which allows users to use Cumulocity IoT APIs incorrectly (by mixing Spring injection with raw Java). With the upcoming releases 10.15+ we intend to no longer expose the PlatformImpl as a Spring Bean. With this change we will close the current design gap.
+With the upcoming releases 10.15+ we intend to close a design gap, which currently exists in Cumulocity IoT and allows to wrongly use Cumulocity IoT APIs (by mixing Spring injection with raw Java).
 
-How does this impact users? PlatformImpl will no longer be exposed as a Spring Bean and it will not be feasible to inject it.
+In the future, PlatformImpl will no longer be exposed as a Spring Bean and it will not be feasible to inject it.
+
+Instead of creating new instances using PlatformImpl, you should always inject Cumulocity IoT API beans, such as InventoryApi, AlarmApi, IndentityApi.
+
+Contact us if you have any questions on this change.
 
 ##### Deprecation of the variable HOOK_ROUTE_ONCE
 

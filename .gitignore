@@ -9,3 +9,4 @@ codekit-config.json
 npm-debug.log
 .vscode/
 static/releases.json
+.hugo_build.lock

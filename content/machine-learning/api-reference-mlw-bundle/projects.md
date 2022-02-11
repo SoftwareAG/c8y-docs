@@ -20,6 +20,8 @@ Operations on Machine Learning Workbench (MLW) Projects.
 
 Retrieves the list of projects available in MLW.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -95,6 +97,8 @@ curl --request GET "{{url}}/service/mlw/projects"
 ```
 
 Creates a new project with given project name and description.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -187,6 +191,35 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
     "exception": "Project Exist"
 }
 ```
+**Example Request**
+
+```
+409 - Conflict
+
+curl --location --request POST '{{url}}/service/mlw/projects' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"name":"","description":"A dummy project"}'
+```
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```
 
 ### POST - Commit the resources of the project
 
@@ -195,6 +228,8 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 ```
 
 Commit the resources of project for version control. The response will be a long running task which runs in the background.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -319,6 +354,8 @@ curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --h
 
 Updates the exiting project name and description with given new project name and description.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -408,6 +445,223 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```
+
+
+### GET - Download a project
+
+```
+{{url}}/service/mlw/projects/{{projectID}}/dump
+```
+
+To facilitate collaboration and sharing, MLW allows the user to export the contents of a project as a compressed file. Download a project by encapsulating all the resources of project as a zip. The response will be a long running task which runs in the background.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+--header 'Authorization: {{auth}}
+--header 'Content-Type: application/json' \
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "ecebc016f83843859e06d10cddce59ec",
+    "name": "WF_download",
+    "createdAt": "2022-02-09T07:54:28.111972Z",
+    "type": "PROJECT_DOWNLOAD",
+    "cronExpression": "",
+    "status": "RUNNING",
+    "individualTasks": {
+        "97f42d387a534ca9902dfaff9e945a6d": {
+            "pID": "140571638638336",
+            "status": "RUNNING",
+            "type": "PROJECT_DOWNLOAD",
+            "id": "97f42d387a534ca9902dfaff9e945a6d",
+            "message": "Zipping your project",
+            "executedAt": "2022-02-09T08:14:51.399136Z",
+            "projectID": "1644309675_Project",
+            "tasksID": "ecebc016f83843859e06d10cddce59ec"
+        }
+    },
+    "projectID": "1644309675_Project",
+    "sortTime": 1644394491,
+    "projectName": "WF",
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "properties": [
+        {
+            "key": "zip_name",
+            "label": "ZIP Name",
+            "value": "WF_download.zip"
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+--header 'Content-Type: application/json'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --header "Authorization: {{auth}}"
+```
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "message": "Project with id '1644309674_Project' not found.",
+    "errorCode": 404,
+    "exception": "Project not found"
+}
+```
+
+
+### POST - Upload a project
+
+```
+{{url}}/service/mlw/projects/upload
+```
+
+To facilitate collaboration and sharing, MLW allows the user to import the contents of a project from a compressed file. Upload a project zip which encapsulates all the resources. The response will be a long running task which runs in the background.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|file|{{file Object}}|Project ZIP file
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request POST '{{url}}/service/mlw/projects/upload' \
+--header 'Authorization: {{auth}}
+--header 'Content-Type: application/json' \
+--form 'file=@"/../../WorkFlow_project.zip"'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "395dc2be201b418b97f56f213b820de5",
+    "name": "WorkFlow_project_e02232",
+    "createdAt": "2022-02-09T08:24:53.045752Z",
+    "type": "PROJECT_UPLOAD",
+    "cronExpression": "",
+    "status": "RUNNING",
+    "individualTasks": {
+        "ca16d85213014c6a980afacf1ebd7798": {
+            "pID": "140571638638336",
+            "status": "RUNNING",
+            "type": "PROJECT_UPLOAD",
+            "id": "ca16d85213014c6a980afacf1ebd7798",
+            "message": "Uploading your project",
+            "executedAt": "2022-02-09T08:24:53.046085Z",
+            "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+            "tasksID": "395dc2be201b418b97f56f213b820de5"
+        }
+    },
+    "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+    "sortTime": 1644395093,
+    "projectName": "WorkFlow_project_e02232",
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": ""
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/upload' \
+--header 'Content-Type: application/json'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
 
 ### DELETE - Delete an existing project
 
@@ -416,6 +670,10 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 ```
 
 Delete the existing project. The response will be the list of remaining projects, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
+
+**NOTE:** If there is any running task associated with the project, the delete operation won't be allowed untill the task has completed.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -493,6 +751,162 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 
 
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "error": "general/internalError",
+    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project delete not allowed."
+}
+```
+
+
+### DELETE - Delete an existing version of a project
+
+```
+{{url}}/service/mlw/projects/{{projectID}}?versionNumber={versionNumber}
+```
+
+Delete the existing version of a project. The response will be the list of remaining projects without the deleted version of the given project id, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
+
+**NOTE:** If there is any running task associated with the project, the delete operation won't be allowed untill the task has completed.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|projectID (string)| project ID of the project
+|versionNumber| version number to be deleted
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "data": [
+        {
+            "id": "1601507741_Project",
+            "name": "MLW Testing Trial",
+            "description": "Regression tests",
+            "createdAt": "2021-09-16T06:18:38.193833Z",
+            "properties": [],
+            "isModified": false,
+            "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v1",
+            "versions": [
+                "v1"
+            ],
+            "resourcesCount": {
+                "data": 38,
+                "model": 27,
+                "code": 26,
+                "workflow": 12,
+                "pipeline": 3,
+                "nn-designer": 5,
+                "totalCount": 111
+            }
+        },
+        {
+            "id": "1601507600_Project",
+            "name": "MLW Testing Trial 2",
+            "description": "Regression tests 2",
+            "createdAt": "2021-09-16T06:18:30.193833Z",
+            "properties": [],
+            "isModified": false,
+            "isFreeze": false,
+            "isFreezeProjectPull": false,
+            "selectedVersion": "v0",
+            "versions": [
+                "v0"
+            ],
+            "resourcesCount": {
+                "data": 8,
+                "model": 2,
+                "code": 2,
+                "workflow": 0,
+                "pipeline": 0,
+                "nn-designer": 0,
+                "totalCount": 12
+            }
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+--header 'Content-Type: application/json' \
+```
+
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "error": "general/internalError",
+    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project version delete not allowed.",
+}
+```
+
+
+
 ### GET - List of available resources in a project
 
 ```
@@ -500,6 +914,8 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 
 Retrieves the list of files available in the project. It contains info related to each file, counts of resources, all available  version information of the selected project.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -598,6 +1014,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 
 Scans the project structure to list any un-reported file in the system, which would have been generated by code execution or through notebook execution.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -700,6 +1118,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 
 Pulls all the resources from the {{ < product-c8y-iot > }} inventory of the selected version of the project.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -852,6 +1272,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 
 To upload the resource files to use in the project, files like csv, txt, json.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -995,6 +1417,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 
 To create a new Python script.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1275,6 +1699,35 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 }
 ```
 
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "type"
+            ],
+            "msg": "unexpected value; permitted: 'wf', 'py', 'ipynb', 'architecture', 'pipeline'",
+            "type": "value_error.const",
+            "ctx": {
+                "given": "",
+                "permitted": [
+                    "wf",
+                    "py",
+                    "ipynb",
+                    "architecture",
+                    "pipeline"
+                ]
+            }
+        }
+    ]
+}
+```
 
 ### GET - Get the details of the resource file
 
@@ -1283,6 +1736,8 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 ```
 
 Gets the details of a resource file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1353,6 +1808,8 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 ```
 Gets the content of the code file.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1409,6 +1866,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 
 Gets the content of the notebook file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1502,6 +1961,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Updates the contents of a file.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -1578,6 +2039,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 
 Deletes a resource file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -1681,6 +2144,8 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
 ```
 
 Downloads a resource file.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -12,9 +12,9 @@ This section deals with the basic data science steps of creating a casting defec
 
 ### Collecting data from Kaggle
 
-Download the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product.
+Download the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product. Or use the prepared dataset included within **CastingDefectDetectionDemoProject.zip** (In case you are using the already prepared dataset, please skip to [Uploading the project to MLW step](#Uploading-the-project-to-MLW))
 
-> **Info:** You will get two folders when you unzip the downloaded dataset. Use the *casting_data* folder and delete the *casting_512x512* folder.
+> **Info:** You will get two folders when you unzip the downloaded dataset from Kaggle. Use the *casting_data* folder and delete the *casting_512x512* folder.
 
 All the images provided with this dataset are the top view of the submersible pump impeller.
 
@@ -32,17 +32,17 @@ For training a classification model, the data is split into training and testing
 
 Change the name of *test* folder to *validation* and create a ZIP file of these two folders (i.e. a ZIP file contaning *train* and *validation* folders). 
 
-### Uploading the data to MLW
+### Uploading the project to MLW
 
-Log in to the MLW and use the **Upload Resources** option to upload the created ZIP file. This might take a few minutes depending on your internet bandwidth.
+Log in to the MLW and Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
 
-After the data is uploaded sucessfully, navigate to the **Data** folder of the MLW and click on the ZIP file. You should see the metadata of the uploaded dataset.
+After the project is uploaded sucessfully, navigate to the **Data** folder of the MLW and click on the ZIP file. You should see the metadata of the uploaded dataset. You should also see 2 test data files, 5 code files, and 1 architecture file within the project.
 
 #### Training the model
 
-**Method 1: Creating a custom deep neural network architecture**  
+**Method 1: Creating/Using a custom deep neural network architecture**  
 
-1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**.
+1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already created architecture file which exists within the project. Jump to step 4 if you are doing the latter.
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 
@@ -60,7 +60,7 @@ After the data is uploaded sucessfully, navigate to the **Data** folder of the M
 
 **Method 2: Training a model in Jupyter Notebook using the transfer learning technique with Mobilenet architecture**
 
-1. The *CastingDefectDetectionDemo.zip* has a folder named *Method2* which contains a Jupyter Notebook file named *castingDefectDetectionDemo.ipynb*. Use the MLW's upload functionality to upload the Notebook file. 
+1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded a Jupyter Notebook file named *castingDefectDetectionDemo.ipynb*. 
 
 2. In the **Code** folder of the MLW, click *castingDefectDetectionDemo.ipynb* to view the metadata of the file. 
 
@@ -73,10 +73,10 @@ Once all the cells are executed successfully, a model named *castingDefectModelV
 
 Now that the model is successfully trained (by any of the above two training methods) and available for serving in the form of an ONNX file, you can create an inference pipeline for deploying the model to production. 
 
-The *CastingDefectDetectionDemo.zip* contains two folders namely *Method1* and *Method2*. Depending on the training method used, upload the relevant Python scripts.
+Uploading *CastingDefectDetectionDemoProject.zip* project uploaded 4 Python files. Depending on the training method used, use the relevant Python scripts.
 
-* If **Method 1** is has been used for training: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts from the *Method1* folder. Use the MLW's upload functionality to upload these Python files.
-* If **Method 2** is has been used for training: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts from the *Method2* folder. Use the MLW's upload functionality to upload these Python files.
+* If **Method 1** has been used for training: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts.
+* If **Method 2** has been used for training: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts.
 
 The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
@@ -87,9 +87,10 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
   from PIL import Image
   import io
   def process(content):
-      im = Image.open(io.BytesIO(content))
+      im = Image.open(io.BytesIO(content)).convert('RGB')
       im = im.resize((250,250))
       x = np.array(im,dtype=np.float32)
+      x *= 1./255
       x = np.expand_dims(x,0)
       return {"Conv2D_input":x}
 ```
@@ -104,7 +105,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** . 
+1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** or 'castingDefectModelViaJNB.onnx' , 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
     
     This creates a new pipeline file named *castingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 
@@ -115,7 +116,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
 
 Now that the inference pipeline is successfully deployed to production and available for serving, you can make predictions using the test data. 
 
-1. The *CastingDefectDetectionDemo.zip* contains two folders namely *Method1* and *Method2*. Both the folders contain *testDefectImage.PNG* and *testOkImage.PNG* test images. Use the MLW's upload functionality to upload these test image files from any of the folders.
+1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded *testDefectImage.PNG* and *testOkImage.PNG* test images.
 
 2. Navigate to the **Data** folder and select *testDefectImage.PNG*. Predict the class of image using castingPipeline.
 

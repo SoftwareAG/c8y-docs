@@ -46,6 +46,8 @@ There can be more than one matching data point entry in the data point library. 
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
+>**Info:** Save as default is triggering save of datapoint configuration within particular source device object. In case of saving configuration as default, reference to stored data can be used by other parts of system, for example by smart rules. Note also that in order to create threshold smartrule you need to save default at least once for selected data point. 
+
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
 <a name="change-visualization"></a>
@@ -102,9 +104,7 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-JsonPath expressions added from data points will be stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces will be supported):
-
-![Measurement added from data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
+>**Info:** JsonPath expressions added from data points are stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces are supported):
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
@@ -141,7 +141,7 @@ The following fields my be modified:
 </tr>
 <tr>
 <td style="text-align:left">Min/Max</td>
-<td style="text-align:left">Range shown on the y-axis. </td>
+<td style="text-align:left">Range shown on the y-axis. If not specified, y-axis is scaled based on measurements values retrieved per specified time range.</td>
 </tr>
 <tr>
 <td style="text-align:left">Target</td>

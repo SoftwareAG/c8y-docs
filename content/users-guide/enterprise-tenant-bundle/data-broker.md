@@ -139,7 +139,7 @@ After saving the configuration, you will see a security code displayed below you
 
 #### To edit a data connector
 
-Click the connector title,  or click the menu icon at the right of a data connector entry and then click **Edit**.
+Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
 
 In the **Settings** tab, edit the data connector configuration.
 

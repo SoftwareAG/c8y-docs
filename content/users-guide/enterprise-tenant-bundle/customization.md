@@ -135,9 +135,9 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-**Type**
+**Font**
 
-In the **Type** section you specify the font settings for your branded version.
+In the **Font** section you specify the font settings for your branded version.
 
 You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 

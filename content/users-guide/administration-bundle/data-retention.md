@@ -93,6 +93,11 @@ For each file, the name of the file, its owner, the file type (i.e. image/bmp, t
 
 Click **Upload file** in the top menu bar.
 
+<img src="/images/users-guide/Administration/admin-files-repository-upload.png" alt="Files Repository download modal" style="max-width: 100%">
+
+In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon at the right of the file field.
+
+
 #### To download a file from your account
 
 Click the menu icon at the right of the respective row and then click **Download**.

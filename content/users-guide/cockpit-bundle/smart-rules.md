@@ -91,7 +91,7 @@ Click the menu icon at the right of an entry and then click **Delete**.
 
 ### To debug a smart rule
 
-> **Note:** this feature is not available with Apama
+> **Info:** This feature is not available with Apama.
 
 For easier debugging, there is a direct link from a smart rule to the corresponding event processing module.
 

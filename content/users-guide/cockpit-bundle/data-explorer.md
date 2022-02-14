@@ -40,13 +40,13 @@ The data points properties are pre-filled as follows:
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
-There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**.
+There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
 
 ![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
->**Info:** Save as default is triggering save of datapoint configuration within particular source device object. In case of saving configuration as default, reference to stored data can be used by other parts of system, for example by smart rules. Note also that in order to create threshold smartrule you need to save default at least once for selected data point. 
+>**Info:** Save as default saves the datapoint configuration in a particular source device object. If you save the configuration as default, the stored data can be referenced by other parts of the system, for example by smart rules. Note also that in order to create a threshold smartrule you must save the default at least once for a selected data point. 
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
@@ -104,13 +104,13 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
->**Info:** JsonPath expressions added from data points are stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces are supported):
+>**Info:** JsonPath expressions added from data points are stored in bracket notation in order to increase flexibility in fragment and series naming (for example whitespaces are supported):
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
-For details on the data point library refer to [Using the Datapoint Library](#data-point-library).
+For details on the data point library refer to [Using the datapoint library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
@@ -141,11 +141,11 @@ The following fields my be modified:
 </tr>
 <tr>
 <td style="text-align:left">Min/Max</td>
-<td style="text-align:left">Range shown on the y-axis. If not specified, y-axis is scaled based on measurements values retrieved per specified time range.</td>
+<td style="text-align:left">Range shown on the y-axis. If not specified, the y-axis is scaled based on measurement values retrieved per specified time range.</td>
 </tr>
 <tr>
 <td style="text-align:left">Target</td>
-<td style="text-align:left">The target value is currently not shown in the diagram. The value is used in the "Data Point List" widget.</td>
+<td style="text-align:left">The target value is currently not shown in the diagram. The value is used in the "Data point list" widget.</td>
 </tr>
 <tr>
 <td style="text-align:left">Yellow range min/max</td>
@@ -213,7 +213,7 @@ To create a widget from the data explorer of a particular asset, click **More...
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
-> **Info:** To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
+> **Info:** To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with dashboards](#dashboards).
 
 **Send as widget to report**
 

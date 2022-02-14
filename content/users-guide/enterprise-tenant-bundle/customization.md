@@ -176,7 +176,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Title color. The default value is "FFFFF".
 * Text and buttons color. The default value is "#FAFAFA".
 * Separator line color. The default value is "#FAFAFA".
-* Text color of the current item in navigator. The default value is "#FAFAFA".
+* Text color of the current item in the navigator. The default value is "#FAFAFA".
 * Background color of the current item in the navigator with the main brand color as default.
 
 **Misc**

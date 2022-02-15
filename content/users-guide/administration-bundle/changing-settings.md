@@ -8,9 +8,9 @@ helpcontent:
   content: "Under **Login settings** you can specify your preferred login mode:
 
 
-	* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+	* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 	* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
-	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 
 	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
@@ -42,9 +42,9 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants.
+* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (prior to 10.13.0).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
-* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -60,7 +60,7 @@ By default, users can use any password with eight characters or more. If you sel
 
 #### Basic Auth restrictions
 
-Even if OAuth Internal is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
+Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
 Use the **Forbidden for web browsers** toggle to disallow the usage of basic authentication for web browsers. Moreover you can specify the following parameters:
 
@@ -69,19 +69,19 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 
 > **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 
-#### Oauth Internal session configuration
+#### OAI-Secure session configuration
 
-OAuth Internal can work in two modes with significant differences:
+OAI-Secure can work in two modes with significant differences:
 
 ##### Without a configuration related to the session (session configuration turned off)
 
-When there is no configuration related to the session, OAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
+When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
 ##### With the configuration of the session (session configuration turned on)
 
-Using OAuth Internal with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
+Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
-The OAuth Internal token acts as a session identifier on the client site (web browser). Such a token identifier which is stored in the cookie can have a preconfigured short lifetime. Then, the {{< product-c8y-iot >}} platform is responsible for renewing the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then, {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs.
+The OAI-Secure token acts as a session identifier on the client site (web browser). Such a token identifier which is stored in the cookie can have a preconfigured short lifetime. Then, the {{< product-c8y-iot >}} platform is responsible for renewing the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then, {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs.
 
 If the **Use session configuration** option is enabled, the following settings can be configured on tenant level by a tenant administrator:
 
@@ -133,7 +133,7 @@ During the session token renewal the previous token is revoked and a new one is 
 <a name="token-settings"></a>
 #### Token and cookie settings
 
-{{< product-c8y-iot >}} OAuth Internal is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
+OAI-Secure is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
 
 ##### Token settings
 
@@ -170,7 +170,7 @@ You may choose one of the following options:
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
-> **Info:** The TOTP method is only available with the login mode "OAuth Internal".
+> **Info:** The TOTP method is only available with the login mode "OAI-Secure".
 
 Click **Save TFA settings** to apply your settings.
 

@@ -58,7 +58,13 @@ By default, users can use any password with eight characters or more. If you sel
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
-#### Basic Auth restrictions
+#### OAI-Secure authentication
+
+If you have selected OAI-Secure as login mode, you may configure several additional parameters.
+
+![OAI-Secure settings](/images/users-guide/Administration/admin-oaisecure-settings.png)
+
+##### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
@@ -69,15 +75,15 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 
 > **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 
-#### OAI-Secure session configuration
+##### OAI-Secure session configuration
 
 OAI-Secure can work in two modes with significant differences:
 
-##### Without a configuration related to the session (session configuration turned off)
+**Without a configuration related to the session (session configuration turned off)**
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-##### With the configuration of the session (session configuration turned on)
+**With the configuration of the session (session configuration turned on)**
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 

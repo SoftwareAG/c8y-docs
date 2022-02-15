@@ -42,7 +42,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (prior to 10.13.0).
+* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
 * Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
@@ -126,7 +126,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tbody>
 </table>
 
->**Info:** The relation between the time parameters should be the following: renewal timeout < token timespan < absolute timeout. The recommended setting for renewal timeout is approximately half of the absolute timeout.
+>**Info:** The relation between the time parameters should be the following: renewal timeout < token timespan < absolute timeout. The recommended setting for the renewal timeout is approximately half of the token lifespan.
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
@@ -153,7 +153,7 @@ The default value is two weeks. It can also be set to any negative value so that
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-> **Info:** If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use OAuth authentication since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
+> **Info:** If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 
 #### TFA settings
 

@@ -1,6 +1,6 @@
 ---
 weight: 91
-title: API reference
+title: OpenAPI reference
 layout: bundle
 aliases:
   - /reference/rest-implementation

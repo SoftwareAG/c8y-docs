@@ -62,7 +62,8 @@ In the future, PlatformImpl will no longer be exposed as a Spring Bean and it wi
 Instead of creating new instances using PlatformImpl, you should always inject Cumulocity IoT API beans, such as InventoryApi, AlarmApi, IndentityApi, for example:
 
 ```
-InventoryApi inventoryApi;
+@Autowired //injection
+private InventoryApi inventoryApi;
 ```
 
 Contact us if you have any questions on this change.

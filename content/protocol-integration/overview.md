@@ -49,8 +49,8 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <td style="text-align:left">Allows to interface with LoRa devices through LORIOT Network Server Provider.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN Custom Codec</a></td>
-<td style="text-align:left">Allows the creation of an LPWAN Custom Codec microservice.</td>
+<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN custom codec</a></td>
+<td style="text-align:left">Allows the creation of an LPWAN custom codec microservice.</td>
 </tr>
 </tbody>
 </table>

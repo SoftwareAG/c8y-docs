@@ -26,6 +26,7 @@ The following placeholders can be found in the **Configuration** tab:
 |{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.
 |{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
+|{emai}|This placeholder will be replaced with recipient user current email address stored in user settings. Some views of UI application recognize that parameter and prefill respective values in a form, e.g. during the process of password reset.
 
 #### Two-factor authentication
 
@@ -49,7 +50,7 @@ In the **Password reset** section you can change all settings related to passwor
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
-In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
+In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {tenant-domain}/apps/devicemanagement/index.html?token={token}&email={email}.
 
 In the **Email subject** field, provide a subject for all password reset related emails.
 

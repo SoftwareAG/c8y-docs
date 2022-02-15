@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-Besides sending requests, for example, measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
+Besides sending requests, such as measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
 Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the {{< product-c8y-iot >}} C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 

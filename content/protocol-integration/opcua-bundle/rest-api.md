@@ -1005,13 +1005,13 @@ the OPC UA device gateway.</td>
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, for example, sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, etc.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, for example, rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, such as rate, etc.</td>
 </tr>
 </tbody>
 </table>

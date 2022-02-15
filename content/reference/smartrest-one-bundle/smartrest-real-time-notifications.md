@@ -96,7 +96,7 @@ Example:
 
 ### Subscribing with multiple templates
 
-If your device uses multiple templates (for example child devices have a different templates than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.
+If your device uses multiple templates (for example, child devices have a different template than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.
 
 Example request:
 

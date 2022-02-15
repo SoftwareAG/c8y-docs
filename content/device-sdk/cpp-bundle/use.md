@@ -245,7 +245,7 @@ int main ()
 
 ### Handling operations
 
-Besides sending requests, for example, measurements to {{< product-c8y-iot >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-c8y-iot >}}. The following example shows how to handle the `c8y_Restart` operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
+Besides sending requests, such as measurements to {{< product-c8y-iot >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-c8y-iot >}}. The following example shows how to handle the `c8y_Restart` operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
 
 ```cpp
 // ex-04-operation: examples/ex-04-operation/main.cc

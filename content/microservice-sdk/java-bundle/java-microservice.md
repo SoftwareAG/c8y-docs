@@ -366,7 +366,7 @@ $ curl -X POST -s \
   "<URL>/application/applications"
 ```
 
-In case of errors, for example, invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
+In case of errors, such as invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {

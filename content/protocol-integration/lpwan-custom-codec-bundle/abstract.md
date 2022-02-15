@@ -11,7 +11,7 @@ This capability solves this problem by providing you an ability to plugin a micr
 
 These Custom codec microservices can be developed in two ways.
 
-* A custom codec is a typical Cumulocity microservice conforming to the `decode` and `encode` contracts and for each supported device it should have
+* A custom codec is a typical {{< product-c8y-iot >}} microservice conforming to the `decode` and `encode` contracts and for each supported device it should have
 a device type and set of device command operations. For details refer [Codec API definitions](#codec-api-definition) 
  
 

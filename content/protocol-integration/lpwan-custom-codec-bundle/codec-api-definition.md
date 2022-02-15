@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 LPWAN Agents provide a way to plugin custom codecs, capable of encoding and decoding the payloads to and from the LPWAN devices. 
-A custom codec is a typical Cumulocity microservice conforming to the following contract.
+A custom codec is a typical {{< product-c8y-iot >}} microservice conforming to the following contract.
 
 1. Exposes `/encode` and `/decode` REST endpoints conforming to the Open API spec can be downloaded [here](/files/rest/lpwan-custom-codec-decode.json).
 2. LPWAN agent identifies the custom codec microservice through the Device Type associated with the Device. 

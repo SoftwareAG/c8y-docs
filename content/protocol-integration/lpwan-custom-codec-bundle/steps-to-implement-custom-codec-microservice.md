@@ -4,7 +4,7 @@ title: Implement LPWAN Codec microservice using lpwan-custom-codec library
 layout: redirect
 ---
 
-Cumulocity provides a java library `com.nsn.cumulocity.clients-java:lpwan-custom-codec` to develop custom codec microservice which complies with `/encode` and `/decode` contract.
+{{< product-c8y-iot >}} provides a java library `com.nsn.cumulocity.clients-java:lpwan-custom-codec` to develop custom codec microservice which complies with `/encode` and `/decode` contract.
 
 The Codec microservice should adhere to the following points.
 

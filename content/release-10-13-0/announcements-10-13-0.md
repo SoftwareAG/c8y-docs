@@ -27,21 +27,21 @@ With the 10.5.0 release a new token-based mechanism for browser-based authentica
 
 **What is new with release 10.13?**
 
-As announced in [release 10.11](/releasenotes/release-10-11-0/announcements-10-11-0/), with the 10.13 release, the OAuth Internal authentication will be enabled by default for all new created tenants as the authentication method for all browser-based applications.
+As announced in [release 10.11](/releasenotes/release-10-11-0/announcements-10-11-0/), with the 10.13 release, the OAI-Secure authentication (successor of OAuth Internal) will be enabled by default for all new created tenants as the authentication method for all browser-based applications.
 
 Basic authentication will still be available as a fallback but has to be manually switched on. For details, see [Administration > Changing settings](https://cumulocity.com/guides/{{< 10-11-0 >}}/users-guide/administration/#changing-settings) in the *User guide*. Note, that basic authentication for devices is not affected by this change.
 
 **What comes next?**
 
-With a future release, the fallback for basic authentication will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism O-Auth Internal.
+With a future release, the fallback for basic authentication will be removed for browser-based applications and all applications will be forced to use the token-based authentication mechanism OAI-Secure.
 
 **What does this mean for my organization?**
 
- All custom web applications and microservices which do not support OAuth internal will not work with newly created tenants.
+ All custom web applications and microservices which do not support OAI-Secure will not work with newly created tenants.
 
 **What do I need to do?**
 
-In case you have developed your own web applications or microservices, please make sure that they support the OAuth Internal authentication mechanism. This is achieved by changing the authentication mechanism using the appropriate SDK later than 10.5 to rebuild your web applications or microservices.
+In case you have developed your own web applications or microservices, please make sure that they support the OAI-Secure authentication mechanism. This is achieved by changing the authentication mechanism using the appropriate SDK later than 10.5 to rebuild your web applications or microservices.
 
 ### SDK changes
 
@@ -50,6 +50,8 @@ In case you have developed your own web applications or microservices, please ma
 ##### Deprecation of addHook and clearHooks methods
 
 The methods <code>addHook</code> and <code>clearHooks</code> are deprecated. The method <code>addHook</code> provided the functionality to invoke a custom method populating the managedObject whenever a managedObject with matching owner ('device_${id}') was created. The method <code>clearHooks</code> would flush the registered hooks and therefore no custom method would get invoked. In device management, the hook(s) would run when a newDeviceRequest got accepted.
+
+If you want to recreate the logic you may use the RealtimeService<T> from @c8y/ngx-components to subscribe to /managedObject/* or use the [ManagedObjectRealtimeService](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/ManagedObjectRealtimeService.html) which already extends the RealtimeService.
 
 See also the related entry in the [Tech Community](https://tech.forums.softwareag.com/t/deprecation-of-addhook-and-clearhooks/254548).
 

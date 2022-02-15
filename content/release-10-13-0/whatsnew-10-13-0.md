@@ -6,17 +6,17 @@ layout: bundle
 
 Release 10.13 includes the following new features or major feature enhancements.
 
-### Security improvement for the Oauth Internal authentication login mode
+### Security improvement for the token-based authentication login mode
 
-To increase the security level of the Cumulocity IoT platform, Oauth Internal authentication is now used as the default login mode for newly created tenants. Moreover, the usage of basic authentication for such tenants will be restricted, that is web browsers are no longer allowed to use basic authentication. Basic authentication is still allowed for IoT devices though.
+To increase the security level of the Cumulocity IoT platform, OAI-Secure authentication (successor of the previous OAuth Internal mode) is now used as the default login mode for newly created tenants. Moreover, the usage of basic authentication for such tenants will be restricted, that is web browsers are no longer allowed to use basic authentication. Basic authentication is still allowed for IoT devices though.
 
 ![Authentication](/images/release-notes/admin-auth-config.png)
 
- Additionally, various options have been added to the **Authentication** page to configure the token-based session. The new configuration options determine, for example, how often users of a tenant should be re-authenticated and how many simultaneous sessions they may use. All settings related to the default login mode or OAuth Internal  configuration can be changed on tenant level or on platform level.
+ Additionally, various options have been added to the **Authentication** page to configure the token-based session. The new configuration options determine, for example, how often users of a tenant should be re-authenticated and how many simultaneous sessions they may use. All settings related to the default login mode or OAI-Secure configuration can be changed on tenant level or on platform level.
 
- For details, see [Administration > Changing settings > Changing authentication settings](https://cumulocity.com/guides{{< 10-13-0 >}}/users-guide/administration/#authentication) in the *User guide* or the *Cumulocity IoT platform - Operations guide*.
+ For details, see [Administration > Changing settings > Changing authentication settings](https://cumulocity.com/guides{{< 10-13-0 >}}/users-guide/administration/#authentication) in the *User guide* or the section on *Operational procedures* in the *Cumulocity IoT platform - Operations guide*.
 
-All custom applications deployed on the Cumulocity IoT platform or integrated with the Cumulocity IoT platform (web application, microservices, etc.) must support authentication with OAuth Internal. In case of lacking backwards compatibility, the previous behaviour of the Cumulocity IoT platform can be restored for a particular tenant.
+All custom applications deployed on the Cumulocity IoT platform or integrated with the Cumulocity IoT platform (web application, microservices, etc.) must support authentication with OAI-Secure. In case of lacking backwards compatibility, the previous behaviour of the Cumulocity IoT platform can be restored for a particular tenant.
 
 ### Inventory roles performance improvement
 

@@ -19,6 +19,6 @@ Map one of these device types to the LPWAN device. To do so, navigate to a parti
 
 ![Device type mapping](/images/device-protocols/lpwan-custom-codec/lpwan-custom-codec-device-type-mapping.png)
 
-Supported device commands are available in the `Predefined commands` option from the device shell tab.
+Supported device commands are available in the `Predefined commands` option from the **Device shell** tab.
 
 ![Device supported commands](/images/device-protocols/lpwan-custom-codec/lpwan-custom-codec-device-commands.png)

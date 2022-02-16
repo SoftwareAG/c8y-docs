@@ -57,11 +57,9 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 **Method 2: Training a model in Jupyter Notebook using the transfer learning technique with Mobilenet architecture**
 
-1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded a Jupyter Notebook file named *castingDefectDetectionDemo.ipynb*. 
+1. In the **Code** folder of the project, click *castingDefectDetectionDemo.ipynb* to view the metadata of the file. 
 
-2. In the **Code** folder of the MLW, click *castingDefectDetectionDemo.ipynb* to view the metadata of the file. 
-
-3. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
+2. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
 
 Once all the cells are executed successfully, a model named *castingDefectModelViaJNB.onnx* is saved to the **Model** folder.
 
@@ -70,14 +68,14 @@ Once all the cells are executed successfully, a model named *castingDefectModelV
 
 Now that the model is successfully trained (by any of the above two training methods) and available for serving in the form of an ONNX file, you can create an inference pipeline for deploying the model to production. 
 
-Uploading *CastingDefectDetectionDemoProject.zip* project uploaded 4 Python files. Depending on the training method used, use the relevant Python scripts.
+Depending on the training method used, use the relevant Python scripts.
 
 * If **Method 1** has been used for training: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts.
 * If **Method 2** has been used for training: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts.
 
 The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
-* The pre-processing script is used to pre-process incoming test data (image) to convert it into *250*250 size. The pre-processing script **castingPreProcessingForNN.py* looks like below.
+* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250*250 size. The pre-processing script **castingPreProcessingForNN.py* looks like below.
 
 ```
   import numpy as np

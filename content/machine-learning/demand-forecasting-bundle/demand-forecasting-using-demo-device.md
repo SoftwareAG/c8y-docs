@@ -8,14 +8,11 @@ aliases:
 ---
 
 A fully functional demand forecasting demo can be prepared with the help of a demo device.
-For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* file.
+For this, use the artifacts provided as part of the project *DemandForecastingDemoProject.zip* file.
 
 #### Start with Machine Learning Workbench
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Demand Forecasting" as **Project name** and "Demand forecasting for waster usage" as **Project description**.
-
-2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload all the files extracted to Machine Learning Workbench (MLW). You will get 2 files in the **Data** section and 3 notebooks in the **Code** section.
-
+Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload "DemandForecastingDemoProject.zip" project to MLW. This should upload a new project with the name **DemandForecastingDemoProject** having a total of 5 resources. You will get 2 files in the **Data** folder and 3 notebooks in the **Code** folder.
 
 #### Register a demo device in the platform
 
@@ -54,7 +51,7 @@ We use this data to generate a time series model and forecast the next day's c8y
 
 #### Generate forecasts based on the simulated data
 
-Run the attached *TrainModelandPredict.ipynb* notebook which does the following:
+Run the uploaded *TrainModelandPredict.ipynb* notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
 2. Forecasts the next day's (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.

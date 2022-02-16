@@ -12,7 +12,7 @@ For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip
 
 #### Start with Machine Learning Workbench
 
-1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload **AnomalyDetectionDemoProject.zip** project to MLW. You will get 2 files in the **Data** folder and 3 notebooks in the **Code** folder.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload *ActivityRecognitionDemoProject.zip* project to MLW. A new project with the name **ActivityRecognitionDemoProject_uuid** having a total of 5 resources. You will get 2 files in the **Data** folder and 3 files in the **Code** folder.
 
 #### Register a demo device in the platform
 

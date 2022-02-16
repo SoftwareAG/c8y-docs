@@ -10,27 +10,24 @@ aliases:
 This section deals with the basic data science steps of creating a casting defect detection model using Machine Learning Workbench with the open-source Kaggle dataset. Follow the sections below for downloading data, building a neural network architecture, transfer learning with MobileNet, training the model, deploying the model to production and using the same to detect defects in the casts. 
 
 
-### Collecting data from Kaggle
+### Kaggle dataset
 
-Download the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product. Or use the prepared dataset included within **CastingDefectDetectionDemoProject.zip** (In case you are using the already prepared dataset, please skip to [Uploading the project to MLW step](#Uploading-the-project-to-MLW))
-
-> **Info:** You will get two folders when you unzip the downloaded dataset from Kaggle. Use the *casting_data* folder and delete the *casting_512x512* folder.
+We have downloaded the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product.
 
 All the images provided with this dataset are the top view of the submersible pump impeller.
 
-The dataset contains 7348 images in total. These are all grey-scaled images of the size 300x300 pixels. The augmentation is already applied in all the images.
+The dataset contains 7340 images in total. These are all grey-scaled images of the size 300x300 pixels. The augmentation is already applied in all the images.
 
 There are mainly two categories:
 
 1. Defective
 2. Ok
 
-For training a classification model, the data is split into training and testing folders. Both *train* and *test* folders contain *def_front* and *ok_front* subfolders.
+For training a classification model, the data is split into training and validation folders. Both *train* and *validation* folders contain *def_front* and *ok_front* subfolders.
 
 * **train:** *def_front* has 3758 and *ok_front* has 2875 images
-* **test:** *def_front* has 453 and *ok_front* has 262 images
+* **validation:** *def_front* has 449 and *ok_front* has 258 images
 
-Change the name of *test* folder to *validation* and create a ZIP file of these two folders (i.e. a ZIP file contaning *train* and *validation* folders). 
 
 ### Uploading the project to MLW
 

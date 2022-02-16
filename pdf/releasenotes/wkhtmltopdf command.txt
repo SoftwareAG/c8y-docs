@@ -13,14 +13,10 @@ wkhtmltopdf \
  ../pdf-copyright-page.html \
  toc \
  --xsl-style-sheet ../cumulocity-toc-style.xsl \
- http://localhost:1313/guides/releasenotes/release-10-10-0/overview-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/whatsnew-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/announcements-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/platform-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/applications-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/devices-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/streaming-analytics-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/machine-learning-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/datahub-10-10-0/ \
- http://localhost:1313/guides/releasenotes/release-10-10-0/documentation-10-10-0/ \
- "Cumulocity IoT release notes PREVIEW-v10.10.0.pdf"
+ http://localhost:1313/guides/releasenotes/release-10-13-0/whatsnew-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/announcements-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/platform-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/applications-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/devices-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/streaming-analytics-10-13-0/ \
+ "Cumulocity IoT release notes PREVIEW-v10.13.0.pdf"

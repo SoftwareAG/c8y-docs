@@ -75,7 +75,7 @@ Depending on the training method used, use the relevant Python scripts.
 
 The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
-* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250*250 size. The pre-processing script **castingPreProcessingForNN.py* looks like below.
+* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250x250 size. The pre-processing script *castingPreProcessingForNN.py* looks like below.
 
 ```
   import numpy as np

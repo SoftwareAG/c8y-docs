@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/demand-forecasting/#prerequisites
 ---
 
-[Download the DemandForecastingDemo.zip](/files/zementis/DemandForecastingDemo.zip) file which contains the scripts and sample data set used in this demo.
+Download the [DemandForecastingDemo.zip](/files/zementis/DemandForecastingDemo.zip) file which contains the scripts and sample data set used in this demo.
 
 Running the demo scripts requires 
 

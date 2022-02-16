@@ -19,4 +19,5 @@ wkhtmltopdf \
  http://localhost:1313/guides/releasenotes/release-10-13-0/applications-10-13-0/ \
  http://localhost:1313/guides/releasenotes/release-10-13-0/devices-10-13-0/ \
  http://localhost:1313/guides/releasenotes/release-10-13-0/streaming-analytics-10-13-0/ \
+ http://localhost:1313/guides/releasenotes/release-10-13-0/machine-learning-10-13-0/ \
  "Cumulocity IoT release notes PREVIEW-v10.13.0.pdf"

@@ -13,7 +13,7 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
-1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload **AnomalyDetectionDemoProject.zip** project to MLW. The project contains a script with name *DemoDeviceCreator.py* in the **Code** folder, that registers a demo device in {{< product-c8y-iot >}}) and also a *CONFIG.json* file in the **Data** folder of the Machine Learning Workbench (MLW).
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload *AnomalyDetectionDemoProject.zip* project to MLW. A new project will be created with the name **AnomalyDetectionDemoProject_uuid** having a total of 6 resources. The project contains a script with name *DemoDeviceCreator.py* in the **Code** folder, that registers a demo device in {{< product-c8y-iot >}} and also a *CONFIG.json* file in the **Data** folder of the Machine Learning Workbench (MLW).
 
 2. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 

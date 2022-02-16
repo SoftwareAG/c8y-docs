@@ -13,15 +13,13 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 A demo device can be registered instead of registering a real phone and used as a replica of an actual mobile phone.
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using demo device" as **Project description**.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload **AnomalyDetectionDemoProject.zip** project to MLW. The project contains a script with name *DemoDeviceCreator.py* in the **Code** folder, that registers a demo device in {{< product-c8y-iot >}}) and also a *CONFIG.json* file in the **Data** folder of the Machine Learning Workbench (MLW).
 
-2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *DemoDeviceCreator.py*, a script that registers a demo device in {{< product-c8y-iot >}}) and *CONFIG.json* to Machine Learning Workbench (MLW).
+2. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
-3. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
+3. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 
-4. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
-
-5. Select *DemoDeviceCreator.py* in the **Code** folder and click the execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+4. Select *DemoDeviceCreator.py* in the **Code** folder and click the execute icon <img src="/images/zementis/mlw-execute-icon.png" alt="Execute" style="display:inline-block; margin:0"> at the right of the top menu bar and fill the form with "DemoDeviceCreator" as **Task Name**, "ONE TIME" as **Recurrence** and click submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 
 Click **Tasks** in the navigator and click the "DemoDeviceCreator" task name, to display the status of the Python execution in the **Task History** section at the center.
@@ -74,7 +72,7 @@ Once registered, you can get the device ID by looking up your device on the **Al
 
 A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{< product-c8y-iot >}} from our demo device. This script can be used to depict the generation of anomalies.
 
-All you need to do is to upload this script to the MLW and run it as explained before.
+All you need to do is to run the script it as explained before.
 
 *AnomalySimulatorForDemoDevice.py*
 

@@ -44,7 +44,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Correlator REST interface.
 
 * To reduce both the memory usage of an application during startup and the application's startup time,
-  ensure the application is completely initialized before injecting monitors that automatically unload,
+  ensure the application is completely initialized before injecting monitors that automatically unload, 
   and before running time-consuming queries.
 
 ### Specific Apama limitations when using EPL apps

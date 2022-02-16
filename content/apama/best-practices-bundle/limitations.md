@@ -22,7 +22,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Correlator persistence.
 	* MemoryStore persistence.
 
-* Non-HTTP/REST connections to an external system or process are mostly impractical. Although if a service is available over the internet, then it can be used (e.g. an HTTP client inside Apama could connect to publicly accessible HTTP servers).
+* Non-HTTP/REST connections to an external system or process are mostly impractical. Although if a service is available over the internet, then it can be used (for example, an HTTP client inside Apama could connect to publicly accessible HTTP servers).
 
 	The Apama features affected by this include:
 

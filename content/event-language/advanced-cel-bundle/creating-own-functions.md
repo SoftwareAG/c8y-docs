@@ -6,7 +6,7 @@ aliases:
   - /event-language/advanced#creating-own-functions
 ---
 
-If you want to make more complex calculation than for example, sum or average you can create your own helper functions and expressions.
+If you want to make more complex calculation than, for example, sum or average you can create your own helper functions and expressions.
 For writing the function you can use JavaScript as the scripting language. You can also import Java classes into your expressions using importClass.
 
 Examples:

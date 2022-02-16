@@ -23,7 +23,7 @@ There are mainly two categories:
 1. Defective
 2. Ok
 
-For training a classification model, the data is split into training and validation folders. Both *train* and *validation* folders contain *def_front* and *ok_front* subfolders.
+For training a classification model, the data is split into train and validation folders. Both *train* and *validation* folders contain *def_front* and *ok_front* subfolders.
 
 * **train:** *def_front* has 3758 and *ok_front* has 2875 images
 * **validation:** *def_front* has 449 and *ok_front* has 258 images
@@ -33,21 +33,21 @@ For training a classification model, the data is split into training and validat
 
 Log in to the MLW and Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
 
-After the project is uploaded sucessfully, navigate to the **Data** folder of the MLW and click on the ZIP file. You should see the metadata of the uploaded dataset. You should also see 2 test data files, 5 code files, and 1 architecture file within the project.
+After the project is uploaded sucessfully, navigate to the **Data** folder of the project. You should also see 3 data files, 5 code files, and 1 architecture file within the project.
 
 #### Training the model
 
 **Method 1: Creating/Using a custom deep neural network architecture**  
 
-1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already created architecture file which exists within the project. Jump to step 4 if you are doing the latter.
+1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already available architecture file (*castingModelDesigner*) which exists within the project. Jump to step 4 if you are doing the latter.
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 
-3. Build a deep neural network architecture using the below example:
+3. Build a deep neural network architecture using the below example and save:
 
     ![Design](/images/zementis/castingDetection/mlw-casting-method1-arch-design.gif)
 
-4. Save the architecture file and train the deep neural network model by setting the **Training Parameters** as below:
+4. Train the deep neural network model by setting the **Training Parameters** as below:
 
     ![TrainParams](/images/zementis/castingDetection/mlw-casting-method1-arch-training-params.png)
 

@@ -6,7 +6,7 @@ aliases:
   - /reference-guide
 ---
 
-The reference guide contains the following topics:
+The *Reference guide* contains the following topics:
 
 * [SmartREST](/reference/smartrest-two)
 * [Notifications 2.0](/reference/notifications)

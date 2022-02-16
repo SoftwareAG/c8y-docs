@@ -100,7 +100,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** or 'castingDefectModelViaJNB.onnx' , 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
+1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** else 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
     
     This creates a new pipeline file named *castingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 

@@ -35,7 +35,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 ![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
->**Info:** To see the **Authentication** menu entry, you need one of the following roles: `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`.
+>**Info:** To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
 
 #### Login settings
 

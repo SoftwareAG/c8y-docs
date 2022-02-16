@@ -111,8 +111,6 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
 
 Now that the inference pipeline is successfully deployed to production and available for serving, you can make predictions using the test data. 
 
-1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded *testDefectImage.PNG* and *testOkImage.PNG* test images.
-
-2. Navigate to the **Data** folder and select *testDefectImage.PNG*. Predict the class of image using castingPipeline.
+Navigate to the **Data** folder and select *testDefectImage.PNG*. Predict the class of image using castingPipeline.
 
 The predictions file will be stored in the **Data** folder with the name *testDefectImage_timeStamp.json*. Edit the predictions JSON file to view the predictions.

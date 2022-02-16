@@ -122,3 +122,13 @@ Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
 <br>limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
 
 Automated parsers of export files must be adjusted to handle the indicator row.
+
+### Machine learning
+
+#### Planned
+
+The API to download the serialized source of a PMML model `{{url}}/service/zementis/model/{{model_name}}/serialized` will be a NO_OP starting with 10.13.0 release and will be removed in 10.15.0 release.
+
+#### Implemented
+
+With GA release 10.13.0, Cumulocity IoT Machine Learning Workbench introduces "Role Based Access Control" which is a breaking change for its existing users. Refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-13-0/machine-learning-10-13-0/#10_13_0) to learn more about this change.

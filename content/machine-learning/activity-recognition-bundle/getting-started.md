@@ -6,7 +6,7 @@ weight: 30
 aliases:
   - /predictive-analytics/activity-recognition/#getting-started
 ---
-Upload all the files from the ZIP file into {{< product-c8y-iot >}} Machine Learning Workbench. We have added a *CONFIG.json* file to the ZIP. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
+Upload the project ZIP file into {{< product-c8y-iot >}} Machine Learning Workbench. We have added a *CONFIG.json* file to the project. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
 
 First, update the *CONFIG.json* with the appropriate values and save it. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. Leave the `c_device_source` as is for now.
 

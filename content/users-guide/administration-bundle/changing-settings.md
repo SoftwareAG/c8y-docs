@@ -54,7 +54,7 @@ In the field **Password validity limit**, you can limit the validity of user pas
 
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > User options and settings > to change your password](/users-guide/getting-started/#to-change-your-password).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#to-change-your-password).
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 

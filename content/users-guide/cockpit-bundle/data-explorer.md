@@ -46,7 +46,7 @@ There can be more than one matching data point entry in the data point library. 
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
->**Info:** Save as default saves the datapoint configuration in a particular source device object. If you save the configuration as default, the stored data can be referenced by other parts of the system, for example by smart rules. Note also that in order to create a threshold smartrule you must save the default at least once for a selected data point. 
+Click **Save as default** to save the datapoint configuration in a particular source device object. If the configuration is saved as default, it can be referenced, for example by smart rules. Note also that in order to create a threshold smartrule you must save the default at least once for a selected data point. 
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 

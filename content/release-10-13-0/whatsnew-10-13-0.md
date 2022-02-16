@@ -14,7 +14,7 @@ To increase the security level of the Cumulocity IoT platform, OAI-Secure authen
 
  Additionally, various options have been added to the **Authentication** page to configure the token-based session. The new configuration options determine, for example, how often users of a tenant should be re-authenticated and how many simultaneous sessions they may use. All settings related to the default login mode or OAI-Secure configuration can be changed on tenant level or on platform level.
 
- For details, see [Administration > Changing settings > Changing authentication settings](https://cumulocity.com/guides{{< 10-13-0 >}}/users-guide/administration/#authentication) in the *User guide* or the section on *Operational procedures* in the *Cumulocity IoT platform - Operations guide*.
+ For details, see [Administration > Changing settings > Changing authentication settings](https://cumulocity.com/guides{{< 10-13-0 >}}/users-guide/administration/#authentication) in the *User guide* or the section on *Operational procedures* in the *Cumulocity IoT Core - Operations guide*.
 
 All custom applications deployed on the Cumulocity IoT platform or integrated with the Cumulocity IoT platform (web application, microservices, etc.) must support authentication with OAI-Secure. In case of lacking backwards compatibility, the previous behaviour of the Cumulocity IoT platform can be restored for a particular tenant.
 

@@ -15,7 +15,7 @@ Casting defect detection automates the inspection process by utilizing the power
 
 For the purpose of showcasing this use case, we followed these steps:
 
-* The training dataset has been downloaded from Kaggle (https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product).
+* The training dataset has been downloaded from Kaggle: https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product.
 * **Method 1**: Use MLW's intuitive drag and drop Neural Network (NN) Designer to build your deep neural network architecture and start training the model.
 * **Method 2**: Use MLW's integrated Jupyter Notebook to train your model using the transfer learning approach.
 * Use the transformed ONNX model, pre-processing, and post-processing scripts to build an inference pipeline and deploy the same to production ({{< product-c8y-iot >}} Machine Learning).

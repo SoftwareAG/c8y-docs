@@ -7,10 +7,10 @@ aliases:
   - /predictive-analytics/welding-defect-detection/#prerequisites
 ---
 
-Download the [WeldingDefectDetectionDemoProject.zip](/files/zementis/WeldingDefectDetectionDemoProject.zip). The archive contains the entire project:
+Download the following: [WeldingDefectDetectionDemoProject.zip](/files/zementis/WeldingDefectDetectionDemoProject.zip). The archive contains the entire project:
 - Python notebook for training the model
-- Pre-processing and post-processing Python scripts needed to create a scoring pipeline
-- Test images for scoring once a pipeline is deployed
+- Pre-processing and post-processing Python scripts needed to create the inference pipeline
+- Test images for scoring once the pipeline is deployed
 - Data used to train the model and evaluate performance
 - An example model that is already trained and can be used to create a pipeline
 

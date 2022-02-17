@@ -5,7 +5,7 @@ title: Overview
 layout: bundle
 ---
 
-These release notes for **Cumulocity IoT release 10.4.6, July 2019**, include all relevant changes (improvements and fixes) that have been implemented in Cumulocity IoT Core and integrated products since the previous GA release.
+These release notes for **Cumulocity IoT release 10.4.6**, include all relevant changes (improvements and fixes) that have been implemented in Cumulocity IoT Core and integrated products since the previous GA release.
 
 >**Info:** The *Operations release notes* for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/) (credentials required).
 

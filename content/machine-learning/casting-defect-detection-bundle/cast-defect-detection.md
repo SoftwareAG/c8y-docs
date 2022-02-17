@@ -10,47 +10,44 @@ aliases:
 This section deals with the basic data science steps of creating a casting defect detection model using Machine Learning Workbench with the open-source Kaggle dataset. Follow the sections below for downloading data, building a neural network architecture, transfer learning with MobileNet, training the model, deploying the model to production and using the same to detect defects in the casts. 
 
 
-### Collecting data from Kaggle
+### Kaggle dataset
 
-Download the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product. Or use the prepared dataset included within **CastingDefectDetectionDemoProject.zip** (In case you are using the already prepared dataset, please skip to [Uploading the project to MLW step](#Uploading-the-project-to-MLW))
-
-> **Info:** You will get two folders when you unzip the downloaded dataset from Kaggle. Use the *casting_data* folder and delete the *casting_512x512* folder.
+We have downloaded the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product.
 
 All the images provided with this dataset are the top view of the submersible pump impeller.
 
-The dataset contains 7348 images in total. These are all grey-scaled images of the size 300x300 pixels. The augmentation is already applied in all the images.
+The dataset contains 7340 images in total. These are all grey-scaled images of the size 300x300 pixels. The augmentation is already applied in all the images.
 
 There are mainly two categories:
 
 1. Defective
 2. Ok
 
-For training a classification model, the data is split into training and testing folders. Both *train* and *test* folders contain *def_front* and *ok_front* subfolders.
+For training a classification model, the data is split into train and validation folders. Both *train* and *validation* folders contain *def_front* and *ok_front* subfolders.
 
 * **train:** *def_front* has 3758 and *ok_front* has 2875 images
-* **test:** *def_front* has 453 and *ok_front* has 262 images
+* **validation:** *def_front* has 449 and *ok_front* has 258 images
 
-Change the name of *test* folder to *validation* and create a ZIP file of these two folders (i.e. a ZIP file contaning *train* and *validation* folders). 
 
 ### Uploading the project to MLW
 
 Log in to the MLW and Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
 
-After the project is uploaded sucessfully, navigate to the **Data** folder of the MLW and click on the ZIP file. You should see the metadata of the uploaded dataset. You should also see 2 test data files, 5 code files, and 1 architecture file within the project.
+After the project is uploaded sucessfully, navigate to the **Data** folder of the project. You should also see 3 data files, 5 code files, and 1 architecture file within the project.
 
 #### Training the model
 
 **Method 1: Creating/Using a custom deep neural network architecture**  
 
-1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already created architecture file which exists within the project. Jump to step 4 if you are doing the latter.
+1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already available architecture file (*castingModelDesigner*) which exists within the project. Jump to step 4 if you are doing the latter.
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 
-3. Build a deep neural network architecture using the below example:
+3. Build a deep neural network architecture using the below example and save:
 
     ![Design](/images/zementis/castingDetection/mlw-casting-method1-arch-design.gif)
 
-4. Save the architecture file and train the deep neural network model by setting the **Training Parameters** as below:
+4. Train the deep neural network model by setting the **Training Parameters** as below:
 
     ![TrainParams](/images/zementis/castingDetection/mlw-casting-method1-arch-training-params.png)
 
@@ -60,11 +57,9 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 **Method 2: Training a model in Jupyter Notebook using the transfer learning technique with Mobilenet architecture**
 
-1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded a Jupyter Notebook file named *castingDefectDetectionDemo.ipynb*. 
+1. In the **Code** folder of the project, click *castingDefectDetectionDemo.ipynb* to view the metadata of the file. 
 
-2. In the **Code** folder of the MLW, click *castingDefectDetectionDemo.ipynb* to view the metadata of the file. 
-
-3. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
+2. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
 
 Once all the cells are executed successfully, a model named *castingDefectModelViaJNB.onnx* is saved to the **Model** folder.
 
@@ -73,14 +68,14 @@ Once all the cells are executed successfully, a model named *castingDefectModelV
 
 Now that the model is successfully trained (by any of the above two training methods) and available for serving in the form of an ONNX file, you can create an inference pipeline for deploying the model to production. 
 
-Uploading *CastingDefectDetectionDemoProject.zip* project uploaded 4 Python files. Depending on the training method used, use the relevant Python scripts.
+Depending on the training method used, use the relevant Python scripts.
 
 * If **Method 1** has been used for training: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts.
 * If **Method 2** has been used for training: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts.
 
 The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
-* The pre-processing script is used to pre-process incoming test data (image) to convert it into *250*250 size. The pre-processing script **castingPreProcessingForNN.py* looks like below.
+* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250x250 size. The pre-processing script *castingPreProcessingForNN.py* looks like below.
 
 ```
   import numpy as np
@@ -105,7 +100,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** or 'castingDefectModelViaJNB.onnx' , 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
+1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** else 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
     
     This creates a new pipeline file named *castingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 
@@ -116,8 +111,6 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
 
 Now that the inference pipeline is successfully deployed to production and available for serving, you can make predictions using the test data. 
 
-1. Uploading *CastingDefectDetectionDemoProject.zip* project uploaded *testDefectImage.PNG* and *testOkImage.PNG* test images.
-
-2. Navigate to the **Data** folder and select *testDefectImage.PNG*. Predict the class of image using castingPipeline.
+Navigate to the **Data** folder and select *testDefectImage.PNG*. Predict the class of image using castingPipeline.
 
 The predictions file will be stored in the **Data** folder with the name *testDefectImage_timeStamp.json*. Edit the predictions JSON file to view the predictions.

@@ -15,7 +15,7 @@ A custom codec microservice is a typical {{< product-c8y-iot >}} microservice wh
 When an LPWAN Agent receives an uplink message, it forwards the device data to a REST endpoint (such as `/decode`) exposed by the custom codec microservice for decoding.
 Similarly, when the user executes a device command through the device shell, the LPWAN agent forwards the command text to a REST endpoint (such as `/encode`) exposed by the custom codec microservice for encoding.  
 
-The following sections:
+To learn more about working with LPWAN custom codec, see the following sections:
 
 * [Implementing a custom codec microservice](#implement-codec-microservice) - How to implement a custom codec microservice that conforms to the predefined contract.
 * [Using the lpwan-custom-codec library](#implement-codec-microservice-using-lpwan-custom-codec-library) - How to implement a custom codec microservice using the lpwan-custom-codec library.

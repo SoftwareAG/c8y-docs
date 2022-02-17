@@ -21,7 +21,7 @@ To create a custom codec microservice using this library, do the following:
     @Component `org.springframework.stereotype.Component`
     ```
 
-    1. Implement the `supportedDevices` method of `com.cumulocity.microservice.lpwan.codec.Codec` to specify the device manufacturer, device name and the commands this custom codec service supports:
+     a. Implement the `supportedDevices` method of `com.cumulocity.microservice.lpwan.codec.Codec` to specify the device manufacturer, device name and the commands this custom codec service supports:
 
         ```java
         package com.cumulocity.microservice.lpwan.codec;
@@ -31,14 +31,14 @@ To create a custom codec microservice using this library, do the following:
         }
         ```    
 
-    2. Implement the `decode` method of `com.cumulocity.microservice.customdecoders.api.service.DecoderService` to provide the decode functionality. The decode method receives the following input:
+     b. Implement the `decode` method of `com.cumulocity.microservice.customdecoders.api.service.DecoderService` to provide the decode functionality. The decode method receives the following input:
         *  `inputData`- device payload to be decoded.
         *  `deviceId`- device managed object ID.
         *  `args`- a map which contains keys:
             *    `deviceManufacturer`- device manufacturer.
             *    `deviceModel`- device model.
             *    `sourceDeviceEui`- device eui.
-            *    `fport`- fport (Optional).
+            *    `fport`- fport (optional).
 
         <br/>
 
@@ -52,7 +52,7 @@ To create a custom codec microservice using this library, do the following:
           }
           ```
 
-    3. Implement the `encode` method of `com.cumulocity.microservice.customencoders.api.service.EncoderService` to provide the encode functionality:
+     c. Implement the `encode` method of `com.cumulocity.microservice.customencoders.api.service.EncoderService` to provide the encode functionality:
 
         ```java
         package com.cumulocity.microservice.customencoders.api.service;

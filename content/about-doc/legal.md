@@ -10,7 +10,7 @@ This content applies to {{< product-c8y-iot >}} 10.10.0 and to all subsequent re
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent release notes or new editions.
 
-Copyright © 2012-2021 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
+Copyright © 2012-2022 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
 
 The name Software AG and all Software AG product names are either trademarks or registered trademarks of Software AG and/or Software AG USA Inc. and/or its subsidiaries and/or its affiliates and/or their licensors. Other company and product names mentioned herein may be trademarks of their respective owners.
 

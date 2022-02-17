@@ -320,14 +320,14 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 
 > **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 
-In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
 - all own applications,
 - all subscribed applications which have different names than the own applications.
 
 > **Info:** In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
 
-On the left, you see the **Applications subscribed to a tenant on creation**, and on the right you see the **Applications subscribed to a tenant on platform upgrade**.
+On the right, you see the **Subscribed on tenant creation** and the **Subscribed on platform upgrade** columns.
 
 Initially, the lists show the default subscriptions inherited from the tenant hierarchy.
 

@@ -117,9 +117,9 @@ $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te 
 ```
 
 Note that you need to have a tenant and user credentials in order to deploy your microservice.    
-The successful execution will create an application on the Cumulucity platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed on **Applications** > **Own Applications** in the Administration application.
+The successful execution will create an application on the {{< product-c8y-iot >}} platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed in **Ecosystem** > **Microservices** in the Administration application.
 
-For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the *User guide*.
+For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 
 ### Subscribing
 

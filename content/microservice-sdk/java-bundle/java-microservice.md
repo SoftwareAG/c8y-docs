@@ -283,9 +283,7 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 
 > **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 
-In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
-
-![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
+In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
 Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
@@ -392,7 +390,7 @@ In case of errors, such as invalid names, you will get the details printed in th
 }
 ```
 
-In the Administration application, navigate to **Applications** > **Own applications**. There you will see the created microservice.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
 
 #### Acquire the microservice bootstrap user
 
@@ -465,7 +463,7 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 #### Subscribe to the microservice
 
-In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
 
 ![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 

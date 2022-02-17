@@ -13,8 +13,6 @@ The device protocol assigned during Sigfox device registration can be changed fr
 
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
 
-If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
-
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 

@@ -57,7 +57,7 @@ By default, users can use any password with eight characters or more. If you sel
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
-
+<a name="basic-oauth-restrictions"></a>
 #### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
@@ -403,7 +403,7 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
->**Info:** All users must have access to this application. 
+>**Info:** All users must have access to this application.
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 

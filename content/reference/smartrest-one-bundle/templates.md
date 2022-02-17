@@ -15,7 +15,7 @@ A request template contains all necessary information to convert a SmartREST req
 A request template contains the following information:
 
 * A unique unsigned integer as a message identifier
-* The request method, e.g. `GET` or `POST`.
+* The request method, for example, `GET` or `POST`.
 * The resource URI, for instance `/inventory/managedObjects`
 * The `Content-TYpe` and `Accept` header values of the sent and received data
 * A placeholder such as `%%`
@@ -29,6 +29,6 @@ A response template contains the necessary information to extract data values fr
 The following information is contained within a response template:
 
 * A unique unsigned integer as a message identifier
-* A JSON path referencing a base object or object list to extract data from, e.g. `$` or `$.managedObjects`. If the JSON path points to a list of objects, one row of extracted data for each object in the list is yielded.
-* A JSON path which must exist within the base object or base object list in order to extract values, e.g. `$.id`. The value is not added to the response.
-* A variable number of JSON paths for each value to extract, e.g. `$.id`, `$.name` or `$.type`. Values are added to the response in the order they were defined in the template.
+* A JSON path referencing a base object or object list to extract data from, for example, `$` or `$.managedObjects`. If the JSON path points to a list of objects, one row of extracted data for each object in the list is yielded.
+* A JSON path which must exist within the base object or base object list in order to extract values, for example, `$.id`. The value is not added to the response.
+* A variable number of JSON paths for each value to extract, for example, `$.id`, `$.name` or `$.type`. Values are added to the response in the order they were defined in the template.

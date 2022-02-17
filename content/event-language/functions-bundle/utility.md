@@ -29,7 +29,7 @@ Example:
 
 ### cast
 
-The cast() function gives you the possibility to transform data to the correct data type if you receive it e.g. as Object.
+The cast() function gives you the possibility to transform data to the correct data type if you receive it, for example, as Object.
 Casting to a basic Java type:
 
     cast(myVariable, long)

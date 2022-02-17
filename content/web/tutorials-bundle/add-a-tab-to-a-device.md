@@ -6,13 +6,13 @@ weight: 40
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case that you want to show additional information to a user in a details view (e.g. for a device or a group).
+It is a common use case that you want to show additional information to a user in a details view (for example for a device or a group).
 
 This how-to recipe explains how to accomplish a new tab in the device details view:
 
 ![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
-In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views e.g. `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`.
+In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views, for example, `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`.
 
 The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above which is referenced by another route called `/info` but reuses the context of the device to show information about it.
 
@@ -28,7 +28,7 @@ c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
 >
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `1009.0.18`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
@@ -100,7 +100,7 @@ export class AppModule extends HybridAppModule {
 Explanation of the above numbers:
 
  1. Provides the multi-provider hook `HOOK_ROUTE_ONCE`. This tells the application to extend the current route configuration.
- 2. Specifies that we want to use a value to define the route hook. You can also use a class here, e.g. if you want to resolve the routes async.
+ 2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes async.
  3. Defines the context of the route. You should use the `ViewContext` enum to define it. In this case we want to extend the context of a device.
  4. The path where it is going to be shown. Is added to the context path. In this case the complete path is: `device/:id/hello`.
  5. Defines which component should be shown if the path is hit by a user.

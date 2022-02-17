@@ -102,7 +102,7 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-JsonPath expressions added from data points will be stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces will be supported):
+JsonPath expressions added from data points will be stored in bracket-notation in order to increase flexibility in fragment and series naming (for example whitespaces will be supported):
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
 
@@ -233,9 +233,9 @@ You may download measurement data as CSV or Excel files. The exported data shows
  - Time when the specific measurement was taken
  - Source of the measurement
  - Name of the device being used
- - Fragment series (e.g. `c8y_SpeedMeasurement`)
+ - Fragment series (for example `c8y_SpeedMeasurement`)
  - Value of the measurement
- - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
+ - Unit used for a particular measurement (for example "C", "km/h", "sec")
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 

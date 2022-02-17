@@ -323,7 +323,7 @@ Each access token is signed by a signing certificate. Currently there are three 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 
- >**Info:** {{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+ >**Info:** {{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (for example Elliptic-curves) are not supported.
 ##### Placeholders
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 

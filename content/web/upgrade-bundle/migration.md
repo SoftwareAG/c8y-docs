@@ -72,4 +72,4 @@ constructor() {
 }
 ```
 
-This will also load your `my-custom-module`. You can use this to override the `ngDoBootstrap()` function to whatever fits your application needs, e.g. upgrade or downgrade Angular services as shown in the Angular docs.
+This will also load your `my-custom-module`. You can use this to override the `ngDoBootstrap()` function to whatever fits your application needs, for example, upgrade or downgrade Angular services as shown in the Angular docs.

@@ -6,7 +6,7 @@ layout: redirect
 
 Calculation categories can be used to provide multiple calculation rules for the same input variable. The calculation rules together make up the input variable.
 
-This allows you to define multiple rules that will handle different types of losses, e.g. planned versus unplanned, or to distinguish between multiple sources of incoming data. Each category will be calculated individually and then aggregated to give the final input variable. Further information on the creation of calculation profiles can be found in [Matching data](/oee/oee-administration/#matching-data).
+This allows you to define multiple rules that will handle different types of losses, for example, planned versus unplanned, or to distinguish between multiple sources of incoming data. Each category will be calculated individually and then aggregated to give the final input variable. Further information on the creation of calculation profiles can be found in [Matching data](/oee/oee-administration/#matching-data).
 
 #### Using calculation categories
 

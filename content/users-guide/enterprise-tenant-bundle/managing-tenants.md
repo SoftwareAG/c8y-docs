@@ -25,7 +25,7 @@ Click **Subtenants** in the **Tenants** menu to view all subtenants available in
 
 The **Tenants** page provides the following information on each subtenant:
 
-* The name of the subtenant, e.g. company name of your customer.
+* The name of the subtenant, for example, company name of your customer.
 * The ID and domain.
 * Optionally, a contact name and phone number.
 * The date when the tenant was created.
@@ -58,7 +58,7 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, e.g. the company's name.</td>
+	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Administrator's email</td>
@@ -356,11 +356,11 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default web applications subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.applications
-  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to define default microservices subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.microservices
-  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+  * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway
 * to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications.enabled
@@ -368,7 +368,7 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default web applications subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
@@ -376,4 +376,4 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default microservices subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices
-  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+  * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway

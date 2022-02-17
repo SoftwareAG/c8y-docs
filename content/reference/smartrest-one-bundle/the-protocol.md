@@ -26,7 +26,7 @@ The SmartREST endpoint yields the following response. Note that the HTTP respons
 
 Each row yielded by the SmartREST endpoint represents a set of extracted values from the result of a SmartREST request containing a unique unsigned integer, the SmartREST request line number and the extracted data values, respectively.
 
->**Info:** If the response from {{< product-c8y-iot >}} REST API was empty (e.g. like after deleting a Managed Object) then the response from SmartREST would be empty as well, regardless of registered response templates.
+>**Info:** If the response from {{< product-c8y-iot >}} REST API was empty (for example like after deleting a Managed Object) then the response from SmartREST would be empty as well, regardless of registered response templates.
 
 >**Info:** Inventory access via SmartREST is limited to inventory objects which are global or for which the client is the owner. Role assignments are not evaluated.
 

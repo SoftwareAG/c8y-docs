@@ -36,8 +36,8 @@ Click **Add Coil** in the **Coils (discrete output)** section, to add a coil def
 2. Optionally, enter the display category to structure your data in widgets.
 3. In the **Value selection** section, enter the number of the coil in the Modbus device.
 4. In the **Functionalities** section, you may select the following actions:
-	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget. In this case, you can enter the text that the UI should show for unset and set coils.
-	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget.
+	* **Show status** - To show the current value in the UI, for example, in the "Fieldbus device" widget. In this case, you can enter the text that the UI should show for unset and set coils.
+	* **Update status** - To enable to update the current value from the UI, for example, in the "Fieldbus device" widget.
 	* **Raise alarm** - To raise an alarm when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.
 	* **Send event** - To send an event each time the value changes. If selected, you may specify the type of event and the text in the event.
 5. Click **Save** to save your configuration.
@@ -62,8 +62,8 @@ Click **Add holding register** under **Holding registers** or **Add input regist
 	* **Enumeration type** - If the register value should be interpreted as 	enumeration of discrete values. If **Enumeration type** is selected, you can 	click **Add value** to add mappings from a discrete value to a text to be 	shown for this value in the widget. Click **Remove value** to remove the 	mapping.
 	* **Little endian** - If the register value should be interpreted in little-endian format based on 8-bit values.
 5. In the **Functionalities** section, you may select the following actions:
-	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget.
-	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
+	* **Show status** - To show the current value in the UI, for example, in the "Fieldbus device" widget.
+	* **Update status** - To enable to update the current value from the UI, for example, in the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
 	* **Send measurement** - To collect the values of the register regularly according to the transmit interval (see [above](#connecting-fieldbus)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the "Fieldbus device" widget.
 	* **Raise alarm** - To raise an alarm when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
 	* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
@@ -113,11 +113,11 @@ Click **Add variable** to configure a new variable.
 2. In the **Value selection** section, specify from where the value should be extracted:
 	* **Index** - Index of the variable in the OD of the device.
 	* **Sub-index** - Sub-index of the variable in the OD of the device.
-	* **Data type** - Type of the variable (e.g. boolean, unsigned).
-	* **Access type** - Access type, e.g. read-only, write-only.
+	* **Data type** - Type of the variable (for example boolean, unsigned).
+	* **Access type** - Access type, for example, read-only, write-only.
 3. Depending on the selected access type, the following functionalities may be specified:
-	* **Show status** - To enable to show the current value in the UI, e.g. in the "Fieldbus device" widget.
-	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
+	* **Show status** - To enable to show the current value in the UI, for example, in the "Fieldbus device" widget.
+	* **Update status** - To enable to update the current value from the UI, for example, in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
 	* **Send measurement** - To create a measurement whenever the value is changed. If selected, you may specify a **Measurement type** and **Measurement series**.
 	* **Raise alarm** - To raise an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Additionally, you may specify the type of the alarm raised, its text and its severity.
 	* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.

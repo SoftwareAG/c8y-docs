@@ -65,7 +65,7 @@ public PagedEventCollectionRepresentation get10Events () {
 
 ### Microservice security
 
-The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, e.g. `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
 
 ### Microservice subscription
 
@@ -376,7 +376,7 @@ There are three options to configure the server URL and credentials:
 * _pom.xml_ - Maven project configuration file
 * Command line
 
-All three ways can be used together, e.g. a goal partially can be configured in the _settings.xml_ and partially in the _pom.xml_.
+All three ways can be used together, for example, a goal partially can be configured in the _settings.xml_ and partially in the _pom.xml_.
 In case of conflicts, the command line configuration has the highest priority and _settings.xml_ configuration the lowest.
 
 To upload a microservice to the server you need to configure the following properties:

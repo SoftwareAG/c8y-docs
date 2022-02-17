@@ -107,7 +107,7 @@ The `finalize` command closes a sequence of install and remove commands started 
 This can be a no-op, but it's also an opportunity to:
 * remove any unnecessary software module after a sequence of actions.
 * commit or rollback the sequence of actions.
-* restart any processes using the modules, e.g. restart the analytics engines if the modules have changed.
+* restart any processes using the modules, for example, restart the analytics engines if the modules have changed.
 
 This command takes no arguments.
 No output is expected.

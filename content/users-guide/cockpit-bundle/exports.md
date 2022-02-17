@@ -78,7 +78,7 @@ If you have at least one field that is not originating from the "Add predefined"
 Example:
 An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
 
-If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
+If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
 In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 

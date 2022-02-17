@@ -46,7 +46,10 @@ There can be more than one matching data point entry in the data point library. 
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
-Click **Save as default** to save the datapoint configuration in a particular source device object. If the configuration is saved as default, it can be referenced, for example by smart rules. Note also that in order to create a threshold smartrule you must save the default at least once for a selected data point. 
+Click **Save as default** if you want each user accessing the view to be able to see predefined configuration when adding datapoints to be displayed in data explorer.
+
+>**Info:** if you have existing **on measurement threshold create alarm** smartrule based on data point library entry used for current datapoint, when you click **save as default** you are effectively overriding configuration from library with current values provided for that particular datapoint. It means that on clicking **save as default** in case of smartrule existing, conditions for creating alarm are taken from data point configuration of current device instead of data point library.
+If you want to restore data point library default settings, click **Load from library** and then click **Save as default**.
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 

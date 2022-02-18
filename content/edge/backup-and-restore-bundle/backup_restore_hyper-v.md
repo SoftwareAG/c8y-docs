@@ -9,7 +9,7 @@ layout: redirect
 1. Shut down the Edge appliance in the Hyper-V console.
 
 2. Right-click the Edge appliance and click **Export**.<br><br>
-   <img src="/images/edge/edge-hyperv-export.png" name="Hyper-V export" style="width:75%;"/>
+   <img src="/images/edge/edge-hyperv-export.png" name="Hyper-V export" style="width:40%;"/>
 
 3. Provide the location to save the backup files and click **Export**.
 

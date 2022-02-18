@@ -107,7 +107,7 @@ If you enter the additional result columns step for a running offloading pipelin
 
 **Add an additional result column**
 
-When adding an additional result column, a modal dialog for defining the column opens. You must define a unique column name. Then the source definition needs to be specified.
+When adding an additional result column, a modal dialog for defining the column opens. You must define a unique column name. Then the source definition needs to be specified. You can validate the source definition and preview its results by clicking **Validate and preview**.
 
 First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, e.g., by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting.
 
@@ -204,7 +204,7 @@ Finally, click **Save** to save the offloading pipeline. Otherwise click **Cance
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.
 
-Each pipeline is shown as a card. A card has controls for managing the offloading process. Besides the description you will find the schedule with which this pipeline will be executed once it is started. In addition to that you will find for active pipelines the time of their last execution and the planned next execution. When expanding **Additional information**, the additional columns, the filter predicate, and the UUID of the configuration are shown.
+Each pipeline is shown as a card. A card has controls for managing the offloading process. Besides the description you will find the schedule with which this pipeline will be executed once it is started. In addition to that you will find for active pipelines the time of their last execution and the planned next execution. When expanding **Additional information**, the additional columns, the filter predicate, and the UUID of the configuration are shown. It also provides a link, which navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.  
 
 #### Scheduling an offloading job
 

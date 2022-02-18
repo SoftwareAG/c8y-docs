@@ -36,7 +36,7 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 2. In the **Code** folder of the MLW, click *weldingDefectDetectionDemo.ipynb* to view the metadata of the file. 
 
-3. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
+3. Click the Edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
 
 > **Info:** The 'Load Libraries' section includes commented-out code to install necessary libraries if they are not already installed. Uncomment these lines if needed, and use the `!pip install <library name>` command to install any other needed libraries.
 
@@ -44,13 +44,13 @@ Once all the cells are executed successfully, a model named *weldingDefectModel.
 
 
 
-#### Deploying the model using the inference pipeline
+### Deploying the model using the inference pipeline
 
 Once the model is trained and available for serving in the form of an ONNX file, you can create an inference pipeline for deploying the model to production. 
 
 The **Code** folder contains the scripts *weldingPreProcessing.py* and *weldingPostProcessing.py*, which we will use along with the model (.onnx file) to create the pipeline.
 
-* The pre-processing script is used to pre-process incoming test data (image) for the model. The pre-processing script is pasted below:
+* The pre-processing script is used to pre-process incoming test data (image) for the model. The script is pasted below:
 
 ```
 def process(content):
@@ -66,7 +66,7 @@ def process(content):
     return {"input":x}
 ```
 
-* The post-processing script is used to assign proper classes to the predicted probabilities from the ONNX model. The post-processing script is pasted below:
+* The post-processing script is used to assign proper classes to the predicted probabilities from the ONNX model. The script is pasted below:
 
 ```
 def process(content):
@@ -81,7 +81,7 @@ def process(content):
 
 This creates a new pipeline file named *weldingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 
-2. Deploy the pipeline to production by clicking on the **Deploy** icon.
+2. Deploy the pipeline to production by clicking on the Deploy icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0">.
 
 
 ### Making predictions using the deployed pipeline

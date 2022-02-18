@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: DataHub Edge overview
+title: Cumulocity IoT DataHub Edge overview
 layout: redirect
 ---
 

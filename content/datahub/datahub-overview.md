@@ -1,5 +1,5 @@
 ---
-title: DataHub overview
+title: Cumulocity IoT DataHub overview
 weight: 10
 layout: bundle
 ---

@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Operating DataHub Edge
+title: Operating Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 

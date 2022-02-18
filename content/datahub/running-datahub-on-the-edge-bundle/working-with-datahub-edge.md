@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Working with DataHub Edge
+title: Working with Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 

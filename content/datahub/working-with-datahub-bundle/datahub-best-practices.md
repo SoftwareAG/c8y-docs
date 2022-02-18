@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: DataHub best practices
+title: Cumulocity IoT DataHub best practices
 layout: redirect
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Working with DataHub
+title: Working with Cumulocity IoT DataHub
 weight: 40
 layout: bundle
 ---

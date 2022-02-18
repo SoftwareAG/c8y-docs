@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Integrating DataHub with Machine Learning Workbench
+title: Integrating Cumulocity IoT DataHub with Machine Learning Workbench
 layout: redirect
 ---
 

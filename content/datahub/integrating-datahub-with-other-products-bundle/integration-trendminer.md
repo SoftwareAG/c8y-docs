@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Integrating DataHub with TrendMiner
+title: Integrating Cumulocity IoT DataHub with TrendMiner
 layout: redirect
 ---
 

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Setting up DataHub Edge
+title: Setting up Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 

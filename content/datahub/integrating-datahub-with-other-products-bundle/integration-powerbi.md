@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Integrating DataHub with Microsoft Power BI
+title: Integrating Cumulocity IoT DataHub with Microsoft Power BI
 layout: redirect
 ---
 

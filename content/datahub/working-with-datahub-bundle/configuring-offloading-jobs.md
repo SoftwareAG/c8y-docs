@@ -139,7 +139,7 @@ When deleting an additional result column, the data will no longer be included i
 
 **Migration of additional result columns**
 
-DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. {{< product-c8y-iot >}} DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
+{{< product-c8y-iot >}} DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. {{< product-c8y-iot >}} DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
 
 To migrate to the new format manually, proceed as follows:
 
@@ -513,4 +513,4 @@ is represented in the target table in the data lake as
 | ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
 | ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
 
-For more details on the TrendMiner/DataHub interaction see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
+For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).

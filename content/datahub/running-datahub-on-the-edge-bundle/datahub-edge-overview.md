@@ -21,11 +21,11 @@ For your convenience, here is an overview of the contents:
 
 [{{< product-c8y-iot >}} Edge](/edge/introduction) is an onsite, single-server, and single-tenant variant of the {{< product-c8y-iot >}} Core platform. It is delivered as a software appliance designed to run on industrial PCs or local servers. {{< product-c8y-iot >}} DataHub is available as an add-on to {{< product-c8y-iot >}} Edge.
 
-DataHub Edge offers the same functionality as the cloud-variant of {{< product-c8y-iot >}} DataHub, but stores the data locally. You can define offloading pipelines, which regularly move data from the Operational Store of {{< product-c8y-iot >}} into a data lake. In an Edge setup, a NAS is used as data lake. Dremio, the internal engine of {{< product-c8y-iot >}} DataHub, can access the data lake and run analytical queries against its contents, using SQL as the query interface.
+{{< product-c8y-iot >}} DataHub Edge offers the same functionality as the cloud-variant of {{< product-c8y-iot >}} DataHub, but stores the data locally. You can define offloading pipelines, which regularly move data from the Operational Store of {{< product-c8y-iot >}} into a data lake. In an Edge setup, a NAS is used as data lake. Dremio, the internal engine of {{< product-c8y-iot >}} DataHub, can access the data lake and run analytical queries against its contents, using SQL as the query interface.
 
 <img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of {{< product-c8y-iot >}} DataHub Edge" style="max-width: 70%">
 
-DataHub Edge consists of the following building blocks:
+{{< product-c8y-iot >}} DataHub Edge consists of the following building blocks:
 
 * The {{< product-c8y-iot >}} DataHub UI is deployed as a web application in the {{< product-c8y-iot >}} core. It provides the frontend for defining and managing offloading pipelines.
 * The {{< product-c8y-iot >}} DataHub backend manages offloading pipelines and their scheduled execution. The backend and its associated database run within one Docker container in the Docker daemon. Its internal state, e.g. the defined offloading configurations, is persisted on the central data disk.

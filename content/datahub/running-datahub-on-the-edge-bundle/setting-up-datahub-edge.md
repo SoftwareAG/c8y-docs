@@ -88,7 +88,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 </thead>
 <tbody>
 <tr>
-<td>DataHub Edge UI</td>
+<td>{{< product-c8y-iot >}} DataHub Edge UI</td>
 <td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well.</td>
 </tr>
 <tr>
@@ -96,11 +96,11 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 <td>On the {{< product-c8y-iot >}} DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under <em>http://datahub.edge_domain_name</em> or <em>https://datahub.edge_domain_name</em>, depending on whether TLS/SSL is used or not. You can log in as <em>admin</em> using the password defined in the installation procedure.</td>
 </tr>
 <tr>
-<td>DataHub JDBC/ODBC</td>
+<td>{{< product-c8y-iot >}} DataHub JDBC/ODBC</td>
 <td>You find the connection settings and the required driver version for JDBC/ODBC in the {{< product-c8y-iot >}} DataHub Edge UI on the <strong>Home</strong> page.</td>
 </tr>
 <tr>
-<td>DataHub REST API</td>
+<td>{{< product-c8y-iot >}} DataHub REST API</td>
 <td>The path of the microservice which hosts the API is <em>https://edge_domain_name/service/datahub</em>.</td>
 </tr>
 <tr>
@@ -120,4 +120,4 @@ The definition and assignment of permissions and roles is done in the same way a
 
 The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
-DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
+{{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.

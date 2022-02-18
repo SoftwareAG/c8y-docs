@@ -25,7 +25,7 @@ The main features of the {{< product-c8y-iot >}} DataHub application are:
 
 The following diagram illustrates the high-level concepts.
 
-<img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="{{< product-c8y-iot >}} DataHub high level concept"  style="max-width: 100%">
 
 The central component of {{< product-c8y-iot >}} DataHub is [Dremio](https://www.dremio.com), a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio is in charge of Extract-Transform-Load (ETL) pipelines that:
 

@@ -4,7 +4,7 @@ title: Overview of UI features
 layout: redirect
 ---
 
-DataHub provides the UI for managing and monitoring your offloading pipelines. The main navigation bar at the left provides links to the relevant pages. The access to these pages is restricted and depends on corresponding user roles/permissions as defined in section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions).
+{{< product-c8y-iot >}} DataHub provides the UI for managing and monitoring your offloading pipelines. The main navigation bar at the left provides links to the relevant pages. The access to these pages is restricted and depends on corresponding user roles/permissions as defined in section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions).
 
 | Page | Description | Required role | Prerequisites
 | ---  | --- | --- | ---
@@ -17,4 +17,4 @@ DataHub provides the UI for managing and monitoring your offloading pipelines. T
 | Administration / Usage statistics | View usage statistics | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics has to be enabled
 | Administration / System status | Check system status | DATAHUB_ADMINISTRATOR | -
 
-<img src="/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-home-page.png" alt="{{< product-c8y-iot >}} DataHub homepage"  style="max-width: 100%">

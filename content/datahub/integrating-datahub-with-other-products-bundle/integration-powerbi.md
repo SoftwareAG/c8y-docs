@@ -4,11 +4,11 @@ title: Integrating Cumulocity IoT DataHub with Microsoft Power BI
 layout: redirect
 ---
 
-Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. These reports can also be built on your IoT data. Given your devices are connected with the {{< product-c8y-iot >}} platform, you can utilize DataHub to offload the data into a data lake of your choice. Then you can create a Microsoft Power BI report which is based on the data in the data lake. DataHub allows you to access and work with these reports from within the DataHub web frontend.
+Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. These reports can also be built on your IoT data. Given your devices are connected with the {{< product-c8y-iot >}} platform, you can utilize {{< product-c8y-iot >}} DataHub to offload the data into a data lake of your choice. Then you can create a Microsoft Power BI report which is based on the data in the data lake. {{< product-c8y-iot >}} DataHub allows you to access and work with these reports from within the {{< product-c8y-iot >}} DataHub web frontend.
 
 ### Prerequisites
 
-Before setting up the connection to Microsoft Power BI in DataHub, conduct the following steps.
+Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}} DataHub, conduct the following steps.
 
 #### Accessing data lakes in Microsoft Power BI reports
 
@@ -20,7 +20,7 @@ A report is typically published so that it is available to other users as well. 
 
 #### Configuring access to Microsoft Power BI reports
 
-To make reports available in its web frontend, DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For authenticating the access an Azure Active Directory service principal object with an application secret is used.
+To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For authenticating the access an Azure Active Directory service principal object with an application secret is used.
 
 The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers).
 
@@ -48,9 +48,9 @@ Next you can define a workspace to organize your reports. By adding the service 
 4. Select **Workspace access**.
 5. Enter the name of your recently created service principal application and grant the *Member* or *Admin* permission.
 
-Only workspaces granting access to the service principal application can be browsed from within DataHub. Once the workspace is available, you can publish reports to it and access it in DataHub.
+Only workspaces granting access to the service principal application can be browsed from within {{< product-c8y-iot >}} DataHub. Once the workspace is available, you can publish reports to it and access it in {{< product-c8y-iot >}} DataHub.
 
-### Setting up the connection in DataHub
+### Setting up the connection in {{< product-c8y-iot >}} DataHub
 
 In the navigator, select **Settings** and then **Microsoft Power BI** to define the connection settings.
 

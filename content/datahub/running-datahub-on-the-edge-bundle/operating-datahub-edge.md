@@ -4,9 +4,9 @@ title: Operating Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 
-Similar to the cloud variant, DataHub Edge UI allows you to check system information and view audit logs. See the section on [Operating DataHub](/datahub/operating-datahub) for details.
+Similar to the cloud variant, {{< product-c8y-iot >}} DataHub Edge UI allows you to check system information and view audit logs. See the section on [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) for details.
 
-When managing DataHub Edge, the following standard tasks are additionally relevant.
+When managing {{< product-c8y-iot >}} DataHub Edge, the following standard tasks are additionally relevant.
 
 ### Troubleshooting the system
 
@@ -21,9 +21,9 @@ If you still need to contact [product support](/welcome/contacting-support), inc
 <a name="health-check"></a>
 #### Health check
 
-##### Check DataHub Edge backend status
+##### Check {{< product-c8y-iot >}} DataHub Edge backend status
 
-You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
+You can check the status of the backend in the Administration page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
 
 ```shell
 curl --user admin:your_password https://edge_domain_name/service/datahub/isalive
@@ -55,7 +55,7 @@ Dremio is running if *OK* is returned. No response will be returned if it is not
 
 The installation log file is stored at */var/log/cdh*.
 
-In order to access the logs of the DataHub and Dremio containers, you have to use the Docker *logs* command. To follow the logs of cdh-master you have to run:
+In order to access the logs of the {{< product-c8y-iot >}} DataHub and Dremio containers, you have to use the Docker *logs* command. To follow the logs of cdh-master you have to run:
 
 ```shell
 docker logs -f cdh-master
@@ -71,11 +71,11 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/diagnostics-and-support/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/diagnostics-and-support/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 
-The data disk is used for storing the state of DataHub and Dremio and serves as data lake. In order to ensure that the system can work properly, the disk must not run out of space. The main factors for the disk space allocation of DataHub Edge are the Dremio job profiles and the data lake contents.
+The data disk is used for storing the state of {{< product-c8y-iot >}} DataHub and Dremio and serves as data lake. In order to ensure that the system can work properly, the disk must not run out of space. The main factors for the disk space allocation of {{< product-c8y-iot >}} DataHub Edge are the Dremio job profiles and the data lake contents.
 
 #### Cleanup of Dremio job history
 
@@ -85,7 +85,7 @@ Dremio is configured to perform the cleanup of job results automatically without
 
 #### Cleanup of data lake contents
 
-The data lake contents are not automatically purged, as the main purpose of DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents need to be deleted.
+The data lake contents are not automatically purged, as the main purpose of {{< product-c8y-iot >}} DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents need to be deleted.
 
 Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you need to run the following query in Dremio:
 
@@ -97,4 +97,4 @@ ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
 
 #### Backup and Restore
 
-DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).
+DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).

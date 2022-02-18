@@ -41,7 +41,7 @@ In the **Sources** panel there is the data source `YourTenantIdDataLake`. This s
 
 When you click on your data source it will be shown in the main panel. Clicking on the source in the main panel navigates into the data source. Here, you see a list of all target tables of your offloading pipelines. Clicking one of these target tables opens an SQL editor which allows you to run queries against that target table.
 
-> **Info:** You might also see a folder named *c8y_cdh_temp*. The folder is used for DataHub-internal purposes and must not be deleted or altered.
+> **Info:** You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< product-c8y-iot >}} DataHub internal purposes and must not be deleted or altered.
 
 #### Spaces
 

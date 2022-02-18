@@ -33,7 +33,7 @@ You can easily look up the paths to the tables in Dremio's UI. Click on your dat
 
 ### Connecting via JDBC
 
-If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You have to download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client use as username and password the credentials from your Dremio account.
+If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You have to download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from {{< product-c8y-iot >}} DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client use as username and password the credentials from your Dremio account.
 
 For additional JDBC settings of Dremio see also the associated [Dremio documentation](https://docs.dremio.com/drivers/dremio-jdbc-driver.html).
 
@@ -45,14 +45,14 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 Dremio offers a [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
 
-Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use DataHub's REST API, see below.
+Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 
-### Connecting via DataHub REST API
+### Connecting via {{< product-c8y-iot >}} DataHub REST API
 
-The DataHub server also can handle REST requests for Dremio query processing. DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [DataHub REST API documentation](https://{{< domain-c8y >}}/datahub/api/{{< c8y-current-version >}}/) for details on the endpoints.
+The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [DataHub REST API documentation](https://{{< domain-c8y >}}/datahub/api/{{< c8y-current-version >}}/) for details on the endpoints.
 
 ### Connecting other clients
 
 Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/client-applications/clients.html) discusses how to connect these clients to Dremio and leverage its query capabilities.
 
-See also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer) to learn how other {{< company-sag >}} products can connect to DataHub and leverage its query capabilities.
+See also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer) to learn how other {{< company-sag >}} products can connect to {{< product-c8y-iot >}} DataHub and leverage its query capabilities.

@@ -10,7 +10,7 @@ Auditing shows in the query log the queries being executed and in the system log
 
 In the navigator, select **Auditing** and then **Query log** to view the query log.
 
-> **Info:** The DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
+> **Info:** The {{< product-c8y-iot >}} DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
 
 In the action bar you can choose between offloading queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
 

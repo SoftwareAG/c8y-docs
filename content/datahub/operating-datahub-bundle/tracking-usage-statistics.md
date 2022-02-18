@@ -4,9 +4,9 @@ title: Tracking usage statistics
 layout: redirect
 ---
 
-If enabled, DataHub tracks usage statistics on the amount of data being processed. These statistics are collected for the offloading queries and track the amount of data these queries read from the Operational Store of {{< product-c8y-iot >}}. The statistics are also collected for the ad-hoc queries and track the amount of data these queries read from the data lake. The usage statistics can be utilized for a volume-based charging. They can also be utilized to pinpoint resource-intensive queries in terms of network load.
+If enabled, {{< product-c8y-iot >}} DataHub tracks usage statistics on the amount of data being processed. These statistics are collected for the offloading queries and track the amount of data these queries read from the Operational Store of {{< product-c8y-iot >}}. The statistics are also collected for the ad-hoc queries and track the amount of data these queries read from the data lake. The usage statistics can be utilized for a volume-based charging. They can also be utilized to pinpoint resource-intensive queries in terms of network load.
 
->**Info:** The tracking of usage statistics is supported for the DataHub Cloud edition. It is not supported for the DataHub Edge edition.
+>**Info:** The tracking of usage statistics is supported for the {{< product-c8y-iot >}} DataHub Cloud edition. It is not supported for the {{< product-c8y-iot >}} DataHub Edge edition.
 
 In the navigator, select **Administration** and then **Usage statistics** to view the usage statistics.
 

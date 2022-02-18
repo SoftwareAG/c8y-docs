@@ -6,17 +6,17 @@ layout: redirect
 
 ### Prerequisites
 
-Before setting up DataHub Edge, you have to check the following prerequisites:
+Before setting up {{< product-c8y-iot >}} DataHub Edge, you have to check the following prerequisites:
 
 | Item | Details |
 | -----   | -----   |
 | {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also section [Setting up {{< product-c8y-iot >}} Edge](/edge/installation). |
-| DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
+| {{< product-c8y-iot >}} DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements
 
-The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Requirements](/edge/installation#prerequisites). When DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
+The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Requirements](/edge/installation#prerequisites). When {{< product-c8y-iot >}} DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
 
 * 100 GB of free disk space plus sufficient free disk space for the data lake contents
 * Intel x86 CPU
@@ -26,9 +26,9 @@ The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instan
 
 Hardware requirements for the host OS are excluded.
 
-### Setting up DataHub Edge
+### Setting up {{< product-c8y-iot >}} DataHub Edge
 
-Copy the DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
+Copy the {{< product-c8y-iot >}} DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
 ```shell
 scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
@@ -46,12 +46,12 @@ Run the install script.
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 
-During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge</em>. During installation, you are also prompted to set the new password of the Dremio <em>admin</em> account. It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
+During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge</em>. During installation, you are also prompted to set the new password of the Dremio <em>admin</em> account. It takes a few minutes to complete the installation. After completion you can delete the {{< product-c8y-iot >}} DataHub Edge archive.
 
 The install script runs the following basic steps:
 
-* Deploy the DataHub Edge UI as a web application to {{< product-c8y-iot >}} Core
-* Start a Docker container with the DataHub Edge backend and the database system for managing the backend state
+* Deploy the {{< product-c8y-iot >}} DataHub Edge UI as a web application to {{< product-c8y-iot >}} Core
+* Start a Docker container with the {{< product-c8y-iot >}} DataHub Edge backend and the database system for managing the backend state
 * Start a Docker container with the Dremio master and a ZooKeeper instance
 * Start a Docker container with the Dremio executor
 * Configure corresponding roles and permissions in {{< product-c8y-iot >}} Core
@@ -62,18 +62,18 @@ The containers are configured to store their application state on the data disk 
 
 * **/cdh-server/data**: the state of the Dremio master
 * **/cdh-executor/data**: the state of the Dremio executor
-* **/cdh-console/db**: the state of the DataHub Edge backend
+* **/cdh-console/db**: the state of the {{< product-c8y-iot >}} DataHub Edge backend
 * **/cdh-server/datalake**: the data lake folder
 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
 
 ### Adapting to network changes of Cumulocity IoT Edge
 
-There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally or changing the domain name. The network configuration of DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts DataHub with parameters aligned with the new network configuration.
+There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
 
-### Accessing DataHub Edge
+### Accessing {{< product-c8y-iot >}} DataHub Edge
 
-The different DataHub Edge interfaces can be accessed in the same way as in a cloud deployment of DataHub.
+The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in the same way as in a cloud deployment of {{< product-c8y-iot >}} DataHub.
 
 <table>
 <thead>
@@ -93,11 +93,11 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 </tr>
 <tr>
 <td>Dremio UI</td>
-<td>On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under <em>http://datahub.edge_domain_name</em> or <em>https://datahub.edge_domain_name</em>, depending on whether TLS/SSL is used or not. You can log in as <em>admin</em> using the password defined in the installation procedure.</td>
+<td>On the {{< product-c8y-iot >}} DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under <em>http://datahub.edge_domain_name</em> or <em>https://datahub.edge_domain_name</em>, depending on whether TLS/SSL is used or not. You can log in as <em>admin</em> using the password defined in the installation procedure.</td>
 </tr>
 <tr>
 <td>DataHub JDBC/ODBC</td>
-<td>You find the connection settings and the required driver version for JDBC/ODBC in the DataHub Edge UI on the <strong>Home</strong> page.</td>
+<td>You find the connection settings and the required driver version for JDBC/ODBC in the {{< product-c8y-iot >}} DataHub Edge UI on the <strong>Home</strong> page.</td>
 </tr>
 <tr>
 <td>DataHub REST API</td>
@@ -112,9 +112,9 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 > **Info:** For JDBC/ODBC you have to configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
-### Defining DataHub permissions and roles
+### Defining {{< product-c8y-iot >}} DataHub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 

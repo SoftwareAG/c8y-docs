@@ -4,11 +4,11 @@ title: Monitoring compaction jobs
 layout: redirect
 ---
 
-During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
 You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 
->**Info**: You need administration permissions to access the compaction job histories. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info**: You need administration permissions to access the compaction job histories. See section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all compaction jobs
 

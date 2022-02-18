@@ -70,9 +70,9 @@ For **alarms**, **events**, **inventory** collection, you only need to specify t
 
 For the **measurements** collection, additional settings are required. The **target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types, e.g., the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
-The layout **One table for one measurement type (Default)** will create a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type** to which the offloaded measurements are restricted. DataHub automatically inspects a subset of the data and identifies existing measurement types. In the measurement type dropdown box, these auto-detected types are listed. In case a specific type you are looking for has not been detected, you can manually enter it in this box as well.     
+The layout **One table for one measurement type (Default)** will create a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type** to which the offloaded measurements are restricted. {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data and identifies existing measurement types. In the measurement type dropdown box, these auto-detected types are listed. In case a specific type you are looking for has not been detected, you can manually enter it in this box as well.     
 
-The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and DataHub, see [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
+The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and {{< product-c8y-iot >}} DataHub, see [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
 For each base collection, a corresponding pipeline extracts a default set of data fields during offloading. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 
@@ -81,11 +81,11 @@ Click **Next** to proceed with the next configuration step. Click **Finish** to 
 <a name="set-addtl-cols"></a>
 ##### Set additional result columns
 
-If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your DataHub queries, then you can include them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
+If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your {{< product-c8y-iot >}} DataHub queries, then you can include them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
 
 **Auto-detected columns**
 
-To ease the configuration process, DataHub auto-detects additional result columns. Using a sample of the base collection, DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
 
 **Structure of additional result columns**
 
@@ -139,7 +139,7 @@ When deleting an additional result column, the data will no longer be included i
 
 **Migration of additional result columns**
 
-DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
+DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. {{< product-c8y-iot >}} DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, e.g., when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
 
 To migrate to the new format manually, proceed as follows:
 
@@ -160,7 +160,7 @@ Optionally you can define an additional filter predicate. Per default, all entri
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You have to use the source definition as defined in the corresponding column instead.
 
-> **Info:** For querying the attribute "id", you have to use "_id". For querying the time attributes, see also [Working with DataHub > DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets for widely-used temporal filter predicates.
+> **Info:** For querying the attribute "id", you have to use "_id". For querying the time attributes, see also [Working with {{< product-c8y-iot >}} DataHub > {{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets for widely-used temporal filter predicates.
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You should fix these errors as otherwise the offloading execution will fail. If the underlying collection is empty and no schema information is available, the validation step cannot be executed.
 
@@ -184,10 +184,10 @@ In the offloading preview you can inspect what the actual data that will be offl
 
 **Compaction strategy**
 
-In the additional settings, you can define the compaction strategy for the offloading pipeline. The compaction strategy refers to how DataHub automatically combines multiple smaller files in the data lake into one or more larger files. DataHub periodically executes the compaction for an offloading pipeline as a large number of small files may adversely affect the query performance. DataHub automatically sets the compaction strategy, but allows you to optionally change the strategy. Available compaction strategies are:
+In the additional settings, you can define the compaction strategy for the offloading pipeline. The compaction strategy refers to how {{< product-c8y-iot >}} DataHub automatically combines multiple smaller files in the data lake into one or more larger files. {{< product-c8y-iot >}} DataHub periodically executes the compaction for an offloading pipeline as a large number of small files may adversely affect the query performance. {{< product-c8y-iot >}} DataHub automatically sets the compaction strategy, but allows you to optionally change the strategy. Available compaction strategies are:
 
-- **Monthly & daily compaction:** DataHub selects for each day all files in the data lake which contain data from that day. These files will be combined into one or more larger files containing all data for this day. Additionally, all days for one month are combined into one or more larger files containing all data for this month. This results in summary files for each day and for each month, while the original files are deleted.
-- **Daily compaction:** DataHub selects for each day all files in the data lake which contain data from that day. These files will be combined into one or more larger files containing all data for this day. This results in summary files for each day, while the original files are deleted.
+- **Monthly & daily compaction:** {{< product-c8y-iot >}} DataHub selects for each day all files in the data lake which contain data from that day. These files will be combined into one or more larger files containing all data for this day. Additionally, all days for one month are combined into one or more larger files containing all data for this month. This results in summary files for each day and for each month, while the original files are deleted.
+- **Daily compaction:** {{< product-c8y-iot >}} DataHub selects for each day all files in the data lake which contain data from that day. These files will be combined into one or more larger files containing all data for this day. This results in summary files for each day, while the original files are deleted.
 - **No compaction:** Compaction is disabled. This setting is not recommended and must be used with caution as it has most likely negative impact on the query performance.
 
 You can change the compaction strategy of an already running offloading pipeline by deactivating the pipeline, editing it, and reactivating it. If a compaction was already executed in the past, disabling the compaction strategy does not revert the previous compaction results.
@@ -212,7 +212,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 ##### Starting periodic offloading
 
-Click the **Active**/**Inactive** toggle in an offloading card to start the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of DataHub will then periodically trigger the pipeline.
+Click the **Active**/**Inactive** toggle in an offloading card to start the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of {{< product-c8y-iot >}} DataHub will then periodically trigger the pipeline.
 
 The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all collection data from the Operational Store of {{< product-c8y-iot >}} to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For this reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
@@ -273,7 +273,7 @@ Click **Show offloading history** to examine the execution history of a pipeline
 <a name="import-export"></a>
 #### Importing/exporting offloading configurations
 
-The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one DataHub instance to another. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.
+The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one {{< product-c8y-iot >}} DataHub instance to another. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.
 
 ##### Export of offloading configurations
 
@@ -329,7 +329,7 @@ The alarms collection keeps track of alarms. An alarm may change its status over
 
 1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus "_all" and "_latest" respectively. The following examples use "alarms" as target table name:
-    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
+    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by {{< product-c8y-iot >}} DataHub).
     * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded. The offloading configuration provides an option to additionally materialize that view.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
@@ -361,7 +361,7 @@ Events, just like alarms, are mutable, i.e., they can be changed after their cre
 
 Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
 
-* **events_all**: Contains all states (that were captured by DataHub's period offloading) of all events.
+* **events_all**: Contains all states (that were captured by {{< product-c8y-iot >}} DataHub's period offloading) of all events.
 * **events_latest**: Contains only the latest state of all events without prior states. The offloading configuration provides an option to additionally materialize that view.
 
 #### Offloading the inventory collection
@@ -388,11 +388,11 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | childAssets | OTHER |
 | childDevices | OTHER |
 
-The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
+The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
 1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
-    * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
+    * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by {{< product-c8y-iot >}} DataHub).
     * **inventory_latest**: a view with the latest status of all managed objects, with all previous transitions being discarded. The offloading configuration provides an option to additionally materialize that view.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
@@ -513,4 +513,4 @@ is represented in the target table in the data lake as
 | ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
 | ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
 
-For more details on the TrendMiner/DataHub interaction see also [Integrating DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
+For more details on the TrendMiner/DataHub interaction see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).

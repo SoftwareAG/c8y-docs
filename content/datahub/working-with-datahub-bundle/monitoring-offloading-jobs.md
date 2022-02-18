@@ -4,11 +4,11 @@ title: Monitoring offloading jobs
 layout: redirect
 ---
 
-Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
+Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
 
 You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
 
->**Info**: You need administration or management permissions to monitor the offloading jobs. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info**: You need administration or management permissions to monitor the offloading jobs. See section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all offloading jobs
 

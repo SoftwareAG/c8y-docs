@@ -28,7 +28,7 @@ Get the matrix profile of a specific historical time series data.
 
 |PARAMS||
 |:---|:---|
-|windowSize (integer)| Optional query parameter to setup the size of subsequence window size. Default subsequence window size is 5 if not provided.
+|windowSize (integer)| Optional query parameter to setup the size of subsequence window size. Default subsequence window size is 5 if not provided. </br>Note that: <ul><li>The window size must be less than or equal to the length of historical data that is retrieved according to the date range defined in ```dateFrom``` and ```dateTo```.</li><li>The window size must be greater than 2 when computing the z-normalized Euclidean distance. A windowSize=1 produces a standard deviation of zero. For windowSize=2, both the mean and standard deviation for any given subsequence are identical and hence the z-normalization for any sequence will either be [-1., 1.] or [1., -1.]. Thus, the z-normalized Euclidean distance will very likely be zero between any subsequence and its nearest neighbor assuming that the time series is large enough to contain both scenarios.</li></ul>
 |source (integer)|Required query parameter for source identifier
 |valueFragmentType (string)|Required query parameter for measurements based on fragment type
 |valueFragmentSeries (string)|Required query parameter for measurements based on fragment series
@@ -155,7 +155,7 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?source=110&valueFragm
 
 {
   "errors": [
-    "The window size must be less than or equal to the length of historical data. Please reduce window size or enlarge the time frame for retrieving longer historical data."
+    "The window size must be less than or equal to the length of historical data. Please reduce window size or increase the date range to retrieve more historical data."
   ]
 }
 ```

@@ -32,18 +32,20 @@ To create a custom codec microservice using this library, do the following:
         ```    
 
      b. Implement the `decode` method of `com.cumulocity.microservice.customdecoders.api.service.DecoderService` to provide the decode functionality. The decode method receives the following input:
-        *  `inputData`- device payload to be decoded.
-        *  `deviceId`- device managed object ID.
-        *  `args`- a map which contains keys:
-            *    `deviceManufacturer`- device manufacturer.
-            *    `deviceModel`- device model.
-            *    `sourceDeviceEui`- device eui.
-            *    `fport`- fport (optional).
+        
+    * `inputData`- device payload to be decoded.
+    * `deviceId`- device managed object ID.
+    * `args`- a map which contains keys:
+        * `deviceManufacturer`- device manufacturer.
+        * `deviceModel`- device model.
+            *  `sourceDeviceEui`- device eui.
+            *  `fport`- fport (optional).
 
-        <br/>
+    The library also provides the wrapper class `com.cumulocity.microservice.lpwan.codec.decoder.model.LpwanDecoderInputData` to extract the decoder inputs.
+    <br/>
 
-        The library also provides the wrapper class `com.cumulocity.microservice.lpwan.codec.decoder.model.LpwanDecoderInputData` to extract the decoder inputs:
-
+    Example for the JSON structure for creating a device type using the Inventory API:
+         
          ```java
           package com.cumulocity.microservice.customdecoders.api.service;
 

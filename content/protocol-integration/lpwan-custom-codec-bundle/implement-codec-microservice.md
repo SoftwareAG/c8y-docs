@@ -12,16 +12,16 @@ A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, w
 
     You need to create a device type (with `type` and `fieldbusType` properties, and the `c8y_LpwanCodecDetails` fragment) as well as an external ID for every device manufacturer and device model combination that this codec microservice supports:
 
-    * `type` is always "c8y_LpwanDeviceType"
-    * `fieldbusType` is always "lpwan"
+    * `type` is always "c8y_LpwanDeviceType".
+    * `fieldbusType` is always "lpwan".
     * The `c8y_LpwanCodecDetails` fragment contains:
-        * `codecServiceContextPath`- Custom codec microservice context path
-        * `supportedDevice`- Supported device information
-            *  `deviceManufacturer`- Device manufacturer
-            *  `deviceModel`- Device model
-        * `supportedDeviceCommands`- A list of commands which this device supports
-            * `name`- Command name, matching the name of the predefined command template you create (see below)
-            * `category`- Command category, matching the category of the predefined command template you create (see below)
+        * `codecServiceContextPath`- Custom codec microservice context path.
+        * `supportedDevice`- Supported device information.
+            *  `deviceManufacturer`- Device manufacturer.
+            *  `deviceModel`- Device model.
+        * `supportedDeviceCommands`- A list of commands which this device supports:
+            * `name`- Command name, matching the name of the predefined command template you create (see below).
+            * `category`- Command category, matching the category of the predefined command template you create (see below).
 
     <br/>
 

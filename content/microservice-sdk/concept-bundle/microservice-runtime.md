@@ -55,7 +55,7 @@ The microservice installer injects the `TZ` environment variable into the micros
 - Tenant option in the microservice owner tenant
 - Platform application environment variables (MICROSERVICE_RUNTIME_TIMEZONE)
 
-The tenant option has higher priority, i.e. if the parameter is set in both places, the value from the tenant option is taken.
+The tenant option has higher priority, that means if the parameter is set in both places, the value from the tenant option is taken.
 
 ##### Example
 
@@ -75,7 +75,7 @@ Deploying and running the microservice inside Docker will result in passing the 
 TZ=Europe/Warsaw
 ```
 
-When using Java-based microservices this variable is automatically read and applied to the Java process, no additional work is required. Microservices developed with other programming languages may require some manual work, i.e. loading the TZ value from the environment and using it to configure the time zone on the language level programmatically.
+When using Java-based microservices this variable is automatically read and applied to the Java process, no additional work is required. Microservices developed with other programming languages may require some manual work, that means loading the TZ value from the environment and using it to configure the time zone on the language level programmatically.
 
 #### Proxy variables
 
@@ -86,7 +86,7 @@ Proxy variables are passed into the microservice environment during installation
  - Tenant options in the microservice owner tenant
  - Platform application environment variables
 
-Tenant options have higher priority, i.e. if the parameter is set in both places, the value from the tenant option is taken.
+Tenant options have higher priority, that means if the parameter is set in both places, the value from the tenant option is taken.
 
 The table below contains the options and proxy variables:
 

@@ -202,7 +202,7 @@ Options can be configured for the application owner or the subscriber. The subsc
 Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
 When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.
 
-> **Info**: For security reasons, the functionality is not available when running the microservice in legacy mode, i.e. local development or RPM installation.
+> **Info:** For security reasons, the functionality is not available when running the microservice in legacy mode, for example, local development or RPM installation.
 
 Tenant option settings can be accessed in two ways:  
 

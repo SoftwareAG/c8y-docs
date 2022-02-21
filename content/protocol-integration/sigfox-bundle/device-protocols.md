@@ -62,7 +62,7 @@ In the following window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the {{< product-c8y-iot >}} data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (for example Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this sample payload structure the message ID is "1".
 
@@ -74,7 +74,9 @@ Under **General**, specify a name for the value and the category under which it 
 
 Under **Value selection**, specify from where the value should be extracted. In the **Start bit** field, indicate where the value information starts and in the **Number of bits** field, indicate the length of the information. The maximum value for the number of bits is 32 bits (4 bytes).
 
-In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
+In this example, the "Channel 1 Type" information starts in byte 2 (that means start bit = "16") and is 1 byte long (that means
+
+   number of bits = "8").
 
 <img src="/images/device-protocols/sigfox/sigfox-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 

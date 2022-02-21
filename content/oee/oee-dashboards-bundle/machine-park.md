@@ -12,7 +12,7 @@ Depending on the defined target value, the OEE box for an entity is either displ
 
 Every 10 minutes a new value is calculated. The precise timestamp is shown in the latest update information.
 
-In the upper section, the average OEE for the entire machine park is shown, i.e. the average OEE value of all sites for which OEE values are listed in the **Machine Park Dashboard**.
+In the upper section, the average OEE for the entire machine park is shown, that is the average OEE value of all sites for which OEE values are listed in the **Machine Park Dashboard**.
 
 Below, the OEE for the areas, sites, lines and machines are displayed.
 

@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: LPWAN Custom codec OpenAPI definition
+  title: LPWAN custom codec OpenAPI definition
   version: v0
 servers:
   - url: http://localhost:8080
@@ -45,7 +45,7 @@ paths:
                     severity: MINOR
                     status: ACTIVE
                     time: '2020-03-03T12:03:23.845Z'
-                alarmTypesToUpdate: 
+                alarmTypesToUpdate:
                   ACKNOWLEDGED:
                   - c8y_Test
                   - c8y_Temp
@@ -60,10 +60,10 @@ paths:
                  - type: c8y_Battery
                    series: c8y_Battery
                    time: '2020-03-03T12:03:23.845Z'
-                   values:           
+                   values:
                     - type: c8y_Battery
                       seriesName: level
-                      unit: c 
+                      unit: c
                       value: 35
                 dataFragments:
                  - key: c8y_Position/lat,
@@ -84,7 +84,7 @@ paths:
           application/json:
             example:
               commandName: position request,
-              commandData : '{position request -latitude 10.25 -longitude -5.67}' 
+              commandData : '{position request -latitude 10.25 -longitude -5.67}'
               sourceDeviceId : 26413,
               args:
                 deviceManufacturer: LANSITEC,
@@ -130,8 +130,8 @@ components:
           description: "Its a map object that contain required information used by the payload like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
           additionalProperties:
             $ref: '#/components/schemas/DecoderInputArgs'
-            
-          
+
+
     DecoderResult:
       type: object
       description: "Contains list of Alarms, AlarmTypes to udpate, Events, Measurement,  DataFragments to be updated."
@@ -170,7 +170,7 @@ components:
           type: boolean
           description: "Boolen value regarding decode is successful or failure."
 
-    EncoderInputData: 
+    EncoderInputData:
       type: object
       description: "Contains all the information device operation for the selected device to encode the command for the selected device."
       required:
@@ -179,7 +179,7 @@ components:
         - sourceDeviceId
         - args
       properties:
-        commandName: 
+        commandName:
           type: string
           description: "Command Name"
         commandData:
@@ -196,15 +196,15 @@ components:
         status:
           type: string
           description: "This is optional attribute provided for LPWAN Custom codec which is not used at present."
-          
+
     EncoderResult:
       type: object
       description: "Contains encoded command and fport information for the selected device."
       properties:
-        encodedCommand: 
+        encodedCommand:
           type: string
           description: "Encoded command Value"
-        properties: 
+        properties:
           type: object
           description: "Its map object to send additional required information like fport."
           additionalProperties:
@@ -215,7 +215,7 @@ components:
         success:
           description: "Boolen value regarding encode is successful or failure."
           type: boolean
-          
+
     DecoderInputArgs:
       type: object
       description: "Required Inputs for the decode API like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
@@ -224,10 +224,10 @@ components:
         - deviceModel
         - sourceDeviceEui
       properties:
-        deviceManufacturer: 
+        deviceManufacturer:
           description: "Device Manufacturer of the LPWAN device."
           type: string
-        deviceModel: 
+        deviceModel:
           description: "Device Model of the LPWAN device."
           type: string
         sourceDeviceEui:
@@ -239,7 +239,7 @@ components:
         fport:
           description: "fport value."
           type: string
-    
+
     AlarmTypesToUpdate:
       type: object
       description: "Map of Alarm types to be updated."
@@ -252,7 +252,7 @@ components:
           type: array
           items:
             type: string
-      
+
     EncoderInputArgs:
       type: object
       description: "Required Inputs for the encode API like deviceManufacturer, deviceModel, sourceDeviceEui."
@@ -261,7 +261,7 @@ components:
         - deviceModel
         - sourceDeviceEui
       properties:
-        deviceManufacturer: 
+        deviceManufacturer:
           description: "Device Manufacturer of the LPWAN device."
           type: string
         deviceModel:
@@ -270,17 +270,17 @@ components:
         sourceDeviceEui:
           description: "LPWAN device External Identifier."
           type: string
-    
+
     EncoderOutputArgs:
       type: object
       description: "Map that contains information like fport."
       required:
         - fport
       properties:
-        fport: 
+        fport:
           description: "fport value."
           type: string
-          
+
     DataFragmentUpdate:
       type: object
       description: "DatafragmentUpdate"
@@ -294,7 +294,7 @@ components:
         valueAsObject:
           type: object
           description: "Value Object."
-          
+
     MeasurementDto:
       type: object
       description: "Measurement Data Transfert Object."
@@ -337,11 +337,10 @@ components:
       properties:
         seriesName:
           type: string
-          description: "Measurment series name."
+          description: "Measurement series name."
         unit:
           type: string
-          description: "Measurment Unit."
+          description: "Measurement Unit."
         value:
           type: number
           description: "Measurement Value."
-   

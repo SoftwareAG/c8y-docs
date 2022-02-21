@@ -1,5 +1,5 @@
 ---
-weight: 15
-title: LPWAN Custom Codec
+weight: 61
+title: LPWAN custom codec
 layout: bundle
 ---

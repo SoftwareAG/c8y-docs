@@ -35,7 +35,7 @@ paths:
                     - args
       responses:
         '200':
-          description: "When the decoder input is successfully decoded and return the DecoderResult"
+          description: "When the decoder input is successfully decoded and returns the DecoderResult"
           content:
             application/json:
               example:
@@ -121,7 +121,7 @@ components:
       properties:
         sourceDeviceId:
           type: string
-          description: "Device managed object Id."
+          description: "Device managed object ID."
         value:
           type: string
           description: "Device payload to decode."
@@ -134,7 +134,7 @@ components:
 
     DecoderResult:
       type: object
-      description: "Contains list of Alarms, AlarmTypes to udpate, Events, Measurement,  DataFragments to be updated."
+      description: "Contains a list of Alarms, AlarmTypes to udpate, Events, Measurement, DataFragments to be updated."
       properties:
         alarms:
           type: array
@@ -144,7 +144,7 @@ components:
             description: "AlarmRepresentation"
         alarmTypesToUpdate:
           type: object
-          description: "Map of AlarmTypes to be updated with a specified status"
+          description: "Map of AlarmTypes to be updated with a specific status"
           additionalProperties:
             $ref: '#/components/schemas/AlarmTypesToUpdate'
         events:
@@ -160,7 +160,7 @@ components:
             $ref: '#/components/schemas/MeasurementDto'
         dataFragments:
           type: array
-          description: "List of DataFragments to be updated with a specified status"
+          description: "List of DataFragments to be updated with a specified status."
           items:
             $ref: '#/components/schemas/DataFragmentUpdate'
         message:
@@ -172,7 +172,7 @@ components:
 
     EncoderInputData:
       type: object
-      description: "Contains all the information device operation for the selected device to encode the command for the selected device."
+      description: "Contains all of the information about the device operation for the selected device to encode the command for the selected device."
       required:
         - commandName
         - commandData
@@ -181,21 +181,21 @@ components:
       properties:
         commandName:
           type: string
-          description: "Command Name"
+          description: "Command Name."
         commandData:
           type: string
-          description: "Command Data to be encoded"
+          description: "Command Data to be encoded."
         sourceDeviceId:
           type: string
           description: "Managed object Id of the device."
         args:
           type: object
-          description: "Its map object that contain required information used by Codec to decode the payload like  deviceModel, deviceManufacturer and sourceDeviceEui"
+          description: "This is a map object that contain required information used by the Codec to decode the payload such as deviceModel, deviceManufacturer and sourceDeviceEui."
           additionalProperties:
             $ref: '#/components/schemas/EncoderInputArgs'
         status:
           type: string
-          description: "This is optional attribute provided for LPWAN Custom codec which is not used at present."
+          description: "This is an optional attribute provided for the LPWAN custom codec which is not used at present."
 
     EncoderResult:
       type: object
@@ -203,17 +203,17 @@ components:
       properties:
         encodedCommand:
           type: string
-          description: "Encoded command Value"
+          description: "Encoded command Value."
         properties:
           type: object
-          description: "Its map object to send additional required information like fport."
+          description: "This is a map object to send additional required information like fport."
           additionalProperties:
             $ref: '#/components/schemas/EncoderOutputArgs'
         message:
           type: string
           description:  "Message description regarding the encode operation."
         success:
-          description: "Boolen value regarding encode is successful or failure."
+          description: "Boolen value that shows whether encoding was successful or not."
           type: boolean
 
     DecoderInputArgs:

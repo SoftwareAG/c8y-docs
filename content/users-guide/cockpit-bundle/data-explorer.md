@@ -48,7 +48,7 @@ For details on modifying the visualization in general, see [Changing data explor
 
 Click **Save as default** to store data point settings into device's managed object. These settings will then take precendence over the settings from data point library, e.g. when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore data point library default settings, click **Load from library** and then click **Save as default**.
 
->**Example:** if you have existing **on measurement threshold create alarm** smartrule based on data point library entry used for current datapoint, when you click **save as default** you are effectively overriding configuration from library with current values provided for that particular datapoint. It means that on clicking **save as default** in case of smartrule existing, conditions for creating alarm are taken from data point configuration of current device instead of data point library.
+>**Example:** let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an **On measurement threshold create alarm** smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
@@ -93,7 +93,7 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 **Data point visibility**
 
-For each datapoint, its visibility can be switched on or off by using the toggle left from the data point name.
+For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
 <a name="add-data-points"></a>
 ### To add a data point
@@ -110,7 +110,7 @@ To save the data point to the data point library, click the menu icon of the dat
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
-For details on the data point library refer to [Using the datapoint library](#data-point-library).
+For details on the data point library refer to [Using the data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 

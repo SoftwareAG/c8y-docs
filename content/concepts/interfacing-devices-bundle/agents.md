@@ -18,7 +18,7 @@ To shield machine-to-machine applications from this numbers of access options, {
 
 The configuration of parameters, readings, events and other information is either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that {{< product-c8y-iot >}} requires. It will also receive device control commands from {{< product-c8y-iot >}} ("switch off that relay") and translate these into a kind of protocol the device requires.
 
-{{< product-c8y-iot >}} uses a simple and secure reference protocol based on REST (i.e. HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, i.e. data is sent as soon as it is available.
+{{< product-c8y-iot >}} uses a simple and secure reference protocol based on REST (that is HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, that means data is sent as soon as it is available.
 
 #### Model transformation
 
@@ -38,7 +38,7 @@ Agents can be deployed in various ways, as illustrated in the picture below. We 
 
 **Server-side agents** are run in a cloud, hosted on {{< product-c8y-iot >}} as microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
 
-* The device is "closed", i.e. it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
-* The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.
+* The device is "closed", that means, it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
+* The protocol on the device is secure and internet-enabled, that is, the device connects to the cloud and not vice-versa.
 
 **Device-side agents** run on a device in the sensor network. These devices can be routers, mobile phones or modems. The agents perform in any kind of run-time environment the device supports, ranging from the very battery- and memory-consuming embedded microcontrollers to minicomputers running Embedded Linux. The agents will directly query connected sensors and manipulate connected controls. This usually results in a simpler architecture than server-side agents.

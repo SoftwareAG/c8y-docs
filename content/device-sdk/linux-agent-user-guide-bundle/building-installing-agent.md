@@ -22,7 +22,7 @@ This section explains how to build the {{< product-c8y-iot >}} Linux agent witho
     git clone  https://github.com/SoftwareAG/cumulocity-agents-linux.git
     ```
 
-2. Export the SDK binaries and libraries path (i.e. _/home/me/repos/cumulocity-sdk-c_). Preferably add the following code to your _~/.bashrc_ for permanence.
+2. Export the SDK binaries and libraries path (that is, _/home/me/repos/cumulocity-sdk-c_). Preferably add the following code to your _~/.bashrc_ for permanence.
 
     ```shell
     export C8Y_LIB_PATH=/path/to/cumulocity-sdk-c

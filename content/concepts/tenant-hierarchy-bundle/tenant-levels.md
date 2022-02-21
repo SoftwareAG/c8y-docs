@@ -27,7 +27,7 @@ At the bottom of the hierarchy you can find single tenants which are represented
 
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
 
-In a {{< standard-tenant >}}, multiple parties are reflected by separate users. Since all users in a tenant share the same URL and data space they can only be separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), i.e. using roles you can give certain users only restricted visibility of the tenant (for example only the devices that belong to them).
+In a {{< standard-tenant >}}, multiple parties are reflected by separate users. Since all users in a tenant share the same URL and data space they can only be separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), that means using roles you can give certain users only restricted visibility of the tenant (for example only the devices that belong to them).
 
 {{< standard-tenant >}}s, as direct subtenants of the {{< management-tenant >}}, provide fully standardized functionality.
 

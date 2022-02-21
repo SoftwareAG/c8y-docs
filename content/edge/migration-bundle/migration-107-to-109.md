@@ -200,9 +200,14 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 >**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
 
-1. Copy the `backup.sh` script to your Edge 10.7 appliance.
+1. Stop the Karaf process using the command:
 
-2. Run the `backup.sh` as a **root** user.
+```shell
+sudo service cumulocity-core-karaf stop
+```
+2. Copy the `backup.sh` script to your Edge 10.7 appliance.
+
+3. Run the `backup.sh` as a **root** user.
 
    You can also run the script with the parameters:
 	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.

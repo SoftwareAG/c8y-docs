@@ -1,0 +1,59 @@
+---
+title: MQTT quick reference
+layout: redirect
+weight: 11
+---
+
+### Quick reference
+
+#### Connection
+
+* <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \
+  Connect the device with serial "1234" and default template myDevice_10 to tenant "acme" and user "device_1234".
+
+#### Topics
+
+Publish
+
+* <kbd>PUBLISH s/us</kbd> - Send a static template.
+* <kbd>PUBLISH s/us/5678</kbd> - Send a static template as child "5678".
+* <kbd>PUBLISH s/ud</kbd> - Send a message using the default template (myDevice_10).
+* <kbd>PUBLISH s/ud/5678</kbd> - Same as above, but as child "5678".
+* <kbd>PUBLISH s/uc/myCommon_10</kbd> - Send a message using myCommon_10 template.
+* <kbd>PUBLISH s/uc/myCommon_10/5678</kbd> - Same as above, but as child "5678".
+
+Subscribe
+
+* <kbd>SUBSCRIBE s/ds</kbd> - Receive static commands.
+* <kbd>SUBSCRIBE s/dd</kbd> - Receive commands using the default template (myDevice_10).
+* <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using the myCommon_10 template.
+* <kbd>SUBSCRIBE s/e</kbd> - Receive error messages.
+
+#### Topic format
+
+`<protocol>/<direction><type>[/<template>][/<child_id>]`
+
+where:
+
+* `<protocol>` can be <kbd>s</kbd> (persistent), <kbd>t</kbd> (transient), <kbd>q</kbd> (quiescent) and <kbd>c</kbd> (CEP), see [processing modes](#processing-mode) for more information.
+* `<direction>` can be <kbd>u</kbd> (upstream from the device), <kbd>d</kbd> (downstream to the device) or <kbd>e</kbd> (error).
+* `<type>` can be <kbd>s</kbd> (static), <kbd>c</kbd> (custom, device-defined), <kbd>d</kbd> (default), <kbd>t</kbd> (template) or <kbd>cr</kbd> (credentials).
+
+#### Device registration
+
+* <kbd>CONNECT 1234 management/devicebootstrap</kbd>
+* <kbd>SUBSCRIBE s/dcr</kbd>
+* <kbd>PUBLISH s/ucr</kbd>
+* <kbd>PUBLISH s/ucr</kbd>
+* <kbd>...</kbd>
+* <kbd>70,tenant,username,password<kbd>
+
+#### Template registration
+
+* <kbd>PUBLISH s/ut/myCommon_10</kbd>
+* <kbd>10,999,POST,MEASUREMENT,,c8y_MyMeasurement;;c8y_MyMeasurement.M.value,NUMBER,...</kbd>
+  10,msgId,api,method,response,type,time,custom1.path,custom1,type,custom1.value
+
+#### Templates
+
+See the [templates quick reference](#templates-quick-reference) for an overview of the available MQTT static templates.

@@ -132,7 +132,7 @@ init();
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.{{< domain-c8y >}}/mqtt` or `wss://mqtt.{{< domain-c8y >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (for example `ws://mqtt.{{< domain-c8y >}}/mqtt` or `wss://mqtt.{{< domain-c8y >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code do?
 

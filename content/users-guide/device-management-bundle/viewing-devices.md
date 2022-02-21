@@ -100,7 +100,7 @@ Moreover, you can add custom columns to show additional device properties.
 4. Select the **Filtering mode** for the new column. <br>
 If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
+<br>In case of **Fragment exists**, filtering will be done by existence, that means filtering is done based on whether the property exists or not.    
 5. Click **Add**.
 
 The new column will be added and displayed in the device list.

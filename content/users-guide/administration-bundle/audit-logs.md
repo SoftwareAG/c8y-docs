@@ -58,7 +58,7 @@ Only the last 100 logs are visible. Scroll down the page to **Load more** to vie
 
 In order to easily search through logs, you may filter logs for
 
- - the type, i.e. alarm, operation, smart rule,
+ - the type, for example, alarm, operation, smart rule,
  - a date range providing a "From" and/or a "To" date,
  - the user.
 

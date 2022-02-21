@@ -511,7 +511,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
+The unit of the consumption measurement is always per hour (that means if the measurements are in "kg" the consumption will be in "kg/h").
 
 The rule takes the last two measurements for a specified time, calculates the difference in value and time and then calculates the consumption per hour.
 
@@ -781,7 +781,7 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
->**Info:** Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+>**Info:** Under certain circumstances, that means if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 
 <a name="threshold-explicit"></a>
@@ -857,7 +857,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
->**Info:** ​Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+>**Info:** ​Under certain circumstances, that means if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 <a name="smart-rule-variables"></a>
 ### Smart rule variables

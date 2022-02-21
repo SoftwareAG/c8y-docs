@@ -33,7 +33,7 @@ After completion, a new child device has been added to the terminal and can now 
 
 To connect a Modbus/TCP device, follow these steps:
 
-1. Make sure that the Modbus/TCP device is connected to the terminal, for example directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
+1. Make sure that the Modbus/TCP device is connected to the terminal, for example, directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 2. Check the network settings of the device using the instructions provided with the device.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.

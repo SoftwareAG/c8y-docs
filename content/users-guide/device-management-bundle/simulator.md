@@ -141,6 +141,6 @@ The custom operation will be added to the operation list.
 
 ### Alarms (simulator)
 
-The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, i.e. if the simulator itself does not work correctly. See [Working with alarms](/users-guide/device-management/#alarm-monitoring) for information on alarms.
+The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, that is if the simulator itself does not work correctly. See [Working with alarms](/users-guide/device-management/#alarm-monitoring) for information on alarms.
 
 ![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

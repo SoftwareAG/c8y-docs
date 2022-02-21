@@ -95,7 +95,7 @@ In the resulting dialog box provide the following information to receive the sch
 
 **1 - Frequency**
 
-Select the frequency for sending the export from the dropdown list, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
+Select the frequency for sending the export from the dropdown list, for example, every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
 >**Info:** Schedule intervals need to be provided in Coordinated Universal Time (UTC).
 

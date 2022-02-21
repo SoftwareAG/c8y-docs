@@ -39,7 +39,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus button</b><br> Most application pages show an <b>Plus</b> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus button</b><br> Most application pages show an <b>Plus</b> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, that means it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -90,7 +90,7 @@ Under **Search results**, the assets matching the search criteria are shown. To 
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
 
->**Important:** The search results include all assets containing the search term in any property (name, model, any fragment), i.e. the search results do not only include assets matching the search criteria with their names.
+>**Important:** The search results include all assets containing the search term in any property (for example name, model or any fragment), that means the search results do not only include assets matching the search criteria with their names.
 
 ##### Exact match
 
@@ -176,7 +176,7 @@ For details on the filtering mechanism in the devices list refer to [Device Mana
 
 ### Real-time behavior of the navigator
 
-In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately.
+In the navigator, changes are not updated in real time, that means new, removed or renamed devices or groups will not be updated immediately.
 
 You will only see such changes in the navigator of the application, in which you have made the changes.
 

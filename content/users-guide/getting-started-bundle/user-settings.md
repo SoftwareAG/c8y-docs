@@ -48,7 +48,7 @@ Note that this option is only available if support user access is not set global
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using, i.e. 10.5.8, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
+<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using, that is 10.5.8, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>
@@ -61,7 +61,7 @@ Several account settings can be changed by the user.
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes.
 3. To change the language, select a [language](#languages) from the dropdown list in the  **Language** field.
-4. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies. 
+4. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
 5. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
 6. Click **Save** to apply your settings.
 
@@ -111,4 +111,4 @@ By default, the password must meet the following conditions:
 * Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).)
 * Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
-> **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
+> **Info:** The password rules can be configured by the administrator, that means your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

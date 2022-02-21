@@ -92,13 +92,13 @@ $ /etc/tedge/sm-plugins/debian finalize
 
 For many plugins this command will do nothing.
 However, it gives the plugin an opportunity to:
-* Update the dependencies before an operation, i.e. a sequence of actions.
+* Update the dependencies before an operation, that is a sequence of actions.
    Notably, a debian plugin can update the `apt` cache issuing an `apt-get update`.
 * Start a transaction, in case the plugin is able to manage rollbacks.
 
 This command takes no arguments.
 No output is expected.
-If the `prepare` command fails, then the planned sequences of actions (i.e. the whole sm operation) is cancelled.
+If the `prepare` command fails, then the planned sequences of actions (that is the whole sm operation) is cancelled.
 
 ### Finalize command
 
@@ -113,7 +113,7 @@ This command takes no arguments.
 No output is expected.
 This command might check (but doesn't have to) that the list of install and remove command has been consistent.
 For instance, a plugin might raise an error after the sequence `prepare;install a; remove a-dependency; finalize`.
-If the `finalize` command fails, then the planned sequences of actions (i.e. the whole sm operation) is reported as failed, even if all the atomic actions have been successfully completed.
+If the `finalize` command fails, then the planned sequences of actions (that is the whole sm operation) is reported as failed, even if all the atomic actions have been successfully completed.
 
 ### Install command
 

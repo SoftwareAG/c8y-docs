@@ -133,7 +133,7 @@ The first row shows if the device is currently running a data session. If it is,
 
 The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
 
-At the bottom you will find usage information for the current month, i.e. from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
+At the bottom you will find usage information for the current month, that is from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
 The **SMS** section shows the text messages sent to the device and received from the device, including information on
 

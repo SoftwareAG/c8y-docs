@@ -18,7 +18,7 @@ You can extend the {{< product-c8y-iot >}} platform with customer-specific funct
 
 The following management features are supported:
 
-- Microservices can be registered to individual tenants and super-tenants (that is, tenants with subtenants).
+- Microservices can be registered to individual tenants and super-tenants (that is tenants with subtenants).
 - Multi-tenant microservices can be subscribed to other tenants.
 
 Technically, microservices are Docker containers hosted by {{< product-c8y-iot >}} and they follow specific conventions. They are typically accessed using {{< product-c8y-iot >}} REST API available under <kbd>/service/&lt;microservice-name&gt;</kbd>.

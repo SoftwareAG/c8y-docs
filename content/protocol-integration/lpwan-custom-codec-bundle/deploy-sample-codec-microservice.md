@@ -19,12 +19,13 @@ The image below shows an example of the device types created by the custom codec
 
 ![List of device types created on subscription](/images/device-protocols/lpwan-custom-codec/lpwan-device-protocols.png)
 
-The created device types will be listed in the drop down during the device registration of LPWAN with any of the LPWAN agents. 
-Actility LoRa device registration shown below.
+The created device types will be listed in the drop down during the device registration of LPWAN with any of the LPWAN agents.
+The Actility LoRa device registration is shown below.
 
 ![Device Registration](/images/device-protocols/lpwan-custom-codec/lpwan-protocol-list-device-registration.png)
 
-You can also assign the device type from the LPWAN device tab. To do so, navigate to a particular device. 
+You can also assign the device type from the LPWAN device tab.
+To do so, navigate to a particular device.
 Then, click on the **LPWAN** tab and click on **New evice Protocol** drop down option to view the device types create above.
 
 ![Device type mapping](/images/device-protocols/lpwan-custom-codec/lpwan-device-page-lpwantab.png)

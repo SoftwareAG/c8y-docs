@@ -72,19 +72,19 @@ The following code block contains the data format of the JSON schema that was as
 #### To collect the walking data:
 
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > { < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the sitting data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > { < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the jumping data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > { < product-name-1 > }}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * Once data is downloaded, this file can be previewed to verify the downloaded data and can be used for model building exercise.
 

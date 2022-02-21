@@ -16,7 +16,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 
 #### How to enable a specific user
 
-1. 1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
+1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
 2. Select the checkbox next to **Enable two-factor authentication**.
 3. Click **Save**.
 
@@ -27,7 +27,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 
 ### TOTP (Google Authenticator)
 
-Users have to install a TOTP application on their smartphone (Google Authenticator recommended), freely available both on App Store and Play Store.
+Users have to install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
 
 #### Setup
 

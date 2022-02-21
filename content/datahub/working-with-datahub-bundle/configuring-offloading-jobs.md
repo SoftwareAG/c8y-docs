@@ -70,7 +70,7 @@ For **alarms**, **events**, **inventory** collection, you only need to specify t
 
 For the **measurements** collection, additional settings are required. The **target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types, e.g., the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
-The layout **One table for one measurement type (Default)** will create a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type** to which the offloaded measurements are restricted. {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data and identifies existing measurement types. In the measurement type dropdown box, these auto-detected types are listed. In case a specific type you are looking for has not been detected, you can manually enter it in this box as well.     
+The layout **One table for one measurement type (Default)** will create a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. In case a specific type you are looking for has not been detected, you can manually enter it in this box as well. Alternatively you can click the popover next to the measurement types and select **Refresh** to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes.  
 
 The layout **All measurement types in one table (TrendMiner)** will create a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in this section. This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and {{< product-c8y-iot >}} DataHub, see [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
@@ -428,30 +428,34 @@ When using the default layout, you have to select a measurement type, so that al
 | ... |  |
 | myCustomAttributeN | Depends on data type |
 
-The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment_` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment_attribute1_name_value` to `fragment_attributeN_name_value`.
+The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment.` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment.attribute1.name.value` to `fragment.attributeN.name.value`.
 
-**Example mapping**
+**Example**
 
-The following excerpt of a measurement document in the base collection
+The following excerpt of a measurement document in the base collection is processed as follows:
 
 ````json
 {
+    "id": "4711",
     ...
-     "c8y_Temperature": {
-         "T": {
-             "unit": "C",
-             "value": 2.0791169082
-         }
-
-     }
+    "time": "2020-03-19T00:00:00.000Z",
+    "type": "c8y_Temperature",
+    "c8y_Temperature": {
+        "T": {
+            "unit": "C",
+            "value": 2.079
+        }
+    }
 }
 ````
 
-is represented in the target table in the data lake as
+The system uses the type attribute to determine *c8y_Temperature* as measurement type. Next it determines the measurement fragment *c8y_Temperature*, which comprises measurement type *T*, measurement value *2.079*, and measurement unit *C* as properties. This fragment is flattened and represented in the target table in the data lake as
 
 | ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
 | ---- | ---- | ---- | ---- |
 | ... | C | 2.0791169082 | ... |
+
+> **Info:** You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not be as concise as intended. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. In such a case the resulting column in the target table would have a mixed type of number and string, which complicates further processing in follow-up applications.
 
 ##### Offloading measurements with the TrendMiner target table layout
 

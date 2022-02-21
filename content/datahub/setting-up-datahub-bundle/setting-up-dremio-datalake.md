@@ -34,9 +34,8 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path in the data lake under which the offloaded data will be stored; default root path is /; setting a subfolder allows you to hide other data in the container from {{< product-c8y-iot >}} DataHub|
+|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, e.g. when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication|
-
 
 >**Info:** Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
 

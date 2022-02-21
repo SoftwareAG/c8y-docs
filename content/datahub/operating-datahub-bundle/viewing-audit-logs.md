@@ -21,7 +21,7 @@ For each offloading query, the following information is provided:
 | Offloading task | The task name of the offloading pipeline, complemented by a status icon showing success or failure of the pipeline execution
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the offloading query has read from the Operational Store of {{< product-c8y-iot >}}
-| Data billed (MB) | The amount of data being billed; amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
+| Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
 | Details | The internal task UUID in an expandable box
 
 For each ad-hoc query, the following information is provided:
@@ -31,7 +31,7 @@ For each ad-hoc query, the following information is provided:
 | Query | The SQL query, complemented by a status icon showing success or failure of the query execution
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake
-| Data billed (MB) | The amount of data being billed; amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
+| Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
 | Details | The link to the the internal Dremio job in an expandable box
 
 ### System log

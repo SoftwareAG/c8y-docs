@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The {{<
 
 ### Connecting via MQTT
 
-{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< domain-c8y >}}_) or your tenant domain (e.g. _mytenant.{{< domain-c8y >}}/mqtt_).
+{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (for example _mqtt.{{< domain-c8y >}}_) or your tenant domain (for example _mytenant.{{< domain-c8y >}}/mqtt_).
 
 Available ports:
 
@@ -60,7 +60,7 @@ Subscribe example:
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
-> **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+> **Info:** `\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
 
 ### Device hierarchies
 
@@ -68,7 +68,7 @@ MQTT sessions are linked to a single device, but this device can have a freely c
 
 All children require a unique ID defined when creating the device. We recommend you to use a combination of the unique ID of the root device and a unique ID within the hierarchy.
 
-To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. <kbd>s/us/myChildDeviceIdentifier</kbd>).
+To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (for example <kbd>s/us/myChildDeviceIdentifier</kbd>).
 
 The client will automatically receive operations for every child in the hierarchy by subscribing to the respective topic. It is not required to subscribe for each child.
 
@@ -107,7 +107,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type <br>default: d (device)|
-|deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
+|deviceIdentifier|YES|A unique identifier for your device, for example, IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check [SmartREST 2.0 > MQTT static templates](/reference/smartrest-two#mqtt-static-templates) for more information about template identifiers|
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.

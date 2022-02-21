@@ -112,7 +112,7 @@ If you want to search for objects matching an exact phrase enclose it in quotati
 "My Demo Device"
 ```
 
-You can also exclude words by putting a hyphen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
+You can also exclude words by putting a hyphen before the word to search the inventory for objects containing, for example, "My" or "Demo" but not "Device":
 
 ```text
 My Demo -Device

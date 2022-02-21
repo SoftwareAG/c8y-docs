@@ -144,3 +144,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/lora-actility/lora-protocols-gpsexample.png)
+
+### Using Custom decoding
+
+The Loriot agent also supports the decoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

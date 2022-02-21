@@ -141,6 +141,6 @@ This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/sigfox/sigfox-protocols-gpsexample.png)
 
-### Using LPWAN custom codec created device protocols
+### Using Custom decoding/encoding
 
-The Sigfox microservice also supports the use of device protocols (used for custom decoding/encoding) created on subscribing to an LPWAN custom codec microservice. Refer to [LPWAN custom codec](../lpwan-custom-codec) for details on how to create a custom codec microservice.
+The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

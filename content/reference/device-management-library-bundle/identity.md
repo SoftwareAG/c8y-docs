@@ -4,7 +4,7 @@ title: Identity
 layout: redirect
 ---
 
-The **Identity** tab shows all identities associated with the device. If no identities are available the tab is not shown. Identities map from a unique device identifier (IMEI, SN, etc.) to the device’s managed object in {{< product-c8y-iot >}}. This allows the device to find its managed object.
+The **Identity** tab shows all identities associated with the device. If no identities are available the tab is not shown. Identities map from a unique device identifier (for example IMEI, SN, and more) to the device’s managed object in {{< product-c8y-iot >}}. This allows the device to find its managed object.
 
 #### REST
 

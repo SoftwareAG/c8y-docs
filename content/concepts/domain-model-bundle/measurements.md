@@ -26,7 +26,7 @@ Measurements consist of a time when the measurement was taken, the unique identi
 }
 ```
 
-Similar to the inventory model, fragments are used to identify characteristics of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. In the example above, such fragment maps the names of the individual readings ("A+", "A-", etc.) to the actual numeric value and unit of the measurement.
+Similar to the inventory model, fragments are used to identify characteristics of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. In the example above, such fragment maps the names of the individual readings (for example "A+", "A-" and so on) to the actual numeric value and unit of the measurement.
 
 Readings can hold various additional information that applications may require.
 

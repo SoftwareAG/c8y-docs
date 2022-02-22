@@ -97,7 +97,7 @@ The plugin manifest describes how your plugin is shown in the {{< product-c8y-io
 * **description**: [optional] A longer description of the plugin.
 * **category**: [optional] A category for the plugin to be used in the filtering in the user interface.
 * **ngModules**: A list of AngularJS modules that are provided by the plugin, at least one is required.
-* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, services, etc. The path is relative to the plugin's root folder.
+* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, services, and so on. The path is relative to the plugin's root folder.
 * **CSS**: [optional] A list of CSS files to be loaded, paths relative to the plugin's root folder.
 * **less**: [optional] A list of LESS files to be loaded, paths relative to the plugin's root folder.
 * **copy**: [optional] A list of files that should be copied into the built.

@@ -27,7 +27,7 @@ There are two different types of smart rules:
 
 * **Global smart rules**
 
-  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
   They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
 

@@ -11,7 +11,7 @@ The machine dashboard offers a detailed view about the current status and develo
 
 ![Machine dashboard](/images/oee/dashboards/dashboard-machine-dashboard.png)
 
-At the top you find the general information (profile name, alarm status etc.) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#data) section.
+At the top you find the general information (profile name, alarm status, and so on) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#data) section.
 
 By default, the **Auto-refresh** option at the top left is activated and [**OEE status**](#oee-status) and [**OEE data**](#data) information is updated automatically according to the selected resolution. Switch the toggle to deactivate it.
 

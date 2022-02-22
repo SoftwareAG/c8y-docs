@@ -1005,13 +1005,13 @@ the OPC UA device gateway.</td>
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, and more.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, such as rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuration, such as rate.</td>
 </tr>
 </tbody>
 </table>
@@ -1328,13 +1328,13 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 </tbody>
 </table>
@@ -1363,13 +1363,13 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>severity</td>

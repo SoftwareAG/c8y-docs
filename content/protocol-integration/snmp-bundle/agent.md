@@ -105,7 +105,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 ### Migration
 
-The SNMP agent has undergone a major revamp in-terms of persistence storage mechanism, robustness, performance improvements etc. between version 10.4.x and 10.5.x. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
+The SNMP agent has undergone a major revamp in-terms of persistence storage mechanism, robustness, performance improvements and so on, between version 10.4.x and 10.5.x. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 
 > **Info:**: The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
 

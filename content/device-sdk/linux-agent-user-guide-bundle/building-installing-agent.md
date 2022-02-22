@@ -129,7 +129,7 @@ make
 
 Then the *c8y_canopend* execution file is created in _cumulocity-agents-linux/bin_.
 
-The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8y-iot >}} Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the {{< product-c8y-iot >}} Linux agent, so you just need to adjust all the CANopen settings in the {{< product-c8y-iot >}} Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
+The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8y-iot >}} Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate and more, automatically from the {{< product-c8y-iot >}} Linux agent, so you just need to adjust all the CANopen settings in the {{< product-c8y-iot >}} Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
 
 <a name=installing-the-agent></a>
 ### Installing the agent

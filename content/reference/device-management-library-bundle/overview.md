@@ -18,7 +18,7 @@ To start with device management, open the **All devices** tab in the **Devices**
 
 ![Device details](/images/reference-guide/device-details.png)
 
-This list can be manipulated through the device fragments, that means which tabs are shown depends on the capability the device supports. This is mainly operated by one fragment called ```c8y_SupportedOperations```. Based on what is put in the array of this fragment, functionality such as tabs, buttons, etc. are enabled. For example if the ```c8y_SupportedOperations``` fragment contains ```c8y_Firmware```, the firmware tab will be visible in the **Device details** page and the device can manage firmware objects.
+This list can be manipulated through the device fragments, that means which tabs are shown depends on the capability the device supports. This is mainly operated by one fragment called ```c8y_SupportedOperations```. Based on what is put in the array of this fragment, functionality such as tabs, buttons, and so on are enabled. For example if the ```c8y_SupportedOperations``` fragment contains ```c8y_Firmware```, the firmware tab will be visible in the **Device details** page and the device can manage firmware objects.
 
 #### c8y_SupportedOperations fragments
 

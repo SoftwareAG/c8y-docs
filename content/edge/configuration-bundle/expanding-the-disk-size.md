@@ -14,9 +14,9 @@ You can expand the disk size of the installation disk and the data disk using th
 
 3. Restart your Edge appliance.
 
-4. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+4. Log in to the {{< management-tenant >}}.
 
-	- Username: management/<*Edge admin username*>
+	- Username: management/<*username*>
 	- Password: password provided during the installation
 
 5. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.

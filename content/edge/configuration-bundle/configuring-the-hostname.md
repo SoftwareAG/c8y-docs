@@ -8,9 +8,9 @@ You can change the hostname of your Edge appliance using the REST APIs. The defa
 
 ### Configuring the hostname using the UI
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+1. Log in to the {{< management-tenant >}}.
 
-   - Username: management/<*Edge admin username*>
+   - Username: management/<*username*>
    - Password: password provided during the installation
 2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 3. Click **Edge** > **Hostname** in the navigator.

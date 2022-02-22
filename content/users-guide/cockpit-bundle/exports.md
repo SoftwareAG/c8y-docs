@@ -82,7 +82,7 @@ If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.do
 
 In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
 
-JsonPath expressions added from data points will be stored in bracket-notation in order to increase flexibility in fragment and series naming (e.g. whitespaces will be supported):
+JsonPath expressions added from data points will be stored in bracket notation in order to increase the flexibility in fragment and series naming (for example whitespaces will be supported):
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 

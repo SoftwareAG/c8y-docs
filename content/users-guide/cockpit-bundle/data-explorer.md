@@ -18,7 +18,7 @@ helpcontent:
 ---
 
 
-In the data explorer, data points, i.e. measurements or sensor data, can be visualized.
+In the data explorer, data points, that is measurements or sensor data, can be visualized.
 
 The data explorer is available for all assets or just for a particular asset.
 
@@ -26,7 +26,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 * Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
-In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 
@@ -36,7 +36,7 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [*Customizing data point properties*](#customize-data-points).
+* If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
@@ -46,9 +46,11 @@ There can be more than one matching data point entry in the data point library. 
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
-Click **Save as default** to store data point settings into device's managed object. These settings will then take precendence over the settings from data point library, e.g. when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore data point library default settings, click **Load from library** and then click **Save as default**.
+Click **Save as default** to store the data point settings into the device's managed object. These settings will then take precedence over the settings from the data point library, for example, when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore the data point library default settings, click **Load from library** and then click **Save as default**.
 
->**Example:** let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an **On measurement threshold create alarm** smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
+**Example:**
+
+Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
@@ -61,11 +63,11 @@ To change the visualization in the data explorer, you can modify several propert
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
-To change the time range on the X-axis,
+To change the time range on the x-axis,
 
 * select a different time range from the dropdown list in the top menu bar,
 * enter a custom time range into the **From** and **To** fields in the data explorer,
-* drag the X-axis and move of left or right to move the time period,
+* drag the x-axis and move left or right to move the time period,
 * double-click into the data explorer to zoom out.
 
 >**Info:** Real-time updates will be switched off if you set a time range in the past.
@@ -110,7 +112,7 @@ To save the data point to the data point library, click the menu icon of the dat
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
-For details on the data point library refer to [Using the data point library](#data-point-library).
+For details on the data point library refer to [Data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
@@ -192,7 +194,7 @@ In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or ev
 
 ![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 
-In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
+In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
 
 Expand an event, to modify its properties.
 

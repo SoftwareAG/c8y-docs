@@ -26,7 +26,7 @@ In the navigator, select **Compaction** under **Status** to get an overview of t
 
 Click **Reload** to refresh the status being shown.
 
-You can filter the entries by their task name or their status by using the filter controls in the action bar.
+You can filter the entries by their task name or their status by using the filter controls in the action bar. The pagination controls can be used to traverse the history entries.
 
 ### History of compactions per offloading pipeline
 

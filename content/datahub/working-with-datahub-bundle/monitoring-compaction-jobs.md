@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 60
 title: Monitoring compaction jobs
 layout: redirect
 ---

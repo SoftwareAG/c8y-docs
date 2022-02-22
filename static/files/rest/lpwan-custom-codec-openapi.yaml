@@ -12,7 +12,7 @@ paths:
       tags:
         - LPWAN Custom Codec Decode API
       summary: "Decodes the payload based on the inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport."
-      description: "This API endpoint decodes the input payload based on inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport and returns the result populated with Measurements, Events, Alarms and Alarm types to update. Also flag whether the decoding payload is successful or not."
+      description: "This API endpoint decodes the input payload based on inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport and returns the result populated with measurements, events, alarms and alarm types to update. Also flag whether the decoding payload is successful or not."
       requestBody:
         required: true
         content:
@@ -134,33 +134,33 @@ components:
 
     DecoderResult:
       type: object
-      description: "Contains a list of Alarms, AlarmTypes to udpate, Events, Measurement, DataFragments to be updated."
+      description: "Contains a list of alarms, alarm types to udpate, events, measurements and data fragments to be updated."
       properties:
         alarms:
           type: array
-          description: "List of Alarms to be created."
+          description: "List of alarms to be created."
           items:
             type : object
             description: "AlarmRepresentation"
         alarmTypesToUpdate:
           type: object
-          description: "Map of AlarmTypes to be updated with a specific status"
+          description: "Map of alarm types to be updated with a specific status"
           additionalProperties:
             $ref: '#/components/schemas/AlarmTypesToUpdate'
         events:
           type: array
-          description: "List of Events to be created."
+          description: "List of events to be created."
           items:
             type: object
             description: "EventRepresentation"
         measurements:
           type: array
-          description: "List of Measurements to be created."
+          description: "List of measurements to be created."
           items:
             $ref: '#/components/schemas/MeasurementDto'
         dataFragments:
           type: array
-          description: "List of DataFragments to be updated with a specified status."
+          description: "List of data fragments to be updated with a specified status."
           items:
             $ref: '#/components/schemas/DataFragmentUpdate'
         message:
@@ -168,7 +168,7 @@ components:
           description: "Message description regarding decode."
         success:
           type: boolean
-          description: "Boolen value regarding decode is successful or failure."
+          description: "Boolen value that indicates whether decoding was successful or not."
 
     EncoderInputData:
       type: object
@@ -181,16 +181,16 @@ components:
       properties:
         commandName:
           type: string
-          description: "Command Name."
+          description: "Command name."
         commandData:
           type: string
-          description: "Command Data to be encoded."
+          description: "Command data to be encoded."
         sourceDeviceId:
           type: string
-          description: "Managed object Id of the device."
+          description: "Managed object ID of the device."
         args:
           type: object
-          description: "This is a map object that contain required information used by the Codec to decode the payload such as deviceModel, deviceManufacturer and sourceDeviceEui."
+          description: "This is a map object that contain required information used by the codec to decode the payload such as deviceModel, deviceManufacturer and sourceDeviceEui."
           additionalProperties:
             $ref: '#/components/schemas/EncoderInputArgs'
         status:
@@ -213,25 +213,25 @@ components:
           type: string
           description:  "Message description regarding the encode operation."
         success:
-          description: "Boolen value that shows whether encoding was successful or not."
+          description: "Boolen value that indicates whether encoding was successful or not."
           type: boolean
 
     DecoderInputArgs:
       type: object
-      description: "Required Inputs for the decode API like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
+      description: "Required inputs for the decode API like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
       required:
         - deviceManufacturer
         - deviceModel
         - sourceDeviceEui
       properties:
         deviceManufacturer:
-          description: "Device Manufacturer of the LPWAN device."
+          description: "Device manufacturer of the LPWAN device."
           type: string
         deviceModel:
-          description: "Device Model of the LPWAN device."
+          description: "Device model of the LPWAN device."
           type: string
         sourceDeviceEui:
-          description: "LPWAN device External Identifier."
+          description: "LPWAN device external identifier."
           type: string
         updateTime:
           description: "Time stamp."
@@ -242,7 +242,7 @@ components:
 
     AlarmTypesToUpdate:
       type: object
-      description: "Map of Alarm types to be updated."
+      description: "Map of alarm types to be updated."
       properties:
         ACKNOWLEDGED:
           type: array
@@ -255,20 +255,20 @@ components:
 
     EncoderInputArgs:
       type: object
-      description: "Required Inputs for the encode API like deviceManufacturer, deviceModel, sourceDeviceEui."
+      description: "Required inputs for the encode API like deviceManufacturer, deviceModel, sourceDeviceEui."
       required:
         - deviceManufacturer
         - deviceModel
         - sourceDeviceEui
       properties:
         deviceManufacturer:
-          description: "Device Manufacturer of the LPWAN device."
+          description: "Device manufacturer of the LPWAN device."
           type: string
         deviceModel:
-          description: "Device Model of the LPWAN device."
+          description: "Device model of the LPWAN device."
           type: string
         sourceDeviceEui:
-          description: "LPWAN device External Identifier."
+          description: "LPWAN device external identifier."
           type: string
 
     EncoderOutputArgs:
@@ -293,21 +293,21 @@ components:
           description: "Value of the fragment."
         valueAsObject:
           type: object
-          description: "Value Object."
+          description: "Value object."
 
     MeasurementDto:
       type: object
-      description: "Measurement Data Transfert Object."
+      description: "Measurement data transfert object."
       properties:
         type:
           type: string
-          description: "Measurement Type."
+          description: "Measurement type."
         series:
           type: string
-          description: "Measurement Series."
+          description: "Measurement series."
         time:
           type: string
-          description: "Date Time."
+          description: "Date and time."
           format: date-time
         fragmentsToCopyFromSourceDevice:
           type: array
@@ -316,7 +316,7 @@ components:
             type: string
         deviceFragmentPrefix:
           type: string
-          description: "Device  fragment prefix."
+          description: "Device fragment prefix."
         deviceNameFragment:
           type: string
           description: "Device name fragment."
@@ -340,7 +340,7 @@ components:
           description: "Measurement series name."
         unit:
           type: string
-          description: "Measurement Unit."
+          description: "Measurement unit."
         value:
           type: number
-          description: "Measurement Value."
+          description: "Measurement value."

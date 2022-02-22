@@ -4,7 +4,7 @@ title: Setting up Dremio account and data lake
 layout: redirect
 ---
 
-The setup of {{< product-c8y-iot >}} DataHub requires you to choose a Dremio account name, and provide credentials to the data lake. In the navigator, select **Settings** to define those settings.
+The setup of {{< product-c8y-iot >}} DataHub requires you to choose a Dremio account name, and provide credentials to the data lake. In the navigator, select **Dremio & Data Lake** under **Settings** to define those settings.
 
 >**Info:** You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
@@ -17,11 +17,13 @@ The name is composed of three parts:
 
 1. tenant id
 2. forward slash
-3. string with a minimum length of two starting with a character and consisting of numbers, characters, dash, or underline
+3. string with a minimum length of two, starting with a character, and consisting of numbers, characters, dash, or underline
 
 If your tenant id is `t12345`, then `t12345/user` is a valid name. The system would also set this value as the initial value in the account field.
 
 The password of the Dremio account has to have at least eight characters, including at least one character and one number.
+
+This account can be used in follow-up applications to query the data lake, e.g., by connecting to Dremio via JDBC. 
 
 #### Data Lake
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you have to specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
@@ -68,7 +70,7 @@ The following types of data lakes are currently supported:
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
 |Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
 
-**Info:** Impersonation is supported and used. However, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis.
+> **Info:** Impersonation is supported and used. However, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis.
 
 For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 

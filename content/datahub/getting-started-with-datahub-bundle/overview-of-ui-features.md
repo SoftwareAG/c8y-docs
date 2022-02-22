@@ -9,8 +9,10 @@ layout: redirect
 | Page | Description | Required role | Prerequisites
 | ---  | --- | --- | ---
 | Home | Get an introduction to {{< product-c8y-iot >}} DataHub and access quick links with related functionality | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | -
-| Settings | Set up {{< product-c8y-iot >}} DataHub | DATAHUB_ADMINISTRATOR | -
+| Settings / Dremio & Data Lake | Set up {{< product-c8y-iot >}} DataHub | DATAHUB_ADMINISTRATOR | -
+| Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DATAHUB_ADMINISTRATOR | -
 | Offloading | Configure and manage your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -
+| Microsoft Power BI | View Microsoft Power BI reports | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Connection to Microsoft Power BI has been set up
 | Auditing / Query log | View the query log | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics has to be enabled
 | Auditing / System log | View the system log | DATAHUB_ADMINISTRATOR | -
 | Status | View the latest job status of your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -

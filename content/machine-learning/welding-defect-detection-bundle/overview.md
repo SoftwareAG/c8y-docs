@@ -7,9 +7,11 @@ aliases:
   - /predictive-analytics/welding-defect-detection/#overview
 ---
 
-Welding defect overview.
+Tungsten Inert Gas (TIG) welding is an arc welding process in which a tungsten electrode is used to produce the weld. The electrode is not consumed, and the electrode and weld pool are protected from contamination by an inert gas. TIG welding is a slower, more complex, and more expensive technique than most others. A few defects that can occur during this process are lack of fusion, misalignment, and burn through. 
 
-In this use case, we follow these steps:
+One way to catch these defects is with non-destructive testing, in which a weld is inspected visually. In this demo, we use images of TIG welds to build a deep learning model to classify images as containing defects or being defect-free. By leveraging deep learning, we can thus automate inspection of weld quality.
+
+In this use case, we take the following steps:
 
 * Download the project archive and upload it to MLW.
 * Use MLW's integrated Jupyter Notebook to train a model using transfer learning and convert it to ONNX.

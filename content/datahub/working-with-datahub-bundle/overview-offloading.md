@@ -8,14 +8,14 @@ layout: redirect
 
 | Section | Content |
 | -----   | -----   |
-| [Configuring offloading jobs](/datahub/configuring-offloading-jobs) | Configure pipelines for offloading data into a data lake |
-| [Offloading the base collections](/datahub/offloading-base-collections) | Examine the result schemas for offloaded {{< product-c8y-iot >}} base collections |
-| [Managing offloading jobs](/datahub/managing-offloading-jobs) | Schedule and manage offloading pipelines |
-| [Monitoring offloading jobs](/datahub/monitoring-offloading-jobs) | Monitor the results of offloading jobs |
-| [Monitoring compaction jobs](/datahub/monitoring-compaction-jobs) | Monitor the results of compaction jobs |
-| [Querying offloaded Cumulocity IoT data](/datahub/querying-offloaded) | Query offloaded Cumulocity IoT data in follow-up applications |
-| [Refining offloaded Cumulocity IoT data](/datahub/integrating-datahub-with-sag-products) | Use Dremio to refine offloaded Cumulocity IoT data |
-| [{{< product-c8y-iot >}} DataHub best practices](/datahub/datahub-best-practices) | Learn more about best practices when working with {{< product-c8y-iot >}} DataHub |
+| [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) | Configure pipelines for offloading data into a data lake |
+| [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) | Examine the result schemas for offloaded {{< product-c8y-iot >}} base collections |
+| [Managing offloading jobs](/datahub/working-with-datahub/#managing-offloading-jobs) | Schedule and manage offloading pipelines |
+| [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) | Monitor the results of offloading jobs |
+| [Monitoring compaction jobs](/datahub/working-with-datahub/#monitoring-compaction-jobs) | Monitor the results of compaction jobs |
+| [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) | Query offloaded Cumulocity IoT data in follow-up applications |
+| [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) | Use Dremio to refine offloaded Cumulocity IoT data |
+| [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) | Learn more about best practices when working with {{< product-c8y-iot >}} DataHub |
 
 ### Basic functionality
 
@@ -34,9 +34,9 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.
 
-In the action bar you have a search control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The configurations can be either shown as cards or in a list. 
+In the action bar you have a search control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The configurations can be either shown as cards or in a list. The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations.
 
-The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations. Below the action bar you will find the current set of configurations.
+Below the action bar you will find the current set of configurations either in a card or a list view.
 
 #### Card view of offloading configurations
 

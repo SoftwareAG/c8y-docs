@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Offloading base collections
+title: Offloading Cumulocity IoT base collections
 layout: redirect
 ---
 
@@ -39,9 +39,10 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses additional steps:
 
 1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
-2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus "_all" and "_latest" respectively. The following examples use "alarms" as target table name:
+2. Some views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus "_all" and "_latest" respectively. The following examples use "alarms" as target table name:
     * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by {{< product-c8y-iot >}} DataHub).
-    * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded. The offloading configuration provides an option to additionally materialize that view.
+    * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
+    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the offloading configuration has view materialization enabled.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
@@ -70,10 +71,11 @@ The events collection manages the events. During offloading, the data of the eve
 
 Events, just like alarms, are mutable, i.e., they can be changed after their creation. Thus, the same logic as for alarms applies.
 
-Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
+Some views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *events* as target table name:
 
 * **events_all**: Contains all states (that were captured by {{< product-c8y-iot >}} DataHub's period offloading) of all events.
-* **events_latest**: Contains only the latest state of all events without prior states. The offloading configuration provides an option to additionally materialize that view.
+* **events_latest**: Contains only the latest state of all events without prior states.
+* **events_c8y_cdh_latest_materialized**: An optional view which materializes the **events_latest** view if the offloading configuration has view materialization enabled.
 
 #### Offloading the inventory collection
 
@@ -103,8 +105,9 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
 
 1. Offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Two views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
-    * **inventory_all**: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by {{< product-c8y-iot >}} DataHub).
-    * **inventory_latest**: a view with the latest status of all managed objects, with all previous transitions being discarded. The offloading configuration provides an option to additionally materialize that view.
+    * **inventory_all**: A view with the updates between two offloading executions, not including the intermediate updates.
+    * **inventory_latest**: A view with the latest status of all managed objects, with all previous transitions being discarded.
+    * **inventory_c8y_cdh_latest_materialized**: An optional view which materializes the **inventory_latest** view if the offloading configuration has view materialization enabled.
 
 Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
@@ -170,7 +173,7 @@ The system uses the type attribute to determine *c8y_Temperature* as measurement
 
 ##### Offloading measurements with the TrendMiner target table layout
 
-When using the TrendMiner layout, all measurements are offloaded into one table. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
+When using the TrendMiner layout, all measurements are offloaded into one table **c8y_cdh_tm_measurements**. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
 
 The resulting schema is defined as follows:
 
@@ -227,5 +230,15 @@ is represented in the target table in the data lake as
 | ---- | ---- | ----- | ----- | ----- | ----- |
 | ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
 | ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
+
+In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source ids, which connect the tagname used in TrendMiner with a device and its id as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
+
+| Column name | Column type |
+| -----       | -----       |
+| source | VARCHAR |
+| tagname | VARCHAR |
+| unit | VARCHAR |
+| datatype | VARCHAR |
+| latestCreationTime | TIMESTAMP |
 
 For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).

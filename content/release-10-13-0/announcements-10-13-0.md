@@ -132,3 +132,21 @@ The API to download the serialized source of a PMML model `{{url}}/service/zemen
 #### Implemented
 
 With GA release 10.13.0, Cumulocity IoT Machine Learning Workbench introduces "Role Based Access Control" which is a breaking change for its existing users. Refer to the "Role Based Access Control" section in the [Machine Learning release notes](/release-10-13-0/machine-learning-10-13-0/#10_13_0) to learn more about this change.
+
+### Streaming Analytics
+
+#### Implemented
+
+##### Cumulocity IoT transport in Apama
+
+The following applies as of Apama 10.11.1:
+
+- The `GeoFenceContainer.createGeoFenceContainer()` action no longer throws an exception when provided with any `lat` or `lng` values that cannot be parsed as a float. 
+  Instead, an empty `optional<GeoFencePoint>` is now created for that coordinate. 
+  See the `com.apama.cumulocity` package in the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/apama/v10-11/apama10-11/ApamaDoc/index.html) 
+  for more information on the `GeoFenceContainer` event.
+
+- Warning messages are now logged for Cumulocity IoT queries where `pageSize` is below 50 and `currentPage` is not set (default). 
+  This is because setting a small `pageSize` without setting `currentPage` can result in queries that run very slowly. 
+  For example, to request the first 20 items, you have to set `pageSize` to 20 and `currentPage` to 1. 
+  See also [Paging Cumulocity IoT queries](https://documentation.softwareag.com/apama/v10-11/apama10-11/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_paging_cumulocity_queries.html) in the Apama documentation.

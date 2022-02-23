@@ -27,13 +27,13 @@ In Dremio a new view is provided, which combines the historical data in the data
 
 > **Info:** So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
 
-You have to follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data. This section also provides the schema of the view.
+You have to follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
 ### Accessing Cumulocity IoT data in TrendMiner
 
 Once you have defined and activated a TrendMiner offloading pipeline, the initial offload has to be completed before you can start querying the data in TrendMiner.
 
-> **Warning:** The offloading pipeline has to be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
+> **Info:** The offloading pipeline has to be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
 
 {{< product-c8y-iot >}} DataHub provides the following views within Dremio, based on tables having the same name and the same schema:
 

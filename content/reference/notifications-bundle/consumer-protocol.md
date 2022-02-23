@@ -93,7 +93,7 @@ Duplicates can also occur due to underlying network failures or perceived failur
 
 A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
 
-For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3..2.
+For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3,2.
 
 The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.

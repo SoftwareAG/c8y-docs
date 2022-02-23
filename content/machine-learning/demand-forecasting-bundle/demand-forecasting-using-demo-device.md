@@ -34,7 +34,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Flow measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last days period and for every two hours (i.e. 12 observations per day).
+2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Flow measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last 8 days period and for every two hours (i.e. 12 observations per day).
 
 We use this data to generate a time series model and forecast the next day's c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
 

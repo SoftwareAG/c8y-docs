@@ -1,6 +1,6 @@
 ---
 weight: 55
-title: Standard measurements and events on uplink message
+title: Uplink message processing
 layout: redirect
 ---
 

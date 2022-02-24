@@ -4,8 +4,8 @@ title: Standard measurements and events created while processing the uplink mess
 layout: redirect
 ---
 
-When an uplink message is sent to the device managed object, the following measurements/events are created:
+On the receipt of an uplink message, the Cumulocity Platform creates the following measurements and events and updates the corresponding Device Managed Object.
 
-- **Position** - The position of the device is captured by considering the latitude, longitude, altitude and accuracy in the c8y_Position fragment of the device managed object. Also a position update event is created.
-- **Spreading factor** - The spreading factor sent in the uplink message is captured in the c8y_SpreadingFactor fragment of the device Managed Object.
-- **Signal strength** - A signal strength measurement is created, by considering the RSSI and SNR values.
+- **Position** - c8y_Position fragment of the device managed object is updated to capture the latitude, longitude, altitude and accuracy information of the device. An event is also created with the position information.
+- **Spreading factor** - c8y_SpreadingFactor fragment of the device managed object is updated to capture the Spreading Factor of the device.
+- **Signal strength** - A measurement is created with RSSI and SNR values of the device signal strength.

@@ -1,11 +1,11 @@
 ---
 weight: 50
-title: Standard measurements and events created while processing the uplink message
+title: Standard measurements and events on uplink message
 layout: redirect
 ---
 
-On the receipt of an uplink message, the Cumulocity Platform creates the following measurements and events and updates the corresponding Device Managed Object.
+On the receipt of an uplink message, the {{< product-c8y-iot >}} platform creates the following measurements and events, and updates the corresponding device managed object.
 
-- **Unprocessed data** - An event of type c8y_LoriotUplinkRequest is created with the unprocessed data.
-- **Position** - c8y_Position fragment of the device managed object is updated to capture the latitude, longitude, altitude and accuracy information of the device. An event is also created with the position information.
+- **Unprocessed data** - An event of type <code>c8y_LoriotUplinkRequest</code> is created with the unprocessed data. 
+- **Position** - The <code>c8y_Position</code> fragment of the device managed object is updated to capture the latitude, longitude, altitude and accuracy information of the device. Also, an event is created with the position information.
 - **Signal strength** - A measurement is created with RSSI and SNR values of the device signal strength.

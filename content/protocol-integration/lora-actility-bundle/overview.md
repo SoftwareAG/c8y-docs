@@ -21,6 +21,7 @@ The following sections describe how to:
 * [Configure your ThingPark account credentials](#configure-credentials) in {{< product-c8y-iot >}}.
 * [Create device protocols](#create-device-protocols) for all devices.
 * [Register devices](#register-device) and visualize Actility payload using {{< product-c8y-iot >}}.
+* [Standard measurements and events created while processing the uplink message](#uplink-message)
 * [Deprovision a device](#deprovision-device) in ThingPark.
 * [Send operations](#configurable-port) to a device.
 * [ThingPark Api availability monitoring](#thingpark-monitoring) in {{< product-c8y-iot >}}.

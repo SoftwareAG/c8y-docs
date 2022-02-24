@@ -22,7 +22,7 @@ The following sections describe how to:
 - [Create device protocols](#device-protocols) with {{< product-c8y-iot >}}'s device database.
 - [Register devices](#register-device-sigfox) and visualize the Sigfox payload using {{< product-c8y-iot >}}.
 - [Update devices](#old-registration) registered with the general device registration.
-- [Standard measurements and events created while processing the uplink message](#uplink-message)
+- [Standard measurements and events on uplink message](#uplink-message)
 - [Send operations](#operations-sigfox) to devices.
 
 Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in case of any issues.

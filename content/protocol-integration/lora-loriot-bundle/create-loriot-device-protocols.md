@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Creating device protocols
 layout: redirect
 ---

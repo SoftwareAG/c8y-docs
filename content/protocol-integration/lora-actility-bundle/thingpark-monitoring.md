@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 70
 title: ThingPark API availability monitoring
 layout: redirect
 ---

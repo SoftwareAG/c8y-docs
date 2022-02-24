@@ -27,6 +27,6 @@ The following sections describe how to:
 Moreover, check out
 
 * [Uplink message processing](#uplink-message) for information on measurements and events created while processing the uplink message.
-* [Troubleshooting](#sigfox-troubleshooting)in case of any issues.
+* [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
 
 > **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).

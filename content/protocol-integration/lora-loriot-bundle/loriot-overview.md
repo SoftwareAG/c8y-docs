@@ -29,7 +29,7 @@ The following sections describe how to:
 Moreover, check out
 
 * [Uplink message processing](#uplink-message) for information on measurements and events created while processing the uplink message.
-* [Troubleshooting](#sigfox-troubleshooting)in case of any issues.
+* [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
 
 
 > Note that your subscription needs to include this feature to be able to use it. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).

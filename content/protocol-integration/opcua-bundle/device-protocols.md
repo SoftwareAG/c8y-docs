@@ -56,7 +56,6 @@ Specify the following parameters (all mandatory):
 
 - Severity - One of CRITICAL, MAJOR, MINOR, WARNING
 - Type
-- Status - One of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
 >**Info:** If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.

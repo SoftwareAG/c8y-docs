@@ -970,7 +970,7 @@ the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>alarmCreation</td>
-<td><em>AlarmCreation</em></td>
+<td><em>UAAlarmCreation</em></td>
 <td>no</td>
 <td>Mappings for alarm.</td>
 </tr>
@@ -1341,8 +1341,6 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 **Data structure for *UAAlarmCreation***
 
-This has all the fields as *AlarmCreation* does, however the *text* and *type* field can be parameterized with different parameters.
-
 <table>
 <colgroup>
 <col style="width: 15%;">
@@ -1376,6 +1374,12 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>string</td>
 <td>no</td>
 <td>For UAAlarmCreation, the severity is optional. If this is not provided, the severity of the alarm will be mapped using the severity mappings specified in the default gateway configuration YAML file or in the server configuration.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>no</td>
+<td>Alarm status. The possible values are ACTIVE, ACKNOWLEDGED, CLEARED. If this is given, the <em>alarmStatusMappings</em> setting in <em>ServerConnectionConfig</em> is ignored.</td>
 </tr>
 </tbody>
 </table>

@@ -14,7 +14,7 @@ In the following screenshot you can find some examples of a device protocol's pr
 
 Enter the shell command or view/edit the predefined command in the **>_Command** field.
 
-If you enter the command without defining a port, it will be sent to the default target port (that is 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port.
+If you enter the command without defining a port, it will be sent to the default target port (that is, port 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port.
 
 ![Port configuration](/images/device-protocols/lora-actility/lora-devices-port.png)
 

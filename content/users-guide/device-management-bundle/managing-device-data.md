@@ -32,7 +32,7 @@ helpcontent:
   For details on managing device profiles and on applying device profiles to devices, see *Device Management > Managing device data > Device profiles* in the *User guide*."
 - label: trusted-certificates
   title: Trusted certificates
-  content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is added to the trusted certificates. For details, see *Device Management > Managing device data > Managing trusted certificates* in the *User guide*."
+  content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates. For details, see *Device Management > Managing device data > Managing trusted certificates* in the *User guide*."
 ---
 
 ### Overview
@@ -593,7 +593,7 @@ To add a certificate perform these steps:
 
 #### To edit a trusted certificate
 
-In the detail view of a certificate you may change the parameters on the left, that is the certificate name, and the settings for the auto registration and enabled/disabled option.
+In the detail view of a certificate you may change the parameters on the left, that is, the certificate name, and the settings for the auto registration and enabled/disabled option.
 
 For details on the fields, see the description on adding certificates above.
 

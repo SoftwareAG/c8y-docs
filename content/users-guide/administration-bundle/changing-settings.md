@@ -454,7 +454,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 <tbody>
 <tr>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">If selected, the property needs to be provided, that means during alarm creation. Not available if the property type is "Boolean".</td>
+<td style="text-align:left">If selected, the property needs to be provided, for example, during alarm creation. Not available if the property type is "Boolean".</td>
 </tr>
 <tr>
 <td style="text-align:left">Default Value</td>
@@ -500,7 +500,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 <a name="sms-provider"></a>
 ### Providing SMS provider credentials
 
-SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, that means on alarms.
+SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, for example, on alarms.
 
 By providing your credentials you enable platform features that utilize SMS services.
 

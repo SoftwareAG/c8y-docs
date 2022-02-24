@@ -7,24 +7,6 @@ aliases:
   - /users-guide/getting-started/#accessing-cumulocity-platform
 ---
 
-> **Requirements:**
-> * working internet connection
-> * supported browser
-> * {{< product-c8y-iot >}} tenant ({{< standard-tenant >}} or higher)
-
-
-> **On this page:**
-> * [How to log into the platform](#login)
-> * [How to reset your password](#reset-password)
-> * [How to access pages using URLs](#URLs)
-
-
-> **Related topics:**
-> * [Branding](/users-guide/enterprise-tenant/#branding) of the cookie banner
-> * [Enterprise tenant](/users-guide/enterprise-tenant/#overview)
-> * [Password configuration](/users-guide/administration/#passwords)
-
-
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
 ### Supported browsers

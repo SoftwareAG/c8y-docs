@@ -48,7 +48,7 @@ Note that this option is only available if support user access is not set global
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using, that is 10.5.8, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
+<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using, for example, 10.13.0.034, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>

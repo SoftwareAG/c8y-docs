@@ -90,7 +90,7 @@ Under **Search results**, the assets matching the search criteria are shown. To 
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
 
->**Important:** The search results include all assets containing the search term in any property (for example name, model or any fragment), that means the search results do not only include assets matching the search criteria with their names.
+>**Important:** The search results include all assets containing the search term in any property (name, model or any fragment), that means the search results do not only include assets matching the search criteria with their names.
 
 ##### Exact match
 

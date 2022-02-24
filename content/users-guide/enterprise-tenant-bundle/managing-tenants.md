@@ -31,7 +31,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the {{< management-tenant >}}, you will also find information on the parent tenant, that is the tenant that created the listed tenant.
+In the {{< management-tenant >}}, you will also find information on the parent tenant, that is, the tenant that created the listed tenant.
 
 <a name="creating-tenants"></a>
 ### To create a subtenant

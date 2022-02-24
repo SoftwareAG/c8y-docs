@@ -115,7 +115,7 @@ For details see [Enterprise tenant > Using the data broker](/users-guide/enterpr
 
 <a name="data-explorer"></a>
 ### Data explorer
-Part of the [Cockpit application](#cockpit-application). The data explorer visualizes all data points (for example  measurements or sensor data) of either a particular asset or of all assets.
+Part of the [Cockpit application](#cockpit-application). The data explorer visualizes all data points (that is, measurements or sensor data) of either a particular asset or of all assets.
 
 For details see [Cockpit > Data explorer](/users-guide/cockpit/#data-explorer) in the *User guide*.
 

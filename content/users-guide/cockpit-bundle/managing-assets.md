@@ -4,30 +4,6 @@ title: Managing assets
 layout: redirect
 ---
 
-> **Requirements:**
-> * working internet connection
-> * supported browser
-> * {{< product-c8y-iot >}} tenant ({{< standard-tenant >}} or higher)
-
-
-> **On this page:**
-> * [How to navigate assets](#navigating)
-> * [How to add a group](#creating-groups)
-> * [How to assign devices to a group](#assigning-devices)
-> * [How to edit a group](#edit-group)
-> * [How to delete a group](#delete-group)
-> * [How to remove a device from a group](#remove-device)
-
-
-> **Related topics:**
-> * The [Device Management guide](/users-guide/device-management/#overview)
-> * [How to connect devices](/users-guide/device-management#connecting-devices)
-> * [How to work with alarms](/users-guide/device-management/#alarm-monitoring)
-> * [How to visualize data](#data-explorer)
-> * [How to work with smart Rules](#smart-rules)
-> * The [Web SDK guide](/web/#overview/)
-> * [How to work with dashboards](#dashboards)
-
 <a name="assets"></a>
 ### Assets hierarchy
 

@@ -75,7 +75,7 @@ Deploying and running the microservice inside Docker will result in passing the 
 TZ=Europe/Warsaw
 ```
 
-When using Java-based microservices this variable is automatically read and applied to the Java process, no additional work is required. Microservices developed with other programming languages may require some manual work, that means loading the TZ value from the environment and using it to configure the time zone on the language level programmatically.
+When using Java-based microservices this variable is automatically read and applied to the Java process, no additional work is required. Microservices developed with other programming languages may require some manual work, that is, loading the TZ value from the environment and using it to configure the time zone on the language level programmatically.
 
 #### Proxy variables
 

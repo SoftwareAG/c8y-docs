@@ -194,7 +194,7 @@ var cDetails = new ConnectionDetailsBuilder()
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-c8y-iot >}} MQTT supports both unsecured TCP and secured SSL connections (for example `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
+{{< product-c8y-iot >}} MQTT supports both unsecured TCP and secured SSL connections (that is, `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
 
 What does the code in `Main` do?
 

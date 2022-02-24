@@ -146,7 +146,7 @@ In the **CANopen communication** section, the following parameters can be config
 
 - **Baud rate:** This field must match with the used baud rate in the CANopen network.
 - **Polling rate:** The rate at which the agent sends requests to the CANopen devices.
-- **Transmit rate:** The transfer rate, that is the rate at which the terminal sends regular measurements to {{< product-c8y-iot >}}.
+- **Transmit rate:** The transfer rate, that is, the rate at which the terminal sends regular measurements to {{< product-c8y-iot >}}.
 
 In the **CANopen** section, up to 127 CANopen devices can be added to the gateway as child devices by providing the following parameters:
 

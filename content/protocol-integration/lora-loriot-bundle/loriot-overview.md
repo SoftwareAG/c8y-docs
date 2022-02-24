@@ -23,7 +23,7 @@ The following sections describe how to:
 * [Configure Loriot agent endpoint credentials](#configure-loriot-credentials) in LORIOT Network Server.
 * [Assign the Loriot admin role](#assign-loriot-admin-role) to the user in {{< product-c8y-iot >}}.
 * [Register devices](#register-loriot-device) and visualize Loriot payload using {{< product-c8y-iot >}}.
-* [Standard measurements and events created while processing the uplink message](#uplink-message) 
+* [Standard measurements and events on uplink message](#uplink-message) 
 * [Create device protocols](#create-loriot-device-protocols) for all devices.
 * [Set device protocol](#assign-loriot-device-protocol) for processing the Loriot LoRa device payload for creating measurements or events in {{< product-c8y-iot >}}.
 * [Troubleshoot](#loriot-troubleshooting) for warning messages.

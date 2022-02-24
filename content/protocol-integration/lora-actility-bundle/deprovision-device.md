@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 60
 title: Deprovisioning LoRa devices
 layout: redirect
 ---

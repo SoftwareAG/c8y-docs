@@ -79,7 +79,7 @@ Under **General**, specify a name for the value and the category under which it 
 
 Under **Value selection**, define from where the value should be extracted. In order to do so, indicate where the value information starts in the **Start bit** field and how long this information is in the **Number of bits** field. The maximum value for the number of bits is 32 bits (4 bytes).
 
-In this example the "Channel 1 Type" information starts in byte 2 (that means start bit = "16") and is 1 byte long (that means number of bits = "8").
+In this example the "Channel 1 Type" information starts in byte 2 (that means, start bit = "16") and is 1 byte long (that means, number of bits = "8").
 
 <img src="/images/device-protocols/lora-actility/lora-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 

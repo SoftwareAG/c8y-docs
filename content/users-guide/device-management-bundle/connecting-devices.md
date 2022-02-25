@@ -81,7 +81,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 <a name="creds-upload"></a>
 #### To bulk-register devices
 
-To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means to register larger amounts of devices by uploading a CSV file.
+To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 > **Info:** There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 

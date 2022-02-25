@@ -1328,13 +1328,13 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
+<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
+<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 </tbody>
 </table>
@@ -1363,13 +1363,13 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
+<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
+<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>severity</td>

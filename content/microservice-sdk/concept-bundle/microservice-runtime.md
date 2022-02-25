@@ -55,7 +55,7 @@ The microservice installer injects the `TZ` environment variable into the micros
 - Tenant option in the microservice owner tenant
 - Platform application environment variables (MICROSERVICE_RUNTIME_TIMEZONE)
 
-The tenant option has higher priority, that means if the parameter is set in both places, the value from the tenant option is taken.
+The tenant option has higher priority, that means, if the parameter is set in both places, the value from the tenant option is taken.
 
 ##### Example
 
@@ -86,7 +86,7 @@ Proxy variables are passed into the microservice environment during installation
  - Tenant options in the microservice owner tenant
  - Platform application environment variables
 
-Tenant options have higher priority, that means if the parameter is set in both places, the value from the tenant option is taken.
+Tenant options have higher priority, that means, if the parameter is set in both places, the value from the tenant option is taken.
 
 The table below contains the options and proxy variables:
 

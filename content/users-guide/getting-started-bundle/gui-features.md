@@ -90,7 +90,7 @@ Under **Search results**, the assets matching the search criteria are shown. To 
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
 
->**Important:** The search results include all assets containing the search term in any property (name, model or any fragment), that means the search results do not only include assets matching the search criteria with their names.
+>**Important:** The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
 
 ##### Exact match
 
@@ -176,7 +176,7 @@ For details on the filtering mechanism in the devices list refer to [Device Mana
 
 ### Real-time behavior of the navigator
 
-In the navigator, changes are not updated in real time, that means new, removed or renamed devices or groups will not be updated immediately.
+In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
 
 You will only see such changes in the navigator of the application, in which you have made the changes.
 

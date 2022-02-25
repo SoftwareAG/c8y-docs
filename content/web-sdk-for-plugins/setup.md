@@ -18,7 +18,7 @@ The following prerequisites are required to develop plugins and to execute the e
 
 * [Node.js](http://nodejs.org/) (6.7 or later)
 * [npm](https://www.npmjs.com/) (installed with Node.js)
-* Access to your {{< product-c8y-iot >}} account, that means you need your tenant ID, username and password.
+* Access to your {{< product-c8y-iot >}} account, that means, you need your tenant ID, username and password.
 
 <a name="cli-tool"></a>
 ### Cumulocity IoT CLI tool

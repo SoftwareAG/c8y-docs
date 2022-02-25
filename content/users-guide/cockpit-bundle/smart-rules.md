@@ -100,11 +100,11 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 <a name="toggle-rules"></a>
 ### To enable/disable a smart rule
 
-If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means its underlying module gets deployed) so that the rule is available for devices and groups.
+If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
-If it is set to **Disabled** it is "turned off" (that means its underlying module is not deployed).
+If it is set to **Disabled** it is "turned off" (that means, its underlying module is not deployed).
 
 In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices.
 

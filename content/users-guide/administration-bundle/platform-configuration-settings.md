@@ -44,7 +44,7 @@ In the field **Activate support user**, specify if support user access is activa
 * *false*: Support user access is deactivated for all subtenants, but can be explicitly enabled for a subtenant. A support user can log in only to subtenants for which at least one user has explicitly enabled such access.
 * An explicit date in date-time format, until when support user access should remain activated. If no date is specified the value is set to "No limit".
 
-In the **Validity limit** field, you can optionally specify the support duration, that means for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
+In the **Validity limit** field, you can optionally specify the support duration, that means, for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, for example, if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 

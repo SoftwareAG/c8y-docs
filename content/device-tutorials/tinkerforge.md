@@ -176,7 +176,7 @@ c8y.remoteswitch.<device name>.receiverCode=<receiver code>
 
 Where:
 
-&lt;device name&gt; - the name of the device(for example socket1, lamp1, and so on)
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;house code&gt; - 5-bit integer (0 to 31)
 &lt;receiver code&gt; - 5-bit integer (0 to 31)
 
@@ -190,7 +190,7 @@ c8y.remoteswitch.<device name>.unit=<unit>
 
 Where:
 
-&lt;device name&gt; - the name of the device(for example socket1, lamp1, and so on).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;address&gt; - 16-bit integer (0 to 65534)
 &lt;unit&gt; - 4-bit integer (0 to 15)
 
@@ -204,7 +204,7 @@ c8y.remoteswitch.<device name>.deviceCode=<device code>
 
 Where:
 
-&lt;device name&gt; - the name of the device (for example socket1, lamp1, and so on).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;system code&gt; - 4-bit character (A to P)
 &lt;device code&gt; - 4-bit integer (0 to 15)
 

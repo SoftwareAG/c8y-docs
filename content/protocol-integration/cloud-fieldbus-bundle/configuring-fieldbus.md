@@ -124,7 +124,7 @@ Click **Add variable** to configure a new variable.
 4. In the **Normalization** section, specify a unit to define how the raw value should be transformed before storing it in the platform.
 5. Click **Save** to save the variable.
 
-The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, that means variables with the same category are grouped together.
+The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, that means, variables with the same category are grouped together.
 
 ![category view](/images/device-protocols/cloud-fieldbus/fieldbus-category.png)
 

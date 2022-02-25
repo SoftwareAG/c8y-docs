@@ -150,7 +150,7 @@ OEE calculation is performed on the basis of the configured resolution intervals
 
 ### Computation
 
-Next, select a calculation method, that means the values for the mapping of the OEE input variables.
+Next, select a calculation method, that means, the values for the mapping of the OEE input variables.
 
 ![Computation](/images/oee/administration/profile-computation.png)
 

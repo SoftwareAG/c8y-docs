@@ -8,7 +8,13 @@ In your Edge 10.7 setup, you must back up the data for each tenant and docker co
 
 >**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
 
-1. Stop the Karaf process using the command:
+1. Run the following command to stop monitoring all the processes:
+
+```shell
+monit unmonitor all
+```
+
+2. Stop the Karaf process using the command:
 
 ```shell
 sudo service cumulocity-core-karaf stop

@@ -22,7 +22,7 @@ helpcontent:
 
 From the **Settings** menu, administrators can manage various settings for the account:
 
-- Configure [authentication settings](#authentication) and [single sign-on](#single-sign-on).
+- Configure [authentication settings](#authentication) and [single sign-on](#configuring-single-sign-on).
 - Change the [application settings](#default-app).
 - Manage the [properties library](#properties).
 - Provide [SMS provider credentials](#sms-provider).
@@ -55,7 +55,7 @@ In the field **Limit password validity for**, you can limit the validity of user
 >
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents devices passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-c8y-iot >}} platform](/users-guide/getting-started/#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the {{< product-c8y-iot >}} platform > To log into the platform](/users-guide/getting-started/#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
@@ -99,9 +99,9 @@ oAuth Internal can work in two modes:
 * without a configuration related to the session
 * with the configuration of the session - to achieve a behavior which is similar to the authentication based on HTTP sessions
 
-There are significant differences between these two modes. 
+There are significant differences between these two modes.
 
-When no configuration related to the session is present, oAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently. oAuth Internal still can be configured to work in this way, but you can configure oAuth Internal in a more convenient and secure way. 
+When no configuration related to the session is present, oAuth Internal issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is extremely inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently. oAuth Internal still can be configured to work in this way, but you can configure oAuth Internal in a more convenient and secure way.
 
 In this second mode, the behavior of oAuth Internal resembles the authentication which is build based on HTTP sessions. The oAuth Internal token acts as a session identifier on the client site (web browser). Such token identifier which is stored in the cookie can have a preconfigured short lifetime. Then the {{< product-c8y-iot >}} platform is responsible to renew the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs. The following configuration options can be adjusted by a tenant administrator:
 
@@ -110,7 +110,7 @@ In this second mode, the behavior of oAuth Internal resembles the authentication
   * Absolute timeout - defines a maximum period of time when the user can use {{< product-c8y-iot >}} without necessity of re-authentication.
   * Renewal timeout - expected to be much shorter than the `absolute timeout`. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the `renewal timeout`.
   * Renewal token delay - during the session token renewal the previously provided token is revoked and a new one is provided. The delay defined by this parameter is used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default) so both tokens, old and new one, are accepted by {{< product-c8y-iot >}}.
-  * Maximum number of parallel sessions per user - defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device. 
+  * Maximum number of parallel sessions per user - defines the maximum number of sessions which can be started by each user (for example on different machines or browsers). When a user exceeds this limit, then the oldest session will be terminated and the user will be logged out on this particular device.
   * User agent validation - defines if {{< product-c8y-iot >}} should use additional protection for communication in the form of comparing the user agent sent in headers of consecutive requests in the scope of one session. If the protection is turned on then a request with changed user agent will not be authorized.
 
 >**Info:** The relation between the time parameters should be the following: `renewal timeout` < `token lifetime < `absolute timeout`.
@@ -152,7 +152,7 @@ The following session settings are part of the oAuth Internal configuration and 
 
 Even if oAuth Internal is configured for human users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted. Restrictions can be configured by the following parameters:
 * forbidden clients - is a list of clients which are not allowed to use basic authentication (`WEB-BROWSERS` by default).
-* trusted user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted. 
+* trusted user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted.
 * forbidden user agents - this list is empty by default. If some user agent is added all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
 
 > **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
@@ -380,7 +380,7 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
->**Info:** All users must have access to this application. 
+>**Info:** All users must have access to this application.
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 
@@ -518,4 +518,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the {{< product-c8y-iot >}} connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [*Protocol integration guide*](/protocol-integration/overview/).

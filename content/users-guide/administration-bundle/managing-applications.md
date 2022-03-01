@@ -221,7 +221,7 @@ In the **Properties** tab, each application will show the following information,
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
+<td style="text-align:left">Used to identify the application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy"><em>Concepts guide</em></a></td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>

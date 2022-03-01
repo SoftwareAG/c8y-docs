@@ -33,7 +33,7 @@ After a user has activated support access, the menu item changes to **Disable su
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 
-The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours), see [Administration > Changing setting > Configuration settings](/users-guide/administration/#config-platform).
+The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours), see [Administration > Changing setting > Configuration settings](/users-guide/administration/#configuration-settings).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not activated globally).
 

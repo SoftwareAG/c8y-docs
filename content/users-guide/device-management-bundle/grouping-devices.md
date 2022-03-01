@@ -201,7 +201,7 @@ Smart groups can be created from the device list.
 #### To create a smart group
 
 1. To open the device list, click **All devices** in the navigator.
-2. Filter the devices in the list to select the desired devices. See [Viewing devices > Filtering devices](#filtering-devices) for details on filtering.
+2. Filter the devices in the list to select the desired devices. See [Viewing devices > To filter devices](#filtering-devices) for details on filtering.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 

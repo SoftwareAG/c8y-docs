@@ -7,218 +7,236 @@ weight: 70
  **Version:** 1013.57.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 ### Introduction
-Cumulocity provides integrated tools that allow to translate Your content.
-It is based on `ngx-translate` library. `CoreModule` exports preconfigured instance of this tool, already integrated with cumulocity. 
 
-You can get more information on ngx-translate [github page](https://github.com/ngx-translate/core).
+{{< product-c8y-iot >}} provides integrated tools that allow to translate your content.
+It is based on the `ngx-translate` library.
+The `CoreModule` exports a preconfigured instance of this tool, already integrated with {{< product-c8y-iot >}}.
+Refer to the [ngx-translate github page](https://github.com/ngx-translate/core) for more information.
 
-For this tutorial we will create new application with minimal configuration needed.
+For this tutorial we will create a new application with a minimal configuration.
 
-#### Configuration of fresh environment
+#### Configuration of a fresh environment
 
-Start with creating new application,
-execute commands:
+Start with creating a new application.
+Execute the follwing commands:
+
 ```
 c8ycli new my-app-i18n
 cd my-app-i18n
 npm install
 ```
 
-After application is successfully scaffolded we can create new basic module, that we will use to fill and translate our content.
+After the application is successfully set up, create a new basic module that you can use to add and translate your content.
 
-Create files:
+Create the following files:
 
-`translations/translations.module.ts`
-```ts
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {
-    CoreModule,
-    NavigatorNode,
-    gettext,
-    HOOK_NAVIGATOR_NODES
-} from '@c8y/ngx-components';
-import { TextTranslationComponent } from "./text-translation.component";
+* `translations/translations.module.ts`:
 
-/**
- * Angular Routes.
- * Within this array at least path (url) and components are linked.
- */
-const routes: Routes = [
-    {
-        path: 'translations',
-        component: TextTranslationComponent
-    },
-];
+    ```ts
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import {
+        CoreModule,
+        NavigatorNode,
+        gettext,
+        HOOK_NAVIGATOR_NODES
+    } from '@c8y/ngx-components';
+    import { TextTranslationComponent } from "./text-translation.component";
 
-const translations = new NavigatorNode({
-    label: gettext('Translations'),
-    icon: 'star',
-    path: '/translations',
-    routerLinkExact: false
-});
+    /**
+     * Angular Routes.
+     * Within this array at least path (url) and components are linked.
+     */
+    const routes: Routes = [
+        {
+            path: 'translations',
+            component: TextTranslationComponent
+        },
+    ];
 
-export const navigatorNodes = {
-    provide: HOOK_NAVIGATOR_NODES,
-    useValue: { get: () => translations },
-    multi: true
-};
+    const translations = new NavigatorNode({
+        label: gettext('Translations'),
+        icon: 'star',
+        path: '/translations',
+        routerLinkExact: false
+    });
 
-@NgModule({
-    declarations: [TextTranslationComponent],
-    imports: [RouterModule.forChild(routes), CoreModule],
-    providers: [navigatorNodes]
-})
-export class TranslationsModule {}
-```
+    export const navigatorNodes = {
+        provide: HOOK_NAVIGATOR_NODES,
+        useValue: { get: () => translations },
+        multi: true
+    };
 
-`translations/translate-text.component.ts`
-```ts
-import { Component } from '@angular/core';
+    @NgModule({
+        declarations: [TextTranslationComponent],
+        imports: [RouterModule.forChild(routes), CoreModule],
+        providers: [navigatorNodes]
+    })
+    export class TranslationsModule {}
+    ```
 
-@Component({
-    selector: 'text-translation',
-    templateUrl: './text-translation.component.html'
-})
-export class TextTranslationComponent {
-}
-```
+* `translations/translate-text.component.ts`:
 
-`translations/translate-text.component.html`
-```html
-Index
-```
+    ```ts
+    import { Component } from '@angular/core';
 
-At this point we can run our application, and blank Page containing `Index` is rendered.
+    @Component({
+        selector: 'text-translation',
+        templateUrl: './text-translation.component.html'
+    })
+    export class TextTranslationComponent {
+    }
+    ```
+
+* `translations/translate-text.component.html`:
+
+    ```html
+    Index
+    ```
+
+Now you can run our application.
+A blank page that contains `Index` is rendered.
 
 ### Extending default translations
-Cumulocity is provided with already wide range of content that is already translated in multiple languages.
-These translations can be easily extended. To do so, just create new file: 
-`translations/locales/de.po`
-```po
-msgid ""
-msgstr ""
-"Project-Id-Version: c8yui.core\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language: de\n"
-"Language-Team: \n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+{{< product-c8y-iot >}} comes with a wide range of content that is already translated in multiple languages.
+These translations can be extended.
+
+1. Create the new file `translations/locales/de.po`:
+
+    ```
+    msgid ""
+    msgstr ""
+    "Project-Id-Version: c8yui.core\n"
+    "Report-Msgid-Bugs-To: \n"
+    "POT-Creation-Date: \n"
+    "PO-Revision-Date: \n"
+    "Last-Translator: \n"
+    "Language: de\n"
+    "Language-Team: \n"
+    "Content-Type: text/plain; charset=UTF-8\n"
+    "Content-Transfer-Encoding: 8bit\n"
+    "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 
-msgid "User settings"
-msgstr "User settings (de)"
-```
+    msgid "User settings"
+    msgstr "User settings (de)"
+    ```
 
-Next, open `index.ts` file and import this freshly created file like so:
+2. Open the `index.ts` file and import the newly created file like so:
 
-```ts
-(...)
-import { AppModule } from './app.module';
+    ```ts
+    (...)
+    import { AppModule } from './app.module';
 
-import './translations/locales/de.po';
+    import './translations/locales/de.po';
 
-declare const __MODE__: string;
-(...)
-```
+    declare const __MODE__: string;
+    (...)
+    ```
 
-After this is done, we can reload our server and application.
-Opening User settings menu while Deutsch language is selected will show us "`User settings (de)`" instead of default "`Benutzereinstellungen`"
+3. Restart your server and application.
 
-This way we can add new translations or modify already existing. Please note that doing so does not disable default translations. New file will extend already existing translations.
+If the application is set to German language, the user settings menu will show **User settings (de)** instead of the default **Benutzereinstellungen**.
 
-You can also retrieve default translation .po files from `./my-app-i18n/node_modules/@c8y/ngx-components/locales` These files can be copied to our locales directory, and then edited.
+This way you can add new or modify existing translations.
+Note that doing so does not disable default translations.
+A new file will extend existing translations.
+
+You can also retrieve default translation .po files from *./my-app-i18n/node_modules/@c8y/ngx-components/locales*.
+These files can be copied to your *locales* directory, and then edited.
 
 ### Adding new languages
-In is possible to define new languages, that are not supported by default.
-In this example, we will introduce Italian language.
-To do so, create new translate file in our `translations/locales` directory like in previous example:
 
-`translations/locales/it.po`
-```po
-msgid ""
-msgstr ""
-"Project-Id-Version: c8yui.core\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language: de\n"
-"Language-Team: \n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+It is possible to define new languages that are not supported by default.
+The example below introduces Italian language.
+
+1. Create the new translation file `translations/locales/it.po`:
+
+    ```
+    msgid ""
+    msgstr ""
+    "Project-Id-Version: c8yui.core\n"
+    "Report-Msgid-Bugs-To: \n"
+    "POT-Creation-Date: \n"
+    "PO-Revision-Date: \n"
+    "Last-Translator: \n"
+    "Language: de\n"
+    "Language-Team: \n"
+    "Content-Type: text/plain; charset=UTF-8\n"
+    "Content-Transfer-Encoding: 8bit\n"
+    "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 
-msgid "User settings"
-msgstr "User settings (it)"
+    msgid "User settings"
+    msgstr "User settings (it)"
 
-msgid "Mr. Smith is {age} years old"
-msgstr "Mr. Smith is {age} years old (it)"
-```
+    msgid "Mr. Smith is {age} years old"
+    msgstr "Mr. Smith is {age} years old (it)"
+    ```
 
-next, open `package.json` file, and modify `c8y.application` object like so:
-```json
-{
-  (...)
-  "c8y": {
-    "application": {
-      "name": "my-app-i18n",
-      "contextPath": "my-app-i18n",
-      "key": "my-app-i18n-application-key",
-      "dynamicOptionsUrl": "/apps/public/public-options/options.json",
-      "languages": {
-        "it": {
-          "name": "Italian",
-          "nativeName": "Italian"
-        }
+2. Open the `package.json` file, and modify the `c8y.application` object like so:
+
+    ```json
+    {
+      (...)
+      "c8y": {
+        "application": {
+          "name": "my-app-i18n",
+          "contextPath": "my-app-i18n",
+          "key": "my-app-i18n-application-key",
+          "dynamicOptionsUrl": "/apps/public/public-options/options.json",
+          "languages": {
+            "it": {
+              "name": "Italian",
+              "nativeName": "Italian"
+            }
+          }
+        },
+        "cli": {}
       }
-    },
-    "cli": {}
-  }
-}
-```
+    }
+    ```
 
-Now, after server and application is reloaded, it is possible to choose Italian language, and our User settings is translated to `User settings (it)`, as defined in our `it.po
- file.
+3. Restart the server and the application.
 
-
+It is now possible to select the Italian language, and your user settings are translated to **User settings (it)**, as defined in the `it.po` file.
 
 ### Basic text translation
-There are multiple ways to translate content. Most common is `translate` pipe and directive
+
+There are multiple ways to translate content.
+The most common is the `translate` pipe and directive.
 
 #### Translate pipe
-This is the most common way to translate content that is present in our html views.
 
-In our `translations/text-translation.component.html` file add 
+This is the most common way to translate content that is present in your HTML views.
+
+In your `translations/text-translation.component.html` file, add:
+
 ```html
 <div>{{'User settings' | translate}}</div>
 ```
-If our current language is set to italian, reloading application will result in our content rendered as `User settings (it)`.
 
-Translate pipe also allows for use of parameters:
+If your language is set to italian, reloading the application will render the content as `User settings (it)`.
 
-`translations/locales/it.po`
+The translate pipe also allows parameters, for example in `translations/locales/it.po`:
+
 ```
 msgid "Mr. Smith is {{ age }} years old"
 msgstr "Sig. Smith ha {{ age }} anni"
 ```
-`translations/text-translation.component.html` 
+`translations/text-translation.component.html`
 ```
 <div>{{ "Mr. Smith is \{\{ age \}\} years old" | translate:{age: 40} }}</div>
 ```
 
-And the result is: `msgstr "Sig. Smith ha 40 anni"`
-Note that in case of translate pipe, string templates must have their interpolation marks escaped, in order to avoid compilation errors.
+The result is: `msgstr "Sig. Smith ha 40 anni"`.
+Note that the string templates must have their parentheses escaped in order to avoid compilation errors.
 
 #### Translate directive
-Another way to have our content translated is to use attribute `translate`. 
 
-`translations/text-translation.component.html`
+Another way to translate content is to use the attribute `translate`, for example in `translations/text-translation.component.html`:
+
 ```html
 <div class="card">
     <div class="card-header separator">
@@ -232,59 +250,69 @@ Another way to have our content translated is to use attribute `translate`.
     </div>
 </div>
 ```
-Similar to translate pipe, this sentence will be translated to `User settings (it)`
 
-We can use parameters with translate directive in this way:
+Similar to the translate pipe, the content will be translated to `User settings (it)`.
 
-`translations/locales/it.po`
-```po
-msgid "{{ filteredItemsCount }} of {{ allItemsCount }} items."
-msgstr "{{ filteredItemsCount }} of {{ allItemsCount }} items. (it)"
+You can use parameters with the translate directive in the following way:
 
-```
-`translations/text-translation.component.html`
-```html
+* `translations/locales/it.po`:
 
-<div class="card">
-    <div class="card-header separator">
-        <h4 class="card-title">Translate directive with parameters example</h4>
+    ```
+    msgid "{{ filteredItemsCount }} of {{ allItemsCount }} items."
+    msgstr "{{ filteredItemsCount }} of {{ allItemsCount }} items. (it)"
+
+    ```
+
+* `translations/text-translation.component.html`:
+
+    ```html
+
+    <div class="card">
+        <div class="card-header separator">
+            <h4 class="card-title">Translate directive with parameters example</h4>
+        </div>
+        <div class="card-block">
+            This sentence will be translated:
+            <span class="m-r-4" ngNonBindable translate [translateParams]="{filteredItemsCount: 10, allItemsCount: 100 }"
+            >{{ filteredItemsCount }} of {{ allItemsCount }} items.</span
+            >
+        </div>
     </div>
-    <div class="card-block">
-        This sentence will be translated:
-        <span class="m-r-4" ngNonBindable translate [translateParams]="{filteredItemsCount: 10, allItemsCount: 100 }"
-        >{{ filteredItemsCount }} of {{ allItemsCount }} items.</span
-        >
-    </div>
-</div>
-```
-In this example we must use Angular's `ngNonBindable` directive in pair with `translate` directive. This way angular will ignore interpolation marks, so they can be interpreted by Translation service.
+    ```
 
-It is possible to translate whole html code blocks:
+In this example you must use Angular's `ngNonBindable` directive in addition to the `translate` directive.
+This way angular will ignore parentheses, so they can be interpreted by the translation service.
 
-`translations/locales/it.po`
-```po
-msgid "Read about Your current language in <a href="#guide">our guide</a>"
-msgstr "Read about Your italian language in <a href="#italian-guide">our italian guide</a>"
+It is possible to translate entire HTML code blocks:
 
-```
-`translations/text-translation.component.html`
-```html
-<div class="card">
-    <div class="card-header separator">
-        <h4 class="card-title">Translate directive with parameters example</h4>
+* `translations/locales/it.po`:
+
+    ```po
+    msgid "Read about Your current language in <a href="#guide">our guide</a>"
+    msgstr "Read about Your italian language in <a href="#italian-guide">our italian guide</a>"
+    ```
+
+* `translations/text-translation.component.html`:
+
+    ```html
+    <div class="card">
+        <div class="card-header separator">
+            <h4 class="card-title">Translate directive with parameters example</h4>
+        </div>
+        <div class="card-block">
+            <span class="m-r-4" translate ngNonBindable
+            >Read about Your current language in <a href="#guide">our guide</a></span
+            >
+        </div>
     </div>
-    <div class="card-block">
-        <span class="m-r-4" translate ngNonBindable
-        >Read about Your current language in <a href="#guide">our guide</a></span
-        >
-    </div>
-</div>
-```
-Note that it is good to have `ngNonBindable` present while translating html blocks, because in some cases, Angular compiler might interfere with Translate service.
+    ```
+
+We recommend you to have `ngNonBindable` present while translating HTML blocks because otherwise the Angular compiler might interfere with the translation service.
 
 #### Translating content of variables
-In some cases we might have our text defined in typescript code. 
-`translations/text-translation.component.ts`
+
+Your content may be located in TypeScript code files, for example in a file like `translations/text-translation.component.ts`:
+
 ```ts
 import { Component } from '@angular/core';
 
@@ -295,17 +323,19 @@ import { Component } from '@angular/core';
 export class TextTranslationComponent {
  variableWithText = 'Text inside variable that is translatable';
 }
-
 ```
-While it is possible to translate such variable like so:
+
+It is possible to translate such variable like so:
 
 ```html
 {{variableWithText | translate}}
 ```
 
-It is best to wrap such strings with `gettext` function. This will enable us for automatic extraction of such string to our .po file. It will also work as indication, that such string is meant to be translated.
+It is best to wrap such strings with the `gettext` function.
+This will enable automatic extraction of the strings to your .po file.
+It will also indicate that such strings are meant to be translated.
+For example in `translations/text-translation.component.ts`:
 
-`translations/text-translation.component.ts`
 ```ts
 import { Component } from '@angular/core';
 import { gettext } from "@c8y/ngx-components";
@@ -331,122 +361,137 @@ export class TextTranslationComponent {
     </div>
 </div>
 ```
-translation extraction will be explained later in this tutorial.
 
-#### Manual translation by typescript code
-It is also possible to translate item manually in typescript code. to do so, we have to inject
-`TranslateService` to our component```
+See [Extracting translations using th locale extract tool](#extracting-translations-using-locale-extract-tool) for information about translation extraction.
 
-At this point we can use `translateService.instant` method to translate text:
-`translations/text-translation.component.ts`
-```ts
-import { Component } from '@angular/core';
-import { gettext } from "@c8y/ngx-components";
-import { TranslateService } from "@ngx-translate/core";
+#### Manual translation by TypeScript code
 
-@Component({
- selector: 'text-translation',
- templateUrl: './text-translation.component.html'
-})
-export class TextTranslationComponent {
- variableWithText = gettext('Text inside variable that is translatable');
+It is also possible to translate strings manually in TypeScript code.
+To do so, inject the `TranslateService` to our component:
 
- translatedVariableWithText;
+[Missing code block?]
 
- constructor(private translateService: TranslateService) {
-  this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
- }
-}
-```
+Now you can use the `translateService.instant` method to translate text:
 
-`translations/text-translation.component.html`
-```html
+* `translations/text-translation.component.ts`:
 
-<div class="card">
-    <div class="card-header separator">
-        <h4 class="card-title">Translated in typescript example</h4>
+    ```ts
+    import { Component } from '@angular/core';
+    import { gettext } from "@c8y/ngx-components";
+    import { TranslateService } from "@ngx-translate/core";
+
+    @Component({
+     selector: 'text-translation',
+     templateUrl: './text-translation.component.html'
+    })
+    export class TextTranslationComponent {
+     variableWithText = gettext('Text inside variable that is translatable');
+
+     translatedVariableWithText;
+
+     constructor(private translateService: TranslateService) {
+      this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
+     }
+    }
+    ```
+
+* `translations/text-translation.component.html`:
+
+    ```html
+
+    <div class="card">
+        <div class="card-header separator">
+            <h4 class="card-title">Translated in typescript example</h4>
+        </div>
+        <div class="card-block">
+            <span class="m-r-4"
+            >{{translatedVariableWithText}}</span
+            >
+        </div>
     </div>
-    <div class="card-block">
-        <span class="m-r-4"
-        >{{translatedVariableWithText}}</span
-        >
+    ```
+    Translating conent with `instant` method, requires us to keep track of language changes - we need to make sure that when user changes language,
+    text is translated again:
+    ```ts
+        this.translateService.onLangChange.subscribe(()=>{
+            this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
+    })
+    ```
+
+Alternatively you can use the `stream` method.
+This will provide an `Observable` object that will output a new value if the language is changed by the user:
+
+* `translations/text-translation.component.ts`
+
+    ```ts
+    import { Component } from '@angular/core';
+    import { gettext } from "@c8y/ngx-components";
+    import {TranslateService} from "@ngx-translate/core";
+
+    @Component({
+     selector: 'text-translation',
+     templateUrl: './text-translation.component.html'
+    })
+    export class TextTranslationComponent {
+    (...)
+
+     textStream
+     translatedVariableStream
+
+     constructor(private translateService: TranslateService) {
+      (...)
+
+      this.textStream = this.translateService.stream(this.variableWithText)
+      this.textStream.subscribe(
+              (text) => {
+               this.translatedVariableStream = text
+              }
+      )
+
+
+     }
+    }
+
+    ```
+
+* `translations/text-translation.component.html`:
+
+    ```html
+    <div class="card">
+        <div class="card-header separator">
+            <h4 class="card-title">Stream examples:</h4>
+        </div>
+        <div class="card-block">
+            <div class="m-r-4">This is translated by `stream` using async pipe: {{textStream|async}}</div>
+            <div class="m-r-4">This is translated by subscribing `stream` method: {{translatedVariableStream}}</div>
+        </div>
     </div>
-</div>
-```
-Translating conent with `instant` method, requires us to keep track of language changes - we need to make sure that when user changes language,
-text is translated again:
-```ts
-    this.translateService.onLangChange.subscribe(()=>{
-        this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
-})
-```
+    ```
 
-Alternatively we can use `stream` method. This will provide us Observable object, that will emit new value if language is changed by user:
+Note that all subscriptions need to be unsubscribed in order to prevent memory leaks.
+This can be avoided by using Angular's `async` pipe on observables instead.
 
-`translations/text-translation.component.ts`
-```ts
-import { Component } from '@angular/core';
-import { gettext } from "@c8y/ngx-components";
-import {TranslateService} from "@ngx-translate/core";
+#### Extracting translations using the locale-extract tool
 
-@Component({
- selector: 'text-translation',
- templateUrl: './text-translation.component.html'
-})
-export class TextTranslationComponent {
-(...)
- 
- textStream
- translatedVariableStream
+The `c8ycli locale-extract` command automatically copies all translations from the `node_modules/@c8y/locales.`
+This makes it easier to edit and add new translations.
+After using this command, the directory *./locales* will contain all available translations.
 
- constructor(private translateService: TranslateService) {
-  (...)
+By default, a new directory `locales` will be created in the root directory. There will be all available languages with actual translations.
+We can edit and copy these files to our *translations/locales* directory and add necessary imports.
 
-  this.textStream = this.translateService.stream(this.variableWithText)
-  this.textStream.subscribe(
-          (text) => {
-           this.translatedVariableStream = text
-          }
-  )
-
-
- }
-}
-
-```
-`translations/text-translation.component.html`
-```html
-<div class="card">
-    <div class="card-header separator">
-        <h4 class="card-title">Stream examples:</h4>
-    </div>
-    <div class="card-block">
-        <div class="m-r-4">This is translated by `stream` using async pipe: {{textStream|async}}</div>
-        <div class="m-r-4">This is translated by subscribing `stream` method: {{translatedVariableStream}}</div>
-    </div>
-</div>
-```
-
-Note that all Subscription needs to be unsubscribed, in order to prevent memory leaks.
-This can be avoided by using Angular's `async` Pipe on observables instead.
-
-#### Extracting translations using locale-extract tool
-`c8ycli locale-extract` is the command that automatically copies all translations from the `node_modules/@c8y/locales.` This makes it easier to edit and add new translations.
-After using this command, the folder ./locales will contain all available translations.
-
-
-By default, there will be new directory `locales` created in root directory - There will be all available languages with actual translations.
-We can edit and copy these files to our `translations/locales` directory and add necessary imports.
-
-File `locales.pot` contains all strings that were marked with `translate` pipe, `translate` directive or `gettext` method. 
-We can append these values to our language files, and fill with necessary translations. 
+The file `locales.pot` contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method.
+You can append these values to your language files, and add the necessary translations.
 
 #### Translating dates
-In order to display date with current localisation rules we can use Angular's `date` pipe:
+
+In order to display dates with correct localisation rules. use Angular's `date` pipe:
 
 ```ts
 currentDate = new Date();
 ```
+
+For example:
 
 ```html
 <div class="card">
@@ -457,11 +502,10 @@ currentDate = new Date();
 </div>
 ```
 
-Alternatively there is also `c8yDate` pipe, that returns date in `medium` format. It also works with values outside of 
-ECMAScript supported range:
+Alternatively there is the `c8yDate` pipe that returns dates in `medium` format.
+It also works with values outside of the ECMAScript supported range:
 
 ```html
-
 <div class="card">
   <div class="card-header separator">
     <h4 class="card-title">Cumulocity pipe example</h4>
@@ -475,4 +519,3 @@ ECMAScript supported range:
   </div>
 </div>
 ```
-

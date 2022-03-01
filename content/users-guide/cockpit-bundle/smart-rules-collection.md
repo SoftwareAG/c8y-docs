@@ -182,7 +182,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>

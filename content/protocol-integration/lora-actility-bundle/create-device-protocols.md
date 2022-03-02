@@ -16,7 +16,7 @@ The device protocol assigned during device registration can be changed from the 
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 
-In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
+In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one or use the device protocols created by an LPWAN custom codec microservice.
 
 <a name="import-device-type"></a>
 ### Importing a predefined device protocol
@@ -91,7 +91,7 @@ Under **Value normalisation** define how the raw value should be transformed bef
 
 - **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative and positive. By default it is set to 1.
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0.
-- **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
+- **Unit** (optional): A unit can be defined which is saved together with the value (for example temperature unit "C" for degree Celsius).
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 
@@ -146,3 +146,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/lora-actility/lora-protocols-gpsexample.png)
+
+### Using Custom decoding/encoding
+
+The Actility agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

@@ -73,7 +73,7 @@ When PUSH is chosen as the deliver method, the agent will try to write the firmw
 
 In both cases, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LWM2M agent. If the device does not specify it, the agent uses its default block size of 512 bytes.
 
-When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
+When the delivery is completed on the device (no matter if it's successful or failed, for example, because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
 
 ### Triggering the firmware update on the device
 

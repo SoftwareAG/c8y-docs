@@ -196,7 +196,8 @@ Data structure for ServerConnectionConfig:
 <td>alarmSeverityMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
+<td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>
+Additionally, the <em>Severity</em> attribute should be added in the subscribed attributes (uaEventMappings -> attributes) in the device type in order to get the severity value of the OPC UA event.</td>
 </tr>
 <tr>
 <td rowspan="1">alarmStatusMappings</td>
@@ -207,7 +208,7 @@ then the status of the alarm in {{< product-c8y-iot >}} is expected as ACKNOWLED
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
-(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+(for example <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
@@ -960,7 +961,10 @@ is changed to "false", or a number that is less than or equals to 0.</td>
 <td>yes</td>
 <td>Selectable event attributes. The nodeId of the event source
 is added by default as the last selected attribute by
-the OPC UA device gateway.</td>
+the OPC UA device gateway.
+If <em>alarmSeverityMappings</em> are defined, also the <em>Severity</em> attribute needs to be added to the attributes.
+If <em>alarmStatusMappings</em> are defined, also the variables used in the expression needs to be added to the attributes.
+</td>
 </tr>
 <tr>
 <td>eventCreation</td>
@@ -970,7 +974,7 @@ the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>alarmCreation</td>
-<td><em>AlarmCreation</em></td>
+<td><em>UAAlarmCreation</em></td>
 <td>no</td>
 <td>Mappings for alarm.</td>
 </tr>
@@ -1005,13 +1009,13 @@ the OPC UA device gateway.</td>
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, etc.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, such as rate, etc.</td>
 </tr>
 </tbody>
 </table>
@@ -1341,8 +1345,6 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 **Data structure for *UAAlarmCreation***
 
-This has all the fields as *AlarmCreation* does, however the *text* and *type* field can be parameterized with different parameters.
-
 <table>
 <colgroup>
 <col style="width: 15%;">
@@ -1376,6 +1378,12 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>string</td>
 <td>no</td>
 <td>For UAAlarmCreation, the severity is optional. If this is not provided, the severity of the alarm will be mapped using the severity mappings specified in the default gateway configuration YAML file or in the server configuration.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>no</td>
+<td>Alarm status. The possible values are ACTIVE, ACKNOWLEDGED, CLEARED. If this is given, the <em>alarmStatusMappings</em> setting in <em>ServerConnectionConfig</em> is ignored.</td>
 </tr>
 </tbody>
 </table>

@@ -297,7 +297,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 </tr>
 <tr>
 <td align="left">Column visibility</td>
-<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">Data Point Library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
+<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">data point library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
 </tr>
 </tbody>
 </table>

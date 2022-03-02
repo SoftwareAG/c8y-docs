@@ -42,4 +42,4 @@ Expand an alarm mapping to edit it. You may modify the description and the alarm
 
 #### To delete an alarm mapping
 
-To delete an alarm mapping, hover over it and click the delete icon which appears on hovering over the row. 
+To delete an alarm mapping, hover over it and click the delete icon which appears on hovering over the row.

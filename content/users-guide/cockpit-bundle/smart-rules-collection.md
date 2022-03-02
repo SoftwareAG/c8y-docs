@@ -65,7 +65,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or Data Point Library.</td>
+<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or data point library.</td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +115,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, for example, "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -182,7 +182,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -323,7 +323,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 When a configured type of alarm is raised, it starts monitoring how long the alarm stays active.
 
-If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
+If the alarm is still active after the specified duration, the severity will be increased one level, for example, from MINOR to MAJOR.
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
@@ -336,7 +336,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 If a geofence border is crossed, an alarm is created.
 
-The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
+The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, for example, if a tracked car which has left the geofence area is re-entering the geofence area.
 
 **Parameters**
 
@@ -644,9 +644,9 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into the yellow range, then an alarm of MINOR severity is created. If it moves out of the yellow range, the MINOR alarm is cleared.
 
-The rule uses the following parameters from the device object or Data Point Library:
+The rule uses the following parameters from the device object or data point library:
 
-* Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
+* Data point library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point. Note that these are close intervals ([red min: red max]) that contain the lowest accepted value and the highest accepted value, see also examples below.
 
@@ -696,7 +696,7 @@ If we set the yellow range to "[30;60)" and the red range to "[50;90]":
 
 and the measured value is 55, a MINOR alarm (yellow) will be created.
 
-Using these mechanisms, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
+Using these mechanisms, you can configure global threshold ranges in the data point library. These global values can then be overridden for specific objects on a case-by-case basis.
 
 **Parameters**
 
@@ -726,7 +726,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">2</td>
 <td align="left">On threshold</td>
-<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data Point Library entry</strong>: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object. Note that the unit which is set in the data point is not taken into account here.</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data point library entry</strong>: Name of the entry in the data point library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object. Note that the unit which is set in the data point is not taken into account here.</td>
 </tr>
 <tr>
 <td align="left">3</td>
@@ -756,12 +756,12 @@ For each incoming measurement value, the rule performs the following steps:
 
 * The data of the red and yellow range is collected from either:
 
-- the Data Point Library (control parameter).
+- the data point library (control parameter).
 - the source object (the measurement). If found, ranges from the source object's data point override are merged.
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
-> **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
+> **Info:** Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
 * Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
@@ -797,7 +797,7 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into GREEN range, no alarm is created.
 
-> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or data point library.
 
 **Parameters**
 
@@ -900,9 +900,9 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), 
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
 variables for times can include a time zone and time format to display the time in.
-The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ. 
+The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
 See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
 and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
 in the Apama documentation.

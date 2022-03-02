@@ -47,7 +47,7 @@ These permissions are visualized in the Administration application. The permissi
 There are three types of users:
 
 * Tenant user: The user that invokes a microservice through its REST API endpoints <kbd>/service/&lt;microservice-name>/&lt;path></kbd> passed through by the proxy.
-* Service user: A generated user that allows a microservice to access a subscribed tenant independent of a REST API invocation, e.g., for initialization or regular jobs.
+* Service user: A generated user that allows a microservice to access a subscribed tenant independent of a REST API invocation, for example, for initialization or regular jobs.
 * Microservice bootstrap user: A user passed to the microservice for requesting subscribed tenants and service users.
 
 The following role types are defined for users:

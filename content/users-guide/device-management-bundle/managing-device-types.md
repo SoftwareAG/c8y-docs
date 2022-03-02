@@ -21,7 +21,7 @@ In the **Device protocols** page you will find a list with all device protocols 
 
 The device protocol list shows the following information:
 
-* the device protocol type (e.g. Modbus, CANOpen, LoRa)
+* the device protocol type (for example Modbus, CANOpen, LoRa)
 * the device type name
 * the number of resources for the device (at the right)
 

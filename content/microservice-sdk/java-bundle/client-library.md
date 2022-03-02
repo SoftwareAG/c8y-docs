@@ -23,7 +23,7 @@ As an example:
 Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 ```
 
-If you use the Java client for developing an application, you need to register an application key (through [Own applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
+If you use the Java client for developing an application, you need to register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
 
@@ -69,7 +69,7 @@ mo.set(relay);
 SinglePhaseElectricitySensor meter = new SinglePhaseElectricitySensor();
 mo.set(meter);
 
-// Set additional properties, e.g. tariff tables
+// Set additional properties, for example, tariff tables
 mo = inventory.create(mo);
 System.out.println(mo.getId());
 ```
@@ -254,8 +254,8 @@ subscriber.disconnect();
 
 ### Subscribing to Notifications 2.0
 
-The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory). 
-See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API. 
+The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
+See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API.
 
 The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 
@@ -290,12 +290,12 @@ subscriptionApi.subscribe(subscriptionRepresentation2);
 
 // Obtain access token
 final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
-        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
+        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified.
         "testSubscription1",        // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
         1440,                       // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details. 
+// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details.
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

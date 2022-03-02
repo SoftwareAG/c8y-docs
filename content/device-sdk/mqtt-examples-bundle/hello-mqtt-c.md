@@ -34,7 +34,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 #### Creating the application
 
-Create a source file, for example *hello_mqtt.c* with the following content:
+Create a source file (for example *hello_mqtt.c*) with the following content:
 
 ```cpp
 #include "stdlib.h"
@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
 
 Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant_ID>>`, `<<username>>` and `<<password>>` with your data.
 
-The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.{{< domain-c8y >}}:1883`` or ``ssl://mqtt.{{< domain-c8y >}}:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections (for example ``tcp://mqtt.{{< domain-c8y >}}:1883`` or ``ssl://mqtt.{{< domain-c8y >}}:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.
 
 What does the code in `main` do?
@@ -138,7 +138,7 @@ Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 
 After starting the application, you should see a new device in the Device Management application, listed in **All devices**.
 
-Additionally, if there will be a new operation created for this device (for example ``c8y_Restart``), information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 ### Improving the agent
 

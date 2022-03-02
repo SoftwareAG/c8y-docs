@@ -26,7 +26,7 @@ For general information on SmartREST 1.0, refer to Using the REST interface > [U
 
 Although you need to send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.
 
-The MQTT ClientId needs to match the externalId with type **c8y_Serial** of your device. It is used to assign the correct operations and responses.
+The MQTT ClientId needs to match the externalId with type `c8y_Serial` of your device. It is used to assign the correct operations and responses.
 
 ### Sending and receiving SmartREST 1.0
 
@@ -51,7 +51,7 @@ An X-ID acts as a protocol identifier and identifies the template collection.
 An X-ID should be immutable: it always identifies exactly the same template collection.
 If the template collection changes, the X-ID must also change.
 An X-ID should also be globally unique: select an X-ID that is not used by anyone else.
-To make sure, we recommend you to use reverse domain names, e.g.:
+To make sure, we recommend you to use reverse domain names, for example:
 
     com.acme.gw801-v1
     com.acme.gw801-v2

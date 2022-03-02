@@ -13,7 +13,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 >To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 >
 >* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
->* Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/administration/#managing-applications) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
+>* Upload this ZIP file as a microservice into the platform. Refer to [Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
 
 ### Installation
 
@@ -57,7 +57,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
    				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
 
-   * Change the properties according to the {{< product-c8y-iot >}} environment (e.g. gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
+   * Change the properties according to the {{< product-c8y-iot >}} environment (for example gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
 
 6. Start the service:
 

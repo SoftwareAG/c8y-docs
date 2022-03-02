@@ -1,17 +1,17 @@
 ---
 weight: 20
 title: Viewing audit logs
-helpcontent: 
+helpcontent:
   - label: audit-logs
     title: Viewing audit logs
     content: "Audit logs show the operations that users have carried out.
-      
+
       In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
 ---
 
 Audit logs show the operations that users have carried out.
 
-To view the audit log list, click **Audit logs** in the **Account** menu. For each log entry, the following information is provided:
+To view the audit log list, click **Audit logs** in the **Accounts** menu. For each log entry, the following information is provided:
 
 <table>
 <colgroup>
@@ -32,13 +32,13 @@ To view the audit log list, click **Audit logs** in the **Account** menu. For ea
 </tr>
 
 <tr>
-<td align="left">Change</td>
-<td align="left">Type of operation, e.g. "Alarm created", "Smart rule deleted". Below it, the user who processed it is displayed.</td>
+<td align="left">Event</td>
+<td align="left">Type of operation, for example "Alarm created", "Smart rule deleted". Below it, the user who processed it is displayed.</td>
 </tr>
 
 <tr>
 <td align="left">Description</td>
-<td align="left">Provides further information depending on the operation, e.g. the device name, alarm text, operation status.</td>
+<td align="left">Provides further information depending on the operation, for example, the device name, alarm text, operation status.</td>
 </tr>
 
 <tr>
@@ -48,7 +48,7 @@ To view the audit log list, click **Audit logs** in the **Account** menu. For ea
 </tbody>
 </table>
 
-Only the last 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
+Only the last 100 logs are visible. Scroll down the page to **Load more** to view more log entries.
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
@@ -58,8 +58,8 @@ Only the last 100 logs are visible. Click **Load more** at the bottom of the lis
 
 In order to easily search through logs, you may filter logs for
 
- - the type, i.e. alarm, operation, Smart Rule,
+ - the type, i.e. alarm, operation, smart rule,
  - a date range providing a "From" and/or a "To" date,
  - the user.
 
-To apply filters, click the filter icon next to the filter fields. To discard filters, click the delete icon (only visible if filters are set).
+To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).

@@ -98,9 +98,9 @@ For a placeholder to be recognized by the SCADA widget, it must occur at least o
 
 The following predefined functions are available for use in expressions:
 
-- `goToGroupDetails(groupId)` – takes the group ID and redirects the user to the group details view, e.g. `<... ng-click="goToGroupDetails(groupId)">`,
-- `goToDeviceDetails(deviceId)` – takes the device ID and redirects the user to the device details view, e.g. `<... ng-click="goToDeviceDetails(deviceId)">`,
-- `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`, e.g. `<... ng-class="getActiveAlarmsStatusClass(alarmsStatus)">`.
+- `goToGroupDetails(groupId)` – takes the group ID and redirects the user to the group details view, for example, `<... ng-click="goToGroupDetails(groupId)">`,
+- `goToDeviceDetails(deviceId)` – takes the device ID and redirects the user to the device details view, for example, `<... ng-click="goToDeviceDetails(deviceId)">`,
+- `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`, for example, `<... ng-class="getActiveAlarmsStatusClass(alarmsStatus)">`.
 
 #### Example
 
@@ -128,7 +128,7 @@ The following predefined functions are available for use in expressions:
 	      <!-- or in an element's content: -->
 	      {{batteryValue}}
 
-	      <!-- a placeholder can be also a part of expression, e.g.: -->
+	      <!-- a placeholder can be also a part of expression, for example,: -->
 	      {{batteryValue * 100}} %
 	    </tspan>
 	  </text>

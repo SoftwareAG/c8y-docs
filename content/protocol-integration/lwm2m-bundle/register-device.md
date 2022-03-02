@@ -133,7 +133,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">In order to establish a connection between the LWM2M client and the LWM2M bootstrap server on the bootstrap interface, the client requires a pre-loaded LWM2M bootstrap server account.
-This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example, the security information like server URI, server ID, security mode, etc.) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
+This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example the security information like server URI, server ID, security mode, etc.) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
 Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">OMA LWM2M 1.0 technical specification</a> for more details.
 </td>
 <td style="text-align: left">Optional</td>
@@ -141,7 +141,7 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr>
 <td style="text-align: left">securityInstanceOffset</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set, for example, to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

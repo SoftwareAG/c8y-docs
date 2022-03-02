@@ -144,7 +144,7 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (e.g. **Registration date**), you specify a date range to filter for.
+* In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 * For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided.
@@ -156,4 +156,4 @@ The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the left of the top menu bar if you want to clear all filters and view all devices.
 
->**Info:** If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
+>**Info:** If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.

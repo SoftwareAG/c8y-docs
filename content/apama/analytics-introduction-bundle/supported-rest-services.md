@@ -6,7 +6,7 @@ layout: redirect
 
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
-To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
+To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
 > **Info**: This API requires version 10.6.0 or above of the Apama-ctrl microservice.
 

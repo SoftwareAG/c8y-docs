@@ -115,7 +115,7 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 <a name="100"></a>
 ##### Device creation (100)
 
-Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
+Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type `c8y_Serial` and the device identifier of the MQTT clientId as value will be created.
 
 |Position|Parameter  |Mandatory|Type  |Default value|
 |:-------|:----------|:--------|:-----|:------------|
@@ -131,7 +131,7 @@ Create a new device for the serial number in the inventory if not yet existing. 
 <a name="101"></a>
 ##### Child device creation (101)
 
-Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type **c8y_Serial** and the value a combination of the serial of the root device and the unique child ID.
+Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type `c8y_Serial` and the value a combination of the serial of the root device and the unique child ID.
 
 |Position|Parameter|Mandatory|Type    |Default value|
 |:-------|:--------|:--------|:-------|:------------|
@@ -257,7 +257,7 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, e.g. `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
 
 <a name="115"></a>
 ##### Set firmware (115)
@@ -299,7 +299,7 @@ Set the list of software installed on the device.
 
 Set the required interval for availability monitoring as an integer value representing minutes.
 For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](/reference/device-management-library/device-availability) in the *Reference guide*.
-This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
+This will only set the value if it does not exist. Values entered, for example, through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
@@ -399,7 +399,7 @@ Create a measurement with a given fragment and series.
 <a name="210"></a>
 ##### Create signal strength measurement (210)
 
-Create a measurement of type **c8y_SignalStrength**.
+Create a measurement of type `c8y_SignalStrength`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
@@ -416,7 +416,7 @@ Create a measurement of type **c8y_SignalStrength**.
 <a name="211"></a>
 ##### Create temperature measurement (211)
 
-Create a measurement of type **c8y_TemperatureMeasurement**.
+Create a measurement of type `c8y_TemperatureMeasurement`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
@@ -432,7 +432,7 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 <a name="212"></a>
 ##### Create battery measurement (212)
 
-Create a measurement of type **c8y_Battery**.
+Create a measurement of type `c8y_Battery`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
@@ -586,7 +586,7 @@ Create an event of given type and text.
 <a name="401"></a>
 ##### Create location update event (401)
 
-Create typical location update event containing **c8y_Position**.
+Create typical location update event containing `c8y_Position`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
@@ -605,7 +605,7 @@ Create typical location update event containing **c8y_Position**.
 <a name="402"></a>
 ##### Create location update event with device update (402)
 
-Create typical location update event containing **c8y_Position**. Additionally the device will be updated with the same **c8y_Position** fragment.
+Create typical location update event containing `c8y_Position`. Additionally the device will be updated with the same `c8y_Position` fragment.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|

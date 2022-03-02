@@ -115,7 +115,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, for example, "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -323,7 +323,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 When a configured type of alarm is raised, it starts monitoring how long the alarm stays active.
 
-If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
+If the alarm is still active after the specified duration, the severity will be increased one level, for example, from MINOR to MAJOR.
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
@@ -336,7 +336,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 If a geofence border is crossed, an alarm is created.
 
-The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
+The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, for example, if a tracked car which has left the geofence area is re-entering the geofence area.
 
 **Parameters**
 

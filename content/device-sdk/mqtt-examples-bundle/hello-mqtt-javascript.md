@@ -22,7 +22,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 #### Creating a JavaScript application
 
-Create an HTML file, for example *hello_mqtt_js.html* with the following content:
+Create an HTML file (for example *hello_mqtt_js.html*) with the following content:
 
 ```xml
 <!DOCTYPE html>
@@ -137,7 +137,7 @@ The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also s
 What does the code do?
 
 -   Configure the MQTT connection.
--   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a c8y_Restart operation, simulate a device restart.
+-   Register ``onMessageArrived`` callback function which will display all incoming messages. In case of a `c8y_Restart` operation, simulate a device restart.
 -   Register ``onMessageDelivered`` callback function which will be called after a publish message has been delivered.
 -   After the page is fully loaded, the function `init` is called and it connects with {{< product-c8y-iot >}} via a MQTT protocol.
 -   When the connection is established, call a ``createDevice`` function.
@@ -152,7 +152,7 @@ Note that the subscription is established after the device creation, otherwise i
 
 Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), related information will be displayed in the browser page.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
 ### Improving the agent
 

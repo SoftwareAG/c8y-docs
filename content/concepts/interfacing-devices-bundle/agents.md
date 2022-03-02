@@ -18,7 +18,7 @@ To shield machine-to-machine applications from this numbers of access options, {
 
 The configuration of parameters, readings, events and other information is either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that {{< product-c8y-iot >}} requires. It will also receive device control commands from {{< product-c8y-iot >}} ("switch off that relay") and translate these into a kind of protocol the device requires.
 
-{{< product-c8y-iot >}} uses a simple and secure reference protocol based on REST (that is, HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, that means, data is sent as soon as it is available.
+{{< product-c8y-iot >}} uses a simple and secure reference protocol based on REST (that is, HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, that is, data is sent as soon as it is available.
 
 #### Model transformation
 

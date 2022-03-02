@@ -85,7 +85,7 @@ When the firmware update is completed (no matter if it's successful or failed) o
 * If the firmware update has failed on the device, the agent marks the firmware update operation as failed.
 
 ### Canceling the firmware update process
-In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, or other failures, you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
+In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, or in case of other failures, you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
 ```PUT .../service/lwm2m-agent/shell/{tenantId}/{deviceId}/cancelFirmwareUpdate```
 in which **tenantId** is the ID of your tenant, **deviceId** is your device managed object ID. The ongoing firmware update process will be canceled by the agent.
 Alternatively, the firmware update process is also canceled if you delete the firmware update operation.

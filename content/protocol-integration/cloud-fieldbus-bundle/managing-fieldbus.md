@@ -74,7 +74,7 @@ To use the "SCADA" widget, follow these steps:
 3. Choose the device that should be shown in the widget in the **Target assets or devices** section.
 4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See [Preparing SVG files for the SCADA widget](#scadasvg) below.
 5. Assign placeholders to devices. Note that multiple devices can be taken as source.
-6. You now need to assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, basic device properties or fieldbus properties (for example status coils and registers) can be chosen. Select the desired property and click **Select**.
+6. You now need to assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, basic device properties or fieldbus properties (that is, status coils and registers) can be chosen. Select the desired property and click **Select**.
 7. After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click **Save** to place the widget on the dashboard.
 
 ![Adding the SCADA Widget](/images/device-protocols/cloud-fieldbus/fieldbus-scada-edit.png)

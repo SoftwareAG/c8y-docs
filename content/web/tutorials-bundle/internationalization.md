@@ -8,17 +8,15 @@ weight: 70
 
 ### Introduction
 
-{{< product-c8y-iot >}} provides integrated tools that allow to translate your content.
-It is based on the `ngx-translate` library.
-The `CoreModule` exports a preconfigured instance of this tool, already integrated with {{< product-c8y-iot >}}.
-Refer to the [ngx-translate github page](https://github.com/ngx-translate/core) for more information.
+{{< product-c8y-iot >}} provides integrated tools that allow you to translate your content. It is based on the `ngx-translate` library. The `CoreModule` exports a preconfigured instance of this tool, with {{< product-c8y-iot >}} already being integrated. Refer to the [ngx-translate Github page](https://github.com/ngx-translate/core) for more information.
 
-For this tutorial we will create a new application with a minimal configuration.
+For this tutorial, create a new application with minimal configuration.
 
 #### Configuration of a fresh environment
 
 Start with creating a new application.
-Execute the follwing commands:
+
+Execute the following commands:
 
 ```
 c8ycli new my-app-i18n
@@ -94,13 +92,11 @@ Create the following files:
     Index
     ```
 
-Now you can run our application.
-A blank page that contains `Index` is rendered.
+Now you can run the application. When starting, the application renders a blank page that contains the `Index`.
 
 ### Extending default translations
 
-{{< product-c8y-iot >}} comes with a wide range of content that is already translated in multiple languages.
-These translations can be extended.
+{{< product-c8y-iot >}} comes with a wide range of content that is already translated in multiple languages. These translations can be extended.
 
 1. Create the new file `translations/locales/de.po`:
 
@@ -123,7 +119,7 @@ These translations can be extended.
     msgstr "User settings (de)"
     ```
 
-2. Open the `index.ts` file and import the newly created file like so:
+2. Open the `index.ts` file and import the newly created file as shown in the example below:
 
     ```ts
     (...)
@@ -135,21 +131,17 @@ These translations can be extended.
     (...)
     ```
 
-3. Restart your server and application.
+3. Restart the server and the application.
 
-If the application is set to German language, the user settings menu will show **User settings (de)** instead of the default **Benutzereinstellungen**.
+>**Info:** If the application is set to German, the user settings menu will show **User settings (de)** instead of the default **Benutzereinstellungen**.
 
-This way you can add new or modify existing translations.
-Note that doing so does not disable default translations.
-A new file will extend existing translations.
+This allows you to add new or to modify existing translations. Doing so does not disable default translations as a new file will extend existing translations.
 
-You can also retrieve default translation .po files from *./my-app-i18n/node_modules/@c8y/ngx-components/locales*.
-These files can be copied to your *locales* directory, and then edited.
+You can retrieve the default translation *.po-files* from *./my-app-i18n/node_modules/@c8y/ngx-components/locales*. To edit these files copy them to your *locales* directory.
 
 ### Adding new languages
 
-It is possible to define new languages that are not supported by default.
-The example below introduces Italian language.
+To define new languages that are not supported by default, follow the example below. This examples defines the translation in Italian.
 
 1. Create the new translation file `translations/locales/it.po`:
 
@@ -175,7 +167,7 @@ The example below introduces Italian language.
     msgstr "Mr. Smith is {age} years old (it)"
     ```
 
-2. Open the `package.json` file, and modify the `c8y.application` object like so:
+2. Open the `package.json` file, and modify the `c8y.application` object as shown below:
 
     ```json
     {
@@ -200,16 +192,15 @@ The example below introduces Italian language.
 
 3. Restart the server and the application.
 
-It is now possible to select the Italian language, and your user settings are translated to **User settings (it)**, as defined in the `it.po` file.
+Now you can select Italian, while your user settings are translated to **User settings (it)**, as defined in the `it.po` file.
 
 ### Basic text translation
 
-There are multiple ways to translate content.
-The most common is the `translate` pipe and directive.
+There are multiple ways to translate content. The most common is the `translate` pipe and directive, which is explained in the following section.
 
 #### Translate pipe
 
-This is the most common way to translate content that is present in your HTML views.
+This is the most common way to translate content that is present in your HTML views. The following example is for a translation in Italian.
 
 In your `translations/text-translation.component.html` file, add:
 
@@ -217,9 +208,9 @@ In your `translations/text-translation.component.html` file, add:
 <div>{{'User settings' | translate}}</div>
 ```
 
-If your language is set to italian, reloading the application will render the content as `User settings (it)`.
+If your language is set to Italian, reloading the application will render the content as `User settings (it)`.
 
-The translate pipe also allows parameters, for example in `translations/locales/it.po`:
+The translate pipe allows to set different parameters, as shown in the example for `translations/locales/it.po`:
 
 ```
 msgid "Mr. Smith is {{ age }} years old"
@@ -231,11 +222,12 @@ msgstr "Sig. Smith ha {{ age }} anni"
 ```
 
 The result is: `msgstr "Sig. Smith ha 40 anni"`.
-Note that the string templates must have their parentheses escaped in order to avoid compilation errors.
+
+>**Important:** The string templates must have their parentheses escaped in order to avoid compilation errors.
 
 #### Translate directive
 
-Another way to translate content is to use the attribute `translate`, for example in `translations/text-translation.component.html`:
+Another way to translate content is to use the attribute `translate`, as shown in the example for `translations/text-translation.component.html`:
 
 ```html
 <div class="card">
@@ -251,9 +243,9 @@ Another way to translate content is to use the attribute `translate`, for exampl
 </div>
 ```
 
-Similar to the translate pipe, the content will be translated to `User settings (it)`.
+Similar to the example regarding the `translate` pipe, the content will be translated to `User settings (it)`.
 
-You can use parameters with the translate directive in the following way:
+You can use parameters with the `translate` directive in the following way:
 
 * `translations/locales/it.po`:
 
@@ -281,9 +273,9 @@ You can use parameters with the translate directive in the following way:
     ```
 
 In this example you must use Angular's `ngNonBindable` directive in addition to the `translate` directive.
-This way angular will ignore parentheses, so they can be interpreted by the translation service.
+This way angular will ignore parentheses in order to be interpreted by the translation service.
 
-It is possible to translate entire HTML code blocks:
+Furthermore, you can translate entire HTML code blocks, as shown in the examples below:
 
 * `translations/locales/it.po`:
 
@@ -307,11 +299,11 @@ It is possible to translate entire HTML code blocks:
     </div>
     ```
 
-We recommend you to have `ngNonBindable` present while translating HTML blocks because otherwise the Angular compiler might interfere with the translation service.
+We recommend you to have `ngNonBindable` present while translating HTML blocks, as the Angular compiler might otherwise interfere with the translation service.
 
 #### Translating content of variables
 
-Your content may be located in TypeScript code files, for example in a file like `translations/text-translation.component.ts`:
+Your content can be located in TypeScript code files. For example, in a file like `translations/text-translation.component.ts`, as shown in the example below:
 
 ```ts
 import { Component } from '@angular/core';
@@ -325,16 +317,13 @@ export class TextTranslationComponent {
 }
 ```
 
-It is possible to translate such variable like so:
+It is possible to translate such variable, as shown below:
 
 ```html
 {{variableWithText | translate}}
 ```
 
-It is best to wrap such strings with the `gettext` function.
-This will enable automatic extraction of the strings to your .po file.
-It will also indicate that such strings are meant to be translated.
-For example in `translations/text-translation.component.ts`:
+Wrap such strings with the `gettext` function. This will enable automatic extraction of the strings to your *.po file*. This also indicates that such strings are meant to be translated, as shown in the example below for `translations/text-translation.component.ts`:
 
 ```ts
 import { Component } from '@angular/core';
@@ -362,16 +351,15 @@ export class TextTranslationComponent {
 </div>
 ```
 
-See [Extracting translations using th locale extract tool](#extracting-translations-using-locale-extract-tool) for information about translation extraction.
+See [Extracting translations using the locale extract tool](#extracting-translations-using-locale-extract-tool) for information about translation extraction.
 
 #### Manual translation by TypeScript code
 
-It is also possible to translate strings manually in TypeScript code.
-To do so, inject the `TranslateService` to our component:
+It is also possible to translate strings manually in TypeScript code. To do so, inject the `TranslateService` to the component:
 
 [Missing code block?]
 
-Now you can use the `translateService.instant` method to translate text:
+Now, use the `translateService.instant` method to translate the content:
 
 * `translations/text-translation.component.ts`:
 
@@ -410,16 +398,15 @@ Now you can use the `translateService.instant` method to translate text:
         </div>
     </div>
     ```
-    Translating conent with `instant` method, requires us to keep track of language changes - we need to make sure that when user changes language,
-    text is translated again:
+    Translating content using the `instant` method, requires you to keep track of language changes. Make sure that if a user changes the language, the text is translated again. See the example below for reference:
     ```ts
         this.translateService.onLangChange.subscribe(()=>{
             this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
     })
     ```
 
-Alternatively you can use the `stream` method.
-This will provide an `Observable` object that will output a new value if the language is changed by the user:
+Alternatively, use the `stream` method. This will provide an `Observable` object that will output a new value if the language is changed by the user.
+See the example below for reference:
 
 * `translations/text-translation.component.ts`
 
@@ -468,30 +455,27 @@ This will provide an `Observable` object that will output a new value if the lan
     </div>
     ```
 
-Note that all subscriptions need to be unsubscribed in order to prevent memory leaks.
-This can be avoided by using Angular's `async` pipe on observables instead.
+>**Important:** All subscriptions need to be unsubscribed in order to prevent memory leaks. This can be avoided by using Angular's `async` pipe on observables instead.
 
 #### Extracting translations using the locale-extract tool
 
-The `c8ycli locale-extract` command automatically copies all translations from the `node_modules/@c8y/locales.`
-This makes it easier to edit and add new translations.
+The `c8ycli locale-extract` command automatically copies all translations from the `node_modules/@c8y/locales.` This makes it easier to edit and add new translations.
 After using this command, the directory *./locales* will contain all available translations.
 
-By default, a new directory `locales` will be created in the root directory. There will be all available languages with actual translations.
-We can edit and copy these files to our *translations/locales* directory and add necessary imports.
+By default, a new directory `locales` will be created in the root directory. It will include all available languages with their respective current translations.
+You can edit and copy these files to the *translations/locales* directory as well as adding necessary imports.
 
 The file `locales.pot` contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method.
 You can append these values to your language files, and add the necessary translations.
 
 #### Translating dates
 
-In order to display dates with correct localisation rules. use Angular's `date` pipe:
+In order to display dates with correct localization rules., use the Angular `date` pipe, as shown in the example below:
 
 ```ts
 currentDate = new Date();
 ```
 
-For example:
 
 ```html
 <div class="card">
@@ -502,8 +486,7 @@ For example:
 </div>
 ```
 
-Alternatively there is the `c8yDate` pipe that returns dates in `medium` format.
-It also works with values outside of the ECMAScript supported range:
+Alternatively, use the `c8yDate` pipe to return dates in `medium` format. This also works with values outside of the by ECMAScript supported range:
 
 ```html
 <div class="card">

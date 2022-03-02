@@ -66,11 +66,11 @@ The following types of data lakes are currently supported:
 |Namenode port|The port of the HDFS NameNode|
 |Root path|The root path within the HDFS filesystem for storing offloaded data; default root path is /; setting a subfolder allows you to hide other data in the filesystem from {{< product-c8y-iot >}} DataHub|
 |Short-circuit local reads|If enabled, Dremio can directly open the HDFS block files; default is disabled|
-|Enable impersonation|If disabled, all requests against HDFS will be made using the user *dremio*; if enabled, the name of the user logged into Dremio will be used to access HDFS; prerequisite is that the user has rwx-permissions for the given root path|
+|Enable impersonation|If disabled, all requests against HDFS will be made using the user *dremio*; if enabled, the tenant name will be used to access HDFS; prerequisite is that the user has rwx-permissions for the given root path. Note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case.|
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
 |Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
 
-> **Info:** Impersonation is supported and used. However, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis.
+> **Info:** Impersonation is supported and may be used. However, when impersonation is enabled, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis. Also note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case. 
 
 For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 

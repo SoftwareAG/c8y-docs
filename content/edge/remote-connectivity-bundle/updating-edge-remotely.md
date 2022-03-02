@@ -6,6 +6,8 @@ layout: redirect
 
 You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
+> **Important:** The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
+
 Before you update your Edge appliance remotely, you must:
 
 - [Enable the remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance

@@ -198,7 +198,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable.
 
-* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example, using a mobile phone).
+* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example using a mobile phone).
 
 * **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 

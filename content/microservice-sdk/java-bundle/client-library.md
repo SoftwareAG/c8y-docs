@@ -69,7 +69,7 @@ mo.set(relay);
 SinglePhaseElectricitySensor meter = new SinglePhaseElectricitySensor();
 mo.set(meter);
 
-// Set additional properties, e.g. tariff tables
+// Set additional properties, for example, tariff tables
 mo = inventory.create(mo);
 System.out.println(mo.getId());
 ```

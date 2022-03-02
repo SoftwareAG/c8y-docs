@@ -2,7 +2,7 @@ import os
 import pathlib
 import frontmatter
 
-class HelptextRemover():
+class TranslationTool():
     def __init__(self):
         self.__programs = [
             {
@@ -12,6 +12,10 @@ class HelptextRemover():
             {
                 "description" : "Remove helptexts only in content/benutzerhandbuch",
                 "call" : self.remove_helptexts_from_benutzerhandbuch
+            },
+            {
+                "description" : "Replace english aliases with german ones in the german files",
+                "call" : self.replace_aliases
             },
         ]
 
@@ -73,6 +77,17 @@ class HelptextRemover():
              self.process_markdown(path_string, dir)
              self.crosses()
 
+    def replace_aliases(self):
+        print("replacing aliases in /benutzerhandbuch")
+        dirpath = os.path.join("..", "content", "benutzerhandbuch")
+        pathlist = pathlib.Path(dirpath).rglob('*.md')
+        for path in pathlist:
+             path_string = str(path)
+             self.crosses()
+             print("looking at file:", path)
+             self.process_aliases(path_string, dir)
+             self.crosses()
+
     def process_markdown(self, path_string, dir):
         file = open(path_string, 'r')
         file_name = os.path.basename(file.name).split(".")[0]
@@ -86,4 +101,41 @@ class HelptextRemover():
             file = open(path_string, 'w+', encoding='utf8')
             file.write(frontmatter.dumps(fm))
 
-h = HelptextRemover()
+    def process_aliases(self, path_string, dir):
+       file = open(path_string, 'r')
+       file_name = os.path.basename(file.name).split(".")[0]
+       fm = frontmatter.load(path_string)
+       string_users_guide = "users-guide"
+       string_benutzerhandbuch = "benutzerhandbuch"
+       de_suffix = "-de"
+       if("aliases" in fm.keys()):
+           aliases = fm.metadata["aliases"]
+           print("here are the aliases:")
+           print(aliases)
+           for i in range(len(aliases)):
+               print("alias #" + str(i + 1), aliases[i])
+               if string_users_guide in aliases[i]:
+                   alias_parts = aliases[i].split("/")
+                   print("alias parts of ", aliases[i])
+                   print(alias_parts)
+                   if alias_parts[1] == string_users_guide:
+                       alias_parts[1] = string_benutzerhandbuch
+                       alias_parts[2] += de_suffix
+                       aliases[i] = "/".join(alias_parts)
+                   print("changed aliases:")
+                   print(aliases)
+                   print("making aliases unique:")
+                   unique_aliases = self.unique_list(aliases)
+                   print(unique_aliases)
+                   fm["aliases"] = unique_aliases
+                   file = open(path_string, 'w+', encoding='utf8')
+                   file.write(frontmatter.dumps(fm))
+
+    def unique_list(self, list):
+        output = []
+        for x in list:
+            if x not in output:
+                output.append(x)
+        return output
+
+h = TranslationTool()

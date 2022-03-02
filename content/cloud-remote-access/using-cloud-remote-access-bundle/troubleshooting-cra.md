@@ -18,7 +18,7 @@ The connection via a gateway to a remote VNC, SSH or Telnet server can fail beca
 
 **Unsupported protocol version**
 
-In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (e.g. 005.00x), try the following workaround:
+In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (for example 005.00x), try the following workaround:
 
 1. Open VNC.
 2. Navigate to **Options**.

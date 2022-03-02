@@ -88,7 +88,7 @@ To run your application locally, just run ```c8y server```.
 Additionally, you can pass options:
 
 - ```-u https://tenant.{{< product-c8y-iot >}}``` with the instance as parameter where you want your api calls to be proxied to,
-- ```-t examples``` or ```-t targets/examples/json``` to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
+- ```-t examples``` or ```-t targets/examples/json``` to use specific target file, for example, if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:
 
 ```json
 {

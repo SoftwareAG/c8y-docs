@@ -1,7 +1,7 @@
 ---
 title: Add a Jest based unit test
 layout: redirect
-weight: 70
+weight: 80
 ---
 
 **Version:** 1013.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
@@ -10,29 +10,28 @@ Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
 This tutorial shows you how to write and verify your first unit test.
 
-### 1. Initialize the example app
+### 1. Initialize the example application
 
-You need an application, for example the empty default application:
+You need an application, for example, the empty default application:
 
 ```js
 c8ycli new my-app application -a @c8y/apps@1013.0.62
 ```
 
-However, any application supports unit tests in the same way.
+However, any application supports unit tests in the same way. Next, you need to install all dependencies.
 
-Next, you need to install all dependencies.
- Switch to the new folder and run `npm install`.
+Switch to the new folder and run `npm install`.
 
->**Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
+>**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an app with the version `1013.0.62`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an application with the version `1013.0.62`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 
 ### 2. Add a component
 
 To test something, you first need a component that you can verify.
-Therefore add a new file called `test.component.ts`:
+Therefore, add a new file called `test.component.ts`:
 
 ```js
 import { Component, OnInit } from '@angular/core';
@@ -107,7 +106,7 @@ It configures an Angular testing module and checks if the `TestComponent` can be
 You can read more about Angular testing support on the [Angular website](https://angular.io/guide/testing).
 
 To start the test, run `npm test` on your command line.
-This executes the predefined script in the `package.json` which starts Jest.
+This executes the predefined script in the `package.json` which then starts Jest.
 You should see the following test result:
 
 ```
@@ -122,14 +121,17 @@ Time:        32.858 s
 ```
 
 If the test says `PASS`, everything went well and your first component test was successful.
-You can now add more detailed test cases to verify your component works as intended.
+Now, you can add more detailed test cases to verify your component works as intended.
 
-### 3. (Bonus) Use a Snapshot Test to verify the component template
+### 3. Use a Snapshot Test to verify the component template
 
-We use Jest instead of Karma as it comes with the option to use so called Snapshot Tests.
-Snapshot Tests allow the verification of the outcome of a test without defining all results.
+This section provides you with additional information on other ways to verify the component template.
+
+
+We use Jest instead of Karma as it comes with the option to use so called snapshot tests.
+Snapshot tests allow the verification of the outcome of a test without defining all results.
 The Jest function `toMatchSnapshot()` creates a file which contains the snapshot of the test on the first run.
-Create another test which will use Snapshot Testing to verify the template of our `TestComponent` by adding the following to your `test.component.spec.ts` file:
+Create another test, which will use snapshot testing, to verify the template of our `TestComponent` by adding the following to your `test.component.spec.ts` file:
 
 ```js
 test("should show a title tag", () => {
@@ -156,11 +158,13 @@ Time:        5.154 s
 ```
 
 You can find and verify this snapshot in the newly created folder `./__snapshot__`.
-It is common practice to commit those snapshots with your code.
 When the template changes, the test will fail and you need to overwrite your test with `npm test -- -u`.
 You can test this behavior by changing your template in the `test.component.ts` file.
 
+>**Info:** It is common practice to commit those snapshots with your code.
+
+
 ### Conclusion
 
-This tutorial showed how to add tests to newly scaffolded applications via the `c8ycli` command.
-The advanced Snapshot Testing has the option to verify templates quickly.
+This tutorial showed you how to add tests to newly scaffolded applications via the `c8ycli` command.
+The advanced snapshot testing has the option to verify templates quickly.

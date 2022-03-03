@@ -138,3 +138,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/sigfox/sigfox-protocols-gpsexample.png)
+
+### Using Custom decoding/encoding
+
+The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

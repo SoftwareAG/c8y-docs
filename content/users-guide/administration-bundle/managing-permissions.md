@@ -196,7 +196,7 @@ The following permission categories are available by default:
 </tr>
 
 <tr>
-<td align="left">Global Smart Rules</td>
+<td align="left">Global smart rules</td>
 <td align="left">Configure global smart rules.</td>
 </tr>
 

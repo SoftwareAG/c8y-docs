@@ -75,7 +75,7 @@ PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 10.20.30.40 -PrefixLength 24
 PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddressPrefix 10.20.30.0/24
 ```
 
-### Setting up Hyper-V
+### Setting up the Edge appliance in Hyper-V
 
 After creating a NAT adapter, you must import the Edge appliance image into Hyper-V.
 

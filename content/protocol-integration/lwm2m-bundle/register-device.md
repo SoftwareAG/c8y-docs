@@ -33,7 +33,7 @@ The CSV file must at least contain the following fields to be able to establish 
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
+<td style="text-align:left">Unique ID of the device, such as an IMEI or a serial number. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
@@ -133,7 +133,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">In order to establish a connection between the LWM2M client and the LWM2M bootstrap server on the bootstrap interface, the client requires a pre-loaded LWM2M bootstrap server account.
-This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example the security information like server URI, server ID, security mode, etc.) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
+This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example, the security information like server URI, server ID, or security mode) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
 Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">OMA LWM2M 1.0 technical specification</a> for more details.
 </td>
 <td style="text-align: left">Optional</td>

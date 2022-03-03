@@ -115,7 +115,7 @@ For details see [Enterprise tenant > Using the data broker](/users-guide/enterpr
 
 <a name="data-explorer"></a>
 ### Data explorer
-Part of the [Cockpit application](#cockpit-application). The data explorer visualizes all data points, i.e. measurements or sensor data, of either a particular asset or of all assets.
+Part of the [Cockpit application](#cockpit-application). The data explorer visualizes all data points (that is, measurements or sensor data) of either a particular asset or of all assets.
 
 For details see [Cockpit > Data explorer](/users-guide/cockpit/#data-explorer) in the *User guide*.
 
@@ -311,7 +311,7 @@ See also [Global roles](#global-roles) and [Inventory roles](#inventory-roles).
 
 <a name=""></a>
 ### Real-time processing
-{{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, i.e. Apama’s Event Processing Language (EPL).
+{{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, that is, Apama’s Event Processing Language (EPL).
 
 For details see [Real-time processing](/concepts/realtime/).
 

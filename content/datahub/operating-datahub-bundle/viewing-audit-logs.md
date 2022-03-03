@@ -12,7 +12,7 @@ In the navigator, select **Auditing** and then **Query log** to view the query l
 
 > **Info:** The {{< product-c8y-iot >}} DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
 
-In the action bar you can choose between offloading queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
+At the top of the page you have controls to choose between offloading queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Use the pagination controls at the bottom of the page to navigate through the result list.
 
 For each offloading query, the following information is provided:
 
@@ -38,7 +38,7 @@ For each ad-hoc query, the following information is provided:
 
 In the navigator, select **Auditing** and then **System log** to view the system log.
 
-In the action bar you can choose between log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
+At the top of the page you have controls to choose between log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Use the pagination controls at the bottom of the page to navigate through the result list.
 
 For each log entry, the following information is provided:
 

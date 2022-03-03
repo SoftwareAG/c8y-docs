@@ -223,7 +223,7 @@ msgstr "Sig. Smith ha {{ age }} anni"
 
 The result is: `msgstr "Sig. Smith ha 40 anni"`.
 
->**Important:** The string templates must have their parentheses escaped in order to avoid compilation errors.
+>**Important:** The string templates must have the curly braces escaped in order to avoid compilation errors.
 
 #### Translate directive
 
@@ -273,7 +273,7 @@ You can use parameters with the `translate` directive in the following way:
     ```
 
 In this example you must use Angular's `ngNonBindable` directive in addition to the `translate` directive.
-This way angular will ignore parentheses in order to be interpreted by the translation service.
+This way, Angular will ignore curly braces in order to be interpreted by the translation service.
 
 Furthermore, you can translate entire HTML code blocks, as shown in the examples below:
 
@@ -299,7 +299,7 @@ Furthermore, you can translate entire HTML code blocks, as shown in the examples
     </div>
     ```
 
-We recommend you to have `ngNonBindable` present while translating HTML blocks, as the Angular compiler might otherwise interfere with the translation service.
+In general we recommend you to have `ngNonBindable` present while translating HTML blocks, because the Angular compiler might otherwise interfere with the translation service.
 
 #### Translating content of variables
 

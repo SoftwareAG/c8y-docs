@@ -34,7 +34,7 @@ Each row yielded by the SmartREST endpoint represents a set of extracted values 
 
 The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
-* Every row must be terminated by the `\n` character sequence.
+* Every linebreak must be encoded as by the character sequence `\n`.
 * Values are always separated by a comma (`,`).
 * If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 

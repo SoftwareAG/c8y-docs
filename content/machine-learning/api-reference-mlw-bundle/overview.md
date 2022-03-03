@@ -37,7 +37,7 @@ In the following examples, `{{ auth }}` represents the base64-encoded `tenant/us
 
 The HTTP response message is composed of a message header and a message body. All MLW microservice response content types implement standard UTF-8 character set encoding.
 
-The header contains response status code and header fields represented as a list of key/value pairs, i.e. `Content-Type:application/json`. Every response from MLW microservice contains a Content-Type header entry with one of the following internet media types (aka MIME) as value.
+The header contains response status code and header fields represented as a list of key/value pairs, that is, `Content-Type:application/json`. Every response from MLW microservice contains a Content-Type header entry with one of the following internet media types (aka MIME) as value.
 
 * application/json
 * application/xml

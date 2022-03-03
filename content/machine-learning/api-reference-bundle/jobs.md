@@ -28,7 +28,7 @@ Operations on jobs scheduled for processing device data.
 |:-----|:-----|:-----|
 |frequency|String|Frequency of job execution. Can be either `periodic` or `once`.|
 |cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> [http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) <br> for more info on CRON.|
-|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400 i.e. 24 hours.|
+|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400, that means, 24 hours.|
 |timeZone|String|Time zone in which the periodic job should be scheduled.|
 |scheduleAt|String|Datetime string in the future when the job should be scheduled.|
 |dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
@@ -37,7 +37,7 @@ Operations on jobs scheduled for processing device data.
 >**Info:**
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
 <br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
-<br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".
+<br> &emsp; that means, "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".
 <br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
 
 ### POST - Create new job

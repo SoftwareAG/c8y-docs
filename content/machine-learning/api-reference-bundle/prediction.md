@@ -11,7 +11,7 @@ Operations on applying model, model group, pipeline to input data.
 
 ### GET - Apply PMML model to single record
 
-``` 
+```
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
 ```
 
@@ -346,7 +346,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter.
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (that is, JSON or CSV) is handled via Accept request header parameter.
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 

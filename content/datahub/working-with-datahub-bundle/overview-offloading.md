@@ -34,14 +34,6 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.
 
-In the action bar you have a search control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The configurations can be either shown as cards or in a list. The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations.
+In the action bar you have a search control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations.
 
-Below the action bar you will find the current set of configurations either in a card or a list view.
-
-#### Card view of offloading configurations
-
-Each pipeline is shown as a card. A card has controls for managing the offloading process. Besides the description you will find the schedule with which this pipeline will be executed once it is started. In addition to that you will find for active pipelines the time of their last execution and the planned next execution. When expanding **Additional information**, the additional columns, the filter predicate, and the UUID of the configuration are shown. It also provides a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.
-
-#### List view of offloading configurations
-
-Each pipeline is shown as list entry. An entry comprises job name, target table name, time and status of last execution. An entry has also controls for managing the offloading process. To see all details of an offloading configuration as provided in the card view, select *Details* in the context menu of the list entry. The list view also allows you to sort the entries by a column.
+Below the action bar you will find the current list of configurations. Each configuration provides the task name, the schedule with which this pipeline will be executed once it is started, and the target table name. In addition to that you will find for active pipelines the time and status of their last execution and the planned next execution. When expanding a configuration, the additional columns and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once. In the context menu of the configuration you find controls for managing the offloading process.

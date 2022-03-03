@@ -34,7 +34,7 @@ You can filter the entries by their task name or their status by using the filte
 
 If you want to examine the compaction history for a particular offloading pipeline, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 
-Click **Show compaction history** in the context menu of the offloading card to show the compaction history.
+Click **Show compaction history** in the context menu of the offloading configuration to show the compaction history.
 
 The list shows the execution history with each execution consisting of the following details:
 

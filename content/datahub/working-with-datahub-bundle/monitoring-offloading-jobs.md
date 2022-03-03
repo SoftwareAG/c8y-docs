@@ -36,7 +36,7 @@ You can filter the entries by their task name or their status by using the filte
 
 If you want to examine the execution history for a particular job, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 
-Click **Show offloading history** in the context menu of the offloading card to show the history of offloading executions.
+Click **Show offloading history** in the context menu of the offloading configuration to show the history of offloading executions.
 
 The list shows the execution history, with each execution consisting of the following details:
 

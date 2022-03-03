@@ -12,7 +12,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 ##### Starting periodic offloading
 
-Click the **Active**/**Inactive** toggle in an offloading card to activate the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of {{< product-c8y-iot >}} DataHub will then periodically trigger the pipeline.
+Click the **Active**/**Inactive** toggle in an offloading configuration to activate the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of {{< product-c8y-iot >}} DataHub will then periodically trigger the pipeline.
 
 The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all collection data from the Operational Store of {{< product-c8y-iot >}} to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For this reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
@@ -28,24 +28,20 @@ The scheduler is configured to run the offloading pipeline once an hour. The pre
 
 ##### Stopping periodic offloading
 
-Use the **Active**/**Inactive** toggle in an offloading card to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
+Use the **Active**/**Inactive** toggle in an offloading configuration to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
 
 ##### Viewing the execution status
 
-At the bottom of each pipeline card, the execution status is shown:
+Each offloading configuration shows the execution status:
 
 * **Last execution** is empty if the offloading has not been executed yet. If the offloading has been executed, **Last execution** shows the execution time and whether the execution was successful or not, indicated by a success or failure icon right next to the time. An additional icon on the left shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon.
 * **Next execution** shows the point in time for which the next execution is planned. It is only shown if the previous execution was a scheduled one.
-
-When using the list view for offloading configurations, last execution time and status are shown as well, but neither the schedule nor the next execution time. You have to switch to the card view or select **Details** in the context menu to see that information.
 
 #### Managing an offloading pipeline
 
 In the context menu of each offloading pipeline, you will find actions for managing and monitoring the pipeline.
 
 <img src="/images/datahub-guide/datahub-offloading-context-menu.png" alt="Context menu of an offloading configuration" style="max-width: 40%">
-
-In the list view, the context menu additionally has an **Details** entry to navigate to a detail view.
 
 ##### Editing/showing an offloading pipeline
 

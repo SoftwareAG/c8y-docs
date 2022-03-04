@@ -118,7 +118,7 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&s
 >
 > - *size(mp) = size(T) - m + 1*
 >
-> Same delta applies to the size of *matrix_profile_index*.
+> The same delta applies to the size of *matrix_profile_index*.
 
 
 **Example Request**: All the required parameters are not provided completely.

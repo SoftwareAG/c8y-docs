@@ -257,7 +257,7 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, e.g. `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
 
 <a name="115"></a>
 ##### Set firmware (115)
@@ -299,7 +299,7 @@ Set the list of software installed on the device.
 
 Set the required interval for availability monitoring as an integer value representing minutes.
 For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](/reference/device-management-library/device-availability) in the *Reference guide*.
-This will only set the value if it does not exist. Values entered, e.g. through the UI, are not overwritten.
+This will only set the value if it does not exist. Values entered, for example, through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

@@ -9,11 +9,11 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
-Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Service monitoring**, **Identity** (also see the tab list below).
+Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Availability**, **Identity** (also see the tab list below).
 
 The following tabs are the most common ones, each described in detail in a separate section:
 
@@ -36,6 +36,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#alarms">Alarms</a></td>
 <td align="left">Provides information on the alarms for a device. See <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#availability">Availability</a></td>
+<td align="left">Allows the availability monitoring of machines. For details, see <a href="#monitoring-availability">Availability</a>. Available for each device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#child-devices">Child Devices</a></td>
@@ -104,10 +108,6 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA server</a></td>
 <td style="text-align:left">Provides details for devices connected via an OPC UA server. For details, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#service-monitoring">Service monitoring</a></td>
-<td align="left">Allows the service monitoring of machines. For details, see <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#shell">Shell</a></td>
@@ -379,10 +379,10 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
 
-<a name="service-monitoring"></a>
-### Service monitoring
+<a name="availability"></a>
+### Availability
 
-In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate availability monitoring for machines, see [Availability](#monitoring-availability) for more information.
 
 <a name="shell"></a>
 ### Shell

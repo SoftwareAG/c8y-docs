@@ -22,7 +22,7 @@ If you have previously been working with older versions you might be interested 
 
 > **Important:** Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
 >
->[Web SDK for plugins](/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. The documentation is still available for migration purposes, i.e. if you want to integrate an already developed plugin into the Web SDK for Angular. You can import plugins to Angular as described in [ngx-components > Extension points](/web/libraries#extension-points).
+>[Web SDK for plugins](/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. The documentation is still available for migration purposes, that means, if you want to integrate an already developed plugin into the Web SDK for Angular. You can import plugins to Angular as described in [ngx-components > Extension points](/web/libraries#extension-points).
 
 ### Packages
 
@@ -32,7 +32,7 @@ The Web SDK consists of the following packages deployed to npm in the scope `@c8
 
 These packages depend on each other from top to bottom. While the `@c8y/client` is a very low-level API interface with nearly no dependencies, the `@c8y/apps` provide feature rich applications by including `@c8y/ngx-components` and `@c8y/client`.
 
-The goal of these splittings is to provide the right package for every use case, e.g. if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/style`.
+The goal of these splittings is to provide the right package for every use case, for example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/style`.
 
 The following is a list which explains the use cases of each package.
 

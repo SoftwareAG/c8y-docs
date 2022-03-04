@@ -47,7 +47,7 @@ The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 0
 
 ### If I recalculate the values myself I get different values.
 
-If the calculation is attempted on the basis of the input parameters (for example, Actual Production Time 60,3454 minutes), the following must be observed:
+If the calculation is attempted on the basis of the input parameters (for example Actual Production Time 60,3454 minutes), the following must be observed:
 * The algorithm of the pathways must be followed.
 * The calculation is done on a millisecond basis (2019-12-09T10:07:04.773).
 * No rounding is performed during the calculation in order to not multiply rounding errors. Only when the data is saved it is rounded to 4 decimal places, as can be seen when the data is exported (in the UI, it is rounded to 2 decimal places).

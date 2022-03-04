@@ -46,7 +46,7 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a "value" property, for example, "c8y_AccelerationMeasurement.acceleration".
 - Specify the unit of the given measurement, for example, "m/s" for velocity.
 
-All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (e.g. 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
+All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
 
 **Create alarm**
 
@@ -56,7 +56,6 @@ Specify the following parameters (all mandatory):
 
 - Severity - One of CRITICAL, MAJOR, MINOR, WARNING
 - Type
-- Status - One of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
 >**Info:** If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
@@ -92,6 +91,10 @@ The value will also be populated as a fragment of the created event, under a sta
  }
 }
 ```
+
+The node values under this static fragment that are numeric and exceed the Java long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internally to double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value. However, the node value that is populated for the value placeholder in the event text will have the actual value even if it exceeds the long range.
+
+
 > **Info:** The measurements, events and alarms are added to a queue by the gateway, and they are flushed at once to create the respective elements. If the server is deleted, but there are still some items to be flushed, then the request is failed with a response code 403.
 Thereafter, the exception is handled by validating the existence of the source. If the source is missing then the elements will be removed from the queue.
 

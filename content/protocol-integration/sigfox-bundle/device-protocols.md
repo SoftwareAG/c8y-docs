@@ -13,8 +13,6 @@ The device protocol assigned during Sigfox device registration can be changed fr
 
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
 
-If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
-
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 
@@ -64,7 +62,7 @@ In the following window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the {{< product-c8y-iot >}} data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (that is, Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this sample payload structure the message ID is "1".
 
@@ -76,7 +74,7 @@ Under **General**, specify a name for the value and the category under which it 
 
 Under **Value selection**, specify from where the value should be extracted. In the **Start bit** field, indicate where the value information starts and in the **Number of bits** field, indicate the length of the information. The maximum value for the number of bits is 32 bits (4 bytes).
 
-In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
+In this example, the "Channel 1 Type" information starts in byte 2 (that means, start bit = "16") and is 1 byte long (that means, number of bits = "8").
 
 <img src="/images/device-protocols/sigfox/sigfox-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
@@ -88,7 +86,7 @@ Under **Value normalization**, specify how the raw value should be transformed b
 
 - **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative or positive. By default it is set to 1.
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative or positive. By default it is set to 0.
-- **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
+- **Unit** (optional): A unit can be defined which is saved together with the value (for example temperature unit "C" for degree Celsius).
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 
@@ -140,3 +138,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/sigfox/sigfox-protocols-gpsexample.png)
+
+### Using Custom decoding/encoding
+
+The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

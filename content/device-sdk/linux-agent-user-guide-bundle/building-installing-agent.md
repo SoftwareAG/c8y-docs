@@ -22,7 +22,7 @@ This section explains how to build the {{< product-c8y-iot >}} Linux agent witho
     git clone  https://github.com/SoftwareAG/cumulocity-agents-linux.git
     ```
 
-2. Export the SDK binaries and libraries path (i.e. _/home/me/repos/cumulocity-sdk-c_). Preferably add the following code to your _~/.bashrc_ for permanence.
+2. Export the SDK binaries and libraries path (that is, _/home/me/repos/cumulocity-sdk-c_). Preferably add the following code to your _~/.bashrc_ for permanence.
 
     ```shell
     export C8Y_LIB_PATH=/path/to/cumulocity-sdk-c
@@ -129,7 +129,7 @@ make
 
 Then the *c8y_canopend* execution file is created in _cumulocity-agents-linux/bin_.
 
-The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8y-iot >}} Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the {{< product-c8y-iot >}} Linux agent, so you just need to adjust all the CANopen settings in the {{< product-c8y-iot >}} Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
+The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8y-iot >}} Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate and more, automatically from the {{< product-c8y-iot >}} Linux agent, so you just need to adjust all the CANopen settings in the {{< product-c8y-iot >}} Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
 
 <a name=installing-the-agent></a>
 ### Installing the agent

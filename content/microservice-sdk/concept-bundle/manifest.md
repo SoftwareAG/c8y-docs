@@ -106,7 +106,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">provider</td>
 <td style="text-align:left">Provider</td>
-<td style="text-align:left">Application provider information. Simple name allowed for predefined providers e.g. c8y. Detailed object for external provider.</td>
+<td style="text-align:left">Application provider information. Simple name allowed for predefined providers, for example, c8y. Detailed object for external provider.</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
@@ -196,8 +196,8 @@ See below for detailed information about available settings.
 
 The version has an impact on the microservice upload behavior:
 
-*   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
-*   If the version is a snapshot, e.g. "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
+*   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, for example, "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
+*   If the version is a snapshot, for example, "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
 
 The snapshot postfix means that the image build is a snapshot of your application at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your application.
 

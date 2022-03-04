@@ -49,7 +49,7 @@ When the firmware operation is being executed, the LWM2M agent first of all trie
 In order to determine what is the best way to deliver the firmware to the device, the LWM2M agent tries to read the device configuration by executing a read request on the firmware update object on the device: read &#47;5&#47;0.
 In this step, the agent will learn:
 * What the supported delivery methods are on the device specified by the value on resource **&#47;5&#47;0&#47;9**, for example: 0 (PULL), 1 (PUSH) or 2 (BOTH). If both delivery methods are supported, PULL will be taken.
-* What the supported delivery protocols are on the device, specified by the value on resource **&#47;5&#47;0&#47;8**, for example: 0 (CoAP), 1 (CoAPs), etc. If this value is not specified by the device, 0 (CoAP) will be taken.
+* What the supported delivery protocols are on the device, specified by the value on resource **&#47;5&#47;0&#47;8**, for example: 0 (CoAP) or 1 (CoAPs). If this value is not specified by the device, 0 (CoAP) will be taken.
 * What the current state of the firmware update is on the device. This value must be 0 (IDLE), otherwise the firmware update process is aborted immediately.
 
 Supported firmware delivery methods and delivery protocols can also be specified in the device managed object by setting these fragments:
@@ -73,7 +73,7 @@ When PUSH is chosen as the deliver method, the agent will try to write the firmw
 
 In both cases, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LWM2M agent. If the device does not specify it, the agent uses its default block size of 512 bytes.
 
-When the delivery is completed on the device (no matter if it's successful or failed, e.g. because the device runs out of storage, or network issues, etc.) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
+When the delivery is completed on the device (no matter if it's successful or failed, for example, because the device runs out of storage, or due to network issues) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
 
 ### Triggering the firmware update on the device
 
@@ -85,7 +85,7 @@ When the firmware update is completed (no matter if it's successful or failed) o
 * If the firmware update has failed on the device, the agent marks the firmware update operation as failed.
 
 ### Canceling the firmware update process
-In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, etc. you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
+In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, or in case of other failures, you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
 ```PUT .../service/lwm2m-agent/shell/{tenantId}/{deviceId}/cancelFirmwareUpdate```
 in which **tenantId** is the ID of your tenant, **deviceId** is your device managed object ID. The ongoing firmware update process will be canceled by the agent.
 Alternatively, the firmware update process is also canceled if you delete the firmware update operation.

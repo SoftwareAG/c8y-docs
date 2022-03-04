@@ -78,7 +78,7 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 	</tr>
 	<tr>
 	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-c8y-iot >}} platform</a> for more information on password strength).</td>
+	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-c8y-iot >}} platform &gt; To log into the platform</a> for more information on password strength).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Tenant policy</td>
@@ -247,7 +247,7 @@ When there is no limit on tenant and system level, the limit feature is consider
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing) page.
 
 #### Product experience tracking
 

@@ -39,7 +39,7 @@ Once you have defined and activated a TrendMiner offloading pipeline, the initia
 
 * **c8y_cdh_tm_measurements** is the view over the table in the data lake, which stores historical data being offloaded from the Operational Store so far.
 * **c8y_cdh_tm_measurements_live** is the live view combining **c8y_cdh_tm_measurements** with recent data from the Operational Store. Both views have the same schema.
-* **c8y_cdh_tm_tags** is the view over the table in the data lake, which stores the tag names and the source ids. The source id identifies the device managed in the {{< product-c8y-iot >}} platform. The tagname combines the source id with the path in the measurements documents to the values establishing the time series. In TrendMiner you use the tagnames to select the time series you want to investigate. With this view you can map this series to the device in the platform.
+* **c8y_cdh_tm_tags** is the view over the table in the data lake, which stores the tag names and the source IDs. The source ID identifies the device managed in the {{< product-c8y-iot >}} platform. The tagname combines the source ID with the path in the measurements documents to the values establishing the time series. In TrendMiner you use the tagnames to select the time series you want to investigate. With this view you can map this series to the device in the platform.
 
 For details on the schema of these views/tables, see section [Offloading Cumulocity IoT base collections](/datahub/working-with-datahub/#offloading-base-collections).
 

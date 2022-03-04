@@ -142,7 +142,9 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?source=110"
   ]
 }
 ```
-**Example Request**: The subsequence window size is larger than the length of historical time series data.
+**Example Request**
+
+The subsequence window size is larger than the length of historical time series data.
 
 ```
 400 – Bad Request

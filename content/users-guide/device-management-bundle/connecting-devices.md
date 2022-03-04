@@ -70,7 +70,7 @@ If you are subscribed to the required applications you will see a third option
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
-After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status "Waiting for connection".
+After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".

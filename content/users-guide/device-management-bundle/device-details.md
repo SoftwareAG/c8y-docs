@@ -50,7 +50,7 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="">Connectivity</a></td>
+<td style="text-align:left"><a href="../../users-guide/device-management/#connectivity">Connectivity</a></td>
 <td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
@@ -146,6 +146,12 @@ Details on these additional menu items are provided where required.
 ### Alarms
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
+
+<a name="availability"></a>
+### Availability
+
+The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](#monitoring-availability) for more information.
+
 
 <a name="child-devices"></a>
 ### Child devices
@@ -378,11 +384,6 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 5. Click **Save changes** to save your settings.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
-
-<a name="availability"></a>
-### Availability
-
-In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate availability monitoring for machines, see [Availability](#monitoring-availability) for more information.
 
 <a name="shell"></a>
 ### Shell

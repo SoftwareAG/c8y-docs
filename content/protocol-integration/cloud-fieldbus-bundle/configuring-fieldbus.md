@@ -124,7 +124,7 @@ Click **Add variable** to configure a new variable.
 4. In the **Normalization** section, specify a unit to define how the raw value should be transformed before storing it in the platform.
 5. Click **Save** to save the variable.
 
-The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, i.e. variables with the same category are grouped together.
+The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, that means, variables with the same category are grouped together.
 
 ![category view](/images/device-protocols/cloud-fieldbus/fieldbus-category.png)
 
@@ -146,7 +146,7 @@ In the **CANopen communication** section, the following parameters can be config
 
 - **Baud rate:** This field must match with the used baud rate in the CANopen network.
 - **Polling rate:** The rate at which the agent sends requests to the CANopen devices.
-- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular measurements to {{< product-c8y-iot >}}.
+- **Transmit rate:** The transfer rate, that is, the rate at which the terminal sends regular measurements to {{< product-c8y-iot >}}.
 
 In the **CANopen** section, up to 127 CANopen devices can be added to the gateway as child devices by providing the following parameters:
 

@@ -23,7 +23,7 @@ A typical device start looks like this:
 ![REST Receiving Device ID](/images/mqtt/exampleRestDeviceId.png)
 
 With MQTT, we automatically use the identity API with the MQTT clientId.
-This removes the necessity to tell the ID to the device, and because the client sends also the other data on this connection, we can associate every measurement, alarm, event, etc. with the correct device.
+This removes the necessity to tell the ID to the device, and because the client sends also the other data on this connection, we can associate every measurement, alarm, event, and so on with the correct device.
 
 ![MQTT Automatically Resolve ID](/images/mqtt/exampleMqttDeviceId.png)
 

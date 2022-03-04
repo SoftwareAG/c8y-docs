@@ -81,7 +81,7 @@ Also see the rest of the documentation, examples and experiment to get values fo
 The first header line in each notification consists of an opaque, encoded binary identifier that must be returned as is in a reply to the Notification 2.0 service in a message acknowledgement.
 
 See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
-It consists of sending the identifier back to the service in a self-contained WebSocket text message, i.e. send back the first header without the training `\n` to the server.
+It consists of sending the identifier back to the service in a self-contained WebSocket text message, that means, send back the first header without the training `\n` to the server.
 
 ### Dealing with notification duplication
 

@@ -75,7 +75,7 @@ Request header should be:
 
 	Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
 
-For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
+For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (that is, *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
 
 {{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
@@ -282,7 +282,7 @@ This request will also delete all data associated with the device including its 
 
 #### Working with operations
 
-Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -384,7 +384,7 @@ Finally, the device connects and waits for operations to be sent to it.
         "clientId": "139jhm07u1dlry92fdl63rmq2c"
     } ]
 
-This request will hang until an operation is issued, i.e. the HTTP server will not answer immediately, but wait until an operation is available for the device (long polling).
+This request will hang until an operation is issued (that is, the HTTP server will not answer immediately) but will wait until an operation is available for the device (long polling).
 
 Note that there might have been operations that were pending before we subscribed to new incoming operations. We need to query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:
 

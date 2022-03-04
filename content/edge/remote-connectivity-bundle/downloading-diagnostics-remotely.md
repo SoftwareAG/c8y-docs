@@ -20,3 +20,4 @@ To download the diagnostics report from your tenant account:
 
 	![Diagnostics report remotely](/images/edge/remote-diagnostics.png)
 
+6. Click the ZIP file link to download the diagnostic report.

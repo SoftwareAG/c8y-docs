@@ -68,7 +68,7 @@ The containers are configured to store their application state on the data disk 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
 
 ### Upgrading {{< product-c8y-iot >}} DataHub Edge
-An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you have to copy the archive with the new version to the {{< product-c8y-iot >}} Edge. Next, you have to log in as admin. Then you have to run the install script using the new version.
+An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you have to copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you have to log in as admin. Then you have to run the install script using the new version.
 
 ```shell
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<NEW version>.tar
@@ -78,7 +78,7 @@ During script execution, the already installed version is detected and the scrip
 
 ### Adapting to network changes of Cumulocity IoT Edge
 
-There might be cases where you have to change the network setup of your Edge installation, e.g. by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
+There might be cases where you have to change the network setup of your Edge installation, for example by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
 
 ### Accessing {{< product-c8y-iot >}} DataHub Edge
 

@@ -38,7 +38,7 @@ For each ad-hoc query, the following information is provided:
 
 In the navigator, select **Auditing** and then **System log** to view the system log.
 
-At the top of the page you have controls to choose between log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Use the pagination controls at the bottom of the page to navigate through the result list.
+At the top of the page you can select log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Use the pagination buttons at the bottom of the page to navigate through the result list.
 
 For each log entry, the following information is provided:
 

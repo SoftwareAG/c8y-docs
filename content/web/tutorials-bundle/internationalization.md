@@ -355,11 +355,7 @@ See [Extracting translations using the locale extract tool](#extracting-translat
 
 #### Manual translation by TypeScript code
 
-It is also possible to translate strings manually in TypeScript code. To do so, inject the `TranslateService` to the component:
-
-[Missing code block?]
-
-Now, use the `translateService.instant` method to translate the content:
+It is also possible to translate strings manually in TypeScript code. To do so, inject the `TranslateService` to the component and use the `translateService.instant` method to translate the content:
 
 * `translations/text-translation.component.ts`:
 

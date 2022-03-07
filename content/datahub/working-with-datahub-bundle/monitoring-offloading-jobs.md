@@ -54,7 +54,7 @@ The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status by using the filter control at the top. The pagination controls can be used to traverse the history entries.
+You can filter the entries by their status by using the filter button at the top. The pagination buttons can be used to traverse the history entries.
 
 ### Details of offloading job
 

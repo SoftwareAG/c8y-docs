@@ -23,7 +23,7 @@ If your tenant id is `t12345`, then `t12345/user` is a valid name. The system wo
 
 The password of the Dremio account has to have at least eight characters, including at least one character and one number.
 
-This account can be used in follow-up applications to query the data lake, e.g., by connecting to Dremio via JDBC. 
+This account can be used in follow-up applications to query the data lake, for example, by connecting to Dremio via JDBC. 
 
 #### Data Lake
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you have to specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
@@ -80,10 +80,10 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data.
 * A source in Dremio is created which connects to the Operational Store of {{< product-c8y-iot >}}.
-* A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views. The name of the space is your tenant ID concatenated with 'Space', e.g. t12345Space.
+* A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings
 Editing the settings is not supported. You have to delete the existing settings and define new settings. If you want to keep your offloading configurations, you have to export the configurations to a backup file, delete the settings, define new settings, and import the configurations from the backup file. See section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export. 
 
 ### Deleting settings
-Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted. To delete the data lake and its contents you have to use the tooling of your data lake provider.
+Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned under "Editing settings" above, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted. To delete the data lake and its contents you have to use the tooling of your data lake provider.

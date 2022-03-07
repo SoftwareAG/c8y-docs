@@ -34,7 +34,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
-2. Download the *RecognizeActivitiesDemoDevice.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
+2. Download the *RecognizeActivitiesDemoDevice.mon* file. Open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
 
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 

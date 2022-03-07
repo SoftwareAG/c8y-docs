@@ -12,7 +12,7 @@ In the navigator, select **Auditing** and then **Query log** to view the query l
 
 > **Info:** The {{< product-c8y-iot >}} DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
 
-At the top of the page you have controls to choose between offloading queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Use the pagination controls at the bottom of the page to navigate through the result list.
+At the top of the page you can offload queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Use the pagination buttons at the bottom of the page to navigate through the result list.
 
 For each offloading query, the following information is provided:
 

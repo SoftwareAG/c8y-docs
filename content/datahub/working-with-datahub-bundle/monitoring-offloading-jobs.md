@@ -28,7 +28,7 @@ In the navigator, select **Status** and then **Offloading** to get an overview o
 
 Click **Reload** to refresh the status being shown.
 
-You can filter the entries by their task name or their status by using the filter controls in the action bar.
+You can filter the entries by their task name or their status by using the filter buttons in the action bar.
 
 ### History per offloading job
 

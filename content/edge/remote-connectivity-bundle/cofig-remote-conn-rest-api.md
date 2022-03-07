@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: Configuring remote-connectivity using the REST APIs
+title: Configuring remote connectivity using the REST APIs
 layout: redirect
 ---
 

@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/anomaly-detection/#prerequisites
 ---
 
-Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains the project zip with name **AnomalyDetectionDemoProject.zip** and the EPL rule with name **DetectAnomalies.mon**.
+Download the [AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains the project ZIP with name **AnomalyDetectionDemoProject.zip** and the EPL rule with name **DetectAnomalies.mon**.
 
 Running the demo requires:
 

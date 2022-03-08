@@ -28,7 +28,7 @@ Get the matrix profile of a specific historical time series data.
 
 |PARAMS||
 |:---|:---|
-|windowSize (integer)| Optional query parameter to setup the size of subsequence window size. Default subsequence window size is 5 if not provided. </br>Note that: <ul><li>The window size must be less than or equal to the length of historical data that is retrieved according to the date range defined in ```dateFrom``` and ```dateTo```.</li><li>The window size must be greater than 2 when computing the z-normalized Euclidean distance. A windowSize=1 produces a standard deviation of zero. For windowSize=2, both the mean and standard deviation for any given subsequence are identical and hence the z-normalization for any sequence will either be [-1., 1.] or [1., -1.]. Thus, the z-normalized Euclidean distance will very likely be zero between any subsequence and its nearest neighbor assuming that the time series is large enough to contain both scenarios.</li></ul>
+|windowSize (integer)| Optional query parameter to setup the size of the subsequence window size. The default subsequence window size is 5 if not provided. </br>Note that: <ul><li>The window size must be less than or equal to the length of historical data that is retrieved according to the date range defined in ```dateFrom``` and ```dateTo```.</li><li>The window size must be greater than 2 when computing the z-normalized Euclidean distance. A windowSize=1 produces a standard deviation of zero. For windowSize=2, both the mean and standard deviation for any given subsequence are identical and hence the z-normalization for any sequence will either be [-1., 1.] or [1., -1.]. Thus, the z-normalized Euclidean distance will very likely be zero between any subsequence and its nearest neighbor assuming that the time series is large enough to contain both scenarios.</li></ul>
 |source (integer)|Required query parameter for source identifier
 |valueFragmentType (string)|Required query parameter for measurements based on fragment type
 |valueFragmentSeries (string)|Required query parameter for measurements based on fragment series
@@ -113,12 +113,12 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&s
   ]
 }
 ```
->**Note:**
-> The delta between the selected **historical time series data (T)** and the generated **matrix_profile (mp)**, shown as null values at the end of the *matrix_profile*, is usual for sliding window computation. The size of the **matrix_profile (mp)** is smaller than the size of the **historical time series data (T)** according to the **subsequence window size (m)**.
+>**Info:**
+> The delta between selected `historical time series data (T)` and `generated matrix_profile (mp)` shown as null values at the end of the `matrix_profile` is the nature of work from sliding window computation. The size of `matrix_profile (mp)` is smaller than size of `historical time series data (T)` according to the `subsequence window size (m)`.
 >
-> - *size(mp) = size(T) - m + 1*
+> - `size(mp) = size(T) - m + 1`
 >
-> The same delta applies to the size of *matrix_profile_index*.
+> Same delta applies to the size of `matrix_profile_index`.
 
 
 **Example Request**

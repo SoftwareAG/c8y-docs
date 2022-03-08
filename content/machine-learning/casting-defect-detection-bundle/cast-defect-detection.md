@@ -23,7 +23,7 @@ There are mainly two categories:
 1. Defective
 2. Ok
 
-For training a classification model, the data is split into train and validation folders. Both *train* and *validation* folders contain *def_front* and *ok_front* subfolders.
+For training a classification model, the data is split into a *train* and a *validation* folder. Both folders contain *def_front* and *ok_front* subfolders.
 
 * **train:** *def_front* has 3758 and *ok_front* has 2875 images
 * **validation:** *def_front* has 449 and *ok_front* has 258 images

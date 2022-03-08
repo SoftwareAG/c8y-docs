@@ -18,7 +18,7 @@ Projects functionality includes:
 
 ### Creating a new project
 
-Click **Projects** in the navigator. This will list all the available projects. 
+Click **Projects** in the navigator. This will list all the available projects.
 
 Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
@@ -71,7 +71,7 @@ To download a project of a particular version, click the icon <img src="/images/
 
 Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore download (ex. demoproject_download), to display the status of the download process in the **Task History** section at the center.
 
-Once the task has reached **COMPLETED** status, the project zip would be successfully created. You can download the project zip by clicking on the **Project** button on the project card.
+Once the task has reached **COMPLETED** status, the project ZIP would be successfully created. You can download the project ZIP by clicking on the **Project** button on the project card.
 
 ![ZIP download](/images/zementis/mlw-app-project-download-zip.png)
 
@@ -80,7 +80,7 @@ Once the task has reached **COMPLETED** status, the project zip would be success
 
 To facilitate collaboration and sharing, MLW allows the user to upload the contents from an exported project archive.
 
-To upload a project on a particular tenant, Click **+Add Project** at the right of the top menu bar, select the **Upload** radio button and upload the zip file by clicking on **Drop file here** button.
+To upload a project on a particular tenant, Click **+Add Project** at the right of the top menu bar, select the **Upload** radio button and upload the ZIP file by clicking on **Drop file here** button.
 
 ![Project upload](/images/zementis/mlw-app-project-upload.png)
 
@@ -96,4 +96,4 @@ To delete a project, click the icon <img src="/images/zementis/mlw-hamburger-ico
 
 Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name underscore delete (ex. demoproject_delete), to display the status of the delete process in the **Task History** section at the center.
 
-Once the task has reached **COMPLETED** status, the project would be successfully deleted. 
+Once the task has reached **COMPLETED** status, the project would be successfully deleted.

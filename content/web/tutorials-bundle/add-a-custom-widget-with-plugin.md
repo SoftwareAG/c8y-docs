@@ -12,7 +12,7 @@ This tutorial focuses on how you can add this widget to an application using the
 The solution below is fully based on the Module Federation functionality introduced in Webpack 5.
 For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
 
-## 1. Initialize the widget plugin example
+### 1. Initialize the widget plugin example
 
 Use the command shown below to start a multi-step process of creating a sample plugin:
 
@@ -79,7 +79,7 @@ tsconfig.json;
 
 You have now created your first plugin that uses Module Federation.
 
-## 2. Differences in approach to creating custom widgets
+### 2. Differences in approach to creating custom widgets
 
 There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.
 

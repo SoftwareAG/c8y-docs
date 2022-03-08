@@ -23,7 +23,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 #### Data collection with Machine Learning Workbench (MLW)
 
-1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload *AnomalyDetectionDemoProject.zip* project to MLW. A new project will be created with the name **AnomalyDetectionDemoProject_uuid** having a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *AnomalyDetectionDemoProject.zip* project to MLW. This creates a new project named **AnomalyDetectionDemoProject_uuid**, which has a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
 
 2. Either you can download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
 
@@ -60,7 +60,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
 
-Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data available in the **Data** folder, using the *isolationForest* PMML model.
+Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE), and predict *test_data.csv* data available in the **Data** folder, using the *isolationForest* PMML model.
 
 #### Create and upload Apama monitor file
 

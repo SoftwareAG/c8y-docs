@@ -472,7 +472,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 {{url}}/service/mlw/projects/{{projectID}}/dump
 ```
 
-To facilitate collaboration and sharing, MLW allows the user to export the contents of a project as a compressed file. Download a project by encapsulating all the resources of project as a zip. The response will be a long running task which runs in the background.
+To facilitate collaboration and sharing, MLW allows you to export the contents of a project as a compressed file. Download a project by encapsulating all the resources of the project as a ZIP file. The response is a long running task which runs in the background.
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
@@ -583,7 +583,7 @@ curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --head
 {{url}}/service/mlw/projects/upload
 ```
 
-To facilitate collaboration and sharing, MLW allows the user to import the contents of a project from a compressed file. Upload a project zip which encapsulates all the resources. The response will be a long running task which runs in the background.
+To facilitate collaboration and sharing, MLW allows you to import the contents of a project from a compressed file. Upload a project ZIP file which encapsulates all the resources. The response is a long running task which runs in the background.
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
 
@@ -779,7 +779,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {{url}}/service/mlw/projects/{{projectID}}?versionNumber={versionNumber}
 ```
 
-Delete the existing version of a project. The response will be the list of remaining projects without the deleted version of the given project id, and the delete operation will happen in the background as a long-running task. The delete operation will remove all the tasks related to the project, and removes the notebook assets as well.
+Delete the existing version of a project. The response is the list of the remaining projects without the deleted version of the given project ID. The delete operation will happen in the background as a long-running task. It removes all the tasks related to the project, as well as the notebook assets.
 
 **NOTE:** If there is any running task associated with the project, the delete operation won't be allowed untill the task has completed.
 

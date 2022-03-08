@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/activity-recognition/#prerequisities
 ---
 
-Download the [ActivityRecognitionDemo.zip](/files/zementis/ActivityRecognitionDemo.zip) file which contains the project zip with name *ActivityRecognitionDemoProject.zip* and the EPL rules.
+Download the [ActivityRecognitionDemo.zip](/files/zementis/ActivityRecognitionDemo.zip) file which contains the project ZIP named *ActivityRecognitionDemoProject.zip* and the EPL rules.
 
 Running the demo scripts requires
 

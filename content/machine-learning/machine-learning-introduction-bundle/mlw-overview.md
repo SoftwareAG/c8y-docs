@@ -40,14 +40,14 @@ The table below shows the permissions for users with this role.
 
 #### Machine Learning User
 
-Users with the global role “Machine Learning User” have limited access to Machine Learning Workbench and can only view the projects, associated files, tasks, assets etc.
+Users with the global role “Machine Learning User” have limited access to Machine Learning Workbench and can only view the projects, associated files, tasks, assets and so on.
 The table below shows the permissions for users with this role.
 
 |Type|READ|CREATE|UPDATE|ADMIN|
 |:---|:---|:---|:---|:---|
 |Machine learning |yes|no|no|no|
 
-These pre-defined and pre-configured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the MLW microservice is subscribed to version 10.13.0 or higher.
+These predefined and preconfigured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the MLW microservice is subscribed to version 10.13.0 or higher.
 
 To be able to leverage the Machine Learning Workbench, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Workbench or add new roles, which should then include the necessary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
 

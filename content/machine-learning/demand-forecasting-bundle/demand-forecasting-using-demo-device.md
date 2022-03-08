@@ -12,7 +12,7 @@ For this, use the artifacts provided as part of the project *DemandForecastingDe
 
 #### Start with Machine Learning Workbench
 
-Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload *DemandForecastingDemoProject.zip* project to MLW. This should create a new project with the name **DemandForecastingDemoProject_uuid** having a total of 5 resources. You will get 2 files in the **Data** folder and 3 notebooks in the **Code** folder.
+Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *DemandForecastingDemoProject.zip* project to MLW. This creates a new project named **DemandForecastingDemoProject_uuid**, which has a total of 5 resources. You will get 2 files in the **Data** folder and 3 notebooks in the **Code** folder.
 
 #### Register a demo device in the platform
 
@@ -34,7 +34,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, c8y_Flow measurements are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last 8 days period and for every two hours (i.e. 12 observations per day).
+2. Execute each cell one by one and you have a registered device in {{< product-c8y-iot >}}. Upon successful execution, `c8y_Flow measurements` are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last 8 days period and for every two hours (that is, 12 observations per day).
 
 We use this data to generate a time series model and forecast the next day's c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
 

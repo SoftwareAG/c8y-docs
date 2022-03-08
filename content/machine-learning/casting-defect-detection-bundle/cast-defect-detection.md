@@ -31,7 +31,7 @@ For training a classification model, the data is split into a *train* and a *val
 
 ### Uploading the project to MLW
 
-Log in to the MLW and Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
+Log in to the MLW and follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload the **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
 
 After the project is uploaded sucessfully, navigate to the **Data** folder of the project. You should see 3 data files, 5 code files, and 1 architecture file within the project.
 
@@ -43,11 +43,11 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 
-3. Build a deep neural network architecture using the below example and save:
+3. Build a deep neural network architecture using the example shown below and save:
 
     ![Design](/images/zementis/castingDetection/mlw-casting-method1-arch-design.gif)
 
-4. Train the deep neural network model by setting the **Training Parameters** as below:
+4. Train the deep neural network model by setting the **Training Parameters** as shown below:
 
     ![TrainParams](/images/zementis/castingDetection/mlw-casting-method1-arch-training-params.png)
 
@@ -75,7 +75,7 @@ Depending on the training method used, use the relevant Python scripts.
 
 The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
-* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250x250 size. The pre-processing script *castingPreProcessingForNN.py* looks like below.
+* The pre-processing script is used to pre-process incoming test data (image) to convert it into 250x250 size. The pre-processing script *castingPreProcessingForNN.py* looks as shown below.
 
 ```
   import numpy as np
@@ -100,7 +100,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1** else 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script** if you have used **Method 2**. 
+1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** if you have used **Method 1**. If you have used **Method 2**, select 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForJNB.py' as **Pre-processing Script** and 'castingPostProcessingForJNB.py' as **Post-processing Script**. 
     
     This creates a new pipeline file named *castingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 

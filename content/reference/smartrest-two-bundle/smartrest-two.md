@@ -53,7 +53,7 @@ In its base, SmartREST 2.0 is like the previous version: a CSV-like payload form
 
 Several changes in the functionality have been made:
 
-* Templates no longer contain IDs of objects (instead, IDs will be resolved by e.g. MQTT ClientId)
+* Templates no longer contain IDs of objects (instead, IDs will be resolved by, for example, MQTT ClientId)
 * Managed objects can be created and retrieved directly with external IDs
 * Creating request templates now uses JSON path (like response templates)
 * Support for lists in responses
@@ -366,7 +366,7 @@ A single custom property requires you to add the following three values to your 
 |NUMBER|An integer or number with decimal places|
 |INTEGER|An integer|
 |UNSIGNED|An integer (only positive)|
-|FLAG|An empty map (e.g. c8y_IsDevice: {}). The client does not need to send anything for this value|
+|FLAG|An empty map (for example c8y_IsDevice: {}). The client does not need to send anything for this value|
 |SEVERITY|A severity of an alarm. Used to update the severity field of alarms|
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|

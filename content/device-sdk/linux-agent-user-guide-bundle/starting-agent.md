@@ -69,4 +69,4 @@ make
 ./c8y_canopen_simulator 5 0
 ```
 
-> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number, i.e. `can0`. In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the {{< product-c8y-iot >}} Linux agent to have the agent create a vcan `can0` interface for you.
+> **Info:** 5 is the CANopen node ID that you want the simulator to run with, and 0 is the CAN interface number (that is, `can0`). In this example, the simulator is automatically connected to the SocketCAN interface `can0`. Make sure that you have a proper `can0` CAN interface, or use the default CANopen settings in the {{< product-c8y-iot >}} Linux agent to have the agent create a vcan `can0` interface for you.

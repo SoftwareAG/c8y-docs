@@ -47,7 +47,7 @@ To register devices, you may choose one of the following options:
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
 
 If you are subscribed to the required applications you will see a third option
-**Custom device registration** for registering devices of specific types, e.g. Actility LoRa or Sigfox, see the documentation for these services in the [Protocol integration guide](/protocol-integration/overview).
+**Custom device registration** for registering devices of specific types, for example, Actility LoRa or Sigfox, see the documentation for these services in the [Protocol integration guide](/protocol-integration/overview).
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -81,7 +81,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 <a name="creds-upload"></a>
 #### To bulk-register devices
 
-To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
+To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 > **Info:** There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 
@@ -102,7 +102,7 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 
 **Simple registration**
 
-The CSV file contains two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
+The CSV file contains two columns: ID;PATH, where ID is the device identifier, for example, serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
 ```asciidoc
     ID;PATH

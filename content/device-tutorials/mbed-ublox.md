@@ -198,7 +198,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable.
 
-* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example, using a mobile phone).
+* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example using a mobile phone).
 
 * **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 
@@ -212,7 +212,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
-* **The device does not appear as CONNECTED in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, i.e. the one that performs the bootstrap against the correct server.
+* **The device does not appear as CONNECTED in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, that is, the one that performs the bootstrap against the correct server.
 
 * **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
 

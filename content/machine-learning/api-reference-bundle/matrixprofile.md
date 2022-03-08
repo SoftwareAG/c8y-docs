@@ -121,7 +121,9 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&s
 > Same delta applies to the size of `matrix_profile_index`.
 
 
-**Example Request**: All the required parameters are not provided completely.
+**Example Request**
+
+All the required parameters are not provided completely.
 
 ```
 400 – Bad Request
@@ -140,7 +142,9 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?source=110"
   ]
 }
 ```
-**Example Request**: The subsequence window size is larger than the length of historical time series data.
+**Example Request**
+
+The subsequence window size is larger than the length of historical time series data.
 
 ```
 400 – Bad Request

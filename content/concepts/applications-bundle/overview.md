@@ -7,8 +7,8 @@ layout: redirect
 
  {{< product-c8y-iot >}} applications can have two forms:
 
-* web-based user interface applications ("[web applications](#web-applications)")
-* server-side business logic through microservices ("[microservices](#microservices)")
+ * [web applications](#web-applications) -  web-based user interface applications
+ * [microservices](#microservices) - server-side business logic
 
 Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform.
 

@@ -183,7 +183,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -205,7 +205,7 @@ Microservice resources are counted based at limits defined in the microservice m
 
 **Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 4 CPU and 4 GB of memory it should be counted as 2000 CPU milliseconds and 2048 MB of memory.
 
-For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
+For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (for example owner, subscription for tenant):
 
 ```json
 {
@@ -335,7 +335,7 @@ Usage statistics consist of values that are progressive like the request count a
 A {{< product-c8y-iot >}} platform tenant can have several states:
 
   * Active - The common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
-  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
+  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", that means, when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
   * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
 

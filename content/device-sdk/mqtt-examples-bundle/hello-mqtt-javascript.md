@@ -22,7 +22,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 #### Creating a JavaScript application
 
-Create an HTML file, for example *hello_mqtt_js.html* with the following content:
+Create an HTML file (for example *hello_mqtt_js.html*) with the following content:
 
 ```xml
 <!DOCTYPE html>
@@ -132,7 +132,7 @@ init();
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.{{< domain-c8y >}}/mqtt` or `wss://mqtt.{{< domain-c8y >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and also secured SSL connections (that is, `ws://mqtt.{{< domain-c8y >}}/mqtt` or `wss://mqtt.{{< domain-c8y >}}/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
 
 What does the code do?
 
@@ -152,7 +152,7 @@ Note that the subscription is established after the device creation, otherwise i
 
 Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. `c8y_Restart`), related information will be displayed in the browser page.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
 ### Improving the agent
 

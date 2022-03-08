@@ -26,6 +26,7 @@ The following placeholders can be found in the **Configuration** tab:
 |{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.
 |{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
+|{email}|This placeholder will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.
 
 #### Two-factor authentication
 
@@ -49,7 +50,7 @@ In the **Password reset** section you can change all settings related to passwor
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
-In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {host}/apps/devicemanagement/index.html?token={token}.
+In the **Password reset email template** fields, provide an email template to be used when the address is known and one to be used when the address is unknown. The link to reset the password might for example be: {tenant-domain}/apps/devicemanagement/index.html?token={token}&email={email}.
 
 In the **Email subject** field, provide a subject for all password reset related emails.
 
@@ -135,9 +136,9 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-**Type**
+**Font**
 
-In the **Type** section you specify the font settings for your branded version.
+In the **Font** section you specify the font settings for your branded version.
 
 You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -225,14 +226,14 @@ The following criteria have to be met by any SSL certificate to be used with the
   certificate is mandatory, as it will also be used for subdomains created from your {{< enterprise-tenant >}}.
 * Every single certificate in the chain is provided using the X509 format.
 * The common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your
-  wildcard domain name, e.g. "CN=\*.iot.mycompany.com".
+  wildcard domain name, for example, "CN=\*.iot.mycompany.com".
 
 {{< product-c8y-iot >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.
 
 #### Packaging the SSL certificate in PKCS #12
 
-In order to use a SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
+In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
 the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two

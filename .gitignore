@@ -8,5 +8,6 @@ resources/
 codekit-config.json
 npm-debug.log
 .vscode/
+.hugo_build.lock
 static/releases.json
 .hugo_build.lock

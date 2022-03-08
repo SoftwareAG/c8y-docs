@@ -39,7 +39,7 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 **Method 1: Creating/Using a custom deep neural network architecture**  
 
-1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Or use the already available architecture file (*castingModelDesigner*) which exists within the project. Jump to step 4 if you are doing the latter.
+1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with "None" as **Architecture**. Alternatively, use the already available architecture file (*castingModelDesigner*) which exists within the project. Jump to step 4 if you are doing the latter.
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 

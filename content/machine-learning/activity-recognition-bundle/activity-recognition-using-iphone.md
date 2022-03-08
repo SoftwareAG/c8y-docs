@@ -22,9 +22,9 @@ Once registered, you can get the device ID by looking up your device on the **Al
 
 #### Data collection
 
-1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload *ActivityRecognitionDemoProject.zip* project to MLW. This creates a new project named **ActivityRecognitionDemoProject_uuid**, which has a total of 5 resources. You will get 2 files in the **Data** folder and 3 files in the **Code** folder.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *ActivityRecognitionDemoProject.zip* project to MLW. This creates a new project named **ActivityRecognitionDemoProject_uuid**, which has a total of 5 resources. You will get 2 files in the **Data** folder and 3 files in the **Code** folder.
 
-2. Select *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
+2. Select the *CONFIG.json* in the **Data** folder and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the *CONFIG.json*.
 
 3. Update the values of *c_url*, *c_user* and *c_pass* with your tenant credentials and click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar.
 

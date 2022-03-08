@@ -78,9 +78,13 @@ If you have at least one field that is not originating from the "Add predefined"
 Example:
 An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
 
-If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, e.g.: ['fragment.key.with.dot'].series.value
+If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
 In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
+
+JsonPath expressions added from data points will be stored in bracket notation in order to increase the flexibility in fragment and series naming (for example whitespaces will be supported):
+
+![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
 #### To schedule an export
@@ -95,7 +99,7 @@ In the resulting dialog box provide the following information to receive the sch
 
 **1 - Frequency**
 
-Select the frequency for sending the export from the dropdown list, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
+Select the frequency for sending the export from the dropdown list, that is, every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
 >**Info:** Schedule intervals need to be provided in Coordinated Universal Time (UTC).
 

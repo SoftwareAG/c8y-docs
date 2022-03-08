@@ -52,7 +52,7 @@ In general, each managed object consists of:
 *  The name of the object.
 *  The most specific type of the managed object.
 *  A time stamp showing the last update.
-*  Fragments with specific meanings, e.g. `c8y_IsDevice`.
+*  Fragments with specific meanings, for example, `c8y_IsDevice`.
 *  Any additional custom fragments.
 
 ### Fragments

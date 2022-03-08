@@ -25,7 +25,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *AnomalyDetectionDemoProject.zip* project to MLW. This creates a new project named **AnomalyDetectionDemoProject_uuid**, which has a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
 
-2. Either you can download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
+2. You can either download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
 
     * Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
 

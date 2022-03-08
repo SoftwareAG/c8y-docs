@@ -1,14 +1,8 @@
 ---
-weight: 80
-title: Restarting the Edge appliance
+weight: 16
+title: Downloading diagnostics using the UI 
 layout: redirect
 ---
-
-Before restarting your Edge appliance, ensure that your appliance is in a safe state.
-
-### Restarting the Edge appliance using the UI
-
-To restart your Edge appliance:
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -17,12 +11,9 @@ To restart your Edge appliance:
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
-3. Click **Edge** > **Reboot** in the navigator.
+3. Click **Edge** > **Diagnostics** in the navigator.
 
-4. Click **Reboot**.
+4. Click **Request diagnostics report** to download the diagnostics.
 
-### Restarting the Edge appliance using the REST APIs
+To download the diagnostics report remotely, see [Remote connectivity > Downloading diagnostics remotely](/edge/remote-connectivity/#downloading-diagnostics-remotely).
 
-To restart your Edge appliance, use the following endpoint:
-
-- [POST /edge/reboot](/edge/rest-api/#working-with-rest-api)

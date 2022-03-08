@@ -13,7 +13,7 @@ Capturing anomalous events through the sensor data of a mobile device on an IoT 
 
 * Collect sensor data from a user performing regular everyday tasks.
 * With the collected data, train an anomaly detection model using the Jupyter Notebook and convert the model to PMML.
-* Deploy the model to {{< product-c8y-iot >}} using the Machine Learning Workbench application.
+* Deploy the model to {{< product-c8y-iot >}} using Machine Learning Workbench application.
 * Create and upload an EPL rule to {{< product-c8y-iot >}} which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.
 	* Sends the data via REST request to the Zementis microservice API for processing.

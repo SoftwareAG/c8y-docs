@@ -16,11 +16,11 @@ Machine Learning Workbench is composed of the following components:
 
 ### Roles and permissions
 
-Starting with 10.13.0 release, Machine Learning Workbench mandates users to have certain permissions to be able to access the [Machine Learning Workbench](/machine-learning/web-app-mlw/) application as well as to be able to invoke the [REST APIs](/machine-learning/api-reference-mlw/). For ease of use and convenience, the Machine Learning Workbench provides the following pre-defined and pre-configured **global roles** which embed the necessary permissions already.
+Starting with 10.13.0 release, Machine Learning Workbench mandates users to have certain permissions to be able to access the [Machine Learning Workbench](/machine-learning/web-app-mlw/) application as well as to be able to invoke the [REST APIs](/machine-learning/api-reference-mlw/). For ease of use and convenience, Machine Learning Workbench provides the following pre-defined and pre-configured **global roles** which embed the necessary permissions already.
 
 #### Machine Learning Admin
 
-Users with the global role “Machine Learning Admin” have unlimited access to the Machine Learning Workbench and can carry out all the operations that it provides.
+Users with the global role “Machine Learning Admin” have unlimited access to Machine Learning Workbench and can carry out all the operations that it provides.
 The table below shows the permissions for users with this role.
 
 |Type|READ|CREATE|UPDATE|ADMIN|
@@ -30,7 +30,7 @@ The table below shows the permissions for users with this role.
 
 #### Machine Learning Manager
 
-Users with the global role “Machine Learning Manager” have limited access to the Machine Learning Workbench and can carry out all its operations except delete operations.
+Users with the global role “Machine Learning Manager” have limited access to Machine Learning Workbench and can carry out all its operations except delete operations.
 The table below shows the permissions for users with this role.
 
 |Type|READ|CREATE|UPDATE|ADMIN|
@@ -49,6 +49,6 @@ The table below shows the permissions for users with this role.
 
 These predefined and preconfigured Machine Learning specific roles show up under **Global roles** in the **Roles** page of the Administration application once the MLW microservice is subscribed to version 10.13.0 or higher.
 
-To be able to leverage the Machine Learning Workbench, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Workbench or add new roles, which should then include the necessary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
+To be able to leverage Machine Learning Workbench, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Workbench or add new roles, which should then include the necessary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
 
-If users do not have the permissions mentioned above, they will get an *Access denied.* error while trying to access the Machine Learning Workbench application. Consumers of the REST APIs will see a `403 - Forbidden` too.
+If users do not have the permissions mentioned above, they will get an *Access denied.* error while trying to access Machine Learning Workbench application. Consumers of the REST APIs will see a `403 - Forbidden` too.

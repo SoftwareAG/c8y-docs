@@ -36,7 +36,7 @@ After the training is complete, the best model selected by the evaluation criter
 
 ### Model deployment and predictions
 
-Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
+Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions.
 
 Select the model from the **Model** folder and click the cloud icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
 
@@ -44,16 +44,16 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 To predict data using a deployed model, select the data set from the **Data** folder and click the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
 
-Data can be sent to a PMML model, an ONNX model, or an ONNX pipeline. For this example, we will use a PMML model deployed on the Machine Learning Engine (MLE). Select the **PMML** option under the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
+Data can be sent to a PMML model, an ONNX model, or an ONNX pipeline. For this example, we will use a PMML model deployed on Machine Learning Engine (MLE). Select the **PMML** option under the predict icon <img src="/images/zementis/mlw-predict-icon.png" alt="Predict" style="display:inline-block; margin:0">.
 
 ![Select Format MLE](/images/zementis/mlw-app-automl-predict.png)
 
-This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select the PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+This will list all the PMML models deployed on Machine Learning Engine (MLE). Select the PMML model for prediction and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Select Model for Prediction](/images/zementis/mlw-app-automl-predict-model-select.png)
 
-The predicted results will be stored in the **Data** folder. For PMML models, the format of the input data will determine the format of predictions, i.e. output data. In our example, the input data was in CSV format. The output data will also be in CSV format. 
+The predicted results will be stored in the **Data** folder. For PMML models, the format of the input data will determine the format of predictions, i.e. output data. In our example, the input data was in CSV format. The output data will also be in CSV format.
 
-Select the output data from the **Data** folder and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> at the right of the top menu bar to download the output data to the local machine. 
+Select the output data from the **Data** folder and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> at the right of the top menu bar to download the output data to the local machine.
 
 Select the output data from the **Data** folder and click the preview icon <img src="/images/zementis/mlw-preview-icon.png" alt="Preview" style="display:inline-block; margin:0"> to preview the output data.

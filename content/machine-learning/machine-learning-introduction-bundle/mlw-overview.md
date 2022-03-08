@@ -16,7 +16,7 @@ Machine Learning Workbench is composed of the following components:
 
 ### Roles and permissions
 
-Starting with 10.13.0 release, Machine Learning Workbench mandates users to have certain permissions to be able to access the [Machine Learning Workbench](/machine-learning/web-app-mlw/) application as well as to be able to invoke the [REST APIs](/machine-learning/api-reference-mlw/). For ease of use and convenience, the Machine Learning Workbench provides the following pre-defined and pre-configured **Global roles** which embed the necessary permissions already.
+Starting with 10.13.0 release, Machine Learning Workbench mandates users to have certain permissions to be able to access the [Machine Learning Workbench](/machine-learning/web-app-mlw/) application as well as to be able to invoke the [REST APIs](/machine-learning/api-reference-mlw/). For ease of use and convenience, the Machine Learning Workbench provides the following pre-defined and pre-configured **global roles** which embed the necessary permissions already.
 
 #### Machine Learning Admin
 

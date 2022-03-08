@@ -11,7 +11,7 @@ Projects functionality includes:
 * [Creating a new project](#creating-a-new-project)
 * [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
 * [Committing a project - version management](#commiting-a-project-version)
-* [Switch between project versions](#switch-project-version)
+* [Switching between project versions](#switch-project-version)
 * [Download a project as a compressed file](#download-a-project)
 * [Upload a project](#upload-a-project)
 * [Delete a project](#delete-a-project)
@@ -55,7 +55,7 @@ The project card will show the different versions available for that project.
 
 ![Upload Resources](/images/zementis/mlw-app-project-version.png)
 
-### Switch between project versions
+### Switching between project versions
 
 To switch to a different version of the project, click on the **Projects** in the navigator and select the version which you want to switch. The version switch message will show up in the respective project tile.
 
@@ -63,7 +63,7 @@ To switch to a different version of the project, click on the **Projects** in th
 
 Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name, to display the status of the commit process in the **Task History** section at the center.
 
-### Download a project
+### Downloading a project
 
 To download a project of a particular version, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click on **Download**.
 
@@ -76,7 +76,7 @@ Once the task has reached **COMPLETED** status, the project zip would be success
 ![ZIP download](/images/zementis/mlw-app-project-download-zip.png)
 
 
-### Upload a project
+### Uploading a project
 
 To facilitate collaboration and sharing, MLW allows the user to upload the contents from an exported project archive.
 

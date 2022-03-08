@@ -33,7 +33,7 @@ For training a classification model, the data is split into train and validation
 
 Log in to the MLW and Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) to upload **CastingDefectDetectionDemoProject.zip** project to MLW. This might take a few minutes depending on your internet bandwidth.
 
-After the project is uploaded sucessfully, navigate to the **Data** folder of the project. You should also see 3 data files, 5 code files, and 1 architecture file within the project.
+After the project is uploaded sucessfully, navigate to the **Data** folder of the project. You should see 3 data files, 5 code files, and 1 architecture file within the project.
 
 #### Training the model
 

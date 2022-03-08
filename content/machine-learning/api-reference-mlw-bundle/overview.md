@@ -53,7 +53,7 @@ The error interpretations are:
 
 |Code|Name|Description
 |:---|:---|:---
-|400|Bad Request|Invalid input from user.
+|400|Bad Request|Invalid input from the user.
 |401|Unauthorized|Authentication has failed, or credentials were required but not provided.
 |404|Not Found|Model or resource was not found.
 |409|Conflict|Model or resource already exists.

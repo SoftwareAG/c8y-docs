@@ -17,7 +17,7 @@ To remotely update your Edge appliance:
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
-2. Go to **Device Management**.
+2. Go to the Device Management application.
 
 3. Click **Firmware repository** in the **Management** menu in the navigator.
 
@@ -68,7 +68,7 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
-2. Go to **Device Management**.
+2. Go to the Device Management application.
 
 3. Click **Device control** in the **Overviews** menu in the navigator.
    ![Edge version](/images/edge/edge-bulk-operation-page.png)

@@ -1,5 +1,5 @@
 ---
-title: Add a Jest based unit test
+title: Add a Jest-based unit test
 layout: redirect
 weight: 80
 ---
@@ -24,8 +24,8 @@ Switch to the new folder and run `npm install`.
 
 >**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an application with the version `1013.0.62`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an application with the version `1013.0.62`.
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag.
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 
 ### 2. Add a component
@@ -123,7 +123,7 @@ Time:        32.858 s
 If the test says `PASS`, everything went well and your first component test was successful.
 Now, you can add more detailed test cases to verify your component works as intended.
 
-### 3. Use a Snapshot Test to verify the component template
+### 3. Use a snapshot test to verify the component template
 
 This section provides you with additional information on other ways to verify the component template.
 
@@ -161,7 +161,7 @@ You can find and verify this snapshot in the newly created folder `./__snapshot_
 When the template changes, the test will fail and you need to overwrite your test with `npm test -- -u`.
 You can test this behavior by changing your template in the `test.component.ts` file.
 
->**Info:** It is common practice to commit those snapshots with your code.
+>**Info:** It is common practice to commit these snapshots with your code.
 
 
 ### Conclusion

@@ -25,6 +25,6 @@ Technically, the sensor library defines standard fragments for inventory, measur
 }
 ```
 
-More examples and details can be found in [Sensor library](/reference/sensor-library/) in the **Reference guide**.
+More examples and details can be found in [Sensor library](/reference/sensor-library/) in the *Reference guide*.
 
 The {{< company-c8y >}} team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into {{< product-c8y-iot >}} by contacting our [product support](/welcome/contacting-support/).

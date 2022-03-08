@@ -10,7 +10,7 @@ Learn how to develop and deploy applications on top of our IoT platform and inte
 
 For our developer community, we offer a variety of sources to quickly get started or to dig deeper into the matter.
 
-If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}. The <a href="/concepts/introduction/">*Concepts guide*</a> serves as a starting point for anyone technically interested in our  IoT platform.
+If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}. The <a href="/concepts/introduction/">Concepts guide</a> serves as a starting point for anyone technically interested in our  IoT platform.
 
 
 ### Developer guides
@@ -49,7 +49,7 @@ Check out the following developer guides if you are looking for step-by-step ins
 </table>
 
 
-Moreover, the <a href="/apama/overview-analytics/"><i>Streaming Analytics guide</i></a> provides basics for understanding how to create your own analytics or other business logic in {{< product-c8y-iot >}} with Apama EPL.
+Moreover, the <a href="/apama/overview-analytics/">Streaming Analytics guide</a> provides basics for understanding how to create your own analytics or other business logic in {{< product-c8y-iot >}} with Apama EPL.
 
 ### OpenAPI Specification
 

@@ -39,7 +39,7 @@ Select the version for which you want to create a sample application (for exampl
   other
 ```
 
-Select an application template as the basis for your plugin, (for example, "widget-plugin"):
+Select an application template as the basis for your plugin for example, "widget-plugin":
 
 ```console
 ? Which base project do you want to scaffold from?
@@ -61,7 +61,7 @@ Application created. Go into the folder "widget-plugin" and run npm install
 Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are `package.json` and `README.md`.
+For this tutorial, the most important files are *package.json* and `README.md`.
 
 ```console
 app.module.spec.ts;
@@ -88,7 +88,7 @@ The following list shows the fields and what they are responsible for:
 
 - `isPackage`: Indicates if the application is a package. In case of a widget that is added using Module Federation, set the value to `true`.
 - `package`: The type of package (for example, `plugin`.)
-- `exports`: This field is important because it defines the Angular modules that will be made available by the widget-plugin for the shell application (also see the README.md file):
+- `exports`: This field is important because it defines the Angular modules that will be made available by the widget-plugin for the shell application (also see the *README.md* file):
   - `name`: The name of the exported module (that is, "Example widget plugin").
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
   - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: <kbd>./widget/widget-plugin.module.ts</kbd>.
@@ -97,13 +97,13 @@ The following list shows the fields and what they are responsible for:
 >**Info:** When creating plugins, keep in mind that custom modules are the backbone of this approach. The exported module is treated as the entry point that will link the plugin with the application (referred to as the shell). You can create several modules and then export them. Such modules should contain ready-made functionality.
 >
 >Furthermore, they behave like lazy loading modules. They are not loaded upfront as one big package, but instead like a collection of smaller packages loaded on demand.
-Each module can use the HOOK concept to extend it with additional features, see [Extend an existing application and use hooks](#extend-an-existing-application). For example, a plugin can add another entry to the navigation menu by using `HOOK_NAVIGATOR_NODES` as described in [Hooking a navigator node](#3-hooking-a-navigator-node).
+Each module can use the HOOK concept to extend it with additional features, see [Extend an existing application and use hooks](#extend-an-existing-application). For example, a plugin can add another entry to the navigation menu by using HOOK_NAVIGATOR_NODES as described in [Hooking a navigator node](#3-hooking-a-navigator-node).
 
 In addition, there is also a difference in how to start the local development server, see the following step for more information on the server's role.
 
-## 3. Local server, debugging and deployment
+### 3. Local server, debugging and deployment
 
-### Local server
+#### Local server
 
 To facilitate the process of creating a new plugin, the local server command was extended with a new flag to proxy all requests to the shell application "Cockpit".
 
@@ -125,10 +125,10 @@ Once logged in, add the `widget-plugin` to your dashboard in the **Add widget** 
 
 ![Add widget](/images/web-sdk/module-federation-widget-plugin.png)
 
-The rest of the widget editing process is the same.
+The rest of the widget editing process is the same as for regular widget.
 After making changes, refresh your browser to see them.
 
-### Debugging
+#### Debugging
 
 There is another difference in the *package.json* file between a regular widget and a widget modified for Module Federation:
 
@@ -142,7 +142,7 @@ There is another difference in the *package.json* file between a regular widget 
 ...
 ```
 
->**Info:** The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the contextPath field in *package.json*) followed by the name of the module class.
+>**Info:** The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in *package.json*) followed by the name of the module class.
 
 The plugin imports itself via a field called `remotes`.
 We recommend this as the first step in verifying the correctness of the exported module, as it facilitates the application debugging.
@@ -150,9 +150,9 @@ After importing your own modules, execute `npm start` to see if the local server
 
 To check the plugin at a later stage, we recommend you to check it locally with various shell applications, using `npm start -- --shell cockpit`.
 
-### Deployment
+#### Deployment
 
-Uploading the widget has remained the same.
+Uploading the widget has remained the same as for regular widgets.
 Execute the following commands sequentially:
 
 ```js
@@ -167,19 +167,19 @@ npm run deploy
 
 Follow the console prompt to deploy the application to your tenant.
 
-## 4. Adding a deployed widget to the shell application
+### 4. Adding a deployed widget to the shell application
 
 In the current version the views and logic related to Module Federation are hidden behind the beta flag.
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
-- Enable the **beta flag** in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`. You should now be able to access the **Packages** tab in *Administration application > Ecosystem > applications > Packages*, where you can see the details of your plugin.
+- Enable the beta flag in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`. You should now be able to access the **Packages** tab in *Administration application > Ecosystem > applications > Packages*, where you can see the details of your plugin.
 
-- If you already have a custom cockpit, navigate to its **Details** page and then to the **Plugins** tab. Install the `widget-plugin`.
+- If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the widget-plugin.
 
-- If you don't have your own version of the cockpit, navigate to *Administration application > Ecosystem > applications* and then click the **Add application** button. In the resulting dialog, select the option **Duplicate existing application**. Then select **Cockpit (Subscribed)** from the available list of applications. You will be able to edit fields such as **name**, **application key**, and **path**. Use the default values and proceed. Install **widget-plugin** in the cloned application.
+- If you don't have your own version of the Cockpit application, navigate to **Administration application > Ecosystem > Applications** and then click **Add application**. In the resulting dialog, select the option **Duplicate existing application**. Then select **Cockpit (Subscribed)** from the available list of applications. You will be able to edit fields such as **Name**, **Application key**, and **Path**. Use the default values and proceed. Install **widget-plugin** in the cloned application.
 
-Your custom widget is now available in your version of the cockpit.
+Your custom widget is now available in your version of the Cockpit application.
 Navigate to your dashboard where the newly added widget will be available in the list of widgets to add.
 
-The **widget-plugin** was installed from within the administration application. This is the main difference between the regular and the new approach when it comes to widgets.
-Module Federation allows us to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+The widget-plugin was installed from within the Administration application. This is the main difference between the regular and the new approach when it comes to widgets.
+Module Federation allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).

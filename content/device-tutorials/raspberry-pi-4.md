@@ -94,7 +94,7 @@ sudo su -
 
 To do the edit, you can start the "vi" editor in the superuser console and make the changes there. The vi editor is available with the Raspbian delivery.
 
-If you prefer to use another editor, you may have to install it first. After the editor is installed, ensure that you start it from a console with superuser privileges.
+If you prefer to use another editor, you must install it first. After the editor is installed, ensure that you start it from a console with superuser privileges.
 
 When you have updated *cumulocity.properties*, restart the agent using:
 

@@ -13,7 +13,7 @@ You access {{< product-c8y-iot >}} DataHub via a web browser. It has been tested
 
 ### How to log into DataHub
 
-After the {{< product-c8y-iot >}} DataHub services have been subscribed for your tenant, you have to log into your tenant. In the **application switcher** you will find the DataHub button. When you click this button, you will be taken to the home page of DataHub. DataHub provides the management and monitoring UI of {{< product-c8y-iot >}} DataHub. Alternatively your tenant administrator can give you the URL directly navigating to DataHub, which requires a login as well.
+After the {{< product-c8y-iot >}} DataHub services have been subscribed for your tenant, you must log into your tenant. In the **application switcher** you will find the DataHub button. When you click this button, you will be taken to the home page of DataHub. DataHub provides the management and monitoring UI of {{< product-c8y-iot >}} DataHub. Alternatively your tenant administrator can give you the URL directly navigating to DataHub, which requires a login as well.
 
 <img src="/images/datahub-guide/datahub-app-switcher.png" alt="DataHub in application switcher"  style="max-width: 100%">
 

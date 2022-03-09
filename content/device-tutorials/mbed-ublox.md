@@ -142,7 +142,7 @@ Subject to the sensitivity threshold, you may not see frequent sending of sensor
 
 #### Performing a factory reset
 
-When a u-blox device is already registered under a certain tenant, a factory reset has to be performed to remove the stored credentials so that the device can be re-registered again. The factory reset is performed as follows:
+When a u-blox device is already registered under a certain tenant, a factory reset must be performed to remove the stored credentials so that the device can be re-registered again. The factory reset is performed as follows:
 
 * Press and hold the joystick when (re)starting an already registered device.
 * Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined to the network, you should see "Reset Success" shown on the LCD display, which indicates a successful factory reset. Starting from version 2.1, a factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger. After about 2 seconds, you should see "Reset Success" on the display.
@@ -216,7 +216,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
 
-* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-c8y-iot >}} under another user account, a factory reset has to be performed to unregister the device.
+* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-c8y-iot >}} under another user account, a factory reset must be performed to unregister the device.
 
 * **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 

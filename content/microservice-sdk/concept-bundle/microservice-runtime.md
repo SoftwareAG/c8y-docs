@@ -173,7 +173,7 @@ SOCKS_HTTP_HOST=10.11.12.13
 
 ### Platform access and other microservices
 
-To execute requests against the {{< product-c8y-iot >}} platform running a microservice, you have to send requests to the host specified by the `C8Y_BASEURL` variable.
+To execute requests against the {{< product-c8y-iot >}} platform running a microservice, you must send requests to the host specified by the `C8Y_BASEURL` variable.
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 

@@ -16,7 +16,7 @@ Different standard interfaces exist for that purpose, namely JDBC, ODBC, and RES
 
 You need a separate Dremio account to run SQL queries. The Dremio account is required to authenticate your requests when running queries against the data lake using Dremio. Contact the administrator for the Dremio account settings.
 
-When you have established a connection, you can run SQL queries against your tables in the data lake (to which new data is appended whenever the offloading pipeline has successfully run). The source you refer to in the query is defined by your tenant id and the target table you have specified in the offloading configuration. The identifier to be used as the source in a SQL query is defined as follows for the different data lake providers:
+When you have established a connection, you can run SQL queries against your tables in the data lake (to which new data is appended whenever the offloading pipeline has successfully run). The source you refer to in the query is defined by your tenant ID and the target table you have specified in the offloading configuration. The identifier to be used as the source in a SQL query is defined as follows for the different data lake providers:
 
 * **Azure Storage:** YourTenantIdDataLake.`FileSystem`.YourAccountName.TargetTable with `FileSystem` denoting the file system within your Azure Storage account
 * **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTable with `Bucket` denoting the bucket within your Amazon S3 account
@@ -33,11 +33,11 @@ You can easily look up the paths to the tables in Dremio's UI. Click on your dat
 
 ### Using the Dremio UI
 
-You can use the Dremio UI to interactively run queries against the data lake. See below section [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
+You can use the Dremio UI to interactively run queries against the data lake. See the section [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
 
 ### Connecting via JDBC
 
-If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You have to download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from {{< product-c8y-iot >}} DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client, use as username and password the credentials from your Dremio account.
+If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You must download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from {{< product-c8y-iot >}} DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client, use as username and password the credentials from your Dremio account.
 
 For additional JDBC settings of Dremio see also the associated [Dremio documentation](https://docs.dremio.com/drivers/dremio-jdbc-driver.html).
 
@@ -47,7 +47,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 ### Connecting via Dremio REST API
 
-Dremio offers a [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
+Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
 
 Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 

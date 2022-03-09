@@ -76,7 +76,7 @@ POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200
 ```
 
-You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your file system: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
 
 After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 

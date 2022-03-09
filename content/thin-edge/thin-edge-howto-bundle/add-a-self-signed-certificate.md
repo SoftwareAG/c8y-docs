@@ -23,7 +23,7 @@ Below are instructions on how to add a new CA certificate and update the certifi
 
 To add a self-signed certificate to the trusted certificate repository on the thin-edge.io system:
 
-Create a `/usr/local/share/ca-certificates/` directory if it does not exist on your computer:
+Create a `/usr/local/share/ca-certificates/` directory if it does not exist on your file system:
 
 ```shell
 sudo mkdir /usr/local/share/ca-certificates/

@@ -28,8 +28,8 @@ For your convenience, here is an overview of the contents:
 {{< product-c8y-iot >}} DataHub Edge consists of the following building blocks:
 
 * The {{< product-c8y-iot >}} DataHub UI is deployed as a web application in the {{< product-c8y-iot >}} core. It provides the frontend for defining and managing offloading pipelines.
-* The {{< product-c8y-iot >}} DataHub backend manages offloading pipelines and their scheduled execution. The backend and its associated database run within one Docker container in the Docker daemon. Its internal state, e.g. the defined offloading configurations, is persisted on the central data disk.
-* The query processing is based on a Dremio master and a Dremio executor as well as on a ZooKeeper instance. Dremio master and ZooKeeper run in one Docker container and the Dremio executor runs in another one. Both containers are run by the Docker daemon. The internal state of the containers, e.g. the query job history, is persisted on the central data disk. In the above figure just Dremio is shown for reasons of simplicity.
+* The {{< product-c8y-iot >}} DataHub backend manages offloading pipelines and their scheduled execution. The backend and its associated database run within one Docker container in the Docker daemon. Its internal state, for example, the defined offloading configurations, is persisted on the central data disk.
+* The query processing is based on a Dremio master and a Dremio executor as well as on a ZooKeeper instance. Dremio master and ZooKeeper run in one Docker container and the Dremio executor runs in another one. Both containers are run by the Docker daemon. The internal state of the containers, for example, the query job history, is persisted on the central data disk. In the above figure just Dremio is shown for reasons of simplicity.
 * The data lake is located on the central data disk.
 
 #### {{< product-c8y-iot >}} DataHub Edge versus {{< product-c8y-iot >}} DataHub cloud deployments

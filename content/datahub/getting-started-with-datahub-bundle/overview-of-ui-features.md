@@ -13,10 +13,10 @@ layout: redirect
 | Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DATAHUB_ADMINISTRATOR | -
 | Offloading | Configure and manage your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -
 | Microsoft Power BI | View Microsoft Power BI reports | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Connection to Microsoft Power BI has been set up
-| Auditing / Query log | View the query log | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics has to be enabled
+| Auditing / Query log | View the query log | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics must be enabled
 | Auditing / System log | View the system log | DATAHUB_ADMINISTRATOR | -
 | Status | View the latest job status of your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -
-| Administration / Usage statistics | View usage statistics | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics has to be enabled
+| Administration / Usage statistics | View usage statistics | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics must be enabled
 | Administration / System status | Check system status | DATAHUB_ADMINISTRATOR | -
 
 <img src="/images/datahub-guide/datahub-home-page.png" alt="{{< product-c8y-iot >}} DataHub homepage"  style="max-width: 100%">

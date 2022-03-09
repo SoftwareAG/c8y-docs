@@ -55,13 +55,13 @@ Dremio is running if *OK* is returned. No response will be returned if it is not
 
 The installation log file is stored at */var/log/cdh*.
 
-In order to access the logs of the {{< product-c8y-iot >}} DataHub and Dremio containers, you have to use the Docker *logs* command. To follow the logs of cdh-master you have to run:
+In order to access the logs of the {{< product-c8y-iot >}} DataHub and Dremio containers, you must use the Docker *logs* command. To follow the logs of cdh-master you must run:
 
 ```shell
 docker logs -f cdh-master
 ```
 
- To follow the logs of cdh-executor you have to run:
+ To follow the logs of cdh-executor you must run:
 
 ```shell
 docker logs -f cdh-executor
@@ -79,9 +79,9 @@ The data disk is used for storing the state of {{< product-c8y-iot >}} DataHub a
 
 #### Cleanup of Dremio job history
 
-Dremio maintains a history of job details and profiles, which can be inspected in Dremio's job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
+Dremio maintains a history of job details and profiles, which can be inspected in Dremio's job log, that is, the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
-Dremio is configured to perform the cleanup of job results automatically without downtime. The default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator has to modify the support key *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio. See the corresponding [Dremio documentation](https://docs.dremio.com/advanced-administration/support-settings/) for more details on support keys.
+Dremio is configured to perform the cleanup of job results automatically without downtime. The default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator must modify the support key *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio. See the corresponding [Dremio documentation](https://docs.dremio.com/advanced-administration/support-settings/) for more details on support keys.
 
 #### Cleanup of data lake contents
 

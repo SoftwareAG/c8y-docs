@@ -20,13 +20,13 @@ A report is typically published so that it is available to other users as well. 
 
 #### Configuring access to Microsoft Power BI reports
 
-To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither have to sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
+To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
 
 The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers).
 
 As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory, follow the instructions in the Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
 
-Next you have to register an Azure Active Directory application, which serves as service principal. You have to configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Microsoft Power BI website](https://app.powerbi.com/embedsetup):
+Next you must register an Azure Active Directory application, which serves as service principal. You must configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Microsoft Power BI website](https://app.powerbi.com/embedsetup):
 
 1. Select **Embed for your customers**.
 2. Sign in to Microsoft Power BI.

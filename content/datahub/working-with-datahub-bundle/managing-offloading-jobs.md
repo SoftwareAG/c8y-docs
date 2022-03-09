@@ -90,4 +90,4 @@ To change the import file, click the delete icon next to the file name and selec
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 
-As the export does not include whether a configuration was active, you have to manually activate the configurations after an import.
+As the export does not include whether a configuration was active, you must manually activate the configurations after an import.

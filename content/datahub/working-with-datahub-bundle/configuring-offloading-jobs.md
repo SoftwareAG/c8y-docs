@@ -15,7 +15,7 @@ To define an offloading configuration, click **Offload collection** to start a w
 * [Set additional result columns](#set-addtl-cols)
 * [Set filter predicate](#set-filter-predicate)
 * [Configure task](#configure-task)
-* [Configure additional settings and finish configuration](#finish)
+* [Configure additional settings and complete configuration](#finish)
 
 The wizard prepopulates settings for the different steps to ease the configuration process. You can modify those settings according to your needs.
 
@@ -53,13 +53,13 @@ For **alarms**, **events**, **inventory** collection, you only need to specify t
 
 For the **measurements** collection, additional settings are required. The **target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types, for example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
-The layout **One table for one measurement type (Default)** creates a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you have to additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click the popover next to the measurement types and select **Refresh** to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
+The layout **One table for one measurement type (Default)** creates a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click the popover next to the measurement types and select **Refresh** to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
 The layout **All measurement types in one table (TrendMiner)** creates a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed later in the section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections). This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and {{< product-c8y-iot >}} DataHub, see [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-sag-products/#integration-trendminer).
 
 For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 
-Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you have to ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
+Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you must ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
 <a name="set-addtl-cols"></a>
 ##### Set additional result columns
@@ -78,7 +78,7 @@ Each additional result column, whether it is manually configured or auto-detecte
 - **Column name**: The column name is the name the column will have in the target table. The column name must be unique.
 - **Auto-detected**: This property denotes whether the column has been auto-detected or manually added by the user.
 - **Source definition**: The source definition is the actual SQL expression, which defines what the data in this column looks like.
-- **Column type**: The column type defines which kind of data the column contains, e.g. DOUBLE for double values or VARCHAR for strings.
+- **Column type**: The column type defines which kind of data the column contains, for example, DOUBLE for double values or VARCHAR for strings.
 
 When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. At the top right the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, a collapse button and a context menu is available. With the collapse button you can expand/collapse more details of the column. In the details section you can explore the source definition as well as sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field.
 
@@ -98,13 +98,13 @@ If you want to derive additional result columns from nested content, you can spe
 
 <img src="/images/datahub-guide/datahub-add-addtl-col.png" alt="Add additional result column" style="max-width: 40%">
 
-Click **Apply** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You have to fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
+Click **Apply** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You must fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
 
 **Edit an additional result column**
 
 In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Apply** to update the column with the new settings. The new column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
 
-Note that for auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you have to duplicate the auto-detected column.
+Note that for auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you must duplicate the auto-detected column.
 
 **Duplicate an additional result column**
 
@@ -143,7 +143,7 @@ Optionally you can define an additional filter predicate. Per default, all entri
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
-> **Info:** For querying the attribute "id", you have to use "&#95;id". For querying the time attributes, see also [Working with {{< product-c8y-iot >}} DataHub > {{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets of widely-used temporal filter predicates.
+> **Info:** For querying the attribute "id", you must use "&#95;id". For querying the time attributes, see also [Working with {{< product-c8y-iot >}} DataHub > {{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets of widely-used temporal filter predicates.
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You must fix these errors before you can proceed.
 
@@ -152,7 +152,7 @@ Click **Next** to proceed with the next configuration step. Click **Previous** t
 <a name="configure-task"></a>
 ##### Configure task
 
-The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It has to have at minimum one non-whitespace character. Even though the task name does not have to be unique, it is advisable to use a unique name.
+The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It must have at minimum one non-whitespace character. Even though the task name does not have to be unique, it is advisable to use a unique name.
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but we recommend you to use it, as it provides additional information about the pipeline and its purpose.
 

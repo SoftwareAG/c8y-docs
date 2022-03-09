@@ -13,7 +13,7 @@ If you do not have corresponding {{< product-c8y-iot >}} DataHub permissions, yo
 ### {{< product-c8y-iot >}} DataHub roles and permissions
 
 #### {{< product-c8y-iot >}} DataHub administrator
-The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like inspecting audit logs or monitoring the system status. The administrator can also manage offloading pipelines, e.g., defining and starting a pipeline.
+The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like inspecting audit logs or monitoring the system status. The administrator can also manage offloading pipelines, for example, defining and starting a pipeline.
 
 For those tasks the default role DATAHUB_ADMINISTRATOR is created. The permissions for this role are defined as follows:
 
@@ -26,7 +26,7 @@ For those tasks the default role DATAHUB_ADMINISTRATOR is created. The permissio
 While READ refers to reading the specific data, ADMIN refers to creating, updating, or deleting the specified data.
 
 #### {{< product-c8y-iot >}} DataHub manager
-The manager manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role DATAHUB_MANAGER is created. The permissions for this role are defined as follows:
+The manager manages offloading pipelines such as defining and starting a pipeline. For those tasks the default role DATAHUB_MANAGER is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
@@ -50,6 +50,6 @@ The permissions for the role DATAHUB_READER are defined as follows:
 |Datahub query|yes|no|
 
 ### Assignment of {{< product-c8y-iot >}} DataHub roles and permissions
-The roles DATAHUB_ADMINISTRATOR, DATAHUB_MANAGER, and DATAHUB_READER have to be assigned to the respective users of your tenant. For assigning roles to users see section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the DATAHUB_ADMINISTRATOR role to complete the {{< product-c8y-iot >}} DataHub configuration.
+The roles DATAHUB_ADMINISTRATOR, DATAHUB_MANAGER, and DATAHUB_READER must be assigned to the respective users of your tenant. For assigning roles to users see section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the DATAHUB_ADMINISTRATOR role to complete the {{< product-c8y-iot >}} DataHub configuration.
 
-> **Info:** You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also have to add the DataHub application to the user's applications.
+> **Info:** You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub application to the user's applications.

@@ -29,7 +29,7 @@ SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
 You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
-> **Info:** The offloading pipeline has to be executed at least once with corresponding data being offloaded before you can run a query.
+> **Info:** The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
 
 ### Using the Dremio UI
 
@@ -43,7 +43,7 @@ For additional JDBC settings of Dremio see also the associated [Dremio documenta
 
 ### Connecting via ODBC
 
-If you want to use an ODBC client to run SQL queries against the data lake, you have to configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
+If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
 
 ### Connecting via Dremio REST API
 

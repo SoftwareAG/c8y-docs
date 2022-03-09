@@ -13,7 +13,7 @@ With the offloading and query capabilities of {{< product-c8y-iot >}} DataHub, T
 * TrendMiner can leverage historical data of the {{< product-c8y-iot >}} platform without adversely affecting the Operational Store of the platform. {{< product-c8y-iot >}} DataHub offloads for that purpose the data from the Operational Store to a data lake.
 * TrendMiner offers a time-series visualization interface and operational monitoring, both relying on live data from the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} DataHub provides for that purpose a live view on recent data in the Operational Store of the platform.
 * {{< product-c8y-iot >}} DataHub unifies the data access layer so that TrendMiner can access historical as well as live data by querying a single view.
-* {{< product-c8y-iot >}} DataHub ensures that the layout of that table meets the query needs of TrendMiner, i.e., the data is in a relational and flattened format, not in a document-based format as in the Operational Store.
+* {{< product-c8y-iot >}} DataHub ensures that the layout of that table meets the query needs of TrendMiner, that is, the data is in a relational and flattened format, not in a document-based format as in the Operational Store.
 
 The following diagram illustrates the high-level concepts of the integration between {{< product-c8y-iot >}} DataHub and TrendMiner.
 
@@ -27,13 +27,13 @@ In Dremio a new view is provided, which combines the historical data in the data
 
 > **Info:** So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
 
-You have to follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
+You must follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
 ### Accessing Cumulocity IoT data in TrendMiner
 
-Once you have defined and activated a TrendMiner offloading pipeline, the initial offload has to be completed before you can start querying the data in TrendMiner.
+Once you have defined and activated a TrendMiner offloading pipeline, the initial offload must be completed before you can start querying the data in TrendMiner.
 
-> **Info:** The offloading pipeline has to be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
+> **Info:** The offloading pipeline must be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
 
 {{< product-c8y-iot >}} DataHub provides the following views within Dremio, based on tables having the same name and the same schema:
 
@@ -43,6 +43,6 @@ Once you have defined and activated a TrendMiner offloading pipeline, the initia
 
 For details on the schema of these views/tables, see section [Offloading Cumulocity IoT base collections](/datahub/working-with-datahub/#offloading-base-collections).
 
-In TrendMiner you have to connect to these Dremio views using ODBC. For the ODBC connection settings, you have to navigate to the **Home** page in the {{< product-c8y-iot >}} DataHub UI and click the ODBC icon to open the ODBC connection settings.
+In TrendMiner you must connect to these Dremio views using ODBC. For the ODBC connection settings, you must navigate to the **Home** page in the {{< product-c8y-iot >}} DataHub UI and click the ODBC icon to open the ODBC connection settings.
 
 For more details on the steps required in TrendMiner, see also the corresponding TrendMiner documentation of the [Generic ODBC Connector Configuration](https://support.trendminer.com/hc/en-us/articles/360039446851-Generic-Connector-Configuration).

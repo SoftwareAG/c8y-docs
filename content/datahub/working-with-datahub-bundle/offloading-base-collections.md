@@ -113,7 +113,7 @@ Both views are provided in your Dremio space. For details on views and spaces in
 
 #### Offloading the measurements collection
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you have to explicitly select a target table layout, which is either having one table for one type or for the TrendMiner case one table with measurements of all types.
+The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or for the TrendMiner case one table with measurements of all types.
 
 ##### Offloading measurements with the default target table layout
 

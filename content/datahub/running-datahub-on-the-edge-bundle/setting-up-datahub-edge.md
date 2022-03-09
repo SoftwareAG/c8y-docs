@@ -6,7 +6,7 @@ layout: redirect
 
 ### Prerequisites
 
-Before setting up {{< product-c8y-iot >}} DataHub Edge, you have to check the following prerequisites:
+Before setting up {{< product-c8y-iot >}} DataHub Edge, you must check the following prerequisites:
 
 | Item | Details |
 | -----   | -----   |
@@ -68,7 +68,7 @@ The containers are configured to store their application state on the data disk 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
 
 ### Upgrading {{< product-c8y-iot >}} DataHub Edge
-An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you have to copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you have to log in as admin. Then you have to run the install script using the new version.
+An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you must copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you must log in as admin. Then you must run the install script using the new version.
 
 ```shell
 sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<NEW version>.tar
@@ -78,7 +78,7 @@ During script execution, the already installed version is detected and the scrip
 
 ### Adapting to network changes of Cumulocity IoT Edge
 
-There might be cases where you have to change the network setup of your Edge installation, for example by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
+There might be cases where you must change the network setup of your Edge installation, for example by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
 
 ### Accessing {{< product-c8y-iot >}} DataHub Edge
 
@@ -119,7 +119,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 </tbody>
 </table>
 
-> **Info:** For JDBC/ODBC you have to configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
+> **Info:** For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
 ### Defining {{< product-c8y-iot >}} DataHub permissions and roles
 

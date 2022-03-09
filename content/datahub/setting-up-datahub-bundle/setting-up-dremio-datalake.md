@@ -83,7 +83,7 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings
-Editing the settings is not supported. You must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file, delete the settings, define new settings, and import the configurations from the backup file. See section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
+Editing the settings is not supported. You must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
 
 ### Deleting settings
 Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned under "Editing settings" above, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted. To delete the data lake and its contents you must use the tooling of your data lake provider.

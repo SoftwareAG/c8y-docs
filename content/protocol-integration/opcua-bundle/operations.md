@@ -719,8 +719,6 @@ This returns a JSON response like this:
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
 
-For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
-
 For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
 
 

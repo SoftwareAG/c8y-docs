@@ -4,7 +4,7 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-To register a LWM2M device in {{< product-c8y-iot >}}, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application
+To register a LWM2M device in {{< product-c8y-iot >}}, upload a CSV file with registration data in the bulk registration dialog in **Devices** > **Registration** > **Register device** > **Bulk device registration** in the Device Management application
 see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
 This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
 {{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
@@ -282,7 +282,7 @@ Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "p
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
 
 
-> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the *User guide*.
+> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

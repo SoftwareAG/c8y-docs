@@ -13,8 +13,8 @@ layout: redirect
 | [Managing offloading jobs](/datahub/working-with-datahub/#managing-offloading-jobs) | Schedule and manage offloading pipelines |
 | [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) | Monitor the results of offloading jobs |
 | [Monitoring compaction jobs](/datahub/working-with-datahub/#monitoring-compaction-jobs) | Monitor the results of compaction jobs |
-| [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) | Query offloaded Cumulocity IoT data in follow-up applications |
-| [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) | Use Dremio to refine offloaded Cumulocity IoT data |
+| [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) | Query offloaded {{< product-c8y-iot >}} data in follow-up applications |
+| [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) | Use Dremio to refine offloaded {{< product-c8y-iot >}} data |
 | [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) | Learn more about best practices when working with {{< product-c8y-iot >}} DataHub |
 
 ### Basic functionality
@@ -34,6 +34,6 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.
 
-In the action bar you have a search control to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter controls to show/hide corresponding configurations. The action bar comprises also controls for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations.
+In the action bar you have a search field to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter to show/hide corresponding configurations. The action bar also provides buttons for adding a collection for offloading, reloading the list of configurations and their status, and importing/exporting configurations.
 
-Below the action bar you will find the current list of configurations. Each configuration provides the task name, the schedule with which this pipeline will be executed once it is started, and the target table name. In addition to that you will find for active pipelines the time and status of their last execution and the planned next execution. When expanding a configuration, the additional columns and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once. In the context menu of the configuration you find controls for managing the offloading process.
+Below the action bar you find the current list of configurations. Each configuration provides the task name, the schedule with which this pipeline will be executed once it is started, and the target table name. In addition to that you find for active pipelines the time and status of their last execution and the planned next execution. When expanding a configuration, the additional columns and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once. In the context menu of the configuration you find controls for managing the offloading process.

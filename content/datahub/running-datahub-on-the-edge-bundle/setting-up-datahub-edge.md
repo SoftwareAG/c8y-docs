@@ -121,9 +121,9 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 
 > **Info:** For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see the section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
-### Defining {{< product-c8y-iot >}} DataHub permissions and roles
+### Defining Cumulocity IoT DataHub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Setting up Cumulocity IoT DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 

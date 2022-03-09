@@ -7,9 +7,9 @@ aliases:
   - /predictive-analytics/web-app/#home-screen
 ---
 
-In {{< product-c8y-iot >}}, you access Machine Learning application through the app switcher.
+In {{< product-c8y-iot >}}, you access the Machine Learning application through the app switcher.
 
-Clicking **Machine Learning** in the app switcher will open Machine Learning application showing the  **Home screen** of the application.
+Clicking **Machine Learning** in the app switcher will open the Machine Learning application showing the  **Home screen** of the application.
 
 ![Home screen](/images/zementis/zementis-home-screen.png)
 

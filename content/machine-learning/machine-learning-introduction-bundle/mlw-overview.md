@@ -51,4 +51,4 @@ These predefined and preconfigured Machine Learning specific roles show up under
 
 To be able to leverage Machine Learning Workbench, users can have one of the above mentioned global roles assigned. Alternately, users can also update their existing global roles to include the permissions related to Machine Learning Workbench or add new roles, which should then include the necessary permissions. See [Managing permissions](/users-guide/administration/#managing-permissions) for details on the management of global roles.
 
-If users do not have the permissions mentioned above, they will get an *Access denied.* error while trying to access Machine Learning Workbench application. Consumers of the REST APIs will see a `403 - Forbidden` too.
+If users do not have the permissions mentioned above, they will get an *Access denied.* error while trying to access the Machine Learning Workbench application. Consumers of the REST APIs will see a `403 - Forbidden` too.

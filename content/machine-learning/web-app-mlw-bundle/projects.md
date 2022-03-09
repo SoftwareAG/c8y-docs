@@ -14,7 +14,7 @@ Projects functionality includes:
 * [Switching between project versions](#switch-project-version)
 * [Download a project as a compressed file](#download-a-project)
 * [Upload a project](#upload-a-project)
-* [Delete a project](#delete-a-project)
+* [Deleting a project](#delete-a-project)
 
 ### Creating a new project
 
@@ -41,7 +41,7 @@ To upload files, click the cloud upload icon <img src="/images/zementis/mlw-uplo
 
 Once the files are uploaded, they will be placed under the respective categories.
 
-### Commiting a project version
+### Committing a project version
 
 To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> at the top right and click **Commit Project**.
 
@@ -88,7 +88,7 @@ Click **Tasks** in the navigator and click the respective task name, which in th
 
 Once the task has reached COMPLETED status, the new project card is successfully created. You can view the contents of the project by clicking the respective project card.
 
-### Delete a project
+### Deleting a project
 
 To delete a project, click the context menu icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click **Delete**.
 

@@ -10,7 +10,7 @@ Projects functionality includes:
 
 * [Creating a new project](#creating-a-new-project)
 * [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
-* [Committing a project - version management](#committing-a-project-version)
+* [Committing a project - version management](#commiting-a-project-version)
 * [Switching between project versions](#switching-project-version)
 * [Downloading a project as a compressed file](#downloading-a-project)
 * [Uploading a project](#uploading-a-project)

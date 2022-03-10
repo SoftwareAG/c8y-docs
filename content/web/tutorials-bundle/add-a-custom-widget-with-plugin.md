@@ -20,13 +20,13 @@ Use the command shown below to start a multi-step process of creating a sample p
 c8ycli new
 ```
 
-Select the plugin name (for example, "widget-plugin"):
+Select the plugin name, for example "widget-plugin":
 
 ```js
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-Select the version for which you want to create a sample application (for example, "1013.72.0 (next)"):
+Select the version for which you want to create a sample application, for example "1013.72.0 (next)":
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -169,7 +169,7 @@ Follow the console prompt to deploy the application to your tenant.
 
 ### 4. Adding a deployed widget to the shell application
 
-In the current version the views and logic related to Module Federation are hidden behind the beta flag.
+In version 1013.84.0 the views and logic related to Module Federation are hidden behind the beta flag.
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
 - Enable the beta flag in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`. You should now be able to access the **Packages** tab in *Administration application > Ecosystem > applications > Packages*, where you can see the details of your plugin.

@@ -147,12 +147,6 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
 
-<a name="availability"></a>
-### Availability
-
-The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](#monitoring-availability) for more information.
-
-
 <a name="child-devices"></a>
 ### Child devices
 

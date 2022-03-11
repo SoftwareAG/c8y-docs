@@ -790,10 +790,10 @@ Full payload data structure explained:
 
 <table>
 <colgroup>
-<col style="width: 20%;">
+<col style="width: 25%;">
 <col style="width: 20%;">
 <col style="width: 10%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
 </colgroup>
 <thead>
 <tr>

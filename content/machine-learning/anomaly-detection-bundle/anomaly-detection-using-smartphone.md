@@ -23,7 +23,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 #### Data collection with Machine Learning Workbench (MLW)
 
-1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *AnomalyDetectionDemoProject.zip* project to MLW. This creates a new project named **AnomalyDetectionDemoProject_uuid**, which has a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *AnomalyDetectionDemoProject.zip* project to MLW. This creates a new project named **AnomalyDetectionDemoProject_{UUID}**, where `UUID` is a system generated unique identifier. This project has a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
 
 2. You can either download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
 

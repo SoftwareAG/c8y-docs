@@ -70,7 +70,7 @@ Click **Tasks** in the navigator and click the respective task name, which in th
 <a name="downloading-a-project"></a>
 ### Downloading a project
 
-To download a project of a particular version, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click **Download**.
+To download a specific version of a project, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click **Download**.
 
 ![Project download](/images/zementis/mlw-app-project-download.png)
 

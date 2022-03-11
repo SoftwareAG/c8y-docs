@@ -20,7 +20,7 @@ Operations for matrix profile.
 Get the matrix profile of a specific historical time series data.
 
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|

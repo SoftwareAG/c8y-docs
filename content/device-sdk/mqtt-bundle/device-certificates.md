@@ -332,7 +332,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. You must Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
+1. Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
 2. Drop your caCert.pem (or intermediateCert.pem).
 3. Check the auto-registration field.
 4. Click on the certificate status to set it to **Enabled**.

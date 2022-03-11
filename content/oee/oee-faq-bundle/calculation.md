@@ -60,7 +60,7 @@ If the calculation is attempted on the basis of the input parameters (for exampl
 
 **Initial situation:**
 
-Machine 1 is processing workpieces, this processing step only takes a short time. The workpieces finished by machine 1 must go through a second, time-consuming machining step. This second machining step is carried out by 2 machines (machines 2 & 3). The workpiece is always fed to the machine with the lowest capacity.
+Machine 1 is processing workpieces, this processing step only takes a short time. The workpieces completed by machine 1 must go through a second, time-consuming machining step. This second machining step is carried out by 2 machines (machines 2 & 3). The workpiece is always fed to the machine with the lowest capacity.
 
 **Problem:**
 

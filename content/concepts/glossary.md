@@ -11,7 +11,7 @@ This glossary lists a variety of technical terms and concepts used in the {{< pr
 The Administration application is one of the default applications of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications. It also allows them to configure various settings for their accounts.
 
-For details see [Administration](/users-guide/administration/#overview) in the *User guide*.
+For details see [Administration](/users-guide/administration) in the *User guide*.
 
 <a name="agent"></a>
 ### Agent
@@ -97,7 +97,7 @@ Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](#
 ### Cumulocity IoT Sensor App
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
-For details see [{{< sensor-app >}}](/users-guide/sensor-app/#overview) in the *User guide*.
+For details see [{{< sensor-app >}}](/users-guide/sensor-app) in the *User guide*.
 
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
@@ -140,7 +140,7 @@ Devices are a special type of [asset](#asset). They can constitute a hierarchy o
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For details see [Device Management](/users-guide/device-management/#overview) in the *User guide*.
+For details see [Device Management](/users-guide/device-management) in the *User guide*.
 
 <a name="digital-twin"></a>
 ### Digital twin
@@ -191,7 +191,7 @@ Role type in {{< product-c8y-iot >}}'s' permission concept. Global roles contain
 
 See also [Inventory roles](#inventory-roles) and [Permissions](#permissions).
 
-For details see [Security aspects > Access control](/concepts/security/#access-control) and [Administration > Managing permissions > Global rules](/users-guide/administration/#managing-permissions) in the *User guide*.
+For details see [Security aspects > Access control](/concepts/security/#access-control) and [Administration > Managing permissions > Global roles](/users-guide/administration/#global-roles) in the *User guide*.
 
 <a name="inventory"></a>
 ### Inventory
@@ -204,7 +204,7 @@ Role type in {{< product-c8y-iot >}}'s' permission concept.  Inventory roles con
 
 See also [Global roles](#global-roles) and [Permissions](#permissions).
 
-For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#managing-permissions/#inventory) in the *User guide*.
+For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#inventory) in the *User guide*.
 
 ### LWM2M
 
@@ -292,7 +292,8 @@ OPC Unified Architecture (OPC UA) is a standard to enable the communication betw
 
 One component of the OPC UA integration in {{< product-c8y-iot >}} is the OPC UA device gateway. The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the {{< product-c8y-iot >}} platform. It stores data into the {{< product-c8y-iot >}} database via REST. The gateway must be registered as {{< product-c8y-iot >}} device.
 
-For details see [OPCUA](/protocol-integration/opcua) in the *Protocol integration guide*.
+
+For details see [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*.
 
 <a name="operations"></a>
 ### Operations
@@ -375,7 +376,7 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 
 These three levels differ in their scope, particularly with regards to administration.
 
-See also [Tenant hierarchy](/concepts/tenant-hierarchy/#tenant-overview), [{{< standard-tenant >}}](#standard-tenant), [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
+See also [Tenant hierarchy](/concepts/tenant-hierarchy), [{{< standard-tenant >}}](#standard-tenant), [{{< enterprise-tenant >}}](#ent-tenant) and [{{< management-tenant >}}](#mgm-tenant).
 
 <a name="tenant-id"></a>
 ### Tenant ID

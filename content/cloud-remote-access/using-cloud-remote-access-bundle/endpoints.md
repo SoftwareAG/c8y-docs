@@ -84,7 +84,7 @@ To delete an endpoint, click the menu icon at the right of the respective entry 
 <a name="connecting-to-endpoints"></a>
 #### To connect to an endpoint
 
-To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**.
+To connect to configured endpoints, select an endpoint in the **Remote access** tab and click **Connect**.
 
 ![Connect Endpoint](/images/cra/cra-endpoint-connect.png)
 

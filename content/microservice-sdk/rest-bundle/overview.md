@@ -79,7 +79,7 @@ Now, click the **Collections** tab on the top left of Postman. You should see a 
 
 Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
-* Click on the cogwheel on the top right and choose **Manage Environments**, then click **Add**.
+* Click on the cogwheel on the top right and select **Manage Environments**, then click **Add**.
 * Enter a name for the environment (for example your tenant ID), then add values for the placeholders.
 * Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.{{< domain-c8y >}}_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.

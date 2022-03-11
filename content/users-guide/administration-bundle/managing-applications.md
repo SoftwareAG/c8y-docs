@@ -129,7 +129,7 @@ Click **Add application** at the top right of the **All applications** tab.
 
 <img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
-In the resulting dialog box, choose one of the following methods:
+In the resulting dialog box, select one of the following methods:
 
 * [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer.
 * [External application](#external-application) - by linking to an application running elsewhere

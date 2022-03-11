@@ -205,7 +205,7 @@ Application management is only available on tenant level. If you want to give cu
 
 **Comparison:**
 
-Choosing the RBAC approach limits you in the options for your business model as it will be impossible to get accurate usage data for the customers. A license based business model (for example per device) is far more feasible in the RBAC setup. Dealing with a multi-tenant setup gives you the option to choose typical Cloud-based business models where you charge per API call and storage.
+Choosing the RBAC approach limits you in the options for your business model as it will be impossible to get accurate usage data for the customers. A license based business model (for example per device) is far more feasible in the RBAC setup. Dealing with a multi-tenant setup gives you the option to select typical Cloud-based business models where you charge per API call and storage.
 
 <a name="analytics"></a>
 #### Analytics

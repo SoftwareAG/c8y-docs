@@ -8,10 +8,10 @@ To get started with the OEE application, you have to create a profile to start t
 
 * **Profile**: Enter a Profile name
 * **Machine**: Enter a Machine location
-* **Workpiece**: Choose a quantity. For this example the value is 1 pcs per minute.
+* **Workpiece**: Select a quantity. For this example the value is 1 pcs per minute.
 * **Resolution**: Enter an interval and a unit. For this example the interval is 10 minutes.
-* **Computation**:  Choose a calculation method. For this example it is PPQ.
-* **Matching**: Choose the desired calculation formula.
+* **Computation**:  Select a calculation method. For this example it is PPQ.
+* **Matching**: Select the desired calculation formula.
 	For this example the values could be the following:
 	* Actual Production Amount - Depending on your machine/simulator and the data it is sending, this could be something like counting events (for example "Piece_Produced")
 ![Example for Actual Production Amount](/images/oee/faq/faq-actual-production-amount.png)

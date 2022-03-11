@@ -36,7 +36,7 @@ Agents can be deployed in various ways, as illustrated in the picture below. We 
 
 ![Agent architectures](/images/concepts-guide/agentarchitectures.png)
 
-**Server-side agents** are run in a cloud, hosted on {{< product-c8y-iot >}} as microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
+**Server-side agents** are run in a cloud, hosted on {{< product-c8y-iot >}} as microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly selected when one or more of the following complies:
 
 * The device is "closed", that means, it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
 * The protocol on the device is secure and internet-enabled, that is, the device connects to the cloud and not vice-versa.

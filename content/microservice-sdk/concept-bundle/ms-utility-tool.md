@@ -57,7 +57,7 @@ $ brew install bash
 $ chsh -s /usr/local/bin/bash
 ```
 
-If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you will have to modify the first line of the microservice utility tool (script) as follows:
+If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you must modify the first line of the microservice utility tool (script) as follows:
 
 ```bash
 #!/usr/local/bin/bash
@@ -85,7 +85,7 @@ $ ./microservice help
 
 ### Packing
 
-A microservice has to be packed as a Docker image in order to be deployed.
+A microservice must be packed as a Docker image in order to be deployed.
 It requires a Docker _image.tar_ and _cumulocity.json_ files packed into a ZIP file.
 
 The following directory structure is required to pack a microservice:

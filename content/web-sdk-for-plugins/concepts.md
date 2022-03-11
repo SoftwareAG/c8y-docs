@@ -31,7 +31,7 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
+Whenever you create a new application or plugin, you must comply with the following folder structure. Otherwise the application or plugin will not work.
 
 The default folder structure of an application is as follows:
 

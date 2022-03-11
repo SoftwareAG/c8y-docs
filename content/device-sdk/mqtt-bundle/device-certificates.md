@@ -18,7 +18,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
-* Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
+* Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices need to trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
@@ -84,7 +84,7 @@ A private key can be used in two ways:
 Every certificate can be self-signed or can be signed by another certificate.
 To tell if the certificate is self-signed you can look at the "Issuer Name" and "Subject Name" fields of the certificate.
 If they are the same then it means that it is a self-signed certificate, otherwise the certificate claims to be signed by the issuer.
-To verify if the issuer really signed the certificate, you have to check the "Signature" field of the certificate.
+To verify if the issuer really signed the certificate, you must check the "Signature" field of the certificate.
 After decryption with the issuer's public key, the signature should match the data of the signed certificate.
 Signing a certificate by another, means that if the issuer's certificate is trusted then the signed certificate also can be trusted.
 
@@ -101,7 +101,7 @@ Providing the chain of certificates lets the platform verify the signatures of e
 The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted.
 However, there are a few things to keep in mind:
 
-* Every certificate which is used to sign another certificate has to contain the extension "CA:TRUE".
+* Every certificate which is used to sign another certificate must contain the extension "CA:TRUE".
 * The lengths of the chain of certificates can be restricted by the certificate extension "pathlen". This extension limits the amount of other CA certificates that can be placed in the chain between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like this: "A (CA:TRUE, pathlen: 2) -> B (CA:TRUE, pathlen: 1) -> C (CA:TRUE, pathlen: 0) -> D (device with CA:FALSE)"".
 
 The structure of an X.509 certificate in version 3 looks like this:
@@ -126,7 +126,7 @@ To show how the authentication with X.509 certificates works, there is an exampl
 
 A server knows that the client is the owner of the certificate it sent, after the server has decrypted the encrypted copy of the message using the client's public key.
 The client knows that the server is the owner of the certificate it sent, if the server uses the correct session key, because that means that the server decrypted it with its private key.
-In basic authentication with username and password, the password has to be sent over the network to authenticate the user.
+In basic authentication with username and password, the password must be sent over the network to authenticate the user.
 When certificates are used, the private key is never sent, which makes the use of the certificates much more secure than the basic authentication with username and password.
 
 There are 3 important terms related to X.509 certificates, which everyone should know who wants to start working with them:
@@ -189,7 +189,7 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
     default_md        = sha256 # hash function
     default_days      = 375 # default number of days for which the certificate will be valid since the date of its generation.
     preserve          = no # if set to 'no' then it will determine the same order of the distinguished name in every signed certificate.
-    policy            = signing_policy # the name of the tag in this file that specifies the fields of the certificate. The fields have to be filled in or even match the CA certificate values to be signed.
+    policy            = signing_policy # the name of the tag in this file that specifies the fields of the certificate. The fields must be filled in or even match the CA certificate values to be signed.
 
     # For certificate revocation lists.
     crl               = $crl_dir/caCrl.pem # CA certificate revocation list
@@ -220,7 +220,7 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
     [ v3_ca ]
     subjectKeyIdentifier = hash # subject key value will be calculated using hash funtion. It's the recommended setting by PKIX.
     authorityKeyIdentifier = keyid:always,issuer # The subject key identifier will be copied from the parent certificate. It's the recommended setting by PKIX.
-    basicConstraints = critical, CA:true, pathlen:10 # "critical" specifies that the extension is important and has to be read by the platform. CA says if it is the CA certificate so it can be used to sign different certificates. "pathlen" specifies the maximum path length between this certificate and the device certificate in the chain of certificates during authentication. Path length is set here only to show how it is done. If you do not want to specify max path length, you can keep only the "basicConstraints = critical, CA:true" part here.
+    basicConstraints = critical, CA:true, pathlen:10 # "critical" specifies that the extension is important and must be read by the platform. CA says if it is the CA certificate so it can be used to sign different certificates. "pathlen" specifies the maximum path length between this certificate and the device certificate in the chain of certificates during authentication. Path length is set here only to show how it is done. If you do not want to specify max path length, you can keep only the "basicConstraints = critical, CA:true" part here.
     keyUsage = digitalSignature, cRLSign, keyCertSign # specifies permitted key usages.
 
     # Default extensions for the device certificate. This tag is not used directly anywhere in this file, but will be used from the command line to create signed certificate with "-extensions v3_signed" parameter.
@@ -234,7 +234,7 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
     [ crl_ext ]
     authorityKeyIdentifier=keyid:always
 
-    # Policy of certificates signing. It specifies which certificate fields have to be filled in during certificate creation. There are three possible values here:
+    # Policy of certificates signing. It specifies which certificate fields must be filled in during certificate creation. There are three possible values here:
     # "optional" - field value can be empty
     # "supplied" - field value must be filled in
     # "match" - signed certificate field value must match the CA certificate value to be created
@@ -277,7 +277,7 @@ To create the intermediate certificate:
 6. Fill in the configuration file as in the CA configuration, but remember to change the general directory ("dir") to your intermediateCertificate folder. Also don't forget to change private_key, certificate and crl names from current with "ca" prefix to "intermediate" prefix (for example: caKey.pem -> intermediateKey.pem), because files with this prefix will be generated in the next steps.
 7. Generate a private key for the intermediate certificate: `openssl genrsa -aes256 -out intermediateKey.pem 4096`
 8. Generate a certificate signing request: `openssl req -config intermediateConfig.cnf -new -sha256 -key intermediateKey.pem -out intermediateCsr.pem`
-9. Go to the caCertificate directory and generate a signed intermediate certificate. You have to use the CA configuration here, because the private key specified in the configuration file will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
+9. Go to the caCertificate directory and generate a signed intermediate certificate. You must use the CA configuration here, because the private key specified in the configuration file will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
 10. Verify if the generated certificate is correctly signed by CA: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`   
 
 #### Creating a device certificate signed by CA or intermediate
@@ -285,7 +285,7 @@ To create the intermediate certificate:
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
 3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
-   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, has to match the [ClientId](/device-sdk/mqtt/#MQTT-ClientId) of the device during the connection.
+   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-sdk/mqtt/#MQTT-ClientId) of the device during the connection.
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
 5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
 
@@ -304,15 +304,15 @@ If you are not using the intermediate certificate then the command is:
 cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCertChain.pem
 ```
 
-If you are using multiple intermediate certificates between the CA certificate and the device certificate, then remember that you have to keep the correct order during the chain creation (Every certificate has to be followed by the certificate, which it is signed by).
+If you are using multiple intermediate certificates between the CA certificate and the device certificate, then remember that you must keep the correct order during the chain creation (Every certificate must be followed by the certificate, which it is signed by).
 
 #### Creating keystore and truststore
 
 1. Go into your deviceCertificates directory with the device's private key and the generated chain of certificates. If you are using an intermediate certificate between the CA certificate and the device certificate then it will be the `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using the generated chain of certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
 2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is usually downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
 3. If you do not have the server certificate, get it by the command: `openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem`
-4. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in a separate pem file).
-   Remember that `alias` is the unique identifier for every keystore or truststore entry. It means that if you want to add a second trusted certificate to the same truststore then you will have to change the alias from `servercertificate` in the command below to some other name:
+4. Now you can create a truststore, which will contain the server certificate. It must be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you must keep every trusted certificate in a separate PEM file).
+   Remember that `alias` is the unique identifier for every keystore or truststore entry. It means that if you want to add a second trusted certificate to the same truststore then you must change the alias from `servercertificate` in the command below to some other name:
     * In PKCS12 format: `keytool -importcert -noprompt -keystore deviceTruststore.pkcs12 -alias servercertificate -file serverCertificate.pem`
     * In JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks`
 5. Optionally, instead of creating a new file for the truststore, you can add the trusted certificates to your created keystore and store everything in one file, which is not the recommended solution:
@@ -332,7 +332,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. You have to open the device management application, then navigate to the **Management** tab and select **Trusted certificates**.
+1. Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
 2. Drop your caCert.pem (or intermediateCert.pem).
 3. Check the auto-registration field.
 4. Click on the certificate status to set it to **Enabled**.
@@ -412,7 +412,7 @@ Then the instance of the MQTT client can be created with a single line:
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
 The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
-The CLIENT_ID value has to match the value of the common name of the device certificate that will be used.
+The CLIENT_ID value must match the value of the common name of the device certificate that will be used.
 The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
 

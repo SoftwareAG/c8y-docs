@@ -15,7 +15,7 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 
 A request to a microservice can be authenticated using basic authentication or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform.
 
-Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend you to use the Microservice SDK Version 10.4.6 or later for supporting OAuth in Java microservices.
+Authentication with OAuth is based on cookies technology, so the access token must be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend you to use the Microservice SDK Version 10.4.6 or later for supporting OAuth in Java microservices.
 
 ![OAuth](/images/microservices-sdk/ms-oauth.png)
 

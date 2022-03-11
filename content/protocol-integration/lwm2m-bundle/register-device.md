@@ -32,7 +32,7 @@ The CSV file must at least contain the following fields to be able to establish 
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device, such as an IMEI or a serial number. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
+<td style="text-align:left">Unique ID of the device, such as an IMEI or a serial number. The ID field must be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>

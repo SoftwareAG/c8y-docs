@@ -12,7 +12,7 @@ weight: 70
 
 For this tutorial, create a new application with minimal configuration.
 
-#### Configuration of a fresh environment
+#### Configuration of a new platform instance
 
 Start with creating a new application.
 
@@ -39,7 +39,7 @@ Create the following files:
         gettext,
         HOOK_NAVIGATOR_NODES
     } from '@c8y/ngx-components';
-    import { TextTranslationComponent } from "./text-translation.component";
+    import { TextTranslationComponent } from './text-translation.component';
 
     /**
      * Angular Routes.
@@ -92,11 +92,12 @@ Create the following files:
     Index
     ```
 
-Now you can run the application. When starting, the application renders a blank page that contains the `Index`.
+Now you can run the application.
+When starting, the application displays a single **Translations** menu item, which renders a blank page with the text: `Index`.
 
 ### Extending default translations
 
-{{< product-c8y-iot >}} comes with a wide range of content that is already translated in multiple languages. These translations can be extended.
+{{< product-c8y-iot >}} comes with a wide range of content that is already translated into multiple languages. These translations can be extended.
 
 1. Create the new file `translations/locales/de.po`:
 
@@ -455,14 +456,16 @@ See the example below for reference:
 
 #### Extracting translations using the locale-extract tool
 
-The `c8ycli locale-extract` command automatically copies all translations from the `node_modules/@c8y/locales.` This makes it easier to edit and add new translations.
-After using this command, the directory *./locales* will contain all available translations.
+You can use the `c8ycli locale-extract` command to extract strings from:
 
-By default, a new directory `locales` will be created in the root directory. It will include all available languages with their respective current translations.
-You can edit and copy these files to the *translations/locales* directory as well as adding necessary imports.
+- `node_modules/@c8y/locales` which contains all the default strings and translations, which makes it easier to edit or add new ones.
+- `.` which contains your custom modules, components, templates, services and more.
 
-The file `locales.pot` contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method.
-You can append these values to your language files, and add the necessary translations.
+After using the command, a new directory `./locales` will be created if it doesn't exist yet.
+It contains:
+
+- Files with the `.po` extension for all available languages. You can edit and copy these files to the *./translations/locales* directory and add necessary imports.
+- The `locales.pot` file which contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method in your own source code under `.`. That means it does not include any default strings from `node_modules/@c8y/locales`. You can append these values to your custom `.po` files and translate them.
 
 #### Translating dates
 
@@ -476,18 +479,18 @@ currentDate = new Date();
 ```html
 <div class="card">
   <div class="card-header separator">
-    <h4 class="card-title">Angular pipe example</h4>
+    <h4 class="card-title">Angular date pipe example</h4>
   </div>
   <div class="card-block">This date will be translated: {{ currentDate | date: 'medium' }}.</div>
 </div>
 ```
 
-Alternatively, use the `c8yDate` pipe to return dates in `medium` format. This also works with values outside of the by ECMAScript supported range:
+Alternatively, use the `c8yDate` pipe to return dates in `medium` format. This also works with values outside of range supported by ECMAScript:
 
 ```html
 <div class="card">
   <div class="card-header separator">
-    <h4 class="card-title">Cumulocity pipe example</h4>
+    <h4 class="card-title">Cumulocity date pipe example</h4>
   </div>
   <div class="card-block">
     <div>This date will be translated: {{ currentDate | c8yDate }}.</div>

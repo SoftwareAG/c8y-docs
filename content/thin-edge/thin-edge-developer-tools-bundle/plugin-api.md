@@ -19,7 +19,7 @@ Each plugin can implement a specific software management policy.
 
 ## Plugin repository
 
-To be used by Thin Edge, a plugin has to be stored in the directory */etc/tedge/sm-plugins*.
+To be used by Thin Edge, a plugin must be stored in the directory */etc/tedge/sm-plugins*.
 The same plugin can have different names, using virtual links.
 One of the plugins can have the name `default`. This plugin is then used as the default plugin.
 
@@ -133,11 +133,11 @@ If no version is provided the plugin is free to install the more appropriate ver
 
 An optional file path can be provided.
 When the device administrator provides a URL, the sm-agent downloads the software module on the device, then invokes the install command with a path to that file.
-If no file is provided, the plugin has to derive the appropriate location from its repository and to download the software module accordingly.
+If no file is provided, the plugin must derive the appropriate location from its repository and to download the software module accordingly.
 The command installs the requested software module and any dependencies that might be required.
 
 It is up to the plugin to define if this command triggers an installation or an upgrade. It depends on the presence of a previous version on the device and on the ability of the package manager to deal with concurrent versions for a module.
-A plugin might not be able to install dependencies. In that case, the device administrator will have to request explicitly the dependencies to be installed first.
+A plugin might not be able to install dependencies. In that case, the device administrator must request explicitly the dependencies to be installed first.
 
 After a successful sequence `prepare; install foo; finalize` the module `foo` must be reported by the `list` command.
 

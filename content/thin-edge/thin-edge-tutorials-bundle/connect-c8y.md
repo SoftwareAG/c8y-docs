@@ -74,7 +74,7 @@ For a certificate to be trusted by {{< product-c8y-iot >}},
 you need to add the certificate of the signing authority to the list of trusted certificates.
 In the {{< product-c8y-iot >}} UI, navigate to **Management** > **Trusted certificates** in the Device Management application in order to see this list for your {{< product-c8y-iot >}} tenant.
 
-Here, the device certificate is self-signed and has to be directly trusted by {{< product-c8y-iot >}}.
+Here, the device certificate is self-signed and must be directly trusted by {{< product-c8y-iot >}}.
 This can be done in two ways:
 
 * Via the UI by uploading the certificate from your device (*/etc/tedge/device-certs/tedge-certificate.pem*) to your tenant at [Management > Trusted certificates](/users-guide/device-management/#managing-trusted-certificates).

@@ -72,8 +72,8 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may choose one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user has to enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
 
 	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
 
@@ -139,7 +139,7 @@ Before switching to the single sign-on option it is mandatory that:
 
 #### Configuration settings
 
-To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
+To enable the feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
 
 Click the **Single sign-on** tab in the **Authentication** page.
 
@@ -199,7 +199,7 @@ New roles are added to the user from every matching access mapping. If one acces
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
-In case the asterisk character should be matched literally it has to be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
+In case the asterisk character should be matched literally it must be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)

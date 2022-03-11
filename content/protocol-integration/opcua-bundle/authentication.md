@@ -11,12 +11,12 @@ The following authentication methods can be selected:
 - Anonymous - Will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
 - Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to {{< product-c8y-iot >}} as a binary with type "application/octet-stream". This keystore must follow the following rules:
-  - It has to be a Java keystore (JKS).
-  - The keystore itself has to be password-protected.
-  - The keystore has to contain a user certificate with the "opcuauser" alias.
-  - The user certificate has to be password-protected.
+  - It must be a Java keystore (JKS).
+  - The keystore itself must be password-protected.
+  - The keystore must contain a user certificate with the "opcuauser" alias.
+  - The user certificate must be password-protected.
 
-> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key have to be used in case a keystore file should contain more data.
+> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key must be used in case a keystore file should contain more data.
 
 The keystore can be created via the following Java keytool command:
 

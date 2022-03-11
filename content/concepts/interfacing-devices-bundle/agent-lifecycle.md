@@ -35,7 +35,7 @@ It is important to know that the device agent is assuming data ownership of conf
 
 ### Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations intended for its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent must query the core for operations intended for its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 

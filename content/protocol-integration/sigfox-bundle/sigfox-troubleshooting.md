@@ -49,7 +49,7 @@ To resolve this, configure at least one device protocol in the [Device database]
 
 ![!Failed operation](/images/device-protocols/sigfox/sigfox-troubleshooting-failedoperation.png)
 
-If the "transfer operation failed" alarm is triggered, the device is already provisioned in the Sigfox platform and changing the device type in the Sigfox platform failed. In order to fix this issue, you have to manually change the device type in the Sigfox platform to the intended one.
+If the "transfer operation failed" alarm is triggered, the device is already provisioned in the Sigfox platform and changing the device type in the Sigfox platform failed. In order to fix this issue, you must manually change the device type in the Sigfox platform to the intended one.
 
 ### Provisioned status is set to false
 

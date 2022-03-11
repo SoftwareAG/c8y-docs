@@ -150,7 +150,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
+Your microservice application must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>
@@ -351,7 +351,7 @@ BODY:
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 

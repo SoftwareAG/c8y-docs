@@ -227,7 +227,7 @@ See the **alarmStatusMappings example** below the table.
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
-This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
+This property must be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
 
 </tbody>

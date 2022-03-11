@@ -111,7 +111,7 @@ export class WidgetConfigDemo {
 
 ### 3. Add the widget to your application
 
-To add the widget you have to use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.
+To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.
 
 To do so, add the following to your `app.module.ts`:
 

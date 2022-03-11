@@ -213,7 +213,7 @@ To create a widget from the data explorer of a particular asset, click **More...
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
-> **Info:** To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
+> **Info:** To use this function, first a dashboard must be created. For details on dashboards, refer to [Working with dashboards](#dashboards).
 
 **Send as widget to report**
 
@@ -223,7 +223,7 @@ To create a widget from the data explorer of in the navigator, click **More...**
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
-> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with reports](#reports).
+> **Info:** To use this function, first a report must be created. For details on reports, refer to [Working with reports](#reports).
 
 <a name="export-data"></a>
 ### Exporting measurement data

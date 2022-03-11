@@ -128,7 +128,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
+You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you must navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 

@@ -62,7 +62,7 @@ This command will:
 - Download the package.
 - Add it as a dependency inside the *package.json* file.
 
-Instead of "latest", you can also specify a certain version number, but this version has to be the same or less than the backend version number.
+Instead of "latest", you can also specify a certain version number, but this version must be the same or less than the backend version number.
 
 > **Info:** When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
 

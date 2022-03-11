@@ -27,7 +27,7 @@ Click the arrow icon at the right to expand or collapse the entity and show or h
 
 The entity will be added to the bottom of the **Organization** page under **Unassigned entities**.
 
-Lines have to be assigned to sites or areas.
+Lines must be assigned to sites or areas.
 
 ### To edit an entity
 

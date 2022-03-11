@@ -19,7 +19,7 @@ The {{< product-c8y-iot >}} UI itself is built around a framework based on Angul
 
 ### Deploying web applications
 
-For an application to be available it has to be deployed on the {{< product-c8y-iot >}} platform.
+For an application to be available it must be deployed on the {{< product-c8y-iot >}} platform.
 
 For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
 

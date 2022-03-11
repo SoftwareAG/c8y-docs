@@ -215,7 +215,7 @@ There are three prerequisites for using a custom domain:
 
 #### SSL certificate requirements
 
-The following criteria have to be met by any SSL certificate to be used with the {{< enterprise-tenant >}} feature:
+The following criteria must be met by any SSL certificate to be used with the {{< enterprise-tenant >}} feature:
 
 * The certificate is currently valid and has not expired. More specifically, validFrom points to a point in time in the
   past, and validTo to a point in the future.
@@ -232,7 +232,7 @@ contains one or more intermediate certificates.
 
 #### Packaging the SSL certificate in PKCS #12
 
-In order to use a SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key have to be uploaded to
+In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key must be uploaded to
 the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two
@@ -249,16 +249,16 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 #### DNS requirements for enterprise domains
 
-The DNS entries for your custom domain have to be configured in a way that all requests are routed to the {{< product-c8y-iot >}} platform.
+The DNS entries for your custom domain must be configured in a way that all requests are routed to the {{< product-c8y-iot >}} platform.
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
-domain from the certificate in the NAME field. The VALUE field of the CNAME entry has to point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
+domain from the certificate in the NAME field. The VALUE field of the CNAME entry must point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
 is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry has to be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
 
 ```shell
 NAME                  TYPE   VALUE

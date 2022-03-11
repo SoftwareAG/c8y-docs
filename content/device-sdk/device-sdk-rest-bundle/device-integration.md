@@ -475,7 +475,7 @@ Note that all data types in {{< product-c8y-iot >}} can include arbitrary extens
 
 #### Step 11: Send alarms
 
-Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone must visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
+Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
     POST /alarm/alarms HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json

@@ -43,7 +43,7 @@ The following information must be provided:
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
 - **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, "https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info".
 
-> **Info:** The group name in the screenshot below is only an example. It must not necessarily be "Cumulocity".
+> **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 

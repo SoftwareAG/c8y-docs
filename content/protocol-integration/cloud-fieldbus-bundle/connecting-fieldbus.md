@@ -27,7 +27,7 @@ To connect a Modbus/RTU device, follow these steps:
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device protocols](#configuring-fieldbus) for information on how to add a new device protocol. Set the Modbus address of the connected device.
 3. Click **Add**. {{< product-c8y-iot >}} will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you must reload your browser window to make the **Child Devices** tab visible.
+After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
 
 ### Connecting Modbus/TCP devices
 
@@ -73,7 +73,7 @@ To connect a CAN device, follow these steps:
 
 {{< product-c8y-iot >}} will now send a notification to the fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you must reload your browser window to make the **Child devices** tab visible.
+After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you may have to reload your browser window to make the **Child devices** tab visible.
 
 <a name="connect-profibus"></a>
 ### Connecting Profibus devices

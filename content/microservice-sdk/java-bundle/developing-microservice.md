@@ -617,7 +617,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
     ```
 * Jackson 2.12.x does not provide the Joda Module by default, it might be required to add `jackson-datatype-joda` dependency and define Joda Module:
   `new ObjectMapper().addModule(new JodaModule());` in a custom Microservice code.
-* Spring Boot 2.5.8 does not provide the _Bean Validation 2.0_ provider  as a transitive dependency anymore. Developers must explicitly define a validation provider, for example `hibernate-validator`, or add the `spring-boot-starter-validation` dependency.
+* Spring Boot 2.5.8 does not provide the _Bean Validation 2.0_ provider  as a transitive dependency anymore. Developers may have to explicitly define a validation provider, for example `hibernate-validator`, or add the `spring-boot-starter-validation` dependency.
 
   Maven example:
      ```

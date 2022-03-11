@@ -311,8 +311,8 @@ If you are using multiple intermediate certificates between the CA certificate a
 1. Go into your deviceCertificates directory with the device's private key and the generated chain of certificates. If you are using an intermediate certificate between the CA certificate and the device certificate then it will be the `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using the generated chain of certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
 2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is usually downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
 3. If you do not have the server certificate, get it by the command: `openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem`
-4. Now you can create a truststore, which will contain the server certificate. It must be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you must keep every trusted certificate in a separate pem file).
-   Remember that `alias` is the unique identifier for every keystore or truststore entry. It means that if you want to add a second trusted certificate to the same truststore then you will must change the alias from `servercertificate` in the command below to some other name:
+4. Now you can create a truststore, which will contain the server certificate. It must be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you must keep every trusted certificate in a separate PEM file).
+   Remember that `alias` is the unique identifier for every keystore or truststore entry. It means that if you want to add a second trusted certificate to the same truststore then you must change the alias from `servercertificate` in the command below to some other name:
     * In PKCS12 format: `keytool -importcert -noprompt -keystore deviceTruststore.pkcs12 -alias servercertificate -file serverCertificate.pem`
     * In JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks`
 5. Optionally, instead of creating a new file for the truststore, you can add the trusted certificates to your created keystore and store everything in one file, which is not the recommended solution:
@@ -332,7 +332,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. You must open the device management application, then navigate to the **Management** tab and select **Trusted certificates**.
+1. You must Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
 2. Drop your caCert.pem (or intermediateCert.pem).
 3. Check the auto-registration field.
 4. Click on the certificate status to set it to **Enabled**.

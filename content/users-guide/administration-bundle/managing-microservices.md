@@ -109,7 +109,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concepts) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 
 <a name="microservice-properties"></a>
 ### Microservice properties
@@ -160,7 +160,7 @@ In the **Properties** tab, each microservice will show the following information
 </tbody>
 </table>
 
-Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/guides/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
+Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
 
 #### Microservice subscription
 

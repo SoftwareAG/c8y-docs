@@ -46,7 +46,7 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="">Connectivity</a></td>
+<td style="text-align:left"><a href="../../users-guide/device-management/#connectivity">Connectivity</a></td>
 <td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
@@ -383,6 +383,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 ### Service monitoring
 
 In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+
 
 <a name="shell"></a>
 ### Shell

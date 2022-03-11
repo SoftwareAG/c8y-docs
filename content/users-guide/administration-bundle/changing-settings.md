@@ -22,7 +22,7 @@ helpcontent:
 
 From the **Settings** menu, administrators can manage various settings for the account:
 
-- Configure [authentication settings](#authentication) and [single sign-on](#single-sign-on).
+- Configure [authentication settings](#authentication) and [single sign-on](#configuring-single-sign-on).
 - Change the [application settings](#default-app).
 - Manage the [properties library](#properties).
 - Provide [SMS provider credentials](#sms-provider).
@@ -130,6 +130,7 @@ If the **Use session configuration** option is enabled, the following settings c
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
+
 <a name="token-settings"></a>
 #### Token and cookie settings
 
@@ -177,8 +178,6 @@ Click **Save TFA settings** to apply your settings.
 >**Important:** Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and need to be configured again.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
-
-
 
 ### Configuring single sign-on
 

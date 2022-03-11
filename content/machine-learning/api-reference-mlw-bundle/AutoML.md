@@ -20,7 +20,7 @@ Operations on MLW Automated ML.
 
 Start the AutoML process by passing the data to the engine and get the initial information to start the AutoML process.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ, ROLE_MACHINE_LEARNING_CREATE, ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -231,7 +231,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Train an AutoML model by using pre-processing options for variables and using the hyper-parameter given by the user in the form.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE, ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -423,7 +423,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 Start the Anomaly detection model training process by passing the data to the engine and get the initial information to start the training.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ, ROLE_MACHINE_LEARNING_CREATE, ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -625,7 +625,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Train an Anomaly detection model by using pre-processing options for variables and using the model options given by the user in the form.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE, ROLE_MACHINE_LEARNING_UPDATE or ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

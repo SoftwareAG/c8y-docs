@@ -13,7 +13,7 @@ To connect a Modbus/RTU device, follow these steps:
 
 1. Physically connect the Modbus/RTU device through a RS-485 or RS-232 cable to the terminal.
 2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (for example by setting a jumper on the device).
-3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (that is, baud rates and communication protocol). These have to match with all devices on the bus.
+3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (that is, baud rates and communication protocol). These must match with all devices on the bus.
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the **Serial communication** section to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency where measurements are sent to {{< product-c8y-iot >}}. The polling rate is the frequency at which the Modbus devices are polled for changes.
@@ -57,7 +57,7 @@ To connect a Modbus/TCP device, follow these steps:
 To connect a CAN device, follow these steps:
 
 1. Physically connect the CAN device to the terminal.
-2. Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
+2. Check the serial communication baud rate of the device according to the instructions provided with the device. These must match all devices on the bus.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN Bus** tab.
 4. Change the baud rate setting shown in the section **CAN Bus communication** to match the settings on the bus, if needed.
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to {{< product-c8y-iot >}}.

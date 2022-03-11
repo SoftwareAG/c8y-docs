@@ -81,7 +81,7 @@ Every operation received will contain the template ID followed by the ID of the 
 The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
-*   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
+*   Device certificates. The devices must contain the whole chain of certificates leading to the trusted root certificate. Also, they must contain the server certificate in their truststore.
 
 #### Troubleshooting
 
@@ -92,8 +92,8 @@ Certificates may be invalid because they expired or the root certificate is not 
 Turn off certificate sending in the device's software.
 If that is not possible, to make the connection work, check the following:
 
-* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
-* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
+* The platform's trust store cannot be empty. At least one trusted certificate must be uploaded to the platform.
+* The device's MQTT client must be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/welcome/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
@@ -124,7 +124,7 @@ d:mySerialNumber:myDefaultTemplate
 
 The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
-During an SSL connection with certificates, the `deviceIdentifier` has to match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
+During an SSL connection with certificates, the `deviceIdentifier` must match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
 
 #### MQTT Quality of Service (QoS)
 

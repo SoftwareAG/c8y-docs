@@ -4,7 +4,7 @@ title: What is the simplest profile to define?
 layout: redirect
 ---
 
-To get started with the OEE application, you have to create a profile to start the calculation. To create a very basic profile, you can use the following settings:
+To get started with the OEE application, you must create a profile to start the calculation. To create a very basic profile, you can use the following settings:
 
 * **Profile**: Enter a Profile name
 * **Machine**: Enter a Machine location

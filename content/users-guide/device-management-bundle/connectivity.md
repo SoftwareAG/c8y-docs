@@ -191,4 +191,4 @@ Data connectivity can be analyzed in various places:
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 
 * The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management/#connecting-devices).
-* There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.
+* There may be a configuration or software problem with the device, which must be analyzed in a device-specific way.

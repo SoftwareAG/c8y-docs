@@ -327,8 +327,8 @@ Click **Add application** in the **Own applications** page.
 
 In the resulting dialog box, choose one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer.
-* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system.
+* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your file system.
 * [External application](#external-application) - by linking to an application running elsewhere
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
@@ -337,7 +337,7 @@ In the resulting dialog box, choose one of the following methods:
 
 1. Click **Add application** in the **Own applications** page.
 2. Select **Upload web application**.
-3. In the resulting dialog box, drop a ZIP file or browse for it on your computer.
+3. In the resulting dialog box, drop a ZIP file or browse for it in your file system.
 
 The application is created once the ZIP file has been successfully uploaded.
 
@@ -422,7 +422,7 @@ Multiple archive file versions can be stored in {{< product-c8y-iot >}} when the
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
-3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
+3. Click **Upload archive** and browse for the archive in your file system or simply drop the archive file.
 4. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">

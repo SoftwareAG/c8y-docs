@@ -90,7 +90,7 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
-3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
+3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it in your file system.
 
 <br>
 Depending on the format of the uploaded CSV file, one of the following registration types will be processed:

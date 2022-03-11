@@ -42,7 +42,7 @@ apt list --installed | grep libcurl
 apt list --installed | grep lua
 ```
 
-In case they are not installed on your file system, search for the libraries' packages.
+In case they are not installed in your environment, search for the libraries' packages.
 
 ```shell
 apt-cache search libcurl | grep dev

@@ -20,7 +20,7 @@ Operations on models.
 
 Retrieves the list of PMML/ONNX/PIPELINE models deployed to MLE.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -170,7 +170,7 @@ curl --location --request POST '{{url}}/service/mlw/resources/deploy?type=H5' \
 
 Deploys the PMML/ONNX/PIPELINE model to MLE.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|
@@ -678,7 +678,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 
 Predicts from the list of deployed PMML/ONNX/PIPELINE models in MLE.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|

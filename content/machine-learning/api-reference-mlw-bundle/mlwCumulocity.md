@@ -20,7 +20,7 @@ Operations on MLW data connectors - Data pull from Cumulocity IoT.
 
 Gets the list of devices from the C8Y inventory.
 
-**ROLES & PERMISSIONS**: (ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN) and ROLE_MEASUREMENT_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -161,7 +161,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Gets the list of measurements from the C8Y inventory.
 
-**ROLES & PERMISSIONS**: (ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN) and ROLE_MEASUREMENT_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -225,7 +225,7 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 
 Downloads the data in the data section from Cumulocity IoT inventory wih given aggregation, it is a long running process.
 
-**ROLES & PERMISSIONS**: (ROLE_MACHINE_LEARNING_CREATE or ROLE_MACHINE_LEARNING_ADMIN) and ROLE_MEASUREMENT_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|

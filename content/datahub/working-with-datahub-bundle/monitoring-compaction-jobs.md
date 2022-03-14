@@ -1,14 +1,14 @@
 ---
-weight: 30
+weight: 60
 title: Monitoring compaction jobs
 layout: redirect
 ---
 
-During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
 You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 
->**Info**: You need administration permissions to access the compaction job histories. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info**: You need administration permissions to access the compaction job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all compaction jobs
 
@@ -26,7 +26,7 @@ In the navigator, select **Compaction** under **Status** to get an overview of t
 
 Click **Reload** to refresh the status being shown.
 
-You can filter the entries by their task name or their status by using the filter controls in the action bar.
+You can filter the entries by their task name or their status by using the filter buttons in the action bar. The pagination buttons can be used to traverse the history entries.
 
 ### History of compactions per offloading pipeline
 
@@ -34,7 +34,7 @@ You can filter the entries by their task name or their status by using the filte
 
 If you want to examine the compaction history for a particular offloading pipeline, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 
-Click **Show compaction history** in the context menu of the offloading card to show the compaction history.
+Click **Show compaction history** in the context menu of the offloading configuration to show the compaction history.
 
 The list shows the execution history with each execution consisting of the following details:
 

@@ -114,7 +114,7 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&s
 }
 ```
 >**Info:**
-> The delta between selected `historical time series data (T)` and `generated matrix_profile (mp)` shown as null values at the end of the `matrix_profile` is the nature of work from sliding window computation. The size of `matrix_profile (mp)` is smaller than the size of `historical time series data (T)` according to the `subsequence window size (m)`.
+> The delta between the size of selected time series data (T) and generated matrix profile (mp) is shown as null values at the end of the `matrix_profile`. This delta occurs because of how sliding window (m) computation works. The size of `matrix_profile` is smaller than the size of historical time series data by `windowSize`.
 >
 > - `size(mp) = size(T) - m + 1`
 >

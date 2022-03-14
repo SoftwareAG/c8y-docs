@@ -23,4 +23,4 @@ Running the demo scripts requires:
 
 * Prior experience with Python and understanding of the data science processes.
 * Familiarity with {{< product-c8y-iot >}} and its in-built apps.
-* Subscription of MLW, Zementis, ONNX microservices (10.13.0.x.x or higher) and Machine Learning Workbench, as well as the Machine Learning applications on the tenant.
+* Subscription of the MLW microservice, the Zementis microservice, the ONNX microservice (10.13.0.x.x or higher), the Machine Learning Workbench application and the Machine Learning application on the tenant.

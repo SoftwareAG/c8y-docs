@@ -69,7 +69,7 @@ end
 If you create any `c8y_SoftwareList` operation from the UI, the agent will receive the list of software packages which are supposed to be installed. In other words, the agent also receives information about unchanged packages with the message template `814`. The `aggregate` function sums up information about all received packages in a table.
 ![restarted-device](/images/device-sdk/software-install.png)
 
-After the aggregation finishes, the `perform` function is called. The function:
+After the aggregation is completed, the `perform` function is called. The function:
 
 - Updates the operation status to EXECUTING
 - Validates package names

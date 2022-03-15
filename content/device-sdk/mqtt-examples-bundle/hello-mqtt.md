@@ -193,7 +193,7 @@ After receiving the operation, we can start executing it to initiate the client'
 501,c8y_Command
 ```
 
-After finishing the handling, the operation can be set to successful with the template `503`.
+After completing the handling, the operation can be set to successful with the template `503`.
 
 Besides the operation type, this operation can also take additional parameters based on what kind of operation it was. We can return a result for the `c8y_Command`.
 

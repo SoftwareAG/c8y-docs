@@ -91,12 +91,12 @@ After step 4 of [Building the basic agent](#basic-agent), edit your _Makefile_ f
 PLUGIN_MODBUS:=1
 ```
 
-After you finished this step, continue with step 5 of [Building the basic agent](#basic-agent) to build the agent.
+After you have completed this step, continue with step 5 of [Building the basic agent](#basic-agent) to build the agent.
 
 <a name="building-the-cumulocity-canopen-service"></a>
 ###  Building the CANopen service
 
-CANopen support is disabled by default. After you have finished all steps described in [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
+CANopen support is disabled by default. After you have completed all steps described in [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
 
 CANopen support is composed of two parts. One is a Lua plugin, which is included in the agent repository by default. However, to get actual CANopen support, you also need to build the {{< product-c8y-iot >}} CANopen service, which is a C program based on the CANopen library and SocketCAN connector from port industrial automation GmbH.
 

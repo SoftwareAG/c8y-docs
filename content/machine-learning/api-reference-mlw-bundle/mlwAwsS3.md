@@ -19,6 +19,8 @@ Operations on MLW data connectors - Download files from AWS S3.
 
 List names of all AWS S3 buckets.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -92,6 +94,8 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
 ```
 
 Lists the names of all files within an AWS S3 buckets.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -212,6 +216,8 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/nomlwbucket/fi
 ```
 
 Downloads the file from AWS S3 bucket.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|

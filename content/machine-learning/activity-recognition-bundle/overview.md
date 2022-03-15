@@ -15,8 +15,8 @@ In this use case, we would like to showcase the recognition of the human activit
 
 * Collect sensor data from a user performing activities (sitting, jumping and walking).
 * Train an activity recognition model with the collected data and generate the model in PMML format using {{< product-c8y-iot >}} Machine Learning Workbench.
-* Deploy the model into {{< product-c8y-iot >}} the Machine Learning application.
+* Deploy the model into {{< product-c8y-iot >}} Machine Learning Engine.
 * Create and upload an EPL rule to {{< product-c8y-iot >}} Streaming Analytics which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.
-	* Sends the data via REST request to the the Zementis microservice API for processing.
+	* Sends the data via REST request to the Zementis microservice API for processing.
 	* Creates an update alert once the user changes activities.

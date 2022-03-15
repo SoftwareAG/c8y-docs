@@ -20,6 +20,8 @@ Operations on MLW Automated ML.
 
 Start the AutoML process by passing the data to the engine and get the initial information to start the AutoML process.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -229,6 +231,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Train an AutoML model by using pre-processing options for variables and using the hyper-parameter given by the user in the form.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -382,7 +386,34 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 }
 ```
 
+**Example Request**
 
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"col1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"col2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"col3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"col4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"target","dtype":"int64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","target_variable":"col1","idforData":"1631782700_autoML","newPMMLFileName":"sampleClassifiactionModel","parameters":{"generation":5,"population_size":25,"model_name":"","scoring":"accuracy","algorithm":["DecisionTreeClassifier","RandomForestClassifier","GradientBoostingClassifier","KNeighborsClassifier","LinearSVC","LogisticRegression","XGBClassifier","LGBMClassifier"]}}}'
+```
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "model_name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
+}
+```
 
 ### GET - Start the Anomaly detection model training process
 
@@ -391,6 +422,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 
 Start the Anomaly detection model training process by passing the data to the engine and get the initial information to start the training.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -592,6 +625,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Train an Anomaly detection model by using pre-processing options for variables and using the model options given by the user in the form.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -710,5 +745,34 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
     "error": "general/internalError",
     "message": "No auth information found",
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/anomaly' \
+--header 'Content-Type: application/json' \
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_temperature2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_temperature1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_pressure2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"idforData":"1631783117_autoML","newPMMLFileName":"sampleAnomaly","parameters":{"n_estimators":100,"max_samples":"auto","contamination":0.5,"max_features":1,"bootstrap":false,"algorithm":"IsolationForest","model_name":""}}}'
+```
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "model_name"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
 }
 ```

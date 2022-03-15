@@ -20,6 +20,8 @@ Operations on MLW data connectors - Data pull from Cumulocity IoT.
 
 Gets the list of devices from the C8Y inventory.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -159,6 +161,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Gets the list of measurements from the C8Y inventory.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -220,6 +224,8 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 ```
 
 Downloads the data in the data section from Cumulocity IoT inventory wih given aggregation, it is a long running process.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|
@@ -336,5 +342,35 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
     "error": "general/internalError",
     "message": "No auth information found",
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
+--data-raw '{"fileName":"","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
+```
+
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "fileName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
 }
 ```

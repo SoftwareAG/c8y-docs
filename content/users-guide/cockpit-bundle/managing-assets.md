@@ -21,7 +21,7 @@ The asset hierarchy is composed of two types of objects:
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below).
+To position a device in the asset hierarchy, you must "assign" the device to the respective group (see below).
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 

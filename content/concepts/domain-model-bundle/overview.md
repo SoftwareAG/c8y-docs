@@ -13,7 +13,7 @@ The following image shows the relevant aspects of devices and assets in the Inte
 
 * **Measurements** contain numerical data produced by sensors (like temperature readings) or calculated data based on information from devices (service availability of a device).
 
-* **Events** contain other real-time information from the sensor network, such as the triggering of a door sensor. Events can also be **alarms**.The user or operator of the system has to take action to resolve the alarm (like a power outage). In addition, security-related events are shown as **audit logs**.
+* **Events** contain other real-time information from the sensor network, such as the triggering of a door sensor. Events can also be **alarms**.The user or operator of the system must take action to resolve the alarm (like a power outage). In addition, security-related events are shown as **audit logs**.
 
 * **Operations** relate to data that is sent to devices for execution or processing, such as switching a relay in a power meter or sending a credit to a vending machine.
 

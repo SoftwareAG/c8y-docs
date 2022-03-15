@@ -40,7 +40,7 @@ After these steps you should have the following folder structure:
 
 ### Configure the application manifest
 
-Second, we have to fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our {{< product-c8y-iot >}} application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:
+Second, we must fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our {{< product-c8y-iot >}} application, such as its name, key, URL and dependencies. For this example, we must specify the following properties:
 
 ```json
 	{
@@ -56,7 +56,7 @@ Second, we have to fill out the application manifest (the "cumulocity.json" file
 	}
 ```
 
-With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the {{< product-c8y-iot >}} UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the {{< product-c8y-iot >}}'s branding to our application. Before we can test an application locally, we have to create it on our tenant first.
+With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the {{< product-c8y-iot >}} UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the {{< product-c8y-iot >}}'s branding to our application. Before we can test an application locally, we must create it on our tenant first.
 
 For more details on other properties of the manifest, see [Concepts > Manifests](/web-sdk-for-plugins/concepts/#manifests).
 
@@ -76,7 +76,7 @@ POST application/applications/31337/binaries/ 201
 PUT /application/applications/31337 200
 ```
 
-You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
+You will be asked for the name and base URL of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables in your file system: ```C8Y_TENANT```, ```C8Y_USER```, ```C8Y_PASS``` and ```C8Y_BASE_URL```.
 
 After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 
@@ -145,7 +145,7 @@ What is missing now is a plugin which adds a menu item to the navigator.
 
 ### Configure the plugin manifest
 
-Each plugin comes in a separate subfolder inside the plugins folder of your application. So to add a plugin to our application, we have to
+Each plugin comes in a separate subfolder inside the plugins folder of your application. So to add a plugin to our application, we must
 * Create a "plugins" folder in our project
 * Create a folder named "myplugin" inside the "plugins" folder.
 * Create a "cumulocity.json" file inside the "myplugin" folder, representing our application manifest.
@@ -177,7 +177,7 @@ The plugin manifest provides information about our plugin, such as the name, a s
 
 For more details on other properties of the manifest, see [Concepts > Manifests](/web-sdk-for-plugins/concepts/#manifests).
 
-Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts separated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
+Now that we have added a plugin to our application, we also must add it to the imports of our application manifest. The name of the import consists of two parts separated by a slash. The first part must be the context path of the application the plugin is located in and the second part must be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
 
 ```json
 	{
@@ -210,7 +210,7 @@ Inside the "hello.module.js" file, we initialize the module for our plugin:
 }());
 ```
 
-In our "hello.config.js" file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules/). Simply inject the services into your config and call the following functions:
+In our "hello.config.js" file, we must configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules/). Simply inject the services into your config and call the following functions:
 
 ```js
 (function () {
@@ -247,7 +247,7 @@ In our "hello.config.js" file, we have to configure our plugin so that it adds a
 
 ### Implement the controller
 
-Second, we have to implement the controller for our view. For this example, the controller just defines a variable "text" which contains the simple static text "hello, world":
+Second, we must implement the controller for our view. For this example, the controller just defines a variable "text" which contains the simple static text "hello, world":
 
 ```js
 (function () {
@@ -265,7 +265,7 @@ Second, we have to implement the controller for our view. For this example, the 
 }());
 ```
 
-Now that we have added the module, config and controller to our plugin, we have to specify "myapp.hello" as our module and add each javascript file to our plugin manifest:
+Now that we have added the module, config and controller to our plugin, we must specify "myapp.hello" as our module and add each javascript file to our plugin manifest:
 
 ```json
 {
@@ -370,7 +370,7 @@ If you are not deploying to a {{< management-tenant >}}, you need to include the
 	}
 ```
 
-To deploy a target file, you have to execute ```c8y deploy:target [targetFile]```. Assuming that we have the following folder structure:
+To deploy a target file, you must execute ```c8y deploy:target [targetFile]```. Assuming that we have the following folder structure:
 
 ```console
 <<root folder>>
@@ -382,7 +382,7 @@ To deploy a target file, you have to execute ```c8y deploy:target [targetFile]``
 └── package.json
 ```
 
-We would have to execute the following command:
+We must execute the following command:
 
 ```bash
 c8y deploy:target targets/target.json

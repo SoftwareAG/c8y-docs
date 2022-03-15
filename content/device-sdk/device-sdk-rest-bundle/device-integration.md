@@ -14,7 +14,7 @@ The startup phase connects the device to {{< product-c8y-iot >}} and updates the
 -   [Step 3](#step-3-register-the-device): Register the device (create the identity).
 -   [Step 4](#step-4-update-the-device-in-the-inventory): If yes, update the device in the inventory.
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
--   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.
+-   [Step 6](#step-6-complete-operations-and-subscribe): Complete operations that required a restart and subscribe to new operations.
 
 ![Startup phase](/images/rest/startupphase.png)
 
@@ -75,7 +75,7 @@ Request header should be:
 
 	Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
 
-For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (that is, *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
+For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (that is, *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID must be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
 
 {{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
@@ -288,7 +288,7 @@ Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. W
 
 The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
-#### Step 6: Finish operations and subscribe
+#### Step 6: Complete operations and subscribe
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 
@@ -475,7 +475,7 @@ Note that all data types in {{< product-c8y-iot >}} can include arbitrary extens
 
 #### Step 11: Send alarms
 
-Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
+Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
     POST /alarm/alarms HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json

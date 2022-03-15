@@ -626,7 +626,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
       <artifactId>spring-boot-starter-validation</artifactId>
      </dependency>
     ```
-* `junit-vintage-engine` was removed from the `spring-boot-starter-test` dependency, if you still use JUnit 4.x you have to add the Vintage engine explicitly:
+* `junit-vintage-engine` was removed from the `spring-boot-starter-test` dependency, if you still use JUnit 4.x you must add the Vintage engine explicitly:
      ```
      <dependency>
        <groupId>org.junit.vintage</groupId>

@@ -49,7 +49,7 @@ This login mode will be used by the platform's applications as the default metho
 
 >**Important:** Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
 
-In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
+In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users must change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 
@@ -163,8 +163,8 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user has to enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user has to request a new verification code in order to login.
+	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
 
 	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
 
@@ -201,7 +201,7 @@ Before switching to the single sign-on option it is mandatory that:
 
 #### Configuration settings
 
-To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
+To enable the feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
 
 Click the **Single sign-on** tab in the **Authentication** page.
 
@@ -261,7 +261,7 @@ New roles are added to the user from every matching access mapping. If one acces
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
-In case the asterisk character should be matched literally it has to be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
+In case the asterisk character should be matched literally it must be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)

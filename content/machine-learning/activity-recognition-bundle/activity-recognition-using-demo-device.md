@@ -12,9 +12,7 @@ For this, use the artifacts provided as part of the *ActivityRecognitionDemo.zip
 
 #### Start with Machine Learning Workbench
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Activity Recognition" as **Project name** and "Activity Recognition Demo" as **Project description**.
-
-2. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload all the files extracted to Machine Learning Workbench (MLW). You will get 2 files in the **Data** section and 3 notebooks in the **Code** section. Exclude the PMML file and .mon file.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *ActivityRecognitionDemoProject.zip* project to MLW. A new project is created with the name **ActivityRecognitionDemoProject_UUID**, where `UUID` is a system generated unique identifier. This project has a total of 5 resources. You will get 2 files in the **Data** folder and 3 files in the **Code** folder.
 
 #### Register a demo device in the platform
 
@@ -36,7 +34,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
-2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
+2. Download the *RecognizeActivitiesDemoDevice.mon* file. Open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
 
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 

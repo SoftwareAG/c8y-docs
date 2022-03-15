@@ -23,13 +23,13 @@ In contrast to supervised classification models, labeled training data is not re
 
 #### Data collection with Machine Learning Workbench (MLW)
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Creating a new project](/machine-learning/web-app-mlw/#creating-a-new-project) and create a new project with "Anomaly Detection" as **Project name** and "Anomaly detection using smartphone" as **Project description**.
+1. Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *AnomalyDetectionDemoProject.zip* project to MLW. This creates a new project named **AnomalyDetectionDemoProject_{UUID}**, where `UUID` is a system generated unique identifier. This project has a total of 6 resources. You will get 3 files in the **Data** folder and 3 files in the **Code** folder.
 
-2. Either you can download the recorded measurements of your smartphone or use the data provided within the ZIP file for model-building purposes.
+2. You can either download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
 
     * Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
 
-    * Alternatively, follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *anomalyTrainingData.csv* to Machine Learning Workbench (MLW).
+    * Alternatively, use the *anomalyTrainingData.csv* file in the **Data** folder of the project.
 
 
 #### Train the PMML model
@@ -46,7 +46,7 @@ After the model is created, the scikit-learn object can be converted to PMML for
 
 The following steps illustrate the training of an Isolation Forest machine learning model using the Jupyter Notebook.
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *createModel.ipynb* to Machine Learning Workbench (MLW).
+1. Open the *createModel.ipynb* file in the **Code** folder of the project.
 
 2. Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *createModel.ipynb* to train an Isolation Forest PMML model.
 
@@ -60,9 +60,7 @@ The following steps illustrate the training of an Isolation Forest machine learn
 
 Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
 
-1. Follow the steps described in [Machine Learning Workbench > Projects > Uploading resources](/machine-learning/web-app-mlw/#uploading-resources) and upload *test_data.csv* to Machine Learning Workbench (MLW).
-
-2. Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE) and predict *test_data.csv* data using the *isolationForest* PMML model.
+Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *isolationForests.pmml* model to Machine Learning Engine (MLE), and predict *test_data.csv* data available in the **Data** folder, using the *isolationForest* PMML model.
 
 #### Create and upload Apama monitor file
 

@@ -90,7 +90,7 @@ Create the following files:
 
 Import `TranslationsModule` to the application's module:
 
-* `app.module.ts`
+* `app.module.ts`:
 
     ```ts
     import { NgModule } from '@angular/core';
@@ -237,7 +237,7 @@ The translate pipe allows to set different parameters, as shown in the example f
 msgid "Mr. Smith is {{ age }} years old"
 msgstr "Sig. Smith ha {{ age }} anni"
 ```
-`translations/text-translation.component.html`
+* `translations/text-translation.component.html`:
 ```
 <div>{{ "Mr. Smith is \{\{ age \}\} years old" | translate:{age: 40} }}</div>
 ```
@@ -326,7 +326,7 @@ Furthermore, you can translate entire HTML code blocks, as shown in the example 
 Your content can be located in TypeScript as string variables
 It is possible to translate such variable, as in example below:
 
-`translations/text-translation.component.ts`
+* `translations/text-translation.component.ts`:
 ```ts
 import { Component } from '@angular/core';
 import { gettext } from '@c8y/ngx-components';
@@ -339,7 +339,7 @@ export class TextTranslationComponent {
  variableWithText = gettext('Text inside variable that is translatable');
 }
 ```
-`translations/text-translation.component.html`
+* `translations/text-translation.component.html`:
 ```html
 <div class="card">
     <div class="card-header separator">

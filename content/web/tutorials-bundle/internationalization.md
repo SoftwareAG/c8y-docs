@@ -18,11 +18,11 @@ Start with creating a new application.
 
 Execute the following commands:
 
-```
-c8ycli new my-app-i18n -a @c8y/apps@1013.0.63
-cd my-app-i18n
-npm install
-```
+    ```
+    c8ycli new my-app-i18n -a @c8y/apps@1013.0.63
+    cd my-app-i18n
+    npm install
+    ```
 
 After the application is successfully set up, create a new basic module that you can use to add and translate your content.
 
@@ -34,37 +34,37 @@ Create the following files:
     import { NgModule } from '@angular/core';
     import { RouterModule, Routes } from '@angular/router';
     import {
-        CoreModule,
-        NavigatorNode,
-        gettext,
-        HOOK_NAVIGATOR_NODES
+      CoreModule,
+      NavigatorNode,
+      gettext,
+      HOOK_NAVIGATOR_NODES
     } from '@c8y/ngx-components';
     import { TextTranslationComponent } from './text-translation.component';
- 
+   
     const routes: Routes = [
-        {
-            path: 'translations',
-            component: TextTranslationComponent
-        },
+      {
+        path: 'translations',
+        component: TextTranslationComponent
+      },
     ];
-
+  
     const translationsNode = new NavigatorNode({
-        label: gettext('Translations'),
-        icon: 'star',
-        path: '/translations',
-        routerLinkExact: false
+      label: gettext('Translations'),
+      icon: 'star',
+      path: '/translations',
+      routerLinkExact: false
     });
-
+  
     export const navigatorNodes = {
-        provide: HOOK_NAVIGATOR_NODES,
-        useValue: { get: () => translationsNode },
-        multi: true
+      provide: HOOK_NAVIGATOR_NODES,
+      useValue: { get: () => translationsNode },
+      multi: true
     };
-
+  
     @NgModule({
-        declarations: [TextTranslationComponent],
-        imports: [RouterModule.forChild(routes), CoreModule],
-        providers: [navigatorNodes]
+      declarations: [TextTranslationComponent],
+      imports: [RouterModule.forChild(routes), CoreModule],
+      providers: [navigatorNodes]
     })
     export class TranslationsModule {}
     ```
@@ -73,10 +73,10 @@ Create the following files:
 
     ```ts
     import { Component } from '@angular/core';
-
+  
     @Component({
-        selector: 'text-translation',
-        templateUrl: './text-translation.component.html'
+      selector: 'text-translation',
+      templateUrl: './text-translation.component.html'
     })
     export class TextTranslationComponent {
     }
@@ -97,19 +97,19 @@ Import `TranslationsModule` to the application's module:
     import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     import { RouterModule as ngRouterModule } from '@angular/router';
     import { CoreModule, BootstrapComponent, RouterModule } from '@c8y/ngx-components';
-    import { TranslationsModule } from './translations/translations.module';        // <--
+    import { TranslationsModule } from './translations/translations.module';    // <--
     
     @NgModule({
-        imports: [
-            BrowserAnimationsModule,
-            RouterModule.forRoot(),
-            ngRouterModule.forRoot([], { enableTracing: false, useHash: true }),
-            CoreModule.forRoot(),
-            TranslationsModule                                                      // <--
-        ],
-        bootstrap: [BootstrapComponent]
+      imports: [
+        BrowserAnimationsModule,
+        RouterModule.forRoot(),
+        ngRouterModule.forRoot([], { enableTracing: false, useHash: true }),
+        CoreModule.forRoot(),
+        TranslationsModule                                                      // <--
+      ],
+      bootstrap: [BootstrapComponent]
     })
-    export class AppModule {}    
+    export class AppModule {}  
     ```
 
 Now you can run the application.
@@ -225,22 +225,22 @@ This is the most common way to translate content that is present in your HTML vi
 
 In your `translations/text-translation.component.html` file, add:
 
-```html
-<div>{{'User settings' | translate}}</div>
-```
+    ```html
+    <div>{{'User settings' | translate}}</div>
+    ```
 
 If your language is set to Italian, reloading the application will render the content as `User settings (it)`.
 
 The translate pipe allows to set different parameters, as shown in the example for `translations/locales/it.po`:
 
-```
-msgid "Mr. Smith is {{ age }} years old"
-msgstr "Sig. Smith ha {{ age }} anni"
-```
+    ```
+    msgid "Mr. Smith is {{ age }} years old"
+    msgstr "Sig. Smith ha {{ age }} anni"
+    ```
 * `translations/text-translation.component.html`:
-```
-<div>{{ "Mr. Smith is \{\{ age \}\} years old" | translate:{age: 40} }}</div>
-```
+    ```
+    <div>{{ "Mr. Smith is \{\{ age \}\} years old" | translate:{age: 40} }}</div>
+    ```
 
 The result is: `"Sig. Smith ha 40 anni"`.
 
@@ -250,19 +250,19 @@ The result is: `"Sig. Smith ha 40 anni"`.
 
 Another way to translate content is to use the attribute `translate`, as shown in the example for `translations/text-translation.component.html`:
 
-```html
-<div class="card">
-    <div class="card-header separator">
+    ```html
+    <div class="card">
+      <div class="card-header separator">
         <h4 class="card-title">Translate directive example</h4>
-    </div>
-    <div class="card-block">
+      </div>
+      <div class="card-block">
         This sentence will be translated:
         <span class="m-r-4" translate
         >User settings</span
         >
+      </div>
     </div>
-</div>
-```
+    ```
 
 Similarly to the example with `translate` pipe, the content of the `span` will be translated to `User settings (it)`.
 
@@ -279,17 +279,16 @@ You can use parameters with the `translate` directive in the following way:
 * `translations/text-translation.component.html`:
 
     ```html
-
     <div class="card">
-        <div class="card-header separator">
-            <h4 class="card-title">Translate directive with parameters example</h4>
-        </div>
-        <div class="card-block">
-            This sentence will be translated:
-            <span class="m-r-4" ngNonBindable translate [translateParams]="{filteredItemsCount: 10, allItemsCount: 100 }"
-            >{{ filteredItemsCount }} of {{ allItemsCount }} items.</span
-            >
-        </div>
+      <div class="card-header separator">
+        <h4 class="card-title">Translate directive with parameters example</h4>
+      </div>
+      <div class="card-block">
+        This sentence will be translated:
+        <span class="m-r-4" ngNonBindable translate [translateParams]="{filteredItemsCount: 10, allItemsCount: 100 }"
+        >{{ filteredItemsCount }} of {{ allItemsCount }} items.</span
+        >
+      </div>
     </div>
     ```
 
@@ -308,14 +307,14 @@ Furthermore, you can translate entire HTML code blocks, as shown in the example 
 
     ```html
     <div class="card">
-        <div class="card-header separator">
-            <h4 class="card-title">Translate directive used on html code</h4>
-        </div>
-        <div class="card-block">
-            <span class="m-r-4" translate ngNonBindable
-            >Read about your current language in <a href="#guide">our guide</a></span
-            >
-        </div>
+      <div class="card-header separator">
+        <h4 class="card-title">Translate directive used on html code</h4>
+      </div>
+      <div class="card-block">
+        <span class="m-r-4" translate ngNonBindable
+        >Read about your current language in <a href="#guide">our guide</a></span
+        >
+      </div>
     </div>
     ```
 
@@ -327,31 +326,31 @@ Your content can be located in TypeScript as string variables
 It is possible to translate such variable, as in example below:
 
 * `translations/text-translation.component.ts`:
-```ts
-import { Component } from '@angular/core';
-import { gettext } from '@c8y/ngx-components';
-
-@Component({
- selector: 'text-translation',
- templateUrl: './text-translation.component.html'
-})
-export class TextTranslationComponent {
- variableWithText = gettext('Text inside variable that is translatable');
-}
-```
+    ```ts
+    import { Component } from '@angular/core';
+    import { gettext } from '@c8y/ngx-components';
+    
+    @Component({
+     selector: 'text-translation',
+     templateUrl: './text-translation.component.html'
+    })
+    export class TextTranslationComponent {
+     variableWithText = gettext('Text inside variable that is translatable');
+    }
+    ```
 * `translations/text-translation.component.html`:
-```html
-<div class="card">
-    <div class="card-header separator">
+    ```html
+    <div class="card">
+      <div class="card-header separator">
         <h4 class="card-title">Translate pipe on variable example</h4>
-    </div>
-    <div class="card-block">
+      </div>
+      <div class="card-block">
         <span class="m-r-4"
         >{{variableWithText|translate}}</span
         >
+      </div>
     </div>
-</div>
-```
+    ```
 >**Info:** Wrap such strings with the `gettext` function. This will enable automatic extraction of the strings to */locales/locales.pot file*. This also indicates that such strings are meant to be translated.
 >
 >See [Extracting translations using the locale extract tool](#extracting-translations-using-locale-extract-tool) for information about extracting strings for translation.
@@ -387,24 +386,23 @@ To do so, inject the `TranslateService` into the component and use its `instant`
 * `translations/text-translation.component.html`:
 
     ```html
-
     <div class="card">
-        <div class="card-header separator">
-            <h4 class="card-title">Translated in typescript example</h4>
-        </div>
-        <div class="card-block">
-            <span class="m-r-4"
-            >{{translatedVariableWithText}}</span
-            >
-        </div>
+      <div class="card-header separator">
+        <h4 class="card-title">Translated in typescript example</h4>
+      </div>
+      <div class="card-block">
+        <span class="m-r-4"
+        >{{translatedVariableWithText}}</span
+        >
+      </div>
     </div>
     ```
 Translating content using the `instant` method, has a flaw that given translation will not be updated upon language change.
 In order to achieve this, it is required to keep track of language changes.
 Make sure that if a user changes the language, the text is translated again. See the example below for reference:
     ```ts
-        this.translateService.onLangChange.subscribe(()=>{
-            this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
+      this.translateService.onLangChange.subscribe(()=>{
+        this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
     })
     ```
 
@@ -433,12 +431,10 @@ See the example below for reference:
 
       this.textStream = this.translateService.stream(this.variableWithText)
       this.textStream.subscribe(
-              (text) => {
-               this.translatedVariableStream = text
-              }
+        (text) => {
+          this.translatedVariableStream = text
+        }
       )
-
-
      }
     }
 
@@ -448,13 +444,13 @@ See the example below for reference:
 
     ```html
     <div class="card">
-        <div class="card-header separator">
-            <h4 class="card-title">Stream examples:</h4>
-        </div>
-        <div class="card-block">
-            <div class="m-r-4">This is translated by `stream` using async pipe: {{textStream|async}}</div>
-            <div class="m-r-4">This is translated by subscribing `stream` method: {{translatedVariableStream}}</div>
-        </div>
+      <div class="card-header separator">
+        <h4 class="card-title">Stream examples:</h4>
+      </div>
+      <div class="card-block">
+        <div class="m-r-4">This is translated by `stream` using async pipe: {{textStream|async}}</div>
+        <div class="m-r-4">This is translated by subscribing `stream` method: {{translatedVariableStream}}</div>
+      </div>
     </div>
     ```
 
@@ -477,33 +473,33 @@ It contains:
 
 In order to display dates according to current locale settings, use the Angular `date` pipe, as shown in the example below:
 
-```ts
-currentDate = new Date();
-```
+    ```ts
+    currentDate = new Date();
+    ```
 
 
-```html
-<div class="card">
-  <div class="card-header separator">
-    <h4 class="card-title">Angular date pipe example</h4>
-  </div>
-  <div class="card-block">This date will be translated: {{ currentDate | date: 'medium' }}.</div>
-</div>
-```
+    ```html
+    <div class="card">
+      <div class="card-header separator">
+        <h4 class="card-title">Angular date pipe example</h4>
+      </div>
+      <div class="card-block">This date will be translated: {{ currentDate | date: 'medium' }}.</div>
+    </div>
+    ```
 
 Alternatively, use the `c8yDate` pipe to return dates in `medium` format. This also works with values outside of range supported by ECMAScript:
 
-```html
-<div class="card">
-  <div class="card-header separator">
-    <h4 class="card-title">Cumulocity date pipe example</h4>
-  </div>
-  <div class="card-block">
-    <div>This date will be translated: {{ currentDate | c8yDate }}.</div>
-    <div>
-      This date exceeding the range supported by ECMAScript will be translated:
-      {{ 8640000000000000 + 1 | c8yDate }}.
+    ```html
+    <div class="card">
+      <div class="card-header separator">
+        <h4 class="card-title">Cumulocity date pipe example</h4>
+      </div>
+      <div class="card-block">
+        <div>This date will be translated: {{ currentDate | c8yDate }}.</div>
+        <div>
+          This date exceeding the range supported by ECMAScript will be translated:
+          {{ 8640000000000000 + 1 | c8yDate }}.
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-```
+    ```

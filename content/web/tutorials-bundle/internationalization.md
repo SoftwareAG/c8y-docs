@@ -358,7 +358,9 @@ export class TextTranslationComponent {
 
 #### Manual translation in TypeScript code
 
-It is also possible to translate strings manually in TypeScript code. To do so, inject the `TranslateService` to the component and use the `translateService.instant` method to translate the content:
+It is also possible to translate strings manually in TypeScript code.
+To do so, inject the `TranslateService` into the component and use its `instant` method to translate the content:
+
 
 * `translations/text-translation.component.ts`:
 

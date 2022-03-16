@@ -97,7 +97,7 @@ Import `TranslationsModule` to the application's module:
     import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     import { RouterModule as ngRouterModule } from '@angular/router';
     import { CoreModule, BootstrapComponent, RouterModule } from '@c8y/ngx-components';
-    import { TranslationsModule } from "./translations/translations.module";        // <--
+    import { TranslationsModule } from './translations/translations.module';        // <--
     
     @NgModule({
         imports: [
@@ -329,7 +329,7 @@ It is possible to translate such variable, as in example below:
 `translations/text-translation.component.ts`
 ```ts
 import { Component } from '@angular/core';
-import { gettext } from "@c8y/ngx-components";
+import { gettext } from '@c8y/ngx-components';
 
 @Component({
  selector: 'text-translation',
@@ -364,8 +364,8 @@ It is also possible to translate strings manually in TypeScript code. To do so, 
 
     ```ts
     import { Component } from '@angular/core';
-    import { gettext } from "@c8y/ngx-components";
-    import { TranslateService } from "@ngx-translate/core";
+    import { gettext } from '@c8y/ngx-components';
+    import { TranslateService } from '@ngx-translate/core';
 
     @Component({
      selector: 'text-translation',
@@ -413,8 +413,8 @@ See the example below for reference:
 
     ```ts
     import { Component } from '@angular/core';
-    import { gettext } from "@c8y/ngx-components";
-    import {TranslateService} from "@ngx-translate/core";
+    import { gettext } from '@c8y/ngx-components';
+    import {TranslateService} from '@ngx-translate/core';
 
     @Component({
      selector: 'text-translation',

@@ -21,16 +21,24 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
-<td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
 <td style="text-align:left">Allows to interface with LoRa devices through Actility's ThingPark Wireless.</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
+<td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">Loriot LoRa</a></td>
+<td style="text-align:left">Allows to interface with LoRa devices through LORIOT Network Server Provider.</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>
 <td style="text-align:left">Allows to communicate with all devices supporting the LWM2M protocol.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN custom codec</a></td>
+<td style="text-align:left">Allows the creation of an LPWAN custom codec microservice.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
@@ -43,14 +51,6 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/snmp">SNMP</a></td>
 <td style="text-align:left">Allows the communication with SNMP-enabled devices.</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
-<td style="text-align:left">Allows to interface with LoRa devices through LORIOT Network Server Provider.</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN custom codec</a></td>
-<td style="text-align:left">Allows the creation of an LPWAN custom codec microservice.</td>
 </tr>
 </tbody>
 </table>

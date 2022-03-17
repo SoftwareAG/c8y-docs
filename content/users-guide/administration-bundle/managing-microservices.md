@@ -250,6 +250,6 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** There is no possibility to see the logs from the previously running instances or from previous rotated logs extending 35MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.

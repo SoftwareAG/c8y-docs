@@ -520,7 +520,7 @@ Initially, the **Logs** tab shows the latest logs of the microservice instance.
 
 At the bottom right you find navigation buttons:
 
-* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 35MB of logs).
 * **Previous** - increases the time range in 10 minutes steps.
 * **Next** - reduces the time range in 10 minutes steps.
 * **Last** - directly navigates to the latest available log entries.
@@ -529,6 +529,6 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.

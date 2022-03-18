@@ -328,7 +328,7 @@ Click **Add application** in the **Own applications** page.
 In the resulting dialog box, choose one of the following methods:
 
 * [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system.
-* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your file system.
+* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it in your file system.
 * [External application](#external-application) - by linking to an application running elsewhere
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 

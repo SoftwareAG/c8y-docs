@@ -4,7 +4,7 @@ title: Security
 layout: redirect
 ---
 
-Microservices typically provide a REST API and {{< product-c8y-iot >}} provides a light API gateway ("Proxy") for inbound REST requests. Inbound WebSocket requests are supported. The API gateway – located between the client and the microservice container – provides:
+Microservices typically provide a REST API and {{< product-c8y-iot >}} provides a light API gateway (Proxy) for inbound REST requests. Inbound WebSocket requests are supported. The API gateway, located between the client and the microservice container, provides:
 
 * Authorization: All calls are authenticated using {{< product-c8y-iot >}} credentials with basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
@@ -15,30 +15,30 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 
 A request to a microservice can be authenticated using various authentication mechanisms supported by {{< product-c8y-iot >}} such as:
 1. Basic authentication
-2. OAI-Secured
+2. OAI-Secure
 3. SSO
-4. JWT token authentication (depricated)
+4. JWT token authentication (deprecated)
 
 If you use Java for your development, we recommend you to use the Microservice SDK version 10.4.6 or later to gain support for all available authentication ways in {{< product-c8y-iot >}}.
 
-For other programming languages, for which {{< product-c8y-iot >}} does not provide SDK, we recommend developers to ensure support for all authentication mechanisms available in the {{< product-c8y-iot >}} platform.
+In case of other programming languages, for which {{< product-c8y-iot >}} does not provide an SDK, we recommend developers to ensure support for all authentication mechanisms available in the {{< product-c8y-iot >}} platform.
 
-The {{< product-c8y-iot >}} exposes the rest endpoint <kbd>/user/currentUser</kbd>. The microservice retrieves the {{< product-c8y-iot >}} address from the <kbd>C8Y_BASEURL</kbd> operating system environment variable. The microservice can verify if the credentials embedded in the HTTP request, which is handled by the microservice, are valid or not by using the REST endpoint <kbd>/user/currentUser</kbd>. If the credentials are correct, the response status from the <kbd>/user/currentUser</kbd> endpoint is <kbd>200 OK</kbd>. In case of incorrect credentials, the response contains a <kbd>401 Unauthorized</kbd> status code. In order to verify if credentials are correct, the microservice copies the credentials from ongoing requests and sends them to the <kbd>/user/currentUser</kbd> endpoint.
+The {{< product-c8y-iot >}} exposes the REST endpoint <kbd>/user/currentUser</kbd>. The microservice retrieves the {{< product-c8y-iot >}} address from the `C8Y_BASEURL` operating system environment variable. The microservice can verify if the credentials embedded in the HTTP request, which is handled by the microservice, are valid or not by using the REST endpoint <kbd>/user/currentUser</kbd>. If the credentials are correct, the response status from the <kbd>/user/currentUser</kbd> endpoint is `200 OK`. In case of incorrect credentials, the response contains a `401 Unauthorized` status code. In order to verify if the credentials are correct, the microservice copies the credentials from ongoing requests and sends them to the <kbd>/user/currentUser</kbd> endpoint.
 
 Depending on the authentication method, the credentials can be passed to the microservice in various ways, such as:
 
-  1. <kbd>Authorization</kbd> HTTP header
-  2. Cookie called <kbd>authorization</kbd>
-  3. Custom HTTP header called <kbd>X-XSRF-TOKEN</kbd>
-  4. Custom HTTP header called <kbd>tfatoken</kbd>
+  1. `Authorization` HTTP header
+  2. Cookie called `authorization`
+  3. Custom HTTP header called `X-XSRF-TOKEN`
+  4. Custom HTTP header called `tfatoken`
 
-If the incoming request contains the cookie <kbd>authorization</kbd>, the microservice has to copy the cookie and the header <kbd>X-XSRF-TOKEN</kbd> to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header <kbd>Authorization</kbd> has to be copied. This is necessary, if a request contains the header <kbd>tfatoken</kbd>, which always needs to be included in the request to <kbd>/user/currentUser</kbd>.
+If the incoming request contains the cookie `authorization`, the microservice has to copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` has to be copied. This is necessary, if a request contains the header `tfatoken`, which always needs to be included in the request to <kbd>/user/currentUser</kbd>.
 
 You can see the credential validation flow on the sequence diagram below:
 
 ![OAuth](/images/microservices-sdk/ms-oauth.png)
 
-**Example**
+**Examp-e**
 
 The microservice can receive the HTTP requests with the following header (see example below). The authentication process is based on basic authentication and SMS based TFA.
 
@@ -57,7 +57,7 @@ x-forwarded-proto: http
 x-real-ip: 192.168.1.20
 ```
 
-The microservice sends the following requests to validate credentials (provided that `c8y_baseurl` is equal to *http://cumulocity:8111*):
+The microservice sends the following requests to validate the credentials (provided that `c8y_baseurl` is equal to `http://cumulocity:8111`):
 
 ```
 GET http://cumulocity:8111/user/currentUser HTTP/1.1
@@ -67,7 +67,7 @@ Content-Length: 0
 tfatoken: 23b75292468e0ba7fe03245d502d9c29e21e8a997fc7dd7e1a1df7fe31cbfb17
 ```
 
-Is the user authenticated with OAI-Secure, the following REST request can reach the microservice:
+If the user is authenticated with OAI-Secure, the following REST request can reach the microservice:
 
 ```
 GET http://cumulocity.default.svc.cluster.local/test HTTP/1.1
@@ -85,7 +85,7 @@ x-real-ip: 192.168.1.20
 x-xsrf-token: GSIzTPxobPKQIBevRMRZ
 ```
 
-To verify credentials from the request above, the microservice sends the following request:
+To verify the credentials from the request above, the microservice sends the following request:
 
 ```
 GET http://cumulocity:8111/user/currentUser HTTP/1.1
@@ -95,15 +95,15 @@ Cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YzAwMGVlO
 X-XSRF-TOKEN: GSIzTPxobPKQIBevRMRZ
 ```
 
-If a request to the <kbd>/user/currentUser</kbd> REST endpoint contains the correct credentials, the response body contains very useful information, for example, user roles assigned to the user account. This information can be very useful in order for the microservice to carry out the authorization process.
+If a request to the <kbd>/user/currentUser</kbd> REST endpoint contains the correct credentials, the response body contains various information, such as user roles assigned to the user account. This information can be very useful in order for the microservice to carry out the authorization process.
 
 When a microservice receives an HTTP request, it can become necessary to use the REST API exposed by {{< product-c8y-iot >}} to fulfil the request. To access the REST API, the microservice must provide a valid credential. It can use credentials that are present in the incoming REST request or use a dedicated user account, created to access resources belonging to tenants which are subscribed to the microservice. The choice between the credentials provided together with the incoming request to the microservice REST or a dedicated account depends on the use case. In order to utilize the user credentials received by the microservice in an incoming HTTP request, the microservice must copy the credentials according to the rules described above.
 
-Furthermore, most of the HTTP requests which are sent by microservices have to contain the HTTP header <kbd>X-Cumulocity-Application-Key</kbd>. The header indicates that an action is performed by an application. When the header is missing {{< product-c8y-iot >}} assumes that the HTTP request is originated by an IoT device. Therefore, a request without <kbd>X-Cumulocity-Application-Key</kbd> affects for example, the device availability state, or the billing data.
+Furthermore, most of the HTTP requests which are sent by microservices must contain the HTTP header `X-Cumulocity-Application-Key`. The header indicates that an action is performed by an application. When the header is missing {{< product-c8y-iot >}} assumes that the HTTP request is originated by an IoT device. Therefore, a request without `X-Cumulocity-Application-Key` affects for example, the device availability state, or the billing data.
 
-Thus, the microservice must not include <kbd>X-Cumulocity-Application-Key</kbd> only if the microservice proxy requests from IoT device to the {{< product-c8y-iot >}} platform.
+Thus, the microservice must only include `X-Cumulocity-Application-Key` if the microservice proxy requests from an IoT device to the {{< product-c8y-iot >}} platform.
 
-If the microservice includes the header <kbd>X-Cumulocity-Application-Key</kbd>, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request has to contain  the credentials for basic authentication in the following format: <kbd>tenantId/username:password</kbd>. The Tenant ID, username and password are read by the microservice from the following operating system environment variables: <kbd>C8Y_BOOTSTRAP_TENANT</kbd>, <kbd>C8Y_BOOTSTRAP_USER</kbd>, and <kbd>C8Y_BOOTSTRAP_PASSWORD</kbd>. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
+If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
 
 #### Microservice authentication and multi-tenancy
 

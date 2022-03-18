@@ -107,10 +107,10 @@ If the microservice includes the header `X-Cumulocity-Application-Key`, the head
 
 #### Microservice authentication and multi-tenancy
 
-In general, microservices use the standard {{< product-c8y-iot >}} authentication mechanism. This is executed in two steps:
+In general, microservices use the standard {{< product-c8y-iot >}} authentication mechanisms. This is executed in two steps:
 
-1. The microservice is created in any tenant that has **feature-microservice-hosting** enabled.
-2. The microservices accesses the tenant API.
+1. The microservice can be created in any tenant that has **feature-microservice-hosting** enabled.
+2. The microservices access the tenant API.
 
 At the installation time of the microservice, an application is created in the {{< management-tenant >}} reflecting the new microservice. In addition, a service user is created in the {{< management-tenant >}} that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.

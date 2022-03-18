@@ -241,7 +241,7 @@ Initially, the **Logs** tab shows the latest logs of the microservice instance.
 
 At the bottom right you find navigation buttons:
 
-* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 35MB of logs).
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 35 MB of logs).
 * **Previous** - increases the time range in 10 minutes steps.
 * **Next** - reduces the time range in 10 minutes steps.
 * **Last** - directly navigates to the latest available log entries.

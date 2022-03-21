@@ -129,7 +129,7 @@ For the rest of the widget editing process follow the process for regular widget
 
 #### Debugging
 
-There is another difference in the *package.json* file between a regular widget and a widget modified for Module Federation:
+Another difference in the *package.json* file between a regular widget and a widget modified for Module Federation is the field `remote`, see example below:
 
 ```json
 ...

@@ -53,13 +53,13 @@ Once the cause of an alarm is resolved, you have to acknowledge and clear the al
 <a name="tenant_option_change"></a>
 #### Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
 - Alarm severity: MAJOR
 
-Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change requires a restart of the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that Apama has detected a change in a tenant option and will restart in order to use it.
+Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change automatically restarts the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that Apama has detected a change in a tenant option and will restart in order to use it.
 
 Once you see this alarm, you can be sure that your change is effective.
 

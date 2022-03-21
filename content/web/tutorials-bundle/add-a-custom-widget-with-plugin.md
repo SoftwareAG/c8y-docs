@@ -168,7 +168,7 @@ Follow the console prompt to deploy the application to your tenant.
 
 ### 4. Adding a deployed widget to the shell application
 
-In version 1013.84.0 the views and logic related to Module Federation are hidden behind the beta flag.
+Currently, the views and logic related to Module Federation are hidden behind a beta flag.
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
 - Enable the beta flag in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`.

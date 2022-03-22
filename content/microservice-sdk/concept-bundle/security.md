@@ -38,7 +38,7 @@ You can see the credential validation flow on the sequence diagram below:
 
 ![OAuth](/images/microservices-sdk/ms-oauth.png)
 
-**Examp-e**
+**Example**
 
 The microservice can receive the HTTP requests with the following header (see example below). The authentication process is based on basic authentication and SMS based TFA.
 

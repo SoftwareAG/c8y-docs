@@ -225,7 +225,7 @@ gateway:
     lifetimeCount: 600
     # The notificationBufferSize defines how many monitored item values should be buffered to receive
     # subscription notification data from the OPC UA server. The subscription reporting rate (publish interval)  
-    # and the volume of sampling data should be taken into account to select a suitable buffer size.
+    # and the volume of sampling data should be taken into account to choose a suitable buffer size.
     notificationBufferSize: 500
     # The recreateFailedItems flag can be used to enable the feature of a subscription so that it automatically retries to create the monitored items
     # if they fail due to error code Bad_NodeIdUnknown. It assumes that the NodeIds are correct, but it hasn't been added to the

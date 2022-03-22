@@ -15,7 +15,7 @@ The user management feature allows you to manage the users within your tenant. W
 - Create users.
 - Assign usernames and set passwords.
 - Store user details.
-- Select login options.
+- Specify login options.
 - Enable additional login security by using Two-Factor Authentication (TFA).
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.

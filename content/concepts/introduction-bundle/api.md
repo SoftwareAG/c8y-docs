@@ -11,4 +11,4 @@ In contrast to many other IoT platforms, {{< product-c8y-iot >}} uses the same A
 
 The plugin concept of {{< product-c8y-iot >}} enables you to write new user interface functionality that will seamlessly extend the existing {{< product-c8y-iot >}} platform.
 
->**Important:** The public APIs for {{< product-c8y-iot >}} are backward compatible where possible. There are some instances where we must change an API, for example in order to support a security enhancement; in this case the change will be announced before it is implemented in the product.
+>**Important:** The public APIs for {{< product-c8y-iot >}} are backward compatible where possible. There are some instances where we may have to change an API, for example in order to support a security enhancement; in this case the change will be announced before it is implemented in the product.

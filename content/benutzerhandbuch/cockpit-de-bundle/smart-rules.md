@@ -19,7 +19,7 @@ Es gibt zwei Typen von Smart Rules:
 
 * **Globale Smart Rules**
 
-  Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer etc.).
+  Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
   In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
 

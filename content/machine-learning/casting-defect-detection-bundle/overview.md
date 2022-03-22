@@ -9,7 +9,7 @@ aliases:
 
 Casting is a manufacturing process in which a liquid material is usually poured into a mould, which contains a hollow cavity of the desired shape, and then is allowed to solidify.
 
-A casting defect is an undesired irregularity in a metal casting process. There are many types of defects in casting like blow holes, pinholes, burr, shrinkage defects, mould material defects, pouring metal defects, metallurgical defects, etc. Defects are an unwanted thing in the casting industry. For removing this defective product, all industry have their quality inspection department. But the main problem is that this inspection process is carried out manually. It is a very time-consuming process and due to human accuracy, this is not 100% accurate. This can lead to the rejection of the whole order which creates a big loss to the company.
+A casting defect is an undesired irregularity in a metal casting process. There are many types of defects in casting such as blow holes, pinholes, burr, shrinkage defects, mould material defects, pouring metal defects, metallurgical defects, and so on. Defects are an unwanted thing in the casting industry. For removing this defective product, all industry have their quality inspection department. But the main problem is that this inspection process is carried out manually. It is a very time-consuming process and due to human accuracy, this is not 100% accurate. This can lead to the rejection of the whole order which creates a big loss to the company.
 
 Casting defect detection automates the inspection process by utilizing the power of deep learning algorithms.
 

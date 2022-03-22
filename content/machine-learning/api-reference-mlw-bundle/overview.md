@@ -27,7 +27,7 @@ The path variable is a variable part of otherwise static URI that denotes a set 
 
 Query parameters are appended to the URI with a question mark followed by a list of key/value pairs. A query variable annotated with the value true in the `/resources/deploy?type=PMML` resource path specifies that the returned PMML file should contain annotations as placed by MLW Server, in case of errors or warnings.
 
-Header parameters are HTTP message metadata in the form of key/value pairs containing information about the message such as content type, message encoding type, authorization, etc.
+Header parameters are HTTP message metadata in the form of key/value pairs containing information about the message such as content type, message encoding type or authorization.
 
 Body parameters appear only in POST or PUT requests and need to be encoded by the HTTP client.
 

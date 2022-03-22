@@ -89,7 +89,7 @@ For each file, the name of the file, its owner, the file type (i.e. image/bmp, t
 
 <img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
-#### To upload a file from your computer
+#### To upload a file from your file system
 
 Click **Upload file** in the top menu bar.
 

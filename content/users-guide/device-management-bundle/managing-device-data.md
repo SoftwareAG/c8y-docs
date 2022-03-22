@@ -583,7 +583,7 @@ To add a certificate perform these steps:
 | Field             | Description                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Certificate name  | User-provided name for the certificate. This name is not used by {{< product-c8y-iot >}} and can serve as a description of the certificate.         |
-| Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.            |
+| Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it in your file system.            |
 | Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |
 

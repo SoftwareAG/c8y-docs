@@ -133,21 +133,21 @@ The setup of the Dremio account and the data lake is done in the same way as in 
 
 ### Changing Dremio memory configuration on Cumulocity IoT DataHub Edge
 
-Depending on the use-case, it might be necessary to increase the memory available to Dremio, the internal engine of Cumulocity IoT DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor).
+Depending on the use case, it might be necessary to increase the memory available to Dremio, the internal engine of {{< product-c8y-iot >}} DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor node).
   
 Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always. 
 Inspecting the Query Profile in Dremio helps to determine where the bottleneck occurs.
 
-#### Master Node Memory Configuration
+#### Master node memory configuration
 
 Run the following steps:
-- Log into edge via ssh
+- Log into edge via SSH
 - As root, run `vi /etc/cdh/cdh-master/dremio-env` and change `DREMIO_MAX_HEAP_MEMORY_SIZE_MB=1750` and `DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=250` to your needs. For example, you can double both values.
 - Run `service cdh-master restart`.
 
-#### Executor Node Memory Configuration
+#### Executor node memory configuration
 
 Run the following steps:
-- Log into edge via ssh
+- Log into edge via SSH
 - As root, run `vi /etc/cdh/cdh-executor/dremio-env` and change `DREMIO_MAX_HEAP_MEMORY_SIZE_MB=1024` and `DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=1488` to your needs. For example, you can double both values.
 - Run `service cdh-executor restart`.

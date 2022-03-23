@@ -60,7 +60,7 @@ The following types of data lakes are currently supported:
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `AES256`
 
-**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS), a key referenced by name. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
+**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by Cumulocity IoT DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 

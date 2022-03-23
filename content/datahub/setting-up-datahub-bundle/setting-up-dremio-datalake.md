@@ -65,7 +65,7 @@ Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 
 Name: `fs.s3a.server-side-encryption.key` \
-Value: Your key name, e.g. `arn:aws:kms:eu-west-2:123456789012:key/071a86ff-8881-4ba0-9230-95af6d01ca01`
+Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a86ff-8881-4ba0-9230-95af6d01ca01`
 
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.** 
 

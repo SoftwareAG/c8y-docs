@@ -56,7 +56,7 @@ Further information is available on [https://os.mbed.com/users/ublox/notebook/u-
 Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket?
 -->
 
-1. Download the firmware to your computer, see table below.
+1. Download the firmware to your file system, see table below.
 2. Copy the downloaded file to the "MBED" drive.
 3. Press the reset button on the C027 to start the agent.
 
@@ -169,7 +169,7 @@ If you want to change the behaviour of the agent, go to mbed.org and adopt the s
 1. Sign up for an account in [mbed](https://mbed.org) for free.
 2. Log into the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
 3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity MbedSmartRESTMain application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
-4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
+4. In the IDE, click **Compile**. The IDE will download the compiled application to your file system.
 5. Copy the downloaded file to the "MBED" drive.
 6. Press the reset button on the C027 to start the agent.
 

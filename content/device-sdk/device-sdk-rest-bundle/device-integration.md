@@ -14,7 +14,7 @@ The startup phase connects the device to {{< product-c8y-iot >}} and updates the
 -   [Step 3](#step-3-register-the-device): Register the device (create the identity).
 -   [Step 4](#step-4-update-the-device-in-the-inventory): If yes, update the device in the inventory.
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
--   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.
+-   [Step 6](#step-6-complete-operations-and-subscribe): Complete operations that required a restart and subscribe to new operations.
 
 ![Startup phase](/images/rest/startupphase.png)
 
@@ -288,7 +288,7 @@ Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. W
 
 The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
-#### Step 6: Finish operations and subscribe
+#### Step 6: Complete operations and subscribe
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 

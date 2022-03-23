@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Microservice migration to API v2
+title: Microservice migration
 layout: redirect
 ---
 
@@ -8,11 +8,11 @@ layout: redirect
 
 #### What's happening:
 
-To comply with new security requirements Software AG is announcing the availability of the Microservice API version 2 and is deprecating the usage of version 1.  
+To comply with new security requirements, Software AG is announcing the availability of the Microservice apiVersion 2 and is deprecating apiVersion 1.  
 
-**With release 10.14**, Software AG announces the availability of Microservice API version 2 and the deprecation of version 1.  
-Microservice API version 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.   
-In details this means that the Microservice API version 2 does not grant the microservice container user the following privileges.
+**With release 10.14**, Software AG announces the availability of Microservice apiVersion 2 and the deprecation of apiVersion 1.  
+Microservice apiVersion 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.
+In details this means that the Microservice apiVersion 2 does not grant the microservice container user the following privileges.
 
 * CAP_AUDIT_CONTROL
 * CAP_AUDIT_READ
@@ -55,31 +55,36 @@ In details this means that the Microservice API version 2 does not grant the mic
 * CAP_SYSLOG
 * CAP_WAKE_ALARM
 
-Please refer to the   
-[Linux man page](https://man7.org/linux/man-pages/ma7/capabilities.7.html) 
+Please refer to the [Linux man page](https://man7.org/linux/man-pages/man7/capabilities.7.html) 
 for more information.
 
-#### What you need to do by XX.YY.ZZ?
+#### What you need to do by 25.10.2022:
 
-Migrate your microservice to the new API version 2.  
+Please perform the following steps to migrate your microservice to the new apiVersion. 
 
-In the simplest case it is sufficient to set the API version 2 in your microservice manifest.  
+1. Change the apiVersion to v2 in the microservice manifest. See <a href="#manifest">Microservice manifest</a>.   
 
-However, for microservices which currently make use of Linux Kernel API which requires one of the above-mentioned user privileges   
+2. Deploy your microservice to the test environment. 
+
+3. Test the functionality of your microservice and analyse possible errors.
+ 
+In the simplest case it is sufficient to set the apiVersion to v2 in your microservice manifest.  
+
+However, for microservices which currently make use of Linux Kernel API which requires one of the above-mentioned user privileges,   
 you additionally need to refactor the source code so that the service doesn't require the invocation of these privileged Linux Kernel APIs anymore.  
 
-For details refer to section "Migration of Microservices to API version 2" 
+For details refer to section "Microservice migration" 
 in the Microservice SDK user guide.
 
 #### How to check whether your microservice is impacted?
 
-Set the API version field in the microservice manifest to "2" and 
+Set the apiVersion field in the microservice manifest to "v2" and 
 deploy this service to your Cumulocity IoT test environment. 
 This environment must be in version 10.14. 
 Verify that the functionality provided by the miroservice still works as expected.
 
 #### What happens if your Cumulocity IoT microservice is still using one of these user privileges after the upgrade of the environment to the 10.15 release? 
 
-If your microservice is using the deprecated API version 1 and 
-is deployed to a Cumulocity IoT environment in version 10.15 or higher it might, 
+If your microservice is using the deprecated apiVersion 1 and 
+is deployed to a Cumulocity IoT environment in version 10.15 or higher, it might, 
 depending on the configuration of this environment, no longer work.

@@ -11,7 +11,7 @@ Here is an example manifest:
 
 ```json
 {
-    "apiVersion": "v1",
+    "apiVersion": "v2",
     "name": "my-microservice",
     "version": "1.0.0",
     "provider": {
@@ -82,7 +82,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">apiVersion</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Document type format discriminator, for future changes in format.</td>
+<td style="text-align:left">Document type format discriminator. The accepted values are positive integer numbers proceeded by a "v", such as "v2".</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>

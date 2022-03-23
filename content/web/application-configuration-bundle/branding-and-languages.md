@@ -84,7 +84,7 @@ my-application
 │
 ```
 
-The first line of code within the ```branding.less``` has to be:
+The first line of code within the ```branding.less``` must be:
 
  ```
  @import '~@c8y/style/extend.less';

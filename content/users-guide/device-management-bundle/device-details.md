@@ -328,7 +328,7 @@ You can influence the graphical display and axes limits by setting up so-called 
 
 **Measurement format**
 
-In order to see measurement graphs, the device has to send measurements in a specified fragment format.
+In order to see measurement graphs, the device must send measurements in a specified fragment format.
 
 	"fragment_name" : {
 		"serie_name" : {
@@ -343,7 +343,7 @@ Example:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
+`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
 <a name="network"></a>
 ### Network

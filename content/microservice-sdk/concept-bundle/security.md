@@ -19,6 +19,8 @@ A request to a microservice can be authenticated using various authentication me
 3. SSO
 4. JWT token authentication (deprecated)
 
+Authentication with OAuth is based on cookies technology, so the access token must be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend you to use the Microservice SDK Version 10.4.6 or later for supporting OAuth in Java microservices.
+
 If you use Java for your development, we recommend you to use the Microservice SDK version 10.4.6 or later to gain support for all available authentication ways in {{< product-c8y-iot >}}.
 
 In case of other programming languages, for which {{< product-c8y-iot >}} does not provide an SDK, we recommend developers to ensure support for all authentication mechanisms available in the {{< product-c8y-iot >}} platform.
@@ -35,6 +37,7 @@ Depending on the authentication method, the credentials can be passed to the mic
 If the incoming request contains the cookie `authorization`, the microservice has to copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` has to be copied. This is necessary, if a request contains the header `tfatoken`, which always needs to be included in the request to <kbd>/user/currentUser</kbd>.
 
 You can see the credential validation flow on the sequence diagram below:
+
 
 ![OAuth](/images/microservices-sdk/ms-oauth.png)
 

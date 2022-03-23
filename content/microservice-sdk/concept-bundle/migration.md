@@ -87,4 +87,5 @@ Verify that the functionality provided by the miroservice still works as expecte
 
 If your microservice is using the deprecated apiVersion 1 and 
 is deployed to a Cumulocity IoT environment in version 10.15 or higher, it might, 
-depending on the configuration of this environment, no longer work.
+depending on the configuration of this environment, be affected by the change. 
+In such a case, you will not be able to upload or subscribe the microservice.

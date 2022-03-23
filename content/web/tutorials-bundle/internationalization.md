@@ -113,17 +113,17 @@ Import `TranslationsModule` to the application's module:
     ```
 
 Now you can run the application.
-When starting, the application displays a single **Translations** menu item, which renders a blank page with the text: `Index`.
+Initially, the application displays a single **Translations** menu item, which renders a blank page with the text: `Index`.
 
 ### Extending default translations
 
-{{< product-c8y-iot >}} comes with a wide range of content that is already translated into multiple languages. These translations can be extended by adding a custom *.po file for a language. This allows you for both adding new translations and modifying the existing ones.
+{{< product-c8y-iot >}} comes with a wide range of content that is already translated into multiple languages. These translations can be extended by adding a custom <i>*.po</i> file for a language. This allows you for both adding new translations and modifying the existing ones.
 
 **Example** 
 
-Let's say you want to override one of the existing strings, e.g. "User settings", to display "User settings (de)" instead of the default "Benutzereinstellungen". This can be achieved by the following steps:
+Let's say you want to override one of the existing strings, for example, "User settings", to display "User settings (de)" instead of the default "Benutzereinstellungen". This can be achieved by the following steps:
 
-1. Create a new file `translations/locales/de.po`:
+1. Create a new file *translations/locales/de.po*:
 
     ```
     msgid ""
@@ -144,7 +144,7 @@ Let's say you want to override one of the existing strings, e.g. "User settings"
     msgstr "User settings (de)"
     ```
 
-2. Open the `index.ts` file and import the newly created file as shown in the example below:
+2. Open the *index.ts* file and import the newly created file as shown in the example below:
 
     ```ts
     (...)
@@ -158,13 +158,13 @@ Let's say you want to override one of the existing strings, e.g. "User settings"
 
 3. Restart the server and the application.
 
->**Info:** You can find *.po files with default translations under *./my-app-i18n/node_modules/@c8y/ngx-components/locales*. To edit these files copy them to your *locales* directory.
+>**Info:** You can find <i>*.po</i> files with default translations under *./my-app-i18n/node_modules/@c8y/ngx-components/locales*. To edit these files copy them to your *locales* directory.
 
 ### Adding new languages
 
 To define new languages that are not supported by default, follow the example below. This example adds an Italian translation.
 
-1. Create a new translation file `translations/locales/it.po`:
+1. Create a new translation file *translations/locales/it.po*:
 
     ```
     msgid ""
@@ -188,7 +188,7 @@ To define new languages that are not supported by default, follow the example be
     msgstr "Mr. Smith is  {{ age }} years old (it)"
     ```
 
-2. Open the `package.json` file, and modify the `c8y.application` object as shown below:
+2. Open the *package.json* file, and modify the `c8y.application` object as shown below:
 
     ```json
     {
@@ -213,17 +213,17 @@ To define new languages that are not supported by default, follow the example be
 
 3. Restart the server and the application.
 
-Now you can select Italian and see that user setting's label is translated as **User settings (it)**, as defined in the `it.po` file.
+Now you can select Italian and see that user setting's label is translated as **User settings (it)**, as defined in the *it.po* file.
 
 ### Basic text translation
 
-There are multiple ways to translate content. The most common is the `translate` pipe and directive, which is explained in the following section.
+There are multiple ways to translate content. The most common is the "translate" pipe and directive, which is explained in the following section.
 
 #### Translate pipe
 
-This is the most common way to translate content that is present in your HTML views. The following example will work assuming that you added a custom it.po file as described in the previous section.  
+The translate pipe is the most common way to translate content that is present in your HTML views. The following example will work assuming that you added a custom *it.po* file as described in the previous section.  
 
-In your `translations/text-translation.component.html` file, add:
+In your *translations/text-translation.component.html* file, add:
 
     ```html
     <div>{{'User settings' | translate}}</div>
@@ -231,7 +231,7 @@ In your `translations/text-translation.component.html` file, add:
 
 If your language is set to Italian, reloading the application will render the content as `User settings (it)`.
 
-The translate pipe allows to set different parameters, as shown in the example for `translations/locales/it.po`:
+The translate pipe allows to set different parameters, as shown in the example for `translations/locales/it.po:
 
     ```
     msgid "Mr. Smith is {{ age }} years old"
@@ -264,7 +264,7 @@ Another way to translate content is to use the attribute `translate`, as shown i
     </div>
     ```
 
-Similarly to the example with `translate` pipe, the content of the `span` will be translated to `User settings (it)`.
+Similarly to the example with the translate pipe, the content of the `span` will be translated to `User settings (it)`.
 
 You can use parameters with the `translate` directive in the following way:
 
@@ -292,7 +292,7 @@ You can use parameters with the `translate` directive in the following way:
     </div>
     ```
 
-In the example above, you must use Angular's `ngNonBindable` directive in addition to the `translate` directive, so that Angular ignores curly braces and lets the translation service to handle them.
+In the example above, you must use Angular's `ngNonBindable` directive in addition to the `translate` directive, so that Angular ignores curly braces and lets the translation service handle them.
 
 Furthermore, you can translate entire HTML code blocks, as shown in the example below:
 
@@ -300,7 +300,7 @@ Furthermore, you can translate entire HTML code blocks, as shown in the example 
 
     ```po
     msgid "Read about your current language in <a href="#guide">our guide</a>"
-    msgstr "Read about your italian language in <a href="#italian-guide">our italian guide</a>"
+    msgstr "Read about your Italian language in <a href="#italian-guide">our Italian guide</a>"
     ```
 
 * `translations/text-translation.component.html`:
@@ -322,8 +322,8 @@ Furthermore, you can translate entire HTML code blocks, as shown in the example 
 
 #### Translating content of variables
 
-Your content can be located in TypeScript as string variables
-It is possible to translate such variable, as in example below:
+Your content can be located in TypeScript as string variables.
+It is possible to translate such variable, as in the example below:
 
 * `translations/text-translation.component.ts`:
     ```ts
@@ -351,7 +351,7 @@ It is possible to translate such variable, as in example below:
       </div>
     </div>
     ```
->**Info:** Wrap such strings with the `gettext` function. This will enable automatic extraction of the strings to */locales/locales.pot file*. This also indicates that such strings are meant to be translated.
+>**Info:** Wrap such strings with the `gettext` function. This will enable automatic extraction of the strings to the */locales/locales.pot* file. This also indicates that such strings are meant to be translated.
 >
 >See [Extracting translations using the locale extract tool](#extracting-translations-using-locale-extract-tool) for information about extracting strings for translation.
 
@@ -463,11 +463,11 @@ You can use the `c8ycli locale-extract` command to extract strings from:
 - `node_modules/@c8y/locales` which contains all the default strings and translations, which makes it easier to edit or add new ones.
 - `.` which contains your custom modules, components, templates, services and more.
 
-After using the command, a new directory `./locales` will be created if it doesn't exist yet.
+After using the command, a new directory *./locales* will be created if it doesn't exist yet.
 It contains:
 
-- Files with the `.po` extension for all available languages. You can edit and copy these files to the *./translations/locales* directory and add necessary imports.
-- The `locales.pot` file which contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method in your own source code under `.`. That means it does not include any default strings from `node_modules/@c8y/locales`. You can append these values to your custom `.po` files and translate them.
+- Files with the *.po* extension for all available languages. You can edit and copy these files to the *./translations/locales* directory and add necessary imports.
+- The *locales.pot* file which contains all strings that were marked with the `translate` pipe, the `translate` directive or the `gettext` method in your own source code under `.`. That means it does not include any default strings from `node_modules/@c8y/locales`. You can append these values to your custom *.po* files and translate them.
 
 #### Translating dates
 

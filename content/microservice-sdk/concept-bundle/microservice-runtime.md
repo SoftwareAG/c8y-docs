@@ -42,7 +42,7 @@ $ docker images
 Run the Docker container for the microservice providing the environment variables:
 
 ```shell
-$ docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
+$ docker run –cap-drop=all –cap-add=net_bind_service -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
 Use a backslash (\\) before special characters such as `&, !, ;, \`.

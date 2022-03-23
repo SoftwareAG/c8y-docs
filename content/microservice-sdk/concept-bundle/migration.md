@@ -12,53 +12,12 @@ To comply with new security requirements, Software AG is announcing the availabi
 
 **With release 10.14**, Software AG announces the availability of Microservice apiVersion 2 and the deprecation of apiVersion 1.  
 Microservice apiVersion 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.
-In details this means that the Microservice apiVersion 2 does not grant the microservice container user the following privileges.
+In details this means that with microservice apiVersion 2 the microservice container is granted only specific capabilities. 
 
-* CAP_AUDIT_CONTROL
-* CAP_AUDIT_READ
-* CAP_AUDIT_WRITE
-* CAP_BLOCK_SUSPEND
-* CAP_BPF
-* CAP_CHECKPOINT_RESTORE
-* CAP_CHOWN
-* CAP_DAC_OVERRIDE
-* CAP_DAC_READ_SEARCH
-* CAP_FOWNER
-* CAP_FSETID
-* CAP_IPC_LOCK
-* CAP_IPC_OWNER
-* CAP_KILL
-* CAP_LEASE
-* CAP_LINUX_IMMUTABLE
-* CAP_MAC_ADMIN
-* CAP_MAC_OVERRIDE
-* CAP_MKNOD
-* CAP_NET_ADMIN
-* CAP_NET_BROADCAST
-* CAP_NET_RAW
-* CAP_PERFMON
-* CAP_SETGID
-* CAP_SETFCAP
-* CAP_SETPCAP
-* CAP_SETUID
-* CAP_SYS_ADMIN
-* CAP_SYS_BOOT
-* CAP_SYS_CHROOT
-* CAP_SYS_MODULE
-* CAP_SYS_NICE
-* CAP_SYS_PACCT
-* CAP_SYS_PTRACE
-* CAP_SYS_RAWIO
-* CAP_SYS_RESOURCE
-* CAP_SYS_TIME
-* CAP_SYS_TTY_CONFIG
-* CAP_SYSLOG
-* CAP_WAKE_ALARM
+Please refer to the [Linux man page](https://man7.org/linux/man-pages/man7/capabilities.7.html) for more information on Kernel capabilities.
+With the apiVersion change, the microservice is granted the capability NET_BIND_SERVICE.
 
-Please refer to the [Linux man page](https://man7.org/linux/man-pages/man7/capabilities.7.html) 
-for more information.
-
-#### What you need to do by 25.10.2022:
+#### What you need to do by release 10.15:
 
 Please perform the following steps to migrate your microservice to the new apiVersion. 
 

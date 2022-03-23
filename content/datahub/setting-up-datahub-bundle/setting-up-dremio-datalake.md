@@ -60,14 +60,14 @@ The following types of data lakes are currently supported:
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `AES256`
 
-**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by Cumulocity IoT DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
+**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 
 Name: `fs.s3a.server-side-encryption.key` \
 Value: Your key name, e.g. `arn:aws:kms:eu-west-2:123456789012:key/071a86ff-8881-4ba0-9230-95af6d01ca01`
 
-**SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **Cumulocity IoT DataHub does not support this option.** 
+**SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.** 
 
 ##### NAS
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:

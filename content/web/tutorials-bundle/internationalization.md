@@ -246,6 +246,10 @@ The result is: `"Sig. Smith ha 40 anni"`.
 
 >**Important:** The string templates must have the curly braces escaped in order to avoid compilation errors.
 
+>**Important:** Currently extract tool does not work with parametrized translate pipe. We recommend to use `gettext()` function inside **.ts* file.
+> This will allow extract tool to properly retrieve translatable text, without need to escape curly braces. 
+
+
 #### Translate directive
 
 Another way to translate content is to use the attribute `translate`, as shown in the example for `translations/text-translation.component.html`:
@@ -397,61 +401,24 @@ To do so, inject the `TranslateService` into the component and use its `instant`
       </div>
     </div>
     ```
-Translating content using the `instant` method, has a flaw that given translation will not be updated upon language change.
-In order to achieve this, it is required to keep track of language changes.
-Make sure that if a user changes the language, the text is translated again. See the example below for reference:
+
+Translating content using `instant` method is a one-time operation, so the translation won't be updated, if user changes the language and decides not to reload the application.
+If you want the translation to be updated even in such a case, we recommend you to use `stream` method instead.
+
+    ```ts
+      this.textStream = this.translateService.stream(this.variableWithText)
+    ```
+
+    ```html
+      {{ textStream | async }}
+    ```
+
+Alternatively, you can subscribe to `onLangChange` event emitter and retranslate the text explicitly.
+
     ```ts
       this.translateService.onLangChange.subscribe(()=>{
         this.translatedVariableWithText = this.translateService.instant(this.variableWithText);
     })
-    ```
-
-Alternatively, use the `stream` method. This will provide an `Observable` object that will output a new value if the language is changed by the user.
-See the example below for reference:
-
-* `translations/text-translation.component.ts`
-
-    ```ts
-    import { Component } from '@angular/core';
-    import { gettext } from '@c8y/ngx-components';
-    import {TranslateService} from '@ngx-translate/core';
-
-    @Component({
-     selector: 'text-translation',
-     templateUrl: './text-translation.component.html'
-    })
-    export class TextTranslationComponent {
-    (...)
-
-     textStream
-     translatedVariableStream
-
-     constructor(private translateService: TranslateService) {
-      (...)
-
-      this.textStream = this.translateService.stream(this.variableWithText)
-      this.textStream.subscribe(
-        (text) => {
-          this.translatedVariableStream = text
-        }
-      )
-     }
-    }
-
-    ```
-
-* `translations/text-translation.component.html`:
-
-    ```html
-    <div class="card">
-      <div class="card-header separator">
-        <h4 class="card-title">Stream examples:</h4>
-      </div>
-      <div class="card-block">
-        <div class="m-r-4">This is translated by `stream` using async pipe: {{textStream|async}}</div>
-        <div class="m-r-4">This is translated by subscribing `stream` method: {{translatedVariableStream}}</div>
-      </div>
-    </div>
     ```
 
 >**Important:** All subscriptions need to be unsubscribed in order to prevent memory leaks. This can be avoided by using Angular's `async` pipe on observables instead.

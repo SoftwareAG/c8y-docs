@@ -29,7 +29,7 @@ Please perform the following steps to migrate your microservice to the new apiVe
  
 In the simplest case it is sufficient to set the apiVersion to v2 in your microservice manifest.  
 
-However, for microservices which currently make use of specific privileges of the Linux Kernel API, which are not granted anymore,
+However, for microservices which currently make use of specific privileges of the Linux Kernel API, not granted anymore,
 you additionally need to refactor the source code so that the service doesn't require the invocation of these privileges.  
 
 For details refer to section "Microservice migration" 

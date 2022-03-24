@@ -21,25 +21,22 @@ With the apiVersion change, the microservice is granted the capability NET_BIND_
 
 Please perform the following steps to migrate your microservice to the new apiVersion. 
 
-1. Change the apiVersion to v2 in the microservice manifest. See <a href="#manifest">Microservice manifest</a>.   
+1. Change the apiVersion to 2 in the microservice manifest. See <a href="#manifest">Microservice manifest</a>.   
 
 2. Deploy your microservice to the test environment. 
 
 3. Test the functionality of your microservice and analyse possible errors.
  
-In the simplest case it is sufficient to set the apiVersion to v2 in your microservice manifest.  
+In the simplest case it is sufficient to set the apiVersion to 2 in your microservice manifest.  
 
 However, for microservices which currently make use of specific privileges of the Linux Kernel API, not granted anymore,
 you additionally need to refactor the source code so that the service doesn't require the invocation of these privileges.  
 
-For details refer to section "Microservice migration" 
-in the Microservice SDK user guide.
-
 #### How to check whether your microservice is impacted?
 
-Set the apiVersion field in the microservice manifest to "v2" and 
+Set the apiVersion field in the microservice manifest to 2 and 
 deploy this service to your Cumulocity IoT test environment. 
-This environment must be in version 10.14. 
+This environment must be in version 10.14 or higher. 
 Verify that the functionality provided by the miroservice still works as expected.
 
 #### What happens if your Cumulocity IoT microservice is still using one of these user privileges after the upgrade of the environment to the 10.15 release? 

@@ -18,7 +18,7 @@ In thin-edge.io we decided not to follow this approach for the following reasons
   including adding new features, testing, documentation, examples, stack overflow, which would not serve a purpose.
   * Using an IPC mechanism and not a library makes it easier to dynamically combine components during runtime
   instead of recompiling the software. For example, it is easier to add additional protocol stacks
-  (OPC/UA, modbus, ProfiNet, IO-Link, KNX, etc.) to thin-edge.io during run-time.
+  (OPC/UA, modbus, ProfiNet, IO-Link, KNX, and so on) to thin-edge.io during run-time.
 * Linking libraries to existing code can be problematic for some developers, for example for licensing reasons.
   While thin-edge.io has a very user-friendly licensing (Apache 2.0),
   some developers prefer to reduce the number of libraries that they link to their software.

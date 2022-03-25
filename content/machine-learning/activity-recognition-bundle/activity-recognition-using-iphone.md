@@ -70,19 +70,19 @@ The following code block contains the data format of the JSON schema that was as
 #### To collect the walking data:
 
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the sitting data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the jumping data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * Once data is downloaded, this file can be previewed to verify the downloaded data and can be used for model building exercise.
 
@@ -136,7 +136,7 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 #### Create and upload Apama monitor file
 
-For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 

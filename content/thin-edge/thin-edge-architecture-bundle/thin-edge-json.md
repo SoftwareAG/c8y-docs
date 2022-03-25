@@ -107,7 +107,7 @@ Thin-edge.io reserves all topics with the prefix `tedge/` for this purpose. To s
 
 If the messages published to this `tedge/measurements` topic is not a well-formed Thin Edge JSON, thin-edge.io does not process this message. It publishes an appropriate error message including the reason why the validation failed to a dedicated `tedge/errors` topic. The messages published to this topic will be highly verbose error messages and can be used for any debugging during development. Do not rely on the structure of these error messages to automate any actions as they are purely textual data and bound to change from time-to-time.
 
-More topics will be added under the `tedge/` topic in future to support more data types like events, alarms etc. We recommend you to avoid any sub-topics under `tedge/` for any other data exchange between processes.
+More topics will be added under the `tedge/` topic in future to support more data types like events, alarms and so on. We recommend you to avoid any sub-topics under `tedge/` for any other data exchange between processes.
 
 Below you find the complete list of topics reserved by thin-edge.io for its internal working:
 

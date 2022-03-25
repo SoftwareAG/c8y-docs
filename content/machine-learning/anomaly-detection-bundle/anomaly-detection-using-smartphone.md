@@ -27,7 +27,7 @@ In contrast to supervised classification models, labeled training data is not re
 
 2. You can either download the recorded measurements of your smartphone or use the data provided within the project for model-building purposes.
 
-    * Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
+    * Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "anomalyTrainingData" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" and "c8y_Gyroscope" as **Data points**.
 
     * Alternatively, use the *anomalyTrainingData.csv* file in the **Data** folder of the project.
 

@@ -45,7 +45,7 @@ There are two ways to add a SmartRest template:
 ### To import an existing SmartREST template
 
 1. Click **Import template** at the right of the top menu bar.
-2. In the resulting dialog box, choose a file to upload by browsing for it.
+2. In the resulting dialog box, select a file to upload by browsing for it.
 3. Enter a template name and a unique template ID (both mandatory fields).
 4. Click **Import** to import the template.
 

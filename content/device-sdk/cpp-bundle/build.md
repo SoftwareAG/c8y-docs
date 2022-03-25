@@ -43,7 +43,7 @@ Before starting developing your C++ agents for {{< product-c8y-iot >}}, you need
 </tbody>
 </table>
 
-> **Info:** There are several libcurl packages against different TLS libraries. You can choose the one you prefer.
+> **Info:** There are several libcurl packages against different TLS libraries. You can select the one you prefer.
 
 ### Compiling the library
 

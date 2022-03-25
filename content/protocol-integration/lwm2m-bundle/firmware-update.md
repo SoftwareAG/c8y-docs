@@ -67,9 +67,9 @@ As the first step of the delivery, the agent tries to establish the observations
 
 Depending on the supported delivery protocols and methods by the device, the agent now delivers the firmware to the device.
 
-When PULL is chosen as the delivery method, the agent will try to write the firmware URI to the device firmware package URI: write **&#47;5&#47;0&#47;1 <firmware uri>**. The agent constructs the firmware URI according to the chosen delivery protocol.
+When PULL is selected as the delivery method, the agent will try to write the firmware URI to the device firmware package URI: write **&#47;5&#47;0&#47;1 <firmware uri>**. The agent constructs the firmware URI according to the selected delivery protocol.
 
-When PUSH is chosen as the deliver method, the agent will try to write the firmware binary to the device firmware package: write **&#47;5&#47;0&#47;0 <firmware binary>**.
+When PUSH is selected as the deliver method, the agent will try to write the firmware binary to the device firmware package: write **&#47;5&#47;0&#47;0 <firmware binary>**.
 
 In both cases, if the firmware binary cannot be delivered as one single message, the agent delivers the firmware using so-called block-wise transfer. The preferred size of each block can be specified by the device in the negotiation phase with the LWM2M agent. If the device does not specify it, the agent uses its default block size of 512 bytes.
 

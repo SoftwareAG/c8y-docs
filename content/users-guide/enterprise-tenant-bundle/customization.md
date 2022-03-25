@@ -140,7 +140,7 @@ Under **Navigator logo** you can provide the navigator logo and set the navigato
 
 In the **Font** section you specify the font settings for your branded version.
 
-You can choose your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
+You can select your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
 **Colors**
 

@@ -46,7 +46,7 @@ The following is a list of the alarms. The information further down below explai
 - [The correlator queue is full](#application_queue_full)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl)
 
-Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
+Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
 > **Info:** The alarm texts for the alarms below may undergo minor changes in the future.
 
@@ -80,7 +80,7 @@ To diagnose the cause of an unexpected restart, you can try the following:
 
 - Check the EPL apps memory profiler by making a REST request to */service/cep/diagnostics/eplMemoryProfiler* (available as of EPL Apps 10.5.7) for any memory leaks.
 
-    Note that you have to re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
+    Note that you must re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
 
 - Check the microservice logs for any exceptions by downloading the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). In the downloaded ZIP file, you can find the logs under */diagnostics/*.
 
@@ -150,7 +150,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 - Also check for memory usage on all the input and output queues available from the **Enhanced** link in */diagnostics/toStringQueues.txt*.
 
-If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you have to fix this as a priority.
+If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you must fix this as a priority.
 
 See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-sag >}}'s {{< sag-dev-community >}}.
 
@@ -345,7 +345,7 @@ This alarm is raised whenever the CEP queue for the respective tenant is full.
 
 Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
-If the CEP queue is full, older events are removed to handle new incoming events. To avoid this, you have to diagnose the cause of the queue being full and resolve it as soon as possible.
+If the CEP queue is full, older events are removed to handle new incoming events. To avoid this, you must diagnose the cause of the queue being full and resolve it as soon as possible.
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 

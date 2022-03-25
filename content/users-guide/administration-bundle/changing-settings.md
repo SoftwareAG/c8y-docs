@@ -9,7 +9,7 @@ helpcontent:
 
 
 	* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
-	* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+	* Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
 	* Single sign-on redirect - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 
@@ -42,7 +42,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 In the **Preferred login mode** field, you can select one of the following options:
 
 * OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
-* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+* Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
 * Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
@@ -160,7 +160,7 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version
 
 Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
 
-You may choose one of the following options:
+You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
@@ -205,7 +205,7 @@ To enable the feature, the administrator must configure a connection with the au
 
 Click the **Single sign-on** tab in the **Authentication** page.
 
-At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
+At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
 ##### Custom template
 

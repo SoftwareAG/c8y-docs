@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-The device management library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
+The device management library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
 
 In the following section you will find descriptions of the most important functionalities of a device, its managed objects and all its corresponding fragments to them. We will explain the relationship between the {{< product-c8y-iot >}} UI, the device object managed in our databases and what is being communicated to and from the device itself.
 

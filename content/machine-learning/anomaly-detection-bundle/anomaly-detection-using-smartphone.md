@@ -9,7 +9,7 @@ aliases:
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone.
 
->**Info:** The phone used for the entire workflow has to be of the same type because the data and sensors may vary for different devices.
+>**Info:** The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
 
 #### Register a smartphone in the platform
 

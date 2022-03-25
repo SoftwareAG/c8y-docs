@@ -41,7 +41,7 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 ### To register devices
 
-To register devices, you may choose one of the following options:
+To register devices, you can select one of the following options:
 
 * **[General device registration](#device-registration-manually)** - to manually connect one or more devices
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step

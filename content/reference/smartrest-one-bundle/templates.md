@@ -6,7 +6,7 @@ layout: redirect
 
 SmartREST templates are a collection of request and response templates used for the conversion of CSV data and {{< product-c8y-iot >}} REST API calls. Additionally, SmartREST templates contain a template identifier which is compared to the custom `X-Id` header field to identify the SmartREST template used for processing.
 
-Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each SmartREST request or response row. To avoid collision with one of the default message identifiers, developers are advised to choose message identifiers starting at `100`.
+Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each SmartREST request or response row. To avoid collision with one of the default message identifiers, developers are advised to select message identifiers starting at `100`.
 
 ### Request templates
 

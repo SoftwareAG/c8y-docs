@@ -30,23 +30,23 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 ### Manual registration
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device Management application, choose **Devices > Registration** from the navigator.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device Management application, select **Devices > Registration** from the navigator.
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.jpg)
 
 2.  From your smartphone, launch the app and tap **Connect** at the top right of the screen. When the camera opens, tap **Manual Registration**.
 
-3. Back in your web browser, click **Register device** and then **General device registration**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
+3. Back in your web browser, click **Register device** and then **General device registration**. Select a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 
-4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
+4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your selected device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
     ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 
-5.  Back on your web browser, your device's card now shows the options to accept or reject the connection. Accept the connection. Your device will be registered with the server and assigned to the chosen group.
+5.  Back on your web browser, your device's card now shows the options to accept or reject the connection. Accept the connection. Your device will be registered with the server and assigned to the selected group.
 
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
-> **Info:** If you do not accept the device request within the required time, an according message shows up. Choose **Retry** to continue with the registration process.
+> **Info:** If you do not accept the device request within the required time, an according message shows up. Select **Retry** to continue with the registration process.
 
 For further information about registering a device on the platform manually, refer to [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices).
 

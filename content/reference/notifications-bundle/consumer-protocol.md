@@ -13,7 +13,7 @@ The new endpoint is accessible only using the external {{< product-c8y-iot >}} f
 
 The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is "wss" and consumers use URLs starting with "wss://" followed by the fully qualified domain name of the {{< product-c8y-iot >}} environment, followed by a fixed URL path and a query string.
 
-The fixed URL path is <kbd>/notifications2/consumer/</kbd> and there are only two query string arguments:
+The fixed URL path is <kbd>/notification2/consumer/</kbd> and there are only two query string arguments:
 
 * `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 

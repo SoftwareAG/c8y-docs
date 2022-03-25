@@ -64,7 +64,7 @@ There is a sample microservice available in the [cumulocity-examples repository]
 When creating a token, an expiration time must be given in minutes of validity from when the token was created.
 This security feature limits the potential damage due to leaking of a token.
 It requires tokens to be re-created or refreshed periodically.
-This can be done by calling the token create request with the same parameters as originally. 
+This can be done by calling the token create request with the same parameters as originally.
 If the parameters used are not available they can be extracted from the token.
 As the token string is a JWT (JSON Web Token), it can be decoded to extract the original information used to create the token by splitting it into 3 parts (on ".") and doing a base64 decode on the first substring.
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
@@ -82,7 +82,7 @@ The token is the same as you would use to connect to the WebSocket endpoint to c
 Note that there is no explicit "subscribe a subscriber" operation using a token.
 Instead this happens when you first connect a WebSocket with a token for the subscription name and subscriber.
 However, unsubscribing an application is an explicit act using the original or a similar token.
-Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes, 
+Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes,
 as typically one wants messages to persist even when no consumer is running.
 Only if no consumer will ever run again should unsubscribing a subscriber be necessary.
 

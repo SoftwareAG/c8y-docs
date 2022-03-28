@@ -1,23 +1,17 @@
 ---
 weight: 50
-title: Microservice migration
+title: Microservice migration to apiVersion 2
 layout: redirect
 ---
 
-### Cumulocity IoT microservice user privilege deprecation
-
-#### Microservice apiVersion 2
-
-To comply with new security requirements, {{< company-sag >}} is announcing the availability of the microservice apiVersion 2 and is deprecating apiVersion 1.  
-
-**With release 10.14**, {{< company-sag >}} announces the availability of microservice apiVersion 2 and the deprecation of apiVersion 1.  
+**With release 10.14**, {{< company-sag >}} announces the availability of microservice apiVersion 2 and the deprecation of apiVersion 1 to comply with new security requirements.  
 Microservice apiVersion 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.
 In details this means that with microservice apiVersion 2 the microservice container is granted only specific capabilities.
 
 Refer to the [Linux man page](https://man7.org/linux/man-pages/man7/capabilities.7.html) for more information on Kernel capabilities.
 With the apiVersion change, the microservice is granted the capability NET_BIND_SERVICE.
 
-#### Microservice migration in release 10.15
+#### Microservice migration from release 10.15
 
 Perform the following steps to migrate your microservice to the new apiVersion.
 

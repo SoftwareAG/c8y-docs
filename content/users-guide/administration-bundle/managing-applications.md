@@ -327,8 +327,8 @@ Click **Add application** in the **Own applications** page.
 
 In the resulting dialog box, choose one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer.
-* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system.
+* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it in your file system.
 * [External application](#external-application) - by linking to an application running elsewhere
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
@@ -337,7 +337,7 @@ In the resulting dialog box, choose one of the following methods:
 
 1. Click **Add application** in the **Own applications** page.
 2. Select **Upload web application**.
-3. In the resulting dialog box, drop a ZIP file or browse for it on your computer.
+3. In the resulting dialog box, drop a ZIP file or browse for it in your file system.
 
 The application is created once the ZIP file has been successfully uploaded.
 
@@ -422,7 +422,7 @@ Multiple archive file versions can be stored in {{< product-c8y-iot >}} when the
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
-3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
+3. Click **Upload archive** and browse for the archive in your file system or simply drop the archive file.
 4. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
@@ -520,7 +520,7 @@ Initially, the **Logs** tab shows the latest logs of the microservice instance.
 
 At the bottom right you find navigation buttons:
 
-* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 35 MB of logs).
 * **Previous** - increases the time range in 10 minutes steps.
 * **Next** - reduces the time range in 10 minutes steps.
 * **Last** - directly navigates to the latest available log entries.
@@ -529,6 +529,6 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35 MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.

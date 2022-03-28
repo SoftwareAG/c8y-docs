@@ -8,7 +8,7 @@ weight: 70
 
 ### Introduction
 
-{{< product-c8y-iot >}} provides integrated tools that allow you to translate your content. It is based on the `ngx-translate` library. The `CoreModule` exports a preconfigured instance of this tool, with {{< product-c8y-iot >}} already being integrated. Refer to the [ngx-translate Github page](https://github.com/ngx-translate/core) for more information.
+{{< product-c8y-iot >}} provides an integrated tool which allows you to translate your content. This tool is based on the ngx-translate library. The `CoreModule` exports a preconfigured instance of this tool, with {{< product-c8y-iot >}} already being integrated. Refer to the [ngx-translate Github page](https://github.com/ngx-translate/core) for more information.
 
 For this tutorial, create a new application with minimal configuration.
 

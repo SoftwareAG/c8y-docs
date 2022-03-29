@@ -11,9 +11,7 @@ helpcontent:
     As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications.
 
 
-    To add a microservice, click **Add microservice** and follow the instructions in the wizard, see also *Administration > Managing Microservices > To add a microservice as custom application* in the *User guide*.
-
-    Click on a microservice to view the application properties."
+    Click on a microservice to view the application properties. To add a microservice, click **Add microservice** and follow the instructions in the wizard or in the *User guide*."
 ---
 
 Click **Microservices** in the **Ecosystem** menu in the navigator to display a list or grid of all  microservices subscribed to your account.

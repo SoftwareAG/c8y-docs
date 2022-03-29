@@ -35,7 +35,7 @@ helpcontent:
   * **Bulk operations** are single operations executed on a set of devices.
 
 
-  See also, *Device Management > Monitoring and controlling devices > Working with operations* in the *User guide*."
+  For details, see *Device Management > Monitoring and controlling devices > Working with operations* in the *User guide*."
 - label: events-all
   title: Events
   content: "Operations are used to remotely control devices. You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of this device.
@@ -44,7 +44,7 @@ helpcontent:
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left.
 
 
-  See also, *Device Management > Monitoring and controlling devices > Troubleshooting Devices* in the *User guide*."
+  For details, see *Device Management > Monitoring and controlling devices > Troubleshooting Devices* in the *User guide*."
 ---
 
 

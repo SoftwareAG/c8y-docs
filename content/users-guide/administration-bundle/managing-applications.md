@@ -12,10 +12,7 @@ helpcontent:
     - custom applications - applications owned by the tenant. You can add custom applications in various ways as own applications.
 
 
-    To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Custom applications* in the *User guide*.
-
-
-    Click on an application to view the application properties."
+    Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also *Administration > Managing applications > Custom applications* in the *User guide*."
 ---
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](concepts/applications/#overview) in the *Concepts guide*..

@@ -17,7 +17,7 @@ Supported browsers in this version are:
 * Google Chrome [2]
 * Internet Explorer 11 [3]
 
-[1] Only the Extended Support Releases of Mozilla Firefox are explicitly supported. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of Cumulocity IoT with future versions of Mozilla Firefox cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT.
+[1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of Cumulocity IoT with other versions of Mozilla Firefox cannot be guaranteed.
 
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of Cumulocity IoT with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT.
 

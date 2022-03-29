@@ -9,7 +9,7 @@ Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure yo
 
 ### <a name="create-new-credentials">Creating new account credentials</a>
 
-If you select **Connectivity** for the first time, you are asked to provide the Actility ThingPark URL and credentials which is used for LoRa device provisioning.
+If you select **Connectivity** for the first time, you are asked to provide the Actility ThingPark URL and credentials which are used for LoRa device provisioning.
 
 Enter the following information:
 

@@ -11,7 +11,7 @@ helpcontent:
   content: "Availability shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 - label: alarm-monitoring
   title: Alarms
-  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
+  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of the device.
 
 
   By default, only unresolved alarms are shown. If you turn on **Show cleared alarms** at the top right, you will see the entire alarm history.
@@ -20,31 +20,25 @@ helpcontent:
   Alarms are classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.
 
 
-  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
-
-
-  For details, see *Device Management > Monitoring and controlling devices > Working with alarms* in the *User guide*."
+  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
 - label: operation-monitoring
   title: Device control
-  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of this device.
+  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of the device.
 
 
   There are two types of operations, each represented by a tab:
 
   * **Single operations** are executed on a single device.
-  * **Bulk operations** are single operations executed on a set of devices.
-
-
-  See also, *Device Management > Monitoring and controlling devices > Working with operations* in the *User guide*."
+  * **Bulk operations** are single operations executed on a set of devices."
 - label: events-all
   title: Events
-  content: "Operations are used to remotely control devices. You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of this device.
+  content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 
-  Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left.
+   You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of the device.
 
 
-  See also, *Device Management > Monitoring and controlling devices > Troubleshooting Devices* in the *User guide*."
+  Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
 
 

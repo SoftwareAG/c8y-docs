@@ -2,6 +2,13 @@
 weight: 20
 title: Managing assets
 layout: redirect
+helpcontent:
+  - label: managing-assets
+    title: Managing assets
+    content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
+
+
+    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
 ---
 
 <a name="assets"></a>

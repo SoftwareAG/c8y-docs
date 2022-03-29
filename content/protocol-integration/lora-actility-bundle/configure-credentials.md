@@ -30,7 +30,7 @@ Click **Save connectivity settings**. If you have entered the correct informatio
 
 In order to update your connectivity settings, go to the Administration and click **Update connectivity settings** in the **Settings** menu.
 
-Enter your Actility ThingPark URL, profile ID, username and password as requested. For details on these information see [Creating new account credentials](#create-new-credentials).
+Enter your Actility ThingPark URL, profile ID, username, and password as requested. For details on these information see [Creating new account credentials](#create-new-credentials).
 
 ![Update connectivity settings](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 

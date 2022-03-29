@@ -7,7 +7,7 @@ helpcontent:
     content: "Audit logs show the operations that users have carried out.
 
 
-      In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them. For details, see *Administration > Viewing audit logs* in the *User guide*."
+      In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
 ---
 
 Audit logs show the operations that users have carried out.

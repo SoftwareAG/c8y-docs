@@ -10,10 +10,7 @@ helpcontent:
     content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations.
 
 
-    Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
-
-
-    See also *Enterprise tenant > Using the data broker* in the *User guide*."
+    Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant. For details, see the *User guide*."
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:

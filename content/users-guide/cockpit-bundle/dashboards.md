@@ -7,7 +7,7 @@ helpcontent:
     content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 
-    Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type. For details, see *Cockpit > Working with dashboards* in the *User guide*.
+    Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type. 
 
 
     On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.

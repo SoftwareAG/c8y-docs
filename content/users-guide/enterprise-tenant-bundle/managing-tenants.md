@@ -12,8 +12,7 @@ helpcontent:
 
     To create a subtenant click **Create tenant** at the right of the top menu bar.
 
-
-    See also *Enterprise tenant > Managing tenant* in the *User guide*."
+    For details on managing tenants see the *User guide*."
 
 ---
 

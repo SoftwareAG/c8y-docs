@@ -4,10 +4,7 @@ title: Managing business rules
 helpcontent:
 - label: reprio-alarms
   title: Alarm mapping
-  content: "Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL.
-
-
-  For details, see *Administration > Managing business rules* in the *User guide*."
+  content: "Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL."
 ---
 
 <a name="reprio-alarms"></a>

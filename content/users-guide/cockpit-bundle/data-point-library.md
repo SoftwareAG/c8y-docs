@@ -5,10 +5,10 @@ layout: redirect
 helpcontent:
   - label: data-point-library
     title: Data point library
-    content: "The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices. To find default values for a data point like color or label, Cumulocity IoT searches the data point library for a matching entry. If there is match, the corresponding data point properties are used for the default visualization. For details see *Cockpit > Data point library* in the *User guide*.
+    content: "The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices. To find default values for a data point like color or label, Cumulocity IoT searches the data point library for a matching entry. If there is match, the corresponding data point properties are used for the default visualization.
 
 
-    Either select one of the existing data points from the list or add a new data point to the library to meet your individual needs."
+    Either select one of the existing data points from the list or click **Add data point** at the top right to add a new data point to the library which meets your individual needs, see the *User guide* for details."
 ---
 
 

@@ -4,7 +4,8 @@ title: Daten-Explorer
 weight: 30
 ---
 
-Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.
+Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
+
 
 Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
 
@@ -12,11 +13,11 @@ Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets ver
 
 * Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
-Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Hinzufügen von Datenpunkten](#add-data-points).
+Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-![data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
+![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
@@ -26,11 +27,17 @@ Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
 * Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte aus der Datenpunktbibliothek verwendet.
 
-In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, in dem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen.
+In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, indem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen.
 
-![edit data points](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-edit.png)
+![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter [Anpassen von Datenpunktattributen](#customize-data-points).
+
+Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im vom Gerät verwalteten Objekt zu speichern. Diese Einstellungen haben dann Vorrang vor den Einstellungen aus der Datenpunktbibliothek, z. B. wenn dieser Datenpunkt von anderen Benutzern einem Daten-Explorer hinzugefügt wird oder wenn das Gerät und sein Datenpunkt durch eine Schwellenwert-Smart Rule verarbeitet werden. Wenn Sie die Standardeinstellungen der Datenpunktbibliothek wiederherstellen möchten, klicken Sie auf **Aus Bibliothek laden** und anschließend auf **Als Standard speichern**.
+
+**Beispiel:**
+
+Angenommen, Sie haben in der Bibliothek einen Temperaturdatenpunkt definiert und verwenden ein Gerät, das Temperaturmesswerte sendet (Übereinstimmung nach Fragment und Serie mit dem Datenpunkt in der Bibliothek). Wenn Sie eine Smart Rule des Typs "Bei Schwellenwert Alarm erzeugen" erstellen und den Datenpunkt aus der Bibliothek wählen, wird anhand der Einstellungen aus der Bibliothek entschieden, ob ein Alarm erzeugt werden soll. Wenn Sie jedoch die Einstellungen dieses Datenpunkts für Ihr Gerät im Daten-Explorer ändern und auf **Als Standard speichern** klicken, verwendet die Smart Rule diese überschriebenen Einstellungen anstelle derjenigen aus der Bibliothek. Für andere Geräte werden hingegen weiterhin die Einstellungen aus der Bibliothek verwendet.
 
 >**Info:** Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
@@ -43,12 +50,12 @@ Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parame
 
 Sie können das angezeigte Zeitintervall ändern. Standardmäßig sehen Sie die Werte für die letzte Stunde.
 
-Um das Zeitintervall auf der X-Achse zu ändern,
+Um das Zeitintervall auf der x-Achse zu ändern,
 
 * wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste,
 * geben Sie ein eigenes Zeitintervall in die Felder **Von** und **Bis** im Daten-Explorer ein,
-* bewegen Sie die X-Achse mit dem Mauszeiger nach links oder rechts um das Zeitintervall zu verschieben,
-* Zoomen Sie durch Doppelklicken in den Daten-Explorer.
+* bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben,
+* zoomen Sie durch Doppelklicken in den Daten-Explorer.
 
 >**Info:** Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
 
@@ -82,19 +89,15 @@ Die Sichtbarkeit eines Datenpunkts kann mit dem Umschalter links neben dem Daten
 
 Klicken Sie auf **Datenpunkt hinzufügen** am Ende der Karte **Datenpunkte**, um einen Datenpunkt zum Daten-Explorer hinzuzufügen.
 
-![Add data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-adddatapoint.png)
+![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
 Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wird nur die Asset-Hierarchie unterhalb des im Navigator ausgewählten Objekts angezeigt. Wenn im Navigator **Daten-Explorer** ausgewählt wurde, wird die gesamte Asset-Hierarchie angezeigt.
 
 Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. Wählen Sie die Datenpunkte aus, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie auf **Hinzufügen**, um alle ausgewählten Datenpunkte zur Datenpunktliste hinzuzufügen.
 
-Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
-
-![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-adddatapoint-measurement.png)
-
 Um einen Datenpunkt in der Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**.
 
-![Save data point to library](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-savedatapoint.png)
+![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
@@ -127,7 +130,7 @@ Die folgenden Felder können bearbeitet werden:
 </tr>
 <tr>
 <td style="text-align:left">Min/Max</td>
-<td style="text-align:left">Bereich, der auf der Y-Achse angezeigt wird. </td>
+<td style="text-align:left">Bereich, der auf der Y-Achse angezeigt wird. Wird dieser nicht angegeben, so wird die y-Achse anhand der Messwerte skaliert, die im angegebenen Zeitintervall abgerufen werden.</td>
 </tr>
 <tr>
 <td style="text-align:left">Ziel</td>
@@ -139,10 +142,10 @@ Die folgenden Felder können bearbeitet werden:
 </tr>
 <tr>
 <td style="text-align:left">Roter Bereich min/max</td>
-<td style="text-align:left">Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellenwertenregel ausgelöst werden.</td>
+<td style="text-align:left">Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellenwertregel ausgelöst werden.</td>
 </tr>
 <tr>
-<td style="text-align:left">Anzeige</td>
+<td style="text-align:left">Anzeigen</td>
 <td style="text-align:left">Wert, der bei aktivierter Aggregation angezeigt wird. Dies kann "Minimum", Maximum" oder "Minimum und Maximum" sein.</td>
 </tr>
 <tr>
@@ -176,7 +179,7 @@ Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hi
 
 Klicken Sie auf **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 
 Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie auf **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 
@@ -195,7 +198,7 @@ Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, k�
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Dashboard hinzufügen**, um ein Widget aus dem Daten-Explorer eines bestimmten Assets zu erstellen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-sendwidget.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
@@ -205,7 +208,7 @@ Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Bericht hinzufügen**, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-sendwidget.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.
 
@@ -219,10 +222,10 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
  - Zeitpunkt, an welchem der Wert gemessen wurde
  - Quelle des Messwerts
  - Name des verwendeten Geräts
- - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
+ - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
  - Messwert
- - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
+ - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 
-Die Download-Datei wird erstellt, wie im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.
+Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie auf **Herunterladen**.

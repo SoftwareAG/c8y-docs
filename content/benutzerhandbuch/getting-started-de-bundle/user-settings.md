@@ -3,13 +3,12 @@ weight: 50
 title: Benutzeroptionen und -einstellungen
 layout: redirect
 aliases:
-  - /benutzerhandbuch/overview-de/#user-settings
-  - /benutzerhandbuch/overview/#user-settings
+  - /users-guide/overview/#user-settings
 ---
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 Das Menü **Benutzer** enthält folgende Elemente:
 
@@ -27,7 +26,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <tbody>
 <tr>
 <td style="text-align:left">Ändern von Benutzereinstellungen</td>
-<td style="text-align:left">Ermöglicht Zugriff auf die Benutzereinstellungen, siehe <a href="#change-user-settings" class="no-ajaxy">So ändern Sie Benutzereinstellungen</a> </td> für nähere Informationen.
+<td style="text-align:left">Ermöglicht Zugriff auf die Benutzereinstellungen, weitere Informationen siehe <a href="#change-user-settings" class="no-ajaxy">So ändern Sie Benutzereinstellungen</a>. </td>
 </tr>
 <tr>
 <td style="text-align:left">Verweigerte Anfragen</td>
@@ -38,14 +37,18 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <td style="text-align:left">Meldet Sie aus Ihrem {{< product-c8y-iot >}}-Konto ab. </td>
 </tr>
 <tr>
+<td style="text-align:left">Supportanfrage stellen</td>
+<td style="text-align:left">Leitet Sie zum <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> um. </td>
+</tr>
+<tr>
 <td style="text-align:left">Support aktivieren</td>
 <td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto.<br>
 <br>
-Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant-de >}}en nicht global für Untermandanten-Benutzer festgelegt ist, nähere Informationen siehe <a href="/benutzerhandbuch/enterprise-tenant-de/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant >}}en nicht global für Untermandanten-Benutzer festgelegt ist, nähere Informationen siehe <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
-<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version an, zum Beispiel 10.5.8, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
+<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version (z. B. 10.13.0.034) für Backend und Benutzeroberfläche an. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>
 </tbody>
 </table>
@@ -58,10 +61,11 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.  
 2. Nehmen Sie im Dialog **Benutzer bearbeiten** die gewünschten Änderungen vor.
 3. Zum Ändern der Sprache wählen Sie eine [Sprache](#languages) aus der Auswahlliste des Feldes **Sprache**.
-4. Klicken Sie auf **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
-5. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
+4. Verwenden Sie den Umschalter **Produkterfahrung**, um das Produkterfahrungs-Tracking von Gainsight abzuwählen, das standardmäßig aktiviert ist, wenn Sie funktionelle Cookies akzeptiert haben.
+5. Klicken Sie auf **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
+6. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
 
@@ -100,11 +104,11 @@ Die Benutzeroberfläche ist in folgenden Sprachen verfügbar:
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
 
 Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 
-* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant-de >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).)
+* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).)
 * Es muss alle der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 
-> **Info:** Die Passwortregeln können vom Administrator konfiguriert werden, d.h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.
+> **Info:** Die Passwortregeln können vom Administrator konfiguriert werden, d. h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.

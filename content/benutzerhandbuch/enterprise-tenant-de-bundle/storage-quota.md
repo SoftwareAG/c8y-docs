@@ -3,8 +3,7 @@ weight: 100
 title: Speicherbegrenzung
 layout: redirect
 aliases:
-  - /Benutzerhandbuch/enterprise-edition/#storage-quota
-  - /benutzerhandbuch/enterprise-edition-de/#storage-quota
+  - /users-guide/enterprise-edition/#storage-quota
 ---
 
 

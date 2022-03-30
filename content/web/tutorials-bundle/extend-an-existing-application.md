@@ -6,7 +6,7 @@ weight: 50
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case to extend one of our existing applications like Cockpit or Device management.
+It is a common use case to extend one of our existing applications like Cockpit or Device Management.
 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
 First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application) npm package contains.
@@ -35,7 +35,7 @@ There are three possibilities in total to start with the Web SDK:
 * Building it with @c8y/cli.
 
 Which one to choose heavily depends on the application you want to build.
-For example, if you want an application that just follows the look and feel of the platform but want to use special dependencies for certain scenarios, for example the Material framework, you are best set with the pure Angular CLI solution.
+For example, if you want an application that just follows the look and feel of the platform but want to use special dependencies for certain scenarios, for example, the Material framework, you are best set with the pure Angular CLI solution.
 
 The most common use case is the extension of a hybrid application, which we will cover in this recipe.
 First, take a look at the limitations of that approach to understand why the concepts are designed the way they are.
@@ -172,7 +172,7 @@ Refer to the [angular.io documentation](https://angular.io/guide/dependency-inje
 
 The injection tokens can be received from the `@c8y/ngx-components` package by importing it.
 They all start with `HOOK_` followed by what they are used for.
-For example to add a navigator node, use the `HOOK_NAVIGATOR_NODE`:
+For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE`:
 
 ```js
 import {NgModule} from "@angular/core";

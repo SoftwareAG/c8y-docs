@@ -191,7 +191,7 @@ Explanation of the numbers above:
 3. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
 4. These parts tell the hook to associate the previously defined components to the widget.
 
-If you now start your application with `npm start` you should be able to add your custom widget to a dashboard.
+If you now start your application with `npm start`, you should be able to add your custom widget to a dashboard.
 
 Once added to a dashboard, the widget looks similar to this:
 

@@ -7,7 +7,7 @@ weight: 70
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 In some situations, the UI needs data from a custom microservice.
-While you can always read that data with any HTTP client, for example Angular's `HttpModule`, you might want authentication out of the box.
+While you can always read that data with any HTTP client, for example, Angular's `HttpModule`, you might want authentication out of the box.
 
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically.
 First, it will take a deeper look at the basics to explain how the client works in Angular applications.
@@ -53,7 +53,7 @@ The next section shows how you can use that concept in an Angular application wi
 ### Basic: Interaction between @c8y/client and an Angular application
 
 `@c8y/ngx-components` is an Angular component that allows to spin up an application.
-It is used in our basic applications like Cockpit, Administration and Device Management to display the login screen for example.
+It is, for example, used in our basic applications like Cockpit, Administration and Device Management to display the login screen.
 When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included.
 Moreover the ngx-components have a subpackage which is called `@c8y/ngx-components/api` and which exports a `DataModule`.
 That module already imports all common endpoint services, so that you can use the standard dependency injection of Angular to access data.
@@ -129,7 +129,7 @@ export class AcmeComponent implements OnInit {
 ```
 
 1. Inject the `FetchClient` which is the `fetch` abstraction used by the client.
-2. Request the data via `fetchClient.fetch`. The function is identical to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), as a second parameter it accepts for example the method or data, except that it adds the authentication to the platform.
+2. Request the data via `fetchClient.fetch`. The function is identical to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), as a second parameter it accepts, for example, the method or data, except that it adds the authentication to the platform.
 3. Parse the data and set it onto your controller to display it in the template.
 
 Next, add a route to your application where you can show the component.
@@ -196,12 +196,12 @@ When you run the application with `c8ycli server` and point your browser to the 
 ![Custom client service](/images/web-sdk/custom-client-service.png)
 
 The request fails as we don't have a microservice with this context path running.
-However, as you can see in the dev tools the request has an authorization cookie attached.
+However, as you can see in the developer tools the request has an authorization cookie attached.
 If the microservice existed, the request would pass and the data would be displayed.
 
 ### 4. Bonus: Write a Service.ts abstraction
 
-In the above example, you have used the underlying `fetch` abstraction to directly access a custom microservice.
+In the example above, you have used the underlying `fetch` abstraction to directly access a custom microservice.
 You might want to achieve the same simplicity for the common service of the client. It handles the URL and the JSON parsing for you internally.
 To do so, extend the `Service` class returned by the `@c8y/client` and override the necessary methods or properties.
 
@@ -270,5 +270,5 @@ Inject the services (1.) and directly do a `list` request on the service (2.). T
 
 ### Conclusion
 
-The above examples show how to access custom microservices via the client. While it might be simpler to use a well-known client abstraction like Angular's `HttpModule`, reusing the `@c8y/client` gives you authentication out of the box.
+The examples above show how to access custom microservices via the client. While it might be simpler to use a well-known client abstraction like Angular's `HttpModule`, reusing the `@c8y/client` gives you authentication out of the box.
 This solution is more robust against changes as you can update the `@c8y/client` without worrying about underlying changes.

@@ -6,7 +6,7 @@ weight: 30
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case that you want to show additional information to a user in a details view, for example for a device or a group.
+It is a common use case that you want to show additional information to a user in a details view, for example, for a device or a group.
 
 This how-to recipe explains how to create a new tab in the device details view:
 
@@ -15,7 +15,7 @@ This how-to recipe explains how to create a new tab in the device details view:
 In Web SDK for Angular, this kind of view is called `ViewContext` as it provides a view for a certain context.
 There are a couple of context views, for example, `Device`, `Group`, `User`, `Application` and `Tenant`.
 You can access them by navigating to a certain `Route` with the hash navigation.
-For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`.
+For example, if you go to the route `apps/cockpit/#/device/1234`, the application tries to resolve the device with the ID `1234`.
 
 The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above.
 It is referenced by another route called `/info` but reuses the context of the device to show information about it.
@@ -106,7 +106,7 @@ export class AppModule extends HybridAppModule {
 Explanation of the numbers above:
 
  1. Provides the multi-provider hook `HOOK_ROUTE_ONCE`. This tells the application to extend the current route configuration.
- 2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example if you want to resolve the routes asynchronously.
+ 2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes asynchronously.
  3. Defines the context of the route. Use the `ViewContext` enum to define it. For this example you want to extend the context of a device.
  4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: `device/:id/hello`.
  5. Defines which component that should be shown if the path is hit by a user.
@@ -318,7 +318,7 @@ export class HelloGuard implements CanActivate {
 
 Explanation of the above numbers:
 
- 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence the `ActivatedRouteSnapshot` is different in both calls and you need to resolve the `contextData` in the second case from the parent.
+ 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence, the `ActivatedRouteSnapshot` is different in both calls and you need to resolve the `contextData` in the second case from the parent.
  2. Checks if the `acme_HelloWorld` fragment is set on the context.
 
 If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, the **Hello** tab will only be shown for that device and not for others.

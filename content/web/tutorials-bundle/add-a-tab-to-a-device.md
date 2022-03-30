@@ -109,7 +109,7 @@ Explanation of the numbers above:
  2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes asynchronously.
  3. Defines the context of the route. Use the `ViewContext` enum to define it. For this example you want to extend the context of a device.
  4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: `device/:id/hello`.
- 5. Defines which component that should be shown if the path is hit by a user.
+ 5. Defines which component should be shown if the path is hit by a user.
  6. The properties `label` and `icon` define what the tab should look like. The `priority` defines in which position it should be shown.
 
 > **Info:** The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.

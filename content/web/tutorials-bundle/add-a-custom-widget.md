@@ -79,7 +79,7 @@ export class WidgetConfigDemo {
 
 Again, you must add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
 
-To enable the widget configuration validation, the following option should be added to the '@Component' decorator.
+To enable the widget configuration validation, the following option should be added to the `@Component` decorator.
 
 ```js
 import { ControlContainer, NgForm } from "@angular/forms";

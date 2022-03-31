@@ -1,9 +1,9 @@
 ---
-weight: 70
-title: Nutzungsstatistiken und Abrechnung
-layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#usage-and-billing
+- /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+layout: redirect
+title: Nutzungsstatistiken und Abrechnung
+weight: 70
 ---
 
 <a name="usage-stats"></a>

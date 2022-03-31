@@ -1,10 +1,10 @@
 ---
-weight: 20
-title: Aufrufen und Anmelden an der Plattform
-layout: redirect
 aliases:
-  - /users-guide/overview/#accessing-cumulocity-platform
-  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
+- /benutzerhandbuch/overview-de/#accessing-cumulocity-platform
+- /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
+layout: redirect
+title: Aufrufen und Anmelden an der Plattform
+weight: 20
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über eine [URL](#url) in einem Webbrowser zugreifen.

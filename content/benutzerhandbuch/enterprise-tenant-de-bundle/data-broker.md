@@ -1,9 +1,9 @@
 ---
-weight: 80
-title: Data Broker
-layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#data-broker
+- /benutzerhandbuch/enterprise-edition-de/#data-broker
+layout: redirect
+title: Data Broker
+weight: 80
 ---
 
 Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgende Daten teilen:

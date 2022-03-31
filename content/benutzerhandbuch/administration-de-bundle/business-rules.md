@@ -10,7 +10,7 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
 Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreibung (optional) angezeigt.
 
@@ -31,7 +31,7 @@ Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibun
 
 > **Info:** Aktualisieren die Liste, um Änderungen zu verwerfen, ohne sie zu speichern.
 
-<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### So löschen Sie eine Alarmregel
 

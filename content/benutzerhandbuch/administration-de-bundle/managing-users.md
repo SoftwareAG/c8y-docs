@@ -30,20 +30,20 @@ Außerdem ist das Zurücksetzen des Passworts in {{< product-c8y-iot >}} für Be
 
 Klicken Sie auf **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-![Expanded view](/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/benutzerhandbuch/Administration/admin-users-list.png)
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird
 * Name und E-Mail-Adresse des Benutzers, falls angegeben
 * Die globalen Rollen, die für den Benutzer vergeben wurden
-* Die [Stärke](/users-guide/getting-started/#change-password) des Passworts, das für den Benutzer gesetzt ist
+* Die [Stärke](/benutzerhandbuch/getting-started-de/#change-password) des Passworts, das für den Benutzer gesetzt ist
 
-Zum Filtern der Liste nach Benutzername können Sie das Filterfeld links in der oberen Menüleiste verwenden. Mit der Auswahlliste können Sie nach globalen Rollen filtern. Weitere Informationen zur Filterung finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Zum Filtern der Liste nach Benutzername können Sie das Filterfeld links in der oberen Menüleiste verwenden. Mit der Auswahlliste können Sie nach globalen Rollen filtern. Weitere Informationen zur Filterung finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Zum Anwenden der gewählten Filter klicken Sie auf **Anwenden**.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant/#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies).
 
 <a name="creating-users"></a>
 ### So fügen Sie einen Benutzer hinzu
@@ -96,21 +96,21 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 	</tr>
 	<tr>
 	<td align="left">Eigentümer</td>
-	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	<tr>
 	<td align="left">Delegiert von</td>
-	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	</tbody>
 	</table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
-	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/users-guide/administration/#tfa).
-	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zum Zurücksetzen des Passworts und zur Passwortstärke finden sie unter [So ändern Sie Ihr Passwort](/users-guide/getting-started/#change-password).  
+	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa).
+	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zum Zurücksetzen des Passworts und zur Passwortstärke finden sie unter [So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
-4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions).
+4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.
@@ -142,7 +142,7 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie auf **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
-Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant#user-hierarchies).
+Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de#user-hierarchies).
 
 > **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 

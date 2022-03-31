@@ -4,7 +4,7 @@ title: Aufrufen und Anmelden an der Plattform
 layout: redirect
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
-  - /users-guide/getting-started/#accessing-cumulocity-platform
+  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über eine [URL](#url) in einem Webbrowser zugreifen.
@@ -48,7 +48,7 @@ https://<tenant-domain>.{{< domain-c8y >}}/
 Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Informationen zu Mandanten-ID und Mandanten-Domain finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}.
 
 
->**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant >}} nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+>**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}} nutzen. Die URL für die {{< enterprise-tenant-de >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der {{< product-c8y-iot >}}-Plattform verbunden sind.
 
@@ -59,10 +59,10 @@ Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Gro�
 
 Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform verwenden und sich zum ersten Mal anmelden, sehen Sie unten ein Cookie-Banner:
 
-<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/users-guide/enterprise-tenant/#branding).
+> **Info:** Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant-de >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
 * Klicken Sie auf **Datenschutzerklärung**, um die [{{< company-sag >}} Datenschutzerklärung]({{< link-sag-privacy-statement >}}) mit Details zur Datenschutzerklärung der {{< company-sag >}} zu öffnen.
@@ -70,17 +70,17 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 	* **Erforderlich** - erforderlich zum Aktivieren der Kernfunktionalität der Website. Diese Cookies führen eine Aufgabe oder Operation aus, ohne die die Website nicht funktionieren würde. Erforderliche Cookies können nicht deaktiviert werden.
 	* **Funktionell** - Diese Cookies dienen zur Verfolgung der Website-Nutzung und zur Verarbeitung persönlicher Daten zur Messung und Verbesserung der Benutzerfreundlichkeit und Leistung. Funktionelle Cookies müssen vom Benutzer aktiv eingeschaltet werden.
 
->**Info:** Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings).
+>**Info:** Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen {{< product-c8y-iot >}}-Anwendungen wechseln, da die {{< product-c8y-iot >}}-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur [Cockpit-Anwendung](/users-guide/cockpit) (sofern nicht anders konfiguriert).
+Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur [Cockpit-Anwendung](/benutzerhandbuch/cockpit-de) (sofern nicht anders konfiguriert).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie dann **Abmelden** im Kontextmenü.
 
->**Info:** Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
+>**Info:** Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 
 <a name="reset-password"></a>
 ### Zurücksetzen Ihres Passworts

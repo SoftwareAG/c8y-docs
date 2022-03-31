@@ -6,7 +6,7 @@ weight: 35
 
 Klicken Sie auf **Microservices** im Menü **Ecosystem** des Navigators, um eine Liste oder Tabelle aller Microservices anzuzeigen, die für Ihr Konto abonniert werden.
 
-<img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
+<img src="/images/benutzerhandbuch/Administration/admin-microservices.png" alt="Microservices list">
 
 Ein Microservice ist eine spezielle Art von Anwendung, und zwar eine serverseitige Anwendung, die zum Entwickeln von Zusatzfunktionalitäten für {{< product-c8y-iot >}} dient. Als Webanwendungen können Microservices entweder von der Plattform oder von einem Service Provider für Ihren Mandanten abonniert werden oder als benutzerdefinierte Anwendungen in Ihrem Besitz sein, siehe [Abonnierte Miroservices](#custom-microservices).
 
@@ -14,7 +14,7 @@ Ein Microservice ist eine spezielle Art von Anwendung, und zwar eine serverseiti
 
 {{< product-c8y-iot >}} stellt vielerlei Microservice-Anwendungen für verschiedene Zwecke bereit. Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der potenziell verfügbaren Anwendungen an.
 
-Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard-tenant >}}en und/oder {{< enterprise-tenant >}}en standardmäßig abonniert sind. Darüber hinaus können zahlreiche optionale Microservices für Ihren Mandanten abonniert sein.
+Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard-tenant-de >}}en und/oder {{< enterprise-tenant-de >}}en standardmäßig abonniert sind. Darüber hinaus können zahlreiche optionale Microservices für Ihren Mandanten abonniert sein.
 
 #### Standardmäßig abonnierte Microservices
 
@@ -37,14 +37,14 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-1c-4g</a></td>
 <td style="text-align:left">Vollversion des Microservice "Apama". Laufzeit für Analytics Builder, EPL Apps und Smart Rules</td>
 <td style="text-align:left">apama-ctrl-1c-4g</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
 <td style="text-align:left">Eingeschränkte Version des Microservice "Apama". Laufzeit für eine unbeschränkte Anzahl von Smart Rules und eine beschränkte Anzahl von Analytics Builder-Modellen</td>
 <td style="text-align:left">apama-ctrl-starter</td>
-<td style="text-align:left">{{< standard-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}</td>
 </tr>
 
 <tr>
@@ -55,31 +55,31 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device-simulator</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device-simulator</a></td>
 <td style="text-align:left">Simulation aller Aspekte von IoT-Geräten</td>
 <td style="text-align:left">device-simulator</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#reports" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Planen von Datenexporten aus der Cockpit-Anwendung heraus</td>
 <td style="text-align:left">report agent</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smartrule</a></td>
 <td style="text-align:left">Verwenden Sie die Smart Rules Engine und erstellen Sie Smart Rules, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert einen der folgenden Microservices: apama-ctrl-1c-4g, apama-ctrl-starter oder apama-ctrl-smartrules</td>
 <td style="text-align:left">smartrule</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de#customization" class="no-ajaxy">Sslmanagement</a></td>
 <td style="text-align:left">Aktivieren eines eigenen benutzerdefinierten Domain-Namens durch Verwendung eines SSL-Zertifikats</td>
 <td style="text-align:left">sslmanagement</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 </tbody>
@@ -104,7 +104,7 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 
 Um weitere Details zu einem Microservice anzuzeigen, klicken Sie auf ihn, um seine Registerkarte **Attribute** zu öffnen.
 
-<img src="/images/users-guide/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
 
 In der Registerkarte **Attribute** werden bei jedem Microservice folgende Informationen angezeigt:
 
@@ -148,13 +148,13 @@ In der Registerkarte **Attribute** werden bei jedem Microservice folgende Inform
 </tbody>
 </table>
 
-Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/users-guide/enterprise-tenant/#usage-and-billing).
+Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing).
 
 #### Microservice-Abonnement
 
 Rechts oben in der Registerkarte **Attribute** finden Sie einen Umschalter zum Abonnieren oder Abbestellen eines Microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
 
 Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microservices, d. h. bei Microservices, die Sie besitzen.
 
@@ -162,7 +162,7 @@ Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microser
 
 In der Registerkarte **Berechtigungen** können Sie die Berechtigungen, die für den jeweiligen Microservice erforderlich sind, und die dafür bereitstehenden Rollen anzeigen.
 
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Überwachen von Microservices
 
@@ -172,7 +172,7 @@ Es gibt zwei Möglichkeiten, Microservices in der {{< product-c8y-iot >}}-Plattf
 
 Der Status eines Microservice kann in der Registerkarte **Status** der entsprechenden Microservice-Anwendung überprüft werden.
 
-<img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 Zum Anzeigen des Status benötigen Sie folgende Berechtigungen: Rolle Anwendungsverwaltung LESEN und Rolle Stammdaten LESEN.
 
@@ -197,7 +197,7 @@ Es gibt zwei benutzerfreundliche Alarmtypen:
 
 Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h. wenn alle Microservice-Instanzen korrekt funktionieren.
 
-Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/users-guide/cockpit/#smart-rules).
+Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit-de/#smart-rules).
 
 Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden".
 
@@ -209,7 +209,7 @@ Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Dow
 
 Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
@@ -236,7 +236,7 @@ Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
 Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine entsprechende Meldung angezeigt:
 
-<img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 > **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 

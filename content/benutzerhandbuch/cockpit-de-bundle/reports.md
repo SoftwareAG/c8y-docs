@@ -12,13 +12,13 @@ Klicken Sie im Navigator auf **Berichte**, um alle Berichte anzuzeigen.
 
 Die Seite **Berichte** listet alle Berichte mit Namen, optionaler Beschreibung und einem Navigator-Umschalter auf.
 
-![Reports](/images/users-guide/cockpit/cockpit-reports-list.png)
+![Reports](/images/benutzerhandbuch/cockpit/cockpit-reports-list.png)
 
 Um einen Bericht zu öffnen, klicken Sie in der Berichtsliste auf seinen Namen. Die Berichtsdetails werden angezeigt.
 
 Verwenden Sie den Umschalter in der Spalte **Im Navigator anzeigen**, wenn Sie den Bericht auffälliger auf der ersten Ebene im Navigator anzeigen möchten. Wenn der Umschalter eingeschaltet ist, erscheint der Bericht sofort im Navigator.
 
-![Report in navigator](/images/users-guide/cockpit/cockpit-reports-navigator.png)
+![Report in navigator](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
 
 Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden Sie unter [So erstellen Sie einen Bericht](#create-report).
 
@@ -26,7 +26,7 @@ Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden S
 ### So erstellen Sie einen Bericht
 
 1. Klicken Sie in der oberen Menüleiste auf **Bericht hinzufügen**, um den Dialog **Bericht hinzufügen** zu öffnen.
-  <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
+  <br>![Add report](/images/benutzerhandbuch/cockpit/cockpit-report-add.png)<br>
 2. Geben Sie im Feld **Menübeschriftung** einen Namen für den Bericht ein und fügen Sie darunter optional eine Beschreibung hinzu.
 3. Wählen Sie **Im Navigator anzeigen**, wenn der Bericht im Navigator angezeigt werden soll. Wählen Sie die Position des Berichts im Navigator. Er wird je nach gewähltem Wert relativ zu bestehenden Elementen positioniert. Hat beispielsweise "Startseite" den Wert "10000", so wird der Bericht über "Startseite" positioniert, wenn der Wert "10001" oder mehr beträgt.
 4. Im Abschnitt **Layout** können Sie ein Design für den Bericht wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
@@ -45,7 +45,7 @@ Klicken Sie in der Berichtsliste auf den Namen eines Berichts, um seine Details 
 
 Um den Bericht zu bearbeiten, klicken Sie in der oberen Menüleiste auf **Bearbeiten**.
 
-<img src="/images/users-guide/cockpit/cockpit-report-edit.png" name="Edit report"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-report-edit.png" name="Edit report"/>
 
 Der Bericht-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie einen Bericht](#create-report).
 

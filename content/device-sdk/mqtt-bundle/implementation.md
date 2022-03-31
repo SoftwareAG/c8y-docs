@@ -162,31 +162,38 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 ### MQTT return codes
 
-When initiating MQTT connection, the user can be exposed to several errors. These are presented by the platform with `CONNACK` message via return code, before closing connection. It is the first clue about encountered problem. They could be treated similarly to the REST API's HTTP codes, like 401. They can be returned due to unexpected error, lack of or permissions, etc. 
+When initiating an MQTT connection, the user can be exposed to several errors.
+These are presented by the platform with a `CONNACK` message via a return code, before closing connection.
+This message the first clue that there was a problem.
+Such a return code can be treated similarly to REST API HTTP codes, such as 401.
+They can be returned because of an unexpected error, lack of permissions, and so on.
 
-Currently platform can use `CONNACK` also to signal sudden error like network issues. Therefore, it is possible to receive this message second time, during normal connection, without direct action. It is a way to signal gracefuly closing connection, as most MQTT clients treat `CONNACK` with code != 0 that connection needs to be closed. See details below.
+The platform can also use `CONNACK` to signal a sudden error such as a network issue.
+Therefore, it is possible to receive this message a second time during a normal connection, and without a direct action.
+It is a way to signal gracefully closing connection, as most clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
+See the details below.
 
-Below table shows the list of returned errors by Cumulocity:
+The table below shows the list of returned errors by {{< product-c8y-iot >}}:
 
 |Code|Canonical message|Troubleshooting|
 |:-------|:--------|:--------|
 |0|Connection accepted|No issue, connection is working.|
-|1|Connection Refused, unacceptable protocol version|Unsupported version of MQTT protocol used. Currently Cumulocity only allows 3.1 and 3.1.1.|
-|2|Connection Refused, identifier rejected|ClientId is not accepted by the platform.|
-|3|Connection Refused, Server unavailable|General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and irrelevant of device state, therefore the solution to this is to try again later. <br>**See special cases below.**|
-|4|Connection Refused, bad user name or password|Incorrect credentials (wrong username and/or password, but not on empty password - **see special cases below**). This error is never returned when authenticating with certificates.|
-|5|Connection Refused, not authorized|Device side related problem, used when it doesn't have permissions or is doing something forbidden. If client sends malformed messages or tries to do any operation without authenticating first, e.g. publishing message will receive this error. <br>Thrown on any issue with certificate authentication(e.g. wrong common name, failed auto registration). <br>Also thrown on general issue with receiving device data or other authorization problem related to device state on platform, e.g. device managed object problem, sudden permissions removed, etc. In this situation it may be required to take action on platform to investigate and apply fix. By default it can be also thrown after connecting, which signals unexpected exceptions like performance issues. <br>**See special cases below.**|
+|1|Connection refused, unacceptable protocol version|Unsupported version of MQTT protocol used. Currently, {{< product-c8y-iot >}} only allows 3.1 and 3.1.1.|
+|2|Connection refused, identifier rejected|ClientId is not accepted by the platform.|
+|3|Connection refused, Server unavailable|General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and independent of device state, therefore the solution to this is to try again later. <br>See special cases below.|
+|4|Connection refused, bad user name or password|Incorrect credentials (wrong username and/or password, but not on empty password. See special cases below). This error is never returned when authenticating with certificates.|
+|5|Connection refused, not authorized|Device side related problem, used when the device doesn't have permissions or is doing something forbidden. If the client sends malformed messages or tries to do any operation without authenticating first, for example, publishing a message will receive this error.<br>Thrown on any issue with certificate authentication (for example, wrong common name, failed auto registration). <br>Also thrown on general issues with receiving device data or some other authorization problem related to the device state on the platform, for example, device managed object problems or the sudden removal of permissions. In this situation it may be required to take action on the platform to investigate and apply a fix. By default, it can also be thrown after connecting, which signals unexpected exceptions like performance issues.<br>See special cases below.|
 
-Due to current inconsistencies in current Cumulocity implementation of MQTT return codes, there are special cases: 
+Due to inconsistencies in the {{< product-c8y-iot >}} implementation of MQTT return codes, there are special cases:
 
 |Case|Default code|Description|
 |:-------|:--------|:--------|
-|Empty credentials|Not authorized (5)|Can throw bad username(4) if tenant option `on-bad-credentials.bad-username-or-password-code` is set to `true` on management tenant.|
-|Tenant initialization (connection too early)|Not authorized(5)|Can throw Server unavailable(3) if tenant option `on-tenant-initialization-exception.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
-|Any unexpected issue when connecting|Not authorized(5)|Can throw Server unavailable(3) if tenant option `on-unexpected-exceptions.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
-|Any unexpected issue during publishing|Not authorized(5)|This code can be received with `CONNACK` after publishing, so it is not a response to `CONNECT`. Can throw Server unavailable(3) if tenant option `on-failure.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
+|Empty credentials|Not authorized (5)|Can throw "Bad username" (4) if the tenant option `on-bad-credentials.bad-username-or-password-code` is set to `true` on a Management tenant.|
+|Tenant initialization (connection too early)|Not authorized (5)|Can throw "Server unavailable" (3) if the tenant option `on-tenant-initialization-exception.server-unavailable` is set to `true` on a particular tenant. If there is a problem resolving the value of an option, the platform will ignore the option.|
+|Any unexpected issue when connecting|Not authorized (5)|Can throw "Server unavailable" (3) if the tenant option `on-unexpected-exceptions.server-unavailable` is set to `true` on a particular tenant. If there is a problem resolving the value of an option, the platform will ignore the option.|
+|Any unexpected issue during publishing|Not authorized (5)|This code can be received with `CONNACK` after publishing, so it is not a response to `CONNECT`. Can throw "Server unavailable" (3) if the tenant option `on-failure.server-unavailable` is set to `true` on a particular tenant. If there is a problem resolving the value of an option, the platform will ignore the option.|
 
-You can find the details about official MQTT connection return codes here: http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033
+Refer to the [MQTT Version 3.1.1 > 3.2 CONNACK - Acknowledge connection request](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033) for details on the official MQTT connection return codes. 
 
 ### Debugging
 

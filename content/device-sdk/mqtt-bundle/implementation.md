@@ -160,6 +160,34 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 > **Info:** The execution of the "last will" updates the device availability.
 
+### MQTT return codes
+
+When initiating MQTT connection, the user can be exposed to several errors. These are presented by the platform with `CONNACK` message via return code, before closing connection. It is the first clue about encountered problem. They could be treated similarly to the REST API's HTTP codes, like 401. They can be returned due to unexpected error, lack of or permissions, etc. 
+
+Currently platform can use `CONNACK` also to signal sudden error like network issues. Therefore, it is possible to receive this message second time, during normal connection, without direct action. It is a way to signal gracefuly closing connection, as most clients treat `CONNACK` with code != 0 that connection needs to be closed. See details below.
+
+Below table shows the list of returned errors by Cumulocity:
+
+|Code|Canonical message|Troubleshooting|
+|:-------|:--------|:--------|
+|0|Connection accepted|No issue, connection is working.|
+|1|Connection Refused, unacceptable protocol version|Unsupported version of MQTT protocol used. Currently Cumulocity only allows 3.1 and 3.1.1.|
+|2|Connection Refused, identifier rejected|ClientId is not accepted by the platform.|
+|3|Connection Refused, Server unavailable|General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and irrelevant of device state, therefore the solution to this is to try again later. <br>**See special cases below.**|
+|4|Connection Refused, bad user name or password|Incorrect credentials (wrong username and/or password, but not on empty password - **see special cases below**). This error is never returned when authenticating with certificates.|
+|5|Connection Refused, not authorized|Device side related problem, used when it doesn't have permissions or is doing something forbidden. If client sends malformed messages or tries to do any operation without authenticating first, e.g. publishing message will receive this error. <br>Thrown on any issue with certificate authentication(e.g. wrong common name, failed auto registration). <br>Also thrown on general issue with receiving device data or other authorization problem related to device state on platform, e.g. device managed object problem, sudden permissions removed, etc. In this situation it may be required to take action on platform to investigate and apply fix. By default it can be also thrown after connecting, which signals unexpected exceptions like performance issues. <br>**See special cases below.**|
+
+Due to current inconsistencies in current Cumulocity implementation of MQTT return codes, there are special cases: 
+
+|Case|Default code|Description|
+|:-------|:--------|:--------|
+|Empty credentials|Not authorized (5)|Can throw bad username(4) if tenant option `on-bad-credentials.bad-username-or-password-code` is set to `true` on management tenant.|
+|Tenant initialization (connection too early)|Not authorized(5)|Can throw Server unavailable(3) if tenant option `on-tenant-initialization-exception.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
+|Any unexpected issue when connecting|Not authorized(5)|Can throw Server unavailable(3) if tenant option `on-unexpected-exceptions.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
+|Any unexpected issue during publishing|Not authorized(5)|This code can be received with `CONNACK` after publishing, so it is not a response to `CONNECT`. Can throw Server unavailable(3) if tenant option `on-failure.server-unavailable` is set to `true` on particular tenant. If there is a problem resolving value of option, platform will ignore option.|
+
+You can find the details about official MQTT connection return codes here: http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033
+
 ### Debugging
 
 To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.

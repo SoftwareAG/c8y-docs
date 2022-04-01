@@ -28,8 +28,10 @@ helpcontent:
 
   There are two types of operations, each represented by a tab:
 
-  * **Single operations** are executed on a single device.
-  * **Bulk operations** are single operations executed on a set of devices."
+
+  **Single operations** are executed on a single device.
+
+  **Bulk operations** are single operations executed on a set of devices."
 - label: events-all
   title: Events
   content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.

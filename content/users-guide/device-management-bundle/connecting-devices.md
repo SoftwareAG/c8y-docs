@@ -11,9 +11,11 @@ helpcontent:
     All devices which are currently in the registration process are displayed with one of the following status:
 
 
-    * **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
-    * **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
-    * **Accepted** - the user has allowed the credentials to be send to the device"
+    **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
+
+    **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
+
+    **Accepted** - the user has allowed the credentials to be send to the device"
 ---
 
 <a name="dev-registration"></a>

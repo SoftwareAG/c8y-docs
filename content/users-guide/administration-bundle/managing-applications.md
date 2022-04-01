@@ -8,8 +8,9 @@ helpcontent:
     content: "In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 
-    * Subscribed applications - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the *User guide*.
-    - Custom applications - Applications owned by the tenant. You can add custom applications in various ways as own applications.
+    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the *User guide*.
+    
+    **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
 
     Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."

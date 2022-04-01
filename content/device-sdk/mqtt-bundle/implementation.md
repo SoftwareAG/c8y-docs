@@ -170,7 +170,7 @@ They can be returned because of an unexpected error, lack of permissions, and so
 
 The platform can also use `CONNACK` to signal a sudden error, such as a network issue.
 Therefore, it is possible to receive this message a second time during a normal connection, and without a direct action.
-It is a way to signal a closing connection, as most clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
+It is a way to signal a closing connection, as most MQTT clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
 See the details below.
 
 The table below shows the list of errors returned by {{< product-c8y-iot >}}:

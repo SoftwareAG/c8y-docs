@@ -162,27 +162,25 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 ### MQTT return codes
 
-When initiating an MQTT connection, the user can be exposed to several errors.
-These are presented by the platform with a `CONNACK` message via a return code, before closing connection.
-This message is the first clue that there is a problem.
-Such a return code can be treated similarly to REST API HTTP codes, such as 401.
-They can be returned because of an unexpected error, lack of permissions, and so on.
+When initiating an MQTT connection, you can be exposed to several errors.
+The platform signals these errors with a `CONNACK` message via a return code, before closing connection
+Such return codes can be treated similarly to REST API HTTP codes, such as 401. Reasons for receiving a return code can be an unexpected error, lack of permissions, and so on.
 
 The platform can also use `CONNACK` to signal a sudden error, such as a network issue.
 Therefore, it is possible to receive this message a second time during a normal connection, and without a direct action.
-It is a way to signal a closing connection, as most clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
+This is used to signal a closing connection, as most clients treat `CONNACK` with a code other than `0`, showing the connection needs to be closed.
 See the details below.
 
-The table below shows the list of errors returned by {{< product-c8y-iot >}}:
+The table below shows the list of errors, which can be returned by {{< product-c8y-iot >}}:
 
 |Code|Canonical message|Troubleshooting|
 |:-------|:--------|:--------|
 |0|Connection accepted | No issue, connection is working.|
 |1|Connection refused, unacceptable protocol version | Unsupported version of MQTT protocol used. Currently, {{< product-c8y-iot >}} only allows 3.1 and 3.1.1.|
 |2|Connection refused, identifier rejected | ClientId is not accepted by the platform.|
-|3|Connection refused, Server unavailable | General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and independent of device state, therefore the solution to this is to try again later. <br>See special cases below.|
-|4|Connection refused, bad user name or password | Incorrect credentials (wrong username and/or password, but not on empty password. See special cases below). This error is never returned when authenticating with certificates.|
-|5|Connection refused, not authorized | Device side related problem, used when the device doesn't have permissions or is doing something forbidden. For example, if the client sends malformed messages or tries to do any operation without authenticating first, such as publishing a message.<br>Thrown on any issue with certificate authentication (for example, wrong common name, failed auto registration). <br>Also thrown on general issues with receiving device data or some other authorization problem related to the device state on the platform. For example, device managed object problems, or the sudden removal of permissions. In this situation it may be required to take action on the platform to investigate and apply a fix. By default, it can also be thrown after connecting, which signals unexpected exceptions like performance issues.<br>See special cases below.|
+|3|Connection refused, Server unavailable | General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and independent of device state. We recommend you to try again later to solve this problem. <br>See special cases below.|
+|4|Connection refused, bad user name or password | Incorrect credentials (wrong username and/or password, but not on empty password. See special cases below). We recommend you to authenticate with certificates in order to avoid receiving this error.|
+|5|Connection refused, not authorized | Device side related problem. This occurs when the device does not have permissions or is doing something not permissible. For example, if the client sends malformed messages or tries to do any operation without authenticating first, such as publishing a message.<br>It is thrown on any issue with certificate authentication (for example, wrong common name, failed auto registration). <br>It is also thrown on general issues with receiving device data or some other authorization problem related to the device state on the platform. For example, device managed object problems, or the sudden removal of permissions. In this situation it may be required to take action on the platform to investigate and apply a fix. By default, it can also be thrown after connecting, which signals unexpected exceptions like performance issues.<br>See special cases below.|
 
 Due to inconsistencies in the {{< product-c8y-iot >}} implementation of MQTT return codes, there are special cases:
 

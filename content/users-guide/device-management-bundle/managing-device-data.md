@@ -249,7 +249,7 @@ In the **Software** tab of a device you can manage the software for the particul
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
-The **Software** tab shows a list of all available software installed on the device.
+The **Software** tab shows a list of all available software installed on the device. If a given software item has a type, it will be displayed next to its name. You can search for a particular software by its name for filter the list by software type.
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
@@ -260,7 +260,12 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install software on a device
 
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
-2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.
+>**Info:** The **Install software** dialog will only display the software entries matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software entries matching the supported software types.
+2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.  
+For devices supporting advanced software managements features already installed software entries cannot be pre-filtered from the list of available software entries. Thus, after a particular software version has been selected a check is done if the chosen software is already installed on the device. If this is the case a warning is displayed to the user:
+![Already installed software entry warning](/images/users-guide/DeviceManagement/devmgmt-software-install-warning.png)
+The user can remove the already installed software entry from the **Software changes** panel. However, even if the resulting operation includes an already installed software entry this should not have any effect on the device software.
+![Software changes warning](/images/users-guide/DeviceManagement/devmgmt-software-changes-warning.png)
 4. Click **Install**.
 5. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
 	![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)

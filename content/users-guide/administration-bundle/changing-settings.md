@@ -126,7 +126,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tbody>
 </table>
 
->**Info:** The time parameters should be related to one another in the following way: renewal timeout < token timespan < absolute timeout.
+>**Info:** The time parameters should be related to one another in the following way: renewal timeout < token lifespan < absolute timeout.
 > Moreover, the renewal timeout should be approximately half of the token lifespan.      
 > 
 > Therefore, the recommended settings for a standard use case for OAI-Secure are the following:   
@@ -134,6 +134,8 @@ If the **Use session configuration** option is enabled, the following settings c
 > * **Session absolute timeout**: 28 800 seconds (8 hours)        
 > * **Session renewal timeout**: 2700 seconds (45 minutes)        
 > * **Token lifespan**: 5400 seconds (90 minutes)
+> 
+>  In such configuration, the Idle timeout will range from 45 to 90 minutes, depending on when the last activity in the session was performed.
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 

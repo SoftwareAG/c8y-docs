@@ -6,6 +6,8 @@ layout: redirect
 
 Before restarting your Edge appliance, ensure that your appliance is in a safe state.
 
+> **Info:** You might see alarms when you power on the Edge appliance from hibernation.
+
 ### Restarting the Edge appliance using the UI
 
 To restart your Edge appliance:

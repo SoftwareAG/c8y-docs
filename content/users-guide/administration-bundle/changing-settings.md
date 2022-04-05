@@ -135,7 +135,7 @@ If the **Use session configuration** option is enabled, the following settings c
 > * **Session renewal timeout**: 2700 seconds (45 minutes)        
 > * **Token lifespan**: 5400 seconds (90 minutes)
 > 
->  In such configuration, the Idle timeout will range from 45 to 90 minutes, depending on when the last activity in the session was performed.
+>  In such configurations, the Idle timeout will range from 45 to 90 minutes, depending on when the last activity in the session was performed.
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 

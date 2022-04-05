@@ -418,7 +418,7 @@ Follow these steps:
       * Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
       * Expand a version and select a patch. Click **Next**.
   * **Software update**
-      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
+      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type, by software type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
       * Confirm the selection and click **Next**.
   * **Apply device profile**
       * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.

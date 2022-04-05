@@ -189,14 +189,14 @@ The available software objects will be displayed as a list.
 
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
-Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
-At the left in the top menu bar, you can filter the repository entries by name, description, device type or configuration type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+Each entry shows the software name, the device type it is applicable for (if set), the software type (if set), and a badge indicating if and how many versions are available for a particular software.
+The values in every column (except **Versions**) can be filtered and sorted by clicking the **Filter** and **Sort** icons in column header.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
 ![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-At the top, the software name, a description, and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
+At the top, the software name, a description, an optional device type filter(s), and a software type are shown. If a device type filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. The software type will make the software installable only on devices that have declared to support the particular software type.
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -208,8 +208,9 @@ The versions are ordered by their creation time (descending).
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description, and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
-3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
-4. Click **Save**.
+4. Define the software type, it will make the software installable only on devices that have declared to support the particular software type.
+5. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
+6. Click **Add software**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
@@ -223,7 +224,7 @@ If you click **Add software** from within the details of a specific software, th
 #### To edit a software
 
 1. Click the menu icon at the right of a specific software entry and in the context menu click **Edit**.
-2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**.
+2. Update the name, description, device type filter or software type by clicking the pencil icon next to it. Make the desired changes and click **Save**.
 
 The software will be updated accordingly.
 
@@ -249,7 +250,7 @@ In the **Software** tab of a device you can manage the software for the particul
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
-The **Software** tab shows a list of all available software installed on the device. If a given software item has a type, it will be displayed next to its name. You can search for a particular software by its name for filter the list by software type.
+The **Software** tab shows a list of all available software installed on the device. If a given software item has a type, it will be displayed next to its name. You can search for a particular software by its name or filter the list by software type.
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 

@@ -7,7 +7,7 @@ helpcontent:
     content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 
-    Click the **Plus** button at the top right to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type. 
+    Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
 
 
     On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
@@ -25,31 +25,26 @@ Dashboards provide you with a customized visualization of your data by using a s
 <a name="creating-dashboards"></a>
 ### To create a dashboard
 
-Select the group or the device in the navigator for which to create a dashboard.
+1. Select the group or the device in the navigator for which to create a dashboard.
+2. Click the plus icon right from the tabs to open the dashboard editor.
 
-Click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
+  <img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
 
-The dashboard editor opens.
+3. In the **Tab** section of the dashboard editor, provide the following information:
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
+    * An icon which is shown next to the dashboard name in the navigator.
+    * A menu label to be used as the name of the dashboard.
+    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+<br><br>
+4. Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
+5. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+6. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
-In the **Tab** section of the dashboard editor, provide the following information:
+    > **Info:** The widget titles will be translated only if a valid translation is available.
 
-*  An icon which is shown next to the dashboard name in the navigator.
-*  A menu label to be used as the name of the dashboard.
-* The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+7. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-If you enable **Apply dashboard to all devices of type <device type>** the dashboard will be shared with all devices of this type.
-
-In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
-
-If you enable the option **Translate widget titles if possible**, the widget title will be translated every time the language is changed.
-
-> **Info:** The widget titles will be translated only if a valid translation is available.
-
-In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
-
-Click **Save** to create and open the dashboard.
+8. Click **Save** to create and open the dashboard.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 

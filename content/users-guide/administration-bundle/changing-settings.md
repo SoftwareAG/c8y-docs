@@ -59,7 +59,7 @@ By default, users can use any password with eight characters or more. If you sel
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
-<a name="basic-oauth-restrictions"></a>
+<a name="basic-auth-restrictions"></a>
 #### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.

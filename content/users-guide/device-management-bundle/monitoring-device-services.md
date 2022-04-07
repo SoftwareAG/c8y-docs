@@ -3,9 +3,10 @@ weight: 45
 title: Monitoring device services
 layout: redirect
 ---
-The Device management application gives you the possibility to monitor the data your devices send about the services they are running.
+The Device Management application lets you monitor the data that your devices send about the services they are running.
 
-The [Services](/users-guide/device-management/#services) tab on the device details view provides you with an overview of the services running on a given device and acts as an entry point to the service details view where you can see detailed information about measurements, events and alarms sent for every service.
+The [Services](/users-guide/device-management/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
+There you can see detailed information about measurements, events and alarms sent for every service.
 
 ![Service details](/images/users-guide/DeviceManagement/devmgmt-service-details.png)
 
@@ -31,7 +32,7 @@ The following tabs make up the service details view, each described in detail in
 </tr>
 <tr>
 <td align="left"><a href="#service-measurements">Measurements</a></td>
-<td align="left">Provides a default visualization of numeric data provided about the service in the form of charts.</td>
+<td align="left">Provides a default visualization of numeric data of the service in the form of charts.</td>
 </tr>
 </tbody>
 </table>
@@ -39,22 +40,24 @@ The following tabs make up the service details view, each described in detail in
 <a name="service-alarms"></a>
 ### Alarms
 
-The **Alarms** tab provides information on the alarms of a service. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
+The **Alarms** tab provides information on the alarms of a service.
+See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
 
->**Info:** The service details **Alarms** tab displays only alarms having the particular service as a source. It does not display any alarms sourced by the device itself.
+>**Info:** The service details **Alarms** tab displays only alarms which have the particular service as a source. It does not display any alarms sourced by the device itself.
 
 <a name="events"></a>
 ### Events
 
-The **Events** tab displays events related to a service. See [Troubleshooting devices](#events-all) for detailed information.
+The **Events** tab displays events related to a service.
+See [Troubleshooting devices](#events-all) for detailed information.
 
->**Info:** The service details **Events** tab displays only events having the particular service as a source. It does not display any events sourced by the device itself.
+>**Info:** The service details **Events** tab displays only events which have the particular service as a source. It does not display any events sourced by the device itself.
 
 <a name="service-measurements"></a>
 ### Measurements
 
-The **Measurements** tab provides a default visualization of numeric data provided for the service in the form of charts.
+The **Measurements** tab provides a default visualization of numeric data for the service in the form of charts.
 
->**Info:** The service details **Measurements** tab displays only measurements having the particular service as a source. It does not display any measurements sourced by the device itself.
+>**Info:** The service details **Measurements** tab displays only measurements which have the particular service as a source. It does not display any measurements sourced by the device itself.
 
-For more information about how to use the **Measurements** tab check device details [Measurements](/users-guide/device-management/#measurements).
+For more information about how to use the **Measurements** tab see [Measurements](#measurements).

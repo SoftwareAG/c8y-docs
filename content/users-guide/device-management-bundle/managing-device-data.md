@@ -190,13 +190,16 @@ The available software objects will be displayed as a list.
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Each entry shows the software name, the device type it is applicable for (if set), the software type (if set), and a badge indicating if and how many versions are available for a particular software.
-The values in every column (except **Versions**) can be filtered and sorted by clicking the **Filter** and **Sort** icons in column header.
+The values in every column except for the **Versions** column can be filtered and sorted by clicking the filter and sort icons in the column header.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
 ![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-At the top, the software name, a description, an optional device type filter(s), and a software type are shown. If a device type filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. The software type will make the software installable only on devices that have declared to support the particular software type.
+At the top, the software name, a description, an optional device type filter(s), and a software type are shown.
+If a device type filter is set, the software will show up for installation only for devices of that type.
+If no filter is set, it will be available for all devices.
+The software type will make the software installable only on devices that have declared to support the particular software type.
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -208,7 +211,7 @@ The versions are ordered by their creation time (descending).
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description, and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
-4. Define the software type, it will make the software installable only on devices that have declared to support the particular software type.
+4. Define the software type. It will make the software installable only on devices that have declared to support the particular software type.
 5. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
 6. Click **Add software**.
 
@@ -250,7 +253,7 @@ In the **Software** tab of a device you can manage the software for the particul
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
-The **Software** tab shows a list of all available software installed on the device. If a given software item has a type, it will be displayed next to its name. You can search for a particular software by its name or filter the list by software type.
+The **Software** tab shows a list of all available software installed on the device. If a given software has a type, it will be displayed next to its name. You can search for a particular software by its name or filter the list by software type.
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
@@ -261,14 +264,19 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install software on a device
 
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
->**Info:** The **Install software** dialog will only display the software entries matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software entries matching the supported software types.
-2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.  
-For devices supporting advanced software managements features already installed software entries cannot be pre-filtered from the list of available software entries. Thus, after a particular software version has been selected a check is done if the chosen software is already installed on the device. If this is the case a warning is displayed to the user:
-![Already installed software entry warning](/images/users-guide/DeviceManagement/devmgmt-software-install-warning.png)
-The user can remove the already installed software entry from the **Software changes** panel. However, even if the resulting operation includes an already installed software entry this should not have any effect on the device software.
-![Software changes warning](/images/users-guide/DeviceManagement/devmgmt-software-changes-warning.png)
-4. Click **Install**.
-5. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
+
+    >**Info:** The **Install software** dialog will only display software entries matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software entries matching the supported software types.
+
+2. Select one or multiple softwares by selecting the respective version from the list which contains all softwares for the particular device type available in the software repository. For devices supporting advanced software management features, already installed software entries cannot be pre-filtered from the list of available software entries. Thus, after a particular software version has been selected, a check is done if the chosen software is already installed on the device. If this is the case a warning is displayed:
+
+    ![Already installed software entry warning](/images/users-guide/DeviceManagement/devmgmt-software-install-warning.png)
+
+    You can remove the already installed software entry from the **Software changes** panel. However, if the resulting operation includes an already installed software entry this has no effect on the device software.
+
+    ![Software changes warning](/images/users-guide/DeviceManagement/devmgmt-software-changes-warning.png)
+
+3. Click **Install**.
+4. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
 	![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.

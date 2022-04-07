@@ -13,7 +13,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Grouping devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
 |[Device details](#device-details)|Detailed description of the various kind of  information available for various types of  devices.
 |[Monitoring and controlling devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [availability status](#monitoring-availability) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.
-|[Monitoring device services](#monitoring-device-services)|Description of the different kind of data available for the purpose of device service monitoring.
+|[Monitoring device services](#monitoring-device-services)|Description of the different kinds of data available for the purpose of device service monitoring.
 |[Managing device types](#managing-device-types)|How to process data from various device types by using [device protocols](#managing-device-types).
 |[Managing device data](#managing-device-data)|How to manage [firmware](#firmware-repo) and [software](#software-repo) for devices, [configuration snapshots](#configuration-repository), [device credentials](#credentials), [trusted certificates](#trusted-certificates) and [device profiles](#device-profiles).
 |[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#smartrest-templates), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.

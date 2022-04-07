@@ -393,15 +393,19 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 <a name="services"></a>
 ### Services
 
-The Services tab provides you a list of all services running on a device with their status, name, type and last updated date. Every column allows that services are filtered and/or sorted by the respective value displayed.
+The Services tab provides a list of all services running on a device with their status, name, type and date of the last update.
+Every column allows services to be filtered and/or sorted by the respective value displayed.
 
 ![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
 
-The platform defines three status options for services - **Up**, **Down** and **Unknown**. These pre-defined status have their own graphical represenation and can be directly selected from **Status** filter:
+The platform defines three status options for services: **Up**, **Down** and **Unknown**.
+These predefined statuses have their own graphical represenation and can be selected directly from the **Status** filter:
 
 ![Status filter](/images/users-guide/DeviceManagement/devmgmt-services-status-filter.png)
 
-Other status options are also allowed and can be freely defined. They all would share the same icon and need to be manually entered in the **Status** filter. A tooltip on the status icon will display their actual value:
+Other status options are also allowed and can be freely defined.
+They all share the same icon and must be entered manually in the **Status** filter.
+A tooltip on the status icon displays their actual value:
 
 ![Status tooltip](/images/users-guide/DeviceManagement/devmgmt-services-status-tooltip.png)
 

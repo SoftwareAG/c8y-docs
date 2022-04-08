@@ -1,7 +1,7 @@
 ---
 title: Custom widget plugin with Module Federation
 layout: redirect
-weight: 30
+weight: 40
 ---
 
 **Version:** 1011.153.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components

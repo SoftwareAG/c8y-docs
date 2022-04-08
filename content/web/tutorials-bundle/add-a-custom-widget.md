@@ -1,7 +1,7 @@
 ---
 title: Add a custom widget to a dashboard
 layout: redirect
-weight: 30
+weight: 10
 ---
 
  **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
@@ -14,9 +14,10 @@ A typical dashboard looks like this, showing various widgets:
 
 This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
-### 1. Initialize the example app
+### 1. Initialize the example application
 
-As a starting point, you need an application showing dashboards. For this purpose, create a new Cockpit application using the `c8ycli`:
+As a starting point, you need an application showing dashboards.
+For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
 c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
@@ -24,11 +25,11 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
+>**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 >
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an app with the version `10.9.0.18`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `10.9.0.18`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 
 ### 2. Create the widget components
 
@@ -37,7 +38,7 @@ Widgets usually consist of two parts:
 * Configuration: The component that is shown when the user wants to add a widget to a dashboard.
 * Widget: The component that is shown when it is added to the dashboard.
 
-Hence you must create two components.
+That is why you must create two components.
 
 First, create the `demo-widget.component.ts`:
 
@@ -54,9 +55,10 @@ export class WidgetDemo {
 }
 ```
 
-There is nothing special to mention about this component. It will just show a configured text which is vertically mirrored via CSS. You can basically do everything in it what you can do in any other Angular component.
+The component will show a configured text which is vertically mirrored via CSS.
+You can do anything in it that you can also do in other Angular components.
 
-It just needs to have the `config` input to pass the configuration from the `demo-widget-config.component.ts` which is defined as:
+It must have the `config` input to pass the configuration from the `demo-widget-config.component.ts` which is defined as the following:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -75,9 +77,9 @@ export class WidgetConfigDemo {
 }
 ```
 
-Here again, you just need to add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
+Again, you must add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
 
-To enable the widget config validation, the following option should be added to the '@Component' decorator.
+To enable the widget configuration validation, the following option should be added to the `@Component` decorator.
 
 ```js
 import { ControlContainer, NgForm } from "@angular/forms";
@@ -88,7 +90,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
 })
 ```
 
-Combined with the example above, the `demo-widget-config.component.ts` component with enabled config validation will be:
+Combined with the example above, the `demo-widget-config.component.ts` component with enabled configuration validation will be:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -182,14 +184,14 @@ export class AppModule extends HybridAppModule {
 
 ```
 
-Explanation of the above numbers:
+Explanation of the numbers above:
 
 1. Define the components as entry components and declare them to make them accessible by this module.
 2. Add a multi-provider hook with the `HOOK_COMPONENTS`. This hook is collected by the application and adds the widget based on the values you provide.
 3. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
-4. These part tells the hook to associate the previously defined components to the widget.
+4. These parts tell the hook to associate the previously defined components to the widget.
 
-If you now start your application with `npm start` you should be able to add your custom widget to a dashboard.
+If you now start your application with `npm start`, you should be able to add your custom widget to a dashboard.
 
 Once added to a dashboard, the widget looks similar to this:
 

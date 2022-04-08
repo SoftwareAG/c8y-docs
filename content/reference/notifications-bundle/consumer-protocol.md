@@ -33,7 +33,7 @@ wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2
 
 ### Web Socket timeouts
 
-There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connectas necessary.
+There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary.
 
 ### Notification acknowledgements
 

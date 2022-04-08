@@ -82,7 +82,7 @@ The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-curr
 After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
 and be removed when that is done.
 
-However, unconsumed notifications will be retained, and for high throughput scenarios, this can result in notifications remaining in storage 
+However, unconsumed notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage 
 if never consumed by the application.
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.

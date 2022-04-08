@@ -269,11 +269,11 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
 For devices supporting advanced software management features, already installed software items cannot be pre-filtered from the list of available software items. Thus, after a particular software version has been selected, a check is done if the selected software is already installed on the device. If this is the case, a warning next to the selected version indicates that this software version is already present on the device.  
-You can remove the already installed software item from **Software changes** or leave it and apply it as part of the changes. It is up to the device agent to decide how to handle such an update.
+You can remove the already installed software item under **Software changes** or leave it and apply it as part of the changes. It is up to the device agent to decide how to handle such an update.
 
 3. Click **Install**.
 
-4. In **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
+4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
 
 	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 

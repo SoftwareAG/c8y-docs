@@ -1,7 +1,7 @@
 ---
 title: Add a Jest-based unit test
 layout: redirect
-weight: 80
+weight: 20
 ---
 
 **Version:** 1013.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
@@ -10,7 +10,7 @@ Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
 This tutorial shows you how to write and verify your first unit test.
 
-### 1. Initialize the example app
+### 1. Initialize the example application
 
 You need an application, for example, the empty default application:
 

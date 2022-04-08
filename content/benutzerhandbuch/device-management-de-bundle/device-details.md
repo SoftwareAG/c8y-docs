@@ -38,28 +38,8 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe <a href="#alarm-monitoring">Verwenden von Alarmen</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
-<td align="left"><a href="#availability">Verfügbarkeit</a></td>
-<td align="left">Ermöglicht die Verfügbarkeitsüberwachung von Maschinen. Näheres dazu finden Sie unter <a href="#monitoring-availability">Verfügbarkeit</a>. Für jedes Gerät vorhanden.</td>
-</tr>
-<tr>
-<td align="left"><a href="#child-devices">Kindgeräte</a></td>
-<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
-</tr>
-<tr>
-<td align="left"><a href="#config">Konfiguration</a></td>
-<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a></td>
 <td style="text-align:left">Stellt die SIM-Management-Funktionalität bereit. Näheres dazu finden Sie unter <a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#control">Steuerung</a></td>
-<td align="left">Zeigt Operationen an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Operationen</a>. Für jedes Gerät vorhanden.</td>
-</tr>
-<tr>
-<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
-<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#events">Ereignisse</a></td>
@@ -74,6 +54,10 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
 </tr>
 <tr>
+<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
+<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
+</tr>
+<tr>
 <td align="left"><a href="#identity">Identifikator</a></td>
 <td align="left">Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.</td>
 </tr>
@@ -82,12 +66,12 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
+<td align="left"><a href="#child-devices">Kindgeräte</a></td>
+<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
 </tr>
 <tr>
-<td align="left"><a href="#location">Standort</a></td>
-<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+<td align="left"><a href="#config">Konfiguration</a></td>
+<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#logs">Logdateien</a></td>
@@ -96,6 +80,10 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu über LORIOT LoRa verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
+<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Messwerte</a></td>
@@ -126,8 +114,20 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Verwaltet die auf einem Gerät installierte Software. Näheres dazu finden Sie unter <a href="#managing-software">Verwalten von Software auf einem Gerät</a>.</td>
 </tr>
 <tr>
+<td align="left"><a href="#location">Standort</a></td>
+<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#control">Steuerung</a></td>
+<td align="left">Zeigt Operationen an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Operationen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
 <td align="left"><a href="#tracking">Tracking</a></td>
 <td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#availability">Verfügbarkeit</a></td>
+<td align="left">Ermöglicht die Verfügbarkeitsüberwachung von Maschinen. Näheres dazu finden Sie unter <a href="#monitoring-availability">Verfügbarkeit</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 </tbody>
 </table>

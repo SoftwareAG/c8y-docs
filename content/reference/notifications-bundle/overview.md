@@ -15,7 +15,7 @@ In the {{< product-c8y-iot >}} 10.11 release, Notifications 2.0 needs to be enab
 See the *Messaging Service - Installation & operations guide* on how to do that.
 Ingress via load balancers also needs to allow ingress for the new WebSocket endpoint that is enabled by default in {{< product-c8y-iot >}} 10.11, which might affect custom deployments that manage their own ingress.
 
-To receive notifications over the 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant. Subscriptions are persitent and long lived and allow notifications to be stored reliably until consumed and acknowledged by a consuming microservice or application.
+To receive notifications over the 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant. Subscriptions are persistent,long lived, and allow notifications to be stored reliably until consumed and acknowledged by a consuming microservice or application.
 
 ### Managed object context
 
@@ -59,7 +59,7 @@ There is no distinction between the two contexts for consumers, and notification
 
 ### Building consuming microservices and applications
 
-For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application. Any WebSocket library or programming language can be used as the protocol is text based and relatively simple. Consumer can be either microservices or applications running externally from Cumulocity and require only a JWT string when connecting.
+For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application. Any WebSocket library or programming language can be used as the protocol is text-based and relatively simple. Consumer can be either microservices or applications running externally from {{< product-c8y-iot >}} and require only a JWT string when connecting.
 
 There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the protocol specification directly.
 

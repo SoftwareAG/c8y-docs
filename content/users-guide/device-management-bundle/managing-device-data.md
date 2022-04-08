@@ -267,13 +267,9 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
     >**Info:** The **Install software** dialog will only display software entries matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software entries matching the supported software types.
 
-2. Select one or multiple softwares by selecting the respective version from the list which contains all softwares for the particular device type available in the software repository. For devices supporting advanced software management features, already installed software entries cannot be pre-filtered from the list of available software entries. Thus, after a particular software version has been selected, a check is done if the chosen software is already installed on the device. If this is the case a warning is displayed:
-
-    ![Already installed software entry warning](/images/users-guide/DeviceManagement/devmgmt-software-install-warning.png)
-
-    You can remove the already installed software entry from the **Software changes** panel. However, if the resulting operation includes an already installed software entry this has no effect on the device software.
-
-    ![Software changes warning](/images/users-guide/DeviceManagement/devmgmt-software-changes-warning.png)
+2. Select one or multiple softwares by selecting the respective version from the list which contains all softwares for the particular device type available in the software repository.  
+For devices supporting advanced software management features, already installed software entries cannot be pre-filtered from the list of available software entries. Thus, after a particular software version has been selected, a check is done if the chosen software is already installed on the device. If this is the case a warning is displayed next to the selected version informing the user that this software version already being present on the device.  
+You can remove the already installed software entry from the **Software changes** pane or leave it and apply it as part of the changes. It is up to the device agent to decide how to handle such an update.
 
 3. Click **Install**.
 4. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>

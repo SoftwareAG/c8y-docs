@@ -10,7 +10,7 @@ A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, w
 
 2. The LPWAN agent discovers the codec microservice using the information available in certain fragments of the device type managed object associated with the device. The LPWAN agent uses these details in the device type to forward encode and decode requests to the corresponding endpoints exposed by the microservice.
 
-    You need to create a device type (with `type` and `fieldbusType` properties, and the `c8y_LpwanCodecDetails` fragment) as well as an external ID for every device manufacturer and device model combination that this codec microservice supports:
+    You must create a device type (with `type` and `fieldbusType` properties, and the `c8y_LpwanCodecDetails` fragment) as well as an external ID for every device manufacturer and device model combination that this codec microservice supports:
 
     * `type` is always "c8y_LpwanDeviceType".
     * `fieldbusType` is always "lpwan".
@@ -66,7 +66,7 @@ A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, w
 
 3. The LPWAN agent forwards the device shell command request to the `/encode` endpoint only when a predefined command listed as "supportedDeviceCommands" in the `c8y_LpwanCodecDetails` fragment of the device type is executed.
 
-    You need to create a predefined command template for every supported device command (`supportedDeviceCommands`) specified in the device type.
+    You must create a predefined command template for every supported device command (`supportedDeviceCommands`) specified in the device type.
 
     The following example shows the JSON structure for creating a predefined command template using the Inventory API:
 

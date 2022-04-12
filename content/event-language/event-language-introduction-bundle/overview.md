@@ -23,6 +23,6 @@ In {{< product-c8y-iot >}}, there are two deployment scenarios for using CEP rul
 
 * MULTI_TENANT: This scope provides access to a shared instance of CEP container. All subscribed tenants share the resources of the same CEP instance. It is available if you are subscribed to the "Cep" application, a built-in application which comes with {{< product-c8y-iot >}}.
 
-* PER_TENANT: Each subscribed tenant has at least one own instance of CEP container. The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one. This feature is available with the application "Cep-small" which is an optional service. Also, you need to be subscribed to the application" Feature-cep-custom-rules" to be able to upload your own CEP rules.
+* PER_TENANT: Each subscribed tenant has at least one own instance of CEP container. The container is isolated from other tenants, hence high CPU load or memory issues on other containers do not have any impact on the own one. This feature is available with the application "Cep-small" which is an optional service. Also, you must be subscribed to the application" Feature-cep-custom-rules" to be able to upload your own CEP rules.
 
 For details on application subscription refer to Administration > Managing tenants > [Subscribing to applications](https://cumulocity.com/guides/users-guide/enterprise-tenant#subscribe) in the *User guide*.

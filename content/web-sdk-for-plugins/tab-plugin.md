@@ -18,7 +18,7 @@ This section shows how to create a plugin that adds a new tab "Contact" to devic
 
 ![Contact tab](/images/plugins/contact.png)
 
-In order to achieve this goal you need to do the following steps:
+In order to achieve this goal you must do the following steps:
 
 * Create a plugin.
 * Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).

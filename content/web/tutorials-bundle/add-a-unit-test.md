@@ -18,7 +18,7 @@ You need an application, for example, the empty default application:
 c8ycli new my-app application -a @c8y/apps@1013.0.62
 ```
 
-However, any application supports unit tests in the same way. Next, you need to install all dependencies.
+However, any application supports unit tests in the same way. Next, you must install all dependencies.
 
 Switch to the new folder and run `npm install`.
 
@@ -158,7 +158,7 @@ Time:        5.154 s
 ```
 
 You can find and verify this snapshot in the newly created folder `./__snapshot__`.
-When the template changes, the test will fail and you need to overwrite your test with `npm test -- -u`.
+When the template changes, the test will fail and you must overwrite your test with `npm test -- -u`.
 You can test this behavior by changing your template in the `test.component.ts` file.
 
 >**Info:** It is common practice to commit these snapshots with your code.

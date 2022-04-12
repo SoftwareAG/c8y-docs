@@ -82,7 +82,7 @@ A template collection is a set of request and response templates that specifies 
 <a name="creating-templates-via-mqtt"></a>
 #### Creating templates via MQTT
 
-Like in SmartREST 1.0, you need to pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
+Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
 
 When creating templates, the client needs to publish to the following topic:
 
@@ -546,6 +546,6 @@ Your MQTT ClientId could look like this:
 d:myDeviceSerial:myDefaultTemplateXID
 ```
 
->**Info**: If you use a default X-ID, you need to include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
+>**Info**: If you use a default X-ID, you must include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
 
 It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).

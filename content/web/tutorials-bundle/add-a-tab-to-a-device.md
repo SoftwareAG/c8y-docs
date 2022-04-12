@@ -31,7 +31,7 @@ For this purpose, create a new Cockpit application using the `c8ycli`:
 c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 ```
 
-Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
+Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
 >**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 >
@@ -318,7 +318,7 @@ export class HelloGuard implements CanActivate {
 
 Explanation of the above numbers:
 
- 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence, the `ActivatedRouteSnapshot` is different in both calls and you need to resolve the `contextData` in the second case from the parent.
+ 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence, the `ActivatedRouteSnapshot` is different in both calls and you must resolve the `contextData` in the second case from the parent.
  2. Checks if the `acme_HelloWorld` fragment is set on the context.
 
 If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, the **Hello** tab will only be shown for that device and not for others.

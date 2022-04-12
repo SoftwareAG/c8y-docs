@@ -8,7 +8,7 @@ The purpose of this plugin is to add a new application to the app switcher menu.
 
 ![Hello world plugin](/images/plugins/hello.png)
 
-In order to achieve this goal we need to do the following steps:
+In order to achieve this goal we must do the following steps:
 
 * Set up an application project.
 * Configure the application manifest.
@@ -22,7 +22,7 @@ In order to achieve this goal we need to do the following steps:
 
 ### Set up an application project
 
-First, we need to create the application project by
+First, we must create the application project by
 * Creating a new folder with an arbitrary name.
 * Creating a "cumulocity.json" file inside this folder, representing our application manifest.
 * Running the command "npm init" to create a new "package.json" file.
@@ -63,7 +63,7 @@ For more details on other properties of the manifest, see [Concepts > Manifests]
 <a name="create-application"></a>
 ### Create the application in your tenant
 
-After successfully logging in into a {{< product-c8y-iot >}} UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
+After successfully logging in into a {{< product-c8y-iot >}} UI application, the application key is fetched automatically. Thus, to develop an application we must make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
 ```bash
 $ c8y deploy:app myapplication
@@ -362,7 +362,7 @@ You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in t
 
 The example above shows how to add your self-developed plugin to one of the core applications, in this case the "Administration" application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin "myplugin" is located in the plugins folder of the application with the contextPath "myapplication".
 
-If you are not deploying to a {{< management-tenant >}}, you need to include the following fragment to your target .json file:
+If you are not deploying to a {{< management-tenant >}}, you must include the following fragment to your target .json file:
 
 ```json
 	"allApplications": {

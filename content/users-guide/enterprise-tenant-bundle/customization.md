@@ -293,7 +293,7 @@ activation. Note that your {{< management-tenant >}} domain name is static, for 
 
 #### Updating your certificate
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that
 
 * the certificate is valid, like when being uploaded for the first time,
 * the certificate is currently valid (validFrom in the past and validTo in the future),

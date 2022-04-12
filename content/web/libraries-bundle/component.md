@@ -13,7 +13,7 @@ ngx-components is a components collection and data access layer for Angular appl
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a new application you first need to install the package:
+If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a new application you must first install the package:
 
 ```
 $ npm install @c8y/ngx-components
@@ -174,9 +174,9 @@ You get the same result in the new Angular framework by modifying the `ng1.ts` f
     import 'my-plugin/cumulocity.json';                                    // 2
 ```
 
-As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity.json` addition to tell webpack that a legacy plugin is imported.
+As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins must have the `/cumulocity.json` addition to tell webpack that a legacy plugin is imported.
 
-To use legacy plugins in your custom non-default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
+To use legacy plugins in your custom non-default application you must set the `upgrade` flag in the package.json file and use the same import approach like described before:
 
 ```json
     "c8y": {

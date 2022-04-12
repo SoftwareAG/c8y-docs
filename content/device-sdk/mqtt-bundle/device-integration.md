@@ -35,7 +35,7 @@ In {{< product-c8y-iot >}}, every MQTT connection needs to be authenticated. You
 
 Once the device retrieved the credentials, it needs to store them locally for further connections.
 
-To establish a connection you need to configure the following parameters:
+To establish a connection you must configure the following parameters:
 
 - Host: &lt;your&#95;cumulocity_url>
 - User: &lt;tenantID>/&lt;username> (user alias is not supported)

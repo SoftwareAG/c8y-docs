@@ -8,7 +8,7 @@ SNMP-enabled devices can be added manually or through the autodiscovery method.
 
 ### Autodiscovery
 
-The autodiscovery functionality allows to scan SNMP-enabled devices in the network for a given IP range. Identified devices will automatically be added as a child to the agent device in the platform. This functionality is helpful when you need to add a large number of devices to the agent. Instead of adding all devices manually, you can use the autodiscovery functionality. The **IP range** field accepts multiple IP ranges separated by comma, for example "10.23.52.51-10.23.52.54,192.168.0.1-192.168.0.5". It also supports the IPv6 IP address format.
+The autodiscovery functionality allows to scan SNMP-enabled devices in the network for a given IP range. Identified devices will automatically be added as a child to the agent device in the platform. This functionality is helpful when you must add a large number of devices to the agent. Instead of adding all devices manually, you can use the autodiscovery functionality. The **IP range** field accepts multiple IP ranges separated by comma, for example "10.23.52.51-10.23.52.54,192.168.0.1-192.168.0.5". It also supports the IPv6 IP address format.
 
 There are two supported ways of discovering devices.
 
@@ -110,7 +110,7 @@ The following REST call schedules autodiscovery for the given interval:
 	</tr>
 	<tr>
 	<td align="left">SNMP version</td>
-	<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters must be provided under <strong>Device authentication details</strong>:<br>- <strong>Username</strong>: Provide a valid username for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
+	<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters must be provided under <strong>Device authentication details</strong>:<br>- <strong>Username</strong>: Provide a valid username for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you must provide authentication and/or privacy details.</td>
 	</tr>
 	</tbody>
 	</table>

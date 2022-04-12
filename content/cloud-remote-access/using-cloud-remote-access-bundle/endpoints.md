@@ -4,7 +4,7 @@ weight: 30
 layout: bundle
 ---
 
-The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port need to be reachable from the gateway. 	
+The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port must be reachable from the gateway. 	
 
 #### To configure a new remote device
 

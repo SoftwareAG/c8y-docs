@@ -6,4 +6,4 @@ layout: redirect
 
 In the **Administration** section, you can manage and create machine profiles and line profiles, and you can customize the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park).
 
-You need to have ADMIN permission to view and modify the **Administration** pages.
+You must have ADMIN permission to view and modify the **Administration** pages.

@@ -35,7 +35,7 @@ When you run this command it provides you with a very simple file structure that
 
 ### Importing AngularJS plugins
 
-If you want to integrate your custom plugin into an application, you first need to set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid application and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
+If you want to integrate your custom plugin into an application, you must first set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid application and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
 
 ```
 import 'my-custom-plugin/cumulocity.json';

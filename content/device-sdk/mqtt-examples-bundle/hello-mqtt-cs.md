@@ -35,7 +35,7 @@ The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.mic
 
 ### Developing the "Hello MQTT world" client
 
-To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you need to:
+To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you must:
 
 * Create a console project.
 * Add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://github.com/SoftwareAG/cumulocity-sdk-cs)).

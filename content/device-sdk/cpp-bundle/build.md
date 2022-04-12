@@ -4,7 +4,7 @@ title: Building the C++ library
 layout: redirect
 ---
 
-Before starting developing your C++ agents for {{< product-c8y-iot >}}, you need to build the library. The prerequisites for building it are listed in the table below.
+Before starting developing your C++ agents for {{< product-c8y-iot >}}, you must build the library. The prerequisites for building it are listed in the table below.
 
 <table id="tab:prereq" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>

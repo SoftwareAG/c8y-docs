@@ -20,7 +20,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
-* Devices need to trust the {{< product-c8y-iot >}} server certificate.
+* Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 

@@ -4,7 +4,7 @@ title: Configuring the Loriot agent endpoint credentials
 layout: redirect
 ---
 
-Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure the {{< product-c8y-iot >}} Loriot agent endpoint details in LORIOT Network Server.
+Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in LORIOT Network Server.
 
 ### <a name="map-loriot-endpoint-with-credentials">Configuring the Loriot endpoint using Basic authentication</a>
 

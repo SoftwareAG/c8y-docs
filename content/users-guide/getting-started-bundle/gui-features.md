@@ -88,7 +88,7 @@ On entering a search term into the textbox at the top of the **Search** window, 
 
 Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets tab](/users-guide/device-management#subassets-tab).
 
-The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
+The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
 >**Important:** The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
 
@@ -163,7 +163,7 @@ cl*
 
 The list will immediately be reduced to the selected objects.
 
->**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You need to load all results first to search through all items. This behavior applies to the following pages:
+>**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
 >
 >* Device protocols
 >* Firmware repository

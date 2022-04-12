@@ -7,8 +7,8 @@ layout: redirect
 As an example, we create a statement. It should listen to a stream and create a new event in another stream whenever the specified condition applies.
 As example we want to create an alarm for each temperature measurement that is created.
 
-1. To create an alarm we need to `insert into` the stream `CreateAlarm`.
-2. We need to specify all parameters for the event in the `select` clause.
+1. To create an alarm we must `insert into` the stream `CreateAlarm`.
+2. We must specify all parameters for the event in the `select` clause.
 3. We want the alarm to be created when an event `from` the stream `MeasurementCreated` is received.
 4. We want the alarm only be created under certain conditions of the event from the `MeasurementCreated` stream which we specify in the `where` clause.
 

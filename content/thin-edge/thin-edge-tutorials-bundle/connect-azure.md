@@ -10,7 +10,7 @@ To enable thin-edge.io you first must connect your device to the cloud. This is 
 The focus is here on connecting the device to Azure IoT.
 See [Connect your device to {{< product-c8y-iot >}}](#connect-c8y), if you want to connect {{< product-c8y-iot >}} instead.
 
-Before you can connect your device to Azure IoT, you need to create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto/#install-thin-edge).
+Before you can connect your device to Azure IoT, you must create an Azure IoT Hub in Azure portal as described at [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal), as well as to [install thin-edge.io on your device](/thin-edge/thin-edge-howto/#install-thin-edge).
 
 You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-command) to:
 * [create a certificate for your device](#create-the-certificate),
@@ -54,7 +54,7 @@ see [Developer tools > Command Line Interface (CLI) > tedge cert command](/thin-
 
 ### Register the device on Azure IoT Hub
 
-In order for Azure to trust a device, you need to add the self-signed certificate thumbprint to the Azure IoT Hub Portal.
+In order for Azure to trust a device, you must add the self-signed certificate thumbprint to the Azure IoT Hub Portal.
 In the Azure IoT Hub Portal, navigate to **Explores** > **IoT Devices** and click  **+ New**. This opens the window **Create a device**.
 
 Here provide the configuration parameters that are required to create the device as described below:
@@ -73,7 +73,7 @@ You can find more information about registering a device on the Azure IoT Hub we
 
 ### Configure the device
 
-To connect the device to the Azure IoT Hub, you need to set the URL/hostname of the IoT Hub and the root certificate of the IoT Hub as shown in the example below.
+To connect the device to the Azure IoT Hub, you must set the URL/hostname of the IoT Hub and the root certificate of the IoT Hub as shown in the example below.
 
 Set the URL/hostname of your Azure IoT Hub.   
 

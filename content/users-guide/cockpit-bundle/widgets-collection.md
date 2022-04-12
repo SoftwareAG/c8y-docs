@@ -229,7 +229,7 @@ The resulting table is visualized as follows:
 
 Click **+Add Properties** and select one or more properties to be added.
 
-> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also must configure the renderer "Active Alarm Status" in the list of columns.
 
 #### To add actions
 

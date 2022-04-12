@@ -18,14 +18,14 @@ In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.ti
 
 #### Installing the Tinkerforge Brick Daemon and Brick Viewer on the RaspPi
 
-Before we try to connect to {{< product-c8y-iot >}}, we need to ensure that the RaspPi and the Weather Station can communicate with each other.
+Before we try to connect to {{< product-c8y-iot >}}, we must ensure that the RaspPi and the Weather Station can communicate with each other.
 
-For the software connection between the devices, you need to install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
+For the software connection between the devices, you must install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
 
 
 #### Checking the connection between the Tinkerforge Weather Station and the RaspPi
 
-Now we need to start the Brick Daemon and set up the Brick Viewer to communicate with the Weather Station. Note that both components need to be started with sudo, to permit a USB connection between the devices.
+Now we must start the Brick Daemon and set up the Brick Viewer to communicate with the Weather Station. Note that both components must be started with sudo, to permit a USB connection between the devices.
 
 ````console
 sudo brickd  
@@ -64,7 +64,7 @@ For details on installing and running the {{< product-c8y-iot >}} Java agent on 
 
 #### To register the RaspPi device to the platform
 
-As a final configuration step, you need to register the RaspPi device to the {{< product-c8y-iot >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
+As a final configuration step, you must register the RaspPi device to the {{< product-c8y-iot >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
 
 ### Interacting with the platform
 

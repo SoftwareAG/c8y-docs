@@ -7,7 +7,7 @@ layout: redirect
 Our rule is already working now but there is one issue left: where to send the location event.
 If a device A sends a location event which is inside its geofence and the following event is from a device B which is outside the geofence it would create an alarm.
 The alarm would be generated for device A because when creating the alarm we regard the source of the first arriving event as source for the alarm creation.
-We need to configure that the window which holds the latest two events should only hold events of the same device.
+We must configure that the window which holds the latest two events should only hold events of the same device.
 If there is an event from another device a new window should be created so there is one window for each device.
 
 This can be achieved with a context. We only need the context at the point where we create the window.

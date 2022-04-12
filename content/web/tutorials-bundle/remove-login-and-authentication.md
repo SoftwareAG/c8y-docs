@@ -14,11 +14,11 @@ This recipe will explain how to remove the login authentication and use the appl
 ### Brief background
 
 The removal of all authentication is not possible.
-In order to get around it you need to pass default credentials that the application will read upon request.
+In order to get around it you must pass default credentials that the application will read upon request.
 Your goal is to trigger the login with the default credentials before the application requests the login page because it is not authenticated.
 
 The login functionality is part of the `CoreModule` in the  `@c8y/ngx-components` package which is loaded when Angular bootstraps the application.
-The default credentials need to be passed to the API before that happens.
+The default credentials must be passed to the API before that happens.
 The result will be that, when Angular loads the initial page, the user will be already authenticated and the login page will be skipped.
 
 ### 1. Initialize a new application
@@ -31,7 +31,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
 This will create a new application that is an exact copy of the Cockpit application.
-Next, you need to install all dependencies.
+Next, you must install all dependencies.
 Switch to the new folder and run `npm install`.
 
 >**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
@@ -42,8 +42,8 @@ Switch to the new folder and run `npm install`.
 
 ### 2. Add logic for default authentication
 
-First you need to make sure to add the default authentication before Angular bootstraps your custom application.
-For that reason you need to add a new provider in the `app.module.ts` in the newly created custom Cockpit application, which will be triggered before the login.
+First you must make sure to add the default authentication before Angular bootstraps your custom application.
+For that reason you must add a new provider in the `app.module.ts` in the newly created custom Cockpit application, which will be triggered before the login.
 For that, use Angular's injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER).
 This token will ensure that the application will not be initialized until the new functionality is being executed.
 
@@ -76,7 +76,7 @@ export function initApp(loginService: LoginService) {
 }
 ```
 
-To login with your default credentials, you need to call the [login function](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html#login) from the service and pass the authentication method and the default credentials.
+To login with your default credentials, you must call the [login function](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html#login) from the service and pass the authentication method and the default credentials.
 
 With that, the recipe is completed and authentication will be done behind the scenes:
 

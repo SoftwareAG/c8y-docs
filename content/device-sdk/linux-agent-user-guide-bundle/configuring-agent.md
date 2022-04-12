@@ -161,7 +161,7 @@ You can change various Modbus parameters in the configuration file. The **modbus
 <tbody>
 <tr>
 <td>modbus.serial.port</td>
-<td>This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent about the serial port your device is mounted as: modbus.serial.port=/dev/ttyACM0 or modbus.serial.port=/dev/ttyUSB0</td>
+<td>This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you must also inform the agent about the serial port your device is mounted as: modbus.serial.port=/dev/ttyACM0 or modbus.serial.port=/dev/ttyUSB0</td>
 <td>modbus.serial.port=/dev/ttyACM0</td>
 </tr>
 <tr>
@@ -239,7 +239,7 @@ The agent supports three different CAN interface types:
 <tr>
 <td>canopen.type</td>
 <td>canopen.type=slcan</td>
-<td>This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent about the serial port your device is mounted as: canopen.serial=/dev/ttyACM0 or canopen.serial=/dev/ttyUSB0</td>
+<td>This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you must also inform the agent about the serial port your device is mounted as: canopen.serial=/dev/ttyACM0 or canopen.serial=/dev/ttyUSB0</td>
 </tr>
 </tbody>
 </table>

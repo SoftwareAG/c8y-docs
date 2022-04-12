@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for C#, and it contains:
 
-*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
+*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 <!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
@@ -30,7 +30,7 @@ For new projects, you shall use a new bundle of [building scripts](https://githu
 <a name="general-prerequisites"></a>
 ### Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you must install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 

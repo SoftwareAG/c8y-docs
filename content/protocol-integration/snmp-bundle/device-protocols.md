@@ -53,7 +53,7 @@ On successful import, the newly added device protocol will be listed in the devi
 
 ### To create a device protocol manually
 
-Device protocols can also be created manually. To do so, you need to know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
+Device protocols can also be created manually. To do so, you must know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
 
 1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 2. In the top menu bar of the **Device protocols** page, click **Add device protocol**.

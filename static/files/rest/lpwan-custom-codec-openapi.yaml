@@ -131,7 +131,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncoderResult'
         '400':
-          description:  "When the encoder input has missing fields or has null input data, EncoderResult is returned with failure message"
+          description:  "The encoder input has missing fields or has `null`as its input data. The EncoderResult is returned with a failure message."
           content:
             application/json:
               example:
@@ -142,7 +142,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncoderResult'
         '501':
-          description:  "When there is no implementation for the EncoderService, EncoderResult is returned with failure message"
+          description:  "There is no implementation for the EncoderService. The EncoderResult is returned with a failure message."
           content:
             application/json:
               example:

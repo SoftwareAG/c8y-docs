@@ -35,7 +35,7 @@ paths:
                     - args
       responses:
         '200':
-          description: "When the decoder input is successfully decoded and returns the DecoderResult"
+          description: "The decoder input is successfully decoded and returns the DecoderResult."
           content:
             application/json:
               example:
@@ -74,7 +74,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DecoderResult'
         '400':
-          description:  "When the decoder input has missing fields or has null input data, DecoderResult is returned with failure message"
+          description: "The decoder input has missing fields or has `null` as its input data. The DecoderResult is returned with a failure message."
           content:
             application/json:
               example:
@@ -85,7 +85,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DecoderResult'
         '501':
-          description:  "When there is no implementation for the DecoderService, DecoderResult is returned with failure message"
+          description:  "There is no implementation for the DecoderService. The DecoderResult is returned with a failure message."
           content:
             application/json:
               example:

@@ -35,7 +35,7 @@ paths:
                     - args
       responses:
         '200':
-          description: "When the decoder input is successfully decoded and returns the DecoderResult"
+          description: "The decoder input is successfully decoded and returns the DecoderResult."
           content:
             application/json:
               example:
@@ -73,6 +73,27 @@ paths:
                 message: "Description of decoding success or failure."
               schema:
                 $ref: '#/components/schemas/DecoderResult'
+        '400':
+          description: "The decoder input has missing fields or has `null` as its input data. The DecoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "DecoderInputData is missing mandatory fields: 'sourceDeviceId', 'sourceDeviceEui', 'inputData', 'manufacturer and/or model'"
+                  - "Decoder is invoked with null input data."
+                success: false
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
+        '501':
+          description:  "There is no implementation for the DecoderService. The DecoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "No implementation provided for the DecoderService"
+                success: false
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
   /encode:
     post:
       tags:
@@ -107,6 +128,27 @@ paths:
                 encodedCommand: 9F5000
                 properties:
                 - fport: 20
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+        '400':
+          description:  "The encoder input has missing fields or has `null`as its input data. The EncoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "EncoderInputData is missing mandatory fields: 'sourceDeviceId', 'sourceDeviceEui', 'manufacturer, model and/or supportedCommands', 'commandName'"
+                  - "Encoder is invoked with null input data."
+                success: false
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+        '501':
+          description:  "There is no implementation for the EncoderService. The EncoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "No implementation provided for the EncoderService"
+                success: false
               schema:
                 $ref: '#/components/schemas/EncoderResult'
 components:

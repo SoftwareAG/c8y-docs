@@ -403,7 +403,7 @@ These predefined statuses have their own graphical representation and can be sel
 
 ![Status filter](/images/users-guide/DeviceManagement/devmgmt-services-status-filter.png)
 
-Other status options are also allowed and can be freely defined.
+Other status options are also allowed and can be freely defined, see [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in the Web SDK documentation resources.
 They all share the same icon and must be entered manually in the **Status** filter.
 A tooltip on the status icon displays their actual value.
 

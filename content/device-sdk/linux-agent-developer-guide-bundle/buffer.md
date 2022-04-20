@@ -4,7 +4,7 @@ layout: redirect
 weight: 60
 ---
 
-The {{< product-c8y-iot >}} C++ SDK offers two message buffering methods in case of connection lost. To switch it, you must change the arguments to be parsed to `SrReporter()`. The {{< product-c8y-iot >}} Linux agent chooses memory-backed buffering by default.
+The {{< product-c8y-iot >}} C++ SDK offers two message buffering methods in case of connection lost. To switch it, you just need to change the arguments to be parsed to `SrReporter()`. The {{< product-c8y-iot >}} Linux agent chooses memory-backed buffering by default.
 
 The user guide of the  C++ SDK mentions the pros and cons of each buffering technique in the `SrReporter()` description.
 
@@ -26,6 +26,6 @@ rpt = new SrReporter(server + port, agent.deviceID(), agent.XID(),
         agent.egress, agent.ingress, 10000, "/path/to/file.cache");
 ```
 
-You must add two new arguments when constructing the `SrRepoter` object:
+You just need to add two new arguments when constructing the `SrRepoter` object:
 - 10000: Capacity of the request buffer
 - _/path/to/file.cache_: The file path for file-backed buffering

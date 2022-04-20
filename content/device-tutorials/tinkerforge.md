@@ -20,7 +20,7 @@ In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.ti
 
 Before we try to connect to {{< product-c8y-iot >}}, we must ensure that the RaspPi and the Weather Station can communicate with each other.
 
-For the software connection between the devices, you must install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
+For the software connection between the devices, you must install Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
 
 
 #### Checking the connection between the Tinkerforge Weather Station and the RaspPi

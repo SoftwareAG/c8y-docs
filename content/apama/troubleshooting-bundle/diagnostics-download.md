@@ -4,6 +4,8 @@ title: Downloading diagnostics and logs
 layout: redirect
 ---
 
+> **Info:** Diagnostics are not available for the Apama Smart Rules-only microservice.
+
 If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available from the bottom of the Streaming Analytics application: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the home screen and also on the pages that appear when you go to the Analytics Builder and EPL Apps pages (that is, in the EPL app manager and in the model manager). 
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/welcome/contacting-support) if you are filing a support ticket. 

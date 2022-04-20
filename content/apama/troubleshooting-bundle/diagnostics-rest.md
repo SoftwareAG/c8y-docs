@@ -4,6 +4,8 @@ title: Diagnostics REST endpoints
 layout: redirect
 ---
 
+> **Info:** These endpoints are not available for the Apama Smart Rules-only microservice.
+
 The following diagnostics endpoints are available for REST requests. These require authentication as a user with READ permission for "CEP management": 
 
 - `/service/cep/diagnostics/metrics`  

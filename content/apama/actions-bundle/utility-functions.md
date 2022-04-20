@@ -99,8 +99,25 @@ To build strings, you can use concatenation as follows:
 string s:= "An event with the text " + evt.text + " has been created.";
 ```
 
-If the texts get longer and have more values that are dynamically set from the data, you can use the `Util.replacePlaceholders()` function. In your text string, you mark the placeholders with the field name from the event and surround it by `#{}`. The second parameter to `replacePlaceholders` can be any event type.
+If the texts get longer and have more values that are dynamically set from the data, you can use the `Util.replacePlaceholders()` function. 
+In your text string, you mark the placeholders with the field name from the event and surround it by `#{}`. 
+The second parameter to `replacePlaceholders` can be any event type.
+
+`Utils::replacePlaceholders` looks up the field name specified in the event or in the parameters of the event to generate the text replacement. 
+You can use field names of type `#{X.Y}` to access nested structures in the event.
 
 ```java
-myMailText := Util.replacePlaceholders("The device #{source} with the serial number #{c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y_Address.street} in #{c8y_Address.city}.", evt);
+myMailText := Util.replacePlaceholders("The device #{source} created an event with the text #{text} at #{time}, alarm);
+```
+
+If the replacement string is of a form such as `#{source.name}` where `source.name` is the name of the underlying managed object/device 
+or `#{source.c8y_hardware.notes}` where `c8y_hardware` is a fragment on the managed object, 
+then special handling is required to achieve the replacement. 
+After the initial replacement, you must update the placeholder field name and run `Util::replacePlaceholders` again with the source `managedObject`.
+
+
+```java
+myMailText := Util.replacePlaceholders("The device #{source} with the serial number #{source.c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{source.c8y_Address.street} in #{source.c8y_Address.city}.", alarm);
+myMailText := myMailText.replaceAll("#{source.", "#{"};
+myMailText := Util.replacePlaceholders(myMailText, managedObject);
 ```

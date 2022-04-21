@@ -110,6 +110,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <td style="text-align:left">Provides details for devices connected via an OPC UA server. For details, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
+<td align="left"><a href="#services">Services</a></td>
+<td align="left">Provides an overview of the services running on a device.</td>
+</tr>
+<tr>
 <td align="left"><a href="#shell">Shell</a></td>
 <td align="left">Enables you to interact with remote devices via a command prompt.</td>
 </tr>
@@ -384,6 +388,24 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 5. Click **Save changes** to save your settings.
 
 > **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
+
+
+<a name="services"></a>
+### Services
+
+The **Services tab** provides a list of all services running on a device with their status, name, type and date of the last update.
+Every column allows services to be filtered and/or sorted by the respective value displayed.
+
+![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
+
+The platform defines three status options for services: **Up**, **Down** and **Unknown**.
+These predefined statuses have their own graphical representation and can be selected directly from the **Status** filter:
+
+![Status filter](/images/users-guide/DeviceManagement/devmgmt-services-status-filter.png)
+
+Other status options are also allowed and can be freely defined, see [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in the Web SDK documentation resources.
+They all share the same icon and must be entered manually in the **Status** filter.
+A tooltip on the status icon displays their actual value.
 
 <a name="shell"></a>
 ### Shell

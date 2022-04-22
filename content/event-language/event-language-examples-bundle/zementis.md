@@ -100,5 +100,5 @@ First, a predictive model is created and uploaded via Zementis console. Assume, 
 The {{< product-c8y-iot >}} CEP module works as follows:
 
 * The data from a specific device is filtered. The measurement values that should be passed for analysis are selected.
-* In order to apply the analytic model, an outbound HTTP request is performed to the above Zementis endpoint. The measurement values that need to be analyzed are passed in request URL parameters.
+* In order to apply the analytic model, an outbound HTTP request is performed to the above Zementis endpoint. The measurement values that must be analyzed are passed in request URL parameters.
 * Depending on the score returned from the model, an alarm is raised.

@@ -40,6 +40,6 @@ During the update:
 
 - If you use Jest (JavaScript Testing Framework) check [Jest - Angular IVY](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-ivy) for the configuration.
 
-> **Info:** Deep imports are not supported. For example, you need to import from `@c8y/ngx-components/asset-navigator` but not from `@c8y/ngx-components/asset-navigator/services/asset-service`.
+> **Info:** Deep imports are not supported. For example, you must import from `@c8y/ngx-components/asset-navigator` but not from `@c8y/ngx-components/asset-navigator/services/asset-service`.
 
 > **Info:** If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is not selected.

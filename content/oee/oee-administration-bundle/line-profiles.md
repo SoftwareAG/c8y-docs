@@ -7,7 +7,7 @@ The following section walks you through the steps required to create a new line 
 
 ### Step 1 - Create a new site
 
-Since lines are attached to a site or an area, you first need to have such an entity available.
+Since lines are attached to a site or an area, you must first have such an entity available.
 
 Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [Organization > To create a new entity](/oee/oee-administration/#create-entity).
 

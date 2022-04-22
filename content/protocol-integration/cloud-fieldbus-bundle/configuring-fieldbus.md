@@ -71,7 +71,7 @@ Click **Add holding register** under **Holding registers** or **Add input regist
 
 ![Add register](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-newregister.png)
 
-In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
+In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you must support buffering of data on the terminal, leave this checkbox clear.
 
 Finally, click **Save** to save the device protocol.
 
@@ -90,7 +90,7 @@ CAN bus device protocols can be configured in a very similar way as Modbus devic
 Profibus device protocols can be configured in the following way:
 
 1. In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.
-1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
+1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you must support buffering of data on the terminal, leave this checkbox clear.
 1. Finally, click **Save** to save your settings.
 
 
@@ -154,4 +154,4 @@ In the **CANopen** section, up to 127 CANopen devices can be added to the gatewa
 - **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
 - **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 
-> The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+> The device type and node ID must match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.

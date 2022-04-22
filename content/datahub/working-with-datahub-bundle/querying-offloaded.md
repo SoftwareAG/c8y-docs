@@ -47,7 +47,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 ### Connecting via Dremio REST API
 
-Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
+Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You must authenticate with your Dremio account against Dremio in order to use the API.
 
 Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 

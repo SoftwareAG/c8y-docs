@@ -41,7 +41,7 @@ To update the Web SDK you can simply use the `new` command that is used for scaf
 c8ycli new <<app-name>> <<cockpit|devicemanagement|administration>> -a @c8y/apps@<<version>>
 ```
 
-So for example if your current working directory is an application called "my-cockpit" based on {{< product-c8y-iot >}}'s Cockpit application and you want to update to version 10.6.2.0, you need to run the following command:
+So for example if your current working directory is an application called "my-cockpit" based on {{< product-c8y-iot >}}'s Cockpit application and you want to update to version 10.6.2.0, you must run the following command:
 
 ```shell
 cd ..
@@ -62,7 +62,7 @@ The following files are currently overwritten:
 
 These are the files that are overwritten by an update based on the version of that article.
 The list might change in later versions.
-Next, we need to reapply the changes that were made earlier to these files.
+Next, we must reapply the changes that were made earlier to these files.
 A git diffing tool can be very helpful for that.
 
 ### Diffing to reapply changes

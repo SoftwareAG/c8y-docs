@@ -10,7 +10,7 @@ Requests to a microservice can be authenticated using basic authentication or OA
 
 ### Prerequisites
 
-You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You must have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
 Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
@@ -72,7 +72,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library
 
-You need to specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 

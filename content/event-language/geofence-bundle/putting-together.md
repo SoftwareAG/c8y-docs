@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 We can now combine all the parts into one module. The order of the statements does not matter.
-The only exception is that if you use custom models (like schemas, functions, contexts, variables, ...) you need to declare them before using them.
+The only exception is that if you use custom models (like schemas, functions, contexts, variables, ...) you must declare them before using them.
 
     create expression distance(lat1, lon1, lat2, lon2) [
       var R = 6371000;

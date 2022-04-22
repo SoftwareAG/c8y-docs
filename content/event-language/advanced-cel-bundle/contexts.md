@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: Contexts 
+title: Contexts
 layout: redirect
 aliases:
   - /event-language/advanced#contexts
@@ -38,7 +38,7 @@ Now we can add the context to the statement:
 Now the average will be calculated for each device separately.
 
 The context can only be applied to statements that have an input that is declared in the context.
-If you have multiple statements that need to be context aware and have different inputs you need to configure each input in the context and where to find the context key.
+If you have multiple statements that must be context aware and have different inputs you must configure each input in the context and where to find the context key.
 
     create context DeviceAwareContext
       partition by

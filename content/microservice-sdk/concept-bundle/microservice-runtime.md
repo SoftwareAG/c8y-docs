@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
+Microservices deployed on the platform have a specific runtime environment and they must understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
 
 ### Environment variables
 

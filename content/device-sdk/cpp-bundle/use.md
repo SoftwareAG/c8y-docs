@@ -75,7 +75,7 @@ Device integration is a bit more complex as illustrated in the flow diagram belo
 
 ![Device integration flowchart](/images/cpp/img/integrate.png)
 
-The code snippet below shows the required API interface by `SrAgent` when implementing your own integrate process. Basically, you need to subclass the pure virtual class `SrIntegrate` and implement its virtual function `integrate` with your particular integrate process. This is a callback function, which will be called by `SrAgent` when you call the `integrate` method of the `SrAgent`. By convention, the function shall return 0 for success, and a non-0 value for failure.
+The code snippet below shows the required API interface by `SrAgent` when implementing your own integrate process. Basically, you must subclass the pure virtual class `SrIntegrate` and implement its virtual function `integrate` with your particular integrate process. This is a callback function, which will be called by `SrAgent` when you call the `integrate` method of the `SrAgent`. By convention, the function shall return 0 for success, and a non-0 value for failure.
 
 ```cpp
 // ex-02-integrate: examples/ex-02-integrate/integrate.h
@@ -192,11 +192,11 @@ After running this example, you will see a device named *HelloC8Y-Agent* in the 
 
 Now that we have successfully integrated a demo device to {{< product-c8y-iot >}}, we can indeed do something more interesting. Let's try sending CPU measurements every 10 seconds.
 
-As shown in [Integrating to {{< product-c8y-iot >}}](#integrating-to-cumulocity-iot), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
+As shown in [Integrating to {{< product-c8y-iot >}}](#integrating-to-cumulocity-iot), first we must add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
 
 In the `main` function, we instantiate a `CPUMEasurement` and register it to a `SrTimer` in the class constructor. `SrTimer` supports millisecond resolution, so 10 seconds are 10,000 milliseconds.
 
-The library is built upon an asynchronous model. Hence, the `SrAgent` class is not responsible for any networking duty, rather it is essentially a scheduler for all timer and message handlers. `SrAgent.send` merely places a message into the `SrAgent.egress` queue and returns immediately after. For actually sending SmartREST requests to {{< product-c8y-iot >}}, we need to instantiate a `SrReporter` object and execute it in a separate thread.
+The library is built upon an asynchronous model. Hence, the `SrAgent` class is not responsible for any networking duty, rather it is essentially a scheduler for all timer and message handlers. `SrAgent.send` merely places a message into the `SrAgent.egress` queue and returns immediately after. For actually sending SmartREST requests to {{< product-c8y-iot >}}, we must instantiate a `SrReporter` object and execute it in a separate thread.
 
 ```cpp
 // ex-03-measurement: examples/ex-03-measurement/main.cc
@@ -245,7 +245,7 @@ int main ()
 
 ### Handling operations
 
-Besides sending requests, such as measurements to {{< product-c8y-iot >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-c8y-iot >}}. The following example shows how to handle the `c8y_Restart` operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
+Besides sending requests, such as measurements to {{< product-c8y-iot >}}, the other important functionality is to handle messages; either responses from GET queries or real-time operations from {{< product-c8y-iot >}}. The following example shows how to handle the `c8y_Restart` operation. Again, first we must register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
 
 ```cpp
 // ex-04-operation: examples/ex-04-operation/main.cc
@@ -291,7 +291,7 @@ int main()
 }
 ```
 
-In the `main` function, we register the `RestartHandler` for SmartREST template (502), which is the template for the restart operation. We also need to instantiate a `SrDevicePush` object and start executing device push in another thread. From now on, as soon as you execute an operation from your {{< product-c8y-iot >}} tenant, device push will receive the operation immediately and your message handler will be invoked by the `SrAgent`.
+In the `main` function, we register the `RestartHandler` for SmartREST template (502), which is the template for the restart operation. We must also instantiate a `SrDevicePush` object and start executing device push in another thread. From now on, as soon as you execute an operation from your {{< product-c8y-iot >}} tenant, device push will receive the operation immediately and your message handler will be invoked by the `SrAgent`.
 
 Now run the program and go to your {{< product-c8y-iot >}} tenant, execute a restart operation as shown in the image below.
 Afterwards, you should see the message printed in the standard output `cout` and the operation status set to SUCCESSFUL in your control tab.
@@ -412,7 +412,7 @@ function init()
 end
 ```
 
-> **Info**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
+> **Info**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you must modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
 
 
 ### Using MQTT instead of HTTP

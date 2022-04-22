@@ -10,7 +10,7 @@ This allows you to define multiple rules that will handle different types of los
 
 #### Using calculation categories
 
-In order to use a calculation category in your OEE calculation profiles, the category itself must first be created in **Administration** > **Calculation Categories** in the application. Categories are considered specific to a given input parameter. So, for each input parameter that requires the use of categories, the input parameter must have its categories defined before the input parameter itself can be created. Typically, calculation categories are used when at least two different types of calculation need to be combined in order to form an input parameter.
+In order to use a calculation category in your OEE calculation profiles, the category itself must first be created in **Administration** > **Calculation Categories** in the application. Categories are considered specific to a given input parameter. So, for each input parameter that requires the use of categories, the input parameter must have its categories defined before the input parameter itself can be created. Typically, calculation categories are used when at least two different types of calculation must be combined in order to form an input parameter.
 
 * **Example 1:** You may wish to have "Planned Maintenance" and "Manual Stoppage" categories for the Availability Loss (Time) input in order to distinguish these two different kinds of losses from each other.
 

@@ -4,7 +4,7 @@ layout: redirect
 weight: 50
 ---
 
-* To start the {{< product-c8y-iot >}} Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).
+* To start the {{< product-c8y-iot >}} Linux Agent with or without Modbus support, you must follow the steps in [Starting the agent process](#starting-the-agent-process).
 * To start the {{< product-c8y-iot >}} Cloud Remote Access service, refer to [Starting the {{< product-c8y-iot >}} Cloud Remote Access service](#starting-the-cumulocity-cloud-remote-access-service).
 * To start the {{< product-c8y-iot >}} CANopen service and CANopen device simulator, refer to [Starting the {{< product-c8y-iot >}} CANopen service](#starting-the-cumulocity-canopen-service).
 

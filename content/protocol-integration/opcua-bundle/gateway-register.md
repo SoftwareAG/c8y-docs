@@ -4,7 +4,7 @@ title: Gateway configuration and registration
 layout: redirect
 ---
 
-YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default.
+YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only must set the properties which are different from the default.
 
 > **Important**: When editing the YAML file, make sure to provide valid indentations.
 

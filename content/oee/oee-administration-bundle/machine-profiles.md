@@ -27,7 +27,7 @@ In the first step, you specify the profile name and type.
     **External profile**<br>
     To integrate external OEE data. It is not possible to define calculation rules or any other settings except the goals for OEE, Availability, Performance and Quality. The tethered external OEE data will be displayed without any calculation. Also no splitting takes place, so the intervals used in the incoming measurements should be configured to match the expectation.
 
-	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements need to meet the following criteria:
+	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements must meet the following criteria:
 
     **Type/Fragmenttype**
 

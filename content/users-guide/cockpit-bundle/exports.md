@@ -73,7 +73,7 @@ Click **Add predefined**, to add predefined properties. Simply select the desire
 
 ![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
-If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export.
+If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you must set up at least one property for the custom values to appear in the export.
 
 Example:
 An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
@@ -101,7 +101,7 @@ In the resulting dialog box provide the following information to receive the sch
 
 Select the frequency for sending the export from the dropdown list, that is, every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
->**Info:** Schedule intervals need to be provided in Coordinated Universal Time (UTC).
+>**Info:** Schedule intervals must be provided in Coordinated Universal Time (UTC).
 
 **2 - Send email:**
 
@@ -114,7 +114,7 @@ Optionally, add the email address of the sender for reply.
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
 Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
-Note that to create a clickable link in the email, you need to add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
+Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
@@ -133,7 +133,7 @@ On opening a report, all scheduled exports based on smart rules are automaticall
 
 ![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
->**Important**: You need to open each report manually, to migrate the export schedules included in the report.
+>**Important**: You must open each report manually, to migrate the export schedules included in the report.
 
 > **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 

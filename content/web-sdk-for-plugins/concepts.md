@@ -86,12 +86,12 @@ The following properties are available:
 	* **hide_navigator**: [optional] A boolean, which if set to true collapses the navigator menu at the left by default.
 	* **globalTitle**: [optional] A title that will be used as the global title of the web application.
 
-> **Info**: The properties "contextPath" and "key" need to be unique. For "PRIVATE" applications, the properties "name" and "contextPath" need to be unique within your tenant only.
+> **Info**: The properties "contextPath" and "key" must be unique. For "PRIVATE" applications, the properties "name" and "contextPath" must be unique within your tenant only.
 
 <a name="plugin-manifest"></a>
 #### Plugin manifest
 
-The plugin manifest describes how your plugin is shown in the {{< product-c8y-iot >}} Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
+The plugin manifest describes how your plugin is shown in the {{< product-c8y-iot >}} Administration application (name, description, category, gallery, list) and what files must be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 
 * **name**: [required] A descriptive name for the plugin.
 * **description**: [optional] A longer description of the plugin.

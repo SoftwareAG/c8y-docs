@@ -31,7 +31,7 @@ Depending on the configuration of the environment, the data lake provider is eit
 The following types of data lakes are currently supported:
 
 ##### Azure Storage
-**Azure Storage** is a set of cloud storage services offered by Microsoft. {{< product-c8y-iot >}} DataHub supports Azure Data Lake Storage Gen2, which is part of these services. The following settings need to be defined for this data lake:
+**Azure Storage** is a set of cloud storage services offered by Microsoft. {{< product-c8y-iot >}} DataHub supports Azure Data Lake Storage Gen2, which is part of these services. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
@@ -43,7 +43,7 @@ The following types of data lakes are currently supported:
 >**Info:** Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
 
 ##### Amazon S3
-**Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
+**Amazon S3** is an object storage service offered by Amazon Web Services. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
@@ -67,17 +67,17 @@ Value: `SSE-KMS`
 Name: `fs.s3a.server-side-encryption.key` \
 Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a86ff-8881-4ba0-9230-95af6d01ca01`
 
-**SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.** 
+**SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
 |Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, for example, to /datalake inside the containers.|
 
 ##### HDFS
-**HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings need to be defined for this data lake:
+**HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|

@@ -94,7 +94,7 @@ Now go to your {{< product-c8y-iot >}} tenant, execute a restart operation as sh
 
 ### Restart device example - practical
 
-The first example does not execute the real rebooting command. For practical usage, you need to take into account how to keep the operation ID before/after rebooting a device.
+The first example does not execute the real rebooting command. For practical usage, you must take into account how to keep the operation ID before/after rebooting a device.
 
 Here is the easiest example to overcome this problem.
 

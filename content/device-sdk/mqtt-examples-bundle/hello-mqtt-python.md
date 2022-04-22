@@ -30,7 +30,7 @@ $ pip install paho-mqtt
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create a Python script,
 * run the script.

@@ -32,7 +32,7 @@ $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key
 
 ### Developing the "Hello, MQTT world!" client with certificates  
 
-To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you need to
+To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you must
 
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.

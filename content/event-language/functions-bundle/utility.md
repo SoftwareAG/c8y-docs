@@ -34,7 +34,7 @@ Casting to a basic Java type:
 
     cast(myVariable, long)
 
-For other types you need to specify the fully-qualified class name
+For other types you must specify the fully-qualified class name
 
     cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)
 

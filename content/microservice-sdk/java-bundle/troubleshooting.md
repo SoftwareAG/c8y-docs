@@ -40,7 +40,7 @@ The *gd\_bundle.crt* certificate can be downloaded directly from the [GoDaddy re
 
 ##### When I install the SDK, Eclipse complains about compatibility problems
 
-Make sure that you use the **Target Platform** preferences page to install the SDK as described in the instructions. **Install New Software** installs software into your running Eclipse IDE, but you need to install the SDK as a separate server software.
+Make sure that you use the **Target Platform** preferences page to install the SDK as described in the instructions. **Install New Software** installs software into your running Eclipse IDE, but you must install the SDK as a separate server software.
 
 ##### I get "Expected to find an object at table index" when running a microservice or application
 

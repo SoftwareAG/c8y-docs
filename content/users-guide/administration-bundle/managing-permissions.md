@@ -337,7 +337,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list:
 

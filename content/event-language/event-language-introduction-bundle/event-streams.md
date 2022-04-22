@@ -27,8 +27,8 @@ Look at the data model to see how the events for each stream are structured.
 
 ### Creating events in a stream
 
-Creating an event is done by the keywords `insert into` and `select`. First, you need to specify the "insert into" followed by the stream name for which stream you want to create an event. After that you can use the "select" clause to specify the parameters of the event.
-A parameter gets specified by the following syntax: `value as parameter`. You can specify multiple parameters by separating them by commas. The order of the parameters does not matter. Please notice that streams can have mandatory parameters you need to specify in the "select" clause.
+Creating an event is done by the keywords `insert into` and `select`. First, you must specify the "insert into" followed by the stream name for which stream you want to create an event. After that you can use the "select" clause to specify the parameters of the event.
+A parameter gets specified by the following syntax: `value as parameter`. You can specify multiple parameters by separating them by commas. The order of the parameters does not matter. Please notice that streams can have mandatory parameters you must specify in the "select" clause.
 
 ### Listening to events in a stream
 

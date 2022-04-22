@@ -14,6 +14,6 @@ These are some useful references to get started with the basic technologies unde
 - The client libraries use the {{< product-c8y-iot >}} REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
 - All examples are open source and can be reviewed at the [{{< product-c8y-iot >}} microservices examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices) repository.
 
-> **Important:** You need to have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
+> **Important:** You must have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 
 If you face any issue or need technical support, refer to [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find plenty of useful information there.

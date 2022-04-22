@@ -50,7 +50,7 @@ The following network ports must be reachable from the local network:
 * MQTT over TLS
 * SSH, only for configuring the appliance
 
-If {{< product-c8y-iot >}} Edge should communicate with the cloud, the following ports of www.{{< domain-c8y >}} (or another instance) need to be available:
+If {{< product-c8y-iot >}} Edge should communicate with the cloud, the following ports of www.{{< domain-c8y >}} (or another instance) must be available:
 
 * HTTPS
 * MQTT over TLS
@@ -59,7 +59,7 @@ There is no internet connection required during installation. Internet connectio
 
 #### Incoming traffic
 
-The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also see [Setting up port forwarding](/edge/setting-up-edge/#vmware-port-forwarding):
+The following ports must be enabled by default in order to accept traffic from users and devices on the internet (also see [Setting up port forwarding](/edge/setting-up-edge/#vmware-port-forwarding):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
@@ -77,7 +77,7 @@ The core node must be able to connect to the internet. Ports required to outside
 |:---|:---|
 |HTTPS|443|
 
-Depending on the installed integrations (email, SMS, etc.) different ports might have to be opened in order to make these services available to the {{< product-c8y-iot >}} platform. The descriptions of these ports are delivered with the corresponding integrations.
+Depending on the installed integrations (email, SMS, and so on), different ports might have to be opened in order to make these services available to the {{< product-c8y-iot >}} platform. The descriptions of these ports are delivered with the corresponding integrations.
 
 Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NTP (UDP/123) connections to the internet must be possible from all hosts.
 

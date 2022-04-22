@@ -41,7 +41,7 @@ Example:
     inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 
-You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0, and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
+You must make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0, and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
 
 The following command lists the local routing information.
 
@@ -70,7 +70,7 @@ Try to reach a well-known address in the internet with the following command:
 	64 bytes from 8.8.8.8: icmp_seq=4 ttl=56 time=2.75 ms
 	64 bytes from 8.8.8.8: icmp_seq=5 ttl=56 time=2.79 ms
 
-As when checking the internal reach ability, you need to make sure that you can see the replies from the address you tried to reach. Use Ctrl-C to end the ping command.
+As when checking the internal reach ability, you must make sure that you can see the replies from the address you tried to reach. Use Ctrl-C to end the ping command.
 
 ### Processing
 
@@ -168,7 +168,7 @@ The response contains checks for the most important components:
 * mongo - status of connection to mongo database (for clustered mongo shows status of connection to mongos)
 * mongodb-cluster - status of mongo cluster, status DOWN doesn't have bad impact for overall health status (because it is marked as "noSuppressibleDown": false) Mongo-cluster shows status as follow:
     * "details": {"mongodb-cluster-enabled": true}, "status": "UP" - mongo cluster is enabled and works correctly
-    * "details": {"mongodb-cluster-enabled": false}, "status": "DOWN" - mongo cluster is disabled and mongo works in single mode (for health status check section "mongo") 
+    * "details": {"mongodb-cluster-enabled": false}, "status": "DOWN" - mongo cluster is disabled and mongo works in single mode (for health status check section "mongo")
     * "details": {"mongodb-cluster-enabled": true}, "status": "DOWN" - mongo cluster is enabled and works incorrectly, additionally mongo exception is presented
 * tenant - tenant initialization status
 
@@ -213,4 +213,4 @@ Run the following command to check the REST API availability:
 	<
 	{"alarm":{"alarms":{"alarms":null,"self":"http://management.<base_url>/alarm/alarms"},"alarmsForSource":"http://management.<base_url>/alarm/alarms?source={source}","alarmsForSourceAndStatus":"http://management.<base_url>/alarm/alarms?source={source}&status={status}","alarmsForSourceAndStatusAndTime":"http://management.<base_url>/alarm/alarms?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForSourceAndTime":"http://management.<base_url>/alarm/alarms?source={source}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForStatus":"http://management.<base_url>/alarm/alarms?status={status}","alarmsForStatusAndTime":"http://management.<base_url>/alarm/alarms?status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForTime":"http://management.<base_url>/alarm/alarms?dateFrom={dateFrom}&dateTo={dateTo}","self":"http://management.<base_url>/alarm"},…}
 
-This example shows the correct response of the platform. The username and password need to have full read access to the {{< management-tenant >}}. The &#60;base_url> needs to be given to connect to the correct platform and the {{< management-tenant >}} must not be blocked from outside.  
+This example shows the correct response of the platform. The username and password must have full read access to the {{< management-tenant >}}. The &#60;base_url> needs to be given to connect to the correct platform and the {{< management-tenant >}} must not be blocked from outside.  

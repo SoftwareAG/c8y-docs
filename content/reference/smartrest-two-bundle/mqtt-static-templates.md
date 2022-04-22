@@ -42,15 +42,13 @@ If a parameter is in square brackets, it is optional.
 + <a href="#118">118,supportedLog1,log2,...</a>
 + <a href="#119">119,supportedConfiguration1,config2,...</a>
 + <a href="#120">120,configType,url,filename[,time]</a>
++ <a href="#121">121,profileExecuted,profileID</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
 + <a href="#210">210,rssi,ber[,time]</a>
 + <a href="#211">211,temperature[,time]</a>
 + <a href="#212">212,battery[,time]</a>
-
-</td>
-<td>
 
 <strong><a href="#alarm-templates">Alarm templates</a></strong>
 + <a href="#301">301,criticalAlarmType[,text][,time]</a>
@@ -60,6 +58,9 @@ If a parameter is in square brackets, it is optional.
 + <a href="#305">305,alarmType,newSeverity</a>
 + <a href="#306">306,alarmTypeToBeCleared</a>
 + <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
+
+</td>
+<td>
 
 <strong><a href="#event-templates">Event templates</a></strong>
 + <a href="#400">400,eventType,text[,time]</a>
@@ -72,10 +73,64 @@ If a parameter is in square brackets, it is optional.
 + <a href="#501">501,typeToSetToExecuting</a>
 + <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#510">510,serial (restart)</a>
++ <a href="#511">511,serial,commandToExecute</a>
++ <a href="#513">513,serial,configurationText</a>
++ <a href="#515">515,serial,firmwareToBeInstalled,version,url</a>
++ <a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a>
++ <a href="#517">517,serial,measurementToBeSent</a>
++ <a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a>
++ <a href="#519">519,serial,relay1Status,relay2Status,...</a>
++ <a href="#520">520,serial (upload your current configuration)</a>
++ <a href="#521">521,serial,url (download configuration)</a>
++ <a href="#522">522,serial,logFileToBeSend,start,stop,searchText,maxLines</a>
++ <a href="#523">523,serial,communicationMode (SMS/IP)</a>
++ <a href="#524">524,serial,url,configType</a>
++ <a href="#525">525,serial,currentFirmwareName,version,url,dependency</a>
++ <a href="#526">526,serial,configType</a>
++ <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
++ <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 
-<strong><a href="#subscribe-templates">Subscribe templates</a></strong>
-+ <a href="#subscribe-templates">(click)</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
+
+<table>
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td>
+
+**[Inventory templates](#subscribe-inventory)**
+
++ [106,child1,child2,…](#106)
+
+**[Operation templates](#subscribe-operations)**
+
++ [510,serial (restart)](#510)
++ [511,serial,commandToExecute](#511)
++ [513,serial,configurationText](#513)
++ [515,serial,firmwareToBeInstalled,version,url](#515)
++ [516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...](#516)
++ [517,serial,measurementToBeSent](#517)
++ [518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)
++ [519,serial,relay1Status,relay2Status,...](#519)
++ [520,serial (upload your current configuration)](#520)
++ [521,serial,url (download configuration)](#521)
++ [522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)
++ [523,serial,communicationMode (SMS/IP)](#523)
++ [524,serial,url,configType](#524)
++ [525,serial,currentFirmwareName,version,url,dependency](#525)
++ [526,serial,configType](#526)
++ [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
++ [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
++ [530,serial,hostname,port,connectionKey](#530)
 
 </td>
 </tr>
@@ -359,6 +414,7 @@ Set currently installed configuration of the device.
 120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
 ```
 
+<a name="121"></a>
 ##### Set device profile that is being applied (121)
 
 Set device profile that is being applied to the device.
@@ -702,33 +758,6 @@ It enables the device to send additional parameters that trigger additional step
 
 
 ### Subscribe templates
-
-The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
-
-**[Inventory template](#subscribe-inventory)**
-
-+ [106,child1,child2,…](#106)
-
-**[Operations template](#subscribe-operations)**
-
-+ [510,serial (restart)](#510)
-+ [511,serial,commandToExecute](#511)
-+ [513,serial,configurationText](#513)
-+ [515,serial,firmwareToBeInstalled,version,url](#515)
-+ [516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2, …](#516)
-+ [517,serial,measurementToBeSent](#517)
-+ [518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)
-+ [519,serial,relay1Status,relay2Status, …](#519)
-+ [520,serial (upload your current configuration)](#520)
-+ [521,serial,url (download configuration)](#521)
-+ [522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)
-+ [523,serial,communicationMode (SMS/IP)](#523)
-+ [524,serial,url,configType](#524)
-+ [525,serial,currentFirmwareName,version,url,dependency](#525)
-+ [526,serial,configType](#526)
-+ [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
-+ [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
-+ [530,serial,hostname,port,connectionKey](#530)
 
 #### Inventory templates (1xx)
 

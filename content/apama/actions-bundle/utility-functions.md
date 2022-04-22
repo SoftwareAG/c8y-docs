@@ -107,7 +107,7 @@ The second parameter to `replacePlaceholders` can be any event type.
 You can use field names of type `#{X.Y}` to access nested structures in the event.
 
 ```java
-myMailText := Util.replacePlaceholders("The device #{source} created an event with the text #{text} at #{time}, alarm);
+myMailText := Util.replacePlaceholders("The device #{source} created an event with the text #{text} at #{time}", alarm);
 ```
 
 If the replacement string is of a form such as `#{source.name}` where `source.name` is the name of the underlying managed object/device 
@@ -118,6 +118,6 @@ After the initial replacement, you must update the placeholder field name and ru
 
 ```java
 myMailText := Util.replacePlaceholders("The device #{source} with the serial number #{source.c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{source.c8y_Address.street} in #{source.c8y_Address.city}.", alarm);
-myMailText := myMailText.replaceAll("#{source.", "#{"};
+myMailText := myMailText.replaceAll("#{source.", "#{");
 myMailText := Util.replacePlaceholders(myMailText, managedObject);
 ```

@@ -338,6 +338,7 @@ It can be configured with the following parameters:
 * rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
 * containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
 * manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
+* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s.
 
 Example configuration:
 

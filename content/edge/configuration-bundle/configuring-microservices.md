@@ -25,6 +25,12 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 
 >**Important:** If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
 
+To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**. 
+
+> **Info:** The **Add microservice** button will not be available if you have not enabled the microservice hosting feature.
+
+Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
+
 ### Enabling or disabling the microservice hosting feature using the REST APIs
 
 To enable or disable the microservice hosting feature, use the following endpoints:

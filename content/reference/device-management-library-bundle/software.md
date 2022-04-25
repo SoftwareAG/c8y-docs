@@ -6,11 +6,11 @@ layout: redirect
 
 The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** page shows a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
+The **Device details** page shows a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects. It also shows a **Services** tab for devices that have running at least one software service. The service can have assigned measurements, alarms and events.
 
 ### Installed software
 
-First a device may announce its current status of installed software to the platform by adding the ```c8y_SoftwareList``` fragment to its device managed object. This fragment is an array that should contain all installed software packages as individual objects with a name, version, and URL property. The URL field is optional since it is often difficult for devices to retain information about where a software package originated from. The other two properties are required to correctly identify packages and their versions.
+A device may announce its current status of installed software to the platform by adding the ```c8y_SoftwareList``` fragment to its device managed object. This fragment is an array that should contain all installed software packages as individual objects with a name, version, URL and software type property. Both the URL and the software type are optional. The name and the version are required, so the software package can be correctly identified.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -21,22 +21,25 @@ PUT /inventory/managedObjects/<deviceId>
        {
            "name": "software_a",
            "version": "3.0.0",
-           "url": "http://example.com/software_a"
+           "url": "http://example.com/software_a",
+           "softwareType": "type A"
        },
        {
            "name": "software_b",
            "version": "2.0.0",
-           "url": "http://example.com/software_b"
+           "url": "http://example.com/software_b",
+           "softwareType": "type B"
        }
    ]
 }
 ```
 
-| Field | DataType | Mandatory | Details |
-|----|----|----|----|
-| name | string | Yes | Name of the software|
-| version | string | Yes | A version identifier of the software|
-| url | string | No | A URL pointing to the location where the software file was obtained from|
+| Field | Mandatory | Details |
+|----|----|----|
+| name | Yes | The name of the software|
+| version | Yes | A version identifier of the software|
+| url | No | A URL pointing to the location where the software file was obtained from|
+| softwareType | No | An arbitrary string for organizing software artifacts|
 
 
 Devices should upload the complete list of installed software during startup. Additionally the list should be updated any time a local change is triggered or detected. This includes cases where a change was requested through {{< product-c8y-iot >}} UI.
@@ -46,6 +49,117 @@ Devices should upload the complete list of installed software during startup. Ad
 {{< product-c8y-iot >}} provides the static SmartREST template 116 for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package:
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
+
+### Advanced Software Management Microservice
+
+To facilitate management of large list of software packages, the Advanced Software Management microservice was introduced. It represents software packages as managed object child additions, thus making them separate entities which can be added, removed, filtered or paged.
+
+Querying software packages with ASM:
+```http
+GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
+```
+```json
+{
+   "softwareList": [
+       {
+           "name": "software_a",
+           "version": "3.0.0",
+           "url": "http://example.com/software_a",
+           "softwareType": "type A"
+       },
+       {
+           "name": "software_b",
+           "version": "2.0.0",
+           "url": "http://example.com/software_b",
+           "softwareType": "type B"
+       }
+   ],
+   "statistics": {
+     "currentPage": 1,
+     "pageSize": 5
+   },
+   "self": ...,
+   "next": ...
+}
+```
+| Query paramater | Mandatory | Details |
+|----|----|----|
+| deviceId  | Yes | Id of the device|
+| name | No | Filter parameter for the software name|
+| version | No | Filter parameter for the software version|
+| type | No | Filter parameter for the software type|
+| pageSize | No | The number of items on the page of the paginated result, between 1 and 2000|
+| currentPage | No | The current page of the paginated result|
+| withTotalPages | No | When set to true, the returned result will contain in the statistics object the total number of the pages|
+
+Setting software packages with ASM:
+
+```http
+POST /service/advanced-software-mgmt/software?deviceId=<deviceId>
+```
+```json
+[
+  {
+    "name": "software_a",
+    "version": "3.0.0",
+    "url": "http://example.com/software_a",
+    "softwareType": "type A"
+  },
+  {
+    "name": "software_b",
+    "version": "2.0.0",
+    "url": "http://example.com/software_b",
+    "softwareType": "type B"
+  }
+]
+```
+Alternatively SmartREST static template 140 can be used. It takes dynamic length list of software packages, each represented by its name, version, software type and URL.
+
+`140,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
+
+Adding software packages with ASM:
+```http
+PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
+```
+```json
+[
+  {
+    "name": "software_a",
+    "version": "3.0.0",
+    "url": "http://example.com/software_a",
+    "softwareType": "type A"
+  },
+  {
+    "name": "software_b",
+    "version": "2.0.0",
+    "url": "http://example.com/software_b",
+    "softwareType": "type B"
+  }
+]
+```
+Alternatively SmartREST static template 141 can be used. Similarly, it takes dynamic length list of software packages, each represented by its name, version, software type and URL.
+
+`141,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
+
+Removing software packages by name and version with ASM:
+```http
+DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
+```
+```json
+[
+  {
+    "name": "software_a",
+    "version": "3.0.0"
+  },
+  {
+    "name": "software_b",
+    "version": "2.0.0"
+  }
+]
+```
+Alternatively SmartREST static template 142 can be used. It takes dynamic length list of software packages, each represented by its name and version, as URL and software type are not used to identify a package.
+
+`142,software_a,3.0.0,software_b,2.0.0`
 
 ### Changing installed software
 
@@ -152,3 +266,84 @@ The 528 static response template is available for dealing with software update o
   `116,software_a,3.0.0,http://example.com/software_a`
 5. Set operation status to SUCCESSFUL <br>
   `503,c8y_SoftwareUpdate`
+
+### Services
+
+A software services running on a device are modeled as child additions with ```c8y_Service``` type.
+
+The **Device details** page shows  a **Services** tab for devices that have at least one software service. The service can have assigned measurements, alarms and events.
+
+
+Querying services:
+
+```http
+GET /inventory/managedObjects/<deviceId>/childAdditions?query=type eq 'c8y_Service' and name eq '*<serviceName>*'
+```
+```json
+{
+  "references": [
+    {
+      "name": "<serviceName>",
+      "id": "123",
+      "type": "c8y_Service",
+      "serviceType": "systemd",
+      "status": "up",
+      ...
+    }
+  ],
+  "statistics": {
+    "currentPage": 1,
+    "pageSize": 5
+  },
+  "self": ...,
+  "next": ...
+}
+````
+
+Adding a service:
+
+```http
+POST /inventory/managedObjects/<deviceId>/childAdditions
+
+Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
+```
+```json
+{
+  "name": "<serviceName>",
+  "id": "123",
+  "type": "c8y_Service",
+  "serviceType": "systemd",
+  "status": "up",
+  ...
+}
+````
+
+Updating service:
+```http
+PUT /inventory/managedObjects/<managedObjectId>
+
+Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
+```
+```json
+{
+  "name": "<serviceName>",
+  "id": "123",
+  "type": "c8y_Service",
+  "serviceType": "systemd",
+  "status": "up",
+  ...
+}
+````
+
+Removing a service:
+```http
+DELETE /inventory/managedObjects/<managedObjectId>
+```
+
+For devices supporting the Advanced Software Management feature new static SmartREST 2.0 template is available. Devices may use this template to announce installed services.
+
+`102,<serviceUniqueID>,<serviceType>,<serviceName>,<status>`
+
+Additionally device may publish messages on SmartREST 2.0 topic `s/us/<serviceUniqueId>` to update the status of given service.
+
+`104,<newServiceStatus>`

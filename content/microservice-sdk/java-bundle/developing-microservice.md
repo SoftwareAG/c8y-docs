@@ -329,7 +329,7 @@ It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
 * description (alias package.description) - defaults to project.description
-* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided.
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided
 * arguments (alias agent-package.arguments) - arguments passed during application startup
 * encoding (alias project.build.sourceEncoding) - defaults to UTF-8
 * heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
@@ -338,7 +338,7 @@ It can be configured with the following parameters:
 * rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
 * containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
 * manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
-* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s.
+* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s
 
 Example configuration:
 

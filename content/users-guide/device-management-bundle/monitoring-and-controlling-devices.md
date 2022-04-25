@@ -189,7 +189,9 @@ Alarms are classified according to their severity. {{< product-c8y-iot >}} inclu
 
 The **Alarm** tab is split into four sections corresponding to these alarm types.
 
-By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make it visible again.
+In the top menu bar, buttons are provided to filter for severity. By clicking a button, the corresponding section will be hidden. Click it once more to make it visible again.
+
+>**Info:** The number provided on the buttons in the top menu bar refers to the number of active alarms for the given severity, as opposed to the counter provided as red circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
 
 Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
 
@@ -212,7 +214,7 @@ In each row, the following information for an alarm is provided:
 <td align="left">One of CRITICAL, MAJOR, MINOR, WARNING (see above).</td>
 </tr>
 <tr>
-<td align="left">Count</td>
+<td align="left">Count (provided as number in a red circle) </td>
 <td align="left">The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.</td>
 </tr>
 <tr>

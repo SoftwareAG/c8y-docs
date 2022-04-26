@@ -43,7 +43,7 @@ The following example illustrates the network configuration on a Windows platfor
 <img src="/images/edge/edge-vmware-06.png" name="Setting up VMware"/>
 
 7. Click **DHCP Settings** to open the **DHCP Settings** window.<br>
-8. In the fields **Starting IP address** and **Ending IP address**, change the IP range from 3 to 254, that is, if your gateway IP is 192.168.117.2, set the IP range from 192.168.117.3 to 192.168.117.254.<br>
+8. In the fields **Starting IP address** and **Ending IP address**, change the IP range from 3 to 254, that means, if your gateway IP is 192.168.117.2, set the IP range from 192.168.117.3 to 192.168.117.254.<br>
 <img src="/images/edge/edge-vmware-07.png" name="Setting up VMware"/>
 
 9. Click **OK** to save your settings.

@@ -8,7 +8,7 @@ layout: redirect
 Microservice API Version 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.
 In details this means that with microservice API Version 2 the microservice container is granted only specific capabilities.
 
-Refer to the [Linux man page](https://man7.org/linux/man-pages/man7/capabilities.7.html) for more information on Kernel capabilities.
+Refer to the [Linux manual page](https://man7.org/linux/man-pages/man7/capabilities.7.html) for more information on Kernel capabilities.
 With the API Version change, the microservice is granted the capability NET_BIND_SERVICE.
 
 #### Microservice migration from release 10.15

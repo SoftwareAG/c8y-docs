@@ -1,15 +1,12 @@
 ---
 weight: 25
-title: Accessing the Edge appliance
+title: Accessing the Cumulocity IoT Edge appliance
 layout: redirect
-aliases:
-  - /edge/installation/#accessing-cumulocity
-
 ---
 
 ### Configuring the access through domain name
 
-The {{< product-c8y-iot >}} Edge appliance is accessible using the domain name configured as part of the installation.
+The Cumulocity IoT Edge appliance is accessible using the domain name configured as part of the installation.
 
 There are two ways to configure the accessibility with the domain names:
 
@@ -43,7 +40,7 @@ If the ping is successful, the DNS resolution is working properly.
 Using &#60;domain_name>, the Edge appliance can be connected from the host operating system (operating system which is hosting the Edge appliance). If you want to connect the Edge appliance within your LAN, which is outside of the host operating system, you need to do following:
 
 * On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
-* The DNS entry must be added in your LAN's DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
+* The DNS entry must be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
 
 ### Accessing the Edge appliance through domain name
 
@@ -52,7 +49,6 @@ Enter the URL in the browser:
 ```http
 https://<domain_name>
 ```
-
 The Edge appliance login screen appears. Log in with your credentials created during the installation.
 
 <img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>

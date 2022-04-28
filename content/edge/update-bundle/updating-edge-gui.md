@@ -1,16 +1,16 @@
 ---
 weight: 10
-title: Updating Edge using the GUI
+title: Updating Cumulocity IoT Edge using the GUI
 layout: redirect
 ---
 
-You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
+You can update Cumulocity IoT Edge or apply fixes to your existing installation using the Administration application in the Management tenant.
 
->**Info:** {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
+>**Info:** Software AG recommends you to create a backup of your existing Cumulocity IoT Edge installation before performing any update.
 
-To update {{< product-c8y-iot >}} Edge:
+To update Cumulocity IoT Edge:
 
-1. Log in to the {{< management-tenant >}}.
+1. Log in to the Management tenant.
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
@@ -18,8 +18,8 @@ To update {{< product-c8y-iot >}} Edge:
 
 4. Click **Update** > **Next**.
 
-5. Upload the new {{< product-c8y-iot >}} Edge archive file and click **Next**.
+5. Upload the new Cumulocity IoT Edge archive file and click **Next**.
 
-7. Click **Update now**.
+7. Click **Update**.
 
 8. Restart your Edge appliance.

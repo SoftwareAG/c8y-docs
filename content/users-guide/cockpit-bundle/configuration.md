@@ -1,10 +1,10 @@
 ---
 weight: 100
-title: Configuring a custom Cockpit application
+title: Configuring Cockpit applications
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} offers you to configure a custom Cockpit application according to your individual needs.
+{{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
 
 ### Requirements
 
@@ -42,8 +42,8 @@ On the right, select the root groups or subgroups to be displayed as top level n
 
 In the **Home dashboard** section, you can select how the home dashboard, that is, the landing page for this application, is treated. By default, the home dashboard is a customizable dashboard which displays data for the whole tenant.
 
-You can select if the customization of the home dashboard is reflected throughout the entire platform (the default), or only reflected in the current custom application, or only reflected in the current user. Note that this user needs inventory write permission.
+You can select if the customization of the home dashboard is reflected throughout the entire platform (the default), or only reflected in the current custom application, or only reflected in the current user. Note that this user then needs inventory write permission.
 
 #### Misc
 
-Finally, you can specify if the navigator should be hidden n start up. By default, the navigator is displayed on start up.
+Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

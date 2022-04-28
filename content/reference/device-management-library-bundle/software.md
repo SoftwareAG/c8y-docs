@@ -55,7 +55,7 @@ Devices should upload the complete list of installed software during startup. Ad
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
-### Advanced Software Management Microservice
+### Advanced Software Management microservice
 
 To facilitate the management of large list of software packages, the Advanced Software Management microservice was introduced.
 It represents software packages as managed object child additions, thus making them separate entities which can be added, removed, filtered or paginated.
@@ -124,7 +124,7 @@ POST /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-Alternatively SmartREST static template 140 can be used.
+You can also use the SmartREST static template 140 instead.
 It takes a list of software packages of dynamic length, where each package is represented by its name, version, software type and URL:
 
 `140,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
@@ -152,8 +152,8 @@ PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-Alternatively SmartREST static template 141 can be used.
-Similarly, it takes a list of software packages dynamic length, where each package is represented by its name, version, software type and URL:
+You can also use the SmartREST static template 141 instead.
+Similarly, it takes a list of software packages of dynamic length, where each package is represented by its name, version, software type and URL:
 
 `141,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
 
@@ -176,7 +176,7 @@ DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-Alternatively SmartREST static template 142 can be used.
+You can also use the SmartREST static template 142 instead.
 It takes a list of software packages of dynamic length, where each package is represented by its name and version, as URL and software type are not used to identify a package:
 
 `142,software_a,3.0.0,software_b,2.0.0`
@@ -341,7 +341,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 }
 ```
 
-Updating service:
+Updating a service:
 
 ```http
 PUT /inventory/managedObjects/<managedObjectId>
@@ -366,7 +366,7 @@ Removing a service:
 DELETE /inventory/managedObjects/<managedObjectId>
 ```
 
-For devices supporting the Advanced Software Management feature, a new static SmartREST 2.0 template is available.
+For devices supporting the Advanced Software Management feature, a static SmartREST 2.0 template is available.
 Devices may use this template to announce installed services:
 
 `102,<serviceUniqueID>,<serviceType>,<serviceName>,<status>`

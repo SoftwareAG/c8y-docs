@@ -10,7 +10,7 @@ If the system performance is slow, you must increase the memory. Stop the Edge a
 
 <img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
 
-Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. 
+Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM.
 
 To increase the memory of the JVM:
 
@@ -35,7 +35,7 @@ and
 
 ### Changing log level for Karaf
 
-This section describes how to change the log level for Cumulocity IoT Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
+This section describes how to change the log level for {{< product-c8y-iot >}} Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
 
 The log level for Karaf is defined in the following file.
 
@@ -92,7 +92,7 @@ Change the following entries to adjust the log levels:
 
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
-Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
+Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all "lower" log levels, e.g. when you set the level to WARN you will also get ERROR events.
 
 |Level|Description|
 |:---|:---

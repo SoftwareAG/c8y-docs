@@ -20,7 +20,7 @@ To set up the Edge appliance in VMware Workstation Player, follow the steps belo
 
 4. Start the Edge appliance by clicking **Play virtual machine**.
 
-Next, perform the Edge appliance installation. See, [Installing Cumulocity IoT Edge](/edge/installation/).
+Next, perform the Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
 
 ### Setting up for vmnetcfg utility
 
@@ -28,7 +28,7 @@ You can use the VMware `vmnetcfg` utility to get the necessary details like the 
 
 The following example illustrates the network configuration on a Windows platform. For instructions on Linux platform, see VMware Knowledge Base.  
 
-1. Download the correct version of the `vmnetcfg` utility. It can also be extracted from the VMware Workstation Pro installer. 
+1. Download the correct version of the `vmnetcfg` utility. It can also be extracted from the VMware Workstation Pro installer.
 
 2. Save the vmnetcfg binary file (*vmnetcfg.exe*) in the VMware Workstation Player installation directory. In a Windows environment, this is usually *C:\Program Files (x86)\VMware\VMware Player*.<br>
 
@@ -47,6 +47,3 @@ The following example illustrates the network configuration on a Windows platfor
 <img src="/images/edge/edge-vmware-07.png" name="Setting up VMware"/>
 
 9. Click **OK** to save your settings.
-
-
-

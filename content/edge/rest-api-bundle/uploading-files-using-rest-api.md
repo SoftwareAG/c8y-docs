@@ -4,7 +4,7 @@ title: Uploading files using REST APIs
 layout: redirect
 ---
 
-The tasks like installing Cumulocity IoT Edge, updating Cumulocity IoT Edge, and updating the certificate require you to upload the files to complete the task successfully. To upload the files, you must use the URLs in the `uploads` array in the JSON response.
+The tasks like installing {{< product-c8y-iot >}} Edge, updating {{< product-c8y-iot >}} Edge, and updating the certificate require you to upload the files to complete the task successfully. To upload the files, you must use the URLs in the `uploads` array in the JSON response.
 
 For example, to upload the license and the certificate files during the installation, you must use the URLs returned in the `uploads` array in the JSON response of the `/edge/install` endpoint. The URL layout is not static and can be changed anytime.
 
@@ -40,5 +40,5 @@ The endpoint returns:
 
 	- the file has been already uploaded for the specified task
 	- the `Content-Disposition` header is set incorrectly
-	
-- HTTP status 404, if the upload timeout has expired	
+
+- HTTP status 404, if the upload timeout has expired

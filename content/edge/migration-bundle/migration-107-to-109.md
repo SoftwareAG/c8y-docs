@@ -4,9 +4,9 @@ title: Migrating Cumulocity IoT Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from Cumulocity IoT Edge 10.7 to Cumulocity IoT Edge 10.9. If you are using a version earlier than Cumulocity IoT Edge 10.7 and plan to upgrade to Cumulocity IoT Edge 10.9, you must first upgrade to Cumulocity IoT Edge 10.7 and then migrate from Cumulocity IoT Edge 10.7 to version 10.9.
+This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7 and then migrate from {{< product-c8y-iot >}} Edge 10.7 to version 10.9.
 
-For information about upgrading from an earlier version to Cumulocity IoT Edge 10.7, see:
+For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
 - https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_esxi
 - https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
@@ -20,7 +20,7 @@ To migrate from Edge 10.7 to 10.9, you must:
 ### Before you begin
 
 - Import the Edge 10.9 appliance. See, [Configuring the Edge infrastructure](/edge/setting-up-edge/).
-- Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing Cumulocity IoT Edge](/edge/installation/)
+- Configure the network and complete the installation procedure on Edge 10.9 appliance. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/)
 
 >**Important:** You can have both the Edge 10.7 and 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
 
@@ -159,7 +159,7 @@ monit restart opcua_mgmt_service_proc
 ```
 12. Restore the Streaming Analytics application.
 
-	- Log in to the Management tenant.
+	- Log in to the {{< management-tenant >}}.
 
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
@@ -177,7 +177,7 @@ Next, you must configure the Edge 10.9 appliance. For example, if you had enable
 
 >**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 
@@ -244,4 +244,4 @@ Next, you must configure the Edge 10.9 appliance. For example, if you had enable
 
 >**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/configuration/).

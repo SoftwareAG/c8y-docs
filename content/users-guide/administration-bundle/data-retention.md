@@ -29,15 +29,15 @@ The asterisk ("*") indicates that data with any value will be cleaned up.
 
 #### Data types
 
-The following data types are covered under retention rules.
-1. Alarms
-2. Audits
-3. Bulk operations
-4. Events
-5. Measurements
-6. Operations
+The following data types are covered under retention rules:
++ Alarms
++ Audits
++ Bulk operations
++ Events
++ Measurements
++ Operations
 
->**Info:** Retention rules do not apply to files stored in the Files repository
+>**Info:** Retention rules do not apply to files stored in the files repository.
 
 <a name="add-retention-rule"></a>
 #### To add a retention rule

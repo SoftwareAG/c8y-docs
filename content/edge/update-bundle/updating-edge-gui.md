@@ -6,7 +6,7 @@ layout: redirect
 
 You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
 
->**Info:** Software AG recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
+>**Info:** {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
 
 To update {{< product-c8y-iot >}} Edge:
 

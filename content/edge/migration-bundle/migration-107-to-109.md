@@ -8,9 +8,9 @@ This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_esxi
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
-- https://cumulocity.com/guides/10.7.0/edge/operation/#upgrade_hyper_v
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation
+- https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7
@@ -181,13 +181,13 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 ### Sample scripts to automate the migration
 
-Software AG provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
+{{< company-sag >}} provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
 
 - [backup.sh](/files/edge/backup.sh)
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 - [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
->**IMPORTANT:** Software AG does not officially support these scripts. These scripts are only for your reference.
+>**IMPORTANT:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
 
 #### Using the scripts
 

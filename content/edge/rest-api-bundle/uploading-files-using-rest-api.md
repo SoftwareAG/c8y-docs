@@ -28,7 +28,7 @@ Content-Disposition: attachment; filename="myown-selfsigned.key"
 
 For each task that requires files to be uploaded, a 10 second timeout is applied from when the bytes were last received for any upload that is part of this task, or from when the task was created. If this timeout is reached, the endpoint returns HTTP status 404.
 
->**Important:** If you have a large file to upload (such as an archive for the `/edge/update` endpoint), check whether your HTTP client loads the full file into the memory before sending the file. It can take more than 10 seconds to load a large file (in gigabytes) into memory, so the timeout could expire before the HTTP client can send the first byte. Software AG recommends that you stream the bytes directly from the file to the upload endpoint. If you cannot stream the bytes directly from the file, an alternative is to read the file into memory before calling the endpoint that starts the task.
+>**Important:** If you have a large file to upload (such as an archive for the `/edge/update` endpoint), check whether your HTTP client loads the full file into the memory before sending the file. It can take more than 10 seconds to load a large file (in gigabytes) into memory, so the timeout could expire before the HTTP client can send the first byte. {{< company-sag >}} recommends that you stream the bytes directly from the file to the upload endpoint. If you cannot stream the bytes directly from the file, an alternative is to read the file into memory before calling the endpoint that starts the task.
 
 **Response**
 

@@ -4,7 +4,7 @@ title: Verwalten von Anwendungen
 weight: 30
 ---
 
-Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](concepts/applications/#overview) im *Concepts Guide*.
+Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications/) im *Concepts Guide*.
 
 * [Anwendungen](#applications) - alle Webanwendungen, die entweder für den Mandanten abonniert sind oder die der Mandant besitzt.
 

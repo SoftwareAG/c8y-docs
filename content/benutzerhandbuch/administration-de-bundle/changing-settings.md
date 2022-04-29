@@ -6,7 +6,7 @@ weight: 70
 
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos verwalten:
 
-- [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#configuring-single-sign-on) konfigurieren.
+- [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#konfigurieren-von-single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
 - Die [Attributsbibliothek](#properties) verwalten.
 - [Zugangsdaten für den SMS-Anbieter](#sms-provider) bereitstellen.
@@ -37,7 +37,7 @@ Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benu
 
 >**Info:** Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#to-change-your-password) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#so-ändern-sie-ihr-passwort) beschrieben.
 
 >**Info:** Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
@@ -271,7 +271,7 @@ Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardm
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-dynamic-access-mapping.png)
 
-Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#assigning-global-roles) im *User Guide*.
+Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#so-weisen-sie-globale-rollen-aus-der-benutzerliste-zu) im *User Guide*.
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 
@@ -331,7 +331,7 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
 Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adresse als Redirect-URI. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". Die Redirect-URI muss für eine Webanwendung und nicht für eine Einzelseitenanwendung festgelegt sein. In Azure AD sind keine weiteren Schritte erforderlich.
 

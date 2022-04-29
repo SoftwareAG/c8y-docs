@@ -24,7 +24,7 @@ To create a new template, click **Create template** at the right of the top menu
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-To ease the device integration, {{< product-c8y-iot >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Device SDK guide](/reference/smartrest-two#mqtt-static-templates).
+To ease the device integration, {{< product-c8y-iot >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Reference guide](/reference/smartrest-two#mqtt-static-templates).
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator.
 

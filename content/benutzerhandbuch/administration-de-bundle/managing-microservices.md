@@ -148,7 +148,7 @@ In der Registerkarte **Attribute** werden bei jedem Microservice folgende Inform
 </tbody>
 </table>
 
-Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing).
+Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Nutzungsstatistiken und Abrechnung > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).
 
 #### Microservice-Abonnement
 

@@ -28,14 +28,6 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show "starting VNC handshake" when the process is starting.
 
-#### To add a remote access endpoint via Telnet
-
-1. Enter the host (IP address or hostname) and the port of the server.
-2. Click **Save** to add the endpoint.
-![Remote access Telnet endpoint](/images/cra/cra-endpoint-telnet.png)
-
->**Important:** Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
-
 
 #### To add a remote access endpoint via SSH
 
@@ -70,6 +62,14 @@ The following algorithms are supported when adding new keys:
 - DSA
 - ECDSA
 - ED25519
+
+#### To add a remote access endpoint via Telnet
+
+1. Enter the host (IP address or hostname) and the port of the server.
+2. Click **Save** to add the endpoint.
+![Remote access Telnet endpoint](/images/cra/cra-endpoint-telnet.png)
+
+>**Important:** Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
 
 #### To edit an endpoint
 

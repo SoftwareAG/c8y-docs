@@ -19,4 +19,4 @@ To access the branding feature:
 
 3. Go to **Settings** > **{{< enterprise-tenant >}}**.
 
-For information about branding configuration, see [Branding](/users-guide/enterprise-tenant/#branding) in the *User guide*.
+For information about branding configuration, see [Branding](/users-guide/enterprise-edition/#branding) in the *User guide*.

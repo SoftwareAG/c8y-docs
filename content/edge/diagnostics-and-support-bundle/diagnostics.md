@@ -79,13 +79,14 @@ Following are the supported startup parameters for the monitor and the data coll
 
 #### Data collector
 
-The data collector can be started by running the "run_data_collector.py" script located under "/opt/c8y/utilities/diagnostic-utility/src/".
+The data collector can be started by running the "run_data_collector.py" script located under "/opt/c8y/utilities/diagnostic-utility/".
 
 Following are the supported command line arguments which can be used while invoking the script. More than one of the supported arguments can be used simultaneously.
 
-* -h or --hardware: Allows the script to collect only the hardware information
-* -s or --software: Allows the script to collect only the software information
-* -c or --cumulocity: Allows the script to collect only the cumulocity information
+* -hw or --hardware: Allows the script to collect only the hardware information
+* -sw or --software: Allows the script to collect only the software information
+* -c8y or --cumulocity: Allows the script to collect only the cumulocity information
+* -h: Displays the help message
 
 #### Monitor
 

@@ -29,4 +29,4 @@ Features of {{< product-c8y-iot >}} Edge include:
 * [Machine Learning](/machine-learning/introduction/) to train and deploy your machine learning models (optional component).
 
 
-<img src="/images/edge/cumulocity-edge-overview.png" name="{{< product-c8y-iot >}} Edge overview" style="width:75%;"/>
+<img src="/images/edge/cumulocity-edge-overview.png" name="Cumulocity Edge overview" style="width:75%;"/>

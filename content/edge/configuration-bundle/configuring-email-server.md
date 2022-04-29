@@ -11,4 +11,4 @@ To configure the "reset password" template and email server settings, perform th
 	- Username: management/<*username*>
 	- Password: password provided during the installation
 
-2. Update the email server details and templates as mentioned in [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
+2. Update the email server details and templates as mentioned in [Configuring password reset](/users-guide/enterprise-edition/#password-reset) and [Configuring email server](/users-guide/enterprise-edition/#email-server) in the *User guide*.

@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Migrating Edge 10.7 to 10.9
+title: Migrating Cumulocity IoT Edge 10.7 to 10.9
 layout: redirect
 ---
 
@@ -24,7 +24,7 @@ To migrate from Edge 10.7 to 10.9, you must:
 
 >**Important:** You can have both the Edge 10.7 and 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from Edge 10.7 appliance.
 
-### Creating a backup on Edge 10.7
+### Creating a backup on Cumulocity IoT Edge 10.7
 
 In your Edge 10.7 setup, you must back up the data for each tenant and docker collection, and note down the device ID.
 
@@ -41,7 +41,7 @@ mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if mic
 3. Create a backup of the `/etc/opcua` directory.
 4. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 
-### Restoring the data on Edge 10.9
+### Restoring the data on Cumulocity IoT Edge 10.9
 
 To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance.
 
@@ -173,11 +173,11 @@ monit restart opcua_mgmt_service_proc
 
 Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microsrevices and configure NTP in the Edge 10.9 appliance.
 
 >**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/configuration/).
 
 ### Sample scripts to automate the migration
 
@@ -185,6 +185,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 - [backup.sh](/files/edge/backup.sh)
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
+- [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
 >**IMPORTANT:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
 
@@ -196,7 +197,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 1. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-2. Run the `backup.sh`.
+2. Run the `backup.sh` as a **root** user.
 
    You can also run the script with the parameters:
 	- OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
@@ -218,7 +219,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 1. Log in as **root** user.
 
-2. Copy the `restore.sh` script to your Edge 10.9 appliance.
+2. Copy the `restore.sh` and `restore_analytics.sh` scripts to your Edge 10.9 appliance.
 
 3. Run the `restore.sh` script with the parameters:
 	- ARCHIVE_PATH: path to the ZIP with 10.7 migration data
@@ -228,4 +229,19 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 	```shell
 	./restore.sh migration_data.tgz /home/admin/migration_data
 	```
-Running the `restore.sh` script successfully completes the migration process.
+4. Run the `restore_analytics.sh` script. This script restores the Streaming Analytics application.
+
+	```shell
+	./restore_analytics.sh USERNAME PASSWORD /tmp/streaming-analytics-app.zip
+
+	Here:
+	- USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
+	```
+
+Running the `restore_analytics.sh` script completes the migration process.
+
+Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+
+>**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+
+For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/configuration/).

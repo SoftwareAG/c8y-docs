@@ -33,3 +33,7 @@ To upload the new SSL certificate and the key file, use the following endpoints:
 
 - [GET /edge/configuration/certificate](/edge/rest-api/#get-edgeconfigurationcertificate)
 - [POST /edge/configuration/certificate](/edge/rest-api/#post-edgeconfigurationcertificate)
+
+
+
+

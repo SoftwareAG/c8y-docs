@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Edge functionalities
+title: Cumulocity IoT Edge funtionalities
 layout: redirect
 ---
 

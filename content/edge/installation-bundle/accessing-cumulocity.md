@@ -1,10 +1,7 @@
 ---
 weight: 25
-title: Accessing the Edge appliance
+title: Accessing the Cumulocity IoT Edge appliance
 layout: redirect
-aliases:
-  - /edge/installation/#accessing-cumulocity
-
 ---
 
 ### Configuring the access through domain name
@@ -52,7 +49,6 @@ Enter the URL in the browser:
 ```http
 https://<domain_name>
 ```
-
 The Edge appliance login screen appears. Log in with your credentials created during the installation.
 
 <img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>

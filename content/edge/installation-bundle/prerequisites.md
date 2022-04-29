@@ -13,7 +13,7 @@ layout: redirect
 |**{{< product-c8y-iot >}} Edge license file**|To request the license file for {{< product-c8y-iot >}} Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (for example, myedge.domain.com), where {{< product-c8y-iot >}} Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](#domain-name-validation-for-edge-license-key-generation).|
 |**SSL key and SSL certificate**|Optional. Use your internal or an external CA (Certification Authority) to generate these files. These files must not be password-protected. <br>**Info:** Ensure that the .crt and .key files are in PEM format and the .key file is not encrypted.|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.{{< domain-c8y >}} to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge appliance within your LAN, the DNS entry has to be added for the domain name (URL under which {{< product-c8y-iot >}} Edge can be reached) with the IP address of the host.|
-|**Edge cloud remote access**|To connect and manage one (or multiple) Edge appliances to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} Standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
+|**Edge cloud remote access**|To connect and manage one (or multiple) Edge appliances to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
 
 ### Domain name validation for Edge license key generation
 
@@ -24,7 +24,7 @@ When you provide the domain name, consider the following points:
 * The domain name does not need to be a Fully Qualified Domain Name (FQDN). For example, to access the Edge appliance with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the subdomain **myown**).
 
 * If you exclude the subdomain from the domain name in the Edge license, you must possess a wildcard SSL certificate which can be used with multiple subdomains (**myown** or others) of the domain (**iot.com**).<br>
-For example, if you provide **iot.com** as the domain name, you must possess an SSL certificate for ***.iot.com**.
+For example, if you provide **iot.com** as the domain name, you must possess an SSL certificate for **.iot.com**.
 
 * If you have an Internationalized Domain Name (IDN), then you must provide the translated ASCII equivalent domain name.<br>
 For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge installation process.<br>

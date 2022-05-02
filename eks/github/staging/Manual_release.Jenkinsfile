@@ -13,21 +13,22 @@ pipeline {
     string(defaultValue: 'release/r10.4.6-BB', description: 'branch/revison', name: 'BRANCH')
   }
   environment {
-    YUM_SRV = 'yum.cumulocity.com'
+    YUM_SRV = 'staging-resources.cumulocity.com'
     YUM_USR = 'hudson'
-    YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
+    YUM_DEST_DIR = '/var/www/staging-resources/staticpage-guides/guides/'
     HUGO_PARAMS = ""
   }
 
   stages {
     stage('Checkout') {
             steps {
-                git branch: "${params.BRANCH}", credentialsId: "jenkins-master", url:'ssh://git@bitbucket.org/m2m/c8y-docs/'
+                git branch: "${params.BRANCH}", credentialsId: "jenkins-master", url:'git@github.com:SoftwareAG/c8y-docs.git'
             }
         }
     stage('Build') {
       steps {
         sh '''bash --login
+        python /stageScanner.py
           if [ -f "properties.json" ]
   then
   	DOC_VERSION=$( jq -r '.name' < properties.json )

@@ -11,9 +11,9 @@ pipeline {
     }
   }
   environment {
-    YUM_SRV = 'yum.cumulocity.com'
+    YUM_SRV = 'staging-resources.cumulocity.com'
     YUM_USR = 'hudson'
-    YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
+    YUM_DEST_DIR = '/var/www/staging-resources/staticpage-guides/guides/'
     HUGO_PARAMS = ""
   }
   stages {
@@ -22,21 +22,24 @@ pipeline {
       checkout([
         $class: 'GitSCM', branches: [[name: 'master']],
         extensions: [[$class: 'CleanCheckout']],
-        userRemoteConfigs: [[url: 'git@bitbucket.org:m2m/c8y-docs.git',credentialsId:'jenkins-master']] ])
+        userRemoteConfigs: [[url: 'git@github.com:SoftwareAG/c8y-docs.git', credentialsId:'jenkins-master']] ])
       }
     }
     stage('Build') {
       steps {
-        sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
-          ls
-          hugo ${HUGO_PARAMS}'''
+        sh '''bash --login
+        python /stageScanner.py
+        echo \"Starting hugo with params ${HUGO_PARAMS}\"
+        ls
+        hugo ${HUGO_PARAMS}
+        '''
       }
     }
     stage('Deploy') {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          python /docsRepoScanner.py ./
+          python /docsRepoScannerForStaging.py ./
           pwd
           ls
           cp output.json ./public/releases.json

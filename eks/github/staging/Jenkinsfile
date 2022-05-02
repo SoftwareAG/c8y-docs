@@ -27,9 +27,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
-          ls
-          hugo ${HUGO_PARAMS}'''
+        sh '''
+        python /stageScanner.py
+        echo \"Starting hugo with params ${HUGO_PARAMS}\"
+        ls
+        hugo ${HUGO_PARAMS}
+        '''
       }
     }
     stage('Deploy') {

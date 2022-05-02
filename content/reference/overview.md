@@ -3,6 +3,11 @@ weight: 5
 title: API reference
 layout: bundle
 aliases:
+  - /reference/openapi
+  - /reference/sensor-library
+  - /reference/smartrest-one
+  - /reference/smartrest-two
+  - /reference/device-management-library
   - /reference/rest-implementation
   - /reference-guide/rest-implementation
   - /reference-guide

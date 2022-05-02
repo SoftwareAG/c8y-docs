@@ -41,7 +41,7 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          python /docsRepoScanner.py ./
+          python /docsRepoScanner.py ./ true
           pwd
           ls
           cp output.json ./public/releases.json

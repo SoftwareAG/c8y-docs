@@ -46,7 +46,7 @@ The **Time range** filter can filter data for a specific time range. Select a ti
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
->**Info:** The maximum number of documents matching defined filters that can be returned is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be exported.
+>**Info:** The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported.
 
 **Fields**
 
@@ -65,7 +65,7 @@ Use the toggle to enable/disable a field.
 
 When a field is enabled, predefined or empty properties can be added.
 
->**Info:** Documents that have no value defined for any of selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
+>**Info:** Documents that have no value defined for any of the selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
 
 ##### To add a property
 

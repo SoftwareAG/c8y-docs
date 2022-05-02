@@ -6,6 +6,11 @@ aliases:
   - /reference-guide/rest-implementation
   - /reference/overview
   - /reference-guide
+  - /reference/openapi
+  - /reference/sensor-library
+  - /reference/smartrest-one
+  - /reference/smartrest-two
+  - /reference/device-management-library
 ---
 
 <div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">

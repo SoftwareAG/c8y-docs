@@ -28,6 +28,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''bash --login
+        pwd
+        ls
         python /stageScanner.py
         echo \"Starting hugo with params ${HUGO_PARAMS}\"
         ls

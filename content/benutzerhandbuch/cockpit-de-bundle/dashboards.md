@@ -76,7 +76,7 @@ Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen
 2. Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 
 Eine alternative Methode zum Kopieren eines Dashboards ist das
-Konzept "Dashboard pro Typ".  Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
+Konzept "Dashboard pro Typ". Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
 
 
 ### So löschen Sie ein Dashboard

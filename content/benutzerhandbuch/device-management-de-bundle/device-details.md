@@ -172,7 +172,8 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 #### So fordern Sie den aktuellen textbasierten Konfigurationssnapshot an.
 
 1. Navigieren Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie auf **Snapshot vom Gerät abrufen**.
+2. Klicken Sie auf eine der gerätegestützten Konfigurationen.
+3. Klicken Sie auf **Snapshot vom Gerät abrufen**.
 
 #### So können Sie einen textbasierten Konfigurationssnapshot hinzufügen oder bearbeiten
 
@@ -414,7 +415,7 @@ Weitere Informationen zum Verwalten und Aktualisieren der auf einem Gerät insta
 
 In {{< product-c8y-iot >}} können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
->**Info: ** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
+>**Info:** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 

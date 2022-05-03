@@ -63,7 +63,6 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-<!-- Screenshot necessary? -->
 
 Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
@@ -140,7 +139,6 @@ Damit wird nach Assets gesucht, die mit dem Suchbegriff beginnen, ihn enthalten 
 
 Einige Seiten bieten eine Filterfunktionalität, um Objekte auf einer Seite zu filtern.
 
-<!--- Screenshot necessary? --->
 ![Filter field](/images/benutzerhandbuch/getting-started/getting-started-filtering.png)
 
 Anders als bei der Suchfunktionalität müssen beim Filtern nicht notwendigerweise ganze Wörter eingegeben werden.

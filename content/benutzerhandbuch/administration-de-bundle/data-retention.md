@@ -75,7 +75,7 @@ Klicken Sie auf **Dateiablage** im Menü **Verwaltung**, um eine Liste aller Dat
 
 Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite **Alle Anwendungen** hochgeladen wurden, handeln.
 
-Für jede Datei werden der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
+Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
 <img src="/images/benutzerhandbuch/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 

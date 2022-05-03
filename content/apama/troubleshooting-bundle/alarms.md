@@ -281,7 +281,7 @@ This alarm is raised when the Apama-ctrl microservice tries to activate the depl
 - Alarm text: Multiple extensions with the same name have been found: &lt;list of all duplicate extension names&gt;
 - Alarm severity: CRITICAL
 
-This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user has to decide which extensions to keep and then delete the duplicate ones.
+This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user must decide which extensions to keep and then delete the duplicate ones.
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
 
@@ -294,7 +294,7 @@ This alarm is raised if a smart rule contains an invalid configuration.
 - Alarm text: &lt;Smart rule identifier&gt;: Smart rule create/edit failed. One or more fields are invalid, please check smart rule configuration.
 - Alarm severity: MAJOR
 
-To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules need to be corrected.
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules must be corrected.
 
 The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
 

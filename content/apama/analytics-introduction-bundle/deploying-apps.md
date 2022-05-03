@@ -15,9 +15,9 @@ You can deploy the following to {{< product-c8y-iot >}}:
 <a name="single-mon-file"></a>
 ### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
->**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
+>**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant must be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
 
-When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
+When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you must share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
 There is a restricted set of utilities and base events available for your EPL app. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles.
 
@@ -31,7 +31,7 @@ For more detailed diagnostics of the Apama runtime and any active EPL apps, you 
 Using {{< sag-designer >}}, you can also develop more complex projects which:
 
 * are spread across multiple \*.mon files
-* need to be isolated from other Apama applications
+* must be isolated from other Apama applications
 * use connectivity plug-ins or EPL plug-ins that are not enabled by default
 
 These kinds of applications should be deployed as microservices to {{< product-c8y-iot >}}.
@@ -85,6 +85,6 @@ The following permissions are required by the microservice in order to start up 
 
     You must create the [microservice manifest](/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
 
-    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you will need to have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
+    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.

@@ -19,7 +19,7 @@ Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die A
 
 ![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
->**Info:** Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
+>**Info:** Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
 
 #### Login-Einstellungen
 

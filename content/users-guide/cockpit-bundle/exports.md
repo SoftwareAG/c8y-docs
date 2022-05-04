@@ -19,8 +19,6 @@ The export functionality lets you export specific data to either CSV or Excel fi
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
->**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be exported.
-
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
 In the **Export** page you will find a list displaying all exports with their names, file type and time range.
@@ -48,6 +46,8 @@ The **Time range** filter can filter data for a specific time range. Select a ti
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
+>**Info:** The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported.
+
 **Fields**
 
 Apart from object- and time-specific filtering you may filter data for specific fields:
@@ -64,6 +64,8 @@ Use the toggle to enable/disable a field.
 >**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 
 When a field is enabled, predefined or empty properties can be added.
+
+>**Info:** Documents that have no value defined for any of the selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
 
 ##### To add a property
 

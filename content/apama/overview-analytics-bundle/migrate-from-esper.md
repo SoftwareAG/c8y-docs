@@ -7,7 +7,7 @@ layout: redirect
 
 If a tenant is only using smart rules and not any custom rules, you can simply unsubscribe the tenant from CEL and subscribe to Apama instead (or ask your operations team to do this for your tenant).
 
-Any previously configured smart rules will be restarted. For smart rules which are stateful, this will, as with any restart of the microservice hosting the smart rules, lose state within the smart rule. In this case, the input (measurements, alarms, etc.) for the devices in question will need to be sent again before the smart rule will be functioning as before. 
+Any previously configured smart rules will be restarted. For smart rules which are stateful, this will, as with any restart of the microservice hosting the smart rules, lose state within the smart rule. In this case, the input (measurements, alarms, etc.) for the devices in question must be sent again before the smart rule will be functioning as before. 
 
 Smart rules will only work correctly if moving from CEL to Apama, not in the opposite direction.
 
@@ -62,7 +62,7 @@ The following smart rules are stateless:
 
 ### Migrating from CEL when also using custom rules
 
-Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you will need to convert that to an Apama EPL app as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama EPL apps as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new Apama EPL apps. To do this, follow these steps:
+Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you must convert that to an Apama EPL app as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama EPL apps as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new Apama EPL apps. To do this, follow these steps:
 
 1. Lock down the CEP custom rules on the existing tenant to prevent change.
 2. Make available a new tenant on which Apama has been enabled.
@@ -82,7 +82,7 @@ You can also work with {{< company-sag >}} Professional Services to help ensure 
 Scheduled exports must be migrated to the report-agent microservice. This can be performed by opening a report in the Cockpit application. See also [Managing exports](/users-guide/cockpit/#exports) in the *User guide*.
 
 
->**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+>**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice must be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 
 ### Using the Esper-to-Apama EPL translation tool
 

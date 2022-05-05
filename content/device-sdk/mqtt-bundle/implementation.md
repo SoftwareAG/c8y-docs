@@ -162,14 +162,14 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 ### MQTT return codes
 
-When there is an MQTT error, platform responds with a CONNACK message with non-zero return code.
+When there is an MQTT error, the platform responds with a `CONNACK` message with a non-zero return code.
 This message is the first clue that there is a problem.
 Such a return code can be treated similarly to REST API HTTP codes, such as 401.
 They can be returned because of an unexpected error, lack of permissions, and so on.
 
-`CONNACK` is not only a response to `CONNECT` message, but also a way to signal errors by platform.
+`CONNACK` is not only a response to a `CONNECT` message, but also a way to signal errors that occurred in the platform.
 Therefore, it is possible to receive this message a second time during a normal connection, and without a direct action.
-It is a way to signal a closing connection, as most MQTT clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
+It is also a way to signal a closing connection, as most MQTT clients treat `CONNACK` with a code other than `0` like the connection needs to be closed.
 See the details below.
 
 The table below shows the list of errors returned by {{< product-c8y-iot >}}:
@@ -177,13 +177,13 @@ The table below shows the list of errors returned by {{< product-c8y-iot >}}:
 |Code|Canonical message|Troubleshooting|
 |:-------|:--------|:--------|
 |0|Connection accepted | No issue, connection is working.|
-|1|Connection refused, unacceptable protocol version | Unsupported version of MQTT protocol used. Currently, {{< product-c8y-iot >}} only allows 3.1 and 3.1.1.|
+|1|Connection refused, unacceptable protocol version | Unsupported version of the MQTT protocol. Currently, {{< product-c8y-iot >}} only allows 3.1 and 3.1.1.|
 |2|Connection refused, identifier rejected | ClientId is not accepted by the platform.|
-|3|Connection refused, Server unavailable | General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>Error should be temporary and independent of device state, therefore the usual solution to this is to try again later.|
+|3|Connection refused, Server unavailable | General platform side error, used on internal errors and unknown authorization problems. <br>Can be received on network issues. <br>The error should be temporary and independent of device state, therefore the usual solution to this is to try again later.|
 |4|Connection refused, bad username or password | Incorrect credentials (wrong username and/or password, but not on empty password). This error is never returned when authenticating with certificates.|
-|5|Connection refused, not authorized | Device side related problem, used when the device doesn't have permissions or is doing something forbidden. For example, if the client sends malformed messages or tries to do any operation without authenticating first, such as publishing a message.<br>Thrown on any issue with certificate authentication (for example, wrong common name, failed auto registration). <br>Also thrown on general issues with receiving device data or some other authorization problem related to the device state on the platform. For example, device Managed Object problems, or the sudden removal of permissions. In this situation it may be required to take action on the platform to investigate and apply a fix.<br> Lastly, it can also be thrown on unexpected exceptions like performance issues, especially during connection. Therefore it is a good approach to repeat connection few times to overcome temporary performance issues.|
+|5|Connection refused, not authorized | Device side related problem, used when the device doesn't have permissions or is doing something forbidden. For example, if the client sends malformed messages or tries to execute an operation without authenticating first, such as publishing a message.<br>Thrown on any issue with certificate authentication (for example, wrong common name, failed auto registration). <br>Also thrown on general issues with receiving device data or some other authorization problem related to the device state on the platform. For example, device managed object problems, or the sudden removal of permissions. In this situation it may be required to take action on the platform to investigate and apply a fix.<br> Lastly, it can also be thrown on unexpected exceptions like performance issues, especially during connection. Therefore it is a good approach to repeat the connection a few times to overcome temporary performance issues.|
 
-Refer to the [MQTT Version 3.1.1 > 3.2 CONNACK - Acknowledge connection request](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033) for details on the official MQTT connection return codes.
+Refer to [MQTT Version 3.1.1 > 3.2 CONNACK - Acknowledge connection request](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033) for details on the official MQTT connection return codes.
 
 ### Debugging
 

@@ -176,7 +176,7 @@ For more details on managing binary-based configuration snapshots, see [Managing
 #### To request the current text-based configuration snapshot
 
 1. Navigate to the **Configuration** tab.
-2. Click one of the device-supported configurations in the list.
+2. Select one of the device-supported configurations in the list.
 3. Click **Get snapshot from device**.
 
 #### To add or edit a text-based configuration snapshot

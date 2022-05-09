@@ -138,6 +138,46 @@ The following types are available:
 </tbody>
 </table>
 
+<a name="target-assets"></a>
+
+### Asset selection
+
+The asset selector allow for selection of groups and devices. The following image shows the view when an asset has already been selected. To select another asset, click "Change".
+
+![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
+
+**Selecting assets**
+
+To select assets simply click on the desired asset. 
+
+If the asset is a group or a device with children, indicated by the chevron as shown in the image below, selection is only possible when clicking on the radio button. Clicking on the name of the group or device will open a new column displaying all assigned assets to that group/device. To return to previous level, simply click on the back chevron.
+
+![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
+
+Unassigned devices can be found in the "Unassigned Devices" node, located on the root level. 
+
+ **Info:** The "Unassigned Devices" node cannot be selected, but all devices inside the node are selectable.
+
+![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
+
+**Searching for assets**
+
+There are two methods which can be used to quickly find assets. Global search and column filtering.
+
+1. The global search will find assets in the whole hierarchy, but requires exact matches, e.g. the whole name of the asset.
+
+![Global search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
+
+When selected the root view will be changed to that asset. To return to the global root view, simply click on "X" in the search field.
+
+![Global search clear](/images/users-guide/cockpit/cockpit-asset-clear-search.png)
+
+> **Info:** The global search is only available when there is no asset context. E.g. in the "Home" dashboard.
+
+2. Column filtering is another way to find devices, but it only filters assets on the current level.
+
+![Column filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
+
 <a name="alarm-list"></a>
 ### Alarm list
 

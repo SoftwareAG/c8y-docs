@@ -198,13 +198,13 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr>
 <td style="text-align: left">Default minimum period / defaultMinimumPeriod</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The default minimum period to configure during bootstrap. See the LWM2M Spec for explanation.</td>
+<td style="text-align: left">The default minimum period to configure during bootstrap. See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a> for explanation.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left; height: 13px;">Default maximum period / defaultMaximumPeriod</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The default max period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align: left">The default max period to configure during bootstrap. See <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a> for explanation.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
@@ -274,13 +274,13 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr>
 <td style="text-align: left; height: 40px;">Notification storing when disabled or offline / notificationIfDisabled</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">See LWM2M spec. Allowed values are true or false. Default: Not configured.</td>
+<td style="text-align: left">See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a>. Allowed values are true or false. Default: Not configured.</td>
 <td style="text-align: left">Optional, defaults to Leshan default behavior</td>
 </tr>
 <tr style="height: 40px;">
 <td style="text-align: left">Disable timeout / disableTimeout</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">See LWM2M spec. Allowed values are true or false. Default: Not configured.</td>
+<td style="text-align: left">See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a>. Allowed values are true or false. Default: Not configured.</td>
 <td style="text-align: left">Optional, defaults to Leshan default behavior</td>
 </tr>
 <tr>

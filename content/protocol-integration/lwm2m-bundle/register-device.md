@@ -4,64 +4,75 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-The data provided during registration is required to enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
+The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
+In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device.
+The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
 {{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
 
-To register a LWM2M device in Cumulocity IoT, it is possible to use the following ways:
+You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
+
 * [Single device registration](#lwm2m-single-device-registration)
 * [Bulk device registration](#lwm2m-bulk-device-registration)
 
-by navigating **Devices** > **Registration** > **Register device**
+For both, navigate to **Devices** > **Registration** in the Device Management application and click **Register device** at the top right.
 
 ![LWM2M device registration dropdown](/images/device-protocols/lwm2m/lwm2m-device-reg-dropdown.png)
 
 <a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
-To register a LWM2M device in {{< product-c8y-iot >}} using LWM2M device registration form by navigating **Devices** > **Registration** > **Register device** > **LWM2M** in the Device Management application.
+To register a LWM2M device in {{< product-c8y-iot >}} use the LWM2M device registration form by navigating to **Devices** > **Registration** in the Device Management application and click **Register device** > **LWM2M** at the top right.
+The resulting device registration wizard has three steps.
 
-In the first step, there are mandatory settings which are required to be able to establish a connection. Refer to [Mandatory settings](#lwm2m-device-registration-mandatory-settings) section for more details about the fields.
+The first covers is mandatory settings for establishing a connection.
+Refer to [Mandatory settings](#lwm2m-device-registration-mandatory-settings) below for details about the fields.
 
 ![LWM2M single device registration form - mandatory](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1.png)
 
-If PSK security mode is selected, additional settings are required
+If PSK security mode is selected, additional settings are required.
 
 ![LWM2M single device registration form - mandatory with psk](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1-psk.png)
 
-The second step is configuration of the bootstrap settings. This configuration is needed if the device could connect with bootstrap. Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) section for more details about the fields.
+The second step covers the configuration of the bootstrap settings.
+This configuration enables the device to connect with bootstrap.
+Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
 
 ![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2.png)
 
-
-In the third step it is possible to do other optional configurations. Refer to [Advanced settings](#lwm2m-device-registration-advanced-settings) section for more details about the fields.
+The third step covers optional configurations.
+Refer to [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
 
 ![LWM2M single device registration form - advanced 1](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-1.png)
 ![LWM2M single device registration form - advanced 2](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-2.png)
 ![LWM2M single device registration form - advanced 3](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-3.png)
 
-After filling all applicable information for the device, click on register. Registration result will be shown right away.
+After filling all applicable information for the device, click **Register**.
+The UI will display a confirmation message.
 
 ![LWM2M single device registration form - success](/images/device-protocols/lwm2m/lwm2m-device-reg-single-success.png)
 
 <a name="lwm2m-bulk-device-registration"></a>
 ### Bulk device registration
 
-If there are number of devices to be registered at the same time, it would be more convenient to register the LWM2M devices in {{< product-c8y-iot >}} by uploading a CSV file with registration data in the bulk registration dialog in **Devices** > **Registration** > **Register device** > **Bulk device registration** > **LWM2M** in the Device Management application. The dialog contains also CSV template links.
+If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
+To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application and click **Register device** > **Bulk device registration** > **LWM2M** at the top right.
+Upload a CSV file with the registration data in the resulting bulk registration dialog.
+The dialog also contains CSV template links.
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk.png)
 
-When you upload the CSV file, dialog displays the message about where to find the result.
+When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result.
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-dialog-result-message.png)
 
-The result of the bulk device registration will be displayed under LWM2M connector device object created for tenant.
+The the bulk device registration operation will be displayed in the LWM2M connector device object created for the tenant.
 
 ![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-connector-op-with-1-duplicated.png)
 
 ### Device registration settings
 
-<a name="lwm2m-device-registration-mandatoy-settings"></a>
+<a name="lwm2m-device-registration-mandatory-settings"></a>
 #### Mandatory settings
 
 The CSV file must at least contain the following fields to be able to establish a connection:
@@ -82,38 +93,38 @@ The CSV file must at least contain the following fields to be able to establish 
 <tr>
 <td style="text-align:left">Endpoint client ID / endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Indicates the LWM2M client's "endpoint ID" in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
-<td style="text-align: left">Yes</td>
+<td style="text-align:left">Indicates the LWM2M client's endpoint ID in order to allow the LWM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left">Security mode / securityMode</td>
 <td style="text-align: left">String</td>
 <td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
-<td style="text-align: left">Yes</td>
+<td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK key / lwm2m psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The hex-encoded pre-shared key used by the device for server connections in PSK mode.</td>
-<td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC.</td>
+<td style="text-align: left; height: 26px;">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK ID / lwm2m psk_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The ID used by the device for server connections in PSK mode.</td>
-<td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC.</td>
+<td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK ID / bootstrap psk_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode.</td>
-<td style="text-align: left">Yes for PSK</td>
+<td style="text-align: left">Mandatory for PSK</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK key / bootstrap psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The hex-encoded key used by the device for bootstrap connections in PSK mode.</td>
-<td style="text-align: left">Yes for PSK</td>
+<td style="text-align: left">Mandatory for PSK</td>
 </tr>
 </tbody>
 </table>
@@ -125,6 +136,7 @@ The CSV file must at least contain the following fields to be able to establish 
 ##### Registration of unsecured devices
 
 Unsecured devices connect during bootstrap connection and server connection through unsecured ports:
+
 * **5683**: unsecure bootstrap connection
 * **5783**: unsecure direct server connection
 
@@ -132,12 +144,15 @@ Unsecured devices connect during bootstrap connection and server connection thro
 ##### Registration of PSK-secured devices
 
 PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
+
 * **5684**: PSK bootstrap connection
 * **5784**: PSK direct server connection
 
-PSK keys must be provided during the device registration. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled.
+PSK keys must be provided during the device registration.
+The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device).
+PSK registration requires additional fields to be filled.
 
-The table below reflects the full set of possible fields that can be added:
+See the table below for the full set of fields you can add:
 
 <table>
 <col style="width:25%">
@@ -156,8 +171,8 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">LWM2M server URI / lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-c8y-iot >}} service the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
-<td style="text-align: left">Yes, for LWM2M bootstrap</td>
+<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-c8y-iot >}} service, the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align: left">Mandatory for LWM2M bootstrap</td>
 </tr>
 <tr>
 <td style="text-align: left">Generate bootstrap server config / generateBootstrapServerConfig</td>
@@ -183,7 +198,7 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr>
 <td style="text-align: left">Default minimum period / defaultMinimumPeriod</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align: left">The default minimum period to configure during bootstrap. See the LWM2M Spec for explanation.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -195,12 +210,12 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 </tbody>
 </table>
 
-> **Info:** After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+> **Info:** After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
 <a name="lwm2m-device-registration-advanced-settings"></a>
 #### Advanced settings
 
-The table below lists the information of the additional fields:
+See the table below for information on additional fields:
 
 <table>
 <col style="width:25%">
@@ -244,7 +259,7 @@ The table below lists the information of the additional fields:
 <tr style="height: 26px;">
 <td style="text-align: left">Binding mode / bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that {{< product-c8y-iot >}} will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are "UQ" (default, queuing) and "U" (unqueued). Note that {{< product-c8y-iot >}} will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -252,41 +267,41 @@ The table below lists the information of the additional fields:
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to {{< product-c8y-iot >}}.
 If set to 0, the device will be considered as always online.
-If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute &ldquo;at&rdquo; or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
+If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute "at" or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
 </td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left; height: 40px;">Notification storing when disabled or offline / notificationIfDisabled</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">See LWM2M spec. Possible values are true or false. Default: Not configured.</td>
-<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
+<td style="text-align: left">See LWM2M spec. Allowed values are true or false. Default: Not configured.</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior</td>
 </tr>
 <tr style="height: 40px;">
 <td style="text-align: left">Disable timeout / disableTimeout</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">See LWM2M spec. Possible values are true or false. Default: Not configured.</td>
-<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
+<td style="text-align: left">See LWM2M spec. Allowed values are true or false. Default: Not configured.</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M request timeout / lwm2mRequestTimeout</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
-The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with &ldquo;C8Y.lwm2mRequestTimeout&rdquo; property.
-The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with &ldquo;C8Y.lwm2mMaxRequestTimeout&rdquo; property.
+The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with the "C8Y.lwm2mRequestTimeout" property.
+The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with the "C8Y.lwm2mMaxRequestTimeout" property.
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Binary delivery encoding / binaryDeliveryEncoding</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be either "OPAQUE" or "TLV" or "JSON" or "TEXT". In case of empty or invalid entries,
-the default format is considered as "OPAQUE".
+<td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be "OPAQUE", "TLV", "JSON" or "TEXT". In case of empty or invalid entries, the default format is "OPAQUE".
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>
 
-The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
+The following table explains several optional parameters related to firmware updates which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
+
 <table>
 <col style="width:25%">
 <col style="width:10%">
@@ -305,20 +320,20 @@ The following table explains several optional parameters related to firmware upd
 <td style="text-align: left">Firmware update delivery method / fwUpdateDeliveryMethod</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Explains the firmware update delivery method.
-Can be either "PUSH" or "PULL" or "BOTH".</td>
+Allowed values are "PUSH", "PULL" or "BOTH".</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Firmware update supported device protocol / fwUpdateSupportedDeviceProtocol</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the device protocol to be used for the firmware update. Can be either "COAP" or "COAPS" or "HTTP" or "HTTPS".</td>
+<td style="text-align: left">Indicates the device protocol to be used for the firmware update. Allowed values are "COAP", "COAPS", "HTTP" or "HTTPS".</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Firmware update reset mechanism / fwUpdateResetMechanism</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
-Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used the default reset state machine mechanism is used in which for PUSH reset is done via package resource and for PULL reset is done via package URI.</td>
+Allowed values are "PACKAGE" or "PACKAGE_URI". Depending on the value, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used, the default reset state machine mechanism is used where a reset is done via package resource for PUSH and via package URI for PULL.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -330,17 +345,17 @@ Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M
 </tbody>
 </table>
 
-> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+> **Info:** Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
 <a name="duplicate-device"></a>
 ### Duplicate LWM2M devices
 
-If a LWM2M device is registered with the same endpoint ID before, the device registration will not register the device for both single and bulk device registrations.
+If a LWM2M device has been registered with the same endpoint ID before, the device registration will not register the device, neither for single nor for bulk device registrations.
 
-For single device registration, below is the message shown for this case.
+For single device registrations, the UI will shown the message below:
 
 ![Single device reg result for duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-single-duplicated-device.png)
 
-For bulk device registrations, the information about this will be displayed under the LWM2M connector operation result.
+For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the LWM2M connector operation result.
 
 ![LWM2M bulk device registration connector operation with a duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-connector-op-with-1-duplicated.png)

@@ -47,11 +47,11 @@ After filling all applicable information for the device, click on register. Regi
 <a name="lwm2m-bulk-device-registration"></a>
 ### Bulk device registration
 
-If there are number of devices to be registered at a time, it would be more convenient to register the LWM2M devices in {{< product-c8y-iot >}} by uploading a CSV file with registration data in the bulk registration dialog in **Devices** > **Registration** > **Register device** > **Bulk device registration** > **LWM2M** in the Device Management application. The dialog contains also CSV template links. 
+If there are number of devices to be registered at the same time, it would be more convenient to register the LWM2M devices in {{< product-c8y-iot >}} by uploading a CSV file with registration data in the bulk registration dialog in **Devices** > **Registration** > **Register device** > **Bulk device registration** > **LWM2M** in the Device Management application. The dialog contains also CSV template links.
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk.png)
 
-Upon upload of the CSV file, dialog displays the message about where to find the result.
+When you upload the CSV file, dialog displays the message about where to find the result.
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-dialog-result-message.png)
 

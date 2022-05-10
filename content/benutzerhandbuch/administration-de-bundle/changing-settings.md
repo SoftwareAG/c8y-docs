@@ -19,7 +19,7 @@ Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die A
 
 ![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
->**Info:** Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
+>**Info:** Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
 
 #### Login-Einstellungen
 
@@ -39,7 +39,7 @@ Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benu
 
 Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password) beschrieben.
 
->**Info:** Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
+>**Info:** Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert wurde.
 
 <a name="basic-oauth-restrictions"></a>
 #### Einschränkungen bei "Basic Auth"
@@ -63,7 +63,7 @@ Wenn keine sitzungsbezogene Konfiguration vorliegt, gibt OAI-Secure ein JWT-Toke
 
 ##### Mit Konfiguration der Sitzung (Sitzungskonfiguration aktiviert)
 
-Die Verwendung von OAI-Secure mit Sitzungskonfiguration ist praktischer und sicherer. Damit kann ein Verhalten erzielt werden, das der Authentifizierung auf Basis von HTTP-Sitzungen ähnelt.
+Die Verwendung von OAI-Secure mit aktivierter Sitzungskonfiguration ist praktischer und sicherer. So erzielen Sie ein Verhalten, das der Authentifizierung auf Basis von HTTP-Sitzungen ähnelt.
 
 Das OAI-Secure-Token fungiert als Sitzungs-ID am Client-Standort (Webbrowser). Eine solche im Cookie gespeicherte Token-ID kann eine vorkonfigurierte kurze Lebensdauer haben. Die {{< product-c8y-iot >}}-Plattform ist dann dafür verantwortlich, die Sitzungs-ID ohne eine Benutzerinteraktion zu erneuern. Es reicht aus, dass die Benutzeraktion den Webbrowser dazu veranlasst, eine Anfrage an {{< product-c8y-iot >}} zu senden. {{< product-c8y-iot >}} kann dann prüfen, ob die Erneuerung der Sitzungs-ID erfolgen soll, und gegebenenfalls die Operation durchführen. {{< product-c8y-iot >}} bietet umfangreiche Konfigurationsmöglichkeiten für dieses Verhalten, so dass die Mandantenadministratoren die Konfiguration nach ihren Wünschen anpassen können.
 
@@ -82,7 +82,7 @@ Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folge
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Validierung des Benutzeragenten erforderlich</td>
+<td style="text-align:left">Validierung des Benutzer-Agenten erforderlich</td>
 <td style="text-align:left">Wenn aktiviert, werden die vom Benutzer-Agenten gesendeten Kopfzeilen von aufeinanderfolgenden Anfragen im Geltungsbereich einer Sitzung verglichen und eine Anfrage mit geändertem Benutzer-Agenten wird nicht autorisiert.</td>
 <td style="text-align:left">false</td>
 </tr>

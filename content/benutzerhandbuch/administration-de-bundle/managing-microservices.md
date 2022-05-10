@@ -106,7 +106,7 @@ Um weitere Details zu einem Microservice anzuzeigen, klicken Sie auf ihn, um sei
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
 
-In der Registerkarte **Attribute** werden bei jedem Microservice folgende Informationen angezeigt:
+In der Registerkarte **Attribute** werden für jeden Microservice folgende Informationen angezeigt:
 
 <table>
 <col width="250">

@@ -66,9 +66,9 @@ When you upload the CSV file, the dialog will display a confirmation message tha
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-dialog-result-message.png)
 
-The the bulk device registration operation will be displayed in the LWM2M connector device object created for the tenant.
+The the bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
 
-![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-connector-op-with-1-duplicated.png)
+![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
 
 ### Device registration settings
 
@@ -103,21 +103,21 @@ The CSV file must at least contain the following fields to be able to establish 
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
+<td style="text-align: left">LWM2M PSK ID / lwm2m psk_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The ID used by the device for server connections in PSK mode. The LWM2M PSK ID has be to be <b>unique</b> across all tenants.</td>
+<td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
+</tr>
+<tr>
 <td style="text-align: left">LWM2M PSK key / lwm2m psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The hex-encoded pre-shared key used by the device for server connections in PSK mode.</td>
 <td style="text-align: left; height: 26px;">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
-<td style="text-align: left">LWM2M PSK ID / lwm2m psk_id</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">The ID used by the device for server connections in PSK mode.</td>
-<td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
-</tr>
-<tr>
 <td style="text-align: left">Bootstrap PSK ID / bootstrap psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode.</td>
+<td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode. The bootstrap PSK ID has be to be <b>unique</b> across all tenants.</td>
 <td style="text-align: left">Mandatory for PSK</td>
 </tr>
 <tr>
@@ -356,6 +356,6 @@ For single device registrations, the UI will shown the message below:
 
 ![Single device reg result for duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-single-duplicated-device.png)
 
-For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the LWM2M connector operation result.
+For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device's](#connector-device) operation result.
 
-![LWM2M bulk device registration connector operation with a duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-connector-op-with-1-duplicated.png)
+![LWM2M bulk device registration connector operation with a duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)

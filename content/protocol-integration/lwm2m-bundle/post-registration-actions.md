@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 80
 title: Handling LWM2M post registration actions
 layout: redirect
 ---

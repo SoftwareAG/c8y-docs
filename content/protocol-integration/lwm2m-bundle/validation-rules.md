@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 70
 title: Adding validation rules to resources
 layout: redirect
 ---

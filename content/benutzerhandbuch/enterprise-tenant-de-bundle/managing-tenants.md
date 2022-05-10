@@ -143,7 +143,7 @@ Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, u
 
 Die Daten des Mandanten bleiben in der Datenbank und können später durch Klicken auf **Einschalten** wieder bereitgestellt werden.
 
-Näheres zur Abrechnungsperspektive von gesperrten Mandanten finden Sie unter [Nutzungsstatistiken und Abrechnung > Lebenszyklus](#lebenszyklus).
+Näheres zur Abrechnungsperspektive von gesperrten Mandanten finden Sie unter [Nutzungsstatistiken und Abrechnung > Lebenszyklus](#lifecycle).
 
 >**Wichtig:** Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
 >

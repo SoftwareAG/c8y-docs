@@ -100,7 +100,7 @@ Folgende Typen sind verfügbar:
 <td align="left">Zeigt den Standort eines Geräts oder aller Geräte einer Gruppe.</td>
 </tr>
 <tr>
-<td align="left"><a href="#kuchendiagramm">Kuchendiagramm</a></td>
+<td align="left"><a href="#pie-chart">Kuchendiagramm</a></td>
 <td align="left">Zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.</td>
 </tr>
 <tr>
@@ -451,7 +451,7 @@ Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle
 
 >**Info:** Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
 
-
+<a name="pie-chart"></a>
 ### Kuchendiagramm
 
 Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.

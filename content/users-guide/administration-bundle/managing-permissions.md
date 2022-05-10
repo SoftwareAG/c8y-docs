@@ -310,8 +310,7 @@ The following default inventory roles are initially available in new tenants:
 #### To add an inventory role
 
 Click **Add inventory role** in the **Inventory roles** tab. 
-
-Form will be displayed, asking for **name**, **description** and **permissions** assignment for new inventory role.
+In the "New inventory role" page, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
 
 ![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
@@ -375,7 +374,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click on the current **User** name at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button (showing the current user name) at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
 <a name="app-access"></a>
 ### Granting application access

@@ -1,16 +1,16 @@
 ---
-weight: 170 title: Software layout: redirect
+weight: 170
+title: Software
+layout: redirect
 ---
 
-The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located
-using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully
-responsible for their local installation, management, and uninstall procedures and any kind of error handling during the
-operation.
+The **Software** tab allows you to install and uninstall a set of software files for a device.
+The files can be located using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository.
+Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** page shows a **Software** tab for devices that announce ```c8y_SoftwareList```
-and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects. It also
-shows a **Services** tab for devices that have at least one software service running. The service can have measurements,
-alarms and events assigned.
+The **Device details** page shows a **Software** tab for devices that announce `c8y_SoftwareList` and/or `c8y_SoftwareUpdate` in their `c8y_SupportedOperations` fragment in their device managed objects.
+It also shows a **Services** tab for devices that have at least one software service running.
+The service can have measurements, alarms and events assigned.
 
 ### Installed software
 
@@ -359,8 +359,8 @@ DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-You can also use the SmartREST static template 142 instead. It takes a list of software packages of dynamic length,
-where each package is represented by its name and version, as URL and software type are not used to identify a package:
+You can also use the SmartREST static template 142 instead.
+It takes a list of software packages of dynamic length, where each package is represented by its name and version, as URL and software type are not used to identify a package:
 
 `142,software_a,3.0.0,software_b,2.0.0`
 

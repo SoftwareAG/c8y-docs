@@ -1,10 +1,14 @@
-### Services
+---
+weight: 180
+title: Services
+layout: redirect
+---
 
-The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device. The services are represented
-in {{< product-c8y-iot >}} domain model as the device managed object child additions with `c8y_Service` type.
+The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device.
+The services are represented in {{< product-c8y-iot >}} domain model as the device managed object child additions with `c8y_Service` type.
 
-The **Device details** page shows a **Services** tab for devices that have at least one software service. A service can
-have measurements, alarms and events assigned.
+The **Device details** page shows a **Services** tab for devices that have at least one software service. A service
+can have measurements, alarms and events assigned.
 
 Query, update, add and remove services using {{< product-c8y-iot >}} REST API for manipulating managed objects.
 

@@ -35,7 +35,7 @@ If PSK security mode is selected, additional settings are required.
 ![LWM2M single device registration form - mandatory with psk](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1-psk.png)
 
 The second step covers the configuration of the bootstrap settings.
-This configuration enables the device to connect with bootstrap.
+This configuration enables the device to connect to the Cumulocity LWM2M bootstrap server.
 Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
 
 ![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2.png)
@@ -75,7 +75,7 @@ The the bulk device registration operation will be displayed in the [LWM2M conne
 <a name="lwm2m-device-registration-mandatory-settings"></a>
 #### Mandatory settings
 
-The CSV file must at least contain the following fields to be able to establish a connection:
+The fields below must be contained to be able to establish a connection:
 <table>
 <col style="width:25%">
 <col style="width:10%">
@@ -93,19 +93,19 @@ The CSV file must at least contain the following fields to be able to establish 
 <tr>
 <td style="text-align:left">Endpoint client ID / endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Indicates the LWM2M client's endpoint ID in order to allow the LWM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID.</td>
+<td style="text-align:left">Indicates the LWM2M client's endpoint ID in order to allow the LWM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID. Registering a device using an endpoint ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left">Security mode / securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is chosen, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK ID / lwm2m psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The ID used by the device for server connections in PSK mode. The LWM2M PSK ID has be to be <b>unique</b> across all tenants.</td>
+<td style="text-align: left">The ID used by the device for server connections in PSK mode. The LWM2M PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an LWM2M PSK ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
@@ -117,7 +117,7 @@ The CSV file must at least contain the following fields to be able to establish 
 <tr>
 <td style="text-align: left">Bootstrap PSK ID / bootstrap psk_id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode. The bootstrap PSK ID has be to be <b>unique</b> across all tenants.</td>
+<td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode. The bootstrap PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an bootstrap PSK ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory for PSK</td>
 </tr>
 <tr>
@@ -132,8 +132,8 @@ The CSV file must at least contain the following fields to be able to establish 
 <a name="lwm2m-device-registration-bootstrap-settings"></a>
 #### Bootstrap settings
 
-<a name="registration-of-unsecured-device"></a>
-##### Registration of unsecured devices
+<a name="registration-of-no-sec-device"></a>
+##### Registration of NO_SEC devices
 
 Unsecured devices connect during bootstrap connection and server connection through unsecured ports:
 
@@ -149,10 +149,10 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5784**: PSK direct server connection
 
 PSK keys must be provided during the device registration.
-The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device).
+The file must contain the fields defined in [Mandatory settings](#lwm2m-device-registration-mandatory-settings).
 PSK registration requires additional fields to be filled.
 
-See the table below for the full set of fields you can add:
+See the table below for the full set of bootstrap fields you can add:
 
 <table>
 <col style="width:25%">

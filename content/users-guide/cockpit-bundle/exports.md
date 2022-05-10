@@ -46,7 +46,7 @@ The **Time range** filter can filter data for a specific time range. Select a ti
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
->**Info:** The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains statements 'limit exceeded!' and 'result truncated!' alternating every other column.
+>**Info:** The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "Limit exceeded!" and "Result truncated!" alternating every other column.
 
 **Fields**
 

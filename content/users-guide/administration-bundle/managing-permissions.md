@@ -263,7 +263,7 @@ There may be additional permissions visible depending on the features in your su
 
 > **Important:** When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 
-<a name="attach-global"></a>
+<a name="assigning-global-roles"></a>
 #### Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.

@@ -53,7 +53,7 @@ In the field **Password validity limit**, you can limit the validity of user pas
 
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#to-change-your-password).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#change-password).
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
@@ -179,6 +179,7 @@ Click **Save TFA settings** to apply your settings.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 
+<a name="configuring-single-sign-on"></a>
 ### Configuring single sign-on
 
 {{< product-c8y-iot >}} provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.

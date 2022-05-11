@@ -1,14 +1,12 @@
 ---
-weight: 180
-title: Services
-layout: redirect
+weight: 180 title: Services layout: redirect
 ---
 
-The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device.
-The services are represented in {{< product-c8y-iot >}} domain model as the device managed object child additions with `c8y_Service` type.
+The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device. The services are represented
+in {{< product-c8y-iot >}} domain model as the device managed object child additions with `c8y_Service` type.
 
-The **Device details** page shows a **Services** tab for devices that have at least one software service. A service
-can have measurements, alarms and events assigned.
+The **Device details** page shows a **Services** tab for devices that have at least one software service. A service can
+have measurements, alarms and events assigned.
 
 Query, update, add and remove services using {{< product-c8y-iot >}} REST API for manipulating managed objects.
 
@@ -39,7 +37,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |id    | Yes | The service unique id|
 |name  |Yes |Name of the service|
 |serviceType  | Yes | An arbitrary string for organizing services|
-|status  |Yes | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
+|status  |Yes | 'up', 'down', 'unknown' or any custom service status|
 
 Or using SmartREST static template 102, which takes all above parameters as a list:
 
@@ -60,21 +58,43 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
   "status": "down"
 }
 ```
+
 | Field | Mandatory | Details |
 | ----  | ---- | ---- |
 |status  |Yes | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
-
 
 Or using SmartREST static template 104:
 
 `104,down`
 
-#### Sending measurements
+#### Sending service data
 
-Using Inventory REST API:
+Inventory REST API:
 
 ```http
 POST /device/<serviceId>/measurements
 
 Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```
+
+```json
+{
+  "source": {
+    "id": "123"
+  },
+  "time": "2020-03-19T12:03:27.845Z",
+  "type": "c8y_TemperatureMeasurement",
+  "c8y_Steam": {
+    "Temperature": {
+      "unit": "C",
+      "value": 100
+    }
+  }
+}
+```
+
+Or using SmartREST static template 104 sent to topic `s/us/<serviceUniqueId>`:
+
+`200,c8y_Steam,C,100`
+
+Similarly to measurements, alarms and events associated with the service can also be sent.

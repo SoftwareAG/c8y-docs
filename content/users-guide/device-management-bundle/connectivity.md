@@ -8,6 +8,7 @@ aliases:
 
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
+The SIM connectivity platforms supported by {{< product-c8y-iot >}} are Comarch, Ericsson, Jasper and Kite.
 {{< product-c8y-iot >}} integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, {{< product-c8y-iot >}} provides an experimental implementation. For more details, please contact [product support](/welcome/contacting-support/).
 
 The following features are supported by these providers:

@@ -57,7 +57,9 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 |searchText|string|Yes|A text filter to apply to individual log lines|
 |maximumLines|string|Yes|Maximum amount of lines to transfer|
 
-When the device has gathered the logs it must upload it as a file to {{< product-c8y-iot >}}. We recommend you to create an event and uploading the log file as binary attachment to said event. There is no concrete definition how this event must be structured, an example could look as follows.
+When the device has gathered the logs it uploads them to {{< product-c8y-iot >}} as a file.
+We recommend you to create an event and upload the log file as a binary attachment of the event.
+The following is an example of such an event:
 
 ```http
 POST /event/events

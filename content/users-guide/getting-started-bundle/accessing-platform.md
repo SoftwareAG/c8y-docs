@@ -18,7 +18,7 @@ Supported browsers in this version are:
 * Google Chrome [2]
 * Internet Explorer 11 [3]
 
-[1] Only the Extended Support Releases of Mozilla Firefox are explicitly supported. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of {{< product-c8y-iot >}} with future versions of Mozilla Firefox cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
+[1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of {{< product-c8y-iot >}} with other versions of Mozilla Firefox cannot be guaranteed.
 
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of {{< product-c8y-iot >}} with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
 
@@ -53,7 +53,7 @@ This will direct you to the login page of your default application. See [Tenants
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the {{< product-c8y-iot >}} platform.
 
 <a name="login"></a>
-### To log into the platform
+### How to log into the platform
 
 On the Login screen, enter your username (case-sensitive) and password.
 
@@ -83,7 +83,7 @@ To explicitly logout, click the **User** button at the right of the top bar, the
 >**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 
 <a name="reset-password"></a>
-### To reset your password
+### How to reset your password
 
 1. Click the **Forgot password?** link on the Login screen.
 2. In the resulting dialog box, enter your email address and click **Reset password**.
@@ -97,7 +97,7 @@ To explicitly logout, click the **User** button at the right of the top bar, the
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/welcome/contacting-support/).
 
 <a name="URLs"></a>
-### Accessing pages using URLs
+### How to access pages using URLs
 
 You can navigate straight to any place inside a {{< product-c8y-iot >}} application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 

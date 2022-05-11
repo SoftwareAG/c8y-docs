@@ -13,7 +13,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 
 ![Objects view](/images/device-protocols/lwm2m/lwm2m-objects.png)
 
-> **Info:** In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
+> **Info:** In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
 
 The following operations may be available in each instance:
 

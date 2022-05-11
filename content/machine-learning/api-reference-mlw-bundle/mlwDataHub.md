@@ -17,6 +17,8 @@ Operations on MLW data connectors - Data pull from {{< product-c8y-iot >}} DataH
 
 Pulls the data with the given query from {{< product-c8y-iot >}} DataHub.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -108,5 +110,36 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
     "message": "File name already exists. Please provide another name",
     "errorCode": 409,
     "exception": "Duplicate name"
+}
+```
+**Example Request**
+
+```
+409 - Conflict
+
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/importFromDatahub/data' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":""}'
+```
+
+
+**Example Response**
+
+```
+400 - Conflict
+
+{
+    "error": "general/Internal Error",
+    "message": "Variable issue",
+    "info": [
+        {
+            "loc": [
+                "fileName"
+            ],
+            "msg": "Invalid characters in attribute name",
+            "type": "value_error"
+        }
+    ]
 }
 ```

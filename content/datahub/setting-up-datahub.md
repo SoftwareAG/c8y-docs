@@ -1,5 +1,5 @@
 ---
-title: Setting up DataHub
+title: Setting up Cumulocity IoT DataHub
 weight: 30
 layout: bundle
 ---

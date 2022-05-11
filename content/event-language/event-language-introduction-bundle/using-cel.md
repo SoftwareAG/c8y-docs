@@ -29,7 +29,7 @@ There are special streams provided by the system to perform predefined operation
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [{{< c8y-event-language >}} reference](/real-time-statements)).
+Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause must match the properties of "AlarmCreated" (see the [{{< c8y-event-language >}} reference](/real-time-statements)).
 
 ### How can I control devices from CEL?
 
@@ -79,4 +79,4 @@ It may be required to query information from the {{< product-c8y-iot >}} databas
 
 Above we create a batch window first, which keeps data for one hour in order to calculate a total in this time frame. We store the prepared data into this window: Incoming events along with the parent managed object of the event source. This corresponds to the data model of our vending application: Sales reports are represented as events in {{< product-c8y-iot >}} with a vending machine as source. Customers are represented as parent managed objects of vending machines.
 
-The collection of sales reports is calculated through "insert into CreateMeasurement..." using a SQL-like syntax and is stored as a measurement. The difference to SQL is: In SQL, you calculate a result over a fixed, current content of a database. In {{< c8y-event-language >}}, statements run endlessly and the process time has to be limited by the time window.
+The collection of sales reports is calculated through "insert into CreateMeasurement..." using a SQL-like syntax and is stored as a measurement. The difference to SQL is: In SQL, you calculate a result over a fixed, current content of a database. In {{< c8y-event-language >}}, statements run endlessly and the process time must be limited by the time window.

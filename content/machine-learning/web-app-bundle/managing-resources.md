@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/web-app/#managing-resources
 ---
 
-In the **Resources** page you manage the resources, i.e. the custom functions and look-up tables for PMML models or the python pre-processing/post-processing scripts for creating ONNX pipelines.
+In the **Resources** page you manage the resources, that is, the custom functions and look-up tables for PMML models or the python pre-processing/post-processing scripts for creating ONNX pipelines.
 
 Resource management functionality includes:
 
@@ -15,16 +15,16 @@ Resource management functionality includes:
 * Downloading resources
 * Deleting resources
 
-Click **Resources** in the navigator, to open the **Resources** page. 
+Click **Resources** in the navigator, to open the **Resources** page.
 
 ![Resources](/images/zementis/zementis-resources.png)
 
 
 ### Uploading resources
 
-To upload a new resource, first click on the tab (PMML or ONNX) depending on whether the resource is for a PMML model or an ONNX pipeline, then click **Add resource**, navigate to the desired resource file and then click **Open**. 
+To upload a new resource, first click on the tab (PMML or ONNX) depending on whether the resource is for a PMML model or an ONNX pipeline, then click **Add resource**, navigate to the desired resource file and then click **Open**.
 
-Once your resource is successfully uploaded, you will see a corresponding confirmation message. The new resource will be added to the resources list. 
+Once your resource is successfully uploaded, you will see a corresponding confirmation message. The new resource will be added to the resources list.
 
 
 ### Downloading resources

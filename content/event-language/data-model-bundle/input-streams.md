@@ -59,7 +59,7 @@ class: com.cumulocity.model.ManagedObject
 |assetParents|Object[]|An array of the [IDs](/event-language/data-model#id) of all parent assets|
 |deviceParents|Object[]|An array of the [IDs](/event-language/data-model#id) of all child devices|
 
-The Object[] for the references to the parents and children contains only [IDs](/event-language/data-model#id). You can use the cast function e.g. `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
+The Object[] for the references to the parents and children contains only [IDs](/event-language/data-model#id). You can use the cast function, for example, `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
 
 Example:
 

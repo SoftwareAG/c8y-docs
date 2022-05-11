@@ -6,14 +6,14 @@ layout: redirect
 
 ### Introduction
 
-The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent has to be registered in {{< product-c8y-iot >}} before serving the device request.
+The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent must be registered in {{< product-c8y-iot >}} before serving the device request.
 
 >**Info:** If you are using one of the {{< company-sag >}} public cloud instances, you need to ensure that your tenant is subscribed to the Mibparser microservice.
 >
 >To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 >
 >* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
->* Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/administration/#managing-applications) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
+>* Upload this ZIP file as a microservice into the platform. Refer to [Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
 
 ### Installation
 
@@ -57,7 +57,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
    				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
 
-   * Change the properties according to the {{< product-c8y-iot >}} environment (e.g. gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
+   * Change the properties according to the {{< product-c8y-iot >}} environment (for example gateway.identifier, {{< product-c8y-iot >}} bootstrap details, SNMP Community target).
 
 6. Start the service:
 
@@ -105,7 +105,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 ### Migration
 
-The SNMP agent has undergone a major revamp in-terms of persistence storage mechanism, robustness, performance improvements etc. between version 10.4.x and 10.5.x. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
+Between version 10.4.x and 10.5.x, the SNMP agent has undergone a major revamp regarding persistence storage mechanism, robustness, performance improvements and more. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 
 > **Info:**: The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
 

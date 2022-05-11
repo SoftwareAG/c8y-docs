@@ -93,7 +93,7 @@ Next, select a machine to be connected with the profile.
 
 #### Using a shift plan
 
-Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (e.g. weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
+Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (for example weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
 
 The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
 
@@ -103,7 +103,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan
 
 * PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
 
-For details, see the [REST API documentation](/files/oee/index.html).
+For details, see the [REST API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Shiftplan).
 
 
 ### Workpiece
@@ -135,7 +135,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/productio
 
 * PUT: Add or update the list of production plans for the device defined in the body. If a production plan exists for the given tenant and device, the new production plans will be merged internally and obsolete instances will be removed. The resulting production plans will then be sent to the Apama service.
 
-For details, see the [Rest API documentation](/files/oee/index.html).
+For details, see the [Rest API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Productionplan).
 
 
 ### Resolution
@@ -150,7 +150,7 @@ OEE calculation is performed on the basis of the configured resolution intervals
 
 ### Computation
 
-Next, select a calculation method, i.e. the values for the mapping of the OEE input variables.
+Next, select a calculation method, that means, the values for the mapping of the OEE input variables.
 
 ![Computation](/images/oee/administration/profile-computation.png)
 

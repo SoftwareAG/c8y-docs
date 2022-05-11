@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox.
+Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You must set up these Sigfox Cloud credentials in Sigfox.
 
 Before you create API access to {{< product-c8y-iot >}}, you need to have an "Associated user" which is added to the {{< product-c8y-iot >}} group in Sigfox Cloud and has the following profiles:
 
@@ -37,13 +37,13 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
-The following information has to be provided:
+The following information must be provided:
 
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
 - **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, "https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info".
 
-> **Info:** The group name in the screenshot below is only an example. It does  not necessarily have to be "Cumulocity".
+> **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 

@@ -86,7 +86,7 @@ Response Structure:
 Timeout and interval will be numbers defining the time in millisecons. The reconnect policy can be one of three values:
 - none: do not reconnect after the response from a connect.
 - retry: do reconnect after the response from a connect.
-- handshake: start with a new handshake (e.g. because the clientId is invalid / server has closed session).
+- handshake: start with a new handshake (for example because the clientId is invalid / server has closed session).
 
 An advice response line does not need to have every value filled
 
@@ -96,7 +96,7 @@ Example:
 
 ### Subscribing with multiple templates
 
-If your device uses multiple templates (e.g. child devices have a different templates than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.
+If your device uses multiple templates (for example, child devices have a different template than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.
 
 Example request:
 

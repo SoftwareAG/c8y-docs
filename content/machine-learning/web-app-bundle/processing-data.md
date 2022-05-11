@@ -63,7 +63,7 @@ In the top right of the **Preview**, you find several buttons to perform the fol
 
 Ideally, for measuring the accuracy of the model against your data, you should specify the desired outputs as part of you data file. If score matching was enabled, the processed results will include a separate column called **Match** which indicates if the computed and the expected outputs have matched.
 
-Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" alt="File" style="display:inline-block; margin:0"> and select **Hide matching rows**, to hide all rows where the **Match** column is true, i.e. to display only records where computed and expected outputs differ.
+Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" alt="File" style="display:inline-block; margin:0"> and select **Hide matching rows**, to hide all rows where the **Match** column is true, that is, to display only records where computed and expected outputs differ.
 
 Click the file icon <img src="/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
@@ -78,7 +78,7 @@ Scheduled processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model's predictions is required for a desired time period.
 
->**Info:** Currently, scheduled processing is only applicable for PMML models and model groups.
+>**Info:** Currently, scheduled processing is only applicable for PMML models and model groups. However, time series models must not be used for processing data in a scheduled manner.
 
 #### Scheduling a job
 

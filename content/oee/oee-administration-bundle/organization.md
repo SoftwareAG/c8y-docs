@@ -4,7 +4,7 @@ title: Organization
 layout: redirect
 ---
 
-In the **Organization** page under **Administration**, you can customize the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park). Various entities, i.e. sites, areas and lines, can be created from here and can be arranged according to your needs.
+In the **Organization** page under **Administration**, you can customize the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park). Various entities (that is, sites, areas and lines) can be created from here and can be arranged according to your needs.
 
 ![Organization](/images/oee/administration/admin-organization.png)
 
@@ -27,7 +27,7 @@ Click the arrow icon at the right to expand or collapse the entity and show or h
 
 The entity will be added to the bottom of the **Organization** page under **Unassigned entities**.
 
-Lines have to be assigned to sites or areas.
+Lines must be assigned to sites or areas.
 
 ### To edit an entity
 

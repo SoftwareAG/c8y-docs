@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-Besides sending requests, e.g., measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
+Besides sending requests, such as measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
 Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the {{< product-c8y-iot >}} C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
@@ -68,7 +68,7 @@ c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
 
 is doing. In practice, the agent needs to execute reboot afterwards, but since this is a simple example, replace it by logging debug message "Executing restart..". This message will be buffered when the connection gets lost as the message priority is marked `1`.
 
-After finishing the execution, the agent needs to inform that it is done using the following code.
+After completing the execution, the agent needs to inform that it is done using the following code.
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',SUCCESSFUL', 1)

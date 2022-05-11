@@ -115,7 +115,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, for example, "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -128,7 +128,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
+You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you must navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 
@@ -323,7 +323,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 When a configured type of alarm is raised, it starts monitoring how long the alarm stays active.
 
-If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
+If the alarm is still active after the specified duration, the severity will be increased one level, for example, from MINOR to MAJOR.
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
@@ -336,7 +336,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 If a geofence border is crossed, an alarm is created.
 
-The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
+The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, for example, if a tracked car which has left the geofence area is re-entering the geofence area.
 
 **Parameters**
 
@@ -399,7 +399,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-If a geofence border is crossed, an email is sent.
+If a geofence border is crossed by leaving the geofence area, an email is sent.
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
@@ -449,7 +449,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
+> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
 
 **Troubleshooting**
 
@@ -511,7 +511,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
+The unit of the consumption measurement is always per hour (that means, if the measurements are in "kg" the consumption will be in "kg/h").
 
 The rule takes the last two measurements for a specified time, calculates the difference in value and time and then calculates the consumption per hour.
 
@@ -781,7 +781,7 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
->**Info:** Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+>**Info:** Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 
 <a name="threshold-explicit"></a>
@@ -857,7 +857,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
->**Info:** ​Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+>**Info:** ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 <a name="smart-rule-variables"></a>
 ### Smart rule variables
@@ -900,8 +900,12 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
-The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York. See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
+variables for times can include a time zone and time format to display the time in.
+The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
+See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
+and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+in the Apama documentation.
 
 **Fields specific for alarms**
 

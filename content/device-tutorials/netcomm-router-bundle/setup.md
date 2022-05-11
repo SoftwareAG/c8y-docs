@@ -44,7 +44,7 @@ The support for {{< product-c8y-iot >}} can be configured through the router's w
 
 Verify that the **Agent** toggle is set to **ON**.
 
-The URL in the **Server** field must point to the {{< product-c8y-iot >}} instance that you want to connect to. The URL has to be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-c8y-iot >}} instance, for example `https://mqtt.{{< domain-c8y >}}/`.
+The URL in the **Server** field must point to the {{< product-c8y-iot >}} instance that you want to connect to. The URL must be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-c8y-iot >}} instance, for example `https://mqtt.{{< domain-c8y >}}/`.
 
 Optionally, you can activate data collecting for the following functionalities:
 

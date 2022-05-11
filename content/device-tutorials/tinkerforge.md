@@ -76,7 +76,7 @@ Now click the **Child devices** tab of the RaspPi to list the connected TinkerFo
 
 ![Child Devices](/images/device-demos/tinkerforge/tinkerforge-child-devices.png)
 
-By default, TinkerForge components are named using the name of the device that they are connected to (for example, "RaspPi BCM2708 10000000e2f5ad4d"), the type of component (for example, "TFHumidityBricklet", indicating the Tinkerforge bricklet that measures humidity) and the serial number of the component (for example, "nBL"). You can edit the name in the **Info** tab of the device.
+By default, TinkerForge components are named using the name of the device that they are connected to (for example "RaspPi BCM2708 10000000e2f5ad4d"), the type of component (for example "TFHumidityBricklet", indicating the Tinkerforge bricklet that measures humidity) and the serial number of the component (for example "nBL"). You can edit the name in the **Info** tab of the device.
 
 
 #### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
@@ -91,7 +91,7 @@ The set of data points that you select are shown in the "Data points" panel, for
 
 ![Selected data points](/images/device-demos/tinkerforge/tinkerforge-selected-data-points.png)
 
-The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last minute).
+The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example over the last minute).
 
 ![Live sensor graph](/images/device-demos/tinkerforge/tinkerforge-live-sensor-graph.png)
 
@@ -164,7 +164,7 @@ The 4x7 Segment Display's implementation is similar to that of the LCD Display b
 
 ##### Configuration
 
-The Remote Switch bricklet can be used to toggle on and off various remote sockets, lamps, etc. It supports three types of addressing.
+The Remote Switch bricklet can be used to toggle on and off various remote sockets, lamps, and so on. It supports three types of addressing.
 
 * Type A addressing: To add a predefined type A device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
@@ -176,7 +176,7 @@ c8y.remoteswitch.<device name>.receiverCode=<receiver code>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.)
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;house code&gt; - 5-bit integer (0 to 31)
 &lt;receiver code&gt; - 5-bit integer (0 to 31)
 
@@ -190,7 +190,7 @@ c8y.remoteswitch.<device name>.unit=<unit>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;address&gt; - 16-bit integer (0 to 65534)
 &lt;unit&gt; - 4-bit integer (0 to 15)
 
@@ -204,7 +204,7 @@ c8y.remoteswitch.<device name>.deviceCode=<device code>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;system code&gt; - 4-bit character (A to P)
 &lt;device code&gt; - 4-bit integer (0 to 15)
 

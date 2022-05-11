@@ -118,7 +118,7 @@ module.exports = function(app) {
 
 At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
-In order to implement the controllers, you first need to create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, e.g. C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
+In order to implement the controllers, you first need to create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
 
 Once you have your Slack app and token ready, create the *controllers.js* file with the following content:
 
@@ -298,11 +298,9 @@ $ zip node-microservice cumulocity.json image.tar
 ```
 
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-c8y-iot >}} platform.
-Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
+Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
-![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
-
-For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/users-guide/administration#adding-applications) under the Administration section in the *User guide*.
+For more details about uploading a microservice ZIP file, refer to [Administration > Managing and monitoring microservices > Custom microservices](/users-guide/administration/#custom-microservices) in the *User guide*.
 
 ### Testing the microservice
 

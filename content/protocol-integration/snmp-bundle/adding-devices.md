@@ -34,7 +34,7 @@ If you want to run autodiscovery after every interval, enter the interval in the
 ![Autodiscovery SNMP device list](/images/device-protocols/snmp/snmp-autodiscovered-devices.png)
 
 
-For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
+For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and must be entered manually.
 
 An alarm will be generated
 
@@ -110,7 +110,7 @@ The following REST call schedules autodiscovery for the given interval:
 	</tr>
 	<tr>
 	<td align="left">SNMP version</td>
-	<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>Username</strong>: Provide a valid username for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
+	<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters must be provided under <strong>Device authentication details</strong>:<br>- <strong>Username</strong>: Provide a valid username for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
 	</tr>
 	</tbody>
 	</table>
@@ -158,7 +158,7 @@ After posting the above request you will get a response similar to the one below
 	   ...
 	}
 
-For SNMP v3, additional authentication and privacy details have to be provided:
+For SNMP v3, additional authentication and privacy details must be provided:
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...

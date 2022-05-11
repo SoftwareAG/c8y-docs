@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The {{<
 
 ### Connecting via MQTT
 
-{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.{{< domain-c8y >}}_) or your tenant domain (e.g. _mytenant.{{< domain-c8y >}}/mqtt_).
+{{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (for example _mqtt.{{< domain-c8y >}}_) or your tenant domain (for example _mytenant.{{< domain-c8y >}}/mqtt_).
 
 Available ports:
 
@@ -60,7 +60,7 @@ Subscribe example:
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
-> **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+> **Info:** `\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
 
 ### Device hierarchies
 
@@ -68,7 +68,7 @@ MQTT sessions are linked to a single device, but this device can have a freely c
 
 All children require a unique ID defined when creating the device. We recommend you to use a combination of the unique ID of the root device and a unique ID within the hierarchy.
 
-To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. <kbd>s/us/myChildDeviceIdentifier</kbd>).
+To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (for example <kbd>s/us/myChildDeviceIdentifier</kbd>).
 
 The client will automatically receive operations for every child in the hierarchy by subscribing to the respective topic. It is not required to subscribe for each child.
 
@@ -81,7 +81,7 @@ Every operation received will contain the template ID followed by the ID of the 
 The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
-*   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
+*   Device certificates. The devices must contain the whole chain of certificates leading to the trusted root certificate. Also, they must contain the server certificate in their truststore.
 
 #### Troubleshooting
 
@@ -92,8 +92,8 @@ Certificates may be invalid because they expired or the root certificate is not 
 Turn off certificate sending in the device's software.
 If that is not possible, to make the connection work, check the following:
 
-* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
-* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
+* The platform's trust store cannot be empty. At least one trusted certificate must be uploaded to the platform.
+* The device's MQTT client must be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/welcome/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
@@ -107,7 +107,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type <br>default: d (device)|
-|deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
+|deviceIdentifier|YES|A unique identifier for your device, for example, IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check [SmartREST 2.0 > MQTT static templates](/reference/smartrest-two#mqtt-static-templates) for more information about template identifiers|
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
@@ -124,7 +124,7 @@ d:mySerialNumber:myDefaultTemplate
 
 The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
-During an SSL connection with certificates, the `deviceIdentifier` has to match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
+During an SSL connection with certificates, the `deviceIdentifier` must match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
 
 #### MQTT Quality of Service (QoS)
 

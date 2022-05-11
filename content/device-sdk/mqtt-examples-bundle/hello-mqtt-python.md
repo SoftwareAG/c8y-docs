@@ -37,7 +37,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 #### Create a Python script
 
-Create a script file, for example *hello_mqtt.py* with the following content:
+Create a script file (for example *hello_mqtt.py*) with the following content:
 
 ```python
 #!/usr/bin/env python3
@@ -134,7 +134,7 @@ except (KeyboardInterrupt, SystemExit):
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
+{{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you select, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
 
 The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
 
@@ -167,7 +167,7 @@ $ python3 hello_mqtt.py
 
 After starting the application you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. `c8y_Restart`), information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 
 ### Improving the agent

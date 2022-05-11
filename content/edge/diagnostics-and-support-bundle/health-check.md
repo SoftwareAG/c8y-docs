@@ -107,6 +107,13 @@ You can check the status of the platform by running the following command:
 			"details": {},
 			"status": "UP"
 		},
+		"mongodb-cluster": {
+			"details": {
+				"mongodb-cluster-enabled": true
+			},
+			"noSuppressibleDown": false,
+			"status": "UP"
+		},
 		"tenant": {
 			"details": {},
 			"status": "UP"
@@ -120,20 +127,23 @@ If something fails, the endpoint should respond a different error code. The resp
 
 
 	{
-	   "status":"DOWN",
-	   "services":{
-	      "details":{
-
-	      },
-	      "status":"UP"
-	   },
-	   "mongodb":{
-	      "details":{
-
-	      },
-	      "status":"UP"
-	   },
-	   "tenant":{
+	    "status":"DOWN",
+	    "services":{
+	        "details": {},
+	        "status":"UP"
+	    },
+	    "mongodb":{
+	        "details": {},
+	        "status":"UP"
+	    },
+	    "mongodb-cluster": {
+	        "details": {
+	            "mongodb-cluster-enabled": true
+	        },
+	        "noSuppressibleDown": false,
+	        "status": "UP"
+	    },
+	    "tenant":{
 	      "details":{
 	         "notFullyInitializedTenants":{
 	            "savenindia":"PAYPAL_REFUND",
@@ -155,7 +165,11 @@ If something fails, the endpoint should respond a different error code. The resp
 The response contains checks for the most important components:
 
 * services - status of OSGI services running within karaf container
-* mongo - status of connection to mongo database
+* mongo - status of connection to mongo database (for clustered mongo shows status of connection to mongos)
+* mongodb-cluster - status of mongo cluster, status DOWN doesn't have bad impact for overall health status (because it is marked as "noSuppressibleDown": false) Mongo-cluster shows status as follow:
+    * "details": {"mongodb-cluster-enabled": true}, "status": "UP" - mongo cluster is enabled and works correctly
+    * "details": {"mongodb-cluster-enabled": false}, "status": "DOWN" - mongo cluster is disabled and mongo works in single mode (for health status check section "mongo") 
+    * "details": {"mongodb-cluster-enabled": true}, "status": "DOWN" - mongo cluster is enabled and works incorrectly, additionally mongo exception is presented
 * tenant - tenant initialization status
 
 The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in.

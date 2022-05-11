@@ -18,7 +18,7 @@ In thin-edge.io we decided not to follow this approach for the following reasons
   including adding new features, testing, documentation, examples, stack overflow, which would not serve a purpose.
   * Using an IPC mechanism and not a library makes it easier to dynamically combine components during runtime
   instead of recompiling the software. For example, it is easier to add additional protocol stacks
-  (OPC/UA, modbus, ProfiNet, IO-Link, KNX, etc.) to thin-edge.io during run-time.
+  (OPC/UA, modbus, ProfiNet, IO-Link, KNX, and so on) to thin-edge.io during run-time.
 * Linking libraries to existing code can be problematic for some developers, for example for licensing reasons.
   While thin-edge.io has a very user-friendly licensing (Apache 2.0),
   some developers prefer to reduce the number of libraries that they link to their software.
@@ -45,7 +45,7 @@ We recommend you to use MQTT for the following reasons:
 
 [MQTT](https://mqtt.org/) is a lightweight and flexible messaging protocol widely used by IoT applications. Nearly all IoT cloud platforms provide an MQTT endpoint to consume and publish messages from a fleet of devices. Therefore, MQTT was an obvious choice for edge to cloud communication.
 
-Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT. Since thin-edge.io has an internal bus, you can implement a bridge to another protocol (e.g. LWM2M or plain HTTPS). In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
+Using MQTT for cloud communication is not mandatory. You are free to add additional protocols beside MQTT. Since thin-edge.io has an internal bus, you can implement a bridge to another protocol (for example LWM2M or plain HTTPS). In that case, MQTT is used inside the edge devices, and another protocol is used for external communication.
 
 ### Why is the thin-edge.io canonical format based on JSON?
 

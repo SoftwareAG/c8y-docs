@@ -14,6 +14,6 @@ There are two ways to prevent this issue:
 
     avg(cast(getNumber(e, "c8y_TemperatureMeasurement.T.value"), double))
 
-2. If you are calculating yourself (e.g. in a expression) make sure to round or cut the number if you want to stay with BigDecimal.
+2. If you are calculating yourself (for example in a expression) make sure to round or cut the number if you want to stay with BigDecimal.
 
     getNumber(e, "c8y_TemperatureMeasurement.T.value").divide(new BigDecimal(3), 5, RoundingMode.HALF_UP)

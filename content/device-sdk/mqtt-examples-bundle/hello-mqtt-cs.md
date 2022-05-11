@@ -194,7 +194,7 @@ var cDetails = new ConnectionDetailsBuilder()
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-{{< product-c8y-iot >}} MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
+{{< product-c8y-iot >}} MQTT supports both unsecured TCP and secured SSL connections (that is, `tcp://mqtt.{{< domain-c8y >}}:1883` or `ssl://mqtt.{{< domain-c8y >}}:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
 
 What does the code in `Main` do?
 
@@ -268,7 +268,7 @@ $ dotnet run
 
 After starting the application, you should see a new registered device in the Device Management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. `c8y_Restart`), the information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), the information about it will be printed to the console.
 
 ### Improving the agent
 

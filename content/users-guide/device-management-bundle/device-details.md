@@ -9,7 +9,7 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -44,6 +44,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../users-guide/device-management/#connectivity">Connectivity</a></td>
+<td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>
@@ -162,7 +166,8 @@ For more details on managing binary-based configuration snapshots, see [Managing
 #### To request the current text-based configuration snapshot
 
 1. Navigate to the **Configuration** tab.
-2. Click **Get snapshot from device**.
+2. Select one of the device-supported configurations in the list.
+3. Click **Get snapshot from device**.
 
 #### To add or edit a text-based configuration snapshot
 
@@ -324,7 +329,7 @@ You can influence the graphical display and axes limits by setting up so-called 
 
 **Measurement format**
 
-In order to see measurement graphs, the device has to send measurements in a specified fragment format.
+In order to see measurement graphs, the device must send measurements in a specified fragment format.
 
 	"fragment_name" : {
 		"serie_name" : {
@@ -339,7 +344,7 @@ Example:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
+`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
 <a name="network"></a>
 ### Network
@@ -379,6 +384,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 ### Service monitoring
 
 In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+
 
 <a name="shell"></a>
 ### Shell

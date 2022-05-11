@@ -26,7 +26,7 @@ The SmartREST endpoint yields the following response. Note that the HTTP respons
 
 Each row yielded by the SmartREST endpoint represents a set of extracted values from the result of a SmartREST request containing a unique unsigned integer, the SmartREST request line number and the extracted data values, respectively.
 
->**Info:** If the response from {{< product-c8y-iot >}} REST API was empty (e.g. like after deleting a Managed Object) then the response from SmartREST would be empty as well, regardless of registered response templates.
+>**Info:** If the response from {{< product-c8y-iot >}} REST API was empty (for example like after deleting a Managed Object) then the response from SmartREST would be empty as well, regardless of registered response templates.
 
 >**Info:** Inventory access via SmartREST is limited to inventory objects which are global or for which the client is the owner. Role assignments are not evaluated.
 
@@ -34,7 +34,7 @@ Each row yielded by the SmartREST endpoint represents a set of extracted values 
 
 The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
-* Every row must be terminated by the `\n` character sequence.
+* Every linebreak must be encoded by the character sequence `\n`.
 * Values are always separated by a comma (`,`).
 * If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 

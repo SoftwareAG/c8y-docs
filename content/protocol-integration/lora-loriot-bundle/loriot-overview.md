@@ -25,7 +25,11 @@ The following sections describe how to:
 * [Register devices](#register-loriot-device) and visualize Loriot payload using {{< product-c8y-iot >}}.
 * [Create device protocols](#create-loriot-device-protocols) for all devices.
 * [Set device protocol](#assign-loriot-device-protocol) for processing the Loriot LoRa device payload for creating measurements or events in {{< product-c8y-iot >}}.
-* [Troubleshoot](#loriot-troubleshooting) for warning messages.
+
+Moreover, check out
+
+* [Uplink message processing](#uplink-message) for information on measurements and events created while processing the uplink message.
+* [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
 
 
 > Note that your subscription needs to include this feature to be able to use it. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).

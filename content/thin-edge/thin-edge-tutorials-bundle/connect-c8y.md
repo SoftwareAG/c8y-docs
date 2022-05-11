@@ -10,7 +10,7 @@ To enable thin-edge.io you first must connect your device to the cloud. This is 
 The focus here is on connecting to [{{< product-c8y-iot >}}](/concepts/introduction/).
 See [Connect your device to Azure IoT](#connect-azure), if you want to connect Azure IoT instead.
 
-Before you connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (e.g. eu-latest.{{< domain-c8y >}}) and your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (e.g. `t00000007`), a username and password. None of these credentials will be stored on the device. These are only required once, to register the device.
+Before you connect your device to {{< product-c8y-iot >}}, you need the URL of the endpoint to connect to (for example eu-latest.{{< domain-c8y >}}) and your credentials to connect to {{< product-c8y-iot >}}, which are your tenant identifier (for example `t00000007`), a username and password. None of these credentials will be stored on the device. These are only required once, to register the device.
 
 If not done yet, [install thin-edge.io](/thin-edge/thin-edge-howto/#install-thin-edge) on your device.
 
@@ -74,7 +74,7 @@ For a certificate to be trusted by {{< product-c8y-iot >}},
 you need to add the certificate of the signing authority to the list of trusted certificates.
 In the {{< product-c8y-iot >}} UI, navigate to **Management** > **Trusted certificates** in the Device Management application in order to see this list for your {{< product-c8y-iot >}} tenant.
 
-Here, the device certificate is self-signed and has to be directly trusted by {{< product-c8y-iot >}}.
+Here, the device certificate is self-signed and must be directly trusted by {{< product-c8y-iot >}}.
 This can be done in two ways:
 
 * Via the UI by uploading the certificate from your device (*/etc/tedge/device-certs/tedge-certificate.pem*) to your tenant at [Management > Trusted certificates](/users-guide/device-management/#managing-trusted-certificates).

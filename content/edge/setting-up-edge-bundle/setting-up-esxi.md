@@ -25,7 +25,7 @@ To set up an ESXi virtual machine, follow these steps:
 6.	Review the machine settings and click **Finish** to complete the setup.
 <img src="/images/edge/edge-esxi-05.png" name="Setting up ESXi" style="width:75%;"/>
 
-A VM with the provided name, e.g. "EDGE-server", should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
+A VM with the provided name (for example, "EDGE-server") should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
 
 ### VM hardware configuration
 

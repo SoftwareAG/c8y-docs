@@ -108,7 +108,7 @@ A response template contains the necessary information to extract data values fr
 <tbody>
 <tr>
 <td align="left">Response ID</td>
-<td align="left">Unique integer that will be used as a response identifier.</td>
+<td align="left">A unique string that will be used as a response identifier.</td>
 </tr>
 <tr>
 <td align="left">Base Pattern</td>

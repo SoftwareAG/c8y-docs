@@ -44,7 +44,7 @@ Make sure that you use the **Target Platform** preferences page to install the S
 
 ##### I get "Expected to find an object at table index" when running a microservice or application
 
-This error occurs due to a bug in particular Eclipse versions. As a workaround, select **Run** from the main menu and then **Run Configurations ...**. On the left, select the launch configuration that you have been using, e.g. **OSGi Framework**. On the right, click the **Arguments** tab. Append a " -clean" to the **Program Arguments** and click **Apply**.
+This error occurs due to a bug in particular Eclipse versions. As a workaround, select **Run** from the main menu and then **Run Configurations ...**. On the left, select the launch configuration that you have been using, for example, **OSGi Framework**. On the right, click the **Arguments** tab. Append a " -clean" to the **Program Arguments** and click **Apply**.
 
 ##### The microservice or application won't start
 
@@ -81,7 +81,7 @@ This means that the process 12985 is using the 8080 port and it can be killed if
 
 ##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
 
-This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, e.g. 10.4.0, the version of Spring Boot must be 1.5.17 or later.
+This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 10.4.0, the version of Spring Boot must be 1.5.17 or later.
 
 ##### Missing Docker permissions in Linux
 

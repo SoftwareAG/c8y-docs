@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Configuring remote-connectivity
+title: Configuring remote connectivity
 layout: redirect
 ---
 
@@ -8,4 +8,4 @@ The {{< product-c8y-iot >}} tenant allows you to remotely manage your Edge appli
 
 >**Important:** If you want to configure remote-connectivity, you must configure the DNS when configuring the network, for example, using the `/edge/configuration/network` endpoint.
 
-For more information, see [Remote-connectivity](/edge/remote-connectivity/).
+For more information, see [Remote connectivity](/edge/remote-connectivity/).

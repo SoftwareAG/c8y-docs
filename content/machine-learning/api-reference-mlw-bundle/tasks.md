@@ -20,6 +20,8 @@ Operations on MLW tasks.
 
 Gets the list of tasks running or completed in the system.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -120,6 +122,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks'
 ```
 
 Gets the details of the parent task running or completed.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -240,6 +244,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 ```
 
 Deletes and stops all the individual tasks running under a parent task and delete the parent task.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -460,6 +466,8 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks'
 
 Provides the complete details of the individual task running under a parent task.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -529,6 +537,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 
 Triggers an early stop callback for the neural network training task
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -584,6 +594,8 @@ curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 ```
 
 Deletes and stops the individual task running under a parent task.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

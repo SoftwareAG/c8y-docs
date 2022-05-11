@@ -106,7 +106,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">provider</td>
 <td style="text-align:left">Provider</td>
-<td style="text-align:left">Application provider information. Simple name allowed for predefined providers e.g. c8y. Detailed object for external provider.</td>
+<td style="text-align:left">Application provider information. Simple name allowed for predefined providers, for example, c8y. Detailed object for external provider.</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
@@ -137,13 +137,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
-<td style="text-align:left">Configuration for resources limits.<br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
+<td style="text-align:left">Configuration for resources limits.<br>Default limits are CPU=0.5, Memory=512MB. Different default values may be configured by the system administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">requestedResources</td>
 <td style="text-align:left">RequestedResources</td>
-<td style="text-align:left">Configuration for minimal required resources.<br>Default values are CPU=0.25, Memory=256MB</td>
+<td style="text-align:left">Intended configuration for minimal required resources.<br>The values may be over-written based on system settings.<br>Default values are CPU=0.25, Memory=256MB. Different default values may be configured by the system administrator.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -191,12 +191,13 @@ See below for detailed information about available settings.
 </tbody>
 </table>
 
+
 #### Version
 
 The version has an impact on the microservice upload behavior:
 
-*   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
-*   If the version is a snapshot, e.g. "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
+*   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, for example, "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
+*   If the version is a snapshot, for example, "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
 
 The snapshot postfix means that the image build is a snapshot of your application at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your application.
 
@@ -212,15 +213,15 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1<br>Default CPU time: 500m, min: 100m | No
-|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>A different default value may be configured by the system administrator.| No
+|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>A different default value may be configured by the system administrator.|No
 
 #### RequestedResources
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Minimal requirements for number of CPUs or CPU time  <br>Default: 250m|No
-|memory|String |Minimal requirements for microservice memory usage <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>A different default value may be configured by the system administrator.|No
+|memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>A different default value may be configured by the system administrator.|No
 
 #### Option
 

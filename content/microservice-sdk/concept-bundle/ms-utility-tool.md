@@ -57,7 +57,7 @@ $ brew install bash
 $ chsh -s /usr/local/bin/bash
 ```
 
-If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you will have to modify the first line of the microservice utility tool (script) as follows:
+If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you must modify the first line of the microservice utility tool (script) as follows:
 
 ```bash
 #!/usr/local/bin/bash
@@ -85,7 +85,7 @@ $ ./microservice help
 
 ### Packing
 
-A microservice has to be packed as a Docker image in order to be deployed.
+A microservice must be packed as a Docker image in order to be deployed.
 It requires a Docker _image.tar_ and _cumulocity.json_ files packed into a ZIP file.
 
 The following directory structure is required to pack a microservice:
@@ -117,9 +117,9 @@ $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te 
 ```
 
 Note that you need to have a tenant and user credentials in order to deploy your microservice.    
-The successful execution will create an application on the Cumulucity platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed on **Applications** > **Own Applications** in the Administration application.
+The successful execution will create an application on the {{< product-c8y-iot >}} platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed in **Ecosystem** > **Microservices** in the Administration application.
 
-For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the *User guide*.
+For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 
 ### Subscribing
 

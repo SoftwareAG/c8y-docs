@@ -27,11 +27,11 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 
 ### TOTP (Google Authenticator)
 
-Users have to install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
+Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
 
 #### Setup
 
-Opposed to the SMS strategy TOTP has to be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
+Opposed to the SMS strategy TOTP must be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
 ![Trigger TOTP setup](/images/users-guide/Administration/admin-user-tfa-setup-button.png)
 
 IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.

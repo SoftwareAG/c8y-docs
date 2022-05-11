@@ -52,7 +52,7 @@ In general, each managed object consists of:
 *  The name of the object.
 *  The most specific type of the managed object.
 *  A time stamp showing the last update.
-*  Fragments with specific meanings, e.g. `c8y_IsDevice`.
+*  Fragments with specific meanings, for example, `c8y_IsDevice`.
 *  Any additional custom fragments.
 
 ### Fragments
@@ -86,7 +86,7 @@ The approach also enables developing generic application components. For example
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the **Reference guide**.
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the *Reference guide*.
 
 > **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
 

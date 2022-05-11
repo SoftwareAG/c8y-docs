@@ -1,14 +1,14 @@
 ---
-weight: 20
+weight: 50
 title: Monitoring offloading jobs
 layout: redirect
 ---
 
-Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
+Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
 
 You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
 
->**Info**: You need administration or management permissions to monitor the offloading jobs. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info**: You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all offloading jobs
 
@@ -28,7 +28,7 @@ In the navigator, select **Status** and then **Offloading** to get an overview o
 
 Click **Reload** to refresh the status being shown.
 
-You can filter the entries by their task name or their status by using the filter controls in the action bar.
+You can filter the entries by their task name or their status by using the filter buttons in the action bar.
 
 ### History per offloading job
 
@@ -36,7 +36,7 @@ You can filter the entries by their task name or their status by using the filte
 
 If you want to examine the execution history for a particular job, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 
-Click **Show offloading history** in the context menu of the offloading card to show the history of offloading executions.
+Click **Show offloading history** in the context menu of the offloading configuration to show the history of offloading executions.
 
 The list shows the execution history, with each execution consisting of the following details:
 
@@ -54,7 +54,7 @@ The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status by using the filter control at the top.
+You can filter the entries by their status by using the filter button at the top. The pagination buttons can be used to traverse the history entries.
 
 ### Details of offloading job
 

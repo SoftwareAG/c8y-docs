@@ -1,6 +1,6 @@
 ---
 weight: 31
-title: Remote-connectivity
+title: Remote connectivity
 layout: bundle
 ---
 

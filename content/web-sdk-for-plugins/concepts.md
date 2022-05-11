@@ -15,7 +15,7 @@ In turn, applications consist of plugins. A plugin represents any functionality 
 * Add new widgets to dashboards.
 * Add new menu items to the drop-down menus.
 * Add new views or tabs to groups and devices.
-* Add any other kind of functionality (e.g. for the search) you would like to integrate.
+* Add any other kind of functionality (for example for the search) you would like to integrate.
 
 This is illustrated below:
 
@@ -31,7 +31,7 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
+Whenever you create a new application or plugin, you must comply with the following folder structure. Otherwise the application or plugin will not work.
 
 The default folder structure of an application is as follows:
 
@@ -97,7 +97,7 @@ The plugin manifest describes how your plugin is shown in the {{< product-c8y-io
 * **description**: [optional] A longer description of the plugin.
 * **category**: [optional] A category for the plugin to be used in the filtering in the user interface.
 * **ngModules**: A list of AngularJS modules that are provided by the plugin, at least one is required.
-* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, services, etc. The path is relative to the plugin's root folder.
+* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, or services. The path is relative to the plugin's root folder.
 * **CSS**: [optional] A list of CSS files to be loaded, paths relative to the plugin's root folder.
 * **less**: [optional] A list of LESS files to be loaded, paths relative to the plugin's root folder.
 * **copy**: [optional] A list of files that should be copied into the built.

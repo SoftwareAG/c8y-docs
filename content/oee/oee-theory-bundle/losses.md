@@ -12,7 +12,7 @@ The special aspect of Availability Losses is that they can be recorded and measu
 
 ### Performance Losses
 
-Performance Losses reflect a reduced production speed and can include short stoppages. You can decide for yourself whether you want to record short stoppages or not, this can be set when matching the parameters. If you have specified that short stoppages have to be recorded, you have to define a time period for this. For example, you can define that Availability Losses (time) shorter than 20 seconds are no longer counted as Availability Losses (time), but instead as Performance Losses (time). Availability Losses (time) shorter than 20 seconds, are then deducted from the Availability Losses and added to the Performance Losses (time) and the Actual Production Time.
+Performance Losses reflect a reduced production speed and can include short stoppages. You can decide for yourself whether you want to record short stoppages or not, this can be set when matching the parameters. If you have specified that short stoppages must be recorded, you must define a time period for this. For example, you can define that Availability Losses (time) shorter than 20 seconds are no longer counted as Availability Losses (time), but instead as Performance Losses (time). Availability Losses (time) shorter than 20 seconds, are then deducted from the Availability Losses and added to the Performance Losses (time) and the Actual Production Time.
 
 Of course, this also applies correspondingly to the Availability Losses (amount) and Performance Losses (amount) and the Ideal Production Amount.
 

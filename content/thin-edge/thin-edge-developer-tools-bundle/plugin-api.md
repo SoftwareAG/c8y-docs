@@ -19,7 +19,7 @@ Each plugin can implement a specific software management policy.
 
 ## Plugin repository
 
-To be used by Thin Edge, a plugin has to be stored in the directory */etc/tedge/sm-plugins*.
+To be used by Thin Edge, a plugin must be stored in the directory */etc/tedge/sm-plugins*.
 The same plugin can have different names, using virtual links.
 One of the plugins can have the name `default`. This plugin is then used as the default plugin.
 
@@ -92,14 +92,14 @@ $ /etc/tedge/sm-plugins/debian finalize
 
 For many plugins this command will do nothing.
 However, it gives the plugin an opportunity to:
-* Update the dependencies before an operation, i.e. a sequence of actions.
+* Update the dependencies before an operation, that is, a sequence of actions.
    Notably, a debian plugin can update the `apt` cache issuing an `apt-get update`.
 * Start a transaction, in case the plugin is able to manage rollbacks.
 
 This command takes no arguments.
 No output is expected.
-If the `prepare` command fails, then the planned sequences of actions (i.e. the whole sm operation) is cancelled.
-
+If the `prepare` command fails, then the planned sequences of actions (that is, the whole sm operation) is cancelled.
+,
 ### Finalize command
 
 The `finalize` command closes a sequence of install and remove commands started by a `prepare` command.
@@ -107,13 +107,13 @@ The `finalize` command closes a sequence of install and remove commands started 
 This can be a no-op, but it's also an opportunity to:
 * remove any unnecessary software module after a sequence of actions.
 * commit or rollback the sequence of actions.
-* restart any processes using the modules, e.g. restart the analytics engines if the modules have changed.
+* restart any processes using the modules, for example, restart the analytics engines if the modules have changed.
 
 This command takes no arguments.
 No output is expected.
 This command might check (but doesn't have to) that the list of install and remove command has been consistent.
 For instance, a plugin might raise an error after the sequence `prepare;install a; remove a-dependency; finalize`.
-If the `finalize` command fails, then the planned sequences of actions (i.e. the whole sm operation) is reported as failed, even if all the atomic actions have been successfully completed.
+If the `finalize` command fails, then the planned sequences of actions (that is, the whole sm operation) is reported as failed, even if all the atomic actions have been successfully completed.
 
 ### Install command
 
@@ -133,11 +133,11 @@ If no version is provided the plugin is free to install the more appropriate ver
 
 An optional file path can be provided.
 When the device administrator provides a URL, the sm-agent downloads the software module on the device, then invokes the install command with a path to that file.
-If no file is provided, the plugin has to derive the appropriate location from its repository and to download the software module accordingly.
+If no file is provided, the plugin must derive the appropriate location from its repository and to download the software module accordingly.
 The command installs the requested software module and any dependencies that might be required.
 
 It is up to the plugin to define if this command triggers an installation or an upgrade. It depends on the presence of a previous version on the device and on the ability of the package manager to deal with concurrent versions for a module.
-A plugin might not be able to install dependencies. In that case, the device administrator will have to request explicitly the dependencies to be installed first.
+A plugin might not be able to install dependencies. In that case, the device administrator must request explicitly the dependencies to be installed first.
 
 After a successful sequence `prepare; install foo; finalize` the module `foo` must be reported by the `list` command.
 

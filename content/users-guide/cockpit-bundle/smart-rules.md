@@ -8,7 +8,7 @@ helpcontent:
   content: "Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
 
 
-  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See *Cockpit > Smart rules collection* in the *User guide* for details on each smart rule template and its configuration."
+  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
 ---
 
 
@@ -16,7 +16,7 @@ helpcontent:
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
->**Info:** Smart rules are only visible, if the tenant is subscribed to the Smartrule application. To manage smart rules, the user has to have CREATE permission for Inventory and either "Smartrule" permission or "CEP management" permission.
+>**Info:** Smart rules are only visible, if the tenant is subscribed to the Smartrule application. To manage smart rules, the user must have CREATE permission for Inventory and either "Smartrule" permission or "CEP management" permission.
 
 Smart rules are parameterized. There are two sources for parameters:
 
@@ -27,7 +27,7 @@ There are two different types of smart rules:
 
 * **Global smart rules**
 
-  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
   They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
 
@@ -91,6 +91,8 @@ Click the menu icon at the right of an entry and then click **Delete**.
 
 ### To debug a smart rule
 
+> **Info:** This feature is not available with Apama.
+
 For easier debugging, there is a direct link from a smart rule to the corresponding event processing module.
 
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
@@ -98,11 +100,11 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 <a name="toggle-rules"></a>
 ### To enable/disable a smart rule
 
-If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (i.e. its underlying module gets deployed) so that the rule is available for devices and groups.
+If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
-If it is set to **Disabled** it is "turned off" (i.e. its underlying module is not deployed).
+If it is set to **Disabled** it is "turned off" (that means, its underlying module is not deployed).
 
 In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices.
 

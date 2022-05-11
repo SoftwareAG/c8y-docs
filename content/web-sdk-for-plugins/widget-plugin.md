@@ -66,7 +66,7 @@ Update the application manifest to add this new plugin to the import list.
 
 #### Add an item to the widget menu list
 
-Next, we have to create a configuration file which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we must create a configuration file which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -86,7 +86,7 @@ Next, we have to create a configuration file which adds a menu item to the widge
     gettext
   ) {
     c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
-      name: 'iconmap', // ... the identifier *"iconmap"* which has to be unique among the widgets in the application
+      name: 'iconmap', // ... the identifier *"iconmap"* which must be unique among the widgets in the application
       nameDisplay: gettext('Icon Map'), // ... the displayed name *"Icon Map"*
       description: gettext('Displays a map with icons for devices instead of markers'), // ... a description
       templateUrl: ':::PLUGIN_PATH:::/views/iconmap.main.html', // ... displaying *"iconmap.main.html"* when added to the dashboard
@@ -98,7 +98,7 @@ Next, we have to create a configuration file which adds a menu item to the widge
 
 #### Get the images for the devices
 
-To start with, we need to define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the "c8yBinary" service. Then we have to filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their `c8y_Position` fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
+To start with, we need to define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the "c8yBinary" service. Then we must filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their `c8y_Position` fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
 
 ```js
 (function () {
@@ -205,7 +205,7 @@ To start with, we need to define an array "markers" which contains markers for e
 }());
 ```
 
-Now that we have added the module, config and controller to our plugin, we have to specify "myapp.iconmap" as our module and add each javascript file to our plugin manifest:
+Now that we have added the module, config and controller to our plugin, we must specify "myapp.iconmap" as our module and add each javascript file to our plugin manifest:
 
 ```json
 {
@@ -236,7 +236,7 @@ The "leaflet" tag adds an [interactive map](http://leafletjs.com/) to our widget
 
 #### Test your plugin
 
-After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Icon Map". Note that in order to see an image for your device, you have to upload an image with the device type as file name to the [file repository](/users-guide/administration#files) of your tenant.
+After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Icon Map". Note that in order to see an image for your device, you must upload an image with the device type as file name to the [file repository](/users-guide/administration#files) of your tenant.
 
 ### Weather Plugin
 
@@ -311,7 +311,7 @@ Update the application manifest to add this new plugin to the import list.
 
 #### Add an item to the navigator menu
 
-Next, we have to create a configuration file, which adds an item to the navigator menu. For that purpose, we can use the service "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we must create a configuration file, which adds an item to the navigator menu. For that purpose, we can use the service "c8yNavigatorProvider" and "c8yViewsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -376,7 +376,7 @@ In our controller, we just need to implement a function for loading the API key 
 }());
 ```
 
-Now that we have added the config and controller to our plugin, we have to specify "myapp.weatherAdmin" as our module and add each javascript file to our plugin manifest:
+Now that we have added the config and controller to our plugin, we must specify "myapp.weatherAdmin" as our module and add each javascript file to our plugin manifest:
 
 ```json
 {
@@ -482,7 +482,7 @@ Secondly, we need to allow our application to send requests to Dark Sky API. In 
 
 #### Add an item to the widget menu list
 
-Next, we have to create a configuration file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
+Next, we must create a configuration file, which adds a menu item to the widget menu list. For that purpose, we can use the service "c8yComponentsProvider" provided by the [{{< product-c8y-iot >}} JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Inject the service into your config and call the following function:
 
 ```js
 (function () {
@@ -499,7 +499,7 @@ Next, we have to create a configuration file, which adds a menu item to the widg
 
   function configure(c8yComponentsProvider, gettext) {
     c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
-      name: 'weather', // ... the identifier *"weather"* which has to be unique among the widgets in the application
+      name: 'weather', // ... the identifier *"weather"* which must be unique among the widgets in the application
       nameDisplay: gettext('Weather'), // ... the displayed name *"weather"*
       description: gettext('Shows the current weather at the location of a device'), // ... a description
       templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html' // ... displaying *"weather.main.html"* when added to the dashboard
@@ -589,7 +589,7 @@ In our controller, we get the weather information based on the position of the d
 }());
 ```
 
-Now that we have added the config and controller to our plugin, we have to specify "myapp.weather" as our module and add each javascript file to our plugin manifest:
+Now that we have added the config and controller to our plugin, we must specify "myapp.weather" as our module and add each javascript file to our plugin manifest:
 
 ```json
 {
@@ -653,4 +653,4 @@ In our config, we already specified the .html file which contains our view for t
 
 #### Test your plugin
 
-After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Weather". Note that you have to enter the API key first to see the weather information.
+After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Weather". Note that you must enter the API key first to see the weather information.

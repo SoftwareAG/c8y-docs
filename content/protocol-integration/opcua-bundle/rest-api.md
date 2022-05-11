@@ -208,7 +208,7 @@ then the status of the alarm in {{< product-c8y-iot >}} is expected as ACKNOWLED
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
-(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+(for example <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
 The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
@@ -216,7 +216,7 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 See the **alarmStatusMappings example** below the table.
 
 >**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
-> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
+> then the status is selected based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
 > the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
 
 </td>
@@ -227,7 +227,7 @@ See the **alarmStatusMappings example** below the table.
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
-This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
+This property must be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
 
 </tbody>
@@ -790,10 +790,10 @@ Full payload data structure explained:
 
 <table>
 <colgroup>
-<col style="width: 20%;">
+<col style="width: 25%;">
 <col style="width: 20%;">
 <col style="width: 10%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
 </colgroup>
 <thead>
 <tr>
@@ -1009,13 +1009,13 @@ If <em>alarmStatusMappings</em> are defined, also the variables used in the expr
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, and more.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuration, such as rate.</td>
 </tr>
 </tbody>
 </table>
@@ -1332,13 +1332,13 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 </tbody>
 </table>
@@ -1365,13 +1365,13 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>severity</td>

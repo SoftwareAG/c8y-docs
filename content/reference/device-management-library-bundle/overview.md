@@ -18,7 +18,7 @@ To start with device management, open the **All devices** tab in the **Devices**
 
 ![Device details](/images/reference-guide/device-details.png)
 
-This list can be manipulated through the device fragments, i.e. which tabs are shown depends on the capability the device supports. This is mainly operated by one fragment called ```c8y_SupportedOperations```. Based on what is put in the array of this fragment, functionality such as tabs, buttons, etc. are enabled. For example if the ```c8y_SupportedOperations``` fragment contains ```c8y_Firmware```, the firmware tab will be visible in the **Device details** page and the device can manage firmware objects.
+This list can be manipulated through the device fragments, that means, which tabs are shown depends on the capability the device supports. This is mainly operated by one fragment called ```c8y_SupportedOperations```. Based on what is put in the array of this fragment, functionality such as tabs, buttons, and so on are enabled. For example if the ```c8y_SupportedOperations``` fragment contains ```c8y_Firmware```, the firmware tab will be visible in the **Device details** page and the device can manage firmware objects.
 
 #### c8y_SupportedOperations fragments
 
@@ -74,7 +74,7 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#connectivity">c8y_Mobile</a></td>
-<td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (e.g. ICCID)</td>
+<td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (for example ICCID)</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#network">c8y_Network</a></td>

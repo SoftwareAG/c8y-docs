@@ -74,7 +74,7 @@ To enable this, set the category of the tenant option to `streaminganalytics` an
 curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options
 ```
 
-where you have to replace the username with the name of a user who has ADMIN permission for "Option management".
+where you must replace the username with the name of a user who has ADMIN permission for "Option management".
 
 Note that this only affects the visibility of the cards and pages in the Streaming Analytics application.
 The [supported REST services](/apama/analytics-introduction/#supported-rest-services) only require READ and ADMIN permissions for "CEP management".

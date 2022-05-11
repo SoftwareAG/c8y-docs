@@ -23,7 +23,7 @@ In Windows systems, Powershell is installed by default. Download the script file
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
-The latest can be replaced by the version number, e.g. `microservicesdk-lin-dev-{X.X.X}.zip`.
+The latest can be replaced by the version number, for example, `microservicesdk-lin-dev-{X.X.X}.zip`.
 
 Once you have downloaded the source, unzip the file.
 
@@ -485,7 +485,7 @@ use the wget command to download the script file to build a "Hello World" applic
 $ sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 ```
 
-The "latest" can be replaced by the version number, e.g. microservicesdk-lin-dev-<X.X.X>.zip.
+The "latest" can be replaced by the version number, for example, microservicesdk-lin-dev-<X.X.X>.zip.
 
 Once you have downloaded the source, unzip the file.
 

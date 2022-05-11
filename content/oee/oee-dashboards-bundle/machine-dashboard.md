@@ -11,7 +11,7 @@ The machine dashboard offers a detailed view about the current status and develo
 
 ![Machine dashboard](/images/oee/dashboards/dashboard-machine-dashboard.png)
 
-At the top you find the general information (profile name, alarm status etc.) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#data) section.
+At the top you find the general information (such as profile name or alarm status) provided in the **Machine Park Overview**, followed by the [**OEE status**](#oee-status) section and [**OEE data**](#data) section.
 
 By default, the **Auto-refresh** option at the top left is activated and [**OEE status**](#oee-status) and [**OEE data**](#data) information is updated automatically according to the selected resolution. Switch the toggle to deactivate it.
 
@@ -145,7 +145,7 @@ Shifts can be created using [Swagger documentation](https://services.adamos-hub.
 Please note: Shifts of one location can't overlap, that means you are not able to enter this:
 
 "Shift 1 End: 2019-08-05T12:00:00
-<br> Shift 2 Start: 2019-08-05T12:00:00" ... instead you have to enter this:
+<br> Shift 2 Start: 2019-08-05T12:00:00" ... instead you must enter this:
 
 "Shift 1 End: 2019-08-05T11:59:59" &nbsp;or "Shift 2 Start: 2019-08-05T12:00:01"
 

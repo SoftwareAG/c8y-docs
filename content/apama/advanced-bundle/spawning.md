@@ -35,4 +35,3 @@ monitor PerDeviceMeasurementTracker {
 	}
 }
 ```
-

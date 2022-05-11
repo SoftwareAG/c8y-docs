@@ -150,7 +150,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
+Your microservice application must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>
@@ -283,9 +283,7 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 
 > **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 
-In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
-
-![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
+In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
 Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
@@ -351,7 +349,7 @@ BODY:
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
@@ -366,7 +364,7 @@ $ curl -X POST -s \
   "<URL>/application/applications"
 ```
 
-In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
+In case of errors, such as invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {
@@ -392,7 +390,7 @@ In case of errors, e.g. invalid names, you will get the details printed in the c
 }
 ```
 
-In the Administration application, navigate to **Applications** > **Own applications**. There you will see the created microservice.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
 
 #### Acquire the microservice bootstrap user
 
@@ -444,7 +442,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
   -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
 ```
 
-`-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
+`-p 8082:80` will expose your port 80 to a port on your host system, for example, 8082.
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
@@ -465,13 +463,13 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 #### Subscribe to the microservice
 
-In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
 
 ![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 
-You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>.
+You may also use the name parameter, for example, <http://localhost:8082/hello?name=Neo>.
 
 ### Improving the microservice
 

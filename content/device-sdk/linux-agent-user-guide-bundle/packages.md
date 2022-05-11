@@ -78,7 +78,7 @@ package.path = package.path .. ';/snap/cumulocity-agent/current/usr/share/lua/5.
 package.cpath = package.cpath .. ';/snap/cumulocity-agent/current/usr/lib/x86_64-linux-gnu/lua/5.2/?.so'
 ```
 
-If you built the agent with Lua 5.3, you have to change `5.2` to `5.3`.
+If you built the agent with Lua 5.3, you must change `5.2` to `5.3`.
 
 To include the Cloud Remote Access feature, first build the Cloud Remote Access service. After that, overwrite the content of *cumulocity-agents-linux/pkg/snapcraft_remoteaccess.yaml* to the default *cumulocity-agents-linux/pkg/snapcraft.yaml*. In addition, modify the `snap:` field of your _Makefile_. Add a `$(BIN_DIR)/$(VNC_BIN)` to the line in which you copy the binaries to a staging directory. The line will look like:
 

@@ -5,15 +5,17 @@ layout: redirect
 helpcontent:
   - label: connecting-devices
     title: Connecting devices
-    content: "To connect devices to Cumulocity IoT they need to be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in *Device Management > Connecting devices* in the *User guide*.
+    content: "To connect devices to Cumulocity IoT they need to be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the *User guide*.
 
 
     All devices which are currently in the registration process are displayed with one of the following status:
 
 
-    * **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
-    * **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
-    * **Accepted** - the user has allowed the credentials to be send to the device"
+    **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
+
+    **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
+
+    **Accepted** - the user has allowed the credentials to be send to the device"
 ---
 
 <a name="dev-registration"></a>
@@ -41,13 +43,13 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 ### To register devices
 
-To register devices, you may choose one of the following options:
+To register devices, you can select one of the following options:
 
 * **[General device registration](#device-registration-manually)** - to manually connect one or more devices
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
 
 If you are subscribed to the required applications you will see a third option
-**Custom device registration** for registering devices of specific types, e.g. Actility LoRa or Sigfox, see the documentation for these services in the [Protocol integration guide](/protocol-integration/overview).
+**Custom device registration** for registering devices of specific types, for example, Actility LoRa or Sigfox, see the documentation for these services in the [Protocol integration guide](/protocol-integration/overview).
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -70,7 +72,7 @@ If you are subscribed to the required applications you will see a third option
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
-After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status "Waiting for connection".
+After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
@@ -81,7 +83,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 <a name="creds-upload"></a>
 #### To bulk-register devices
 
-To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
+To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 > **Info:** There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 
@@ -102,7 +104,7 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 
 **Simple registration**
 
-The CSV file contains two columns: ID;PATH, where ID is the device identifier, e.g. serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
+The CSV file contains two columns: ID;PATH, where ID is the device identifier, for example, serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
 ```asciidoc
     ID;PATH

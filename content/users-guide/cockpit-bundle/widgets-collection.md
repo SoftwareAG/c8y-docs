@@ -239,7 +239,7 @@ Click **+Add Properties** and select one or more properties to be added.
 
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Shell commands](/users-guide/device-management/#shell).<br>
+>**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 
 #### To modify the table
@@ -578,4 +578,4 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
-|States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
+|States mapping|Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.

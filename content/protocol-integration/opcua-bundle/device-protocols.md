@@ -24,13 +24,13 @@ Once the device protocol is created, various configuration settings such as vari
 1. Click **Add variable** under the **Variables** section.
 2. Enter the path and the name of the variable. The path can be the exact browse path or a regular expression of the browse path. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings.
 When using a regular expression, keep in mind that it might be matching many nodes in the address space and resulting in unexpected incoming data. Our recommendation is to use it with great care and together with other exact browse paths in the same mapping if possible. For example, `&#91;"2:Objects", "regex(2:MyDevice\\d)", "..."&#93;`
-3. Choose either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable.
+3. Select either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable.
 4. Additionally, different functionalities such as sending measurements, creating alarms, sending events and custom actions for each variable can be selected.
 5. Click **Save** to save your settings.
 
 The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page.
 
-> **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path "5:Counter1" would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to "ns=5;s=Simulation" will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server's namespace array, the 5th element has the value of "http://www.prosysopc.com/OPCUA/SimulationNodes".
+> **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path "5:Counter1" would be: `http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1`. A node ID equal to "ns=5;s=Simulation" will have the following namespace representation `nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation`. In both examples the fifth element of the server's namespace array has a value of `http://www.prosysopc.com/OPCUA/SimulationNodes`.
 
 ![OPC UA device protocol](/images/device-protocols/opcua/opcua-device-protocol.png)
 
@@ -46,7 +46,7 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a "value" property, for example, "c8y_AccelerationMeasurement.acceleration".
 - Specify the unit of the given measurement, for example, "m/s" for velocity.
 
-All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (e.g. 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
+All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
 
 **Create alarm**
 

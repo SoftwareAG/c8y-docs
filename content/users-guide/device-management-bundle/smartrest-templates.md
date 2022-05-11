@@ -11,7 +11,7 @@ helpcontent:
     To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.
 
 
-    To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *Device Management > SmartREST templates* section in the *User guide*."
+    To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *User guide*."
 ---
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
@@ -45,7 +45,7 @@ There are two ways to add a SmartRest template:
 ### To import an existing SmartREST template
 
 1. Click **Import template** at the right of the top menu bar.
-2. In the resulting dialog box, choose a file to upload by browsing for it.
+2. In the resulting dialog box, select a file to upload by browsing for it.
 3. Enter a template name and a unique template ID (both mandatory fields).
 4. Click **Import** to import the template.
 

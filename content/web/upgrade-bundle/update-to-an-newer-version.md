@@ -56,7 +56,7 @@ The following files are currently overwritten:
  - `app.module.ts`: The Angular module imports which might be aligned by your application to import custom Angular modules.
  - `index.ts`: The bootstrapping file which is called first. This file is usually not changed.
  - `ng1.ts`: The angularjs imports which might have been aligned to add or remove angularjs plugins.
- - `package.json`: The npm dependencies, application options and names are stored in this file. This is very likely changed, e.g. when different options or a different dependency are used.
+ - `package.json`: The npm dependencies, application options and names are stored in this file. This is very likely changed, for example, when different options or a different dependency are used.
  - `tsconfig.json`: The typescript configuration. It is usually unchanged.
  - `angular.json`: The Angular project configuration defaults for build and development tools
 

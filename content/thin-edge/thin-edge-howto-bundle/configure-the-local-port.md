@@ -10,7 +10,7 @@ Configuring a mosquitto port in Thin Edge is a three step process.
 <a name="step-1"></a>
 ### Step 1: Disconnect the Thin Edge device
 
-The Thin Edge device has to be disconnected from the cloud using the `tedge` command:
+The Thin Edge device must be disconnected from the cloud using the `tedge` command:
 
 ```shell
 tedge disconnect c8y/az
@@ -54,7 +54,7 @@ tedge connect az
 
 ### Update to use default port
 
-To use the default port (1883), the MQTT port has to be unset using the `tedge` command:
+To use the default port (1883), the MQTT port must be unset using the `tedge` command:
 
 ```shell
 tedge config unset mqtt.port
@@ -85,7 +85,7 @@ Restart the collectd service:
 sudo systemctl restart collectd.service
 ```
 
-After changing the MQTT port and connecting to cloud using `tedge connect c8y/az` (steps 1-3), the collectd-mapper has to be restarted to use the newly set port.
+After changing the MQTT port and connecting to cloud using `tedge connect c8y/az` (steps 1-3), the collectd-mapper must be restarted to use the newly set port.
 
 Restart the collectd-mapper service:
 

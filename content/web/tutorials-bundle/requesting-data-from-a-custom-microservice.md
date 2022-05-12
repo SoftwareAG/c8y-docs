@@ -94,7 +94,7 @@ For this purpose, create a new Cockpit application using the `c8ycli`:
 c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
-Next, you need to install all dependencies.
+Next, you must install all dependencies.
 Switch to the new folder and run `npm install`.
 
 >**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
@@ -236,7 +236,7 @@ Explanation of the numbers above:
 
 1. By extending the service you get the same capabilities as of all common services in `@c8y/client`. The generic type, in this case, is set to `any`, to keep the example as easy as possible. It is a common pattern to create an interface that reflects the data you are sending via this service and replace `any` by this interface.
 2. The URLs are the main entry points for this service. The pattern is always `<<url>>/<<baseUrl>>/<<listUrl>>/<id>`. If your microservice follows a different structure, you can override the `getUrl` method of the service class.
-3. The constructor needs the current `FetchClient` imported via dependency injection. It also needs to get it passed to the extended `Service` class via `super()`. If you want your endpoint to support real time, you also need to inject the `RealTime` abstraction here and pass it.
+3. The constructor needs the current `FetchClient` imported via dependency injection. It also needs to get it passed to the extended `Service` class via `super()`. If you want your endpoint to support real time, you also must inject the `RealTime` abstraction here and pass it.
 4. You can now override the `detail()` or `list()` implementation. You can call the super method only, modify the result of the super call or write your own implementation. The choice depends on the implementation details of your microservice.
 
 Now you can reuse the `AcmeService` in the `acme.component.ts`:

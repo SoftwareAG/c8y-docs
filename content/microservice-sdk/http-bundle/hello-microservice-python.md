@@ -33,7 +33,7 @@ $ docker version
 
 ### Developing the "Hello world" microservice
 
-To develop a simple "Hello world" microservice in Python, you need to:
+To develop a simple "Hello world" microservice in Python, you must:
 
 * Create a Python web application.
 * Create the Dockerfile.
@@ -88,7 +88,7 @@ The application is configured to run on port 80 – which is required for micros
 
 #### Create the Dockerfile
 
-You need to create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
+You must create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
 
 ```
 FROM python:alpine3.6

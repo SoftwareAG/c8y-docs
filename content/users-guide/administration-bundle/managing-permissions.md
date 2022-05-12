@@ -80,7 +80,7 @@ Furthermore, the following pre-configured roles are initially provided.
 <td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
-<td align="left">Device management User</td>
+<td align="left">Devicemanagement User</td>
 <td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ You may also see the following legacy roles:
 <a name="create-edit-roles"></a>
 #### To add a global role
 
-Click **Add Role** in the **Global roles** tab.
+Click **Add global role** in the **Global roles** tab.
 
 In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
 
@@ -309,9 +309,8 @@ The following default inventory roles are initially available in new tenants:
 
 #### To add an inventory role
 
-Click **Add Role** in the **Inventory roles** tab.
-
-At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
+Click **Add inventory role** in the **Inventory roles** tab. 
+In the "New inventory role" page, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
 
 ![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
@@ -337,7 +336,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list:
 
@@ -356,7 +355,7 @@ As another example, assume that you are using tracking devices. You want to allo
 
 Inventory roles are assigned to a user and a group of devices.
 
-To assign inventory roles, click **User** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
+To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
 In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
 
@@ -375,7 +374,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button (showing the current user name) at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
 <a name="app-access"></a>
 ### Granting application access

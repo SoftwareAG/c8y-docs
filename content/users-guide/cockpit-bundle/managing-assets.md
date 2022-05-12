@@ -24,7 +24,7 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 

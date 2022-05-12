@@ -170,13 +170,15 @@ Duplicating an application might be useful if you want to customize a subscribed
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
-4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
+4. In the next window, provide a name for the application.
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
-5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
-6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
+5. Provide an application key, used to identify this application.
+6. Provide the application path as part of the URL to invoke the application. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
 7. Finally, click **Duplicate** to create the application.
+
+> **Info:** The above mentioned fields for name, key and path of the duplicated application are per default provided with their corresponding value from the original application, extended by a number. In case the application has been subscribed to this tenant, there will be an additional toggle that allows to either inherit the values from the original application or modify them.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 
 For details on the fields, see also [Application properties](#application-properties) below.
 

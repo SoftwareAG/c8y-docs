@@ -66,7 +66,7 @@ The main conceptual change of the second generation was that applications were s
 
 This way, each time the platform was updated, 3rd party applications were only affected when they were explicitly upgraded.
 
-We became aware that plugins are just modules, and their names need to be unique. The pattern ```<app>/<plugin>``` which was intentional earlier, became irrelevant with module names being unique, but we maintained compatibility with this naming as we do until today.
+We became aware that plugins are just modules, and their names must be unique. The pattern ```<app>/<plugin>``` which was intentional earlier, became irrelevant with module names being unique, but we maintained compatibility with this naming as we do until today.
 
 Although the strategy changed drastically, the manifest files stayed fully compatible.
 
@@ -82,7 +82,7 @@ Although plugins are not just data any longer, we still allow to change the appl
 
 ### Today's Generation: Native modules
 
-The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we need to bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
+The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we must bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
 
 One major change is that so far modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truly just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
 
@@ -104,7 +104,7 @@ So far, branding was always considered part of the application, as a module like
 
 ## Migrating
 
-To use the new tooling you need to switch the build tools. Previously, we have published the `c8y` command in the npm package "cumulocity-node-tools". Now we changed the command name to `c8ycli` to avoid conflicts and it is published on npm as "@c8y/cli".
+To use the new tooling you must switch the build tools. Previously, we have published the `c8y` command in the npm package "cumulocity-node-tools". Now we changed the command name to `c8ycli` to avoid conflicts and it is published on npm as "@c8y/cli".
 
 The following table shows which versions support which tooling:
 

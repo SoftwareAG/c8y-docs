@@ -14,7 +14,7 @@ On top of that the {{< product-c8y-iot >}} platform in general is a **multi-tena
 
 This will leave you with two options to organize your customers. You can either create a tenant for each of your customers or you can manage multiple customers within a single tenant and protect them from each other using RBAC.
 
-In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. {{< product-c8y-iot >}} is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
+In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. {{< product-c8y-iot >}} is designed to manage tenants using the tenant hierarchy. As a result, some aspects that must be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
 
 >**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
 
@@ -71,7 +71,7 @@ The following sections discuss how these tasks are handled in both approaches.
 
 **Comparison:**
 
-The creation of a new customer is equally simple. However, you need to consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
+The creation of a new customer is equally simple. However, you must consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
 
 <a name="device-registration"></a>
 #### Device registration
@@ -115,7 +115,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">There are two types of roles in {{< product-c8y-iot >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you need to use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles need to be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
+<td style="text-align:left">There are two types of roles in {{< product-c8y-iot >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you must use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles must be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
 <td style="text-align:left">As the tenant is completely separated from all other customers you do not necessarily need to be involved in setting up the access rights of the customer. If customers are given administration rights for their tenants they can set up permissions on their own. It is not possible for customers to have any sight or knowledge of other customers.</td>
 </tr>
 </tbody>
@@ -144,7 +144,7 @@ For security aspects on access control see [Security aspects > Access control](/
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Using the user hierarchy feature you can delegate the user management to the customers, so that they are able to create new users on their own. Using this feature they are only allowed to create users with the same roles that they have (or less). Therefore you need to assign all roles that the customer needs in total to the first user so that he can delegate those.</td>
+<td style="text-align:left">Using the user hierarchy feature you can delegate the user management to the customers, so that they are able to create new users on their own. Using this feature they are only allowed to create users with the same roles that they have (or less). Therefore you must assign all roles that the customer needs in total to the first user so that he can delegate those.</td>
 <td style="text-align:left">Customers have full admin access to the user management and can also define their own roles.</td>
 </tr>
 </tbody>
@@ -223,7 +223,7 @@ Choosing the RBAC approach limits you in the options for your business model as 
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">All data is available in a single database and therefore you can easily apply analytics on the data either using the Apama streaming analytics engine or external tools. Applying analytics to just one customer can be a bit more challenging as you need to split the devices based on the customer group they belong to.
+<td style="text-align:left">All data is available in a single database and therefore you can easily apply analytics on the data either using the Apama streaming analytics engine or external tools. Applying analytics to just one customer can be a bit more challenging as you must split the devices based on the customer group they belong to.
 </td>
 <td style="text-align:left">All data is split across multiple databases (one per tenant/customer) and you are not able to directly access all of them. You either need access to each tenant to extract the data or you are using features like data explorer to synchronize analytic-relevant data into a single tenant where you then can do your analytics.</td>
 </tr>

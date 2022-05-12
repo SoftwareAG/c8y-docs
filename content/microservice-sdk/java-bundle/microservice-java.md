@@ -108,7 +108,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you need to [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
@@ -147,7 +147,7 @@ The microservice will get the approximate location based on the client's IP.
 To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must [get a free API key](https://ipstack.com/product).
 Once you have it, assign it to the `"ipstack.key"` key in your _cumulocity.json_ file.
 
-A GET request to the ipstack API using your key will return a location object. Therefore, you need to create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:
+A GET request to the ipstack API using your key will return a location object. Therefore, you must create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:
 
 ```java
 package c8y.example;

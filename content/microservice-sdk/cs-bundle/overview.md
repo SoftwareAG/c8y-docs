@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for C#, and it contains:
 
-*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
+*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 <!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
@@ -21,7 +21,7 @@ If you face any issue or need technical support, please use the [{{< product-c8y
 #### Upgrading the SDK
 
 The latest supported SDK is based on .NET Core 3.1 and **Visual Studio 2019** is required for supporting it.
-To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, for example, 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading the an existing project to the latest version of SDK (1006.6.0) must follow offical [microsoft guidlines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
+To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, for example, 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading an existing project to the latest version of SDK (1006.6.0) must follow the offical [Microsoft guidelines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
 
 
 
@@ -30,7 +30,7 @@ For new projects, you shall use a new bundle of [building scripts](https://githu
 <a name="general-prerequisites"></a>
 ### Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you must install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 

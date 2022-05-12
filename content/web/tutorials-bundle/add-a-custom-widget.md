@@ -23,7 +23,7 @@ For this purpose, create a new Cockpit application using the `c8ycli`:
 c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 ```
 
-Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
+Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
 >**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 >

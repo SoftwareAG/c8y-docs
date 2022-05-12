@@ -189,14 +189,19 @@ The available software objects will be displayed as a list.
 
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
-Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
-At the left in the top menu bar, you can filter the repository entries by name, description, device type or configuration type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+Each entry shows the software name, the device type it is applicable for (if set), the software type (if set), and a badge indicating if and how many versions are available for a particular software.
+The values in every column except for the **Versions** column can be filtered and sorted by clicking the filter and sort icons in the column header.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
 ![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-At the top, the software name, a description, and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
+At the top, the software name, a description, an optional device type filter(s), and a software type are shown.
+If a device type filter is set, the software will show up for installation only for devices of that type.
+If no filter is set, it will be available for all devices.
+The software type will make the software installable only on devices that specifically support the particular software type.
+
+>**Info:** The **Software type** field suggests you a list of types already used in your software repository. Before you consider defining a new software type (the field accepts new values directly) check if the type you need has already been defined before for another software by looking at the suggestions in the dropdown. This will help you keep software types consistent within your organization. If you use, for example, container images you may look for `container` or `image`, or try to search for more specific types like `docker`, `lxc`, and so on. This may prevent you from scattering your software types and using different names for effectively the same software type.
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -208,8 +213,9 @@ The versions are ordered by their creation time (descending).
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description, and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
-3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
-4. Click **Save**.
+4. Define the software type. It will make the software installable only on devices that have declared to support the particular software type.
+5. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
+6. Click **Add software**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
@@ -222,17 +228,17 @@ If you click **Add software** from within the details of a specific software, th
 
 #### To edit a software
 
-1. Click the menu icon at the right of a specific software entry and in the context menu click **Edit**.
-2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**.
+1. Click the menu icon at the right of a specific software item and in the context menu click **Edit**.
+2. Update the name, description, device type filter or software type by clicking the pencil icon next to it. Make the desired changes and click **Save**.
 
 The software will be updated accordingly.
 
 
-#### Deleting softwares or software versions
+#### Deleting software items or software versions
 
 ##### To delete a software
 
-Click the menu icon at the right of a specific software entry and in the context menu click **Delete**.
+Click the menu icon at the right of a specific software item and in the context menu click **Delete**.
 
 The software and all its versions will be deleted from the software repository.
 
@@ -249,7 +255,7 @@ In the **Software** tab of a device you can manage the software for the particul
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
-The **Software** tab shows a list of all available software installed on the device.
+The **Software** tab shows a list of all available software installed on the device. If a given software has a type, it will be displayed next to its name. You can search for a particular software by its name or filter the list by software type.
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
@@ -260,10 +266,18 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install software on a device
 
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
-2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.
-4. Click **Install**.
-5. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
-	![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
+
+    >**Info:** The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+
+2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
+For devices supporting advanced software management features, already installed software items cannot be pre-filtered from the list of available software items. Thus, after a particular software version has been selected, a check is done if the selected software is already installed on the device. If this is the case, a warning next to the selected version indicates that this software version is already present on the device.  
+You can remove the already installed software item under **Software changes** or leave it and apply it as part of the changes. It is up to the device agent to decide how to handle such an update.
+
+3. Click **Install**.
+
+4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
+
+	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
@@ -274,7 +288,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 ##### To update software on a device
 
-Hover over the software entry which you want to update and click **Update**.
+Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
 
 ![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
@@ -283,7 +297,7 @@ The software will be updated with the selected version.
 
 ##### To delete software from a device
 
-Hover over the software entry which you want to delete and click the delete icon.
+Hover over the software item which you want to delete and click the delete icon.
 
 ##### To install software on multiple devices
 

@@ -77,11 +77,11 @@ Download the [API examples](/files/rest/Cumulocity_API.postman_collection.json) 
 
 Now, click the **Collections** tab on the top left of Postman. You should see a folder _{{< product-c8y-iot >}} API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from {{< product-c8y-iot >}}.
 
-Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
+Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You must tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
-* Click on the cogwheel on the top right and select **Manage Environments**, then click **Add**.
-* Enter a name for the environment (for example your tenant ID), then add values for the placeholders.
-* Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.{{< domain-c8y >}}_. Click **Submit**.
+* Click the cogwheel on the top right and select **Manage Environments**, then click **Add**.
+* Enter a name for the environment (for example, your tenant ID), then add values for the placeholders.
+* Configure a key _url_ with a value of _https://&lt;TENANT_NAME&gt;.{{< domain-c8y >}}_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
@@ -93,6 +93,6 @@ For example, assume that your tenant ID is "t07007007", your username is "winter
 $ echo -n t07007007/winter:jh0nS0nw | base64
 ```
 
-The resulting text is "dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==" and you need to use `Basic dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==` as value for the `auth` key. You can achieve the same result also by using an online Base64 encode/decode tool.
+The resulting text is "dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==" and you must use `Basic dDA3MDA3MDA3L3dpbnRlcjpqaDBuUzBudw==` as value for the `auth` key. You can achieve the same result also by using an online Base64 encode/decode tool.
 
 Now it is time to start exploring the API!

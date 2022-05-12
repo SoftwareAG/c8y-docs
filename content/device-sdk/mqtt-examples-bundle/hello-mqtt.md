@@ -22,7 +22,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 #### Configuring the MQTT connection
 
-To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
+To configure the MQTT connection, you must pass the following connection parameters (see the screenshot below).
 
 *   MQTT Client Name – Give your client a name to identify it, for example, {{< product-c8y-iot >}} MQTT.
 *   MQTT Client Id – You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device in {{< product-c8y-iot >}}. To reconnect to the same device, use the same ID.
@@ -156,7 +156,7 @@ Now you should see both the **Location** and the **Tracking** tab in the device 
 
 So far we have only used MQTT to send data from the client to the server. Now we will send data from the server to the client.
 
-To achieve this, we first need to subscribe to the responsible topic. We will do two subscriptions:
+To achieve this, we must first subscribe to the responsible topic. We will do two subscriptions:
 
 * s/ds : This will subscribe to the static operation templates for the device
 * s/e :  This will subscribe to an error topic that can be used for debugging
@@ -185,7 +185,7 @@ In the MQTTBox, you should now have received a new message for the <kbd>s/ds</kb
 
 ![MQTTBox Received Operation](/images/mqtt/mqttBoxReceivedOperation.png)
 
-The `511` is indicating what kind of operation we received (in this case `c8y_Command`). This will be followed by the **deviceIdentifier** to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In such case, you need to know for which of the children the operation was dedicated. Finally, you have the operation specific parameters, which in the case of `c8y_Command` is only the command text.
+The `511` is indicating what kind of operation we received (in this case `c8y_Command`). This will be followed by the **deviceIdentifier** to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In such case, you must know for which of the children the operation was dedicated. Finally, you have the operation specific parameters, which in the case of `c8y_Command` is only the command text.
 
 After receiving the operation, we can start executing it to initiate the client's handling the operation. Similar to changing the status of an alarm, you can add the type of operation to the template.
 

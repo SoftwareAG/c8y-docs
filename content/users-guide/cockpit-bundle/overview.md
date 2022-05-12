@@ -25,7 +25,7 @@ For your convenience find an overview on the content of this document below.
 <td align="left">Organize assets in <a href="#hierarchies">hierarchies</a> by <a href="#creating-groups">creating groups</a> and <a href="#assigning-devices">assigning devices</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#data-explorer">Visualizing data using the Data Explorer</a></td>
+<td align="left"><a href="#data-explorer">Data explorer</a></td>
 <td align="left">Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the <a href="#data-explorer">data explorer</a>, <a href="#add-data-points">add data points</a> to the data explorer, <a href="#customize-data-points">customize data point properties</a>, <a href="#change-visualization">modify the visualization</a>, store the <a href="#create-widget">data explorer as widget</a>, and <a href="#export-data">export</a> the data.</td>
 </tr>
 <tr>
@@ -47,23 +47,24 @@ For your convenience find an overview on the content of this document below.
 <td align="left">Use various types of <a href="#widgets-collection">widgets</a> from the Widgets collection that comes with {{< product-c8y-iot >}} and configure them according your needs.</td>
 </tr>
 <tr>
-<td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a></td>
-<td align="left">Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to <a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a> in Device Management.</td>
-<tr>
 <td align="left"><a href="#exports">Managing exports</a></td>
 <td align="left">Configure <a href="#exports">exports for exporting data</a> in CSV or excel format and <a href="#schedule-export">schedule the export</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#data-point-library">Using the data point library</a></td>
+<td align="left"><a href="#data-point-library">Data point library</a></td>
 <td align="left">Manage default settings ("profiles") of your devices and apply them automatically using the <a href="#data-point-library">data point library</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#smart-rules">Working with smart rules</a></td>
+<td align="left"><a href="#smart-rules">Smart rules</a></td>
 <td align="left"><a href="#create-rules">Create and manage business rules</a> to work on incoming data in realtime and to perform actions based on this data.</td>
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart rules collection</a></td>
 <td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email). Describes each smart rule and its configurable parameters in detail.</td>
+</tr>
+<tr>
+<td align="left"><a href="#configuration">Configuring Cockpit applications</a></td>
+<td align="left">Configure custom Cockpit applications according to your individual needs.</td>
 </tr>
 </tbody>
 </table>

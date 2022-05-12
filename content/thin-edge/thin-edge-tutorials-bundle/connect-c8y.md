@@ -21,7 +21,7 @@ You can now use the [tedge command](/thin-edge/thin-edge-developer-tools/#tedge-
 
 ### Configure the device
 
-To connect the device to {{< product-c8y-iot >}}, you need to set the URL of your {{< product-c8y-iot >}} tenant and the root certificate as below.
+To connect the device to {{< product-c8y-iot >}}, you must set the URL of your {{< product-c8y-iot >}} tenant and the root certificate as below.
 
 Set the URL of your {{< product-c8y-iot >}} tenant.
 
@@ -71,7 +71,7 @@ see [Developer tools > Command Line Interface (CLI) > tedge cert command](/thin-
 ### Make the device trusted by Cumulocity IoT
 
 For a certificate to be trusted by {{< product-c8y-iot >}},
-you need to add the certificate of the signing authority to the list of trusted certificates.
+you must add the certificate of the signing authority to the list of trusted certificates.
 In the {{< product-c8y-iot >}} UI, navigate to **Management** > **Trusted certificates** in the Device Management application in order to see this list for your {{< product-c8y-iot >}} tenant.
 
 Here, the device certificate is self-signed and must be directly trusted by {{< product-c8y-iot >}}.

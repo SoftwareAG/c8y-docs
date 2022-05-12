@@ -27,6 +27,17 @@ For each rule, the rule name, details on the data to be deleted (fragment type, 
 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
+#### Data types
+
+The following data types are covered under retention rules:
++ Alarms
++ Audits
++ Bulk operations
++ Events
++ Measurements
++ Operations
+
+>**Info:** Retention rules do not apply to files stored in the files repository.
 
 <a name="add-retention-rule"></a>
 #### To add a retention rule
@@ -104,4 +115,4 @@ Click the menu icon at the right of the respective row and then click **Download
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
->**Info:** If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
+>**Info:** If the file corresponds to an active application, it cannot be deleted. You must first remove or upgrade the application to be able to delete it.

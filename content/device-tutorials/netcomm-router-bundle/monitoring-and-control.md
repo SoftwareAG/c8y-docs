@@ -22,7 +22,7 @@ To regularly poll the input voltage of a GPIO pin and send it to the {{< product
 set service.cumulocity.gpio.interval=<seconds>
 ```
 
-Then, you need to specify the port and turn on the notification by using the [device shell](#device-shell).
+Then, you must specify the port and turn on the notification by using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.gpio.<port>.notify=measurement
@@ -68,7 +68,7 @@ Digital outputs can be controlled using the "Relay array control" widget, see th
 <a name="modbus"></a>
 ### Cloud Fieldbus
 
-You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and serial port, respectively, and manage them remotely in {{< product-c8y-iot >}}. To do so, you need to follow these steps.
+You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and serial port, respectively, and manage them remotely in {{< product-c8y-iot >}}. To do so, you must follow these steps.
 
 For Modbus-TCP setup:
 

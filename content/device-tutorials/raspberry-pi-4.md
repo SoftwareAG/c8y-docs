@@ -105,7 +105,7 @@ $ sudo service cumulocity-agent restart
 
 #### To activate SPI
 
-You need to activate the SPI (Serial Peripheral Interface) on the Raspberry Pi, if it is not already activated. You can do this as follows:
+You must activate the SPI (Serial Peripheral Interface) on the Raspberry Pi, if it is not already activated. You can do this as follows:
 
 1.	On the command line, enter this command to start the `raspi-config` tool:
 
@@ -138,7 +138,7 @@ After the Raspberry Pi has been successfully registered, you can view the device
 
 If you have reached this part of the tutorial successfully, you have the proof-of-concept that you can attach a device such as a Raspberry Pi to a {{< product-c8y-iot >}} server and view its status information. Congratulations!
 
-The Raspberry Pi by itself delivers only static information, so if you want to view real-time measurements coming from the device, you generally need to attach hardware components that deliver this data, such as components provided by the third-party suppliers Tinkerforge and PiFace Digital. See the following sections for details.
+The Raspberry Pi by itself delivers only static information, so if you want to view real-time measurements coming from the device, you generally must attach hardware components that deliver this data, such as components provided by the third-party suppliers Tinkerforge and PiFace Digital. See the following sections for details.
 
 #### Tinkerforge bricks and bricklets
 

@@ -43,7 +43,7 @@ After logging in you should see a barely empty starter application. If you want 
 
 > **Info**: If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
 
-> **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
+> **Info**: You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
 
 ### First route & component
 
@@ -64,7 +64,7 @@ export class HelloComponent {
 }
 ```
 
-To hook the new component into the application you need to declare the new component and add it to a route in the `app.module.ts`:
+To hook the new component into the application you must declare the new component and add it to a route in the `app.module.ts`:
 
 ```js
 import { NgModule } from '@angular/core';

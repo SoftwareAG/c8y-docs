@@ -16,7 +16,7 @@ With the following plugin a new widget will be available for dashboards which di
 
 ![Iconmap Widget](/images/plugins/iconmapwidget.png)
 
-In order to achieve this goal you need to do the following steps:
+In order to achieve this goal you must do the following steps:
 
 * Create a plugin.
 * Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
@@ -98,7 +98,7 @@ Next, we must create a configuration file which adds a menu item to the widget m
 
 #### Get the images for the devices
 
-To start with, we need to define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the "c8yBinary" service. Then we must filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their `c8y_Position` fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
+To start with, we must define an array "markers" which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we must get all binary objects in the inventory with the help of the "c8yBinary" service. Then we must filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their `c8y_Position` fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.
 
 ```js
 (function () {
@@ -244,7 +244,7 @@ With the following plugin a new widget will be available for dashboards which sh
 
 ![Weather Widget](/images/plugins/weatherwidget.png)
 
-In order to achieve this goal you need to do the following steps:
+In order to achieve this goal you must do the following steps:
 
 * Create a plugin for using the [Dark Sky API](https://darksky.net/dev/).
 * Create a plugin for entering the API key.
@@ -456,9 +456,9 @@ Update the application manifest to add this new plugin to the import list.
   ]
 }
 ```
-To be able to use the Weather plugin two things need to be added to the application manifest.
+To be able to use the Weather plugin two things must be added to the application manifest.
 
-Firstly, we need to enable users to use dashboards in our application so that they can create the Weather widget instances. This is possible by importing two core plugins:
+Firstly, we must enable users to use dashboards in our application so that they can create the Weather widget instances. This is possible by importing two core plugins:
 
 ```json
 {
@@ -470,7 +470,7 @@ Firstly, we need to enable users to use dashboards in our application so that th
 }
 ```
 
-Secondly, we need to allow our application to send requests to Dark Sky API. In order to achieve that, let's add a new property to the application manifest called `contentSecurityPolicy` with the following value:
+Secondly, we must allow our application to send requests to Dark Sky API. In order to achieve that, let's add a new property to the application manifest called `contentSecurityPolicy` with the following value:
 
 ```json
 {

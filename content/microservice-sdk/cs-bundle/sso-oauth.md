@@ -12,7 +12,7 @@ Note that when a request authenticated with OAuth arrives to the microservice, i
 
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests.
 
-To employ OAuth you need to add the following code to the `ConfigureServices` method in the *Startup.cs* file:
+To employ OAuth you must add the following code to the `ConfigureServices` method in the *Startup.cs* file:
 
 ```cs
 services.AddCumulocityAuthenticationAll(Configuration);
@@ -30,7 +30,7 @@ public static IServiceCollection AddCumulocityAuthenticationAll(this IServiceCol
 }
 ```
 
-Moreover, you need to register the authentication middleware. To do so, call the `UseAuthentication` method within the `Configure` method in the *Startup.cs* file as shown below:
+Moreover, you must register the authentication middleware. To do so, call the `UseAuthentication` method within the `Configure` method in the *Startup.cs* file as shown below:
 
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

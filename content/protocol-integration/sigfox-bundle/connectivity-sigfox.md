@@ -62,6 +62,8 @@ To add another connection, click on Add Connection in the bottom left side of th
 
 If you wish to update the connection information for a particular connection, navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. Select the desired connection. Enter the connection information mentioned above and click **Save** to update the previous connection information
 
+WARNING: When the connection is updated, currently it is updated, without displaying the devices associated with the connection. 
+
 ###  Deleting an existing connection
 
 In order to delete an existing connection, go to the Administration and click **Connectivity** in the **Settings** menu and switch to the **Sigfox provider settings** tab.
@@ -71,4 +73,6 @@ Select the connection to be deleted. Click on the Delete button which is on the 
 There is a prompt that gives a warning regarding the deletion of the connection. Click on the link **Click to download a list with affected devices**, so that the devices present in the downloaded list can be re-registered to a different connection. For details on these information see the **Registering LoRa devices** section on how to register the device. 
 
 Then click on the **Delete** button in the prompt. Click on **Cancel** to cancel the deletion of connection. 
+
+WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.
 

@@ -39,6 +39,8 @@ In order to update your connection information for a particular connection, go t
 
 Select the connection for which the credentials need to be updated. Enter the new name, description, Actility ThingPark URL, profile ID, route application server ID, route application server key, username, and password as requested. For details on these information see [create-new-connection](#create-new-connection).
 
+WARNING: When the connection is updated, currently it is updated, without displaying the devices associated with the connection. 
+
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
 Click **Save**, the old connection information is now replaced with your new connection information.
@@ -52,6 +54,8 @@ Select the connection to be deleted. Click on the Delete button which is on the 
 There is a prompt that gives a warning regarding the deletion of the connection. Click on the link **Click to download a list with affected devices**, so that the devices present in the downloaded list can be re-registered to a different connection. For details on these information see the **Registering LoRa devices** section on how to register the device. 
 
 Then click on the **Delete** button in the prompt. Click on **Cancel** to cancel the deletion of connection. 
+
+WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection. 
 
 
 

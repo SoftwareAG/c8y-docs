@@ -18,8 +18,8 @@ Enter the following information:
 - **Description**: The description of the Actility connection being created. 
 - **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (for example Community or Enterprise edition). 
 - **Profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
-- **Route Application Server ID**: TLS security id between provider platform and agent. Application server id should be unique to route address. Leave empty to disable security.
-- **Route Application Server Key**: TLS security key between provider platform and agent. The value should be in hex and 16 bytes. Do not change application server key if Application server id is not updated. Leave empty to disable security.
+- **Route Application Server ID**: TLS security id between provider platform and agent. Application server id should be unique to route address. This is an optional field. Leave empty to disable security.
+- **Route Application Server Key**: TLS security key between provider platform and agent. The value should be in hex and 16 bytes. Do not change application server key if Application server id is not updated. This is an optional field. Leave empty to disable security.
 - **Username**: Your ThingPark account username.
 - **Password**: Your ThingPark account password.
 

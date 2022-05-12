@@ -42,7 +42,31 @@ A new section is defined by a markdown file with the following front matter:
 
 ```yaml
 ---
-title: My new section # add the section title
+title: My new section # add the section titlewkhtmltopdf \
+ --page-size A4 --margin-top 20mm --margin-bottom 20mm --margin-left 20mm --margin-right 20mm \
+ --title "Advanced Software Management microservice - Installation & operations guide" \
+ --header-html sms-gateway-pdf-page-header.html --header-line --header-spacing 3 --header-font-size 10 \
+ --footer-line --footer-spacing 3 --footer-left "[section]" --footer-right "Page [page] of [toPage]" --footer-font-size 8 \
+ --no-background \
+ --print-media-type \
+ --user-style-sheet ../style.css \
+ --javascript-delay 2000 \
+ --enable-local-file-access \
+ --dpi 300 \
+ cover sms-gateway-pdf-front-page.html \
+ ../pdf-copyright-page.html \
+ toc \
+ --xsl-style-sheet ../cumulocity-toc-style.xsl \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--purpose/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt-communication/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--requirements/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--installation/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--upgrade/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--configuration/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--logging/ \
+ http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--troubleshooting/ \
+ "Advanced Software Management microservice-Installation & operations guide-10.14.0-$(date +%Y-%m-%d).pdf"
+
 bundle: new-section # add the directory holding the section pages
 icon: "c8y-icon c8y-icon-tools" # use either fontawesome or c8y-icons
 type: root # don't change
@@ -55,7 +79,7 @@ Grab the icon classes in the [styleguide](http://styleguide.cumulocity.com/icons
 
 ### 2. Add the section root directory
 
-All guides are stored in the ```content``` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
+All guides are stored in the `content` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
 
 ### 3. Add a subsection
 
@@ -152,6 +176,80 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
 }```
 - Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
 - Deploy the `default` branch using the jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
+
+## Release switch
+
+When a new release version is added to the release dropdown menu on https://cumulocity.com/guides/ and replaces the standard URL, there are a couple of things to do.
+
+### Alter the deployment Python script
+
+Update the `blacklist` variable in the method `readProperties` in the [deployment Python script](https://github.softwareag.com/IOTA/c8y-jenkins-docker/blob/develop/hugo/docsRepoScanner.py) according to your intended changes.
+
+For example, when version 10.13.0 of the Cumulocity IoT documentation replaces 10.11.0 on the standard URL, thus deprecating version 10.7.0, the `blacklist` changes from:
+
+```python
+        blacklist = ["releasenotes", "10.4.6", "10.5.0", "10.5.7", "10.6.0", "10.6.6", "10.3.0", "10.14.0", "10.15.0"]
+```
+
+to:
+
+```python
+        blacklist = ["releasenotes", "10.4.6", "10.5.0", "10.5.7", "10.6.0", "10.6.6", "10.7.0", "10.14.0", "10.15.0"]
+```
+
+The change is actually two steps:
+
+* Version 10.7.0 is added to the `blacklist`, as it's no longer supposed to show up in the release dropdown
+* Version 10.13.0 is removed from the blacklist, as it is supposed to show up in the release drowdown from now on
+
+Merge this change to the develop branch of `c8y-jenkins-docker`, then run the [Jenkins job](https://jenkins.dev.c8y.io/view/C8Y-TOOLS/job/cumulocity-docker-images-rebuild/) to update the script.
+
+### (Optional) Add a preview banner
+
+If your new release is a preview version at first, add a preview banner by adding the following JavaScript snippet to `themes/c8y-docs/static/js/main.js` in the `.done` function of the `$.getJSON` statement, below the second `for`-loop and in the respective release branch:
+
+```javascript
+        if (true) {
+          offset = 45;
+          $('<div/>', {
+            id: 'preview-banner',
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #fff794; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+          }).prependTo('body');
+          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+          $('.main-top-bar').css('top', offset);
+          $('.main-nav.navbar').css('top', offset);
+          $('.dropdown.version').css('top', (offset + 10));
+        }
+```
+
+If you decide to remove the banner at a later time, it suffices to change the boolean value from `true` to `false`.
+
+### (Optional) Add a deprecation banner
+
+If you remove an old release branch from the release dropdown, you can add a deprecation banner that will show up when a user navigates to the old URL which remains on the server.
+
+To add the banner, add the following JavaScript snippet to `themes/c8y-docs/static/js/main.js` in the `.done` function of the `$.getJSON` statement, inside the scope of the `if`-statement `if (vs.indexOf(v) < 0)` and in the respective release branch:
+
+```javascript
+          offset = 45;
+
+          $('<div/>', {
+            id: 'deprecation-banner',
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff9301; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+          }).prependTo('body');
+
+          backURL = prefix + suffix;
+
+          $('<p style="text-align: center; vertical-align: center;">This documentation refers to a Cumulocity IoT release that is no longer maintained (version ' + v + '). Click <a href="' + backURL + '">here</a> to switch to the latest version.</p>').appendTo('#deprecation-banner');
+
+          $('.main-top-bar').css('top', offset);
+          $('.main-nav.navbar').css('top', offset);
+```
+
+### Change the baseURL fields
+
+Set the `baseURL` field inside your `config.toml` file of your new branch which will be the standard URL to `"https://cumulocity.com/guides"`.
+In the branch that was previously the standard URL, set the this field to `"https://cumulocity.com/guides/[RELEASE_NUMBER]"`.
 
 ---
 © Cumulocity GmbH  2019 + All rights reserved.

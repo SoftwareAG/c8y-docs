@@ -42,31 +42,7 @@ A new section is defined by a markdown file with the following front matter:
 
 ```yaml
 ---
-title: My new section # add the section titlewkhtmltopdf \
- --page-size A4 --margin-top 20mm --margin-bottom 20mm --margin-left 20mm --margin-right 20mm \
- --title "Advanced Software Management microservice - Installation & operations guide" \
- --header-html sms-gateway-pdf-page-header.html --header-line --header-spacing 3 --header-font-size 10 \
- --footer-line --footer-spacing 3 --footer-left "[section]" --footer-right "Page [page] of [toPage]" --footer-font-size 8 \
- --no-background \
- --print-media-type \
- --user-style-sheet ../style.css \
- --javascript-delay 2000 \
- --enable-local-file-access \
- --dpi 300 \
- cover sms-gateway-pdf-front-page.html \
- ../pdf-copyright-page.html \
- toc \
- --xsl-style-sheet ../cumulocity-toc-style.xsl \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--purpose/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt-communication/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--requirements/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--installation/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--upgrade/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--configuration/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--logging/ \
- http://localhost:1313/guides/advanced-software-mgmt/advanced-software-mgmt--troubleshooting/ \
- "Advanced Software Management microservice-Installation & operations guide-10.14.0-$(date +%Y-%m-%d).pdf"
-
+title: My new section # add the section title
 bundle: new-section # add the directory holding the section pages
 icon: "c8y-icon c8y-icon-tools" # use either fontawesome or c8y-icons
 type: root # don't change

@@ -140,39 +140,68 @@ The following types are available:
 
 <a name="target-assets"></a>
 
-### Asset selection
+### To select an asset
 
-The asset selector allow for selection of groups and devices. The following image shows the view when an asset has already been selected. To select another asset, click "Change".
+There are two options for selecting an asset of a widget:
+
+1. through editing an existing widget,
+2. by adding a new widget.
+
+#### To add an asset to an existing widget
+To select an asset of an existing widget follow the steps below:
+
+1. Select the widget in the respective folder in the **Groups** menu in the Cockpit application.
+2. Click the cogwheel icon at the top right corner of the widget and select **Edit** from the context menu.
+3. In the following window you can now select an asset via the drop-down menu "Asset selection" on the left.
+
+The following image you see the dialogue window with an asset already being selected. To select another asset, click "Change".
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
-**Selecting assets**
+You have now selected an asset for an existing widget.
 
-To select assets simply click on the desired asset. 
+#### To add an asset to a new widget
+Another option of selection an asset is through adding a new widget. See [To add a widget to a dashboard or a report](#adding-widgets) on how to add a new widget.
+In the **Configuration** tab of the **Add widget** window, select an asset via the drop-down menu "Asset selection" on the left.
 
-If the asset is a group or a device with children, indicated by the chevron as shown in the image below, selection is only possible when clicking on the radio button. Clicking on the name of the group or device will open a new column displaying all assigned assets to that group/device. To return to previous level, simply click on the back chevron.
+You have now selected an asset for a new widget.
+
+#### To select groups or devices with children as asset
+
+If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device in the list to open a new column displaying all assigned assets to that group or device. To return to previous level, simply click on the back chevron.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
-Unassigned devices can be found in the "Unassigned Devices" node, located on the root level. 
+Unassigned devices can be found in the "Unassigned Devices" node, located on the root level of the selected group.
 
- **Info:** The "Unassigned Devices" node cannot be selected, but all devices inside the node are selectable.
+ **Info:** You cannot select the "Unassigned Devices", but all devices inside the node can be selected in the .
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
-**Searching for assets**
+### To search for assets
 
-There are two methods which can be used to quickly find assets. Global search and column filtering.
+There are two methods which can be used to quickly find assets:
 
-1. The global search will find assets in the whole hierarchy, but requires exact matches, e.g. the whole name of the asset.
+1. Global search, and
+2. column filtering.
+
+#### Global search of assets
+
+The global search finds assets in the whole hierarchy, but requires exact matches, for example, the whole name of the asset.
+There are two ways of searching for an asset via the global search:
+
+1. Through the **Add widget** button, and
+2. by selecting and editing a device.
+
+
 
 ![Global search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
-When selected the root view will be changed to that asset. To return to the global root view, simply click on "X" in the search field.
+Select the desired asset to change the root view to that asset (see image below). To return to the global root view, click the "X" in the search field.
 
 ![Global search clear](/images/users-guide/cockpit/cockpit-asset-clear-search.png)
 
-> **Info:** The global search is only available when there is no asset context. E.g. in the "Home" dashboard.
+> **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
 
 2. Column filtering is another way to find devices, but it only filters assets on the current level.
 

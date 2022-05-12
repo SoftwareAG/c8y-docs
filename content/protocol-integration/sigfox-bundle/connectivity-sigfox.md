@@ -37,14 +37,16 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. 
 
-The **Connectivity** tab facilitates the creation of multiple Sigfox connections for use by different devices or switching between connections in a particular device. 
+The **Connectivity** tab facilitates the creation/editing/deletion/updation of multiple Sigfox connections for use by different devices
 
 The following information must be provided in order to create a connection:
 
+- **Name**: The name of the Sigfox connection being created. 
+- **Description**: The description of the Sigfox connection being created. 
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
 - **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, "https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info".
-- **Base URL:** This is the URL associated with the Sigfox Cloud account
+- **Base URL:** This is the URL that points to the Sigfox Cloud account
 
 > **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
 
@@ -54,11 +56,11 @@ The following information must be provided in order to create a connection:
 
 Click **Save** to save your settings. If everything is correct, a message "Credentials successfully saved" will be displayed.
 
-To add another connection, click on Add Connection in the bottom left side of the screen and then follow the steps mentioned above to create the connection.
+To add another connection, click on Add Connection in the bottom left side of the screen and then follow the steps mentioned above to create the new connection.
 
-### Replacing credentials for a particular connection
+### Updating connection information for an existing connection
 
-If you wish to overwrite your previous credentials for a particular connection, Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. Select the desired connection. Enter the connection information mentioned above and click **Save** to overwrite the previous credentials
+If you wish to update the connection information for a particular connection, navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. Select the desired connection. Enter the connection information mentioned above and click **Save** to update the previous connection information
 
 ###  Deleting an existing connection
 

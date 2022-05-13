@@ -6,4 +6,5 @@ collection: 'reference/smartrest-two'
 toc: true
 aliases:
   - /device-sdk/mqtt
+  - /reference/smartrest
 ---

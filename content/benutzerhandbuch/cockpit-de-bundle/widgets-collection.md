@@ -451,7 +451,7 @@ Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle
 
 >**Info:** Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
 
-
+<a name="pie-chart"></a>
 ### Kuchendiagramm
 
 Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.

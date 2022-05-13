@@ -260,6 +260,7 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 
 > **Wichtig:** Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Änderung von Einstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
 
+
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu
 
 1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen.

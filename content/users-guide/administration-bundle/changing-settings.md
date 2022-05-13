@@ -53,7 +53,7 @@ In the field **Password validity limit**, you can limit the validity of user pas
 
 >**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#to-change-your-password).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#change-password).
 
 >**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 
@@ -179,6 +179,7 @@ Click **Save TFA settings** to apply your settings.
 
 >**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 
+<a name="configuring-single-sign-on"></a>
 ### Configuring single sign-on
 
 {{< product-c8y-iot >}} provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
@@ -207,6 +208,7 @@ Click the **Single sign-on** tab in the **Authentication** page.
 
 At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
+<a name="custom-template"></a>
 ##### Custom template
 
 ![Request configuration](/images/users-guide/Administration/admin-sso-1.png)
@@ -287,7 +289,7 @@ By default, dynamic access mapping assigns user roles, based on the access token
 
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-dynamic-access-mapping.png)
 
-When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#assigning-global-roles) in the *User guide*.
+When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 

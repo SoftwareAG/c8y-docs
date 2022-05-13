@@ -327,7 +327,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 |Abonnierte Anwendungen | 9, 17 und EOD|
 |Microservice-Ressourcen | 9, 17 und EOD|
 
-<a name="Lifecycle"></a>
+<a name="lifecycle"></a>
 ### Lebenszyklus
 
 **Mandant**

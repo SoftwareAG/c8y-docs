@@ -37,7 +37,7 @@ Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benu
 
 >**Info:** Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#to-change-your-password) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password) beschrieben.
 
 >**Info:** Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert wurde.
 
@@ -163,6 +163,7 @@ Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speich
 
 >**Info:** Benutzer mit der Rolle "devices" sind von TFA und TOTP ausgeschlossen. Dies gilt auch dann, wenn TOTP für alle Benutzer erzwungen wird.
 
+<a name="configuring-single-sign-on"></a>
 ### Konfigurieren von Single Sign-On
 
 {{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
@@ -191,6 +192,7 @@ Klicken Sie auf die Registerkarte **Single-Sign-On** auf der Seite **Authentifiz
 
 Links oben können Sie eine Vorlage auswählen. Diese wirkt sich auf das Layout der Seite aus. Die Standardvorlage "Benutzerdefiniert" ermöglicht eine sehr detaillierte Konfiguration mit nahezu jedem Autorisierungsserver, der die Vergabe von OAuth2-Autorisierungscodes unterstützt. Andere Vorlagen bieten vereinfachte Ansichten bekannter und unterstützter Autorisierungsserver. Im Folgenden wird erklärt, wie Sie die benutzerdefinierte Vorlage verwenden, sowie eine Vorlage für das Azure Active Directory vorgestellt.
 
+<a name="custom-template"></a>
 ##### Benutzerdefinierte Vorlage
 
 ![Request configuration](/images/benutzerhandbuch/Administration/admin-sso-1.png)
@@ -271,7 +273,7 @@ Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardm
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-dynamic-access-mapping.png)
 
-Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#assigning-global-roles) im *User Guide*.
+Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 

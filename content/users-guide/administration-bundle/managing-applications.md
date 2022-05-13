@@ -15,7 +15,7 @@ helpcontent:
     Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
 ---
 
-The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](concepts/applications/#overview) in the *Concepts guide*..
+The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications/) in the *Concepts guide*.
 
 * [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
 

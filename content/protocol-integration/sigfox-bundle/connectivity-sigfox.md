@@ -37,7 +37,7 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. 
 
-The **Connectivity** tab facilitates the creation/editing/deletion/updation of multiple Sigfox connections for use by different devices
+The **Connectivity** tab facilitates the creation/editing/deletion/updation of multiple Sigfox connections.
 
 The following information must be provided in order to create a connection:
 
@@ -54,25 +54,21 @@ The following information must be provided in order to create a connection:
 
 ![API access page](/images/device-protocols/sigfox/sigfox-connectivity.png)
 
-Click **Save** to save your settings. If everything is correct, a message "Credentials successfully saved" will be displayed.
+Click **Save**. If you have entered the correct information, a message "Credentials successfully saved" will be displayed.
 
-To add another connection, click on Add Connection in the bottom left side of the screen and then follow the steps mentioned above to create the new connection.
+To add another connection, click on **Add Connection** and then follow the above steps.
 
-### Updating connection information for an existing connection
+### Updating existing connection
 
-If you wish to update the connection information for a particular connection, navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. Select the desired connection. Enter the connection information mentioned above and click **Save** to update the previous connection information
+Select the existing connection and update the required fields and Save the connection.
 
 WARNING: When the connection is updated, currently it is updated, without displaying the devices associated with the connection. 
 
 ###  Deleting an existing connection
 
-In order to delete an existing connection, go to the Administration and click **Connectivity** in the **Settings** menu and switch to the **Sigfox provider settings** tab.
+Select the connection to be deleted and click on the Delete button. 
 
-Select the connection to be deleted. Click on the Delete button which is on the right of connection at the bottom. 
+A warning message appears if there are devices associated with the selected connection with the link **Click to download a list with affected devices**. Clicking on the link downloads a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
 
-There is a prompt that gives a warning regarding the deletion of the connection. Click on the link **Click to download a list with affected devices**, so that the devices present in the downloaded list can be re-registered to a different connection. For details on these information see the **Registering LoRa devices** section on how to register the device. 
-
-Then click on the **Delete** button in the prompt. Click on **Cancel** to cancel the deletion of connection. 
-
-WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.
+WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection. 
 

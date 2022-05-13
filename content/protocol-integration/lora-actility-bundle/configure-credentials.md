@@ -6,11 +6,11 @@ layout: redirect
 
 
 
-Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. In order to create a new connection or edit an existing connection, navigate to the Administration application and select **Connectivity** in the **Settings** menu in the navigator. The **Connectivity** tab facilitates the creation/editing/deletion/updation of multiple Actility connections for use by different devices
+Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. The **Connectivity** tab in the **Settings** menu of the **Administration** application facilitates the creation/editing/deletion/updation of multiple Actility connections.
 
 ### <a name="create-new-connection">Creating a new connection</a>
 
-If you select **Connectivity** for the first time, you are asked to create a connection. Click on Add Connection in the bottom left side of the screen. 
+If you select **Connectivity** for the first time, you are asked to create a connection. Click on **Add Connection**. 
 
 Enter the following information:
 
@@ -23,37 +23,29 @@ Enter the following information:
 - **Username**: Your ThingPark account username.
 - **Password**: Your ThingPark account password.
 
-Do not use the same ThingPark login (username and password) for other tenants.
+Note: Do not use the same ThingPark login (username and password) for other tenants.
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials for a particular connection. 
 
 ![Setting provider credentials](/images/device-protocols/lora-actility/lora-admin-settings.png)
 
 Click **Save**. If you have entered the correct information, you see the message "Connection created".
 
-To add another connection, click on Add Connection in the bottom left side of the screen and then follow the steps mentioned above to create the new connection. 
+To add another connection, click on **Add Connection** and then follow the above steps. 
 
 <a name="update-credentials-in-a-connection"></a>
-### Updating connection information for an existing connection
+### Updating existing connection
 
-In order to update your connection information for a particular connection, go to Administration and click **Connectivity** in the **Settings** menu.
-
-Select the connection for which the credentials need to be updated. Enter the new name, description, Actility ThingPark URL, profile ID, route application server ID, route application server key, username, and password as requested. For details on these information see [create-new-connection](#create-new-connection).
+Select the existing connection and update the required fields and Save the connection.
 
 WARNING: When the connection is updated, currently it is updated, without displaying the devices associated with the connection. 
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
-Click **Save**, the old connection information is now replaced with your new connection information.
-
 ### <a name="delete-connection">Deleting an existing connection</a>
 
-In order to delete an existing connection, go to Administration and click **Connectivity** in the **Settings** menu.
+Select the connection to be deleted and click on the Delete button. 
 
-Select the connection to be deleted. Click on the Delete button which is on the right of connection at the bottom. 
-
-There is a prompt that gives a warning regarding the deletion of the connection. Click on the link **Click to download a list with affected devices**, so that the devices present in the downloaded list can be re-registered to a different connection. For details on these information see the **Registering LoRa devices** section on how to register the device. 
-
-Then click on the **Delete** button in the prompt. Click on **Cancel** to cancel the deletion of connection. 
+A warning message appears if there are devices associated with the selected connection with the link **Click to download a list with affected devices**. Clicking on the link downloads a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
 
 WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection. 
 

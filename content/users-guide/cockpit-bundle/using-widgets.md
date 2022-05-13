@@ -23,7 +23,7 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
-	>**Info:** The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used. 
+	>**Info:** The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
 
 5. Click **Save** to add the widget to the dashboard or report.
 
@@ -47,3 +47,81 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
 >**Info:** On touch devices like smartphones or tablets some functions may not be supported.
+
+<a name="target-assets"></a>
+### To select an asset for a widget
+
+There are two options for selecting an asset of a widget:
+
+1. through editing an existing widget,
+2. by adding a new widget.
+
+The following section describes how [to add an asset](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
+
+<a name="add-asset"></a>
+#### To add an asset to an existing widget
+To select an asset of an existing widget follow the steps below:
+
+1. Select the widget in the respective folder in the **Groups** menu in the Cockpit application.
+2. Click the cogwheel icon at the top right corner of the widget and select **Edit** from the context menu.
+3. In the following window you can now select an asset via the drop-down menu "Asset selection" on the left.
+
+The following image you see the dialogue window with an asset already being selected. To select another asset, click "Change".
+
+![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
+
+You have now selected an asset for an existing widget.
+
+<a name="asset-new-widget"></a>
+#### To add an asset to a new widget
+Another option of selection an asset is through adding a new widget. See [To add a widget to a dashboard or a report](#adding-widgets) on how to add a new widget.
+In the **Configuration** tab of the **Add widget** window, select an asset via the drop-down menu "Asset selection" on the left.
+
+You have now selected an asset for a new widget.
+
+<a name="asset-groups"></a>
+### To select groups or devices with children as asset
+
+If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assigned assets to that group or device. To return to previous level, simply click on the back chevron. Click the desired device to select it as an asset.
+
+![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
+
+If you want to select an unassigned device as an asset, unassigned devices can be found in the **Unassigned Devices** node, located on the root level of the selected group.
+
+>**Info:** You cannot select the **Unassigned Devices**. However, all devices inside this node can be selected on the next column level. Click **Unassigned Devices** to open the column with all unassigned devices. Click the desired device to select it.
+
+![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
+
+<a name="asset-search"></a>
+### To search and filter for assets
+
+There are two methods which can be used to quickly find assets:
+
+1. General search, and
+2. column filtering.
+
+<a name="general-search"></a>
+#### General search
+
+Through the general search you can find assets in the whole hierarchy, but requires exact matches, for example, the whole name of the asset.
+There are two ways of searching for an asset via the global search:
+
+1. Through the **Add widget** button, and
+2. by selecting and editing widget.
+
+Whether you choose to add a new widget or to edit an existing widget, the process opens a dialogue window for editing the widget. Here you can find the
+
+![General search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
+
+Select the desired asset to change the root view to that asset (see image below). To return to the global root view, click the "X" in the search field.
+
+![General search clear](/images/users-guide/cockpit/cockpit-asset-clear-search.png)
+
+> **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
+
+<a name="column-filter-asset"></a>
+#### Column filtering
+
+Column filtering is another way to find devices. However, it only filters assets on the current level in the asset selector.
+
+![Column filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)

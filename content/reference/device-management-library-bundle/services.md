@@ -24,7 +24,6 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 
 ```json
 {
-  "id": "123",
   "name": "MongoDB",
   "type": "c8y_Service",
   "serviceType": "systemd",
@@ -32,16 +31,18 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 }
 ```
 
-| Field | Mandatory | Details |
-| ----  | ---- | ---- |
-|id    | Yes | The service unique id|
-|name  |Yes |Name of the service|
-|serviceType  | Yes | An arbitrary string for organizing services|
-|status  |Yes | 'up', 'down', 'unknown' or any custom service status|
+| Field       | Mandatory | Details |
+| ----        | ----      | ----    |
+|name         | Yes       | Name of the service |
+|type         | Yes       | Type of the managed object, must always be 'c8y_Service'|
+|serviceType  | Yes       | An arbitrary string for organizing services|
+|status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Or using SmartREST static template 102, which takes all above parameters as a list:
+Or using SmartREST static template 102. The second parameter - the unique ID does not reference the internal numeric ID
+but a string based external ID which is defined by the device not by the platform. We recommend prefixing the unique ID
+with a device specific prefix to avoid clashes with other devices running the same service:
 
-`102,123,systemd,MongoDb,up`
+`102,myDevice_MongoDb,systemd,MongoDb,up`
 
 #### Updating the status of a service
 
@@ -60,8 +61,8 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 ```
 
 | Field | Mandatory | Details |
-| ----  | ---- | ---- |
-|status  |Yes | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
+| ----  | ----      | ----    |
+|status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
 Or using SmartREST static template 104:
 
@@ -69,7 +70,7 @@ Or using SmartREST static template 104:
 
 #### Sending service data
 
-Inventory REST API:
+Measurement REST API:
 
 ```http
 POST /device/<serviceId>/measurements
@@ -83,18 +84,18 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
     "id": "123"
   },
   "time": "2020-03-19T12:03:27.845Z",
-  "type": "c8y_TemperatureMeasurement",
-  "c8y_Steam": {
-    "Temperature": {
-      "unit": "C",
+  "type": "c8y_Memory",
+  "c8y_Memory": {
+    "allocated": {
+      "unit": "MB",
       "value": 100
     }
   }
 }
 ```
 
-Or using SmartREST static template 104 sent to topic `s/us/<serviceUniqueId>`:
+Or using SmartREST static template 200 sent to topic `s/us/<serviceUniqueId>`:
 
-`200,c8y_Steam,C,100`
+`200,c8y_Memory,allocated,100,MB`
 
 Similarly to measurements, alarms and events associated with the service can also be sent.

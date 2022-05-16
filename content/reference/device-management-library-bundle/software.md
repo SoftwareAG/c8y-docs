@@ -1,16 +1,16 @@
 ---
-weight: 170
-title: Software
-layout: redirect
+weight: 170 title: Software layout: redirect
 ---
 
-The **Software** tab allows you to install and uninstall a set of software files for a device.
-The files can be located using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository.
-Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
+The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located
+using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully
+responsible for their local installation, management, and uninstall procedures and any kind of error handling during the
+operation.
 
-The **Device details** page shows a **Software** tab for devices that announce `c8y_SoftwareList` and/or `c8y_SoftwareUpdate` in their `c8y_SupportedOperations` fragment in their device managed objects.
-It also shows a **Services** tab for devices that have at least one software service running.
-The service can have measurements, alarms and events assigned.
+The **Device details** page shows a **Software** tab for devices that announce `c8y_SoftwareList`
+and/or `c8y_SoftwareUpdate` in their `c8y_SupportedOperations` fragment in their device managed objects. It also shows
+a **Services** tab for devices that have at least one software service running. The service can have measurements,
+alarms and events assigned.
 
 ### Installed software
 
@@ -195,31 +195,19 @@ additions. To facilitate the management of them, the Advanced Software Managemen
 default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices)
 was introduced.
 
-An example managed object for a device that supports advanced software management and contain a single software package:
+Devices may indicate their support for Advanced Software Management by including the ```c8y_SoftwareUpdate``` operation
+in their ```c8y_SupportedOperations``` fragment and additionally listing their supported software types in
+the ```c8y_SupportedSoftwareTypes``` fragment.
 
 ```json
 {
-  "owner": "service_advanced-software-mgmt",
-  "childAdditions": {
-    "references": [
-      {
-        "managedObject": {
-          "name": "Software Name",
-          "self": "http://t789864.latest.stage.c8y.io/inventory/managedObjects/123",
-          "id": "123"
-        },
-        "self": "http://t789864.latest.stage.c8y.io/inventory/managedObjects/321/childAdditions/123"
-      }
-    ],
-    "name": "Device Name",
-    "self": "http://t789864.latest.stage.c8y.io/inventory/managedObjects/127947",
-    "id": "321",
-    "c8y_IsDevice": {},
-    "c8y_SupportedOperations": [
-      "c8y_SoftwareList"
-    ],
-    "c8y_SupportedSoftwareTypes": {}
-  }
+  "c8y_SupportedOperations": [
+    "c8y_SoftwareUpdate"
+  ],
+  "c8y_SupportedSoftwareTypes": [
+    "type_a",
+    "type_b"
+  ]
 }
 ```
 
@@ -243,7 +231,7 @@ detect the software package.
 Querying, adding and removing software packages can be done with the microservice REST endpoints or using SmartREST
 static templates.
 
-Querying the software packages:
+#### Querying the software packages:
 
 ```http
 GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
@@ -282,9 +270,12 @@ GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
 | type            | No        | Filter parameter for the software type |
 | pageSize        | No        | The number of items on the page of the paginated result, between 1 and 2000 |
 | currentPage     | No        | The current page of the paginated result |
-| withTotalPages  | No | When set to `true`, the returned result will contain the total number of the pages in the statistics object |
+| withTotalPages  | No        | When set to `true`, the returned result will contain the total number of the pages in the statistics object |
 
-Setting software packages:
+#### Setting software packages
+
+Advanced Software Management allows devices to set their installed software, similarly to legacy software management. In
+this case any software communicated to the platform before is overwritten entirely with then new packages.
 
 ```http
 POST /service/advanced-software-mgmt/software?deviceId=<deviceId>
@@ -307,12 +298,17 @@ POST /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-You can also use the SmartREST static template 140 instead. It takes a list of software packages of dynamic length,
+##### SmartREST example
+
+Devices may also use the SmartREST static template 140 instead. It takes a list of software packages of dynamic length,
 where each package is represented by its name, version, software type and URL:
 
 `140,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
 
-Adding software packages:
+#### Adding software packages
+
+With Advanced Software Management devices may also append packages to their installed software without having to
+announce the entire list.
 
 ```http
 PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
@@ -335,12 +331,17 @@ PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-You can also use the SmartREST static template 141 instead. Similarly, it takes a list of software packages of dynamic
-length, where each package is represented by its name, version, software type and URL:
+##### SmartREST example
+
+Devices also use the SmartREST static template 141 instead. Similarly to 140, it takes a list of software packages of
+dynamic
 
 `141,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
 
-Removing software packages by name and version using Advanced Software Management microservice:
+#### Removing software
+
+In order to complete partial updates of installed software Advanced Software Management offers an interface to remove
+individual packages from a device's installed software.
 
 ```http
 DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
@@ -359,8 +360,10 @@ DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-You can also use the SmartREST static template 142 instead.
-It takes a list of software packages of dynamic length, where each package is represented by its name and version, as URL and software type are not used to identify a package:
+##### SmartREST example
+
+Devices may also use the SmartREST static template 142 instead. It takes a list of software packages of dynamic length,
+where each package is represented by its name and version, as URL and software type are not used to identify a package:
 
 `142,software_a,3.0.0,software_b,2.0.0`
 
@@ -371,69 +374,11 @@ the operations: `c8y_SoftwareUpdate` or `c8y_SoftwareList`, depending on which a
 in `c8y_SupportedOperations` fragment. The only difference is that now software type property is required for software
 packages.
 
-##### Software list
-
-If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_SupportedOperations``` fragment does not
-contain ```c8y_SoftwareUpdate```, a ```c8y_SoftwareList``` operation is sent to the device. The ```c8y_SoftwareList```
-operation always contains the entire list of software that should be installed on the device. Exactly the packages in
-the list should be installed. Any installed packages not contained in the list should be removed.
-
-```json
-{
-  "c8y_SoftwareList": [
-    {
-      "name": "software_a",
-      "version": "4.0.0",
-      "url": "http://example.com/software_a",
-      "softwareType": "type A"
-    },
-    {
-      "name": "software_b",
-      "version": "3.0.0",
-      "url": "http://example.com/software_b",
-      "softwareType": "type B"
-    }
-  ]
-}
-```
-
-| Field | DataType | Mandatory | Details |
-| ---- | ---- | ---- | ---- |
-| name | string | Yes | Name of the software|
-| version | string | Yes | A version identifier of the software|
-| url | string | Yes | A URL pointing to the location where the software file should be downloaded from|
-| softwareType | string| Yes | An arbitrary string for organizing software artifacts|
-
-The device is expected to perform the following actions:
-
-1. Set operation status to EXECUTING
-2. Uninstall software that should be uninstalled
-3. Install software that should be installed
-4. Update the software list in the device’s own managed object
-5. Set operation status to SUCCESSFUL
-
-If the desired state cannot be achieved for any reason the operation should be concluded with status FAILED.
-
-**SmartREST example**
-
-The 516 static response template is available for dealing with software list operations.
-
-1. Receive ```c8y_SoftwareList``` operation <br>
-   `516,deviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,software_b,3.0.0,"type B",http://example.com/software_b`
-2. Set operation status to EXECUTING <br>
-   `501,c8y_SoftwareList`
-3. Uninstall and install software
-4. Remove from the inventory uninstalled software packages <br>
-   `142,software_c,5.0.0,software_d,6.0.0`
-5. Add to the inventory installed software packages <br>
-   `141,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
-6. Set operation status to SUCCESSFUL <br>
-   `503,c8y_SoftwareList`
-
 ##### Software update
 
-The `c8y_SoftwareUpdate` operation contains a partial list and each list element contains an additional instruction
-whether the package should be installed or uninstalled.
+The `c8y_SoftwareUpdate` operation contains also partial list of software packages, each with an instruction whether it
+should be installed or uninstalled. This is very similar to legacy software management, however an additional parameter
+indicating the software type of each package is also included.
 
 ```json
 {
@@ -449,7 +394,7 @@ whether the package should be installed or uninstalled.
       "name": "software_b",
       "version": "3.0.0",
       "url": "http://example.com/software_b",
-      "softwareType": "type B"
+      "softwareType": "type B",
       "action": "delete"
     }
   ]
@@ -473,10 +418,11 @@ The device is expected to perform the following actions:
 
 **SmartREST example**
 
-The 528 static response template is available for dealing with software update operations:
+The 529 static response template is available for dealing with software update operations for devices that support
+Advanced Software Management:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `528,deviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
+   `529,deviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareUpdate`
 3. Uninstall and install software

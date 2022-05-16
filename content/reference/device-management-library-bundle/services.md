@@ -64,7 +64,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 | ----  | ----      | ----    |
 |status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
-Or using SmartREST static template 104:
+Or using SmartREST static template 104 (remember to target the service in the MQTT topic using its unique ID):
 
 `104,down`
 

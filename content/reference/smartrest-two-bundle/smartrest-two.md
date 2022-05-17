@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
+Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 

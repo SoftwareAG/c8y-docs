@@ -16,7 +16,7 @@ helpcontent:
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
->**Info:** Smart rules are only visible, if the tenant is subscribed to the Smartrule application. To manage smart rules, the user must have CREATE permission for Inventory and either "Smartrule" permission or "CEP management" permission.
+>**Info:** The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
 
 Smart rules are parameterized. There are two sources for parameters:
 

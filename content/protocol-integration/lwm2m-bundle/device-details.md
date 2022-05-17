@@ -4,7 +4,9 @@ title: LWM2M device details
 layout: redirect
 ---
 
->**Info:** In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
+{{< c8y-admon-info >}}
+In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
+{{< /c8y-admon-info >}}
 
 <a name="objects"></a>
 ### Objects
@@ -13,7 +15,9 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 
 ![Objects view](/images/device-protocols/lwm2m/lwm2m-objects.png)
 
-> **Info:** In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
+{{< c8y-admon-info >}}
+In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
+{{< /c8y-admon-info >}}
 
 The following operations may be available in each instance:
 
@@ -28,7 +32,9 @@ The following operations may be available in each instance:
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
-> **Info:**  Some instances do not have all of the listed operations.
+{{< c8y-admon-info >}}
+Some instances do not have all of the listed operations.
+{{< /c8y-admon-info >}}
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation without parameters, click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
@@ -61,7 +67,9 @@ Click **Audit configuration** in the right of the top menu bar to navigate to th
 
 To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
 
-> **Info:** The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
+{{< c8y-admon-info >}}
+The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
+{{< /c8y-admon-info >}}
 
 ![Sync properties](/images/device-protocols/lwm2m/lwm2m-devices-sync.png)
 
@@ -72,7 +80,9 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 
 ![Bootstrap customization](/images/device-protocols/lwm2m/lwm2m-devices-bootstrap.png)
 
-> **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
+{{< c8y-admon-important >}}
+Currently only the "NO_SEC" and "PSK" security modes are supported.
+{{< /c8y-admon-important >}}
 
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register-device).
 

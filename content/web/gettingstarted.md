@@ -16,7 +16,9 @@ Next, bootstrap a new blank application with the `new` command:
 $ c8ycli new myApp
 ```
 
-> **Info:** When you want to see the possibilities and implementation details of the Web SDK you should try the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial`.
+{{< c8y-admon-info >}}
+When you want to see the possibilities and implementation details of the Web SDK you should try the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial`.
+{{< /c8y-admon-info >}}
 
 Once the CLI installation is completed, change to the newly created folder and run `npm install`:
 
@@ -41,9 +43,13 @@ If you point your browser to `http://localhost:9000/apps/myapp/` you will get a 
 
 After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/libraries/#application). If you want to build and deploy your application read more about the necessary commands of the [c8y command line tool](/web/development-tools/#c8y-cli).
 
-> **Info**: If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
+{{< c8y-admon-info >}}
+If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
+{{< /c8y-admon-info >}}
 
-> **Info**: You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
+{{< c8y-admon-info >}}
+You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
+{{< /c8y-admon-info >}}
 
 ### First route & component
 

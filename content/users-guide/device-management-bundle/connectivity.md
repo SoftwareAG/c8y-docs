@@ -49,7 +49,9 @@ The following sections describe:
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
 
->**Info:** In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+{{< c8y-admon-info >}}
+In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+{{< /c8y-admon-info >}}
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page.
 Your API license key and the API server URL are displayed on the top left.
@@ -123,7 +125,9 @@ In the **Connectivity** tab you will find the following sections:
 
 ![Connectivity tab](/images/users-guide/connectivity/connectivity-tab.png)
 
->**Info:** Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
+{{< c8y-admon-info >}}
+Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
+{{< /c8y-admon-info >}}
 
 The **Status** section lists summary information for the SIM card.
 

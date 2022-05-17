@@ -28,7 +28,9 @@ sudo apt install libmodbus-dev lua-socket
 sudo apt install lua-socket
 ```
 
-> **Info:** The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.
+{{< c8y-admon-info >}}
+The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.
+{{< /c8y-admon-info >}}
 
 Make sure that the following libraries (-dev version) are installed.
 
@@ -104,7 +106,9 @@ The agent software requires the [{{< product-c8y-iot >}} C++ SDK](https://github
     LDLIBS:=$(shell pkg-config --libs libcurl lua5.3)
     ```
 
-    > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
+    {{< c8y-admon-info >}}
+This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
+    {{< /c8y-admon-info >}}
 
     If you don't know which liblua version has already been installed on your device, you can find the version which you need to add to your _init.mk_ by:
 

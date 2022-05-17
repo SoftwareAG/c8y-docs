@@ -88,9 +88,11 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router a
 
 * Make sure to turn off all serial port related functionalities on the router, such as PADD and Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
-> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
->
->Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+{{< c8y-admon-info >}}
+The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
+
+Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+{{< /c8y-admon-info >}}
 
 Then:
 

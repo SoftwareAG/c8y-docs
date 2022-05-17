@@ -24,9 +24,13 @@ Python can be downloaded from [www.python.org](https://www.python.org/).
 ```shell
 $ pip install paho-mqtt
 ```
-> **Info**: The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html) to install it only for this example.
+{{< c8y-admon-info >}}
+The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html) to install it only for this example.
+{{< /c8y-admon-info >}}
 
-> **Info**: On macOS you may need to execute `sudo easy_install pip` in case the `pip` command is not found.
+{{< c8y-admon-info >}}
+On macOS you may need to execute `sudo easy_install pip` in case the `pip` command is not found.
+{{< /c8y-admon-info >}}
 
 ### Developing the "Hello, MQTT world!" client
 

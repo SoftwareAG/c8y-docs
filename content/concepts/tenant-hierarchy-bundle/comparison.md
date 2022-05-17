@@ -16,7 +16,9 @@ This will leave you with two options to organize your customers. You can either 
 
 In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better. {{< product-c8y-iot >}} is designed to manage tenants using the tenant hierarchy. As a result, some aspects that must be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
 
->**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
+{{< c8y-admon-info >}}
+Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
+{{< /c8y-admon-info >}}
 
 ### General setup
 
@@ -30,8 +32,9 @@ Handling everything in a single tenant usually starts by creating an asset hiera
 
 Creating a tenant for each customer will separate your customers at the tenant level. Your customers will get access to their tenants only and can work in this tenant the same way you do in yours (with whatever specific access you want to grant them). In the use cases we will assume that the customer is the admin of his tenant and therefore has full access.
 
->**Info:** The customer tenant is not different from your tenant unless you restrict your customer from certain functionality explicitly.
->
+{{< c8y-admon-info >}}
+The customer tenant is not different from your tenant unless you restrict your customer from certain functionality explicitly.
+{{< /c8y-admon-info >}}
 
 ### Comparison of various use cases
 

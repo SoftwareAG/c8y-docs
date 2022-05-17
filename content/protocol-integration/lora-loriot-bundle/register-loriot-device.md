@@ -12,7 +12,9 @@ LORIOT Network Server forwards two types of messages to the Loriot agent: "rx" (
 The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in {{< product-c8y-iot >}}, because most of the information matches with "gw" message whereas "gw" message also carries
 all gateway information.
 
->**Info:** You must enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Configuring the Loriot agent endpoint credentials](#configure-loriot-credentials).
+{{< c8y-admon-info >}}
+You must enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Configuring the Loriot agent endpoint credentials](#configure-loriot-credentials).
+{{< /c8y-admon-info >}}
 
 In the below Loriot LoRa device message `gws` represents a list of gateways involved in the network.
 

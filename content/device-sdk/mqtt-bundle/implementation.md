@@ -17,12 +17,16 @@ Available ports:
 | SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
 
->**Info:** Port 80 is deactivated in cloud systems.
+{{< c8y-admon-info >}}
+Port 80 is deactivated in cloud systems.
+{{< /c8y-admon-info >}}
 
 Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
 The two-way SSL support is enabled by default. To disable it please contact [product support](/welcome/contacting-support/).
 
-> **Info:** To use WebSockets you must connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
+{{< c8y-admon-info >}}
+To use WebSockets you must connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
+{{< /c8y-admon-info >}}
 
 ### SmartREST payload
 
@@ -32,7 +36,9 @@ It incorporates the highly expressive strength of the REST API but replaces JSON
 Additionally, the simple and compact syntax of CSV renders it highly efficient for IoT communication via mobile networks.
 It can save up to 80% of mobile traffic compared to other HTTP APIs.
 
-> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+{{< c8y-admon-info >}}
+For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+{{< /c8y-admon-info >}}
 
 #### SmartREST basics
 
@@ -60,7 +66,9 @@ Subscribe example:
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
-> **Info:** `\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+{{< c8y-admon-info >}}
+`\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+{{< /c8y-admon-info >}}
 
 ### Device hierarchies
 
@@ -112,7 +120,9 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 
-> **Important:** The colon character has a special meaning in {{< product-c8y-iot >}}. Hence, it must not be used in the `deviceIdentifier`.
+{{< c8y-admon-important >}}
+The colon character has a special meaning in {{< product-c8y-iot >}}. Hence, it must not be used in the `deviceIdentifier`.
+{{< /c8y-admon-important >}}
 
 Examples of ClientIds:
 
@@ -147,7 +157,9 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** {{< product-c8y-iot >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
+{{< /c8y-admon-info >}}
 
 #### MQTT retained flag
 
@@ -158,7 +170,9 @@ Messages published by {{< product-c8y-iot >}} like operations and errors do not 
 
 In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. For example, using `400,c8y_ConnectionEvent,"Device connection was lost."` as last will message and <kbd>s/us</kbd> as last will topic, raises an event whenever the device loses the connection.
 
-> **Info:** The execution of the "last will" updates the device availability.
+{{< c8y-admon-info >}}
+The execution of the "last will" updates the device availability.
+{{< /c8y-admon-info >}}
 
 ### MQTT return codes
 
@@ -189,7 +203,9 @@ Refer to [MQTT Version 3.1.1 > 3.2 CONNACK - Acknowledge connection request](htt
 
 To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
->**Info:** This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+{{< c8y-admon-info >}}
+This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+{{< /c8y-admon-info >}}
 
 ### MQTT broker certificates
 

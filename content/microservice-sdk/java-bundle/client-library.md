@@ -55,7 +55,9 @@ for (ManagedObjectRepresentation mo : moc.get().allPages()) {
 }
 ```
 
-> **Important:** By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
+{{< c8y-admon-important >}}
+By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
+{{< /c8y-admon-important >}}
 
 To create a new managed object, construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:
 
@@ -238,7 +240,9 @@ Subscription<> subscription = subscriber.subscribe(agentId, new SubscriptionList
 });
 ```
 
-> **Info:** "agentId" is the ID of your agent in the inventory.
+{{< c8y-admon-info >}}
+"agentId" is the ID of your agent in the inventory.
+{{< /c8y-admon-info >}}
 
 To unsubscribe from a subscription, use the following code:
 

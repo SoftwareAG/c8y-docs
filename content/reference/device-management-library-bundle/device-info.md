@@ -21,7 +21,9 @@ PUT /inventory/managedObjects/<deviceId>
 }
 ```
 
-> **Info:** Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< c8y-admon-info >}}
+Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< /c8y-admon-info >}}
 
 ### Agent marker
 
@@ -36,7 +38,9 @@ PUT /inventory/managedObjects/<deviceId>
 }
 ```
 
-> **Info:** Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< c8y-admon-info >}}
+Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< /c8y-admon-info >}}
 
 ### Device restart
 

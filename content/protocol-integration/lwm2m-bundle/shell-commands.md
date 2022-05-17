@@ -114,4 +114,6 @@ In the next table you will see all available commands and a brief description of
 </tbody>
 </table>
 
-> **Info:** A shell command can also be used to send multiple operations to a LWM2M device at once. To do that, simply enter all instructions with a line break between them. Make sure that the shell command does not carry any leading or trailing white spaces. The LWM2M agent then uses the line break to split a multi-line operation into separate LWM2M shell operations.
+{{< c8y-admon-info >}}
+A shell command can also be used to send multiple operations to a LWM2M device at once. To do that, simply enter all instructions with a line break between them. Make sure that the shell command does not carry any leading or trailing white spaces. The LWM2M agent then uses the line break to split a multi-line operation into separate LWM2M shell operations.
+{{< /c8y-admon-info >}}

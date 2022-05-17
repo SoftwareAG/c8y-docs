@@ -136,7 +136,9 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+{{< c8y-admon-info >}}
+Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+{{< /c8y-admon-info >}}
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -186,7 +188,9 @@ For more details on managing binary-based configuration snapshots, see [Managing
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 
-> **Info:** If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+{{< c8y-admon-info >}}
+If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+{{< /c8y-admon-info >}}
 
 <a name="control"></a>
 ### Control
@@ -365,7 +369,9 @@ In the **Network** tab, mobile network (WAN) and local area network (LAN) parame
 
 The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 
-> **Info:** For SMS configuration, the router needs to be configured to accept SMS commands.
+{{< c8y-admon-info >}}
+For SMS configuration, the router needs to be configured to accept SMS commands.
+{{< /c8y-admon-info >}}
 
 #### To configure WAN parameters
 
@@ -378,7 +384,9 @@ The WAN parameters in the user interface correspond to the first profile stored 
 
 To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
-> **Info:** **Name** and **Mac address** fields are not configurable.
+{{< c8y-admon-info >}}
+**Name** and **Mac address** fields are not configurable.
+{{< /c8y-admon-info >}}
 
 #### To configure DHCP parameters
 
@@ -388,8 +396,9 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 4. Enter the domain name.
 5. Click **Save changes** to save your settings.
 
-> **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
-
+{{< c8y-admon-info >}}
+If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
+{{< /c8y-admon-info >}}
 
 <a name="services"></a>
 ### Services
@@ -419,7 +428,9 @@ In the command prompt you can enter arbitrary command text. To send the command 
 
 ![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
->**Important:** When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< c8y-admon-important >}}
+When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< /c8y-admon-important >}}
 
 Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
 
@@ -437,7 +448,9 @@ See [Managing software on a device](#managing-software) for more information on 
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 
->**Info: ** The **Tracking** tab only shows up when a device contains `c8y_Position` property.
+{{< c8y-admon-info >}}
+The **Tracking** tab only shows up when a device contains `c8y_Position` property.
+{{< /c8y-admon-info >}}
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 

@@ -33,6 +33,5 @@ Verify that the functionality provided by the miroservice still works as expecte
 
 #### Microservices still using old user privileges after the environment upgrade
 
-If your microservice is using the deprecated API Version 1 and
-is deployed to a {{< company-c8y >}} environment in version 10.16 or higher, it may be affected by the change, depending on the configuration of this environment.
+If your microservice is using the deprecated API Version 1, it may be affected by the change depending on the configuration of this environment.
 In this case, you will not be able to upload or subscribe the microservice.

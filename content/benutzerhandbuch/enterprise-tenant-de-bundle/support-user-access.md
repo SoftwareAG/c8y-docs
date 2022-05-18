@@ -1,10 +1,9 @@
 ---
-weight: 50
-title: Supportbenutzerzugriff
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition/#users-in-other-tenants
-  - /benutzerhandbuch/enterprise-edition-de/#users-in-other-tenants
+- /benutzerhandbuch/enterprise-edition#users-in-other-tenants-de
+layout: redirect
+title: Supportbenutzerzugriff
+weight: 50
 ---
 
 Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und im Falle von individuellen lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen.
@@ -34,7 +33,7 @@ Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpun
 
 > **Info:** Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 
-Die Dauer der aktiven Supportanfrage kann im {{< management-tenant-de >}} global konfiguriert werden (der Standardwert ist 24 Stunden), siehe [Administration > Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform).
+Die Dauer der aktiven Supportanfrage kann im {{< management-tenant-de >}} global konfiguriert werden (der Standardwert ist 24 Stunden), siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 
 Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist).
 
@@ -44,7 +43,7 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 Um sich vom {{< management-tenant-de >}} aus als Supportbenutzer anzumelden, müssen Sie im Login-Bildschirm folgende Informationen eingeben:
 
-* Mandanten-ID: die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
+* Mandanten-ID: die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
 * Supportbenutzer: der Benutzername des {{< management-tenant-de >}}-Benutzers, der den Support leistet.
 * Benutzer: der Benutzername des zu unterstützenden Benutzers.
 

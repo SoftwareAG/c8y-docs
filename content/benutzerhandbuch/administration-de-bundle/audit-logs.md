@@ -5,7 +5,7 @@ weight: 20
 
 Audit-Logs zeigen die von Benutzern ausgeführten Operationen.
 
-Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Konto**. Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:
+Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit-Logs** im Menü **Konten**. Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:
 
 <table>
 <colgroup>
@@ -26,13 +26,13 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Ko
 </tr>
 
 <tr>
-<td align="left">Ändern</td>
-<td align="left">Typ der Operationen, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
+<td align="left">Ereignis</td>
+<td align="left">Typ der Operationen, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
 </tr>
 
 <tr>
 <td align="left">Beschreibung</td>
-<td align="left">Liefert je nach Operation weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
+<td align="left">Liefert je nach Operation weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
 </tr>
 
 <tr>
@@ -42,7 +42,7 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit Logs** im Menü **Ko
 </tbody>
 </table>
 
-Es werden nur die letzten 100 Logeinträge angezeigt. Klicken Sie auf **Mehr laden** am Listenende, um weitere Logeinträge anzuzeigen.
+Es werden nur die letzten 100 Logeinträge angezeigt. Scrollen Sie herunter zu **Mehr laden**, um weitere Logeinträge anzuzeigen.
 
 ![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
 
@@ -52,8 +52,8 @@ Es werden nur die letzten 100 Logeinträge angezeigt. Klicken Sie auf **Mehr lad
 
 Um Logeinträge leichter durchsuchen zu können, können diese gefiltert werden nach
 
- - Typ , z. B. Alarm, Operation, Smart Rule,
+ - Typ, d. h. Alarm, Operation, Smart Rule,
  - einem Datumsbereich mit einem "Von"- und/oder einem "Bis"-Datum,
  - dem Benutzer.
 
-Klicken Sie auf das Filter-Symbol neben den Filter-Eingabefeldern, um den Filter anzuwenden. Zum Aufheben von Filtern klicken Sie auf das Löschen-Symbol (wird nur angezeigt, wenn Filter gesetzt sind).
+Um einen Filter anzuwenden, klicken Sie auf die Schaltfläche **Anwenden** neben dem entsprechenden Filterfeld. Zum Aufheben von Filtern klicken Sie auf das X-Symbol neben der Schaltfläche **Anwenden** (wird nur angezeigt, wenn Filter gesetzt sind).

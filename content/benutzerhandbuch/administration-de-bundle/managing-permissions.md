@@ -16,15 +16,15 @@ Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 <a name="global"></a>
 ### Globale Rollen
 
-Klicken Sie auf **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
+Klicken Sie auf **Rollen** im Menü **Konten**, um die Liste der konfigurierten Rollen anzuzeigen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
 
-In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
+In der Registerkarte **Globale Rollen** finden Sie die Rollen, die Berechtigungen auf Systemebene erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
-> **Info:** Die vordefinierten Rollen sind nicht vollständig konfiguriert. Sie können als Muster betrachtet werden, die für einen bestimmten Zweck vorkonfiguriert sind. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
+> **Info:** Die vordefinierten Rollen sind als Muster für einen bestimmten Zweck konfiguriert. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
 
-> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für diesen Benutzer relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
+> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle notwendigen Berechtigungen umfassen, die speziell für diesen Benutzer in beiden zugewiesenen Rollen relevant sind. Berechtigungen aus unterschiedlichen Rollen werden zusammengeführt, wenn sie demselben Benutzer zugewiesen werden. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen. Wenn Sie jedoch auch eine Stammdatenberechtigung über einige der verfügbaren Rollen zuweisen, erhält der Benutzer Zugriff auf die gesamten Stammdaten wie Geräte, Gruppen und Konfigurationen.
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
@@ -40,7 +40,7 @@ Die Rollen "admins" und "devices" haben einen Sonderstatus:
 <tbody>
 <tr>
 <td align="left">admins</td>
-<td align="left">Alle Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d.h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
+<td align="left">Administrative Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d. h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
 </tr>
 <tr>
 <td align="left">devices</td>
@@ -91,7 +91,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 </tr>
 <tr>
 <td align="left">Mandantenmanager</td>
-<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
+<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
 </tr>
 </tbody>
 </table>
@@ -258,6 +258,9 @@ Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funkt
 
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
+> **Wichtig:** Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Änderung von Einstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
+
+
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu
 
 1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen.
@@ -277,9 +280,9 @@ Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 <a name="inventory"></a>
 ### Stammdatenrollen
 
-Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
+Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
-Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
+Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konten** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
 
@@ -290,7 +293,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 |Rolle|Beschreibung|
 |:---|:---|
 |Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Operationen ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
-|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
+|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
 |Operationen: Gerät neustarten|Kann Geräte neustarten.
 |Leser|Kann alle Daten des Assets lesen.
 
@@ -344,7 +347,7 @@ Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie m�
 
 Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
 
-Klicken Sie auf **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
+Klicken Sie auf **Benutzer** im Menü **Konten**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 

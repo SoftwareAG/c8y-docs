@@ -47,4 +47,4 @@ Select the connection to be deleted and click on the Delete button.
 
 A warning message appears if there are devices associated with the selected connection with the link **Click to download a list with affected devices**. Clicking on the link downloads a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
 
-WARNING: When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.
+>**Important:** When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.

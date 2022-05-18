@@ -3,6 +3,7 @@ weight: 20
 title: Verwalten von Assets
 layout: redirect
 ---
+
 <a name="assets"></a>
 ### Asset-Hierarchie
 
@@ -65,7 +66,8 @@ Wenn Sie LKWs innerhalb der {{< product-c8y-iot >}}-Plattform verwalten, wird je
 
 Beim Gebäudemanagement ist es häufig so, dass eine Gruppe von Sensoren in einem Gebäude als eine Gruppe darstellt wird, die mit der {{< product-c8y-iot >}}-Plattform kommuniziert.
 
-### Navigieren durch die Assets
+<a name="navigating"></a>
+### Navigieren durch Assets
 
 In der Asset-Hierarchie unterscheidet {{< product-c8y-iot >}} zwischen Top-Level-Gruppen und untergeordneten Assets (Kind-Assets). Kind-Assets können entweder andere Gruppen oder Geräte sein.
 
@@ -101,7 +103,7 @@ Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese e
 Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web-sdk-for-plugins/overview/).
 
 <a name="creating-groups"></a>
-### So fügen Sie eine Gruppe hinzu
+### Hinzufügen einer Gruppe
 
 1. Klicken Sie auf **Gruppe hinzufügen** rechts in der oberen Menüleiste.
 2. Geben Sie im darauf folgenden Dialog einen eindeutigen Gruppennamen und eine optionale Beschreibung ein und klicken Sie auf **Weiter**.
@@ -115,7 +117,7 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
 <a name="assigning-devices"></a>
-### So weisen Sie einer Gruppe Geräte zu
+### Zuweisen von Geräten zu einer Gruppe
 
 Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit {{< product-c8y-iot >}} verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/benutzerhandbuch/device-management-de).
 
@@ -130,22 +132,23 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
 
-### So bearbeiten Sie eine Gruppe
+<a name="edit-group"></a>
+### Bearbeiten einer Gruppe
 
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. In der Registerkarte **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
 
-
-### So löschen Sie eine Gruppe
+<a name="delete-group"></a>
+### Löschen einer Gruppe
 
 Um eine Gruppe entweder auf der obersten Ebene von der Seite **Gruppen** oder von der Registerkarte **Kind-Assets** einer anderen Gruppe zu löschen, bewegen Sie den Mauszeiger über den zu löschenden Eintrag und klicken Sie rechts auf das Symbol "Löschen".
 
 Im darauf folgenden Dialogfeld können Sie festlegen, dass auch alle Geräte innerhalb des ausgewählten Assets und aller seiner Kind-Assets gelöscht werden sollen.
 
-
-### So heben Sie die Zuordnung eines Geräts zu einer Gruppe auf
+<a name="remove-device"></a>
+### Entfernen eines Geräts aus einer Gruppe
 
 1. Navigieren Sie zur Registerkarte **Kind-Assets** der entsprechenden Gruppe.
-2. Bewegen Sie den Mauszeiger über das Gerät, dessen Zuweisung Sie aufheben möchten, und klicken Sie rechts auf das Symbol "Zuweisung aufheben".
+2. Bewegen Sie den Mauszeiger über das Gerät, das Sie entfernen möchten, und klicken Sie rechts auf das Entfernen-Symbol.
 
-Wenn Sie die Zuordnung eines Geräts aufheben, werden das Gerät, seine Kindgeräte sowie zugehörige Daten nicht gelöscht. Das Gerät wird lediglich aus der Gruppe entfernt. Es kann jederzeit wieder zu dieser oder einer anderen Gruppe hinzugefügt werden.
+Wenn Sie die Zuordnung eines Geräts entfernen, werden das Gerät, seine Kindgeräte sowie zugehörige Daten nicht gelöscht. Das Gerät wird lediglich aus der Gruppe entfernt. Es kann jederzeit wieder zu dieser oder einer anderen Gruppe hinzugefügt werden.

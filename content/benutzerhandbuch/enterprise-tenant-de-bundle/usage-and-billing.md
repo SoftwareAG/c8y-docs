@@ -1,10 +1,9 @@
 ---
-weight: 70
-title: Nutzungsstatistiken und Abrechnung
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition/#usage-and-billing
-  - /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+- /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+layout: redirect
+title: Nutzungsstatistiken und Abrechnung
+weight: 70
 ---
 
 <a name="usage-stats"></a>
@@ -206,7 +205,7 @@ Microservice-Ressourcen werden täglich anhand von Grenzwerten erfasst, die im M
 
 **Beispiel**: Wenn ein Mandant einen Microservice 12 Stunden lang abonniert hat und der Microservice 4 CPUs und 4 GB Speicher aufweist, ist dies als 2000 CPU-Millisekunden und 2048 MB Speicher zu zählen.
 
-Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
+Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
 
 ```json
 {
@@ -328,6 +327,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 |Abonnierte Anwendungen | 9, 17 und EOD|
 |Microservice-Ressourcen | 9, 17 und EOD|
 
+<a name="lifecycle"></a>
 ### Lebenszyklus
 
 **Mandant**
@@ -335,7 +335,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 Ein Mandant der {{< product-c8y-iot >}}-Platform kann mehrere Status besitzen:
 
   * Aktiv - Der allgemeine Status, wenn der Mandant mit der Plattform interagieren kann. In diesem Status werden alle Abrechnungswerte gespeichert und aktualisiert.
-  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d.h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, sodass keine Ressourcen berechnet werden können.
+  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Existenz des Mandanten und die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d. h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, so dass keine Ressourcen berechnet werden können.
   * Gelöscht - Dieser Vorgang kann nicht rückgängig gemacht werden. Dem Mandanten werden keine Ressourcen in Rechnung gestellt, aber es gibt auch keine Möglichkeit, die Daten wiederherzustellen.
 
 
@@ -348,7 +348,7 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
   * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits.
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
-Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
   <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 

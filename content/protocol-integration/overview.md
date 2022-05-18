@@ -38,7 +38,7 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN custom codec</a></td>
-<td style="text-align:left">Allows the creation of an LPWAN custom codec microservice.</td>
+<td style="text-align:left">Allows to use custom device protocols via custom microservice.</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>

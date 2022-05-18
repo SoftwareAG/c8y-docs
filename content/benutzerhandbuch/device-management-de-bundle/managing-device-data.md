@@ -547,7 +547,7 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 	![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-new.png)
 
-2. Geben Sie Sie im nächsten Dialog die folgenden Informationen ein:
+2. Geben Sie im nächsten Dialog die folgenden Informationen ein:
 
 | Feld             | Beschreibung                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -562,7 +562,7 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 #### So bearbeiten Sie ein vertrauenswürdiges Zertifikat
 
-In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d.h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
+In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
 
 Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung zum Hinzufügen von Zertifikaten.
 

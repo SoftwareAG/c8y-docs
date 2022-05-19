@@ -60,7 +60,7 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 ### To update a connection
 
-Select the connection to be updated, make your edits and save the connection.
+Select the connection to be updated, make your edits, and save the connection.
 
 >**Important:** When the connection is updated, currently it is updated, without displaying the devices associated with the connection.
 

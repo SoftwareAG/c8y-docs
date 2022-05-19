@@ -49,24 +49,19 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 >**Info:** On touch devices like smartphones or tablets some functions may not be supported.
 
 <a name="target-assets"></a>
-### To select an asset for a widget
+### Select assets in widget
 
-There are two options for selecting an asset of a widget:
-
-1. through editing an existing widget,
-2. by adding a new widget.
-
-The following section describes how [to add an asset](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
+The following section describes how [to add an asset to an existing widget](#add-asset) as well as to [a new widget](#asset-new-widget), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
 
 <a name="add-asset"></a>
 #### To add an asset to an existing widget
-To select an asset of an existing widget follow the steps below:
+To select an asset for an existing widget follow the steps below:
 
 1. Select the widget in the respective folder in the **Groups** menu in the Cockpit application.
-2. Click the cogwheel icon at the top right corner of the widget and select **Edit** from the context menu.
-3. In the following window you can now select an asset via the drop-down menu "Asset selection" on the left.
+2. Click the cogwheel icon at the top right of the widget and select **Edit** from the context menu.
+3. In the resulting dialog box you can now select an asset via the **Asset selection** dropdown field on the left.
 
-The following image you see the dialogue window with an asset already being selected. To select another asset, click "Change".
+The following image shows the dialogue box with an asset being selected. To select another asset, click **Change**.
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
@@ -75,7 +70,7 @@ You have now selected an asset for an existing widget.
 <a name="asset-new-widget"></a>
 #### To add an asset to a new widget
 Another option of selection an asset is through adding a new widget. See [To add a widget to a dashboard or a report](#adding-widgets) on how to add a new widget.
-In the **Configuration** tab of the **Add widget** window, select an asset via the drop-down menu "Asset selection" on the left.
+In the **Configuration** tab of the **Add widget** window, select an asset via the **Asset selection** dropdown field on the left.
 
 You have now selected an asset for a new widget.
 

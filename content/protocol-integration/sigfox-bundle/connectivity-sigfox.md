@@ -37,16 +37,16 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
-The **Connectivity** tab facilitates the creation/editing/deletion/updation of multiple Sigfox connections.
+The **Connectivity** tab facilitates creating, updating, and deleting multiple Sigfox connections.
 
 The following information must be provided in order to create a connection:
 
-- **Name**: The name of the Sigfox connection being created.
-- **Description**: The description of the Sigfox connection being created.
+- **Name**: Name of the Sigfox connection being created.
+- **Description**: Description of the Sigfox connection being created.
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
-- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, "https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info".
-- **Base URL:** This is the URL that points to the Sigfox Cloud account
+- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
+- **Base URL:** URL that points to the Sigfox Cloud account.
 
 > **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
 
@@ -58,16 +58,16 @@ Click **Save**. If you have entered the correct information, the message "Creden
 
 To add another connection, click **Add Connection** and follow the steps above.
 
-### Updating existing connection
+### To update a connection
 
-Select the existing connection and update the required fields and Save the connection.
+Select the connection to be updated, make your edits and save the connection.
 
 >**Important:** When the connection is updated, currently it is updated, without displaying the devices associated with the connection.
 
-###  Deleting an existing connection
+###  To delete a connection
 
 Select the connection to be deleted and click **Delete**. 
 
-A warning message appears if there are devices associated with the selected connection with the link "Click to download a list with affected devices". Clicking the link downloads a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
+A warning message appears if there are devices associated with the selected connection. Click the link **Click to download a list with affected devices**. to download a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
 
 >**Important:** When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.

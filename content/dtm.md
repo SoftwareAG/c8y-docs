@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT DTM guide
+title: Digital Twin Manager
 bundle: dtm
 icon: "c8y-icon c8y-icon-tools"
 type: root

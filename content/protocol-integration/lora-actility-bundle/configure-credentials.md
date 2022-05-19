@@ -34,16 +34,16 @@ Click **Save**. If you have entered the correct information, you see the message
 To add another connection, click **Add Connection** and follow the steps above.
 
 <a name="update-credentials-in-a-connection"></a>
-### To update an existing connection
+### To update a connection
 
-Select the connection, update the required fields and save the connection.
+Select the connection to be updated, make your edits, and save the connection.
 
 >**Important:** When the connection is updated, it is currently updated without displaying the devices associated with the connection.
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
 <a name="delete-connection"></a>
-### To delete an existing connection
+### To delete a connection
 
 Select the connection to be deleted and click **Delete**.
 

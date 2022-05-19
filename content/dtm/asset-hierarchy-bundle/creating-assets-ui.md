@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Creation of assets via UI
+title: Creating assets via the UI
 layout: redirect
 ---
 

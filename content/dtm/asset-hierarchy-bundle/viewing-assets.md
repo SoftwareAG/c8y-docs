@@ -1,7 +1,5 @@
 ---
 weight: 30
-title: View assets
+title: Viewing assets
 layout: redirect
 ---
-
-View assets

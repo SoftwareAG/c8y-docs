@@ -1,8 +1,5 @@
 ---
 weight: 20
-title: Asset type
+title: Asset types
 layout: redirect
 ---
-
-
-Asset type

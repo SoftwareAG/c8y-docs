@@ -38,6 +38,9 @@ The devices may have one of the following status:
 * **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect.
 * **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device.
 * **Accepted** - The user has allowed the credentials to be send to the device.
+* **Blocked** - Device registration being blocked due to number of failed attempts
+
+> **Info:** In order to restart device registration process (for example due to the **Blocked** status) respective device registration item should be removed and process should be started from beginning.
 
 Devices can be connected to your {{< product-c8y-iot >}} account in different ways.
 
@@ -75,12 +78,112 @@ If you are subscribed to the required applications you will see a third option
 After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
-Once a device is connected, its status will change to "Pending acceptance".
+
+Once a device is connected, its status will change to "Pending acceptance". 
+
+> **Info:** "Pending acceptance" screen might differ depending on [security policy setting](#security-token-policy).
+
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
 > **Info:** In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 
 <a name="creds-upload"></a>
+
+#### Security token policy
+
+To mitigate possibility of random guess on not yet registered device serial number which might lead to situation when device is taken over by third tenant, security token policy should be configured.
+
+Platform supports following values for security token policy:
+
+* **IGNORED** - Even if device requires secure registration, platform will ignore that requirement.
+* **OPTIONAL** - If device will require secure registration, platform will honor that by requesting additional security token from user.
+* **REQUIRED** - All devices connected to platform must use security token during registration. 
+
+Configuration can be performed by setting following tenant options with one of above values:
+
+```json
+{ 
+  "category": "device-registration",
+  "key": "security-token.policy", 
+  "value": "ignored"
+}
+```
+
+Depending on security token policy "Pending acceptance" screen will be different.
+
+##### Ignored security token policy
+
+In this mode device connected to platform can be accepted without token validation.
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png" alt="Pending acceptance devices in ignored security token policy">
+
+##### Optional security token policy
+
+
+List of device registration is presented on image below. As can be noticed, input to provide token is available for all devices in this mode. 
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Pending acceptance devices in optional security token policy">
+
+###### Registration in optional security policy without using security token
+
+When device connected to platform doesn't use security token, device registration is proceeding without requirement to provide any value for security token input by user.
+
+
+If token is being provided by user for device which connected unsecurely, it will be accepted and token will be ignored.
+
+###### Registration in optional security policy using security token
+
+When device connected to platform does use security token, in order to complete registration user must provide same security token as being used by device on establishing connection.
+
+In case of providing incorrect token error message will be displayed. After certain amount of attempts registration for device will reach blocked state and should be manually removed and started over.
+
+Entering correct token for device which requires will lead to successful registration.
+
+Entering incorrect token for device which requires it:
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png" alt="Pending acceptance devices in optional security token policy entering token">
+
+Will lead to error message informing about mismatch:
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-wrong-token.png" alt="Pending acceptance devices in optional security token policy incorrect token error">
+
+
+Continuous errors on entering incorrect token will lead to error informing about reaching blocked state:
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-reaching-blocked-state.png" alt="Pending acceptance devices in optional security token policy reaching blocked state">
+
+Any following attemp will result in error:
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-blocked-error-message.png" alt="Pending acceptance devices in optional security token policy blocked state">
+
+###### Restriction on usage accept all feature with optional security policy
+
+**Accept all** feature is supported for devices connected to platform without usage of security token.
+
+For any device which uses security token, **accept all** feature is not available and will display a warning message. 
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all.png" alt="Pending acceptance devices in optional security token policy accept all">
+
+Summary of warning message provides details on devices which could not be accepted automatically
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all-warning.png" alt="Pending acceptance devices in optional security token policy accept all result">
+
+Such devices should be accepted manually by providing correct **security token** value and clicking **Accept** button.
+
+##### Required security token policy
+
+In this mode any device connected to platform are required to use security token on establishing connection and for each "general device registration" user should provide security token used by device.
+
+The procedure of accepting devices is same as described by [registration in optional security policy using security token](#registration-in-optional-security-policy-using-security-token)
+
+Any device connected to platform which is not using security token will be blocked and there is no possibility in this mode to complete registration for such devices.
+
+On image below one device being registered by providing correct security token and two other devices were blocked without ever reaching **PENDING ACCEPTANCE** state.
+
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-required-security-blocked-unsecure-devices.png" alt="Pending acceptance devices in optional security token policy accept all result">
+
+
+
 #### To bulk-register devices
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.

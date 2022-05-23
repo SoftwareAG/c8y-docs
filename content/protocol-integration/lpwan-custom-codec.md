@@ -1,5 +1,5 @@
 ---
 weight: 61
-title: LPWAN Custom Device Protocols
+title: LPWAN Custom device protocols
 layout: bundle
 ---

@@ -37,7 +37,7 @@ IoT devices come with a wide variety of protocols, parameters and network connec
 <td style="text-align:left">Allows to communicate with all devices supporting the LWM2M protocol.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN Custom Device Protocols</a></td>
+<td style="text-align:left"><a href="../../protocol-integration/lpwan-custom-codec">LPWAN custom device protocols</a></td>
 <td style="text-align:left">Allows to use custom device protocols via a microservice.</td>
 </tr>
 <tr>

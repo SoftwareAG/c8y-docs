@@ -8,8 +8,8 @@ A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, w
 
 1. Create a microservice which exposes the `/encode` and `/decode` REST endpoints conforming to the [OpenAPI Specification](/files/rest/lpwan-custom-codec-openapi.yaml), implementing the encoding and decoding functionality.
 
-2. The microservice needs to create Device Protocols for each LPWAN device type it does support. If you do use the lpwan-custom-codec library the Device Protocols will be created automatically for you. 
-Otherwise, you will need to use the Inventory API to create a new managed object describing the Device Protocol with the following JSON structure:
+2. The microservice needs to create device protocols for each LPWAN device type it supports. If you use the lpwan-custom-codec library the device protocols will be created automatically for you. 
+Otherwise, you must use the Inventory API to create a new managed object describing the device protocol with the following JSON structure:
 
     You must create a device protocol (with `type` and `fieldbusType` properties, and the `c8y_LpwanCodecDetails` fragment) as well as an external ID for every device manufacturer and device model combination that this codec microservice supports:
 
@@ -30,8 +30,8 @@ Otherwise, you will need to use the Inventory API to create a new managed object
 
     ```json
     {
-    	"name": "<<Name of the LPWAN Device protocol>>",
-    	"description": "<<Description of the LPWAN Device protocol>>",
+    	"name": "<<Name of the LPWAN device protocol>>",
+    	"description": "<<Description of the LPWAN device protocol>>",
     	"type": "c8y_LpwanDeviceType",
     	"fieldbusType": "lpwan",
     	"c8y_IsDeviceType": {},
@@ -65,8 +65,8 @@ Otherwise, you will need to use the Inventory API to create a new managed object
     }
     ```
 
-3. Based on the Device Protocol assigned to a device, the LPWAN agent will automatically route the request to the corresponding microservice.
-  For device downlink commands, the LPWAN agent forwards the device shell command request to the `/encode` endpoint only when a predefined command listed as "supportedDeviceCommands" in the `c8y_LpwanCodecDetails` fragment of the device type is executed.
+3. Based on the device protocol assigned to a device, the LPWAN agent automatically routes the request to the corresponding microservice.
+  For device downlink commands, the LPWAN agent forwards the device shell command request to the `/encode` endpoint only when a predefined command listed as "supportedDeviceCommands" in the `c8y_LpwanCodecDetails` fragment of the device protocol is executed.
 
     You must create a predefined command template for every supported device command (`supportedDeviceCommands`) specified in the device type.
 

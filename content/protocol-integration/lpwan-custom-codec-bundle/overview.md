@@ -8,7 +8,7 @@ layout: redirect
 
 The latest LPWAN devices send dynamic payloads which the existing binary mapping device protocol capability is not flexible enough to decode.
 The case is similar for encoding the commands sent to the devices.
-To overcome this, LPWAN agents can extend the payload decoding and command encoding by allowing you to plugin a custom implementation via a microservice.
+To overcome this, LPWAN agents can extend the payload decoding and command encoding by allowing you to plugin custom device protocol implementation via a microservice.
 This microservice will be referred to as a custom codec microservice.
 A custom codec microservice is a typical {{< product-c8y-iot >}} microservice which conforms to a specific contract.
 

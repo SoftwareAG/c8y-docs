@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 For convenience, {{< product-c8y-iot >}} provides the Java library `com.nsn.cumulocity.clients-java:lpwan-custom-codec` to develop the custom codec microservice in Java as a SpringBoot application.
-When subscribed, such a custom codec microservice automatically creates the required device types and predefined command templates as described in [Implementing a custom codec microservice](#implement-codec-microservice).
+When subscribed, such a custom codec microservice automatically creates the required device protocols and predefined command templates as described in [Implementing a custom codec microservice](#implement-codec-microservice).
 
 To create a custom codec microservice using this library, do the following:
 
@@ -46,7 +46,6 @@ To create a custom codec microservice using this library, do the following:
     The library also provides the wrapper class `com.cumulocity.microservice.lpwan.codec.decoder.model.LpwanDecoderInputData` to extract the decoder inputs.
     <br/>
 
-    Example for the JSON structure for creating a device type using the Inventory API:
 
          ```java
           package com.cumulocity.microservice.customdecoders.api.service;

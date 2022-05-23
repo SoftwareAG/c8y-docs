@@ -4,6 +4,8 @@ title: Configuring Karaf
 layout: redirect
 ---
 
+> **Important:** If you want to change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`  and so on), you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.* Since the changes to this file are overwritten by the update, you need to reapply the changes to this file after the update process.
+
 ### Increasing the system performance
 
 If the system performance is slow, you must increase the memory. Stop the Edge appliance and increase the memory of the Edge appliance using the hypervisor.
@@ -32,10 +34,6 @@ and
 ```shell
 [admin@iot-edge-server ~]$  service cumulocity-core-karaf start
 ```
-
-> **Important:** If you want to change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`  and so on), you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.* 
->
-> Since the changes to this file are overwritten by the update, you need to reapply the changes to this file after the update process.
 
 ### Changing log level for Karaf
 

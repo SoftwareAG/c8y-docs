@@ -66,7 +66,7 @@ Otherwise, you must use the Inventory API to create a new managed object describ
     ```
 
 3. Based on the device protocol assigned to a device, the LPWAN agent automatically routes the request to the corresponding microservice.
-  For device downlink commands, the LPWAN agent forwards the device shell command request to the `/encode` endpoint only when a predefined command listed as "supportedDeviceCommands" in the `c8y_LpwanCodecDetails` fragment of the device protocol is executed.
+  For device downlink commands, the LPWAN agent forwards the device shell command request to the <kbd>/encode</kbd> endpoint only when a predefined command listed as "supportedDeviceCommands" in the `c8y_LpwanCodecDetails` fragment of the device protocol is executed.
 
     You must create a predefined command template for every supported device command (`supportedDeviceCommands`) specified in the device type.
 

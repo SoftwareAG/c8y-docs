@@ -35,15 +35,15 @@ The option looks like the following in the REST API:
 `{ "category": "configuration", "key": "acl.algorithm-version", "value": "OPTIMIZED"}`
 
 
-### Custom codec support for LPWAN agents
+### Custom device protocol for LPWAN agents
 
 Cumulocity IoT can interface with LPWAN devices through LPWAN network providers via Cumulocity IoT LPWAN agents, such as [Actility LoRa](https://cumulocity.com/guides{{< 10-13-0 >}}/protocol-integration/lora-actility/).
 
 The latest LPWAN devices send dynamic payloads which could not be decoded by the binary mapping device protocol capability, similar applied for encoding the commands sent to the devices.
 
-To overcome this, LPWAN agents can now extend the payload decoding and command encoding by allowing you to plugin a custom implementation via a microservice, called a custom codec microservice. A custom codec microservice is a typical Cumulocity IoT microservice which conforms to a specific contract.
+To overcome this, LPWAN agents can now extend the payload decoding and command encoding by allowing you to plugin a custom implementation via a Cumulocity IoT microservice which conforms to a specific contract.
 
-When an LPWAN agent receives an uplink message, it forwards the device data to a REST endpoint (such as `/decode`) exposed by the custom codec microservice for decoding. Similarly, when the user executes a device command through the device shell, the LPWAN agent forwards the command text to a REST endpoint (such as `/encode`) exposed by the custom codec microservice for encoding.
+When an LPWAN agent receives an uplink message, it forwards the device data to the REST /decode endpoint exposed by the microservice for decoding of LoRa payloads. Similarly, when the user executes a device command through the device shell, the LPWAN agent forwards the command text to the REST  /encode endpoint exposed by the custom codec microservice for command encoding.
 
 For details, see (https://cumulocity.com/guides{{< 10-13-0 >}}/protocol-integration/lpwan-custom-codec/#overview) in the *Protocol integration guide*.
 

@@ -6,7 +6,7 @@ layout: redirect
 
 A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, which can be implemented and enabled as follows.
 
-1. Create a microservice which exposes the `/encode` and `/decode` REST endpoints conforming to the [OpenAPI Specification](/files/rest/lpwan-custom-codec-openapi.yaml), implementing the encoding and decoding functionality.
+1. Create a microservice which exposes the <kbd>/encode</kbd> and <kbd>/decode</kbd> REST endpoints conforming to the [OpenAPI Specification](/files/rest/lpwan-custom-codec-openapi.yaml), implementing the encoding and decoding functionality.
 
 2. The microservice needs to create device protocols for each LPWAN device type it supports. If you use the lpwan-custom-codec library the device protocols will be created automatically for you. 
 Otherwise, you must use the Inventory API to create a new managed object describing the device protocol with the following JSON structure:

@@ -135,9 +135,9 @@ If token is being provided by user for device which connected unsecurely, it wil
 
 When device connected to platform does use security token, in order to complete registration user must provide same security token as being used by device on establishing connection.
 
-In case of providing incorrect token error message will be displayed. After certain amount of attempts registration for device will reach blocked state and should be manually removed and started over.
+In case of providing incorrect token, the error message will be displayed. After certain amount of attempts registration for device will reach blocked state. Blocked registration should be removed to attempt of connecting device once again.
 
-Entering correct token for device which requires will lead to successful registration.
+Entering correct token for device which requires it will lead to successful registration.
 
 Entering incorrect token for device which requires it:
 
@@ -176,7 +176,7 @@ In this mode any device connected to platform are required to use security token
 
 The procedure of accepting devices is same as described by [registration in optional security policy using security token](#registration-in-optional-security-policy-using-security-token)
 
-Any device connected to platform which is not using security token will be blocked and there is no possibility in this mode to complete registration for such devices.
+Any device registering to platform without usage of security token will be blocked and there is no possibility in this mode to complete registration for such devices.
 
 On image below one device being registered by providing correct security token and two other devices were blocked without ever reaching **PENDING ACCEPTANCE** state.
 

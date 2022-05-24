@@ -32,7 +32,8 @@ Click **Roles** in the **Accounts** menu to display a list of configured roles.
 
 In the **Global roles** tab you can find the roles which grant permissions on a system level. There are several global roles pre-defined, but you can define your own according to your needs.
 
-{{< c8y-admon-info >}} The pre-defined roles are configured as samples for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
+{{< c8y-admon-info >}}
+The pre-defined roles are configured as samples for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
 
 On creating a new user, make sure that the global roles you assign to the user contain all necessary permissions relevant for this particular user in either of those roles assigned. Permissions from different roles are merged together when assigned to the same user. If, for example, a user only has the role "Cockpit User" (see below), the user is only able to access the Cockpit application and nothing more. But if you also assign inventory permission via some of the available roles, the user will get access to the whole inventory, such as devices, groups, and configurations.
 {{< /c8y-admon-info >}}

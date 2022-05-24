@@ -190,6 +190,7 @@ You may select one of the following options:
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
    - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+   <br><br>
 
 	{{< c8y-admon-info >}}
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.

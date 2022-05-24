@@ -36,7 +36,7 @@ int main ()
 }
 ```
 
->{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 It is strongly encouraged that you pick a different random value for `deviceID` as this is the unique identifier of your device.
 {{< /c8y-admon-info >}}
 

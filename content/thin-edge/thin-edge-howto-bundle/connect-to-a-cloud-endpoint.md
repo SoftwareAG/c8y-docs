@@ -22,7 +22,6 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 
 {{< c8y-admon-tip >}}
 If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
-
 For example, if you execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
 
 > ```shell

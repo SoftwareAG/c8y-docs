@@ -137,7 +137,7 @@ Click **Export as CSV** at the right. The **Export** page in the Cockpit applica
     ![Managed objects](/images/oee/dashboards/dashboard-export-csv-4-2.png)
 
     {{< c8y-admon-info >}}
-Column names are user defined, whereas the path is the fragment name of the managed object.
+  Column names are user defined, whereas the path is the fragment name of the managed object.
     {{< /c8y-admon-info >}}
 
 5. Click **Save & close** to save your configuration.

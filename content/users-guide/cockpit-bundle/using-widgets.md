@@ -49,12 +49,12 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 >**Info:** On touch devices like smartphones or tablets some functions may not be supported.
 
 <a name="target-assets"></a>
-### Select assets in widget
+### Selecting assets in widgets
 
 The following section describes how [to add an asset to an existing widget](#add-asset) as well as to [a new widget](#asset-new-widget), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
 
 <a name="add-asset"></a>
-#### To add an asset to an existing widget
+#### To add an asset to a widget
 To select an asset for an existing widget follow the steps below:
 
 1. Select the widget in the respective folder in the **Groups** menu in the Cockpit application.
@@ -65,7 +65,7 @@ The following image shows the dialogue box with an asset being selected. To sele
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
-You have now selected an asset for an existing widget.
+You have now selected an asset for a widget.
 
 <a name="asset-new-widget"></a>
 #### To add an asset to a new widget
@@ -77,13 +77,13 @@ You have now selected an asset for a new widget.
 <a name="asset-groups"></a>
 ### To select groups or devices with children as asset
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assigned assets to that group or device. To return to previous level, simply click on the back chevron. Click the desired device to select it as an asset.
+If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assigned assets to that group or device. To return to the previous level, click on the back chevron. Click the desired device to select it as an asset.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
 If you want to select an unassigned device as an asset, unassigned devices can be found in the **Unassigned Devices** node, located on the root level of the selected group.
 
->**Info:** You cannot select the **Unassigned Devices**. However, all devices inside this node can be selected on the next column level. Click **Unassigned Devices** to open the column with all unassigned devices. Click the desired device to select it.
+>**Info:** You cannot select the **Unassigned Devices** node itself. However, all devices inside this node can be selected on the next column level. Click **Unassigned Devices** to open the column with all unassigned devices. Click the desired device to select it.
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
@@ -104,11 +104,11 @@ There are two ways of searching for an asset via the global search:
 1. Through the **Add widget** button, and
 2. by selecting and editing widget.
 
-Whether you choose to add a new widget or to edit an existing widget, the process opens a dialogue window for editing the widget. Here you can find the
+On the **Configuration** tab in the dialog box for adding or editing a widget you can use the general search.
 
 ![General search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
-Select the desired asset to change the root view to that asset (see image below). To return to the global root view, click the "X" in the search field.
+After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
 ![General search clear](/images/users-guide/cockpit/cockpit-asset-clear-search.png)
 
@@ -117,6 +117,6 @@ Select the desired asset to change the root view to that asset (see image below)
 <a name="column-filter-asset"></a>
 #### Column filtering
 
-Column filtering is another way to find devices. However, it only filters assets on the current level in the asset selector.
+Column filtering is another way to find assets. However, it only filters assets on the current level under **Asset selection**.
 
 ![Column filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)

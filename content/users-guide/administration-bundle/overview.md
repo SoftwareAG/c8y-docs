@@ -15,4 +15,4 @@ The following sections will walk you through all functionalities of the Administ
 |[Managing business rules](#business-rules)|How to reprioritize alarms by [alarm mappings](#reprio-alarms).
 |[Managing data retention](#data-retention)|How to manage and configure [retention rules](#retention-rules) for your data and how to [manage stored files](#files) in the file repository.
 |[Two-factor authentication](#tfa)|How to activate/deactivate [two-factor authentication](#tfa) for a user.
-|[Changing settings](#changing-settings)|How to change account settings like [application settings](#default-app) or [authentication settings](#authentication), how to manage the [properties library](#properties) and how to configure [single sign-on](#single-sign-on).
+|[Changing settings](#changing-settings)|How to change account settings like [application settings](#default-app) or [authentication settings](#authentication), how to manage the [properties library](#properties) and how to configure [single sign-on](#configuring-single-sign-on).

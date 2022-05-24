@@ -45,7 +45,7 @@ See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
 
 >**Info:** The service details **Alarms** tab displays only alarms which have the particular service as a source. It does not display any alarms sourced by the device itself.
 
-<a name="events"></a>
+<a name="service-events"></a>
 ### Events
 
 The **Events** tab displays events related to a service.

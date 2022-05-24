@@ -6,7 +6,7 @@ layout: redirect
 
 The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.
 
->**Info:** The Knowledge Hub is only available for users of free trial tenants.
+>**Info:** The Knowledge Hub is only available for users who accepted the Gainsight functional cookies. Users can opt out from the Knowledge Hub using the **Product experience** toggle in the **User settings** menu. See also, [To change user settings](/users-guide/getting-started/#to-change-user-settings).
 
 ### To access the Knowledge Hub
 

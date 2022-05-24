@@ -51,28 +51,20 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <a name="target-assets"></a>
 ### Selecting assets in widgets
 
-The following section describes how [to add an asset to an existing widget](#add-asset) as well as to [a new widget](#asset-new-widget), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
+The following section describes how [to select one or more assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
 
 <a name="add-asset"></a>
-#### To add an asset to a widget
-To select an asset for an existing widget follow the steps below:
+#### To add an asset to a new or existing widget
 
-1. Select the widget in the respective folder in the **Groups** menu in the Cockpit application.
-2. Click the cogwheel icon at the top right of the widget and select **Edit** from the context menu.
-3. In the resulting dialog box you can now select an asset via the **Asset selection** dropdown field on the left.
+On the **Configuration tab** of the dialog box of a new widget or existing widget, select the desired asset under **Asset selection**.
 
-The following image shows the dialogue box with an asset being selected. To select another asset, click **Change**.
+The following image shows the dialog box with an asset being selected. To select another asset, click **Change**.
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
 You have now selected an asset for a widget.
 
-<a name="asset-new-widget"></a>
-#### To add an asset to a new widget
-Another option of selection an asset is through adding a new widget. See [To add a widget to a dashboard or a report](#adding-widgets) on how to add a new widget.
-In the **Configuration** tab of the **Add widget** window, select an asset via the **Asset selection** dropdown field on the left.
-
-You have now selected an asset for a new widget.
+For details on how to add or modify a widget, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
 ### To select groups or devices with children as asset
@@ -98,13 +90,11 @@ There are two methods which can be used to quickly find assets:
 <a name="general-search"></a>
 #### General search
 
-Through the general search you can find assets in the whole hierarchy, but requires exact matches, for example, the whole name of the asset.
-There are two ways of searching for an asset via the global search:
+Through the general search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
 
-1. Through the **Add widget** button, and
-2. by selecting and editing widget.
+For details see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
-On the **Configuration** tab in the dialog box for adding or editing a widget you can use the general search.
+On the **Configuration** tab in the dialog box you can use the general search dropdown field under **Asset selection**.
 
 ![General search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 

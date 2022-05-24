@@ -279,7 +279,7 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 >**Info:** The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
->**Info:** Tenant options specified in tenant policy are **not encrypted**. You should not specify or overwrite here tenant options with "credentials." prefix, since system expects those options to be encrypted with data that will appear after the tenant is created.
+>**Important:** Tenant options specified in a tenant policy are **not encrypted**. You should not specify or overwrite tenant options here with a "credentials." prefix, since the platform expects those options to be encrypted with data that will appear after the tenant has been created.
 
 #### To view tenant policies
 

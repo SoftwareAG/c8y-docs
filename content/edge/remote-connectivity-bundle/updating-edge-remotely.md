@@ -10,8 +10,8 @@ You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s 
 
 Before you update your Edge appliance remotely, you must:
 
-- [Enable the remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance
-- [Register your Edge appliance](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
+- [Enable the remote-connectivity](/edge/remote-connectivity/#config-remote-connectivity) feature in your Edge appliance
+- [Register your Edge appliance](/edge/remote-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
 
 To remotely update your Edge appliance:
 

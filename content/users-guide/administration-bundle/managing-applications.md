@@ -174,6 +174,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
+> **Info:** Prefix 'feature-' is restricted by the platform from being used. You will not be able to create applications using this prefix for application name.
 5. Provide an application key, used to identify this application.
 6. Provide the application path as part of the URL to invoke the application. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
 7. Finally, click **Duplicate** to create the application.

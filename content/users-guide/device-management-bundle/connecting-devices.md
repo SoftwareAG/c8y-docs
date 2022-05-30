@@ -100,7 +100,8 @@ Platform supports the following values for security token policy:
 * **OPTIONAL** - If a device requires secure registration, the platform will request an additional security token from user.
 * **REQUIRED** - All devices connected to the platform must use security token during registration. 
 
-Configuration can be performed by setting following tenant options with one of above values:
+The policy can be configured by setting the following tenant option with one of the values listed above, for example:
+
 
 ```json
 { 

@@ -60,10 +60,10 @@ The Docker containers will be restarted automatically if the container itself fa
 
 The containers are configured to store their application state on the data disk under **/opt/mongodb**:
 
-* **/cdh-server/data**: the state of the Dremio master
+* **/cdh-master/data**: the state of the Dremio master
 * **/cdh-executor/data**: the state of the Dremio executor
 * **/cdh-console/db**: the state of the {{< product-c8y-iot >}} DataHub Edge backend
-* **/cdh-server/datalake**: the data lake folder
+* **/cdh-master/datalake**: the data lake folder
 
 >**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
 

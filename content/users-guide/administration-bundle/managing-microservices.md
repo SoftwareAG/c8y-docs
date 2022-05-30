@@ -158,7 +158,7 @@ In the **Properties** tab, each microservice will show the following information
 </tbody>
 </table>
 
-Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
+Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Usage statistics and billing > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage ) for details on these parameters.
 
 #### Microservice subscription
 

@@ -93,7 +93,7 @@ Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zus
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, erfolgt die Filterung durch Anwenden der Kriterien, die ein Benutzer in dem Dialogfeld festlegen kann, das beim Klicken auf das Spaltenfilter-Symbol angezeigt wird.<br>
 ![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
+<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, d. h. danach, ob das Attribut vorhanden ist oder nicht.    
 5. Klicken Sie auf **Hinzufügen**.
 
 Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
@@ -118,7 +118,7 @@ Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in d
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
 
-Unser Beispiel zeigt eine Suche nach "Ublox C027".
+Unser Beispiel zeigt eine Suche nach "NTC".
 
 ![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 
@@ -137,7 +137,7 @@ Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie wie im S
 
 Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 
-* Bei Datumsfeldern (z. B. **Registrierungsdatum**) geben Sie ein Zeitintervall als Filter ein.
+* Bei Datumsfeldern (z. B. **Registrierungsdatum**) geben Sie ein Zeitintervall als Filter ein.
 * In der Spalte **Status** können Sie nach verschiedenen Kriterien filtern, die jeweils den Sende-, Push- oder Wartungsstatus des Geräts repräsentieren.
 * In der Spalte **Alarm** entsprechen die Filterkriterien den Alarmtypen (kritisch, wichtig, weniger wichtig, Warnung, keine Alarme).
 * Wenn für benutzerdefinierte Spalten bei der Konfiguration das Kriterium **Fragment entspricht Wert** festgelegt wurde, muss ein Wert bereitgestellt werden.
@@ -149,4 +149,4 @@ Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingunge
 
 Klicken Sie **Filter zurücksetzen** links in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
 
->**Info:** Wenn Sie die Liste anhand eines Textfelds, z. B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
+>**Info:** Wenn Sie die Liste anhand eines Textfelds, z. B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.

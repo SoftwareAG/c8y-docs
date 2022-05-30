@@ -440,6 +440,7 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
+<a name="pie-chart"></a>
 ### Pie chart
 
 The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.

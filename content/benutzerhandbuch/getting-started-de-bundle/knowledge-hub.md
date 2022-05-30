@@ -54,7 +54,7 @@ Hier finden Sie eine Reihe weiterer Ressourcen, wie Dokumentation, Trainings, Re
 
 ### Kommunikation
 
-Am Ende der Liste im Dialog **Knowledge Hub** finden Sie verschiedene Optionen, um bei Bedarf mit uns Kontakt aufzunehmen, z. B.:
+Am Ende der Liste im Dialog **Knowledge Hub** finden Sie verschiedene Optionen, um bei Bedarf mit uns Kontakt aufzunehmen, z. B.:
 
 * **Have a question or idea** - Geben Sie uns Feedback per E-Mail oder senden Sie uns Ideen zu Produkten oder Anfragen zu Funktionen
 * **Book a demo** - Buchen Sie eine Produktdemo

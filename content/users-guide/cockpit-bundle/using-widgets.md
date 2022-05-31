@@ -56,13 +56,12 @@ The following section describes how [to select one or more assets](#add-asset), 
 <a name="add-asset"></a>
 #### To add an asset to a new or existing widget
 
-On the **Configuration tab** of the dialog box of a new widget or existing widget, select the desired asset under **Asset selection**.
+On the **Configuration tab** of the dialog box for creating or editing a widget, select the desired assets under **Asset selection**.
 
-The following image shows the dialog box with an asset being selected. To select another asset, click **Change**.
+The following image shows the dialog box with an asset being selected.<br> To select another asset, click **Change**.
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
-You have now selected an asset for a widget.
 
 For details on how to add or modify a widget, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
@@ -73,9 +72,9 @@ If the asset is a group or a device with children, you see a folder icon next to
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
-If you want to select an unassigned device as an asset, unassigned devices can be found in the **Unassigned Devices** node, located on the root level of the selected group.
+If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** node, located on the root level of the selected group.
 
->**Info:** You cannot select the **Unassigned Devices** node itself. However, all devices inside this node can be selected on the next column level. Click **Unassigned Devices** to open the column with all unassigned devices. Click the desired device to select it.
+>**Info:** You cannot select the **Unassigned devices** node itself. However, all devices inside this node can be selected on the next column level. Click **Unassigned devices** to open the column with all unassigned devices. Click the desired device to select it.
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
@@ -84,23 +83,22 @@ If you want to select an unassigned device as an asset, unassigned devices can b
 
 There are two methods which can be used to quickly find assets:
 
-1. General search, and
+1. Full text search, and
 2. column filtering.
 
 <a name="general-search"></a>
-#### General search
+#### Full text search
 
-Through the general search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
+Through the full text search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
 
-For details see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
+For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
-On the **Configuration** tab in the dialog box you can use the general search dropdown field under **Asset selection**.
+On the **Configuration** tab in the dialog box you can use the full text search drop down field under **Asset selection**.
 
-![General search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
+![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
-![General search clear](/images/users-guide/cockpit/cockpit-asset-clear-search.png)
 
 > **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
 

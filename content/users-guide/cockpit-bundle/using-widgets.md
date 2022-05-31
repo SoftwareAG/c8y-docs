@@ -100,7 +100,7 @@ On the **Configuration** tab in the dialog box you can use the full text search 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
 
-> **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
+> **Info:** The full text search is only available when there is no asset context, for example, in the "Home" dashboard.
 
 <a name="column-filter-asset"></a>
 #### Column filtering

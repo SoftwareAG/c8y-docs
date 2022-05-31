@@ -342,7 +342,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Subscribed applications | 9, 17 and EOD|
 |Microservice resources | 9, 17 and EOD|
 
-<a name="Lifecycle"></a>
+<a name="lifecycle"></a>
 ### Lifecycle
 
 **Tenant**

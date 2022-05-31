@@ -450,6 +450,7 @@ If none of the target device(s) has a known location, then the widget shows a wo
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
+<a name="pie-chart"></a>
 ### Pie chart
 
 The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.

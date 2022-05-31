@@ -6,9 +6,11 @@ layout: redirect
 
 The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.
 
+
 {{< c8y-admon-info >}}
 The Knowledge Hub is only available for users of free trial tenants.
 {{< /c8y-admon-info >}}
+
 
 ### To access the Knowledge Hub
 

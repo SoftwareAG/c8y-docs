@@ -34,7 +34,9 @@ After selecting a type, the following rules can be selected:
 - Greater or equals than
 - Lower or equals than
 
-> **Info:** Not all rules are available to each type.
+{{< c8y-admon-info >}}
+Not all rules are available to each type.
+{{< /c8y-admon-info >}}
 
 To delete a rule, simply click on the delete icon:
 

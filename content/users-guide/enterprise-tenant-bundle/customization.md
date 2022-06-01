@@ -17,7 +17,9 @@ Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these set
 <a name="configuration"></a>
 ### Configuration
 
->**Info:** In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
+{{< c8y-admon-info >}}
+In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
+{{< /c8y-admon-info >}}
 
 The following placeholders can be found in the **Configuration** tab:
 
@@ -92,7 +94,9 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** at the bottom to save your settings.
 
-> **Info:** Some additional configuration settings can be specified globally in the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+{{< c8y-admon-info >}}
+Some additional configuration settings can be specified globally in the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+{{< /c8y-admon-info >}}
 
 <a name="branding"></a>
 ### Branding
@@ -203,7 +207,9 @@ A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{<
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}}. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
-> **Info:** The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or on-prem installations which don't use a custom load balancer.
+{{< c8y-admon-info >}}
+The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or on-prem installations which don't use a custom load balancer.
+{{< /c8y-admon-info >}}
 
 There are three prerequisites for using a custom domain:
 
@@ -289,7 +295,9 @@ to your {{< enterprise-tenant >}} using the new domain name. You will also recei
 activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".
 
-> **Info:** After the activation is completed you will no longer be able to access your tenant with the {{< product-c8y-iot >}} domain name. Instead, use your custom domain name.
+{{< c8y-admon-info >}}
+After the activation is completed you will no longer be able to access your tenant with the {{< product-c8y-iot >}} domain name. Instead, use your custom domain name.
+{{< /c8y-admon-info >}}
 
 #### Updating your certificate
 
@@ -299,14 +307,18 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate.
 
->**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+{{< c8y-admon-info >}}
+Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+{{< /c8y-admon-info >}}
 
 
 #### Deactivating your certificate
 
 If you wish to return to your old domain at {{< product-c8y-iot >}}, you can simply deactivate you certificate.
 
->**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
+{{< c8y-admon-important >}}
+Use with care. Your customers will not be able to access their subtenants anymore.
+{{< /c8y-admon-important >}}
 
 #### Troubleshooting
 
@@ -345,5 +357,6 @@ HTTP/1.1 200 OK
 ```
 
 
->**Info:** Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
->
+{{< c8y-admon-info >}}
+Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+{{< /c8y-admon-info >}}

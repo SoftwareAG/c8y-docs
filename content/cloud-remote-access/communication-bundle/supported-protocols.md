@@ -19,8 +19,9 @@ Cloud Remote Access supports the following protocols:
 	* Console for command line access
 	* Keyboard for interaction
 
->**Important:** Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
-
+{{< c8y-admon-important >}}
+Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
+{{< /c8y-admon-important >}}
 
 ### Supported gateways
 

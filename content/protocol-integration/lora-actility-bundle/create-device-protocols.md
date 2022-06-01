@@ -13,8 +13,10 @@ The device protocol assigned during device registration can be changed from the 
 
 ![Actility LPWAN Tab](/images/device-protocols/lora-actility/lora-lpwan-tab.png)
 
-> **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
+{{< c8y-admon-info >}}
+Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
+{{< /c8y-admon-info >}}
 
 In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one or use the device protocols created by an LPWAN custom codec microservice.
 
@@ -95,7 +97,9 @@ Under **Value normalisation** define how the raw value should be transformed bef
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 
-> **Info:** "Little endian" support to decode the payload has been added.
+{{< c8y-admon-info >}}
+"Little endian" support to decode the payload has been added.
+{{< /c8y-admon-info >}}
 
 Under Options, select one of the following options, if required:
 

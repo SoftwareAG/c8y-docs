@@ -11,7 +11,9 @@ To create a new certificate you can use the thin-edge.io command [tedge cert cre
 sudo tedge cert create --device-id alpha
 ```
 
->**Info:** `tedge cert` requires `sudo` privilege. This command provides no output on success.
+{{< c8y-admon-info >}}
+`tedge cert` requires `sudo` privilege. This command provides no output on success.
+{{< /c8y-admon-info >}}
 
 The command [sudo tedge cert create](/thin-edge/thin-edge-developer-tools/#create) will create a certificate in a default location (*/etc/tedge/device-certs/*).
 To use a custom location, refer to [tedge config](/thin-edge/thin-edge-developer-tools/#tedge-config-command).
@@ -52,7 +54,9 @@ Caused by:
             Run `tedge cert remove` first to generate a new certificate.
 ```
 
->**Warning:** Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
+{{< c8y-admon-warning >}}
+Removing a certificate can break the bridge and more seriously delete a certificate that was a CA-signed certificate.
+{{< /c8y-admon-warning >}}
 
 Follow the instruction in the error message to remove the existing certificate and execute [tedge cert remove](/thin-edge/thin-edge-developer-tools/#remove):
 

@@ -20,9 +20,11 @@ This guide provides information on the Web SDK which enables you to
 
 If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack  ([Migration history](/web/background)) to better understand how and why it is now designed the way it is.
 
-> **Important:** Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
->
->[Web SDK for plugins](/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. The documentation is still available for migration purposes, that means, if you want to integrate an already developed plugin into the Web SDK for Angular. You can import plugins to Angular as described in [ngx-components > Extension points](/web/libraries#extension-points).
+{{< c8y-admon-important >}}
+ Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
+
+[Web SDK for plugins](/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. The documentation is still available for migration purposes, that means, if you want to integrate an already developed plugin into the Web SDK for Angular. You can import plugins to Angular as described in [ngx-components > Extension points](/web/libraries#extension-points).
+{{< /c8y-admon-important >}}
 
 ### Packages
 

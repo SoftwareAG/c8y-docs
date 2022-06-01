@@ -16,7 +16,9 @@ The following authentication methods can be selected:
   - The keystore must contain a user certificate with the "opcuauser" alias.
   - The user certificate must be password-protected.
 
-> **Info:** The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key must be used in case a keystore file should contain more data.
+{{< c8y-admon-info >}}
+The OPC UA gateway connects as an OPC UA client to the OPC UA server. If key-based authentication is used, the gateway uses a certificate and a corresponding private key to authenticate at the OPC UA server. Both certificate and private key must be stored in a keystore file, using the alias "opcuauser". This way, the gateway precisely can determine which certificate and private key must be used in case a keystore file should contain more data.
+{{< /c8y-admon-info >}}
 
 The keystore can be created via the following Java keytool command:
 
@@ -38,8 +40,13 @@ The keystore can then be uploaded as binary in {{< product-c8y-iot >}} and it ca
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
 
-> **Info:** If you don't have the certificate trusted by your OPC UA server, the server will reject the connection. If you have problems trusting a certificate in your OPC UA server, contact your OPC UA server provider.
-> **Info:** Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well.
+{{< c8y-admon-info >}}
+If you don't have the certificate trusted by your OPC UA server, the server will reject the connection. If you have problems trusting a certificate in your OPC UA server, contact your OPC UA server provider.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}
+Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well.
+{{< /c8y-admon-info >}}
 
 ### Child devices
 

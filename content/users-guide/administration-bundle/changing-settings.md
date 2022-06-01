@@ -37,7 +37,9 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 ![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
->**Info:** To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
+{{< c8y-admon-info >}}
+To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
+{{< /c8y-admon-info >}}
 
 #### Login settings
 
@@ -49,15 +51,21 @@ In the **Preferred login mode** field, you can select one of the following optio
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
->**Important:** Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
+{{< c8y-admon-important >}}
+Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
+{{< /c8y-admon-important >}}
 
 In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users must change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
->**Info:** The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
+{{< c8y-admon-info >}}
+The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
+{{< /c8y-admon-info >}}
 
 By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#change-password).
 
->**Info:** The password validity limit and the password strength may not be editable, if configured by the platform administrator.
+{{< c8y-admon-info >}}
+The password validity limit and the password strength may not be editable, if configured by the platform administrator.
+{{< /c8y-admon-info >}}
 
 <a name="basic-auth-restrictions"></a>
 #### Basic Auth restrictions
@@ -69,7 +77,9 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 * **Trusted user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted.
 * **Forbidden user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
 
-> **Info:** If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
+{{< c8y-admon-info >}}
+If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
+{{< /c8y-admon-info >}}
 
 #### OAI-Secure session configuration
 
@@ -128,16 +138,18 @@ If the **Use session configuration** option is enabled, the following settings c
 </tbody>
 </table>
 
->**Info:** The time parameters should depend on each other in the following manner: renewal timeout < token lifespan < absolute timeout.
-> Moreover, the renewal timeout should be approximately half of the token lifespan.      
-> 
-> Therefore, the recommended settings for a standard use case for OAI-Secure are the following:   
-> 
-> * **Session absolute timeout**: 28 800 seconds (8 hours)        
-> * **Session renewal timeout**: 2700 seconds (45 minutes)        
-> * **Token lifespan**: 5400 seconds (90 minutes)
-> 
->  In such configurations, the idle timeout is in the range of 45 to 90 minutes, depending on when the last activity for the session was performed.
+{{< c8y-admon-info >}}
+The time parameters should depend on each other in the following manner: renewal timeout < token lifespan < absolute timeout.
+Moreover, the renewal timeout should be approximately half of the token lifespan.      
+
+Therefore, the recommended settings for a standard use case for OAI-Secure are the following:   
+
+ * **Session absolute timeout**: 28 800 seconds (8 hours)        
+ * **Session renewal timeout**: 2700 seconds (45 minutes)        
+ * **Token lifespan**: 5400 seconds (90 minutes)
+
+In such configurations, the idle timeout is in the range of 45 to 90 minutes, depending on when the last activity for the session was performed.
+{{< /c8y-admon-info >}}
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
@@ -165,7 +177,9 @@ The default value is two weeks. It can also be set to any negative value so that
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-> **Info:** If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
+{{< c8y-admon-info >}}
+If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
+{{< /c8y-admon-info >}}
 
 #### TFA settings
 
@@ -176,26 +190,37 @@ You may select one of the following options:
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
    - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+   <br><br>
 
-	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
+	{{< c8y-admon-info >}}
+An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
+  {{< /c8y-admon-info >}}
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
-> **Info:** The TOTP method is only available with the login mode "OAI-Secure".
+{{< c8y-admon-info >}}
+The TOTP method is only available with the login mode "OAI-Secure".
+{{< /c8y-admon-info >}}
 
 Click **Save TFA settings** to apply your settings.
 
->**Important:** Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and must be configured again.
+{{< c8y-admon-important >}}
+Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and must be configured again.
+{{< /c8y-admon-important >}}
 
->**Info:** Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
+{{< c8y-admon-info >}}
+Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
+{{< /c8y-admon-info >}}
 
 <a name="configuring-single-sign-on"></a>
 ### Configuring single sign-on
 
 {{< product-c8y-iot >}} provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
-> **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
+{{< c8y-admon-info >}}
+This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
+{{< /c8y-admon-info >}}
 
 This feature is enabled since {{< product-c8y-iot >}} version 10.4.6. For correct behavior any microservice needs to use the microservice SDK with version 10.4.6 or later.
 
@@ -208,8 +233,9 @@ Before switching to the single sign-on option it is mandatory that:
 * All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
->**Info:** In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
-
+{{< c8y-admon-info >}}
+In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
+{{< /c8y-admon-info >}}
 
 #### Configuration settings
 
@@ -228,7 +254,9 @@ As the OAuth protocol is based on the execution of HTTP requests and redirects, 
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
->**Info:** Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-c8y-iot >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
+{{< c8y-admon-info >}}
+Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-c8y-iot >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
+{{< /c8y-admon-info >}}
 
 Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}.
 
@@ -335,7 +363,10 @@ Each access token is signed by a signing certificate. Currently there are three 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 
- >**Info:** {{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (for example Elliptic-curves) are not supported.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (for example Elliptic-curves) are not supported.
+{{< /c8y-admon-info >}}
+
 ##### Placeholders
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 
@@ -415,7 +446,9 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
->**Info:** All users must have access to this application.
+{{< c8y-admon-info >}}
+All users must have access to this application.
+{{< /c8y-admon-info >}}
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 
@@ -439,7 +472,9 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
->**Info:** Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+{{< c8y-admon-info >}}
+Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+{{< /c8y-admon-info >}}
 
 <a name="add-property"></a>
 #### To add a custom property
@@ -522,7 +557,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
     ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-	>**Info:** To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
+	{{< c8y-admon-info >}}
+To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
+  {{< /c8y-admon-info >}}
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
@@ -530,7 +567,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 4. Click **Save** to save your settings.
 
->**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
+{{< c8y-admon-info >}}
+OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
+{{< /c8y-admon-info >}}
 
 
 <a name="connectivity"></a>

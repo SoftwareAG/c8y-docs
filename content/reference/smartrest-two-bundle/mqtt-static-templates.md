@@ -432,16 +432,16 @@ Set device profile that is being applied to the device.
 ```
 
 <a name="122"></a>
-##### Set device agent information (120)
+##### Set device agent information (122)
 
 Allows a device to provide information about the agent running on it.
 
-| Position | Parameter  | Mandatory | Type   | Default value           |
-|:---------|:-----------|:----------|:-------|:------------------------|
-| 1        | Name       | YES       | String | Name of the agent       |
-| 2        | Version    | YES       | String | Version of the agent    |
-| 3        | URL        | NO        | String | Agent's URL             |
-| 4        | Maintainer | YES       | String | Maintainer of the agent |
+| Position | Parameter              | Mandatory | Type   | Default value |
+|:---------|:-----------------------|:----------|:-------|:--------------|
+| 1        | Name of the agent      | YES       | String |               |
+| 2        | Version of the agent   | YES       | String |               |
+| 3        | The agent URL          | NO        | String |               |
+| 4        | Maintainer of the agent| YES       | String |               |
 
 **Example**
 

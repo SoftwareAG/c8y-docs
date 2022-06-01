@@ -29,7 +29,9 @@ For example, if you provide **iot.com** as the domain name, you must possess an 
 * If you have an Internationalized Domain Name (IDN), then you must provide the translated ASCII equivalent domain name.<br>
 For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge installation process.<br>
 
-	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+	{{< c8y-admon-info >}}
+An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+	{{< /c8y-admon-info >}}
 
 * Ensure that you adhere to the following domain name validation rules:
 	* The domain name must be a combination of case-insensitive alphanumeric characters separated by dot ( . ) or hyphen ( - ).
@@ -96,4 +98,6 @@ The virtual machine has the following minimum hardware requirements:
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
 
->**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
+{{< c8y-admon-info >}}
+This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
+{{< /c8y-admon-info >}}

@@ -10,7 +10,9 @@ aliases:
 
 Operations on MLW projects.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### POST - Execute a script
 
@@ -33,7 +35,7 @@ Execute a python script.
 |recurrence (string)| required ONE_TIME/REPEAT
 |cronExpression (string)| mandatory Cron expression body parameter if recurrence is "REPEAT"
 |taskName (string)| required taskName body parameter
-|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format
 
 **Example Request**
 

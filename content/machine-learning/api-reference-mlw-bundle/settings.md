@@ -10,7 +10,9 @@ aliases:
 
 Operations on MLW settings.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Get AWS S3 credentials
 

@@ -34,7 +34,9 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | status | VARCHAR |
 | text | VARCHAR |
 
->**Info:** The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, it must be added manually.
+{{< c8y-admon-info >}}
+The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, it must be added manually.
+{{< /c8y-admon-info >}}
 
 The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses additional steps:
 
@@ -169,7 +171,8 @@ The system uses the type attribute to determine *c8y_Temperature* as measurement
 | ---- | ---- | ---- | ---- |
 | ... | C | 2.0791169082 | ... |
 
-> **Info:** You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not be as concise as intended. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. In such a case the resulting column in the target table would have a mixed type of number and string, which complicates further processing in follow-up applications.
+{{< c8y-admon-info >}}You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not be as concise as intended. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. In such a case the resulting column in the target table would have a mixed type of number and string, which complicates further processing in follow-up applications.
+{{< /c8y-admon-info >}}
 
 ##### Offloading measurements with the TrendMiner target table layout
 

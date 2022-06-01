@@ -25,7 +25,9 @@ Providing TrendMiner access to {{< product-c8y-iot >}} data requires you solely 
 
 In Dremio a new view is provided, which combines the historical data in the data lake with recent data from the Operational Store, effectively providing a unified view over *hot* data in the Operational Store and *cold* data in the data lake. {{< product-c8y-iot >}} DataHub takes care that the combined data in that view is lossless and does not introduce duplicates. This view is the single connection point to provide TrendMiner access to historical and live data of the {{< product-c8y-iot >}} platform.
 
-> **Info:** So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
+{{< c8y-admon-info >}}
+So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
+{{< /c8y-admon-info >}}
 
 You must follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
@@ -33,7 +35,9 @@ You must follow the instructions in [Configuring offloading jobs](/datahub/worki
 
 Once you have defined and activated a TrendMiner offloading pipeline, the initial offload must be completed before you can start querying the data in TrendMiner.
 
-> **Info:** The offloading pipeline must be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
+{{< c8y-admon-info >}}
+The offloading pipeline must be active. If the pipeline is deactivated, you can only query the contents offloaded into the data lake so far. Access to recent data will be deactivated.
+{{< /c8y-admon-info >}}
 
 {{< product-c8y-iot >}} DataHub provides the following views within Dremio, based on tables having the same name and the same schema:
 

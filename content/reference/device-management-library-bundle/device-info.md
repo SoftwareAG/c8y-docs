@@ -101,3 +101,35 @@ PUT /inventory/managedObjects/<deviceId>
 Upload hardware information using the 110 static template. Usually this can be done once during agent application startup:
 
 `110,1234567890,myModel,1.2.3`
+
+### Agent information
+
+Devices can provide information about the agent they are running i.e. the software that integrates them with Cumulocity IoT.
+
+```http
+PUT /inventory/managedObjects/<deviceId>
+```
+```json
+{
+   "c8y_Agent": {
+       "name": "edge.i",
+       "version": "0.6",
+       "url": "https://edge.io",
+       "maintainer": "Software AG"
+   }
+}
+```
+| Field    | Data type | Mandatory | Details                 |
+|----------|-----------|-----------|-------------------------|
+| name     | string    | Yes       | Name of the agent       |
+| version  | string    | Yes       | Version of the agent    |
+| url      | string    | No        | Agent's URL             |
+| revision | string    | Yes       | Maintainer of the agent |
+
+**SmartREST example**
+
+Upload agent details using the 220 static template:
+
+`122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
+
+Traditionally this is done once at agent initialization.

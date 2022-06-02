@@ -325,7 +325,7 @@ If a chart contains graphs with different units, one Y-axis is rendered per unit
 
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
-> **Info:** We recommend you to not have more than 20 series per measurement. Having too much series for a single measurement strongly decreases the performance of a single graph and makes it harder to review measurement values per series from within the Device Management application. For a more detailed data analysis, better use the data explorer feature in the Cockpit application.
+> **Info:** We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device Management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
 
 **Time range and aggregation**
 

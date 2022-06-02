@@ -51,30 +51,30 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <a name="target-assets"></a>
 ### Selecting assets in widgets
 
-The following section describes how [to select one or more assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
+The following section describes how [to select one or more single assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
 
 <a name="add-asset"></a>
 #### To add an asset to a new or existing widget
 
-On the **Configuration tab** of the dialog box for creating or editing a widget, select the desired assets under **Asset selection**.
+On the **Configuration tab** of the widget editor, select the check boxes of the desired assets under **Asset selection**.
 
-The following image shows the dialog box with an asset being selected.<br> To select another asset, click **Change**.
+To modify your selection, click **Change**.
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
 
-For details on how to add or modify a widget, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
+For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
 ### To select groups or devices with children as asset
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assigned assets to that group or device. To return to the previous level, click on the back chevron. Click the desired device to select it as an asset.
+If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assets assigned to that group or device. Select the desired assets. To return to the previous level, click on the back chevron. 
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
-If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** node, located on the root level of the selected group.
+If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the root level of the selected group.
 
->**Info:** You cannot select the **Unassigned devices** node itself. However, all devices inside this node can be selected on the next column level. Click **Unassigned devices** to open the column with all unassigned devices. Click the desired device to select it.
+>**Info:** You cannot select the **Unassigned devices** folder itself. However, all devices inside this folder can be selected on the next column level. Click **Unassigned devices** to open the column with all unassigned devices. Click the desired device to select it.
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
@@ -93,7 +93,7 @@ Through the full text search you can find assets in the whole hierarchy, but it 
 
 For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
-On the **Configuration** tab in the dialog box you can use the full text search drop down field under **Asset selection**.
+On the **Configuration** tab in the widget editor, you can use the search field under **Asset selection**.
 
 ![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 

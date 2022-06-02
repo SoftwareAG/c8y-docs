@@ -68,13 +68,13 @@ For details on how to add or modify a widget, see [To add a widget to a dashboar
 <a name="asset-groups"></a>
 ### To select groups or devices with children as asset
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as a chevron icon pointing right. Click the desired group or device with children in the list to open a new column displaying all assigned assets to that group or device. To return to the previous level, click on the back chevron. Click the desired device to select it as an asset.
+If the asset is a group or a device with children, you see a folder icon next to their name as well as a arrow pointing right. Click the desired group or device with children in the list to open a new column level displaying all assigned assets to that group or device. To return to the previous level, click on the back chevron. Click the desired device to select it as an asset.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
-If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** node, located on the root level of the selected group.
+If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the root level of the selected group.
 
->**Info:** You cannot select the **Unassigned devices** node itself. However, all devices inside this node can be selected on the next column level. Click **Unassigned devices** to open the column with all unassigned devices. Click the desired device to select it.
+>**Info:** You cannot select the **Unassigned devices** folder itself. However, all devices inside this folder can be selected on the next column level. Click **Unassigned devices** to open the next column level with all unassigned devices. Click the desired device to select it.
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
@@ -90,17 +90,15 @@ There are two methods which can be used to quickly find assets:
 #### Full text search
 
 Through the full text search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
-
-For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
-
 On the **Configuration** tab in the dialog box you can use the full text search drop down field under **Asset selection**.
 
 ![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
-
 > **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
+
+For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
 <a name="column-filter-asset"></a>
 #### Column filtering
@@ -108,3 +106,5 @@ After selecting the asset, you see all children of this asset. To return to the 
 Column filtering is another way to find assets. However, it only filters assets on the current level under **Asset selection**.
 
 ![Column filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
+
+For details on the filter functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).

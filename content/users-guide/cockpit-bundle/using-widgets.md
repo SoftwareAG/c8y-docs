@@ -51,24 +51,24 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <a name="target-assets"></a>
 ### Selecting assets in widgets
 
-The following section describes how [to select one or more assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search).
+The following section describes how [to select one or more single assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
 
 <a name="add-asset"></a>
 #### To add an asset to a new or existing widget
 
-On the **Configuration tab** of the dialog box for creating or editing a widget, select the desired assets under **Asset selection**.
+On the **Configuration tab** of the widget editor, select the check boxes of the desired assets under **Asset selection**.
 
-The following image shows the dialog box with an asset being selected.<br> To select another asset, click **Change**.
+To modify your selection, click **Change**.
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
 
 
-For details on how to add or modify a widget, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
+For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
 ### To select groups or devices with children as asset
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as a arrow pointing right. Click the desired group or device with children in the list to open a new column level displaying all assigned assets to that group or device. To return to the previous level, click on the back chevron. Click the desired device to select it as an asset.
+If the asset is a group or a device with children, you see a folder icon next to their name as well as an arrow icon pointing right. Click the desired group or device with children in the list to open a new column level displaying all assigned assets to that group or device. Select the desired assets. To return to the previous level, click on the back arrow icon.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 

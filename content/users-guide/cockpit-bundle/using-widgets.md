@@ -51,30 +51,30 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <a name="target-assets"></a>
 ### Selecting assets in widgets
 
-The following section describes how [to select one or more single assets](#add-asset), how [to select groups or devices with children as assets](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
+The following section describes how [to select one asset](#add-asset), how [to select groups or devices with children as an asset](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
 
 <a name="add-asset"></a>
 #### To add an asset to a new or existing widget
 
-On the **Configuration** tab of the widget editor, select the check boxes of the desired assets under **Asset selection**.
+On the **Configuration** tab of the widget editor, select the check boxes of the desired asset under **Asset selection**. Click **Save** to add the asset to the widget.
+You can select a single device or a group of devices, which are marked with a folder icon. For details on selecting groups of devices see [To select groups or devices with children as an asset](#asset-groups).
 
-To clear and restart your selection, click **Change**.
+If you want to edit an asset of a widget, open the widget editor and click **Clear**. This clears the previous asset collection. Select the new desired asset and click **Save**.  
 
 ![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
-
 
 For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
-#### To select groups or devices with children as asset
+#### To select groups or devices with children as an asset
 
-If the asset is a group or a device with children, you see a folder icon next to their name as well as an arrow icon pointing right. Click the desired group or device with children in the list to open a new level displaying all assigned assets to that group or device. Select the desired assets. To return to the previous level, click on the back arrow icon.
+If the asset is a group or a device with children, you see a folder icon next to their name as well as an arrow icon pointing right. Click the desired group or device with children in the list to open a new level displaying all assigned assets to that group or device. Select the desired asset. To return to the previous level, click on the arrow icon pointing left.
 
 ![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
-If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the root level of the selected group.
+If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the first level of the selected group.
 
->**Info:** You cannot select the **Unassigned devices** folder itself. However, all devices inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
+>**Info:** You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
 
 ![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
@@ -84,29 +84,28 @@ If you want to select an unassigned device as an asset, you can find the unassig
 There are two methods which can be used to quickly find assets:
 
 1. Full text search, and
-2. (column) filtering.
+2. filtering.
 
 <a name="general-search"></a>
 ##### Full text search
 
-On the **Configuration** tab of the widget editor you can use the full text search search field under **Asset selection**.
+On the **Configuration** tab of the widget editor you can use the full text search field under **Asset selection**.
 
 Through the full text search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
-
 
 ![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
-> **Info:** The global search is only available when there is no asset context, for example, in the "Home" dashboard.
+> **Info:** The full text search is only available in the Home dashboard and the Report dashboards.
 
 For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
 <a name="column-filter-asset"></a>
-##### (Column) filtering
+##### Filtering
 
-Column filtering is another way to find assets. However, it only filters assets on the current level under **Asset selection**.
+Filtering is another way to find assets. However, it only filters assets on the current level under **Asset selection**.
 
-![Column filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
+![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
 For details on the filter functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).

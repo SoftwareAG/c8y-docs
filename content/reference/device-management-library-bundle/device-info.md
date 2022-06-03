@@ -126,7 +126,7 @@ PUT /inventory/managedObjects/<deviceId>
 | name     | string    | Yes       | Name of the agent       |
 | version  | string    | Yes       | Version of the agent    |
 | url      | string    | No        | The agent URL           |
-| revision | string    | Yes       | Maintainer of the agent |
+| maintainer | string    | Yes       | Maintainer of the agent |
 
 **SmartREST example**
 

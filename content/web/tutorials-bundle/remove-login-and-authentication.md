@@ -63,7 +63,7 @@ providers: [
 ```
 
 Use a factory function `initApp`, where you will define and send your default authentication.
-To send your credentials to the API, add a dependency to the `LoginService`](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html), which is a part of `@c8y/ngx-components`:
+To send your credentials to the API, add a dependency to the `LoginService` ([http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html)), which is a part of `@c8y/ngx-components`:
 
 ```js
 export function initApp(loginService: LoginService) {

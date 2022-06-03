@@ -140,7 +140,7 @@ Note that you did not have to handle any alarm IDs with the MQTT implementation.
 
 ##### Creating events
 
-Next, we will create some location events for the device. If you wish, you may use the [LatLong website](http://www.latlong.net/) to get the latitude and longitude of your city.
+Next, we will create some location events for the device. If you wish, you may use the [LatLong website](https://www.latlong.net/) to get the latitude and longitude of your city.
 
 The template `401` lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters, but for now we will just use the first two.
 

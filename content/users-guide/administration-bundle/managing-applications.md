@@ -16,7 +16,7 @@ helpcontent:
     Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
 ---
 
-The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications/) in the *Concepts guide*.
+The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
 
 * [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
 
@@ -178,9 +178,9 @@ Duplicating an application might be useful if you want to customize a subscribed
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
-{{< c8y-admon-info >}}
+    {{< c8y-admon-info >}}
 The platform restricts the use of the prefix "feature-". You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
-{{< /c8y-admon-info >}}
+    {{< /c8y-admon-info >}}
 5. Provide an application key, used to identify this application.
 6. Provide the application path as part of the URL to invoke the application. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
 7. Finally, click **Duplicate** to create the application.

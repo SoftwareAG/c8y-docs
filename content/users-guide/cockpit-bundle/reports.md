@@ -43,7 +43,9 @@ See [To create a report](#create-report) below for details on how to configure t
 If you enable the option **Translate widget titles if possible**, the widget title will be translated every time the language is changed. Note that the widget titles will be translated only if a valid translation is available.
 Click **Save** to create the report and add it to the report list.
 
-**Info:** In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+{{< c8y-admon-info >}}
+In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+{{< /c8y-admon-info >}}
 
 Next, widgets can be added to the report.
 

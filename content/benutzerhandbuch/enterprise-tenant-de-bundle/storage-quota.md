@@ -1,12 +1,10 @@
 ---
-weight: 100
-title: Speicherbegrenzung
-layout: redirect
 aliases:
-  - /Benutzerhandbuch/enterprise-edition/#storage-quota
-  - /benutzerhandbuch/enterprise-edition-de/#storage-quota
+- /benutzerhandbuch/enterprise-edition-de/#storage-quota
+layout: redirect
+title: Speicherbegrenzung
+weight: 100
 ---
-
 
 Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrator ein Speicherkontingent pro Gerät eingerichtet hat. Der insgesamt verfügbare Speicher für einen Benutzer wird mittels der Formel `Speicherkontingent pro Gerät x Anzahl der Geräte` berechnet. Jede Nacht wird überprüft, ob das Kontingent überschritten wurde.
 

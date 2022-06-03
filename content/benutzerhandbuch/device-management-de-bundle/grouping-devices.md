@@ -20,7 +20,7 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
-Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol:
+Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
 
  ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
 
@@ -194,7 +194,7 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 #### So erstellen Sie eine dynamische Gruppe
 
 1. Klicken Sie auf **Alle Geräte** im Navigator, um die Geräteliste anzuzeigen.
-2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > Filtern von Geräten](#filtering-devices).
+2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > So filtern Sie Geräte](#filtering-devices).
 3. Klicken Sie auf **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie auf **Erstellen**.
 

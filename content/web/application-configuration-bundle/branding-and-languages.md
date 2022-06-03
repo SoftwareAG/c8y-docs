@@ -448,4 +448,6 @@ c8ycli deploy public-options ui-assets
 
 Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
->**Info**: For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
+{{< c8y-admon-info >}}
+For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
+{{< /c8y-admon-info >}}

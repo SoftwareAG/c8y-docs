@@ -11,6 +11,7 @@ This document describes the {{< product-c8y-iot >}} NetComm Agent package for th
 
 > **Important:** The {{< product-c8y-iot >}} NetComm Agent releases 1.0.x and 1.1.x are only supported on [Casa Systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) routers. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series) are only supported by another agent.
 
+
 #### 1.0.0
 
 Changes from the previous agent for NTC-6200 and NTC-140W:

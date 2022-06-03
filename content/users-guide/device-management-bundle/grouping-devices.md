@@ -84,7 +84,9 @@ In the **Info** tab, the following information is provided:
 
 In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
 
-> **Info:** Bulk operations are ordered by date, showing the latest operation at the top.
+{{< c8y-admon-info >}}
+Bulk operations are ordered by date, showing the latest operation at the top.
+{{< /c8y-admon-info >}}
 
 <a name="add-group"></a>
 ### To add a group
@@ -96,7 +98,9 @@ In the **Bulk operations** tab, bulk operations created for the group can be man
 
 The new group will be added to the groups list.
 
->**Info:** A group can be created with "0" devices in it.
+{{< c8y-admon-info >}}
+A group can be created with "0" devices in it.
+{{< /c8y-admon-info >}}
 
 To add a new group as a child of an existing group, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
@@ -148,9 +152,9 @@ The device will be assigned to the selected group.
 
 If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
 
->**Info:** In order to create a new group, the user must have the permissions
-ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
-
+{{< c8y-admon-info >}}
+In order to create a new group, the user must have the permissions ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
+{{< /c8y-admon-info >}}
 
 
 #### To unassign a device
@@ -194,7 +198,9 @@ You can easily restructure groups, subgroups and devices by a drag & drop functi
 
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
->**Info:** Smart groups are only available in the Device Management application and not visible in the Cockpit application.
+{{< c8y-admon-info >}}
+Smart groups are only available in the Device Management application and not visible in the Cockpit application.
+{{< /c8y-admon-info >}}
 
 Smart groups can be created from the device list.
 
@@ -218,4 +224,6 @@ Below the smart group name and description you can see the filter criteria which
 
 Hover over the respective entry you want to delete and click the delete icon at the right.
 
-> **Important:** Deleting a smart group is irreversible.
+{{< c8y-admon-important >}}
+Deleting a smart group is irreversible.
+{{< /c8y-admon-important >}}

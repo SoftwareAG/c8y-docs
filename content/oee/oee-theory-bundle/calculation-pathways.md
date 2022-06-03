@@ -10,8 +10,9 @@ The following image explains the naming conventions of the pathways. The same te
 
 In the following, details on each calculation pathway are provided.
 
->**Info:** The tables at the top show which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors used in the images are used only for better understanding and clarity. Below the image you find the corresponding formulas. The formulas which are necessary to calculate the OEE are marked in italics in the table.
-
+{{< c8y-admon-info >}}
+The tables at the top show which variables, starting from the input variables, are needed to calculate all other variables including the OEE. The different colors used in the images are used only for better understanding and clarity. Below the image you find the corresponding formulas. The formulas which are necessary to calculate the OEE are marked in italics in the table.
+{{< /c8y-admon-info >}}
 
 ### Calculation pathway #1
 

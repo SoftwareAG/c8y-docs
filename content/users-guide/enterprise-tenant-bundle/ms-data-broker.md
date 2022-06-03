@@ -8,7 +8,9 @@ aliases:
 
 The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
-> **Important:** At this time the {{< product-c8y-iot >}} Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all {{< product-c8y-iot >}} public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your {{< product-c8y-iot >}} environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
+{{< c8y-admon-important >}}
+At this time the {{< product-c8y-iot >}} Messaging Service and the microservice-based data broker are available on a limited trial basis, and not yet enabled in all {{< product-c8y-iot >}} public cloud environments. Please contact [product support](/welcome/contacting-support/) to inquire about using these capabilities in your {{< product-c8y-iot >}} environment. The original data broker will continue to operate alongside the microservice-based data broker for the time being. Users can choose which data broker to use on a per-tenant basis.
+{{< /c8y-admon-important >}}
 
 <a name="enabling-ms-data-broker"></a>
 ###  To enable the microservice-based data broker
@@ -18,7 +20,9 @@ The microservice-based data broker is powered by the {{< product-c8y-iot >}} Mes
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
 
-> **Info:** Tenants subscribing to a data connector don't need the data broker agent subscription.
+{{< c8y-admon-info >}}
+Tenants subscribing to a data connector don't need the data broker agent subscription.
+{{< /c8y-admon-info >}}
 
 <a name="ms-data-broker-connectors"></a>
 ###  Data connectors
@@ -62,4 +66,6 @@ The data broker monitors the data rate at which events are being forwarded. If t
 
 ![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)
 
-> **Info:** Refer to the *Messaging Service Installation & operations guide* to find out more about how these parameters can be configured.
+{{< c8y-admon-info >}}
+Refer to the *Messaging Service Installation & operations guide* to find out more about how these parameters can be configured.
+{{< /c8y-admon-info >}}

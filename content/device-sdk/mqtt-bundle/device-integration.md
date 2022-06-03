@@ -66,7 +66,9 @@ The device will be linked automatically to the ID the client uses with its MQTT 
 ```text
 100,Device Name,Device Type
 ```
->**Info:** The topic used for {{< product-c8y-iot >}}'s pre-provided static templates is <kbd>s/us</kbd>.
+{{< c8y-admon-info >}}
+The topic used for {{< product-c8y-iot >}}'s pre-provided static templates is <kbd>s/us</kbd>.
+{{< /c8y-admon-info >}}
 
 #### Step 2: Verify children
 

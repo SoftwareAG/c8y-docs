@@ -67,11 +67,15 @@ Klicken Sie auf **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes A
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
 Beispiel:
-Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;SpeedMeasurement.speed.value. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut `c8y_SpeedMeasurement.speed.value` hat, wird er nicht im Bericht erscheinen.
+Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;SpeedMeasurement.speed.value. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut `c8y_SpeedMeasurement.speed.value` hat, wird er nicht in der Exportdatei erscheinen.
 
-Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
+Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
 
 Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
+
+Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
+
+![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
 #### So planen Sie einen Export
@@ -86,7 +90,7 @@ Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten 
 
 **1 - Häufigkeit**
 
-Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, z. B. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
+Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
 >**Info:** Intervalle müssen in koordinierter Weltzeit (UTC) angegeben werden.
 
@@ -131,6 +135,16 @@ Um Daten in eine CSV- oder XLSX-Datei zu exportieren, aktivieren Sie die Checkbo
 Sie erhalten eine E-Mail mit einem Link zu jeder Export-Datei.
 
 Standard-Zeitattribute (wie time oder creationTime in Alarmen) werden nach der Datums- und Uhrzeitformat-Darstellung gemäß [ISO-8601]( https://www.w3.org/TR/NOTE-datetime) in die XLSX- und CSV-Dateien exportiert.
+
+Wenn das Limit für Exportdokumente erreicht ist und das Ergebnis durch seine Begrenzungen beschnitten wird, wird eine weitere Zeile mit einem Indikator am Ende des Dokuments hinzugefügt.
+
+Beispiel für einen CSV-Export mit Indikator:
+
+Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
+2021-11-25T10:37:06.485Z,Position #1,2021-11-25T10:37:06.485Z,Position #1,1266,1195,Location updated,2021-11-25T10:37:06.485Z,c8y_LocationUpdate
+2021-11-25T10:37:01.484Z,Position #1,2021-11-25T10:37:01.484Z,Position #1,1265,1195,Location updated,2021-11-25T10:37:01.484Z,c8y_LocationUpdate
+[...]
+limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
 
 #### So bearbeiten Sie einen Export
 

@@ -58,7 +58,7 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 </tr>
 <tr>
 <td align="left"><a href="#usage-and-billing">Nutzungsstatistiken und Abrechnung</a></td>
-<td align="left">Zeigen Sie <a href="#usage-stats">statistische Informationen</a> zu den einzelnen Mandanten an, z. B. die Anzahl der erstellten Geräte oder Alarme, sowie zur <a href="#microservice-usage">Ressourcennutzung für jeden Microservice</a> zu jedem Mandanten zu Anrechnungszwecken. </td>
+<td align="left">Zeigen Sie <a href="#usage-stats">statistische Informationen</a> zu den einzelnen Mandanten an, z. B. die Anzahl der erstellten Geräte oder Alarme, sowie zur <a href="#microservice-usage">Ressourcennutzung für jeden Microservice</a> zu jedem Mandanten zu Anrechnungszwecken. </td>
 <tr>
 <td align="left"><a href="#data-broker">Data Broker</a></td>
 <td align="left">Teilen Sie Daten selektiv mit anderen Mandanten mit Hilfe von <a href="#data-broker-connectors">Datenkonnektoren</a> und <a href="#data-broker-subscriptions">Datenabonnements</a>.</td>

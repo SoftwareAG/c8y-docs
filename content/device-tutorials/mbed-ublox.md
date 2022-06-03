@@ -46,7 +46,9 @@ To run the {{< product-c8y-iot >}} mbed agent, the following items are required:
 5. Connect a USB cable to the C027 and to your computer. The C027 will appear as "MBED" drive on your computer.
 6. Plug in the power supply and connect it to the application board.
 
-> **Info**: The device cannot be flashed without the power supply connected.
+{{< c8y-admon-info >}}
+The device cannot be flashed without the power supply connected.
+{{< /c8y-admon-info >}}
 
 Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 

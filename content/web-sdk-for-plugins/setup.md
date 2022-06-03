@@ -64,6 +64,10 @@ This command will:
 
 Instead of "latest", you can also specify a certain version number, but this version must be the same or less than the backend version number.
 
-> **Info:** When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
+{{< c8y-admon-info >}}
+When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
+{{< /c8y-admon-info >}}
 
-> You can see the list of plugins which an application uses by utilizing the command `c8y util:showimports \[appContextPath\]`.
+{{< c8y-admon-info >}}
+You can see the list of plugins which an application uses by utilizing the command `c8y util:showimports \[appContextPath\]`.
+{{< /c8y-admon-info >}}

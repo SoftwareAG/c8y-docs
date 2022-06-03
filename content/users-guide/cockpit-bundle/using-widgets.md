@@ -64,7 +64,7 @@ If you want to edit an asset of a widget, open the widget editor and click **Cle
 For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
-#### To select child devices within groups as asset
+#### To select child devices as asset
 
 If the asset is a group or a device with children, you see a folder icon next to their name as well as an arrow icon pointing right. Click the desired group or device with children in the list to open a new level displaying all assigned assets to that group or device. Select the desired asset. To return to the previous level, click on the arrow icon pointing left.
 

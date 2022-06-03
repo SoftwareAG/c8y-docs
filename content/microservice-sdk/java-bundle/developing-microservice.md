@@ -182,7 +182,9 @@ The following properties are used by a microservice:
 | C8Y.httpClient.pool.max          | Max total connections if the connection pooling is enabled.    | 100           |
 | C8Y.httpClient.pool.awaitTimeout | Connection manager timeout (milliseconds).                     | 10000         |
 
-> **Info:** No changes should be made unless the request/connection timeouts or HTTP client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
+{{< c8y-admon-info >}}
+No changes should be made unless the request/connection timeouts or HTTP client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
+{{< /c8y-admon-info >}}
 
 ### Microservice settings
 
@@ -195,14 +197,18 @@ By default the microservice loads the tenant options for the category specified 
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
 When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 
-> **Info**: Once the microservice is deployed it is not possible to change the category during application upgrade.
+{{< c8y-admon-info >}}
+Once the microservice is deployed it is not possible to change the category during application upgrade.
+{{< /c8y-admon-info >}}
 
 Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 
 Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
 When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.
 
-> **Info:** For security reasons, the functionality is not available when running the microservice in legacy mode, that is, local development or RPM installation.
+{{< c8y-admon-info >}}
+For security reasons, the functionality is not available when running the microservice in legacy mode, that is, local development or RPM installation.
+{{< /c8y-admon-info >}}
 
 Tenant option settings can be accessed in two ways:  
 
@@ -261,8 +267,9 @@ BODY:
   }
 ```
 
-> **Note**: You cannot override a property injected by Spring `@Value("${property.name}")`.
-
+{{< c8y-admon-info >}}
+You cannot override a property injected by Spring `@Value("${property.name}")`.
+{{< /c8y-admon-info >}}
 
 ### Logging
 
@@ -329,7 +336,7 @@ It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
 * description (alias package.description) - defaults to project.description
-* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided.
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided
 * arguments (alias agent-package.arguments) - arguments passed during application startup
 * encoding (alias project.build.sourceEncoding) - defaults to UTF-8
 * heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
@@ -338,6 +345,7 @@ It can be configured with the following parameters:
 * rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
 * containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
 * manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
+* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s
 
 Example configuration:
 
@@ -440,7 +448,9 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 
 #### Hosted deployment
 
-> **Info**: For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
+{{< c8y-admon-info >}}
+For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
+{{< /c8y-admon-info >}}
 
 To deploy an application on an environment you need the following:
 

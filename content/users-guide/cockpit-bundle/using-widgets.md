@@ -23,7 +23,9 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
-	>**Info:** The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
+	{{< c8y-admon-info >}}
+The header styles "Regular" and "Border" can be used for all widgets while the header styles "Overlay" and "Hidden" remove the header and should only be used for widgets which benefit from a full-screen experience, for example "Image" or "Map". For other widgets, like "Alarms list" or "Data point table", these header styles should not be used.
+	{{< /c8y-admon-info >}}
 
 5. Click **Save** to add the widget to the dashboard or report.
 
@@ -46,7 +48,9 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
->**Info:** On touch devices like smartphones or tablets some functions may not be supported.
+{{< c8y-admon-info >}}
+On touch devices like smartphones or tablets some functions may not be supported.
+{{< /c8y-admon-info >}}
 
 <a name="target-assets"></a>
 ### Selecting assets in widgets
@@ -106,3 +110,4 @@ Filtering is another way to find assets. However, it only filters assets on the 
 ![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
 For details on the filter functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
+

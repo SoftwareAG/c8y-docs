@@ -169,7 +169,9 @@ The table can be understood as follows:
  * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
  * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
 
- > **Info**: The {{< product-c8y-iot >}} platform itself is running as a hybrid application in production since version 9.25.x.
+{{< c8y-admon-info >}}
+The {{< product-c8y-iot >}} platform itself is running as a hybrid application in production since version 9.25.x.
+{{< /c8y-admon-info >}}
 
 #### Deprecating custom manifests
 

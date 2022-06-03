@@ -19,7 +19,9 @@ The tutorial describes how to install a {{< product-c8y-iot >}} agent with all r
 * Use the [PiFace Digital 2](https://www.element14.com/community/docs/DOC-69001) adapter board from the cloud.
 * Use [TinkerForge](/device-tutorials/tinkerforge) sensors and controls from the cloud.
 
-> **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the {{< product-c8y-iot >}} C++ SDK.
+{{< c8y-admon-info >}}
+The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the {{< product-c8y-iot >}} C++ SDK.
+{{< /c8y-admon-info >}}
 
 ### Prerequisites
 

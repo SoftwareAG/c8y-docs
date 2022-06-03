@@ -1,6 +1,6 @@
 ---
 layout: redirect
-title: Verwenden von SmartREST-Templates
+title: SmartREST-Templates
 weight: 80
 ---
 
@@ -8,13 +8,13 @@ Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und An
 
 Um ein neues Template hinzuzufügen, importieren Sie entweder ein vorhandenes Template oder erstellen Sie ein neues.
 Um ein Template zu importieren, klicken Sie rechts in der oberen Menüleiste auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
-Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie unter [Device Management > SmartREST-Templates](/users-guide/device-management#smartrest-templates) im *User Guide* beschrieben.
+Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie im Abschnitt [Device Management > SmartREST-Templates](/users-guide/device-management#smartrest-templates) beschrieben.
 
 ### Einführung
 
 Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und {{< product-c8y-iot >}} Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedes Mal manuell eine Anfrage zu schreiben.
 
-Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Reference Guide](/reference/smartrest-two/#mqtt-static-templates).
+Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Reference Guide](/reference/smartrest-two#mqtt-static-templates).
 
 Öffnen Sie die Seite **SmartREST-Template** im Menü **Gerätetypen** des Navigators.
 
@@ -121,7 +121,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST > Templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 

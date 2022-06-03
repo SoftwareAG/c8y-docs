@@ -8,12 +8,14 @@ layout: redirect
 
 The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent must be registered in {{< product-c8y-iot >}} before serving the device request.
 
->**Info:** If you are using one of the {{< company-sag >}} public cloud instances, you must ensure that your tenant is subscribed to the Mibparser microservice.
->
->To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
->
->* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
->* Upload this ZIP file as a microservice into the platform. Refer to [Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
+{{< c8y-admon-info >}}
+If you are using one of the {{< company-sag >}} public cloud instances, you must ensure that your tenant is subscribed to the Mibparser microservice.
+
+To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
+
+* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
+* Upload this ZIP file as a microservice into the platform. Refer to [Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide* for details on how to upload microservices into {{< product-c8y-iot >}}.
+{{< /c8y-admon-info >}}
 
 ### Installation
 
@@ -71,14 +73,18 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 		$HOME/.snmp/log/snmp-agent-gateway-server.log
 
-> **Info:** The agent uses the following location as persistent storage:
+{{< c8y-admon-info >}}
+The agent uses the following location as persistent storage:
+{{< /c8y-admon-info >}}
 
 		$HOME/.snmp/{gateway.identifier}/chronicle
 
 
 ### Upgrading a GA version
 
-> **Info:**: This upgrade procedure is only for GA releases. If you have installed any previous release prior to GA release, follow the migration procedure described below.
+{{< c8y-admon-info >}}
+This upgrade procedure is only for GA releases. If you have installed any previous release prior to GA release, follow the migration procedure described below.
+{{< /c8y-admon-info >}}
 
 1. Make sure that the load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are pending messages in the SNMP agent to be sent to the platform, wait for the processing to complete.
@@ -107,7 +113,9 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 Between version 10.4.x and 10.5.x, the SNMP agent has undergone a major revamp regarding persistence storage mechanism, robustness, performance improvements and more. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 
-> **Info:**: The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
+{{< c8y-admon-info >}}
+The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
+{{< /c8y-admon-info >}}
 
 1. Make sure that load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are pending messages in the SNMP agent to be sent to the platform, wait for the processing to complete.
@@ -121,4 +129,6 @@ Between version 10.4.x and 10.5.x, the SNMP agent has undergone a major revamp r
 7. Delete the snmp-agent device in {{< product-c8y-iot >}} which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
 8. Follow the installation procedure described above, to install/move to GA version.
 
-> **Info:** SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
+{{< c8y-admon-info >}}
+SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
+{{< /c8y-admon-info >}}

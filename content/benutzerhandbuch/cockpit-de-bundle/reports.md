@@ -4,6 +4,7 @@ title: Verwenden von Berichten
 weight: 45
 ---
 
+
 Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
 Klicken Sie im Navigator auf **Berichte**, um alle Berichte anzuzeigen.

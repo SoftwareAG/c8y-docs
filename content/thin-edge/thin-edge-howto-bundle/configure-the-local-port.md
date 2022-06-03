@@ -50,7 +50,9 @@ tedge connect c8y
 tedge connect az
 ```
 
->**Info:** Steps 1 and 2 can be followed in any order.
+{{< c8y-admon-info >}}
+Steps 1 and 2 can be followed in any order.
+{{< /c8y-admon-info >}}
 
 ### Update to use default port
 

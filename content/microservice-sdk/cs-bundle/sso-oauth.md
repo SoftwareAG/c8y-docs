@@ -40,7 +40,9 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-> **Important:** Do not use the `AddBasicAuthentication` method if you want OAuth-based authentication for your microservice.
+{{< c8y-admon-important >}}
+Do not use the `AddBasicAuthentication` method if you want OAuth-based authentication for your microservice.
+{{< /c8y-admon-important >}}
 
 To use multiple authentication schemes, the Controllers class must be decorated as follows:
 

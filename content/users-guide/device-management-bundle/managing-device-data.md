@@ -138,7 +138,9 @@ In the details of a specific firmware, hover over the version or patch entry you
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
->**Info:** The **Firmware** tab shows up for a device if the device supports `c8y_Firmware` operations.
+{{< c8y-admon-info >}}
+The **Firmware** tab shows up for a device if the device supports `c8y_Firmware` operations.
+{{< /c8y-admon-info >}}
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Firmware** tab.
 
@@ -174,7 +176,9 @@ The status of the bulk operation is shown in the **Bulk operations** tab under *
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
 
->**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< c8y-admon-info >}}
+Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< /c8y-admon-info >}}
 
 <a name="software-repo"></a>
 ### Managing device software
@@ -201,7 +205,9 @@ If a device type filter is set, the software will show up for installation only 
 If no filter is set, it will be available for all devices.
 The software type will make the software installable only on devices that specifically support the particular software type.
 
->**Info:** The **Software type** field suggests you a list of types already used in your software repository. Before you consider defining a new software type (the field accepts new values directly) check if the type you need has already been defined before for another software by looking at the suggestions in the dropdown. This will help you keep software types consistent within your organization. If you use, for example, container images you may look for `container` or `image`, or try to search for more specific types like `docker`, `lxc`, and so on. This may prevent you from scattering your software types and using different names for effectively the same software type.
+{{< c8y-admon-info >}}
+The **Software type** field suggests you a list of types already used in your software repository. Before you consider defining a new software type (the field accepts new values directly) check if the type you need has already been defined before for another software by looking at the suggestions in the dropdown. This will help you keep software types consistent within your organization. If you use, for example, container images you may look for `container` or `image`, or try to search for more specific types like `docker`, `lxc`, and so on. This may prevent you from scattering your software types and using different names for effectively the same software type.
+{{< /c8y-admon-info >}}
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -251,7 +257,9 @@ In the details of a specific software, hover over the version entry you want to 
 
 In the **Software** tab of a device you can manage the software for the particular device.
 
->**Info:** The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< c8y-admon-info >}}
+The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< /c8y-admon-info >}}
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
@@ -267,7 +275,9 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
 
-    >**Info:** The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+    {{< c8y-admon-info >}}
+The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+    {{< /c8y-admon-info >}}
 
 2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
 For devices supporting advanced software management features, already installed software items cannot be pre-filtered from the list of available software items. Thus, after a particular software version has been selected, a check is done if the selected software is already installed on the device. If this is the case, a warning next to the selected version indicates that this software version is already present on the device.  
@@ -311,7 +321,9 @@ The status and details of the bulk operation are shown in the **Bulk operations*
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
 
->**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< c8y-admon-info >}}
+Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Managing configurations
@@ -355,7 +367,9 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
->**Info:** The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
+{{< c8y-admon-info >}}
+The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
+{{< /c8y-admon-info >}}
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
@@ -382,7 +396,9 @@ Once retrieved, you can save or download the snapshot in the **Preview** section
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> **Info:** Clicking **Get snapshot from device** creates a new operation. If the operation is in status PENDING or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
+{{< c8y-admon-info >}}
+Clicking **Get snapshot from device** creates a new operation. If the operation is in status PENDING or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
+{{< /c8y-admon-info >}}
 
 To apply a configuration snapshot to a device which supports multiple configuration types:
 
@@ -393,7 +409,9 @@ To apply a configuration snapshot to a device which supports multiple configurat
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+{{< c8y-admon-info >}}
+Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+{{< /c8y-admon-info >}}
 
 <a name="credentials"></a>
 ### Managing device credentials
@@ -506,7 +524,9 @@ Duplicating a profile creates another instance of the profile with the same cont
 
 To delete a device profile, click the menu icon at the right of the respective device profile entry and then click **Delete**.
 
-> **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
+{{< c8y-admon-info >}}
+Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
+{{< /c8y-admon-info >}}
 
 <a name="applying-device-profiles"></a>
 ### Applying device profiles to devices
@@ -520,7 +540,9 @@ The **Device profile** tab of a particular device shows the details of the curre
 
 ![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
+{{< c8y-admon-info >}}
+The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
+{{< /c8y-admon-info >}}
 
 Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
 
@@ -549,15 +571,18 @@ Device profiles can be applied to multiple devices by using bulk operations.
 
 The devices will install the firmware, software, and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 
->**Info:** When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
-
+{{< c8y-admon-info >}}
+When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
+{{< /c8y-admon-info >}}
 
 <a name="trusted-certificates"></a>
 ### Managing trusted certificates
 
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
->**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the *Device SDK guide*.
+{{< c8y-admon-info >}}
+This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the *Device SDK guide*.
+{{< /c8y-admon-info >}}
 
 Click **Trusted certificates** in the **Management** menu in the navigator.
 
@@ -603,7 +628,9 @@ To add a certificate perform these steps:
 
 3. Click **Add Certificate** to validate and save the certificate.
 
->**Info:** For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
+{{< c8y-admon-info >}}
+For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
+{{< /c8y-admon-info >}}
 
 #### To edit a trusted certificate
 

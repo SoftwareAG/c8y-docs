@@ -42,7 +42,7 @@ $ docker images
 Run the Docker container for the microservice providing the environment variables:
 
 ```shell
-$ docker run -–cap-drop=ALL -–cap-add=NET_BIND_SERVICE \ 
+$ docker run -–cap-drop=ALL -–cap-add=NET_BIND_SERVICE \
    -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> \
    -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> \
    -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> \
@@ -182,4 +182,6 @@ To execute requests against the {{< product-c8y-iot >}} platform running a micro
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 
-> **Important**: `C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
+{{< c8y-admon-important >}}
+`C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
+{{< /c8y-admon-important >}}

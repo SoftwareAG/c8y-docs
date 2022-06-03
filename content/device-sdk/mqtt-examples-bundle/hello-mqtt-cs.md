@@ -211,7 +211,9 @@ Note that the subscription is established after the device creation, otherwise i
 
 The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-sdk/rest#step-0-request-device-credentials) step.
 
-> **Important**: Do not use new line characters  \r\n and escaping characters specific for Windows OS.
+{{< c8y-admon-important >}}
+Do not use new line characters  \r\n and escaping characters specific for Windows OS.
+{{< /c8y-admon-important >}}
 
 ```cs
 const string serverUrl = "mqtt.cumulocity.com";

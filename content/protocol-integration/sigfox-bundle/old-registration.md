@@ -11,4 +11,6 @@ If devices have previously been registered via the general device registration t
 - `https://sigfox-agent.{{< domain-c8y >}}/sigfoxServiceStatusCallback` to `https://<tenantId>.{{< domain-c8y >}}/service/sigfox-agent/sigfoxServiceStatusCallback`.
 - `https://sigfox-agent.{{< domain-c8y >}}/sigfoxErrorCallback` to `https://<tenantId>.{{< domain-c8y >}}/service/sigfox-agent/sigfoxErrorCallback`.
 
-> **Info:** General device registration for Sigfox devices is no longer supported.
+{{< c8y-admon-info >}}
+General device registration for Sigfox devices is no longer supported.
+{{< /c8y-admon-info >}}

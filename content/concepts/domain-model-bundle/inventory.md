@@ -88,7 +88,9 @@ Fragments use a naming convention to avoid conflicts between different parties s
 
 In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the *Reference guide*.
 
-> **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
+{{< c8y-admon-important >}}
+Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
+{{< /c8y-admon-important >}}
 
 Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 

@@ -15,7 +15,9 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 2. Enter a name for the new endpoint and select the protocol to be used.
 3. Follow the descriptions below for the protocol-specific settings.
 
->**Info:** To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+{{< c8y-admon-info >}}
+To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+{{< /c8y-admon-info >}}
 
 <a name="adding-remote-access-endpoints-via-vnc"></a>
 #### To add a remote access endpoint via VNC
@@ -42,7 +44,9 @@ Once the connection is established, a new browser tab will open displaying the f
 
 	![SSH public/private keys sign in](/images/cra/cra-endpoint-ssh-publicprivatekeys.png)
 
-	> **Info:** The public key needs to be installed on the remote device as authorized key.
+	{{< c8y-admon-info >}}
+The public key needs to be installed on the remote device as authorized key.
+	{{< /c8y-admon-info >}}
 
 	Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
 
@@ -69,7 +73,9 @@ The following algorithms are supported when adding new keys:
 2. Click **Save** to add the endpoint.
 ![Remote access Telnet endpoint](/images/cra/cra-endpoint-telnet.png)
 
->**Important:** Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
+{{< c8y-admon-important >}}
+Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
+{{< /c8y-admon-important >}}
 
 #### To edit an endpoint
 
@@ -79,7 +85,9 @@ To edit an endpoint, click the menu icon at the right of the respective entry an
 
 To delete an endpoint, click the menu icon at the right of the respective entry and select **Remove** from the context menu.
 
->**Info:** An active connection will not be terminated automatically after the endpoint was deleted.
+{{< c8y-admon-info >}}
+An active connection will not be terminated automatically after the endpoint was deleted.
+{{< /c8y-admon-info >}}
 
 <a name="connecting-to-endpoints"></a>
 #### To connect to an endpoint

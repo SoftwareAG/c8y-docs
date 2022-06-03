@@ -40,8 +40,9 @@ Dashboards provide you with a customized visualization of your data by using a s
 5. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
 6. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
-    > **Info:** The widget titles will be translated only if a valid translation is available.
-
+    {{< c8y-admon-info >}}
+The widget titles will be translated only if a valid translation is available.
+    {{< /c8y-admon-info >}}
 7. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
 8. Click **Save** to create and open the dashboard.
@@ -65,8 +66,9 @@ A corresponding message will be displayed in the editor.
 
 Changes made to this dashboard are automatically applied to all dashboard instances.
 
-> **Info:** You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
-
+{{< c8y-admon-info >}}
+You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
+{{< /c8y-admon-info >}}
 
 ### To edit a dashboard
 

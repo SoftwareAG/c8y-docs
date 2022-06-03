@@ -53,7 +53,7 @@ Folgende Typen sind verfügbar:
 </tr>
 <tr>
 <td align="left"><a href="#widget-asset-table">Asset-Tabelle</a></td>
-<td align="left">Zeigt eine Tabelle mit Details zu den Kindgeräten.</td>
+<td align="left">Zeigt eine Tabelle mit Details zu einem ausgewählten Asset und allen seinen Kindgeräten.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widget-image">Bild</a></td>
@@ -228,7 +228,7 @@ Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen 
 <a name="widget-asset-table"></a>
 ### Asset-Tabelle
 
-Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu den Kindgeräten an. Dies ist ein sehr mächtiges Widget, dass es ermöglicht, ausgewählte Attribute von Objekten in einer Tabelle zu arrangieren.
+Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu einem ausgewählten Asset und allen seinen Kindgeräten. Dies ist ein sehr mächtiges Widget, dass es ermöglicht, ausgewählte Attribute von Objekten in einer Tabelle zu arrangieren.
 
 **Konfigurierbare Parameter**
 
@@ -261,7 +261,7 @@ Klicken Sie auf **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attri
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Shell-Kommandos](/benutzerhandbuch/device-management-de/#shell).<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Gerätedetails > Shell](/benutzerhandbuch/device-management-de/#shell).<br>
 Sie können auch das JSON-Format für die Operation eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Operationen, um weitere Details zu erfahren.
 
 #### So ändern Sie die Tabelle
@@ -368,6 +368,7 @@ Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es k�
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
 
+
 <a name="widget-html"></a>
 ### HTML
 
@@ -420,7 +421,6 @@ Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte
 ![Info gauge widget data point label](/images/benutzerhandbuch/cockpit/cockpit-widget-data-labels.png)
 
 Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
-
 
 <a name="widget-map"></a>
 ### Karte
@@ -496,12 +496,15 @@ Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Mes
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
 
+
 <a name="quick-links"></a>
 ### Quick Links
 
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
+
+
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung

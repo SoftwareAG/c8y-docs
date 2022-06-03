@@ -22,8 +22,9 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 
 ![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
->**Info:** This process can only be executed in the Administration application and is not available under **User settings**.
-
+{{< c8y-admon-info >}}
+This process can only be executed in the Administration application and is not available under **User settings**.
+{{< /c8y-admon-info >}}
 
 ### TOTP (Google Authenticator)
 

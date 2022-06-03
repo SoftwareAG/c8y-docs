@@ -10,11 +10,13 @@ In the following section you will find descriptions of the most important functi
 
 If you are interested in details on exposing the {{< product-c8y-iot >}}´s functionalities through our Rest API, see the [{{< openapi >}}](https://{{< domain-c8y >}}/api/) for further information.
 
-Moreover, see [SmartREST](/reference/smartrest) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
+Moreover, see [SmartREST](/reference/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
 
 To start with device management, open the **All devices** tab in the **Devices** menu of the Device Management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
 
->**Info:** For a detailed explanation of each tab and its related configuration via the UI, see also [Device Management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
+{{< c8y-admon-info >}}
+For a detailed explanation of each tab and its related configuration via the UI, see also [Device Management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
+{{< /c8y-admon-info >}}
 
 ![Device details](/images/reference-guide/device-details.png)
 

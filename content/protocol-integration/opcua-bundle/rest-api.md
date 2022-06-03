@@ -215,9 +215,9 @@ The Spring Expression Language(SpEL) has been used to parse these conditions, bu
 
 See the **alarmStatusMappings example** below the table.
 
->**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
-> then the status is selected based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
-> the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+{{< c8y-admon-info >}}
+There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation, then the status is selected based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+{{< /c8y-admon-info >}}
 
 </td>
 </tr>

@@ -8,7 +8,7 @@ weight: 50
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
+To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
 
 You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
@@ -162,7 +162,7 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
 
 <a name="inventory-templates"></a>
 #### Inventory templates (1xx)
@@ -312,7 +312,9 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< c8y-admon-info >}}
+If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< /c8y-admon-info >}}
 
 <a name="115"></a>
 ##### Set firmware (115)
@@ -1062,12 +1064,14 @@ Update the software installed on the device.
 528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
 
->**Info:** The action can either be `install` or `delete`.
->
-> When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
-> The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
->
-> When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< c8y-admon-info >}}
+The action can either be `install` or `delete`.
+
+When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
+The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
+
+When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< /c8y-admon-info >}}
 
 <a name="530"></a>
 ##### Cloud Remote Access Connect (530)

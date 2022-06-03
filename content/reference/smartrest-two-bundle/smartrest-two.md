@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
+Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -182,7 +182,9 @@ A request template contains the following basic fields:
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
 It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
 
-> **Info:** If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
+{{< c8y-admon-info >}}
+If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
+{{< /c8y-admon-info >}}
 
 **Example**
 
@@ -301,7 +303,9 @@ This results in the following minimal template creations:
 Creating data on the inventory optionally includes the creation of an externalId for that object.
 This is controlled by the mandatory value externalIdType.
 
-> **Important**: POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.
+{{< c8y-admon-important >}}
+POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.
+{{< /c8y-admon-important >}}
 
 ```bash
 # Creation:
@@ -546,6 +550,8 @@ Your MQTT ClientId could look like this:
 d:myDeviceSerial:myDefaultTemplateXID
 ```
 
->**Info**: If you use a default X-ID, you must include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
+{{< c8y-admon-info >}}
+If you use a default X-ID, you must include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
+{{< /c8y-admon-info >}}
 
 It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).

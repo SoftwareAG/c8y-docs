@@ -61,8 +61,6 @@ You can select a single device or a group of devices, which are marked with a fo
 
 If you want to edit an asset of a widget, open the widget editor and click **Clear**. This clears the previous asset collection. Select the new desired asset and click **Save**.  
 
-![Selected asset](/images/users-guide/cockpit/cockpit-asset-selected.png)
-
 For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
 
 <a name="asset-groups"></a>
@@ -76,7 +74,6 @@ If you want to select an unassigned device as an asset, you can find the unassig
 
 >**Info:** You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
 
-![Unassigned devices](/images/users-guide/cockpit/cockpit-asset-unassigned-devices.png)
 
 <a name="asset-search"></a>
 #### To search and filter for assets

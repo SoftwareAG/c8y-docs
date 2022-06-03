@@ -71,7 +71,9 @@ The following requests are considered a device's heartbeat and will mark the dev
  * Creation of an event, measurement or alarm (for given device as source)
  * Updates to the device itself (with a given ID), in the form of empty PUT requests or requests with an ID only, that is `{}` or `{"id": ... }`
 
->**Info:** Keep in mind that after updating the last message it may take some minutes until the new status has been saved in a database.
+{{< c8y-admon-info >}}
+Keep in mind that after updating the last message it may take some minutes until the new status has been saved in a database.
+{{< /c8y-admon-info >}}
 
 ### Connection monitoring
 
@@ -85,4 +87,6 @@ A monitored device has one of the following statuses for `c8y_Connection`:
 |DISCONNECTED| `responseInterval` is larger than 0 and the device is neither AVAILABLE nor CONNECTED. |
 |MAINTENANCE| `responseInterval` is smaller or equal to 0; the device is under maintenance.          |
 
->**Info:** If a device is not connected via device push, but a message was sent within the required response interval, `c8y_Availability` can still have the status AVAILABLE, even if `c8y_Connection` does not have the status CONNECTED.
+{{< c8y-admon-info >}}
+If a device is not connected via device push, but a message was sent within the required response interval, `c8y_Availability` can still have the status AVAILABLE, even if `c8y_Connection` does not have the status CONNECTED.
+{{< /c8y-admon-info >}}

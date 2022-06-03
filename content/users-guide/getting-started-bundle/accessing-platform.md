@@ -75,10 +75,12 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} public 
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
-* Click **Privacy policy** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+* Click **Reject all** to reject all of the default cookie settings.
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
-	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.
+	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
+* Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+
 
 {{< c8y-admon-info >}}
 If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).

@@ -113,19 +113,19 @@ PUT /inventory/managedObjects/<deviceId>
 ```json
 {
    "c8y_Agent": {
-       "name": "edge.i",
+       "name": "thin-edge.io",
        "version": "0.6",
-       "url": "https://edge.io",
+       "url": "https://thin-edge.io/",
        "maintainer": "Software AG"
    }
 }
 ```
 
-| Field    | Data type | Mandatory | Details                 |
-|----------|-----------|-----------|-------------------------|
-| name     | string    | Yes       | Name of the agent       |
-| version  | string    | Yes       | Version of the agent    |
-| url      | string    | No        | The agent URL           |
+| Field      | Data type | Mandatory | Details                 |
+|------------|-----------|-----------|-------------------------|
+| name       | string    | Yes       | Name of the agent       |
+| version    | string    | Yes       | Version of the agent    |
+| url        | string    | No        | The agent URL           |
 | maintainer | string    | Yes       | Maintainer of the agent |
 
 **SmartREST example**

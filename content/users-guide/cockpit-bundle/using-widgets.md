@@ -57,7 +57,7 @@ The following section describes how [to select one asset](#add-asset), how [to s
 #### To add an asset to a new or existing widget
 
 On the **Configuration** tab of the widget editor, select the check boxes of the desired asset under **Asset selection**. Click **Save** to add the asset to the widget.
-You can select a single device or a whole group of devices, indicated by a folder icon. For details on selecting child devices within groups, see [To select child devices within groups as asset](#asset-groups).
+You can select a single device or a whole group of devices, indicated by a folder icon. For details on selecting child devices, see [To select child devices within groups as asset](#asset-groups).
 
 If you want to edit an asset of a widget, open the widget editor and click **Clear**. This clears the previous asset collection. Select the new desired asset and click **Save**.  
 

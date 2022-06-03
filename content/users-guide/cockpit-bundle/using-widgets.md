@@ -51,7 +51,7 @@ Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock
 <a name="target-assets"></a>
 ### Selecting assets in widgets
 
-The following section describes how [to select one asset](#add-asset), how [to select groups or devices with children as an asset](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
+The following section describes how [to select one top-level asset](#add-asset), how [to select child devices as asset](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
 
 <a name="add-asset"></a>
 #### To add an asset to a new or existing widget

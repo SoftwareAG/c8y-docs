@@ -31,9 +31,9 @@ The network configuration blue screen does not appear post installation. After t
 
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
-	{{< c8y-admon-important >}}
+    {{< c8y-admon-important >}}
 Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
-  {{< /c8y-admon-important >}}
+    {{< /c8y-admon-important >}}
 
 8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 

@@ -128,8 +128,7 @@ monit restart opcua_mgmt_service_proc
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
 	- Subscribe the Streaming Analytics application to the edge tenant.
-
-		{{< c8y-admon-important >}}
+    {{< c8y-admon-important >}}
 To subscribe the application, you must have the "Tenant Manager" role.
     {{< /c8y-admon-important >}}
 

@@ -102,9 +102,9 @@ Use the **Apply across all models** toggle if you want the processing to happen 
 <br>Click **Finish** to schedule the job that you just configured.
 
 {{< c8y-admon-info >}}
-<br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
-<br>2. The data range selected for the schedule must not exceed 24 hours.
-<br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
+1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
+2. The data range selected for the schedule must not exceed 24 hours.
+3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
 {{< /c8y-admon-info >}}
 
 After the job is scheduled, you will see a corresponding notification.

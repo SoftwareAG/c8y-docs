@@ -37,10 +37,10 @@ Currently, jobs can be scheduled using PMML models and model groups only. Howeve
 |dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
 {{< c8y-admon-info >}}
-<br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
-<br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
-<br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".
-<br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
+1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
+2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format <br>
+&emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".<br>
+&emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
 {{< /c8y-admon-info >}}
 
 ### POST - Create new job

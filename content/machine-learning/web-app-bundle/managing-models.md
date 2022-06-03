@@ -30,9 +30,9 @@ Then click **Add model**, navigate to the desired file and finally click **Open*
 Once your model is successfully uploaded, you will see a corresponding confirmation message. The new model will be added to the models list.
 
 {{< c8y-admon-info >}}
-<br>For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
-<br>By default, the toggle is enabled.<br>
-<br>During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
+For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
+By default, the toggle is enabled.<br>
+During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
 {{< /c8y-admon-info >}}
 
 ### Downloading models

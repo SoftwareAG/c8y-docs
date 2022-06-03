@@ -104,7 +104,7 @@ Upload hardware information using the 110 static template. Usually this can be d
 
 ### Agent information
 
-All devices should provide information about the agent they are running, that is the software that integrates them with {{< product-c8y-iot >}}.
+All devices must provide information about the agent they are running, that is the software that integrates them with {{< product-c8y-iot >}}.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

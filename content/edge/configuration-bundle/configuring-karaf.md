@@ -36,7 +36,7 @@ If the system performance is slow, you must increase the memory. Stop the Edge a
 
 <img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
 
-Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
+Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of the `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
 
 ### Changing log level for Karaf
 

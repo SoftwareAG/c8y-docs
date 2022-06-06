@@ -39,14 +39,13 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
 
-In order to change the connection associated with the device, the device needs to be re-registered.
+In order to migrate the device from one LNS Connection to another, the device needs to be re-registered.
 Navigate to the **LPWAN** tab of the Device.
 Click on the **Provider connection** dropdown.
-A prompt will appear stating that in order to change the provider connection, you need to re-register the device.
+A prompt will appear stating that in order to migrate the device from one LNS Connection to another, you need to re-register the device.
 Click on the **Re-Register** button.
 
-Change the provider connection to the desired new connection and click **Re-Register**.
-A prompt will appear stating **Provider connection updated**, if the re-registration was successful.
+The user is directed to the device registration page where the user can perform the re-registration, as per the steps mentioned above and selecting the desired LNS Connection. 
 
 
 ### <a name="device-registration-process">LoRa device registration process</a>

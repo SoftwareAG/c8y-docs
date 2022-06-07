@@ -29,6 +29,8 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
 + <a href="#100">100,createdDeviceName,deviceType</a>
 + <a href="#101">101,createdChildId,childName,childType</a>
++ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
++ <a href="#104">104,serviceStatus</a>
 + <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
 + <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
 + <a href="#110">110,serialNumber,hardwareModel,revision</a>
@@ -198,6 +200,39 @@ Create a new child device for the current device. The newly created object will 
 
 ```text
 101,uniqueChildId,myChildDevice,myChildType
+```
+
+<a name="102"></a>
+##### Service creation (102)
+
+Create a new software service for given device.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service name|YES|String|
+|2|service unique external id|YES|String|
+|3|service type|YES|String|
+|4|service status|YES|String|
+
+**Example**
+
+```text
+102,myDevice_MongoDb,systemd,MongoDb,up
+```
+
+<a name="104"></a>
+##### Service status update (104)
+
+Set a status for given software service.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service status|YES|String|
+
+**Example**
+
+```text
+104,up
 ```
 
 <a name="105"></a>

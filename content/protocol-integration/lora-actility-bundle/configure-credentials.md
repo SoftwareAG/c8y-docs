@@ -41,8 +41,7 @@ To add another connection, click **Add Connection** and follow the steps above.
 Select the connection to be updated, make your edits, and save the connection.
 
 
-If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
-
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file".
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
@@ -51,5 +50,4 @@ If there are devices associated with the connection, then we get an error messag
 
 Select the connection to be deleted and click **Delete**.
 
-If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
-
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file".

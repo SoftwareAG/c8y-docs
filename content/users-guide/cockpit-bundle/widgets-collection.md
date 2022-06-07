@@ -220,7 +220,7 @@ The "Asset table" widget shows details of a selected asset and all its child dev
 
 **Example**
 
-In the following screenshot, five columns are configured. Three property columns "Meter", "Vendor", and "Owner", which refer to the properties "name", "type" and "owner" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+In the following screenshot, five columns are configured. Three property columns "Name", "Owner", and "Type", which refer to the properties "name", "owner" and "type" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
 ![Asset table widget](/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 

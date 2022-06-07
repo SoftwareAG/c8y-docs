@@ -29,6 +29,8 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
 + <a href="#100">100,createdDeviceName,deviceType</a>
 + <a href="#101">101,createdChildId,childName,childType</a>
++ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
++ <a href="#104">104,serviceStatus</a>
 + <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
 + <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
 + <a href="#110">110,serialNumber,hardwareModel,revision</a>
@@ -200,6 +202,39 @@ Create a new child device for the current device. The newly created object will 
 101,uniqueChildId,myChildDevice,myChildType
 ```
 
+<a name="102"></a>
+##### Service creation (102)
+
+Create a new software service for given device.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service name|YES|String|
+|2|service unique external id|YES|String|
+|3|service type|YES|String|
+|4|service status|YES|String|
+
+**Example**
+
+```text
+102,myDevice_MongoDb,systemd,MongoDb,up
+```
+
+<a name="104"></a>
+##### Service status update (104)
+
+Set a status for given software service.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service status|YES|String|
+
+**Example**
+
+```text
+104,up
+```
+
 <a name="105"></a>
 ##### Get child devices (105)
 
@@ -312,7 +347,9 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< c8y-admon-info >}}
+If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< /c8y-admon-info >}}
 
 <a name="115"></a>
 ##### Set firmware (115)
@@ -1062,12 +1099,14 @@ Update the software installed on the device.
 528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
 
->**Info:** The action can either be `install` or `delete`.
->
-> When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
-> The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
->
-> When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< c8y-admon-info >}}
+The action can either be `install` or `delete`.
+
+When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
+The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
+
+When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< /c8y-admon-info >}}
 
 <a name="530"></a>
 ##### Cloud Remote Access Connect (530)

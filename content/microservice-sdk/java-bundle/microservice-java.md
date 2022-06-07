@@ -6,7 +6,9 @@ aliases:
   - /microservice-sdk/http/#microservice-java
 ---
 
-> **Important**: Visit our [Hello world tutorial](/microservice-sdk/java/#java-microservice) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
+{{< c8y-admon-important >}}
+Visit our [Hello world tutorial](/microservice-sdk/java/#java-microservice) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
+{{< /c8y-admon-important >}}
 
 ### Developing the IP-tracker microservice
 
@@ -39,7 +41,9 @@ Your *pom.xml* file should contain a snippet similar to:
 </properties>
 ```
 
-> **Info**: This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+{{< c8y-admon-info >}}
+This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+{{< /c8y-admon-info >}}
 
 Finally, add the following dependency:
 

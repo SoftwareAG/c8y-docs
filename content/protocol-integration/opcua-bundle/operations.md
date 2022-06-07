@@ -74,7 +74,9 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 </tbody>
 </table>
 
-> **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< c8y-admon-info >}}
+We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< /c8y-admon-info >}}
 
 ### Reading the value of a node/nodes
 

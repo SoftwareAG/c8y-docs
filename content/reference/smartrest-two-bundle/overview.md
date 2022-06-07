@@ -19,7 +19,9 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 
 In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
 
->**Info:** The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest-two).
+{{< c8y-admon-info >}}
+The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest-two).
+{{< /c8y-admon-info >}}
 
 ### How does SmartREST work?
 

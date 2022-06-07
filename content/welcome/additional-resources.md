@@ -28,7 +28,9 @@ On this community, you can:
 
 You can find product information on the product support website in the [{{< company-sag >}} {{< sag-portal >}} ]({{< link-sag-portal >}}).
 
->**Info:** If you do not have an account for the {{< sag-portal >}} yet, send an email to [{{< email-sag >}}]({{< email-sag >}}) with your name, company, and company email address and request an account.
+{{< c8y-admon-info >}}
+If you do not have an account for the {{< sag-portal >}} yet, send an email to [{{< email-sag >}}]({{< email-sag >}}) with your name, company, and company email address and request an account.
+{{< /c8y-admon-info >}}
 
 Once you have an account, you can:
 

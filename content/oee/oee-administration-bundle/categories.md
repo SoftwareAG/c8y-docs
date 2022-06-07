@@ -16,4 +16,6 @@ In order to use a calculation category in your OEE calculation profiles, the cat
 
 * **Example 2:** You may wish to use "Source Left" and "Source Right" categories for Actual Production Amount in order to distinguish the different incoming paths a machine has for its input items.
 
->**Info:** As categories may be used in many different OEE calculation profiles, it is not possible to remove a category from the application once it is created. It is therefore important to consider the categories to be used and ensure that they make sense long-term. If an old category should no longer be used, it may be set to "deactivated". This will prevent it from being used in any new calculation profiles.
+{{< c8y-admon-info >}}
+As categories may be used in many different OEE calculation profiles, it is not possible to remove a category from the application once it is created. It is therefore important to consider the categories to be used and ensure that they make sense long-term. If an old category should no longer be used, it may be set to "deactivated". This will prevent it from being used in any new calculation profiles.
+{{< /c8y-admon-info >}}

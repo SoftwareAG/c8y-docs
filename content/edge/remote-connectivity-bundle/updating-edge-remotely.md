@@ -12,8 +12,8 @@ The Edge archive file size is about 3GB. If your tenant account has a limitation
 
 Before you update your Edge appliance remotely, you must:
 
-- [Enable the remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance
-- [Register your Edge appliance](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
+- [Enable the remote-connectivity](/edge/remote-connectivity/#config-remote-connectivity) feature in your Edge appliance
+- [Register your Edge appliance](/edge/remote-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
 
 To remotely update your Edge appliance:
 
@@ -31,15 +31,9 @@ To remotely update your Edge appliance:
 
 6. Optionally, you can define the device type filter when adding a new firmware. For example, *c8y_EdgeAgent*.
 
-7. Select the **Upload a binary** option to upload the archive file.
+7. Select the **Provide a file path** option to specify an HTTPS URL of a server from where the archive file can be downloaded.
 
-   Select the **Provide a file path** option to specify an HTTPS URL of a server from where the archive file can be downloaded.
-
-8. Click **Add firmware**.
-
-   ![Add firmware](/images/edge/edge-firmware-upload.png)
-
-   The firmware object appears in the firmware list.
+8. Click **Add firmware**. The firmware object appears in the firmware list.
 
 9. Click **All devices** in the **Devices** menu in the navigator, select your Edge appliance from the device list.
 

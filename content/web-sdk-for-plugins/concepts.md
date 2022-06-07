@@ -27,7 +27,9 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 * Dashboard: Adds a new view/tab to groups and devices, functioning as a container for widgets.
 * Data point table: Adds a widget to dashboards providing a visualization of measurements in tabular form.
 
-> **Info:** You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of {{< product-c8y-iot >}} (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
+{{< c8y-admon-info >}}
+You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of {{< product-c8y-iot >}} (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
+{{< /c8y-admon-info >}}
 
 ### Project structure
 
@@ -86,7 +88,9 @@ The following properties are available:
 	* **hide_navigator**: [optional] A boolean, which if set to true collapses the navigator menu at the left by default.
 	* **globalTitle**: [optional] A title that will be used as the global title of the web application.
 
-> **Info**: The properties "contextPath" and "key" must be unique. For "PRIVATE" applications, the properties "name" and "contextPath" must be unique within your tenant only.
+{{< c8y-admon-info >}}
+The properties "contextPath" and "key" must be unique. For "PRIVATE" applications, the properties "name" and "contextPath" must be unique within your tenant only.
+{{< /c8y-admon-info >}}
 
 <a name="plugin-manifest"></a>
 #### Plugin manifest

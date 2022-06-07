@@ -1,5 +1,7 @@
 ---
-weight: 170 title: Software layout: redirect
+weight: 170
+title: Software
+layout: redirect
 ---
 
 The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located

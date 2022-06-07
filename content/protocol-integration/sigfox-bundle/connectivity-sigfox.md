@@ -62,7 +62,7 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 Select the connection to be updated, make your edits, and save the connection.
 
->**Important:** When the connection is updated, currently it is updated, without displaying the devices associated with the connection.
+If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
 
 ###  To delete a connection
 
@@ -70,4 +70,4 @@ Select the connection to be deleted and click **Delete**.
 
 A warning message appears if there are devices associated with the selected connection. Click the link **Click to download a list with affected devices**. to download a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
 
->**Important:** When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.
+If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**

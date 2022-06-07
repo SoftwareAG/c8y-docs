@@ -10,7 +10,9 @@ opensource: true
 To create a northbound connection, you must establish a local bridge.
 To achieve this, use the tedge CLI and the commands described below.
 
->**Info:** `tedge connect` requires `sudo` privilege.
+{{< c8y-admon-info >}}
+`tedge connect` requires `sudo` privilege.
+{{< /c8y-admon-info >}}
 
 Configure the required parameters for thin-edge.io with [tedge config set](/thin-edge/thin-edge-developer-tools/#set):
 
@@ -18,9 +20,10 @@ Configure the required parameters for thin-edge.io with [tedge config set](/thin
 sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 ```
 
->**Tip:** If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
-> For example, if you execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
->
+{{< c8y-admon-tip >}}
+If you you are unsure which parameters are required for the command to work, run the command and it will tell you which parameters are missing.
+For example, if you execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) without any configuration, the following piece of advice will be given:
+
 > ```shell
 > $ tedge connect c8y`
 > ...
@@ -29,15 +32,18 @@ sudo tedge config set c8y.url example.{{< domain-c8y >}}.com
 > Caused by:
 >     Required configuration item is not provided 'c8y.url', run 'tedge config set c8y.url <value>' to add it to config.
 > ```
->
-> This message explains which configuration parameter is missing and how to add it to configuration. In this case we are told to run `tedge config set c8y.url <value>`.
+
+This message explains which configuration parameter is missing and how to add it to configuration. In this case we are told to run `tedge config set c8y.url <value>`.
+{{< /c8y-admon-tip >}}
 
 The next step is to have the device certificate trusted by {{< product-c8y-iot >}}. This is done by uploading the certificate of the signee.
 You can upload the root certificate via [{{< product-c8y-iot >}} UI](/device-sdk/mqtt/#device-certificates) or with [tedge cert upload](/thin-edge/thin-edge-developer-tools/#upload) as described below.
 
->**Info:** This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
->
-> After issuing this command you are going to be prompted for a password. Usernames and passwords are not stored in the configuration for security reasons.
+{{< c8y-admon-info >}}
+This command takes the parameter `user`. This is due to the upload mechanism to the {{< product-c8y-iot >}} cloud which uses username and password for authentication.
+
+After issuing this command you are going to be prompted for a password. Usernames and passwords are not stored in the configuration for security reasons.
+{{< /c8y-admon-info >}}
 
 ```shell
 $ sudo tedge cert upload c8y –-user <username>
@@ -114,7 +120,9 @@ Disabling tedge-mapper service.
 tedge-mapper service successfully stopped and disabled!
 ```
 
->**Info:** `tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
+{{< c8y-admon-info >}}
+`tedge disconnect c8y` also stops and disables the tedge-mapper service if it is installed on the device.
+{{< /c8y-admon-info >}}
 
 Now you can execute [tedge connect c8y](/thin-edge/thin-edge-developer-tools/#cumulocity-iot) to create a new bridge.
 

@@ -13,10 +13,13 @@ In order to follow this tutorial, check the following prerequisites:
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * You have installed [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) or a similar MQTT tool.
 
->**Info:** The screenshots in the tutorial use MQTTBox. Other tools may look different.
+{{< c8y-admon-info >}}
+The screenshots in the tutorial use MQTTBox. Other tools may look different.
+{{< /c8y-admon-info >}}
 
->**Info:** If you are using a trial tenant, the default user will not work with this tutorial. Create an additional user instead. The tenant ID and URL data will also differ from trial tenant information.
-
+{{< c8y-admon-info >}}
+If you are using a trial tenant, the default user will not work with this tutorial. Create an additional user instead. The tenant ID and URL data will also differ from trial tenant information.
+{{< /c8y-admon-info >}}
 
 ### Talking MQTT
 
@@ -35,7 +38,9 @@ To configure the MQTT connection, you must pass the following connection paramet
 
 ![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
 
-> **Info**: You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
+{{< c8y-admon-info >}}
+You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
+{{< /c8y-admon-info >}}
 
 Other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.
 
@@ -135,7 +140,7 @@ Note that you did not have to handle any alarm IDs with the MQTT implementation.
 
 ##### Creating events
 
-Next, we will create some location events for the device. If you wish, you may use the [LatLong website](http://www.latlong.net/) to get the latitude and longitude of your city.
+Next, we will create some location events for the device. If you wish, you may use the [LatLong website](https://www.latlong.net/) to get the latitude and longitude of your city.
 
 The template `401` lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters, but for now we will just use the first two.
 

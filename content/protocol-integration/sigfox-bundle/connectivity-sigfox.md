@@ -12,7 +12,9 @@ Before you create API access to {{< product-c8y-iot >}}, you must have an "Assoc
 - Customer [R]
 - Device Manager [W]
 
-> **Important:** Without the profiles described below, the required Sigfox API access can not be set up.
+{{< c8y-admon-important >}}
+Without the profiles described below, the required Sigfox API access can not be set up.
+{{< /c8y-admon-important >}}
 
 ### Step 1
 
@@ -48,7 +50,9 @@ The following information must be provided in order to create a connection:
 - **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
 - **Base URL:** URL that points to the Sigfox Cloud account.
 
-> **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+{{< c8y-admon-info >}}
+The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+{{< /c8y-admon-info >}}
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 
@@ -64,10 +68,10 @@ Select the connection to be updated, make your edits, and save the connection.
 
 If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
 
+
 ###  To delete a connection
 
 Select the connection to be deleted and click **Delete**. 
 
-A warning message appears if there are devices associated with the selected connection. Click the link **Click to download a list with affected devices**. to download a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
-
 If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
+

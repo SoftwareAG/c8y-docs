@@ -45,9 +45,9 @@ Add the printed list of plugins to the imports definition of your application ma
 
 However, if you prefer a more minimalistic approach you can also read the "cumulocity.json" file in [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
 
-> **TIP**
+{{< c8y-admon-tip >}}
 Run `c8y util:showimports cockpit` or `c8y util:showimports administration` to see other plugins available to you. The manifests for the built-in applications are stored in *_apps.json* inside "node_modules/cumulocity-ui-build".
-
+{{< /c8y-admon-tip >}}
 
 ### Create a plugin
 

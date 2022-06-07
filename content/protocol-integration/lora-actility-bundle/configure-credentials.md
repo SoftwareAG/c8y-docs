@@ -24,8 +24,10 @@ Enter the following information:
 - **Username**: Your ThingPark account username.
 - **Password**: Your ThingPark account password.
 
->**Info:** Do not use the same ThingPark login (username and password) for other tenants.
+{{< c8y-admon-info >}}
+Do not use the same ThingPark login (username and password) for other tenants.
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials for a particular connection.
+{{< /c8y-admon-info >}}
 
 ![Setting provider credentials](/images/device-protocols/lora-actility/lora-admin-settings.png)
 
@@ -38,7 +40,9 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 Select the connection to be updated, make your edits, and save the connection.
 
+
 If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
+
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
@@ -47,6 +51,5 @@ If there are devices associated with the connection, then we get an error messag
 
 Select the connection to be deleted and click **Delete**.
 
-A warning message appears if there are devices associated with the selected connection. Click the link **Click to download a list with affected devices**. to download a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
-
 If there are devices associated with the connection, then we get an error message in a popup, in the form of **Can not update the LNS Connection with name lns-connection-1 as it's associated with 2 devices. Visit the following URL to download the file**
+

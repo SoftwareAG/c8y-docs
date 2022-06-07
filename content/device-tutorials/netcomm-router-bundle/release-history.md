@@ -7,9 +7,13 @@ weight: 60
 
 This document describes the {{< product-c8y-iot >}} NetComm Agent package for the [Casa System NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) router.
 
-> **Info:** If you are using either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), you must use our prior NetComm Agent version 4.2.3 or older. Contact [product support](/welcome/contacting-support/) or refer to the [NetComm](https://{{< domain-c8y >}}/guides/10.4.6/devices/netcommwireless/) section in the Devices guide in the {{< product-c8y-iot >}} 10.4.6 documentation 10.4.6 for information on how to get the packages.
+{{< c8y-admon-info >}}
+If you are using either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), you must use our prior NetComm Agent version 4.2.3 or older. Contact [product support](/welcome/contacting-support/) or refer to the [NetComm](https://{{< domain-c8y >}}/guides/10.4.6/devices/netcommwireless/) section in the Devices guide in the {{< product-c8y-iot >}} 10.4.6 documentation 10.4.6 for information on how to get the packages.
+{{< /c8y-admon-info >}}
 
-> **Important:** The {{< product-c8y-iot >}} NetComm Agent releases 1.0.x and 1.1.x are only supported on [Casa Systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) routers. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series) are only supported by another agent.
+{{< c8y-admon-important >}}
+The {{< product-c8y-iot >}} NetComm Agent releases 1.0.x and 1.1.x are only supported on [Casa Systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) routers. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series) are only supported by another agent.
+{{< /c8y-admon-important >}}
 
 #### 1.0.0
 

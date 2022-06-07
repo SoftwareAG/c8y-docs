@@ -98,4 +98,6 @@ private MqttClient connect() throws MqttException {
 
 The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-sdk/mqtt/#device-certificates) process.
 
-> **Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
+{{< c8y-admon-info >}}
+You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
+{{< /c8y-admon-info >}}

@@ -11,8 +11,9 @@ weight: 30
 3. Navigate to the **System** menu. Click **System configuration** > **Firmware signature**.
 4. Turn **Enable firmware signature check** to OFF.
 
-    > **Info:** If you don´t turn the signature check off, the software installation will fail. After you have installed the agent package, the signature check will automatically be turned on again.
-  In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
+    {{< c8y-admon-info >}}
+If you don´t turn the signature check off, the software installation will fail. After you have installed the agent package, the signature check will automatically be turned on again. In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
+    {{< /c8y-admon-info >}}
 
 5. Navigate to the **System** menu. Click **System configuration** > **Upload** > **Choose a file** and select the downloaded software. Click **Upload** to upload the software to the router.
 6. Click the **Install** button for the uploaded software which you want to install.

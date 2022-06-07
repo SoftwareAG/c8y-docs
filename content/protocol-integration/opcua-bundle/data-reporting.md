@@ -26,7 +26,9 @@ Possible parameters:
 	* **Absolute** - Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
 	* **Percent** - The value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
 
-> **Important:** Very low interval rates (for example 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
+{{< c8y-admon-important >}}
+Very low interval rates (for example 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
+{{< /c8y-admon-important >}}
 
 ### Applying constraints
 

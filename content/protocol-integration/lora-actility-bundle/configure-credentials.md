@@ -40,9 +40,8 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 Select the connection to be updated, make your edits, and save the connection.
 
-{{< c8y-admon-important >}}
-When the connection is updated, it is currently updated without displaying the devices associated with the connection.
-{{< /c8y-admon-important >}}
+
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
@@ -51,8 +50,4 @@ When the connection is updated, it is currently updated without displaying the d
 
 Select the connection to be deleted and click **Delete**.
 
-A warning message appears if there are devices associated with the selected connection. Click the link **Click to download a list with affected devices**. to download a file which contains devices associated with the selected connection. Re-register the devices to a different connection before deleting the connection.  
-
-{{< c8y-admon-important >}}
-When the connection is deleted, currently it is deleted, without displaying the devices associated with the connection.
-{{< /c8y-admon-important >}}
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".

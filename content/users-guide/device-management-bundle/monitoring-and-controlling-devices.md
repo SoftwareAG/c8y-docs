@@ -6,12 +6,12 @@ helpcontent:
 - label: map
   title: Locating devices
   content: "In the map, you can view all devices in your account in real time. Devices are represented as 'pins'. Click a pin to see the name of the respective device. Click the device name to switch to its device details."
-- label: service-monitoring
-  title: Monitoring services
-  content: "Service monitoring shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
+- label: availability
+  title: Availability monitoring
+  content: "Availability shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 - label: alarm-monitoring
   title: Alarms
-  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
+  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of the device.
 
 
   By default, only unresolved alarms are shown. If you turn on **Show cleared alarms** at the top right, you will see the entire alarm history.
@@ -20,31 +20,27 @@ helpcontent:
   Alarms are classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.
 
 
-  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
-
-
-  For details, see *Device Management > Monitoring and controlling devices > Working with alarms* in the *User guide*."
+  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
 - label: operation-monitoring
   title: Device control
-  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of this device.
+  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of the device.
 
 
   There are two types of operations, each represented by a tab:
 
-  * **Single operations** are executed on a single device.
-  * **Bulk operations** are single operations executed on a set of devices.
 
+  **Single operations** are executed on a single device.
 
-  See also, *Device Management > Monitoring and controlling devices > Working with operations* in the *User guide*."
+  **Bulk operations** are single operations executed on a set of devices."
 - label: events-all
   title: Events
-  content: "Operations are used to remotely control devices. You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of this device.
+  content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 
-  Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left.
+   You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of the device.
 
 
-  See also, *Device Management > Monitoring and controlling devices > Troubleshooting Devices* in the *User guide*."
+  Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
 
 
@@ -88,7 +84,9 @@ When a device is detected to be offline (stops sending data within required inte
 
 Send connections are updated when something is sent to the device, such as alarms, events, measurements or inventory updates.
 
->**Info:** PUT requests to the managed object of the device will also update a connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
+{{< c8y-admon-info >}}
+PUT requests to the managed object of the device will also update a connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
+{{< /c8y-admon-info >}}
 
 **Push connections**
 
@@ -101,8 +99,9 @@ The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to
 A push connection is an active HTTPS long poll or an MQTT connection from {{< product-c8y-iot >}} to the <kbd>/notification/operations</kbd> API endpoint (not the real time API endpoint).
 It is always green if the device is connected, even without data.
 
-
->**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
+{{< c8y-admon-info >}}
+Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
+{{< /c8y-admon-info >}}
 
 <a name="maintenance-mode"></a> **Maintenance mode**
 
@@ -119,7 +118,9 @@ Navigate to the **Info** tab of a particular device to monitor the connections o
 
 Below the send connection and push connection status, the time of the last communication is displayed.
 
-> **Info:** "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
+{{< c8y-admon-info >}}
+"Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
+{{< /c8y-admon-info >}}
 
 In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with {{< product-c8y-iot >}}. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
@@ -129,12 +130,12 @@ With the **Maintenance** toggle you can turn the maintenance mode for the device
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
-<a name="monitoring-services"></a>
-### Service monitoring
+<a name="monitoring-availability"></a>
+### Availability
 
-{{< product-c8y-iot >}} distinguishes between connection monitoring and service monitoring. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
+{{< product-c8y-iot >}} distinguishes between connection monitoring and availability. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
 
-Service monitoring indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
+Availability indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.
 
 {{< product-c8y-iot >}} considers a device to be in service while there is no critical, unresolved alarm present for the machine. This is displayed as a share of time such an alarm was present. If a machine didn't have any critical alarms whatsoever during a time period, it was 100% in service. If half of the time there was some critical, unresolved alarm, the machine was 50% in service.
 
@@ -147,17 +148,17 @@ There may be exceptions from this rule. If your vending machines rely exclusivel
 
 {{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 
-#### To view the service monitoring of a particular device
+#### To view the availability of a particular device
 
-Click the **Service monitoring** tab in the details of a particular device to check the service monitoring of this device.
+Click the **Availability** tab in the details of a particular device to check the availability of this device.
 
-#### To view the service monitoring across all devices
+#### To view the availability across all devices
 
-Click **Service monitoring** in the **Device** menu in the navigator to display the overall service across all devices.
+Click **Availability** in the **Device** menu in the navigator to display the overall service across all devices.
 
-![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Availability](/images/users-guide/DeviceManagement/devmgmt-devices-availability.png)
 
-The **Service monitoring** page shows the availability of devices for the last 24 hours, last 7 days and last 30 days in percentage.
+The **Availability** page shows the availability of devices for the last 24 hours, last 7 days and last 30 days in percentage.
 
 <a name="alarm-monitoring"></a>
 ### Working with alarms
@@ -189,7 +190,11 @@ Alarms are classified according to their severity. {{< product-c8y-iot >}} inclu
 
 The **Alarm** tab is split into four sections corresponding to these alarm types.
 
-By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make it visible again.
+In the top menu bar, buttons are provided to filter for severity. By clicking a button, the corresponding section will be hidden. Click it once more to make it visible again.
+
+{{< c8y-admon-info >}}
+The number provided on the buttons in the top menu bar refers to the number of active alarms for the given severity, as opposed to the counter provided as red circle next to an active alarm, which shows the number of times this same alarm has occurred (see also the table below).
+{{< /c8y-admon-info >}}
 
 Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first.
 
@@ -212,7 +217,7 @@ In each row, the following information for an alarm is provided:
 <td align="left">One of CRITICAL, MAJOR, MINOR, WARNING (see above).</td>
 </tr>
 <tr>
-<td align="left">Count</td>
+<td align="left">Count (provided as number in a red circle) </td>
 <td align="left">The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.</td>
 </tr>
 <tr>
@@ -236,7 +241,7 @@ In each row, the following information for an alarm is provided:
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/users-guide/administration#reprio-alarms).
+* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Administration > Managing business rules > Alarm mapping](/users-guide/administration#reprio-alarms).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
 #### To change the status of an alarm
@@ -304,17 +309,21 @@ Click **All** to clear the filter.
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 Click **Reload** to update the list once manually.
 
->**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
+{{< c8y-admon-info >}}
+Single operations are listed in descending time order. Operations are executed strictly according to this order.
+{{< /c8y-admon-info >}}
 
 #### To add and execute a single operation
 
-Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#firmware-repo), [software](/users-guide/device-management/#software-repo), [configurations](/users-guide/device-management/#configuration-repository) etc.
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#firmware-repo), [software](/users-guide/device-management/#software-repo), [configurations](/users-guide/device-management/#configuration-repository) and more.
 
 When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 
 Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
->**Important:** When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< c8y-admon-important >}}
+When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< /c8y-admon-important >}}
 
 #### To cancel pending single operations
 
@@ -393,7 +402,9 @@ To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
->**Info:** Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
+{{< c8y-admon-info >}}
+Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
+{{< /c8y-admon-info >}}
 
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
@@ -422,7 +433,7 @@ Follow these steps:
       * Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
       * Expand a version and select a patch. Click **Next**.
   * **Software update**
-      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
+      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type, by software type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
       * Confirm the selection and click **Next**.
   * **Apply device profile**
       * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.

@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Configuring remote-connectivity using the UI
+title: Configuring remote connectivity using the UI
 layout: redirect
 ---
 

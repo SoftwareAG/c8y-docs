@@ -32,20 +32,20 @@ This will open the MobileNet architecture in the editor where you can add new la
 
 ![New NN Selector](/images/zementis/mlw-app-nn-tl-originalarch.png)
 
-With the pre-trained MobileNet model represented by the architecture shown above, you can initiate transfer learning. To get started, you have to remove the last 2 layers: **Reshape** and **Activation**.
+With the pre-trained MobileNet model represented by the architecture shown above, you can initiate transfer learning. To get started, you must remove the last 2 layers: **Reshape** and **Activation**.
 
-Next, drag and drop **Flatten** and **Dense** (Activation Function : softmax , Units : 2) layers, set the properties and connect them to the network. 
+Next, drag and drop **Flatten** and **Dense** (Activation Function : softmax , Units : 2) layers, set the properties and connect them to the network.
 
 Click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" style="display:inline-block; margin:0"> at the right of the top menu bar to save the architecture.
 
 #### Specifying the training process
 
 1. Click the cogwheel icon <img src="/images/zementis/mlw-cogwheel-icon.png" alt="Cogwheel" style="display:inline-block; margin:0"> to train a model on the updated architecture.  
-2. In the **Training Parameters** section at the right, select the appropriate data under **Data**. 
-3. Specify the **Problem Type** which can either be "classification" or "regression". 
-4. If the data needs pre-processing, specify the **Pre Processing Script**. 
-5. The **Recurrence** parameter defines whether the training task needs to be executed one time or periodically. For this example, the training task will be one time. 
-6. Provide values for **Epoch**, **Learning Rate**, **Loss**, **Metrics**, **Optimizer**. Other parameters can be left as default. 
+2. In the **Training Parameters** section at the right, select the appropriate data under **Data**.
+3. Specify the **Problem Type** which can either be "classification" or "regression".
+4. If the data needs pre-processing, specify the **Pre Processing Script**.
+5. The **Recurrence** parameter defines whether the training task needs to be executed one time or periodically. For this example, the training task will be one time.
+6. Provide values for **Epoch**, **Learning Rate**, **Loss**, **Metrics**, **Optimizer**. Other parameters can be left as default.
 7. Once the training parameters are updated click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0"> which will trigger the training process.
 
 ![NN training parameter](/images/zementis/mlw-app-nn-tl-train.png)

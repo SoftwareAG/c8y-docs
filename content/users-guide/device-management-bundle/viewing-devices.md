@@ -5,10 +5,10 @@ layout: redirect
 helpcontent:
   - label: viewing-devices
     title: Viewing devices
-    content: "The device list shows the most relevant information for all devices connected to your account in a list view. The columns shown in the device list may be customized to your needs, see *Device Management > Viewing devices* in the *User guide*.
+    content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the *User guide* for details.
 
 
-    You may filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
+    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
 ---
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
@@ -100,12 +100,14 @@ Moreover, you can add custom columns to show additional device properties.
 4. Select the **Filtering mode** for the new column. <br>
 If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
+<br>In case of **Fragment exists**, filtering will be done by existence, that means, filtering is done based on whether the property exists or not.    
 5. Click **Add**.
 
 The new column will be added and displayed in the device list.
 
-> **Info:** While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
+{{< c8y-admon-info >}}
+While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
+{{< /c8y-admon-info >}}
 
 #### To delete a device from the list
 
@@ -114,7 +116,9 @@ The new column will be added and displayed in the device list.
 
 The device will be permanently deleted from the platform.
 
-> **Important:** Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+{{< c8y-admon-important >}}
+Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+{{< /c8y-admon-important >}}
 
 <a name="searching-devices"></a>
 ### To search for devices
@@ -144,7 +148,7 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (e.g. **Registration date**), you specify a date range to filter for.
+* In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 * For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided.
@@ -156,4 +160,6 @@ The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the left of the top menu bar if you want to clear all filters and view all devices.
 
->**Info:** If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
+{{< c8y-admon-info >}}
+If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
+{{< /c8y-admon-info >}}

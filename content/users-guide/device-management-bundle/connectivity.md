@@ -49,7 +49,9 @@ The following sections describe:
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
 
->**Info:** In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+{{< c8y-admon-info >}}
+In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+{{< /c8y-admon-info >}}
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page.
 Your API license key and the API server URL are displayed on the top left.
@@ -123,7 +125,9 @@ In the **Connectivity** tab you will find the following sections:
 
 ![Connectivity tab](/images/users-guide/connectivity/connectivity-tab.png)
 
->**Info:** Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
+{{< c8y-admon-info >}}
+Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
+{{< /c8y-admon-info >}}
 
 The **Status** section lists summary information for the SIM card.
 
@@ -133,7 +137,7 @@ The first row shows if the device is currently running a data session. If it is,
 
 The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
 
-At the bottom you will find usage information for the current month, i.e. from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
+At the bottom you will find usage information for the current month, that is, from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
 The **SMS** section shows the text messages sent to the device and received from the device, including information on
 
@@ -191,4 +195,4 @@ Data connectivity can be analyzed in various places:
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 
 * The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management/#connecting-devices).
-* There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.
+* There may be a configuration or software problem with the device, which must be analyzed in a device-specific way.

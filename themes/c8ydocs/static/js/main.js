@@ -46,18 +46,6 @@ var main = (function ($) {
           }
         }
 
-        if (true) {
-          offset = 45;
-          $('<div/>', {
-            id: 'construction-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff0000; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
-          }).prependTo('body');
-          $('<p style="text-align: center; vertical-align: center;">This page is a copy of the documentation of the previous release and exists for technical reasons. It does not yet include any new content.</p>').appendTo('#construction-banner');
-          $('.main-top-bar').css('top', offset);
-          $('.main-nav.navbar').css('top', offset);
-          $('.dropdown.version').css('top', (offset + 10));
-        }
-
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);

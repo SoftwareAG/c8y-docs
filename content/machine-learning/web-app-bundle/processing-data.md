@@ -78,7 +78,7 @@ Scheduled processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model's predictions is required for a desired time period.
 
->**Info:** Currently, scheduled processing is only applicable for PMML models and model groups.
+>**Info:** Currently, scheduled processing is only applicable for PMML models and model groups. However, time series models must not be used for processing data in a scheduled manner.
 
 #### Scheduling a job
 

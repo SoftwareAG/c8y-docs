@@ -2,7 +2,15 @@
 weight: 20
 title: Managing assets
 layout: redirect
+helpcontent:
+  - label: managing-assets
+    title: Managing assets
+    content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
+
+
+    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
 ---
+
 <a name="assets"></a>
 ### Assets hierarchy
 
@@ -16,13 +24,15 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below).
+To position a device in the asset hierarchy, you must "assign" the device to the respective group (see below).
 
-> **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+{{< c8y-admon-info >}}
+Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+{{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
 #### Asset hierarchy versus device hierarchy
@@ -65,7 +75,8 @@ If you manage trucks within the {{< product-c8y-iot >}} platform, then each truc
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
 
-### Navigating assets
+<a name="navigating"></a>
+### How to navigate assets
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
 
@@ -75,7 +86,9 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
->**Info:** If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
+{{< c8y-admon-info >}}
+If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
+{{< /c8y-admon-info >}}
 
 Use the navigator, to navigate through the asset hierarchy.
 
@@ -101,7 +114,7 @@ If dashboards have been created for a group or device, they will also be added a
 Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/web-sdk-for-plugins/overview/) for details.
 
 <a name="creating-groups"></a>
-### To add a group
+### How to add a group
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -110,12 +123,14 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 The new group will be added to the groups list.
 
->**Info:** A group can be created with "0" devices in it.
+{{< c8y-admon-info >}}
+A group can be created with "0" devices in it.
+{{< /c8y-admon-info >}}
 
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
 <a name="assigning-devices"></a>
-### To assign devices to a group
+### How to assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
 
@@ -130,22 +145,23 @@ To assign devices to a group, follow these steps:
 
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
 
-### To edit a group
+<a name="edit-group"></a>
+### How to edit a group
 
 1. In the navigator, click a group to open it.
 2. In the **Subassets** tab, you can edit the name and description of the group.
 
-
-### To delete a group
+<a name="delete-group"></a>
+### How to delete a group
 
 To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
 
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
-
-### To unassign a device from a group
+<a name="remove-device"></a>
+### How to remove a device from a group
 
 1. Navigate to the **Subassets** tab of the group.
-2. Hover over the respective device you want to unassign and click the unassign icon at the right.
+2. Hover over the respective device you want to remove and click the remove icon at the right.
 
-Unassigning a device does not delete the device, subdevices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.
+Removing a device does not delete the device, subdevices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.

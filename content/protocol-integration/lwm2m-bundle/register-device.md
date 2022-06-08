@@ -4,8 +4,7 @@ title: Registering LWM2M devices
 layout: redirect
 ---
 
-To register a LWM2M device in {{< product-c8y-iot >}}, upload a CSV file with registration data in the bulk registration dialog in Devices > Registration > Register device > Bulk device registration in the Device Management application
-see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
+To register a LWM2M device in {{< product-c8y-iot >}}, upload a CSV file with registration data in the bulk registration dialog in **Devices** > **Registration** > **Register device** > **Bulk device registration** in the Device Management application, see [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the *User guide*.
 This data is required to enable LWM2M communication. The CSV file holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
 {{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
@@ -33,7 +32,7 @@ The CSV file must at least contain the following fields to be able to establish 
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
+<td style="text-align:left">Unique ID of the device, such as an IMEI or a serial number. The ID field must be <b>unique</b> as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
@@ -74,7 +73,9 @@ The CSV file must at least contain the following fields to be able to establish 
 </tbody>
 </table>
 
-> **Info:** The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+{{< c8y-admon-info >}}
+The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+{{< /c8y-admon-info >}}
 
 Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "nosec_device" device has been created.
 
@@ -132,13 +133,16 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr>
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">Toggles if {{< product-c8y-iot >}} generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align: left">In order to establish a connection between the LWM2M client and the LWM2M bootstrap server on the bootstrap interface, the client requires a pre-loaded LWM2M bootstrap server account.
+This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example, the security information like server URI, server ID, or security mode) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
+Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">OMA LWM2M 1.0 technical specification</a> for more details.
+</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">securityInstanceOffset</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set, for example, to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -156,7 +160,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr>
 <td style="text-align: left; height: 13px;">registrationLifetime</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.</td>
+<td style="text-align: left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration. The value must be specified in seconds.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -214,7 +218,7 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5684**: PSK bootstrap connection
 * **5784**: PSK direct server connection
 
-PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
+PSK keys must be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
 
 ![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-device-csv-example.png)
 
@@ -279,7 +283,9 @@ Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "p
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
 
 
-> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the *User guide*.
+{{< c8y-admon-info >}}
+Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+{{< /c8y-admon-info >}}
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

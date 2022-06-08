@@ -18,7 +18,7 @@ This section shows how to create a plugin that adds a new tab "Contact" to devic
 
 ![Contact tab](/images/plugins/contact.png)
 
-In order to achieve this goal you need to do the following steps:
+In order to achieve this goal you must do the following steps:
 
 * Create a plugin.
 * Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
@@ -41,13 +41,13 @@ $ c8y util:showimports devicemanagement
 
 Add the printed list of plugins to the imports definition of your application manifest.
 
-> Note that you have to exclude the c8yBranding plugin if you have already defined your own branding plugin.
+> Note that you must exclude the c8yBranding plugin if you have already defined your own branding plugin.
 
 However, if you prefer a more minimalistic approach you can also read the "cumulocity.json" file in [cumulocity-ui-plugin-examples](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
 
-> **TIP**
+{{< c8y-admon-tip >}}
 Run `c8y util:showimports cockpit` or `c8y util:showimports administration` to see other plugins available to you. The manifests for the built-in applications are stored in *_apps.json* inside "node_modules/cumulocity-ui-build".
-
+{{< /c8y-admon-tip >}}
 
 ### Create a plugin
 
@@ -122,7 +122,7 @@ Inside the plugin folder, create a file "deviceContact.config.js" with the conte
 
 > Note that when multiple views are attached to the route ("/device/:deviceId" in this case), tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, "Contact" is rendered as a tab.
 
-Next, we have to define our view and controller. For the controller, create a new file "deviceContact.controller.js" inside the plugin folder and add the following content:
+Next, we must define our view and controller. For the controller, create a new file "deviceContact.controller.js" inside the plugin folder and add the following content:
 
 ```js
 (function () {
@@ -148,7 +148,7 @@ Inside the plugin folder, create a new folder "views" and add the file "deviceCo
 	</div>
 ```
 
-Now that we have added the module, config and controller to our plugin, we have to specify "myapp.deviceContact" as our module and add each javascript file to our plugin manifest:
+Now that we have added the module, config and controller to our plugin, we must specify "myapp.deviceContact" as our module and add each javascript file to our plugin manifest:
 
 ```json
 {

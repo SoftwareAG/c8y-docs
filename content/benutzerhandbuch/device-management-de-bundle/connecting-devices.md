@@ -35,7 +35,7 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -58,7 +58,7 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
-Nach erfolgreicher Registrierung werden die Geräte auf der [Seite **Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
+Nach erfolgreicher Registrierung werden die Geräte auf der Seite [Geräteregistrierung](#dev-registration) mit dem Status "Wartet auf Verbindung" angezeigt.
 
 Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
@@ -69,7 +69,9 @@ Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status de
 <a name="creds-upload"></a>
 #### So führen Sie eine Bulk-Registrierung von Geräten durch
 
-Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+
+> **Info:** Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine Bulk-Registrierung registriert werden können. Je mehr Geräte Sie jedoch hinzufügen, desto langsamer erfolgen die Erstellung und die Operation.
 
 1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
@@ -88,7 +90,7 @@ Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierun
 
 **Einfache Registrierung**
 
-Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
+Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
 
 ```asciidoc
     ID;PATH

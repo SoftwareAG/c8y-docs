@@ -18,7 +18,7 @@ The following prerequisites are required to develop plugins and to execute the e
 
 * [Node.js](http://nodejs.org/) (6.7 or later)
 * [npm](https://www.npmjs.com/) (installed with Node.js)
-* Access to your {{< product-c8y-iot >}} account, i.e. you need your tenant ID, username and password.
+* Access to your {{< product-c8y-iot >}} account, that means, you need your tenant ID, username and password.
 
 <a name="cli-tool"></a>
 ### Cumulocity IoT CLI tool
@@ -62,8 +62,12 @@ This command will:
 - Download the package.
 - Add it as a dependency inside the *package.json* file.
 
-Instead of "latest", you can also specify a certain version number, but this version has to be the same or less than the backend version number.
+Instead of "latest", you can also specify a certain version number, but this version must be the same or less than the backend version number.
 
-> **Info:** When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
+{{< c8y-admon-info >}}
+When sharing your project, other developers only need to run  `npm install` inside the root folder of the application project, as the version of the {{< product-c8y-iot >}} UI package is already defined as a dependency in the *package.json* file. You can always install other versions by running the `c8y install` command again.
+{{< /c8y-admon-info >}}
 
-> You can see the list of plugins which an application uses by utilizing the command `c8y util:showimports \[appContextPath\]`.
+{{< c8y-admon-info >}}
+You can see the list of plugins which an application uses by utilizing the command `c8y util:showimports \[appContextPath\]`.
+{{< /c8y-admon-info >}}

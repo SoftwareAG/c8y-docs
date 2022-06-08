@@ -22,7 +22,7 @@ Enabling monitoring on your device is a 3-steps process:
 3. [Enable thin-edge.io monitoring](#enable-thin-edge-monitoring).
 
 ### Install mosquitto client library
-Since thin-edge.io uses the MQTT plugin of collectd, you need to install the mosquitto client library,
+Since thin-edge.io uses the MQTT plugin of collectd, you must install the mosquitto client library,
 either libmosquitto1
 
 ``` shell
@@ -65,10 +65,12 @@ sudo systemctl restart collectd
 #### Collectd.conf
 
 Unless you opted for the [minimal test configuration provided with thin-edge](#basic-collectd-configuration)
-you will have to update the collectd.conf configuration file at [https://collectd.org/documentation/manpages/collectd.conf.5.shtml](https://collectd.org/documentation/manpages/collectd.conf.5.shtml).
+you must update the collectd.conf configuration file at [https://collectd.org/documentation/manpages/collectd.conf.5.shtml](https://collectd.org/documentation/manpages/collectd.conf.5.shtml).
 The collectd.conf configuration file is usually located at */etc/collectd/collectd.conf*.
 
->**Important:** You can enable or disable the collectd plugins of your choice. This is subject to some notable exceptions, which are listed below.
+{{< c8y-admon-important >}}
+You can enable or disable the collectd plugins of your choice. This is subject to some notable exceptions, which are listed below.
+{{< /c8y-admon-important >}}
 
 1. **MQTT must be enabled**.
    * Thin-edge.io expects the collectd metrics to be published on the local MQTT bus.

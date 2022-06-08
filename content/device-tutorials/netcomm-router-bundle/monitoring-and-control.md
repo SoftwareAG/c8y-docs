@@ -22,7 +22,7 @@ To regularly poll the input voltage of a GPIO pin and send it to the {{< product
 set service.cumulocity.gpio.interval=<seconds>
 ```
 
-Then, you need to specify the port and turn on the notification by using the [device shell](#device-shell).
+Then, you must specify the port and turn on the notification by using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.gpio.<port>.notify=measurement
@@ -68,7 +68,7 @@ Digital outputs can be controlled using the "Relay array control" widget, see th
 <a name="modbus"></a>
 ### Cloud Fieldbus
 
-You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and serial port, respectively, and manage them remotely in {{< product-c8y-iot >}}. To do so, you need to follow these steps.
+You can connect Modbus-TCP and Modbus-RTU clients to the router via LAN and serial port, respectively, and manage them remotely in {{< product-c8y-iot >}}. To do so, you must follow these steps.
 
 For Modbus-TCP setup:
 
@@ -86,11 +86,13 @@ set serial.iomode.default=<mode>
 
 where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router after changing the mode.
 
-* Make sure to turn off all serial port related functionalities on the router, e.g. PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
+* Make sure to turn off all serial port related functionalities on the router, such as PADD and Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
-> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
->
->Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+{{< c8y-admon-info >}}
+The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it's empty or you need to configure a different port, it can be configured in the {{< product-c8y-iot >}} menu in the web UI of the router, see [Configuring the router](#configure).
+
+Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter's manufacturer about how to disable it.
+{{< /c8y-admon-info >}}
 
 Then:
 

@@ -1,37 +1,37 @@
 ---
 weight: 20
-title: Configuring ThingPark account credentials and application EUI
+title: Configuring ThingPark account credentials
 layout: redirect
 ---
 
 
-Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator.
+Before using LoRa devices with {{< product-c8y-iot >}}, you must configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator.
 
 ### <a name="create-new-credentials">Creating new account credentials</a>
 
-If you go to **Connectivity** for the first time, you will be asked to provide credentials and application EUI which is used for LoRa device provisioning.
+If you select **Connectivity** for the first time, you are asked to provide the Actility ThingPark URL and credentials which are used for LoRa device provisioning.
 
 Enter the following information:
 
-- **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
-- **username**: Your ThingPark username.
-- **password**: Your ThingPark password.
-- **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
+- **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (for example Community or Enterprise edition). This is an optional field, and defaults to the value configured in the agent properties if nothing is entered.
+- **Profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
+- **Username**: Your ThingPark username.
+- **Password**: Your ThingPark password.
 
 Do not use the same ThingPark login (username and password) for other tenants.
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
 ![Setting provider credentials](/images/device-protocols/lora-actility/lora-admin-settings.png)
 
-Click **Save**. If everything is okay, there will be a message "Credentials successfully saved".
+Click **Save connectivity settings**. If you have entered the correct information, you see the message "Connectivity settings saved".
 
 <a name="replace-credentials"></a>
-### Replacing account credentials
+### Updating connectivity settings
 
-In order to replace your credentials, click **Replace credentials**.
+In order to update your connectivity settings, go to the Administration and click **Update connectivity settings** in the **Settings** menu.
 
-Enter your profile ID, username, password and application EUI (for details on profile ID and application EUI see [Creating new account credentials](#create-new-credentials).
+Enter your Actility ThingPark URL, profile ID, username, and password as requested. For details on these information see [Creating new account credentials](#create-new-credentials).
 
-![Replace credentials](/images/device-protocols/lora-actility/lora-admin-settings-replace.png)
+![Update connectivity settings](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
-Click **Save**. Your old credentials will now be replaced with the new ones.
+Click **Save connectivity settings**, the old settings are now replaced with your new connectivity settings.

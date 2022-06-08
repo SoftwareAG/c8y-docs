@@ -14,7 +14,9 @@ For SMS configuration, the router needs to be configured to accept SMS commands.
 
 For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the *User guide*.
 
-> **Info:** If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
+{{< c8y-admon-info >}}
+If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
+{{< /c8y-admon-info >}}
 
 ![Network Parameters](/images/device-demos/casa-system-router/router-network-info.png)
 
@@ -25,13 +27,17 @@ LAN and DHCP parameters can be directly configured from {{< product-c8y-iot >}} 
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from {{< product-c8y-iot >}}. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the *User guide*.
 
-Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
+Software packages must be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
 
-> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-c8y-iot >}}.
+{{< c8y-admon-info >}}
+The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-c8y-iot >}}.
+{{< /c8y-admon-info >}}
 
-Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm's naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
+Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files must follow Netcomm's naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
 
-> **Info:** If the agent package is not included in the target firmware, the agent will not start after the installation.
+{{< c8y-admon-info >}}
+If the agent package is not included in the target firmware, the agent will not start after the installation.
+{{< /c8y-admon-info >}}
 
 ![Software and Firmware info](/images/device-demos/casa-system-router/router-software-menu.png)
 
@@ -116,7 +122,7 @@ For more information about logs, see [Device Management > Device details > Logs]
 <a name="notification"></a>
 ### Event notifications
 
-The router reports certain system events as notifications, which can be forwarded to the {{< product-c8y-iot >}} platform as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
+The router reports certain system events as notifications, which can be forwarded to the {{< product-c8y-iot >}} platform as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
 
 ![Notification](/images/device-demos/casa-system-router/router-alarms.png)
 
@@ -137,4 +143,6 @@ To configure the MQTT keepalive interval (default is 240 seconds), run the follo
 set service.cumulocity.mqtt.keepalive = <seconds>
 ```
 
-> **Info:** Changing the keepalive interval only has effect after the next reboot.
+{{< c8y-admon-info >}}
+Changing the keepalive interval only has effect after the next reboot.
+{{< /c8y-admon-info >}}

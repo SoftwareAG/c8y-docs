@@ -9,7 +9,7 @@ aliases:
 
 Operations on jobs scheduled for processing device data.
 
->**Info:** Currently, jobs can be scheduled using PMML models and model groups only.
+>**Info:** Currently, jobs can be scheduled using PMML models and model groups only. However, time series models must not be used for processing data in a scheduled manner.
 
 ### Domain model
 #### JobConfiguration

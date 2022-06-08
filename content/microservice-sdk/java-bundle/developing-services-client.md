@@ -16,7 +16,9 @@ ServicesPlatform platform = new ServicesPlatformImpl("<URL>", new CumulocityCred
 
 The URL pointing to the platform must be of the form *&lt;tenant>.{{< domain-c8y >}}*, for example *https://demos.{{< domain-c8y >}}*, which will process all the API requests.
 
-**Info**: You need to have appropriate credentials to be able to access the Services API from outside. See the example above.
+{{< c8y-admon-info >}}
+You must have appropriate credentials to be able to access the Services API from outside. See the example above.
+{{< /c8y-admon-info >}}
 
 ### Accessing the SMS Messaging API
 
@@ -32,36 +34,6 @@ Using this handle, you can send and retrieve the SMS messages from Java by calli
 
 To use the SMS messaging API, the user must have the required roles SMS_ADMIN and SMS_READ for sending and receiving messages respectively.
 Refer to [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
-
-### Choosing a SMS provider
-
-#### OpenIT
-
-OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
-
-![OpenIT Credentials](/images/java/java-client-services/openit_credentials.png)
-
-Note that receiving messages and receiving specific messages are not supported for this provider.
-
-#### Jasper Control Center
-
-Refer to [Device Management > Connectivity](/users-guide/device-management/#connectivity) in the *User guide* for information about how to set these credentials.
-
-#### Provider configuration
-
-To configure a SMS provider first it is required to get the available providers schemas:
-```http
-GET /service/messaging/providers/definitions
-Host: ...
-Authorization: Basic ...
-```
-
-The response contains the provider properties, and to save them you need to make a POST request as follows:
-```http
-POST /service/messaging/providers/configuration
-Host: ...
-Authorization: Basic ...
-```
 
 ### Sending a message
 

@@ -6,6 +6,8 @@ layout: redirect
 
 Before restarting your Edge appliance, ensure that your appliance is in a safe state.
 
+> **Info:** You might see alarms when you power on the Edge appliance from hibernation.
+
 ### Restarting the Edge appliance using the UI
 
 To restart your Edge appliance:
@@ -15,7 +17,7 @@ To restart your Edge appliance:
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
 
-2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Reboot** in the navigator.
 

@@ -1,10 +1,9 @@
 ---
-weight: 20
-title: Verwalten von Benutzerhierarchien
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition/#user-hierarchies
-  - /benutzerhandbuch/enterprise-edition-de/#user-hierarchies
+- /benutzerhandbuch/enterprise-edition-de/#user-hierarchies
+layout: redirect
+title: Verwalten von Benutzerhierarchien
+weight: 20
 ---
 
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in {{< product-c8y-iot >}} verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
@@ -43,7 +42,7 @@ Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neue
 <a name="delegate"></a>
 ### Delegieren von Benutzerhierarchien
 
-In {{< product-c8y-iot >}} können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.
+In {{< product-c8y-iot >}} kann ein Benutzer seine Benutzerhierarchien und Berechtigungen einem anderen Benutzer übertragen (beide Benutzer müssen derselben Hierarchie angehören). Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat. Zur Durchführung der Benutzerverwaltung muss der delegierte Benutzer die Berechtigung USER_MANAGEMENT_CREATE haben oder eine der vordefinierten Rollen verwenden: "Geteilter Benutzermanager", "Benutzerverwaltung". 
 
 Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.
 

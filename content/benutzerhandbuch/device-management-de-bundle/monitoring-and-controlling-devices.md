@@ -42,6 +42,10 @@ Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letz
 
 Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein "UnavailabilityAlarm" für das Gerät mit der folgenden Nachricht erzeugt: "Im erforderlichen Zeitraum wurden keine Daten vom Gerät empfangen."
 
+Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
+
+>**Info:** Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
+
 **Push-Verbindungen**
 
 Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}} zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:
@@ -50,7 +54,9 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}}
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Push-Verbindung bedeutet Verbindung von {{< product-c8y-iot >}} zu /notification/operations API, **nicht** zu Echtzeit-API.
+Eine Push-Verbindung ist ein aktiver HTTPS-Long-Poll oder eine MQTT-Verbindung von {{< product-c8y-iot >}} zum API-Endpunkt <kbd>/notification/operations</kbd> (nicht zum Echtzeit-API-Endpunkt).
+Sie ist immer grün dargestellt, wenn das Gerät verbunden ist, auch wenn kein Datenverkehr stattfindet.
+
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
@@ -79,12 +85,12 @@ Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
-<a name="monitoring-services"></a>
-### Serviceüberwachung
+<a name="monitoring-availability"></a>
+### Verfügbarkeit
 
-{{< product-c8y-iot >}} unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit {{< product-c8y-iot >}} kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
+{{< product-c8y-iot >}} unterscheidet zwischen Verbindungsüberwachung und Verfügbarkeit. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit {{< product-c8y-iot >}} kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.
 
-Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu {{< product-c8y-iot >}} gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde.
+Verfügbarkeit zeigt hingegen an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu {{< product-c8y-iot >}} gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde.
 
 {{< product-c8y-iot >}} betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen aktiven Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es zu 100% in Betrieb. Gab es während der Hälfte der Zeit kritische aktive Alarme, war es zu 50% in Betrieb.
 
@@ -97,17 +103,17 @@ Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beis
 
 {{< product-c8y-iot >}} zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
-#### So zeigen Sie die Serviceüberwachung eines bestimmten Geräts an
+#### So zeigen Sie die Verfügbarkeit eines bestimmten Geräts an
 
-Klicken Sie auf die Registerkarte **Serviceüberwachung** in den Details eines bestimmten Geräts, um die Serviceüberwachung dieses Geräts zu überprüfen.
+Klicken Sie auf die Registerkarte **Verfügbarkeit** in den Details eines bestimmten Geräts, um die Verfügbarkeit dieses Geräts zu überprüfen.
 
-#### So zeigen Sie die Serviceüberwachung für alle Geräte an
+#### So zeigen Sie die Verfügbarkeit für alle Geräte an
 
-Klicken Sie auf **Serviceüberwachung** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
+Klicken Sie auf **Verfügbarkeit** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
 
-![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Availability](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-availability.png)
 
-Die Seite **Serviceüberwachung** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
+Die Seite **Verfügbarkeit** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
 
 <a name="alarm-monitoring"></a>
 ### Verwenden von Alarmen
@@ -186,7 +192,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Anwenden von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de/#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -258,7 +264,7 @@ Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) und mehr.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
@@ -313,40 +319,13 @@ Bulk-Operationen können sich in einem der folgenden Status befinden:
 
 In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angezeigt:
 
-<table>
-<colgroup>
-<col width="30%">
-<col width="70%">
-</colgroup>
-<thead>
-<tr>
-<th style="text-align:left">Info</th>
-<th style="text-align:left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Status</td>
-<td style="text-align:left">GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben).</td>
-</tr>
-<tr>
-<td style="text-align:left">Name</td>
-<td style="text-align:left">Name der Operation.</td>
-</tr>
-<tr>
-<td style="text-align:left">Fortschrittsanzeige</td>
-<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an.</td>
-</tr>
-<tr>
-<td style="text-align:left">Start- und Enddatum</td>
-<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen.</td>
-</tr>
-<tr>
-<td style="text-align:left">Schaltfläche Aktualisieren</td>
-<td style="text-align:left">Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige</td>
-</tr>
-</tbody>
-</table>
+| Info   | Beschreibung |
+| :----- | :---------- |
+| Status  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
+| Name   | Name der Operation. |
+| Fortschrittsanzeige | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an. |
+| Start- und Enddatum | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen. |
+| Schaltfläche Aktualisieren | Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige |
 
 Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zur Bulk-Operation anzeigen.
 

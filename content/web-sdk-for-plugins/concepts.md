@@ -15,7 +15,7 @@ In turn, applications consist of plugins. A plugin represents any functionality 
 * Add new widgets to dashboards.
 * Add new menu items to the drop-down menus.
 * Add new views or tabs to groups and devices.
-* Add any other kind of functionality (e.g. for the search) you would like to integrate.
+* Add any other kind of functionality (for example for the search) you would like to integrate.
 
 This is illustrated below:
 
@@ -27,11 +27,13 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 * Dashboard: Adds a new view/tab to groups and devices, functioning as a container for widgets.
 * Data point table: Adds a widget to dashboards providing a visualization of measurements in tabular form.
 
-> **Info:** You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of {{< product-c8y-iot >}} (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
+{{< c8y-admon-info >}}
+You can [extend](/web-sdk-for-plugins/hello-world/#target) the default applications of {{< product-c8y-iot >}} (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web-sdk-for-plugins/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
+{{< /c8y-admon-info >}}
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
+Whenever you create a new application or plugin, you must comply with the following folder structure. Otherwise the application or plugin will not work.
 
 The default folder structure of an application is as follows:
 
@@ -86,18 +88,20 @@ The following properties are available:
 	* **hide_navigator**: [optional] A boolean, which if set to true collapses the navigator menu at the left by default.
 	* **globalTitle**: [optional] A title that will be used as the global title of the web application.
 
-> **Info**: The properties "contextPath" and "key" need to be unique. For "PRIVATE" applications, the properties "name" and "contextPath" need to be unique within your tenant only.
+{{< c8y-admon-info >}}
+The properties "contextPath" and "key" must be unique. For "PRIVATE" applications, the properties "name" and "contextPath" must be unique within your tenant only.
+{{< /c8y-admon-info >}}
 
 <a name="plugin-manifest"></a>
 #### Plugin manifest
 
-The plugin manifest describes how your plugin is shown in the {{< product-c8y-iot >}} Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
+The plugin manifest describes how your plugin is shown in the {{< product-c8y-iot >}} Administration application (name, description, category, gallery, list) and what files must be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 
 * **name**: [required] A descriptive name for the plugin.
 * **description**: [optional] A longer description of the plugin.
 * **category**: [optional] A category for the plugin to be used in the filtering in the user interface.
 * **ngModules**: A list of AngularJS modules that are provided by the plugin, at least one is required.
-* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, services, etc. The path is relative to the plugin's root folder.
+* **js**: [optional] A list of JavaScript files to be loaded, such as *index.js*, controllers, or services. The path is relative to the plugin's root folder.
 * **CSS**: [optional] A list of CSS files to be loaded, paths relative to the plugin's root folder.
 * **less**: [optional] A list of LESS files to be loaded, paths relative to the plugin's root folder.
 * **copy**: [optional] A list of files that should be copied into the built.

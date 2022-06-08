@@ -39,7 +39,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus button</b><br> Most application pages show an <b>Plus</b> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -56,7 +56,9 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 <img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
-> **Info:** {{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+{{< /c8y-admon-info >}}
 
 <a name="app-switcher"></a>
 ### Application switcher
@@ -67,7 +69,7 @@ The application switcher allows you to quickly switch between applications. Clic
 
 <!-- Screenshot necessary? -->
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/users-guide/administration/#subscribed-applications), either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/users-guide/administration/#subscribed-applications) or [custom applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications:
 
@@ -88,9 +90,11 @@ On entering a search term into the textbox at the top of the **Search** window, 
 
 Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets tab](/users-guide/device-management#subassets-tab).
 
-The Search window only lists a limited number of matches. In case of more matches, to see the complete results you need to switch to the asset table.
+The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
->**Important:** The search results include all assets containing the search term in any property (name, model, any fragment), i.e. the search results do not only include assets matching the search criteria with their names.
+{{< c8y-admon-important >}}
+The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
+{{< /c8y-admon-important >}}
 
 ##### Exact match
 
@@ -112,7 +116,7 @@ If you want to search for objects matching an exact phrase enclose it in quotati
 "My Demo Device"
 ```
 
-You can also exclude words by putting a hyphen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
+You can also exclude words by putting a hyphen before the word to search the inventory for objects containing, for example, "My" or "Demo" but not "Device":
 
 ```text
 My Demo -Device
@@ -163,20 +167,22 @@ cl*
 
 The list will immediately be reduced to the selected objects.
 
->**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You need to load all results first to search through all items. This behavior applies to the following pages:
->
->* Device protocols
->* Firmware repository
->* Software repository
->* Configuration repository
->* Tenants
->* File repository
+{{< c8y-admon-important >}}
+On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
+
+* Device protocols
+* Firmware repository
+* Software repository
+* Configuration repository
+* Tenants
+* File repository
+{{< /c8y-admon-important >}}
 
 For details on the filtering mechanism in the devices list refer to [Device Management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
 
 ### Real-time behavior of the navigator
 
-In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately.
+In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
 
 You will only see such changes in the navigator of the application, in which you have made the changes.
 

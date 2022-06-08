@@ -4,9 +4,11 @@ title: Gateway configuration and registration
 layout: redirect
 ---
 
-YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default.
+YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only must set the properties which are different from the default.
 
-> **Important**: When editing the YAML file, make sure to provide valid indentations.
+{{< c8y-admon-important >}}
+When editing the YAML file, make sure to provide valid indentations.
+{{< /c8y-admon-important >}}
 
 To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
 
@@ -27,7 +29,9 @@ gateway:
         baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
-> **Info:** Windows OS is used for the example.
+{{< c8y-admon-info >}}
+Windows OS is used for the example.
+{{< /c8y-admon-info >}}
 
 ### Configuration profile location on the filesystem
 
@@ -45,15 +49,15 @@ Mac OS
     /opt/opcua/data
 ```
 
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let's use the previously created profile. Start a terminal and use the following command:
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument must be passed when running the gateway JAR file. For example, let's use the previously created profile. Start a terminal and use the following command:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles must be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
-**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
+**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations must be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
 
 ```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
@@ -63,11 +67,15 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 ### Additional customizations
 
-> **Info:** If no additional customizations are required, you can skip this section.
+{{< c8y-admon-info >}}
+If no additional customizations are required, you can skip this section.
+{{< /c8y-admon-info >}}
 
-> **Info:** Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+{{< c8y-admon-info >}}
+Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
 The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
 Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
+{{< /c8y-admon-info >}}
 
 The following properties can be manually configured in the YAML file:
 
@@ -364,7 +372,7 @@ connected to them. The cleanest approach to delete a gateway is to first delete 
 
 The server can be either deleted from the **OPC UA server** tab of the gateway (recommended way of deletion), or from the device list itself. If the server is
 deleted from the **OPC UA server** tab, then the server managed object and all the address space managed objects are deleted by the OPC UA management service,
-but the child devices associated with the server have to be deleted separately.
+but the child devices associated with the server must be deleted separately.
 
 On the other hand, if the server is deleted from the device list, then the
 child devices associated with the server can be deleted by selecting the checkbox **Also delete child devices of this device**. The deletion is detected by the gateway,
@@ -376,3 +384,24 @@ completely remove all the associated managed objects. Thereafter, the gateway ca
 
 If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.
+
+### Downgrade to an earlier version
+
+Due to security improvements, downgrades from 10.12.0 to previous versions are not directly supported.
+However, if required, a downgrade is possible by following the instructions below:
+
+1. Shut down the current version of the gateway and remember the gateway managed object ID from the devices list.
+2. Send an HTTP PUT command to your tenant to reset the identity:
+
+PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}
+```json
+   {
+   "c8y_ua_IdentityConfig":null
+   }
+```
+3. The response code should be 200 OK.
+4. Start the old version of the gateway.
+
+After completing these steps a new identity will be created in the old structure.
+
+It is possible to upgrade to version 10.12.0 or above at a later stage. The necessary conversion will be done automatically.

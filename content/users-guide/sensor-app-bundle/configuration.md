@@ -15,4 +15,6 @@ Tapping **Disable** still allows the smartphone to monitor measurements from thi
 
 Tapping **Edit**, or swiping upwards, reveals further settings that allow you to adjust various properties about this sensor, such as its name and update intervals.
 
-> **Info:** Smaller update intervals provide better response times and more complete measurement data, but also lead to higher power usage.
+{{< c8y-admon-info >}}
+Smaller update intervals provide better response times and more complete measurement data, but also lead to higher power usage.
+{{< /c8y-admon-info >}}

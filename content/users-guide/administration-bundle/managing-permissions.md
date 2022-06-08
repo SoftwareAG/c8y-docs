@@ -11,10 +11,7 @@ helpcontent:
   In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined (which may serve as a template), but you can define your own according to your needs.
 
 
-  In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device.
-
-
-  For details on working with global roles and inventory roles, see *Administration > Managing permissions* in the *User guide*."
+  In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device."
 ---
 
 Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
@@ -29,15 +26,17 @@ Moreover, application access can be granted to enable a user to use an applicati
 <a name="global"></a>
 ### Global roles
 
-Click **Roles** in the **Account** menu to display a list of configured roles.
+Click **Roles** in the **Accounts** menu to display a list of configured roles.
 
 <img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
-In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined, but you can define your own according to your needs.
+In the **Global roles** tab you can find the roles which grant permissions on a system level. There are several global roles pre-defined, but you can define your own according to your needs.
 
-> **Info:** The pre-defined roles are not fully configured. They can be seen as samples which are pre-configured for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
+{{< c8y-admon-info >}}
+The pre-defined roles are configured as samples for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
 
-> On creating a new user, make sure that the global roles you assign to the user cover all permissions relevant for this particular user. If, for example, a user only has the role "Cockpit User" (see below), the user will only be able to access the Cockpit application and nothing more.  
+On creating a new user, make sure that the global roles you assign to the user contain all necessary permissions relevant for this particular user in either of those roles assigned. Permissions from different roles are merged together when assigned to the same user. If, for example, a user only has the role "Cockpit User" (see below), the user is only able to access the Cockpit application and nothing more. But if you also assign inventory permission via some of the available roles, the user will get access to the whole inventory, such as devices, groups, and configurations.
+{{< /c8y-admon-info >}}
 
 The roles "admins" and "devices" have a special status:
 
@@ -53,7 +52,7 @@ The roles "admins" and "devices" have a special status:
 <tbody>
 <tr>
 <td align="left">admins</td>
-<td align="left">All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.</td>
+<td align="left">Administrative permissions are enabled. The initial administrator, the first user created in a tenant, has this role.</td>
 </tr>
 <tr>
 <td align="left">devices</td>
@@ -83,7 +82,7 @@ Furthermore, the following pre-configured roles are initially provided.
 <td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
-<td align="left">Device management User</td>
+<td align="left">Devicemanagement User</td>
 <td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
@@ -119,7 +118,7 @@ You may also see the following legacy roles:
 <a name="create-edit-roles"></a>
 #### To add a global role
 
-Click **Add Role** in the **Global roles** tab.
+Click **Add global role** in the **Global roles** tab.
 
 In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
 
@@ -136,7 +135,9 @@ For each type, you can select the following permission levels:
 - UPDATE: Change and delete the specified data (not including READ).
 - ADMIN: Create, update or delete the specified data.
 
-> **Info:** CREATE permissions are related to the concept of ownership in {{< product-c8y-iot >}}. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
+{{< c8y-admon-info >}}
+CREATE permissions are related to the concept of ownership in {{< product-c8y-iot >}}. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
+{{< /c8y-admon-info >}}
 
 Select the checkbox at the top of a column to set the respective level to all permission types.
 
@@ -264,14 +265,18 @@ The following permission categories are available by default:
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
 
-> **Important:** When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
+{{< c8y-admon-important >}}
+When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
+{{< /c8y-admon-important >}}
 
 <a name="attach-global"></a>
 #### Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
-> **Important:** By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However, this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template).
+{{< c8y-admon-important >}}
+By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template) in the *User guide*.
+{{< /c8y-admon-important >}}
 
 ##### To assign global roles from the user list
 
@@ -294,7 +299,7 @@ Click **Save** to save your settings.
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
-To view the currently configured inventory roles, click **Roles** in the **Account** menu and switch to the **Inventory roles** tab.
+To view the currently configured inventory roles, click **Roles** in the **Accounts** menu and switch to the **Inventory roles** tab.
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
@@ -305,16 +310,15 @@ The following default inventory roles are initially available in new tenants:
 |Role|Description|
 |:---|:---|
 |Manager| Can read all data of the asset and manage all inventory data but cannot perform operations. In addition, can manage inventory data (including dashboards) and alarms.
-|Operations: All|Can remotely manage the assets by sending operations to a device (e.g. software updates, remote configurations).
+|Operations: All|Can remotely manage the assets by sending operations to a device (for example software updates, remote configurations).
 |Operations: Restart Device|Can restart devices.
 |Reader|Can read all data of the asset.
 
 
 #### To add an inventory role
 
-Click **Add Role** in the **Inventory roles** tab.
-
-At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
+Click **Add inventory role** in the **Inventory roles** tab.
+In the "New inventory role" page, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
 
 ![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
@@ -330,7 +334,9 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their {{< management-tenant >}}. This permission lets users of the service provider give support to their customer's users, see [Support user access](/users-guide/enterprise-tenant/#support-user-access).
+{{< c8y-admon-info >}}
+Service providers will see an additional permission "Support" in their {{< management-tenant >}}. This permission lets users of the service provider give support to their customer's users, see [Support user access](/users-guide/enterprise-tenant/#support-user-access).
+{{< /c8y-admon-info >}}
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -340,7 +346,9 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+{{< c8y-admon-info >}}
+For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+{{< /c8y-admon-info >}}
 
 In the **Permission** field, select a permission level from the dropdown list:
 
@@ -348,7 +356,9 @@ In the **Permission** field, select a permission level from the dropdown list:
 * CHANGE - to modify objects (does not include READ permission)
 * ALL - to read AND modify objects
 
->**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
+{{< c8y-admon-important >}}
+When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
+{{< /c8y-admon-important >}}
 
 As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library/)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
@@ -359,11 +369,14 @@ As another example, assume that you are using tracking devices. You want to allo
 
 Inventory roles are assigned to a user and a group of devices.
 
-To assign inventory roles, click **User** in the **Account** menu, select a user in the user list and switch to its **Inventory roles** tab.
+To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
 In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
 
-> **Important:** If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
+{{< c8y-admon-important >}}
+If a user already has a global role containing inventory permissions, the user will be
+able to see or change all devices regardless of what inventory roles you set here.
+{{< /c8y-admon-important >}}
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 
@@ -378,7 +391,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button (showing the current user name) at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
 <a name="app-access"></a>
 ### Granting application access
@@ -391,4 +404,6 @@ For more information on application management, see [Administration > Managing a
 
 ![Application access](/images/users-guide/Administration/admin-application-access.png)
 
-> **Info:** If a user has global permission to read all applications, an information box will be shown.
+{{< c8y-admon-info >}}
+If a user has global permission to read all applications, an information box will be shown.
+{{< /c8y-admon-info >}}

@@ -4,6 +4,14 @@ title: Usage statistics and billing
 layout: redirect
 aliases:
   - /users-guide/enterprise-edition/#usage-and-billing
+helpcontent:
+  - label: usage-and-billing
+    title: Usage statistics
+    content: "The **Usage statistics** page provides statistical information on each subtenant such as the number of API requests, the number of devices connected to the subtenant, the amount of data stored in the account, or the number applications subscribed to the tenant. For details, see the *User guide*.
+
+
+    You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria."
+
 ---
 
 <a name="usage-stats"></a>
@@ -136,11 +144,16 @@ Custom properties may be defined in the [Properties Library](/users-guide/admini
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
->**Info:** If a tenant was created after the selected time period, it will show up but the numbers are "0".
+{{< c8y-admon-info >}}
+If a tenant was created after the selected time period, it will show up but the numbers are "0".
+{{< /c8y-admon-info >}}
 
 You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
-> **Important:** The date/time range used here might differ from your server time due to different time zones.
+{{< c8y-admon-important >}}
+The date/time range used here might differ from your server time due to different time zones.
+{{< /c8y-admon-important >}}
+
 
 #### To export the usage statistics table
 
@@ -183,7 +196,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -205,7 +218,7 @@ Microservice resources are counted based at limits defined in the microservice m
 
 **Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 4 CPU and 4 GB of memory it should be counted as 2000 CPU milliseconds and 2048 MB of memory.
 
-For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
+For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (for example owner, subscription for tenant):
 
 ```json
 {
@@ -246,7 +259,9 @@ For more information, refer to [Audits](https://{{< domain-c8y >}}/api/{{< c8y-c
 
 ### Timezone handling
 
->**Important:** {{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
+{{< /c8y-admon-important >}}
 
 The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the server timezone. As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
@@ -327,7 +342,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Subscribed applications | 9, 17 and EOD|
 |Microservice resources | 9, 17 and EOD|
 
-<a name="Lifecycle"></a>
+<a name="lifecycle"></a>
 ### Lifecycle
 
 **Tenant**
@@ -335,7 +350,7 @@ Usage statistics consist of values that are progressive like the request count a
 A {{< product-c8y-iot >}} platform tenant can have several states:
 
   * Active - The common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
-  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
+  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", that means, when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
   * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
 
@@ -359,7 +374,9 @@ Tenants should also be able to see the full application lifecyle in the applicat
   * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
   * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
 
->**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
+{{< c8y-admon-info >}}
+There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
+{{< /c8y-admon-info >}}
 
   <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 

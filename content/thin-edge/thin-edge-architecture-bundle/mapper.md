@@ -92,7 +92,7 @@ If you do not want to add a timestamp in the output of Azure IoT Hub mapper, you
 sudo tedge config set az.mapper.timestamp false
 ```
 
-After changing the configuration, you need to restart the mapper service by
+After changing the configuration, you must restart the mapper service by
 
 ```shell
 sudo systemctl restart tedge-mapper-az.service

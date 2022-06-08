@@ -68,12 +68,14 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 2. Make available a new tenant on which Apama has been enabled.
 3. Manually convert all old custom rules from the existing tenant into equivalent Apama EPL apps on the new tenant. Refer to the rest of this guide, in particular [Best practices and guidelines](/apama/best-practices/). This includes smart rules where the CEL has been modified.
 4. Test the behavior of the new EPL apps by sending, for example, measurements or events into the new tenant and verifying that the new EPL apps respond appropriately.
+    > **Important:** CEL allowed measurements with null values. This is no longer supported. Therefore, you must make sure that all of your measurements send numeric values. 
 5. When all new EPL apps have been developed and tested, move your production tenant from CEP to Apama, that is: subscribe the new tenant to the Apama-ctrl microservice (and unsubscribe it from CEP). 
 	* Any unmodified smart rules will migrate automatically. 
 	* Delete any smart rules where the CEL version had been modified and a new EPL app has been implemented. 
 	* Activate your newly developed EPL apps in the production tenant.
 
-You can also choose to work with {{< company-sag >}} Professional Services to help ensure the migration is as smooth as possible. {{< company-sag >}} Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in {{< product-c8y-iot >}}.
+
+You can also work with {{< company-sag >}} Professional Services to help ensure the migration is as smooth as possible. {{< company-sag >}} Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in {{< product-c8y-iot >}}.
 
 ### Handling scheduled exports
 

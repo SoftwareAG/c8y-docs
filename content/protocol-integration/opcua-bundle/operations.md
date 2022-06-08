@@ -74,7 +74,9 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 </tbody>
 </table>
 
-> **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< c8y-admon-info >}}
+We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< /c8y-admon-info >}}
 
 ### Reading the value of a node/nodes
 
@@ -719,9 +721,7 @@ This returns a JSON response like this:
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
 
-For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
-
-For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
+For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value

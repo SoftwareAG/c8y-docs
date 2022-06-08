@@ -4,7 +4,7 @@ layout: redirect
 title: Authentication
 ---
 
-The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token has to be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.
+The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token must be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.
 
 You can find a [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) in our GitHub repository to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and starts listening on the specified port in the *Properties/launchSettings.json* file.
 
@@ -12,7 +12,7 @@ Note that when a request authenticated with OAuth arrives to the microservice, i
 
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests.
 
-To employ OAuth you need to add the following code to the `ConfigureServices` method in the *Startup.cs* file:
+To employ OAuth you must add the following code to the `ConfigureServices` method in the *Startup.cs* file:
 
 ```cs
 services.AddCumulocityAuthenticationAll(Configuration);
@@ -30,7 +30,7 @@ public static IServiceCollection AddCumulocityAuthenticationAll(this IServiceCol
 }
 ```
 
-Moreover, you need to register the authentication middleware. To do so, call the `UseAuthentication` method within the `Configure` method in the *Startup.cs* file as shown below:
+Moreover, you must register the authentication middleware. To do so, call the `UseAuthentication` method within the `Configure` method in the *Startup.cs* file as shown below:
 
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,7 +40,9 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-> **Important:** Do not use the `AddBasicAuthentication` method if you want OAuth-based authentication for your microservice.
+{{< c8y-admon-important >}}
+Do not use the `AddBasicAuthentication` method if you want OAuth-based authentication for your microservice.
+{{< /c8y-admon-important >}}
 
 To use multiple authentication schemes, the Controllers class must be decorated as follows:
 
@@ -62,7 +64,7 @@ Refer to [Authorize with a specific scheme in ASP.NET Core](https://docs.microso
 
 ### Testing the microservice with OAuth tokens
 
-Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (e.g. by watching network requests in the browser). Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expires. The cURL equivalent to test the [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) is as follows:
+Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (for example by watching network requests in the browser). Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expires. The cURL equivalent to test the [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) is as follows:
 
 ```
 curl 'http://<URL>/api/values' \

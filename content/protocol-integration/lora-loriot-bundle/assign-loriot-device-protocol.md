@@ -1,11 +1,11 @@
 ---
-weight: 40
+weight: 50
 title: Assign the Loriot LoRa device protocol
 layout: redirect
 ---
 
 
-Once the Loriot LoRa device is available in the {{< product-c8y-iot >}} platform, you need to assign a device protocol from the **LPWAN** tab.
+Once the Loriot LoRa device is available in the {{< product-c8y-iot >}} platform, you must assign a device protocol from the **LPWAN** tab.
 
 ![Assign device protocol](/images/device-protocols/lora-loriot/loriot-device-protocol-assignment.png)
 

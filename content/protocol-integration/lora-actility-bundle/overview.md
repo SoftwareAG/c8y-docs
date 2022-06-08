@@ -23,7 +23,11 @@ The following sections describe how to:
 * [Register devices](#register-device) and visualize Actility payload using {{< product-c8y-iot >}}.
 * [Deprovision a device](#deprovision-device) in ThingPark.
 * [Send operations](#configurable-port) to a device.
+
+Moreover you find details on:
+
 * [ThingPark Api availability monitoring](#thingpark-monitoring) in {{< product-c8y-iot >}}.
+* Measurements and events created during [uplink message processing](#uplink-message).
 * [Troubleshooting](#troubleshooting) for warning messages.
 
 > Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).

@@ -12,7 +12,7 @@ The following image provides an overview on the matching capabilities.
 
 ![Functional overview](/images/oee/administration/matching-functional-overview.png)
 
-You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories need to be created under **Calculation categories** first, see [Calculation categories](/oee/oee-administration/#categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
+You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories must be created under **Calculation categories** first, see [Calculation categories](/oee/oee-administration/#categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
 
 #### Calculation rules
 
@@ -48,7 +48,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 * Actual Production Time: Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
 * Availability Loss (time): Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
 * Actual Production Amount: Needs to be derived from actual measurements.
-* Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
+* Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) must be defined.
 
 ![Matching](/images/oee/administration/matching-general.png)
 
@@ -113,8 +113,8 @@ You must define the amount and the unit of time (for example "5" and "minutes").
 You must define an identifier which can either be a transformation or a machine event. If a machine event is defined, it might overwrite an existing event (for example quality event is defined in the matching step and in the correlation step) as the current configuration model is supposed to only hold one quality and one machine event. The respective subscriptions will also be created for all defined correlation identifiers (and potentially their machine events). The new created subscriptions are appended to those coming from the matching rules (duplicates are filtered beforehand).
 
 - The definition of correlations will be allowed for machine and line profiles.
-- Depending on the mode while saving the step, unused attributes are removed (e.g. when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
-- Correlation step gets also validated as part of the summary step, e.g. to show that the step is not yet completed.
+- Depending on the mode while saving the step, unused attributes are removed (for example when no correlation has been selected, the attribute *correlationId* and *correlationOffset* will be removed from the input).
+- Correlation step gets also validated as part of the summary step, for example, to show that the step is not yet completed.
 - All values are properly written to the BE.
 
 ![Correlation](/images/oee/administration/admin-correlation.png)

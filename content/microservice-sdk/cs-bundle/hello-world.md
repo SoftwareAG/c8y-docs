@@ -23,7 +23,7 @@ In Windows systems, Powershell is installed by default. Download the script file
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
-The latest can be replaced by the version number, e.g. `microservicesdk-lin-dev-{X.X.X}.zip`.
+The latest can be replaced by the version number, for example, `microservicesdk-lin-dev-{X.X.X}.zip`.
 
 Once you have downloaded the source, unzip the file.
 
@@ -470,11 +470,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [*Device SDK guide*](https://{{< domain-c8y >}}/guides/device-sdk/).
+For further information, refer to the [Device SDK guide](/device-sdk/).
 
 #### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://{{< domain-c8y >}}/guides/device-sdk/mqtt-examples) in the *Device SDK guide*.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-sdk/mqtt-examples) in the *Device SDK guide*.
 
 
 ### Building and deploying on Linux
@@ -485,7 +485,7 @@ use the wget command to download the script file to build a "Hello World" applic
 $ sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 ```
 
-The "latest" can be replaced by the version number, e.g. microservicesdk-lin-dev-<X.X.X>.zip.
+The "latest" can be replaced by the version number, for example, microservicesdk-lin-dev-<X.X.X>.zip.
 
 Once you have downloaded the source, unzip the file.
 
@@ -557,7 +557,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [General aspects > Packing](https://{{< domain-c8y >}}/guides/microservice-sdk/concept/#packing) in this guide.
+For further information, refer to [General aspects > Packing](/microservice-sdk/concept/#packing) in this guide.
 
 **Deployment**
 

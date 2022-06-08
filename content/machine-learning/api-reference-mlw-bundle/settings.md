@@ -20,6 +20,8 @@ Operations on MLW settings.
 
 Fetches the AWS S3 credentials information.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -74,6 +76,8 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 ```
 
 Registers the AWS S3 credentials information with {{< product-c8y-iot >}}.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|
@@ -160,6 +164,8 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 ```
 
 Deletes the AWS S3 credentials information from {{< product-c8y-iot >}}.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

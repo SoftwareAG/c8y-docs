@@ -14,7 +14,7 @@ The startup phase connects the device to {{< product-c8y-iot >}} and updates the
 -   [Step 3](#step-3-register-the-device): Register the device (create the identity).
 -   [Step 4](#step-4-update-the-device-in-the-inventory): If yes, update the device in the inventory.
 -   [Step 5](#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory): Discover child devices and create or update them in the inventory.
--   [Step 6](#step-6-finish-operations-and-subscribe): Finish operations that required a restart and subscribe to new operations.
+-   [Step 6](#step-6-complete-operations-and-subscribe): Complete operations that required a restart and subscribe to new operations.
 
 ![Startup phase](/images/rest/startupphase.png)
 
@@ -69,17 +69,17 @@ The device issues this request repeatedly. While the user has not yet registered
 
 The device can now connect to {{< product-c8y-iot >}} using the tenant ID, username and password. User alias is not supported for devices.
 
-With the introduction of the concept of {{< enterprise-tenant >}}s, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant.
+With the introduction of the concept of {{< enterprise-tenant >}}s, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, for example, `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant.
 
 Request header should be:
 
 	Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
 
-For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
+For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (that is, *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID must be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
 
 {{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (e.g. *xyz.{{< domain-c8y >}}* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
+If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -233,7 +233,7 @@ Continuing the above example, we would associate the newly created device "24803
 
 #### Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide* for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we must make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide* for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
@@ -282,13 +282,13 @@ This request will also delete all data associated with the device including its 
 
 #### Working with operations
 
-Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
 The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
-#### Step 6: Finish operations and subscribe
+#### Step 6: Complete operations and subscribe
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 
@@ -384,9 +384,9 @@ Finally, the device connects and waits for operations to be sent to it.
         "clientId": "139jhm07u1dlry92fdl63rmq2c"
     } ]
 
-This request will hang until an operation is issued, i.e. the HTTP server will not answer immediately, but wait until an operation is available for the device (long polling).
+This request will hang until an operation is issued (that is, the HTTP server will not answer immediately) but will wait until an operation is available for the device (long polling).
 
-Note that there might have been operations that were pending before we subscribed to new incoming operations. We need to query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:
+Note that there might have been operations that were pending before we subscribed to new incoming operations. We must query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:
 
     GET /devicecontrol/operations?agentId=2480300&status=PENDING HTTP/1.1
 
@@ -475,7 +475,7 @@ Note that all data types in {{< product-c8y-iot >}} can include arbitrary extens
 
 #### Step 11: Send alarms
 
-Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
+Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
     POST /alarm/alarms HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
@@ -503,7 +503,7 @@ However, you most likely should not create an alarm for a device, if there is a 
 
     GET /alarm/alarms?source=2480300&status=ACTIVE HTTP/1.1
 
-In contrast to events, alarms can be updated. If an issue is resolved (e.g. the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
+In contrast to events, alarms can be updated. If an issue is resolved (for example the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
 
     PUT /alarm/alarms/214600 HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json

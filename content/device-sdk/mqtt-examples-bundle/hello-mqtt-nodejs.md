@@ -15,7 +15,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create a Node.js application,
 * install the MQTT middleware (in this example we will use the library [MQTT.js](https://github.com/mqttjs/MQTT.js)),
@@ -99,7 +99,7 @@ client.on("message", function (topic, message) {
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
-The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
+The {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you select, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
 
 What does the code do?
 
@@ -121,7 +121,7 @@ Before running the application, the MQTT middleware must be installed. To achiev
 $ npm install
 ```
 
-Installation has to be done only once. Afterwards, you only need to execute the following command:
+Installation needs to be done only once. Afterwards, you only need to execute the following command:
 
 ```shell
 $ npm start
@@ -129,7 +129,7 @@ $ npm start
 
 You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. `c8y_Restart`), related information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
 ### Improving the agent
 

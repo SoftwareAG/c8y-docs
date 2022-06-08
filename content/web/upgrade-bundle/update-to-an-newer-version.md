@@ -41,14 +41,16 @@ To update the Web SDK you can simply use the `new` command that is used for scaf
 c8ycli new <<app-name>> <<cockpit|devicemanagement|administration>> -a @c8y/apps@<<version>>
 ```
 
-So for example if your current working directory is an application called "my-cockpit" based on {{< product-c8y-iot >}}'s Cockpit application and you want to update to version 10.6.2.0, you need to run the following command:
+So for example if your current working directory is an application called "my-cockpit" based on {{< product-c8y-iot >}}'s Cockpit application and you want to update to version 10.6.2.0, you must run the following command:
 
 ```shell
 cd ..
 c8ycli new my-cockpit cockpit -a @c8y/apps@1006.2.0
 ```
 
-> **Info:** The first two numbers of the version are combined (eg. 10.6 becomes 1006) as npm only supports semver version numbers. You can also remove the `-a` flag to always update to the latest version (the version our cloud platform is running on).
+{{< c8y-admon-info >}}
+The first two numbers of the version are combined (eg. 10.6 becomes 1006) as npm only supports semver version numbers. You can also remove the `-a` flag to always update to the latest version (the version our cloud platform is running on).
+{{< /c8y-admon-info >}}
 
 The command simply copies over the files that are used for building a new application in the particular version.
 The following files are currently overwritten:
@@ -56,13 +58,13 @@ The following files are currently overwritten:
  - `app.module.ts`: The Angular module imports which might be aligned by your application to import custom Angular modules.
  - `index.ts`: The bootstrapping file which is called first. This file is usually not changed.
  - `ng1.ts`: The angularjs imports which might have been aligned to add or remove angularjs plugins.
- - `package.json`: The npm dependencies, application options and names are stored in this file. This is very likely changed, e.g. when different options or a different dependency are used.
+ - `package.json`: The npm dependencies, application options and names are stored in this file. This is very likely changed, for example, when different options or a different dependency are used.
  - `tsconfig.json`: The typescript configuration. It is usually unchanged.
  - `angular.json`: The Angular project configuration defaults for build and development tools
 
 These are the files that are overwritten by an update based on the version of that article.
 The list might change in later versions.
-Next, we need to reapply the changes that were made earlier to these files.
+Next, we must reapply the changes that were made earlier to these files.
 A git diffing tool can be very helpful for that.
 
 ### Diffing to reapply changes

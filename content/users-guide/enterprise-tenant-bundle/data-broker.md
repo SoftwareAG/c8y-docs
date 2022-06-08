@@ -4,6 +4,13 @@ title: Using the data broker
 layout: redirect
 aliases:
   - /users-guide/enterprise-edition/#data-broker
+helpcontent:
+  - label: data-broker
+    title: Data broker
+    content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations.
+
+
+    Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant. For details, see the *User guide*."
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:
@@ -18,7 +25,9 @@ Navigate to **Data connectors** in the **Data broker** menu if you would like to
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
->**Important:** Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+{{< c8y-admon-important >}}
+Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+{{< /c8y-admon-important >}}
 
 Be aware of the following limitations of the data broker:
 
@@ -43,12 +52,15 @@ For each data connector, the following information is provided:
 
 * the data connector's name
 * its destination tenant
+* description if provided, "None" displayed otherwise
 * the status of the connector
 * the number of filters set for the data connector
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-> **Info:** If the source tenant has been suspended all its data broker connectors will be suspended as well.
+{{< c8y-admon-info >}}
+If the source tenant has been suspended all its data broker connectors will be suspended as well.
+{{< /c8y-admon-info >}}
 
 <a name="data-broker-connector-edit"></a>
 #### To add a data connector
@@ -61,7 +73,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 	|Title|The name of the data connector.
 	|Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
 	|Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
-	|Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
+	|Data filters|A set of filters that define what is copied to the destination. You must configure at least one filter.
 
 3. Click **Add filter** to configure a new filter.
 
@@ -88,7 +100,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 	</tr>
 	<tr>
 	<td style="text-align:left">Fragments to filter</td>
-	<td style="text-align:left">The fragments that need to be present in a device to be forwarded.</td>
+	<td style="text-align:left">The fragments that must be present in a device to be forwarded.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Fragments to copy</td>
@@ -113,7 +125,7 @@ This concerns items such as SmartREST templates, device protocols, smart rule co
 <br><br>
 For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
 
-If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
+If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, meaning it forwards the device or asset along with its first event/measurement/alarm.
 
 If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
@@ -131,14 +143,14 @@ The heading of a data filter summarizes the configuration in one line. The stand
 * **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString
 * **For updated operations**: status
 
-After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
+After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You must communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
 ![Security code](/images/users-guide/enterprise-tenant/et-data-broker-connector-security-code.png)
 
 
 #### To edit a data connector
 
-Click the menu icon at the right of a data connector entry and then click **Edit**.
+Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
 
 In the **Settings** tab, edit the data connector configuration.
 

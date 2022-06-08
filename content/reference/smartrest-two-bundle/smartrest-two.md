@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
+Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -53,7 +53,7 @@ In its base, SmartREST 2.0 is like the previous version: a CSV-like payload form
 
 Several changes in the functionality have been made:
 
-* Templates no longer contain IDs of objects (instead, IDs will be resolved by e.g. MQTT ClientId)
+* Templates no longer contain IDs of objects (instead, IDs will be resolved by, for example, MQTT ClientId)
 * Managed objects can be created and retrieved directly with external IDs
 * Creating request templates now uses JSON path (like response templates)
 * Support for lists in responses
@@ -82,7 +82,7 @@ A template collection is a set of request and response templates that specifies 
 <a name="creating-templates-via-mqtt"></a>
 #### Creating templates via MQTT
 
-Like in SmartREST 1.0, you need to pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
+Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
 
 When creating templates, the client needs to publish to the following topic:
 
@@ -182,7 +182,9 @@ A request template contains the following basic fields:
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
 It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
 
-> **Info:** If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
+{{< c8y-admon-info >}}
+If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
+{{< /c8y-admon-info >}}
 
 **Example**
 
@@ -301,7 +303,9 @@ This results in the following minimal template creations:
 Creating data on the inventory optionally includes the creation of an externalId for that object.
 This is controlled by the mandatory value externalIdType.
 
-> **Important**: POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.
+{{< c8y-admon-important >}}
+POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.
+{{< /c8y-admon-important >}}
 
 ```bash
 # Creation:
@@ -366,7 +370,7 @@ A single custom property requires you to add the following three values to your 
 |NUMBER|An integer or number with decimal places|
 |INTEGER|An integer|
 |UNSIGNED|An integer (only positive)|
-|FLAG|An empty map (e.g. c8y_IsDevice: {}). The client does not need to send anything for this value|
+|FLAG|An empty map (for example c8y_IsDevice: {}). The client does not need to send anything for this value|
 |SEVERITY|A severity of an alarm. Used to update the severity field of alarms|
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|
@@ -546,6 +550,8 @@ Your MQTT ClientId could look like this:
 d:myDeviceSerial:myDefaultTemplateXID
 ```
 
->**Info**: If you use a default X-ID, you need to include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
+{{< c8y-admon-info >}}
+If you use a default X-ID, you must include in the **ClientId** the `d:` at the beginning to specify that the client is a device.
+{{< /c8y-admon-info >}}
 
 It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).

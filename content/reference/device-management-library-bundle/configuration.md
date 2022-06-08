@@ -8,9 +8,9 @@ The **Configuration** tab allows three different formats for device configuratio
 
 ### Text-based configuration
 
-The most basic form of configuration is a simple text-based configuration. Here the configuration is stored and transferred directly as string. We recommend you to use this form for small human readable configuration files only, e.g. for microcontroller-based devices.
+The most basic form of configuration is a simple text-based configuration. Here the configuration is stored and transferred directly as string. We recommend you to use this form for small human readable configuration files only, for example, for microcontroller-based devices.
 
-The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care has to be taken that encoding is performed properly. {{< product-c8y-iot >}} supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
+The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care must be taken that encoding is performed properly. {{< product-c8y-iot >}} supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest-one/#data-format) for SmartREST payloads may be required.
 
 We recommend you to upload the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
@@ -269,7 +269,7 @@ The device is expected to perform the following actions:
 
 The 521 static response template is available for this functionality:
 
-1. Receive ```c8y_UploadConfigFile``` operation <br>
+1. Receive ```c8y_DownloadConfigFile``` operation <br>
   `521,DeviceSerial,https://demos.cumulocity.com/inventory/binaries/9100`
 2. Set operation status to EXECUTING <br>
   `501,c8y_DownloadConfigFile`

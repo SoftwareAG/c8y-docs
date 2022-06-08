@@ -18,14 +18,14 @@ In this tutorial, we will link up a [Tinkerforge Weather Station](https://www.ti
 
 #### Installing the Tinkerforge Brick Daemon and Brick Viewer on the RaspPi
 
-Before we try to connect to {{< product-c8y-iot >}}, we need to ensure that the RaspPi and the Weather Station can communicate with each other.
+Before we try to connect to {{< product-c8y-iot >}}, we must ensure that the RaspPi and the Weather Station can communicate with each other.
 
-For the software connection between the devices, you need to install  Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
+For the software connection between the devices, you must install Tinkerforge's Brick Daemon and Brick Viewer on the RaspPi. The installation instructions are provided on the Tinkerforge web page for setting up the Raspberry Pi at https://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html.
 
 
 #### Checking the connection between the Tinkerforge Weather Station and the RaspPi
 
-Now we need to start the Brick Daemon and set up the Brick Viewer to communicate with the Weather Station. Note that both components need to be started with sudo, to permit a USB connection between the devices.
+Now we must start the Brick Daemon and set up the Brick Viewer to communicate with the Weather Station. Note that both components must be started with sudo, to permit a USB connection between the devices.
 
 ````console
 sudo brickd  
@@ -64,19 +64,19 @@ For details on installing and running the {{< product-c8y-iot >}} Java agent on 
 
 #### To register the RaspPi device to the platform
 
-As a final configuration step, you need to register the RaspPi device to the {{< product-c8y-iot >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
+As a final configuration step, you must register the RaspPi device to the {{< product-c8y-iot >}} platform. Instructions for doing this are also provided in the [Raspberry Pi tutorial](../raspberry-pi-4).
 
 ### Interacting with the platform
 
 To view the device in your {{< product-c8y-iot >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
-Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
+Add the RaspPi device to a group, see [Grouping devices](/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
 
 Now click the **Child devices** tab of the RaspPi to list the connected TinkerForge components. The display will look similar to the following:
 
 ![Child Devices](/images/device-demos/tinkerforge/tinkerforge-child-devices.png)
 
-By default, TinkerForge components are named using the name of the device that they are connected to (for example, "RaspPi BCM2708 10000000e2f5ad4d"), the type of component (for example, "TFHumidityBricklet", indicating the Tinkerforge bricklet that measures humidity) and the serial number of the component (for example, "nBL"). You can edit the name in the **Info** tab of the device.
+By default, TinkerForge components are named using the name of the device that they are connected to (for example "RaspPi BCM2708 10000000e2f5ad4d"), the type of component (for example "TFHumidityBricklet", indicating the Tinkerforge bricklet that measures humidity) and the serial number of the component (for example "nBL"). You can edit the name in the **Info** tab of the device.
 
 
 #### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
@@ -91,7 +91,7 @@ The set of data points that you select are shown in the "Data points" panel, for
 
 ![Selected data points](/images/device-demos/tinkerforge/tinkerforge-selected-data-points.png)
 
-The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last minute).
+The data explorer display updates in real time to show a graph of the sensor data over a defined period of time (for example over the last minute).
 
 ![Live sensor graph](/images/device-demos/tinkerforge/tinkerforge-live-sensor-graph.png)
 
@@ -164,7 +164,7 @@ The 4x7 Segment Display's implementation is similar to that of the LCD Display b
 
 ##### Configuration
 
-The Remote Switch bricklet can be used to toggle on and off various remote sockets, lamps, etc. It supports three types of addressing.
+The Remote Switch bricklet can be used to toggle on and off various remote sockets, lamps, and so on. It supports three types of addressing.
 
 * Type A addressing: To add a predefined type A device to the Remote Switch bricklet, append the following lines to the Configuration panel:
 
@@ -176,7 +176,7 @@ c8y.remoteswitch.<device name>.receiverCode=<receiver code>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.)
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;house code&gt; - 5-bit integer (0 to 31)
 &lt;receiver code&gt; - 5-bit integer (0 to 31)
 
@@ -190,7 +190,7 @@ c8y.remoteswitch.<device name>.unit=<unit>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;address&gt; - 16-bit integer (0 to 65534)
 &lt;unit&gt; - 4-bit integer (0 to 15)
 
@@ -204,7 +204,7 @@ c8y.remoteswitch.<device name>.deviceCode=<device code>
 
 Where:
 
-&lt;device name&gt; - the name of the device(e.g. socket1, lamp1, etc.).
+&lt;device name&gt; - the name of the device (socket1, lamp1, and so on)
 &lt;system code&gt; - 4-bit character (A to P)
 &lt;device code&gt; - 4-bit integer (0 to 15)
 

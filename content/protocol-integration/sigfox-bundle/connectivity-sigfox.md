@@ -66,11 +66,11 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 Select the connection to be updated, make your edits, and save the connection.
 
-If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `name of LNS Connection` as it's associated with `number of devices`. Visit the following URL to download the file: `/service/<agent-name>/lns-connection/<connection-name>/device`".
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 
 
 ###  To delete a connection
 
 Select the connection to be deleted and click **Delete**.
 
-If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `name of LNS Connection` as it's associated with `number of devices`. Visit the following URL to download the file: `/service/<agent-name>/lns-connection/<connection-name>/device`".
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".

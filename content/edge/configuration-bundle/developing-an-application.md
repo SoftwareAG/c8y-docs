@@ -11,13 +11,13 @@ To add the Edge appliance's self-signed certificate to the Node.js trust store, 
 On Windows Powershell
 
 ```shell
-$env:NODE_EXTRA_CA_CERTS=C:\certificate.pem; npm install
+$env:NODE_EXTRA_CA_CERTS=<path-to-the-certificagte>\certificate.pem; npm install
 ```
 
 On Windows command prompt
 
 ```shell
-set NODE_EXTRA_CA_CERTS=C:\certificate.pem
+set NODE_EXTRA_CA_CERTS=<path-to-the-certificagte>\certificate.pem
 npm install
 ```
 

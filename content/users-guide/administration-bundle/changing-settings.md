@@ -397,11 +397,11 @@ When configuring your Azure AD, use your full domain address as redirect URI. Fo
 
 #### Integration with Keycloak
 
-##### Single logout feature (available for Keycloak in version 12.0.0 and higher)
+##### Global logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows the administrator to use a single logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to the {{< product-c8y-iot >}} platform with a logout token that is verified in the same way as the SSO token used in the login process. This feature allows ending sessions on both sides, {{< product-c8y-iot >}} platform and Keycloak, for the particular user.
+Integration with Keycloak allows the admin to use a global logout feature based on OpenId Connect. Event from Keycloak authorization server is sent to all applications (including Cumulocity IoT) with logout token that is verified in the same way as token used in the login process. This functionality allows ending session on all applications (including Cumulocity IoT platform) and Keycloak side for the particular user.
 
-To configure the single logout feature follow these steps:
+To configure the global logout feature follow these steps:
 
 1. Go to the administrator console.
 2. Select the realm used in the SSO configuration for the tenant.
@@ -409,7 +409,7 @@ To configure the single logout feature follow these steps:
 4. Select the client used in the SSO configuration.
 5. Set the **Backchannel Logout URL** field to "https://mytenant.{{< domain-c8y >}}/user/logout/oidc".
 
-To use the single logout feature follow these steps:
+To use the global logout feature follow these steps:
 
 1. Go to the administrator console.
 2. Select the realm used in the SSO configuration for the tenant.

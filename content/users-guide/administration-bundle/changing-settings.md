@@ -399,7 +399,7 @@ When configuring your Azure AD, use your full domain address as redirect URI. Fo
 
 ##### Global logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows the admin to use a global logout feature based on OpenId Connect. Event from Keycloak authorization server is sent to all applications (including Cumulocity IoT) with logout token that is verified in the same way as token used in the login process. This functionality allows ending session on all applications (including Cumulocity IoT platform) and Keycloak side for the particular user.
+Integration with Keycloak allows the administrator to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to the all applications (including {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
 
 To configure the global logout feature follow these steps:
 

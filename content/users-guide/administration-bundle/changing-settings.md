@@ -399,48 +399,48 @@ When configuring your Azure AD, use your full domain address as redirect URI. Fo
 
 ##### Single logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows the admin to use a single logout feature based on OpenId Connect. Event from Keycloak authorization server is sent to the Cumulocity IoT platform with logout token that is verified in the same way as SSO token used in the login process. This feature allows ending session on both,
-Cumulocity IoT platform and Keycloak side for the particular user.
+Integration with Keycloak allows the administrator to use a single logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to the {{< product-c8y-iot >}} platform with a logout token that is verified in the same way as the SSO token used in the login process. This feature allows ending sessions on both sides, {{< product-c8y-iot >}} platform and Keycloak, for the particular user.
 
-To configure the single logout feature:
-1. Go to Admin Console
-2. Select Realm used in SSO configuration for the tenant
-3. Go to the **Clients** in **Configure** section
-4. Chose Client used in SSO configuration
-5. Set **Backchannel Logout URL** field using: `https://mytenant.cumulocity.com/user/logout/oidc`
+To configure the single logout feature follow these steps:
 
-To use the single logout feature:
-1. Go to Admin Console
-2. Select Realm used in SSO configuration for the tenant
-3. Go to the **Users** in **Manage** section
-4. Chose particular user
-5. Go to **Sessions** tab and use **Logout** button to perform action
+1. Go to the administrator console.
+2. Select the realm used in the SSO configuration for the tenant.
+3. Navigate to **Clients** in the **Configure** section.
+4. Select the client used in the SSO configuration.
+5. Set the **Backchannel Logout URL** field to "https://mytenant.{{< domain-c8y >}}/user/logout/oidc".
 
-##### All user logout feature
+To use the single logout feature follow these steps:
 
-Keycloak provides also feature where admin can logout all SSO users.
+1. Go to the administrator console.
+2. Select the realm used in the SSO configuration for the tenant.
+3. Navigate to **Users** in the **Manage** section.
+4. Select the particular user.
+5. Navigate to the **Sessions** tab in the **Manage** section and click **Logout**.
 
-To configure the all users logout feature:
-1. Go to Admin Console
-2. Select Realm used in SSO configuration for the tenant
-3. Go to the **Clients** in **Configure** section
-4. Chose Client used in SSO configuration 
-5. Set the **Admin URL** to `https://mytenant.cumulocity.com/user/keycloak`
+##### Logout feature for all users
 
-To use the all users logout feature:
-1. Go to Admin Console 
-2. Select Realm used in SSO configuration for the tenant
-3. Go to **Sessions** in **Manage** section and use **Logout all** button
+Keycloak also provides a feature which allows an administrator to logout all SSO users.
 
-Note that the logout event for all users is performed only in the scope of one Keycloak Realm.
-Moreover, it is sent only for those tenants where the client that is used as a configuration for the SSO feature has the correct **Admin URL** value.
+To configure the all users logout feature follow these steps:
 
-In the **Session** tab the Keycloak administrator can also check how many active sessions there are on the respective client.
-It can estimate how many tenants and users will be affected by the logout event.
+1. Go to the administrator console.
+2. Select the realm used in the SSO configuration for the tenant.
+3. Navigate to **Clients** in the **Configure** section.
+4. Select the client used in the SSO configuration.
+5. Set the **Admin URL** to "https://mytenant.{{< domain-c8y >}}/user/keycloak"
 
-To confirm if the logout event for all users or single user were received by the tenant, the Cumulocity IoT admin can verify if there is information about the logout event
-in the audit logs.
-It can be found in the Administration application under **Accounts** in the **Audit Logs** tab.
+To use the all users logout feature follow these steps:
+
+1. Go to the administrator console. 
+2. Select the realm used in the SSO configuration for the tenant.
+3. Navigate to the **Sessions** tab in the **Manage** section and click **Logout all**.
+
+Note that the logout event for all users is only performed in the scope of one Keycloak realm.
+Moreover, it is only sent for those tenants where the client being used as a configuration for the SSO feature has the correct **Admin URL** value.
+
+In the **Session** tab, the Keycloak administrator can also check how many active sessions exist on the respective client and estimate how many tenants and users will be affected by the logout event.
+
+To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
 
 ##### Cumulocity IoT configuration
 

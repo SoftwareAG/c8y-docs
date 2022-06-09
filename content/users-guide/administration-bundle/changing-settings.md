@@ -395,6 +395,53 @@ The integration was successfully verified against Azure AD. The configuration st
 
 When configuring your Azure AD, use your full domain address as redirect URI. For the purpose of this document we assume that it is "http://documentation.{{< domain-c8y >}}/tenant/oauth". The redirect URI must be set for a web application and not for a single-page application. There are no additional steps on Azure AD required.
 
+#### Integration with Keycloak
+
+##### Single logout feature (available for Keycloak in version 12.0.0 and higher)
+
+Integration with Keycloak allows the admin to use a single logout feature based on OpenId Connect. Event from Keycloak authorization server is sent to the Cumulocity IoT platform with logout token that is verified in the same way as SSO token used in the login process. This feature allows ending session on both,
+Cumulocity IoT platform and Keycloak side for the particular user.
+
+To configure the single logout feature:
+1. Go to Admin Console
+2. Select Realm used in SSO configuration for the tenant
+3. Go to the **Clients** in **Configure** section
+4. Chose Client used in SSO configuration
+5. Set **Backchannel Logout URL** field using: `https://mytenant.cumulocity.com/user/logout/oidc`
+
+To use the single logout feature:
+1. Go to Admin Console
+2. Select Realm used in SSO configuration for the tenant
+3. Go to the **Users** in **Manage** section
+4. Chose particular user
+5. Go to **Sessions** tab and use **Logout** button to perform action
+
+##### All user logout feature
+
+Keycloak provides also feature where admin can logout all SSO users.
+
+To configure the all users logout feature:
+1. Go to Admin Console
+2. Select Realm used in SSO configuration for the tenant
+3. Go to the **Clients** in **Configure** section
+4. Chose Client used in SSO configuration 
+5. Set the **Admin URL** to `https://mytenant.cumulocity.com/user/keycloak`
+
+To use the all users logout feature:
+1. Go to Admin Console 
+2. Select Realm used in SSO configuration for the tenant
+3. Go to **Sessions** in **Manage** section and use **Logout all** button
+
+Note that the logout event for all users is performed only in the scope of one Keycloak Realm.
+Moreover, it is sent only for those tenants where the client that is used as a configuration for the SSO feature has the correct **Admin URL** value.
+
+In the **Session** tab the Keycloak administrator can also check how many active sessions there are on the respective client.
+It can estimate how many tenants and users will be affected by the logout event.
+
+To confirm if the logout event for all users or single user were received by the tenant, the Cumulocity IoT admin can verify if there is information about the logout event
+in the audit logs.
+It can be found in the Administration application under **Accounts** in the **Audit Logs** tab.
+
 ##### Cumulocity IoT configuration
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:

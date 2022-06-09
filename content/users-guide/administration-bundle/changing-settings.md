@@ -399,7 +399,7 @@ When configuring your Azure AD, use your full domain address as redirect URI. Fo
 
 ##### Global logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows the administrator to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to the all applications (including {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
+Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all applications (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
 
 To configure the global logout feature follow these steps:
 
@@ -417,11 +417,11 @@ To use the global logout feature follow these steps:
 4. Select the particular user.
 5. Navigate to the **Sessions** tab in the **Manage** section and click **Logout**.
 
-##### Logout feature for all users
+##### Logout all users feature
 
-Keycloak also provides a feature which allows an administrator to logout all SSO users.
+Keycloak also provides a feature which allows administrators to logout all SSO users.
 
-To configure the all users logout feature follow these steps:
+To configure the logout all users feature follow these steps:
 
 1. Go to the administrator console.
 2. Select the realm used in the SSO configuration for the tenant.
@@ -429,7 +429,7 @@ To configure the all users logout feature follow these steps:
 4. Select the client used in the SSO configuration.
 5. Set the **Admin URL** to "https://mytenant.{{< domain-c8y >}}/user/keycloak"
 
-To use the all users logout feature follow these steps:
+To use the logout all users feature follow these steps:
 
 1. Go to the administrator console. 
 2. Select the realm used in the SSO configuration for the tenant.

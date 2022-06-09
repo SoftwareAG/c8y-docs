@@ -45,6 +45,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#119">119,supportedConfiguration1,config2,...</a>
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
++ <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
@@ -465,6 +466,24 @@ Set device profile that is being applied to the device.
 
 ```text
 121,true,8473
+```
+
+<a name="122"></a>
+##### Set device agent information (122)
+
+Allows a device to provide information about the agent running on it.
+
+| Position | Parameter              | Mandatory | Type   | Default value |
+|:---------|:-----------------------|:----------|:-------|:--------------|
+| 1        | Name of the agent      | YES       | String |               |
+| 2        | Version of the agent   | YES       | String |               |
+| 3        | The agent URL          | NO        | String |               |
+| 4        | Maintainer of the agent| YES       | String |               |
+
+**Example**
+
+```text
+122,thin-edge.io,0.6,https://thin-edge.io,Software AG
 ```
 
 <a name="measurement-templates"></a>

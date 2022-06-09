@@ -1,5 +1,7 @@
 ---
-weight: 180 title: Services layout: redirect
+weight: 180
+title: Services
+layout: redirect
 ---
 
 The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device. The services are represented

@@ -12,22 +12,22 @@ The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platfo
 
 The following features are supported by these providers:
 
-|Feature|Jasper|Ericsson|Comarch|Kite|
+|Feature|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|
 |Check the status of the SIM card in the device|x|x|x|x|
 |Check the online status of the device as reported by the network|x|x|x|x|
 |Change SIM card status, for example activate or deactivate it|x|x|x|x|
-|Disconnect SIM card from current session| | |x| |
+|Disconnect SIM card from current session|x| | | |
 |Communicate with the device through text messages, for example, to set APN parameters|x| |x|x|
 |View summary usage of data traffic, text messages and voice calls|x|x|x|x|
-|View usage details of data traffic, text messages and voice calls|x|x| | |
-|View the history of data sessions and any changes to the SIM card or traffic|x| |&nbsp;| |
+|View usage details of data traffic, text messages and voice calls| |x|x| |
+|View the history of data sessions and any changes to the SIM card or traffic|&nbsp;| |x| |
 
 As you can see, Jasper currently is the most feature-rich provider.
 
 Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-management-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
-|Requires|Jasper|Ericsson|Comarch|Kite|
+|Requires|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|
 |ICCID|x| |x|x|
 |MSISDN| |x| | |

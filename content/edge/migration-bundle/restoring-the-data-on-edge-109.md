@@ -129,7 +129,7 @@ monit restart opcua_mgmt_service_proc
 
 	- Subscribe the Streaming Analytics application to the edge tenant.
     {{< c8y-admon-important >}}
-To subscribe the application, you must have the "Tenant Manager" role.
+  To subscribe the application, you must have the "Tenant Manager" role.
     {{< /c8y-admon-important >}}
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.

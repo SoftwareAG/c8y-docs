@@ -8,26 +8,26 @@ aliases:
 
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
-{{< product-c8y-iot >}} integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, {{< product-c8y-iot >}} provides an experimental implementation. For more details, please contact [product support](/welcome/contacting-support/).
+The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.
 
 The following features are supported by these providers:
 
-|Feature|Jasper|Ericsson|Comarch|Kite|
+|Feature|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|
 |Check the status of the SIM card in the device|x|x|x|x|
 |Check the online status of the device as reported by the network|x|x|x|x|
 |Change SIM card status, for example activate or deactivate it|x|x|x|x|
-|Disconnect SIM card from current session| | |x| |
+|Disconnect SIM card from current session|x| | | |
 |Communicate with the device through text messages, for example, to set APN parameters|x| |x|x|
 |View summary usage of data traffic, text messages and voice calls|x|x|x|x|
-|View usage details of data traffic, text messages and voice calls|x|x| | |
-|View the history of data sessions and any changes to the SIM card or traffic|x| |&nbsp;| |
+|View usage details of data traffic, text messages and voice calls| |x|x| |
+|View the history of data sessions and any changes to the SIM card or traffic|&nbsp;| |x| |
 
 As you can see, Jasper currently is the most feature-rich provider.
 
 Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-management-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
-|Requires|Jasper|Ericsson|Comarch|Kite|
+|Requires|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|
 |ICCID|x| |x|x|
 |MSISDN| |x| | |
@@ -108,9 +108,11 @@ If the ICCID is not shown automatically check the following:
 * Enter the ICCID in the **Info** tab, then click **Save**.
 * Click **Reload** in the top menu bar to make the **Connectivity** tab appear.
 
+
 {{< c8y-admon-info >}}
 Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-c8y-iot >}} checks if the particular SIM card is managed by the SIM provider.
 {{< /c8y-admon-info >}}
+
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
@@ -195,6 +197,7 @@ Data connectivity can be analyzed in various places:
 {{< c8y-admon-info >}}
 The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
 {{< /c8y-admon-info >}}
+
 
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 

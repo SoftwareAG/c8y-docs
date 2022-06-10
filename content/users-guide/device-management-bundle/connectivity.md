@@ -49,7 +49,7 @@ The following sections describe:
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
 
->**Info:** In a similar way, we recommend you to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+>**Info:** In a similar way, we recommend you to set up a dedicated user for Comarch, Ericsson or Kite to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page.
 Your API license key and the API server URL are displayed on the top left.
@@ -106,7 +106,7 @@ If the ICCID is not shown automatically check the following:
 * Enter the ICCID in the **Info** tab, then click **Save**.
 * Click **Reload** in the top menu bar to make the **Connectivity** tab appear.
 
-> Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-c8y-iot >}} checks if the particular SIM card is managed by the SIM provider.
+>**Info:** Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-c8y-iot >}} checks if the particular SIM card is managed by the SIM provider.
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
@@ -186,7 +186,7 @@ Data connectivity can be analyzed in various places:
 * Check the **Audit logs** section on the **Connectivity** tab to see if there were any recent changes to the SIM card.
 * Finally, click the cogwheel on the top right and select **SIM details** to navigate to the SIM configuration in Jasper Control Center.
 
-> The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
+>**Info:** The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
 
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 

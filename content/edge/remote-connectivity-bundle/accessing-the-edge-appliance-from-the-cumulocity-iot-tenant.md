@@ -17,7 +17,7 @@ To use Cloud Remote Access, you need:
 
 The following protocols are supported to connect to the Edge appliance through remote access from the {{< product-c8y-iot >}} tenant:
 
-* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/remote-connectivity/#accessing-the-edge-appliance-remotely-through-vnc).
   * Shares the desktop of the remote device
   * Mouse and keyboard for interaction
 * Secure Shell (SSH)

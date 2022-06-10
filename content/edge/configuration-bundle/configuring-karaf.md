@@ -4,24 +4,19 @@ title: Configuring Karaf
 layout: redirect
 ---
 
-### Increasing the system performance
-
-If the system performance is slow, you must increase the memory. Stop the Edge appliance and increase the memory of the Edge appliance using the hypervisor.
-
-<img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
-
-Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM.
-
-To increase the memory of the JVM:
+If you want to change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`  and so on), you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.* To do so:
 
 1. Start the Edge appliance.
+
 2. Log in to Edge appliance.
+
 3. Open the file */usr/share/cumulocity-core-karaf/bin/setenv*.
-4. Edit the value of the parameter `JAVA_MAX_MEM`. The default size is 1024 MB.
 
-	export JAVA_MAX_MEM=1024M # Maximum memory for the JVM
+4. Edit the parameters.
+   If the parameter you want to change is present in the file, update its value; otherwise, add a new line:
+   `export <PARAMETER_NAME>=<VALUE>` at the end of the file.
 
-After increasing the size, restart Karaf:
+After changing the file, restart the `cumulocity-core-karaf` service:
 
 ```shell
 [admin@iot-edge-server ~]$  sudo service cumulocity-core-karaf stop
@@ -32,6 +27,16 @@ and
 ```shell
 [admin@iot-edge-server ~]$  service cumulocity-core-karaf start
 ```
+
+>**Important:** Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+
+### Increasing the system performance
+
+If the system performance is slow, you must increase the memory. Stop the Edge appliance and increase the memory of the Edge appliance using the hypervisor.
+
+<img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
+
+Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of the `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
 
 ### Changing log level for Karaf
 
@@ -46,7 +51,7 @@ The file has the following structure:
 	# Root logger
 	log4j.rootLogger=INFO,out,osgi:*
 	log4j.throwableRenderer=org.apache.log4j.OsgiThrowableRenderer
-
+	
 	# Error appender
 	log4j.appender.out=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.out.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -58,14 +63,14 @@ The file has the following structure:
 	log4j.appender.out.layout=org.apache.log4j.PatternLayout
 	log4j.appender.out.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.out.append=true
-
+	
 	# CXF request and response info:
 	# * ERROR - none
 	# * INFO - just headers (default)
 	# * DEBUG - whole, with payloads
 	log4j.additivity.com.cumulocity.rest.interceptors=false
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-
+	
 	# Access appender
 	log4j.appender.access=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.access.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -77,7 +82,7 @@ The file has the following structure:
 	log4j.appender.access.layout=org.apache.log4j.PatternLayout
 	log4j.appender.access.layout.ConversionPattern=%d{yyyy-MM-dd} %d{HH:mm:ss}  | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 	log4j.appender.access.append=true
-
+	
 	# Error response info:
 	# * INFO - just error message (default)
 	# * DEGUB - full stack trace
@@ -87,9 +92,9 @@ The file has the following structure:
 Change the following entries to adjust the log levels:
 
 	log4j.rootLogger=INFO,out,osgi:*
-
+	
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-
+	
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all "lower" log levels, for example, when you set the level to WARN you will also get ERROR events.

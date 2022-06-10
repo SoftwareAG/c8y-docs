@@ -16,9 +16,9 @@ Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 |:------|:-----|:-------|:------|:------|
 |Status der SIM-Karte im Gerät prüfen|x|x|x|x|
 |Vom Netzwerk gemeldeten Online-Status der Geräte prüfen|x|x|x|x|
-|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
+|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
 |SIM-Karte von aktueller Sitzung trennen| | |x| |
-|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
+|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
 |Nutzungsübersicht über Datenverkehr, Textnachrichten und Sprachanrufe anzeigen|x|x|x|x|
 |Nutzungsdetails zu Datenverkehr, Textnachrichten und Sprachanrufen anzeigen|x|x| | |
 |Verlauf von Datensitzungen und etwaigen Änderungen an SIM-Karte oder Datenverkehr anzeigen|x| |&nbsp;| |
@@ -73,7 +73,7 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in {{< product-c8y-
 
 1. Melden Sie sich über einen {{< product-c8y-iot >}}-Administratorbenutzer bei der {{< product-c8y-iot >}}-Plattform an.
 1. Wechseln Sie zur Anwendung Administration.
-1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
+1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [READ- und ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
 2. Wechseln Sie zur Registerkarte **Mobilfunkanbieter-Einstellungen**.
 3. Wählen Sie einen Anbieter aus der Auswahlliste aus.
 1. Geben Sie die Zugangsdaten (URL, Schlüssel (im Falle von Jasper), Benutzername und Passwort) für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.
@@ -133,7 +133,7 @@ Die erste Zeile gibt Auskunft darüber, ob das Gerät momentan eine Datensitzung
 
 Die zweite Zeile zeigt weitere Statusinformationen an: die ICCID der SIM-Karte, den Aktivierungszustand der SIM-Karte und, sofern eingestellt, die festgelegte IP-Adresse der SIM-Karte. Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie den Aktivierungszustand über das Auswahlmenü ändern.
 
-Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
+Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
 
 Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet und von diesem empfangen wurden, einschließlich
 

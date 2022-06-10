@@ -83,6 +83,6 @@ Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern d
 
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
-Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
+Details zum Bearbeiten von Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
 
 Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie auf **Mehr...** rechts oben in der Menüleiste und klicken Sie dann auf **Dashboard wiederherstellen**.

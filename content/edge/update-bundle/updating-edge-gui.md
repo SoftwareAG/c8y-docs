@@ -22,6 +22,12 @@ To update {{< product-c8y-iot >}} Edge:
 
 5. Upload the new {{< product-c8y-iot >}} Edge archive file and click **Next**.
 
-7. Click **Update**.
+6. Click **Update**.
 
-8. Restart your Edge appliance.
+   While updating the Edge appliance with the microservice hosting feature enabled, the following notification may appear on the user interface:
+
+   *Could not get the details on the update status. Do refresh after some time to check if the update has completed*.
+
+   Refresh the page to check if the update has been completed by verifying the version number.
+
+7. Restart your Edge appliance.

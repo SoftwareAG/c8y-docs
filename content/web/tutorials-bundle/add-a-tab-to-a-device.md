@@ -33,12 +33,12 @@ c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
->**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
->
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
-
+{{< c8y-admon-info >}}
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+{{< /c8y-admon-info >}}
 
 ### 2. Add a new ROUTE&#95;HOOK_ONCE
 
@@ -112,7 +112,9 @@ Explanation of the numbers above:
  5. Defines which component should be shown if the path is hit by a user.
  6. The properties `label` and `icon` define what the tab should look like. The `priority` defines in which position it should be shown.
 
-> **Info:** The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.
+{{< c8y-admon-info >}}
+The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.
+{{< /c8y-admon-info >}}
 
 After this alignment the route is registered but the application will fail to compile as the `HelloComponent` does not exist yet.
 You will create it in the next section.

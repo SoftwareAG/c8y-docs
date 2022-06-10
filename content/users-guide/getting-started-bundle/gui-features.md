@@ -56,7 +56,9 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 <img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
-> **Info:** {{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+{{< /c8y-admon-info >}}
 
 <a name="app-switcher"></a>
 ### Application switcher
@@ -90,7 +92,9 @@ Under **Search results**, the assets matching the search criteria are shown. To 
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
->**Important:** The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
+{{< c8y-admon-important >}}
+The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
+{{< /c8y-admon-important >}}
 
 ##### Exact match
 
@@ -163,14 +167,16 @@ cl*
 
 The list will immediately be reduced to the selected objects.
 
->**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
->
->* Device protocols
->* Firmware repository
->* Software repository
->* Configuration repository
->* Tenants
->* File repository
+{{< c8y-admon-important >}}
+On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
+
+* Device protocols
+* Firmware repository
+* Software repository
+* Configuration repository
+* Tenants
+* File repository
+{{< /c8y-admon-important >}}
 
 For details on the filtering mechanism in the devices list refer to [Device Management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
 

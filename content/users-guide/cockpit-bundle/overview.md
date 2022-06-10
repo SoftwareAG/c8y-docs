@@ -80,7 +80,9 @@ The Home screen of the Cockpit application is a dashboard which shows data for t
 
 The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes a welcome message, the active critical alarms, recent alarms and a map of all objects.
 
-> **Info:** For performance reasons, the map on the Home dashboard displays icons for maximum 100 devices. If there are more devices they will not be shown in the map. To see them, you must go to the dashboard on group level, and add the "Map" widget there to only see devices from this particular group, see [Widgets collection](#widgets-collection).
+{{< c8y-admon-info >}}
+For performance reasons, the map on the Home dashboard displays icons for maximum 100 devices. If there are more devices they will not be shown in the map. To see them, you must go to the dashboard on group level, and add the "Map" widget there to only see devices from this particular group, see [Widgets collection](#widgets-collection).
+{{< /c8y-admon-info >}}
 
 The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here.
 

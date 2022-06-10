@@ -6,7 +6,9 @@ weight: 60
 
 **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-> **Info:** This technique exposes the username and password. Ensure that this user doesn't have access to sensible data.
+{{< c8y-admon-info >}}
+This technique exposes the username and password. Ensure that this user doesn't have access to sensible data.
+{{< /c8y-admon-info >}}
 
 The default application always takes you to the login page for authentication before it allows you to access a page.
 This recipe will explain how to remove the login authentication and use the application directly.
@@ -34,11 +36,13 @@ This will create a new application that is an exact copy of the Cockpit applicat
 Next, you must install all dependencies.
 Switch to the new folder and run `npm install`.
 
->**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
->
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+{{< c8y-admon-info >}}
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+{{< /c8y-admon-info >}}
 
 ### 2. Add logic for default authentication
 
@@ -59,7 +63,7 @@ providers: [
 ```
 
 Use a factory function `initApp`, where you will define and send your default authentication.
-To send your credentials to the API, add a dependency to the `LoginService`](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html), which is a part of `@c8y/ngx-components`:
+To send your credentials to the API, add a dependency to the `LoginService` ([http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html)), which is a part of `@c8y/ngx-components`:
 
 ```js
 export function initApp(loginService: LoginService) {

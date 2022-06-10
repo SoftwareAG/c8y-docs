@@ -46,7 +46,9 @@ To run the {{< product-c8y-iot >}} mbed agent, the following items are required:
 5. Connect a USB cable to the C027 and to your computer. The C027 will appear as "MBED" drive on your computer.
 6. Plug in the power supply and connect it to the application board.
 
-> **Info**: The device cannot be flashed without the power supply connected.
+{{< c8y-admon-info >}}
+The device cannot be flashed without the power supply connected.
+{{< /c8y-admon-info >}}
 
 Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 
@@ -74,9 +76,9 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
 3. Log into the {{< product-c8y-iot >}} platform.
 4. Navigate to the Device Management application using the application switcher at the top right.
-5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the *User guide*.
+5. To register the device follow the instructions in [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the *User guide*.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
+7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations](#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
 ### Interacting with the platform
 
@@ -95,7 +97,7 @@ The device sends new sensor data only when the sensor values are changing. If th
 
 The representation of sensor data can be customized.
 
-1. Add the "Mbed Test Device" to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details.
+1. Add the "Mbed Test Device" to a group, see [Grouping devices](/users-guide/device-management/#grouping-devices) for details.
 2. Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device".  
 3. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
 
@@ -118,7 +120,7 @@ An example dashboard created for an mbed device is shown below:
 
 ![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
-For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the *User guide*.
+For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets-collection) in the *User guide*.
 
 <a id="Interacting_with_the_control_operations"></a>
 #### To interact with control operations
@@ -206,7 +208,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
 
-* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
+* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode](#Enabling_debug_ mode).
 
 * **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/welcome/contacting-support/) if you are connecting directly to {{< product-c8y-iot >}}.
 

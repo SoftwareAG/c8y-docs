@@ -59,9 +59,14 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 Refer to the [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options.
 These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
 
-> **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places:
->
-> - When you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
-> - When you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute.
+{{< c8y-admon-tip >}}
+`contentSecurityPolicy` for the current application can be checked in the following places:
+- When you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
+- When you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute.
+{{< /c8y-admon-tip >}}
 
-> **Info:** If you build a custom application based on the standard application, make sure you append your CSP value to the default one.
+<br>
+
+{{< c8y-admon-info >}}
+If you build a custom application based on the standard application, make sure you append your CSP value to the default one.
+{{< /c8y-admon-info >}}

@@ -73,7 +73,9 @@ The CSV file must at least contain the following fields to be able to establish 
 </tbody>
 </table>
 
-> **Info:** The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+{{< c8y-admon-info >}}
+The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+{{< /c8y-admon-info >}}
 
 Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "nosec_device" device has been created.
 
@@ -281,7 +283,9 @@ Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "p
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
 
 
-> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+{{< c8y-admon-info >}}
+Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+{{< /c8y-admon-info >}}
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

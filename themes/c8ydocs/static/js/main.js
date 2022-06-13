@@ -30,6 +30,14 @@ var main = (function ($) {
         }
         suffix = r.join("/");
 
+        console.log("vs", vs);
+
+        console.log("v", v);
+
+        console.log("r", r);
+
+        console.log("rest", rest);
+
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
           var href_url = el.url.endsWith('/') ? el.url + suffix : el.url + '/' + suffix;

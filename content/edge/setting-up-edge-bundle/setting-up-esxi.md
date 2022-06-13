@@ -13,7 +13,7 @@ To set up an ESXi virtual machine, follow these steps:
 2.	Under **Select creation type**, select **Deploy a virtual machine from OVA or OVF template** and click **Next**. <br>
 <img src="/images/edge/edge-esxi-01.png" name="Setting up ESXi" style="width:75%;"/>
 
-3.	In the next window, provide a name for the VM, e.g. EDGE-server, and drag and drop the required files (ovf, vmdk1, vmdk2) and click **Next**. <br>
+3.	In the next window, provide a name for the VM, for example, EDGE-server, and drag and drop the required files (ovf, vmdk1, vmdk2) and click **Next**. <br>
 <img src="/images/edge/edge-esxi-02.png" name="Setting up ESXi" style="width:75%;"/>
 
 4.	Under **Select storage**, select the datastore where the VM will reside and click **Next**.
@@ -25,7 +25,7 @@ To set up an ESXi virtual machine, follow these steps:
 6.	Review the machine settings and click **Finish** to complete the setup.
 <img src="/images/edge/edge-esxi-05.png" name="Setting up ESXi" style="width:75%;"/>
 
-A VM with the provided name, e.g. "EDGE-server", should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
+A VM with the provided name, for example, "EDGE-server", should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
 
 ### VM hardware configuration
 

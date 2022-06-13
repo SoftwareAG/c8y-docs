@@ -13,6 +13,8 @@ For more information about Device simulator, see [Working with simulators](/user
 If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
 - 10.96.0.0/12
 
+Enabling the microservice hosting feature takes about 10 to 15 minutes to complete. 
+
 ### Enabling or disabling the microservice hosting feature using the UI
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
@@ -24,6 +26,12 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 4. Use the toggle button to enable the microservice hosting feature.
 
 >**Important:** If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
+
+To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**. 
+
+> **Info:** The **Add microservice** button will not be available if you have not enabled the microservice hosting feature.
+
+Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs
 

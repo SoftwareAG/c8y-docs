@@ -32,7 +32,9 @@ For apt the command may look like the following:
 apt install mosquitto
 ```
 
->**Info:** Some operating systems may require you to use `sudo` to install packages.
+{{< c8y-admon-info >}}
+Some operating systems may require you to use `sudo` to install packages.
+{{< /c8y-admon-info >}}
 
 ```shell
 sudo apt install mosquitto
@@ -70,7 +72,9 @@ curl -LJO https://github.com/thin-edge/thin-edge.io/releases/download/0.1.0/tedg
 
 Now that you have downloaded the package you can proceed with the installation. First install the CLI tool `tedge`.
 
->**Info:** Some operating systems may require you to use `sudo` to install packages and therefore all following commands may need `sudo`.
+{{< c8y-admon-info >}}
+Some operating systems may require you to use `sudo` to install packages and therefore all following commands may need `sudo`.
+{{< /c8y-admon-info >}}
 
 To install `tedge` use the following command:
 

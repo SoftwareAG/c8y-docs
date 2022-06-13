@@ -87,7 +87,7 @@ Dremio is configured to perform the cleanup of job results automatically without
 
 The data lake contents are not automatically purged, as the main purpose of {{< product-c8y-iot >}} DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents must be deleted.
 
-Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you must run the following query in Dremio:
+Browse to the data lake folder **/opt/mongodb/cdh-master/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you must run the following query in Dremio:
 
 ```
 ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE

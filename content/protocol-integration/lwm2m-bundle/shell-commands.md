@@ -114,4 +114,16 @@ In the next table you will see all available commands and a brief description of
 </tbody>
 </table>
 
-> **Info:** A shell command can also be used to send multiple operations to a LWM2M device at once. To do that, simply enter all instructions with a line break between them. Make sure that the shell command does not carry any leading or trailing white spaces. The LWM2M agent then uses the line break to split a multi-line operation into separate LWM2M shell operations.
+{{< c8y-admon-info >}}
+A shell command can also be used to send multiple operations to a LWM2M device at once. To do that, simply enter all instructions with a line break between them. Make sure that the shell command does not carry any leading or trailing white spaces. The LWM2M agent then uses the line break to split a multi-line operation into separate LWM2M shell operations.
+{{< /c8y-admon-info >}}
+
+## Shell command lifecycle
+The handling of LWM2M shell commands follows the following lifecycle:
+
+1. When a shell command is created the corresponding operation status is set to PENDING. This means that the corresponding CoAP request has not yet been sent to the device.
+2. The {{< product-c8y-iot >}} platform processes the shell command. It sends a corresponding CoAP request to the device and updates the operation status to EXECUTING.
+3. The next status update depends on the response of the device.
+    - *Successful request*: In case the device signals a successful operation using a 2.XX CoAP response code, the operation result is updated and the operation status is turned to SUCCESSFUL.
+    - *Failed requests*: If the CoAP request fails with a 4.XX or 5.XX error on the device, the operation is marked as FAILED. The operation result contains a possible response of the device.
+    - *Not-responding*: When sending a LWM2M command to a device the {{< product-c8y-iot >}} platform is not precisely aware if the device can be reached using a UDP datagram. If the request times out {{< product-c8y-iot >}} assumes that there is no connectivity. It puts the operation back to PENDING. A redelivery of the operation is triggered as soon as the device sends a registration update or a new LWM2M registration request.

@@ -14,14 +14,16 @@ This section describes how to develop and deploy microservices on top of {{< pro
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).
 
-> **Info:** You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
+{{< c8y-admon-info >}}
+You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
+{{< /c8y-admon-info >}}
 
 If you face any issue or need technical support, please use the [{{< product-c8y-iot >}} community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
 
 #### Upgrading the SDK
 
 The latest supported SDK is based on .NET Core 3.1 and **Visual Studio 2019** is required for supporting it.
-To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, for example, 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading the an existing project to the latest version of SDK (1006.6.0) must follow offical [microsoft guidlines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
+To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, for example, 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading an existing project to the latest version of SDK (1006.6.0) must follow the offical [Microsoft guidelines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
 
 
 
@@ -67,7 +69,9 @@ The most important requirement is an installation of [Docker 17.06](https://docs
 
 The recommended image for production is `mcr.microsoft.com/dotnet/core/aspnet:<version> AS runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
 
-> **Important**: {{< product-c8y-iot >}} supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+{{< /c8y-admon-important >}}
 
 The SDK is based on the package `Cumulocity.SDK.Microservices` and it has a dependency on:
 

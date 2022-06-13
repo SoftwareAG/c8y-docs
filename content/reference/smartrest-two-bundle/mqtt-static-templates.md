@@ -8,7 +8,7 @@ weight: 50
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
+To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
 
 You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
@@ -29,6 +29,8 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
 + <a href="#100">100,createdDeviceName,deviceType</a>
 + <a href="#101">101,createdChildId,childName,childType</a>
++ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
++ <a href="#104">104,serviceStatus</a>
 + <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
 + <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
 + <a href="#110">110,serialNumber,hardwareModel,revision</a>
@@ -43,6 +45,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#119">119,supportedConfiguration1,config2,...</a>
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
++ <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
@@ -162,7 +165,7 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
 
 <a name="inventory-templates"></a>
 #### Inventory templates (1xx)
@@ -198,6 +201,39 @@ Create a new child device for the current device. The newly created object will 
 
 ```text
 101,uniqueChildId,myChildDevice,myChildType
+```
+
+<a name="102"></a>
+##### Service creation (102)
+
+Create a new software service for given device.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service name|YES|String|
+|2|service unique external id|YES|String|
+|3|service type|YES|String|
+|4|service status|YES|String|
+
+**Example**
+
+```text
+102,myDevice_MongoDb,systemd,MongoDb,up
+```
+
+<a name="104"></a>
+##### Service status update (104)
+
+Set a status for given software service.
+
+|Position|Parameter  |Mandatory|Type  |
+|:-------|:----------|:--------|:-----|
+|1|service status|YES|String|
+
+**Example**
+
+```text
+104,up
 ```
 
 <a name="105"></a>
@@ -312,7 +348,9 @@ Set the supported operations of the device.
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
-**>Info:** If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< c8y-admon-info >}}
+If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
+{{< /c8y-admon-info >}}
 
 <a name="115"></a>
 ##### Set firmware (115)
@@ -428,6 +466,24 @@ Set device profile that is being applied to the device.
 
 ```text
 121,true,8473
+```
+
+<a name="122"></a>
+##### Set device agent information (122)
+
+Allows a device to provide information about the agent running on it.
+
+| Position | Parameter              | Mandatory | Type   | Default value |
+|:---------|:-----------------------|:----------|:-------|:--------------|
+| 1        | Name of the agent      | YES       | String |               |
+| 2        | Version of the agent   | YES       | String |               |
+| 3        | The agent URL          | NO        | String |               |
+| 4        | Maintainer of the agent| YES       | String |               |
+
+**Example**
+
+```text
+122,thin-edge.io,0.6,https://thin-edge.io,Software AG
 ```
 
 <a name="measurement-templates"></a>
@@ -1062,12 +1118,14 @@ Update the software installed on the device.
 528,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
 ```
 
->**Info:** The action can either be `install` or `delete`.
->
-> When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
-> The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
->
-> When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< c8y-admon-info >}}
+The action can either be `install` or `delete`.
+
+When the `install` action is received, the device agent ensures that the software will appear in the `c8y_SoftwareList` fragment of the device after it has completed the installation.
+The agent will also determine if there is a previous version of the software and replace it with the new version, resulting in an update.
+
+When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
+{{< /c8y-admon-info >}}
 
 <a name="530"></a>
 ##### Cloud Remote Access Connect (530)

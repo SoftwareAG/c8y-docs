@@ -243,7 +243,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be updated. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be updated. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 
@@ -319,7 +319,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be deleted. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be deleted. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 

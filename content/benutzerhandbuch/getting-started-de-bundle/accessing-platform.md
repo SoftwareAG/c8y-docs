@@ -1,11 +1,10 @@
 ---
-weight: 20
-title: Aufrufen und Anmelden an der Plattform
-layout: redirect
 aliases:
-  - /benutzerhandbuch/overview/#accessing-cumulocity-platform
-  - /benutzerhandbuch/overview-de/#accessing-cumulocity-platform
-  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
+- /benutzerhandbuch/overview-de/#accessing-cumulocity-platform
+- /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
+layout: redirect
+title: Aufrufen und Anmelden an der Plattform
+weight: 20
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über eine [URL](#url) in einem Webbrowser zugreifen.
@@ -54,7 +53,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit der {{< product-c8y-iot >}}-Plattform verbunden sind.
 
 <a name="login"></a>
-### So melden Sie sich an der Plattform an
+### Anmelden an der Plattform
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein.
 
@@ -71,6 +70,8 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 	* **Erforderlich** - erforderlich zum Aktivieren der Kernfunktionalität der Website. Diese Cookies führen eine Aufgabe oder Operation aus, ohne die die Website nicht funktionieren würde. Erforderliche Cookies können nicht deaktiviert werden.
 	* **Funktionell** - Diese Cookies dienen zur Verfolgung der Website-Nutzung und zur Verarbeitung persönlicher Daten zur Messung und Verbesserung der Benutzerfreundlichkeit und Leistung. Funktionelle Cookies müssen vom Benutzer aktiv eingeschaltet werden.
 
+>**Info:** Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
+
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen {{< product-c8y-iot >}}-Anwendungen wechseln, da die {{< product-c8y-iot >}}-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
 Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur [Cockpit-Anwendung](/benutzerhandbuch/cockpit-de) (sofern nicht anders konfiguriert).
@@ -82,7 +83,7 @@ Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rech
 >**Info:** Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 
 <a name="reset-password"></a>
-### So setzen Sie Ihr Passwort zurück
+### Zurücksetzen Ihres Passworts
 
 1. Klicken Sie auf den Link **Passwort vergessen?** auf der Anmeldeseite.
 2. Geben Sie im darauffolgenden Dialog Ihre E-Mail-Adresse ein und klicken Sie auf **Passwort zurücksetzen**.
@@ -96,7 +97,7 @@ Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rech
 Wenn Sie selbst der Hauptadministrator sind, wird die E-Mail-Adresse, die Sie bei der ersten Registrierung angegeben haben, automatisch gespeichert. Wenn Sie weitere Fragen haben, kontaktieren Sie den [Produkt-Support](/welcome/contacting-support/).
 
 <a name="URLs"></a>
-### Zugreifen auf Seiten mittels URL
+### Zugreifen auf Seiten über URLs
 
 Sie können unmittelbar an jede Stelle in einer {{< product-c8y-iot >}}-Anwendung navigieren, indem Sie die entsprechende URL verwenden. So können Sie etwa, um allgemeine Information zu einem Gerät anzuzeigen, die folgende URL eingeben:
 

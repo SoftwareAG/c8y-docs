@@ -37,7 +37,9 @@ In the device protocol page, you will see the description at the top left and th
 
 Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
-> **Info:** LWM2M protocol resources cannot be edited.
+{{< c8y-admon-info >}}
+LWM2M protocol resources cannot be edited.
+{{< /c8y-admon-info >}}
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
@@ -117,7 +119,9 @@ Below is an example where the &ldquo;connectivity:updateRssi&rdquo; custom actio
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
-> **Info:** At least one functionality must be set to enable "Auto observe".
+{{< c8y-admon-info >}}
+At least one functionality must be set to enable "Auto observe".
+{{< /c8y-admon-info >}}
 
 ![Resource](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
 

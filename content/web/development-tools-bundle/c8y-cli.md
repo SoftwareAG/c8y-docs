@@ -17,7 +17,9 @@ npm install -g @c8y/cli
 c8ycli [options] [command]
 ```
 
-> **Info:** The commands must be executed from the root path of the project.
+{{< c8y-admon-info >}}
+The commands must be executed from the root path of the project.
+{{< /c8y-admon-info >}}
 
 ### Options
 
@@ -45,11 +47,13 @@ The `c8ycli new [name] [template]` helps to start an empty application or to ext
 $ c8ycli new cockpit cockpit
 ```
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
->
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
+{{< c8y-admon-tip >}}
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
+{{< /c8y-admon-tip >}}
+
 
 The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps must be completed via the interface before the app is scaffolded.
 
@@ -60,7 +64,9 @@ The `c8ycli new` command can also be provided on its own without the `[name]` an
 
 The first step asks for the project name. If no project name is entered, the default value `my-application` is used.
 
-> **Info:** This step can also be skipped if the name is provided in the initial command: `c8ycli new my-application`.
+{{< c8y-admon-info >}}
+This step can also be skipped if the name is provided in the initial command: `c8ycli new my-application`.
+{{< /c8y-admon-info >}}
 
 **Step 2:**
 ```
@@ -83,7 +89,9 @@ In the second step, the base scaffolding version must be selected. The interface
 
 In this step, the desired version must be entered manually, for example, `1010.0.0`.
 
-> **Info:** This question will appear only if `other` was selected in the previous step.
+{{< c8y-admon-info >}}
+This question will appear only if `other` was selected in the previous step.
+{{< /c8y-admon-info >}}
 
 **Step 3:**
 
@@ -99,7 +107,9 @@ In this step, the desired version must be entered manually, for example, `1010.0
 
 In the final step, the base project to scaffold from must be selected.
 
-> **Info:** This step will only show projects which are available for the selected version in Step 2.
+{{< c8y-admon-info >}}
+This step will only show projects which are available for the selected version in Step 2.
+{{< /c8y-admon-info >}}
 
 ### Application options
 

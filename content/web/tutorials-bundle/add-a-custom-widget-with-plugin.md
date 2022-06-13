@@ -94,10 +94,12 @@ The following list shows the fields and what they are responsible for:
   - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: <kbd>./widget/widget-plugin.module.ts</kbd>.
   - `description`: A brief description of what the module does.
 
->**Info:** When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.
->
->Furthermore, these modules behave like lazy loading modules. They are not loaded upfront as one big package, but instead like a collection of smaller packages loaded on demand.
+{{< c8y-admon-info >}}
+When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.
+
+Furthermore, these modules behave like lazy loading modules. They are not loaded upfront as one big package, but instead like a collection of smaller packages loaded on demand.
 You can extend each module with additional features through the HOOK concept, see [Extend an existing application and use hooks](#extend-an-existing-application) for more information. For example, a plugin can add another entry to the navigation menu using HOOK_NAVIGATOR_NODES, see [Hooking a navigator node](#3-hooking-a-navigator-node) for more information.
+{{< /c8y-admon-info >}}
 
 There is also a difference in how to start the local development server, see the following step for more information on the server's role.
 
@@ -141,7 +143,9 @@ Another difference in the *package.json* file between a regular widget and a wid
 ...
 ```
 
->**Info:** The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in *package.json*) followed by the name of the module class.
+{{< c8y-admon-info >}}
+The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in *package.json*) followed by the name of the module class.
+{{< /c8y-admon-info >}}
 
 The plugin imports itself via a field called `remotes`.
 We recommend this as the first step in verifying the correctness of the exported module. It facilitates the application debugging.

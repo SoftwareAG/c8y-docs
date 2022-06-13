@@ -19,8 +19,6 @@ The export functionality lets you export specific data to either CSV or Excel fi
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
->**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be exported.
-
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
 In the **Export** page you will find a list displaying all exports with their names, file type and time range.
@@ -42,11 +40,17 @@ In the **Filter** section, you can select filters to request object- or time-spe
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
 
->**Info:** If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
+{{< c8y-admon-info >}}
+If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
+{{< /c8y-admon-info >}}
 
 The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week", or you may select "Custom" and enter a custom from/to range in the additional fields.
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
+
+{{< c8y-admon-info >}}
+The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "limit exceeded!" and "result truncated!" alternating every other column.
+{{< /c8y-admon-info >}}
 
 **Fields**
 
@@ -61,9 +65,15 @@ Use the toggle to enable/disable a field.
 
 ![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
->**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
+{{< c8y-admon-info >}}
+The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
+{{< /c8y-admon-info >}}
 
 When a field is enabled, predefined or empty properties can be added.
+
+{{< c8y-admon-info >}}
+Documents that have no value defined for any of the selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
+{{< /c8y-admon-info >}}
 
 ##### To add a property
 
@@ -101,7 +111,9 @@ In the resulting dialog box provide the following information to receive the sch
 
 Select the frequency for sending the export from the dropdown list, that is, every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
->**Info:** Schedule intervals must be provided in Coordinated Universal Time (UTC).
+{{< c8y-admon-info >}}
+Schedule intervals must be provided in Coordinated Universal Time (UTC).
+{{< /c8y-admon-info >}}
 
 **2 - Send email:**
 
@@ -116,8 +128,9 @@ Specify the subject of the email. This field is pre-filled, but may be modified.
 Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
 Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
->**Info:** Note that the corresponding emails are send with "text/html" as content type.
-
+{{< c8y-admon-info >}}
+Note that the corresponding emails are send with "text/html" as content type.
+{{< /c8y-admon-info >}}
 
 Click **Create** to create the new export schedule.
 
@@ -133,9 +146,13 @@ On opening a report, all scheduled exports based on smart rules are automaticall
 
 ![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
->**Important**: You must open each report manually, to migrate the export schedules included in the report.
+{{< c8y-admon-important >}}
+You must open each report manually, to migrate the export schedules included in the report.
+{{< /c8y-admon-important >}}
 
-> **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+{{< c8y-admon-info >}}
+To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+{{< /c8y-admon-info >}}
 
 #### To export data
 

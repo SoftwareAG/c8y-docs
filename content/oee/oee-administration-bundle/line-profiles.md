@@ -49,4 +49,6 @@ For details on all steps of the profile configuration refer to [**Creating machi
 
 To complete the creation of a new line profile, activate it in the **Profile settings** page. For more information see also [Managing profiles](#managing-profiles).
 
->**Info:** Make sure that all machine profiles of the line are activated as well.
+{{< c8y-admon-info >}}
+Make sure that all machine profiles of the line are activated as well.
+{{< /c8y-admon-info >}}

@@ -51,7 +51,9 @@ This section explains how to build the {{< product-c8y-iot >}} Linux agent witho
                       -DPKG_DIR='"$(PKG_DIR)"'
     LDLIBS:=-lsera $(shell pkg-config --libs lua5.3) -pthread
     ```
-    > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
+    {{< c8y-admon-info >}}
+This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
+    {{< /c8y-admon-info >}}
 
 5. To build the agent in debug mode, run:
 
@@ -134,7 +136,9 @@ The {{< product-c8y-iot >}} CANopen service communicates with the {{< product-c8
 <a name=installing-the-agent></a>
 ### Installing the agent
 
-> **Info:** Before installing the agent, you must configure the agent parameters in the _cumulocity-agent.conf_ file. For details, refer to [Configuring the agent](#configuring-agent).
+{{< c8y-admon-info >}}
+Before installing the agent, you must configure the agent parameters in the _cumulocity-agent.conf_ file. For details, refer to [Configuring the agent](#configuring-agent).
+{{< /c8y-admon-info >}}
 
 
 You can install and uninstall the agent using the same commands regardless of whether your agent supports Modbus, CANopen or none of them.

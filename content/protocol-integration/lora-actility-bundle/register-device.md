@@ -24,6 +24,7 @@ In the next window fill in the required information:
 - **Application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
+- **Provider connection**: The Actility connection the device must be associated with.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-registration.png)
@@ -37,6 +38,15 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 ![Device data](/images/device-protocols/lora-actility/lora-devices-devicedata.png)
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
+
+In order to migrate the device from one LNS Connection to another, the device needs to be re-registered.
+Navigate to the **LPWAN** tab of the Device.
+Click on the **Provider connection** dropdown.
+A prompt will appear stating that in order to migrate the device from one LNS connection to another, you need to re-register the device.
+Click on the **Re-Register** button.
+
+The user is directed to the device registration page where he can perform the re-registration by following the steps above and selecting the desired LNS connection. 
+
 
 ### <a name="device-registration-process">LoRa device registration process</a>
 

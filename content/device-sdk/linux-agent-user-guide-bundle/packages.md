@@ -61,7 +61,9 @@ sudo snap install <agent.snap> --devmode
 
 The agent starts automatically after installation and every time the machine boots.
 
-> **Info:** Packaging requires version 2.10 of snapcraft or higher because lower versions do not support the confinement property, which is required for packaging the agent as a snap.
+{{< c8y-admon-info >}}
+Packaging requires version 2.10 of snapcraft or higher because lower versions do not support the confinement property, which is required for packaging the agent as a snap.
+{{< /c8y-admon-info >}}
 
 To include the Modbus feature, add your libmodbus library to the `Depends:` field of *cumulocity-agents-linux/pkg/snapcraft.yaml*.
 

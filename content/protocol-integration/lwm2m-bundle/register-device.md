@@ -178,7 +178,8 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr style="height: 26px;">
 <td style="text-align: left">bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that {{< product-c8y-iot >}} will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. For LWM2M 1.0 devices supported modes are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued).
+Note, that since {{< product-c8y-iot >}} LWM2M 1.1, &ldquo;Q&rdquo; (queue) mode is not supported, and the default mode will be &ldquo;U&rdquo; (unqueued). Although {{< product-c8y-iot >}} will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

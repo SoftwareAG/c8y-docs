@@ -12,7 +12,13 @@ To install {{< product-c8y-iot >}} Edge using the user interface:
   > **Info:** The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
-<img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+  <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+
+  > **Important:** While configuring the network on VMware based hypervisors, do not us the IP addresses:
+  >
+  > - X.X.X.1 (used by VMnet8 network adapter on host)
+  > -  X.X.X.2 (used by VMnet8 network adapter's gateway)
+  > - X.X.X.254 (used by VMnet8 network adapter's DHCP server)
 
 3. Press **Enter** to save the network configuration.
 <img src="/images/edge/edge-network-configurator-2.png" name="Network Configurator" style="width:75%;"/>

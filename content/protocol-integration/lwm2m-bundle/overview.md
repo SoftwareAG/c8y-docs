@@ -26,6 +26,7 @@ Our LWM2M solution supports the following measurement types:
 - Boolean - represented as "true" or "false" and mapped in {{< product-c8y-iot >}} LWM2M solution respectively as "0" or "1"
 - Float - represented by any Float numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as is
 - Integer - represented by any Integer numeric values and mapped in {{< product-c8y-iot >}} LWM2M solution as is
+- Time - represented by any Integer or a Date format that can be converted to an Integer and also mapped in {{< product-c8y-iot >}} LWM2M solution as an Integer
 - String - represented by:
     - Any numeric values in a string format (for example integer and float)
     - Numeric values in scientific format in a positive or negative exponential notation (for example 1.23E10 or 3.57e+5 or 9.8e-4)

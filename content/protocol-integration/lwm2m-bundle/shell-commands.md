@@ -75,7 +75,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">cread /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.1</td>
-<td align="left">Composite reads of one or more resource paths. The resource data from all listed resource paths will be read in a single client response</td>
+<td align="left">Composite reads of one or more resource paths. The resource data from all listed resource paths will be read in a single client response.</td>
 </tr>
 <tr>
 <td align="left">observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
@@ -85,7 +85,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">cobserve /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.1</td>
-<td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the Cumulocity's LwM2M agent in a single client request</td>
+<td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the {{< product-c8y-iot >}}'s LwM2M agent in a single client request.</td>
 </tr>
 <tr>
 <td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
@@ -105,7 +105,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.0, 1.1</td>
-<td align="left">Cancels either a single or a composite observation functionality from the desired resource. To cancel a composite observation the same list of paths should be mentioned as the composite observation was created. The list of the paths is not required to be in the same order as the composite observation was created</td>
+<td align="left">Cancels either a single or a composite observation functionality from the desired resource. To cancel a composite observation the same list of paths must be mentioned as the composite observation was created. The list of paths is not required to be in the same order as the composite observation that was created.</td>
 </tr>
 <tr>
 <td align="left">delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]</td>

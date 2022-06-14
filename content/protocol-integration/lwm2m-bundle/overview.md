@@ -11,13 +11,13 @@ Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} LWM2M 1.1 is backward compatible. Everything which has been working on {{< product-c8y-iot >}} LWM2M 1.0 is working the same way on {{< product-c8y-iot >}} LWM2M 1.1. Keep in mind that {{< product-c8y-iot >}} LWM2M 1.1 introduces some new features which are also not compatible with the LWM2M 1.0 devices. If you try to run some of these features to LWM2M 1.0 device, you'll receive an error message response.
+{{< product-c8y-iot >}} LWM2M 1.1 is backward compatible. What has been working on {{< product-c8y-iot >}} LWM2M 1.0 will also be working on {{< product-c8y-iot >}} LWM2M 1.1. However, {{< product-c8y-iot >}} LWM2M 1.1 introduces some new features which are not compatible with LWM2M 1.0 devices. If you try to run some of these features with LWM2M 1.0 devices, you may receive an error message response.
 
-You can connect any device supporting LWM2M 1.1 or LWM2M 1.0 to {{< product-c8y-iot >}} without programming. We expect the device and its capabilities (such as firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard. There is some possibility to connect also a devices using CoAP over TCP binding, but this is still in an experimental phase and not fully supported. That's why connecting LWM2M devices using CoAP over TCP is not recommended
+You can connect any device supporting LWM2M 1.1 or LWM2M 1.0 to {{< product-c8y-iot >}} without programming. {{< product-c8y-iot >}} expects the device and its capabilities (such as firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard. There is also the possibility to connect a device using CoAP over TCP binding, but this is still in an experimental phase and not fully supported. That's why connecting LWM2M devices using CoAP over TCP is not recommended
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} LWM2M 1.1 introduces a new client's side "send" operation. If a sensor or number of sensors want to send measurements to the server, they can use the "send" operation to send single or composite measurement data. LWM2M 1.1 "send" operation makes this simple on protocol level, compared to LWM2M 1.0 where the level of complexity is higher using MQTT protocol for these purposes.
+{{< product-c8y-iot >}} LWM2M 1.1 introduces a client-side "send" operation. If a sensor or a number of sensors want to send measurements to the server, they can use the "send" operation to send single or composite measurement data. The LWM2M 1.1 "send" operation makes this simple on protocol level. In LWM2M 1.0 the level of complexity was higher because it made use of the MQTT protocol for this kind of operation.
 {{< /c8y-admon-info >}}
 
 Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:

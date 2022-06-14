@@ -448,6 +448,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-1.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-2.png)
 
 |Field|Description|
 |:---|:---|

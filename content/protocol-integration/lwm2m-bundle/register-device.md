@@ -259,7 +259,8 @@ See the table below for information on additional fields:
 <tr style="height: 26px;">
 <td style="text-align: left">Binding mode / bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are "UQ" (default, queuing) and "U" (unqueued). Note that {{< product-c8y-iot >}} will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. For LWM2M 1.0 devices supported modes are "UQ" (default, queuing) and "U" (unqueued).
+Note, that since {{< product-c8y-iot >}} LWM2M 1.1, &ldquo;Q&rdquo; (queue) mode is not supported, and the default mode will be &ldquo;U&rdquo; (unqueued). Although {{< product-c8y-iot >}} will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

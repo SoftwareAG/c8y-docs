@@ -108,7 +108,9 @@ If the ICCID is not shown automatically check the following:
 * Enter the ICCID in the **Info** tab, then click **Save**.
 * Click **Reload** in the top menu bar to make the **Connectivity** tab appear.
 
->**Info:** Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-c8y-iot >}} checks if the particular SIM card is managed by the SIM provider.
+{{< c8y-admon-info >}}
+Note that it may take a few seconds until the tab appears for the first time on a device, as {{< product-c8y-iot >}} checks if the particular SIM card is managed by the SIM provider.
+{{< /c8y-admon-info >}}
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
@@ -190,7 +192,9 @@ Data connectivity can be analyzed in various places:
 * Check the **Audit logs** section on the **Connectivity** tab to see if there were any recent changes to the SIM card.
 * Finally, click the cogwheel on the top right and select **SIM details** to navigate to the SIM configuration in Jasper Control Center.
 
->**Info:** The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
+{{< c8y-admon-info >}}
+The **SIM details** menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.
+{{< /c8y-admon-info >}}
 
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 

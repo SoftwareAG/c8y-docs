@@ -62,7 +62,7 @@ In the next table you will see all available commands and a brief description of
 <thead>
 <tr>
 <th align="left">Command</th>
-<th align="left">Minimum LwM2M version</th>
+<th align="left">Supported version</th>
 <th align="left">Description</th>
 </tr>
 </thead>

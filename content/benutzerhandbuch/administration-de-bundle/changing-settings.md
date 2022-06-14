@@ -343,6 +343,7 @@ Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etw
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic.png)
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-1.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-2.png)
 
 |Feld|Beschreibung|
 |:---|:---|

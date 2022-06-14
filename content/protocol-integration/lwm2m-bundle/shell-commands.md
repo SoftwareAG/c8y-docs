@@ -69,7 +69,7 @@ In the next table you will see all available commands and a brief description of
 <tbody>
 <tr>
 <td align="left">read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Reads a resource path.</td>
 </tr>
 <tr>
@@ -79,7 +79,7 @@ In the next table you will see all available commands and a brief description of
 </tr>
 <tr>
 <td align="left">observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Enables the observe functionality.</td>
 </tr>
 <tr>
@@ -89,12 +89,12 @@ In the next table you will see all available commands and a brief description of
 </tr>
 <tr>
 <td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Executes a resource on the device with optional parameters.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Writes value to a resource on the device.</td>
 </tr>
 <tr>
@@ -104,38 +104,38 @@ In the next table you will see all available commands and a brief description of
 </tr>
 <tr>
 <td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Cancels either a single or a composite observation functionality from the desired resource. To cancel a composite observation the same list of paths should be mentioned as the composite observation was created. The list of the paths is not required to be in the same order as the composite observation was created</td>
 </tr>
 <tr>
 <td align="left">delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Deletes a given object/instance/resource.</td>
 </tr>
 <tr>
 <td align="left">discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Shows all resources of the given object.</td>
 </tr>
 <tr>
 <td align="left">create /&lt;objectID&gt; [JSON]</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Creates a new object. The JSON argument is optional.</td>
 </tr>
 <tr>
 <td align="left">writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; pmin=&lt;sec&gt;&pmax=&lt;sec&gt;&amp;gt=&lt;num&gt;&amp;lt=&lt;num&gt;&st=&lt;num&gt;&cancel
 </td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Writes additional attributes to the object. Typically used for conditional observes.</td>
 </tr>
 <tr>
 <td align="left">fwupdate &lt;Firmware name&gt;;&lt;firmware version&gt;;&lt;firmware_url&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Updates the firmware of the agent.</td>
 </tr>
 <tr>
 <td align="left">serialization &lt;SER&gt;</td>
-<td align="center">1.0</td>
+<td align="center">1.0, 1.1</td>
 <td align="left">Sets the data format.</td>
 </tr>
 

@@ -6,7 +6,9 @@ layout: redirect
 
 In your Edge 10.7 setup, you must back up the data for each tenant and docker collection, and note down the device ID.
 
->**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
+{{< c8y-admon-important >}}
+Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
+{{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all the processes:
 

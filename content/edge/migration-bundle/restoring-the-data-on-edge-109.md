@@ -5,7 +5,9 @@ layout: redirect
 ---
 To restore the data, you must first copy the MongoDB backup from Edge 10.7 appliance to your Edge 10.9 appliance.
 
->**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+{{< c8y-admon-important >}}
+Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+{{< /c8y-admon-important >}}
 
 Perform these steps as **root** user in your Edge 10.9 appliance.
 
@@ -69,7 +71,9 @@ rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86
 ```
 5. Prepare the applications for deployment using the commands:
 
-   >**Important:** Do not include the *streaming-analytics-app.zip* file in the ZIP package.
+    {{< c8y-admon-important >}}
+Do not include the *streaming-analytics-app.zip* file in the ZIP package.
+    {{< /c8y-admon-important >}}
 
 ```shell
 UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
@@ -124,8 +128,9 @@ monit restart opcua_mgmt_service_proc
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
 	- Subscribe the Streaming Analytics application to the edge tenant.
-
-		>**Important:** To subscribe the application, you must have the "Tenant Manager" role.
+    {{< c8y-admon-important >}}
+  To subscribe the application, you must have the "Tenant Manager" role.
+    {{< /c8y-admon-important >}}
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
@@ -135,6 +140,8 @@ Restoring the Streaming Analytics application completes the migration procedure.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
->**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< c8y-admon-important >}}
+To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< /c8y-admon-important >}}
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

@@ -10,7 +10,9 @@ aliases:
 
 Operations on Jupyter Notebook.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Preview the Notebook code along with the session creation
 

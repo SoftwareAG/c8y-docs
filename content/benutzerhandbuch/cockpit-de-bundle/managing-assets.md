@@ -100,7 +100,7 @@ Bei Geräten werden die folgenden Registerkarten angezeigt:
 
 Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web-sdk-for-plugins/overview/).
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. **Siehe auch Web SDK for plugins.
 
 <a name="creating-groups"></a>
 ### Hinzufügen einer Gruppe

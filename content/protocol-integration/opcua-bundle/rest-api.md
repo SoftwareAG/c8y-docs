@@ -110,7 +110,7 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoScanAddressSpace</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Boolean. Whether the gateway should scan the address space automatically the first time it connects. Default is true.</td>
 </tr>
@@ -122,7 +122,7 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoReconnect</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.</td>
 </tr>
@@ -211,7 +211,7 @@ attributes provided in the subscription definition of the device type. It can be
 (for example <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
-The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
+The Spring Expression Language(SpEL) has been used to parse these conditions, but only Boolean expressions are allowed.
 
 See the **alarmStatusMappings example** below the table.
 
@@ -223,7 +223,7 @@ There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOW
 </tr>
 <tr>
 <td>subscribeModelChangeEvent</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
@@ -812,7 +812,7 @@ Full payload data structure explained:
 </tr>
 <tr>
 <td>enabled</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Whether the device type is enabled and should be applied to the connected servers or not. Default is false.</td>
 </tr>
@@ -913,7 +913,7 @@ Full payload data structure explained:
 <td>alarmCreation</td>
 <td><em>AlarmCreation</em></td>
 <td>no</td>
-<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
 The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
 is changed to "false", or a number that is less than or equals to 0.</td>
 </tr>
@@ -1295,7 +1295,7 @@ If <em>alarmStatusMappings</em> are defined, also the variables used in the expr
 </tr>
 <tr>
 <td>retryEnabled</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
 </tr>

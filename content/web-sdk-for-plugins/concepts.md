@@ -85,7 +85,7 @@ The following properties are available:
 * **imports**: A list of plugins used by the application. List of `<<applicationName>>/<<pluginName>>`.
 * **noAppSwitcher**: [optional] If set to true, the application will not appear in the app switcher menu. You might want to use this, for example, if the application only exposes plugins.
 * **options**:
-	* **hide_navigator**: [optional] A boolean, which if set to true collapses the navigator menu at the left by default.
+	* **hide_navigator**: [optional] A Boolean, which if set to true collapses the navigator menu at the left by default.
 	* **globalTitle**: [optional] A title that will be used as the global title of the web application.
 
 {{< c8y-admon-info >}}

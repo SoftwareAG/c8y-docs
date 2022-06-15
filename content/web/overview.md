@@ -9,6 +9,12 @@ aliases:
   - /developers-guide/developing-web-clients.html
   - /web/smart-toolkit
   - /web/reference
+  - /http
+  - /web/jsdoc
+  - /web/branding-plugin
+  - /web/tab-plugin
+  - /web/widget-plugin
+  - /web/web-sdk-for-plugins/
 ---
 
 

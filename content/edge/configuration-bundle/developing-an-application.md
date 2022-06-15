@@ -13,19 +13,19 @@ For example:
 On Windows Powershell
 
 ```shell
-$env:NODE_EXTRA_CA_CERTS=<path-to-the-certificagte>\certificate.pem;
+$env:NODE_EXTRA_CA_CERTS=<path-to-the-certificate>\certificate.pem
 ```
 
 On Windows command prompt
 
 ```shell
-set NODE_EXTRA_CA_CERTS=<path-to-the-certificagte>\certificate.pem
+set NODE_EXTRA_CA_CERTS=<path-to-the-certificate>\certificate.pem
 ```
 
 On Linux platforms
 
 ```shell
-export NODE_EXTRA_CA_CERTS=<path-to-the-certificagte>/certificate.pem
+export NODE_EXTRA_CA_CERTS=<path-to-the-certificate>/certificate.pem
 ```
 
  For more information on the {{< product-c8y-iot >}} web application development, see the [Web SDK guide](/web/overview/).

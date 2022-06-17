@@ -68,7 +68,7 @@ When you upload the CSV file, the dialog will display a confirmation message tha
 
 The the bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
 
-![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
+![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res.png)
 
 ### Device registration settings
 
@@ -210,7 +210,9 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 </tbody>
 </table>
 
-> **Info:** After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+{{< c8y-admon-info >}}
+After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+{{< /c8y-admon-info >}}
 
 <a name="lwm2m-device-registration-advanced-settings"></a>
 #### Advanced settings
@@ -358,6 +360,11 @@ For single device registrations, the UI will shown the message below:
 
 ![Single device reg result for duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-single-duplicated-device.png)
 
-For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device's](#connector-device) operation result.
+For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device](#connector-device)'s operation result.
 
 ![LWM2M bulk device registration connector operation with a duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
+
+### Device deletion
+
+During LWM2M device registration also the tenant route information is stored in the cluster tenant.
+In order to remove the device, besides deleting the device from the [Device Management > All Devices](/users-guide/device-management/#viewing-devices) list also a connector operation needs to be executed to remove tenant route information from the cluster tenant. See LWM2M connector device's [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) section for more information.

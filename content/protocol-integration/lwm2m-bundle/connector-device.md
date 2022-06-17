@@ -14,6 +14,8 @@ Additionally, the bulk device registration status and result are shown under thi
 
 ![LWM2M connector bulk device registration result](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
 
+We recommend to never delete the connector device.
+
 ### Migration of the LWM2M devices
 
 Starting from version 10.15.0, the new device registration for LWM2M is introduced.
@@ -22,3 +24,13 @@ The command can take comma-separated device managed object IDs as parameters. If
 If the command is sent without any parameters then all LWM2M devices that have not been migrated will be detected and migrated.
 
 Example usages: `migrateLwm2mDevices 1122,3344` or `migrateLwm2mDevices`
+
+<a name="lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation"></a>
+### Cleanup cluster tenant objects for endpoint
+
+During LWM2M device registration also tenant route information is stored in the cluster tenant. If the LWM2M device only deleted from the tenant, the tenant route information would not be deleted automatically.
+This operation can be used for triggering the cleanup of the managed objects in the cluster tenant associated to the device with endpoint and has to be executed from the tenant that owned/owns the device with endpoint.
+
+Additionally, the operation can be executed regardless of the existence of the device in the tenant. Therefore, it is also possible to use it to remove the link between the device and the tenant but still keep the device's history.
+
+Example usage: `cleanupClusterTenantObjectsForEndpoint urn:imei:012345678901234`

@@ -111,7 +111,7 @@ Devices show the following tabs:
 
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with plugins. **See Web SDK for plugins for details.
+Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
 <a name="creating-groups"></a>
 ### How to add a group

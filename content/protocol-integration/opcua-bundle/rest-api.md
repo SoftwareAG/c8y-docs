@@ -1438,7 +1438,7 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 </tr>
 <tr>
 <td>discardOldest</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Default is true. When this is true and the reported data is exceeding the queue size, the oldest elements in the queue will be discarded. If this is false, the newer elements will be discarded.</td>
 </tr>

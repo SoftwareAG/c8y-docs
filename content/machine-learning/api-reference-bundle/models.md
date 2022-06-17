@@ -212,7 +212,7 @@ Get annotated or original PMML file. Annotated source may contain warning or err
 |PARAMS||
 |:---|:---|
 |model_name (string)|required path variable for existing model name
-|annotated (boolean)|optional query parameter used to request the annotated version of the PMML file
+|annotated (Boolean)|optional query parameter used to request the annotated version of the PMML file
 
 
 **Example Request**
@@ -691,7 +691,7 @@ Hence, all subsequent calls should refer to the converted name as listed in the 
 |PARAMS||
 |:---|:---|
 |file|required query parameter for PMML file name, if Content-Type is application/octet-stream<br> or a body parameter for PMML file, if Content-Type is multipart/form-data
-|applyCleanser (boolean)|optional parameter used to automatically perform comprehensive syntactic and semantic checks, correct known issues and convert your PMML file to version 4.4 (default is true)
+|applyCleanser (Boolean)|optional parameter used to automatically perform comprehensive syntactic and semantic checks, correct known issues and convert your PMML file to version 4.4 (default is true)
 
 **Example Request**
 

@@ -352,7 +352,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 2. By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-10.png)
 
 3. By providing the public key of a certificate manually to {{< product-c8y-iot >}}. A certificate definition requires an algorithm information, public key value and validity period.
 

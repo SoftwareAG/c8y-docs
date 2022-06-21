@@ -297,7 +297,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-10.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 

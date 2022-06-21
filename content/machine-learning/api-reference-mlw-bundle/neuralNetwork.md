@@ -44,8 +44,8 @@ Train a neural network model using architecture file.
 |dataID (string)| required resource ID of data (body parameter)
 |codeID (string)| optional resource ID of pre-processing script (body parameter)
 |problemType (string)| required classification/regression
-|shuffleData (boolean)| required shuffleData body parameter
-|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
+|shuffleData (Boolean)| required shuffleData body parameter
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format
 
 **Example Request**
 

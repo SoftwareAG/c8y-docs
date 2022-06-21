@@ -50,7 +50,7 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a "value" property, for example, "c8y_AccelerationMeasurement.acceleration".
 - Specify the unit of the given measurement, for example, "m/s" for velocity.
 
-All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
+All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
 
 **Create alarm**
 
@@ -63,7 +63,7 @@ Specify the following parameters (all mandatory):
 - Text
 
 {{< c8y-admon-info >}}
-If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
 The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value is changed to "false", or a number that is less than or equals to 0.
 {{< /c8y-admon-info >}}
 

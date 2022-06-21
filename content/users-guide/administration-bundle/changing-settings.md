@@ -431,7 +431,7 @@ To configure the logout all users feature follow these steps:
 
 To use the logout all users feature follow these steps:
 
-1. Go to the administrator console. 
+1. Go to the administrator console.
 2. Select the realm used in the SSO configuration for the tenant.
 3. Navigate to the **Sessions** tab in the **Manage** section and click **Logout all**.
 
@@ -553,7 +553,7 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 </tr>
 <tr>
 <td style="text-align:left">Default Value</td>
-<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".</td>
+<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "string".</td>
 </tr>
 <tr>
 <td style="text-align:left">Minimum</td>

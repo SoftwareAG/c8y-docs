@@ -19,7 +19,7 @@ Operations on jobs scheduled for processing device data.
 |jobDescription|String|Description of the job.|
 |groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
 |modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
-|applyAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
+|applyAllModels|Boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 
@@ -255,7 +255,7 @@ Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers f
 
 |PARAMS||
 |:---|:---|
-|withTotalPages (boolean)|optional request parameter for displaying total pages; default value is true.
+|withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is true.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 |pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
@@ -565,7 +565,7 @@ Get execution history of a particular job. Lists all executions of that specific
 |PARAMS||
 |:---|:---|
 |jobId (string)|required path variable for job ID
-|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|withTotalPages (Boolean)|optional request paramter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 |pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
@@ -751,7 +751,7 @@ Get the results/inferences generated in a single job execution. These inferences
 |:---|:---|
 |jobId (string)|required path variable for job ID
 |executionId (string)|required path variable for execution ID
-|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 
 

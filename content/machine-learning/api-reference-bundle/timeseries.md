@@ -46,7 +46,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 
 |PARAMS||
 |:---|:---|
-|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
+|autoDeploy (Boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 **BODY**
 ```

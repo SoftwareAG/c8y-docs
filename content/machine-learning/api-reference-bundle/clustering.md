@@ -28,7 +28,7 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 
 |PARAMS||
 |:---|:---|
-|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
+|autoDeploy (Boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 
 **BODY**

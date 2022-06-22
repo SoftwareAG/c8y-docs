@@ -492,7 +492,7 @@ Allows a device to provide information about the agent running on it.
 ```
 
 <a name="140"></a>
-##### Set Advanced Software List (140)
+##### Set advanced software list (140)
 
 Sets the list of advanced software installed on the device. Any existing list will be overwritten.
 
@@ -506,13 +506,13 @@ Sets the list of advanced software installed on the device. Any existing list wi
 **Example**
 
 ```text
-140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,contaiener,https://www.nginx.com/
+140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
 ```
 
 <a name="141"></a>
-##### Append Advanced Software items to the List (141)
+##### Append advanced software items (141)
 
-Appends advanced software installed items to the already existing ones.
+Appends advanced software items to the list that exists for the device.
 
 | Position | Parameter               | Mandatory | Type   | Default value |
 |:---------|:------------------------|:----------|:-------|:--------------|
@@ -524,13 +524,13 @@ Appends advanced software installed items to the already existing ones.
 **Example**
 
 ```text
-141,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,contaiener,https://www.nginx.com/
+141,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
 ```
 
 <a name="142"></a>
-##### Remove Advanced Software items from the list (142)
+##### Remove advanced software items (142)
 
-Removes advanced software items from the device.
+Removes advanced software items from the list that exists for the device.
 
 | Position | Parameter               | Mandatory | Type   | Default value |
 |:---------|:------------------------|:----------|:-------|:--------------|
@@ -1156,7 +1156,7 @@ Set the device profiles
 ```
 
 <a name="528"></a>
-##### Update Software (528)
+##### Update software (528)
 
 Update the software installed on the device.
 
@@ -1185,7 +1185,7 @@ When the `delete` action is received, the device agent ensures that the software
 {{< /c8y-admon-info >}}
 
 <a name="529"></a>
-##### Update Advanced Software (529)
+##### Update advanced software (529)
 
 Update the software installed on the device.
 
@@ -1207,7 +1207,7 @@ Update the software installed on the device.
 
 
 <a name="530"></a>
-##### Cloud Remote Access Connect (530)
+##### Cloud Remote Access connect (530)
 
 Establish tunneling by Remote Access device agent.
 

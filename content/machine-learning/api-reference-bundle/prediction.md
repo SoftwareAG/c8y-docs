@@ -829,7 +829,9 @@ Apply an ONNX model to multiple records. Note that the size of the uploaded file
 
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
->**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+{{< c8y-admon-info >}}
+An active subscription of the Onnx microservice is required to leverage this API.
+{{< /c8y-admon-info >}}
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
@@ -963,7 +965,9 @@ Apply an ONNX pipeline to input data. Note that the size of the uploaded file sh
 
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there is no pre-processing step in the pipeline then the input data must be in JSON format.
 
->**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+{{< c8y-admon-info >}}
+An active subscription of the Onnx microservice is required to leverage this API.
+{{< /c8y-admon-info >}}
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 

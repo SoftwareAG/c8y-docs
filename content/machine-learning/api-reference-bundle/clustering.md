@@ -6,7 +6,9 @@ weight: 40
 
 Operations for identifying clusters in given data using clustering models.
 
->**Info:** An active subscription of the Nyoka microservice is required to leverage the clustering APIs.
+{{< c8y-admon-info >}}
+An active subscription of the Nyoka microservice is required to leverage the clustering APIs.
+{{< /c8y-admon-info >}}
 
 
 ### POST – Generate clustering model based on multiple time series

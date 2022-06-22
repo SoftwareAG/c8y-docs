@@ -9,7 +9,9 @@ aliases:
 
 Operations for time series data/model.
 
->**Info:** An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< c8y-admon-info >}}
+An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< /c8y-admon-info >}}
 
 ### Domain model
 #### TimeSeries

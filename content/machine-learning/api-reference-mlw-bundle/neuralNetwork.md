@@ -10,7 +10,9 @@ aliases:
 
 Neural network training.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### POST - Start the training process of the neural network
 

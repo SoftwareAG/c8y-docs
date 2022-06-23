@@ -11,7 +11,7 @@ Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} LWM2M 1.1 introduces a composite operations and client-side "send" operation. If a sensor or a number of sensors want to send measurements to the server, they can use the "send" operation to send single or composite measurement data. The LWM2M 1.1 "send" operation makes this simple on protocol level. {{< product-c8y-iot >}} also allows a timestamp based operations. If a sensor reports a timestamp resource object in parallel with the sensor's data from the same object, the timestamp will be used. 
+{{< product-c8y-iot >}} LWM2M 1.1 introduces a composite operation and a client-side "send" operation. If a sensor or a number of sensors want to send measurements to the server, they can use the "send" operation to send single or composite measurement data. The LWM2M 1.1 "send" operation makes this simple on protocol level. {{< product-c8y-iot >}} also allows a timestamp based operation. If a sensor reports a timestamp resource object in parallel with its data from the same object, the timestamp will be used.
 
 {{< product-c8y-iot >}} LWM2M 1.1 is backward compatible. What has been working on {{< product-c8y-iot >}} LWM2M 1.0 will also be working on {{< product-c8y-iot >}} LWM2M 1.1. However, {{< product-c8y-iot >}} LWM2M 1.1 introduces some new features which are not compatible with LWM2M 1.0 devices. If you try to run some of these features with LWM2M 1.0 devices, you may receive an error message response.
 

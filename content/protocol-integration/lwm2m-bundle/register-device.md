@@ -366,5 +366,6 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 
 ### Device deletion
 
-During LWM2M device registration also the tenant route information is stored in the cluster tenant.
-In order to remove the device, besides deleting the device from the [Device Management > All Devices](/users-guide/device-management/#viewing-devices) list also a connector operation needs to be executed to remove tenant route information from the cluster tenant. See LWM2M connector device's [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) section for more information.
+During LWM2M device registration the tenant route information is also stored in the cluster tenant.
+In order to remove the device, besides deleting the device from the list in [Device Management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
+See [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) for more information.

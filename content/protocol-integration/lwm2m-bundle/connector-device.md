@@ -14,7 +14,9 @@ Additionally, the bulk device registration status and result are shown under thi
 
 ![LWM2M connector bulk device registration result](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
 
-We recommend to never delete the connector device.
+{{< c8y-amon-warning >}}
+We recommend you to never delete the connector device.
+{{< /c8y-amon-warning >}}
 
 ### Migration of the LWM2M devices
 
@@ -28,9 +30,11 @@ Example usages: `migrateLwm2mDevices 1122,3344` or `migrateLwm2mDevices`
 <a name="lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation"></a>
 ### Cleanup cluster tenant objects for endpoint
 
-During LWM2M device registration also tenant route information is stored in the cluster tenant. If the LWM2M device only deleted from the tenant, the tenant route information would not be deleted automatically.
-This operation can be used for triggering the cleanup of the managed objects in the cluster tenant associated to the device with endpoint and has to be executed from the tenant that owned/owns the device with endpoint.
+During LWM2M device registration the tenant route information is stored in the cluster tenant.
+If the LWM2M device is only deleted from the tenant, the tenant route information will not be deleted automatically.
+This operation can be used for triggering the cleanup of the managed objects in the cluster tenant associated with the device with the endpoint and has to be executed from the tenant that owned the device with the endpoint.
 
-Additionally, the operation can be executed regardless of the existence of the device in the tenant. Therefore, it is also possible to use it to remove the link between the device and the tenant but still keep the device's history.
+Additionally, the operation can be executed regardless of the existence of the device in the tenant.
+Therefore, it is also possible to use it to remove the link between the device and the tenant but still keep the device's history.
 
 Example usage: `cleanupClusterTenantObjectsForEndpoint urn:imei:012345678901234`

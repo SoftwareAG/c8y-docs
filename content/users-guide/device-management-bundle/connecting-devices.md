@@ -93,6 +93,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 Security token policy should be configured to reduce the risk of taking over not yet registered devices by threat actors (for example, by guessing their serial numbers).
 
+> **Info** Feature requires user to have **READ** permission to **option management**. In case if permission is not granted, security token policy used by default is **OPTIONAL**.
 
 Platform supports the following values for security token policy:
 

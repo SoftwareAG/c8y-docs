@@ -14,4 +14,4 @@ aliases:
   - /thin-edge/thin-edge-tutorials
 ---
 
-Refer to the [Thin Edge open source  documentation](https://thin-edge.github.io/thin-edge.io/html/).
+Refer to the [Thin Edge open source documentation](https://thin-edge.github.io/thin-edge.io/html/).

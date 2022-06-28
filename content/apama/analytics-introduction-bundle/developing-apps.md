@@ -72,9 +72,9 @@ Click **X** in the top menu bar to leave the EPL editor and thus to return to th
 
 <!--I wanted to use ""/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 All unsaved changes are lost when you navigate to a different URL or close the browser window.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 **Step 3 - Test the EPL app**
 

@@ -65,9 +65,9 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-console/db**: the state of the {{< product-c8y-iot >}} DataHub Edge backend
 * **/cdh-master/datalake**: the data lake folder
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 You must not modify the contents of these folders as this may corrupt your installation.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 ### Upgrading {{< product-c8y-iot >}} DataHub Edge
 An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you must copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you must log in as admin. Then you must run the install script using the new version.

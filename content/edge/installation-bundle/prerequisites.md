@@ -65,7 +65,7 @@ The following ports must be enabled by default in order to accept traffic from u
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
-|any|any|Edge appliance IP|TTCP/443|HTTPS
+|any|any|Edge appliance IP|TCP/443|HTTPS
 |any|any|Edge appliance IP|TCP/1883|MQTT
 |any|any|Edge appliance IP|TCP/8883|MQTT/TLS
 

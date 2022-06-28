@@ -31,7 +31,7 @@ Example usages: `migrateLwm2mDevices 1122,3344` or `migrateLwm2mDevices`
 ### Cleanup cluster tenant objects for endpoint
 
 {{< c8y-admon-info >}}
-Endpoint refers to the endpoint client ID listed under [Registering LWM2M devices > Mandatory settings](http://localhost:1313/guides/protocol-integration/lwm2m/#mandatory-settings).
+Endpoint refers to the endpoint client ID listed under [Registering LWM2M devices > Mandatory settings](#lwm2m-device-registration-mandatory-settings).
 {{< /c8y-admon-info >}}
 
 During LWM2M device registration the tenant route information is stored in the cluster tenant.

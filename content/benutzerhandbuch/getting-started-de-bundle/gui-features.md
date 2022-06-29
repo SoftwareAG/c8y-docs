@@ -1,12 +1,10 @@
 ---
-weight: 40
-title: Eigenschaften und Funktionen der Benutzeroberfläche
-layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+- /benutzerhandbuch/overview-de/#gui-features
+layout: default
+title: Eigenschaften und Funktionen der Benutzeroberfläche
+weight: 40
 ---
-
-
 
 <a name="screen"></a>
 ### Hauptbildschirmelemente

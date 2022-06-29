@@ -1,9 +1,9 @@
 ---
-weight: 60
-title: Lizenzverwaltung
-layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#license-management
+- /benutzerhandbuch/enterprise-edition-de/#license-management
+layout: redirect
+title: Lizenzverwaltung
+weight: 60
 ---
 
 Der {{< management-tenant-de >}} kann die Lizenzen für die Domains der {{< enterprise-tenant-de >}}s über die Benutzeroberfläche verwalten.

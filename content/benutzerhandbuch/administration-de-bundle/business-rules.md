@@ -10,7 +10,7 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie auf **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
 Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreibung (optional) angezeigt.
 
@@ -23,15 +23,19 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreib
 4. Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-> **Info:** Der als Alarmregel bereitgestellte Alarmtyp wird als Alarmtyp-Präfix interpretiert: &quot;&#60;type-prefix&#62;*&quot;. Wenn Sie z. B. eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren soll, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+{{< c8y-admon-info >}}
+Der als Alarmregel bereitgestellte Alarmtyp wird als Alarmtyp-Präfix interpretiert: &quot;&#60;type-prefix&#62;*&quot;. Wenn Sie z. B. eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren soll, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+{{< /c8y-admon-info >}}
 
 #### So bearbeiten Sie eine Alarmregel
 
 Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht editierbar.
 
-> **Info:** Aktualisieren die Liste, um Änderungen zu verwerfen, ohne sie zu speichern.
+{{< c8y-admon-info >}}
+Aktualisieren die Liste, um Änderungen zu verwerfen, ohne sie zu speichern.
+{{< /c8y-admon-info >}}
 
-<img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### So löschen Sie eine Alarmregel
 

@@ -44,9 +44,11 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit-Logs** im Menü **Ko
 
 Es werden nur die letzten 100 Logeinträge angezeigt. Scrollen Sie herunter zu **Mehr laden**, um weitere Logeinträge anzuzeigen.
 
-![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
+![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
->**Info:** Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
+{{< c8y-admon-info >}}
+Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
+{{< /c8y-admon-info >}}
 
 ### Filtern von Logeinträgen
 

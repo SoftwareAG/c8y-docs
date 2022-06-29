@@ -14,7 +14,7 @@ Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsrege
 
 Klicken Sie auf **Datenpunktbibliothek** im Menü **Konfiguration** im Navigator, um die Datenpunktbibliothek zu öffnen.
 
-![Data point library](/images/benutzerhandbuch/cockpit/cockpit-data-point-library.png)
+![Data point library](/images/users-guide/cockpit/cockpit-data-point-library.png)
 
 Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
 

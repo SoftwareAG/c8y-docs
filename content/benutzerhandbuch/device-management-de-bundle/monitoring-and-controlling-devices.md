@@ -13,7 +13,7 @@ Klicken Sie auf **Karte** im Menü **Geräte** im Navigator, um eine Karte zu ö
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.
 
-![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
 
 <a name="connection-monitoring"></a>
 ### Verbindungsüberwachung
@@ -28,7 +28,7 @@ Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehre
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Sendeverbindungen**
 
@@ -44,7 +44,9 @@ Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Inter
 
 Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
 
->**Info:** Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
+{{< c8y-admon-info >}}
+Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
+{{< /c8y-admon-info >}}
 
 **Push-Verbindungen**
 
@@ -57,8 +59,9 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}}
 Eine Push-Verbindung ist ein aktiver HTTPS-Long-Poll oder eine MQTT-Verbindung von {{< product-c8y-iot >}} zum API-Endpunkt <kbd>/notification/operations</kbd> (nicht zum Echtzeit-API-Endpunkt).
 Sie ist immer grün dargestellt, wenn das Gerät verbunden ist, auch wenn kein Datenverkehr stattfindet.
 
-
->**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
+{{< c8y-admon-info >}}
+Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
+{{< /c8y-admon-info >}}
 
 <a name="maintenance-mode"></a> **Wartungsmodus**
 
@@ -71,11 +74,13 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Verbindungen zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
-> **Info:** "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
+{{< c8y-admon-info >}}
+"Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
+{{< /c8y-admon-info >}}
 
 Im Feld **Erwartetes Sendeintervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunde mit {{< product-c8y-iot >}} kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.
 
@@ -83,7 +88,7 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartun
 
 Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 <a name="monitoring-availability"></a>
 ### Verfügbarkeit
@@ -99,7 +104,7 @@ Ist ein Gerät offline, nimmt {{< product-c8y-iot >}} standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/users-guide/administration#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 {{< product-c8y-iot >}} zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
@@ -111,7 +116,7 @@ Klicken Sie auf die Registerkarte **Verfügbarkeit** in den Details eines bestim
 
 Klicken Sie auf **Verfügbarkeit** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
 
-![Availability](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-availability.png)
+![Availability](/images/users-guide/DeviceManagement/devmgmt-devices-availability.png)
 
 Die Seite **Verfügbarkeit** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
 
@@ -127,7 +132,7 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
 
-![Alarms page](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
 
 Standardmäßig
 
@@ -145,7 +150,11 @@ Alarme werden nach Schweregraden klassifiziert. {{< product-c8y-iot >}} enthält
 
 Die Registerkarte **Alarm** ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
-Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
+In der oberen Menüleiste sind Schaltflächen zum Filtern nach Schweregrad verfügbar. Wenn Sie auf eine Schaltfläche klicken, wird der entsprechende Bereich ausgeblendet. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
+
+{{< c8y-admon-info >}}
+Die an den Schaltflächen in der oberen Menüleiste angegebene Zahl bezieht sich auf die Anzahl der Alarme zum jeweiligen Schweregrad, im Gegensatz zu dem Zähler, der als roter Kreis neben einem aktiven Alarm erscheint und angibt, wie oft derselbe Alarm aufgetreten ist (siehe auch nachstehende Tabelle).
+{{< /c8y-admon-info >}}
 
 In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
 
@@ -168,7 +177,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 <td align="left">KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG (siehe oben).</td>
 </tr>
 <tr>
-<td align="left">Anzahl</td>
+<td align="left">Anzahl (angegeben als Zahl in einem roten Kreis) </td>
 <td align="left">Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.</td>
 </tr>
 <tr>
@@ -192,14 +201,14 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Anwenden von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de/#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/users-guide/administration#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger über die Zeile und klicken Sie auf die entsprechende Schaltfläche oder klicken Sie auf das Menüsymbol und wählen Sie den gewünschten Status.
 
-![Alarm change status](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
+![Alarm change status](/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
 
 Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie auf **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade zu löschen.
 
@@ -227,7 +236,7 @@ In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf 
 
 Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
-![Single operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
+![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
 Einzel-Operationen können sich in einem der folgenden vier Status befinden:
 
@@ -251,7 +260,7 @@ Durch Klicken auf eine Zeile wird diese aufgeklappt und es werden weitere Detail
 * **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
 * **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
 
-![Single operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
+![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
 Um die Liste der Einzel-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
@@ -260,17 +269,21 @@ Klicken Sie auf **Alle**, um den Filter wieder zurückzusetzen.
 Klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Operationen in Echtzeit anzuzeigen.
 Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
->**Info:** Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
+{{< c8y-admon-info >}}
+Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
+{{< /c8y-admon-info >}}
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) und mehr.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/users-guide/device-management/#firmware-repo), [Software](/users-guide/device-management/#software-repo), [Konfigurationen](/users-guide/device-management/#configuration-repository) und mehr.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/users-guide/device-management#shell).
 
->**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< c8y-admon-important >}}
+Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< /c8y-admon-important >}}
 
 #### So brechen Sie ausstehende Einzel-Operationen ab
 
@@ -285,14 +298,14 @@ Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHE
 
 Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
-Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
+Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/users-guide/cockpit/#create-rules) beschrieben.
 
 <a name="to-view-bulk-operations"></a>
 #### So zeigen Sie Bulk-Operationen an
 
 Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
-![Bulk operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
 Bulk-Operationen besitzen einen Operationstyp und einen Status.
 
@@ -334,9 +347,9 @@ Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die 
 * **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen** klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
 * **Änderungshistorie**: In einer zweiten Registerkarte werden Informationen zu den letzten Änderungen der Operation angezeigt.
 
-![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
 
-![Bulk operation details, second tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
+![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
 
 Um die Liste der Bulk-Operationen nach Operationstyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Operationstypen und klicken Sie auf **Anwenden**.
 Um den Filter wieder zurückzusetzen, wählen Sie **Alle** in der Auswahlliste und klicken Sie erneut auf **Anwenden**.
@@ -349,9 +362,11 @@ Um den Filter zurückzusetzen, klicken Sie direkt daneben auf **Löschen**.
 
 Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
 
->**Info:** Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
+{{< c8y-admon-info >}}
+Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
+{{< /c8y-admon-info >}}
 
->![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
+>![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>
 <a name="to-add-a-bulk-operation"></a>
@@ -369,7 +384,7 @@ Führen Sie folgende Schritte aus:
 
 1. Klicken Sie in der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation**.
 2. Wählen Sie im nächsten Dialog einen Operationstyp.
-    ![Select a bulk operation type](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
+    ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. Im darauf folgenden Assistenten gibt es vier Schritte. Je nach Operationstyp unterscheiden sich die ersten beiden Schritte:
   * **Konfigurationsaktualisierung**
       * Wählen Sie eine Konfiguration aus der Liste aus. Die Liste kann nach Konfigurationstyp oder Konfigurationsnamen gefiltert werden. Klicken Sie auf **Weiter**.
@@ -378,15 +393,15 @@ Führen Sie folgende Schritte aus:
       * Wählen Sie eine Firmware aus der Liste aus. Die Liste kann nach Firmware-Namen gefiltert werden. Klicken Sie auf **Weiter**.
       * Erweitern Sie einen Versionseintrag und wählen Sie einen Patch. Klicken Sie auf **Weiter**.
   * **Software Update**
-      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp oder Softwarenamen gefiltert werden. Klicken Sie auf **Weiter**. Wenn Sie Software für mehrere Gerätetypen gewählt haben, informiert Sie ein Warndialog darüber, dass einige Operationen wegen nicht unterstützter Software fehlschlagen könnten, und fordert Sie zur Bestätigung auf.
+      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp, nach Software-Typ oder nach Softwarename gefiltert werden. Klicken Sie auf **Weiter**. Wenn Sie Software für mehrere Gerätetypen gewählt haben, informiert Sie ein Warndialog darüber, dass einige Operationen wegen nicht unterstützter Software fehlschlagen könnten, und fordert Sie zur Bestätigung auf.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
   * **Geräteprofil anwenden**
       * Wählen Sie ein Geräteprofil aus der Liste aus. Die Liste kann nach Gerätetyp oder Profilnamen gefiltert werden. Klicken Sie auf **Weiter**.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
 4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Name, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Der Gruppenfilter ermöglicht auch das Filtern nach Untergruppen. Zum Auswählen einer ggf. vorhandenen Untergruppe klicken Sie auf die Pfeilschaltfläche rechts neben einer Gruppe und wählen Sie die gewünschten Untergruppen aus der Auswahlliste. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
-    ![Bulk operation wizard, step 3](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
+    ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
 5. Geben Sie einen neuen Titel ein oder verwenden Sie den vorgegebenen Titel. Geben Sie bei Bedarf eine Beschreibung ein. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den Einzel-Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
-    ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
+    ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 <a name="to-schedule-a-single-operation-as-bulk-operation"></a>
 ##### So planen Sie eine Einzel-Operation als Bulk-Operation
@@ -408,7 +423,7 @@ Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbei
 
 Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
 
-![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
+![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
 <a name="bulk-operations"></a>
 #### So brechen Sie Bulk-Operationen ab
@@ -450,7 +465,7 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
 
-![Events](/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
+![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
 
 Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste.
 

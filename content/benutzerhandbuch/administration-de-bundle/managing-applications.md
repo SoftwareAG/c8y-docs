@@ -4,7 +4,7 @@ title: Verwalten von Anwendungen
 weight: 30
 ---
 
-Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications/) im *Concepts Guide*.
+Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications) im *Concepts Guide*.
 
 * [Anwendungen](#applications) - alle Webanwendungen, die entweder für den Mandanten abonniert sind oder die der Mandant besitzt.
 
@@ -12,16 +12,16 @@ Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Mic
 
 Beides kann über das Menü **Ecosystem** im Navigator aufgerufen werden.
 
-Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/users-guide/enterprise-tenant/#default-subscriptions).
 
-<img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
+<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 <a name="applications"></a>
 ### Anwendungen
 
 Klicken Sie auf **Anwendungen** im Menü **Ecosystem** des Navigators, um eine Liste oder Tabelle aller Anwendungen in Ihrem Konto anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
 In der Registerkarte **Alle Anwendungen** werden alle Anwendungen angezeigt, die in Ihrem Mandanten verfügbar sind. Es gibt zwei Arten von Anwendungen:
 
@@ -30,7 +30,7 @@ In der Registerkarte **Alle Anwendungen** werden alle Anwendungen angezeigt, die
 
 Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfügbar.
 
-<img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
+<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 
 <a name="subscribed-applications"></a>
@@ -38,9 +38,11 @@ Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfü
 
 {{< product-c8y-iot >}} stellt vielerlei Anwendungen für verschiedene Zwecke bereit. Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der potenziell verfügbaren Anwendungen an.
 
-Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant-de >}}en oder im {{< enterprise-tenant-de >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
+Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant >}}en oder im {{< enterprise-tenant >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
 
->**Info:** In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
+{{< c8y-admon-info >}}
+In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
+{{< /c8y-admon-info >}}
 
 #### Standardmäßig abonnierte Anwendungen
 
@@ -61,34 +63,34 @@ Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-ten
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Analytics Builder-Modelle und EPL-Apps (sofern aktiviert) verwalten und bearbeiten</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant-de >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant-de >}} (Vollversion)</td>
+<td style="text-align:left">{{< standard-tenant >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant >}} (Vollversion)</td>
 </tr>
 
 </tr>
@@ -113,9 +115,9 @@ In der Registerkarte **Alle Anwendungen** sind benutzerdefinierte Anwendungen al
 
 Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
+<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
-Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
+Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden aus:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
@@ -130,7 +132,9 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
+{{< c8y-admon-important >}}
+Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
+{{< /c8y-admon-important >}}
 
 <a name="external-application"></a>
 ##### So verweisen Sie auf eine externe Anwendung
@@ -138,7 +142,7 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 2. Wählen Sie **Externe Anwendung**.
 <br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
+<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
 <br><br>
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
@@ -153,29 +157,38 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
-2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
+2. Wählen Sie im folgenden Dialog **Vorhandene Anwendung duplizieren**.
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
 <br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
+<img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
-4. Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
+4. Geben Sie im nächsten Fenster den Namen der Anwendung ein.
 <br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
-5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
-6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
+    {{< c8y-admon-info >}}
+Die Plattform beschränkt die Verwendung des Präfixes "feature-". Sie können keine Anwendungen mit diesem Präfix im Anwendungsnamen erstellen. Dies gilt auch für bestehende Anwendungen in Fällen, in denen die Funktion "Anwendung duplizieren" verwendet wird.
+    {{< /c8y-admon-info >}}
+5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren.
+6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
 7. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
+
+{{< c8y-admon-info >}}
+Die oben genannten Felder für Name, Schlüssel und Pfad der duplizierten Anwendung werden standardmäßig mit dem entsprechenden Wert aus der ursprünglichen Anwendung, erweitert um eine Zahl, bereitgestellt. Falls die Anwendung für diesen Mandanten abonniert wurde, ist ein weiterer Umschalter vorhanden, über den Sie die Werte entweder von der ursprünglichen Anwendung erben oder aber bearbeiten können.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+{{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-> **Info:** Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
+{{< c8y-admon-info >}}
+Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
+{{< /c8y-admon-info >}}
 
 <a name="application-properties"></a>
 ### Anwendungsattribute
 
 Um weitere Details zu einer Anwendung anzuzeigen, klicken Sie auf sie, um ihre Registerkarte **Attribute** zu öffnen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungstyp (gehostet oder extern) folgende Informationen angezeigt:
 
@@ -234,7 +247,9 @@ Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben eine
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
 
->**Wichtig:** Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
+{{< c8y-admon-important >}}
+Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
+{{< /c8y-admon-important >}}
 
 ### So löschen Sie eine Anwendung
 
@@ -251,14 +266,16 @@ Bei benutzerdefinierten Anwendungen können mehrere Dateiversionen in {{< produc
 #### So laden Sie ein Archiv hoch
 
 1. Öffnen Sie die Anwendungsattribute für die entsprechende Anwendung, indem Sie darauf klicken.
-2. Klicken Sie unten im Abschnitt **Aktivitätslog** auf die Plus-Schaltfläche und navigieren Sie zu dem Archiv auf Ihrem Computer oder ziehen Sie das Archiv auf das entsprechende Feld.
+2. Klicken Sie unten im Abschnitt **Aktivitätslog** auf die Plus-Schaltfläche und navigieren Sie zu dem Archiv in Ihrem Dateisystem oder ziehen Sie einfach das Archiv auf das entsprechende Feld.
 3. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr {{< product-c8y-iot >}}-Konto hochzuladen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
+<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
-> **Info:** Die Archiv-Funktionalität steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
+{{< c8y-admon-info >}}
+Die Archiv-Funktionalität steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
+{{< /c8y-admon-info >}}
 
 #### So stellen Sie eine ältere Anwendungsversion wieder her
 
@@ -280,7 +297,7 @@ Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien 
 
 Funktionen sind integrierte Anwendungen, die nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt werden.
 
-Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die in Ihrem Mandanten abonniert werden. In einem {{< enterprise-tenant-de >}}en sind folgende Funktionen standardmäßig verfügbar:
+Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die in Ihrem Mandanten abonniert werden. In einem {{< enterprise-tenant >}}en sind folgende Funktionen standardmäßig verfügbar:
 
 <table>
 <col width="200">
@@ -297,28 +314,30 @@ Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#branding" class="no-ajaxy">Funktion-Branding</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Funktion-Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an</td>
 <td style="text-align:left">feature-branding</td>
-<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 
 </tr>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#data-broker" class="no-ajaxy">Funktion-Broker</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Funktion-Broker</a></td>
 <td style="text-align:left">Teilen Sie Daten gezielt mit anderen Mandanten</td>
 <td style="text-align:left">feature-broker</td>
-<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies" class="no-ajaxy">Funktion-Benutzer-Hierarchie</a></td>
+<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Funktion-Benutzer-Hierarchie</a></td>
 <td style="text-align:left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen</td>
 <td style="text-align:left">feature-user-hierarchy</td>
-<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
+<td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 </tbody>
 </table>
 
->**Info:** Alle hier aufgelisteten Anwendungen sind vom Typ "Funktion".
+{{< c8y-admon-info >}}
+Alle hier aufgelisteten Anwendungen sind vom Typ "Funktion".
+{{< /c8y-admon-info >}}
 
 Je nach den konkreten Abonnements Ihres Mandanten können auch andere Funktionen angezeigt werden.

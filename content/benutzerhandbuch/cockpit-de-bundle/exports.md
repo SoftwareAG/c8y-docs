@@ -137,7 +137,7 @@ Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Ex
 
 ![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 {{< /c8y-admon-important >}}
 

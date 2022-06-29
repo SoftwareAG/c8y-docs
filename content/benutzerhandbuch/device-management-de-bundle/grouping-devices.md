@@ -217,6 +217,6 @@ Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die F
 
 Bewegen Sie den Mauszeiger über den Eintrag, den Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Das Löschen einer dynamischen Gruppe ist irreversibel.
 {{< /c8y-admon-important >}}

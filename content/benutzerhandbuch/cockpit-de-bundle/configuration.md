@@ -12,7 +12,7 @@ Zur Verwendung dieser Funktionalität müssen die folgenden Anforderungen erfül
 
 * Sie verfügen über eine ADMIN-Berechtigung für den Berechtigungstyp "Anwendungsverwaltung".
 
-* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zum Clonen einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/users-guide/administration/#adding-applications).
+* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zum Clonen einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
 
 Wenn diese Anforderungen erfüllt sind, wird im Menü **Konfiguration** des Navigators der benutzerdefinierten Cockpit-Anwendung der Eintrag **App-Konfiguration** angezeigt.
 
@@ -20,7 +20,7 @@ Wenn diese Anforderungen erfüllt sind, wird im Menü **Konfiguration** des Navi
 
 Klicken Sie im Navigator auf **App-Konfiguration** im Menü **Konfiguration**.
 
-![App configuration](/images/users-guide/cockpit/cockpit-app-configuration.png)
+![App configuration](/images/benutzerhandbuch/cockpit/cockpit-app-configuration.png)
 
 Auf der Seite **App-Konfiguration** können Sie verschiedene Aspekte Ihrer Cockpit-Anwendung individuell anpassen.
 
@@ -34,7 +34,7 @@ Standardmäßig sind alle Funktionen aktiviert. Verwenden Sie den Umschalter neb
 
 Unter **Oberste Knoten** können Sie wählen, welche Gruppen auf der obersten Ebene des Navigators angezeigt werden sollen. Standardmäßig wird nur der Eintrag **Gruppen** angezeigt (sofern er im Abschnitt **Funktionen** nicht deaktiviert wurde).
 
-![Nodes configuration](/images/users-guide/cockpit/cockpit-configuration-nodes.png)
+![Nodes configuration](/images/benutzerhandbuch/cockpit/cockpit-configuration-nodes.png)
 
 Wählen Sie rechts die Haupt- oder Untergruppen aus, die als oberste Knoten im Navigator angezeigt werden sollen. Sobald eine Gruppe ausgewählt wurde, wird sie der benutzerdefinierten Liste der obersten Knoten hinzugefügt. Darüber hinaus können Sie die Knoten weiter konfigurieren, indem Sie die Anzeige der Geräte für eine bestimmte Gruppe aktivieren/deaktivieren. Bei Deaktivierung werden alle Geräte für diese Gruppe ausgeblendet, d. h. nicht im Navigator angezeigt.
 

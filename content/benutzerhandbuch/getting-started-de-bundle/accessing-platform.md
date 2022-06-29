@@ -4,7 +4,7 @@ title: Aufrufen und Anmelden an der Plattform
 layout: redirect
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
-  - /users-guide/getting-started/#accessing-cumulocity-platform
+  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über eine [URL](#url) in einem Webbrowser zugreifen.
@@ -53,7 +53,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 
 {{< c8y-admon-info >}}
-Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant >}} nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}} nutzen. Die URL für die {{< enterprise-tenant-de >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}
@@ -67,11 +67,11 @@ Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Gro�
 
 Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform verwenden und sich zum ersten Mal anmelden, sehen Sie unten ein Cookie-Banner:
 
-<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
 {{< c8y-admon-info >}}
-Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/users-guide/enterprise-tenant/#branding).
+Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant-de >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 {{< /c8y-admon-info >}}
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
@@ -83,19 +83,19 @@ Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}}
 
 
 {{< c8y-admon-info >}}
-Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings).
+Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
 {{< /c8y-admon-info >}}
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen {{< product-c8y-iot >}}-Anwendungen wechseln, da die {{< product-c8y-iot >}}-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur [Cockpit-Anwendung](/users-guide/cockpit) (sofern nicht anders konfiguriert).
+Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelangen. Zunächst gelangen Sie zur [Cockpit-Anwendung](/benutzerhandbuch/cockpit-de) (sofern nicht anders konfiguriert).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie dann **Abmelden** im Kontextmenü.
 
 {{< c8y-admon-info >}}
-Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
+Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 {{< /c8y-admon-info >}}
 
 <a name="reset-password"></a>

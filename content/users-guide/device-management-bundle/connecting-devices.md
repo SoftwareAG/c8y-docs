@@ -127,7 +127,7 @@ In this mode a device connected to the platform can be accepted without any toke
 The list of device registrations is presented in the image below. Note that the input for security token is displayed for all devices.
  
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Accepting devices registrations when in optional token security token policy">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Accepting devices registrations when in optional security token policy">
 
 **Registration without using security token**
 

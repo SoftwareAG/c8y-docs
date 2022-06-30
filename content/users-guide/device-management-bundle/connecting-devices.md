@@ -93,7 +93,8 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 Security token policy should be configured to reduce the risk of taking over not yet registered devices by threat actors (for example, by guessing their serial numbers).
 
-> **Info** Feature requires user to have **READ** permission to **option management**. In case if permission is not granted, security token policy used by default is **OPTIONAL**.
+> **Info:** Feature requires user to have **READ** permission to **Option management**. In case if permission is not granted, security token policy defaults to **OPTIONAL**.
+
 
 Platform supports the following values for security token policy:
 
@@ -118,7 +119,7 @@ Depending on security token policy "Pending acceptance" screen will be different
 
 In this mode a device connected to the platform can be accepted without any token validation.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png" alt="Pending acceptance devices in ignored security token policy">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png" alt="Accepting devices registrations when in ignored security token policy">
 
 ##### Optional security token policy
 
@@ -126,7 +127,7 @@ In this mode a device connected to the platform can be accepted without any toke
 The list of device registrations is presented in the image below. Note that the input for security token is displayed for all devices.
  
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Pending acceptance devices in optional security token policy">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Accepting devices registrations when in optional token security token policy">
 
 **Registration without using security token**
 
@@ -139,17 +140,17 @@ If a security token is provided for a device which is connected unsecurely, it w
 
 When a device connected to the platform does use a security token, the registration can be completed only if user provides a token matching the one sent by the device on establishing the connection.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png" alt="Pending acceptance devices in optional security token policy entering token">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png" alt="Providing a token for device registration request in optional security token policy">
 
 In the case of providing an incorrect token, the error message will be displayed. 
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-wrong-token.png" alt="Pending acceptance devices in optional security token policy incorrect token error">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-wrong-token.png" alt="Error displayed on accepting device registration request by providing incorrect token">
 
 After a certain amount of failed attempts, the registration will reach the blocked state. The blocked registration must be removed before the next attempt to connect the device.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-reaching-blocked-state.png" alt="Pending acceptance devices in optional security token policy reaching blocked state">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-reaching-blocked-state.png" alt="Blocking device registration request as a result of continuous errors in providing token">
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-blocked-error-message.png" alt="Pending acceptance devices in optional security token policy blocked state">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-blocked-error-message.png" alt="Blocked device registration request as a result of continuous errors in providing token">
 
 
 **Limited  usage of "Accept all" feature**
@@ -158,11 +159,11 @@ After a certain amount of failed attempts, the registration will reach the block
 
 For any device which uses security token, **accept all** feature is not available and will display a warning message. 
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all.png" alt="Pending acceptance devices in optional security token policy accept all">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all.png" alt="Warning for device registration in optional security token policy when accept all feature is used">
 
 The details of the warning message provide the list of devices which could not be accepted automatically.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all-warning.png" alt="Pending acceptance devices in optional security token policy accept all result">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all-warning.png" alt="Details summary of device registration in optional security token policy when accept all feature used">
 
 Such devices should be accepted manually by providing correct **Security token** value and clicking **Accept** button.
 
@@ -179,7 +180,7 @@ While in this mode, any devices connecting to the platform without a security to
 In the screenshot below the first device has been accepted by providing the correct security token, the two other ones have been blocked without ever reaching **Pending acceptance** state.
 
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-required-security-blocked-unsecure-devices.png" alt="Pending acceptance devices in optional security token policy accept all result">
+<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-required-security-blocked-unsecure-devices.png" alt="Blocked unsecure device registrations requests in required mode">
 
 
 

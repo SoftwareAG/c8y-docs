@@ -86,7 +86,10 @@ chown karaf:karaf $UI_VERSION.zip
 6. Restore the device ID of the Edge 10.7 appliance using the commands:
 ```shell
 DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
-curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
+
+curl -v --header "Content-Type: application/json" --request POST --data
+'{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
+
 systemctl restart edge-agent
 ```
 7. Restore the MongoDB collections from the Edge 10.7 appliance using the command:
@@ -129,7 +132,7 @@ monit restart opcua_mgmt_service_proc
 
 	- Subscribe the Streaming Analytics application to the edge tenant.
     {{< c8y-admon-important >}}
-  To subscribe the application, you must have the "Tenant Manager" role.
+    To subscribe the application, you must have the "Tenant Manager" role.
     {{< /c8y-admon-important >}}
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.

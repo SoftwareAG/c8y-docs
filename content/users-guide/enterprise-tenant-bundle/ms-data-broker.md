@@ -14,7 +14,9 @@ The microservice-based data broker is powered by the {{< product-c8y-iot >}} Mes
 ###  To enable the microservice-based data broker
 
 1. In the {{< management-tenant >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
-2. In the **Applications** tab, subscribe the tenant to the data broker agent (databroker-agent-server).
+2. In the **Applications** tab:
+    * Subscribe the tenant to the data broker feature (`feature-broker` application), if it is not already subscribed.
+    * Subscribe the tenant to the data broker agent (`databroker-agent-server` application).
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
 

@@ -177,7 +177,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden
 <a name="traffic-light"></a>
 ### Ampel
 
-Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
+Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
 
 **Konfigurierbare Parameter**
 

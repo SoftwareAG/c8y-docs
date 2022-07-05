@@ -37,7 +37,7 @@ Folgende Typen sind verfügbar:
 </tr>
 <tr>
 <td align="left"><a href="#traffic-light">Ampel</a></td>
-<td align="left">Zeigt die Zustände eines Geräts im Form einer Ampel.</td>
+<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
 </tr>
 <tr>
 <td align="left"><a href="#applications">Anwendungen</a></td>

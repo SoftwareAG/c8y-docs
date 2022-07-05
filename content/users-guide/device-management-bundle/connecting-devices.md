@@ -84,7 +84,7 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
 
 {{< c8y-admon-info >}}
-The "Pending acceptance" screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
 {{< /c8y-admon-info >}}
 
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
@@ -98,12 +98,12 @@ Click **Accept** to confirm the connection. The status of the device will change
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
 
 {{< c8y-admon-info >}}
-The feature requires the user to have **READ** permission for **Option management**. In the case of missing permission, the security token policy defaults to **OPTIONAL**.
+The feature requires the user to have READ permission for "Option management". In the case of missing permission, the security token policy defaults to OPTIONAL.
 {{< /c8y-admon-info >}}
 
 {{< product-c8y-iot >}} supports the following values for the security token policy:
 
-* **IGNORED** - Even if a device requires secure registration, {{< product-c8y-iot >}} will ignore that requirement.
+* IGNORED - Even if a device requires secure registration, {{< product-c8y-iot >}} will ignore that requirement.
 * **OPTIONAL** - If a device requires secure registration, {{< product-c8y-iot >}} will request an additional security token from user.
 * **REQUIRED** - All devices connected to {{< product-c8y-iot >}} must use a security token during registration.
 
@@ -117,7 +117,9 @@ The policy can be configured by setting the following tenant option with one of 
 }
 ```
 
-Depending on the security token policy, the "Pending acceptance" screen will be different.
+{{< c8y-admon-info >}}
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+{{< /c8y-admon-info >}}
 
 ##### Ignored security token policy
 

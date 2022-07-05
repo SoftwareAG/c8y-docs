@@ -104,8 +104,8 @@ The feature requires the user to have READ permission for "Option management". I
 {{< product-c8y-iot >}} supports the following values for the security token policy:
 
 * IGNORED - Even if a device requires secure registration, {{< product-c8y-iot >}} will ignore that requirement.
-* **OPTIONAL** - If a device requires secure registration, {{< product-c8y-iot >}} will request an additional security token from user.
-* **REQUIRED** - All devices connected to {{< product-c8y-iot >}} must use a security token during registration.
+* **OPTIONAL** - If a device requires secure registration, {{< product-c8y-iot >}} will request an additional security token from the user.
+* REQUIRED - All devices connected to {{< product-c8y-iot >}} must use a security token during registration.
 
 The policy can be configured by setting the following tenant option with one of the values listed above, for example:
 
@@ -123,7 +123,7 @@ The **Pending acceptance** screen might differ depending on the [security token 
 
 ##### Ignored security token policy
 
-With a value of **IGNORED** for the security token policy, a device connected to {{< product-c8y-iot >}} can be accepted without any token validation:
+With a value of IGNORED for the security token policy, a device connected to {{< product-c8y-iot >}} can be accepted without any token validation:
 
 ![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 

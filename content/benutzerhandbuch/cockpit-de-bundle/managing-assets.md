@@ -106,6 +106,9 @@ Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese e
 
 Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web-sdk-for-plugins/overview/).
 
+Web sdk for plugins has been deleted. Updated paragraph in the Users guide:
+(Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device/) to see how to add a custom tab.)
+
 <a name="creating-groups"></a>
 ### Hinzufügen einer Gruppe
 

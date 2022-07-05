@@ -373,7 +373,7 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
 Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adresse als Redirect-URI. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". Die Redirect-URI muss für eine Webanwendung und nicht für eine Einzelseitenanwendung festgelegt sein. In Azure AD sind keine weiteren Schritte erforderlich.
 

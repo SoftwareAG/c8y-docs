@@ -40,7 +40,9 @@ The devices may have one of the following status:
 * **Accepted** - The user has allowed the credentials to be send to the device.
 * **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
 
-> **Info:** If a device registration is **blocked**, you will need to delete it first and then create it again.
+{{< c8y-admon-info >}}
+If a device registration is **blocked**, you will need to delete it first and then create it again.
+{{< /c8y-admon-info >}}
 
 Devices can be connected to your {{< product-c8y-iot >}} account in different ways.
 
@@ -79,9 +81,11 @@ After successful registration the device(s) will be listed in the [Device regist
 
 Turn on the device(s) and wait for the connection to be established.
 
-Once a device is connected, its status will change to "Pending acceptance". 
+Once a device is connected, its status will change to "Pending acceptance".
 
-> **Info:** "Pending acceptance" screen might differ depending on [security token policy](#security-token-policy).
+{{< c8y-admon-info >}}
+The "Pending acceptance" screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+{{< /c8y-admon-info >}}
 
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
@@ -91,98 +95,91 @@ Click **Accept** to confirm the connection. The status of the device will change
 
 #### Security token policy for device registration
 
-Security token policy should be configured to reduce the risk of taking over not yet registered devices by threat actors (for example, by guessing their serial numbers).
+Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
 
-> **Info:** Feature requires user to have **READ** permission to **Option management**. In case if permission is not granted, security token policy defaults to **OPTIONAL**.
+{{< c8y-admon-info >}}
+The feature requires the user to have **READ** permission for **Option management**. In the case of missing permission, the security token policy defaults to **OPTIONAL**.
+{{< /c8y-admon-info >}}
 
+{{< product-c8y-iot >}} supports the following values for the security token policy:
 
-Platform supports the following values for security token policy:
-
-* **IGNORED** - Even if a device requires secure registration, the platform will ignore that requirement.
-* **OPTIONAL** - If a device requires secure registration, the platform will request an additional security token from user.
-* **REQUIRED** - All devices connected to the platform must use security token during registration. 
+* **IGNORED** - Even if a device requires secure registration, {{< product-c8y-iot >}} will ignore that requirement.
+* **OPTIONAL** - If a device requires secure registration, {{< product-c8y-iot >}} will request an additional security token from user.
+* **REQUIRED** - All devices connected to {{< product-c8y-iot >}} must use a security token during registration.
 
 The policy can be configured by setting the following tenant option with one of the values listed above, for example:
 
-
 ```json
-{ 
+{
   "category": "device-registration",
-  "key": "security-token.policy", 
+  "key": "security-token.policy",
   "value": "IGNORED"
 }
 ```
 
-Depending on security token policy "Pending acceptance" screen will be different.
+Depending on the security token policy, the "Pending acceptance" screen will be different.
 
 ##### Ignored security token policy
 
-In this mode a device connected to the platform can be accepted without any token validation.
+With a value of **IGNORED** for the security token policy, a device connected to {{< product-c8y-iot >}} can be accepted without any token validation:
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png" alt="Accepting devices registrations when in ignored security token policy">
+![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 
 ##### Optional security token policy
 
-
 The list of device registrations is presented in the image below. Note that the input for security token is displayed for all devices.
- 
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png" alt="Accepting devices registrations when in optional security token policy">
+![Accepting devices registrations under optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
 
-**Registration without using security token**
+**Registration without using a security token**
 
-When a device connected to the platform doesn't use a security token, the registration can proceed without providing any value in the security token input.
-
+When a device connected to {{< product-c8y-iot >}} doesn't use a security token, the registration can proceed without providing any value in the security token input.
 
 If a security token is provided for a device which is connected unsecurely, it will be accepted and the token will be ignored.
 
-**Registration using security token**
+**Registration using a security token**
 
-When a device connected to the platform does use a security token, the registration can be completed only if user provides a token matching the one sent by the device on establishing the connection.
+When a device connected to {{< product-c8y-iot >}} does use a security token, the registration can be completed only if the user provides a token matching the one sent by the device on establishing the connection.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png" alt="Providing a token for device registration request in optional security token policy">
+![Providing a token for device registration request in optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
 
-In the case of providing an incorrect token, the error message will be displayed. 
+In the case of providing an incorrect token, an error message will be displayed.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-wrong-token.png" alt="Error displayed on accepting device registration request by providing incorrect token">
+![Error displayed on accepting device registration request by providing an incorrect token](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-wrong-token.png)
 
-After a certain amount of failed attempts, the registration will reach the blocked state. The blocked registration must be removed before the next attempt to connect the device.
+After a certain amount of failed attempts, the registration will reach the blocked state.
+The blocked registration must be removed before the next attempt to connect the device.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-reaching-blocked-state.png" alt="Blocking device registration request as a result of continuous errors in providing token">
+![Blocking device registration request as a result of continuous errors in providing a token](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-reaching-blocked-state.png)
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-blocked-error-message.png" alt="Blocked device registration request as a result of continuous errors in providing token">
-
+![Blocked device registration request as a result of continuous errors in providing a token](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-blocked-error-message.png)
 
 **Limited  usage of "Accept all" feature**
 
-**Accept all** feature is supported for devices connected to platform without usage of security token.
+The **accept all** feature is supported for devices connected to {{< product-c8y-iot >}} without the usage of a security token.
 
-For any device which uses security token, **accept all** feature is not available and will display a warning message. 
+For any device which uses a security token, the **accept all** feature is not available and will display a warning message.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all.png" alt="Warning for device registration in optional security token policy when accept all feature is used">
+![Warning for device registration in optional security token policy when the accept all feature is used](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all.png)
 
 The details of the warning message provide the list of devices which could not be accepted automatically.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all-warning.png" alt="Details summary of device registration in optional security token policy when accept all feature used">
+![Details summary of device registration under optional security token policy when the accept all feature used](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-accept-all-warning.png)
 
-Such devices should be accepted manually by providing correct **Security token** value and clicking **Accept** button.
+Such devices must be accepted manually by providing the correct **Security token** value and clicking the **Accept** button.
 
 
 ##### Required security token policy
 
-In this mode any device connected to the platform is required to use a security token on establishing the connection and a user is required to enter the same token when accepting the device.
+In this mode any device connected to {{< product-c8y-iot >}} is required to use a security token on establishing the connection and a user is required to enter the same token when accepting the device.
 
-The procedure of accepting devices is same as described by  [registration with optional security policy when using a security token](#optional-security-token-policy)
+The procedure of accepting devices is the same as described in [Optional security token policy](#optional-security-token-policy).
 
-While in this mode, any devices connecting to the platform without a security token will be blocked and it won't be possible to complete their registration.
+While in this mode, any devices connecting to {{< product-c8y-iot >}} without a security token will be blocked and it won't be possible to complete their registration.
 
+In the screenshot below the first device has been accepted by providing the correct security token, the two other have been blocked without ever reaching **Pending acceptance** state.
 
-In the screenshot below the first device has been accepted by providing the correct security token, the two other ones have been blocked without ever reaching **Pending acceptance** state.
-
-
-<img src="/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-required-security-blocked-unsecure-devices.png" alt="Blocked unsecure device registrations requests in required mode">
-
-
+![Blocked unsecure device registrations requests in required mode](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-required-security-blocked-unsecure-devices.png)
 
 #### To bulk-register devices
 

@@ -100,7 +100,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <<td align="left">cwrite /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;]</td>
 <td align="center">1.1</td>
-<td align="left">Composite writes of one or more values to a resources on the device. The data will be written to the listed resource paths in a single request</td>
+<td align="left">Composite writes of one or more values to a resource on the device. The data will be written to the listed resource paths in a single request</td>
 </tr>
 <tr>
 <td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>

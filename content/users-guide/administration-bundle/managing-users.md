@@ -10,13 +10,14 @@ helpcontent:
     Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
 ---
 
-The user management feature allows you to manage the users within your tenant. With this functionality you may:
+The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
 
-- Create users.
-- Assign usernames and set passwords.
-- Store user details.
-- Specify login options.
-- Enable additional login security by using Two-Factor Authentication (TFA).
+{{< c8y-admon-related >}}
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
+- [Tenant hierachy](/concepts/tenant-hierarchy) for information on the concept of multi-tenancy as opposed to user access control.
+- For managing users via REST, see [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}}.
+{{< /c8y-admon-related >}}
+
 
 {{< c8y-admon-info >}}
 The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.

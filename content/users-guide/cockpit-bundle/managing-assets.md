@@ -87,6 +87,10 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
+Subassets count displayed on top of the table of **Subassets** tab is showing total number of child assets assigned to current group. Any type of managed object can be a child asset. For more details on counting of objects please check OpenAPI specification for "[retrieve all child assets of a specific managed object](https://cumulocity.com/api/10.11.0/#operation/getManagedObjectChildAssetsResource)"
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 {{< /c8y-admon-info >}}
 

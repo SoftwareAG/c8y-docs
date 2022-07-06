@@ -8,6 +8,7 @@ aliases:
   - /users-guide/enterprise-tenant/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-tenant-de/#tenant-sla-monitoring
+  - /thin-edge
 ---
 
 This documentation describes the **10.10.0 release (July 2021)** of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release 10.10.0 (see the [Release notes](https://{{< domain-c8y >}}/guides/releasenotes/release-10-10-0/overview-10-10-0/) for details).

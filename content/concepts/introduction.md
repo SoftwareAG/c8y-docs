@@ -6,6 +6,7 @@ aliases:
   - /concepts-guide/introduction-to-cumulocity
   - /concepts-guide/introduction-to-cumulocity.html
   - /concepts/acl
+  - /concepts/glossary
   - /konzepte/einfuehrung
   - /konzepte/introduction
 ---

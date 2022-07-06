@@ -7,6 +7,7 @@ aliases:
   - /users-guide/enterprise-edition/#tenant-sla-monitoring
   - /users-guide/enterprise-tenant/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
+  - /benutzerhandbuch/enterprise-tenant-de/#tenant-sla-monitoring
   - /release-notes
   - /apama/apama-release-notes
   - /datahub/datahub-release-notes

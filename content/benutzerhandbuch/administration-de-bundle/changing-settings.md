@@ -277,7 +277,7 @@ Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 
-Die Benutzer-ID kann auf ein beliebiges Feld des an die Plattform gesendeten Autorisierungs-Tokens gesetzt werden. Wir empfehlen Ihnen, das Autorisierungs-Token in den Audit-Logs zu überprüfen, um sicherzustellen, dass das richtige Feld verwendet wird (siehe [Troubleshooting](#troubleshooting)).
+Die Benutzer-ID kann in ein beliebiges Feld des an die Plattform gesendeten Autorisierungs-Tokens gesetzt werden. Wir empfehlen Ihnen, das Autorisierungs-Token in den Audit-Logs zu überprüfen, um sicherzustellen, dass das richtige Feld verwendet wird (siehe [Troubleshooting](#troubleshooting)).
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-3.png)
 
@@ -305,7 +305,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-5.png)
 
-4. Durch Spezifizieren der JWKS (JSON Web Key Set)-Adresse. JWKS ist ein Satz kryptografischer Schlüssel, die öffentliche Schlüssel enthalten, die zum Verifizieren von Autorisierungs-Token verwendet werden, die vom Autorisierungsserver ausgestellt wurden.
+4. Durch Spezifizieren der JWKS (JSON Web Key Set)-Adresse. JWKS ist ein Satz kryptografischer Schlüssel, die öffentliche Schlüssel enthalten, die zum Verifizieren von Autorisierungs-Tokens verwendet werden, die vom Autorisierungsserver ausgestellt wurden.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
 

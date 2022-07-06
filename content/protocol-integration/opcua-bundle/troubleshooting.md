@@ -49,3 +49,45 @@ For example:
 ```
 
 For additional information about log levels, refer to the [Logback architecture documentation](http://logback.qos.ch/manual/architecture.html#effectiveLevel).
+
+### Java Management Extensions (JMX) 
+
+For additional monitoring, the Gateway component provides MBeans. Those MBeans get exposed if following configuration is set in the application.yaml
+
+```
+spring:
+     jmx:
+         enabled: true
+```
+
+Via jconsole the MBeans can be selected and following attributes can be accessed:
+
+![jconsole MBeans](/images/device-protocols/opcua/opcua-jmx-mbeans.png)
+
+Particular for custom actions it is usefull to get some statistics. This attributes can be retrieved from CustomActionMBean:
+
+1. Table of all called URLs seperated by http return code and retry count.
+
+![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.PNG)
+
+The key entry of the table contains of 
+
+```
+{URL}_{HTTP Response Code}_{Retry Count}
+```
+
+
+
+2. If retry is enabled, the queue size of the retry queue can be monitored.
+
+![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.PNG)
+
+
+### Prometheus
+
+The OPC UA gateway doesn't provide prometheus endpoints! However, it is possible by using an additional component; jmx_exporter: https://github.com/prometheus/jmx_exporter
+to provide prometheus endpoints based on JMX.
+
+
+
+

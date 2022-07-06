@@ -6,5 +6,5 @@ slug: introduction
 
 aliases:
   - /predictive-analytics/introduction
+  - /machine-learning/welding-defect-detection
 ---
-

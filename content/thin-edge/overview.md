@@ -6,6 +6,8 @@ outputs:
 - html
 - json
 opensource: true
+aliases:
+  - /thin-edge/thin-edge-doc
 ---
 
 ### Why thin-edge.io

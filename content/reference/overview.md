@@ -16,6 +16,7 @@ aliases:
   - /reference-guide/device-control
   - /reference/device-credentials
   - /reference/identity
+  - /reference/notifications
   - /reference/users
   - /reference-guide/users
   - /reference/device-management-library

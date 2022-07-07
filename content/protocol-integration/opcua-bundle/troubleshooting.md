@@ -70,7 +70,7 @@ It can be is useful to get some statistics for custom actions in particular. The
 
 ![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.PNG)
 
-The key entry of the table contains of 
+The key entry of the table consists of:
 
 ```
 {URL}_{HTTP Response Code}_{Retry Count}

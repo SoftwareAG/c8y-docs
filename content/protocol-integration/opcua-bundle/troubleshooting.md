@@ -76,7 +76,6 @@ The key entry of the table consists of:
 {URL}_{HTTP Response Code}_{Retry Count}
 ```
 
-
 2. If retry is enabled, the queue size of the retry queue can be monitored.
 
 ![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.PNG)

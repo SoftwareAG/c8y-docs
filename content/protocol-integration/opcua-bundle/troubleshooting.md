@@ -64,7 +64,7 @@ Via jconsole the MBeans can be selected and the following attributes can be acce
 
 ![jconsole MBeans](/images/device-protocols/opcua/opcua-jmx-mbeans.png)
 
-Particular for custom actions it is usefull to get some statistics. This attributes can be retrieved from CustomActionMBean:
+It can be is useful to get some statistics for custom actions in particular. These attributes can be retrieved from the CustomActionMBean:
 
 1. Table of all called URLs seperated by http return code and retry count.
 

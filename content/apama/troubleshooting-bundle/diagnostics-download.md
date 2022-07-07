@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-info >}}
-Diagnostics are not available for the Apama Smart Rules-only microservice.
+Diagnostics are not available for the Apama-ctrl-smartrules microservice.
 {{< /c8y-admon-info >}}
 
 If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available from the bottom of the Streaming Analytics application: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the home screen and also on the pages that appear when you go to the Analytics Builder and EPL Apps pages (that is, in the EPL app manager and in the model manager).

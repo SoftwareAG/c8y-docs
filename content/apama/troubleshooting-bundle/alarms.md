@@ -34,7 +34,7 @@ The following is a list of the alarms. The information further down below explai
 
 - [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
 - [Safe mode on startup](#apama_safe_mode)
-- [Deactivating models in Apama Starter](#apama_ctrl_starter)
+- [Deactivating models in the Apama-ctrl-starter microservice](#apama_ctrl_starter)
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
@@ -94,15 +94,15 @@ To diagnose the cause of an unexpected restart, you can try the following:
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
 <a name="apama_ctrl_starter"></a>
-#### Deactivating models in Apama Starter
+#### Deactivating models in the Apama-ctrl-starter microservice
 
-This alarm is raised when Apama-ctrl switches from the fully capable microservice to Apama Starter with more than 3 active models.
+This alarm is raised when Apama-ctrl switches from the fully capable microservice to the Apama-ctrl-starter microservice with more than 3 active models.
 
 - Alarm type: `apama_ctrl_starter`
-- Alarm text: The following models were de-activated as Apama Starter is restricted to 3 active models: (&lt;models&gt;).
+- Alarm text: The following models were de-activated as Analytics Builder is restricted to 3 active models: (&lt;models&gt;).
 - Alarm severity: MINOR
 
-In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
+With the Apama-ctrl-starter microservice, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama-ctrl-starter. Since Apama-ctrl-starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
 <a name="apama_highmemoryusage"></a>
 #### High memory usage
@@ -160,7 +160,7 @@ See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.so
 <a name="apama_ctrl_fatalcritwarn"></a>
 #### Warning or higher level logging from an EPL file
 
-This alarm is raised whenever messages are logged by Apama EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
+This alarm is raised whenever messages are logged by EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
 The Streaming Analytics application allows you to deploy EPL files to the correlator. The Apama-ctrl microservice analyzes logged content in the EPL files and raises an alarm for specific log levels with details such as monitor name, log text and alarm type (either of WARNING or MAJOR), based on the log level.
 

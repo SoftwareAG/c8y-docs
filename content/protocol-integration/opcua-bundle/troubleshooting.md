@@ -60,7 +60,7 @@ spring:
          enabled: true
 ```
 
-Via jconsole the MBeans can be selected and following attributes can be accessed:
+Via jconsole the MBeans can be selected and the following attributes can be accessed:
 
 ![jconsole MBeans](/images/device-protocols/opcua/opcua-jmx-mbeans.png)
 

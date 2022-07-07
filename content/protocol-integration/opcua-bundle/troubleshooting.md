@@ -77,17 +77,6 @@ The key entry of the table contains of
 ```
 
 
-
 2. If retry is enabled, the queue size of the retry queue can be monitored.
 
 ![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.PNG)
-
-
-### Prometheus
-
-The OPC UA gateway doesn't provide prometheus endpoints! However, it is possible by using an additional component; jmx_exporter: https://github.com/prometheus/jmx_exporter
-to provide prometheus endpoints based on JMX.
-
-
-
-

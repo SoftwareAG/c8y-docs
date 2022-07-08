@@ -60,6 +60,10 @@ To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices*
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
 
+{{< c8y-admon-info >}}
+The maximum size allowed for the CSV file is 10 MB.
+{{< /c8y-admon-info >}}
+
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk.png)
 
 When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result.

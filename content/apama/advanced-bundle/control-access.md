@@ -4,7 +4,7 @@ title: Controlling access to the Streaming Analytics application
 layout: redirect
 ---
 
-By default, the Streaming Analytics application gives you access to the Analytics Builder and EPL Apps pages.
+By default, the Streaming Analytics application gives you access to the **Analytics Builder** and **EPL Apps** pages.
 Administrators may wish to control which of these are shown on different tenants or for different users,
 or modify the wording of the cards on the home screen (see also [Customizing the home screen of the Streaming Analytics application](/apama/advanced/#customize-home-screen)).
 

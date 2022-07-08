@@ -66,3 +66,9 @@ PUT /alarm/alarms/<alarmId>
 The 306 static template is provided to clear an active alarm of a specified type:
 
 `306,c8y_TemperatureAlarm`
+
+### Critical alarms
+
+When a device raises an alarm with the severity CRITICAL, the device is considered unavailable for the duration this alarm stays active. The aggregated availability overview in the **Service monitoring** tab will reflect this time as offline.
+
+Devices should use the severity "CRITICAL alarm" only for alarm statuses that impact the device's ability to fulfill its use case.

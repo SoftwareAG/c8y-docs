@@ -68,7 +68,7 @@ Particular for custom actions it is usefull to get some statistics. This attribu
 
 1. Table of all called URLs seperated by http return code and retry count.
 
-![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.PNG)
+![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.png)
 
 The key entry of the table contains of 
 
@@ -79,4 +79,4 @@ The key entry of the table contains of
 
 2. If retry is enabled, the queue size of the retry queue can be monitored.
 
-![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.PNG)
+![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.png)

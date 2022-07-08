@@ -304,6 +304,12 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be "OPAQUE", "TLV", "JSON" or "TEXT". In case of empty or invalid entries, the default format is "OPAQUE".
 <td style="text-align: left">Optional</td>
 </tr>
+<tr>
+<td style="text-align: left">Use common timestamp resources 5518 and 6050 or object specific timestamp for object 6 reported by the device if available / enableResourceLevelTimestamp</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">When this device property is enabled, then {{< product-c8y-iot >}} is registering the device's reported data either the time send from the device in the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. The timestamp is used only per Object ID reported in a single or composite device response. Using a timestamp from other objects is not possible. Otherwise {{< product-c8y-iot >}} will use its local date and time to register the resource data. Allowed values are true or false. Default: false.
+<td style="text-align: left">Optional, defaults to false</td>
+</tr>
 </tbody>
 </table>
 

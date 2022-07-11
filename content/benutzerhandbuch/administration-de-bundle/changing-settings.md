@@ -176,7 +176,7 @@ Sie können eine der folgenden Optionen wählen:
 
 {{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
-  {{< /c8y-admon-info >}}
+{{< /c8y-admon-info >}}
 
 * **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellung:
 	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.

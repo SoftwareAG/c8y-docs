@@ -48,7 +48,7 @@ To register devices, you can select one of the following options:
 * Single **[General](#device-registration-manually)** device registration - to manually connect one or more devices
 * Bulk **[General](#creds-upload)** device registration - to register larger amounts of devices in one step
 
-If you are subscribed to the required applications you will see other options for registering devices of specific types (e.g.: Actility LoRa or Sigfox). Full list of supported protocols can be found at [Protocol integration guide](/protocol-integration/overview)
+If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -59,19 +59,19 @@ If you are subscribed to the required applications you will see other options fo
 Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 {{< /c8y-admon-info >}}
 
-1. Expand device registration dropdown menu by clicking **Register device** button 
-2. Find `SINGLE REGISTRATION` section in the menu and then select **General**.
+1. Click **Registration** in the **Devices** menu of the navigator.
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
-3. In the result, **REGISTER DEVICES** form will be displayed.
+The **Register devices** dialog box will be displayed.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
-4. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-5. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-6. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
-7. Click **Next** to register your device(s).
+3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
+4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
+5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}
 In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly select a tenant to which the device will be added from here. Note that since the {{< management-tenant >}} does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
@@ -98,12 +98,11 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
-1. Expand device registration dropdown menu by clicking **Register device** button 
-2. Find `BULK REGISTRATION` section in the menu and then select **General**.
+1. Click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
-3. Click **+** button to select or drag-and-drop the CSV file you want to upload.
+2. Click the Plus button to select or drag-and-drop the CSV file you want to upload.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 

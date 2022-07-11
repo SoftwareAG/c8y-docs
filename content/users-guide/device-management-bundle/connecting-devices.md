@@ -75,9 +75,9 @@ The **Register devices** dialog box will be displayed.
 
 {{< c8y-admon-info >}}
 In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly select a tenant to which the device will be added from here. Note that since the {{< management-tenant >}} does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
-{{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+{{< /c8y-admon-info >}}
 
 After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
 
@@ -98,11 +98,13 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
-1. Click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
+1. Click **Registration** in the **Devices** menu of the navigator.
+
+2. Click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
-2. Click the Plus button to select or drag-and-drop the CSV file you want to upload.
+3. Click the Plus button to select or drag-and-drop the CSV file you want to upload.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
@@ -120,10 +122,10 @@ Bulk registration creates an elementary representation of the device. Then, the 
 
 The CSV file contains two columns: ID;PATH, where ID is the device identifier, for example, serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
-```asciidoc
-    ID;PATH
-    Device1;Group A
-    Device2;Group A/Group B			
+```
+ID;PATH
+Device1;Group A
+Device2;Group A/Group B			
 ```
 
 
@@ -135,10 +137,10 @@ The CSV files must contain at least the IDs as device identifier and the credent
 
 In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in this example.
 
-```asciidoc
-    ID;Credentials;PATH;ICCID;NAME;TYPE
-    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
-    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+```
+ID;Credentials;PATH;ICCID;NAME;TYPE
+006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
 ```
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:

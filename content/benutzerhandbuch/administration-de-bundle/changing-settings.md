@@ -539,7 +539,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
     ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
 
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
   {{< /c8y-admon-info >}}
 

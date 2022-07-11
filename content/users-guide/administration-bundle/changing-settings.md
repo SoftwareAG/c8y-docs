@@ -83,7 +83,7 @@ If the user agent is not found in the list of trusted or forbidden user agents t
 
 #### OAI-Secure
 
-OAI-Secure is a more secure alternative for Basic Auth mode that also supports username and password login. In OAI-Secure mode credentials in initial request are exchanged to JWT token that is set as a Cookie in web browser. Based on configuration OAI-Secure can support full session management or work as standard JWT authentication where user session lifetime is limited by token expiration time.
+OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged to a JWT token that is set as a cookie in the web browser. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
 ##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  

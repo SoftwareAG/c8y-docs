@@ -329,7 +329,7 @@ By default, dynamic access mapping assigns user roles, based on the access token
 When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
-The user ID can be set to any field of the authorization token sent to the platform. We recommend you to inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
  
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 

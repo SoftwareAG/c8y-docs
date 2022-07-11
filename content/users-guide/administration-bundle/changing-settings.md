@@ -357,7 +357,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
-4. By specifying the JWKS (JSON Web Key Set) address. JWKS is a set of cryptographic keys containing public keys used to verify tokens issued by the authorization server.
+4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 

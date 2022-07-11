@@ -69,7 +69,7 @@ The following endpoints and actions are supported:
 |[alarm/alarms](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Alarms)|x|x|x|&nbsp;|
 |[measurement/measurements](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Measurements)|x|x|&nbsp;|x|
 |[inventory/managedObjects](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
-|[inventory/child operations](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
+|[inventory/managedObjects/{id}/childDevices](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildDevicesResource)|x|&nbsp;|&nbsp;|&nbsp;|
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 

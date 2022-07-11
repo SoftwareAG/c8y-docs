@@ -14,8 +14,8 @@ The **user management feature** allows you to manage the users within your tenan
 
 {{< c8y-admon-related >}}
 - [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
-- [Tenant hierachy](/concepts/tenant-hierarchy) for information on the concept of multi-tenancy as opposed to user access control.
-- For managing users via REST, see [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}}.
+- [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
+- [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
 
 

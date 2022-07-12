@@ -142,6 +142,14 @@ The Device Management application provides functionalities for connecting, manag
 
 For details see [Device Management](/users-guide/device-management) in the *User guide*.
 
+<a name="device-protocol"></a>
+### Device protocol
+A device protocol describes how to integrate a specific device type into the {{< product-c8y-iot >}} platform.
+It describes how to map the device data into the {{< product-c8y-iot >}} data model.
+The definition of the device protocol differs based on the underlying protocol used by the device (for example, Modbus, LoRa, OPC UA or LWM2M).
+You don't need to create device drotocols for devices that are natively connected to the {{< product-c8y-iot >}} platform (for example, using device SDKs, thin-edge.io or REST/MQTT interfaces).
+For these devices the device agent will take care of the integration of the devices' data with the {{< product-c8y-iot >}} platform.
+
 <a name="digital-twin"></a>
 ### Digital twin
 

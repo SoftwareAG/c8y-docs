@@ -155,12 +155,12 @@ During the session token renewal the previous token is revoked and a new one is 
 
 <a name="token-settings"></a>
 
-#### Token Generation with OAI-Secure
+#### Token generation with OAI-Secure
 
-OAI-Secure is based primarily on JWT stored in a browser cookie. It can be also used to generate JWT in response body.
+OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
 The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-##### Lifespan configuration of JWT stored in Cookie
+##### Lifespan configuration of JWT stored in the cookie
 
 JWT tokens stored in the browser cookie have a default validity time of two weeks. 
 This can be changed with tenant options:
@@ -179,7 +179,7 @@ The default value is two weeks. It can also be set to any negative value so that
 
 ##### Lifespan configuration of JWT in response body
 
-The lifespan of JWT tokens generated in response body is configured with the following tenant options:
+The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
 - category: `oauth.internal`;
 - key: `body-token.lifespan.seconds`;
 

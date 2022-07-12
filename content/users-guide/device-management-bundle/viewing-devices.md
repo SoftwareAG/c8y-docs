@@ -73,8 +73,6 @@ For each device, the device list shows the following information provided in col
 </tbody>
 </table>
 
-The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
-
 <a name="configuring-columns"></a>
 ### Configuring columns
 
@@ -82,10 +80,9 @@ The columns shown in the device list may be configured to your needs.
 
 #### To show/hide standard columns
 
-1. In the top menu bar, click **Configure columns**.
-2. In the resulting dialog box, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
+1. In the table header, click **Configure columns**.
+2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
 <br>
-3. Click **Save**.
 
 The device list will reflect your changes and only show the selected columns.
 
@@ -93,15 +90,12 @@ The device list will reflect your changes and only show the selected columns.
 
 Moreover, you can add custom columns to show additional device properties.
 
-1. In the **Configure columns** dialog box, click **Add custom column**.<br>
+1. In the **Configure columns** dropdown, click **Add custom column**.<br>
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. In the **Header** field, enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
-4. Select the **Filtering mode** for the new column. <br>
-If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
-![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>In case of **Fragment exists**, filtering will be done by existence, that means, filtering is done based on whether the property exists or not.    
-5. Click **Add**.
+4. Toggle the **Add another column after saving this one** button active to create another custom column right after saving the current one without leaving the dialog.
+5. Click **Save**.
 
 The new column will be added and displayed in the device list.
 
@@ -142,23 +136,24 @@ Filtering is available on every column. Just click the filter icon next to the n
 
 ![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
-In the **Filter options** dialog box, specify your filter options.
+In the resulting popup, specify your filter options.
 
-Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term.
+Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Add next** to add another textbox if you want to filter for more than one term.
 
 Apart from filtering for text there are several other options:
 
 * In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided.
-* If the filter criteria was set to **Fragment exists** during configuration then the filtering will be done based on whether the fragment exists or not.
+* For custom columns, you can choose between filtering based on whether the fragment exists by clicking the **Only rows where value is defined** button active or specify one or more filter terms the entry must match.
 
-In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering.
+Finally, click **Apply** to carry out the filtering.
 
 The devices list will now only display devices matching the filtering options.
 
-Click **Clear filters** at the left of the top menu bar if you want to clear all filters and view all devices.
+Sorting is available on every column. Click the sort icon next in column header once to sort entries in ascending order and twice to sort the entries in descending order. One more click on the sort icon will remove sorting for this column.
+
+Click **Clear filters** in table header if you want to clear all filters and view all devices.
 
 {{< c8y-admon-info >}}
 If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.

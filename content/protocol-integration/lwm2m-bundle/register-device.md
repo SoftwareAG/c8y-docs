@@ -307,7 +307,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <tr>
 <td style="text-align: left">Use common timestamp resources 5518 and 6050 or object specific timestamp for object 6 reported by the device if available / enableResourceLevelTimestamp</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">When this device property is enabled, then {{< product-c8y-iot >}} is registering the device's reported data either the time send from the device in the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. The timestamp is used only per Object ID reported in a single or composite device response. Using a timestamp from other objects is not possible. Otherwise {{< product-c8y-iot >}} will use its local date and time to register the resource data. Allowed values are true or false. Default: false.
+<td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. This is possible if the device reports multiple resources at the same time. For example, this may be done using observes on entire object instances or composite reads and observes. Time stamp data needs to be reported as part of the same object: Either via the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. If this feature is disabled or no timestamp information is reported, {{< product-c8y-iot >}} will use its local date and time. Default: false</td>
 <td style="text-align: left">Optional, defaults to false</td>
 </tr>
 </tbody>

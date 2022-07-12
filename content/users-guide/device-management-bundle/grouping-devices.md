@@ -11,6 +11,13 @@ helpcontent:
   You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 ---
 
+{{< c8y-admon-related >}}
+* See [User guide > Cockpit > Managing assets > Assets hierarchy](https://cumulocity.com/guides/users-guide/cockpit/#managing-assets) for more information about group objects
+* See [User guide > Administration > Managing permissions > Inventory roles](https://cumulocity.com/guides/users-guide/administration/#inventory-roles) on how to assign inventory roles to groups of devices
+* See the [managed objects API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Managed-objects) for REST API methods concerning managed objects (devices or groups of devices)
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management
+{{< /c8y-admon-related >}}
+
 Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 {{< product-c8y-iot >}} distinguishes between top-level groups and subgroups:

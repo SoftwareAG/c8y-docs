@@ -6,6 +6,10 @@ aliases:
   - users-guide/optional-services/#connectivity
 ---
 
+{{< c8y-admon-related >}}
+* See [Reference guide > Device management library > Connectivity](https://cumulocity.com/guides/reference/device-management-library/#connectivity) for the device management library entry on connectivity
+{{< /c8y-admon-related >}}
+
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.

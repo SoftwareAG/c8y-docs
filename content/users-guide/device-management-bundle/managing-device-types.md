@@ -11,6 +11,12 @@ helpcontent:
   To add a new device protocol, click **Add device protocol** at the top right, select a device protocol type and configure it following the instructions for the particular type in the *Protocol integration guide*."
 ---
 
+{{< c8y-admon-related >}}
+* See [Concepts guide > Interfacing devices](https://cumulocity.com/guides/concepts/interfacing-devices/) for more information on how to interface devices
+* See [Protocol integration guide > LPWAN Custom device protocols](https://cumulocity.com/guides/protocol-integration/lpwan-custom-codec/) for custom device protocols for LPWAN devices
+{{< /c8y-admon-related >}}
+
+
 To process data from various device types, {{< product-c8y-iot >}} uses device protocols which are stored in a database.
 
 Click **Device protocols** in the **Device types** menu in the navigator.

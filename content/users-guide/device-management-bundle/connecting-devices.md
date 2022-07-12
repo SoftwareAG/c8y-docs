@@ -18,6 +18,12 @@ helpcontent:
     **Accepted** - the user has allowed the credentials to be send to the device"
 ---
 
+{{< c8y-admon-related >}}
+* See [Device integration tutorials](../../device-tutorials/tutorials-introduction) for information on the integration of specific devices
+* See the [Device SDK guide](../../device-sdk/introduction/) for information on device integration via REST and C++
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management
+{{< /c8y-admon-related >}}
+
 <a name="dev-registration"></a>
 
 ### Device registration

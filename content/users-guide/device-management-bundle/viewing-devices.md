@@ -11,6 +11,10 @@ helpcontent:
     You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
 ---
 
+{{< c8y-admon-related >}}
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management
+{{< /c8y-admon-related >}}
+
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
 
 A detailed device list will be displayed.

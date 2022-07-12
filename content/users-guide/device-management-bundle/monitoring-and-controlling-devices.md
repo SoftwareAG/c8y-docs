@@ -43,6 +43,13 @@ helpcontent:
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
 
+{{< c8y-admon-related >}}
+* See [Reference guide > Device management library > Device availability](https://cumulocity.com/guides/reference/device-management-library/#device-availability) for the device management library entry on device availability
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Operations) for REST API methods concerning operations
+* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Bulk-operations) for REST API methods concerning bulk operations
+{{< /c8y-admon-related >}}
+
 
 <a name="map"></a>
 ### Locating devices

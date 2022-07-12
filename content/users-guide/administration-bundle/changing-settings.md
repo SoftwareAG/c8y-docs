@@ -73,9 +73,8 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 
 #### OAI-Secure session configuration
 
-OAI-Secure can work in two modes with significant differences:
-
-##### Without a configuration related to the session (session configuration turned off)
+OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
+##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
@@ -134,25 +133,34 @@ During the session token renewal the previous token is revoked and a new one is 
 
 
 <a name="token-settings"></a>
-#### Token and cookie settings
 
-OAI-Secure is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
+#### Token Generation with OAI-Secure
 
-##### Token settings
+OAI-Secure is based primarily on JWT stored in a browser cookie. It can be also used to generate JWT in response body.
+The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-The default token validity time is two weeks. This can be changed with tenant options:
+##### Lifespan configuration of JWT stored in Cookie
+
+JWT tokens stored in the browser cookie have a default validity time of two weeks. 
+This can be changed with tenant options:
  - category: `oauth.internal`;
  - key: `basic-token.lifespan.seconds`;
 
 The minimum allowed value is 5 minutes.
 
-##### Cookies settings
+##### Lifespan configuration of cookies
 
-Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
+Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
 The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
+
+##### Lifespan configuration of JWT in response body
+
+The lifespan of JWT tokens generated in response body is configured with the following tenant options:
+- category: `oauth.internal`;
+- key: `body-token.lifespan.seconds`;
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 

@@ -275,8 +275,6 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Provider name|Name of the provider
 |Visible on Login page|Indicates whether the login option is enabled or not.
 |Audience|Expected aud parameter of JWT
-|Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
-|Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
@@ -331,8 +329,9 @@ By default, dynamic access mapping assigns user roles, based on the access token
 When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
-
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+ 
+![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
  If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
@@ -358,7 +357,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
-4. By specifying the JWKS (JSON Web Key Set) address.
+4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 

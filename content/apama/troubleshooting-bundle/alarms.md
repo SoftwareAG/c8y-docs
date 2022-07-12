@@ -34,7 +34,7 @@ The following is a list of the alarms. The information further down below explai
 
 - [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
 - [Safe mode on startup](#apama_safe_mode)
-- [Deactivating models in Apama Starter](#apama_ctrl_starter)
+- [Deactivating models in the Apama-ctrl-starter microservice](#apama_ctrl_starter)
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
@@ -59,10 +59,10 @@ The alarm texts for the alarms below may undergo minor changes in the future.
 This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 - Alarm type: `tenant_option_change`
-- Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
+- Alarm text: Detected changes in tenant option. Apama-ctrl will restart in order to use it.
 - Alarm severity: MAJOR
 
-Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change automatically restarts the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that Apama has detected a change in a tenant option and will restart in order to use it.
+Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change automatically restarts the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that changes have been detected in a tenant option and that Apama-ctrl will restart in order to use it.
 
 Once you see this alarm, you can be sure that your change is effective.
 
@@ -72,10 +72,10 @@ Once you see this alarm, you can be sure that your change is effective.
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
 - Alarm type: `apama_safe_mode`
-- Alarm text: Apama appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
+- Alarm text: Apama-ctrl appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Apama detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, analytic models, extensions), Apama disables them all as a precaution. Potential causes are, for example, an EPL app that consumes more memory than is available or an extension containing bugs.
+Apama-ctrl detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, analytic models, extensions), Apama-ctrl disables them all as a precaution. Potential causes are, for example, an EPL app that consumes more memory than is available or an extension containing bugs.
 
 You can check the mode of the microservice (either normal or safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
@@ -94,15 +94,15 @@ To diagnose the cause of an unexpected restart, you can try the following:
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
 <a name="apama_ctrl_starter"></a>
-#### Deactivating models in Apama Starter
+#### Deactivating models in the Apama-ctrl-starter microservice
 
-This alarm is raised when Apama-ctrl switches from the fully capable microservice to Apama Starter with more than 3 active models.
+This alarm is raised when Apama-ctrl switches from the fully capable microservice to the Apama-ctrl-starter microservice with more than 3 active models.
 
 - Alarm type: `apama_ctrl_starter`
-- Alarm text: The following models were de-activated as Apama Starter is restricted to 3 active models: (&lt;models&gt;).
+- Alarm text: The following models were de-activated as Analytics Builder is restricted to &lt;activate limit&gt; active models: (&lt;models&gt;).
 - Alarm severity: MINOR
 
-In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
+With the Apama-ctrl-starter microservice, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama-ctrl-starter. Since Apama-ctrl-starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
 <a name="apama_highmemoryusage"></a>
 #### High memory usage
@@ -114,19 +114,19 @@ There are 3 variants of this alarm, depending on the time and count restrictions
 First variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Diagnostics file is located at &lt;URL-to-ZIP-file&gt; You can also download the file by navigating to Administration > Management > Files Repository
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Diagnostics file is located at &lt;URL-to-ZIP-file&gt; You can also download the file by navigating to Administration > Management > Files Repository
 - Alarm severity: WARNING
 
 Second variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have recently created diagnostics snapshot (within last hour).
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have recently created diagnostics snapshot (within last hour).
 - Alarm severity: WARNING
 
 Third variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
 - Alarm severity: WARNING
 
 Running EPL apps (and to a lesser extent, smart rules and analytic models) consumes memory, the amount will depend a lot on the nature of the app running. The memory usage should be approximately constant for a given set of apps, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text).
@@ -160,7 +160,7 @@ See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.so
 <a name="apama_ctrl_fatalcritwarn"></a>
 #### Warning or higher level logging from an EPL file
 
-This alarm is raised whenever messages are logged by Apama EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
+This alarm is raised whenever messages are logged by EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
 The Streaming Analytics application allows you to deploy EPL files to the correlator. The Apama-ctrl microservice analyzes logged content in the EPL files and raises an alarm for specific log levels with details such as monitor name, log text and alarm type (either of WARNING or MAJOR), based on the log level.
 

@@ -16,10 +16,6 @@ In the Streaming Analytics application, the term "activate" is used for deployin
 <a name="single-mon-file"></a>
 ### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
-{{< c8y-admon-info >}}
-To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant must be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
-{{< /c8y-admon-info >}}
-
 When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you must share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
 There is a restricted set of utilities and base events available for your EPL app. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles.

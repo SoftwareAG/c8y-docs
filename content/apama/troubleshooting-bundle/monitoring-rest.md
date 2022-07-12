@@ -13,7 +13,7 @@ The following monitoring endpoints are available for REST requests. These requir
     Also provides correlator and microservice status values. For details about the correlator status values, see "List of correlator status statistics" in the Apama documentation.  
 
     {{< c8y-admon-info >}}
-  For the multi-tenant variant of the Apama Smart Rules-only microservice, only basic microservice status values are provided.
+  For the multi-tenant variant of the Apama-ctrl-smartrules microservice, only basic microservice status values are provided.
     {{< /c8y-admon-info >}}
 - `/service/cep/prometheus`  
     GET only. Plain text format.  

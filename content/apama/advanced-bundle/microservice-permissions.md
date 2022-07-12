@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 100
 title: Modifying microservice permissions and resource usage
 layout: redirect
 ---

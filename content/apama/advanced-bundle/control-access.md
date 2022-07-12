@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 80
 title: Controlling access to the Streaming Analytics application
 layout: redirect
 ---

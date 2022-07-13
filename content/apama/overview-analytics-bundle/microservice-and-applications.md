@@ -23,6 +23,6 @@ If your tenant is subscribed to the Apama-ctrl-starter microservice, then the fo
 - The **EPL Apps** page is not available in the Streaming Analytics application.
 - Unlimited number of smart rules.
 
-If your tenant is subscribed to the Apama-ctrl-smartrules microservice, the **Analytics Builder** and **EPL Apps** pages are not available in the Streaming Analytics application.
+If your tenant is subscribed to the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice, the **Analytics Builder** and **EPL Apps** pages are not available in the Streaming Analytics application.
 
 Contact [product support](/welcome/contacting-support) to discuss adding more capabilities.

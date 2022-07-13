@@ -145,7 +145,7 @@ Apart from filtering for text there are several other options:
 * In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, you can choose between filtering based on whether the fragment exists by clicking the **Only rows where value is defined** button active or specify one or more filter terms the entry must match.
+* For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists,  or specify one or more filter terms the entry must match.
 
 Finally, click **Apply** to carry out the filtering.
 

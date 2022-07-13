@@ -94,7 +94,7 @@ Moreover, you can add custom columns to show additional device properties.
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. In the **Header** field, enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
-4. Toggle the **Add another column after saving this one** button active to create another custom column right after saving the current one without leaving the dialog.
+4. Switch the **Add another column after saving this one** toggle to active to create another custom column right after saving the current one without leaving the dialog.
 5. Click **Save**.
 
 The new column will be added and displayed in the device list.

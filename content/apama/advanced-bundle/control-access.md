@@ -14,7 +14,7 @@ Which pages are available also depends on the variant of the Apama-ctrl microser
 and only a card with information about smart rules is shown.
 - If the Apama-ctrl-starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama-ctrl-starter.
-- If the Apama-ctrl-smartrules microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled).
+- If the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled).
 In this case, only the card with information about the smart rules is shown.
 - For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 

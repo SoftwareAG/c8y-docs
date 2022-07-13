@@ -23,6 +23,6 @@ You can configure the number of client connections with the `client.numClients` 
 If you require a fully serial transport, set the value of `client.numClients` to 1. 
 
 {{< c8y-admon-info >}}
-This does not apply to the Apama-ctrl-smartrules microservices. They have a fixed value for this option, which is not configurable.
+This does not apply to the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices. They have a fixed value for this option, which is not configurable.
 {{< /c8y-admon-info >}}
 

@@ -100,7 +100,7 @@ There is no restriction on the number of devices that you can bulk-register but 
 
 1. Click **Registration** in the **Devices** menu of the navigator.
 
-2. Click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 

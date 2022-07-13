@@ -151,9 +151,9 @@ Finally, click **Apply** to carry out the filtering.
 
 The devices list will now only display devices matching the filtering options.
 
-Sorting is available on every column. Click the sort icon next in column header once to sort entries in ascending order and twice to sort the entries in descending order. One more click on the sort icon will remove sorting for this column.
+Sorting is available on every column. Click the sort icon in the respective column header once to sort the entries in ascending order and twice to sort the entries in descending order. Click the sort icon once more to remove sorting for this column.
 
-Click **Clear filters** in table header if you want to clear all filters and view all devices.
+Click **Clear filters** in the table header if you want to clear all filters and view all devices.
 
 {{< c8y-admon-info >}}
 If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.

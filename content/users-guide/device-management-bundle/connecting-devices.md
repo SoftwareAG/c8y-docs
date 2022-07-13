@@ -98,7 +98,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
 
 {{< c8y-admon-info >}}
-The feature requires the user to have READ permission for "Option management". In the case of missing permission, the security token policy defaults to OPTIONAL.
+The feature requires you to have READ permission for "Option management". In the case of missing permission, the security token policy defaults to OPTIONAL.
 {{< /c8y-admon-info >}}
 
 {{< product-c8y-iot >}} supports the following values for the security token policy:

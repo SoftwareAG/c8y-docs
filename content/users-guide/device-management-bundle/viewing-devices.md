@@ -94,7 +94,7 @@ Moreover, you can add custom columns to show additional device properties.
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. In the **Header** field, enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
-4. Toggle the **Add another column after saving this one** button active to create another custom column right after saving the current one without leaving the dialog.
+4. Switch the **Add another column after saving this one** toggle to active to create another custom column right after saving the current one without leaving the dialog.
 5. Click **Save**.
 
 The new column will be added and displayed in the device list.
@@ -145,15 +145,15 @@ Apart from filtering for text there are several other options:
 * In case of date fields (for example **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, you can choose between filtering based on whether the fragment exists by clicking the **Only rows where value is defined** button active or specify one or more filter terms the entry must match.
+* For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists,  or specify one or more filter terms the entry must match.
 
 Finally, click **Apply** to carry out the filtering.
 
 The devices list will now only display devices matching the filtering options.
 
-Sorting is available on every column. Click the sort icon next in column header once to sort entries in ascending order and twice to sort the entries in descending order. One more click on the sort icon will remove sorting for this column.
+Sorting is available on every column. Click the sort icon in the respective column header once to sort the entries in ascending order and twice to sort the entries in descending order. Click the sort icon once more to remove sorting for this column.
 
-Click **Clear filters** in table header if you want to clear all filters and view all devices.
+Click **Clear filters** in the table header if you want to clear all filters and view all devices.
 
 {{< c8y-admon-info >}}
 If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.

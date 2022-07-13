@@ -38,7 +38,8 @@ The second step covers the configuration of the bootstrap settings.
 This configuration enables the device to connect to the Cumulocity LWM2M bootstrap server.
 Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
 
-![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2.png)
+![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2-1.png)
+![LWM2M single device registration form - bootstrap 2](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2-2.png)
 
 The third step covers optional configurations.
 Refer to [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
@@ -64,7 +65,8 @@ The dialog also contains CSV template links.
 The maximum size allowed for the CSV file is 10 MB.
 {{< /c8y-admon-info >}}
 
-![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk.png)
+![LWM2M bulk device registration form 1](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-1.png)
+![LWM2M bulk device registration form 2](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-2.png)
 
 When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result.
 

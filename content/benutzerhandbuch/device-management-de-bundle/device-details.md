@@ -9,11 +9,11 @@ Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen
 
 ![Device info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-info.png)
 
-Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d.h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind.
+Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library) im *Reference Guide*.
 
 Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist.
 
-Jedes Gerät enthält mindestens die folgenden Registerkarten: **Info**, **Alarme**, **Steuerung**, **Ereignisse**, **Serviceüberwachung**, **Identifikator** (siehe auch die folgende Liste der Registerkarten).
+Jedes Gerät enthält mindestens die folgenden Registerkarten: **Info**, **Alarme**, **Steuerung**, **Ereignisse**, **Verfügbarkeit**, **Identifikator** (siehe auch die folgende Liste der Registerkarten).
 
 Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in den folgenden Abschnitten detailliert beschrieben:
 
@@ -36,6 +36,10 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <tr>
 <td align="left"><a href="#alarms">Alarme</a></td>
 <td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe <a href="#alarm-monitoring">Verwenden von Alarmen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a></td>
+<td style="text-align:left">Stellt die SIM-Management-Funktionalität bereit. Näheres dazu finden Sie unter <a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#events">Ereignisse</a></td>
@@ -79,7 +83,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
+<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LWM2M</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Messwerte</a></td>
@@ -92,10 +96,6 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPCUA-Server</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu über einen OPCUA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPCUA</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#service-monitoring">Serviceüberwachung</a></td>
-<td align="left">Ermöglicht die Serviceüberwachung von Maschinen. Näheres dazu finden Sie unter <a href="#monitoring-services">Serviceüberwachung</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
 <td align="left"><a href="#shell">Shell</a></td>
@@ -125,12 +125,16 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left"><a href="#tracking">Tracking</a></td>
 <td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
 </tr>
+<tr>
+<td align="left"><a href="#availability">Verfügbarkeit</a></td>
+<td align="left">Ermöglicht die Verfügbarkeitsüberwachung von Maschinen. Näheres dazu finden Sie unter <a href="#monitoring-availability">Verfügbarkeit</a>. Für jedes Gerät vorhanden.</td>
+</tr>
 </tbody>
 </table>
 
 >**Info:** Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der {{< product-c8y-iot >}}-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Eine detaillierte Beschreibung der Registerkarte **Modbus** ist beispielsweise unter [Cloud Fieldbus](/protocol-integration/cloud-fieldbus) im *Protocol Integration Guide* zu finden.
 
-Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
+Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Aktionsmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken.
 
@@ -189,23 +193,23 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 <td style="text-align:left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie auf <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken. </td>
 </tr>
 <tr>
-<td style="text-align:left">Aktive kritische Alarme</td>
-<td style="text-align:left">Zeigt die aktiven kritischen Alarme für das Gerät an.</td>
+<td style="text-align:left">Gerätestatus</td>
+<td style="text-align:left">Enthält verbindungsrelevante Informationen, die im Detail unter <a href="#connection-monitoring" class="no-ajaxy">Verbindungsüberwachung</a> beschrieben sind. </td>
+</tr>
+<tr>
+<td style="text-align:left">Gerät und Kommunikation</td>
+<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Bewegen Sie die x-Achse mit dem Mauszeiger, um den Datenpunkt-Zeitmesswert zu verschieben. Zum Hereinzoomen wählen Sie einen Zeitraum aus, zum Herauszoomen des Graphen führen Sie einen Doppelklick aus. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/benutzerhandbuch/cockpit-de#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation.<br> Folgende Messwerte können hier angezeigt werden: <br>
+<strong>Datenpunkte</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
+<strong>Alarme</strong>: c8y_UnavailabilityAlarm<br>
+<strong>Ereignisse</strong>: c8y_LocationUpdate</td>
 </tr>
 <tr>
 <td style="text-align:left">Gerätedaten</td>
 <td style="text-align:left">Enthält Informationen zum Gerät (ID, Name, Typ, Besitzer, zuletzt aktualisiert). Die Felder <strong>Name</strong> und <strong>Typ</strong> können bearbeitet werden. Unterhalb der allgemeinen Geräteinformationen werden auf der Karte Statusinformationen (nicht editierbar) zu aktiven Alarmen, Verfügbarkeit und Verbindung angezeigt. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
 </tr>
 <tr>
-<td style="text-align:left">Gerätestatus</td>
-<td style="text-align:left">Enthält verbindungsrelevante Informationen, die im Detail unter <a href="#connection-monitoring" class="no-ajaxy">Verbindungsüberwachung</a> beschrieben sind. </td>
-</tr>
-<tr>
-<td style="text-align:left">Gerät und Kommunikation</td>
-<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/benutzerhandbuch/cockpit-de#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation. <br>Folgende Messwerte können hier angezeigt werden: <br>
-<strong>Datenpunkte</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
-<strong>Alarme</strong>: c8y_UnavailabilityAlarm<br>
-<strong>Ereignisse</strong>: c8y_LocationUpdate</td>
+<td style="text-align:left">Aktive kritische Alarme</td>
+<td style="text-align:left">Zeigt die aktiven kritischen Alarme für das Gerät an.</td>
 </tr>
 <tr>
 <td style="text-align:left">Gruppenzuordnung</td>
@@ -249,7 +253,7 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 > **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
 
 <a name="logs"></a>
-### Logdateien
+### Logdaten
 
 Die Registerkarte **Logdateien** ermöglicht es, Loginformationen von Geräten zu verwalten.
 
@@ -358,20 +362,6 @@ Zum Konfigurieren von LAN-Parametern geben Sie einfach **IP-Adresse** und **Subn
 
 > **Info:** Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
 
-<a name="location"></a>
-### Standort
-
-Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
-
-![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
-
-Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
-
-<a name="service-monitoring"></a>
-### Serviceüberwachung
-
-Zusätzlich zur Verbindungsüberwachung bietet {{< product-c8y-iot >}} eine Serviceüberwachung von Maschinen, siehe [Serviceüberwachung](#monitoring-services).
-
 <a name="shell"></a>
 ### Shell
 
@@ -396,6 +386,15 @@ Klicken Sie auf **Historie ansehen** rechts in der oberen Menüleiste, um zur Re
 
 Weitere Informationen zum Verwalten und Aktualisieren der auf einem Gerät installierten Software finden Sie unter [Verwalten von Software auf einem Gerät](#managing-software).
 
+<a name="location"></a>
+### Standort
+
+Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den "Pin" an die entsprechende Stelle in der Karte.
+
+![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
+
+Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
+
 <a name="control"></a>
 ### Steuerung
 
@@ -417,3 +416,8 @@ In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder e
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an.
 
 Abhängig vom Gerätetypen und der Integration in {{< product-c8y-iot >}} können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
+
+<a name="availability"></a>
+### Verfügbarkeit
+
+Die Registerkarte "Verfügbarkeit" ermöglicht die Verfügbarkeitsüberwachung von Maschinen. Näheres dazu finden Sie unter [Überwachen und Steuern von Geräten > Verfügbarkeit](#monitoring-availability).

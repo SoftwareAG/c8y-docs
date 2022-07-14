@@ -3,49 +3,6 @@ title: Anwenden von Geschäftsregeln
 weight: 50
 ---
 
-<a name="event-processing"></a>
-### Echtzeitverarbeitung
-
->**Wichtig:** Die hier beschriebene Funktionalität **Echtzeitverarbeitung** ist nur verfügbar, wenn Ihr Mandant Esper und nicht Apama abonniert hat. Apama ist die Standard-CEP-Engine für neue Mandanten. Für Mandanten, die Apama verwenden, ist eine ähnliche Funktionalität über die Seite **Streaming Analytics EPL Apps** verfügbar, siehe [Developing apps with the Streaming Analytics application](/apama/analytics-introduction/#apama-epl-apps). Im Falle einer Migration muss jeglicher CEL-Code ({{< c8y-event-language >}}) in EPL-Apps übersetzt werden. Näheres zur Migration finden Sie unter [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) im *Streaming Analytics Guide*.
-
-Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von {{< product-c8y-iot >}} automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Regeln implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
-
->**Info:** Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.  
-
-Klicken Sie auf **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Regeln anzuzeigen.
-
-<img src="/images/benutzerhandbuch/Administration/admin-event-processing.png" alt="Event processing">
-
-<br>Für jede Regel wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
-
-Wenn der Status einer Regel auf **Gestartet** gesetzt ist, wird die durch die Anweisung erzeugte Ausgabe unterhalb des Häkchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie auf **Alle löschen**, um die Ausgabe zu entfernen.
-
-<a name="add-rule"></a>
-#### So fügen Sie eine Regel hinzu
-
-1. Klicken Sie auf **Neue Regel** in der oberen Menüleiste.
-2. Geben Sie oben einen Namen für die neue Regel ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.
-3. Standardmäßig ist der Status **Gestartet** voreingestellt, so dass die Anweisungen, die Sie erstellen, unmittelbar ausgeführt werden. Um dies zu verhindern, stellen Sie den Umschalter auf **Nicht gestartet**.
-4. Geben Sie Ihre CEP-Anweisungen in das Textfeld **Quellcode** ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie auf **Beispiele** und wählen Sie ein passendes Beispiel aus der Auswahlliste. Klicken Sie auf **Übernehmen**, um das Beispiel an der Position des Mauszeigers in das Textfeld **Quellcode** zu kopieren.
-5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
-
-Die folgende Beispielregel erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.
-
-<img src="/images/benutzerhandbuch/Administration/admin-event-processing-sample-module.png" alt="Example rule" style="max-width: 100%">
-
-#### So bearbeiten Sie eine Regel
-
-Klicken Sie einfach auf die Zeile der zu bearbeitenden Regel oder auf das Menüsymbol rechts neben der jeweiligen Zeile und danach auf **Bearbeiten**.
-
-Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie eine Regel hinzu](#add-rule).
-
-
-#### So löschen Sie eine Regel
-
-Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
-
-Anstatt eine Regel zu löschen, können Sie sie auch zeitweise deaktivieren, indem Sie den Status auf "Nicht gestartet" setzen.
-
 <a name="reprio-alarms"></a>
 ### Alarmregeln
 
@@ -66,14 +23,16 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreib
 4. Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie "Ignorieren", um den Alarm ganz zu unterdrücken.
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-> **Info:** Der in einer Alarmregel festgelegte Alarmtyp wird als &quot;&#60;type&#62;*&quot; interpretiert. Wenn Sie beispielsweise eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren sollen, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+> **Info:** Der als Alarmregel bereitgestellte Alarmtyp wird als Alarmtyp-Präfix interpretiert: &quot;&#60;type-prefix&#62;*&quot;. Wenn Sie z. B. eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren soll, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
 
 #### So bearbeiten Sie eine Alarmregel
 
 Um Alarmregeln zu bearbeiten, klappen Sie diese aus. Sie können die Beschreibung und den Alarmschweregrad ändern. Der Alarmtyp ist nicht editierbar.
 
+> **Info:** Aktualisieren die Liste, um Änderungen zu verwerfen, ohne sie zu speichern.
+
 <img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### So löschen Sie eine Alarmregel
 
-Zum Löschen einer Alarmregel bewegen Sie den Mauszeiger darüber und klicken Sie auf das Löschen-Symbol.
+Zum Löschen einer Alarmregel bewegen Sie den Mauszeiger darüber und klicken Sie auf das Löschen-Symbol, das beim Bewegen des Mauszeigers über die Zeile sichtbar wird.

@@ -6,7 +6,7 @@ layout: redirect
 
 You can access the Edge appliance from the {{< product-c8y-iot >}} tenant by installing the VNC components on your Edge appliance.
 
-**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
+**Info:** Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/remote-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 ### Step 1: Installing the VNC components
 
@@ -46,7 +46,9 @@ The connection to the Edge appliance is established and the UI appears for the E
 
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
-**Important:** Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+{{< c8y-admon-important >}}
+Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+{{< /c8y-admon-important >}}
 
 ### Changing the VNC password
 

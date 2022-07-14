@@ -9,7 +9,9 @@ aliases:
 
 Operations on model groups.
 
->**Info:** Currently, model groups can be used for grouping PMML models only.
+{{< c8y-admon-info >}}
+Currently, model groups can be used for grouping PMML models only.
+{{< /c8y-admon-info >}}
 
 ### GET - List PMML groups
 

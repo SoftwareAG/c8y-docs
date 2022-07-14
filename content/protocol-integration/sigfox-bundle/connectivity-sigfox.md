@@ -5,14 +5,16 @@ layout: redirect
 ---
 
 
-Before you register a device, you must configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You must set up these Sigfox Cloud credentials in Sigfox.
+Before you register a device, you must configure the Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You must set up these Sigfox Cloud credentials in Sigfox.
 
 Before you create API access to {{< product-c8y-iot >}}, you must have an "Associated user" which is added to the {{< product-c8y-iot >}} group in Sigfox Cloud and has the following profiles:
 
 - Customer [R]
 - Device Manager [W]
 
-> **Important:** Without the profiles described below, the required Sigfox API access can not be set up.
+{{< c8y-admon-important >}}
+Without the profiles described below, the required Sigfox API access can not be set up.
+{{< /c8y-admon-important >}}
 
 ### Step 1
 
@@ -37,18 +39,38 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
-The following information must be provided:
+The **Connectivity** tab facilitates creating, updating, and deleting multiple Sigfox connections.
 
+The following information must be provided in order to create a connection:
+
+- **Name**: Name of the Sigfox connection being created.
+- **Description**: Description of the Sigfox connection being created.
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
-- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, "https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info".
+- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
+- **Base URL:** URL that points to the Sigfox Cloud account.
 
-> **Info:** The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+{{< c8y-admon-info >}}
+The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+{{< /c8y-admon-info >}}
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 
 ![API access page](/images/device-protocols/sigfox/sigfox-connectivity.png)
 
-Click **Save credentials** to save your settings. If everything is correct, a message "Credentials successfully saved" will be displayed.
+Click **Save**. If you have entered the correct information, the message "Credentials successfully saved" will be displayed.
 
-If you wish to overwrite your previous credentials, click **Replace credentials** and add your new credentials.
+To add another connection, click **Add Connection** and follow the steps above.
+
+### To update a connection
+
+Select the connection to be updated, make your edits, and save the connection.
+
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+
+
+###  To delete a connection
+
+Select the connection to be deleted and click **Delete**.
+
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".

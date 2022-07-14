@@ -70,7 +70,7 @@ As a final configuration step, you must register the RaspPi device to the {{< pr
 
 To view the device in your {{< product-c8y-iot >}} account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>".
 
-Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
+Add the RaspPi device to a group, see [Grouping devices](/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes.
 
 Now click the **Child devices** tab of the RaspPi to list the connected TinkerForge components. The display will look similar to the following:
 

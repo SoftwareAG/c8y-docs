@@ -104,7 +104,9 @@ $ ./microservice pack --name hello-world
 
 It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar_ which is an exported Docker image.
 
-> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< c8y-admon-important >}}
+When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< /c8y-admon-important >}}
 
 ### Deploying
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2021 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
+# Copyright (c) 2018-2022 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
 # Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.
 #
 
@@ -82,14 +82,14 @@ zip $UI_VERSION.zip package-cumulocity-$UI_VERSION.zip
 chown karaf:karaf $UI_VERSION.zip
 cd $CPWD
 
+mkdir -p $EXTRACTED_PATH
+tar -C $EXTRACTED_PATH -xvzf $ARCHIVE
+
 echo "Started archive restore procedure"
 echo "Restoring device-id from 10.7"
 DEVICE_ID=$(cat $EXTRACTED_PATH/configs/edge-agent_device-id)
-curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'","edge_agent_enabled":true}' 127.0.0.1:3032/configuration
+curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
 systemctl restart edge-agent
-
-mkdir -p $EXTRACTED_PATH
-tar -C $EXTRACTED_PATH -xvzf $ARCHIVE
 
 collections=$(ls $EXTRACTED_PATH/collections)
 

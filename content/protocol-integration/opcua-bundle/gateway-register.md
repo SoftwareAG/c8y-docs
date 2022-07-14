@@ -6,7 +6,9 @@ layout: redirect
 
 YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only must set the properties which are different from the default.
 
-> **Important**: When editing the YAML file, make sure to provide valid indentations.
+{{< c8y-admon-important >}}
+When editing the YAML file, make sure to provide valid indentations.
+{{< /c8y-admon-important >}}
 
 To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
 
@@ -27,7 +29,9 @@ gateway:
         baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
-> **Info:** Windows OS is used for the example.
+{{< c8y-admon-info >}}
+Windows OS is used for the example.
+{{< /c8y-admon-info >}}
 
 ### Configuration profile location on the filesystem
 
@@ -63,11 +67,15 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 ### Additional customizations
 
-> **Info:** If no additional customizations are required, you can skip this section.
+{{< c8y-admon-info >}}
+If no additional customizations are required, you can skip this section.
+{{< /c8y-admon-info >}}
 
-> **Info:** Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
+{{< c8y-admon-info >}}
+Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
 The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
 Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
+{{< /c8y-admon-info >}}
 
 The following properties can be manually configured in the YAML file:
 

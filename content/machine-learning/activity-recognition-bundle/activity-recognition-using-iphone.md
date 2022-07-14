@@ -9,14 +9,17 @@ aliases:
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone.
 
->**Info:** The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
-
+{{< c8y-admon-info >}}
+The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
+{{< /c8y-admon-info >}}
 
 #### Register a smartphone in the platform
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-c8y-iot >}}.
 
->**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< c8y-admon-info >}}
+Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< /c8y-admon-info >}}
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
 

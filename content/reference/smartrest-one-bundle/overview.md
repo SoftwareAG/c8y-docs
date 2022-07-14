@@ -20,7 +20,7 @@ Note that SmartREST 1.0 was designed for HTTP request/response and does not supp
 
 The support for SmartREST 1.0 was added to ease transition if you have an existing implementation using it.
 
-For general information on SmartREST 1.0, refer to Using the REST interface > [Using SmartREST](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
+For general information on SmartREST 1.0, refer to [Using the REST interface](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
 
 ### MQTT ClientId
 
@@ -95,9 +95,10 @@ SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint t
 ```http
 s/ol/<X-ID>
 ```
->**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
+{{< c8y-admon-info >}}
+To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
+{{< /c8y-admon-info >}}
 
->**Info:** To get notifications running, the platform device must have an external ID set which matches the MQTT client ID, otherwise it will not receive notifications.
 
 ### Limitations
 

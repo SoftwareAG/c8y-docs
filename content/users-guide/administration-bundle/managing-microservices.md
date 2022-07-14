@@ -95,7 +95,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tbody>
 </table>
 
->**Info:** All applications listed here are of the type "Microservice".
+{{< c8y-admon-info >}}
+All applications listed here are of the type "Microservice".
+{{< /c8y-admon-info >}}
 
 <a name="custom-microservices"></a>
 ### Custom microservices
@@ -107,7 +109,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+{{< c8y-admon-important >}}
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+{{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
 ### Microservice properties
@@ -158,7 +162,7 @@ In the **Properties** tab, each microservice will show the following information
 </tbody>
 </table>
 
-Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#usage-and-billing) for details on these parameters.
+Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Usage statistics and billing > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage ) for details on these parameters.
 
 #### Microservice subscription
 
@@ -223,11 +227,15 @@ To view logs, open the **Logs** tab of the respective microservice.
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
-> **Info:** If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+{{< c8y-admon-info >}}
+If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+{{< /c8y-admon-info >}}
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-> **Info:** The time entered here may differ from the server time due to different time zones.
+{{< c8y-admon-info >}}
+The time entered here may differ from the server time due to different time zones.
+{{< /c8y-admon-info >}}
 
 At the top right, additional functionality is provided:
 
@@ -248,6 +256,8 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35 MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+{{< c8y-admon-info >}}
+There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35 MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
->Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
+Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
+{{< /c8y-admon-info >}}

@@ -4,7 +4,9 @@ title: JSON via MQTT
 layout: redirect
 ---
 
->**Info:** JSON via MQTT is meant as an addition to a device that is connected via SmartREST. This is not a standalone interface.
+{{< c8y-admon-info >}}
+JSON via MQTT is meant as an addition to a device that is connected via SmartREST. This is not a standalone interface.
+{{< /c8y-admon-info >}}
 
 This section describes the JSON payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
@@ -43,7 +45,9 @@ To publish messages in CEP mode:
 c/<api>/<resource>/<action>/<resource_id>
 ```
 
->**Info:** `<resource_id>` is not required for every `<action>`. See the examples below.
+{{< c8y-admon-info >}}
+`<resource_id>` is not required for every `<action>`. See the examples below.
+{{< /c8y-admon-info >}}
 
 Refer to [Processing mode](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 
@@ -71,7 +75,7 @@ The following endpoints and actions are supported:
 |[alarm/alarms](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Alarms)|x|x|x|&nbsp;|
 |[measurement/measurements](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Measurements)|x|x|&nbsp;|x|
 |[inventory/managedObjects](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Managed-objects)|x|&nbsp;|x|&nbsp;|
-|[inventory/child operations](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Child-operations)|x|&nbsp;|&nbsp;|&nbsp;|
+|[inventory/managedObjects/{id}/childDevices](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildDevicesResource)|x|&nbsp;|&nbsp;|&nbsp;|
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 
@@ -161,7 +165,7 @@ Example payload:
 
 ### Receiving operations
 
-A notification client can subscribe to the <kbd>notification/operations</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
+A notification client can subscribe to the <kbd>devicecontrol/notifications</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 
 Additionally, it contains an [External ID](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/External-IDs), so the client can identify for which child the operation is executed.
 

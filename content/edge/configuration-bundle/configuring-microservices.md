@@ -8,10 +8,14 @@ Microservices are server-side applications which may be used to extend the {{< p
 
 For more information about Device simulator, see [Working with simulators](/users-guide/device-management/#simulator).
 
->**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
+{{< c8y-admon-info >}}
+Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
+{{< /c8y-admon-info >}}
 
 If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
 - 10.96.0.0/12
+
+Enabling the microservice hosting feature takes about 10 to 15 minutes to complete. 
 
 ### Enabling or disabling the microservice hosting feature using the UI
 
@@ -23,11 +27,15 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 3. Click **Edge** > **Microservices** in the navigator.
 4. Use the toggle button to enable the microservice hosting feature.
 
->**Important:** If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
+{{< c8y-admon-important >}}
+If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
+{{< /c8y-admon-important >}}
 
-To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**. 
+To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
-> **Info:** The **Add microservice** button will not be available if you have not enabled the microservice hosting feature.
+{{< c8y-admon-info >}}
+The **Add microservice** button will not be available if you have not enabled the microservice hosting feature.
+{{< /c8y-admon-info >}}
 
 Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
 
@@ -35,7 +43,9 @@ Upload the ZIP file for your microservice application. For more information abou
 
 To enable or disable the microservice hosting feature, use the following endpoints:
 
->**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< c8y-admon-important >}}
+To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< /c8y-admon-important >}}
 
 - [GET /edge/configuration/microservices](/edge/rest-api/#get-edgeconfigurationmicroservices)
 - [POST /edge/configuration/microservices](/edge/rest-api/#post-edgeconfigurationmicroservices)
@@ -49,4 +59,6 @@ Before disabling the microservice hosting feature, you should unsubscribe from a
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
 For more information about developing and hosting a microservice, see [Microservices SDK](/microservice-sdk/introduction/).
 
->**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< /c8y-admon-info >}}

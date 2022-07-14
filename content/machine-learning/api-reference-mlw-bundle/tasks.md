@@ -10,7 +10,9 @@ aliases:
 
 Operations on MLW tasks.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Get the list of tasks in the system
 
@@ -692,4 +694,3 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/tas
     "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
-

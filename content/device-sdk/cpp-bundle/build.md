@@ -43,7 +43,9 @@ Before starting developing your C++ agents for {{< product-c8y-iot >}}, you must
 </tbody>
 </table>
 
-> **Info:** There are several libcurl packages against different TLS libraries. You can select the one you prefer.
+{{< c8y-admon-info >}}
+There are several libcurl packages against different TLS libraries. You can select the one you prefer.
+{{< /c8y-admon-info >}}
 
 ### Compiling the library
 

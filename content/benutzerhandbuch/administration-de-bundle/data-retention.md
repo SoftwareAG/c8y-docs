@@ -39,7 +39,7 @@ Die Datenhaltungsregel wird zu den Berichtsdetails hinzugefügt.
 
 #### So bearbeiten Sie eine Datenhaltungsregel
 
-Klicken Sie einfach auf die Zeile der zu bearbeitenden Regel oder auf das Menüsymbol rechts neben der jeweiligen Zeile und danach auf **Bearbeiten**.
+Klicken Sie einfach auf die Zeile der zu löschenden Regel.
 
 Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie eine Datenhaltungsregel hinzu](#add-retention-rule).
 
@@ -73,15 +73,20 @@ Die Dateiablage bietet einen Überblick über die Dateien, die in Ihrem Konto ge
 
 Klicken Sie auf **Dateiablage** im Menü **Verwaltung**, um eine Liste aller Dateien anzuzeigen.
 
-Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite **Eigene Anwendungen** hochgeladen wurden, handeln.
+Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite **Alle Anwendungen** hochgeladen wurden, handeln.
 
-Für jede Datei wird der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
+Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
 <img src="/images/benutzerhandbuch/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### So laden Sie eine Datei von Ihrem Computer hoch
 
 Klicken Sie auf **Datei hochladen** in der oberen Menüleiste.
+
+<img src="/images/benutzerhandbuch/Administration/admin-files-repository-upload.png" alt="Files Repository download modal" style="max-width: 100%">
+
+Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen aus. Wenn Sie mehrere Dateien hochladen möchten, klicken Sie auf **Datei hinzufügen**, um eine weitere Datei auszuwählen. Sie können eine Datei vor dem Hochladen auch löschen, indem Sie rechts neben dem Dateifeld auf das Löschen-Symbol klicken.
+
 
 #### So laden Sie eine Datei von Ihrem Konto herunter
 

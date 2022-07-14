@@ -53,7 +53,9 @@ Only the last 100 logs are visible. Scroll down the page to **Load more** to vie
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
->**Info:** The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
+{{< c8y-admon-info >}}
+The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
+{{< /c8y-admon-info >}}
 
 ### Filtering logs
 

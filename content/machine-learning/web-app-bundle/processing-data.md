@@ -41,7 +41,9 @@ Click **Next** to proceed. <br>
 On uploading a valid file, you will see an uploading message.
 After the processing has been completed, you will see a corresponding notification.
 
->**Info:** The size of the uploaded file must not exceed 500 MB.
+{{< c8y-admon-info >}}
+The size of the uploaded file must not exceed 500 MB.
+{{< /c8y-admon-info >}}
 
 The steps involved in running the batch process on ONNX models/pipelines remain similar to the ones for PMML models. However, there is no option to enable score matching. Also, model groups for ONNX models are not supported yet.
 
@@ -78,7 +80,9 @@ Scheduled processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model's predictions is required for a desired time period.
 
->**Info:** Currently, scheduled processing is only applicable for PMML models and model groups. However, time series models must not be used for processing data in a scheduled manner.
+{{< c8y-admon-info >}}
+Currently, scheduled processing is only applicable for PMML models and model groups. However, time series models must not be used for processing data in a scheduled manner.
+{{< /c8y-admon-info >}}
 
 #### Scheduling a job
 
@@ -97,10 +101,11 @@ Use the **Apply across all models** toggle if you want the processing to happen 
 ![Scheduled process 3](/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
->**Info:**
-<br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
-<br>2. The data range selected for the schedule must not exceed 24 hours.
-<br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
+{{< c8y-admon-info >}}
+1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
+2. The data range selected for the schedule must not exceed 24 hours.
+3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
+{{< /c8y-admon-info >}}
 
 After the job is scheduled, you will see a corresponding notification.
 

@@ -8,7 +8,7 @@ layout: redirect
 
 |Item|Details|
 |:---|:---|
-|**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 16.2 <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.
+|**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 16.2 <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.<br>**Important:** Ensure that you keep the virtualization platform updated and free from vulnerabilities by following the security advisories provided by the vendors of the hypervisor.
 |**Edge appliance image**|To be downloaded from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), based on the target hypervisor. <br><br> For VMware (ESXi and Workstation Player), download all the 4 files:<br>- CumulocityIoTEdge-Appliance-*version*-VMware-disk1.vmdk<br>- CumulocityIoTEdge-Appliance-*version*-VMware-disk2.vmdk<br>- CumulocityIoTEdge-Appliance-*version*-VMware.mf<br>- CumulocityIoTEdge-Appliance-*version*-VMware.ovf<br><br> For Hyper-V, download the ZIP file:<br>- CumulocityIoTEdge-Appliance-*version*-HyperV.zip <br><br>The fixes for {{< product-c8y-iot >}} Edge:<br>- CumulocityIoTEdge-*version*.tar.gz |
 |**{{< product-c8y-iot >}} Edge license file**|To request the license file for {{< product-c8y-iot >}} Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (for example, myedge.domain.com), where {{< product-c8y-iot >}} Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](#domain-name-validation-for-edge-license-key-generation).|
 |**SSL key and SSL certificate**|Optional. Use your internal or an external CA (Certification Authority) to generate these files. These files must not be password-protected. Ensure that the SSL certificate has the complete certificates chain in the right order.<br>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
@@ -29,7 +29,9 @@ For example, if you provide **iot.com** as the domain name, you must possess an 
 * If you have an Internationalized Domain Name (IDN), then you must provide the translated ASCII equivalent domain name.<br>
 For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you must use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge installation process.<br>
 
-	>**Info:** An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+	{{< c8y-admon-info >}}
+An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+	{{< /c8y-admon-info >}}
 
 * Ensure that you adhere to the following domain name validation rules:
 	* The domain name must be a combination of case-insensitive alphanumeric characters separated by dot ( . ) or hyphen ( - ).
@@ -63,7 +65,7 @@ The following ports must be enabled by default in order to accept traffic from u
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
-|any|any|Edge appliance IP|TTCP/443|HTTPS
+|any|any|Edge appliance IP|TCP/443|HTTPS
 |any|any|Edge appliance IP|TCP/1883|MQTT
 |any|any|Edge appliance IP|TCP/8883|MQTT/TLS
 
@@ -96,4 +98,6 @@ The virtual machine has the following minimum hardware requirements:
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
 
->**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
+{{< c8y-admon-info >}}
+This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
+{{< /c8y-admon-info >}}

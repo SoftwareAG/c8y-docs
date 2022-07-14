@@ -8,7 +8,7 @@ This section describes specific aspects of developing microservices using the RE
 
 {{< product-c8y-iot >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
 
-REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is�[RESTful Web Services](http://oreilly.com/catalog/9780596529260).
+REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
 With this API description you will learn how to use {{< product-c8y-iot >}}'s REST interfaces to develop microservice applications on top of the {{< product-c8y-iot >}} platform.
 
@@ -79,9 +79,9 @@ Now, click the **Collections** tab on the top left of Postman. You should see a 
 
 Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You must tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 
-* Click on the cogwheel on the top right and select **Manage Environments**, then click **Add**.
-* Enter a name for the environment (for example your tenant ID), then add values for the placeholders.
-* Configure a key _url_ with a value of _https://&lt;yourTenant&gt;.{{< domain-c8y >}}_. Click **Submit**.
+* Click the cogwheel on the top right and select **Manage Environments**, then click **Add**.
+* Enter a name for the environment (for example, your tenant ID), then add values for the placeholders.
+* Configure a key _url_ with a value of _https://&lt;TENANT_NAME&gt;.{{< domain-c8y >}}_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 

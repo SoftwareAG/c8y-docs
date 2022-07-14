@@ -19,7 +19,7 @@ Es gibt zwei Typen von Smart Rules:
 
 * **Globale Smart Rules**
 
-  Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer etc.).
+  Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
   In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
 
@@ -83,6 +83,8 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 
 ### So beheben Sie Fehler in einer Smart Rule
 
+> **Info:** Diese Funktion ist bei Apama nicht verfügbar.
+
 Um die Fehlersuche zu vereinfachen, gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul.
 
 Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Quelltext ansehen**, um diesen Link zu verwenden.
@@ -90,11 +92,11 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 <a name="toggle-rules"></a>
 ### So schalten Sie eine Smart Rule ein/aus
 
-Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
+Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
-Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
+Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
 
 Zusätzlich zum globalen Ein-/Ausschalten einer Smart Rule kann eine Smart Rule für konkrete Objekte (Gruppen oder Geräte) im **aktiven** oder **inaktiven** Zustand sein. Im **aktiven** Zustand verarbeitet die Regel Ereignisse für diese Gruppen und Geräte.
 

@@ -45,8 +45,9 @@ The CSV file used in bulk registration should meet the requirements described in
 
 Single registration is not supported for devices which are going to use certificates for authentication.
 
->**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
-
+{{< c8y-admon-info >}}
+During device registration, the device user is created, which is necessary for device communication with the platform.
+{{< /c8y-admon-info >}}
 
 ### JWT token retrieval
 

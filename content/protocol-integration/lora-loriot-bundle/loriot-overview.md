@@ -12,7 +12,9 @@ layout: redirect
 * Post-process raw device data through {{< product-c8y-iot >}} events.
 * Make use of existing {{< product-c8y-iot >}} features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
->**Info:** The Loriot agent automatically creates a LoRa device in the {{< product-c8y-iot >}} platform if it does not exist so explicit registration is not required.
+{{< c8y-admon-info >}}
+The Loriot agent automatically creates a LoRa device in the {{< product-c8y-iot >}} platform if it does not exist so explicit registration is not required.
+{{< /c8y-admon-info >}}
 
 The following illustration gives an overview of the {{< product-c8y-iot >}} Loriot LoRa integration.
 

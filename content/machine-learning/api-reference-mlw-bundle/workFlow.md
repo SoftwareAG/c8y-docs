@@ -9,7 +9,9 @@ aliases:
 
 Training WorkFlow in MLW.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### POST - Retrain Machine Learning models using WorkFlow
 

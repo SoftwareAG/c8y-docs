@@ -6,7 +6,9 @@ layout: redirect
 
 In {{< product-c8y-iot >}} Edge, you can customize the appearance of your tenant to your own preferences.
 
->**Info:** Use the domain name to access the {{< product-c8y-iot >}} Edge platform to properly apply the branding and see the effects after branding.
+{{< c8y-admon-info >}}
+Use the domain name to access the {{< product-c8y-iot >}} Edge platform to properly apply the branding and see the effects after branding.
+{{< /c8y-admon-info >}}
 
 To access the branding feature:
 

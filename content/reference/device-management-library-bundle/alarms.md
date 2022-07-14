@@ -40,8 +40,6 @@ In addition to the required parameters above, the device may also include custom
 {{< product-c8y-iot >}} provides several static SmartREST templates for basic alarm management for device. They can be found with message IDs between 301 and 304 for different severities:
 
 `302,c8y_TemperatureAlarm,"CPU temperature too high"`
-  * Clearing an alarm of a specified type <br>
-    `306,c8y_TemperatureAlarm`
 
 ### Clearing alarms
 When a device detects that the local alarm status was resolved it must clear the alarm. This is done by updating the alarm status to CLEARED.
@@ -66,3 +64,9 @@ PUT /alarm/alarms/<alarmId>
 The 306 static template is provided to clear an active alarm of a specified type:
 
 `306,c8y_TemperatureAlarm`
+
+### Critical alarms
+
+When a device raises an alarm with the severity CRITICAL, the device is considered unavailable for the duration this alarm stays active. The aggregated availability overview in the **Service monitoring** tab will reflect this time as offline.
+
+Devices should use the severity "CRITICAL alarm" only for alarm statuses that impact the device's ability to fulfill its use case.

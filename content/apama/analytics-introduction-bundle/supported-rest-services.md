@@ -27,7 +27,7 @@ The following common error response codes can be expected for all requests:
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 401  | Unauthorized.                                                |
-| 403  | Forbidden. EPL apps are not available with Apama Starter. |
+| 403  | Forbidden. EPL apps are not available with the Apama-ctrl-starter microservice. |
 
 Any other response codes that can be expected from a specific request are given below.
 

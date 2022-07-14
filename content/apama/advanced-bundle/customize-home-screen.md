@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 90
 title: Customizing the home screen of the Streaming Analytics application
 layout: redirect
 ---

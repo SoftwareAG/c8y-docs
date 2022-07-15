@@ -63,7 +63,7 @@ The response interval set in the ```c8y_RequiredAvailability``` fragment is used
 
 The availability information computed by {{< product-c8y-iot >}} is stored in the device fragments `c8y_Availability` and `c8y_Connection`.
 
-    "c8y_Availability": { "lastMessage": "2022-05-21...", "status": "AVAILABLE" },
+    "c8y_Availability": { "lastMessage": "2022-05-01T22:21:22", "status": "AVAILABLE" },
     "c8y_Connection": {"status":"CONNECTED"}
 
 |Name|Type|Description|

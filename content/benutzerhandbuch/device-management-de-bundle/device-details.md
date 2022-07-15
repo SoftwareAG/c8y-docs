@@ -279,7 +279,7 @@ Die Loginformationen des Geräts werden abgefragt.
 
 ![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
->Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
+Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
 
 Sobald die Logdaten vom Gerät auf die {{< product-c8y-iot >}}-Plattform übertragen wurden, werden Sie in der Registerkarte **Logdateien** gelistet. Die Zeile in der Liste zeigt das jeweils angeforderte Zeitintervall.
 

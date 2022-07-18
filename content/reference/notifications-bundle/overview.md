@@ -29,7 +29,7 @@ This API requires the calling user to be an authenticated {{< product-c8y-iot >}
 When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations or any combination of these) to filter by. The alarms with children and events with children allow users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
 It is also possible to filter by presence of a specific JSON fragment or "fragment type".
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
-For usage, please refer to [OpenAPI documentation](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
+For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
 
 ### Receiving subscribed notifications
 

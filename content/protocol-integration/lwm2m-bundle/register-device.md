@@ -6,7 +6,7 @@ layout: redirect
 
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
 In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device.
-The client-initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client.
+The client-initiated bootstrap mode requires a LWM2M bootstrap server account pre-loaded in the LWM2M client.
 {{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
 
 
@@ -22,10 +22,10 @@ For both, navigate to **Devices** > **Registration** in the Device Management ap
 <a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
-To register a LWM2M device in {{< product-c8y-iot >}} use the LWM2M device registration form by navigating to **Devices** > **Registration** in the Device Management application and click **Register device** > **LWM2M** at the top right.
+To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **LWM2M** from the dropdown.
 The resulting device registration wizard has three steps.
 
-The first covers is mandatory settings for establishing a connection.
+The first covers mandatory settings for establishing a connection.
 Refer to [Mandatory settings](#lwm2m-device-registration-mandatory-settings) below for details about the fields.
 
 ![LWM2M single device registration form - mandatory](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1.png)
@@ -35,7 +35,7 @@ If PSK security mode is selected, additional settings are required.
 ![LWM2M single device registration form - mandatory with psk](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1-psk.png)
 
 The second step covers the configuration of the bootstrap settings.
-This configuration enables the device to connect to the Cumulocity LWM2M bootstrap server.
+This configuration enables the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
 Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
 
 ![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2-1.png)
@@ -105,7 +105,7 @@ The fields below must be contained to be able to establish a connection:
 <tr>
 <td style="text-align:left">Security mode / securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is chosen, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is selected, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>

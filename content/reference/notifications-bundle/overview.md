@@ -26,7 +26,7 @@ This subscribed object is known as the source object for the <kdb>notification/e
 Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations or any combination of these) to filter by. The alarms with children and events with children allow users to create explicit subscriptions that will allow the delivery of events and alarms for parent & children-managed objects.
+When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations or any combination of these) to filter by. The alarms with children and events with children allow users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
 It is also possible to filter by presence of a specific JSON fragment or "fragment type".
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
 For usage, please refer to [OpenAPI documentation](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)

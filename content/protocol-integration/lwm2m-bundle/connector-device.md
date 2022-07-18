@@ -14,9 +14,9 @@ Additionally, the bulk device registration status and result are shown under thi
 
 ![LWM2M connector bulk device registration result](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 We recommend you to never delete the connector device.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 ### Migration of the LWM2M devices
 

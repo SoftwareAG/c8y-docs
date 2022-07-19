@@ -40,26 +40,22 @@ ROLES & PERMISSIONS:
 
   <img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
 
-3.  In the **Tab** section of the dashboard editor, provide the following information:
+3. In the **Tab** section of the dashboard editor, provide the following information:
 
-        * An icon which is shown next to the dashboard name in the navigator.
-        * A menu label to be used as the name of the dashboard.
-        * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+    * An icon which is shown next to the dashboard name in the navigator.
+    * A menu label to be used as the name of the dashboard.
+    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+<br><br>
+4. Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
+5. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+6. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
-    <br><br>
-
-4.  Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
-5.  In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
-6.  Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
-
-        {{< c8y-admon-info >}}
-
-    The widget titles will be translated only if a valid translation is available.
+    {{< c8y-admon-info >}}
+The widget titles will be translated only if a valid translation is available.
     {{< /c8y-admon-info >}}
+7. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-7.  In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
-
-8.  Click **Save** to create and open the dashboard.
+8. Click **Save** to create and open the dashboard.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
@@ -68,7 +64,6 @@ ROLES & PERMISSIONS:
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 
 <a name="sharing-dashboards"></a>
-
 ### Sharing dashboards
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
@@ -102,7 +97,8 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach. With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [Sharing dashboards](#sharing-dashboards).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [Sharing dashboards](#sharing-dashboards).
+
 
 ### To delete a dashboard
 

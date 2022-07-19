@@ -85,7 +85,7 @@ Smart rules can both be created in the **Global smart rules** page (global smart
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
 3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](#smart-rules-collection).
-5. Click **Create** to create the smart rule.
+6. Click **Create** to create the smart rule.
 
 {{< c8y-admon-info >}}
 When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#toggle-rules).
@@ -93,11 +93,13 @@ When you create a smart rule in the **Global smart rules** page, it will be acti
 
 Smart rules can be instantiated multiple times.
 
+
 ### To edit a smart rule
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
 For details on the fields see [To create a smart rule](#create-rules).
+
 
 ### To duplicate a smart rule
 
@@ -120,7 +122,6 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
 <a name="toggle-rules"></a>
-
 ### To enable/disable a smart rule
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
@@ -135,7 +136,7 @@ In addition to globally enabling/disabling a smart rule, a smart rule can be in 
 On creating a smart rule in the **Global smart rules** page, it will be active by default for all assets, unless you explicitly select target asset(s). If specific target assets are selected, it will be deactivated for all other assets. A local smart rule created in the **Info** page of a particular group or device is automatically activated for the respective target asset (and its direct children).
 {{< /c8y-admon-info >}}
 
-To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.
+To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
@@ -157,7 +158,7 @@ To define a threshold rule follow these steps:
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points).
 4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-   <br>
+<br>
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

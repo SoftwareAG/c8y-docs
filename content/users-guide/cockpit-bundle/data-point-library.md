@@ -33,34 +33,35 @@ To open the data point library, click **Data point library** in the **Configurat
 
 A list of available data points will be opened. For each data point, the following information is provided in the list:
 
-- Color and label for the data point
-- Fragment name and series
-- Measurement unit
-- Values (minimum, maximum, red/yellow ranges)
+* Color and label for the data point
+* Fragment name and series
+* Measurement unit
+* Values (minimum, maximum, red/yellow ranges)
 
 ### To add a data point to the library
 
 1. Click **Add data point** in the top menu bar.
 2. Provide the following information:
 
-| Field        | Description                                        |
-| :----------- | :------------------------------------------------- |
-| Color        | Color for the data point visualization             |
-| Label        | Label to identify the data point                   |
-| Fragment     | Name of the fragment                               |
-| Series       | Name of the series                                 |
-| Unit         | Unit used for the measurement                      |
-| Target       | Target value                                       |
-| Minimum      | Minimum value shown on the y-axis                  |
-| Maximum      | Minimum value shown on the y-axis                  |
-| Yellow range | Min/max values for the yellow range (MINOR alarms) |
-| Red range    | Min/max values for the red range (CRITICAL alarms) |
+  |Field|Description|
+|:---|:---|
+|Color|Color for the data point visualization
+|Label|Label to identify the data point
+|Fragment|Name of the fragment
+|Series|Name of the series
+|Unit|Unit used for the measurement
+|Target|Target value
+|Minimum|Minimum value shown on the y-axis
+|Maximum|Minimum value shown on the y-axis
+|Yellow range|Min/max values for the yellow range (MINOR alarms)
+|Red range|Min/max values for the red range (CRITICAL alarms)
 
 3. Click **Save** to add the data point to the library.
 
 ### To edit a data point
 
 Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
+
 
 ### To delete a data point
 

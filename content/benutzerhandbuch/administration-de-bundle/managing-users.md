@@ -8,7 +8,7 @@ Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten 
 - Erstellen von Benutzern
 - Vergeben von Benutzernamen und Passwörtern
 - Speichern von Benutzerdetails
-- Legen Sie Anmeldeoptionen fest.
+- Festlegen der Anmeldeoptionen
 - Aktivieren einer zusätzlicher Login-Sicherheitsebene durch Zwei-Faktor-Authentifizierung (TFA)
 
 {{< c8y-admon-info >}}

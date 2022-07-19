@@ -12,7 +12,7 @@ Zur Verwendung dieser Funktionalität müssen die folgenden Anforderungen erfül
 
 * Sie verfügen über eine ADMIN-Berechtigung für den Berechtigungstyp "Anwendungsverwaltung".
 
-* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zum Clonen einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
+* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zur Duplizierung einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
 
 Wenn diese Anforderungen erfüllt sind, wird im Menü **Konfiguration** des Navigators der benutzerdefinierten Cockpit-Anwendung der Eintrag **App-Konfiguration** angezeigt.
 
@@ -49,4 +49,4 @@ Sie können auswählen, ob die Anpassung des Start-Dashboards
 
 #### Sonstiges
 
-Schließlich können Sie festlegen, dass der Navigator beim Start ausgeblendet sein soll. Standardmäßig wird der Navigator beim Start angezeigt.
+Abschließend können Sie festlegen, ob der Navigator beim Start ausgeblendet sein soll. Standardmäßig wird der Navigator beim Start angezeigt.

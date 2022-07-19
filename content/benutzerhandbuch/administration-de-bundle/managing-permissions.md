@@ -72,7 +72,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 <td align="left">Hat Zugriff auf die Anwendung Cockpit. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
 <tr>
-<td align="left">Gerätemanagement-Benutzer</td>
+<td align="left">Device Management-Benutzer</td>
 <td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Bulk-Operationen ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
 <tr>

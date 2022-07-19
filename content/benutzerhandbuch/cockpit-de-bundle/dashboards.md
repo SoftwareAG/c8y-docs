@@ -21,7 +21,7 @@ Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand vers
     * einen Namen für das Dashboard, der auch im Navigator angezeigt wird.
     * Die Position des Dashboards im Navigator. "10000" erscheint an oberster und "-10000" an unterster Position.
 <br><br>
-4. Aktivieren Sie die Option **Dashboard auf alle Geräte des Typs anwenden <Gerätetyp>**, um das Dashboard mit allen Geräten dieses Typs zu teilen.
+4. Aktivieren Sie die Option **Dashboard auf alle Geräte des Typs <Gerätetyp> anwenden**, um das Dashboard mit allen Geräten dieses Typs zu teilen.
 5. Im Abschnitt **Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
 6. Aktivieren Sie die Option **Widget-Titel übersetzen, wenn möglich**, um den Widget-Titel bei jeder Änderung der Sprache übersetzen zu lassen.
 
@@ -73,7 +73,7 @@ Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen
 2. Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 
 Eine alternative Methode zum Kopieren eines Dashboards ist das
-Konzept "Dashboard pro Typ".  Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
+Konzept "Dashboard pro Typ". Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
 
 
 ### So löschen Sie ein Dashboard

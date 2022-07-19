@@ -117,7 +117,7 @@ Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendun
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
 
-Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden aus:
+Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird

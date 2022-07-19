@@ -884,7 +884,7 @@ Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben 
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 {{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>

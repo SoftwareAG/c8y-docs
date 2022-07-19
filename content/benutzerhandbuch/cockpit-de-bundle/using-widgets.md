@@ -76,7 +76,9 @@ Wenn das Asset eine Gruppe oder ein Gerät mit Kindern ist, werden neben seinem 
 
 Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie die nicht zugewiesenen Geräte im Ordner **Nicht zugewiesene Geräte** auf der ersten Ebene der ausgewählten Gruppe.
 
->**Info:** Sie können nicht den Ordner **Nicht zugewiesene Geräte** selbst auswählen. Jedes Gerät innerhalb dieses Ordners kann jedoch auf der nächsten Ebene ausgewählt werden. Klicken Sie auf **Nicht zugewiesene Geräte**, um die nächste Ebene mit allen nicht zugewiesenen Geräten zu öffnen. Klicken Sie auf das gewünschte Gerät, um es auszuwählen.
+{{< c8y-admon-info >}}
+Sie können nicht den Ordner **Nicht zugewiesene Geräte** selbst auswählen. Jedes Gerät innerhalb dieses Ordners kann jedoch auf der nächsten Ebene ausgewählt werden. Klicken Sie auf **Nicht zugewiesene Geräte**, um die nächste Ebene mit allen nicht zugewiesenen Geräten zu öffnen. Klicken Sie auf das gewünschte Gerät, um es auszuwählen.
+{{< /c8y-admon-info >}}
 
 
 <a name="asset-search"></a>
@@ -84,7 +86,7 @@ Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie
 
 Zum schnellen Auffinden von Assets gibt es zwei Methoden:
 
-1. Volltextsuche,
+1. Volltextsuche und
 2. Filtern.
 
 <a name="general-search"></a>
@@ -98,7 +100,9 @@ Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Vollt
 
 Nachdem Sie das Asset ausgewählt haben, sehen Sie alle Kinder dieses Assets. Um zur übergeordneten Ebene zurückzukehren, klicken Sie auf das "X" im Suchfeld.
 
-> **Info:** Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verfügbar.
+{{< c8y-admon-info >}}
+Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verfügbar.
+{{< /c8y-admon-info >}}
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
 

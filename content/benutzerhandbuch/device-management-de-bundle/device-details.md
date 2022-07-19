@@ -428,7 +428,6 @@ Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts 
 ![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
 
 Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
-<a name="child-devices"></a>
 
 <a name="control"></a>
 ### Steuerung

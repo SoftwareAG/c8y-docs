@@ -8,8 +8,6 @@ The LWM2M connector device is an automatically generated device for the tenants 
 You can use this device to manage tenant-wide LWM2M devices.
 The `help` shell command shows the available operations and how to use them.
 
-![LWM2M connector device help command](/images/device-protocols/lwm2m/lwm2m-connector-device-help-command.png)
-
 Additionally, the bulk device registration status and result are shown under this device.
 
 ![LWM2M connector bulk device registration result](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)

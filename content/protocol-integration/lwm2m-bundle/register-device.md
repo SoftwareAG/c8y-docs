@@ -15,58 +15,37 @@ You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 * [Single device registration](#lwm2m-single-device-registration)
 * [Bulk device registration](#lwm2m-bulk-device-registration)
 
-For both, navigate to **Devices** > **Registration** in the Device Management application and click **Register device** at the top right.
-
-![LWM2M device registration dropdown](/images/device-protocols/lwm2m/lwm2m-device-reg-dropdown.png)
-
 <a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
-To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **LWM2M** from the dropdown.
-The resulting device registration wizard has three steps.
+To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
-The first covers mandatory settings for establishing a connection.
-Refer to [Mandatory settings](#lwm2m-device-registration-mandatory-settings) below for details about the fields.
-
-![LWM2M single device registration form - mandatory](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1.png)
-
+The LWM2M device registration wizard has three steps:
+* Required settings for establishing a connection.
+Refer to [Required settings](#lwm2m-device-registration-required-settings) below for details about the fields.
 If PSK security mode is selected, additional settings are required.
-
-![LWM2M single device registration form - mandatory with psk](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page1-psk.png)
-
-The second step covers the configuration of the bootstrap settings.
-This configuration enables the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
+* Bootstrap settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
 Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
-
-![LWM2M single device registration form - bootstrap](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2-1.png)
-![LWM2M single device registration form - bootstrap 2](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page2-2.png)
-
-The third step covers optional configurations.
+* Advanced setting for further optional configurations.
 Refer to [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
-
-![LWM2M single device registration form - advanced 1](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-1.png)
-![LWM2M single device registration form - advanced 2](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-2.png)
-![LWM2M single device registration form - advanced 3](/images/device-protocols/lwm2m/lwm2m-device-reg-single-page3-3.png)
 
 After filling all applicable information for the device, click **Register**.
 The UI will display a confirmation message.
-
-![LWM2M single device registration form - success](/images/device-protocols/lwm2m/lwm2m-device-reg-single-success.png)
 
 <a name="lwm2m-bulk-device-registration"></a>
 ### Bulk device registration
 
 If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
-To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application and click **Register device** > **Bulk device registration** > **LWM2M** at the top right.
+
+To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
+Refer to [Required settings](#lwm2m-device-registration-required-settings), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
 
 {{< c8y-admon-info >}}
 The maximum size allowed for the CSV file is 10 MB.
 {{< /c8y-admon-info >}}
 
-![LWM2M bulk device registration form 1](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-1.png)
-![LWM2M bulk device registration form 2](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-2.png)
 
 When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result.
 
@@ -78,8 +57,8 @@ The the bulk device registration operation will be displayed in the [LWM2M conne
 
 ### Device registration settings
 
-<a name="lwm2m-device-registration-mandatory-settings"></a>
-#### Mandatory settings
+<a name="lwm2m-device-registration-required-settings"></a>
+#### Required settings
 
 The fields below must be contained to be able to establish a connection:
 <table>
@@ -368,14 +347,9 @@ Firmware updates are also supported for the registration of unsecured devices as
 ### Duplicate LWM2M devices
 
 If a LWM2M device has been registered with the same endpoint ID before, the device registration will not register the device, neither for single nor for bulk device registrations.
+For single device registrations, the duplication error message will be displayed after clicking register.
+For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device](#connector-device)'s bulk upload operation result.
 
-For single device registrations, the UI will shown the message below:
-
-![Single device reg result for duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-device-reg-single-duplicated-device.png)
-
-For bulk device registrations, the information about duplicate LWM2M devices will be displayed under the [LWM2M connector device](#connector-device)'s operation result.
-
-![LWM2M bulk device registration connector operation with a duplicated device with endpoint](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res-with-1-duplicate.png)
 
 ### Device deletion
 

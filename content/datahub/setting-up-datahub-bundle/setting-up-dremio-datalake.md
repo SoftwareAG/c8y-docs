@@ -6,7 +6,9 @@ layout: redirect
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to select a Dremio account name, and provide credentials to the data lake. In the navigator, select **Dremio & Data Lake** under **Settings** to define those settings.
 
->**Info:** You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< c8y-admon-info >}}
+You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< /c8y-admon-info >}}
 
 ### Defining new settings
 
@@ -40,7 +42,9 @@ The following types of data lakes are currently supported:
 |Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication|
 
->**Info:** Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
+{{< c8y-admon-info >}}
+Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
+{{< /c8y-admon-info >}}
 
 ##### Amazon S3
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings must be defined for this data lake:
@@ -52,7 +56,9 @@ The following types of data lakes are currently supported:
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from {{< product-c8y-iot >}} DataHub|
 
->**Info:** An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
+{{< c8y-admon-info >}}
+An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
+{{< /c8y-admon-info >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 
@@ -89,7 +95,9 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
 |Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
 
-> **Info:** Impersonation is supported and may be used. However, when impersonation is enabled, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis. Also note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case.
+{{< c8y-admon-info >}}
+Impersonation is supported and may be used. However, when impersonation is enabled, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis. Also note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case.
+{{< /c8y-admon-info >}}
 
 For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 

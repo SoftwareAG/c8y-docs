@@ -46,6 +46,9 @@ If a parameter is in square brackets, it is optional.
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
 + <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
++ <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
++ <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
++ <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
@@ -93,6 +96,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#526">526,serial,configType</a>
 + <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
 + <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
++ <a href="#589">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
@@ -133,6 +137,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 + [526,serial,configType](#526)
 + [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
 + [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
++ [529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)
 + [530,serial,hostname,port,connectionKey](#530)
 
 </td>
@@ -484,6 +489,58 @@ Allows a device to provide information about the agent running on it.
 
 ```text
 122,thin-edge.io,0.6,https://thin-edge.io,Software AG
+```
+
+<a name="140"></a>
+##### Set advanced software list (140)
+
+Sets the list of advanced software installed on the device. Any existing list will be overwritten.
+
+| Position | Parameter               | Mandatory | Type   | Default value |
+|:---------|:------------------------|:----------|:-------|:--------------|
+| 1        | Name of the software    | YES       | String |               |
+| 2        | Version of the software | YES       | String |               |
+| 3        | Type of the software    | NO        | String |               |
+| 4        | URL of the software     | NO        | String |               |
+
+**Example**
+
+```text
+140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
+```
+
+<a name="141"></a>
+##### Append advanced software items (141)
+
+Appends advanced software items to the list that exists for the device.
+
+| Position | Parameter               | Mandatory | Type   | Default value |
+|:---------|:------------------------|:----------|:-------|:--------------|
+| 1        | Name of the software    | YES       | String |               |
+| 2        | Version of the software | YES       | String |               |
+| 3        | Type of the software    | NO        | String |               |
+| 4        | URL of the software     | NO        | String |               |
+
+**Example**
+
+```text
+141,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
+```
+
+<a name="142"></a>
+##### Remove advanced software items (142)
+
+Removes advanced software items from the list that exists for the device.
+
+| Position | Parameter               | Mandatory | Type   | Default value |
+|:---------|:------------------------|:----------|:-------|:--------------|
+| 1        | Name of the software    | YES       | String |               |
+| 2        | Version of the software | YES       | String |               |
+
+**Example**
+
+```text
+142,docker,3.2.1,nginx,1.6
 ```
 
 <a name="measurement-templates"></a>
@@ -1099,7 +1156,7 @@ Set the device profiles
 ```
 
 <a name="528"></a>
-##### Update Software (528)
+##### Update software (528)
 
 Update the software installed on the device.
 
@@ -1127,8 +1184,30 @@ The agent will also determine if there is a previous version of the software and
 When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
 {{< /c8y-admon-info >}}
 
+<a name="529"></a>
+##### Update advanced software (529)
+
+Update the software installed on the device.
+
+
+| Position | Parameter                     | Type   |
+|:---------|:------------------------------|:-------|
+| 1...     | List of 5 values per software | (n/a)  |
+| 1.1      | name                          | String |
+| 1.2      | version                       | String |
+| 1.2      | type                          | String |
+| 1.3      | URL                           | String |
+| 1.4      | action to be performed        | String |
+
+**Example**
+
+```text
+529,DeviceSerial,softwareA,1.0,url1,install,softwareB,2.0,url2,install
+```
+
+
 <a name="530"></a>
-##### Cloud Remote Access Connect (530)
+##### Cloud Remote Access connect (530)
 
 Establish tunneling by Remote Access device agent.
 

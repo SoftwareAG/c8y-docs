@@ -81,15 +81,14 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 {{< /c8y-admon-info >}}
 
-#### OAI-Secure session configuration
+#### OAI-Secure
 
-OAI-Secure can work in two modes with significant differences:
-
-##### Without a configuration related to the session (session configuration turned off)
+OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
+##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-##### With the configuration of the session (session configuration turned on)
+##### OAI-Secure with the configuration of the session management (session configuration turned on)
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
@@ -155,25 +154,34 @@ During the session token renewal the previous token is revoked and a new one is 
 
 
 <a name="token-settings"></a>
-#### Token and cookie settings
 
-OAI-Secure is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
+#### Token generation with OAI-Secure
 
-##### Token settings
+OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
+The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-The default token validity time is two weeks. This can be changed with tenant options:
+##### Lifespan configuration of JWT stored in the cookie
+
+JWT tokens stored in the browser cookie have a default validity time of two weeks. 
+This can be changed with tenant options:
  - category: `oauth.internal`;
  - key: `basic-token.lifespan.seconds`;
 
 The minimum allowed value is 5 minutes.
 
-##### Cookies settings
+##### Lifespan configuration of cookies
 
-Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
+Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
 The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
+
+##### Lifespan configuration of JWT in response body
+
+The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
+- category: `oauth.internal`;
+- key: `body-token.lifespan.seconds`;
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
@@ -275,8 +283,6 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Provider name|Name of the provider
 |Visible on Login page|Indicates whether the login option is enabled or not.
 |Audience|Expected aud parameter of JWT
-|Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
-|Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
@@ -331,8 +337,9 @@ By default, dynamic access mapping assigns user roles, based on the access token
 When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
-
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+ 
+![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
  If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
@@ -352,13 +359,13 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 2. By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-10.png)
 
 3. By providing the public key of a certificate manually to {{< product-c8y-iot >}}. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
-4. By specifying the JWKS (JSON Web Key Set) address.
+4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
@@ -431,7 +438,7 @@ To configure the logout all users feature follow these steps:
 
 To use the logout all users feature follow these steps:
 
-1. Go to the administrator console. 
+1. Go to the administrator console.
 2. Select the realm used in the SSO configuration for the tenant.
 3. Navigate to the **Sessions** tab in the **Manage** section and click **Logout all**.
 
@@ -448,6 +455,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-1.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-2.png)
 
 |Field|Description|
 |:---|:---|
@@ -552,7 +560,7 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 </tr>
 <tr>
 <td style="text-align:left">Default Value</td>
-<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".</td>
+<td style="text-align:left">Provide a default value to be automatically filled in the custom property field. Only available for properties with type "string".</td>
 </tr>
 <tr>
 <td style="text-align:left">Minimum</td>

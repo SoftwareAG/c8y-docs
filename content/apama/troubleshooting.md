@@ -5,4 +5,4 @@ layout: bundle
 collection: 'apama/troubleshooting'
 ---
 
-**Info:** If you have the Apama Smart Rules-only microservice (also called Apama-ctrl-smartrules), most of the functionality described in this topic does not apply. 
+If you have the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice, most of the functionality described in this topic does not apply.

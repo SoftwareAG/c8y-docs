@@ -13,9 +13,18 @@ aliases:
   - /users-guide/cockpit/#export
 ---
 
-
-
 The export functionality lets you export specific data to either CSV or Excel files.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view exports: READ permission for permission type "Inventory"
+- To edit exports: ADMIN permission for permission type "Inventory"
+- To add a new export: CREATE permission for permission type "Inventory"
+- To schedule an export: ADMIN permission for permission type "Schedule export"
+- To duplicate exports: ADMIN permission for permission type "Inventory"
+- To delete an export: ADMIN permission for permission type "Inventory"
+  {{< /c8y-admon-req >}}
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
@@ -26,13 +35,13 @@ In the **Export** page you will find a list displaying all exports with their na
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
 <a name="add-export"></a>
+
 #### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
-	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
+   ![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output.
-
 
 **Filters**
 
@@ -86,7 +95,7 @@ Click **Add predefined**, to add predefined properties. Simply select the desire
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you must set up at least one property for the custom values to appear in the export.
 
 Example:
-An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
+An export has 4 fields defined: time range, device name, type and c8y_SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
@@ -97,6 +106,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
+
 #### To schedule an export
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
@@ -160,7 +170,7 @@ To export data to a CSV or XLSX file, select the checkbox in front of the respec
 
 You will receive an email containing links to each export file.
 
-Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601]( https://www.w3.org/TR/NOTE-datetime).
+Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601](https://www.w3.org/TR/NOTE-datetime).
 
 When the export documents limit is reached and the result is truncated due to its limitations, an additional line with an indicator is added at the end of document.
 
@@ -177,7 +187,6 @@ limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceed
 Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
 
 For details on the fields see [To add an export](#add-export).
-
 
 #### To duplicate an export
 

@@ -12,6 +12,7 @@ helpcontent:
 ---
 
 <a name="assets"></a>
+
 ### Assets hierarchy
 
 Assets represent business objects in general like buildings, machines, production units or cars.
@@ -22,9 +23,9 @@ Assets are organized in hierarchies. For example, an energy monitoring applicati
 
 The asset hierarchy is composed of two types of objects:
 
-* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
+- **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+- **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
@@ -35,20 +36,19 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
+
 #### Asset hierarchy versus device hierarchy
 
 {{< product-c8y-iot >}} supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
 
-
-The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide*.
-
+The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the _Concepts guide_.
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
-* **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather stations or general "smart" sensors with a built-in communication module.
+- **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather stations or general "smart" sensors with a built-in communication module.
 
-* **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
+- **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
 The following section explains how to work with smart devices and gateway devices in the Cockpit application.
 
@@ -76,6 +76,7 @@ If you manage trucks within the {{< product-c8y-iot >}} platform, then each truc
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
 
 <a name="navigating"></a>
+
 ### How to navigate assets
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
@@ -98,22 +99,46 @@ Depending on the asset type (group or device), various tabs are available with d
 
 Groups show the following tabs:
 
-* **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
-* **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
-* **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
+- **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
+- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS IN GROUPS CONTEXT:
+
+- To view all groups: READ or CREATE permission for permission type "Inventory"
+- To add new groups: CREATE permission for permission type "Inventory"
+- To delete any group: ADMIN permission for permission type "Inventory"
+- To rename a group or change group description: ADMIN permission for permission type "Inventory"
+- To view specific groups: READ permissions for permission type "Inventory" in the Inventory role permissions.
+- To manage or delete specific groups: READ and CHANGE permissions for permission type "Inventory" in the Inventory role permissions.
+  {{< /c8y-admon-req >}}
+
+{{< c8y-admon-info >}}
+Global inventory permissions will override inventory role permissions.
+{{< /c8y-admon-info >}}
 
 Devices show the following tabs:
 
-* **Info** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
-* **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
-* **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
-* **Location** - Shows the current location of a device (only available with `c8y_Position`).
+- **Info** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
+- **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Location** - Shows the current location of a device (only available with `c8y_Position`).
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS IN DEVICES CONTEXT:
+
+- To view all devices within a group: READ or CREATE permission for permission type "Inventory"
+- To assign or unassign devices within a group: CREATE permission for permission type "Inventory"
+- To delete any device within a group: ADMIN permission for permission type "Inventory"
+  {{< /c8y-admon-req >}}
 
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
 <a name="creating-groups"></a>
+
 ### How to add a group
 
 1. Click **Add group** at the right of the top menu bar.
@@ -130,6 +155,7 @@ A group can be created with "0" devices in it.
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
 <a name="assigning-devices"></a>
+
 ### How to assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
@@ -146,12 +172,14 @@ To assign devices to a group, follow these steps:
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
 
 <a name="edit-group"></a>
+
 ### How to edit a group
 
 1. In the navigator, click a group to open it.
 2. In the **Subassets** tab, you can edit the name and description of the group.
 
 <a name="delete-group"></a>
+
 ### How to delete a group
 
 To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
@@ -159,6 +187,7 @@ To delete a group either on top-level from the **Groups** page or from the **Sub
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
 <a name="remove-device"></a>
+
 ### How to remove a device from a group
 
 1. Navigate to the **Subassets** tab of the group.

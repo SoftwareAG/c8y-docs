@@ -11,10 +11,28 @@ helpcontent:
   Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
 ---
 
-
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS FOR GLOBAL SMART RULES:
+
+- To view a global smart rules: READ permission for permission type "Global smart rules"
+- To edit global smart rules: ADMIN permission for permission type "Global smart rules"
+- To create a global smart rule: ADMIN permission for permission type "Global smart rules"
+- To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules"
+- To delete a global smart rule: ADMIN permission for permission type "Global smart rules"
+  {{< /c8y-admon-req >}}
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS FOR LOCAL SMART RULES:
+
+- To view local smart rules: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
+- To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+- To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+- To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+  {{< /c8y-admon-req >}}
 
 {{< c8y-admon-info >}}
 The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
@@ -22,43 +40,43 @@ The smart rules functionality is only available if the tenant is subscribed to t
 
 Smart rules are parameterized. There are two sources for parameters:
 
-* **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
-* **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
+- **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+- **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
 
 There are two different types of smart rules:
 
-* **Global smart rules**
+- **Global smart rules**
 
   Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
   They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
 
-  * Smartrule = READ permission
-  * Smartrule = ADMIN permission
-  * CEP management = ADMIN permission
-<br>
-<br>
-* **Local smart rules**
+  - Smartrule = READ permission
+  - Smartrule = ADMIN permission
+  - CEP management = ADMIN permission
+    <br>
+    <br>
+
+- **Local smart rules**
 
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
-
 Smart rules can be seen in two places:
 
-* In the **Global smart rules** page accessible from the **Configuration** menu.
+- In the **Global smart rules** page accessible from the **Configuration** menu.
 
   ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
   In the **Global smart rules** page, only the global smart rules are shown.
 
-* In the **Smart rules** tab of a device or group.
+- In the **Smart rules** tab of a device or group.
 
   ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
-  In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
-
+  In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
 <a name="create-rules"></a>
+
 ### To create a smart rule
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
@@ -67,7 +85,7 @@ Smart rules can both be created in the **Global smart rules** page (global smart
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
 3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](#smart-rules-collection).
-6. Click **Create** to create the smart rule.
+5. Click **Create** to create the smart rule.
 
 {{< c8y-admon-info >}}
 When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#toggle-rules).
@@ -75,13 +93,11 @@ When you create a smart rule in the **Global smart rules** page, it will be acti
 
 Smart rules can be instantiated multiple times.
 
-
 ### To edit a smart rule
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
 For details on the fields see [To create a smart rule](#create-rules).
-
 
 ### To duplicate a smart rule
 
@@ -104,6 +120,7 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
 <a name="toggle-rules"></a>
+
 ### To enable/disable a smart rule
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
@@ -118,7 +135,7 @@ In addition to globally enabling/disabling a smart rule, a smart rule can be in 
 On creating a smart rule in the **Global smart rules** page, it will be active by default for all assets, unless you explicitly select target asset(s). If specific target assets are selected, it will be deactivated for all other assets. A local smart rule created in the **Info** page of a particular group or device is automatically activated for the respective target asset (and its direct children).
 {{< /c8y-admon-info >}}
 
-To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
+To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
@@ -140,7 +157,7 @@ To define a threshold rule follow these steps:
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points).
 4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-<br>
+   <br>
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

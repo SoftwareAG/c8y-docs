@@ -11,8 +11,15 @@ helpcontent:
     Either select one of the existing data points from the list or click **Add data point** at the top right to add a new data point to the library which meets your individual needs, see the *User guide* for details."
 ---
 
-
 The data point library provides a collection of data points with default values for data point properties.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To add new data points: CREATE permission for permission type "Inventory"
+- To delete data points: ADMIN permission for permission type "Inventory"
+- To edit data points: ADMIN permission for permission type "Inventory"
+  {{< /c8y-admon-req >}}
 
 Data point properties are similar to paragraph formats in word processing applications. You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. The data point library provides the same functionality for data points. It provides a number of default data point templates that can be easily applied to your data points from different devices.
 
@@ -26,35 +33,34 @@ To open the data point library, click **Data point library** in the **Configurat
 
 A list of available data points will be opened. For each data point, the following information is provided in the list:
 
-* Color and label for the data point
-* Fragment name and series
-* Measurement unit
-* Values (minimum, maximum, red/yellow ranges)
+- Color and label for the data point
+- Fragment name and series
+- Measurement unit
+- Values (minimum, maximum, red/yellow ranges)
 
 ### To add a data point to the library
 
 1. Click **Add data point** in the top menu bar.
 2. Provide the following information:
 
-  |Field|Description|
-|:---|:---|
-|Color|Color for the data point visualization
-|Label|Label to identify the data point
-|Fragment|Name of the fragment
-|Series|Name of the series
-|Unit|Unit used for the measurement
-|Target|Target value
-|Minimum|Minimum value shown on the y-axis
-|Maximum|Minimum value shown on the y-axis
-|Yellow range|Min/max values for the yellow range (MINOR alarms)
-|Red range|Min/max values for the red range (CRITICAL alarms)
+| Field        | Description                                        |
+| :----------- | :------------------------------------------------- |
+| Color        | Color for the data point visualization             |
+| Label        | Label to identify the data point                   |
+| Fragment     | Name of the fragment                               |
+| Series       | Name of the series                                 |
+| Unit         | Unit used for the measurement                      |
+| Target       | Target value                                       |
+| Minimum      | Minimum value shown on the y-axis                  |
+| Maximum      | Minimum value shown on the y-axis                  |
+| Yellow range | Min/max values for the yellow range (MINOR alarms) |
+| Red range    | Min/max values for the red range (CRITICAL alarms) |
 
 3. Click **Save** to add the data point to the library.
 
 ### To edit a data point
 
 Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
-
 
 ### To delete a data point
 

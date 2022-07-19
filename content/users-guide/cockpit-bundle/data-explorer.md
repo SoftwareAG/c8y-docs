@@ -17,15 +17,21 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view and select data points: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
+- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for the "Measurements" Inventory roles
+- To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
+  {{< /c8y-admon-req >}}
 
 The data explorer is available for all assets or just for a particular asset.
 
-* Click **Data explorer** in the navigator to visualize all data points of all assets.
+- Click **Data explorer** in the navigator to visualize all data points of all assets.
 
-* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
+- Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
 In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
 
@@ -37,9 +43,9 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
+- If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
 
-* If the data points have a matching definition in the data point library, the values from the data point library are used.
+- If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
 
@@ -58,6 +64,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 {{< /c8y-admon-info >}}
 
 <a name="change-visualization"></a>
+
 ### Changing data explorer visualization
 
 To change the visualization in the data explorer, you can modify several properties.
@@ -68,10 +75,10 @@ You can change the time range being shown. By default, you see the values for th
 
 To change the time range on the x-axis,
 
-* select a different time range from the dropdown list in the top menu bar,
-* enter a custom time range into the **From** and **To** fields in the data explorer,
-* drag the x-axis and move left or right to move the time period,
-* double-click into the data explorer to zoom out.
+- select a different time range from the dropdown list in the top menu bar,
+- enter a custom time range into the **From** and **To** fields in the data explorer,
+- drag the x-axis and move left or right to move the time period,
+- double-click into the data explorer to zoom out.
 
 {{< c8y-admon-info >}}
 Real-time updates will be switched off if you set a time range in the past.
@@ -85,11 +92,10 @@ By default, aggregation is set to "None". This value may be changed in the **Agg
 
 When aggregation is activated, the timestamp which is displayed in data point graphs or data point tables changes slightly as follows to improve transparency:
 
-* If no aggregation is selected the date, hour, minute and second are shown:<br> 27 Jan 2020 17:26:55
-* If minutely aggregation is selected, the second indication will not be shown:<br> 27 Jan 2020 17:27-17:28
-* If hourly aggregation is selected, the minute and second indication will not be shown:<br> 27 Jan 2020 05:00-06:00
-* If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
-
+- If no aggregation is selected the date, hour, minute and second are shown:<br> 27 Jan 2020 17:26:55
+- If minutely aggregation is selected, the second indication will not be shown:<br> 27 Jan 2020 17:27-17:28
+- If hourly aggregation is selected, the minute and second indication will not be shown:<br> 27 Jan 2020 05:00-06:00
+- If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
 
 **Realtime updating**
 
@@ -97,12 +103,12 @@ By default, realtime updating is enabled which means that the data being shown i
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
-
 **Data point visibility**
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
 <a name="add-data-points"></a>
+
 ### To add a data point
 
 To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
@@ -122,6 +128,7 @@ For details on the data point library refer to [Data point library](#data-point-
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
 <a name="customize-data-points"></a>
+
 ### Customizing data point properties
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
@@ -187,7 +194,7 @@ Per default, the first data point is positioned to the left y-axis and the remai
 
 Each data point is shown on its own y-axis, unless the following condition is met:
 
-* Two data points having the same minimum and the same maximum value.
+- Two data points having the same minimum and the same maximum value.
 
 In this case, both data points share the same y-axis. This y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
 
@@ -208,6 +215,7 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
 <a name="create-widget"></a>
+
 ### Creating widgets from the data explorer
 
 If you want to keep your current configuration in the data explorer for later usage, save it as a widget.
@@ -237,16 +245,17 @@ To use this function, first a report must be created. For details on reports, re
 {{< /c8y-admon-info >}}
 
 <a name="export-data"></a>
+
 ### Exporting measurement data
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
 
- - Time when the specific measurement was taken
- - Source of the measurement
- - Name of the device being used
- - Fragment series (for example `c8y_SpeedMeasurement`)
- - Value of the measurement
- - Unit used for a particular measurement (for example "C", "km/h", "sec")
+- Time when the specific measurement was taken
+- Source of the measurement
+- Name of the device being used
+- Fragment series (for example `c8y_SpeedMeasurement`)
+- Value of the measurement
+- Unit used for a particular measurement (for example "C", "km/h", "sec")
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 

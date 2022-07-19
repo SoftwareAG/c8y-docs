@@ -170,23 +170,18 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. In the upcoming dialog, select **Duplicate existing application**.
-3. Select the desired application from the dropdown list.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
-<br><br>
-4. In the next window, provide a name for the application. Per default, the name of the original application is provided, extended by a number, see also the info box below.
+3. Select the desired application from the dropdown list, for example "Cockpit".
+4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
     {{< c8y-admon-info >}}
-The platform restricts the use of the prefix "feature-". You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
+The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
     {{< /c8y-admon-info >}}
-5. Provide an application key, used to identify this application. Per default, the key of the original application is provided, extended by a number.
-6. Provide the application path as part of the URL to invoke the application. Per default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
-7. Finally, click **Duplicate** to create the application.
+5. Finally, click **Duplicate** to create the application.
 
 {{< c8y-admon-info >}}
-The fields for name, key and path of the duplicated application are per default provided with their corresponding value from the original application, extended by a number. In case the application has been subscribed to the tenant, there is an additional toggle that allows to either inherit the values from the original application and overrule the subscribed application or modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+In case the application has been subscribed to the tenant, there is an additional toggle **Overrule subscribed application**. If you turn this toggle on, the values for name, key and path will be inherited from the original application and your duplicated application will overrule the subscribed application. Turn it off, to modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 For details on the fields, see also [Application properties](#application-properties) below.

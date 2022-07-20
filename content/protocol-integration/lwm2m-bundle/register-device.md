@@ -134,7 +134,7 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5784**: PSK direct server connection
 
 PSK keys must be provided during the device registration.
-The file must contain the fields defined in [Mandatory settings](#lwm2m-device-registration-mandatory-settings).
+The file must contain the fields defined in [Required settings](#lwm2m-device-registration-required-settings).
 PSK registration requires additional fields to be filled.
 
 See the table below for the full set of bootstrap fields you can add:

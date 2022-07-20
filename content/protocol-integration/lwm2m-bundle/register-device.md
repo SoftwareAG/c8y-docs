@@ -7,7 +7,7 @@ layout: redirect
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
 In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device.
 The client-initiated bootstrap mode requires a LWM2M bootstrap server account pre-loaded in the LWM2M client.
-{{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with **NO_SEC** and **PSK** mode respectively.
+{{< product-c8y-iot >}} supports registration for **unsecured** and **PSK-secured** LWM2M devices allowing connection with NO_SEC and PSK mode respectively.
 
 
 You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
@@ -51,7 +51,7 @@ When you upload the CSV file, the dialog will display a confirmation message tha
 
 ![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-dialog-result-message.png)
 
-The the bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
+The bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
 
 ![LWM2M bulk device registration connector operation](/images/device-protocols/lwm2m/lwm2m-connector-device-bulk-device-reg-res.png)
 
@@ -156,7 +156,7 @@ See the table below for the full set of bootstrap fields you can add:
 <tr>
 <td style="text-align: left">LWM2M server URI / lwm2m server uri</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URI the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the {{< product-c8y-iot >}} service, the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
+<td style="text-align: left">The URI the server uses for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you use the {{< product-c8y-iot >}} service, the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 <td style="text-align: left">Mandatory for LWM2M bootstrap</td>
 </tr>
 <tr>
@@ -282,7 +282,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <tr>
 <td style="text-align: left">Binary delivery encoding / binaryDeliveryEncoding</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be "OPAQUE", "TLV", "JSON" or "TEXT". In case of empty or invalid entries, the default format is "OPAQUE".
+<td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be OPAQUE, TLV, JSON or TEXT. In case of empty or invalid entries, the default format is OPAQUE.
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -314,13 +314,13 @@ The following table explains several optional parameters related to firmware upd
 <td style="text-align: left">Firmware update delivery method / fwUpdateDeliveryMethod</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Explains the firmware update delivery method.
-Allowed values are "PUSH", "PULL" or "BOTH".</td>
+Allowed values are PUSH, PULL or BOTH.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Firmware update supported device protocol / fwUpdateSupportedDeviceProtocol</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the device protocol to be used for the firmware update. Allowed values are "COAP", "COAPS", "HTTP" or "HTTPS".</td>
+<td style="text-align: left">Indicates the device protocol to be used for the firmware update. Allowed values are COAP, COAPS, HTTP or HTTPS.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

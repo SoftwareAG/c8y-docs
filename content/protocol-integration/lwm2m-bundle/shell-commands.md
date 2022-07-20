@@ -85,7 +85,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">cobserve /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.1</td>
-<td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the {{< product-c8y-iot >}}'s LwM2M agent in a single client request.</td>
+<td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the {{< product-c8y-iot >}}'s LWM2M agent in a single client request.</td>
 </tr>
 <tr>
 <td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>

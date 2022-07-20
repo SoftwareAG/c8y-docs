@@ -7,7 +7,7 @@ layout: redirect
 
 To register a LoRa device, navigate to the Device Management application and click **Registration** in the **Devices** menu in the navigator. Click **Register device**.
 
-In the upcoming window, click **Custom device registration** and select **LoRa**:
+In the dropdown, select **Actility LoRa**:
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 
@@ -15,7 +15,7 @@ In the upcoming window, click **Custom device registration** and select **LoRa**
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
 
 In the next window fill in the required information:
-
+- **Connection**: It will list all the configured Actility connections in the tenant. The following Device profile and  Connectivity plan option is populated based on selected Actility connection.
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
 
     The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.
@@ -24,12 +24,11 @@ In the next window fill in the required information:
 - **Application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
-- **Provider connection**: The Actility connection the device must be associated with.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
-![Register devices](/images/device-protocols/lora-actility/lora-registration.png)
+![Register devices](/images/device-protocols/lora-actility/test.png)
 
-Click **Next** to submit the device registration request and create the device.
+Click **Register** to submit the device registration request and create the device.
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening the **Events** tab. All events related to this device are listed here.
 

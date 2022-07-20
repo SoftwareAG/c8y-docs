@@ -4,15 +4,6 @@ title: Troubleshooting
 layout: redirect
 ---
 
-
-### No active contracts with free slots available
-
-![No active contracts with free slots available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
-
-Active contracts with free slots are filtered based on the activation end time and tokens in use. Contracts in which the activation end time is higher than the current time or the activation end time is unlimited, and contracts in which the max tokens are higher than the tokens in use or the max tokens are unlimited will be considered.
-
-In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
-
 ### Sigfox callbacks in backend.sigfox.com are not created correctly
 
 ![Callback information](/images/device-protocols/sigfox/sigfox-troubleshooting-callbacks.png)
@@ -31,21 +22,16 @@ The request above is simply an example API request that could be used. For more 
 
 #### No Sigfox provider settings are found
 
-This warning message shows up when there are no credentials set up for the Sigfox account.
+This warning message shows up when there are no credentials set up for the Sigfox account. To resolve this click on **Settings** to navigate to administration app where credentials are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
 
-To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
-
 #### No device protocols configured
 
-This warning message shows up when no Sigfox device protocol exists to be used for device registration.
+This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click on **Device protocols** to navigate to device protocols page where protocols are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
-
-To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
-
 
 ### Issues with alarm provisioning
 

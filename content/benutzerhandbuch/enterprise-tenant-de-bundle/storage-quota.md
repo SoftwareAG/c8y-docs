@@ -10,7 +10,9 @@ Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrato
 
 Ist das Kontingent überschritten, wird eine E-Mail an alle Mandantenadministratoren gesendet mit der Information, dass in der folgenden Nacht Daten gelöscht werden. Ist das Kontingent nach 24 Stunden weiterhin überschritten, werden alle Datenhaltungsbegrenzungen um einen festen Prozentwert herabgesetzt. Daraus resultiert, dass das Kontingent pro Gerät entsprechend verringert wird.
 
->**Info:** Das Speicherkontingent muss im Mandanten definiert werden und kann nicht durch die Konfiguration aktiviert/deaktiviert werden.
+{{< c8y-admon-info >}}
+Das Speicherkontingent muss im Mandanten definiert werden und kann nicht durch die Konfiguration aktiviert/deaktiviert werden.
+{{< /c8y-admon-info >}}
 
 #### Beispiel
 

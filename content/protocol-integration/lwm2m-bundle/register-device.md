@@ -327,7 +327,7 @@ Allowed values are PUSH, PULL or BOTH.</td>
 <td style="text-align: left">Firmware update reset mechanism / fwUpdateResetMechanism</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
-Allowed values are "PACKAGE" or "PACKAGE_URI". Depending on the value, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used, the default reset state machine mechanism is used where a reset is done via package resource for PUSH and via package URI for PULL.</td>
+Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used, the default reset state machine mechanism is used where a reset is done via package resource for PUSH and via package URI for PULL.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

@@ -8,7 +8,9 @@ weight: 20
 
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in {{< product-c8y-iot >}} verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
 
-> **Info:** Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchy".
+{{< c8y-admon-info >}}
+Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchy".
+{{< /c8y-admon-info >}}
 
 ### Anzeigen von Benutzerhierarchien
 
@@ -29,9 +31,11 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 
 ![Select owner](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
->**Info:** Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist, sofern der angemeldete Benutzer nur die "Benutzerverwaltung"-Berechtigung ERSTELLEN hat. Der Besitzer kann später geändert werden, jedoch nur durch einen Benutzer mit der "Benutzerverwaltung"-Berechtigung ADMIN.
-<br><br>
->Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit der "Benutzerverwaltung"-Berechtigung für alle Benutzer hat.
+{{< c8y-admon-info >}}
+Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist, sofern der angemeldete Benutzer nur die "Benutzerverwaltung"-Berechtigung ERSTELLEN hat. Der Besitzer kann später geändert werden, jedoch nur durch einen Benutzer mit der "Benutzerverwaltung"-Berechtigung ADMIN.
+
+Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit der "Benutzerverwaltung"-Berechtigung für alle Benutzer hat.
+{{< /c8y-admon-info >}}
 
 **Beispiel**
 
@@ -42,7 +46,7 @@ Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neue
 <a name="delegate"></a>
 ### Delegieren von Benutzerhierarchien
 
-In {{< product-c8y-iot >}} kann ein Benutzer seine Benutzerhierarchien und Berechtigungen einem anderen Benutzer übertragen (beide Benutzer müssen derselben Hierarchie angehören). Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat. Zur Durchführung der Benutzerverwaltung muss der delegierte Benutzer die Berechtigung USER_MANAGEMENT_CREATE haben oder eine der vordefinierten Rollen verwenden: "Geteilter Benutzermanager", "Benutzerverwaltung". 
+In {{< product-c8y-iot >}} kann ein Benutzer seine Benutzerhierarchien und Berechtigungen einem anderen Benutzer übertragen (beide Benutzer müssen derselben Hierarchie angehören). Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat. Zur Durchführung der Benutzerverwaltung muss der delegierte Benutzer die Berechtigung USER_MANAGEMENT_CREATE haben oder eine der vordefinierten Rollen verwenden: "Geteilter Benutzermanager", "Benutzerverwaltung".
 
 Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.
 
@@ -58,7 +62,9 @@ Entfernen Sie die Delegierung im Feld **Delegiert von** oder klicken Sie auf das
 
 Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte Geräte verwalten können soll, muss der Admin-Benutzer diesem Benutzer die Berechtigung für die entsprechenden Geräte (Stammdatenrollen) direkt zuweisen. Dies kann über den Befehl **Stammdatenrollen eines anderen Benutzers kopieren** erfolgen. Weitere Informationen finden Sie unter [Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration-de#attach-inventory).
 
-> **Info:** Die Delegierung funktioniert nur im Bereich Benutzerverwaltung und hat keine Auswirkungen auf andere Bereiche.
+{{< c8y-admon-info >}}
+Die Delegierung funktioniert nur im Bereich Benutzerverwaltung und hat keine Auswirkungen auf andere Bereiche.
+{{< /c8y-admon-info >}}
 
 ### Fehlerbehebung für untergeordnete Benutzer
 

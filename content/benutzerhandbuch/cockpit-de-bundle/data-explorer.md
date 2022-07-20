@@ -39,7 +39,9 @@ Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im v
 
 Angenommen, Sie haben in der Bibliothek einen Temperaturdatenpunkt definiert und verwenden ein Gerät, das Temperaturmesswerte sendet (Übereinstimmung nach Fragment und Serie mit dem Datenpunkt in der Bibliothek). Wenn Sie eine Smart Rule des Typs "Bei Schwellenwert Alarm erzeugen" erstellen und den Datenpunkt aus der Bibliothek wählen, wird anhand der Einstellungen aus der Bibliothek entschieden, ob ein Alarm erzeugt werden soll. Wenn Sie jedoch die Einstellungen dieses Datenpunkts für Ihr Gerät im Daten-Explorer ändern und auf **Als Standard speichern** klicken, verwendet die Smart Rule diese überschriebenen Einstellungen anstelle derjenigen aus der Bibliothek. Für andere Geräte werden hingegen weiterhin die Einstellungen aus der Bibliothek verwendet.
 
->**Info:** Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+{{< c8y-admon-info >}}
+Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+{{< /c8y-admon-info >}}
 
 <a name="change-visualization"></a>
 ### Ändern der Daten-Explorer-Visualisierung
@@ -57,7 +59,9 @@ Um das Zeitintervall auf der x-Achse zu ändern,
 * bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben,
 * zoomen Sie durch Doppelklicken in den Daten-Explorer.
 
->**Info:** Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
+{{< c8y-admon-info >}}
+Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
+{{< /c8y-admon-info >}}
 
 **Aggregation**
 
@@ -202,7 +206,9 @@ Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widg
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
-> **Info:** Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+{{< c8y-admon-info >}}
+Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werden. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+{{< /c8y-admon-info >}}
 
 **Als Widget einem Bericht hinzufügen**
 
@@ -212,7 +218,9 @@ Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widg
 
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.
 
-> **Info:** Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
+{{< c8y-admon-info >}}
+Um diese Funktion nutzen zu können, muss zunächst ein Bericht erstellt werden. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
+{{< /c8y-admon-info >}}
 
 <a name="export-data"></a>
 ### Exportieren von Messwerten

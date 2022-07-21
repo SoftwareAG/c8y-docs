@@ -22,9 +22,8 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefo
 
 ![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa-1.png)
 
-{{< c8y-admon-info >}}
-Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
-{{< /c8y-admon-info >}}
+>**Info:** Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
+
 
 ### TOTP (Google Authenticator)
 

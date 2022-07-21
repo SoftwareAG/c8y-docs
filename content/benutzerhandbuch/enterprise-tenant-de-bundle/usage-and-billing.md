@@ -136,16 +136,11 @@ Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandb
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Die Seite **Nutzungsstatistiken** zeigt die Zahlen für alle Untermandanten in diesem Zeitraum an.
 
-{{< c8y-admon-info >}}
-Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
-{{< /c8y-admon-info >}}
+>**Info:** Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
 
 Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
-{{< c8y-admon-important title="Wichtig" >}}
-Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
-{{< /c8y-admon-important >}}
-
+> **Wichtig:** Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 
@@ -251,9 +246,7 @@ Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y
 
 ### Handhabung von Zeitzonen
 
-{{< c8y-admon-important title="Wichtig" >}}
-Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
 
 Die Mandanten-Nutzungsstatistiken werden täglich entsprechend dem durch die Zeitzone des Servers bestimmten Beginn des Tages (`BOD`) und Ende des Tages (`EOD`) erfasst. Wenn die lokale Zeitzone eines Benutzers nicht mit der Zeitzone des Servers übereinstimmt, kann folglich eine vom Benutzer gestartete Operation je nach Serverzeit einem anderen Tag zugewiesen werden.
 
@@ -366,9 +359,7 @@ Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer A
   * `Container erstellt.` - Der Microservice-Container wurde erstellt, aber noch nicht gestartet (Zustand "Geplant").
   * `Container gestartet.` - Der Microservice-Container wurde gestartet, ist jedoch noch nicht bereit, eingehenden Datenverkehr zu verarbeiten (Zustand "Nicht bereit").
 
-{{< c8y-admon-info >}}
-Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
-{{< /c8y-admon-info >}}
+>**Info:** Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
 
   <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 

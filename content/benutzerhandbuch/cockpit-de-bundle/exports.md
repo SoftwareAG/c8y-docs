@@ -10,6 +10,8 @@ Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- od
 
 Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Exportdaten enthalten so lediglich Informationen über die gefilterten Daten und aktivierten Felder.
 
+>**Info:** Es können maximal 1 Millionen Dokumente in eine einzelne Datei exportiert werden. Wenn die Anzahl der Dokumente für die gesetzten Filter diesen Wert überschreitet, werden nur die ersten 1 Million Dokumente exportiert.
+
 Um alle Exporte anzuzeigen, klicken Sie auf **Exportieren** im Menü **Konfiguration** des Navigators.
 
 Die Seite **Exportieren** listet alle Exporte mit Namen, Dateityp und Zeitintervall auf.
@@ -31,17 +33,11 @@ Im Bereich **Filter** können Sie Filter setzen, um Daten für bestimmte Objekte
 
 Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Alle passenden Geräte oder Gruppen werden unter dem **Wert**-Feld angezeigt. Wählen Sie ein Objekt durch Klicken aus (grün hervorgehoben).
 
-{{< c8y-admon-info >}}
-Wenn Sie eine Gruppe wählen, werden die Daten der direkten Kindgeräte einbezogen. Der Export enthält jedoch nicht die Daten der Geräte, die sich in Untergruppen befinden (indirekte Kinder).
-{{< /c8y-admon-info >}}
+>**Info:** Wenn Sie eine Gruppe wählen, werden die Daten der direkten Kindgeräte einbezogen. Der Export enthält jedoch nicht die Daten der Geräte, die sich in Untergruppen befinden (indirekte Kinder).
 
 Der Filter **Zeitintervall** filtert Daten nach einem bestimmten Zeitintervall. Wählen Sie ein Zeitintervall aus der Auswahlliste. Mögliche Intervalle sind "Letztes Jahr", "Letzter Monat" und "Letzte Woche", oder wählen Sie "Benutzerdefiniert" und geben Sie Von/Bis-Werte in die entsprechenden Felder ein, um ein individuelles Intervall zu definieren.
 
 Aktivieren Sie die Checkboxen **Zu exportierendes Objekt** und **Zeitintervall**, um die entsprechenden Filter zu aktivieren.
-
-{{< c8y-admon-info >}}
-Maximal können 1 Million Dokumente, die den definierten Filtern entsprechen, zurückgegeben werden. Wenn die Anzahl der Dokumente für die definierten Filter diesen Wert überschreitet, werden nur die ersten 1 Million Dokumente exportiert. Wird das Ergebnis durch diese Begrenzung beschnitten, wird außerdem eine weitere Zeile mit einem Indikator am Ende der Datei hinzugefügt. Die Indikatorzeile enthält in jeder zweiten Spalte abwechselnd die Anweisungen "limit exceeded!" (Begrenzung überschritten!) und "result truncated!" (Ergebnis beschnitten!).
-{{< /c8y-admon-info >}}
 
 **Felder**
 
@@ -56,15 +52,9 @@ Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
 ![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
-{{< c8y-admon-info >}}
-Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
-{{< /c8y-admon-info >}}
+>**Info:** Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
 
 Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
-
-{{< c8y-admon-info >}}
-Dokumente, bei denen keinerlei Werte für die ausgewählten Felder definiert sind, werden aus der resultierenden Exportdatei entfernt. Dies erfolgt erst, nachdem das Ergebnis der oben definierten Filter bereits berechnet wurde. Dies ist meist der Grund, weshalb die resultierenden Dateien selten die Obergrenze von 1 Million Zeilen erreichen.
-{{< /c8y-admon-info >}}
 
 ##### So fügen Sie ein Attribut hinzu
 
@@ -102,9 +92,7 @@ Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten 
 
 Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
-{{< c8y-admon-info >}}
-Intervalle müssen in Coordinated Universal Time (UTC) angegeben werden.
-{{< /c8y-admon-info >}}
+>**Info:** Intervalle müssen in koordinierter Weltzeit (UTC) angegeben werden.
 
 **2 - E-Mail senden:**
 
@@ -119,9 +107,8 @@ Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber b
 Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet "Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden".
 Beachten Sie, dass Sie zum Erstellen eines anklickbaren Links in der E-Mail "https://" zum Link hinzufügen müssen. Beispiel: "Eine Datei mit exportierten Daten kann unter https://{tenant-domain}/inventory/binaries/{binaryId} heruntergeladen werden."
 
-{{< c8y-admon-info >}}
-Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-{{< /c8y-admon-info >}}
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
+
 
 Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
@@ -137,13 +124,9 @@ Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Ex
 
 ![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
-{{< c8y-admon-important title="Wichtig" >}}
-Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
-{{< /c8y-admon-important >}}
+>**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 
-{{< c8y-admon-info >}}
-Damit die neue Exportplan-Funktion genutzt und die Migration durchgeführt werden kann, muss der Microservice "report-agent" abonniert sein. Neue Mandanten haben diesen automatisch abonniert. Bei vorhandenen Mandanten muss sichergestellt sein, dass sie den Microservice abonniert haben.
-{{< /c8y-admon-info >}}
+> **Info:** Damit die neue Exportplan-Funktion genutzt und die Migration durchgeführt werden kann, muss der Microservice "report-agent" abonniert sein. Neue Mandanten haben diesen automatisch abonniert. Bei vorhandenen Mandanten muss sichergestellt sein, dass sie den Microservice abonniert haben.
 
 #### So exportieren Sie Daten
 

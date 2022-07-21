@@ -70,9 +70,8 @@ Folgende Typen sind verfügbar:
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden, siehe [Smart Rule-Variablen](#smart-rule-variables) am Ende dieses Abschnitts.  
-{{< /c8y-admon-info >}}
+>**Info:** In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen verwendet werden, siehe [Smart Rule-Variablen](#smart-rule-variables) am Ende dieses Abschnitts.  
+
 
 <a name="alarm-sms"></a>
 ### Bei Alarm SMS senden
@@ -81,9 +80,7 @@ In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
-{{< c8y-admon-info >}}
-Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
-{{< /c8y-admon-info >}}
+> **Info:** Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
 
 **Parameter**
 
@@ -141,9 +138,7 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 
 <a name="alarm-email"></a>
 ### Bei Alarm E-Mail senden
@@ -152,9 +147,7 @@ Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen ve
 
 Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
-{{< c8y-admon-info >}}
-Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-{{< /c8y-admon-info >}}
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 **Parameter**
 
@@ -334,9 +327,7 @@ Ist der Alarm nach Ablauf der spezifizierten Dauer immer noch aktiv, wird der Sc
 
 Wenn der Alarm den Schweregrad KRITISCH erreicht hat, wird die Überwachung beendet, da keine weitere Aktion möglich ist.
 
-{{< c8y-admon-info >}}
-Die Regel prüft einmal pro Minute, ob die konfigurierte Dauer überschritten ist. Daher ist es möglich, dass der Schweregrad sich nicht exakt dann ändert, wenn die Dauer überschritten ist, sondern erst nach der nächsten Prüfung.
-{{< /c8y-admon-info >}}
+> **Info:** Die Regel prüft einmal pro Minute, ob die konfigurierte Dauer überschritten ist. Daher ist es möglich, dass der Schweregrad sich nicht exakt dann ändert, wenn die Dauer überschritten ist, sondern erst nach der nächsten Prüfung.
 
 <a name="geofence-alarm"></a>
 ### Bei Geofence-Übertretung Alarm erzeugen
@@ -393,9 +384,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
-{{< /c8y-admon-info >}}
+> **Info:** Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
 **Fehlerbehebung**
 
@@ -412,9 +401,7 @@ Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstelle
 
 Wird eine Geofence-Grenze durch Verlassen des Geofence-Bereichs überschritten, wird eine E-Mail gesendet.
 
-{{< c8y-admon-info >}}
-Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-{{< /c8y-admon-info >}}
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 **Parameter**
 
@@ -462,9 +449,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-Damit die Regel ausgeführt wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein. Beim Verlassen des Geofence-Bereichs wird eine E-Mail gesendet.
-{{< /c8y-admon-info >}}
+> **Info:** Damit die Regel ausgeführt wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein. Beim Verlassen des Geofence-Bereichs wird eine E-Mail gesendet.
 
 **Fehlerbehebung**
 
@@ -590,9 +575,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.
-{{< /c8y-admon-info >}}
+> **Info:** Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.
 
 <a name="alarm-operation"></a>
 ### Bei Alarm Operation ausführen
@@ -778,9 +761,7 @@ Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:
 
 Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
-{{< c8y-admon-info >}}
-Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte aus der Datenpunktbibliothek. Sie können auch lediglich einen einzelnen Wert überschreiben (z. B. gelber Bereich max), indem Sie diesen im Quellobjekt setzen. Die anderen Werte werden dann aus der Datenpunktbibliothek übernommen.
-{{< /c8y-admon-info >}}
+> **Info:** Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte aus der Datenpunktbibliothek. Sie können auch lediglich einen einzelnen Wert überschreiben (z. B. gelber Bereich max), indem Sie diesen im Quellobjekt setzen. Die anderen Werte werden dann aus der Datenpunktbibliothek übernommen.
 
 * Eingehende Werte innerhalb des roten Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
 
@@ -798,13 +779,10 @@ Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-{{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
-{{< /c8y-admon-info >}}
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+
 
 <a name="threshold-explicit"></a>
 ### Bei explizitem Schwellenwert Alarm erzeugen
@@ -819,9 +797,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 * Wenn der Messwert sich in den grünen Bereich bewegt, wird kein Alarm erzeugt.
 
-{{< c8y-admon-info >}}
-Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellenwert explizit bereitgestellt, während in der Regel "Bei Schwellenwert Alarm erzeugen" der Schwellenwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
-{{< /c8y-admon-info >}}
+> **Info:** Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erzeugen". Allerdings wird in dieser Regel hier der rote Schwellenwert explizit bereitgestellt, während in der Regel "Bei Schwellenwert Alarm erzeugen" der Schwellenwert vom Gerät oder aus der Datenpunktbibliothek genommen wird.
 
 **Parameter**
 
@@ -879,13 +855,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
-{{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+> **Info:**  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
-{{< /c8y-admon-info >}}
+>**Info:** Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 
 <a name="smart-rule-variables"></a>
 ### Smart Rule-Variablen
@@ -928,14 +900,12 @@ Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte i
   </tr>
 </table>
 
-{{< c8y-admon-info >}}
-Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung)
+> **Info:** Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung)
 können Variablen für Uhrzeiten eine Zeitzone und ein Zeitformat enthalten, in denen die Uhrzeit angezeigt werden soll.
 So zeigt zum Beispiel die Variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} die Uhrzeit entsprechend der Zeitzone für New York im Format HH:mm:ssZ an.
 Siehe auch [Unterstützte Zeitzonen]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
 und [Formatspezifikation für die TimeFormat-Funktionen]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
 in der Apama-Dokumentation.
-{{< /c8y-admon-info >}}
 
 **Alarmspezifische Felder**
 
@@ -1085,6 +1055,4 @@ Hier lassen sich beispielsweise die folgenden Variablen definieren:
   </tr>  
 </table>
 
-{{< c8y-admon-important title="Wichtig" >}}
-Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.
-{{< /c8y-admon-important >}}
+> **Wichtig:** Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.

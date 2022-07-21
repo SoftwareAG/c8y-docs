@@ -10,9 +10,7 @@ Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot
 
 Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und die erforderlichen Supportbenutzer müssen im {{< management-tenant-de >}} erstellt sein, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/benutzerhandbuch/administration-de/#config-support-users).
 
-{{< c8y-admon-info >}}
-In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutzer-Funktionalität nur vom [{{< sag-support >}}](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für {{< enterprise-tenant-de >}}-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
-{{< /c8y-admon-info >}}
+> **Info:** In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutzer-Funktionalität nur vom [{{< sag-support >}}](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für {{< enterprise-tenant-de >}}-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
 
 <a name="configuring-support-access"></a>
 ### Konfigurieren von Supportbenutzerzugriff
@@ -31,13 +29,9 @@ Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch
 
 Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
 
-{{< c8y-admon-info >}}
-Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support/).
-{{< /c8y-admon-info >}}
+> **Info:** Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support/).
 
-{{< c8y-admon-info >}}
-Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
-{{< /c8y-admon-info >}}
+> **Info:** Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 
 Die Dauer der aktiven Supportanfrage kann im {{< management-tenant-de >}} global konfiguriert werden (der Standardwert ist 24 Stunden), siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 

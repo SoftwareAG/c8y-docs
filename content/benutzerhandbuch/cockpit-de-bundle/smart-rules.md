@@ -8,9 +8,7 @@ weight: 80
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
-{{< c8y-admon-info >}}
-Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die ERSTELLEN-Berechtigung für "Stammdaten" und die ADMIN-Berechtigung für entweder "Globale Smart Rules" oder "Regeln".
-{{< /c8y-admon-info >}}
+>**Info:** Smart Rules sind nur sichtbar, wenn der Mandant die Smart Rule-Anwendung abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die Berechtigung zum Erstellen von Stammdaten sowie entweder die Berechtigung "Smart rule" oder "CEP management".
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
@@ -61,9 +59,7 @@ Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Ko
 4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](#smart-rules-collection).
 6. Klicken Sie auf **Erstellen**, um die Smart Rule zu erstellen.
 
-{{< c8y-admon-info >}}
-Wenn Sie eine Smart Rule auf der Seite **Globale Smart Rules** erstellen, ist sie standardmäßig für alle Assets aktiv, solange Sie in Schritt 4 des Dialogfelds keine Ziel-Assets auswählen; siehe dazu auch [So schalten Sie eine Smart Rule ein/aus](#toggle-rules).
-{{< /c8y-admon-info >}}
+>**Info:** Wenn Sie eine Smart Rule auf der Seite **Globale Smart Rules** erstellen, ist sie standardmäßig für alle Assets aktiv, solange Sie in Schritt 4 des Dialogfelds keine Ziel-Assets auswählen; siehe dazu auch [So schalten Sie eine Smart Rule ein/aus](#toggle-rules).
 
 Smart Rules können mehrfach instanziiert werden.
 
@@ -87,9 +83,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 
 ### So beheben Sie Fehler in einer Smart Rule
 
-{{< c8y-admon-info >}}
-Diese Funktion ist bei Apama nicht verfügbar.
-{{< /c8y-admon-info >}}
+> **Info:** Diese Funktion ist bei Apama nicht verfügbar.
 
 Um die Fehlersuche zu vereinfachen, gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul.
 
@@ -106,9 +100,7 @@ Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zu
 
 Zusätzlich zum globalen Ein-/Ausschalten einer Smart Rule kann eine Smart Rule für konkrete Objekte (Gruppen oder Geräte) im **aktiven** oder **inaktiven** Zustand sein. Im **aktiven** Zustand verarbeitet die Regel Ereignisse für diese Gruppen und Geräte.
 
-{{< c8y-admon-info >}}
-Beim Erstellen einer Smart Rule auf der Seite **Globale Smart Rules** ist die Regel standardmäßig für alle Assets aktiv, solange Sie keine Ziel-Assets explizit auswählen. Werden spezifische Ziel-Assets ausgewählt, so wird sie für alle anderen Assets deaktiviert. Eine lokale Smart Rule, die auf der Seite **Info** einer Gruppe oder eines Geräts erstellt wird, wird automatisch für das entsprechende Ziel-Asset (und seine unmittelbaren Kinder) aktiviert.
-{{< /c8y-admon-info >}}
+> **Info:** Beim Erstellen einer Smart Rule auf der Seite **Globale Smart Rules** ist die Regel standardmäßig für alle Assets aktiv, solange Sie keine Ziel-Assets explizit auswählen. Werden spezifische Ziel-Assets ausgewählt, so wird sie für alle anderen Assets deaktiviert. Eine lokale Smart Rule, die auf der Seite **Info** einer Gruppe oder eines Geräts erstellt wird, wird automatisch für das entsprechende Ziel-Asset (und seine unmittelbaren Kinder) aktiviert.
 
 Um eine Regel explizit zu aktivieren bzw. zu deaktivieren, navigieren Sie zur Registerkarte **Info** der jeweiligen Gruppe oder des jeweiligen Geräts und stellen Sie den Umschalter **Aktiv/Inaktiv** auf **Aktiv** bzw. **Inaktiv**.  
 
@@ -120,9 +112,7 @@ Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschal
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
-{{< c8y-admon-important title="Wichtig" >}}
-Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 
 ### Beispiel: Definieren von exakten Schwellenwerten
 
@@ -147,6 +137,4 @@ Smart Rules können ein neues Datenelement auf der Plattform erstellen. Die Schw
 
 Mit diesem Mechanismus kann eine Kette von Smart Rules erstellt werden.
 
-{{< c8y-admon-info >}}
-Berücksichtigen Sie beim Erstellen einer Regelkette, wie viele Daten diese erzeugt, um Überlastungen oder übermäßige Datenmengen zu vermeiden.
-{{< /c8y-admon-info >}}
+>**Info:** Berücksichtigen Sie beim Erstellen einer Regelkette, wie viele Daten diese erzeugt, um Überlastungen oder übermäßige Datenmengen zu vermeiden.

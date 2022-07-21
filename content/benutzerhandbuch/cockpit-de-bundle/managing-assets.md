@@ -1,7 +1,7 @@
 ---
-layout: redirect
-title: Verwalten von Assets
 weight: 20
+title: Verwalten von Assets
+layout: redirect
 ---
 
 <a name="assets"></a>
@@ -23,9 +23,7 @@ Im vorliegenden Beispiel repräsentieren die Gruppenobjekte einen Gebäudebestan
 
 Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gruppe zugewiesen werden (siehe unten).
 
-{{< c8y-admon-info >}}
-Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Die Verwaltung erfolgt in der Device Management-Anwendung.
-{{< /c8y-admon-info >}}
+> **Info:** Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Die Verwaltung erfolgt in der Device Management-Anwendung.
 
 <a name="hierarchies"></a>
 #### Asset-Hierarchie versus Gerätehierarchie
@@ -79,9 +77,7 @@ Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gru
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
-{{< c8y-admon-info >}}
-Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
-{{< /c8y-admon-info >}}
+>**Info:** Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
 
 Verwenden Sie den Navigator, um durch die Asset-Hierarchie zu navigieren.
 
@@ -104,8 +100,7 @@ Bei Geräten werden die folgenden Registerkarten angezeigt:
 
 Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit einer eigenen Web SDK-Extension erweitert wurde. Siehe auch [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device/) für Informationen zum Hinzufügen einer eigenen Registerkarte.
-
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit einer eigenen Web SDK-Extension erweitert wurde. Siehe auch [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) für Informationen zum Hinzufügen einer eigenen Registerkarte.
 
 <a name="creating-groups"></a>
 ### Hinzufügen einer Gruppe
@@ -117,9 +112,7 @@ Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit
 
 Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
-{{< c8y-admon-info >}}
-Eine Gruppe kann mit "0" Geräten erstellt werden.
-{{< /c8y-admon-info >}}
+>**Info:** Eine Gruppe kann mit "0" Geräten erstellt werden.
 
 Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 

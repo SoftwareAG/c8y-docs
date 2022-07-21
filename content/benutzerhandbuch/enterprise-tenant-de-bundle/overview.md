@@ -37,7 +37,7 @@ Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die im {{< enterpr
 <tbody>
 <tr>
 <td align="left"><a href="#managing-tenants">Verwalten von Mandanten</a></td>
-<td align="left">Erstellen und verwalten Sie Untermandanten und verwalten Sie deren Attribute und <a href="#subscribe">abonnierte Anwendungen</a>.</td>
+<td align="left">Erstellen und verwalten Sie Untermandanten und verwalten Sie deren Attribute und <a href="<a name="#subscribe"></a>">abonnierte Anwendungen</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Verwalten von Benutzerhierarchien</a></td>

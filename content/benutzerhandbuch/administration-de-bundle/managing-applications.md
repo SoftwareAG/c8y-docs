@@ -4,7 +4,7 @@ title: Verwalten von Anwendungen
 weight: 30
 ---
 
-Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications) im *Concepts Guide*.
+Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications/) im *Concepts Guide*.
 
 * [Anwendungen](#applications) - alle Webanwendungen, die entweder für den Mandanten abonniert sind oder die der Mandant besitzt.
 
@@ -40,9 +40,7 @@ Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfü
 
 Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant-de >}}en oder im {{< enterprise-tenant-de >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
 
-{{< c8y-admon-info >}}
-In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
-{{< /c8y-admon-info >}}
+>**Info:** In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
 
 #### Standardmäßig abonnierte Anwendungen
 
@@ -132,9 +130,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 
 <a name="external-application"></a>
 ##### So verweisen Sie auf eine externe Anwendung
@@ -157,31 +153,22 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten. Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.
 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
-2. Wählen Sie im folgenden Dialog **Vorhandene Anwendung duplizieren**.
+2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
-4. Geben Sie im nächsten Fenster den Namen der Anwendung ein.
+4. Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
-    {{< c8y-admon-info >}}
-Die Plattform beschränkt die Verwendung des Präfixes "feature-". Sie können keine Anwendungen mit diesem Präfix im Anwendungsnamen erstellen. Dies gilt auch für bestehende Anwendungen in Fällen, in denen die Funktion "Anwendung duplizieren" verwendet wird.
-    {{< /c8y-admon-info >}}
-5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren.
-6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
+5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
+6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
 7. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
-
-{{< c8y-admon-info >}}
-Die oben genannten Felder für Name, Schlüssel und Pfad der duplizierten Anwendung werden standardmäßig mit dem entsprechenden Wert aus der ursprünglichen Anwendung, erweitert um eine Zahl, bereitgestellt. Falls die Anwendung für diesen Mandanten abonniert wurde, ist ein weiterer Umschalter vorhanden, über den Sie die Werte entweder von der ursprünglichen Anwendung erben oder aber bearbeiten können.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
-{{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-{{< c8y-admon-info >}}
-Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
-{{< /c8y-admon-info >}}
+> **Info:** Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
 
 <a name="application-properties"></a>
 ### Anwendungsattribute
@@ -247,9 +234,7 @@ Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben eine
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 
 ### So löschen Sie eine Anwendung
 
@@ -266,16 +251,14 @@ Bei benutzerdefinierten Anwendungen können mehrere Dateiversionen in {{< produc
 #### So laden Sie ein Archiv hoch
 
 1. Öffnen Sie die Anwendungsattribute für die entsprechende Anwendung, indem Sie darauf klicken.
-2. Klicken Sie unten im Abschnitt **Aktivitätslog** auf die Plus-Schaltfläche und navigieren Sie zu dem Archiv in Ihrem Dateisystem oder ziehen Sie einfach das Archiv auf das entsprechende Feld.
+2. Klicken Sie unten im Abschnitt **Aktivitätslog** auf die Plus-Schaltfläche und navigieren Sie zu dem Archiv auf Ihrem Computer oder ziehen Sie das Archiv auf das entsprechende Feld.
 3. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr {{< product-c8y-iot >}}-Konto hochzuladen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
-{{< c8y-admon-info >}}
-Die Archiv-Funktionalität steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
-{{< /c8y-admon-info >}}
+> **Info:** Die Archiv-Funktionalität steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
 
 #### So stellen Sie eine ältere Anwendungsversion wieder her
 
@@ -336,8 +319,6 @@ Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-Alle hier aufgelisteten Anwendungen sind vom Typ "Funktion".
-{{< /c8y-admon-info >}}
+>**Info:** Alle hier aufgelisteten Anwendungen sind vom Typ "Funktion".
 
 Je nach den konkreten Abonnements Ihres Mandanten können auch andere Funktionen angezeigt werden.

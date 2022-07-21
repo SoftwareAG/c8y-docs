@@ -8,9 +8,7 @@ weight: 90
 
 Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messaging Service, der eine zuverlässige, skalierbare und hochleistungsfähige Bewegung von IoT-Daten ermöglicht. Der Microservice-basierte Data Broker ähnelt in seiner Funktionalität dem bisherigen Data Broker, außer dass zu seiner Nutzung ein Microservice, der `databroker-agent-server`, aktiviert werden muss.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Der {{< product-c8y-iot >}} Messaging Service und der Microservice-basierte Data Broker sind derzeit als eingeschränkte Testversionen verfügbar und noch nicht in allen {{< product-c8y-iot >}} Public-Cloud-Umgebungen aktiviert. Bitte wenden Sie sich an den [Produkt-Support](/welcome/contacting-support/), um Näheres über die Verwendung dieser Fähigkeiten in Ihrer {{< product-c8y-iot >}}-Umgebung zu erfahren. Der ursprüngliche Data Broker wird vorerst neben dem Microservice-basierten Data Broker weiter betriebsfähig bleiben. Die Benutzer können somit für jeden Mandanten individuell auswählen, welcher Data Broker verwendet werden soll.
-{{< /c8y-admon-important >}}
+> **Wichtig:** Der {{< product-c8y-iot >}} Messaging Service und der Microservice-basierte Data Broker sind derzeit als eingeschränkte Testversionen verfügbar und noch nicht in allen {{< product-c8y-iot >}} Public-Cloud-Umgebungen aktiviert. Bitte wenden Sie sich an den [Produkt-Support](/welcome/contacting-support/), um Näheres über die Verwendung dieser Fähigkeiten in Ihrer {{< product-c8y-iot >}}-Umgebung zu erfahren. Der ursprüngliche Data Broker wird vorerst neben dem Microservice-basierten Data Broker weiter betriebsfähig bleiben. Die Benutzer können somit für jeden Mandanten individuell auswählen, welcher Data Broker verwendet werden soll.
 
 <a name="enabling-ms-data-broker"></a>
 ###  So aktivieren Sie den Microservice-basierten Data Broker
@@ -20,9 +18,7 @@ Der {{< product-c8y-iot >}} Messaging Service und der Microservice-basierte Data
 
 ![Databroker-Agent-Server](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-agent.png)
 
-{{< c8y-admon-info >}}
-Mandanten, die einen Datenkonnektor abonnieren, benötigen kein Data Broker-Agent-Abonnement.
-{{< /c8y-admon-info >}}
+> **Info:** Mandanten, die einen Datenkonnektor abonnieren, benötigen kein Data Broker-Agent-Abonnement.
 
 <a name="ms-data-broker-connectors"></a>
 ###  Datenkonnektoren
@@ -66,6 +62,4 @@ Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werd
 
 ![New Data-Broker Alarms](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-alarms.png)
 
-{{< c8y-admon-info >}}
-Näheres darüber, wie sich diese Parameter konfigurieren lassen, finden Sie im *Messaging Service Installation & Operations Guide*.
-{{< /c8y-admon-info >}}
+> **Info:** Näheres darüber, wie sich diese Parameter konfigurieren lassen, finden Sie im *Messaging Service Installation & Operations Guide*.

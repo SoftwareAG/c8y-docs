@@ -16,7 +16,7 @@ The data point library provides a collection of data points with default values 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To add new data points: CREATE permission for permission type "Inventory"
+- To add new data points: CREATE or ADMIN permission for permission type "Inventory"
 - To delete data points: ADMIN permission for permission type "Inventory"
 - To edit data points: ADMIN permission for permission type "Inventory"
   {{< /c8y-admon-req >}}

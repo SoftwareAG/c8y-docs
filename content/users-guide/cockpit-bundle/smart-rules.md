@@ -23,7 +23,8 @@ ROLES & PERMISSIONS FOR GLOBAL SMART RULES:
 - To create a global smart rule: ADMIN permission for permission type "Global smart rules"
 - To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules"
 - To delete a global smart rule: ADMIN permission for permission type "Global smart rules"
-  {{< /c8y-admon-req >}}
+- The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS FOR LOCAL SMART RULES:
@@ -32,11 +33,8 @@ ROLES & PERMISSIONS FOR LOCAL SMART RULES:
 - To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
 - To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
 - To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-  {{< /c8y-admon-req >}}
-
-{{< c8y-admon-info >}}
-The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
-{{< /c8y-admon-info >}}
+- The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
+{{< /c8y-admon-req >}}
 
 Smart rules are parameterized. There are two sources for parameters:
 

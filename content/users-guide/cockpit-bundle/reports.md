@@ -24,12 +24,9 @@ ROLES & PERMISSIONS:
 - To view reports: READ permission for permission type "Inventory"
 - To edit reports: ADMIN permission for permission type "Inventory"
 - To add a new report: CREATE permission for permission type "Inventory"
-- To remove a report: ADMIN permission for permission type "Inventory"
-  {{< /c8y-admon-req >}}
-
-  {{< c8y-admon-info >}}
-  Without READ permission for permission type "Inventory", no measurements will be shown within the report.
-  {{< /c8y-admon-info >}}
+- To delete a report: ADMIN permission for permission type "Inventory"
+- Without READ permission for permission type "Inventory", no measurements will be shown within the report.
+{{< /c8y-admon-req >}}
 
 To show all reports, click **Reports** in the navigator.
 

@@ -11,9 +11,9 @@ ROLES & PERMISSIONS:
 
 - To view widgets within dashboards: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
 - To edit widgets: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- To create a widget: CREATE permission for permission type "Inventory" or CHANGR permission for the "Inventory" Inventory roles
-- To remove a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-  {{< /c8y-admon-req >}}
+- To create a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+- To delete a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-info >}}
 Some of the widget will require additional permissions in order to visualize the data which they display. E.g. The alarms widget will require READ permission for permission type "Alarms" in order to view all of the alarms.
@@ -25,15 +25,15 @@ Some of the widget will require additional permissions in order to visualize the
 
 ### To add a widget to a dashboard or a report
 
-1.  Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
+1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 
-2.  In the **Add widget** dialog, select a widget type.
+2. In the **Add widget** dialog, select a widget type.
 
 <img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
-3.  Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets-collection).
+3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets-collection).
 
-4.  In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](#creating-dashboards).
+4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](#creating-dashboards).
 
         <img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
 

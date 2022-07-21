@@ -106,13 +106,13 @@ Groups show the following tabs:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS IN GROUPS CONTEXT:
 
-- To view all groups: READ or CREATE permission for permission type "Inventory"
+- To view all groups: READ permission for permission type "Inventory"
 - To add new groups: CREATE permission for permission type "Inventory"
 - To delete any group: ADMIN permission for permission type "Inventory"
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
-- To view specific groups: READ permissions for permission type "Inventory" in the Inventory role permissions.
-- To manage or delete specific groups: READ and CHANGE permissions for permission type "Inventory" in the Inventory role permissions.
-  {{< /c8y-admon-req >}}
+- To view specific groups: READ permissions for permission type "Inventory" in the Inventory role permissions
+- To manage or delete specific groups: READ and CHANGE permissions for permission type "Inventory" in the Inventory role permissions
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-info >}}
 Global inventory permissions will override inventory role permissions.
@@ -128,10 +128,10 @@ Devices show the following tabs:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS IN DEVICES CONTEXT:
 
-- To view all devices within a group: READ or CREATE permission for permission type "Inventory"
-- To assign or unassign devices within a group: CREATE permission for permission type "Inventory"
+- To view all devices within a group: READ permission for permission type "Inventory"
+- To assign or unassign devices within a group: ADMIN permission for permission type "Inventory"
 - To delete any device within a group: ADMIN permission for permission type "Inventory"
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 

@@ -20,7 +20,7 @@ ROLES & PERMISSIONS:
 
 - To view exports: READ permission for permission type "Inventory"
 - To edit exports: ADMIN permission for permission type "Inventory"
-- To add a new export: CREATE permission for permission type "Inventory"
+- To add a new export: CREATE or ADMIN permission for permission type "Inventory"
 - To schedule an export: ADMIN permission for permission type "Schedule export"
 - To duplicate exports: ADMIN permission for permission type "Inventory"
 - To delete an export: ADMIN permission for permission type "Inventory"

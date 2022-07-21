@@ -7,13 +7,29 @@ layout: redirect
 <a name="lora-connectivity-troubleshooting"></a>
 ### Connectivity
 
-#### Authorization to the LoRa platform failed
+#### Authentication to the Actility platform failed.
 
-This warning message shows up if a provided profile ID, username or password is invalid.
+This warning message shows up if a provided baseUrl is invalid.
 
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
+<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-url-error.png" alt="Account credentials" style="max-width: 100%">
 <br>
-To resolve this, provide correct credentials and try again.
+To resolve this, provide correct baseUrl and try again.
+
+<br>
+Below warning message shows up if a provided profile ID is invalid.
+
+<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-profileId-error.png" alt="Account credentials" style="max-width: 100%">
+<br>
+To resolve this, provide correct profile ID and try again.
+
+<br>
+Below warning message shows up if a provided username or password is invalid.
+
+<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-username-or-password-error.png" alt="Account credentials" style="max-width: 100%">
+<br>
+To resolve this, provide correct username and password and try again.
+
+
 
 <a name="lora-device-registration-troubleshooting"></a>
 ### Device registration

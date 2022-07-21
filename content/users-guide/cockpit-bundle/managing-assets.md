@@ -87,7 +87,7 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
-The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to [retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
+The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}

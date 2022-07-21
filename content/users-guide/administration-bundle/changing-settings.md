@@ -286,7 +286,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
  In the example above, if a user tries to login a decoded JWT claims look like:
 
@@ -355,19 +355,19 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 1. By specifying the Azure AD certificate discovery address.
 
- ![Signature verification Azure](/images/users-guide/Administration/sso-custom-signature-verification-Azure-AD.png)
+ ![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
 
 2. By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![Signature verification ADFS](/images/users-guide/Administration/sso-custom-signature-verification-ADFS-manifest.png)
+ ![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. By providing the public key of a certificate manually to {{< product-c8y-iot >}}. A certificate definition requires an algorithm information, public key value and validity period.
 
- ![Signature verification Custom](/images/users-guide/Administration/sso-custom-signature-verification-custom.png)
+ ![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
 
 4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
- ![Signature verification JWKS](/images/users-guide/Administration/sso-custom-signature-verification-JWKS.png)
+ ![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
 
 
 {{< c8y-admon-info >}}
@@ -477,8 +477,6 @@ Optionally single logout can be configured:
 |Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
-
- ![Azure configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
 
 ##### Troubleshooting

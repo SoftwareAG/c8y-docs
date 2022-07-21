@@ -195,7 +195,7 @@ Links oben können Sie eine Vorlage auswählen. Diese wirkt sich auf das Layout 
 <a name="custom-template"></a>
 ##### Benutzerdefinierte Vorlage
 
-![Request configuration](/images/benutzerhandbuch/Administration/admin-sso-1.png)
+![Request configuration](/images/benutzerhandbuch/Administration/sso-custom-authorization-request.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
 
@@ -205,11 +205,11 @@ Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration
 
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus {{< product-c8y-iot >}} zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-logout-request.png)
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-2.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -225,7 +225,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-access-mapping.png)
 
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -250,7 +250,7 @@ Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unt
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
 
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-8.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-WHEN.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -271,7 +271,7 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 
 Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardmäßig Benutzerrollen anhand des Access Tokens zu. Somit ist es nicht möglich, die Benutzerrollen innerhalb von {{< product-c8y-iot >}} zu ändern, da diese bei der nächsten Anmeldung des Benutzers überschrieben würden. Um dieses Verhalten zu ändern, aktivieren Sie das Kontrollkästchen **Dynamische Zugriffszuordnung nur bei der Benutzererstellung verwenden** im unteren Teil des Abschnitts **Rechtezuordnung**.
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-dynamic-access-mapping.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
 
 Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
 
@@ -279,13 +279,13 @@ Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername au
 
 Die Benutzer-ID kann in ein beliebiges Feld des an die Plattform gesendeten Autorisierungs-Tokens gesetzt werden. Wir empfehlen Ihnen, das Autorisierungs-Token in den Audit-Logs zu überprüfen, um sicherzustellen, dass das richtige Feld verwendet wird (siehe [Troubleshooting](#troubleshooting)).
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-3.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-userid-config.png)
 
  Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
 
 Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
 
-![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-user-data-mappings.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-userdata-mapping.png)
 
 Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
 
@@ -295,19 +295,19 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-4.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-signature-verification-Azure-AD.png)
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-5.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-signature-verification-custom.png)
 
 4. Durch Spezifizieren der JWKS (JSON Web Key Set)-Adresse. JWKS ist ein Satz kryptografischer Schlüssel, die öffentliche Schlüssel enthalten, die zum Verifizieren von Autorisierungs-Tokens verwendet werden, die vom Autorisierungsserver ausgestellt wurden.
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-signature-verification-JWKS.png)
 
 
  >**Info:** {{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
@@ -343,9 +343,9 @@ Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adress
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic.png)
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-1.png)
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-2.png)
+![Azure Basic configuration](/images/users-guide/Administration/sso-azure-basic.png)
+![Azure access mapping](/images/users-guide/Administration/sso-azure-access-mapping.png)
+![Azure user data mapping](/images/users-guide/Administration/sso-azure-userdata-mappings.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -367,8 +367,6 @@ Optional kann Single Logout konfiguriert werden:
 |Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
 Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, des Benutzerdaten-Mappings, der Benutzer-ID und der Signaturverifizierung.
-
- ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-2.png)
 
 
 ##### Troubleshooting

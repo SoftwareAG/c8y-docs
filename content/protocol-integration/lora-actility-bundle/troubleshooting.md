@@ -28,12 +28,11 @@ To resolve this, provide the correct application EUI from [Connectivity](#config
 
 #### No LoRa provider settings found
 
-This warning message shows up when there are no credentials set up for the ThingPark account.
+This warning message shows up when there are no credentials set up for the ThingPark account.To resolve this click on **Settings** to navigate to administration app where credentials are configured.
 
 <img src="/images/device-protocols/lora-actility/lora-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
 
-To resolve this, refer to [Configure ThingPark credentials](#configure-credentials).
 
 #### Getting device profiles from provider failed
 
@@ -46,11 +45,9 @@ This issue can be solved by reconfiguring the ThingPark credentials to renew the
 
 #### No device protocols configured
 
-This warning message shows up when no LoRa device protocol exists to be used for device registration.
+This warning message shows up when no LoRa device protocol exists to be used for device registration.To resolve this, click on **Device protocols** to navigate to device protocols page where protocols are configured.
 
 <img src="/images/device-protocols/lora-actility/lora-registration-no-devicetype.png" alt="No device protocol given for LoRa" style="max-width: 100%">
-
-To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
 
 #### No connectivity plans with free slots available
 

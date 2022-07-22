@@ -67,10 +67,33 @@ To add another connection, click **Add Connection** and follow the steps above.
 Select the connection to be updated, make your edits, and save the connection.
 
 If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
-
+![Update connection information](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
 
 ###  To delete a connection
 
 Select the connection to be deleted and click **Delete**.
 
 If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+![Delete connection information](/images/device-protocols/sigfox/sigfox-admin-settings-delete.png)
+
+#### Authentication to the Sigfox platform failed.
+
+This warning message shows up if a provided baseUrl is invalid.
+
+![Invalid baseurl error](/images/device-protocols/sigfox/sigfox-connectivity-invalid-url-error.png)
+<br>
+To resolve this, provide correct baseUrl and try again.
+
+<br>
+Below warning message shows up if a provided parent group ID is invalid.
+
+![Invalid parent group ID error](/images/device-protocols/sigfox/sigfox-connectivity-invalid-groupId-error.png)
+<br>
+To resolve this, provide correct profile ID and try again.
+
+<br>
+Below warning message shows up if a provided username or password is invalid.
+
+![Invalid credentials error](/images/device-protocols/sigfox/sigfox-connectivity-invalid-username-or-password-error.png)
+<br>
+To resolve this, provide correct username and password and try again.

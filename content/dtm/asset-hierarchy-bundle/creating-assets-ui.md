@@ -204,7 +204,7 @@ Parent asset is displayed with the label PARENT NODE on top of it.
 
 The **Asset hierarchy** that loads will be a subset of the root **Asset hierarchy**.
 
-Screenshot for add child asset.
+Screenshot for add child asset
 
 **Example:**
 

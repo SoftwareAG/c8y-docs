@@ -136,7 +136,7 @@ Filtering is available on every column. Just click the filter icon next to the n
 
 ![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
-In the resulting popup, specify your filter options.
+Specify your filter options in the dropdown list.
 
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Add next** to add another textbox if you want to filter for more than one term.
 

@@ -16,14 +16,14 @@ This warning message shows up if a provided baseUrl is invalid.
 To resolve this, provide correct baseUrl and try again.
 
 <br>
-Below warning message shows up if a provided profile ID is invalid.
+This warning message shows up if a provided profile ID is invalid.
 
 <img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-profileId-error.png" alt="Account credentials" style="max-width: 100%">
 <br>
 To resolve this, provide correct profile ID and try again.
 
 <br>
-Below warning message shows up if a provided username or password is invalid.
+This warning message shows up if a provided username or password is invalid.
 
 <img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-username-or-password-error.png" alt="Account credentials" style="max-width: 100%">
 <br>

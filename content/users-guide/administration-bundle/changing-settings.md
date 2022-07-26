@@ -528,7 +528,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Exports** page in the Cockpit application.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
 {{< c8y-admon-info >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.

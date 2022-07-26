@@ -92,8 +92,6 @@ Screenshot to be added.
 
    In case of unsuccessful search, you also have an option of creating a new custom property by clicking on **New custom property**.
 
-   Screenshot to be provided for new custom property button.
-
    On click of this option, a pop-up window opens with the same fields as present when creating a **Custom property**.
 
    Screenshot to be provided for custom property pop up window.

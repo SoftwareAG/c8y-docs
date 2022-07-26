@@ -63,7 +63,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
   **Example:**
 
-   If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a=zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+   If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
    If you enter the information correctly according to the set criteria, the default value information for this custom property is valid. Click **Save** to finish.
 
@@ -164,7 +164,9 @@ The entered **Default value** has to adhere to all validations provided beforeha
   In case you want to upload the blueprint for a building, then create a custom property named “Building blueprint”. When creating the asset, the blueprint can be uploaded as a file for this custom property. Once the asset is created, you will have an option to view this file for future reference.  
 
 
-  Custom properties are of 2 types.
+##### **Types of Custom properties**
+
+Custom properties are of 2 types.
 
 * **Simple Custom property**:
 

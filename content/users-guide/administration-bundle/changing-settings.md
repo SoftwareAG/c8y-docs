@@ -497,11 +497,6 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 ![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
-{{< c8y-admon-related >}}
-- [Managing applications](#managing-applications) for general information on managing applications.
-- [Managing users](#managing-users) for general information on managing users.
-{{< /c8y-admon-related >}}
-
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
 {{< c8y-admon-info >}}
@@ -516,6 +511,11 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 * Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
+
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-applications) for general information on managing applications.
+- [Managing users](#managing-users) for general information on managing users.
+{{< /c8y-admon-related >}}
 
 <a name="properties"></a>
 ### Managing the properties library

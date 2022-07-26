@@ -12,13 +12,6 @@ helpcontent:
 
 The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
 
-{{< c8y-admon-related >}}
-- [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
-- [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
-- [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
-{{< /c8y-admon-related >}}
-
-
 {{< c8y-admon-info >}}
 The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 {{< /c8y-admon-info >}}
@@ -36,6 +29,12 @@ Moreover, password reset in {{< product-c8y-iot >}} is disabled for users create
 {{< c8y-admon-info >}}
 Users which are using single sign-on cannot change the password of users which are managed by the platform.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
+- [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
+- [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
+{{< /c8y-admon-related >}}
 
 ### Viewing users
 

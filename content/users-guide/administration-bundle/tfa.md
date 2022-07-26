@@ -4,16 +4,18 @@ title: Two-factor authentication
 ---
 The two-factor authentication (TFA) is an extra layer of security that only completes authentication with a combination of two different factors: something the users know (username and password) and something they have (for example, smartphone) or something they are (for example, fingerprint). You can read more on how to configure TFA in the [authentication settings](/users-guide/administration/#authentication) section.
 
-{{< c8y-admon-related >}}
-- [Changing settings > Changing authentication settings](/users-guide/administration/#authentication) for information on how to configure TFA and other authentication settings.
-- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
-{{< /c8y-admon-related >}}
 
 There are two possible TFA strategies: SMS and TOTP. Only one of them can be active at a time.
 
 To check whether TFA is enabled for a certain user, go to the **Users** page and see the TFA status column right from the password strength column. A key icon indicates that TFA is enabled and by hovering over it you can see the strategy that is being used.
 
 ![TFA status](/images/users-guide/Administration/admin-user-tfa-enabled.png)
+
+{{< c8y-admon-related >}}
+- [Changing settings > Changing authentication settings](/users-guide/administration/#authentication) for information on how to configure TFA and other authentication settings.
+- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+{{< /c8y-admon-related >}}
+
 
 ### SMS
 

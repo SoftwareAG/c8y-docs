@@ -5,9 +5,7 @@ layout: redirect
 ---
 
 
-To register a LoRa device, navigate to the Device Management application and click **Registration** in the **Devices** menu in the navigator. Click **Register device**.
-
-In the dropdown, select **Actility LoRa**:
+To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa**from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 
@@ -15,7 +13,7 @@ In the dropdown, select **Actility LoRa**:
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
 
 In the next window fill in the required information:
-- **Connection**: It will list all the configured Actility connections in the tenant. The following Device profile and  Connectivity plan option is populated based on selected Actility connection.
+- **Connection**: Lists all configured Actility connections in the tenant. The following device profile and  connectivity plan option is populated based on the selected Actility connection.
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
 
     The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.
@@ -26,7 +24,7 @@ In the next window fill in the required information:
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
-![Register devices](/images/device-protocols/lora-actility/test.png)
+![Register devices](/images/device-protocols/lora-actility/lora-registration.png)
 
 Click **Register** to submit the device registration request and create the device.
 

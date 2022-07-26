@@ -41,6 +41,11 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-related >}}
+- [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+{{< /c8y-admon-related >}}
+
 #### Login settings
 
 In the **Preferred login mode** field, you can select one of the following options:
@@ -492,6 +497,11 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 ![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-applications) for general information on managing applications.
+- [Managing users](#managing-users) for general information on managing users.
+{{< /c8y-admon-related >}}
+
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
 {{< c8y-admon-info >}}
@@ -516,13 +526,19 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 With custom properties, you can extend the data model of {{< product-c8y-iot >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Exports** page in the Cockpit application.
 
 {{< c8y-admon-info >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+- [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
+- [Cockpit > Managing exports](/users-guide/cockpit/#exports) for further information on the usage of properties in reports and exports.
+- [Enterprise tenant > Managing tenants > To create a subtenant](/users-guide/enterprise-tenant/#creating-tenants) for further information on custom tenant properties.
+{{< /c8y-admon-related >}}
 
 <a name="add-property"></a>
 #### To add a custom property

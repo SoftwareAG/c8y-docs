@@ -73,7 +73,7 @@ For each device, the device list shows the following information provided in col
 </tbody>
 </table>
 
-For users with global roles the devices list will display the items in a paginated manner where you are able to select the number of items per page and directly jump to any page. Users with inventory roles will see up to 50 items initially. If there are more than 50 devices available to you more will be loaded as you scroll down the list.
+For users with global roles the devices list displays the items in a paginated manner. You can select the number of items per page and directly jump to any page. Users with inventory roles see up to 50 items initially. If there are more than 50 devices available more devices are loaded as you scroll down the list.
 
 <a name="configuring-columns"></a>
 ### Configuring columns

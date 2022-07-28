@@ -29,7 +29,7 @@ This warning message shows up when there are no credentials set up for the Sigfo
 
 #### No device protocols configured
 
-This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click on **Device protocols** to navigate to device protocols page where protocols are configured.
+This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click  **Device protocols** to navigate to the **Device protocols** page where the protocols are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
 

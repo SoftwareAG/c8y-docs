@@ -78,6 +78,6 @@ If there are devices associated with the connection, an error message will appea
 
 #### Authentication to the Sigfox platform failed.
 
-Authentication to the Sigfox platform failed. Check if the Parent group Id and/or the credentials are correct.
+Authentication to the Sigfox platform failed. Check if the Parent group ID and/or the credentials are correct.
 
-To resolve this, provide correct baseUrl or parent group ID or Username or password and try again.
+To resolve this, provide a correct baseUrl or parent group ID or username or password and try again.

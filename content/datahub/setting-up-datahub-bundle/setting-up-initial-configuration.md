@@ -1,34 +1,34 @@
 ---
 weight: 30
-title: Setting up Dremio account and data lake
+title: Setting up initial configuration
 layout: redirect
 ---
 
-The setup of {{< product-c8y-iot >}} DataHub requires you to select a Dremio account name, and provide credentials to the data lake. In the navigator, select **Dremio & Data Lake** under **Settings** to define those settings.
+The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
 
 {{< c8y-admon-info >}}
 You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-info >}}
 
-### Defining new settings
+### Defining initial configuration
 
-#### Dremio Account
-Under **Dremio Account** name and password of the Dremio account are defined.
+#### Dremio API user
 
-The name is composed of three parts:
+In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
 
-1. tenant id
-2. forward slash
-3. string with a minimum length of two, starting with a character, and consisting of numbers, characters, dash, or underline
+Therefore, you have to configure in the initial configuration under **Dremio API user** the name and the password of that Dremio API user.
 
-If your tenant id is `t12345`, then `t12345/user` is a valid name. The system would also set this value as the initial value in the account field.
+The name is composed of two parts, with the first part being fixed:
 
-The password of the Dremio account must have at least eight characters, including at least one character and one number.
+1. Tenant id plus forward slash
+2. String with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline
 
-This account can be used in follow-up applications to query the data lake, for example, by connecting to Dremio via JDBC.
+The password of the Dremio API user must have at least eight characters, including at least one character and one number.
+
+Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
 
 #### Data Lake
-Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
+Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
 
 The following types of data lakes are currently supported:
 
@@ -41,6 +41,8 @@ The following types of data lakes are currently supported:
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication|
+
+While the other settings are fixed once the initial configuration was saved, the **Azure Storage shared access key** can be changed afterwards. Click **Edit**, set a new value, and either click **Save credentials** to save the update or cancel to keep the old value.
 
 {{< c8y-admon-info >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
@@ -55,6 +57,8 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from {{< product-c8y-iot >}} DataHub|
+
+While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or cancel to keep the old values.
 
 {{< c8y-admon-info >}}
 An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
@@ -110,7 +114,9 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings
-Editing the settings is not supported. You must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
+To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. An edit form is opened which allows you to edit all user details, except for the user name, which is fixed. In section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users), all user details are described.
+
+The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
 
 ### Deleting settings
-Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned under "Editing settings" above, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted. To delete the data lake and its contents you must use the tooling of your data lake provider.
+Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.

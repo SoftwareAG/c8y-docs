@@ -86,7 +86,7 @@ You must not modify the contents of the export file as this might corrupt the im
 
 The action bar provides an **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal UUID of the original configuration. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown for such an entry. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal UUID of the original configuration, the target table name, and the description. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
 
 To change the import file, click the delete icon next to the file name and select a new file to import the configurations from.
 

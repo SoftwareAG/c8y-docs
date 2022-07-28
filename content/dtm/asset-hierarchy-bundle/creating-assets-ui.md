@@ -9,15 +9,14 @@ Navigate to **Assets** page using the left nav. By default, no assets are presen
 
 If there are assets already created, then it is listed on this page.
 
-Screenshot for assets page
+![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
+
 
 ##### **Add Asset**
 
 To create assets via UI, click on **Add Asset**
 
 "New asset page" is displayed to create a new asset hierarchy.
-
-Screenshot for new asset page
 
 Click on **Choose asset type** dropdown on left. All the root asset types get displayed in this list.
 
@@ -43,6 +42,8 @@ If you are creating an **Asset hierarchy** for a "Building" Asset, then give the
 
 When creating the **Asset type** [link to Asset type], these custom properties were chosen. Now the values must be provided for all the custom properties for the **Asset** being created.
 
+![assets-new](/images/dtm/assets/dtm-assets-create-text-type.png)
+
 ##### **Custom property of Type Text or Number:**
 
 If the **Type** of custom property is either **Text** or **Number**, then provide a valid text or numeric input as value.
@@ -57,7 +58,6 @@ If default values were provided when creating the custom properties of **Type** 
 
 In case no default value was mentioned during creation, then you must provide a value now.
 
-Screenshot for reference.
 
 ##### **Custom property of Type Date picker:**
 
@@ -67,7 +67,7 @@ If the **Type** of custom property is **Date picker**, then a calendar will be d
 
 In case “Project start date” is a **Custom property** for the "Building" asset, then the start date of the project can be provided as its value when creating the "Building" asset.
 
-Screenshot for reference.
+![assets-date](/images/dtm/assets/dtm-assets-create-date-type.png)
 
 ##### **Custom property of Type File upload:**
 
@@ -91,15 +91,13 @@ If “building color” is a **Custom property** and color of the building can b
 
 When **Asset hierarchy** is being created, a dropdown appears with these 3 options and you must choose a value for **Custom property** from this dropdown.
 
-Screenshot for reference.
+![assets-enum](/images/dtm/assets/dtm-assets-create-enum-type.png)
 
 ##### **Custom property of Type Boolean:**
 
 In case the **Custom property** is of the **Type** “Boolean”, then a check box will be present against the **Custom property**.
 
 When creating the **Asset**, the presence or absence of the **Custom property** can be defined by enabling or disabling the check box respectively.
-
-Screenshot to be added.
 
 
 >**Info:** When **Asset type** is defined, few of the custom properties are marked as **Required** using checkbox. When **Asset** is created, then these custom properties must be defined/ assigned a value during creation.
@@ -115,7 +113,7 @@ The **Custom property** section appears only, if for the **Asset type** the cust
 
 Click **Assign devices** option, “Assign devices” page loads with the list of devices.
 
-Screenshot to be added.
+![assign-devices](/images/dtm/assets/dtm-assets-assign-devices.png)
 
 All the devices present in the tenant get displayed here. In case new device must be added, it must be added under **Device Management** of {{< product-c8y-iot >}}. Refer section: Hyperlink to be added.
 
@@ -151,7 +149,6 @@ Click **Next**, asset hierarchy details for the next asset to be created loads. 
 
 As **Assets** are defined for each hierarchy level, same is indicated via green tick mark on the Asset hierarchy on left.
 
-Screenshot to be provided of green tick mark in asset hierarchy.
 
 >**Info:** In case there are validation errors on the page, it is indicated by red highlights. Correct the same to proceed further.
 
@@ -165,7 +162,7 @@ In case you have 1 building and 2 floors within the building, then create the as
 
 Next using the **Add** button on bottom, add the second floor asset.
 
-Screenshot to be added
+![assets-multiple](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
 Click on **Delete** icon on top right, if you want to delete the added asset template,
 
@@ -181,7 +178,7 @@ If you want to modify any of the assets, then same can be done by navigating to 
 
 Once all the assets are created for each hierarchy level, then a confirmation page loads. Hierarchy is displayed with all the assets created.
 
-Screenshot to be provided for confirmation page.
+![assets-confirmation](/images/dtm/assets/dtm-assets-confirmation-page.png)
 
 If all changes are in place, click on **Confirm** in the Confirmation page to create the entire Asset hierarchy with all the assets.
 
@@ -194,9 +191,9 @@ Once the **Asset hierarchy** is created, it can be viewed by clicking on the roo
 
 On click of the root Asset in **Assets** page, **Subassets** page loads. **Subassets** page has details of root asset, subassets for the root asset, the child devices for the root asset and the custom properties for root Asset.
 
-Screenshot for subassets page.
+![subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-**Subassets** page has below 2 options on top right corner:
+**Subassets** page has below 3 options on top right corner:
 
 *	**Add child asset** : On click of **Add child asset** option, **Asset hierarchy** page loads with parent being the root asset or asset where “add child asset” option is invoked from.
 
@@ -204,7 +201,7 @@ Parent asset is displayed with the label PARENT NODE on top of it.
 
 The **Asset hierarchy** that loads will be a subset of the root **Asset hierarchy**.
 
-Screenshot for add child asset
+![child-asset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
 **Example:**
 
@@ -223,3 +220,8 @@ For more details on how to add **Assets** in **Asset hierarchy**, please refer t
 Assign devices screen loads with the list of devices present in the {{< product-c8y-iot >}} tenant. You can choose a device/s from this list and assign to the particular asset.
 
 For more details on **Assign devices** refer --> Hyperlink to be added for Add asset > Assign devices.
+
+
+*	**Import assets** : If you want to import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, bulk import option can be used.
+
+Refer to this section to know about bulk import : Hyperlink to bulk import.

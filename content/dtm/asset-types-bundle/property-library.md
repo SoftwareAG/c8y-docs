@@ -12,7 +12,9 @@ When you navigate to Property library page via the path **“Configuration> Digi
 If you use a tenant with custom properties already defined in the Property library, you can find the list of defined custom properties on the left, as well as the selected custom properties listed on the right.
 
 On click of **Add custom property** a screen is displayed on right side. Once you fill in all the mandatory fields with valid inputs, then you have an option to save the custom property.
-Screenshot to be added for Add custom property screen
+
+![Property-add](/images/dtm/custom-property/dtm-property-library-create-property.png)
+
 
 Custom properties have the following attributes:
 *	Label: Name of the custom property and is a mandatory field. Custom property is addressed using the Label field.
@@ -30,7 +32,8 @@ As described above, you can select one of the six options listed under **Type** 
 
   If you select "Text", four additional fields appear. The information in these fields is optional. Select "Text" when the custom property value is a string, for example, the building name.
 
-  Screenshot to be added by choosing Text in dropdown
+![Property-text](/images/dtm/custom-property/dtm-property-library-type-text.png)
+
 
   *	**Min Length**:
 
@@ -66,8 +69,6 @@ The entered **Default value** has to adhere to all validations provided beforeha
    If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
    If you enter the information correctly according to the set criteria, the default value information for this custom property is valid. Click **Save** to finish.
-
-  [Screenshot to be added for this positive flow.]
 
 
 ##### **Number**
@@ -139,7 +140,8 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
    If "building color" is a custom property and the color has to be either "black", "white" or "grey", then these values are provided as comma separated options when creating the custom property.
 
-  [Screenshot to be added for custom property screen.]
+   ![Property-enum](/images/dtm/custom-property/dtm-property-library-type-enum.png)
+
 
 
 ##### **Boolean**
@@ -172,11 +174,12 @@ Custom properties are of 2 types.
 
 If an attribute consists of a single key value pair, then it is a Simple custom property.
 
+![Property-simple](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
+
  **Example:**
 
  If “Building Color” is defined as a custom property under Property library section, then “building_color” is the key used. “White” is the default value for this custom property.
 
-[Screenshot to be provided]
 
 * **Complex Custom property**:
 
@@ -186,7 +189,8 @@ If an attribute consists of a single key value pair, then it is a Simple custom 
 
  If Building dimension is defined as a complex custom property, then building area, building height and building width are the multiple key value pairs defining the attribute building dimension.
 
-[Screenshot to be provided]
+ ![Property-complex](/images/dtm/custom-property/dtm-property-library-complex-property.png)
+
 
 Fill all the mandatory fields and click on **Save** button to create a custom property. Either a Simple or a Complex custom property is created, based on inputs provided. In case of Complex custom property, each key value pair must be defined, and "type" should be provided for each key value pair.
 
@@ -196,7 +200,8 @@ In case the mandatory fields are not filled, then the **Save** button is not ena
 
 If the mandatory fields are filled, but there are validation issues, then the same will be highlighted with red highlight on the corresponding element and validation error text will be displayed on screen. You can then change the input fields accordingly and save with new valid inputs.
 
-[Screenshot to be added for validation issue. screenshot required]
+![Property-validation](/images/dtm/custom-property/dtm-property-library-validation-issues.png)
+
 
 If you want to cancel the creation of a new custom property, click **Cancel** at the bottom. In this case, you do not receive a notification and the **Add new property** screen closes.
 

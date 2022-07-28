@@ -29,7 +29,7 @@ Under CUSTOM APPLICATIONS, check "Digital Twin Manager" checkbox.
 
 Click **Save**.
 
-Screenshot for this section.
+![bulk-import-permission](/images/dtm/bulk-import/dtm-bulk-import-assign-permissions.png)
 
 On successful save a notification is received indicating the same.
 
@@ -47,13 +47,14 @@ Follow the below steps to do the same:
 
 * IMPORT ASSETS window loads with a “Choose Asset type” dropdown.
 
-* If no **Asset types** are created yet, then only “Group” asset type is listed in the dropdown.
+* If no asset types are created yet, then only “Group” asset type is listed in the dropdown.
 
 * If you have added the asset types, all the Root Asset types [link for root asset type] will be listed in the dropdown.
 
 * Select the **Asset type** for which the Asset hierarchy must be created.
 
-Screenshot of Import assets window.
+![bulk-import-asset](/images/dtm/bulk-import/dtm-bulk-import-import-assets-window.png)
+
 
 * On selection, below 2 additional options appear.
 1.	**Drop file here** section: An option to upload the CSV template as file, for importing assets in bulk.
@@ -64,7 +65,6 @@ Screenshot of Import assets window.
 
 ##### **CSV template attributes**
 
-Screenshot of CSV template.
 
 The CSV template has the following fields:
 
@@ -81,6 +81,9 @@ If the hierarchy is like “Building --> Floor --> Room” and you want to enter
 *	Custom properties for the asset type : 6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.
 
 The custom properties which are mandatory are mentioned with a “required” label.
+
+![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
+
 
 The **Type** of the custom property is also mentioned as a label, for better understanding.
 
@@ -105,8 +108,6 @@ Fill in details for all the assets which must be created as part of the Asset hi
 Start with the asset details for root asset type. Then enter the asset details for child asset types under the root asset.
 Next, enter the details for second level hierarchy of child assets and continue this until details for all the assets are entered in the CSV template.
 
-Screenshot for a CSV template with asset inputs to be provided here.
-
 Once you fill in all details, save the CSV template in your system.
 
 
@@ -125,9 +126,10 @@ To upload the CSV template follow the below steps:
 
 * You can view the newly created assets in **Assets** page.
 
-If the inputs are not provided in the correct format, bulk import fails with validation errors and same is displayed in a **Failed asset imports** window. No Assets are created.
+If the inputs are not provided in the correct format, bulk import fails with validation errors and same is displayed in a FAILED ASSET IMPORTS window. No Assets are created.
 
-Screenshot of failed asset import window to be provided here.
+![bulk-import-failed-import](/images/dtm/bulk-import/dtm-bulk-import-failed-asset-imports.png)
+
 
 You can rectify the issues and try the import again.
 

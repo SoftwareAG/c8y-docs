@@ -8,7 +8,7 @@ Once the **Asset hierarchy** [link to asset hierarchy] is created by adding all 
 
 ##### View Asset:
 
-On click of any **Asset**, subassets page will load. This page contains the asset details, created and last updated time on top right. Also options to **Add child assets** and **Assign devices** on the top bar.
+On click of any **Asset**, subassets page will load. This page contains the asset details, created and last updated time on top right. Also options to **Add child assets**, **Assign devices** and **Import assets** are displayed on the top bar.
 
 Asset name and description along with the icon gets displayed on top. All subassets and devices for this **Asset** will get listed in the Subassets section.
 

@@ -12,13 +12,14 @@ Language for the **DTM** application can be changed under **User settings** by c
 
 Additionally, if you want to add translations for the **Custom property** [link to property library] or **Asset types** [link to asset types] created, or if you want to add custom translations for the existing Static text in **DTM** application, same can be done using Localization feature.
 
+![localization-mainpage](/images/dtm/localization/dtm-localozation-main-page.png)
 Screenshot of Localization page.
 
 On first time login, when you navigate to **Localization** page, by default there will be a row added with **Group** as Key. You can add the translations if needed for **Group**.
 
 Once the Custom properties and asset types are created, then all those names are added as Keys in **Localization** page. You can further add the translations as required.
 
-In case you want to modify the translation for existing text in the **DTM** application, same can be done by adding the text as Key and adding the required translation for the respective languages.
+In case you want to add new translation in the **DTM** application, same can be done by adding the text as Key and adding the required translation for the respective languages.
 
 ##### **Adding new Keys for translations:**
 
@@ -26,10 +27,12 @@ New keys and their respective translations can be added using the **Add term** o
 
 On click of **Add term** option, ADD TERM AND TRANSLATIONS screen loads.
 
-Screenshot to be provided.
+![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
+
 
 Fill all the mandatory parameters and click on **Save** to save the changes. New key with added translations are saved.
 
+Next, click on **Apply** for the changes to be applicable.
 
 ##### **Add / Edit translations:**
 
@@ -41,7 +44,6 @@ For every row, against each column **Edit icon** appears on hover.
 
 On click of this **Edit icon**, you can either add new translation or edit existing translation text.
 
-Screenshot to be added.
 
 2.	By clicking on the **Edit icon** against each row:
 
@@ -49,8 +51,13 @@ Screenshot to be added.
 
 Translation can be added or modified for any of the languages and the changes can be saved using **Save** button.
 
-Screenshot to be added for Edit term translations.
 
 Once all your translations are in place, change the language using the **Language** dropdown under **User settings**. The added translations will reflect in the **DTM** application.
 
 >**Info:** The translations added for **Asset type** and **Custom property** will be reflecting only in **Assets** page.
+
+{{< c8y-admon-info>}}
+
+ Currently the translations for DTM application are available for English and German language.
+
+{{< /c8y-admon-info>}}

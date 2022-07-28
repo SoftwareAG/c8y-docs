@@ -14,7 +14,7 @@ Navigate to Asset types page via path “Configuration > Digital twin library > 
 
 Once you create the **Asset type**, view the details in Asset types page.
 
-[Screenshot to be added.]
+![assettype-view](/images/dtm/asset-type/dtm-asset-type-view.png)
 
 Below 4 column headers are displayed in Asset types page:
 1.	Asset type: Name of the **Asset type**
@@ -31,7 +31,7 @@ If you want to reload the screen, click on **Reload**.
 
 If you want to add a new **Asset type**, click **Add asset type**. "New asset type” page loads.
 
-Screenshot to be added.
+ ![assettype-create-new](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
 
 **Asset type** has the following 6 attributes :
 
@@ -50,7 +50,7 @@ Screenshot to be added.
 
      Select an icon and click on **Save**.
 
-Screenshot to be added.
+![assettype-icon](/images/dtm/asset-type/dtm-asset-type-select-icon.png)
 
   If you don’t want to select any icon, click **Cancel**. You will be navigated back to “New asset type” page.
 
@@ -94,7 +94,7 @@ Screenshot to be added.
 
    On click of this option, a pop-up window opens with the same fields as present when creating a **Custom property**.
 
-   Screenshot to be provided for custom property pop up window.
+   ![assettype-new-custom-prop](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
 
    Refer to creation of **Custom property** here : Hyperlink to be provided for Custom property creation.
 
@@ -106,7 +106,7 @@ Screenshot to be added.
 
    If there are any validation issues for any of the fields, same will be highlighted with red highlight and validation error message will be displayed on screen. You can then rectify the inputs and then save the **Asset type**.
 
-   Screenshot for validation error.
+    ![assettype-validation](/images/dtm/asset-type/dtm-asset-type-validation-error.png)
 
    If you want to cancel the operation, click on **Cancel**.
 

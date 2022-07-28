@@ -68,7 +68,15 @@ src."creationTime"."date" > {ts '2020-02-08 14:00:00.000'}
 ```
 
 ### Querying additional data with Cumulocity IoT DataHub
-
 Main use-case of {{< product-c8y-iot >}} DataHub is to offload data from the internal {{< product-c8y-iot >}} database to a data lake and query the data lake contents afterwards. In some use cases {{< product-c8y-iot >}} DataHub is required to query additional data which is not kept in the {{< product-c8y-iot >}} platform. For a cloud environment, the additional data must be provided as Parquet files and must be located in the specific bucket of the data lake as configured in the offloading settings of {{< product-c8y-iot >}} DataHub. The Parquet files must not be in folders that are used as target tables for offloadings as this would corrupt query processing of {{< product-c8y-iot >}} DataHub. The Parquet files themselves must be compliant with the [Dremio limitations for Parquet files](https://docs.dremio.com/data-formats/parquet-files/).
 
 For a dedicated environment, the additional data can be located somewhere else, provided it can be accessed via Dremio, for example, in a relational database. For performance and cost reasons, however, data and processing should always be colocated.
+
+If you want to combine your offloaded IoT data with the new, additional data, you can define a join query in Dremio and define the query as a view. The view can then be queried like any other table and provides the combined data.
+
+### Modifying data in the data lake
+{{< product-c8y-iot >}} DataHub offloads IoT data into a data lake. Within this process, the original data is transformed into a relational format and finally stored in files, using the Apache Parquet format. Each offloading configuration has a unique folder in the data lake container, which is referred to as target table. The files in that folder are managed in a folder hierarchy based on temporal information. In order to ensure an efficient and in particular correct querying of the data, the files in the data lake must not be modified. 
+
+In rare cases, however, the modification of the files is required. You might either want to drop old data or delete one or more columns. First step is to stop and delete the offloading configuration associated with this target table. Next you have to define in Dremio a [CTAS query](https://docs.dremio.com/software/sql-reference/sql-commands/tables/) which queries the data from this target table, filters obsolete data, and uses projections to skip unwanted columns. The query results are offloaded into a new folder in the bucket of the data lake as configured in the offloading settings of {{< product-c8y-iot >}} DataHub. To make the folder accessible as a table in Dremio, promote the folder to a dataset. Then you can delete the old folder from the data lake. Next, you have to define a new offloading configuration which uses the new folder name as target table name. Define the same filter criteria and columns as in the CTAS query to ensure that the data has the same format. Save the offloading configuration, select the append mode for storing the data, and activate the offloading.
+
+It must be emphasized that this use case is not officially supported by {{< product-c8y-iot >}} DataHub and there is a high risk that the data is corrupted and the original use case will have failures.

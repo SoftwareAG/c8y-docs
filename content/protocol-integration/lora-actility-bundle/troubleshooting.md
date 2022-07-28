@@ -4,33 +4,6 @@ title: Troubleshooting
 layout: redirect
 ---
 
-<a name="lora-connectivity-troubleshooting"></a>
-### Connectivity
-
-#### Authentication to the Actility platform failed
-
-This warning message shows up if a provided baseUrl is invalid.
-
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-url-error.png" alt="Account credentials" style="max-width: 100%">
-<br>
-To resolve this, provide a correct baseUrl and try again.
-
-<br>
-This warning message shows up if a provided profile ID is invalid.
-
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-profileId-error.png" alt="Account credentials" style="max-width: 100%">
-<br>
-To resolve this, provide a correct profile ID and try again.
-
-<br>
-This warning message shows up if a provided username or password is invalid.
-
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-username-or-password-error.png" alt="Account credentials" style="max-width: 100%">
-<br>
-To resolve this, provide a correct username and password and try again.
-
-
-
 <a name="lora-device-registration-troubleshooting"></a>
 ### Device registration
 

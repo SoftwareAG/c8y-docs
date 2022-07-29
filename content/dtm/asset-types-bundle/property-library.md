@@ -4,12 +4,14 @@ title: Property library
 layout: redirect
 ---
 
-**Property library** section allows you to create custom properties. Custom properties are the attributes that define an asset type. One or more custom properties are used to define an asset type.
+**Property library** section allows you to create custom properties. Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define an asset type.
 Also, the same custom property can belong to 2 different asset types.
 
 When you navigate to Property library page via the path **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** to add the custom properties.
 
 If you use a tenant with custom properties already defined in the Property library, you can find the list of defined custom properties on the left, as well as the selected custom properties listed on the right.
+
+##### **Create new Custom property**
 
 On click of **Add custom property** a screen is displayed on right side. Once you fill in all the mandatory fields with valid inputs, then you have an option to save the custom property.
 
@@ -24,7 +26,10 @@ Custom properties have the following attributes:
 *	Type: Type dropdown defines the type of the custom property. Type can belong to any of these categories – Text, Number, File upload, Date picker, Enumeration or Boolean.
 *	Default value: Optional text box default value, defines the default value for the attribute when filled. If empty, then you have an option to fill, and if filled then you can modify default value during creation of Asset.
 
+
 >**Info:** Default value text box gets displayed only if the ‘Type’ chosen is either **Text** or **Number**.
+
+#### Types of Custom property
 
 As described above, you can select one of the six options listed under **Type** to further define the type of your custom property.
 
@@ -55,6 +60,8 @@ As described above, you can select one of the six options listed under **Type** 
 
    If, for example, the custom property is "Employee ID", then all employee IDs have to start with the prefix “SAGEMPID”. As a result, the regular expression can be provided as ^SAGEMPID[a-zA-Z0-9]*$.
 
+##### Default value
+
   *	**Default value**:
 
   This field is optional and provides the flexibility of assigning a default value to the custom property. If this field is left empty, you can enter any value for this custom property during the asset creation.
@@ -68,7 +75,9 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
    If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
-   If you enter the information correctly according to the set criteria, the default value information for this custom property is valid. Click **Save** to finish.
+   If you enter the information correctly according to the set criteria, the default value information for this custom property is valid.
+
+   Click **Save** to finish.
 
 
 ##### **Number**
@@ -84,7 +93,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
    {{< c8y-admon-info>}}
 
-   If you have entered a (Default value)[add link] beforehand, the **Default value** needs to be greater than or equal to the **Minimum** entered here.
+   If you have entered a [Default value](/dtm/asset-types/#default-value) beforehand, the **Default value** needs to be greater than or equal to the **Minimum** entered here.
 
    By default, this box is not checked.
 
@@ -97,7 +106,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
    {{< c8y-admon-info>}}
 
-   If you have entered a (Default value)[add link] beforehand, the **Default value** needs to be lesser than or equal to the **Maximum** entered here.
+   If you have entered a [Default value](/dtm/asset-types/#default-value) beforehand, the **Default value** needs to be lesser than or equal to the **Maximum** entered here.
 
    By default, this box is not checked.
 
@@ -225,4 +234,4 @@ You can also delete any custom property from the list. Select the respective cus
 
  If the search entry does not match with any custom properties, you get a notification.
 
- Once you have defined all necessary custom properties for your project, you need to define the required asset types.
+ Once you have defined all necessary custom properties for your project, you need to define the required [asset types](/dtm/asset-types/#asset-types).

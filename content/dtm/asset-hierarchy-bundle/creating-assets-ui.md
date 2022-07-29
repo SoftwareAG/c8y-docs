@@ -5,11 +5,34 @@ layout: redirect
 ---
 
 
+##### **Assets**
+
+**Assets** in DTM application are the digital representation of physical assets. It can have subassets and devices underneath it.
+Properties or attributes of the assets are defined using [Custom properties](/dtm/asset-types/#property-library).
+
+
+**Example:**
+
+If HVAC is your asset, then condenser and cooling system are the subassets underneath your HVAC asset. If there are devices associated with HVAC asset or either of the subassets, same can be represented by assigning devices to the corresponding assets/ subassets.
+
 Navigate to **Assets** page using the left nav. By default, no assets are present and a message is displayed prompting to create the assets.
 
 If there are assets already created, then it is listed on this page.
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
+
+
+##### **Asset hierarchy**
+
+The **Asset hierarchy** gives a bird’s eye view of the entire hierarchy. Root asset type and all its subsequent child asset types together form the entire **Asset hierarchy**. Each hierarchy level comprises of custom properties for that asset and the subassets and devices underneath that asset.
+
+**Example:**
+
+If "Building" is a root level asset, "Floor" is a child asset of building and "Room" is a child asset of floor. (Building --> Floor --> Room).
+
+In case, there is one "Building" asset, having 2 floors and each floor having 5 rooms underneath it, then in this case 1 Building + 2 floors + 10 rooms, custom properties for all these assets and all devices assigned for these asets together form the **Asset hierarchy**.
+
+You can think of **Asset hierarchy** being similar to a tree structure, with the root level asset on top and its subsequent child assets branching out.
 
 
 ##### **Add Asset**
@@ -26,8 +49,6 @@ Select the root asset type, for which the asset must be created, in this dropdow
 
 On choosing the root asset type, **Asset hierarchy** gets displayed on left in the form of a hierarchy. The mandatory fields are mentioned with a “required” label against it. Root asset is indicated with a label START NODE.
 
-The **Asset hierarchy** gives a bird’s eye view of the entire hierarchy.
-
 Fill in Asset related details on the right. The following sections are present, fill all the mandatory fields, in order to move to the next section.
 
 *	Name : Mandatory field **Name** indicates the name of the **Asset**.
@@ -38,9 +59,9 @@ If you are creating an **Asset hierarchy** for a "Building" Asset, then give the
 
 *	Description : Optional field **Description** can be provided which gives a brief description about the **Asset** being created.
 
-*	Custom properties : This section lists all the custom properties [link to Property library] which must be defined for the **Asset** being created.
+*	Custom properties : This section lists all the [custom properties](/dtm/asset-types/#property-library) which must be defined for the **Asset** being created.
 
-When creating the **Asset type** [link to Asset type], these custom properties were chosen. Now the values must be provided for all the custom properties for the **Asset** being created.
+When [creating the Asset type](/dtm/asset-types/#creating-a-new-asset-type), these custom properties were chosen. Now the values must be provided for all the custom properties for the **Asset** being created.
 
 ![assets-new](/images/dtm/assets/dtm-assets-create-text-type.png)
 
@@ -93,6 +114,7 @@ When **Asset hierarchy** is being created, a dropdown appears with these 3 optio
 
 ![assets-enum](/images/dtm/assets/dtm-assets-create-enum-type.png)
 
+
 ##### **Custom property of Type Boolean:**
 
 In case the **Custom property** is of the **Type** “Boolean”, then a check box will be present against the **Custom property**.
@@ -100,9 +122,14 @@ In case the **Custom property** is of the **Type** “Boolean”, then a check b
 When creating the **Asset**, the presence or absence of the **Custom property** can be defined by enabling or disabling the check box respectively.
 
 
->**Info:** When **Asset type** is defined, few of the custom properties are marked as **Required** using checkbox. When **Asset** is created, then these custom properties must be defined/ assigned a value during creation.
+{{< c8y-admon-info>}}
+
+When **Asset type** is defined, few of the custom properties are marked as **Required** using checkbox. When **Asset** is created, then these custom properties must be defined/ assigned a value during creation.
 If all the mandatory custom fields are not initialized with values, then the **Next** or **Create** option does not get enabled.
 The remaining custom properties can be defined during asset creation or can be assigned a value after the asset is created.
+
+{{< /c8y-admon-info>}}
+
 
 The **Custom property** section appears only, if for the **Asset type** the custom properties were chosen. In case, the **Asset type** does not have any custom properties, then during asset hierarchy creation, the **Custom property** section is not displayed.
 
@@ -115,11 +142,16 @@ Click **Assign devices** option, “Assign devices” page loads with the list o
 
 ![assign-devices](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-All the devices present in the tenant get displayed here. In case new device must be added, it must be added under **Device Management** of {{< product-c8y-iot >}}. Refer section: Hyperlink to be added.
+All the devices present in the tenant get displayed here. In case new device must be added, it must be added under **Device Management** of {{< product-c8y-iot >}}. Refer section: [Device Management](/users-guide/device-management/#connecting-devices)
 
 Check box is provided against each device on left and you can select single or multiple devices to assign.
 
->**Info:** Select only those devices which are part of the current asset being created. If a device belongs to a child asset, then select it when the child asset is being created.
+
+{{< c8y-admon-info>}}
+
+Select only those devices which are part of the current asset being created. If a device belongs to a child asset, then select it when the child asset is being created.
+
+{{< /c8y-admon-info>}}
 
 Various columns are present that specify the device details for each device.
 
@@ -151,6 +183,7 @@ As **Assets** are defined for each hierarchy level, same is indicated via green 
 
 
 >**Info:** In case there are validation errors on the page, it is indicated by red highlights. Correct the same to proceed further.
+
 
 ##### **Adding multiple instances of Assets:**
 
@@ -184,7 +217,7 @@ If all changes are in place, click on **Confirm** in the Confirmation page to cr
 
 On successful **Asset hierarchy** creation, a success pop-up notification is displayed on top right.
 
-Once the **Asset hierarchy** is created, it can be viewed by clicking on the root Asset and navigating further. Check “view asset hyperlink” for reference.
+Once the **Asset hierarchy** is created, it can be viewed by clicking on the root Asset and navigating further. Check [view assets](/dtm/asset-hierarchy/#view-asset) for viewing assets.
 
 
 ##### **Sub Assets:**
@@ -194,6 +227,8 @@ On click of the root Asset in **Assets** page, **Subassets** page loads. **Subas
 ![subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
 **Subassets** page has below 3 options on top right corner:
+
+###### **Add child assets:**
 
 *	**Add child asset** : On click of **Add child asset** option, **Asset hierarchy** page loads with parent being the root asset or asset where “add child asset” option is invoked from.
 
@@ -211,7 +246,7 @@ In this case, if you navigate to "Building" asset and click on **Add child asset
 
 In case, you navigate to existing "Floor" asset and want to add a child asset, then child asset can be added only for "Room".
 
-For more details on how to add **Assets** in **Asset hierarchy**, please refer to section --> Hyperlink to be provided for Creation of Assets via UI
+For more details on how to add **Assets** in **Asset hierarchy**, please refer to section [Add Assets via UI](/dtm/asset-hierarchy/#creating-assets-ui)
 
 >**Info:** In case you are at the end of the hierarchy which cannot have any child assets, then on click of **Add child asset** there will be no options to create child assets.
 
@@ -219,9 +254,9 @@ For more details on how to add **Assets** in **Asset hierarchy**, please refer t
 
 Assign devices screen loads with the list of devices present in the {{< product-c8y-iot >}} tenant. You can choose a device/s from this list and assign to the particular asset.
 
-For more details on **Assign devices** refer --> Hyperlink to be added for Add asset > Assign devices.
+For more details on Assign devices, refer section [**Assign devices**](/dtm/asset-hierarchy/#assign-devices)
 
 
 *	**Import assets** : If you want to import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, bulk import option can be used.
 
-Refer to this section to know about bulk import : Hyperlink to bulk import.
+Refer to [bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) section to import assets in bulk.

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-In case you want to import the entire **Asset hierarchy** with all assets at once, same can be done using the Bulk import feature. For each **Asset type**, a CSV template is provided.
+In case you want to import the entire **Asset hierarchy** with all assets at once, same can be done using the Bulk import feature. For each [**Asset type**](/dtm/asset-types/#asset-types), a CSV template is provided.
 
 You can fill in the required details in this template and upload this file, to create the assets in bulk for the selected **Asset type**.
 
@@ -15,7 +15,7 @@ To use the Bulk import feature, you need to give permissions for **Digital Twin*
 
 Follow the below steps:
 
-Navigate to **Administration** via the App switcher in {{< product-c8y-iot >}}.
+Navigate to [**Administration**](/users-guide/administration/#overview) via the application switcher in the top bar.
 
 Click on **Roles** under the Quick links.
 
@@ -49,7 +49,7 @@ Follow the below steps to do the same:
 
 * If no asset types are created yet, then only “Group” asset type is listed in the dropdown.
 
-* If you have added the asset types, all the Root Asset types [link for root asset type] will be listed in the dropdown.
+* If you have added the asset types, all the Root Asset types will be listed in the dropdown.
 
 * Select the **Asset type** for which the Asset hierarchy must be created.
 
@@ -85,7 +85,7 @@ The custom properties which are mandatory are mentioned with a “required” la
 ![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
 
 
-The **Type** of the custom property is also mentioned as a label, for better understanding.
+The [**Type**](/dtm/asset-types/#types-of-custom-property) of the custom property is also mentioned as a label, for better understanding.
 
 >**Info:** Modify the excel settings so that date can be provided in yyyy-mm-dd format, so that date is not auto corrected on input.
 
@@ -145,7 +145,7 @@ To import a single child asset or the child asset hierarchy, first navigate to t
 
 Next, fill in details for the child asset hierarchy in the CSV template.
 
-Refer to this section for details on filling the CSV template: CSV template attributes link to be provided.
+Refer to this section for details on filling the CSV template: [Filling CSV template for bulk import](/dtm/asset-hierarchy/#csv-template-attributes)
 
 >**Info:** From any hierarchy level, template will be downloaded only for its succeeding child hierarchy. And Assets must be imported only for that child hierarchy.
 

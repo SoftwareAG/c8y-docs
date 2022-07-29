@@ -4,16 +4,15 @@ layout: bundle
 title: Localization
 ---
 
-Localization feature is provided in **DTM (Digital Twin Manager)** (DTM) application. To use this feature, enable **Feature branding** in the Management tenant using the steps mentioned here [Provide link to enable feature branding].
+Localization feature is provided in **DTM (Digital Twin Manager)** (DTM) application. To use this feature, subscribe to [**Feature branding**](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
 
 Once the Feature branding is enabled, navigate to **Localization** page using the left nav.
 
-Language for the **DTM** application can be changed under **User settings** by choosing the language in the **Language** dropdown. Based on the chosen language, application loads accordingly.
+Language for the **DTM** application can be changed by clicking on the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and by choosing the language in the **Language** dropdown. Based on the chosen language, application loads accordingly.
 
-Additionally, if you want to add translations for the **Custom property** [link to property library] or **Asset types** [link to asset types] created, or if you want to add custom translations for the existing Static text in **DTM** application, same can be done using Localization feature.
+Additionally, if you want to add translations for the [**Custom property**](/dtm/asset-types/#property-library) or [**Asset types**](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing Static text in **DTM** application, same can be done using Localization feature.
 
 ![localization-mainpage](/images/dtm/localization/dtm-localozation-main-page.png)
-Screenshot of Localization page.
 
 On first time login, when you navigate to **Localization** page, by default there will be a row added with **Group** as Key. You can add the translations if needed for **Group**.
 

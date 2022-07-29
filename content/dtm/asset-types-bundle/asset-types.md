@@ -4,9 +4,9 @@ title: Asset types
 layout: redirect
 ---
 
-**Asset type** is a blueprint or template to create **Assets** [Link to assets to be provided here]. **Asset type** defines how the asset will look like, when created. Using a single asset type, multiple instances of assets can be created. But every asset belongs to only one **Asset type**, it cannot have multiple asset types as the source template.
+**Asset type** is a blueprint or template to create [Assets](/dtm/asset-hierarchy/#assets). **Asset type** defines how the asset will look like, when created. Using a single asset type, multiple instances of assets can be created. But every asset belongs to only one **Asset type**, it cannot have multiple asset types as the source template.
 
-**Asset type** consists of one or more **Custom properties** [Provide hyperlink to Custom properties here]. Once the asset type is created, it can be used to create various different assets.
+**Asset type** consists of one or more [Custom properties](/dtm/asset-types/#property-library). Once the asset type is created, it can be used to create various different assets.
 
 Navigate to Asset types page via path “Configuration > Digital twin library > Asset types”.
 
@@ -26,12 +26,14 @@ If you want to select the columns to be displayed, use **Configure columns**.
 
 If you want to reload the screen, click on **Reload**.
 
+
 ##### **Creating a new Asset type**
 
 
 If you want to add a new **Asset type**, click **Add asset type**. "New asset type” page loads.
 
- ![assettype-create-new](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
+
+ ![assettype-create-new](/images/dtm/asset-type/dtm-asset-type-create-new.png)
 
 **Asset type** has the following 6 attributes :
 
@@ -49,6 +51,7 @@ If you want to add a new **Asset type**, click **Add asset type**. "New asset ty
      You can either search, or filter by type or simply scroll down and select an icon from the predefined list of icons provided.
 
      Select an icon and click on **Save**.
+
 
 ![assettype-icon](/images/dtm/asset-type/dtm-asset-type-select-icon.png)
 
@@ -94,15 +97,16 @@ If you want to add a new **Asset type**, click **Add asset type**. "New asset ty
 
    On click of this option, a pop-up window opens with the same fields as present when creating a **Custom property**.
 
+
    ![assettype-new-custom-prop](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
 
-   Refer to creation of **Custom property** here : Hyperlink to be provided for Custom property creation.
+   Refer to section [Create new custom property](/dtm/asset-types/#create-new-custom-property) to create new **Custom property**.
 
-   Once the custom property is created, you can add this custom property in asset type.
+   Once the custom property is created, you can add this custom property in asset type being created.
 
    Once all the mandatory fields are filled, **Save** button gets enabled. Click **Save** to create the asset type.
 
-   On successful save, a pop-up notification is displayed and you are navigated back to Asset types [Link to asset types page here] page.
+   On successful save, a pop-up notification is displayed and you are navigated back to [Asset types](/dtm/asset-types/#asset-types) page.
 
    If there are any validation issues for any of the fields, same will be highlighted with red highlight and validation error message will be displayed on screen. You can then rectify the inputs and then save the **Asset type**.
 
@@ -116,11 +120,11 @@ If you want to add a new **Asset type**, click **Add asset type**. "New asset ty
 
 ##### **Creation of Asset type for the Entire hierarchy**
 
-To create **Asset type** for the entire hierarchy, first add all necessary **Custom property** [Link to add custom property to be given here].
+To create **Asset type** for the entire hierarchy, first add all necessary [Custom property](/dtm/asset-types/#property-library).
 
-Then create the asset types [Link to create a new asset type to be provided here] in a bottom-up approach, so that all the child asset types are created first and then the root asset type is created at the end.
+Then [create the asset types](/dtm/asset-types/#creating-a-new-asset-type) in a bottom-up approach, so that all the child asset types are created first and then the root asset type is created at the end.
 
-Once the root asset type is created, **Asset** [hyperLink to asset] can then be created for this.
+Once the root asset type is created, start [creating assets](/dtm/asset-hierarchy/#creating-assets-ui) for the entire asset hierarchy.
 
 Using this approach the desired hierarchy with all the asset types, sub asset types and Custom properties are created.
 
@@ -144,8 +148,9 @@ On successful save a success pop-up notification is displayed.
 
   Click on this **Delete** icon, an additional confirmation pop up is displayed.
 
-Click **Confirm** to delete the asset type.
-Click **Cancel** to cancel the operation.
+  Click **Confirm** to delete the asset type.
+
+  Click **Cancel** to cancel the operation.
 
 
 * **Delete the asset types in bulk:**
@@ -173,4 +178,4 @@ Applied filters can be cleared using the **Clear filters** option on top.
 
 Number of asset types gets displayed on bottom left of the page. Number of entries in a page can be changed using the **Items per page** dropdown. Pagination is provided on bottom right of page.
 
-Once all the required **Asset types** are created, **Assets** [link to assets] can be created using these asset types.
+Once all the required **Asset types** are created, [**Assets**](/dtm/asset-hierarchy/#assets) can be created using these asset types.

@@ -42,7 +42,7 @@ The following types of data lakes are currently supported:
 |Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication|
 
-While the other settings are fixed once the initial configuration was saved, the **Azure Storage shared access key** can be changed afterwards. Click **Edit**, set a new value, and either click **Save credentials** to save the update or cancel to keep the old value.
+While the other settings are fixed once the initial configuration was saved, the **Azure Storage shared access key** can be changed afterwards. Click **Edit**, set a new value, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
 
 {{< c8y-admon-info >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
@@ -58,7 +58,7 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from {{< product-c8y-iot >}} DataHub|
 
-While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or cancel to keep the old values.
+While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
 {{< c8y-admon-info >}}
 An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
@@ -108,9 +108,9 @@ For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also defi
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
-* A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
+* A Dremio API user is created; the user has standard Dremio user privileges, not admin privileges.
 * A data lake connection in Dremio is created using the provided data lake settings. For Dremio that connection is technically spoken a source. In our context we refer to it as **target table** as this data lake is used for storing the offloaded data.
-* A source in Dremio is created which connects to the Operational Store of {{< product-c8y-iot >}}.
+* A source in Dremio is created which connects to the Operational Store of {{< product-c8y-iot >}}. That source is not visible to the Dremio API user.
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings

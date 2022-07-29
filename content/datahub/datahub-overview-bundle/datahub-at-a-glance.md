@@ -56,7 +56,7 @@ Offloading refers to moving data from the Operational Store of {{< product-c8y-i
 * Build a low-cost long-term archive of data.
 * Separate analytical workloads from operational workloads.
 
-The starting point is one of the base {{< product-c8y-iot >}} collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
+The starting point is one of the {{< product-c8y-iot >}} base collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
 
 {{< c8y-admon-info >}}
 {{< product-c8y-iot >}} DataHub only supports offloading for the following {{< product-c8y-iot >}} base collections: **alarms**, **events**, **inventory**, **measurements**. Offloading of other collections is currently not supported.

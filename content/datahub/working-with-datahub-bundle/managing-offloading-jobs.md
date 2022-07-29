@@ -45,7 +45,7 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in the future.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -88,7 +88,7 @@ The action bar provides an **Import** button, which imports offloading configura
 
 Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal UUID of the original configuration, the target table name, and the description. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
 
-To change the import file, click the delete icon next to the file name and select a new file to import the configurations from.
+To select a different import file, click the delete icon next to the file name and select a new file to import the configurations from.
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 

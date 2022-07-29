@@ -21,7 +21,6 @@ In the navigator, select **Compaction** under **Status** to get an overview of t
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or failed
-| Job name | The name of the pipeline the compaction job is associated with
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled
@@ -43,7 +42,6 @@ The list shows the execution history with each execution consisting of the follo
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or failed
-| Job name | The name of the pipeline the compaction job is associated with
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled

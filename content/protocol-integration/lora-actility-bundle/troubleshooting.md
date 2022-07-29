@@ -3,6 +3,20 @@ weight: 90
 title: Troubleshooting
 layout: redirect
 ---
+<a name="lora-connectivity-troubleshooting"></a>
+### Connectivity
+
+#### Authorization to the LoRa platform failed
+
+Authentication to the Actility platform failed. Check if the base URL is correct.To resolve this, provide correct URL and try again.
+<br>
+
+Authentication to the Actility platform failed with status code '400'. Check if the profile Id is correct.To resolve this, provide correct profile Id and try again.
+<br>
+
+Authentication to the Actility platform failed with status code '401'. Check if the credentials are correct.To resolve this, provide correct username/password try again.
+<br>
+
 
 <a name="lora-device-registration-troubleshooting"></a>
 ### Device registration

@@ -43,7 +43,7 @@ To see the **Authentication** menu entry, you must have "Tenant management" ADMI
 
 {{< c8y-admon-related >}}
 - [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
-- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}
 
 #### Login settings

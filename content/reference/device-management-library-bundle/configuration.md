@@ -118,6 +118,8 @@ Devices that want to manage configuration as files can achieve a basic form usin
 
 This approach stores and transfers configuration as binary files.
 
+> **Note:** This mechanism only works with internal Cumulocity repository. When a device supports only legacy configuration it is important to be known that configurations with external URLs will not be supported by that device. The id that is stored in the device managed object (an example can be seen below) is always refering to a inernal binary saved in the inventory.
+
 #### Upload current legacy configuration
 
 Devices may signal their support for uploading their current configuration to {{< product-c8y-iot >}} by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a **Get snapshot from device** button in the **Configuration** tab. Clicking it generates a ```c8y_UploadConfigFile``` operation for the device.

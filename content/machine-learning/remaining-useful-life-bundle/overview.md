@@ -19,8 +19,9 @@ For this demo we are using a popular data set from NASA, called CMAPSS. CMAPSS 
 
 Please follow the below steps:
 
-* Create a demo device in {{< product-c8y-iot >}} that mimics an actual device.
+* Train a machine learning model via a Jupyter notebook in MLW.
+* Create a demo device in {{< product-c8y-iot >}} that mimics an actual engine.
 * Simulate measurements for the demo device.
-* Generate estimates based on the simulated data.
+* Generate remaining useful life estimates based on the simulated data.
 
 1. X.-S. Si, W. Wang, C.-H. Hu and D.-H. Zhou, "Remaining useful life estimation—A review on the statistical data driven approaches", Eur. J. Oper. Res., vol. 213, no. 1, pp. 1-14, Aug. 2011.

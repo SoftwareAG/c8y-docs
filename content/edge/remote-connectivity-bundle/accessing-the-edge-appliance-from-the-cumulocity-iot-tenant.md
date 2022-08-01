@@ -23,8 +23,7 @@ The following protocols are supported to connect to the Edge appliance through r
 * Secure Shell (SSH)
   * Console for command line access
   * Keyboard for interaction
-* Terminal (Telnet)
-  * Console for command line access
-  * Keyboard for interaction
+
+> **Important:** Starting {{< product-c8y-iot >}} Edge Release 10.15, the support for Telnet protocol has been removed to make {{< product-c8y-iot >}} Edge more secure, as Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment, {{< company-sag >}} recommends you to use the SSH protocol instead.
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

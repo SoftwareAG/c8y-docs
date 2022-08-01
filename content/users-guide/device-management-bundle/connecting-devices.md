@@ -119,18 +119,18 @@ After the file is uploaded, all required new groups will be created, new registr
 
 The CSV files must contain at least the IDs as device identifier and the credentials of the devices.
 
-In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in this example.
+In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the follwoing example:
 
-```asciidoc
-    ID;Credentials;PATH;ICCID;NAME;TYPE
-    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
-    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+```
+ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
+006064ce800a;LF2PWJoLG1Fz;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
+006064ce8077;OowoGKAbiNJs;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
 ```
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
 
 * Username - the username for accessing {{< product-c8y-iot >}} must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
-* Password - the password to access {{< product-c8y-iot >}}, equals the value "Credentials" in the CSV file.
+* Password - the unique password for each device to access {{< product-c8y-iot >}} equals the value "Credentials" in the CSV file.
 * Device in managed object representation - fields TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in the CSV file.
 
 After the data is imported, you will get feedback on the number of devices that were pre-registered as well as on any potential errors that may have occurred.

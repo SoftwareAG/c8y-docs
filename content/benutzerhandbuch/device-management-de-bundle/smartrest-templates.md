@@ -8,7 +8,7 @@ Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und An
 
 Um ein neues Template hinzuzufügen, importieren Sie entweder ein vorhandenes Template oder erstellen Sie ein neues.
 Um ein Template zu importieren, klicken Sie rechts in der oberen Menüleiste auf **Template importieren**, wählen Sie eine hochzuladende Datei aus und geben Sie einen Namen und eine eindeutige ID ein.
-Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie im Abschnitt [Device Management > SmartREST-Templates](/users-guide/device-management#smartrest-templates) beschrieben.
+Um ein neues Template zu erstellen, klicken Sie rechts in der oberen Menüleiste auf **Template erstellen**, geben Sie einen Namen und eine eindeutige ID ein und fügen Sie die erforderlichen Nachrichten oder Antworten hinzu, wie im weiteren Verlauf beschrieben.
 
 ### Einführung
 
@@ -35,7 +35,7 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 ### So importieren Sie ein vorhandenes SmartREST-Template
 
 1. Klicken Sie rechts in der oberen Menüleiste auf **Template importieren**.
-2. Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen von Ihrem Computer.
+2. Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen aus Ihrem Dateisystem.
 3. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).
 4. Klicken Sie auf **Importieren**, um das Template zu importieren.
 
@@ -121,7 +121,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 

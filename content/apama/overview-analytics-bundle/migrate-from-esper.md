@@ -62,11 +62,11 @@ The following smart rules are stateless:
 
 ### Migrating from CEL when also using custom rules
 
-Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you must convert that to an Apama EPL app as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama EPL apps as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new Apama EPL apps. To do this, follow these steps:
+Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you must convert that to an EPL app as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting EPL apps as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new EPL apps. To do this, follow these steps:
 
 1. Lock down the CEP custom rules on the existing tenant to prevent change.
 2. Make available a new tenant on which Apama has been enabled.
-3. Manually convert all old custom rules from the existing tenant into equivalent Apama EPL apps on the new tenant. Refer to the rest of this guide, in particular [Best practices and guidelines](/apama/best-practices/). This includes smart rules where the CEL has been modified.
+3. Manually convert all old custom rules from the existing tenant into equivalent EPL apps on the new tenant. Refer to the rest of this guide, in particular [Best practices and guidelines](/apama/best-practices/). This includes smart rules where the CEL has been modified.
 4. Test the behavior of the new EPL apps by sending, for example, measurements or events into the new tenant and verifying that the new EPL apps respond appropriately.
 
     {{< c8y-admon-important >}}
@@ -78,7 +78,7 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 	* Activate your newly developed EPL apps in the production tenant.
 
 
-You can also work with {{< company-sag >}} Professional Services to help ensure the migration is as smooth as possible. {{< company-sag >}} Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in {{< product-c8y-iot >}}.
+You can also work with {{< company-sag >}} Professional Services to help ensure the migration is as smooth as possible. {{< company-sag >}} Professional Services can help migrate CEL code into EPL code and they can also provide training on using Apama in {{< product-c8y-iot >}}.
 
 ### Handling scheduled exports
 

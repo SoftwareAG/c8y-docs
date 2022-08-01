@@ -8,6 +8,13 @@ aliases:
   - /users-guide/enterprise-tenant/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring
   - /benutzerhandbuch/enterprise-tenant-de/#tenant-sla-monitoring
+  - /release-notes
+  - /apama/apama-release-notes
+  - /datahub/datahub-release-notes
+  - /edge/edge-release-notes
+  - /machine-learning/release-notes
+  - /web-sdk-for-plugins
+  - /event-language
 ---
 
 This documentation describes the **{{< c8y-current-version >}} release** of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release {{< c8y-current-version >}} (see the [Release notes](https://{{< domain-c8y >}}/releasenotes/release-{{< c8y-current-version-hyphen >}}/overview-{{< c8y-current-version-hyphen >}}) for details).

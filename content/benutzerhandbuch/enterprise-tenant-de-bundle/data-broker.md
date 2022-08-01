@@ -18,7 +18,9 @@ Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie a
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
->**Wichtig:** Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+{{< c8y-admon-important title="Wichtig" >}}
+Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+{{< /c8y-admon-important >}}
 
 Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
@@ -49,7 +51,9 @@ Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
 Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten zu aktivieren bzw. deaktivieren. Werden Daten weitergeleitet, steht der Umschalter auf "Aktiv". Werden keine Daten weitergeleitet, steht der Umschalter auf "Gesperrt" oder "Ausstehend". "Gesperrt" bedeutet, dass Sie das Weiterleiten deaktiviert haben. "Ausstehend" bedeutet, dass der Zielmandant das Weiterleiten deaktiviert hat.
 
-> **Info:** Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
+{{< c8y-admon-info >}}
+Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
+{{< /c8y-admon-info >}}
 
 <a name="data-broker-connector-edit"></a>
 #### So fügen Sie einen Datenkonnektor hinzu

@@ -11,22 +11,24 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
+{{< c8y-admon-info >}}
+To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, 
+your tenant must be subscribed to the Apama-ctrl microservice that supports EPL apps. 
+If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/welcome/contacting-support).
+{{< /c8y-admon-info >}}
+
 <a name="apama-epl-apps"></a>
 ### Developing apps with the Streaming Analytics application
 
-The EPL Apps page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
+The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
-Any user on the tenant wishing to use the EPL Apps page must be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
-
-{{< c8y-admon-info >}}
-To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, your tenant must be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
-{{< /c8y-admon-info >}}
+Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 **Step 1 - Invoke the Streaming Analytics application**
 
-Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the EPL Apps page.
+Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
 
-When you go to the  EPL Apps page, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
+When you go to the **EPL Apps** page, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
 
 ![EPL Apps](/images/apama/apama-epl-apps-cards.png)
 

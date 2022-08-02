@@ -27,14 +27,16 @@ There are two different types of smart rules:
   Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
 {{< c8y-admon-req >}}
+The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+
 ROLES & PERMISSIONS for global smart rules:
 
-- To view a global smart rules: READ permission for permission type "Global smart rules"
-- To edit global smart rules: ADMIN permission for permission type "Global smart rules"
-- To create a global smart rule: ADMIN permission for permission type "Global smart rules"
-- To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules"
-- To delete a global smart rule: ADMIN permission for permission type "Global smart rules"
-- The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
+- To view a global smart rules: READ permission for permission type "Global smart rules" or "CEP management" and READ permission for permission type "Inventory"
+- To edit global smart rules: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
+- To create a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
+- To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
+- To delete a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
+-  To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
 {{< /c8y-admon-req >}}
 
 - **Local smart rules**
@@ -42,13 +44,14 @@ ROLES & PERMISSIONS for global smart rules:
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
 {{< c8y-admon-req >}}
+The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+
 ROLES & PERMISSIONS for local smart rules:
 
 - To view local smart rules: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
 - To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
 - To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
 - To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
 {{< /c8y-admon-req >}}
 
 Smart rules can be seen in two places:

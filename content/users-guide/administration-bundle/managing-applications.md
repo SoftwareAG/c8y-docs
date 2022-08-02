@@ -131,8 +131,9 @@ Click **Add application** at the top right of the **All applications** tab.
 
 In the resulting dialog box, select one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system.
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system
 * [External application](#external-application) - by linking to an application running elsewhere
+* [Install from available packages](#blueprint-application) - by selecting a package blueprint
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
 <a name="uploading-zip-files"></a>
@@ -159,6 +160,21 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
 6. Enter the external URL where the application can be reached.
+7. Click **Save** to create the application.
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
+<a name="blueprint-application"></a>
+##### To install an application from a blueprint
+
+1. Click **Add application** at the top right of the **All applications** tab.
+2. Select **Install from available packages**.
+<br><br>
+<img src="/images/users-guide/Administration/admin-application-blueprint-install.png" alt="Blueprint package">
+<br><br>
+3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
+5. Enter an application key, used to identify this application.
+6. Enter the path where the application can be reached.
 7. Click **Save** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
@@ -242,6 +258,13 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
+### Application plugins
+
+To display a grid of all plugins installed on an application click on the **Plugins** tab.
+
+<img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
+
+In the **Plugins** tab one can extend the current application by installing or removing plugins. Additionally the view offers a grid view of all currently installed plugins.
 
 <a name="editing-and-removing"></a>
 ### To edit an application
@@ -295,6 +318,35 @@ If a hosted application is not deployed correctly, users may reactivate it.
 3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
+
+### Packages
+
+The Microfrontends feature offers better shareability and reusability of UI features across the different applications in the form of packages. With Microfrontends, UI features can now be developed as packages and added to an application without coding knowledge. Users have the ability to develop two types of applications:
+
+- **Plugins** can be used to extend existing applications without the need of re-building the application.
+- **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new applications from scratch.
+
+Packages are compositions of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the "Packages" tab in the "Applications" page.
+
+To add a new package click on the "Add Package" button.
+
+<img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+
+By clicking on a package, one can view additional data related to the package such as "Package overview" which includes description and images as well as some meta information which is taken from the "package.json".
+
+Additionally, it is possible to view all available plugins within the selected package on the right hand side. To install a plugin simply click on the "Install plugin" button and select the desired application.  
+
+<img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
+
+In the archives tab, one can see all previously uploaded binaries related to the current package. The binaries displayed in that view can be downloaded by clicking on the three dots next to each archive.
+
+<img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
+
+In the versions tab it is possible to select or upload different versions. Versions will indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version it is possible to observe additional information such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be chosen in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+
+To switch to a different version click on the three dots next to the desired version and click "Set as latest". To delete a version click "Delete" in the external menu.
+
+<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Archive view">
 
 ### Features
 

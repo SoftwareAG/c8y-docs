@@ -37,7 +37,9 @@ If you want to modify any of the asset details, click on **Edit icon**, enter ne
 
 If you want to delete the subasset or device in the hierarchy, then click the **Delete icon** against the subasset or device.
 
->**Info:** **Delete icon** appears on hover against each row under Subassets section.
+{{< c8y-admon-info>}}
+**Delete icon** appears on hover against each row under Subassets section.
+{{< /c8y-admon-info>}}
 
 On click of the **Delete icon**, a confirmation pop-up is displayed, asking if you want to delete the **Asset** or **Device**.
 

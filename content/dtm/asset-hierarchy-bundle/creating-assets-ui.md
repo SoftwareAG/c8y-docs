@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-##### **Assets**
+##### Assets
 
 **Assets** in DTM application are the digital representation of physical assets. It can have subassets and devices underneath it.
 Properties or attributes of the assets are defined using [Custom properties](/dtm/asset-types/#property-library).
@@ -22,7 +22,7 @@ If there are assets already created, then it is listed on this page.
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
 
-##### **Asset hierarchy**
+##### Asset hierarchy
 
 The **Asset hierarchy** gives a bird’s eye view of the entire hierarchy. Root asset type and all its subsequent child asset types together form the entire **Asset hierarchy**. Each hierarchy level comprises of custom properties for that asset and the subassets and devices underneath that asset.
 
@@ -35,7 +35,7 @@ In case, there is one "Building" asset, having 2 floors and each floor having 5 
 You can think of **Asset hierarchy** being similar to a tree structure, with the root level asset on top and its subsequent child assets branching out.
 
 
-##### **Add Asset**
+##### Add Asset
 
 To create assets via UI, click on **Add Asset**
 
@@ -43,7 +43,9 @@ To create assets via UI, click on **Add Asset**
 
 Click on **Choose asset type** dropdown on left. All the root asset types get displayed in this list.
 
->**Info:** Root asset type is an **Asset type** which is at the top of hierarchy and does not have any Parent Asset type above it.
+{{< c8y-admon-info>}}
+Root asset type is an **Asset type** which is at the top of hierarchy and does not have any Parent Asset type above it.
+{{< /c8y-admon-info>}}
 
 Select the root asset type, for which the asset must be created, in this dropdown.
 
@@ -65,7 +67,7 @@ When [creating the Asset type](/dtm/asset-types/#creating-a-new-asset-type), the
 
 ![assets-new](/images/dtm/assets/dtm-assets-create-text-type.png)
 
-##### **Custom property of Type Text or Number:**
+##### Custom property of Type Text or Number
 
 If the **Type** of custom property is either **Text** or **Number**, then provide a valid text or numeric input as value.
 
@@ -80,7 +82,7 @@ If default values were provided when creating the custom properties of **Type** 
 In case no default value was mentioned during creation, then you must provide a value now.
 
 
-##### **Custom property of Type Date picker:**
+##### Custom property of Type Date picker
 
 If the **Type** of custom property is **Date picker**, then a calendar will be displayed, and a date must be provided as value for the custom property.
 
@@ -90,7 +92,7 @@ In case “Project start date” is a **Custom property** for the "Building" ass
 
 ![assets-date](/images/dtm/assets/dtm-assets-create-date-type.png)
 
-##### **Custom property of Type File upload:**
+##### Custom property of Type File upload
 
 If the **Type** of **Custom property** is “File upload”, then during asset hierarchy creation a file browser is displayed, and you must choose a valid file to be uploaded.
 
@@ -100,9 +102,11 @@ When creating the **Custom property**, allowed file types are defined. When crea
 
 Blueprint for a building can be uploaded as one of the **Custom property** and later this can be used for future references.
 
->**Info:** In case file is uploaded which is not present in allowed file types list, it results in validation error and asset will not be created.
+{{< c8y-admon-info>}}
+In case file is uploaded which is not present in allowed file types list, it results in validation error and asset will not be created.
+{{< /c8y-admon-info>}}
 
-##### **Custom property of Type Enumeration:**
+##### Custom property of Type Enumeration
 
 In case the **Custom property** is of **Type** “Enumeration”, then when creating the **Asset hierarchy**, the options provided during creation are displayed in a dropdown. Choose a value for the **Custom property** from this dropdown.
 
@@ -115,7 +119,7 @@ When **Asset hierarchy** is being created, a dropdown appears with these 3 optio
 ![assets-enum](/images/dtm/assets/dtm-assets-create-enum-type.png)
 
 
-##### **Custom property of Type Boolean:**
+##### Custom property of Type Boolean
 
 In case the **Custom property** is of the **Type** “Boolean”, then a check box will be present against the **Custom property**.
 
@@ -136,7 +140,7 @@ The **Custom property** section appears only, if for the **Asset type** the cust
 * Assigned Devices: By default no devices are assigned. You can assign devices for the assets using below steps.
 
 
-##### **Assign devices:**
+##### Assign devices
 
 Click **Assign devices** option, “Assign devices” page loads with the list of devices.
 
@@ -165,7 +169,9 @@ In case you want to filter devices based on text, use **Filter** option in appli
 
 To clear the filters, click **Clear all filters**.
 
->**Info:** The **Sort** and **Filter** icons appear on hover over each column.
+{{< c8y-admon-info>}}
+The **Sort** and **Filter** icons appear on hover over each column.
+{{< /c8y-admon-info>}}
 
 Devices once selected can also be deselected using the checkbox, or also by clicking on **Cancel** on the top bar, on which all selected devices get deselected.
 
@@ -181,11 +187,11 @@ Click **Next**, asset hierarchy details for the next asset to be created loads. 
 
 As **Assets** are defined for each hierarchy level, same is indicated via green tick mark on the Asset hierarchy on left.
 
+{{< c8y-admon-info>}}
+In case there are validation errors on the page, it is indicated by red highlights. Correct the same to proceed further.
+{{< /c8y-admon-info>}}
 
->**Info:** In case there are validation errors on the page, it is indicated by red highlights. Correct the same to proceed further.
-
-
-##### **Adding multiple instances of Assets:**
+##### Adding multiple instances of Assets
 
 At each hierarchy level, multiple assets can be created from a Single **Asset type**, based on the requirement.
 
@@ -199,7 +205,9 @@ Next using the **Add** button on bottom, add the second floor asset.
 
 Click on **Delete** icon on top right, if you want to delete the added asset template,
 
->**Info:** **Delete** icon appears on hover.
+{{< c8y-admon-info>}}
+**Delete** icon appears on hover.
+{{< /c8y-admon-info>}}
 
 Click **Previous**, if you want to modify any of the details for asset in previous screen, during asset hierarchy creation.
 
@@ -220,7 +228,7 @@ On successful **Asset hierarchy** creation, a success pop-up notification is dis
 Once the **Asset hierarchy** is created, it can be viewed by clicking on the root Asset and navigating further. Check [view assets](/dtm/asset-hierarchy/#view-asset) for viewing assets.
 
 
-##### **Sub Assets:**
+##### Sub Assets
 
 On click of the root Asset in **Assets** page, **Subassets** page loads. **Subassets** page has details of root asset, subassets for the root asset, the child devices for the root asset and the custom properties for root Asset.
 
@@ -228,7 +236,7 @@ On click of the root Asset in **Assets** page, **Subassets** page loads. **Subas
 
 **Subassets** page has below 3 options on top right corner:
 
-###### **Add child assets:**
+###### Add child assets
 
 *	**Add child asset** : On click of **Add child asset** option, **Asset hierarchy** page loads with parent being the root asset or asset where “add child asset” option is invoked from.
 
@@ -248,7 +256,10 @@ In case, you navigate to existing "Floor" asset and want to add a child asset, t
 
 For more details on how to add **Assets** in **Asset hierarchy**, please refer to section [Add Assets via UI](/dtm/asset-hierarchy/#creating-assets-ui)
 
->**Info:** In case you are at the end of the hierarchy which cannot have any child assets, then on click of **Add child asset** there will be no options to create child assets.
+{{< c8y-admon-info>}}
+In case you are at the end of the hierarchy which cannot have any child assets, then on click of **Add child asset** there will be no options to create child assets.
+{{< /c8y-admon-info>}}
+
 
 *	**Assign devices** : In case devices have to be added at any hierarchy level, then click on **Assign devices** option on top right.
 

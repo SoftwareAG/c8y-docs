@@ -29,7 +29,7 @@ Click **Configure columns** to configure the displayed columns.
 If you want to reload the screen, click on **Reload**.
 
 
-##### **Creating a new Asset type**
+##### Creating a new Asset type
 
 
 If you want to add a new **Asset type**, click **Add asset type**.
@@ -81,10 +81,10 @@ If one or more **child asset types** are checked as required, an asset created w
 * **Custom properties**: This information is optional. By default no custom properties are selected.
 
 If you want to add custom property, click **Add custom property**. You see a drop-down field where you can select the existing **custom properties**. Select the desired **custom property**. Repeat this process to select multiple **custom properties**.
-You can reorder the **custom properties** via drag and drop. 
+You can reorder the **custom properties** via drag and drop.
 
 The selected **custom properties** are then displayed under **Custom properties** with the checkbox **Required** on the right. Check the box if the **Asset type** must require this **custom property**. By default this check box remains unchecked.
- 
+
 If you want to disassociate the **custom property** from **Asset type**, click the **Remove** icon next to the check box.
 
 Once you have filled all mandatory fields you can click **Save**.
@@ -109,7 +109,7 @@ Once you have filled all mandatory fields you can click **Save**.
 
    If you want to disassociate the custom property, click on the **Remove** icon against it.
 
-   To search for specific **custom properties** type the respective name in the drop-down field. 
+   To search for specific **custom properties** type the respective name in the drop-down field.
    If search is successful, the custom properties are listed and you can select the desired custom property.
 
    If you cannot find a specific **custom property**, click **New custom property**. In the following dialog window, you can fill out the necessary information. For more details see [how to create a custom property](Add Hyperlink here).
@@ -157,7 +157,7 @@ Modify the required fields in the dialog window and click **Save**.
 On successful save, you will see a success pop-up notification.```
 
 
-##### **Delete an existing Asset type**
+##### Delete an existing Asset type
 
 Use **Delete** to delete an existing asset type. There are two ways to delete an asset.
 
@@ -197,6 +197,6 @@ Hover over a column to see the **Filter** option.
 
 To clear any applied filters use the **Clear filters** option on the top.
 
-You can see the total number of asset types on the bottom left of the page. To change the number of entries per page use the **Items per page** drop down option. 
+You can see the total number of asset types on the bottom left of the page. To change the number of entries per page use the **Items per page** drop down option.
 
 Once all the required **Asset types** are created, you can start creating [**Assets**](/dtm/asset-hierarchy/#assets) using these asset types.

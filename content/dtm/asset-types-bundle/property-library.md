@@ -13,7 +13,7 @@ When you navigate to the **Property library** page via **“Configuration> Digit
 
 If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
-##### **Create new Custom property**
+##### Create new Custom property
 
 In order to add a custom property, click **Add custom property** on the bottom left. Enter the required data in the dialog box on the right and click **Save**. You can now select this custom property..
 
@@ -28,14 +28,16 @@ Custom properties have the following attributes:
 *	**Type**: This field defines the type of the custom property. It can be any of the following categories – Text, Number, File upload, Date picker, Enumeration or Boolean.
 *	**Default value**: This information is optional. It defines the default value for the attribute. You can modify the content when creating an asset using this custom property.
 
+{{< c8y-admon-info>}}
+Default value text box gets displayed only if the ‘Type’ chosen is either **Text** or **Number**.
+{{< /c8y-admon-info>}}
 
->**Info:** Default value text box gets displayed only if the ‘Type’ chosen is either **Text** or **Number**.
 
 #### Types of Custom property
 
 As described above, you can select one of the six options listed under **Type** to further define the type of your custom property.
 
-##### **Text**
+##### Text
 
   If you select **Text**, four additional fields appear. The information in these fields is optional. Select **Text** when the custom property value is a string, for example, the building name.
 
@@ -82,7 +84,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
    Click **Save** to finish.
 
 
-##### **Number**
+##### Number
 
 
   If you select the **Number** as the custom property type you have to provide a numeric value when creating the asset, for example, the height of a building.
@@ -130,7 +132,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
    If the custom property is the building's height with the **Minimum** field set to 80 and the **Maximum** set to 150, the **Default value** must be between 80 to 150.
 
 
-##### **Date Picker**
+##### Date Picker
 
   If you select this option in the **Type** drop-down list, you must choose a date and custom property during asset creation to be initialized to that value.
 
@@ -139,7 +141,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
    An example for a custom property with this type is "start date". During the asset creation you can initialize the custom property with the relevant start date.
 
 
-##### **Enumeration**
+##### Enumeration
 
   If you want to choose a value from the drop-down menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
 
@@ -155,7 +157,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 
 
-##### **Boolean**
+##### Boolean
 
   If you select Boolean for your custom property type, the presence of the custom property can either be true or false.
 
@@ -166,7 +168,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
   Initialize it to "true" if a whiteboard is present in the room, and initialize it to "false" if there is no whiteboard.
 
 
-##### **File upload**
+##### File upload
 
   Select this option if you need to upload a file to define the custom property.
 
@@ -177,7 +179,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
   If you want to upload the blueprint for a building,you must name the custom property "Building blueprint" and specify the file type of the blueprint file. When you create the asset, you can upload the respective file. Once the asset is created, you can view this file for future reference.
 
 
-##### **Types of Custom properties**
+##### Types of Custom properties
 
 Custom properties are of 2 types.
 

@@ -20,7 +20,7 @@ Once you created all **custom properties** and **asset types**, then all they na
 
 In case you want to add new translation in the DTM application, same can be done by adding the text as key and adding the required translation for the respective languages.
 
-##### **Adding new Keys for translations:**
+##### Adding new Keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 
@@ -32,11 +32,11 @@ Fill all the mandatory fields in the dialog window and click **Save**. The new k
 
 Next, click **Apply** to apply the changes.
 
-##### **Add / Edit translations:**
+##### Add / Edit translations
 
  You can add or edit translations for all the keys in two ways:
 
-* Hover over the respective column for the **Edit** icon to be visible. Click the icon to select the desired language and add or edit the translation. 
+* Hover over the respective column for the **Edit** icon to be visible. Click the icon to select the desired language and add or edit the translation.
 
 
 

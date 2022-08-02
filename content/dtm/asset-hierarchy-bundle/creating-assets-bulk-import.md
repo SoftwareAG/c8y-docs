@@ -9,7 +9,7 @@ If you want to import the entire **Asset hierarchy** with all assets at once, yo
 
 You can fill in the required details in this template and upload this file, to create the assets in bulk for the selected **Asset type**.
 
-##### **Creating a role to use Bulk import feature**
+##### Creating a role to use Bulk import feature
 
 To use the Bulk import feature, you must give permissions for **Digital Twin** role, following these steps:
 
@@ -37,7 +37,7 @@ Once the permissions are assigned, bulk import feature can be used.
 If the permissions are not assigned, then the CSV template will not get downloaded correctly.
 {{< /c8y-admon-info>}}
 
-##### **Download CSV template for bulk import**
+##### Download CSV template for bulk import
 
 You have to download the CSV template for the required **Asset type** first.
 
@@ -62,7 +62,7 @@ You have to download the CSV template for the required **Asset type** first.
 * Click on **Download Template** option to download the CSV template.
 
 
-##### **CSV template attributes**
+##### CSV template attributes
 
 
 The CSV template has the following fields:
@@ -86,7 +86,9 @@ The custom properties which are mandatory are mentioned with a “required” la
 
 The [**Type**](/dtm/asset-types/#types-of-custom-property) of the custom property is also mentioned as a label, for better understanding.
 
->**Info:** Modify the excel settings so that date can be provided in yyyy-mm-dd format, so that date is not auto corrected on input.
+{{< c8y-admon-info>}}
+Modify the excel settings so that date can be provided in yyyy-mm-dd format, so that date is not auto corrected on input.
+{{< /c8y-admon-info>}}
 
 If the **Type** of Custom property is **Date**, then input must be provided in yyyy-mm-dd format.
 
@@ -111,7 +113,7 @@ Once you fill in all details, save the CSV template in your system.
 
 
 
-##### **Uploading the CSV template**
+##### Uploading the CSV template
 
 To upload the CSV template follow the below steps:
 
@@ -136,7 +138,7 @@ If there is an issue with the template being uploaded (example: invalid template
 
 
 
-##### **Partial Import**
+##### Partial Import
 
 In case the Asset hierarchy is already existing, and you want to import some more Asset/s, then same can be achieved by Partial import.
 
@@ -146,7 +148,9 @@ Next, fill in details for the child asset hierarchy in the CSV template.
 
 Refer to this section for details on filling the CSV template: [Filling CSV template for bulk import](/dtm/asset-hierarchy/#csv-template-attributes)
 
->**Info:** From any hierarchy level, template will be downloaded only for its succeeding child hierarchy. And Assets must be imported only for that child hierarchy.
+{{< c8y-admon-info>}}
+From any hierarchy level, template will be downloaded only for its succeeding child hierarchy. And Assets must be imported only for that child hierarchy.
+{{< /c8y-admon-info>}}
 
 Once you enter all the details correctly for child asset in the CSV template, upload the template using below steps:
 

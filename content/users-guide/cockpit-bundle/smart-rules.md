@@ -27,7 +27,7 @@ There are two different types of smart rules:
   Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
 {{< c8y-admon-req >}}
-ROLES & PERMISSIONS FOR GLOBAL SMART RULES:
+ROLES & PERMISSIONS for global smart rules:
 
 - To view a global smart rules: READ permission for permission type "Global smart rules"
 - To edit global smart rules: ADMIN permission for permission type "Global smart rules"
@@ -42,7 +42,7 @@ ROLES & PERMISSIONS FOR GLOBAL SMART RULES:
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
 {{< c8y-admon-req >}}
-ROLES & PERMISSIONS FOR LOCAL SMART RULES:
+ROLES & PERMISSIONS for local smart rules:
 
 - To view local smart rules: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
 - To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles

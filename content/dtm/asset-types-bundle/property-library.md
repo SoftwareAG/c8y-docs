@@ -8,6 +8,7 @@ layout: redirect
 Also, the same custom property can belong to 2 different asset types.
 
 #### Custom property attributes
+#### Custom property attributes
 When you navigate to the **Property library** page via **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
 
 If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.

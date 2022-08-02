@@ -5,43 +5,43 @@ layout: redirect
 ---
 
 
-In case you want to import the entire **Asset hierarchy** with all assets at once, same can be done using the Bulk import feature. For each [**Asset type**](/dtm/asset-types/#asset-types), a CSV template is provided.
+If you want to import the entire **Asset hierarchy** with all assets at once, you can use the bulk import feature. For each [Asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
 
 You can fill in the required details in this template and upload this file, to create the assets in bulk for the selected **Asset type**.
 
 ##### **Creating a role to use Bulk import feature**
 
-To use the Bulk import feature, you need to give permissions for **Digital Twin** role.
+To use the Bulk import feature, you must give permissions for **Digital Twin** role, following these steps:
 
 Follow the below steps:
 
-Navigate to [**Administration**](/users-guide/administration/#overview) via the application switcher in the top bar.
+Navigate to [**Administration**](/users-guide/administration/#overview) via the application switcher in the top right corner.
 
-Click on **Roles** under the Quick links.
+Under **Quick links** click **Roles**.
 
-Click on the role which is already assigned for your username under "Global roles" tab.
+In the **Global roles** tab, select the role which is already assigned for your username.
 
-Set all available permissions for **Digital Twin** under "Permissions" section by selecting all check boxes.
+Set all available permissions for **Digital Twin** under "Permissions" section by selecting the following check boxes:
 
-Under **Application access**, check "Digital Twin" checkbox.
+                * Under **Application access**, select the "Digital Twin".
 
-Under CUSTOM APPLICATIONS, check "Digital Twin Manager" checkbox.
+                     * Under **Custom applications**, select the "Digital Twin Manager".
 
 Click **Save**.
 
-![bulk-import-permission](/images/dtm/bulk-import/dtm-bulk-import-assign-permissions.png)
+![Permissions for bulk import](/images/dtm/bulk-import/dtm-bulk-import-assign-permissions.png)
 
-On successful save a notification is received indicating the same.
 
 Once the permissions are assigned, bulk import feature can be used.
 
->**Info:** If the permissions are not assigned, then the CSV template will not get downloaded correctly.
+{{< c8y-admon-info>}}
+If the permissions are not assigned, then the CSV template will not get downloaded correctly.
+{{< /c8y-admon-info>}}
 
 ##### **Download CSV template for bulk import**
 
 You have to download the CSV template for the required **Asset type** first.
 
-Follow the below steps to do the same:
 
 * Navigate to **Assets** page. Click on **Import assets**.
 

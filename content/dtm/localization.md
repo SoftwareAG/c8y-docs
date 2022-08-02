@@ -24,7 +24,6 @@ In case you want to add new translation in the DTM application, same can be done
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 
-On click of **Add term** option, ADD TERM AND TRANSLATIONS screen loads.
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
@@ -39,9 +38,7 @@ Next, click **Apply** to apply the changes.
 
 * Hover over the respective column for the **Edit** icon to be visible. Click the icon to select the desired language and add or edit the translation. 
 
-For every row, against each column **Edit icon** appears on hover.
 
-On click of this **Edit icon**, you can either add new translation or edit existing translation text.
 
 
 * Click the **Edit icon** in each row to open the dialog window **Edit term translations**. Add or edit the translation for any language. Click **Save** to finish the process.

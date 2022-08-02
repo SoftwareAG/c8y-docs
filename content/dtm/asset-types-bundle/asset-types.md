@@ -44,38 +44,27 @@ To create a new **Asset type** you have to fill out the following six attributes
 *	**Key**: This information is mandatory. It uniquely identifies the **Asset type**. Note that **Key** can only contain letters and numbers, no special characters or space are allowed.
 
 *	**Description**: This information is optional. It offers a brief description of the **Asset type**.
-    You can enter a brief description for the **Asset type** or choose to leave it blank.
 
-*	**Icon**: This information is optional. It is displayed against the label for each **Asset type**. By default no icon is selected. To choose an icon, click **Select icon** on the left. This opens a dialog window where you can either search or filter icons by type or select an icon from the predefined list. Click **Save**. If you do not want to select an icon at this point, click **Cancel**. The dialog window closes automatically.
+*	**Icon**: This information is optional. It is displayed against the label for each **Asset type**. By default no icon is selected. To select an icon, click **Select icon** on the left. This opens a dialog window where you can either search or filter icons by type or select an icon from the predefined list. Click **Save**. If you do not want to select an icon at this point, click **Cancel**. The dialog window closes automatically.
 
-     To choose an icon, click on **select icon** option on left, a pop-up window loads.
 
-     You can either search, or filter by type or simply scroll down and select an icon from the predefined list of icons provided.
 
-     Select an icon and click on **Save**.
 
 
 ![Select an icon for the Asset Type](/images/dtm/asset-type/dtm-asset-type-select-icon.png)
 
-  If you don’t want to select any icon, click **Cancel**. You will be navigated back to “New asset type” page.
 
-* **Child asset types**: This information is optional. It restricts the asset assignment to the defined types. If not set, then no child assets are allowed by default.  To add child asset types, click **Add child asset type**. You see a drop-down field where you can select the allowed **child asset types**. Repeat this process to select multiple **child asset types**. The selected **child asset types** are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. Check the box if the **Asset type** must require this **child asset type**. By default this check box remains unchecked.
+* **Child asset types**: This information is optional. It restricts the asset assignment to the defined types. If not set, then no child assets are allowed by default.  To add child asset types, click **Add child asset type**. You see a drop-down field where you can select the allowed **child asset type**. Repeat this process to select multiple **child asset types**. The selected **child asset types** are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. Check the box if the **Asset type** must require this **child asset type**. By default this check box remains unchecked.
 
-If you want to disassociate the child asset from **Asset type**, click the **Remove** icon next to the check box.
-
+If you want to disassociate the child asset from the selected **Asset type**, click the **Remove** icon next to the check box.
 
 
 
-   On click of **Add child asset type** button, a dropdown gets displayed on screen. You can select allowed child asset types from this dropdown.
-   On click of the dropdown, all the asset types get listed. You have to select the allowed types one by one.
 
-   Once child asset types are selected, it gets displayed in “Child asset types” section under “Allowed child asset types”. Against each row a **Required** check box will be present on right. By default this check box is disabled.  
 
-   If you check the **Required** checkbox, then during asset creation, addition of that child asset is mandatory.
 
-   For each added child asset type, a **Remove** icon displayed on extreme right.
 
-   If you want to disassociate the child asset from asset type, click on the **Remove** icon.
+
 
 {{< c8y-admon-info>}}
 If you do not select and check an **child asset types**, then the asset cannot have any child assets.
@@ -110,7 +99,6 @@ Once you have filled all mandatory fields you can click **Save**.
 
 
 
-   If you want to add custom property, click **Add custom property**.  
 
    On click, a dropdown is displayed and all existing custom properties are displayed.
    Choose the custom properties one by one.
@@ -181,7 +169,6 @@ Use **Delete** to delete an existing asset type. There are two ways to delete an
 
   Click **Confirm** to delete the asset type. If you want to cancel the operation, click **Cancel**.
 
-  Click **Cancel** to cancel the operation.
 
 
 * **Delete the asset types in bulk**
@@ -210,6 +197,6 @@ Hover over a column to see the **Filter** option.
 
 To clear any applied filters use the **Clear filters** option on the top.
 
-Number of asset types gets displayed on bottom left of the page. Number of entries in a page can be changed using the **Items per page** dropdown. Pagination is provided on bottom right of page.
+You can see the total number of asset types on the bottom left of the page. To change the number of entries per page use the **Items per page** drop down option. 
 
 Once all the required **Asset types** are created, you can start creating [**Assets**](/dtm/asset-hierarchy/#assets) using these asset types.

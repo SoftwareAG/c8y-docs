@@ -7,24 +7,25 @@ layout: redirect
 **Property library** section allows you to create custom properties. Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define an asset type.
 Also, the same custom property can belong to 2 different asset types.
 
-When you navigate to Property library page via the path **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** to add the custom properties.
+#### Custom property attributes
+When you navigate to the **Property library** page via **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
 
-If you use a tenant with custom properties already defined in the Property library, you can find the list of defined custom properties on the left, as well as the selected custom properties listed on the right.
+If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
 ##### **Create new Custom property**
 
-On click of **Add custom property** a screen is displayed on right side. Once you fill in all the mandatory fields with valid inputs, then you have an option to save the custom property.
+In order to add a custom property, click **Add custom property** on the bottom left. Enter the required data in the dialog box on the right and click **Save**. You can now select this custom property..
 
 ![Property-add](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
 
 Custom properties have the following attributes:
-*	Label: Name of the custom property and is a mandatory field. Custom property is addressed using the Label field.
-*	Key: Mandatory field Key, is used to uniquely identify and store the custom property internally.
-*	Description: Optional field description is used to provide a brief description about the custom property being created.
-*	Complex property toggle: This toggle option when enabled creates a Complex custom property. By default its disabled and creates a simple custom property.
-*	Type: Type dropdown defines the type of the custom property. Type can belong to any of these categories – Text, Number, File upload, Date picker, Enumeration or Boolean.
-*	Default value: Optional text box default value, defines the default value for the attribute when filled. If empty, then you have an option to fill, and if filled then you can modify default value during creation of Asset.
+*	**Label**: This information is mandatory. It refers to the name of the custom property.  The custom property is further addressed using the information provided here..
+*	**Key**: This information is mandatory. It is used to uniquely identify and store the custom property in the DTM.
+*	**Description**: This information is optional. It provides a brief description of the custom property.
+*	**Complex property toggle**:  This information is optional. Use this toggle to create a complex custom property, that contains one or multiple key-value pairs. The toggle is disabled by default.
+*	**Type**: This field defines the type of the custom property. It can be any of the following categories – Text, Number, File upload, Date picker, Enumeration or Boolean.
+*	**Default value**: This information is optional. It defines the default value for the attribute. You can modify the content when creating an asset using this custom property.
 
 
 >**Info:** Default value text box gets displayed only if the ‘Type’ chosen is either **Text** or **Number**.
@@ -35,26 +36,26 @@ As described above, you can select one of the six options listed under **Type** 
 
 ##### **Text**
 
-  If you select "Text", four additional fields appear. The information in these fields is optional. Select "Text" when the custom property value is a string, for example, the building name.
+  If you select **Text**, four additional fields appear. The information in these fields is optional. Select **Text** when the custom property value is a string, for example, the building name.
 
 ![Property-text](/images/dtm/custom-property/dtm-property-library-type-text.png)
 
 
   *	**Min Length**:
 
-  If you check this box, you need to enter the minimum length of the text that must be provided for this custom property during the asset creation. Any text below the minimum length will not be accepted.
+  If selected, you need to enter the minimum length of the text that must be provided for this custom property during the asset creation. Any text below the minimum length will not be accepted.
 
-  You also have an option of not checking this box. Doing so implies there will be no minimum length criteria set for this custom property during the asset creation.
+If not selected, there will be no minimum length criteria set for this custom property during the asset creation.
 
   * **Max Length**:
 
-  If you check this box, you need to enter the maximum length of the text that must be provided for this custom property during the asset creation. Any text above the maximum length will not be accepted.
+  If selected, you need to enter the maximum length of the text that must be provided for this custom property during the asset creation.
 
   If the entered text exceeds the maximum length, you get notified of the incidence. The asset will not be created.
 
   * **RegExp**:
 
-  If you check this box, you need to enter a valid regular expression. You also need to provide the custom property value when creating the asset, which adhers to the regular expression defined.
+  If selected, you need to enter a valid regular expression. You also need to provide the custom property value when creating the asset, which adhers to the regular expression defined.
 
   **Example:**
 
@@ -130,7 +131,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### **Date Picker**
 
-  If you select this option in the **Type** dropdown list, then during asset creation you must choose a date and custom property will be initialized to that value.
+  If you select this option in the **Type** drop-down list, you must choose a date and custom property during asset creation to be initialized to that value.
 
   **Example:**
 
@@ -139,15 +140,15 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### **Enumeration**
 
-  If you want to choose a value from a dropdown during asset creation, then select **Type** as **Enumeration** when creating the custom property.
+  If you want to choose a value from the drop-down menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
 
   When you select **Enumeration** as the custom property **Type**, a second field appears below. Here, enter all desired information separated by a comma.
 
-  When the asset is being created, then these values appear as menu options in the dropdown. Select one of the options and custom property is initialized with that option.
+   During asset creating, these values appear as menu options in the drop-down menu. Select one of the options to initialize the custom property with that option.
 
   **Example:**
 
-   If "building color" is a custom property and the color has to be either "black", "white" or "grey", then these values are provided as comma separated options when creating the custom property.
+   If you create a custom property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a colon when creating the custom property.
 
    ![Property-enum](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -155,24 +156,24 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### **Boolean**
 
-  If value of the Custom property is either "true" or "false", then choose **Type** as **Boolean**.
+  If you select Boolean for your custom property type, the presence of the custom property can either be true or false.
 
   **Example:**
 
-  If "Whiteboard" is a custom property and in a building there are rooms with Whiteboard and other rooms not having the Whiteboard, then in such cases the custom property is created with type as **Boolean**.
+  If you define a custom property called "Whiteboard" for a building where there are rooms with a whiteboard and some without, then the custom property needs to be created as Boolean. So when the asset is created, if the room has a whiteboard, it is then initialized to "true". If there is no whiteboard in the room, the asset is initialized to "false".
 
-  Initialize it to "true" if whiteboard is present in room, and initialize it to "false" in case the whiteboard is absent.
+  Initialize it to "true" if a whiteboard is present in the room, and initialize it to "false" if there is no whiteboard.
 
 
-##### **File Upload**
+##### **File upload**
 
-  If you want to upload a file when creating the asset, then choose **File Upload** as the **Type**.
+  Select this option if you need to upload a file to define the custom property.
 
-  On selecting **File Upload** additional text box is displayed to mention the allowed file types. This is an optional field and if filled, only the mentioned file types are allowed to be uploaded.
+  If you select **File upload**, you see an additional text box showing the allowed file types. Enter the allowed file types separated by a comma in the **Allowed file types** field. During the asset creation, you can only upload files of the allowed file types.
 
  **Example:**
 
-  In case you want to upload the blueprint for a building, then create a custom property named “Building blueprint”. When creating the asset, the blueprint can be uploaded as a file for this custom property. Once the asset is created, you will have an option to view this file for future reference.  
+  If you want to upload the blueprint for a building,you must name the custom property "Building blueprint" and specify the file type of the blueprint file. When you create the asset, you can upload the respective file. Once the asset is created, you can view this file for future reference.
 
 
 ##### **Types of Custom properties**
@@ -187,38 +188,42 @@ If an attribute consists of a single key value pair, then it is a Simple custom 
 
  **Example:**
 
- If “Building Color” is defined as a custom property under Property library section, then “building_color” is the key used. “White” is the default value for this custom property.
+ If the custom property is named "Building color", you must use the key "building_color" with the Default value being "white".
 
 
 * **Complex Custom property**:
 
- If a Custom property consists of multiple key value pairs, then such properties are Complex custom properties. In this case, there will be a root object followed by one or more key value pairs.
+ A complex custom property consists of multiple key value pairs, meaning it contains a root object followed by one or more key value pairs. You can select the complex custom property option by turning on the toggle. If you turn on the toggle, you must define each key value pair as well as providing a Type for each pair.
+
+In case of Complex custom property, each key value pair must be defined, and type should be provided for each key value pair
 
  **Example:**
 
- If Building dimension is defined as a complex custom property, then building area, building height and building width are the multiple key value pairs defining the attribute building dimension.
+ If "Building dimension" is defined as a complex custom property, then building area, building height and building width are the multiple key value pairs defining the attribute building dimension.
 
  ![Property-complex](/images/dtm/custom-property/dtm-property-library-complex-property.png)
 
 
-Fill all the mandatory fields and click on **Save** button to create a custom property. Either a Simple or a Complex custom property is created, based on inputs provided. In case of Complex custom property, each key value pair must be defined, and "type" should be provided for each key value pair.
+Fill all the mandatory fields and click **Save** to create a custom property. Based in the input, you create a either a **Simple custom property** or a **Complex custom property**. In case of a **Complex custom property** each key value pair must be defined, also provide the **Type** for each key value pair.
 
-On successful creation, a success notification is displayed on top right of screen.
+When the process is completed successfully, you see a green pop-up notification at the top right corner of the screen.
 
-In case the mandatory fields are not filled, then the **Save** button is not enabled.
+If any mandatory fields are left open, the Save button is deactivated.
 
-If the mandatory fields are filled, but there are validation issues, then the same will be highlighted with red highlight on the corresponding element and validation error text will be displayed on screen. You can then change the input fields accordingly and save with new valid inputs.
+{{< c8y-admon-info>}}
+In case of validation issues, the respective fields are also highlighted red and an error notification will pop up. To solve this issue, enter the necessary information in the respective field and click Save.
+{{< /c8y-admon-info>}}
 
 ![Property-validation](/images/dtm/custom-property/dtm-property-library-validation-issues.png)
 
 
 If you want to cancel the creation of a new custom property, click **Cancel** at the bottom. In this case, you do not receive a notification and the **Add new property** screen closes.
 
-Once the custom properties are created, then all the custom properties get listed on the screen towards the left. In case of simple custom properties, the **type** gets displayed along with the labels. In case of complex properties, **Object** is displayed against the labels.
+Once the custom properties are created, they are listed on the left. For simple custom properties you see the **Type** as well as the labels. For complex custom properties you see the **Object** against the labels.
 
-You can select any custom property from this list. Clicking it displays all the details on the right of the screen. You can now view or edit any content of the custom property. Click **Save** to save your changes. In case of successfully editing a custom property, you see a notification indicating that the changes have been saved successfully.
+You can select any custom property from this list. Click the desired custom property to see all the details on the right of the screen. You can now view or edit any content of the custom property. Click **Save** to save your changes.
 
-You can also delete any custom property from the list. Select the respective custom property and click **Delete** on the bottom right. The custom property is now deleted. You also see a notification message stating that the custom property has been deleted.
+You can also delete any custom property from the list. Select the respective custom property and click **Delete** on the bottom right. The custom property is now deleted.
 
 
 {{< c8y-admon-info>}}
@@ -228,7 +233,7 @@ You can also delete any custom property from the list. Select the respective cus
 {{< /c8y-admon-info>}}
 
 
- You can also search for specific custom properties using the **Search** field. To start searching enter the label in the search field and click **Search**.
+ You can also search for specific custom properties using the **Search** option. To start searching, enter the label in the search field and click **Search**.
 
  If the search is successful, all custom properties matching the search values are displayed on the screen.
 

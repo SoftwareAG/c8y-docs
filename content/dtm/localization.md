@@ -4,59 +4,60 @@ layout: bundle
 title: Localization
 ---
 
-Localization feature is provided in **DTM (Digital Twin Manager)** (DTM) application. To use this feature, subscribe to [**Feature branding**](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
+The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [Subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
 
-Once the Feature branding is enabled, navigate to **Localization** page using the left nav.
+Once you have enabled feature branding, open the **Localization** page on the left menu.
 
-Language for the **DTM** application can be changed by clicking on the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and by choosing the language in the **Language** dropdown. Based on the chosen language, application loads accordingly.
+To change the language for the **DTM** application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the drop down menu. You need to refresh your screen for the application to display the newly selected language.
 
-Additionally, if you want to add translations for the [**Custom property**](/dtm/asset-types/#property-library) or [**Asset types**](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing Static text in **DTM** application, same can be done using Localization feature.
+Additionally, if you want to add translations for the [Custom property](/dtm/asset-types/#property-library) or [Asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
-![localization-mainpage](/images/dtm/localization/dtm-localozation-main-page.png)
+![Main view localization page](/images/dtm/localization/dtm-localozation-main-page.png)
 
-On first time login, when you navigate to **Localization** page, by default there will be a row added with **Group** as Key. You can add the translations if needed for **Group**.
+On your first time login, the **Localization** page will show a row named **Group** as key. If necessary, add a translation for "group" according to the explanation above.
 
-Once the Custom properties and asset types are created, then all those names are added as Keys in **Localization** page. You can further add the translations as required.
+Once you created all **custom properties** and **asset types**, then all they names are added as keys in the **Localization** page. You can further add the translations as required.
 
-In case you want to add new translation in the **DTM** application, same can be done by adding the text as Key and adding the required translation for the respective languages.
+In case you want to add new translation in the DTM application, same can be done by adding the text as key and adding the required translation for the respective languages.
 
 ##### **Adding new Keys for translations:**
 
-New keys and their respective translations can be added using the **Add term** option on top right.
+Add new keys and their respective translations using the **Add term** option on the top right.
 
 On click of **Add term** option, ADD TERM AND TRANSLATIONS screen loads.
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
 
-Fill all the mandatory parameters and click on **Save** to save the changes. New key with added translations are saved.
+Fill all the mandatory fields in the dialog window and click **Save**. The new key is saved including the added translations.
 
-Next, click on **Apply** for the changes to be applicable.
+Next, click **Apply** to apply the changes.
 
 ##### **Add / Edit translations:**
 
- For all the keys, you can add translations or edit the existing translations in two ways.
+ You can add or edit translations for all the keys in two ways:
 
-1.	By clicking on the **Edit icon** against the column for the desired language:
+* Hover over the respective column for the **Edit** icon to be visible. Click the icon to select the desired language and add or edit the translation. 
 
 For every row, against each column **Edit icon** appears on hover.
 
 On click of this **Edit icon**, you can either add new translation or edit existing translation text.
 
 
-2.	By clicking on the **Edit icon** against each row:
+* Click the **Edit icon** in each row to open the dialog window **Edit term translations**. Add or edit the translation for any language. Click **Save** to finish the process.
 
 **Edit icon** is present for each row and on click “Edit term translations” screen loads.
 
 Translation can be added or modified for any of the languages and the changes can be saved using **Save** button.
 
 
-Once all your translations are in place, change the language using the **Language** dropdown under **User settings**. The added translations will reflect in the **DTM** application.
+Once all your translations are in place, change the language under **User settings**. The added translations will now be displayed in the DTM application.
 
->**Info:** The translations added for **Asset type** and **Custom property** will be reflecting only in **Assets** page.
+{{< c8y-admon-info>}}
+The added translations for **Asset type** and **Custom property** will only show up in the **Assets** page.
 
 {{< c8y-admon-info>}}
 
- Currently the translations for DTM application are available for English and German language.
+The translations for the DTM application are currently available for English and German.
 
 {{< /c8y-admon-info>}}

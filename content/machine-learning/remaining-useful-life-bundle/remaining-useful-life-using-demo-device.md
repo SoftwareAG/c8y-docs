@@ -51,10 +51,32 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 <img src="/images/zementis/RemainingUsefulLife/remaining-useful-life_get_device_id.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
+#### Register a second demo device to receive the predictions
+
+Please use the script *RegisterDeviceForPrediction.ipynb* to register the second demo device named "RULPredictionDevice". This device is used to receive the predictions. Follow the steps as described for the first demo device.
+
 #### Simulate measurements for the demo device
 
 Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one. Upon successful execution, `predicted_RUL values` are sent to {{< product-c8y-iot >}} on behalf of the demo device. 
+2. Execute each cell one by one. Upon successful execution, `predicted_RUL values` are sent to {{< product-c8y-iot >}} on behalf of the demo device every 60 seconds. 
+
+#### Schedule scoring the simulated data
+
+Use the Python script *SchedulePrediction.py* to score the simulated data and send the predictions to the second demo device "RULPredictionDevice". In order to execute the script on a schedule, follow the steps described in [Machine Learning Workbench > Task Scheduler](/machine-learning/web-app-mlw/#scheduler). As part of this demo we configured the scheduler as shown in the below screenshot.
+
+<img src="/images/zementis/RemainingUsefulLife/rul-schedule-task.png" alt="Download" style="display:inline-block; margin:0"> <br>
+
+#### Create Widgets
+
+For this demo we created a number of widgets to show the {{< product-c8y-iot >}} display capabilities:
+* A data points list, which is a table display of a collection of data points.
+* A silo displaying current values for selected measurements.
+* A data points graph displaying a collection of data points.
+* A KPI Widget displaying the last measurement value of a device.
+
+See screenshot below and follow the description in [User Guide > Cockpit](/users-guide/cockpit).
+
+<img src="/images/zementis/RemainingUsefulLife/rul-widgets.png" alt="Download" style="display:inline-block; margin:0"> <br>
 

@@ -58,14 +58,6 @@ To create a new **Asset type** you have to fill out the following six attributes
 
 If you want to disassociate the child asset from the selected **Asset type**, click the **Remove** icon next to the check box.
 
-
-
-
-
-
-
-
-
 {{< c8y-admon-info>}}
 If you do not select and check an **child asset types**, then the asset cannot have any child assets.
 
@@ -97,9 +89,6 @@ Once you have filled all mandatory fields you can click **Save**.
 
    If you want to cancel the operation, click **Cancel**. There will be no notification. Any inputs will be discarded.
 
-
-
-
    On click, a dropdown is displayed and all existing custom properties are displayed.
    Choose the custom properties one by one.
    You also have the option to reorder the custom properties by dragging and dropping them.
@@ -110,32 +99,14 @@ Once you have filled all mandatory fields you can click **Save**.
    If you want to disassociate the custom property, click on the **Remove** icon against it.
 
    To search for specific **custom properties** type the respective name in the drop-down field.
-   If search is successful, the custom properties are listed and you can select the desired custom property.
 
-   If you cannot find a specific **custom property**, click **New custom property**. In the following dialog window, you can fill out the necessary information. For more details see [how to create a custom property](Add Hyperlink here).
-
-   On click of this option, a pop-up window opens with the same fields as present when creating a **Custom property**.
-
+   If you cannot find a specific **custom property**, click **New custom property**. In the following dialog window, you can fill out the necessary information. For more details see [Create new custom property](/dtm/asset-types/#create-new-custom-property).
 
    ![Add new custom property via asset types](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
 
-   Refer to section [Create new custom property](/dtm/asset-types/#create-new-custom-property) to create new **Custom property**.
-
    Once the custom property is created, you can add this custom property in asset type being created.
 
-   Once all the mandatory fields are filled, **Save** button gets enabled. Click **Save** to create the asset type.
-
-   On successful save, a pop-up notification is displayed and you are navigated back to [Asset types](/dtm/asset-types/#asset-types) page.
-
-   If there are any validation issues for any of the fields, same will be highlighted with red highlight and validation error message will be displayed on screen. You can then rectify the inputs and then save the **Asset type**.
-
     ![assettype-validation](/images/dtm/asset-type/dtm-asset-type-validation-error.png)
-
-   If you want to cancel the operation, click on **Cancel**.
-
-   No notification is displayed, and the **Asset type** is not created.
-
-
 
 ##### Creating an Asset type for the entire hierarchy
 

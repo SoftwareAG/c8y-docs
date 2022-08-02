@@ -10,13 +10,13 @@ The Digital Twin Manager (DTM) application allows you to create a digital repres
 
 Once the Asset hierarchy is created in DTM, the hierarchy can be consumed by other applications such as OEE or Machine portal. It would save a lot of time and efforts, as the hierarchy is created only once and can be used directly in other {{< product-c8y-iot >}} hosted applications.
 
-DTM application is hosted on {{< product-c8y-iot >}} platform. Asset hierarchy is created using assets and devices as the basic building blocks.
-
 Devices for the DTM application are created using Device Management application hosted on {{< product-c8y-iot >}} platform.
 For details on the Device Management application, see (Device Management)[/guides/users-guide/device-management-bundle/#overview] in the *User guide*.
 
 Assets are created in the DTM application using asset types as the blueprint for assets. An asset type consists of one or more custom properties and subassets.
 
-The root asset type is created using bottom-up approach and defines all the sub assets and custom properties in the form of a template. Using this root asset type, Asset hierarchy is created, and all the assets, sub-assets, custom properties and devices are defined. Later, this Asset hierarchy can be used as input for other application’s usage.
+#### Root asset type
 
-DTM also provides Localization feature, wherein user can customize and display the translation for certain text. Either for new text or for existing text, user can define the translations and the translations will be displayed on changing the respective languages.
+To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided template first. This root asset type can then be used to create an asset hierarchy, which then (?) defines all the assets, subassets, custom properties and devices in the DTM. As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+
+DTM also provides a Localization feature, where you can customize and display the translation for certain content. See [ADD HYPERLINK TO TRANSLATIONS HERE]().

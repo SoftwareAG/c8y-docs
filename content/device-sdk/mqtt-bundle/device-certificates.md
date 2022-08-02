@@ -67,6 +67,10 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
+{{< c8y-admon-caution >}}
+A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
+{{< /c8y-admon-caution >}}
+
 ### Introduction to X.509 certificates
 
 X.509 is a standard that defines public key certificates, which are commonly used in the SSL protocol to provide secure connection and data transfer.

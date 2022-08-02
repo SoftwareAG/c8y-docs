@@ -48,9 +48,6 @@ To create a new **Asset type** you have to fill out the following six attributes
 *	**Icon**: This information is optional. It is displayed against the label for each **Asset type**. By default no icon is selected. To select an icon, click **Select icon** on the left. This opens a dialog window where you can either search or filter icons by type or select an icon from the predefined list. Click **Save**. If you do not want to select an icon at this point, click **Cancel**. The dialog window closes automatically.
 
 
-
-
-
 ![Select an icon for the Asset Type](/images/dtm/asset-type/dtm-asset-type-select-icon.png)
 
 
@@ -171,3 +168,9 @@ To clear any applied filters use the **Clear filters** option on the top.
 You can see the total number of asset types on the bottom left of the page. To change the number of entries per page use the **Items per page** drop down option.
 
 Once all the required **Asset types** are created, you can start creating [**Assets**](/dtm/asset-hierarchy/#assets) using these asset types.
+
+#### Root asset type
+
+To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided template first. This root asset type can then be used to create an asset hierarchy, which then (?) defines all the assets, subassets, custom properties and devices in the DTM. As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+
+DTM also provides a Localization feature, where you can customize and display the translation for certain content. See [ADD HYPERLINK TO TRANSLATIONS HERE]().

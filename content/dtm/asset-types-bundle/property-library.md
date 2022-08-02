@@ -4,29 +4,60 @@ title: Property library
 layout: redirect
 ---
 
-**Property library** section allows you to create custom properties. Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define an asset type.
+The **Property library** section allows you to create custom properties. Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define an asset type.
 Also, the same custom property can belong to 2 different asset types.
 
-#### Custom property attributes
-#### Custom property attributes
+### Custom property attributes
+
 When you navigate to the **Property library** page via **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
 
 If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
-##### Create new Custom property
+#### Create a new Custom property
 
-In order to add a custom property, click **Add custom property** on the bottom left. Enter the required data in the dialog box on the right and click **Save**. You can now select this custom property..
+In order to add a custom property, click **Add custom property** on the bottom left. Enter the required data in the dialog box on the right and click **Save**. You can now select this custom property.
 
 ![Property-add](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
-
 Custom properties have the following attributes:
-*	**Label**: This information is mandatory. It refers to the name of the custom property.  The custom property is further addressed using the information provided here..
-*	**Key**: This information is mandatory. It is used to uniquely identify and store the custom property in the DTM.
-*	**Description**: This information is optional. It provides a brief description of the custom property.
-*	**Complex property toggle**:  This information is optional. Use this toggle to create a complex custom property, that contains one or multiple key-value pairs. The toggle is disabled by default.
-*	**Type**: This field defines the type of the custom property. It can be any of the following categories – Text, Number, File upload, Date picker, Enumeration or Boolean.
-*	**Default value**: This information is optional. It defines the default value for the attribute. You can modify the content when creating an asset using this custom property.
+
+<table>
+<col width="10">
+<col width="90">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><b>Label</b></td>
+<td style="text-align:left">This information is mandatory. It refers to the name of the custom property. The custom property is further addressed using the information provided here.</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Key</b></td>
+<td style="text-align:left">This information is mandatory. It is used to uniquely identify and store the custom property in the DTM.</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Description</b></td>
+<td style="text-align:left">This information is optional. It provides a brief description of the custom property.</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Complex property toggle</b></td>
+<td style="text-align:left">This information is optional. Use this toggle to create a complex custom property, that contains one or multiple key-value pairs. The toggle is disabled by default.</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Type</b></td>
+<td style="text-align:left">This field defines the type of the custom property. It can be any of the following categories – Text, Number, File upload, Date picker, Enumeration or Boolean.</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Default value</b></td>
+<td style="text-align:left">This information is optional. It defines the default value for the attribute. You can modify the content when creating an asset using this custom property.</td>
+</tr>
+</tbody>
+</table>
+
 
 {{< c8y-admon-info>}}
 Default value text box gets displayed only if the ‘Type’ chosen is either **Text** or **Number**.

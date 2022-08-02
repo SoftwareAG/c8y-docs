@@ -22,6 +22,16 @@
     min-height: 0;
 }
 
+.caution {
+    border-color: #ff801f;
+    background-color: #fff8f2;
+}
+
+.caution .title {
+    color: #ff801f;
+    border-color: #ff801f;
+}
+
 .info {
     border-color: #1776bf;
     background-color: #f2f9ff;

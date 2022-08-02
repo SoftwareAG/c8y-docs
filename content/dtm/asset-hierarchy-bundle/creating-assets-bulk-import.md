@@ -13,7 +13,6 @@ You can fill in the required details in this template and upload this file, to c
 
 To use the Bulk import feature, you must give permissions for **Digital Twin** role, following these steps:
 
-Follow the below steps:
 
 Navigate to [**Administration**](/users-guide/administration/#overview) via the application switcher in the top right corner.
 

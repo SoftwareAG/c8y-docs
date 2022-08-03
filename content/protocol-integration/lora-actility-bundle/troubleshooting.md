@@ -21,7 +21,7 @@ To resolve this, refer to [Configure ThingPark credentials](#configure-credentia
 
 #### Getting device profiles from provider failed
 
-This warning message shows up when the tenant's access token to Thingpark becomes invalid. Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
+This warning message shows up when the tenant's access token to Actility Thingpark becomes invalid. Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
 
 This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
 

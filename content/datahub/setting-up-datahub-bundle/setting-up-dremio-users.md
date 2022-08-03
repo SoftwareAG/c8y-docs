@@ -21,8 +21,8 @@ If the initial configuration has not been completed yet, no users are shown. If 
 
 ### Properties of a Dremio user
 
-#### User name
-The user name is a mandatory setting. It must be a unique value, i.e., no other Dremio user has the same user name. It consists of the tenant id plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline.
+#### Username
+The username is a mandatory setting. It must be a unique value, i.e., no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be *t47110815/myUser*.
 
 #### First name, last name and email
 The first name, last name, and email of a Dremio user are optional settings.
@@ -51,7 +51,7 @@ To add a Dremio user, select **Dremio users** under **Settings** and click **Add
 Click **Save** to save the settings and create the new user. Click **Cancel** to cancel the creation of the user.
 
 ### Editing a Dremio user
-The **Dremio user** section under **Settings** displays the list of users. For each user, there is a context menu on the right side. Select **Edit** from that menu to edit a user. Except for the user name, all settings can be changed. The password can also optionally be changed by clicking **Change password**. Click **Save** to apply the new settings.
+The **Dremio user** section under **Settings** displays the list of users. For each user, there is a context menu on the right side. Select **Edit** from that menu to edit a user. Except for the username, all settings can be changed. The password can also optionally be changed by clicking **Change password**. Click **Save** to apply the new settings.
 
 ### Deleting a Dremio user
-In the context menu of the Dremio user list, select **Delete** and click **Confirm** in the subsequent confirmation dialog to delete a Dremio user. The Dremio API user defined in the initial configuration cannot be deleted that way. This user can only be deleted if the settings under **Initial configuration** are deleted. In the latter case, all Dremio users associated with this {{< product-c8y-iot >}} DataHub instance are deleted.
+In the context menu of the Dremio user list, select **Delete** and click **Confirm** in the subsequent confirmation dialog to delete a Dremio user. The Dremio API user defined in the initial configuration cannot be deleted that way. This user can only be deleted if the settings under **Initial configuration** are deleted. In the latter case, all Dremio users associated with this {{< product-c8y-iot >}} DataHub instance are deleted.

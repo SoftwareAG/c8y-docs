@@ -30,7 +30,7 @@ For each ad-hoc query, the following information is provided:
 
 | Column name | Description
 | ---         |  ---
-| User | The user name of the Dremio user, which has been used to execute the query
+| User | The username of the Dremio user, which has been used to execute the query
 | Query | The SQL query, complemented by a status icon showing success or failure of the query execution
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake

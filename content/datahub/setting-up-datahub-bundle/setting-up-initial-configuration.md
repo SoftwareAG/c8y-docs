@@ -114,7 +114,7 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings
-To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. An edit form is opened which allows you to edit all user details, except for the user name, which is fixed. In section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users), all user details are described.
+To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. An edit form is opened which allows you to edit all user details, except for the username, which is fixed. In section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users), all user details are described.
 
 The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
 

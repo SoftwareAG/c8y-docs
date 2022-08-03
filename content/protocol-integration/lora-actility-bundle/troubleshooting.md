@@ -4,17 +4,6 @@ title: Troubleshooting
 layout: redirect
 ---
 
-<a name="lora-connectivity-troubleshooting"></a>
-### Connectivity
-
-#### Authorization to the LoRa platform failed
-
-This warning message shows up if a provided profile ID, username or password is invalid.
-
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
-<br>
-To resolve this, provide correct credentials and try again.
-
 <a name="lora-device-registration-troubleshooting"></a>
 ### Device registration
 
@@ -56,3 +45,14 @@ This warning message shows up when the connectivity plan in Actility ThingPark h
 <img src="/images/device-protocols/lora-actility/lora-registration-no-freeslots.png" alt="No free slots by device registration" style="max-width: 100%">
 
 To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in {{< product-c8y-iot >}}.
+
+<a name="lora-connectivity-troubleshooting"></a>
+### Connectivity
+
+#### Authorization to the LoRa platform failed
+
+This warning message shows up if a provided profile ID, username or password is invalid.
+
+<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
+<br>
+To resolve this, provide correct credentials and try again.

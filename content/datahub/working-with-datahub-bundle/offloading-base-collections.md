@@ -35,18 +35,30 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | text | VARCHAR |
 
 {{< c8y-admon-info >}}
-The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, it must be added manually.
+The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, 
+it must be added manually.
 {{< /c8y-admon-info >}}
 
-The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses additional steps:
+The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also 
+supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses 
+additional steps:
 
-1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
-2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all*, *_latest*, and *_c8y_cdh_latest_materialized* respectively. The following examples use "alarms" as target table name:
-    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by {{< product-c8y-iot >}} DataHub).
+1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded 
+with the above mentioned standard schema into the target table of the data lake.
+2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as 
+follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following 
+examples use "alarms" as target table name:
+    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. 
+    For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status 
+    from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the 
+    latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 
+    thus is not seen by {{< product-c8y-iot >}} DataHub).
     * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the offloading configuration has view materialization enabled.
+    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the 
+    offloading configuration has view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section 
+[Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 #### Offloading the events collection
 
@@ -174,7 +186,9 @@ The system uses the type attribute to determine *c8y_Temperature* as measurement
 | ... | C | 2.0791169082 | ... |
 
 {{< c8y-admon-info >}}
-You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. In such a case type coercion is used, which determines a common super type.
+You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of 
+the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common 
+problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. 
 {{< /c8y-admon-info >}}
 
 ##### Offloading measurements with the TrendMiner target table layout

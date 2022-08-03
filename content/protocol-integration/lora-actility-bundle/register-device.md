@@ -13,7 +13,7 @@ To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > *
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
 
 In the next window fill in the required information:
-- **Connection**: Lists all configured Actility connections in the tenant. The following device profile and  connectivity plan option is populated based on the selected Actility connection.
+- **Connection**: Lists all configured Actility connections in the tenant. The following device profile and connectivity plan option is populated based on the selected Actility connection.
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
 
     The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.

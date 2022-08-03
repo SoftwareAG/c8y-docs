@@ -22,8 +22,8 @@ In the data explorer, data points (that is measurements or sensor data) can be v
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To view and select data points: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
-- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for the "Measurements" Inventory roles
+- To view and select data points: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
 - To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
   {{< /c8y-admon-req >}}
 

@@ -48,10 +48,10 @@ The smart rules functionality is only available if the tenant is subscribed to t
 
 ROLES & PERMISSIONS for local smart rules:
 
-- To view local smart rules: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
-- To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
+- To view local smart rules: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+- To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory"  in the inventory roles
+- To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 {{< /c8y-admon-req >}}
 
 Smart rules can be seen in two places:

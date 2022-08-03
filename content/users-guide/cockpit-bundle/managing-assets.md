@@ -104,14 +104,14 @@ Groups show the following tabs:
 - **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
 
 {{< c8y-admon-req >}}
-ROLES & PERMISSIONS IN GROUPS CONTEXT:
+ROLES & PERMISSIONS in groups context:
 
 - To view all groups: READ permission for permission type "Inventory"
 - To add new groups: CREATE permission for permission type "Inventory"
 - To delete any group: ADMIN permission for permission type "Inventory"
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
-- To view specific groups: READ permissions for permission type "Inventory" in the Inventory role permissions
-- To manage or delete specific groups: READ and CHANGE permissions for permission type "Inventory" in the Inventory role permissions
+- To view specific groups: READ permissions for "Inventory" in the inventory roles
+- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles 
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-info >}}

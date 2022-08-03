@@ -4,6 +4,7 @@ title: Troubleshooting
 layout: redirect
 ---
 
+### Sigfox callbacks in backend.sigfox.com are not created correctly
 
 ### Device registration
 
@@ -45,6 +46,18 @@ The request above is simply an example API request that could be used. For more 
 {{< /c8y-admon-info >}}
 
 
+This warning message shows up when there are no connections set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration application where the connections are configured.
+
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without connections" style="max-width: 100%">
+<br>
+
+#### No device protocols configured
+
+This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click **Device protocols** to navigate to the **Device protocols** page where the protocols are configured.
+
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
+
+### Issues with alarm provisioning
 #### Issues with alarm provisioning
 
 ![!Failed operation](/images/device-protocols/sigfox/sigfox-troubleshooting-failedoperation.png)

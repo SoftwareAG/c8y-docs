@@ -65,13 +65,14 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or Data Point Library.</td>
+<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or data point library.</td>
 </tr>
 </tbody>
 </table>
 
->**Info:** In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  
-
+{{< c8y-admon-info >}}
+In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  
+{{< /c8y-admon-info >}}
 
 <a name="alarm-sms"></a>
 ### On alarm send SMS
@@ -80,7 +81,9 @@ The following types are available:
 
 If an alarm is created, an SMS is sent.
 
-> **Info:** This rule is only available if your tenant has a configured SMS provider.
+{{< c8y-admon-info >}}
+This rule is only available if your tenant has a configured SMS provider.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 
@@ -115,7 +118,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, for example, "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -128,17 +131,19 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
+You can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you must navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
->**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
+{{< c8y-admon-important >}}
+There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
+{{< /c8y-admon-important >}}
 
 <a name="alarm-email"></a>
 ### On alarm send email
@@ -147,7 +152,9 @@ You can select a single group or a single device (just one, not multiple). To en
 
 If an alarm is created, an email is sent.
 
->**Info:** Note that the corresponding emails are send with "text/html" as content type.
+{{< c8y-admon-info >}}
+Note that the corresponding emails are send with "text/html" as content type.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 
@@ -182,7 +189,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send email</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the email to. Multiple addresses can be separated by a comma (",", do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy">Smart rule variables</a>.<br> <strong>Message</strong>: Text of the email. You can use a variable of the form #{name}, see <a href="#smart-rule-variables" class="no-ajaxy"> Smart rule variables</a>.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -197,7 +204,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -261,7 +268,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -323,11 +330,13 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 When a configured type of alarm is raised, it starts monitoring how long the alarm stays active.
 
-If the alarm is still active after the specified duration, the severity will be increased one level, e.g. from MINOR to MAJOR.
+If the alarm is still active after the specified duration, the severity will be increased one level, for example, from MINOR to MAJOR.
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
-> **Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
+{{< c8y-admon-info >}}
+The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
+{{< /c8y-admon-info >}}
 
 <a name="geofence-alarm"></a>
 ### On geofence create alarm
@@ -336,7 +345,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 If a geofence border is crossed, an alarm is created.
 
-The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
+The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, for example, if a tracked car which has left the geofence area is re-entering the geofence area.
 
 **Parameters**
 
@@ -384,13 +393,15 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
+{{< c8y-admon-info >}}
+In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
+{{< /c8y-admon-info >}}
 
 **Troubleshooting**
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. No new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). No new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -399,9 +410,11 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-If a geofence border is crossed, an email is sent.
+If a geofence border is crossed by leaving the geofence area, an email is sent.
 
->**Info:** Note that the corresponding emails are send with "text/html" as content type.
+{{< c8y-admon-info >}}
+Note that the corresponding emails are send with "text/html" as content type.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 
@@ -449,7 +462,9 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
+{{< c8y-admon-info >}}
+In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
+{{< /c8y-admon-info >}}
 
 **Troubleshooting**
 
@@ -511,7 +526,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
+The unit of the consumption measurement is always per hour (that means, if the measurements are in "kg" the consumption will be in "kg/h").
 
 The rule takes the last two measurements for a specified time, calculates the difference in value and time and then calculates the consumption per hour.
 
@@ -575,7 +590,9 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-> **Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
+{{< c8y-admon-info >}}
+The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
+{{< /c8y-admon-info >}}
 
 <a name="alarm-operation"></a>
 ### On alarm execute operation
@@ -644,9 +661,9 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into the yellow range, then an alarm of MINOR severity is created. If it moves out of the yellow range, the MINOR alarm is cleared.
 
-The rule uses the following parameters from the device object or Data Point Library:
+The rule uses the following parameters from the device object or data point library:
 
-* Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
+* Data point library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point. Note that these are close intervals ([red min: red max]) that contain the lowest accepted value and the highest accepted value, see also examples below.
 
@@ -696,7 +713,7 @@ If we set the yellow range to "[30;60)" and the red range to "[50;90]":
 
 and the measured value is 55, a MINOR alarm (yellow) will be created.
 
-Using these mechanisms, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
+Using these mechanisms, you can configure global threshold ranges in the data point library. These global values can then be overridden for specific objects on a case-by-case basis.
 
 **Parameters**
 
@@ -726,7 +743,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">2</td>
 <td align="left">On threshold</td>
-<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data Point Library entry</strong>: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object. Note that the unit which is set in the data point is not taken into account here.</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data point library entry</strong>: Name of the entry in the data point library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object. Note that the unit which is set in the data point is not taken into account here.</td>
 </tr>
 <tr>
 <td align="left">3</td>
@@ -756,12 +773,14 @@ For each incoming measurement value, the rule performs the following steps:
 
 * The data of the red and yellow range is collected from either:
 
-- the Data Point Library (control parameter).
+- the data point library (control parameter).
 - the source object (the measurement). If found, ranges from the source object's data point override are merged.
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
-> **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
+{{< c8y-admon-info >}}
+Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
+{{< /c8y-admon-info >}}
 
 * Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
@@ -773,16 +792,19 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
-> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+{{< c8y-admon-info >}}
+If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+{{< /c8y-admon-info >}}
 
->**Info:** Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
-
+{{< c8y-admon-info >}}
+Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+{{< /c8y-admon-info >}}
 
 <a name="threshold-explicit"></a>
 ### On measurement explicit threshold create alarm
@@ -797,7 +819,9 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into GREEN range, no alarm is created.
 
-> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+{{< c8y-admon-info >}}
+This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or data point library.
+{{< /c8y-admon-info >}}
 
 **Parameters**
 
@@ -849,15 +873,19 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance mode](/users-guide/device-management#maintenance-mode). In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
-> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+{{< c8y-admon-info >}}
+If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+{{< /c8y-admon-info >}}
 
->**Info:** ​Under certain circumstances, i.e. if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+{{< c8y-admon-info >}}
+​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+{{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>
 ### Smart rule variables
@@ -900,8 +928,14 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application), variables for times can include a time zone to display the time in.
-The variable #{time:TZ=America/New_York} for example displays the time using the time zone for New York. See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+{{< c8y-admon-info >}}
+If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
+variables for times can include a time zone and time format to display the time in.
+The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
+See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
+and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+in the Apama documentation.
+{{< /c8y-admon-info >}}
 
 **Fields specific for alarms**
 
@@ -1051,4 +1085,6 @@ Here we can for example define the following variables:
   </tr>  
 </table>
 
-> **Important:** In case the variable does not exist or is misspelled, no substitution will occur.
+{{< c8y-admon-important >}}
+In case the variable does not exist or is misspelled, no substitution will occur.
+{{< /c8y-admon-important >}}

@@ -30,8 +30,8 @@ A success response consists of a 201 status and a location header similar to `<H
 
 The properties `key`, `name` and `type` from the above request body are self explanatory, and about the roles:
 
-* `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, e.g. if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
-* `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, e.g. a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the {{< product-c8y-iot >}} platform.
+* `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, for example, if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
+* `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, for example, a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the {{< product-c8y-iot >}} platform.
 
 The application ID for existing applications can be obtained employing a GET request with the name of the application:
 
@@ -436,7 +436,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library) and in the [Sensor library](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Sensor-library).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](/reference/device-management-library/) and in the [Sensor library](/reference/sensor-library/).
 
 Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-sdk/rest) in the *Device SDK guide*).
 
@@ -526,7 +526,7 @@ A status of PENDING means here that the device has not yet picked up the operati
 
 #### Listening for events
 
-Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/reference/real-time-statements)) to create a new rule module "myRule":
+Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](https://{{< domain-c8y >}}/guides/10.9.0/event-language/real-time-statements/)) to create a new rule module "myRule":
 
 ```sql
 select *

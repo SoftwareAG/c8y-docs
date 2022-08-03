@@ -14,7 +14,7 @@ After starting, the agent will synchronize the inventory with the sensor subnetw
 
 ### Synchronizing inventory data
 
-To understand inventory synchronization, remember the communication hierarchy described in [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the subnetwork that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
+To understand inventory synchronization, remember the communication hierarchy described in [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the subnetwork that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes must be reflected in the inventory.
 
 ![Communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
@@ -35,7 +35,7 @@ It is important to know that the device agent is assuming data ownership of conf
 
 ### Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations intended for its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent must query the core for operations intended for its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 
@@ -45,10 +45,10 @@ Finally, the agent acknowledges the execution of the operation and it would upda
 
 Besides remote control of devices, the other main task of agents is to transmit data from sensors. This data can vary as outlined in the domain model section:
 
--   **Measurements** are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (e.g. temperature sensors or electrical meters). In other cases, the data is read on demand or at irregular intervals (e.g. health devices such as weight scales). Regardless what kind of protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to {{< product-c8y-iot >}}.
--   **Events** that need to be processed in realtime by IoT applications, e.g. notifications from a motion detector or transactions from a vending machine.
--   **Alarms** are events that require human intervention, e.g. tamper events sent by an electrical meter.
--   **Audit logs** are events that are recorded for risk management purposes, e.g. login failures.
+-   **Measurements** are produced by reading sensor values. In some cases, this data is read in static intervals and sent to the platform (for example temperature sensors or electrical meters). In other cases, the data is read on demand or at irregular intervals (for example health devices such as weight scales). Regardless what kind of protocol the device supports, the agent is responsible for converting it into a "push" protocol by uploading data to {{< product-c8y-iot >}}.
+-   **Events** that must be processed in realtime by IoT applications, for example, notifications from a motion detector or transactions from a vending machine.
+-   **Alarms** are events that require human intervention, for example, tamper events sent by an electrical meter.
+-   **Audit logs** are events that are recorded for risk management purposes, for example, login failures.
 
 ### Updating agent configuration
 

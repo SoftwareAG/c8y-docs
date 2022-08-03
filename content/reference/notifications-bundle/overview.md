@@ -15,7 +15,7 @@ In the {{< product-c8y-iot >}} 10.11 release, Notifications 2.0 needs to be enab
 See the *Messaging Service - Installation & operations guide* on how to do that.
 Ingress via load balancers also needs to allow ingress for the new WebSocket endpoint that is enabled by default in {{< product-c8y-iot >}} 10.11, which might affect custom deployments that manage their own ingress.
 
-To receive notifications over the 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant.
+To receive notifications over the 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant. Subscriptions are persistent,long lived, and allow notifications to be stored reliably until consumed and acknowledged by a consuming microservice or application.
 
 ### Managed object context
 
@@ -26,9 +26,12 @@ This subscribed object is known as the source object for the <kdb>notification/e
 Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, events, measurements, managed objects or any combination of these) to filter by.
+When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations or any combination of these) to filter by. The alarms with children and events with children enable users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
 It is also possible to filter by presence of a specific JSON fragment or "fragment type".
-When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied to the consumer.
+When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
+For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
+
+### Receiving subscribed notifications
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
 
@@ -55,16 +58,18 @@ See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
 
-For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application.
+### Building consuming microservices and applications
 
-There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the following protocol specification directly.
+For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application. Any WebSocket library or programming language can be used as the protocol is text-based and relatively simple. Consumer can be either microservices or applications running externally from {{< product-c8y-iot >}} and require only a JWT string when connecting.
+
+There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the protocol specification directly.
 
 ### Token expiration
 
 When creating a token, an expiration time must be given in minutes of validity from when the token was created.
 This security feature limits the potential damage due to leaking of a token.
 It requires tokens to be re-created or refreshed periodically.
-This can be done by calling the token create request with the same parameters as originally. 
+This can be done by calling the token create request with the same parameters as originally.
 If the parameters used are not available they can be extracted from the token.
 As the token string is a JWT (JSON Web Token), it can be decoded to extract the original information used to create the token by splitting it into 3 parts (on ".") and doing a base64 decode on the first substring.
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
@@ -99,29 +104,40 @@ Both the token and the subscriptions have `nonPersistent` but only the token has
 This changes the subscription to not persist notifications on replicated secondary storage for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
 Note that there can be both nonPersistent and ordinary (i.e. persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select the nonPeristent or (by default) the persistent topic.   
+These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select
+the nonPeristent or (by default) the persistent topic.
 
 The messaging service will keep nonPersistent notifications in memory but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
 
-### Unsubscribing a subscriber
+### Deleting subscriptions and unsubscribing a subscriber
+
+Once a subscription is made, notifications will be retained until consumed by all subscribers who have previously connected to the subscription.
+The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber. 
+The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
+After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
+and be removed when that is done.
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
 For persistent subscriptions, this can result in notifications remaining in storage if never consumed by the application.
+However, unconsumed persistent notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage 
+if never consumed by the application.
+
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
-It is therefore advisable to unsubscribe a subscriber that will never run again.
+It is therefore advisable to unsubscribe a subscriber that will never run again (and so will not drain down persisted notifications).
 A separate REST endpoint is available for this: <kbd>/notification2/unsubscribe</kbd>.
 It has a mandatory query parameter `token`.
 The token is the same as you would use to connect to the WebSocket endpoint to consume notifications.
 Note that there is no explicit "subscribe a subscriber" operation using a token.
 Instead this happens when you first connect a WebSocket with a token for the subscription name and subscriber.
-However, unsubscribing an application is an explicit act using the original or a similar token.
-Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes, 
+However, unsubscribing a microservice or an application is an explicit act using the original or a similar token.
+Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes,
 as typically one wants messages to persist even when no consumer is running.
-Only if no consumer will ever run again should unsubscribing a subscriber be necessary.
+Only if no consumer will ever run again to drain notifications should unsubscribing a subscriber be necessary.
 
 It is also possible to unsubscribe a subscriber on an open consumer WebSocket connection.
 To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your WebSocket client to the service.
 The service will then unsubscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
 
-It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.
+It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, 
+as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

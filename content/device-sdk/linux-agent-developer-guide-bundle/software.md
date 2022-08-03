@@ -48,7 +48,7 @@ function init()
 end
 ```
 
-Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Device-management-library/Device-information).
+Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](/reference/device-management-library/#device-info).
 
 `pkg_list()` returns a table. If your package control system is not `apt`, you also need to change how to extract software names and versions from the command you defined.
 
@@ -69,7 +69,7 @@ end
 If you create any `c8y_SoftwareList` operation from the UI, the agent will receive the list of software packages which are supposed to be installed. In other words, the agent also receives information about unchanged packages with the message template `814`. The `aggregate` function sums up information about all received packages in a table.
 ![restarted-device](/images/device-sdk/software-install.png)
 
-After the aggregation finishes, the `perform` function is called. The function:
+After the aggregation is completed, the `perform` function is called. The function:
 
 - Updates the operation status to EXECUTING
 - Validates package names
@@ -92,7 +92,9 @@ Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Th
 
 Now go to your {{< product-c8y-iot >}} tenant, create a software operation. You'll see the operation is managed by this script.
 
-> **Info:** MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
-If the result of `cmd_list` (e.g. `apt list --installed`) is huge, the agent might fail to send its package list.
+{{< c8y-admon-info >}}
+MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
+If the result of `cmd_list` (for example `apt list --installed`) is huge, the agent might fail to send its package list.
 It is recommended to drop uninteresting packages from the sending list or pick up only interesting packages.
 For example, if you want to manage only `lua` and `modbus` packages, you can define `cmd_list` to `apt list --installed | grep -e lua -e modbus`.
+{{< /c8y-admon-info >}}

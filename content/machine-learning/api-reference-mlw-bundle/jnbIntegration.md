@@ -10,7 +10,9 @@ aliases:
 
 Operations on Jupyter Notebook.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Preview the Notebook code along with the session creation
 
@@ -18,6 +20,8 @@ Operations on Jupyter Notebook.
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
 Gets the content of the Jupyter Notebook file and also creates a Jupyter session.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -110,6 +114,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 
 Updates the contents of the Jupyter Notebook file.
 
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -121,7 +127,7 @@ Updates the contents of the Jupyter Notebook file.
 |content (string)| required body parameter for updated contents of Jupyter Notebook
 |format (string)| required body parameter for format (ex. 'json')
 |type (string)| required body parameter for type (ex. 'notebook')
-|export (boolean)| required body parameter to export notebook to Python file.
+|export (Boolean)| required body parameter to export notebook to Python file.
 
 
 **Example Request**
@@ -213,6 +219,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 
 Gets the list of created Jupyter sessions.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|

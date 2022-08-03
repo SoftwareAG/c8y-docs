@@ -11,8 +11,9 @@ weight: 30
 3. Navigate to the **System** menu. Click **System configuration** > **Firmware signature**.
 4. Turn **Enable firmware signature check** to OFF.
 
-    > **Info:** If you don´t turn the signature check off, the software installation will fail. After you have installed the agent package, the signature check will automatically be turned on again.
-  In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
+    {{< c8y-admon-info >}}
+If you don´t turn the signature check off, the software installation will fail. After you have installed the agent package, the signature check will automatically be turned on again. In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
+    {{< /c8y-admon-info >}}
 
 5. Navigate to the **System** menu. Click **System configuration** > **Upload** > **Choose a file** and select the downloaded software. Click **Upload** to upload the software to the router.
 6. Click the **Install** button for the uploaded software which you want to install.
@@ -44,7 +45,7 @@ The support for {{< product-c8y-iot >}} can be configured through the router's w
 
 Verify that the **Agent** toggle is set to **ON**.
 
-The URL in the **Server** field must point to the {{< product-c8y-iot >}} instance that you want to connect to. The URL has to be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-c8y-iot >}} instance, for example `https://mqtt.{{< domain-c8y >}}/`.
+The URL in the **Server** field must point to the {{< product-c8y-iot >}} instance that you want to connect to. The URL must be of the format `https://<my-tenant>.<instance-url>`, where &lt;instance-url&gt; refers to the URL of the {{< product-c8y-iot >}} instance, for example `https://mqtt.{{< domain-c8y >}}/`.
 
 Optionally, you can activate data collecting for the following functionalities:
 

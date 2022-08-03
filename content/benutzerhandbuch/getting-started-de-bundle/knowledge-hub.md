@@ -6,7 +6,11 @@ layout: redirect
 
 Der Knowledge Hub bietet Ihnen Zugriff auf Kurzvideos, Führungen, Artikel, Hilfe und Verknüpfungen und dient so als Einstiegspunkt für Ihre Arbeit mit der {{< product-c8y-iot >}}-Plattform.
 
->**Info:** Der Knowledge Hub ist nur für Benutzer von kostenlosen Trial Tenants verfügbar.
+
+{{< c8y-admon-info >}}
+Der Knowledge Hub ist nur für Benutzer von kostenlosen Trial Tenants verfügbar.
+{{< /c8y-admon-info >}}
+
 
 ### So rufen Sie den Knowledge Hub auf
 
@@ -18,7 +22,9 @@ Der Dialog **Knowlegde Hub** wird geöffnet und zeigt eine Reihe von Optionen.
 
 ![Knowledge Hub dialog](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-dialog.png)
 
->**Info:** Die Optionen im Dialog **Knowlegde Hub** werden häufig aktualisiert, so dass die Sitzungen, Ressourcen und Kommunikationsoptionen, die Sie in der Plattform sehen, möglichweise nicht exakt mit den oben abgebildeten und unten beschriebenen Optionen übereinstimmen.
+{{< c8y-admon-info >}}
+Die Optionen im Dialog **Knowlegde Hub** werden häufig aktualisiert, so dass die Sitzungen, Ressourcen und Kommunikationsoptionen, die Sie in der Plattform sehen, möglichweise nicht exakt mit den oben abgebildeten und unten beschriebenen Optionen übereinstimmen.
+{{< /c8y-admon-info >}}
 
 ### Sitzungen
 
@@ -35,8 +41,9 @@ Die ersten Elemente in der Liste führen Sie schrittweise durch die wichtigsten 
 |7 - View advanced analytics|Bietet eine Einführung in das Analysieren Ihrer Daten mittels Streaming Analytics und Predictive Analytics|
 |8 - Data integration and storage|Zeigt, wie sich IoT-Daten mit anderen Apps in Ihrem gesamten Unternehmen analysieren lassen|
 
->**Info:** Nachdem Sie einem Element gefolgt und zum Knowledge Hub zurückgekehrt sind, finden Sie ein grünes Häkchen vor dem Element in der Liste, um leichter zu erkennen, welche Sitzungen Sie bereits verfolgt oder angesehen haben. Beachten Sie, dass diese Sitzungen von Zeit zu Zeit variieren können.
-
+{{< c8y-admon-info >}}
+Nachdem Sie einem Element gefolgt und zum Knowledge Hub zurückgekehrt sind, finden Sie ein grünes Häkchen vor dem Element in der Liste, um leichter zu erkennen, welche Sitzungen Sie bereits verfolgt oder angesehen haben. Beachten Sie, dass diese Sitzungen von Zeit zu Zeit variieren können.
+{{< /c8y-admon-info >}}
 
 ### Feedback
 
@@ -54,7 +61,7 @@ Hier finden Sie eine Reihe weiterer Ressourcen, wie Dokumentation, Trainings, Re
 
 ### Kommunikation
 
-Am Ende der Liste im Dialog **Knowledge Hub** finden Sie verschiedene Optionen, um bei Bedarf mit uns Kontakt aufzunehmen, z. B.:
+Am Ende der Liste im Dialog **Knowledge Hub** finden Sie verschiedene Optionen, um bei Bedarf mit uns Kontakt aufzunehmen, z. B.:
 
 * **Have a question or idea** - Geben Sie uns Feedback per E-Mail oder senden Sie uns Ideen zu Produkten oder Anfragen zu Funktionen
 * **Book a demo** - Buchen Sie eine Produktdemo

@@ -4,7 +4,7 @@ title: Building the C++ library
 layout: redirect
 ---
 
-Before starting developing your C++ agents for {{< product-c8y-iot >}}, you need to build the library. The prerequisites for building it are listed in the table below.
+Before starting developing your C++ agents for {{< product-c8y-iot >}}, you must build the library. The prerequisites for building it are listed in the table below.
 
 <table id="tab:prereq" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>
@@ -43,7 +43,9 @@ Before starting developing your C++ agents for {{< product-c8y-iot >}}, you need
 </tbody>
 </table>
 
-> **Info:** There are several libcurl packages against different TLS libraries. You can choose the one you prefer.
+{{< c8y-admon-info >}}
+There are several libcurl packages against different TLS libraries. You can select the one you prefer.
+{{< /c8y-admon-info >}}
 
 ### Compiling the library
 
@@ -73,7 +75,7 @@ LDLIBS:=-lcurl
 
 This is a typical *init.mk* file example. In essence, it defines the search path for the required C++ header files, preferred warning levels, search path for the required C++ library files, and the necessary linking flags.
 
-When you do host compiling, many of these settings can be omitted; these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain that the *init.mk* file is also very important for another purpose, i.e., build customization to tailor the library to your needs.
+When you do host compiling, many of these settings can be omitted; these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain that the *init.mk* file is also very important for another purpose, that is, build customization to tailor the library to your needs.
 
 With the *init.mk* being defined, it's time to define your *makefile*.
 
@@ -81,7 +83,7 @@ With the *init.mk* being defined, it's time to define your *makefile*.
 $ cp Makefile.template Makefile
 ```
 
-The default *Makefile.template* can be used unchanged in most cases. In case some settings are not suitable for your use case, e.g., you may want `-Os` optimization level instead of the default `-O2`, simply edit the copied *Makefile*.
+The default *Makefile.template* can be used unchanged in most cases. In case some settings are not suitable for your use case, for example, you may want `-Os` optimization level instead of the default `-O2`, simply edit the copied *Makefile*.
 
 Now that we have done all the preparation work, it's time to build the library for your target device.
 

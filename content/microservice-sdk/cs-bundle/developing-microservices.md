@@ -107,7 +107,7 @@ public class HomeController : Controller
 
 ### Accessing HTTPContext in ASP.net Core
 
-In earlier versions of .Net Core, `IHttpContextAccessor` was automatically registered. This was removed. You need to register it manually if you intend to use it inside services. `IHttpContextAccessor` is only intended for accessing the `HttpContext` in locations where it is not directly available.
+In earlier versions of .Net Core, `IHttpContextAccessor` was automatically registered. This was removed. You must register it manually if you intend to use it inside services. `IHttpContextAccessor` is only intended for accessing the `HttpContext` in locations where it is not directly available.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -353,7 +353,7 @@ public class Startup
 
 Health monitoring can allow near-real-time information about the state of your containers and microservices. Health monitoring is critical to multiple aspects of operating microservices and is especially important when orchestrators perform partial application upgrades in phases.
 
-For a service or web application to expose the health check endpoint, it has to enable the `UseHealthChecks([url_for_health_checks])` extension method. This method goes at the `WebHostBuilder` level in the main method of the `Program` class of your ASP.NET Core service or web application, right after `UseKestrel` as shown in the code below.
+For a service or web application to expose the health check endpoint, it must enable the `UseHealthChecks([url_for_health_checks])` extension method. This method goes at the `WebHostBuilder` level in the main method of the `Program` class of your ASP.NET Core service or web application, right after `UseKestrel` as shown in the code below.
 
 ```cs
 public class Program

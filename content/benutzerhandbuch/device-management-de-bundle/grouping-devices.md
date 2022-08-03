@@ -20,7 +20,7 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
-Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol:
+Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
 
  ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
 
@@ -77,7 +77,9 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie eine Operation in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
-> **Info:** Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
+{{< c8y-admon-info >}}
+Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
+{{< /c8y-admon-info >}}
 
 <a name="add-group"></a>
 ### So fügen Sie eine Gruppe hinzu
@@ -89,7 +91,9 @@ In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die
 
 Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
->**Info:** Eine Gruppe kann mit "0" Geräten erstellt werden.
+{{< c8y-admon-info >}}
+Eine Gruppe kann mit "0" Geräten erstellt werden.
+{{< /c8y-admon-info >}}
 
 Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
@@ -141,9 +145,9 @@ Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
->**Info:** Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
-ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
-
+{{< c8y-admon-info >}}
+Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen: ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
+{{< /c8y-admon-info >}}
 
 
 #### So heben Sie die Zuweisung eines Geräts auf
@@ -187,14 +191,16 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 
 Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.
 
->**Info:** Dynamische Gruppen sind nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar.
+{{< c8y-admon-info >}}
+Dynamische Gruppen sind nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar.
+{{< /c8y-admon-info >}}
 
 Dynamische Gruppen werden in der Geräteliste erstellt.
 
 #### So erstellen Sie eine dynamische Gruppe
 
 1. Klicken Sie auf **Alle Geräte** im Navigator, um die Geräteliste anzuzeigen.
-2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > Filtern von Geräten](#filtering-devices).
+2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > So filtern Sie Geräte](#filtering-devices).
 3. Klicken Sie auf **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie auf **Erstellen**.
 
@@ -211,4 +217,6 @@ Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die F
 
 Bewegen Sie den Mauszeiger über den Eintrag, den Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
-> **Wichtig:** Das Löschen einer dynamischen Gruppe ist irreversibel.
+{{< c8y-admon-important title="Wichtig" >}}
+Das Löschen einer dynamischen Gruppe ist irreversibel.
+{{< /c8y-admon-important >}}

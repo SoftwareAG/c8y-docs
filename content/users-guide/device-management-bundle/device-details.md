@@ -9,11 +9,11 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
-Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Service monitoring**, **Identity** (also see the tab list below).
+Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Availability**, **Identity** (also see the tab list below).
 
 The following tabs are the most common ones, each described in detail in a separate section:
 
@@ -38,16 +38,20 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Provides information on the alarms for a device. See <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
 </tr>
 <tr>
+<td align="left"><a href="#availability">Availability</a></td>
+<td align="left">Allows the availability monitoring of machines. For details, see <a href="#monitoring-availability">Availability</a>. Available for each device.</td>
+</tr>
+<tr>
 <td align="left"><a href="#child-devices">Child Devices</a></td>
 <td align="left">Lists devices being connected to the current device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
-<td style="text-align:left">Provides details for fieldbus devices. For details, see <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
-</tr>
-<tr>
 <td align="left"><a href="#config">Configuration</a></td>
 <td align="left">Allows manual configuration of device parameters and settings entered in a text format. For details, see <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../users-guide/device-management/#connectivity">Connectivity</a></td>
+<td style="text-align:left">Provides SIM management functionality. For details, see <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>
@@ -60,6 +64,10 @@ The following tabs are the most common ones, each described in detail in a separ
 <tr>
 <td align="left"><a href="#events">Events</a></td>
 <td align="left">Displays events related to a device, helpful for low-level troubleshooting. Also refer to <a href="#events-all">Troubleshooting devices</a>. Available for each device.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
+<td style="text-align:left">Provides details for fieldbus devices. For details, see <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
@@ -102,8 +110,8 @@ The following tabs are the most common ones, each described in detail in a separ
 <td style="text-align:left">Provides details for devices connected via an OPC UA server. For details, see <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#service-monitoring">Service monitoring</a></td>
-<td align="left">Allows the service monitoring of machines. For details, see <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
+<td align="left"><a href="#services">Services</a></td>
+<td align="left">Provides an overview of the services running on a device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#shell">Shell</a></td>
@@ -128,7 +136,9 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+{{< c8y-admon-info >}}
+Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+{{< /c8y-admon-info >}}
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -142,6 +152,12 @@ Details on these additional menu items are provided where required.
 ### Alarms
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
+
+<a name="availability"></a>
+### Availability
+
+The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](#monitoring-availability) for more information.
+
 
 <a name="child-devices"></a>
 ### Child devices
@@ -162,7 +178,8 @@ For more details on managing binary-based configuration snapshots, see [Managing
 #### To request the current text-based configuration snapshot
 
 1. Navigate to the **Configuration** tab.
-2. Click **Get snapshot from device**.
+2. Select one of the device-supported configurations in the list.
+3. Click **Get snapshot from device**.
 
 #### To add or edit a text-based configuration snapshot
 
@@ -171,7 +188,9 @@ For more details on managing binary-based configuration snapshots, see [Managing
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 
-> **Info:** If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+{{< c8y-admon-info >}}
+If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+{{< /c8y-admon-info >}}
 
 <a name="control"></a>
 ### Control
@@ -200,7 +219,7 @@ See [Managing firmware on a device](#managing-firmware) for more information on 
 
 {{< product-c8y-iot >}} can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
-This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
+This is useful, for example, when you have non-functional hardware and must replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
 
 <a name="info"></a>
 ### Info
@@ -231,7 +250,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br>
+<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation.<br> The following measurements may be shown here: <br>
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>
@@ -262,7 +281,7 @@ The **Location** tab by default shows the location of a device on a map and as c
 
 ![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
 
-The **Location** tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
+The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new `c8y_Position` event, you can set the same `c8y_Position` fragment on the device and it will automatically mark its position on the map.
 
 
 <a name="logs"></a>
@@ -310,6 +329,8 @@ If a chart contains graphs with different units, one Y-axis is rendered per unit
 
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
+> **Info:** We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device Management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+
 **Time range and aggregation**
 
 By default, charts show the raw data of the last hour. To change the time range on the X-axis, open the "Last hour" dropdown menu at the top right and select a time range.
@@ -324,7 +345,7 @@ You can influence the graphical display and axes limits by setting up so-called 
 
 **Measurement format**
 
-In order to see measurement graphs, the device has to send measurements in a specified fragment format.
+In order to see measurement graphs, the device must send measurements in a specified fragment format.
 
 	"fragment_name" : {
 		"serie_name" : {
@@ -339,7 +360,7 @@ Example:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
+`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
 <a name="network"></a>
 ### Network
@@ -350,7 +371,9 @@ In the **Network** tab, mobile network (WAN) and local area network (LAN) parame
 
 The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 
-> **Info:** For SMS configuration, the router needs to be configured to accept SMS commands.
+{{< c8y-admon-info >}}
+For SMS configuration, the router needs to be configured to accept SMS commands.
+{{< /c8y-admon-info >}}
 
 #### To configure WAN parameters
 
@@ -363,7 +386,9 @@ The WAN parameters in the user interface correspond to the first profile stored 
 
 To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
-> **Info:** **Name** and **Mac address** fields are not configurable.
+{{< c8y-admon-info >}}
+**Name** and **Mac address** fields are not configurable.
+{{< /c8y-admon-info >}}
 
 #### To configure DHCP parameters
 
@@ -373,12 +398,26 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 4. Enter the domain name.
 5. Click **Save changes** to save your settings.
 
-> **Info:** If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
+{{< c8y-admon-info >}}
+If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
+{{< /c8y-admon-info >}}
 
-<a name="service-monitoring"></a>
-### Service monitoring
+<a name="services"></a>
+### Services
 
-In addition to connection monitoring, {{< product-c8y-iot >}} offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+The **Services tab** provides a list of all services running on a device with their status, name, type and date of the last update.
+Every column allows services to be filtered and/or sorted by the respective value displayed.
+
+![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
+
+The platform defines three status options for services: **Up**, **Down** and **Unknown**.
+These predefined statuses have their own graphical representation and can be selected directly from the **Status** filter:
+
+![Status filter](/images/users-guide/DeviceManagement/devmgmt-services-status-filter.png)
+
+Other status options are also allowed and can be freely defined, see [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in the Web SDK documentation resources.
+They all share the same icon and must be entered manually in the **Status** filter.
+A tooltip on the status icon displays their actual value.
 
 <a name="shell"></a>
 ### Shell
@@ -391,7 +430,9 @@ In the command prompt you can enter arbitrary command text. To send the command 
 
 ![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
->**Important:** When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< c8y-admon-important >}}
+When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+{{< /c8y-admon-important >}}
 
 Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
 
@@ -409,7 +450,9 @@ See [Managing software on a device](#managing-software) for more information on 
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 
-**Note** that the **Tracking** tab only shows up when a device contains c8y_Position property.
+{{< c8y-admon-info >}}
+The **Tracking** tab only shows up when a device contains `c8y_Position` property.
+{{< /c8y-admon-info >}}
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 

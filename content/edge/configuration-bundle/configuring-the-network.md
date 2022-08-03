@@ -6,16 +6,18 @@ layout: redirect
 
 After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
->**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< c8y-admon-important >}}
+Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< /c8y-admon-important >}}
 
 ### Configuring the network using the UI
 
-1. Log in to the {{< management-tenant >}}.
+1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
-	- Username: management/<*username*>
+	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
 
-2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Network** in the navigator.
 
@@ -39,7 +41,9 @@ After a successful installation, you can reconfigure the network and also config
 
    The **Address range CIDR** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
 
-   >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
+  	{{< c8y-admon-info >}}
+If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
+		{{< /c8y-admon-info >}}
 
 ### Configuring the network using the REST APIs
 

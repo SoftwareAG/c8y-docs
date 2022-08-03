@@ -84,7 +84,7 @@ my-application
 │
 ```
 
-The first line of code within the ```branding.less``` has to be:
+The first line of code within the ```branding.less``` must be:
 
  ```
  @import '~@c8y/style/extend.less';
@@ -381,7 +381,7 @@ Each translated catalog is loaded at runtime in a JSON format. To convert .po (g
 ##### How to add your own translations at build time
 
 1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@latest/locales/locales.pot) (starting from version 1004.0.6,`latest` can be replaced by your current used version).
-2. Load the downloaded locales.pot template file in your preferred .pot file editor and create a new translation from it. Choose the target language of the translation, e.g. Afrikaans, and translate each string. Repeat the process for as many languages as you like.
+2. Load the downloaded locales.pot template file in your preferred .pot file editor and create a new translation from it. Select the target language of the translation, for example Afrikaans, and translate each string. Repeat the process for as many languages as you like.
 The outcome of this step will be a .po catalog file for each language. Make sure to store these files in a safe place, as they will be useful when updating the strings in subsequent versions.
 3. Transform the newly created .po file into a .json file using the `c8ycli`:
 
@@ -448,4 +448,6 @@ c8ycli deploy public-options ui-assets
 
 Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
->**Info**: For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
+{{< c8y-admon-info >}}
+For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
+{{< /c8y-admon-info >}}

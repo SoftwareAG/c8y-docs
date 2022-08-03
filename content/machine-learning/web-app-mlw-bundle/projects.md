@@ -10,14 +10,20 @@ Projects functionality includes:
 
 * [Creating a new project](#creating-a-new-project)
 * [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
-* [Committing a project - version management](#commiting-a-project-version)
+* [Committing a project - version management](#committing-a-project-version)
+* [Switching between project versions](#switching-project-version)
+* [Downloading a project as a compressed file](#downloading-a-project)
+* [Uploading a project](#uploading-a-project)
+* [Deleting a project](#deleting-a-project)
 
+<a name="creating-a-new-project"></a>
 ### Creating a new project
 
-Click **Projects** in the navigator. This will list all the available projects. 
+Click **Projects** in the navigator. This will list all the available projects.
 
 Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
+<a name="uploading-resources"></a>
 ### Uploading resources
 
 Machine Learning Workbench (MLW) categorizes project resources as follows:
@@ -37,7 +43,8 @@ To upload files, click the cloud upload icon <img src="/images/zementis/mlw-uplo
 
 Once the files are uploaded, they will be placed under the respective categories.
 
-### Commiting a project version
+<a name="committing-a-project-version"></a>
+### Committing a project version
 
 To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> at the top right and click **Commit Project**.
 
@@ -50,3 +57,49 @@ Click **Tasks** in the navigator and click the respective task name, which in th
 The project card will show the different versions available for that project.
 
 ![Upload Resources](/images/zementis/mlw-app-project-version.png)
+
+<a name="switching-project-version"></a>
+### Switching between project versions
+
+To switch to a different version of the project, click **Projects** in the navigator and select the version you want to switch to. The version switch message will show up in the respective project tile.
+
+![Version Change](/images/zementis/mlw-app-project-version-change.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case is the project name, to display the status of the commit process in the **Task History** section at the center.
+
+<a name="downloading-a-project"></a>
+### Downloading a project
+
+To download a specific version of a project, click the icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click **Download**.
+
+![Project download](/images/zementis/mlw-app-project-download.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case is the project name underscore download (ex. demoproject_download), to display the status of the download process in the **Task History** section at the center.
+
+Once the task has reached **COMPLETED** status, the project ZIP would be successfully created. You can download the project ZIP by clicking on the **Project** button on the project card.
+
+![ZIP download](/images/zementis/mlw-app-project-download-zip.png)
+
+<a name="uploading-a-project"></a>
+### Uploading a project
+
+To facilitate collaboration and sharing, MLW allows you to upload the contents from an exported project archive.
+
+To upload a project on a particular tenant, Click **+Add Project** at the right of the top menu bar, select the **Upload** radio button and upload the ZIP file by clicking on **Drop file here** button.
+
+![Project upload](/images/zementis/mlw-app-project-upload.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case is the project name underscore unique uuid (ex. demoproject_a3n67e), to display the status of the upload process in the **Task History** section at the center.
+
+Once the task has reached COMPLETED status, the new project card is successfully created. You can view the contents of the project by clicking the respective project card.
+
+<a name="deleting-a-project"></a>
+### Deleting a project
+
+To delete a project, click the context menu icon <img src="/images/zementis/mlw-hamburger-icon.png" alt="Hamburger" style="display:inline-block; margin:0"> and click **Delete**.
+
+![Project download](/images/zementis/mlw-app-project-delete.png)
+
+Click **Tasks** in the navigator and click the respective task name, which in this case is the project name underscore delete (ex. demoproject_delete), to display the status of the delete process in the **Task History** section at the center.
+
+Once the task has reached **COMPLETED** status, the project would be successfully deleted.

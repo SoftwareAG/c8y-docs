@@ -14,11 +14,11 @@ For more information on permissions, refer to [Administration > Managing permiss
 
 **Connection fails**
 
-The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you need to contact your network administrator.
+The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you must contact your network administrator.
 
 **Unsupported protocol version**
 
-In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (e.g. 005.00x), try the following workaround:
+In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (for example 005.00x), try the following workaround:
 
 1. Open VNC.
 2. Navigate to **Options**.

@@ -201,7 +201,9 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |Target assets or devices|Select groups or devices.
 |Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
 
->**Info:** In the view mode, this widget only displays the properties which are not empty.
+{{< c8y-admon-info >}}
+In the view mode, this widget only displays the properties which are not empty.
+{{< /c8y-admon-info >}}
 
 <a name="widget-asset-table"></a>
 ### Asset table
@@ -218,7 +220,7 @@ The "Asset table" widget shows details of a selected asset and all its child dev
 
 **Example**
 
-In the following screenshot, five columns are configured. Three property columns "Meter", "Vendor", and "Owner", which refer to the properties "name", "type" and "owner" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+In the following screenshot, five columns are configured. Three property columns "Name", "Owner", and "Type", which refer to the properties "name", "owner" and "type" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
 ![Asset table widget](/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 
@@ -229,7 +231,9 @@ The resulting table is visualized as follows:
 
 Click **+Add Properties** and select one or more properties to be added.
 
-> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+{{< c8y-admon-info >}}
+The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also must configure the renderer "Active Alarm Status" in the list of columns.
+{{< /c8y-admon-info >}}
 
 #### To add actions
 
@@ -239,8 +243,10 @@ Click **+Add Properties** and select one or more properties to be added.
 
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Shell commands](/users-guide/device-management/#shell).<br>
+{{< c8y-admon-info >}}
+The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
+{{< /c8y-admon-info >}}
 
 #### To modify the table
 
@@ -297,7 +303,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 </tr>
 <tr>
 <td align="left">Column visibility</td>
-<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">Data Point Library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
+<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">data point library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
 </tr>
 </tbody>
 </table>
@@ -402,7 +408,9 @@ The "Linear gauge" widget visualizes data points in form of a linear gauge. Min 
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
 
->**Info:** If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
+{{< c8y-admon-info >}}
+If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
+{{< /c8y-admon-info >}}
 
 You must enable at least one data point to create the "Linear gauge" widget.
 
@@ -433,13 +441,16 @@ Click a device icon, to open a popup with the following information:
 
 Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
->**Info:** If none of the target device(s) has a known location, then the widget shows a world map without icons.
+{{< c8y-admon-info >}}
+If none of the target device(s) has a known location, then the widget shows a world map without icons.
+{{< /c8y-admon-info >}}
 
 <a name="widget-message-sending"></a>
 ### Message sending
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
+<a name="pie-chart"></a>
 ### Pie chart
 
 The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.
@@ -533,7 +544,9 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
-> **Info:** All SVG files are sanitized in order to remove malicious code.
+{{< c8y-admon-info >}}
+All SVG files are sanitized in order to remove malicious code.
+{{< /c8y-admon-info >}}
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
@@ -578,4 +591,4 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
-|States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
+|States mapping|Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.

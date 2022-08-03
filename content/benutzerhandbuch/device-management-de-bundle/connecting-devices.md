@@ -35,14 +35,16 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 <a name="device-registration-manually"></a>
 #### So verbinden Sie ein Gerät manuell
 
->**Info:** Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
+{{< c8y-admon-info >}}
+Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
+{{< /c8y-admon-info >}}
 
 1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
@@ -54,29 +56,37 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 5. Klicken Sie auf **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
-> **Info:** In einem {{< enterprise-tenant-de >}} kann der {{< management-tenant-de >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant-de >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
+{{< c8y-admon-info >}}
+In einem {{< enterprise-tenant-de >}} kann der {{< management-tenant-de >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant-de >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
+{{< /c8y-admon-info >}}
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
-Nach erfolgreicher Registrierung werden die Geräte auf der [Seite **Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
+Nach erfolgreicher Registrierung werden die Geräte auf der Seite [Geräteregistrierung](#dev-registration) mit dem Status "Wartet auf Verbindung" angezeigt.
 
 Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
 Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
-> **Info:** Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
+{{< c8y-admon-info >}}
+Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
+{{< /c8y-admon-info >}}
 
 <a name="creds-upload"></a>
 #### So führen Sie eine Bulk-Registrierung von Geräten durch
 
-Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+
+{{< c8y-admon-info >}}
+Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine Bulk-Registrierung registriert werden können. Je mehr Geräte Sie jedoch hinzufügen, desto langsamer erfolgen die Erstellung und die Operation.
+{{< /c8y-admon-info >}}
 
 1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
 
   <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
-3. Klicken Sie auf **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie auf Ihrem Computer zu der Datei navigieren.
+3. Klicken Sie auf **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie in Ihrem Dateisystem zu ihr navigieren.
 
 <br>
 Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet:
@@ -84,11 +94,13 @@ Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierun
 * Einfache Registrierung
 * Vollständige Registrierung
 
-> **Info:** Durch Mehrfachregistrierung wird eine elementare Darstellung des Geräts erstellt. Danach muss das Gerät sie auf eine volle Darstellung mit eigenem Status aktualisieren.
+{{< c8y-admon-info >}}
+Durch Mehrfachregistrierung wird eine elementare Darstellung des Geräts erstellt. Danach muss das Gerät sie auf eine volle Darstellung mit eigenem Status aktualisieren.
+{{< /c8y-admon-info >}}
 
 **Einfache Registrierung**
 
-Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
+Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
 
 ```asciidoc
     ID;PATH
@@ -121,7 +133,9 @@ Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung zur Anzahl d
 
 Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktische CSV-Vorlagendateien bereit, die Sie aus dem Registrierungsassistenten herunterladen können, um die Struktur anzuzeigen oder zu kopieren.
 
->**Info:** Wenn das Gerät mit der jeweiligen Bezeichnung bereits existiert, wird es mit den Daten aus der CSV-Datei aktualisiert.
+{{< c8y-admon-info >}}
+Wenn das Gerät mit der jeweiligen Bezeichnung bereits existiert, wird es mit den Daten aus der CSV-Datei aktualisiert.
+{{< /c8y-admon-info >}}
 
 ##### So importieren Sie CSV-Daten in Microsoft Excel
 
@@ -134,4 +148,6 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
 [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
->**Info:** Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.
+{{< c8y-admon-info >}}
+Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.
+{{< /c8y-admon-info >}}

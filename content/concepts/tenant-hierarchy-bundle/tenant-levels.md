@@ -15,10 +15,11 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 
 These three levels differ in their scope, particularly with regards to administration, see below.
 
->**Info:** Refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on our related commercial offering.
->
->Refer to your contract for details on your individual subscriptions.
->
+{{< c8y-admon-info >}}
+Refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on our related commercial offering.
+
+Refer to your contract for details on your individual subscriptions.
+{{< /c8y-admon-info >}}
 
 <a name="standard-tenant"></a>
 ### Standard tenant
@@ -27,7 +28,7 @@ At the bottom of the hierarchy you can find single tenants which are represented
 
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
 
-In a {{< standard-tenant >}}, multiple parties are reflected by separate users. Since all users in a tenant share the same URL and data space they can only be separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), i.e. using roles you can give certain users only restricted visibility of the tenant (for example, only the devices that belong to them).
+In a {{< standard-tenant >}}, multiple parties are reflected by separate users. Since all users in a tenant share the same URL and data space they can only be separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), that means, using roles you can give certain users only restricted visibility of the tenant (for example only the devices that belong to them).
 
 {{< standard-tenant >}}s, as direct subtenants of the {{< management-tenant >}}, provide fully standardized functionality.
 
@@ -66,6 +67,6 @@ Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tena
 
 On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} can only be accessed by the {{< company-sag >}} cloud operations team.
 
-You will only have access to the {{< management-tenant >}}, when you setup your own {{< product-c8y-iot >}} instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the {{< product-c8y-iot >}} Edge offering.
+You will only have access to the {{< management-tenant >}}, when you setup your own {{< product-c8y-iot >}} instance either as a dedicated/hosted cloud deployment, an on-prem deployment, or the {{< product-c8y-iot >}} Edge offering.
 
 For detailed information on the configuration options of a {{< product-c8y-iot >}} deployment on platform level, refer to the *{{< product-c8y-iot >}} Core - Operations guide* available on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}).

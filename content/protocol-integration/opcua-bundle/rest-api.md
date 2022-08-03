@@ -110,7 +110,7 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoScanAddressSpace</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Boolean. Whether the gateway should scan the address space automatically the first time it connects. Default is true.</td>
 </tr>
@@ -122,7 +122,7 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoReconnect</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.</td>
 </tr>
@@ -196,7 +196,8 @@ Data structure for ServerConnectionConfig:
 <td>alarmSeverityMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
+<td>Alarm severity mappings from the OPC UA event severity to the {{< product-c8y-iot >}} alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;{{< product-c8y-iot >}} alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>
+Additionally, the <em>Severity</em> attribute should be added in the subscribed attributes (uaEventMappings -> attributes) in the device type in order to get the severity value of the OPC UA event.</td>
 </tr>
 <tr>
 <td rowspan="1">alarmStatusMappings</td>
@@ -207,26 +208,26 @@ then the status of the alarm in {{< product-c8y-iot >}} is expected as ACKNOWLED
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
 The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired status of the alarm. The variables that can be used in the expressions are the selected
 attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
-(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+(for example <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
-The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
+The Spring Expression Language(SpEL) has been used to parse these conditions, but only Boolean expressions are allowed.
 
 See the **alarmStatusMappings example** below the table.
 
->**Info:** There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation,
-> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and
-> the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+{{< c8y-admon-info >}}
+There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm status is realized during the alarm creation, then the status is selected based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED status with the least priority. If the expression could not be evaluated then the gateway logs a warning and the alarm status is assumed as ACTIVE. The alarm status is also assumed as ACTIVE, if the default status is not specified, and the parameters do not match any other defined condition.
+{{< /c8y-admon-info >}}
 
 </td>
 </tr>
 <tr>
 <td>subscribeModelChangeEvent</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
-This property has to be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
+This property must be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
 
 </tbody>
@@ -789,10 +790,10 @@ Full payload data structure explained:
 
 <table>
 <colgroup>
-<col style="width: 20%;">
+<col style="width: 25%;">
 <col style="width: 20%;">
 <col style="width: 10%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
 </colgroup>
 <thead>
 <tr>
@@ -811,7 +812,7 @@ Full payload data structure explained:
 </tr>
 <tr>
 <td>enabled</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Whether the device type is enabled and should be applied to the connected servers or not. Default is false.</td>
 </tr>
@@ -912,7 +913,7 @@ Full payload data structure explained:
 <td>alarmCreation</td>
 <td><em>AlarmCreation</em></td>
 <td>no</td>
-<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
 The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
 is changed to "false", or a number that is less than or equals to 0.</td>
 </tr>
@@ -960,7 +961,10 @@ is changed to "false", or a number that is less than or equals to 0.</td>
 <td>yes</td>
 <td>Selectable event attributes. The nodeId of the event source
 is added by default as the last selected attribute by
-the OPC UA device gateway.</td>
+the OPC UA device gateway.
+If <em>alarmSeverityMappings</em> are defined, also the <em>Severity</em> attribute needs to be added to the attributes.
+If <em>alarmStatusMappings</em> are defined, also the variables used in the expression needs to be added to the attributes.
+</td>
 </tr>
 <tr>
 <td>eventCreation</td>
@@ -970,7 +974,7 @@ the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>alarmCreation</td>
-<td><em>AlarmCreation</em></td>
+<td><em>UAAlarmCreation</em></td>
 <td>no</td>
 <td>Mappings for alarm.</td>
 </tr>
@@ -1005,13 +1009,13 @@ the OPC UA device gateway.</td>
 <td>subscriptionParameters</td>
 <td><em>SubscriptionParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc.</td>
+<td>In case the subscription type is <em>Subscription</em>, this is required. This defines the OPC UA subscription configuration, such as sampling rate, queue size, and more.</td>
 </tr>
 <tr>
 <td>cyclicReadParameters</td>
 <td><em>CyclicReadParameter</em></td>
 <td>yes/no</td>
-<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuation, e.g. rate, etc.</td>
+<td>In case the subscription type is <em>CyclicRead</em>, this is required. This defines the cyclic read configuration, such as rate.</td>
 </tr>
 </tbody>
 </table>
@@ -1291,7 +1295,7 @@ the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>retryEnabled</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
 </tr>
@@ -1328,20 +1332,18 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Event text. This event text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Event type. This event type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 </tbody>
 </table>
 
 **Data structure for *UAAlarmCreation***
-
-This has all the fields as *AlarmCreation* does, however the *text* and *type* field can be parameterized with different parameters.
 
 <table>
 <colgroup>
@@ -1363,19 +1365,25 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>text</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, etc.</td>
+<td>Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put <code>${i}</code>&nbsp;to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code>&nbsp;to take the first attribute, <code>${1}</code>&nbsp;to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>string</td>
 <td>yes</td>
-<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
+<td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0, so put <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, and so on.</td>
 </tr>
 <tr>
 <td>severity</td>
 <td>string</td>
 <td>no</td>
 <td>For UAAlarmCreation, the severity is optional. If this is not provided, the severity of the alarm will be mapped using the severity mappings specified in the default gateway configuration YAML file or in the server configuration.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>no</td>
+<td>Alarm status. The possible values are ACTIVE, ACKNOWLEDGED, CLEARED. If this is given, the <em>alarmStatusMappings</em> setting in <em>ServerConnectionConfig</em> is ignored.</td>
 </tr>
 </tbody>
 </table>
@@ -1430,7 +1438,7 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 </tr>
 <tr>
 <td>discardOldest</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>Default is true. When this is true and the reported data is exceeding the queue size, the oldest elements in the queue will be discarded. If this is false, the newer elements will be discarded.</td>
 </tr>

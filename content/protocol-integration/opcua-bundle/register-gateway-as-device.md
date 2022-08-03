@@ -4,9 +4,14 @@ title: Registering the gateway as a Cumulocity IoT device
 layout: redirect
 ---
 
+1. Click **Registration** in the **Devices** menu of the navigator.
 
-Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is "Gateway_Device") and then click **Next**.
+2. Click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**.
 
-Click **Accept** to complete the registration.
+3. Enter the Device ID (in our example it is "Gateway_Device") and then click **Next**.
 
-![Device Registration](/images/device-protocols/opcua/opcua-device-registration.png)
+![Device Registration](/images/device-protocols/opcua/opcua-device-registration-gateway.png)
+
+4. Click **Accept** to complete the registration.
+
+![Device Registration Acceptance](/images/device-protocols/opcua/opcua-device-registration.png)

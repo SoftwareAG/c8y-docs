@@ -10,7 +10,9 @@ In some cases however, it is not possible or not economic to implement every asp
 
 In these cases, you can use Cloud Remote Access to securely manage remote devices. The benefit is that you manage the device in the same way as if you had it physically close to you.
 
->**Important:** Be aware that using Cloud Remote Access includes administrative intervention:
->
->* Often, devices have no detailed permission management, so you give a user very fundamental access to the device.
+{{< c8y-admon-important >}}
+Be aware that using Cloud Remote Access includes administrative intervention:
+
+* Often, devices have no detailed permission management, so you give a user very fundamental access to the device.
 * When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards.
+{{< /c8y-admon-important >}}

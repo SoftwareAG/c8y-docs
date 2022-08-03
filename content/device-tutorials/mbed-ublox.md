@@ -46,7 +46,9 @@ To run the {{< product-c8y-iot >}} mbed agent, the following items are required:
 5. Connect a USB cable to the C027 and to your computer. The C027 will appear as "MBED" drive on your computer.
 6. Plug in the power supply and connect it to the application board.
 
-> **Info**: The device cannot be flashed without the power supply connected.
+{{< c8y-admon-info >}}
+The device cannot be flashed without the power supply connected.
+{{< /c8y-admon-info >}}
 
 Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/](https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 
@@ -56,7 +58,7 @@ Further information is available on [https://os.mbed.com/users/ublox/notebook/u-
 Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket?
 -->
 
-1. Download the firmware to your computer, see table below.
+1. Download the firmware to your file system, see table below.
 2. Copy the downloaded file to the "MBED" drive.
 3. Press the reset button on the C027 to start the agent.
 
@@ -74,9 +76,9 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
 3. Log into the {{< product-c8y-iot >}} platform.
 4. Navigate to the Device Management application using the application switcher at the top right.
-5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the *User guide*.
+5. To register the device follow the instructions in [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices) in the *User guide*.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
+7. When the device is connected to {{< product-c8y-iot >}}, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations](#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
 ### Interacting with the platform
 
@@ -95,7 +97,7 @@ The device sends new sensor data only when the sensor values are changing. If th
 
 The representation of sensor data can be customized.
 
-1. Add the "Mbed Test Device" to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details.
+1. Add the "Mbed Test Device" to a group, see [Grouping devices](/users-guide/device-management/#grouping-devices) for details.
 2. Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device".  
 3. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
 
@@ -118,7 +120,7 @@ An example dashboard created for an mbed device is shown below:
 
 ![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
-For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the *User guide*.
+For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets-collection) in the *User guide*.
 
 <a id="Interacting_with_the_control_operations"></a>
 #### To interact with control operations
@@ -142,7 +144,7 @@ Subject to the sensitivity threshold, you may not see frequent sending of sensor
 
 #### Performing a factory reset
 
-When a u-blox device is already registered under a certain tenant, a factory reset has to be performed to remove the stored credentials so that the device can be re-registered again. The factory reset is performed as follows:
+When a u-blox device is already registered under a certain tenant, a factory reset must be performed to remove the stored credentials so that the device can be re-registered again. The factory reset is performed as follows:
 
 * Press and hold the joystick when (re)starting an already registered device.
 * Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined to the network, you should see "Reset Success" shown on the LCD display, which indicates a successful factory reset. Starting from version 2.1, a factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger. After about 2 seconds, you should see "Reset Success" on the display.
@@ -169,7 +171,7 @@ If you want to change the behaviour of the agent, go to mbed.org and adopt the s
 1. Sign up for an account in [mbed](https://mbed.org) for free.
 2. Log into the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
 3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity MbedSmartRESTMain application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
-4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
+4. In the IDE, click **Compile**. The IDE will download the compiled application to your file system.
 5. Copy the downloaded file to the "MBED" drive.
 6. Press the reset button on the C027 to start the agent.
 
@@ -198,7 +200,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable.
 
-* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example, using a mobile phone).
+* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example using a mobile phone).
 
 * **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
 
@@ -206,17 +208,17 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
 
-* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
+* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode](#Enabling_debug_ mode).
 
 * **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [product support](/welcome/contacting-support/) if you are connecting directly to {{< product-c8y-iot >}}.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
-* **The device does not appear as CONNECTED in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, i.e. the one that performs the bootstrap against the correct server.
+* **The device does not appear as CONNECTED in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, that is, the one that performs the bootstrap against the correct server.
 
 * **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
 
-* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-c8y-iot >}} under another user account, a factory reset has to be performed to unregister the device.
+* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with {{< product-c8y-iot >}} under another user account, a factory reset must be performed to unregister the device.
 
 * **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 

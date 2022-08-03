@@ -23,7 +23,7 @@ As an example:
 Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 ```
 
-If you use the Java client for developing an application, you need to register an application key (through [Own applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
+If you use the Java client for developing an application, you must register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
 
@@ -55,7 +55,9 @@ for (ManagedObjectRepresentation mo : moc.get().allPages()) {
 }
 ```
 
-> **Important:** By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
+{{< c8y-admon-important >}}
+By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
+{{< /c8y-admon-important >}}
 
 To create a new managed object, construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:
 
@@ -69,14 +71,14 @@ mo.set(relay);
 SinglePhaseElectricitySensor meter = new SinglePhaseElectricitySensor();
 mo.set(meter);
 
-// Set additional properties, e.g. tariff tables
+// Set additional properties, for example, tariff tables
 mo = inventory.create(mo);
 System.out.println(mo.getId());
 ```
 
 By invoking the `create()` method, a new managed object is created with an auto-generated unique identifier.
 
-Assume that you would like to store additional custom properties along with the device. This can be done by creating a new fragment in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and you need to store the hours during which the night time tariff is active:
+Assume that you would like to store additional custom properties along with the device. This can be done by creating a new fragment in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and you must store the hours during which the night time tariff is active:
 
 ```java
 public class Tariff {
@@ -238,7 +240,9 @@ Subscription<> subscription = subscriber.subscribe(agentId, new SubscriptionList
 });
 ```
 
-> **Info:** "agentId" is the ID of your agent in the inventory.
+{{< c8y-admon-info >}}
+"agentId" is the ID of your agent in the inventory.
+{{< /c8y-admon-info >}}
 
 To unsubscribe from a subscription, use the following code:
 
@@ -254,8 +258,8 @@ subscriber.disconnect();
 
 ### Subscribing to Notifications 2.0
 
-The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory). 
-See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API. 
+The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
+See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API.
 
 The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 
@@ -290,12 +294,12 @@ subscriptionApi.subscribe(subscriptionRepresentation2);
 
 // Obtain access token
 final NotificationTokenRequestRepresentation tokenRequestRepresentation = new NotificationTokenRequestRepresentation(
-        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified. 
+        properties.getSubscriber(), // The subscriber name with which the client wishes to be identified.
         "testSubscription1",        // The subscription name. This value should be the same as with which the subscription was created. The access token will be only valid for the subscription specified here.
         1440,                       // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details. 
+// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details.
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

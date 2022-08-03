@@ -1,16 +1,16 @@
 ---
-weight: 30
+weight: 40
 title: LWM2M device protocols
 layout: redirect
 ---
 
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
-Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
+Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types) in the *User guide*.
 
 <a name="creating_device_protocols"></a>
 ### Creating LWM2M device protocols
 
-Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
+Once you have registered a device, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
 To add a new LWM2M device protocol follow these steps:
 
@@ -37,7 +37,9 @@ In the device protocol page, you will see the description at the top left and th
 
 Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
-> **Info:** LWM2M protocol resources cannot be edited.
+{{< c8y-admon-info >}}
+LWM2M protocol resources cannot be edited.
+{{< /c8y-admon-info >}}
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
@@ -91,21 +93,21 @@ Actions that are relevant for Device (/3):
 - device:updateManufacturer
   - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
 - device:updateModelNumber
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;model&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;model&rdquo; property.
 - device:updateSerialNumber
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;serialNumber&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;serialNumber&rdquo; property.
 - device:updateFirmwareVersion
-  - Stores to the device managed object with the &ldquo;c8y_Hardware&rdquo; fragment &ldquo;revision&rdquo; property.
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;revision&rdquo; property.
 
 Actions that are relevant for connectivity monitoring (/4):
 - connectivity:updateCellId
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;cellId&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;cellId&rdquo; property.
 - connectiviy:updateSmnc
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mnc&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mnc&rdquo; property.
 - connectivity:updateSmcc
-  - Stores to the device managed object with the &ldquo;c8y_Mobile&rdquo; fragment &ldquo;mcc&rdquo; property.
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mcc&rdquo; property.
 - connectivity:updateRssi
-  - Stores the value as device measurement with the &ldquo;c8y_SignalStrength&rdquo; type and fragment and &ldquo;rssi&rdquo; property.
+  - Stores the value as device measurement with the `c8y_SignalStrength` type and fragment and &ldquo;rssi&rdquo; property.
   - In the same measurement, stores resource path information in &ldquo;resourcePath&rdquo; fragment and also in &ldquo;objectResourcePath_&lt;resource path&gt;&rdquo; fragment name.
   - In the same measurement, stores device name information in &ldquo;device!Name&rdquo; fragment.
   - In the same measurement, stores device mobile information in &ldquo;device!c8y_Mobile&rdquo; fragment.
@@ -117,7 +119,9 @@ Below is an example where the &ldquo;connectivity:updateRssi&rdquo; custom actio
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
-> **Info:** At least one functionality must be set to enable "Auto observe".
+{{< c8y-admon-info >}}
+At least one functionality must be set to enable "Auto observe".
+{{< /c8y-admon-info >}}
 
 ![Resource](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
 
@@ -131,4 +135,4 @@ There are 2 types of alarms raised related to device protocol mapping failures.
 - Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
 This can be resolved by importing device protocol for this resource.
 
-- Alarm due to non-numeric/non-boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-boolean value.
+- Alarm due to non-numeric/non-Boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-Boolean value.

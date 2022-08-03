@@ -4,13 +4,27 @@ title: Managing tenants
 layout: redirect
 aliases:
   - /users-guide/enterprise-edition/#managing-tenants
+helpcontent:
+  - label: managing-tenants
+    title: Subtenants
+    content: "Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account. The **Tenants** page provides information on each subtenant such as the name of the subtenant, its ID and domain, and the status of the tenant (either active, indicated by a green checkmark icon, or suspended, indicated by a red cross icon).
+
+
+    To create a subtenant click **Create tenant** at the right of the top menu bar.
+
+    For details on managing tenants see the *User guide*."
+
 ---
 
-Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and a manage subtenants.
+Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
-> **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
+{{< c8y-admon-important >}}
+There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
+{{< /c8y-admon-important >}}
 
->**Info:** If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
+{{< c8y-admon-info >}}
+If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
+{{< /c8y-admon-info >}}
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -25,13 +39,13 @@ Click **Subtenants** in the **Tenants** menu to view all subtenants available in
 
 The **Tenants** page provides the following information on each subtenant:
 
-* The name of the subtenant, e.g. company name of your customer.
+* The name of the subtenant, for example, company name of your customer.
 * The ID and domain.
 * Optionally, a contact name and phone number.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the {{< management-tenant >}}, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
+In the {{< management-tenant >}}, you will also find information on the parent tenant, that is, the tenant that created the listed tenant.
 
 <a name="creating-tenants"></a>
 ### To create a subtenant
@@ -58,7 +72,7 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, e.g. the company's name.</td>
+	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Administrator's email</td>
@@ -78,7 +92,7 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 	</tr>
 	<tr>
 	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-c8y-iot >}} platform</a> for more information on password strength).</td>
+	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-c8y-iot >}} platform &gt; To log into the platform</a> for more information on password strength).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Tenant policy</td>
@@ -124,7 +138,7 @@ The following information is displayed here:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the {{< management-tenant >}} (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the {{< management-tenant >}}, <br>- no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).</td>
+<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the {{< management-tenant >}} (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the {{< management-tenant >}}, <br>- no subtenant user has currently any active support user access (that means, each support user request has either expired or has actively been deactivated).</td>
 </tr>
 <tr>
 <td style="text-align:left">Active requests count</td>
@@ -145,10 +159,13 @@ The tenant's data remains in the database and can be made available later by cli
 
 Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on the billing perspective of suspended tenants.
 
->**Important:** Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
->
-> **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
+{{< c8y-admon-important >}}
+Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
+{{< /c8y-admon-important>}}
 
+{{< c8y-admon-info >}}
+If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
+{{< /c8y-admon-info >}}
 
 #### To suspend a subtenant
 
@@ -160,14 +177,17 @@ Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on t
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
->**Info:** If you are a service provider, you can suppress this email.
-
+{{< c8y-admon-info >}}
+If you are a service provider, you can suppress this email.
+{{< /c8y-admon-info >}}
 
 ### Deleting subtenants
 
->**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
->
->Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
+{{< c8y-admon-important >}}
+Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
+
+Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
+{{< /c8y-admon-important >}}
 
 #### To delete a subtenant
 
@@ -234,7 +254,9 @@ Platform administrators can limit the request rate of each subtenant via the fol
 
 The request throttling mechanism is only enabled when both HTTP properties (limit HTTP queue and limit HTTP requests) are configured. If one of the values is omitted, it does not work.
 
->**Important:** Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
+{{< c8y-admon-important >}}
+Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
+{{< /c8y-admon-important >}}
 
 It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}} by using the following subtenant custom fragments:
 
@@ -247,13 +269,15 @@ When there is no limit on tenant and system level, the limit feature is consider
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing) page.
 
 #### Product experience tracking
 
 Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 
-Even if tracking is enabled for a tenant, users need to actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the platform](/users-guide/getting-started/#accessing-platform).
+On tenant level, the product experience tracking by Gainsight can be disabling by disabling the cookie banner on the **Branding** page, see [Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+
+Even if tracking is enabled for a tenant, users must actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Getting started > Accessing and logging into the platform](/users-guide/getting-started/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -265,7 +289,13 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
->**Info:** The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+{{< c8y-admon-info >}}
+The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-important >}}
+Tenant options specified in a tenant policy are **not encrypted**. You should not specify or overwrite tenant options here with a "credentials." prefix, since the platform expects those options to be encrypted with data that will appear after the tenant has been created.
+{{< /c8y-admon-important >}}
 
 #### To view tenant policies
 
@@ -286,7 +316,9 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
->**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the {{< management-tenant >}} in order to edit those rules and options.
+{{< c8y-admon-important >}}
+When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
+{{< /c8y-admon-important >}}
 
 #### To edit a tenant policy
 
@@ -316,16 +348,20 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+{{< c8y-admon-info >}}
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+{{< /c8y-admon-info >}}
 
-In the middle of the page, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
 - all own applications,
 - all subscribed applications which have different names than the own applications.
 
-> **Info:** In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+{{< c8y-admon-info >}}
+In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+{{< /c8y-admon-info >}}
 
-On the left, you see the **Applications subscribed to a tenant on creation**, and on the right you see the **Applications subscribed to a tenant on platform upgrade**.
+On the right, you see the **Subscribed on tenant creation** and the **Subscribed on platform upgrade** columns.
 
 Initially, the lists show the default subscriptions inherited from the tenant hierarchy.
 
@@ -344,7 +380,9 @@ If you want to return to the settings inherited from the tenant hierarchy, just 
 
 Save the settings by clicking **Save** at the bottom of the page.
 
-> **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+{{< c8y-admon-info >}}
+Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+{{< /c8y-admon-info >}}
 
 <a name="default-applications"></a>
 #### Overriding default subscriptions
@@ -354,11 +392,11 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default web applications subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.applications
-  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to define default microservices subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.microservices
-  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+  * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway
 * to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications.enabled
@@ -366,7 +404,7 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default web applications subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: comma-separated list of application names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
@@ -374,4 +412,4 @@ The default subscriptions can be overridden for subtenants by setting up a tenan
 * to define default microservices subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices
-  * value: comma-separated list of microservice names, e.g. device-simulator,report-agent,sms-gateway
+  * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway

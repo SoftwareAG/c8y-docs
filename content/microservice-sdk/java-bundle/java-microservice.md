@@ -10,7 +10,7 @@ Requests to a microservice can be authenticated using basic authentication or OA
 
 ### Prerequisites
 
-You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You must have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
 Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
@@ -25,27 +25,47 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-{{< product-c8y-iot >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine has to provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
 Client: Docker Engine - Community
- Version:           19.03.2
- API version:       1.40
- OS/Arch:           darwin/amd64
+ Version:           20.10.14
+ API version:       1.41
+ Go version:        go1.16.15
+ Git commit:        a224086
+ Built:             Thu Mar 24 01:47:57 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
 
 Server: Docker Engine - Community
  Engine:
-  Version:          19.03.2
-  API version:      1.40 (minimum version 1.12)
+  Version:          20.10.14
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.16.15
+  Git commit:       87a90dc
+  Built:            Thu Mar 24 01:45:46 2022
   OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.5.11
+  GitCommit:        3df54a852345ae127d1fa3092b95168e4a88e2f8
+ runc:
+  Version:          1.0.3
+  GitCommit:        v1.0.3-0-gf46b6ba
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
 ```
 
 ### Developing the "Hello world" microservice
 
 You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
-> **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
+{{< c8y-admon-important >}}
+This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 20.10.14; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
+{{< /c8y-admon-important >}}
 
 #### Create a Maven project
 
@@ -72,7 +92,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library
 
-You need to specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
@@ -97,7 +117,9 @@ In the `<properties>` element specified above, add a child element `<c8y.version
     <microservice.name>hello-microservice-java</microservice.name>
 ```
 
-> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< c8y-admon-important >}}
+When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< /c8y-admon-important >}}
 
 #### Add repositories and dependencies
 
@@ -150,7 +172,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
+Your microservice application must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>
@@ -223,7 +245,7 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/<microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the {{< product-c8y-iot >}} Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>/service/&lt;microservice-name>/hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
 Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for {{< product-c8y-iot >}} microservices including:
 
@@ -281,15 +303,13 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The ZIP file built with Maven on the previous steps.
 
-> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
+{{< c8y-admon-important >}}
+The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
+{{< /c8y-admon-important >}}
 
-In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
-
-![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
+In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
 Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
-
-![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
@@ -351,9 +371,11 @@ BODY:
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
-> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< c8y-admon-important >}}
+When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< /c8y-admon-important >}}
 
 The cURL command can be used to create the application with a POST request:
 
@@ -366,7 +388,7 @@ $ curl -X POST -s \
   "<URL>/application/applications"
 ```
 
-In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
+In case of errors, such as invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {
@@ -392,7 +414,7 @@ In case of errors, e.g. invalid names, you will get the details printed in the c
 }
 ```
 
-In the Administration application, navigate to **Applications** > **Own applications**. There you will see the created microservice.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
 
 #### Acquire the microservice bootstrap user
 
@@ -406,7 +428,9 @@ HEADERS:
   "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 
-> **Info**: Besides the cURL command, you can also employ a graphical interface such as Postman.
+{{< c8y-admon-info >}}
+Besides the cURL command, you can also employ a graphical interface such as Postman.
+{{< /c8y-admon-info >}}
 
 The response looks like this:
 
@@ -444,7 +468,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
   -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
 ```
 
-`-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
+`-p 8082:80` will expose your port 80 to a port on your host system, for example, 8082.
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
@@ -465,13 +489,13 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 #### Subscribe to the microservice
 
-In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
+In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
 
 ![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 
-You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>.
+You may also use the name parameter, for example, <http://localhost:8082/hello?name=Neo>.
 
 ### Improving the microservice
 

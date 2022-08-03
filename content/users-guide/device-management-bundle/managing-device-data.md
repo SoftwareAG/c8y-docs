@@ -5,34 +5,34 @@ layout: redirect
 helpcontent:
 - label: firmware-repo
   title: Firmware repository
-  content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware objects by name, description, or device type.
+  content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware items by name, description, or device type.
 
 
-	For details on managing firmware, firmware versions and patches, and on how to install or update them on devices, see *Device Management > Managing device data > Managing device firmware* in the *User guide*."
+	See the *User guide* for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
 - label: software-repo
   title: Software repository
-  content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the the repository entries by name, description, or device type.
+  content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the repository entries by name, description, or device type.
 
 
-	For details on managing software and software versions and on how to install or update them on devices, see *Device Management > Managing device data > Managing device software* in the *User guide*."
+	See the *User guide* for details on managing software and software versions and on how to install or update them on devices."
 - label: configuration-repository
   title: Configuration repository
   content: "In the configuration repository, you can store and manage configuration data retrieved from your devices as 'configuration snaphots'. The configuration data contains the parameters and the initial settings of a device. Such configuration snapshots help you, for example, to apply the same configuration to multiple devices.
 
 
-  For details on how to retrieve configuration data, and how to store and manage it in the configuration repository as snapshot, see *Device Management > Managing device data > Managing configurations* in the *User guide*."
+  See the *User guide* for details on how to retrieve configuration data, and how to store and manage it in the configuration repository as snapshot."
 - label: credentials
   title: Device credentials
-  content: "Manage the device credentials that have been generated for your connected devices. Edit, disable, or delete device credentials as required or modify its permissions in the **Global roles** field, see also *Device Management > Managing device data > Device credentials* in the *User guide*."
+  content: "Manage the device credentials that have been generated for your connected devices. Edit, disable, or delete device credentials as required or modify its permissions in the **Global roles** field, see the *User guide* for details."
 - label: device-profiles
   title: Device profiles
   content: "Device profiles represent a set of a firmware version, one or multiple software packages, and one or multiple configuration files which can be deployed on a device. Based on device profiles, you can easily deploy a specific target configuration on devices by using bulk operations.
 
 
-  For details on managing device profiles and on applying device profiles to devices, see *Device Management > Managing device data > Device profiles* in the *User guide*."
+  See the *User guide* for details on managing device profiles and on applying device profiles to devices."
 - label: trusted-certificates
   title: Trusted certificates
-  content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, i.e. added to the trusted certificates. For details, see *Device Management > Managing device data > Managing trusted certificates* in the *User guide*."
+  content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
 
 ### Overview
@@ -138,7 +138,9 @@ In the details of a specific firmware, hover over the version or patch entry you
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
->**Info:** The **Firmware** tab shows up for a device if the device supports c8y_Firmware operations.
+{{< c8y-admon-info >}}
+The **Firmware** tab shows up for a device if the device supports `c8y_Firmware` operations.
+{{< /c8y-admon-info >}}
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Firmware** tab.
 
@@ -174,7 +176,9 @@ The status of the bulk operation is shown in the **Bulk operations** tab under *
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
 
->**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< c8y-admon-info >}}
+Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< /c8y-admon-info >}}
 
 <a name="software-repo"></a>
 ### Managing device software
@@ -189,14 +193,21 @@ The available software objects will be displayed as a list.
 
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
-Each entry shows the software name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular software.
-At the left in the top menu bar, you can filter the repository entries by name, description, device type or configuration type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+Each entry shows the software name, the device type it is applicable for (if set), the software type (if set), and a badge indicating if and how many versions are available for a particular software.
+The values in every column except for the **Versions** column can be filtered and sorted by clicking the filter and sort icons in the column header.
 
 When clicking on an entry, the details for this software are displayed along with all available versions.
 
 ![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-At the top, the software name, a description, and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices.
+At the top, the software name, a description, an optional device type filter(s), and a software type are shown.
+If a device type filter is set, the software will show up for installation only for devices of that type.
+If no filter is set, it will be available for all devices.
+The software type will make the software installable only on devices that specifically support the particular software type.
+
+{{< c8y-admon-info >}}
+The **Software type** field suggests you a list of types already used in your software repository. Before you consider defining a new software type (the field accepts new values directly) check if the type you need has already been defined before for another software by looking at the suggestions in the dropdown. This will help you keep software types consistent within your organization. If you use, for example, container images you may look for `container` or `image`, or try to search for more specific types like `docker`, `lxc`, and so on. This may prevent you from scattering your software types and using different names for effectively the same software type.
+{{< /c8y-admon-info >}}
 
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
@@ -208,8 +219,9 @@ The versions are ordered by their creation time (descending).
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the resulting window), a description, and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
-3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
-4. Click **Save**.
+4. Define the software type. It will make the software installable only on devices that have declared to support the particular software type.
+5. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
+6. Click **Add software**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
@@ -222,17 +234,17 @@ If you click **Add software** from within the details of a specific software, th
 
 #### To edit a software
 
-1. Click the menu icon at the right of a specific software entry and in the context menu click **Edit**.
-2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**.
+1. Click the menu icon at the right of a specific software item and in the context menu click **Edit**.
+2. Update the name, description, device type filter or software type by clicking the pencil icon next to it. Make the desired changes and click **Save**.
 
 The software will be updated accordingly.
 
 
-#### Deleting softwares or software versions
+#### Deleting software items or software versions
 
 ##### To delete a software
 
-Click the menu icon at the right of a specific software entry and in the context menu click **Delete**.
+Click the menu icon at the right of a specific software item and in the context menu click **Delete**.
 
 The software and all its versions will be deleted from the software repository.
 
@@ -245,11 +257,13 @@ In the details of a specific software, hover over the version entry you want to 
 
 In the **Software** tab of a device you can manage the software for the particular device.
 
->**Info:** The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< c8y-admon-info >}}
+The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< /c8y-admon-info >}}
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab.
 
-The **Software** tab shows a list of all available software installed on the device.
+The **Software** tab shows a list of all available software installed on the device. If a given software has a type, it will be displayed next to its name. You can search for a particular software by its name or filter the list by software type.
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
@@ -260,10 +274,20 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install software on a device
 
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
-2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.
-4. Click **Install**.
-5. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
-	![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
+
+    {{< c8y-admon-info >}}
+The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+    {{< /c8y-admon-info >}}
+
+2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
+For devices supporting advanced software management features, already installed software items cannot be pre-filtered from the list of available software items. Thus, after a particular software version has been selected, a check is done if the selected software is already installed on the device. If this is the case, a warning next to the selected version indicates that this software version is already present on the device.  
+You can remove the already installed software item under **Software changes** or leave it and apply it as part of the changes. It is up to the device agent to decide how to handle such an update.
+
+3. Click **Install**.
+
+4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
+
+	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
@@ -274,7 +298,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 ##### To update software on a device
 
-Hover over the software entry which you want to update and click **Update**.
+Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
 
 ![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
@@ -283,7 +307,7 @@ The software will be updated with the selected version.
 
 ##### To delete software from a device
 
-Hover over the software entry which you want to delete and click the delete icon.
+Hover over the software item which you want to delete and click the delete icon.
 
 ##### To install software on multiple devices
 
@@ -297,7 +321,9 @@ The status and details of the bulk operation are shown in the **Bulk operations*
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
 
->**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< c8y-admon-info >}}
+Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Managing configurations
@@ -341,7 +367,9 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
->**Info:** The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
+{{< c8y-admon-info >}}
+The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
+{{< /c8y-admon-info >}}
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
@@ -368,7 +396,9 @@ Once retrieved, you can save or download the snapshot in the **Preview** section
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> **Info:** Clicking **Get snapshot from device** creates a new operation. If the operation is in status PENDING or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
+{{< c8y-admon-info >}}
+Clicking **Get snapshot from device** creates a new operation. If the operation is in status PENDING or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
+{{< /c8y-admon-info >}}
 
 To apply a configuration snapshot to a device which supports multiple configuration types:
 
@@ -379,7 +409,9 @@ To apply a configuration snapshot to a device which supports multiple configurat
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+{{< c8y-admon-info >}}
+Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+{{< /c8y-admon-info >}}
 
 <a name="credentials"></a>
 ### Managing device credentials
@@ -492,7 +524,9 @@ Duplicating a profile creates another instance of the profile with the same cont
 
 To delete a device profile, click the menu icon at the right of the respective device profile entry and then click **Delete**.
 
-> **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
+{{< c8y-admon-info >}}
+Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
+{{< /c8y-admon-info >}}
 
 <a name="applying-device-profiles"></a>
 ### Applying device profiles to devices
@@ -506,7 +540,9 @@ The **Device profile** tab of a particular device shows the details of the curre
 
 ![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** The **Device profile** tab shows up for a device if the device supports c8y_DeviceProfile operations.
+{{< c8y-admon-info >}}
+The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
+{{< /c8y-admon-info >}}
 
 Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
 
@@ -535,15 +571,18 @@ Device profiles can be applied to multiple devices by using bulk operations.
 
 The devices will install the firmware, software, and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 
->**Info:** When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
-
+{{< c8y-admon-info >}}
+When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
+{{< /c8y-admon-info >}}
 
 <a name="trusted-certificates"></a>
 ### Managing trusted certificates
 
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
->**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the *Device SDK guide*.
+{{< c8y-admon-info >}}
+This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the *Device SDK guide*.
+{{< /c8y-admon-info >}}
 
 Click **Trusted certificates** in the **Management** menu in the navigator.
 
@@ -583,17 +622,19 @@ To add a certificate perform these steps:
 | Field             | Description                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Certificate name  | User-provided name for the certificate. This name is not used by {{< product-c8y-iot >}} and can serve as a description of the certificate.         |
-| Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.            |
+| Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it in your file system.            |
 | Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |
 
 3. Click **Add Certificate** to validate and save the certificate.
 
->**Info:** For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
+{{< c8y-admon-info >}}
+For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
+{{< /c8y-admon-info >}}
 
 #### To edit a trusted certificate
 
-In the detail view of a certificate you may change the parameters on the left, i.e. the certificate name, and the settings for the auto registration and enabled/disabled option.
+In the detail view of a certificate you may change the parameters on the left, that is, the certificate name, and the settings for the auto registration and enabled/disabled option.
 
 For details on the fields, see the description on adding certificates above.
 

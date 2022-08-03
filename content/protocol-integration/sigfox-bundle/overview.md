@@ -24,6 +24,11 @@ The following sections describe how to:
 - [Update devices](#old-registration) registered with the general device registration.
 - [Send operations](#operations-sigfox) to devices.
 
-Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in case of any issues.
+Moreover, check out
 
-> **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).
+* [Uplink message processing](#uplink-message) for information on measurements and events created while processing the uplink message.
+* [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
+
+{{< c8y-admon-info >}}
+To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).
+{{< /c8y-admon-info >}}

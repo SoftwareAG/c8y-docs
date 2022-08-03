@@ -42,7 +42,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-Available arguments for c8y_ua_command_ScanAddressSpace:
+Available arguments for `c8y_ua_command_ScanAddressSpace`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -67,14 +67,16 @@ Available arguments for c8y_ua_command_ScanAddressSpace:
 </tr>
 <tr>
 <td>skipSync</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>If set to true, the address space nodes will not be synchronized to Cumulocity IoT Inventory API. Default is false.</td>
 </tr>
 </tbody>
 </table>
 
-> **Info:** We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< c8y-admon-info >}}
+We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+{{< /c8y-admon-info >}}
 
 ### Reading the value of a node/nodes
 
@@ -93,7 +95,7 @@ POST /devicecontrol/operations/
 }
 ```
 
-Available arguments for c8y_ua_command_ReadValue:
+Available arguments for `c8y_ua_command_ReadValue`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -183,7 +185,7 @@ This operation returns all attributes of specific node.
 }
 ```
 
-Available arguments for c8y_ua_command_ReadNodeAttributes:
+Available arguments for `c8y_ua_command_ReadNodeAttributes`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -249,7 +251,7 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 }
 ```
 
-Available arguments for c8y_ua_command_ReadAttribute:
+Available arguments for `c8y_ua_command_ReadAttribute`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -387,7 +389,7 @@ This operation reads many attributes from many nodes at single call.
 }
 ```
 
-Available arguments for c8y_ua_command_ReadComplex:
+Available arguments for `c8y_ua_command_ReadComplex`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -460,7 +462,7 @@ This operation reads history values and applies the mappings except of alarm map
 }
 ```
 
-Available arguments for c8y_ua_command_HistoricReadOperation:
+Available arguments for `c8y_ua_command_HistoricReadOperation`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -519,7 +521,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>processMappings</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true. Note that any data created from historic data using a device protocol will carry the same processing mode as specified in the mapping.</td>
 </tr>
@@ -552,7 +554,7 @@ This operation reads historic values and only saves those values to a file which
 ```
 The binary file representations, which can be queried using binary API, are created with the type "c8y_ua_HistoricData" and an operationId with the value of the operation with which it has been generated.
 
-Available arguments for c8y_ua_command_HistoricDataUploadOperation:
+Available arguments for `c8y_ua_command_HistoricDataUploadOperation`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -617,7 +619,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>compress</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>If set the false the output chunks are compressed. Default is false.</td>
 </tr>
@@ -643,7 +645,7 @@ With this operation, a file can be downloaded from the OPC UA server at the give
 }
 ```
 
-Available arguments for c8y_ua_command_ReadFileOperation:
+Available arguments for `c8y_ua_command_ReadFileOperation`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -676,7 +678,7 @@ Available arguments for c8y_ua_command_ReadFileOperation:
 </tr>
 <tr>
 <td>skipResetPosition</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>If set to true then the position to read the file is reset before reading the file. Default is false.</td>
 </tr>
@@ -719,9 +721,7 @@ This returns a JSON response like this:
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
 
-For further information, refer to [Binaries > Binaries collection](/reference/binaries/#binaries-collection) in the *Reference guide*.
-
-For 10.9 and later, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
+For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value
@@ -745,7 +745,7 @@ This operation writes values to the node/nodes.
 }
 ```
 
-Available arguments for c8y_ua_command_WriteValue:
+Available arguments for `c8y_ua_command_WriteValue`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -777,7 +777,7 @@ Available arguments for c8y_ua_command_WriteValue:
 </tbody>
 </table>
 
-Available arguments for type rangedValue (used as map value in c8y_ua_command_WriteValue.values):
+Available arguments for type rangedValue (used as map value in `c8y_ua_command_WriteValue.values`):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -838,7 +838,7 @@ This operation is similar to the previous one, but instead of writing to the val
 }
 ```
 
-Available arguments for c8y_ua_command_WriteAttribute:
+Available arguments for `c8y_ua_command_WriteAttribute`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -946,7 +946,7 @@ This operation reads the description of a method node.
 }
 ```
 
-Available arguments for c8y_ua_command_GetMethodDescriptionOperation:
+Available arguments for `c8y_ua_command_GetMethodDescriptionOperation`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1032,7 +1032,7 @@ This operation calls the method on the OPC UA server. It requires complete input
     "description": "call method"
 }
 ```
-Available arguments for c8y_ua_command_CallMethodOperation:
+Available arguments for `c8y_ua_command_CallMethodOperation`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1064,7 +1064,7 @@ Available arguments for c8y_ua_command_CallMethodOperation:
 </tbody>
 </table>
 
-Available arguments for type methodRequest (used in c8y_ua_command_CallMethodOperation.request):
+Available arguments for type methodRequest (used in `c8y_ua_command_CallMethodOperation.request`):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1101,14 +1101,14 @@ Available arguments for type methodRequest (used in c8y_ua_command_CallMethodOpe
 </tr>
 <tr>
 <td>parseResponse</td>
-<td>boolean</td>
+<td>Boolean</td>
 <td>no</td>
 <td>If set to true, the value is converted to JSON and the actual value is stored in the rawValue fragment in response. Default is true</td>
 </tr>
 </tbody>
 </table>
 
-Available arguments for type methodArgument (used in c8y_ua_command_CallMethodOperation.request.arguments):
+Available arguments for type methodArgument (used in `c8y_ua_command_CallMethodOperation.request.arguments`):
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1195,7 +1195,7 @@ This operation allows for testing a device type against a specific node on an OP
 }
 ```
 
-Available arguments for c8y_ua_command_TestDeviceTypeMatching:
+Available arguments for `c8y_ua_command_TestDeviceTypeMatching`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1284,7 +1284,7 @@ As explained earlier, the {{< product-c8y-iot >}} OPC UA gateway performs an aut
 
 ```
 
-Available arguments for c8y_ua_command_DryRunDeviceTypeMatching:
+Available arguments for `c8y_ua_command_DryRunDeviceTypeMatching`:
 <table>
 <colgroup>
 <col style="width: 20%;">
@@ -1384,7 +1384,7 @@ In order to know what is the current state of a device type application, use the
 }
 ```
 
-Available arguments for c8y_ua_command_GetDeviceTypeApplicationState:
+Available arguments for `c8y_ua_command_GetDeviceTypeApplicationState`:
 <table>
 <colgroup>
 <col style="width: 20%;">

@@ -17,12 +17,14 @@ If Activation by Personalization (ABP) is required to be used, refer to the [LoR
 In the next window fill in the required information:
 
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
-  
+
     The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.
 - **Device protocol**: Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-device-protocols).
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
+- **Application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
+- **Provider connection**: The Actility connection the device must be associated with.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-registration.png)
@@ -37,6 +39,15 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
 
+In order to migrate the device from one LNS Connection to another, the device needs to be re-registered.
+Navigate to the **LPWAN** tab of the Device.
+Click on the **Provider connection** dropdown.
+A prompt will appear stating that in order to migrate the device from one LNS connection to another, you need to re-register the device.
+Click on the **Re-Register** button.
+
+The user is directed to the device registration page where he can perform the re-registration by following the steps above and selecting the desired LNS connection. 
+
+
 ### <a name="device-registration-process">LoRa device registration process</a>
 
 <img src="/images/device-protocols/lora-actility/lora-device-registration-process.png" style="max-width: 60%">
@@ -49,7 +60,7 @@ First it is checked, if the device already exists. If no device exists with the 
 
 Activating the device by personalization is not recommended and not fully supported in {{< product-c8y-iot >}} LoRa device registration.
 
-However, if you would like to create a device with this activation type in {{< product-c8y-iot >}} and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for {{< product-c8y-iot >}} using the destination `http://actility-server.{{< domain-c8y >}}` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
+However, if you would like to create a device with this activation type in {{< product-c8y-iot >}} and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you must create "AS Routing Profile" for {{< product-c8y-iot >}} using the destination `http://actility-server.{{< domain-c8y >}}` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
 ### <a name="legacy-LoRa-devices">Limitations for LoRa devices created with general device registration</a>
 

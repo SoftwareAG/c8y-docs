@@ -10,7 +10,9 @@ aliases:
 
 Operations on MLW settings.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Get AWS S3 credentials
 
@@ -19,6 +21,8 @@ Operations on MLW settings.
 ```
 
 Fetches the AWS S3 credentials information.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
 
 |HEADERS||
 |:---|:---|
@@ -74,6 +78,8 @@ curl --location --request GET '{{url}}/service/mlw/credentials'
 ```
 
 Registers the AWS S3 credentials information with {{< product-c8y-iot >}}.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
 
 |HEADERS||
 |:---|:---|
@@ -160,6 +166,8 @@ curl --location --request POST '{{url}}/service/mlw/credentials?type=AWS' \
 ```
 
 Deletes the AWS S3 credentials information from {{< product-c8y-iot >}}.
+
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -8,7 +8,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between usernames: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all {{< product-c8y-iot >}} applications that a tenant subscribes to.
 
-Each new realm is automatically populated with an initial administrator user who can create further users and user groups (i.e. global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
+Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
 ![User management](/images/concepts-guide/user-management.png)
 
@@ -61,4 +61,4 @@ For details on permission management using the API refer to [the User API](https
 
 ### Globally accessible objects
 
-It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called "c8y_Global" to the object.
+It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called `c8y_Global` to the object.

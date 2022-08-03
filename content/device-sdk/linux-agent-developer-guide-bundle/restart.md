@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-Besides sending requests, e.g., measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
+Besides sending requests, such as measurements to the {{< product-c8y-iot >}} platform, another important function is handling incoming messages from {{< product-c8y-iot >}}; either responses from GET queries or real-time operations.  
 Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the {{< product-c8y-iot >}} C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
@@ -56,7 +56,7 @@ end
 11,804,,$.c8y_Restart,$.id,$.deviceId
 ```
 
-`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [SmartREST > Template](/reference/smartrest/#templates) in the *Reference guide*.
+`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [SmartREST > Template](/reference/smartrest-one/#templates) in the *Reference guide*.
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
@@ -68,7 +68,7 @@ c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
 
 is doing. In practice, the agent needs to execute reboot afterwards, but since this is a simple example, replace it by logging debug message "Executing restart..". This message will be buffered when the connection gets lost as the message priority is marked `1`.
 
-After finishing the execution, the agent needs to inform that it is done using the following code.
+After completing the execution, the agent needs to inform that it is done using the following code.
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',SUCCESSFUL', 1)
@@ -94,7 +94,7 @@ Now go to your {{< product-c8y-iot >}} tenant, execute a restart operation as sh
 
 ### Restart device example - practical
 
-The first example does not execute the real rebooting command. For practical usage, you need to take into account how to keep the operation ID before/after rebooting a device.
+The first example does not execute the real rebooting command. For practical usage, you must take into account how to keep the operation ID before/after rebooting a device.
 
 Here is the easiest example to overcome this problem.
 

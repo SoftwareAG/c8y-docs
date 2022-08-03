@@ -9,7 +9,9 @@ aliases:
 
 Operations for time series data/model.
 
->**Info:** An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< c8y-admon-info >}}
+An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< /c8y-admon-info >}}
 
 ### Domain model
 #### TimeSeries
@@ -23,7 +25,7 @@ Operations for time series data/model.
 #### TimePeriod
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|timeUnit|ChronoUnit|The value has to be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – "SECONDS", "MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS" etc.|
+|timeUnit|ChronoUnit|The value must be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – "SECONDS", "MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS" etc.|
 |periodLength|Number|Length of the period.|
 
 
@@ -44,7 +46,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 
 |PARAMS||
 |:---|:---|
-|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
+|autoDeploy (Boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 **BODY**
 ```

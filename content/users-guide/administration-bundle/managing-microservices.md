@@ -142,7 +142,7 @@ In the **Properties** tab, each microservice will show the following information
 <tr>
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Application name; will be shown as title of the microservice application in the top bar</td>
-<td style="text-align:left">Automatically created, based on the ZIP file name</td>
+<td style="text-align:left">Automatically inferred from the ZIP file name (recognized version number is dropped), unless provided in the microservice's manifest file</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>

@@ -311,8 +311,6 @@ In the Administration application, navigate to **Ecosystem** > **Microservices**
 
 Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
-![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
-
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
 ![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)

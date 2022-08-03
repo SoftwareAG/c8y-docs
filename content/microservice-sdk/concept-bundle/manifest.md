@@ -230,7 +230,8 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |key|String |Key of the option|Yes
 |defaultValue|String|Default value|Yes
 |editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
-
+|overwriteOnUpdate|Boolean|Defines if an editable option is reset upon microservice update <br>Default: true |No
+|inheritFromOwner|Boolean|Specifies if an option should be inherited from the owner <br>Default: true |No
 #### Probe
 
 |Name|Type|Description|Required|

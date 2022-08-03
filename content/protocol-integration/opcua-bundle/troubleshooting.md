@@ -68,14 +68,14 @@ It can be useful to get some statistics for custom actions in particular. These 
 
 1. Table of all called URLs seperated by HTTP return code and retry count.
 
-![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.png)
+    ![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.png)
 
-The key entry of the table consists of:
+    The key entry of the table consists of:
 
-```
-{URL}_{HTTP Response Code}_{Retry Count}
-```
+    ```
+    {URL}_{HTTP Response Code}_{Retry Count}
+    ```
 
 2. If retry is enabled, the queue size of the retry queue can be monitored.
 
-![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.png)
+    ![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.png)

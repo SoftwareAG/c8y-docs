@@ -9,15 +9,13 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To view widgets within dashboards: READ permission for permission type "Inventory" or READ permission for the "Inventory" Inventory roles
-- To edit widgets: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- To create a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-- To delete a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for the "Inventory" Inventory roles
-{{< /c8y-admon-req >}}
+- To view widgets within dashboards: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To edit widgets: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+- To create a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+- To delete a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 
-{{< c8y-admon-info >}}
-Some of the widget will require additional permissions in order to visualize the data which they display. E.g. The alarms widget will require READ permission for permission type "Alarms" in order to view all of the alarms.
-{{< /c8y-admon-info >}}
+Some of the widget require additional permissions in order to visualize the data which they display. For example, the alarms widget requires READ permission for permission type "Alarms" in order to view all alarms.
+{{< /c8y-admon-req >}}
 
 {{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](#widgets-collection).
 

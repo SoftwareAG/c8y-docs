@@ -72,12 +72,13 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 ### Shared subscription
 
-There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscriptions.
+There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscription filters. A subscription name (or topic) can also be set up on many managed objects or child / parent hierarchies. These can easily lead to high volumes of notifications.
+
 In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelized application.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application with the optional boolean `isShared` request parameter set to true in the token create request.
+This can be achieved by creating a token with a subscription and subscriber name for the scalable application with the optional boolean `shared` request parameter set to true in the token create request.
 
 Notifications (messages) will be distributed among all connections to the Notification 2.0 WebSocket endpoint.
-They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (for example if the token can not be shared over the network).
+They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (for example if the tokens can not be shared over the network).
 The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that's usually used.
 The application can consist of more than one instance running in parallel in the shared use case.
 
@@ -90,22 +91,22 @@ However, a different consumer name is passed as the `consumer` query string argu
 For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
 Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
 
-### Volatile subscriptions
+### NonPersistent subscriptions
 
-When subscribing, it is possible to pass in an optional boolean `isVolatile` query parameter with a value of true.
+When subscribing, it is possible to pass in an optional boolean `nonPersistent` query parameter with a value of true.
 Note that there is no need to mark a subscription as shared - only the token is marked as shared. 
-Both the token and the subscriptions have `isVolatile` but only the token has both `isVolatile` and `isShared`.
-This changes the subscription to not persist notifications for the named subscription.
+Both the token and the subscriptions have `nonPersistent` but only the token has both `nonPersistent` and `shared`.
+This changes the subscription to not persist notifications on replicated secondary storage for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
-Note that there can be both volatile and ordinary (non-volatile or persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `isVolatile` equal to true or false.   
+Note that there can be both nonPersistent and ordinary (i.e. persistent) subscriptions on a managed object with the same subscription name.
+These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select the nonPeristent or (by default) the persistent topic.   
 
-The messaging service will keep volatile notifications in memory but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
+The messaging service will keep nonPersistent notifications in memory but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
 
 ### Unsubscribing a subscriber
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
-For non-volatile subscriptions, this can result in notifications remaining in storage if never consumed by the application.
+For persistent subscriptions, this can result in notifications remaining in storage if never consumed by the application.
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.
 A separate REST endpoint is available for this: <kbd>/notification2/unsubscribe</kbd>.

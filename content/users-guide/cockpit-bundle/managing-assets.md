@@ -126,7 +126,7 @@ Devices show the following tabs:
 - **Location** - Shows the current location of a device (only available with `c8y_Position`).
 
 {{< c8y-admon-req >}}
-ROLES & PERMISSIONS IN DEVICES CONTEXT:
+ROLES & PERMISSIONS in devices context:
 
 - To view all devices within a group: READ permission for permission type "Inventory"
 - To assign or unassign devices within a group: ADMIN permission for permission type "Inventory"

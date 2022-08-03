@@ -49,3 +49,33 @@ For example:
 ```
 
 For additional information about log levels, refer to the [Logback architecture documentation](http://logback.qos.ch/manual/architecture.html#effectiveLevel).
+
+### Java Management Extensions (JMX)
+
+For additional monitoring, the Gateway component provides MBeans. These MBeans get exposed if the following configuration is set in the *application.yaml* file:
+
+```
+spring:
+     jmx:
+         enabled: true
+```
+
+Via jconsole the MBeans can be selected and the following attributes can be accessed:
+
+![jconsole MBeans](/images/device-protocols/opcua/opcua-jmx-mbeans.png)
+
+It can be useful to get some statistics for custom actions in particular. These attributes can be retrieved from the CustomActionMBean:
+
+1. Table of all called URLs seperated by HTTP return code and retry count.
+
+![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.png)
+
+The key entry of the table consists of:
+
+```
+{URL}_{HTTP Response Code}_{Retry Count}
+```
+
+2. If retry is enabled, the queue size of the retry queue can be monitored.
+
+![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.png)

@@ -15,7 +15,7 @@ In order to resolve this error, please contact support.sigfox.com to create a co
 
 #### No Sigfox provider settings are found.
 
-This warning message shows up when there are no credentials set up for the Sigfox account.
+This warning message shows up  when there are no connections set up for the sigfox connectivity.
 
 To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
 

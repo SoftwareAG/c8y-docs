@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa**from the dropdown.
+To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 

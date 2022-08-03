@@ -22,9 +22,9 @@ The request above is simply an example API request that could be used. For more 
 
 #### No Sigfox provider settings are found
 
-This warning message shows up when there are no credentials set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration application where the credentials are configured.
+This warning message shows up when there are no connections set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration application where the connections are configured.
 
-<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without credentials" style="max-width: 100%">
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without connections" style="max-width: 100%">
 <br>
 
 #### No device protocols configured

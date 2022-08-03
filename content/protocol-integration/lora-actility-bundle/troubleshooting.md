@@ -28,7 +28,7 @@ To resolve this, provide the correct application EUI from [Connectivity](#config
 
 #### No LoRa provider settings found
 
-This warning message shows up when there are no credentials set up for the ThingPark account. To resolve this click **Settings** to navigate to the Administration application where the credentials are configured.
+This warning message shows up when there are no credentials set up for the ThingPark account. To resolve this click **Settings** to navigate to the Administration application where the connections are configured.
 
 <img src="/images/device-protocols/lora-actility/lora-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
@@ -41,7 +41,7 @@ Invalidation of the token might happen when the same ThingPark credentials are u
 
 <img src="/images/device-protocols/lora-actility/lora-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%">
 
-This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
+This issue can be solved by reconfiguring the Actility ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
 
 #### No device protocols configured
 
@@ -51,7 +51,7 @@ This warning message shows up when no LoRa device protocol exists to be used for
 
 #### No connectivity plans with free slots available
 
-This warning message shows up when the connectivity plan in ThingPark has reached the limit for the device count.
+This warning message shows up when the connectivity plan in Actility ThingPark has reached the limit for the device count.
 
 <img src="/images/device-protocols/lora-actility/lora-registration-no-freeslots.png" alt="No free slots by device registration" style="max-width: 100%">
 

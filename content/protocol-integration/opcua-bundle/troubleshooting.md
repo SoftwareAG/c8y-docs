@@ -52,7 +52,7 @@ For additional information about log levels, refer to the [Logback architecture 
 
 ### Java Management Extensions (JMX)
 
-For additional monitoring, the Gateway component provides MBeans. These MBeans get exposed if the following configuration is set in the *application.yaml* file:
+For additional monitoring, the gateway component provides MBeans. These MBeans get exposed if the following configuration is set in the *application.yaml* file:
 
 ```
 spring:

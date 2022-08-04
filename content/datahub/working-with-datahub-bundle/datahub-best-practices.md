@@ -66,7 +66,8 @@ src."creationTime"."date" > {ts '2020-02-08 14:00:00.000'}
 ```
 
 ### Querying additional data with Cumulocity IoT DataHub
-Main use-case of {{< product-c8y-iot >}} DataHub is to offload data from the internal {{< product-c8y-iot >}} database 
+Main use case of {{< product-c8y-iot >}} DataHub is to offload data from the internal {{< product-c8y-iot >}} database 
+
 to a data lake and query the data lake contents afterwards. In some use cases, {{< product-c8y-iot >}} DataHub is required 
 to query additional data which is not kept in the {{< product-c8y-iot >}} platform. For a cloud environment, the 
 additional data must be provided as Parquet files and must be located in the data lake as configured in the initial 
@@ -104,4 +105,4 @@ nothing wrong in particular with rewriting data (or importing legacy data this w
 manually created files are not compliant to the required table schema and thus offloading additional data to the target 
 table would not work, i.e. the corresponding offloading pipeline would be broken. In particular, one must be careful 
 to use the correct data type (`TIMESTAMPMILLIS`) for all timestamp columns (`time`, `timeWithOffset`, 
-`creationTime`, `creationTimeWithOffset`).
+`creationTime`, `creationTimeWithOffset`).

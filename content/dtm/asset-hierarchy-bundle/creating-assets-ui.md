@@ -4,62 +4,65 @@ title: Creating assets via the UI
 layout: redirect
 ---
 
-
-##### Assets
-
-**Assets** in DTM application are the digital representation of physical assets. It can have subassets and devices underneath it.
-Properties or attributes of the assets are defined using [Custom properties](/dtm/asset-types/#property-library).
+You have two options for creating assets in the DTM application. The following section describes how to create an asset via the UI. Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into DTM.
 
 
-**Example:**
+### Assets
 
-If HVAC is your asset, then condenser and cooling system are the subassets underneath your HVAC asset. If there are devices associated with HVAC asset or either of the subassets, same can be represented by assigning devices to the corresponding assets/ subassets.
+In DTM assets are the digital representation of physical assets. An asset in DTM can contain numerous subassets and devices. You also have the opportunity to define properties or attributes of an assets through [custom properties](/dtm/asset-types/#property-library).
 
-Navigate to **Assets** page using the left nav. By default, no assets are present and a message is displayed prompting to create the assets.
+To work with assets in DTM navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
 
-If there are assets already created, then it is listed on this page.
+If you already created assets, you find them listed on this page (see image below).
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
+**Example:**
 
-##### Asset hierarchy
+In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets. If there are devices associated with this "HVAC" asset or either of its subassets, you can  assign devices to the corresponding assets or subassets.
 
-The **Asset hierarchy** gives a bird’s eye view of the entire hierarchy. Root asset type and all its subsequent child asset types together form the entire **Asset hierarchy**. Each hierarchy level comprises of custom properties for that asset and the subassets and devices underneath that asset.
+
+### Asset hierarchy
+
+You can see the **asset hierarchy** in the **New asset** page.
+
+The **asset hierarchy** provides a bird’s eye view of the entire hierarchy. It is compiled by the root asset type and all its subsequent child asset types. Each hierarchy level comprises of custom properties for the asset as well as its subassets and devices.
+
+It is similar to a tree structure, with the root level asset on top and its subsequent child assets branching out below.
 
 **Example:**
 
-If "Building" is a root level asset, "Floor" is a child asset of building and "Room" is a child asset of floor. (Building --> Floor --> Room).
+You create the root asset level "Building" is a root level with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
 
-In case, there is one "Building" asset, having 2 floors and each floor having 5 rooms underneath it, then in this case 1 Building + 2 floors + 10 rooms, custom properties for all these assets and all devices assigned for these asets together form the **Asset hierarchy**.
-
-You can think of **Asset hierarchy** being similar to a tree structure, with the root level asset on top and its subsequent child assets branching out.
+Building > Floor > Room
 
 
-##### Add Asset
+### Adding an asset
 
-To create assets via UI, click on **Add Asset**
+To create an asset via the UI, click the **Add Asset** button in the top right corner of the **Assets** page. This opens the **New asset** page, where you can create a new asset and asset hierarchy.
 
-"New asset page" is displayed to create a new asset hierarchy.
-
-Click on **Choose asset type** dropdown on left. All the root asset types get displayed in this list.
+First you have to choose the desired asset type from the **Choose asset type** drop down menu on the top left. These asset types are root asset types. They are labeled "START NODE" in the hierarchy.
 
 {{< c8y-admon-info>}}
-Root asset type is an **Asset type** which is at the top of hierarchy and does not have any Parent Asset type above it.
+Root asset type is an **Asset type** which is at the top of hierarchy and does not have any parent asset type above it.
 {{< /c8y-admon-info>}}
 
-Select the root asset type, for which the asset must be created, in this dropdown.
+Next, the **asset hierarchy** is displayed in the left tab, with the respective dialog window opening in the right tab. Fill out all the mandatory field labeled "required" to move to the next section.
 
-On choosing the root asset type, **Asset hierarchy** gets displayed on left in the form of a hierarchy. The mandatory fields are mentioned with a “required” label against it. Root asset is indicated with a label START NODE.
+You also have the option of adding a description or assigning devices to your root asset. If you want to add more than one root asset, click the **Add** button. If you want to proceed, click **Next**. The following tab shows the next hierarchy level of your **asset hierarchy**. Fill out the fields as necessary for your asset. Click **Next**.
+Repeat this process for all **asset hierarchy** levels according to the assets requirements.
 
-Fill in Asset related details on the right. The following sections are present, fill all the mandatory fields, in order to move to the next section.
-
-*	Name : Mandatory field **Name** indicates the name of the **Asset**.
+At the end you see the **Confirmation** window, which displays a final overview of your asset and asset hierarchy levels. Click **Create** to finish the process and create your asset. The new asset is now listed in the **Assets** page.
 
 **Example:**
 
-If you are creating an **Asset hierarchy** for a "Building" Asset, then give the name of the building here.
+If you are creating an **Asset hierarchy** for the asset "Building", select the root asset level "Building" in the **Choose asset type** drop down menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. If you want to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
 
-*	Description : Optional field **Description** can be provided which gives a brief description about the **Asset** being created.
+Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
+
+[CONTINUE HERE]
+
+
 
 *	Custom properties : This section lists all the [custom properties](/dtm/asset-types/#property-library) which must be defined for the **Asset** being created.
 

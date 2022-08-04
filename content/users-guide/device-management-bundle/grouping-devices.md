@@ -11,6 +11,7 @@ helpcontent:
   You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 ---
 
+<!-- TODO: We need context help for Subassets view "Assign devices, etc"  -->
 Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 {{< product-c8y-iot >}} distinguishes between top-level groups and subgroups:

@@ -18,6 +18,8 @@ helpcontent:
     **Accepted** - the user has allowed the credentials to be send to the device"
 ---
 
+<!-- TODO: Device Registration has changed recently. Maybe we need to review this to better explain how it works now, custom/single/bulk registrations, etc. -->
+
 <a name="dev-registration"></a>
 
 ### Device registration

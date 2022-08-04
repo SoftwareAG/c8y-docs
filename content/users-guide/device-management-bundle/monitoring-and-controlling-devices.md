@@ -43,6 +43,7 @@ helpcontent:
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
 
+<!-- TODO: We're missing Single/Bulk operations context help -->
 
 <a name="map"></a>
 ### Locating devices

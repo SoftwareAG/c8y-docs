@@ -13,6 +13,8 @@ helpcontent:
     Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant. For details, see the *User guide*."
 ---
 
+<!-- TODO: We should separate "Data Connectors" and "Data subcriptions". this one is being applied in both views-->
+
 Data broker lets you share data selectively with other tenants. You can share:
 
 - devices (and more generically, managed objects),

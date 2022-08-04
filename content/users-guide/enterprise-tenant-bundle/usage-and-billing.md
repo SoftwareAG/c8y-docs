@@ -14,6 +14,8 @@ helpcontent:
 
 ---
 
+<!-- TODO: Review copy to fix "The **Usage statistics** page" duplication. -->
+
 <a name="usage-stats"></a>
 ### Viewing usage statistics
 

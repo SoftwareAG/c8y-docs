@@ -11,6 +11,8 @@ helpcontent:
     Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
 ---
 
+<!-- TODO: We need context help for Subassets view "Assign devices, etc"  -->
+
 <a name="assets"></a>
 ### Assets hierarchy
 

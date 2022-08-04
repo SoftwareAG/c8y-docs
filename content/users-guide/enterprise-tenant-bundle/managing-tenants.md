@@ -16,6 +16,8 @@ helpcontent:
 
 ---
 
+<!-- TODO: We're missing context help for "Tenant Policies" in "Tenants" -->
+
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 {{< c8y-admon-important >}}

@@ -12,8 +12,8 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* See [Concepts guide > Interfacing devices](https://cumulocity.com/guides/concepts/interfacing-devices/) for more information on how to interface devices
-* See [Protocol integration guide > LPWAN Custom device protocols](https://cumulocity.com/guides/protocol-integration/lpwan-custom-codec/) for custom device protocols for LPWAN devices
+* See [Concepts guide > Interfacing devices](/concepts/interfacing-devices/) for more information on how to interface devices
+* See [Protocol integration guide > LPWAN Custom device protocols](/protocol-integration/lpwan-custom-codec/) for custom device protocols for LPWAN devices
 {{< /c8y-admon-related >}}
 
 

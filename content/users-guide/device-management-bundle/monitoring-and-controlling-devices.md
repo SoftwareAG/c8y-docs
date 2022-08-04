@@ -44,8 +44,9 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* See [Reference guide > Device management library > Device availability](https://cumulocity.com/guides/reference/device-management-library/#device-availability) for the device management library entry on device availability
-* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms
+* See [Reference guide > Device management library > Device availability](/reference/device-management-library/#device-availability) for the device management library entry on device availability
+* See the [alarms API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms
+* See [Reference guide > Device management library > Alarms](/reference/device-management-library/#alarms) for the device management library entry on alarms
 * See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Operations) for REST API methods concerning operations
 * See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Bulk-operations) for REST API methods concerning bulk operations
 {{< /c8y-admon-related >}}

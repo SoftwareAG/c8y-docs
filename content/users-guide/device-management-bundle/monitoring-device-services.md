@@ -3,6 +3,15 @@ weight: 45
 title: Monitoring device services
 layout: redirect
 ---
+
+{{< c8y-admon-related >}}
+* See the [alarms API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms
+* See [Reference guide > Device management library > Alarms](/reference/device-management-library/#alarms) for the device management library entry on alarms
+* See the [events API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Events) for REST API methods concerning events
+* See the [measurements API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Measurements) for REST API methods concerning measurements
+* See [Reference guide > Device management library > Measurements](/reference/device-management-library/#measurements) for the device management library entry on measurements
+{{< /c8y-admon-related >}}
+
 The Device Management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/users-guide/device-management/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.

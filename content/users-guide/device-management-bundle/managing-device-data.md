@@ -35,6 +35,15 @@ helpcontent:
   content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
 
+{{< c8y-admon-related >}}
+* See [Reference guide > Device management library > Firmware](/reference/device-management-library/#firmware) for the device management library entry on firmware
+* See [Reference guide > Device management library > Software](/reference/device-management-library/#software) for the device management library entry on software
+* See [Reference guide > Device management library > Configuration](/reference/device-management-library/#configuration) for the device management library entry on configurations
+* See the [device credentials API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials
+* See [Reference guide > Device management library > Device profile](/reference/device-management-library/#device-profile) for the device management library entry on device profiles
+* See [Device SDK guide > Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) for more information on device certificates in the context of MQTT
+{{< /c8y-admon-related >}}
+
 ### Overview
 
 The Device Management application provides various features that support you in efficiently managing your devices:

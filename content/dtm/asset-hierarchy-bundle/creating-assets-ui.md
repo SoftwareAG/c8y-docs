@@ -22,7 +22,7 @@ If you already created assets, you find them listed on this page (see image belo
 In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets. If there are devices associated with this "HVAC" asset or either of its subassets, you can  assign devices to the corresponding assets or subassets.
 
 
-### Asset hierarchy
+#### Asset hierarchy
 
 You can see the **asset hierarchy** in the **New asset** page.
 
@@ -49,10 +49,28 @@ Root asset type is an **Asset type** which is at the top of hierarchy and does n
 
 Next, the **asset hierarchy** is displayed in the left tab, with the respective dialog window opening in the right tab. Fill out all the mandatory field labeled "required" to move to the next section.
 
-You also have the option of adding a description or assigning devices to your root asset. If you want to add more than one root asset, click the **Add** button. If you want to proceed, click **Next**. The following tab shows the next hierarchy level of your **asset hierarchy**. Fill out the fields as necessary for your asset. Click **Next**.
+You also have the option of adding a description or assigning devices to your root asset. If you want to add more than one root asset, click the **Add** button.
+The other building block to your asset are the **custom properties**. Here you find all [custom properties](/dtm/asset-types/#property-library) assigned to the asset type that you create. Fill in the required information.
+
+{{< c8y-admon-info>}}
+ The custom properties are defined when [creating the asset type](/dtm/asset-types/#creating-a-new-asset-type). When creating an asset you must provide the values for all custom properties.
+{{< /c8y-admon-info>}}
+
+Click **Assing device** to assign any registered devices to this asset. See [Assigning devices to an asset](HYPERLINK) for more information.
+
+Click **Next** to reach the following hierarchy level of your **asset hierarchy**. Fill out the fields as necessary for your asset and click **Next**.
 Repeat this process for all **asset hierarchy** levels according to the assets requirements.
 
 At the end you see the **Confirmation** window, which displays a final overview of your asset and asset hierarchy levels. Click **Create** to finish the process and create your asset. The new asset is now listed in the **Assets** page.
+
+As you define each hierarchy level of your new asset, you see a green check mark on each asset hierarchy level in the overview on the left.
+
+{{< c8y-admon-info>}}
+If there are validation errors on the page, they are indicated by red highlights. Correct the required information to continue with the process.
+{< /c8y-admon-info>}}
+
+![Adding a new asset](/images/dtm/assets/dtm-assets-create-text-type.png)
+
 
 **Example:**
 
@@ -60,17 +78,9 @@ If you are creating an **Asset hierarchy** for the asset "Building", select the 
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 
-[CONTINUE HERE]
 
 
-
-*	Custom properties : This section lists all the [custom properties](/dtm/asset-types/#property-library) which must be defined for the **Asset** being created.
-
-When [creating the Asset type](/dtm/asset-types/#creating-a-new-asset-type), these custom properties were chosen. Now the values must be provided for all the custom properties for the **Asset** being created.
-
-![assets-new](/images/dtm/assets/dtm-assets-create-text-type.png)
-
-##### Custom property of Type Text or Number
+<!--- #### Custom property of Type, Text or Number
 
 If the **Type** of custom property is either **Text** or **Number**, then provide a valid text or numeric input as value.
 
@@ -140,35 +150,36 @@ The remaining custom properties can be defined during asset creation or can be a
 
 The **Custom property** section appears only, if for the **Asset type** the custom properties were chosen. In case, the **Asset type** does not have any custom properties, then during asset hierarchy creation, the **Custom property** section is not displayed.
 
-* Assigned Devices: By default no devices are assigned. You can assign devices for the assets using below steps.
+* Assigned Devices: By default no devices are assigned. You can assign devices for the assets using below steps.--->
 
 
-##### Assign devices
+#### Assigning devices to an asset
 
-Click **Assign devices** option, “Assign devices” page loads with the list of devices.
+When you create a new asset you have the option of assigning one or more devices to this asset.
 
-![assign-devices](/images/dtm/assets/dtm-assets-assign-devices.png)
+Click **Assign devices** in the **New asset** page. This opens a new dialog window, which lists all devices registered for this tenant. Select one or multiple devices and click **Assign** (see image below). The window closes and you can proceed with creating the asset.
 
-All the devices present in the tenant get displayed here. In case new device must be added, it must be added under **Device Management** of {{< product-c8y-iot >}}. Refer section: [Device Management](/users-guide/device-management/#connecting-devices)
+![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-Check box is provided against each device on left and you can select single or multiple devices to assign.
-
+If you want to add a new device, you must add it through the **Device Management** application. For more details refer to the [Device Management](/users-guide/device-management/#connecting-devices) section in the *User guide*.
 
 {{< c8y-admon-info>}}
 
-Select only those devices which are part of the current asset being created. If a device belongs to a child asset, then select it when the child asset is being created.
+Select only devices which are part of the current asset. If a device belongs to a child asset, then select it when you create the child asset.
 
 {{< /c8y-admon-info>}}
 
+##### Filtering and selecting devices
+
 Various columns are present that specify the device details for each device.
 
-The columns can be configured using **Configure columns** option on top right.
+You can configure the columns using the **Configure columns** option on top right.
 
-Click on **Reload** to reload the page and display the latest list of devices present in the {{< product-c8y-iot >}} tenant.
+Click **Reload** to reload the page and display the latest list of devices present in the {{< product-c8y-iot >}} tenant.
 
 Click **Sort** on the applicable columns to view the device data in either ascending or descending order.
 
-In case you want to filter devices based on text, use **Filter** option in applicable columns. When filter is applied, same is notified on top.
+In case you want to filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
 
 To clear the filters, click **Clear all filters**.
 
@@ -176,59 +187,49 @@ To clear the filters, click **Clear all filters**.
 The **Sort** and **Filter** icons appear on hover over each column.
 {{< /c8y-admon-info>}}
 
-Devices once selected can also be deselected using the checkbox, or also by clicking on **Cancel** on the top bar, on which all selected devices get deselected.
+You can select devices through the checkbox. To cancel your selection, click **Cancel** on the top bar, which removes all selected devices.
 
-Once you select a device/s, then the **Assign** button on bottom gets enabled.
-
-Click **Assign** to assign the devices. Devices are assigned to **Asset** being created and you are navigated back to Asset hierarchy creation page.
-
-You also have an option of not assigning any devices. Click on **Cancel**, you are navigated back to Asset hierarchy creation page.
-
-Once you fill all the mandatory fields for the **Asset**, then the **Next** button gets enabled.
-
-Click **Next**, asset hierarchy details for the next asset to be created loads. Fill in the asset details to proceed further.
-
-As **Assets** are defined for each hierarchy level, same is indicated via green tick mark on the Asset hierarchy on left.
+Once you select one or more devices, click the **Assign** button at the bottom. The window closes and you can proceed with creating the asset.
 
 {{< c8y-admon-info>}}
-In case there are validation errors on the page, it is indicated by red highlights. Correct the same to proceed further.
+Assigning devices to an asset is optional.
 {{< /c8y-admon-info>}}
 
-##### Adding multiple instances of Assets
+##### Adding multiple instances in an asset
 
-At each hierarchy level, multiple assets can be created from a Single **Asset type**, based on the requirement.
+At each hierarchy level, you can create multiple assets from a single **Asset type**, based on the requirement.
 
 **Example:**
 
-In case you have 1 building and 2 floors within the building, then create the asset for “building” first, then using floor asset type, add first floor.
+In case you have one building with two floors, you first create the asset hierarchy level for “building”. Second, using the "Floor" **asset type**, you add the first floor.
 
-Next using the **Add** button on bottom, add the second floor asset.
+Click **Add** on the bottom to add the asset for the second floor.
 
-![assets-multiple](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
+![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-Click on **Delete** icon on top right, if you want to delete the added asset template,
+If you want to delete an added asset template, click the **Delete** icon on the top right.
 
 {{< c8y-admon-info>}}
 **Delete** icon appears on hover.
 {{< /c8y-admon-info>}}
 
-Click **Previous**, if you want to modify any of the details for asset in previous screen, during asset hierarchy creation.
+If you want to modify any of the details for an asset on the previous screen during asset hierarchy creation, click **Previous**.
 
-Click **Cancel** if you want to cancel the creation of asset.
+If you want to cancel the creation of the asset, click **Cancel**.
 
-Progress of asset hierarchy creation can be tracked with the help of green tick marks.
+You can track your progress with the green check marks on the asset hierarchy levels on the left.
 
-If you want to modify any of the assets, then same can be done by navigating to the respective asset page using **Previous** and **Next** buttons.
+If you want to modify any of the assets, navigate to the respective asset page using the **Previous** and **Next** buttons.
 
-Once all the assets are created for each hierarchy level, then a confirmation page loads. Hierarchy is displayed with all the assets created.
+Once you created all assets for each hierarchy level, you see the **Confirmation** page. This page shows the entire hierarchy with all the created assets.
 
-![assets-confirmation](/images/dtm/assets/dtm-assets-confirmation-page.png)
+![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
 
-If all changes are in place, click on **Confirm** in the Confirmation page to create the entire Asset hierarchy with all the assets.
+If all changes are sufficient, click **Confirm** to create the entire asset hierarchy with all the assets.
 
-On successful **Asset hierarchy** creation, a success pop-up notification is displayed on top right.
+On successful **Asset hierarchy** creation, you see a pop-up notification in the top right corner.
 
-Once the **Asset hierarchy** is created, it can be viewed by clicking on the root Asset and navigating further. Check [view assets](/dtm/asset-hierarchy/#view-asset) for viewing assets.
+Once the **Asset hierarchy** is created, you can see it by clicking on the root asset and following the navigation. See [viewing assets](/dtm/asset-hierarchy/#view-asset) for more information.
 
 
 ##### Sub Assets

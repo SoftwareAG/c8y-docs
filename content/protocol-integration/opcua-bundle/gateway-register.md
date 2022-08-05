@@ -239,7 +239,13 @@ gateway:
     # if they fail due to error code Bad_NodeIdUnknown. It assumes that the NodeIds are correct, but it hasn't been added to the
     # server's address space yet. The default value is false.
     recreateFailedItems: false
-
+  
+  # Server connectivity configuration
+  connectivity:
+    # If the autoReconnect in server's client configuration is set to false, then the gateway tries to reconnect manually.
+    # triggerManualReconnectOnConnectionDrop can be used to stop the manual reconnect as well if set to false. The default value is true.
+    triggerManualReconnectOnConnectionDrop: true
+    
   # Internal repository configurations
   repositories:
     # Interval in milliseconds describing how often the repositories are flushed to the platform

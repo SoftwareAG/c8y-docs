@@ -96,7 +96,7 @@ If the source tenant has been suspended all its data broker connectors will be s
 	</tr>
 	<tr>
 	<td style="text-align:left">API</td>
-	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
+	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, managed objects) or being received (operations).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Fragments to filter</td>

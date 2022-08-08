@@ -30,7 +30,7 @@ For further details on the architecture of the {{< product-c8y-iot >}} documenta
 
 To view the documentation in HTML format you need to be a bit familiar with working in a version control system like Git.
 
-First you need to make a copy of the repository (called a "clone") on your local machine either by using a desktop client (for example Sourcetree) or through the command line in a terminal.
+First you must make a copy of the repository (called a "clone") on your local machine either by using a desktop client (for example Sourcetree) or through the command line in a terminal.
 
 Switch to the branch of your choice.
 

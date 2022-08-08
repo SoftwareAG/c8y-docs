@@ -9,13 +9,17 @@ layout: redirect
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 - [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
->**IMPORTANT:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
+{{< c8y-admon-important >}}
+{{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
+{{< /c8y-admon-important >}}
 
 ### Using the scripts
 
 #### In 10.7 appliance
 
->**Important:** Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+{{< c8y-admon-important >}}
+Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+{{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all the processes:
 
@@ -47,7 +51,9 @@ sudo service cumulocity-core-karaf stop
 
 #### In 10.9 appliance
 
->**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+{{< c8y-admon-important >}}
+Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
+{{< /c8y-admon-important >}}
 
 1. Log in as **root** user.
 
@@ -65,7 +71,7 @@ sudo service cumulocity-core-karaf stop
 
 	```shell
 	./restore_analytics.sh USERNAME PASSWORD /tmp/streaming-analytics-app.zip
-	
+
 	Here:
 	- USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
 	```
@@ -74,6 +80,8 @@ Running the `restore_analytics.sh` script completes the migration process.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
->**Important:** To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< c8y-admon-important >}}
+To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< /c8y-admon-important >}}
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

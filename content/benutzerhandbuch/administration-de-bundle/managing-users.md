@@ -8,10 +8,12 @@ Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten 
 - Erstellen von Benutzern
 - Vergeben von Benutzernamen und Passwörtern
 - Speichern von Benutzerdetails
-- Auswählen von Anmeldeoptionen
+- Festlegen der Anmeldeoptionen
 - Aktivieren einer zusätzlicher Login-Sicherheitsebene durch Zwei-Faktor-Authentifizierung (TFA)
 
-> **Info:** Für diese Funktionen muss der Benutzer eine Rolle mit den Benutzerverwaltungsberechtigungen ADMIN oder ERSTELLEN haben.
+{{< c8y-admon-info >}}
+Für diese Funktionen muss der Benutzer eine Rolle mit den Benutzerverwaltungsberechtigungen ADMIN oder ERSTELLEN haben.
+{{< /c8y-admon-info >}}
 
 Wenn für Ihren Mandanten in {{< sag-cloud >}} die Verwendung von Single-Sign-On (SSO) konfiguriert ist, sollten neue Benutzer unter **My Cloud** angelegt werden, um die SSO-Funktion nutzen zu können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
 
@@ -23,8 +25,9 @@ Für Benutzer, die über einen externen Autorisierungsserver angelegt werden, ha
 
 Außerdem ist das Zurücksetzen des Passworts in {{< product-c8y-iot >}} für Benutzer deaktiviert, die über einen externen Autorisierungsserver angelegt wurden.
 
-> **Info:** Benutzer, die Single-Sign-On verwenden, können das Passwort von Benutzern, die von der Plattform verwaltet werden, nicht ändern.
-
+{{< c8y-admon-info >}}
+Benutzer, die Single-Sign-On verwenden, können das Passwort von Benutzern, die von der Plattform verwaltet werden, nicht ändern.
+{{< /c8y-admon-info >}}
 
 ### Anzeigen von Benutzern
 
@@ -49,8 +52,9 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 ### So fügen Sie einen Benutzer hinzu
 
 1. Klicken Sie auf **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
-
-  >**Info:** Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+  {{< c8y-admon-info >}}
+Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+  {{< /c8y-admon-info >}}
 
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
@@ -115,7 +119,9 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.
 
-> **Info:** Standardmäßig ist bei Benutzern, die manuell angelegt wurden, die Berechtigung "Own user management" aktiviert.
+{{< c8y-admon-info >}}
+Standardmäßig ist bei Benutzern, die manuell angelegt wurden, die Berechtigung "Own user management" aktiviert.
+{{< /c8y-admon-info >}}
 
 ### So bearbeiten Sie einen Benutzer
 
@@ -123,7 +129,9 @@ Der neue Benutzer wird der Benutzerliste hinzugefügt.
 2. Klicken Sie auf **Passwort ändern**, um das Passwort zu ändern.
 3. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
-> **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< c8y-admon-info >}}
+Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< /c8y-admon-info >}}
 
 ### So kopieren Sie Stammdatenrollen
 
@@ -134,7 +142,9 @@ Der neue Benutzer wird der Benutzerliste hinzugefügt.
 
 Die Stammdatenrollen werden vom ausgewählten Benutzer kopiert.
 
-> **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< c8y-admon-info >}}
+Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< /c8y-admon-info >}}
 
 ### So delegieren Sie Benutzerhierarchien oder heben die Delegierung auf
 
@@ -144,16 +154,22 @@ Klicken Sie auf **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
 Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de#user-hierarchies).
 
-> **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< c8y-admon-info >}}
+Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< /c8y-admon-info >}}
 
 ### So deaktivieren/aktivieren Sie einen Benutzer
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Deaktivieren**, um einen aktiven Benutzer zu deaktivieren, bzw. auf **Aktivieren**, um einen deaktivierten Benutzer wieder zu aktivieren.
 
-> **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< c8y-admon-info >}}
+Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< /c8y-admon-info >}}
 
 ### So löschen Sie einen Benutzer
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
 
-> **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< c8y-admon-info >}}
+Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
+{{< /c8y-admon-info >}}

@@ -8,7 +8,9 @@ Dedicated permissions define what a user is allowed to do in {{< product-c8y-iot
 
 If you do not have corresponding {{< product-c8y-iot >}} DataHub permissions, you will get a warning after login.
 
-> **Info:** When offloading the inventory/events/alarms/measurements collection, {{< product-c8y-iot >}} DataHub does not incorporate access limitations for these collections as set in the Cumulocity IoT platform. In particular, [inventory roles](/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with {{< product-c8y-iot >}} DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
+{{< c8y-admon-info >}}
+When offloading the inventory/events/alarms/measurements collection, {{< product-c8y-iot >}} DataHub does not incorporate access limitations for these collections as set in the Cumulocity IoT platform. In particular, [inventory roles](/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with {{< product-c8y-iot >}} DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
+{{< /c8y-admon-info >}}
 
 ### Cumulocity IoT DataHub roles and permissions
 
@@ -52,4 +54,6 @@ The permissions for the role DATAHUB_READER are defined as follows:
 ### Assignment of Cumulocity IoT DataHub roles and permissions
 The roles DATAHUB_ADMINISTRATOR, DATAHUB_MANAGER, and DATAHUB_READER must be assigned to the respective users of your tenant. For assigning roles to users see the section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the DATAHUB_ADMINISTRATOR role to complete the {{< product-c8y-iot >}} DataHub configuration.
 
-> **Info:** You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub application to the user's applications.
+{{< c8y-admon-info >}}
+You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub application to the user's applications.
+{{< /c8y-admon-info >}}

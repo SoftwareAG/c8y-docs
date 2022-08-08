@@ -23,7 +23,9 @@ For an application to be available it must be deployed on the {{< product-c8y-io
 
 For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
 
-> **Info:** In case of a web application, the application is active for you as owner without subscribing to it.
+{{< c8y-admon-info >}}
+In case of a web application, the application is active for you as owner without subscribing to it.
+{{< /c8y-admon-info >}}
 
 ### Web application hosting
 

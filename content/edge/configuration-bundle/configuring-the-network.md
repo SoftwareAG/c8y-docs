@@ -6,7 +6,9 @@ layout: redirect
 
 After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
->**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< c8y-admon-important >}}
+Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< /c8y-admon-important >}}
 
 ### Configuring the network using the UI
 
@@ -39,7 +41,9 @@ After a successful installation, you can reconfigure the network and also config
 
    The **Address range CIDR** must not overlap with the reserved IP addresses. See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
 
-   >**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
+    {{< c8y-admon-info >}}
+If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
+    {{< /c8y-admon-info >}}
 
 ### Configuring the network using the REST APIs
 

@@ -29,7 +29,9 @@ SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
 You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
-> **Info:** The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
+{{< c8y-admon-info >}}
+The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
+{{< /c8y-admon-info >}}
 
 ### Using the Dremio UI
 
@@ -47,7 +49,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 ### Connecting via Dremio REST API
 
-Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
+Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You must authenticate with your Dremio account against Dremio in order to use the API.
 
 Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 

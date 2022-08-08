@@ -78,8 +78,10 @@ See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) in th
 and [Supported time zones]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
 
 
-> **Info:** This tenant option is only read when the microservice starts.
+{{< c8y-admon-info >}}
+This tenant option is only read when the microservice starts.
 If the tenant option is changed, the microservice only picks this up on the next microservice subscription.
+{{< /c8y-admon-info >}}
 
 ### Streams - windows
 

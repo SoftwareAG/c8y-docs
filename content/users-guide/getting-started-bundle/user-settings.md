@@ -111,4 +111,6 @@ By default, the password must meet the following conditions:
 * Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).)
 * Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
-> **Info:** The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
+{{< c8y-admon-info >}}
+The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
+{{< /c8y-admon-info >}}

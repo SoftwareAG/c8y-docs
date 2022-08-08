@@ -14,7 +14,7 @@ For more information on permissions, refer to [Administration > Managing permiss
 
 **Connection fails**
 
-The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you need to contact your network administrator.
+The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you must contact your network administrator.
 
 **Unsupported protocol version**
 

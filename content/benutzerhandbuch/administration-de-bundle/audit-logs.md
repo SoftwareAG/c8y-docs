@@ -46,7 +46,9 @@ Es werden nur die letzten 100 Logeinträge angezeigt. Scrollen Sie herunter zu *
 
 ![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
 
->**Info:** Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
+{{< c8y-admon-info >}}
+Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
+{{< /c8y-admon-info >}}
 
 ### Filtern von Logeinträgen
 

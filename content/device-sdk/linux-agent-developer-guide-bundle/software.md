@@ -92,7 +92,9 @@ Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Th
 
 Now go to your {{< product-c8y-iot >}} tenant, create a software operation. You'll see the operation is managed by this script.
 
-> **Info:** MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
+{{< c8y-admon-info >}}
+MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
 If the result of `cmd_list` (for example `apt list --installed`) is huge, the agent might fail to send its package list.
 It is recommended to drop uninteresting packages from the sending list or pick up only interesting packages.
 For example, if you want to manage only `lua` and `modbus` packages, you can define `cmd_list` to `apt list --installed | grep -e lua -e modbus`.
+{{< /c8y-admon-info >}}

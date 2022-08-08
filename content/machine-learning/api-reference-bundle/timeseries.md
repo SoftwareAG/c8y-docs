@@ -9,7 +9,9 @@ aliases:
 
 Operations for time series data/model.
 
->**Info:** An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< c8y-admon-info >}}
+An active subscription of the Nyoka microservice is required to leverage the time series APIs.
+{{< /c8y-admon-info >}}
 
 ### Domain model
 #### TimeSeries
@@ -44,7 +46,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 
 |PARAMS||
 |:---|:---|
-|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
+|autoDeploy (Boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 **BODY**
 ```

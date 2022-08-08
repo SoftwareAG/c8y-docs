@@ -9,7 +9,9 @@ aliases:
 
 Operations for matrix profile.
 
->**Info:** An active subscription of the Nyoka microservice is required to leverage the matrix profile APIs.
+{{< c8y-admon-info >}}
+An active subscription of the Nyoka microservice is required to leverage the matrix profile APIs.
+{{< /c8y-admon-info >}}
 
 ### GET – Generate matrix profile using historical time series data
 
@@ -113,13 +115,13 @@ curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&s
   ]
 }
 ```
->**Info:**
-> The delta between the size of selected time series data (T) and generated matrix profile (mp) is shown as null values at the end of the `matrix_profile`. This delta occurs because of how sliding window (m) computation works. The size of `matrix_profile` is smaller than the size of historical time series data by `windowSize`.
->
-> - `size(mp) = size(T) - m + 1`
->
-> Same delta applies to the size of `matrix_profile_index`.
+{{< c8y-admon-info >}}
+The delta between the size of selected time series data (T) and generated matrix profile (mp) is shown as null values at the end of the `matrix_profile`. This delta occurs because of how sliding window (m) computation works. The size of `matrix_profile` is smaller than the size of historical time series data by `windowSize`.
 
+- `size(mp) = size(T) - m + 1`
+
+Same delta applies to the size of `matrix_profile_index`.
+{{< /c8y-admon-info >}}
 
 **Example Request**
 

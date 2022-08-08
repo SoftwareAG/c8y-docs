@@ -29,10 +29,11 @@ Then click **Add model**, navigate to the desired file and finally click **Open*
 
 Once your model is successfully uploaded, you will see a corresponding confirmation message. The new model will be added to the models list.
 
->**Info:**
-<br>For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
-<br>By default, the toggle is enabled.<br>
-<br>During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
+{{< c8y-admon-info >}}
+For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
+By default, the toggle is enabled.<br>
+During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
+{{< /c8y-admon-info >}}
 
 ### Downloading models
 
@@ -70,12 +71,13 @@ Besides the name, description and status of the model, the **Model Details** win
 
 ![Model details](/images/zementis/zementis-model-details.png)
 
->**Info:**
+{{< c8y-admon-info >}}
 <br> 1. By default, the **Inputs** and **Outputs** panels are in collapsed state. Click the labels to expand them.
 <br><br> 2. Memory Metrics provides information about the memory footprint of the model on the server and its related attributes like used memory, free memory and total memory of the application. The same information is represented as a vertical bar chart.
 <br><br> 3. Prediction Metrics provides a scoring result summary for the models. Prediction Metrics of a classification model displays the predicted categories and its respective counts as a pie chart. Prediction Metrics of a regression model
-displays the Five Point Summary of predicted values, that is, Minimum, FirstQuartile, Median, ThirdQuartile and Maximum values as a box plot. Initially, the Prediction Metrics of any model is empty and it will be displayed only if scoring is applied on the model. Prediction Metrics of a model will be reset when the model is deleted or deactivated. Also the Prediction Metrics information that shows up is always the cumulative result with the past scoring of the model.
+displays the Five Point Summary of predicted values, i.e. Minimum, FirstQuartile, Median, ThirdQuartile and Maximum values as a box plot. Initially, the Prediction Metrics of any model is empty and it will be displayed only if scoring is applied on the model. Prediction Metrics of a model will be reset when the model is deleted or deactivated. Also the Prediction Metrics information that shows up is always the cumulative result with the past scoring of the model.
 Currently, the Prediction Metrics feature is supported only for classification and regression models.
+{{< /c8y-admon-info >}}
 
 An ONNX model has many important properties such as model inputs and outputs, along with ONNX version, Opset version, model version, producer name and producer version.
 Click the info icon <img src="/images/zementis/zementis-info-icon.png" alt="Info" style="display:inline-block; margin:0"> to view the properties of an ONNX model. The ONNX model properties are represented in JSON format.

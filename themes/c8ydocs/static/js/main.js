@@ -46,7 +46,7 @@ var main = (function ($) {
           }
         }
 
-        if (false) {
+        if (true) {
           offset = 45;
           $('<div/>', {
             id: 'preview-banner',

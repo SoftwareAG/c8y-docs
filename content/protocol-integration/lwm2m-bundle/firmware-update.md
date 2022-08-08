@@ -17,7 +17,9 @@ Assuming that you have already registered and connected your device, go to the d
 
 Once the firmware update has been triggered, the LWM2M agent creates and queues up a PENDING firmware update operation for execution.
 
-> **Info:** This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-c8y-iot >}} LWM2M.
+{{< c8y-admon-info >}}
+This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-c8y-iot >}} LWM2M.
+{{< /c8y-admon-info >}}
 
 ### Firmware update state machine
 

@@ -46,8 +46,10 @@ The connection to the Edge appliance is established and the UI appears for the E
 
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
-**Important:** Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+{{< c8y-admon-important >}}
+Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+{{< /c8y-admon-important >}}
 
 ### Changing the VNC password
 
-You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint. x
+You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.

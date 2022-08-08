@@ -9,14 +9,17 @@ aliases:
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone.
 
->**Info:** The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
-
+{{< c8y-admon-info >}}
+The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
+{{< /c8y-admon-info >}}
 
 #### Register a smartphone in the platform
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and register a smartphone in {{< product-c8y-iot >}}.
 
->**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< c8y-admon-info >}}
+Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< /c8y-admon-info >}}
 
 Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
 
@@ -70,19 +73,19 @@ The following code block contains the data format of the JSON schema that was as
 #### To collect the walking data:
 
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of newly registered smartphone with "walkData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the sitting data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "sittingData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
 #### To collect the jumping data:
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (that is, interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "jumpData.csv" as **File name**, data interval (i.e. interval during which the data was created), "None" as **Aggregation** and select "c8y_Acceleration" as **Data points**.
 
 * Once data is downloaded, this file can be previewed to verify the downloaded data and can be used for model building exercise.
 
@@ -136,7 +139,7 @@ Once the model is successfully deployed, the cloud icon will change to <img src=
 
 #### Create and upload Apama monitor file
 
-For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 

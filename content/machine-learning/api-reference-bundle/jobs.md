@@ -9,7 +9,9 @@ aliases:
 
 Operations on jobs scheduled for processing device data.
 
->**Info:** Currently, jobs can be scheduled using PMML models and model groups only. However, time series models must not be used for processing data in a scheduled manner.
+{{< c8y-admon-info >}}
+Currently, jobs can be scheduled using PMML models and model groups only. However, time series models must not be used for processing data in a scheduled manner.
+{{< /c8y-admon-info >}}
 
 ### Domain model
 #### JobConfiguration
@@ -19,7 +21,7 @@ Operations on jobs scheduled for processing device data.
 |jobDescription|String|Description of the job.|
 |groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
 |modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
-|applyAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
+|applyAllModels|Boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 
@@ -28,17 +30,18 @@ Operations on jobs scheduled for processing device data.
 |:-----|:-----|:-----|
 |frequency|String|Frequency of job execution. Can be either `periodic` or `once`.|
 |cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> [http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) <br> for more info on CRON.|
-|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400, that means, 24 hours.|
+|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400 i.e. 24 hours.|
 |timeZone|String|Time zone in which the periodic job should be scheduled.|
 |scheduleAt|String|Datetime string in the future when the job should be scheduled.|
 |dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
 |dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
->**Info:**
-<br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
-<br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
-<br> &emsp; that means, "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".
-<br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
+{{< c8y-admon-info >}}
+1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
+2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format <br>
+&emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30".<br>
+&emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
+{{< /c8y-admon-info >}}
 
 ### POST - Create new job
 
@@ -255,7 +258,7 @@ Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers f
 
 |PARAMS||
 |:---|:---|
-|withTotalPages (boolean)|optional request parameter for displaying total pages; default value is true.
+|withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is true.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 |pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
@@ -565,7 +568,7 @@ Get execution history of a particular job. Lists all executions of that specific
 |PARAMS||
 |:---|:---|
 |jobId (string)|required path variable for job ID
-|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|withTotalPages (Boolean)|optional request paramter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 |pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
@@ -751,7 +754,7 @@ Get the results/inferences generated in a single job execution. These inferences
 |:---|:---|
 |jobId (string)|required path variable for job ID
 |executionId (string)|required path variable for execution ID
-|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 
 

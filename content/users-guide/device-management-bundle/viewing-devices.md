@@ -12,7 +12,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* See the [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management
+* The [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management.
 {{< /c8y-admon-related >}}
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.

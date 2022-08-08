@@ -36,12 +36,12 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* See [Reference guide > Device management library > Firmware](/reference/device-management-library/#firmware) for the device management library entry on firmware
-* See [Reference guide > Device management library > Software](/reference/device-management-library/#software) for the device management library entry on software
-* See [Reference guide > Device management library > Configuration](/reference/device-management-library/#configuration) for the device management library entry on configurations
-* See the [device credentials API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials
-* See [Reference guide > Device management library > Device profile](/reference/device-management-library/#device-profile) for the device management library entry on device profiles
-* See [Device SDK guide > Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) for more information on device certificates in the context of MQTT
+* [Device management library > Firmware](/reference/device-management-library/#firmware) in the *Reference guide* for the device management library entry on firmware.
+* [Device management library > Software](/reference/device-management-library/#software) in the *Reference guide* for the device management library entry on software.
+* [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for the device management library entry on configurations.
+* The [device credentials API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials.
+* [Device management library > Device profile](/reference/device-management-library/#device-profile) in the *Reference guide* for the device management library entry on device profiles.
+* [Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) in the *Device SDK guide* for more information on device certificates in the context of MQTT.
 {{< /c8y-admon-related >}}
 
 ### Overview

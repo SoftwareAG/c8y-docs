@@ -15,8 +15,8 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* See [Reference guide > SmartREST 2.0](/reference/smartrest-two/) for more information on SmartREST
-* See [Device SDK guide > Device integration using MQTT](/device-sdk/mqtt/) for information on integrating devices via MQTT
+* [SmartREST 2.0](/reference/smartrest-two/) in the *Reference guide* for more information on SmartREST.
+* [Device integration using MQTT](/device-sdk/mqtt/) in the *Device SDK guide* for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.

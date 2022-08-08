@@ -242,7 +242,7 @@ gateway:
   
   # Server connectivity configuration
   connectivity:
-    # If the autoReconnect in server's client configuration is set to false, then the gateway tries to reconnect manually.
+    # If the autoReconnect in the server's client configuration is set to false, then the gateway tries to reconnect manually.
     # triggerManualReconnectOnConnectionDrop can be used to stop the manual reconnect as well if set to false. The default value is true.
     triggerManualReconnectOnConnectionDrop: true
     

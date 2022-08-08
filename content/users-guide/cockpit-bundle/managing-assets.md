@@ -112,11 +112,9 @@ ROLES & PERMISSIONS in groups context:
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
 - To view specific groups: READ permissions for "Inventory" in the inventory roles
 - To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles 
-{{< /c8y-admon-req >}}
 
-{{< c8y-admon-info >}}
-Global inventory permissions will override inventory role permissions.
-{{< /c8y-admon-info >}}
+Note that global inventory permissions override inventory role permissions.
+{{< /c8y-admon-req >}}
 
 Devices show the following tabs:
 

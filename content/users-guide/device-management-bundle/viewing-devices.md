@@ -105,9 +105,7 @@ If you select **Fragment equals value**, filtering will be done by applying the 
 
 The new column will be added and displayed in the device list.
 
-{{< c8y-admon-info >}}
-While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
-{{< /c8y-admon-info >}}
+> **Info:** While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
 
 #### To delete a device from the list
 
@@ -116,9 +114,7 @@ While standard columns can only be shown/hidden as required, custom columns may 
 
 The device will be permanently deleted from the platform.
 
-{{< c8y-admon-important >}}
-Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
-{{< /c8y-admon-important >}}
+> **Important:** Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 <a name="searching-devices"></a>
 ### To search for devices
@@ -160,6 +156,4 @@ The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the left of the top menu bar if you want to clear all filters and view all devices.
 
-{{< c8y-admon-info >}}
-If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
-{{< /c8y-admon-info >}}
+>**Info:** If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.

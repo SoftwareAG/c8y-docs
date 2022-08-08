@@ -52,9 +52,7 @@ Your applications are available through the application switcher in the top bar.
 
 Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
 
-{{< c8y-admon-info >}}
-In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
-{{< /c8y-admon-info >}}
+>**Info:** In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 
 #### Applications subscribed by default
 
@@ -144,9 +142,7 @@ In the resulting dialog box, select one of the following methods:
 
 The application is created once the ZIP file has been successfully uploaded.
 
-{{< c8y-admon-important >}}
-The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
-{{< /c8y-admon-important >}}
+>**Important:** The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 
 <a name="external-application"></a>
 ##### To link to an external application
@@ -174,23 +170,17 @@ Duplicating an application might be useful if you want to customize a subscribed
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
-4. In the next window, provide a name for the application.
+4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
-    {{< c8y-admon-info >}}
-The platform restricts the use of the prefix "feature-". You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
-{{< /c8y-admon-info >}}
-
-5. Provide an application key, used to identify this application.
-6. Provide the application path as part of the URL to invoke the application. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
+5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
+6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
 7. Finally, click **Duplicate** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-{{< c8y-admon-info >}}
-If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
-{{< /c8y-admon-info >}}
+> **Info:** If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 <a name="application-properties"></a>
 ### Application properties
@@ -256,9 +246,7 @@ Simply click the application or click the menu icon at the right of an entry and
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
-{{< c8y-admon-important >}}
-Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
-{{< /c8y-admon-important >}}
+>**Important:** Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 
 ### To delete an application
 
@@ -282,9 +270,7 @@ For custom applications, multiple file versions can be stored in {{< product-c8y
 
 Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-{{< c8y-admon-info >}}
-The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
-{{< /c8y-admon-info >}}
+> **Info:** The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
 
 #### To restore an older application version
 
@@ -345,8 +331,6 @@ In the **Features** tab, you will find a list of all features subscribed in your
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-All applications listed here are of the type "Feature".
-{{< /c8y-admon-info >}}
+>**Info:** All applications listed here are of the type "Feature".
 
 Other features may show up, depending on the individual subscriptions of your tenant.

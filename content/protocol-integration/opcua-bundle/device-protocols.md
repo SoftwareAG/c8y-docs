@@ -15,9 +15,7 @@ layout: redirect
 4. Click **Create**.<br>
    ![Add new device protocol](/images/device-protocols/opcua/opcua-add-protocol.png)
 
-{{< c8y-admon-info >}}
-Selecting a reference server will require you to select a reference node.
-{{< /c8y-admon-info >}}
+> **Info:** Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
@@ -32,9 +30,7 @@ When using a regular expression, keep in mind that it might be matching many nod
 
 The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page.
 
-{{< c8y-admon-info >}}
-If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path "5:Counter1" would be: `http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1`. A node ID equal to "ns=5;s=Simulation" will have the following namespace representation `nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation`. In both examples the fifth element of the server's namespace array has a value of `http://www.prosysopc.com/OPCUA/SimulationNodes`.
-{{< /c8y-admon-info >}}
+> **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path "5:Counter1" would be: `http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1`. A node ID equal to "ns=5;s=Simulation" will have the following namespace representation `nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation`. In both examples the fifth element of the server's namespace array has a value of `http://www.prosysopc.com/OPCUA/SimulationNodes`.
 
 ![OPC UA device protocol](/images/device-protocols/opcua/opcua-device-protocol.png)
 
@@ -50,7 +46,7 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a "value" property, for example, "c8y_AccelerationMeasurement.acceleration".
 - Specify the unit of the given measurement, for example, "m/s" for velocity.
 
-All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
+All measurements which exceed the Java Long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internal to Double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value.
 
 **Create alarm**
 
@@ -62,10 +58,9 @@ Specify the following parameters (all mandatory):
 - Type
 - Text
 
-{{< c8y-admon-info >}}
-If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
-The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value is changed to "false", or a number that is less than or equals to 0.
-{{< /c8y-admon-info >}}
+>**Info:** If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
+is changed to "false", or a number that is less than or equals to 0.
 
 **Send Event**
 
@@ -96,14 +91,8 @@ The value will also be populated as a fragment of the created event, under a sta
  }
 }
 ```
-
-The node values under this static fragment that are numeric and exceed the Java long ranges for Long.Max_VALUE(9,223,372,036,854,775,807) or Long.MIN_VALUE(-9,223,372,036,854,775,807) are converted internally to double values with scientific notation (for example 9.223372036854778e+24) to ensure the storage in the database. This may result in a less precise rounded value. However, the node value that is populated for the value placeholder in the event text will have the actual value even if it exceeds the long range.
-
-
-{{< c8y-admon-info >}}
-The measurements, events and alarms are added to a queue by the gateway, and they are flushed at once to create the respective elements. If the server is deleted, but there are still some items to be flushed, then the request is failed with a response code 403.
+> **Info:** The measurements, events and alarms are added to a queue by the gateway, and they are flushed at once to create the respective elements. If the server is deleted, but there are still some items to be flushed, then the request is failed with a response code 403.
 Thereafter, the exception is handled by validating the existence of the source. If the source is missing then the elements will be removed from the queue.
-{{< /c8y-admon-info >}}
 
 **Custom Actions**
 

@@ -42,7 +42,7 @@ We use this data to generate a time series model and forecast the next day's c8y
 
 #### Download the data for model building exercise
 
-* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (i.e. interval during which the data was created), "HOURLY" as **Aggregation** and select "c8y_flow" as **Data points**.
+* Follow the steps described in [Machine Learning Workbench > Data pull > {{< product-c8y-iot >}}](/machine-learning/web-app-mlw/#cumulocity-iot) and pull the measurements of the newly registered smartphone with "hourlyData.csv" as **File name**, data interval (that is, interval during which the data was created), "HOURLY" as **Aggregation** and select "c8y_flow" as **Data points**.
 
 * This file can be previewed to verify the downloaded data and can be used for model building exercise.
 
@@ -54,7 +54,7 @@ We use this data to generate a time series model and forecast the next day's c8y
 Run all the cells in *TrainModelandPredict.ipynb* notebook which does the following:
 
 1. Loads the data for building the Time Series model using the Nyoka microservice.
-2. Forecasts the next day's (i.e. today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
+2. Forecasts the next day's (that is, today) water consumption values along with the timestamps using the generated Time Series model by invoking the Zementis microservice.
 
 <img src="/images/zementis/DemandForecasting/traindata.PNG" alt="Download" style="display:inline-block; margin:0">
 

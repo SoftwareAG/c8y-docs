@@ -13,9 +13,7 @@ New devices will be added to the list as the smartphone discovers them.
 
 ![Bluetooth connection](/images/users-guide/csa/csa-available-bluetooth-devices.png)
 
-{{< c8y-admon-info >}}
-If there are no supported devices in range, there is an option to see a list of all currently supported device types.
-{{< /c8y-admon-info >}}
+> **Info:** If there are no supported devices in range, there is an option to see a list of all currently supported device types.
 
 Ensure that the device you wish to connect to is switched on and in pairing mode. For most devices, this automatically happens when they are switched on and not paired with any other device. Refer to the manufacturer's instructions if you are unsure.
 

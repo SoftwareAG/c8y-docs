@@ -23,7 +23,7 @@ As an example:
 Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 ```
 
-If you use the Java client for developing an application, you must register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
+If you use the Java client for developing an application, you need to register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
 
@@ -55,9 +55,7 @@ for (ManagedObjectRepresentation mo : moc.get().allPages()) {
 }
 ```
 
-{{< c8y-admon-important >}}
-By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
-{{< /c8y-admon-important >}}
+> **Important:** By default, `allPages()` doesn't return all elements at once, rather in batches of 5 elements (paginated). A separate request is made for each subsequent page after the iteration of the previous page is completed. Hence, it is not recommended to change/edit those objects while iterating through them, otherwise the filters may include/exclude different elements. It is better to collect them all and save them in memory, and only then perform edit operations.
 
 To create a new managed object, construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:
 
@@ -78,7 +76,7 @@ System.out.println(mo.getId());
 
 By invoking the `create()` method, a new managed object is created with an auto-generated unique identifier.
 
-Assume that you would like to store additional custom properties along with the device. This can be done by creating a new fragment in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and you must store the hours during which the night time tariff is active:
+Assume that you would like to store additional custom properties along with the device. This can be done by creating a new fragment in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and you need to store the hours during which the night time tariff is active:
 
 ```java
 public class Tariff {
@@ -240,9 +238,7 @@ Subscription<> subscription = subscriber.subscribe(agentId, new SubscriptionList
 });
 ```
 
-{{< c8y-admon-info >}}
-"agentId" is the ID of your agent in the inventory.
-{{< /c8y-admon-info >}}
+> **Info:** "agentId" is the ID of your agent in the inventory.
 
 To unsubscribe from a subscription, use the following code:
 

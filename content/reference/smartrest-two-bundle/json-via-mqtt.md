@@ -4,9 +4,7 @@ title: JSON via MQTT
 layout: redirect
 ---
 
-{{< c8y-admon-info >}}
-JSON via MQTT is meant as an addition to a device that is connected via SmartREST. This is not a standalone interface.
-{{< /c8y-admon-info >}}
+>**Info:** JSON via MQTT is meant as an addition to a device that is connected via SmartREST. This is not a standalone interface.
 
 This section describes the JSON payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
@@ -45,9 +43,7 @@ To publish messages in CEP mode:
 c/<api>/<resource>/<action>/<resource_id>
 ```
 
-{{< c8y-admon-info >}}
-`<resource_id>` is not required for every `<action>`. See the examples below.
-{{< /c8y-admon-info >}}
+>**Info:** `<resource_id>` is not required for every `<action>`. See the examples below.
 
 Refer to [Processing mode](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 

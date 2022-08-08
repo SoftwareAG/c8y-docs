@@ -52,7 +52,7 @@ This will list all the PMML models deployed on Machine Learning Engine (MLE). Se
 
 ![Select Model for Prediction](/images/zementis/mlw-app-automl-predict-model-select.png)
 
-The predicted results will be stored in the **Data** folder. For PMML models, the format of the input data will determine the format of predictions, i.e. output data. In our example, the input data was in CSV format. The output data will also be in CSV format.
+The predicted results will be stored in the **Data** folder. For PMML models, the format of the input data will determine the format of predictions, that is, output data. In our example, the input data was in CSV format. The output data will also be in CSV format.
 
 Select the output data from the **Data** folder and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> at the right of the top menu bar to download the output data to the local machine.
 

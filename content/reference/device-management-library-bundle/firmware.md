@@ -104,7 +104,7 @@ In case a user selects a firmware patch to be installed on a device, a ```c8y_Fi
 |version|string|Yes|A version identifier of the firmware|
 |url|string|Yes|A URL pointing to the location of the firmware file|
 |dependency|string|Yes|Version of the firmware the patch depends on|
-|isPatch|Boolean|Yes|Indicator showing that this firmware package is a patch|
+|isPatch|boolean|Yes|Indicator showing that this firmware package is a patch|
 
 
 The device is expected to perform the following actions:

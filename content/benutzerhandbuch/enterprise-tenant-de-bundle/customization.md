@@ -17,9 +17,7 @@ Klicken Sie auf **{{< enterprise-tenant-de >}}** im Menü **Einstellungen**, um 
 <a name="configuration"></a>
 ### Konfiguration
 
-{{< c8y-admon-info >}}
-Bei einigen Attributen können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
-{{< /c8y-admon-info >}}
+>**Info:** Bei einigen Attributen können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 
@@ -94,9 +92,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-{{< c8y-admon-info >}}
-Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
-{{< /c8y-admon-info >}}
+> **Info:** Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 
 <a name="branding"></a>
 ### Branding
@@ -132,8 +128,8 @@ Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab ve
 
 Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
-* Das "Favicon", das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Das unterstütze Format für das Favicon ist "ico".
-* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Die unterstützen Formate sind "png" und "svg".
+* Das "Favicon", das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist "ico".
+* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind "png" und "svg".
 * Die Höhe des Markenlogos.
 
 **Navigatorlogo**
@@ -144,7 +140,7 @@ Unter **Navigatorlogo** können Sie das Logo, das oben im Navigator angezeigt wi
 
 Im Bereich **Schriftart** definieren Sie die Schriftarten für Ihre Branding-Version.
 
-Sie können den Basis-Schriftartenstapel und den Überschriften-Schriftartenstapel auswählen sowie eine Option für den Navigator-Schriftartenstapel (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
+Sie können den Basis-Schriftartenstapel und den Überschriften-Schriftartenstapel wählen sowie eine Option für den Navigator-Schriftartenstapel (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
 **Farben**
 
@@ -207,9 +203,7 @@ Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, 
 bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
-{{< c8y-admon-info >}}
-Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für {{< product-c8y-iot >}}-Cloud- oder lokale Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
-{{< /c8y-admon-info >}}
+> **Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für {{< product-c8y-iot >}}-Cloud- oder lokale Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
 Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen:
 
@@ -295,9 +289,7 @@ Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. 
 Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
 .iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".
 
-{{< c8y-admon-info >}}
-Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
-{{< /c8y-admon-info >}}
+> **Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 #### Aktualisieren des Zertifikats
 
@@ -307,18 +299,14 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 * das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
 * das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
 
-{{< c8y-admon-info >}}
-Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
-{{< /c8y-admon-info >}}
+>**Info:** Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
 
 
 #### Deaktivieren eines Zertifikats
 
 Wenn Sie zu Ihrer alten Domain auf {{< product-c8y-iot >}} zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
 #### Troubleshooting
 
@@ -357,6 +345,5 @@ HTTP/1.1 200 OK
 ```
 
 
-{{< c8y-admon-info >}}
-Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
-{{< /c8y-admon-info >}}
+>**Info:** Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
+>

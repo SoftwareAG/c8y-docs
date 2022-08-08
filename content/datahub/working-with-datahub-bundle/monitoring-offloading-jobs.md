@@ -8,9 +8,7 @@ Once you have configured and started your offloading pipelines, they regularly o
 
 You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
 
-{{< c8y-admon-info >}}
-You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+>**Info**: You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all offloading jobs
 
@@ -64,9 +62,7 @@ You can filter the entries by their status by using the filter button at the top
 
 For a given offloading job, you can examine additional details of its execution.
 
-{{< c8y-admon-info >}}
-You need administration permissions to access the job details.
-{{< /c8y-admon-info >}}
+>**Info**: You need administration permissions to access the job details.
 
 Select a job overview in the history per offloading job or in the status of all offloading jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 

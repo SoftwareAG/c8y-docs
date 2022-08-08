@@ -10,9 +10,7 @@ aliases:
 
 Operations on MLW data connectors - Data pull from Cumulocity IoT.
 
-{{< c8y-admon-info >}}
-An active subscription of the MLW microservice is required to perform operations.
-{{< /c8y-admon-info >}}
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### GET - Get the list of devices from the C8Y inventory
 

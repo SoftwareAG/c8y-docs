@@ -9,10 +9,9 @@ aliases:
 
 Operation on resources.
 
-{{< c8y-admon-info >}}
-1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
-2. For ONNX, the resources are typically python files containing some pre-processing or post-processing logic which can be embedded into a pipeline.
-{{< /c8y-admon-info >}}
+>**Info:**
+<br>1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
+<br>2. For ONNX, the resources are typically python files containing some pre-processing or post-processing logic which can be embedded into a pipeline.
 
 ### GET - List available PMML resources
 

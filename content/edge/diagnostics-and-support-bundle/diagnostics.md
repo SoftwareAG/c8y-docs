@@ -19,7 +19,7 @@ The following hardware information is available:
 |:----------------|:---|
 |CPU|Reads and gathers CPU information from "/proc/cpuinfo"
 |Memory|Reads and gathers memory information from "/proc/meminfo"
-|Detailed system summary|Data is captured using the 'lswh' command. Data includes multiple components like network, display adapter, bridge, IDE, and so on. This command is executed as sudo to capture all available details.
+|Detailed system summary|Data is captured using the 'lswh' command. Data includes multiple components like network, display adapter, bridge, IDE etc. This command is executed as sudo to capture all available details.
 |Short system summary|Data is captured using the 'lswh' command, here the data is in precise format. This command is executed as sudo to capture all available details.
 |PCI|Data related to installed PCI devices is captured using the 'lspci' command
 |Storage|Data is an aggregation of the output of the commands 'df' and 'lsblk'
@@ -34,21 +34,21 @@ The following software information is available:
 |<div style="width:250px">Information</div>|Description|
 |:----------------|:---|
 |IP|Reads basic IP information from the target system using the 'ip' command
-|OS|Collects various OS information like name, version, release, and so on, using the commands 'lsb_release' and 'uname'
+|OS|Collects various OS information like name, version, release etc. using the commands 'lsb_release' and 'uname'
 |Installed package|A list of installed packages is prepared using the 'rpm' command
 |Running processes|A list of running processes is prepared using the 'ps' command
 |Top result|Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.
 
 ### Cumulocity IoT information
 
-This section contains information on the running {{< product-c8y-iot >}} processes, health endpoint check result, {{< product-c8y-iot >}} logs, and so on.
+This section contains information on the running {{< product-c8y-iot >}} processes, health endpoint check result, {{< product-c8y-iot >}} logs etc.
 
 The following {{< product-c8y-iot >}} information is collected:
 
 |<div style="width:250px">Information</div>|Description|
 |:---------------------|:---|
 |Health endpoint result|{{< product-c8y-iot >}} and its microservices provide health endpoints, from which the user can get the system status.
-|Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information, and so on.
+|Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
 |Log files|Archive of the log files from {{< product-c8y-iot >}}, its microservices and Apama is created.
@@ -111,9 +111,7 @@ The kubernetes_logs.zip file contains the logs of all Kubernetes platform compon
 * kube-proxy-*XX*
 * kube-scheduler-server
 
-{{< c8y-admon-info >}}
-The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
-{{< /c8y-admon-info >}}
+>**Info:** The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
 
 The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
@@ -121,9 +119,7 @@ The hosted microservices are captured at *cumulocity-single-node* path in the ar
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
-{{< c8y-admon-important >}}
-The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
-{{< /c8y-admon-important >}}
+>**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
 
 Following are the available keys used in the configuration file:
 

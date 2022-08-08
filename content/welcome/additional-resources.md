@@ -8,7 +8,7 @@ aliases:
 
 ### Installation and operations documentation
 
-The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}). Search for "{{< product-c8y-iot >}} Platform" as product. To view the Installation and Operations guides you must click the PDF icon for the version of your choice.
+The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}). Search for "{{< product-c8y-iot >}} Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
 ![Documentation on {{< sag-portal >}}](/images/about/about-empower.png)
 
@@ -28,9 +28,7 @@ On this community, you can:
 
 You can find product information on the product support website in the [{{< company-sag >}} {{< sag-portal >}} ]({{< link-sag-portal >}}).
 
-{{< c8y-admon-info >}}
-If you do not have an account for the {{< sag-portal >}} yet, send an email to [{{< email-sag >}}]({{< email-sag >}}) with your name, company, and company email address and request an account.
-{{< /c8y-admon-info >}}
+>**Info:** If you do not have an account for the {{< sag-portal >}} yet, send an email to [{{< email-sag >}}]({{< email-sag >}}) with your name, company, and company email address and request an account.
 
 Once you have an account, you can:
 

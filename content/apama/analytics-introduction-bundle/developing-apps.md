@@ -18,9 +18,7 @@ The EPL Apps page of the Streaming Analytics application provides an interface f
 
 Any user on the tenant wishing to use the EPL Apps page will need to be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-{{< c8y-admon-info >}}
-To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
-{{< /c8y-admon-info >}}
+> **Info**: To be able to develop EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
 
 **Step 1 - Invoke the Streaming Analytics application**
 
@@ -64,17 +62,13 @@ It is also possible to change the mode from **Inactive** to **Active** (or vice 
 
 Keep the following in mind while creating (or importing) an EPL app: When an EPL app is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the app. For example, you may only have ADMIN permission for "CEP management" for injecting EPL and creating analytic models. However, when the app is activated, it is also possible that the injected EPL can create or clear an alarm and that an analytic model can create an operation.
 
-{{< c8y-admon-info >}}
-Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
-{{< /c8y-admon-info >}}
+> **Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
 Click **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL apps.
 
 <!--I wanted to use ""/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
 
-{{< c8y-admon-warning >}}
-All unsaved changes are lost when you navigate to a different URL or close the browser window.
-{{< /c8y-admon-warning >}}
+> **Caution:** All unsaved changes are lost when you navigate to a different URL or close the browser window.
 
 **Step 3 - Test the EPL app**
 
@@ -142,9 +136,7 @@ CUMULOCITY_PASSWORD=examplePassword
 CUMULOCITY_APPKEY=apamaAppKey
 ```
 
-{{< c8y-admon-info >}}
-You need to [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
-{{< /c8y-admon-info >}}
+> **Info:** You need to [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
 

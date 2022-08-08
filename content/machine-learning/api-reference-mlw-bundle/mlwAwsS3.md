@@ -9,9 +9,7 @@ aliases:
 
 Operations on MLW data connectors - Download files from AWS S3.
 
-{{< c8y-admon-info >}}
-An active subscription of the MLW microservice is required to perform operations.
-{{< /c8y-admon-info >}}
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### GET - Names of all AWS S3 buckets
 
@@ -34,7 +32,7 @@ List names of all AWS S3 buckets.
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' 
 ```
 
 **Example Response**
@@ -114,7 +112,7 @@ Lists the names of all files within an AWS S3 buckets.
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/files' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' 
 ```
 
 **Example Response**
@@ -325,3 +323,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
     "exception": "Duplicate name"
 }
 ```
+
+
+
+

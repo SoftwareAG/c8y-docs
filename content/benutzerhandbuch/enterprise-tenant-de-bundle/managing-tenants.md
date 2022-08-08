@@ -8,13 +8,9 @@ weight: 10
 
 Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
-{{< /c8y-admon-important >}}
+> **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
 
-{{< c8y-admon-info >}}
-Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
-{{< /c8y-admon-info >}}
+>**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
 
 Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um eine sensible Operation handelt, sind die entsprechenden Berechtigungen granularer:
 
@@ -149,13 +145,10 @@ Die Daten des Mandanten bleiben in der Datenbank und können später durch Klick
 
 Näheres zur Abrechnungsperspektive von gesperrten Mandanten finden Sie unter [Nutzungsstatistiken und Abrechnung > Lebenszyklus](#lifecycle).
 
-{{< c8y-admon-important title="Wichtig" >}}
-Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
-{{< /c8y-admon-important>}}
+>**Wichtig:** Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
+>
+> **Info:** Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
 
-{{< c8y-admon-info >}}
-Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
-{{< /c8y-admon-info >}}
 
 #### So sperren Sie einen Untermandanten
 
@@ -167,17 +160,14 @@ Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das 
 
 Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
 
-{{< c8y-admon-info >}}
-Als Service Provider können Sie diese E-Mail unterdrücken.
-{{< /c8y-admon-info >}}
+>**Info:** Als Service Provider können Sie diese E-Mail unterdrücken.
+
 
 ### Löschen von Untermandanten
 
-{{< c8y-admon-important title="Wichtig" >}}
-Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
-
-Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
+>
+>Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 
 #### So löschen Sie einen Untermandanten
 
@@ -244,9 +234,7 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 
 Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Eine Begrenzung der Rate kann eine wirksame Maßnahme gegen Bedrohungen wie Brute-Force-Anmeldeversuche, API-Missbrauch und Überflutung mit Anfragen sein und verringert somit die Menge des schädlichen/unerwünschten Datenverkehrs. Dies trägt zum Schutz vor DoS-Angriffen (Denial of Service) und zur Sicherstellung der für legitime Anfragen verfügbaren Bandbreite bei.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Eine Begrenzung der Rate kann eine wirksame Maßnahme gegen Bedrohungen wie Brute-Force-Anmeldeversuche, API-Missbrauch und Überflutung mit Anfragen sein und verringert somit die Menge des schädlichen/unerwünschten Datenverkehrs. Dies trägt zum Schutz vor DoS-Angriffen (Denial of Service) und zur Sicherstellung der für legitime Anfragen verfügbaren Bandbreite bei.
 
 Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant-de >}} aus durchgeführt werden:
 
@@ -267,7 +255,7 @@ Auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usag
 
 Auf Mandantenebene kann das Produkterfahrungs-Tracking von Gainsight durch Deaktivieren des Cookie-Banners auf der Seite **Branding** ausgeschaltet werden, siehe [Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
-Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
+Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -279,13 +267,7 @@ Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
-{{< c8y-admon-info >}}
-Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
-{{< /c8y-admon-info >}}
-
-{{< c8y-admon-important title="Wichtig" >}}
-In einer Mandantenregel angegebene Mandantenoptionen sind **nicht verschlüsselt**. Sie sollten hier keine Mandantenoptionen mit dem Präfix "credentials." angeben oder überschreiben, da die Plattform erwartet, dass diese Optionen bei Daten, die nach dem Erstellen des Mandaten erscheinen, verschlüsselt sind.
-{{< /c8y-admon-important >}}
+>**Info:** Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
 
 #### So zeigen Sie Mandantenregeln an
 
@@ -306,9 +288,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
-{{< /c8y-admon-important >}}
+>**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
 
 #### So bearbeiten Sie eine Mandantenregel
 
@@ -338,18 +318,14 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden neuen Mandanten bei dessen Erstellung,
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
-{{< c8y-admon-info >}}
-Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
-{{< /c8y-admon-info >}}
+> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
 
 Links wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
 
 - alle eigenen Anwendungen,
 - alle abonnierten Anwendungen, deren Namen von den eigenen Anwendungen abweichen.
 
-{{< c8y-admon-info >}}
-Um leichter unterscheiden zu können, welche Anwendung eine eigene und welche eine abonnierte ist, wird die Mandanten-ID des Besitzers angezeigt.
-{{< /c8y-admon-info >}}
+> **Info:** Um leichter unterscheiden zu können, welche Anwendung eine eigene und welche eine abonnierte ist, wird die Mandanten-ID des Besitzers angezeigt.
 
 Rechts sehen Sie die Spalten **Zum Zeitpunkt der Mandantenerstellung abonniert** und **Plattform-Upgrade abonniert**.
 
@@ -370,9 +346,7 @@ Wenn Sie zu den von der Mandantenhierarchie geerbten Einstellungen zurückkehren
 
 Speichern Sie die Einstellungen, indem Sie unten auf der Seite auf **Speichern** klicken.
 
-{{< c8y-admon-info >}}
-Veraltete Einträge, die keinen bestehenden Anwendungen entsprechen, werden beim Speichern entfernt. Wenn eine Anwendung, die in einer der Listen ausgewählt war, entfernt wurde, wird sie während der Mandantenerstellung bzw. dem Plattform-Upgrade stillschweigend ignoriert. Wird danach (aber noch bevor die Einstellungen auf dieser Seite erneut gespeichert werden, wodurch der veraltete Eintrag gelöscht wird) eine andere Anwendung mit demselben Namen erstellt, so wird anstelle der früheren Anwendung die neue Anwendung abonniert.
-{{< /c8y-admon-info >}}
+> **Info:** Veraltete Einträge, die keinen bestehenden Anwendungen entsprechen, werden beim Speichern entfernt. Wenn eine Anwendung, die in einer der Listen ausgewählt war, entfernt wurde, wird sie während der Mandantenerstellung bzw. dem Plattform-Upgrade stillschweigend ignoriert. Wird danach (aber noch bevor die Einstellungen auf dieser Seite erneut gespeichert werden, wodurch der veraltete Eintrag gelöscht wird) eine andere Anwendung mit demselben Namen erstellt, so wird anstelle der früheren Anwendung die neue Anwendung abonniert.
 
 <a name="default-applications"></a>
 #### Außerkraftsetzen von Standardabonnements

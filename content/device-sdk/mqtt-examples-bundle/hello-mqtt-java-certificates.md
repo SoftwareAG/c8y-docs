@@ -32,7 +32,7 @@ $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key
 
 ### Developing the "Hello, MQTT world!" client with certificates  
 
-To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you must
+To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you need to
 
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
@@ -98,6 +98,4 @@ private MqttClient connect() throws MqttException {
 
 The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-sdk/mqtt/#device-certificates) process.
 
-{{< c8y-admon-info >}}
-You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
-{{< /c8y-admon-info >}}
+> **Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.

@@ -19,6 +19,8 @@ The export functionality lets you export specific data to either CSV or Excel fi
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
+>**Info:** The maximum number of documents that can be exported into a single file is 1 million. If the number of documents for defined filters exceeds this limit, only the first 1 million documents will be exported.
+
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
 In the **Export** page you will find a list displaying all exports with their names, file type and time range.
@@ -40,17 +42,13 @@ In the **Filter** section, you can select filters to request object- or time-spe
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
 
-{{< c8y-admon-info >}}
-If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
-{{< /c8y-admon-info >}}
+>**Info:** If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
 
 The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week", or you may select "Custom" and enter a custom from/to range in the additional fields.
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
-{{< c8y-admon-info >}}
- The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "limit exceeded!" and "result truncated!" alternating every other column.
- {{< /c8y-admon-info >}}
+>**Info:** The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "limit exceeded!" and "result truncated!" alternating every other column.
 
 **Fields**
 
@@ -65,15 +63,9 @@ Use the toggle to enable/disable a field.
 
 ![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
-{{< c8y-admon-info >}}
-The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
-{{< /c8y-admon-info >}}
+>**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 
 When a field is enabled, predefined or empty properties can be added.
-
-{{< c8y-admon-info >}}
-Documents that have no value defined for any of the selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
-{{< /c8y-admon-info >}}
 
 ##### To add a property
 
@@ -83,7 +75,7 @@ Click **Add predefined**, to add predefined properties. Simply select the desire
 
 ![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
-If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you must set up at least one property for the custom values to appear in the export.
+If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export.
 
 Example:
 An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedMeasurement.speed.value. The first 3 are predefined properties, while the last one is a custom property. If any measurement for export does not have a custom property `c8y_SpeedMeasurement.speed.value`, then it will not appear in the export file.
@@ -111,9 +103,7 @@ In the resulting dialog box provide the following information to receive the sch
 
 Select the frequency for sending the export from the dropdown list, that is, every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
-{{< c8y-admon-info >}}
-Schedule intervals must be provided in Coordinated Universal Time (UTC).
-{{< /c8y-admon-info >}}
+>**Info:** Schedule intervals need to be provided in Coordinated Universal Time (UTC).
 
 **2 - Send email:**
 
@@ -126,11 +116,10 @@ Optionally, add the email address of the sender for reply.
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
 Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
-Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
+Note that to create a clickable link in the email, you need to add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
-{{< c8y-admon-info >}}
-Note that the corresponding emails are send with "text/html" as content type.
-{{< /c8y-admon-info >}}
+>**Info:** Note that the corresponding emails are send with "text/html" as content type.
+
 
 Click **Create** to create the new export schedule.
 
@@ -146,13 +135,9 @@ On opening a report, all scheduled exports based on smart rules are automaticall
 
 ![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
-{{< c8y-admon-important >}}
-You must open each report manually, to migrate the export schedules included in the report.
-{{< /c8y-admon-important >}}
+>**Important**: You need to open each report manually, to migrate the export schedules included in the report.
 
-{{< c8y-admon-info >}}
-To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
-{{< /c8y-admon-info >}}
+> **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 
 #### To export data
 
@@ -161,16 +146,6 @@ To export data to a CSV or XLSX file, select the checkbox in front of the respec
 You will receive an email containing links to each export file.
 
 Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601]( https://www.w3.org/TR/NOTE-datetime).
-
-When the export documents limit is reached and the result is truncated due to its limitations, an additional line with an indicator is added at the end of document.
-
-Sample CSV export with indicator:
-
-Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
-2021-11-25T10:37:06.485Z,Position #1,2021-11-25T10:37:06.485Z,Position #1,1266,1195,Location updated,2021-11-25T10:37:06.485Z,c8y_LocationUpdate
-2021-11-25T10:37:01.484Z,Position #1,2021-11-25T10:37:01.484Z,Position #1,1265,1195,Location updated,2021-11-25T10:37:01.484Z,c8y_LocationUpdate
-[...]
-limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
 
 #### To edit an export
 

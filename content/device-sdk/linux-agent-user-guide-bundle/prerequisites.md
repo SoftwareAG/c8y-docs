@@ -28,9 +28,7 @@ sudo apt install libmodbus-dev lua-socket
 sudo apt install lua-socket
 ```
 
-{{< c8y-admon-info >}}
-The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.
-{{< /c8y-admon-info >}}
+> **Info:** The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.
 
 Make sure that the following libraries (-dev version) are installed.
 
@@ -60,7 +58,7 @@ sudo apt install liblua5.3-dev
 
 ### Building the C++ SDK
 
-The agent software requires the [{{< product-c8y-iot >}} C++ SDK](https://github.com/SoftwareAG/cumulocity-sdk-c), so you must build the {{< product-c8y-iot >}} C++ SDK first, before starting to build the software.
+The agent software requires the [{{< product-c8y-iot >}} C++ SDK](https://github.com/SoftwareAG/cumulocity-sdk-c), so you need to build the {{< product-c8y-iot >}} C++ SDK first, before starting to build the software.
 
 
 1. Launch a Git client and clone the SDK repository to a directory of your choice. For example:
@@ -106,9 +104,7 @@ The agent software requires the [{{< product-c8y-iot >}} C++ SDK](https://github
     LDLIBS:=$(shell pkg-config --libs libcurl lua5.3)
     ```
 
-    {{< c8y-admon-info >}}
-This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
-    {{< /c8y-admon-info >}}
+    > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
 
     If you don't know which liblua version has already been installed on your device, you can find the version which you need to add to your _init.mk_ by:
 

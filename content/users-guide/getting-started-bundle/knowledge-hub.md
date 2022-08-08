@@ -6,11 +6,7 @@ layout: redirect
 
 The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.
 
-
-{{< c8y-admon-info >}}
-The Knowledge Hub is only available for users of free trial tenants.
-{{< /c8y-admon-info >}}
-
+>**Info:** The Knowledge Hub is only available for users who accepted the Gainsight functional cookies. Users can opt out from the Knowledge Hub using the **Product experience** toggle in the **User settings** menu. See also, [To change user settings](/users-guide/getting-started/#to-change-user-settings).
 
 ### To access the Knowledge Hub
 
@@ -22,9 +18,7 @@ The **Knowlegde Hub** dialog opens, presenting a couple of options in a list.
 
 ![Knowledge Hub dialog](/images/users-guide/getting-started/getting-started-knowledge-hub-dialog.png)
 
-{{< c8y-admon-info >}}
-The options provided in the **Knowlegde Hub** dialog will frequently be updated so that the sessions, resources and communication options you see in the platform might not match exactly those shown in the image above and described below.
-{{< /c8y-admon-info >}}
+>**Info:** The options provided in the **Knowlegde Hub** dialog will frequently be updated so that the sessions, resources and communication options you see in the platform might not match exactly those shown in the image above and described below.
 
 ### Sessions
 
@@ -41,9 +35,8 @@ The first items of the list guide you in a step-by-step manner through the major
 |7 - View advanced analytics|Introduces you to analyzing your data using streaming and predictive analytics|
 |8 - Data integration and storage|Shows how to integrate IoT data with other apps across your organization|
 
-{{< c8y-admon-info >}}
-After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.
-{{< /c8y-admon-info >}}
+>**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.
+
 
 ### Feedback
 

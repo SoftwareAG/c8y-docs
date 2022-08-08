@@ -9,9 +9,7 @@ You access {{< product-c8y-iot >}} DataHub via a web browser. It has been tested
 * Firefox (latest version)
 * Chrome (latest version)
 
-{{< c8y-admon-info >}}
-Mobile devices like smartphones or tablets are not supported.
-{{< /c8y-admon-info >}}
+> **Info:** Mobile devices like smartphones or tablets are not supported.
 
 ### How to log into Cumulocity IoT DataHub
 

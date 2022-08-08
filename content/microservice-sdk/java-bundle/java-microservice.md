@@ -10,7 +10,7 @@ Requests to a microservice can be authenticated using basic authentication or OA
 
 ### Prerequisites
 
-You must have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You need to have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
 Verify that you have a recommended Java version installed together with Maven 3 or higher. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
@@ -45,9 +45,7 @@ Server: Docker Engine - Community
 
 You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
-{{< c8y-admon-important >}}
-This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 20.10.14; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
-{{< /c8y-admon-important >}}
+> **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
 #### Create a Maven project
 
@@ -74,7 +72,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library
 
-You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You need to specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
@@ -99,9 +97,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
     <microservice.name>hello-microservice-java</microservice.name>
 ```
 
-{{< c8y-admon-important >}}
-When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
-{{< /c8y-admon-important >}}
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
 #### Add repositories and dependencies
 
@@ -285,9 +281,7 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The ZIP file built with Maven on the previous steps.
 
-{{< c8y-admon-important >}}
-The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
-{{< /c8y-admon-important >}}
+> **Important:** The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
@@ -355,9 +349,7 @@ BODY:
 
 You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
-{{< c8y-admon-important >}}
-When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
-{{< /c8y-admon-important >}}
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
 The cURL command can be used to create the application with a POST request:
 
@@ -410,9 +402,7 @@ HEADERS:
   "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 
-{{< c8y-admon-info >}}
-Besides the cURL command, you can also employ a graphical interface such as Postman.
-{{< /c8y-admon-info >}}
+> **Info**: Besides the cURL command, you can also employ a graphical interface such as Postman.
 
 The response looks like this:
 

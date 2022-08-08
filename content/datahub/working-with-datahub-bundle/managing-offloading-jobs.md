@@ -78,9 +78,7 @@ The import/export functionality allows you to backup your offloading configurati
 
 The action bar provides an **Export** button, which exports all offloading configurations. The button is disabled if no offloading configurations are defined. If you click **Export**, all offloading configurations are exported into a file. The file is located in the local download folder used by your browser.
 
-{{< c8y-admon-warning >}}
-You must not modify the contents of the export file as this might corrupt the import step.
-{{< /c8y-admon-warning >}}
+>**Warning:** You must not modify the contents of the export file as this might corrupt the import step.
 
 ##### Import of offloading configurations
 

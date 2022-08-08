@@ -14,9 +14,7 @@ For SMS configuration, the router needs to be configured to accept SMS commands.
 
 For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the *User guide*.
 
-{{< c8y-admon-info >}}
-If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
-{{< /c8y-admon-info >}}
+> **Info:** If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
 ![Network Parameters](/images/device-demos/casa-system-router/router-network-info.png)
 
@@ -27,17 +25,13 @@ LAN and DHCP parameters can be directly configured from {{< product-c8y-iot >}} 
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from {{< product-c8y-iot >}}. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the *User guide*.
 
-Software packages must be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
+Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, make sure to install these first.
 
-{{< c8y-admon-info >}}
-The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-c8y-iot >}}.
-{{< /c8y-admon-info >}}
+> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from {{< product-c8y-iot >}}.
 
-Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files must follow Netcomm's naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
+Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm's naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
 
-{{< c8y-admon-info >}}
-If the agent package is not included in the target firmware, the agent will not start after the installation.
-{{< /c8y-admon-info >}}
+> **Info:** If the agent package is not included in the target firmware, the agent will not start after the installation.
 
 ![Software and Firmware info](/images/device-demos/casa-system-router/router-software-menu.png)
 
@@ -143,6 +137,4 @@ To configure the MQTT keepalive interval (default is 240 seconds), run the follo
 set service.cumulocity.mqtt.keepalive = <seconds>
 ```
 
-{{< c8y-admon-info >}}
-Changing the keepalive interval only has effect after the next reboot.
-{{< /c8y-admon-info >}}
+> **Info:** Changing the keepalive interval only has effect after the next reboot.

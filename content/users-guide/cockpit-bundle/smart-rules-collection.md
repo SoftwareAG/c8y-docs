@@ -70,9 +70,8 @@ The following types are available:
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  
-{{< /c8y-admon-info >}}
+>**Info:** In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  
+
 
 <a name="alarm-sms"></a>
 ### On alarm send SMS
@@ -81,9 +80,7 @@ In certain rule parameters, various trigger fields can be used as variables, see
 
 If an alarm is created, an SMS is sent.
 
-{{< c8y-admon-info >}}
-This rule is only available if your tenant has a configured SMS provider.
-{{< /c8y-admon-info >}}
+> **Info:** This rule is only available if your tenant has a configured SMS provider.
 
 **Parameters**
 
@@ -141,9 +138,7 @@ You can select a single group or a single device (just one, not multiple). To en
 
 * If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
-{{< c8y-admon-important >}}
-There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
-{{< /c8y-admon-important >}}
+>**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
 <a name="alarm-email"></a>
 ### On alarm send email
@@ -152,9 +147,7 @@ There is a limit of 160 characters as a total count. If you use variables and af
 
 If an alarm is created, an email is sent.
 
-{{< c8y-admon-info >}}
-Note that the corresponding emails are send with "text/html" as content type.
-{{< /c8y-admon-info >}}
+>**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
 **Parameters**
 
@@ -334,9 +327,7 @@ If the alarm is still active after the specified duration, the severity will be 
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
-{{< c8y-admon-info >}}
-The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
-{{< /c8y-admon-info >}}
+> **Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
 
 <a name="geofence-alarm"></a>
 ### On geofence create alarm
@@ -393,9 +384,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
-{{< /c8y-admon-info >}}
+> **Info:** In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
@@ -412,9 +401,7 @@ In order to raise an alarm the device had to be inside the geofence at least onc
 
 If a geofence border is crossed by leaving the geofence area, an email is sent.
 
-{{< c8y-admon-info >}}
-Note that the corresponding emails are send with "text/html" as content type.
-{{< /c8y-admon-info >}}
+>**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
 **Parameters**
 
@@ -462,9 +449,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
-{{< /c8y-admon-info >}}
+> **Info:** In order to perform the rule the device had to be inside the geofence at least once after creating the rule. An email is triggered on leaving the geofence area.
 
 **Troubleshooting**
 
@@ -590,9 +575,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
-{{< /c8y-admon-info >}}
+> **Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 
 <a name="alarm-operation"></a>
 ### On alarm execute operation
@@ -778,9 +761,7 @@ For each incoming measurement value, the rule performs the following steps:
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
-{{< c8y-admon-info >}}
-Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
-{{< /c8y-admon-info >}}
+> **Info:** Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
 * Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
@@ -798,13 +779,10 @@ Range values defined in the source object have a higher priority than those defi
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
-{{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
-{{< /c8y-admon-info >}}
+>**Info:** Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+
 
 <a name="threshold-explicit"></a>
 ### On measurement explicit threshold create alarm
@@ -819,9 +797,7 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into GREEN range, no alarm is created.
 
-{{< c8y-admon-info >}}
-This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or data point library.
-{{< /c8y-admon-info >}}
+> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or data point library.
 
 **Parameters**
 
@@ -879,13 +855,9 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
-{{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
-{{< /c8y-admon-info >}}
+>**Info:** ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 
 <a name="smart-rule-variables"></a>
 ### Smart rule variables
@@ -928,14 +900,12 @@ You can use this mechanism for example to insert device names or alarm text into
   </tr>
 </table>
 
-{{< c8y-admon-info >}}
-If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
+> **Info:** If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
 variables for times can include a time zone and time format to display the time in.
 The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
 See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
 and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
 in the Apama documentation.
-{{< /c8y-admon-info >}}
 
 **Fields specific for alarms**
 
@@ -1085,6 +1055,4 @@ Here we can for example define the following variables:
   </tr>  
 </table>
 
-{{< c8y-admon-important >}}
-In case the variable does not exist or is misspelled, no substitution will occur.
-{{< /c8y-admon-important >}}
+> **Important:** In case the variable does not exist or is misspelled, no substitution will occur.

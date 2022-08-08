@@ -9,10 +9,8 @@ To process data from LoRa devices, {{< product-c8y-iot >}} needs to understand t
 
 During the [device registration](#register-loriot-device), you can associate this device protocol. The received uplink message for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
-{{< c8y-admon-info >}}
-Device protocol mapping only supports decoding for fixed byte positions based on the message type.
+> **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
-{{< /c8y-admon-info >}}
 
 In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
@@ -93,9 +91,7 @@ Under **Value normalisation** define how the raw value should be transformed bef
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 
-{{< c8y-admon-info >}}
-"Little endian" support to decode the payload has been added.
-{{< /c8y-admon-info >}}
+> **Info:** "Little endian" support to decode the payload has been added.
 
 Under Options, select one of the following options, if required:
 

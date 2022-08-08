@@ -19,6 +19,4 @@ on Measurement() as m1 -> Measurement() as m2 {
 }
 ```
 
-{{< c8y-admon-info >}}
-{{< product-c8y-iot >}} deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules.
-{{< /c8y-admon-info >}}
+>**Info:** {{< product-c8y-iot >}} deploys each module into its own namespace, so event definitions from one module cannot be used in other modules. This prevents dependencies between modules.

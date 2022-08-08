@@ -24,15 +24,13 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
 To position a device in the asset hierarchy, you must "assign" the device to the respective group (see below).
 
-{{< c8y-admon-info >}}
-Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
-{{< /c8y-admon-info >}}
+> **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
 <a name="hierarchies"></a>
 #### Asset hierarchy versus device hierarchy
@@ -86,9 +84,7 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
-{{< c8y-admon-info >}}
-If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
-{{< /c8y-admon-info >}}
+>**Info:** If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
 Use the navigator, to navigate through the asset hierarchy.
 
@@ -123,9 +119,7 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 The new group will be added to the groups list.
 
-{{< c8y-admon-info >}}
-A group can be created with "0" devices in it.
-{{< /c8y-admon-info >}}
+>**Info:** A group can be created with "0" devices in it.
 
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 

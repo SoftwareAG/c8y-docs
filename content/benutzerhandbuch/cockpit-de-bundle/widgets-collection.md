@@ -37,7 +37,7 @@ Folgende Typen sind verfügbar:
 </tr>
 <tr>
 <td align="left"><a href="#traffic-light">Ampel</a></td>
-<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
+<td align="left">Zeigt die Zustände eines Geräts im Form einer Ampel.</td>
 </tr>
 <tr>
 <td align="left"><a href="#applications">Anwendungen</a></td>
@@ -177,7 +177,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden
 <a name="traffic-light"></a>
 ### Ampel
 
-Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
+Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
 
 **Konfigurierbare Parameter**
 
@@ -223,9 +223,7 @@ Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen 
 |Ziel-Assets oder -geräte|Gruppen oder Geräte, die ausgewertet werden.
 |Attribute|Liste von Attributen, siehe [Widget "Asset-Tabelle"](#widget-asset-table).
 
-{{< c8y-admon-info >}}
-Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.
-{{< /c8y-admon-info >}}
+>**Info:** Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.
 
 <a name="widget-asset-table"></a>
 ### Asset-Tabelle
@@ -253,9 +251,7 @@ Die daraus resultierende Tabelle wird folgendermaßen visualisiert:
 
 Klicken Sie auf **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attribute aus.
 
-{{< c8y-admon-info >}}
-Das Attribut "Anzahl aktiver Alarme" zeigt aktive Alarme als Symbole in der Tabelle. Wenn Sie dieses Attribut auswählen, müssen Sie den Renderer "Anzahl aktiver Alarme" in der Spaltenliste konfigurieren.
-{{< /c8y-admon-info >}}
+> **Info:** Das Attribut "Anzahl aktiver Alarme" zeigt aktive Alarme als Symbole in der Tabelle. Wenn Sie dieses Attribut auswählen, müssen Sie den Renderer "Anzahl aktiver Alarme" in der Spaltenliste konfigurieren.
 
 #### So fügen Sie Aktionen hinzu
 
@@ -265,10 +261,8 @@ Das Attribut "Anzahl aktiver Alarme" zeigt aktive Alarme als Symbole in der Tabe
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
-{{< c8y-admon-info >}}
-Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Gerätedetails > Shell](/benutzerhandbuch/device-management-de/#shell).<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Gerätedetails > Shell](/benutzerhandbuch/device-management-de/#shell).<br>
 Sie können auch das JSON-Format für die Operation eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Operationen, um weitere Details zu erfahren.
-{{< /c8y-admon-info >}}
 
 #### So ändern Sie die Tabelle
 
@@ -420,7 +414,7 @@ Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und 
 
 ![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
 
-Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
+Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
 
 ![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
 
@@ -455,9 +449,7 @@ Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Popup-Fenster an
 
 Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle einer Gruppe werden alle Geräte in dieser Gruppe (aber nicht in Untergruppen) angezeigt.
 
-{{< c8y-admon-info >}}
-Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
-{{< /c8y-admon-info >}}
+>**Info:** Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
 
 <a name="pie-chart"></a>
 ### Kuchendiagramm
@@ -500,11 +492,10 @@ Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Mes
 
 ![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-linear-gauge.png)
 
-{{< c8y-admon-info >}}
-Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
-{{< /c8y-admon-info >}}
+>**Info:** Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
+
 
 <a name="quick-links"></a>
 ### Quick Links
@@ -512,6 +503,7 @@ Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeig
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
+
 
 
 <a name="relay-array-control"></a>
@@ -548,9 +540,7 @@ Das Widget "SCADA" bietet eine graphische Darstellung eines Gerätestatus.
 
 Weitere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
 
-{{< c8y-admon-info >}}
-Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
-{{< /c8y-admon-info >}}
+> **Info:** Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
 
 ![SCADA widget](/images/benutzerhandbuch/cockpit/cockpit-widget-scada.png)
 

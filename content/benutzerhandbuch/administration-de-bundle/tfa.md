@@ -8,7 +8,7 @@ Es gibt zwei mögliche TFA-Strategien: SMS und TOTP. Es kann immer nur eine von 
 
 Ob TFA für einen bestimmten Benutzer aktiviert ist, können Sie überprüfen, indem Sie die Seite **Benutzer** aufrufen und in der Spalte "TFA-Status" rechts neben der Spalte "Passwortstärke" nachsehen. Ein Schlüsselsymbol bedeutet, dass TFA aktiviert ist, und indem Sie den Mauszeiger darüber bewegen, können Sie sehen, welche Strategie verwendet wird.
 
-![TFA status](/images/benutzerhandbuch/Administration/admin-tfa-sms.png)
+![TFA status](/images/benutzerhandbuch/Administration/admin-user-tfa-enabled.png)
 
 ### SMS
 
@@ -20,11 +20,10 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefo
 2. Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung aktivieren**.
 3. Klicken Sie auf **Speichern**.
 
-![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa-1.png)
+![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
 
-{{< c8y-admon-info >}}
-Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
-{{< /c8y-admon-info >}}
+>**Info:** Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
+
 
 ### TOTP (Google Authenticator)
 
@@ -33,7 +32,7 @@ Benutzer müssen auf ihrem Smartphone eine TOTP-Anwendung installieren (Google A
 #### Einrichten
 
 Anders als bei der SMS-Strategie muss TOTP von jedem einzelnen Benutzer eingerichtet werden. Das Einrichten kann durch Öffnen von **Benutzereinstellungen** in der oberen rechten Ecke und Klicken auf **Zweifaktor-Authentifizierung einrichten** gestartet werden.
-![Trigger TOTP setup](/images/benutzerhandbuch/Administration/admin-user-enable-tfa-2.png)
+![Trigger TOTP setup](/images/benutzerhandbuch/Administration/admin-user-tfa-setup-button.png)
 
 Wenn TFA aktiviert ist, wird dem Benutzer ein QR-Code angezeigt, den er mit der zuvor installierten TOTP-App scannen muss.
 

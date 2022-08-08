@@ -38,9 +38,7 @@ After the project is uploaded sucessfully, navigate to the **Data** folder of th
 
 3. Click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open the Jupyter Notebook and execute all the cells in sequence.
 
-{{< c8y-admon-info >}}
-The 'Load Libraries' section includes commented-out code to install necessary libraries if they are not already installed. Uncomment these lines if needed, and use the `!pip install <library name>` command to install any other needed libraries.
-{{< /c8y-admon-info >}}
+> **Info:** The 'Load Libraries' section includes commented-out code to install necessary libraries if they are not already installed. Uncomment these lines if needed, and use the `!pip install <library name>` command to install any other needed libraries.
 
 Once all the cells are executed successfully, a model named *weldingDefectModel.onnx* is saved to the **Model** folder.
 

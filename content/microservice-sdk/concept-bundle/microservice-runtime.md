@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Microservices deployed on the platform have a specific runtime environment and they must understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
+Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
 
 ### Environment variables
 
@@ -177,6 +177,4 @@ To execute requests against the {{< product-c8y-iot >}} platform running a micro
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 
-{{< c8y-admon-important >}}
-`C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
-{{< /c8y-admon-important >}}
+> **Important**: `C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.

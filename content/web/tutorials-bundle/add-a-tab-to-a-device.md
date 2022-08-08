@@ -31,14 +31,14 @@ For this purpose, create a new Cockpit application using the `c8ycli`:
 c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 ```
 
-Next, you must install all dependencies. Switch to the new folder and run `npm install`.
+Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-{{< c8y-admon-info >}}
-The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
-{{< /c8y-admon-info >}}
+>**Info:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+>
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+
 
 ### 2. Add a new ROUTE&#95;HOOK_ONCE
 
@@ -112,9 +112,7 @@ Explanation of the numbers above:
  5. Defines which component should be shown if the path is hit by a user.
  6. The properties `label` and `icon` define what the tab should look like. The `priority` defines in which position it should be shown.
 
-{{< c8y-admon-info >}}
-The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.
-{{< /c8y-admon-info >}}
+> **Info:** The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.
 
 After this alignment the route is registered but the application will fail to compile as the `HelloComponent` does not exist yet.
 You will create it in the next section.
@@ -320,7 +318,7 @@ export class HelloGuard implements CanActivate {
 
 Explanation of the above numbers:
 
- 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence, the `ActivatedRouteSnapshot` is different in both calls and you must resolve the `contextData` in the second case from the parent.
+ 1. This is the only part which is not aligned with the Angular router. In a context route, `CanActivate` will be called twice, once when the parent route is activated and once when the child route is activated. The first call checks if the tab should be shown at all, while the second call checks if the user is allowed to navigate to it. Hence, the `ActivatedRouteSnapshot` is different in both calls and you need to resolve the `contextData` in the second case from the parent.
  2. Checks if the `acme_HelloWorld` fragment is set on the context.
 
 If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, the **Hello** tab will only be shown for that device and not for others.

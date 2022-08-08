@@ -10,9 +10,7 @@ aliases:
 
 Neural network training.
 
-{{< c8y-admon-info >}}
-An active subscription of the MLW microservice is required to perform operations.
-{{< /c8y-admon-info >}}
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### POST - Start the training process of the neural network
 
@@ -46,8 +44,8 @@ Train a neural network model using architecture file.
 |dataID (string)| required resource ID of data (body parameter)
 |codeID (string)| optional resource ID of pre-processing script (body parameter)
 |problemType (string)| required classification/regression
-|shuffleData (Boolean)| required shuffleData body parameter
-|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format
+|shuffleData (boolean)| required shuffleData body parameter
+|startDate (string)| optional startDate body parameter in "%Y-%m-%dT%H:%M:%S.%fZ" format 
 
 **Example Request**
 

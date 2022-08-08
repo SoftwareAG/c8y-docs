@@ -15,15 +15,11 @@ You access Dremio via a web browser. It has been tested with the following web b
 * Firefox (latest version)
 * Chrome (latest version)
 
-{{< c8y-admon-info >}}
-Support for mobile devices like smartphones or tablets has not been tested.
-{{< /c8y-admon-info >}}
+> **Info:** Support for mobile devices like smartphones or tablets has not been tested.
 
 To access Dremio, navigate to the home page. Under **Quick links** click on the **Dremio** icon. This will direct you to the **Login** screen of Dremio.
 
-{{< c8y-admon-info >}}
-Your Dremio user does not have administration rights in Dremio.
-{{< /c8y-admon-info >}}
+> **Info:** Your Dremio user does not have administration rights in Dremio.
 
 #### How to log into Dremio
 
@@ -41,15 +37,11 @@ On the home page of Dremio you will find at the left under **Datasets** two pane
 
 In the **Sources** panel there is the data source `YourTenantIdDataLake`, for example, `t47110815DataLake`. This source has been auto-configured for you and points to your data lake.
 
-{{< c8y-admon-info >}}
-Terminology-wise, {{< product-c8y-iot >}} DataHub replicates data from the Operational Store of {{< product-c8y-iot >}} into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
-{{< /c8y-admon-info >}}
+> **Info:** Terminology-wise, {{< product-c8y-iot >}} DataHub replicates data from the Operational Store of {{< product-c8y-iot >}} into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
 
 When you click on your data source it will be shown in the main panel. Clicking on the source in the main panel navigates into the data source. Here, you see a list of all target tables of your offloading pipelines. Clicking one of these target tables opens an SQL editor which allows you to run queries against that target table.
 
-{{< c8y-admon-info >}}
-You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< product-c8y-iot >}} DataHub internal purposes and must not be deleted or altered.
-{{< /c8y-admon-info >}}
+> **Info:** You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< product-c8y-iot >}} DataHub internal purposes and must not be deleted or altered.
 
 #### Spaces
 
@@ -59,9 +51,7 @@ A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} Da
 
 The **Job History** tab displays jobs/queries you have executed. It allows you to view details of a job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
 
-{{< c8y-admon-info >}}
-The job history only contains queries that you actively run; the jobs related to the data extraction are hidden.
-{{< /c8y-admon-info >}}
+> **Info:** The job history only contains queries that you actively run; the jobs related to the data extraction are hidden.
 
 ### Creating views
 
@@ -71,9 +61,7 @@ Depending on your use cases, you will often find the need to provide a view on t
 
 In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely select a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#querying-offloaded).
 
-{{< c8y-admon-info >}}
-Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. When configuring the offloading pipeline, you can optionally activate view materialization.
-{{< /c8y-admon-info >}}
+> **Info:** Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. When configuring the offloading pipeline, you can optionally activate view materialization.
 
 #### Example
 Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column *myValue*. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:

@@ -25,9 +25,7 @@ To verify whether your setup is correct, execute the following REST API request:
 	GET {{url}}/tenant/currentTenant
 	```
 
-{{< c8y-admon-info >}}
-The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
-{{< /c8y-admon-info >}}
+> **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
 
 #### No Sigfox provider settings are found
 
@@ -59,15 +57,11 @@ If the "transfer operation failed" alarm is triggered, the device is already pro
 
 In case of this alarm, you can see that the **Provisioned** status is set to "false" which means that no data is coming from the Sigfox platform. In the alarm message there is more information regarding the error. In this case the PAC code given during registration was invalid.
 
-{{< c8y-admon-info >}}
-If the provisioning process has been completed, but has failed, information is returned as an alarm with the reason of the failure provided.
-{{< /c8y-admon-info >}}
+> **Info:** If the provisioning process has been completed, but has failed, information is returned as an alarm with the reason of the failure provided.
 
 The **Provisioned** status is set to true when the device provisioning process is completed and success information is received from the Sigfox platform. Additionally, it is set to true when uplink messages are retrieved from the device.
 
-{{< c8y-admon-info >}}
-The status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.
-{{< /c8y-admon-info >}}
+> **Info:** The status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.
 
 ### Callback creation failed
 
@@ -94,9 +88,7 @@ In order to manually create the callback, the following properties must be fille
  - contentType
  - headers
 
-{{< c8y-admon-info >}}
-The Authorization header displayed in the alarm does not show the user credentials.
-{{< /c8y-admon-info >}}
+> **Info:** The Authorization header displayed in the alarm does not show the user credentials.
 
 Non-mentioned properties from the alarm are:
 

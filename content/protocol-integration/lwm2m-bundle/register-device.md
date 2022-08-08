@@ -73,9 +73,7 @@ The CSV file must at least contain the following fields to be able to establish 
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
-{{< /c8y-admon-info >}}
+> **Info:** The {{< product-c8y-iot >}} platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV file is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
 Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "nosec_device" device has been created.
 
@@ -218,7 +216,7 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5684**: PSK bootstrap connection
 * **5784**: PSK direct server connection
 
-PSK keys must be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
+PSK keys need to be provided during the device registration in the CSV file. The file must contain the fields defined in [Registration of unsecured device](#registration-of-unsecured-device). PSK registration requires additional fields to be filled (see the example CSV file for a PSK-secured device below).  
 
 ![PSK device csv](/images/device-protocols/lwm2m/lwm2m-psk-device-csv-example.png)
 
@@ -283,9 +281,7 @@ Upon upload of the CSV file in {{< product-c8y-iot >}} we should see that our "p
 ![PSK device external ids](/images/device-protocols/lwm2m/lwm2m-psk-device-created-external-ids.png)
 
 
-{{< c8y-admon-info >}}
-Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
-{{< /c8y-admon-info >}}
+> **Info:** Firmware updates are also supported for registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>

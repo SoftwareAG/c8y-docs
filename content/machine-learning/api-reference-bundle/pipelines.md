@@ -10,9 +10,7 @@ aliases:
 
 Operations on pipelines.
 
-{{< c8y-admon-info >}}
-Currently, only ONNX pipelines are supported. An active subscription of the Onnx microservice is required to leverage these pipeline APIs.
-{{< /c8y-admon-info >}}
+>**Info:** Currently, only ONNX pipelines are supported. An active subscription of the Onnx microservice is required to leverage these pipeline APIs.
 
 ### GET - List ONNX pipelines
 

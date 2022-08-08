@@ -11,9 +11,7 @@ Angular 12 is supported from version `10.11.45.0`. The following configuration c
 - Follow the `Angular 12` upgrade guide: [Updating to version 12](https://v12.angular.io/guide/updating-to-version-12).
 - Use Node version `14`.
 
-{{< c8y-admon-info >}}
-`AOT` is not yet supported.
-{{< /c8y-admon-info >}}
+> **Info:** `AOT` is not yet supported.
 
 #### How to enable IVY
 
@@ -42,10 +40,6 @@ During the update:
 
 - If you use Jest (JavaScript Testing Framework) check [Jest - Angular IVY](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-ivy) for the configuration.
 
-{{< c8y-admon-info >}}
-Deep imports are not supported. For example, you must import from `@c8y/ngx-components/asset-navigator` but not from `@c8y/ngx-components/asset-navigator/services/asset-service`.
-{{< /c8y-admon-info >}}
+> **Info:** Deep imports are not supported. For example, you need to import from `@c8y/ngx-components/asset-navigator` but not from `@c8y/ngx-components/asset-navigator/services/asset-service`.
 
-{{< c8y-admon-info >}}
-If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is not selected.
-{{< /c8y-admon-info >}}
+> **Info:** If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is not selected.

@@ -55,7 +55,7 @@ The same settings can be specified for discrete inputs. However, it is not possi
 Click **Add holding register** under **Holding registers** or **Add input register** under **Input registers** to add a register definition.
 
 1. In the **General** section, specify a name for the register and a display category to structure your data in widgets.
-2. In the **Value selection** section, enter the number of the register in the Modbus device. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers". It is important to note that in {{< product-c8y-iot >}} registers are numbered as per the standard Modbus specification, that is they start from 1. This differs with some device manufacturers which count registers starting from 0.
+2. In the **Value selection** section, enter the number of the register in the Modbus device. If the Modbus device used implements the standard Modbus specification, the number of the register is 1. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers".
 3. In the **Normalization** section, specify how the raw value should be transformed before storing it in the platform. To scale the integer value read from the Modbus device, you can enter a **Multiplier**, a **Divisor** and a number of decimal places in the **Right Shift** field. The register value is first multiplied by the multiplier, then divided by the divisor and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to {{< product-c8y-iot >}}. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to {{< product-c8y-iot >}}. If you use a divisor of ten and no decimal places, the terminal may send 23 to {{< product-c8y-iot >}} (depending on its implementation). In the **Unit** field, indicate the unit of the data, for example, "C" for temperature values.
 4. In the Options section, select the following options:
 	* **Signed** - If the register value should be interpreted as signed number.
@@ -71,7 +71,7 @@ Click **Add holding register** under **Holding registers** or **Add input regist
 
 ![Add register](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-newregister.png)
 
-In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you must support buffering of data on the terminal, leave this checkbox clear.
+In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
 Finally, click **Save** to save the device protocol.
 
@@ -90,7 +90,7 @@ CAN bus device protocols can be configured in a very similar way as Modbus devic
 Profibus device protocols can be configured in the following way:
 
 1. In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.
-1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you must support buffering of data on the terminal, leave this checkbox clear.
+1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 1. Finally, click **Save** to save your settings.
 
 
@@ -113,7 +113,7 @@ Click **Add variable** to configure a new variable.
 2. In the **Value selection** section, specify from where the value should be extracted:
 	* **Index** - Index of the variable in the OD of the device.
 	* **Sub-index** - Sub-index of the variable in the OD of the device.
-	* **Data type** - Type of the variable (for example Boolean, unsigned).
+	* **Data type** - Type of the variable (for example boolean, unsigned).
 	* **Access type** - Access type, for example, read-only, write-only.
 3. Depending on the selected access type, the following functionalities may be specified:
 	* **Show status** - To enable to show the current value in the UI, for example, in the "Fieldbus device" widget.
@@ -154,4 +154,4 @@ In the **CANopen** section, up to 127 CANopen devices can be added to the gatewa
 - **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
 - **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 
-> The device type and node ID must match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+> The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.

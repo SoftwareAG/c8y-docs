@@ -15,9 +15,7 @@ The complete webMethods.io Integration documentation is available at [https://do
 
 ### Getting started
 
-{{< c8y-admon-info >}}
-If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the app switcher and single sign-on login.
-{{< /c8y-admon-info >}}
+>**Info:** If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the app switcher and single sign-on login.
 
 To subscribe to webMethods.io Integration, perform the following steps:
 
@@ -27,10 +25,8 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 ![webMethods.io App Switcher Integration](/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
 
-{{< c8y-admon-info >}}
-If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **{{< sag-cloud >}}** portal where you can subscribe for a free trial.
+>**Info:** If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **{{< sag-cloud >}}** portal where you can subscribe for a free trial.
 <br><br>![webMethods.io App Switcher My Cloud](/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
-{{< /c8y-admon-info >}}
 
 ### Examples
 

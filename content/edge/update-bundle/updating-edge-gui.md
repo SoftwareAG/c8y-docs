@@ -8,9 +8,7 @@ You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing inst
 
 When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities.
 
-{{< c8y-admon-info >}}
-{{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
-{{< /c8y-admon-info >}}
+>**Info:** {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
 
 To update {{< product-c8y-iot >}} Edge:
 

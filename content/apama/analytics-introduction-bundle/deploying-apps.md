@@ -9,16 +9,13 @@ You can deploy the following to {{< product-c8y-iot >}}:
 * EPL apps. You can [develop or import a single \*.mon file with the Streaming Analytics application](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
 * Apama applications. You can upload complex Apama applications (that is, Apama projects developed with {{< sag-designer >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
 
-{{< c8y-admon-info >}}
-In the Streaming Analytics application, the term "activate" is used for deploying an app.
-{{< /c8y-admon-info >}}
+> **Info:** In the Streaming Analytics application, the term "activate" is used for deploying an app.
+
 
 <a name="single-mon-file"></a>
 ### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
-{{< c8y-admon-info >}}
-To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
-{{< /c8y-admon-info >}}
+>**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
 
 When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
@@ -39,9 +36,7 @@ Using {{< sag-designer >}}, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to {{< product-c8y-iot >}}.
 
-{{< c8y-admon-info >}}
-This only applies if you are using Apama 10.3 or later.
-{{< /c8y-admon-info >}}
+>**Info**: This only applies if you are using Apama 10.3 or later.
 
 #### Required settings in the microservice manifest
 
@@ -68,9 +63,7 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
 
-{{< c8y-admon-info >}}
-The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
-{{< /c8y-admon-info >}}
+> **Info:** The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
 
 #### To deploy an Apama application as a microservice
 

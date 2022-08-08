@@ -6,9 +6,7 @@ layout: redirect
 
 You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
-{{< c8y-admon-important >}}
-The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
-{{< /c8y-admon-important >}}
+> **Important:** The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
 
 Before you update your Edge appliance remotely, you must:
 
@@ -54,7 +52,7 @@ To remotely update your Edge appliance:
     ![Edge version](/images/edge/edge-check-remote-update-status.png)
     - To check the details of the update, click the text outlined in red in the figure below:
     ![Edge version](/images/edge/edge-check-remote-update-full-log.png)
-
+    
 13. Restart your Edge appliance after the firmware update is complete. You can remotely restart your Edge appliance from your tenant account as shown in the figure below:
     ![Edge version](/images/edge/edge-firmware-update-restart.png)
 
@@ -68,14 +66,14 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 
 3. Click **Device control** in the **Overviews** menu in the navigator.
    ![Edge version](/images/edge/edge-bulk-operation-page.png)
-
+   
 4. Click **Bulk operations** and then click **New bulk operation**.
    ![Edge version](/images/edge/edge-new-bulk-operation.png)
-
+   
 5. Click **Firmware update**.
    ![Edge version](/images/edge/edge-bulk-operation-firmware-update.png)
 
-6. Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
+6. Select a firmware from the list. The list can be filtered by firmware name. Click **Next**. 
 
 7. Expand the version and select the archive file. Click **Next**.
    ![Edge version](/images/edge/edge-bulk-operation-select-version.png)
@@ -89,3 +87,4 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
    ![Edge version](/images/edge/edge-schedule-bulk-operation.png)
 
 For more information about bulk operations, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations) in the *User guide*.
+

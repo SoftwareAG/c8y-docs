@@ -10,9 +10,7 @@ aliases:
 
 Operations on Jupyter Notebook.
 
-{{< c8y-admon-info >}}
-An active subscription of the MLW microservice is required to perform operations.
-{{< /c8y-admon-info >}}
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### GET - Preview the Notebook code along with the session creation
 
@@ -127,7 +125,7 @@ Updates the contents of the Jupyter Notebook file.
 |content (string)| required body parameter for updated contents of Jupyter Notebook
 |format (string)| required body parameter for format (ex. 'json')
 |type (string)| required body parameter for type (ex. 'notebook')
-|export (Boolean)| required body parameter to export notebook to Python file.
+|export (boolean)| required body parameter to export notebook to Python file.
 
 
 **Example Request**

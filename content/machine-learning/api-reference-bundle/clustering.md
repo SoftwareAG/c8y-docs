@@ -6,9 +6,7 @@ weight: 40
 
 Operations for identifying clusters in given data using clustering models.
 
-{{< c8y-admon-info >}}
-An active subscription of the Nyoka microservice is required to leverage the clustering APIs.
-{{< /c8y-admon-info >}}
+>**Info:** An active subscription of the Nyoka microservice is required to leverage the clustering APIs.
 
 
 ### POST – Generate clustering model based on multiple time series
@@ -28,7 +26,7 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 
 |PARAMS||
 |:---|:---|
-|autoDeploy (Boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
+|autoDeploy (boolean)|optional parameter used to determine whether or not the model should be deployed automatically once it is generated, default is true
 
 
 **BODY**

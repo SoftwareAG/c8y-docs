@@ -29,9 +29,7 @@ In the dropdown box select one of the {{< product-c8y-iot >}} base collections, 
 * inventory
 * measurements
 
-{{< c8y-admon-info >}}
-You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection, except for the case of a TrendMiner offloading configuration, which must be singleton. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
-{{< /c8y-admon-info >}}
+> **Info:** You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection, except for the case of a TrendMiner offloading configuration, which must be singleton. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
 
 In the section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
@@ -145,9 +143,7 @@ Optionally you can define an additional filter predicate. Per default, all entri
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
-{{< c8y-admon-info >}}
-For querying the attribute "id", you must use "&#95;id". For querying the time attributes, see also [Working with {{< product-c8y-iot >}} DataHub > {{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets of widely-used temporal filter predicates.
-{{< /c8y-admon-info >}}
+> **Info:** For querying the attribute "id", you must use "&#95;id". For querying the time attributes, see also [Working with {{< product-c8y-iot >}} DataHub > {{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) for example snippets of widely-used temporal filter predicates.
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You must fix these errors before you can proceed.
 
@@ -183,9 +179,7 @@ You can change the compaction strategy of an already running offloading pipeline
 
 In the additional settings, you can enable/disable view materialization for an offloading pipeline based on the alarms, events, or inventory collection. For these three collections, additional views over the target table are defined in the tenant’s space in Dremio. The *_latest* view maintains the latest status of all entities, excluding intermediate transitions of an entity. For large tables, the maintenance of the view might adversely affect overall performance. For that reason, the *_latest* view can be materialized so that the latest state of each entity will be persisted in the data lake. If that setting is activated for a pipeline, the materialized view will be created with the next offloading run and updated for each subsequent run. The materialized view is named with suffix *_c8y_cdh_latest_materialized*. If you deactivate the setting for a pipeline, the view is still available, but no more materialized.
 
-{{< c8y-admon-info >}}
-When view materialization is activated, additional data is stored in the data lake, which might affect your storage costs.
-{{< /c8y-admon-info >}}
+> **Info:** When view materialization is activated, additional data is stored in the data lake, which might affect your storage costs.
 
 Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
 

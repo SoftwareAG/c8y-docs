@@ -8,9 +8,7 @@ EPL apps are designed to listen for REST (Representational State Transfer) servi
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
-{{< c8y-admon-info >}}
-This API requires version 10.6.0 or above of the Apama-ctrl microservice.
-{{< /c8y-admon-info >}}
+> **Info**: This API requires version 10.6.0 or above of the Apama-ctrl microservice.
 
 ### Request headers for all operations
 
@@ -68,15 +66,15 @@ Example value for response code 200:
   "eplfiles":[
     {
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
-
+ 
       ],
       "id":"39615",
       "name":"Ordinal1",
       "state":"active",
       "warnings":[
-
+ 
       ]
     }
   ]
@@ -111,7 +109,7 @@ Example value for response code 200:
     {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -151,7 +149,7 @@ Example value for response code 200:
 {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -200,15 +198,15 @@ Example for response code 201 when successfully created:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
-
+ 
   ],
   "id":"39615",
   "name":"Ordinal1",
   "state":"active",
   "warnings":[
-
+ 
   ]
 }
 ```
@@ -218,7 +216,7 @@ Example for response code 201 when created with warnings or errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,
@@ -276,15 +274,15 @@ Example value for response code 200 when successfully updated with no errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
-
+ 
   ],
   "id":"39615",
   "name":"Ordinal1",
   "state":"active",
   "warnings":[
-
+ 
   ]
 }
 ```
@@ -294,7 +292,7 @@ Example value for response code 200 when updated with errors or warnings:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,
@@ -336,7 +334,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 <a name="example-404"></a>
 ### Example value for response code 404
-The response code 404 indicates that a file with a specific identifier was not found.
+The response code 404 indicates that a file with a specific identifier was not found. 
 
 ```
 {
@@ -349,7 +347,7 @@ The response code 404 indicates that a file with a specific identifier was not f
 }
 ```
 
-where
+where 
 
 - `error` is the error message.
 - `exception` specifies the exception that was raised.

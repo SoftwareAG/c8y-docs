@@ -77,9 +77,7 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie eine Operation in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
 
-{{< c8y-admon-info >}}
-Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
-{{< /c8y-admon-info >}}
+> **Info:** Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
 
 <a name="add-group"></a>
 ### So fügen Sie eine Gruppe hinzu
@@ -91,9 +89,7 @@ Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erste
 
 Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
-{{< c8y-admon-info >}}
-Eine Gruppe kann mit "0" Geräten erstellt werden.
-{{< /c8y-admon-info >}}
+>**Info:** Eine Gruppe kann mit "0" Geräten erstellt werden.
 
 Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
@@ -145,9 +141,9 @@ Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
-{{< c8y-admon-info >}}
-Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen: ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
-{{< /c8y-admon-info >}}
+>**Info:** Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
+ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
+
 
 
 #### So heben Sie die Zuweisung eines Geräts auf
@@ -191,9 +187,7 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 
 Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.
 
-{{< c8y-admon-info >}}
-Dynamische Gruppen sind nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar.
-{{< /c8y-admon-info >}}
+>**Info:** Dynamische Gruppen sind nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar.
 
 Dynamische Gruppen werden in der Geräteliste erstellt.
 
@@ -217,6 +211,4 @@ Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die F
 
 Bewegen Sie den Mauszeiger über den Eintrag, den Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
-{{< c8y-admon-important title="Wichtig" >}}
-Das Löschen einer dynamischen Gruppe ist irreversibel.
-{{< /c8y-admon-important >}}
+> **Wichtig:** Das Löschen einer dynamischen Gruppe ist irreversibel.

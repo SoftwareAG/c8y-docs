@@ -27,7 +27,7 @@ The path variable is a variable part of otherwise static URI that denotes a set 
 
 Query parameters are appended to the URI with a question mark followed by a list of key/value pairs. A query variable annotated with the value true in the `/resources/deploy?type=PMML` resource path specifies that the returned PMML file should contain annotations as placed by MLW Server, in case of errors or warnings.
 
-Header parameters are HTTP message metadata in the form of key/value pairs containing information about the message such as content type, message encoding type, authorization, etc.
+Header parameters are HTTP message metadata in the form of key/value pairs containing information about the message such as content type, message encoding type or authorization.
 
 Body parameters appear only in POST or PUT requests and need to be encoded by the HTTP client.
 
@@ -37,7 +37,7 @@ In the following examples, `{{ auth }}` represents the base64-encoded `tenant/us
 
 The HTTP response message is composed of a message header and a message body. All MLW microservice response content types implement standard UTF-8 character set encoding.
 
-The header contains response status code and header fields represented as a list of key/value pairs, i.e. `Content-Type:application/json`. Every response from MLW microservice contains a Content-Type header entry with one of the following internet media types (aka MIME) as value.
+The header contains response status code and header fields represented as a list of key/value pairs, that is, `Content-Type:application/json`. Every response from MLW microservice contains a Content-Type header entry with one of the following internet media types (aka MIME) as value.
 
 * application/json
 * application/xml

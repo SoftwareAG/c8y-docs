@@ -95,9 +95,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tbody>
 </table>
 
-{{< c8y-admon-info >}}
-All applications listed here are of the type "Microservice".
-{{< /c8y-admon-info >}}
+>**Info:** All applications listed here are of the type "Microservice".
 
 <a name="custom-microservices"></a>
 ### Custom microservices
@@ -109,9 +107,7 @@ All applications listed here are of the type "Microservice".
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
-{{< c8y-admon-important >}}
-The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
-{{< /c8y-admon-important >}}
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 
 <a name="microservice-properties"></a>
 ### Microservice properties
@@ -227,15 +223,11 @@ To view logs, open the **Logs** tab of the respective microservice.
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
-{{< c8y-admon-info >}}
-If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
-{{< /c8y-admon-info >}}
+> **Info:** If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-{{< c8y-admon-info >}}
-The time entered here may differ from the server time due to different time zones.
-{{< /c8y-admon-info >}}
+> **Info:** The time entered here may differ from the server time due to different time zones.
 
 At the top right, additional functionality is provided:
 
@@ -247,7 +239,7 @@ Initially, the **Logs** tab shows the latest logs of the microservice instance.
 
 At the bottom right you find navigation buttons:
 
-* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 35 MB of logs).
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
 * **Previous** - increases the time range in 10 minutes steps.
 * **Next** - reduces the time range in 10 minutes steps.
 * **Last** - directly navigates to the latest available log entries.
@@ -256,8 +248,6 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-{{< c8y-admon-info >}}
-There is no possibility to see the logs from the previously running instances or from previously rotated logs exceeding 35 MB. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
-Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
-{{< /c8y-admon-info >}}
+>Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.

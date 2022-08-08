@@ -50,9 +50,7 @@ To connect a Modbus/TCP device, follow these steps:
 
 {{< product-c8y-iot >}} will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-{{< c8y-admon-info >}}
-It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200 and NTC 220 series, the port to be used can be configured through the variable "service.cumulocity.modbus.port" via the device shell or the local web user interface of the device.
-{{< /c8y-admon-info >}}
+> **Info:** It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200 and NTC 220 series, the port to be used can be configured through the variable "service.cumulocity.modbus.port" via the device shell or the local web user interface of the device.
 
 ### Connecting CAN devices
 

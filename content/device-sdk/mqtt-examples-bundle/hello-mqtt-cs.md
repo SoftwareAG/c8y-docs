@@ -35,11 +35,11 @@ The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.mic
 
 ### Developing the "Hello MQTT world" client
 
-To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you must
+To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you need to:
 
-* create a console project,
-* add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://github.com/SoftwareAG/cumulocity-sdk-cs)),
-* build and run the C# application.
+* Create a console project.
+* Add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://github.com/SoftwareAG/cumulocity-sdk-cs)).
+* Build and run the C# application.
 
 #### Creating a console project
 
@@ -211,9 +211,7 @@ Note that the subscription is established after the device creation, otherwise i
 
 The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-sdk/rest#step-0-request-device-credentials) step.
 
-{{< c8y-admon-important >}}
-Do not use new line characters  \r\n and escaping characters specific for Windows OS.
-{{< /c8y-admon-important >}}
+> **Important**: Do not use new line characters  \r\n and escaping characters specific for Windows OS.
 
 ```cs
 const string serverUrl = "mqtt.cumulocity.com";

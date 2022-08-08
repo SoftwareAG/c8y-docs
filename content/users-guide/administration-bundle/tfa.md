@@ -8,7 +8,7 @@ There are two possible TFA strategies: SMS and TOTP. Only one of them can be act
 
 To check whether TFA is enabled for a certain user, go to the **Users** page and see the TFA status column right from the password strength column. A key icon indicates that TFA is enabled and by hovering over it you can see the strategy that is being used.
 
-![TFA status](/images/users-guide/Administration/admin-tfa-sms.png)
+![TFA status](/images/users-guide/Administration/admin-user-tfa-enabled.png)
 
 ### SMS
 
@@ -20,11 +20,10 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 2. Select the checkbox next to **Enable two-factor authentication**.
 3. Click **Save**.
 
-![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa-1.png)
+![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
-{{< c8y-admon-info >}}
-This process can only be executed in the Administration application and is not available under **User settings**.
-{{< /c8y-admon-info >}}
+>**Info:** This process can only be executed in the Administration application and is not available under **User settings**.
+
 
 ### TOTP (Google Authenticator)
 
@@ -33,7 +32,7 @@ Users must install a TOTP application on their smartphone (Google Authenticator 
 #### Setup
 
 Opposed to the SMS strategy TOTP must be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
-![Trigger TOTP setup](/images/users-guide/Administration/admin-user-enable-tfa-2.png)
+![Trigger TOTP setup](/images/users-guide/Administration/admin-user-tfa-setup-button.png)
 
 IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.
 

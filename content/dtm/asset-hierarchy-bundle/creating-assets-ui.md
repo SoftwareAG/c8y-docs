@@ -234,44 +234,48 @@ Once the **Asset hierarchy** is created, you can see it by clicking on the root 
 
 ##### Sub Assets
 
-On click of the root Asset in **Assets** page, **Subassets** page loads. **Subassets** page has details of root asset, subassets for the root asset, the child devices for the root asset and the custom properties for root Asset.
+Click the root asset in the **Assets** page to load the **Subassets** page . It shows the details of the root asset, all subassets, child devices and custom properties.
 
-![subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
+![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-**Subassets** page has below 3 options on top right corner:
+In the **Subassets** page you see the following three options in the top right corner:
 
 ###### Add child assets
 
-*	**Add child asset** : On click of **Add child asset** option, **Asset hierarchy** page loads with parent being the root asset or asset where “add child asset” option is invoked from.
+Click **Add child asset** to load the **Asset hierarchy** page with the root asset or asset where “add child asset” option is invoked from at the top.
 
-Parent asset is displayed with the label PARENT NODE on top of it.
+The root asset is displayed with the label "parent node".
 
 The **Asset hierarchy** that loads will be a subset of the root **Asset hierarchy**.
 
-![child-asset](/images/dtm/assets/dtm-assets-add-child-asset.png)
+![Child asset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
 **Example:**
 
-If "Building" is a root level asset, "Floor" is a child asset of building and "Room" is a child asset of floor. (Building --> Floor --> Room)
+If "Building" is a root level asset, then "Floor" is a child asset of "building" and "Room" is a child asset of floor".
 
-In this case, if you navigate to "Building" asset and click on **Add child asset**, then **Asset hierarchy** loads for "Floor" and "Room" assets creation. (“Floor -->Room”)
+In this case, if you navigate to the "Building" asset and click on **Add child asset**, then the **Asset hierarchy** loads for "Floor" and "Room".
 
-In case, you navigate to existing "Floor" asset and want to add a child asset, then child asset can be added only for "Room".
+If you navigate to the existing "Floor" asset and want to add a child asset, then you can only add child assets for "Room".
 
-For more details on how to add **Assets** in **Asset hierarchy**, please refer to section [Add Assets via UI](/dtm/asset-hierarchy/#creating-assets-ui)
+For more details on how to add **Assets** in **Asset hierarchy**, see [Add Assets via UI](/dtm/asset-hierarchy/#creating-assets-ui)
 
 {{< c8y-admon-info>}}
 In case you are at the end of the hierarchy which cannot have any child assets, then on click of **Add child asset** there will be no options to create child assets.
 {{< /c8y-admon-info>}}
 
 
-*	**Assign devices** : In case devices have to be added at any hierarchy level, then click on **Assign devices** option on top right.
+##### Assign devices
 
-Assign devices screen loads with the list of devices present in the {{< product-c8y-iot >}} tenant. You can choose a device/s from this list and assign to the particular asset.
+If you must add devices to any hierarchy level, then click **Assign devices** on the top right.
 
-For more details on Assign devices, refer section [**Assign devices**](/dtm/asset-hierarchy/#assign-devices)
+In the following dialog window you see a list of all devices present in your tenant. You can choose one or multiple devices from this list and assign them to the particular asset.
+
+For more details on how to assign devices, see [**Assign devices**](/dtm/asset-hierarchy/#assign-devices).
 
 
-*	**Import assets** : If you want to import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, bulk import option can be used.
+###### Import assets +
 
-Refer to [bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) section to import assets in bulk.
+If you want to import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, you can use the bulk import option.
+
+See [Bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) for more details on how to import assets in bulk.

@@ -36,7 +36,6 @@ ROLES & PERMISSIONS for global smart rules:
 - To create a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
 - To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
 - To delete a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
--  To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
 {{< /c8y-admon-req >}}
 
 - **Local smart rules**

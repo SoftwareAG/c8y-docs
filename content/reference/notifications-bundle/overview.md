@@ -23,7 +23,7 @@ New capabilities are added to Notifications 2.0 in each release of {{< product-c
 However, it does not yet support all of the notifications available from the Real-time notification API so it is not yet a complete replacement for the older API.
 See the rest of this section and the detailed API documentation for full details of the notifications supported by this release of the Notifications 2.0 API.
 
-To receive notifications over the Notifications 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant. Subscriptions are persistent,long lived, and allow notifications to be stored reliably until consumed and acknowledged by a consuming microservice or application.
+To receive notifications over the Notifications 2.0 protocol, an application or microservice must subscribe to notifications, either for notifications about a particular managed object or in a wider context that is scoped to a tenant. Subscriptions are persistent, long lived, and allow notifications to be stored reliably until consumed and acknowledged by a consuming microservice or application.
 
 ### Managed object context
 

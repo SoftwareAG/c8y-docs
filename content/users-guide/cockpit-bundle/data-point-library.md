@@ -16,9 +16,9 @@ The data point library provides a collection of data points with default values 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To add new data points: CREATE or ADMIN permission for permission type "Inventory"
-- To delete data points: ADMIN permission for permission type "Inventory"
-- To edit data points: ADMIN permission for permission type "Inventory"
+- To add a data point: CREATE or ADMIN permission for permission type "Inventory"
+- To delete a data point: ADMIN permission for permission type "Inventory"
+- To edit a data point: ADMIN permission for permission type "Inventory"
   {{< /c8y-admon-req >}}
 
 Data point properties are similar to paragraph formats in word processing applications. You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. The data point library provides the same functionality for data points. It provides a number of default data point templates that can be easily applied to your data points from different devices.

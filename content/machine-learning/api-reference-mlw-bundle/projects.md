@@ -251,7 +251,7 @@ Commit the resources of project for version control. The response will be a long
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
---data-raw '{"listOfResources":["1631777710_0928_Resource","1631777752_0720_Resource"]}'
+--data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138"]}'
 ```
 
 **Example Response**
@@ -316,7 +316,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Content-Type: application/json' \
---data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
+--data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138","72c0673497344164a80e298f679b8137","72c0673497344164a80e298f679b8136","72c0673497344164a80e298f679b8131"]}'
 ```
 
 **Example Response**
@@ -1513,7 +1513,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
         "v0",
         "v1"
     ],
- 'resources': {'data': [{'id': '1600753567_0365_Resource',
+ 'resources': {'data': [{'id': '72c0673497344164a80e298f679b8139',
     'name': 'MD.Orig.jpg',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1525,7 +1525,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
     'category': 'Data'},
-   {'id': '1600751893_0717_Resource',
+   {'id': '72c0673497344164a80e298f679b8138',
     'name': 'MD.Diet.jpg',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1537,7 +1537,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
     'category': 'Data'},
-   {'id': '1600753267_0571_Resource',
+   {'id': '72c0673497344164a80e298f679b8137',
     'name': 'predicted_MD_1600753267.json',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1554,7 +1554,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'application/json',
     'extension': '.json',
     'category': 'Data'},
-   {'id': '1600750617_0744_Resource',
+   {'id': '72c0673497344164a80e298f679b8136',
     'name': 'sample.zip',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1566,7 +1566,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'application/zip',
     'extension': '.zip',
     'category': 'Data'},
-   {'id': '1600753576_0003_Resource',
+   {'id': '72c0673497344164a80e298f679b8135',
     'name': 'predicted_MD_1600753576.json',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1583,7 +1583,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'application/json',
     'extension': '.json',
     'category': 'Data'},
-   {'id': '1601252767_0581_Resource',
+   {'id': '72c0673497344164a80e298f679b8134',
     'name': 'admissions.csv',
     'description': '',
     'createdAt': 'Mon Sep 28 00:26:07 2020',
@@ -1601,7 +1601,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'text/csv',
     'extension': '.csv',
     'category': 'Data'}],
-  'model': [{'id': '1600751811_0233_Resource',
+  'model': [{'id': '72c0673497344164a80e298f679b8141',
     'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1614,7 +1614,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
+  'code': [{'id': '72c0673497344164a80e298f679b8142',
     'name': 'samplePY.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1626,7 +1626,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
-   {'id': '1600751640_0643_Resource',
+   {'id': '72c0673497344164a80e298f679b8145',
     'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1638,7 +1638,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
-  'pipeline': [{'id': '1600753248_0497_Resource',
+  'pipeline': [{'id': '72c0673497344164a80e298f679b8187',
     'name': 'samplePipe.pipeline',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1660,7 +1660,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'category': 'Pipeline',
     'deployed': True}],
   'workflow': [],
-  'nn-designer': [{'id': '1600750594_0269_Resource',
+  'nn-designer': [{'id': '72c0673497344164a80e298f679b8177',
     'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',

@@ -75,7 +75,7 @@ As the token string is a JWT (JSON Web Token), it can be decoded to extract the 
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
 
-### Shared subscription
+### Shared subscriptions
 
 There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscription filters. A subscription name (or topic) can also be set up on many managed objects or child / parent hierarchies. These can easily lead to high volumes of notifications.
 

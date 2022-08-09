@@ -118,7 +118,7 @@ Note that global inventory permissions override inventory role permissions.
 
 Devices show the following tabs:
 
-- **Info** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
+- **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
 - **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 - **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
 - **Location** - Shows the current location of a device (only available with `c8y_Position`).

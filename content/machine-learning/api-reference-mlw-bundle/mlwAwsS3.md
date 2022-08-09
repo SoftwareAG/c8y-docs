@@ -236,7 +236,7 @@ Downloads the file from AWS S3 bucket.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/resources/downloadFromS3/mlwbucket/download' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
@@ -286,7 +286,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/resources/downloadFromS3/mlwbucket/download' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
 ```

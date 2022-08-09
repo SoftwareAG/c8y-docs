@@ -248,7 +248,7 @@ Commit the resources of project for version control. The response will be a long
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
 --data-raw '{"listOfResources":["1631777710_0928_Resource","1631777752_0720_Resource"]}'
@@ -314,7 +314,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Content-Type: application/json' \
 --data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
 ```
@@ -336,7 +336,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --header "Authorization: {{auth}}"
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit" --header "Authorization: {{auth}}"
 ```
 **Example Response**
 
@@ -373,7 +373,7 @@ Updates the exiting project name and description with given new project name and
 ```
 201 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
@@ -411,7 +411,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/'
 ```
 409 - Conflict
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
@@ -431,7 +431,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
@@ -492,7 +492,7 @@ To facilitate collaboration and sharing, MLW allows you to export the contents o
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
 ```
@@ -543,7 +543,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/d
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
 --header 'Content-Type: application/json'
 ```
 
@@ -564,7 +564,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/d
 ```
 404 - Not Found
 
-curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump" --header "Authorization: {{auth}}"
 ```
 **Example Response**
 
@@ -692,7 +692,7 @@ If there is any running task associated with the project, the delete operation w
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 ```
@@ -737,7 +737,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -760,7 +760,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 400 - Bad Request
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -805,7 +805,7 @@ If there is any running task associated with the project, the delete operation w
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 ```
@@ -872,7 +872,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -895,7 +895,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 400 - Bad Request
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -936,7 +936,7 @@ Retrieves the list of files available in the project. It contains info related t
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1038,7 +1038,7 @@ Scans the project structure to list any un-reported file in the system, which wo
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?refresh=true' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?refresh=true' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1142,7 +1142,7 @@ Pulls all the resources from the {{ < product-c8y-iot > }} inventory of the sele
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?versionNumber=v0' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1254,7 +1254,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?versionNumber=v0'
 ```
 
 **Example Response**
@@ -1295,7 +1295,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header 'Authorization: {{auth}}' \
 --form 'file=@/../../iris Dataset.csv'
 ```
@@ -1379,7 +1379,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
 ```
 409 - Not Supported
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header '{{auth}}' \
 --form 'file=@/../../LogisticR.pmml'
 ```
@@ -1399,7 +1399,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --form 'file=@/../../iris Dataset.csv'
 ```
 
@@ -1487,7 +1487,7 @@ To create a new pipeline file.
 ```
 200 - OK
 
-curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
@@ -1688,7 +1688,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
 ```
@@ -1760,7 +1760,7 @@ Gets the details of a resource file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1792,7 +1792,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/1600786266_0437_Resource"
+curl --request GET "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139"
 ```
 
 **Example Response**
@@ -1831,7 +1831,7 @@ Gets the content of the code file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601419709_0877_Resource/preview' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/preview' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1850,7 +1850,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601419709_0877_Resource/preview' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/preview' \
 ```
 
 **Example Response**
@@ -1890,7 +1890,7 @@ Gets the content of the notebook file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1942,7 +1942,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content'
 
 ```
 
@@ -1985,7 +1985,7 @@ Updates the contents of a file.
 ```
 200 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/resources/1601422676_0095_Resource/save' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/save' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content":"def hello():\r\n    return '\''Hello'\''"}'
@@ -2020,7 +2020,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/resources/1601422676_0095_Resource/save' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/save' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content":"def hello():\r\n    return '\''Hello'\''"}'
 
@@ -2063,7 +2063,7 @@ Deletes a resource file.
 ```
 200 - OK
 
-curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource" --header "Authorization: {{auth}}"
+curl --request DELETE "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -2127,7 +2127,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
 ```
 401 - Unauthorized
 
-curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources/1600786266_0437_Resource"
+curl --request DELETE "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139"
 ```
 
 **Example Response**
@@ -2168,7 +2168,7 @@ Downloads a resource file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/download' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/download' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -2195,7 +2195,7 @@ col1,col2,col3,col4,target
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/download' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/download' \
 ```
 
 **Example Response**

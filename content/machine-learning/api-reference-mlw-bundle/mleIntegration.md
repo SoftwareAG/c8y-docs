@@ -188,7 +188,7 @@ Deploys the PMML/ONNX/PIPELINE model to MLE.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -270,7 +270,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357305_0916_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -302,7 +302,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357604_0359_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -353,7 +353,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy'
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy'
 ```
 
 **Example Response**
@@ -373,7 +373,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 409 - Conflict
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -393,7 +393,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 400 - Error
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355166_0193_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -413,7 +413,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 404 - Not Found
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -453,7 +453,7 @@ Removes the PMML/ONNX/PIPELINE model from MLE.
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -535,7 +535,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357305_0916_Resource/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -566,7 +566,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357604_0359_Resource/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -617,7 +617,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy'
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy'
 ```
 
 **Example Response**
@@ -637,7 +637,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ```
 404 - Not Found
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -656,7 +656,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ```
 404 - Not Found
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/deploy' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -698,7 +698,7 @@ Predicts from the list of deployed PMML/ONNX/PIPELINE models in MLE.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/deployModel?type=PMML' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/deployModel?type=PMML' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -880,7 +880,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/admsNNN?type=ONNX' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1052,7 +1052,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/PPP?type=PIPELINE' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/PPP?type=PIPELINE' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1179,7 +1179,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/deployModel?type=PMML'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/deployModel?type=PMML'
 ```
 
 **Example Response**
@@ -1199,7 +1199,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 404 - Not Found
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/admsNNN?type=ONNX' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -1220,7 +1220,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 404 - Not Found
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/PPP?type=H5' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/predict/PPP?type=H5' \
 --header 'Authorization: {{auth}}'
 ```
 

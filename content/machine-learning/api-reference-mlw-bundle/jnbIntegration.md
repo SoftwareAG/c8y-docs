@@ -38,7 +38,7 @@ Gets the content of the Jupyter Notebook file and also creates a Jupyter session
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -90,7 +90,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content'
 
 ```
 
@@ -135,7 +135,7 @@ Updates the contents of the Jupyter Notebook file.
 ```
 200 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}} \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
@@ -167,7 +167,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
 "format": "json",
@@ -192,7 +192,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 400 - Error
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},

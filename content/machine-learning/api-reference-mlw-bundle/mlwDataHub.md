@@ -34,7 +34,7 @@ Pulls the data with the given query from {{< product-c8y-iot >}} DataHub.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/importFromDatahub/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromDatahub/data' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
@@ -73,7 +73,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/importFromDatahub/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromDatahub/data' \
 --header 'Content-Type: application/json' \
 --data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
 ```

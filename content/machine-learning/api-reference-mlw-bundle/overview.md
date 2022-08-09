@@ -23,7 +23,7 @@ In the following examples, `http://domain:port` is represented as `{{ url }}`.
 
 The HTTP request is a combination of a simple URI, HTTP verb GET, POST, PUT, or DELETE, request parameters, which can be in the form of a path variable, query, body, or header parameters, and message body (content).
 
-The path variable is a variable part of otherwise static URI that denotes a set of possible resource names on the server and is denoted with curly braces. For example, the `/projects/{projectID}/resources` resource path specifies the Project ID for an arbitrary project denoted as `{projectID}`. Thus, the request path for the Project ID of model 1601283001_Project should be constructed as `/projects/1601283001_Project/resources`.
+The path variable is a variable part of otherwise static URI that denotes a set of possible resource names on the server and is denoted with curly braces. For example, the `/projects/0f981b26132d412097ee5e54a257ce9f/resources`.
 
 Query parameters are appended to the URI with a question mark followed by a list of key/value pairs. A query variable annotated with the value true in the `/resources/deploy?type=PMML` resource path specifies that the returned PMML file should contain annotations as placed by MLW Server, in case of errors or warnings.
 

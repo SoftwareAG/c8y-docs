@@ -10,7 +10,7 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 ROLES & PERMISSIONS:
 
 - To view widgets within dashboards: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
-- To edit widgets: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+- To edit a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 - To create a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 - To delete a widget: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 

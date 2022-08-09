@@ -23,7 +23,7 @@ Dashboards provide you with a customized visualization of your data by using a s
 ROLES & PERMISSIONS:
 
 - To view dashboards: READ permission for permission type "Inventory" or READ permission for "Inventory" in inventory roles
-- To edit widgets within the dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To edit widgets within a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To create a dashboard: CREATE or ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To delete a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles

@@ -293,12 +293,12 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "taskName": "sampleClassifiactionModel2",
             "type": "AUTOML",
             "listOfModelAccuracy": [],
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "status": "RUNNING",
             "message": "In progress"
         }
     ],
-    "projectID": "1631779101_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {
@@ -684,11 +684,11 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "type": "ANOMALY",
             "executedAt": "2021-09-16T09:07:23.487543Z",
             "listOfModelAccuracy": [],
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "pID": "140106208573184"
         }
     ],
-    "projectID": "1631779101_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {

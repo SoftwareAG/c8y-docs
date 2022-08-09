@@ -259,7 +259,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "path": "1600784593_Project/Code/untitled.ipynb",
                 "name": "untitled"
             },
-            "projectID": "1600784593_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "blah project",
             "fileName": "untitled.ipynb"
         },
@@ -279,7 +279,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "path": "1601355085_Project/Code/untitled.ipynb",
                 "name": "untitled"
             },
-            "projectID": "1601355085_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "vinsy",
             "fileName": "untitled.ipynb"
         }

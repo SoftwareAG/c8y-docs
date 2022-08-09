@@ -276,7 +276,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T07:38:28.712732Z",
-            "projectID": "1631774924_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -292,7 +292,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             ]
         }
     ],
-    "projectID": "1631774924_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {
@@ -517,11 +517,11 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "id": "97f42d387a534ca9902dfaff9e945a6d",
             "message": "Zipping your project",
             "executedAt": "2022-02-09T08:14:51.399136Z",
-            "projectID": "1644309675_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "tasksID": "ecebc016f83843859e06d10cddce59ec"
         }
     },
-    "projectID": "1644309675_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "sortTime": 1644394491,
     "projectName": "WF",
     "recurrence": "ONE_TIME",
@@ -629,11 +629,11 @@ curl --location --request POST '{{url}}/service/mlw/projects/upload' \
             "id": "ca16d85213014c6a980afacf1ebd7798",
             "message": "Uploading your project",
             "executedAt": "2022-02-09T08:24:53.046085Z",
-            "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "tasksID": "395dc2be201b418b97f56f213b820de5"
         }
     },
-    "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "sortTime": 1644395093,
     "projectName": "WorkFlow_project_e02232",
     "recurrence": "ONE_TIME",
@@ -1168,7 +1168,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:08.878904Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -1192,7 +1192,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:39.810531Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v1",
             "properties": [
                 {
@@ -1215,7 +1215,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:28:28.709415Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -1232,7 +1232,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "pID": "140106208573184"
         }
     ],
-    "projectID": "1631779101_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {

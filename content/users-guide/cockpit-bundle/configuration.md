@@ -14,7 +14,7 @@ To use the Cockpit configuration functionality, the following requirements have 
 * The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to clone an application see [Managing applications > Custom application > To add a custom application](/users-guide/administration/#adding-applications).
 
 If these requirements are met, an **App configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
-{{/< c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 ### To configure a custom Cockpit application
 
